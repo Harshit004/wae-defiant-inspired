@@ -208,7 +208,7 @@ export default function Home() {
           className="absolute"
           style={{
             top: "350px",
-            left: "800px",
+            left: "60%",
             width: "393px",
             height: "159px",
             color: "#000",
@@ -301,8 +301,10 @@ export default function Home() {
                     color: "#00000099",
                   }}
                 >
-                  The underlying natural order of the universe - circular
-                  continuity of the natural world...
+                  The underlying natural order of the universe - 
+                  circular continuity of the natural world. 
+                  Undifferentiated, endlessly self-replenishing, 
+                  immensely powerful and impassively generous.
                 </p>
                 <button
                   className="w-fit px-[16px] py-[12px]"
@@ -377,8 +379,16 @@ export default function Home() {
                     color: "#00000099",
                   }}
                 >
-                  WAE captures the heart of Indian innovation by seamlessly
-                  blending...
+                  WAE captures the heart of Indian innovation by 
+                  seamlessly blending the time-honoured ideals 
+                  with the latest technology. We are driven by the 
+                  mission to build a brand that not only saves the 
+                  planet but also creates a potent impact on 
+                  future generations for the country’s 
+                  advancements, integrity & innovation. Our 
+                  approach strengthens community resilience 
+                  while showcasing India’s Intellectual capital on 
+                  the world stage.
                 </p>
                 <button
                   className="w-fit px-[16px] py-[12px]"
