@@ -235,8 +235,8 @@ export default function Home() {
         <motion.div
           style={{
             position: "sticky",
-            top: "50%",
-            transform: "translateY(-50%)",
+            top: "25%",
+            // transform: "translateY(-50%)",
             zIndex: 50,
             opacity: logoOpacity,
           }}
