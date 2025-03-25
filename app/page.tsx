@@ -12,7 +12,7 @@ export default function Home() {
   const sections = ["hero"] // We only have 'hero' now
 
   // =======================
-  // 1) TIME IN INDIA (unchanged)
+  // 1) TIME IN INDIA
   // =======================
   useEffect(() => {
     const updateIndiaTime = () => {
@@ -65,6 +65,27 @@ export default function Home() {
     [indiaOpacity, indiaVanish],
     ([iO, iV]) => iO * iV
   )
+
+  // =======================
+  // 4) MENU ARRAYS
+  // =======================
+  // Example: you can replace these with real items or a dynamic source.
+  const productsItems = [
+    "Products & Solutions A",
+    "Products & Solutions B",
+    "Products & Solutions C",
+    "Products & Solutions D",
+    // ...add as many as you want
+  ]
+  const blueprintItems = [
+    "Blueprint 1",
+    "Blueprint 2",
+    "Blueprint 3",
+    // ...add as many as you want
+  ]
+
+  // The number of lines we want to draw is the smaller of the two lengths.
+  const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   return (
     <main className="relative">
@@ -136,52 +157,50 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 4) Products & Solutions items (remove last line, left-aligned) */}
+            {/* 4) Products & Solutions items - using productsItems array */}
             <div className="flex flex-col justify-center space-y-2">
-              {Array(4)
-                .fill(0)
-                .map((_, i) => (
-                  <div
-                    key={i}
-                    className={`pb-2 ${
-                      i < 3 ? "border-b border-[#D9D9DC]" : ""
-                    }`}
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "12px",
-                      lineHeight: "100%",
-                      letterSpacing: "0px",
-                      textAlign: "left",
-                    }}
-                  >
-                    Products &amp; Solutions
-                  </div>
-                ))}
+              {productsItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "12px",
+                    lineHeight: "100%",
+                    letterSpacing: "0px",
+                    textAlign: "left",
+                    borderBottom:
+                      // Only add border if i < lineCount
+                      i < lineCount ? "1px solid #D9D9DC" : "none",
+                  }}
+                >
+                  {item}
+                </div>
+              ))}
             </div>
 
-            {/* 5) Blueprint items (remove last line, left-aligned) */}
+            {/* 5) Blueprint items - using blueprintItems array */}
             <div className="flex flex-col justify-center space-y-2">
-              {Array(3)
-                .fill(0)
-                .map((_, i) => (
-                  <div
-                    key={i}
-                    className={`pb-2 ${
-                      i < 2 ? "border-b border-[#D9D9DC]" : ""
-                    }`}
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "12px",
-                      lineHeight: "100%",
-                      letterSpacing: "0px",
-                      textAlign: "left",
-                    }}
-                  >
-                    Blueprint
-                  </div>
-                ))}
+              {blueprintItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "12px",
+                    lineHeight: "100%",
+                    letterSpacing: "0px",
+                    textAlign: "left",
+                    borderBottom:
+                      // Only add border if i < lineCount
+                      i < lineCount ? "1px solid #D9D9DC" : "none",
+                  }}
+                >
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -224,7 +243,6 @@ export default function Home() {
           disrupting the <br />
           status quo
         </div>
-        {/* Bouncing icon removed */}
       </section>
 
       {/* ============================
@@ -236,7 +254,6 @@ export default function Home() {
           style={{
             position: "sticky",
             top: "25%",
-            // transform: "translateY(-50%)",
             zIndex: 50,
             opacity: logoOpacity,
           }}
@@ -253,10 +270,9 @@ export default function Home() {
 
         {/* OUR PURPOSE: full screen, background #F2F2F2 */}
         <section
-          className="h-screen flex items-end justify-center bg-[#F2F2F2]"
+          className="h-screen flex items-end justify-center"
           style={{ position: "relative" }}
         >
-          {/* The text block slides up & fades in from bottom */}
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -338,7 +354,7 @@ export default function Home() {
 
         {/* MADE IN INDIA: full screen, same approach */}
         <section
-          className="h-screen flex items-end justify-center bg-[#F2F2F2]"
+          className="h-screen flex items-end justify-center"
           style={{ position: "relative" }}
         >
           <motion.div
