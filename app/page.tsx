@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import RelatedCard from "../components/related-card"
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState(0)
@@ -249,7 +250,7 @@ export default function Home() {
           style={{
             position: "sticky",
             top: "25%",
-            zIndex: 50,
+            zIndex: 0,
             opacity: logoOpacity,
           }}
           className="pointer-events-none flex justify-center"
@@ -289,7 +290,7 @@ export default function Home() {
                   verticalAlign: "middle",
                 }}
               >
-                Our Purpose
+                About WAE
               </h2>
 
               <div
@@ -471,6 +472,44 @@ export default function Home() {
           margin-top: -12px;
         }
       `}</style>
+
+      {/* Related Information Section */}
+      <section className="max-w-[72.5rem] mx-auto mb-[9.72%]">
+        <h2 className="font-helvetica text-[3.63rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem] mt-[7.5rem]">
+          Related Information
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+          <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c32e685-fbfe-4edb-0e63-4bbf261b3100/public"
+            title="Awards and Other Information"
+            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+            width={272}
+            height={270}
+          />
+          <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/67063015-a309-4a59-9247-c67c4efea500/public"
+            title="News And Updates"
+            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+            width={272}
+            height={162}
+          />
+          <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/efbc7ed9-3a44-4bea-0cab-e1f7ba555500/public"
+            title="Impact We Enable For You"
+            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+            width={272}
+            height={200}
+          />
+          <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afdeb7b4-18e6-4bc2-0ed8-85d97cb6dc00/public"
+            title="Our Sustainable Water Solutions"
+            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+            width={272}
+            height={238}
+          />
+        </div>
+      </section>
+
     </main>
   )
 }
