@@ -30,19 +30,20 @@ export default function RelatedCard({ image, title, description, width, height }
         style={{ y, position: "relative", zIndex: 9999 }}
       >
         <Image
-          src={image || "/placeholder.svg"}
-          alt={title}
-          width={width}
-          height={height}
-          className="object-cover transition-transform duration-300 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
+            src={image || "/placeholder.svg"}
+            alt={title}
+            width={width}
+            height={height}
+            className="object-cover transition-all duration-1000 group-hover:scale-110 filter grayscale group-hover:grayscale-0"
         />
+
       </motion.div>
 
       <div className="transition-all duration-300 relative">
-        <h3 className="font-[Inter Tight] font-[400] text-[24px] leading-[100%] tracking-[0%] align-middle mb-[12px] group-hover:no-underline px-[10px] pt-[12px]">
+        <h3 className="font-[Inter Tight] font-[400] text-[22px] leading-[100%] tracking-[0%] align-middle mb-[12px] group-hover:no-underline px-[10px] pt-[12px]">
           {title}
         </h3>
-        <p className="font-[Inter Tight] font-[400] text-[12px] leading-[120%] tracking-[-2%] align-middle text-gray-600 mb-[48px] px-[10px]">
+        <p className="font-[Inter Tight] font-[400] text-[12px] leading-[110%] tracking-[-2%] align-middle text-gray-600 mb-[48px] px-[10px]">
           {description}
         </p>
 

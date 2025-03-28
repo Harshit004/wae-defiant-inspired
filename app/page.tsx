@@ -135,11 +135,11 @@ export default function Home() {
               <div
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "9px",
-                  lineHeight: "100%",
-                  letterSpacing: "0px",
-                  textTransform: "uppercase",
+                  fontWeight: 500,
+                  fontSize: "10px",
+                  lineHeight: "125%",
+                  letterSpacing: "0%",
+                  // textTransform: "uppercase",
                   color: "#00000066",
                 }}
               >
@@ -208,7 +208,7 @@ export default function Home() {
       <section
         id="hero"
         ref={heroRef}
-        className="relative h-screen w-full overflow-hidden"
+        className="relative h-[590px] w-full overflow-hidden"
       >
         <video
           src="/a337333f-cbd25ca9.mp4"
@@ -244,7 +244,7 @@ export default function Home() {
       {/* ============================
           SCROLL CONTAINER
       ============================ */}
-      <motion.div style={{ height: "300vh" }} className="relative bg-[#F2F2F2]">
+      <motion.div style={{ height: "300vh",  }} className="relative bg-[#F2F2F2]">
         {/* PINNED LOGO IN CENTER */}
         <motion.div
           style={{
