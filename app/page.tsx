@@ -1,11 +1,41 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import RelatedCard from "../components/related-card"
+
+// A reusable button component with the hover effect:
+// On hover, the button background becomes black, text becomes white, and the icon image changes.
+function HoverButton({ children }: { children: (hovered: boolean) => React.ReactNode }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <button
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="w-fit px-[16px] py-[12px]"
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "8px",
+        fontFamily: "'Inter Tight', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
+        lineHeight: "100%",
+        letterSpacing: "0%",
+        verticalAlign: "middle",
+        backgroundColor: hovered ? "#000" : "#f2f2f2",
+        border: "1px solid #000",
+        cursor: "pointer",
+        color: hovered ? "#fff" : "#000",
+      }}
+    >
+      {children(hovered)}
+    </button>
+  )
+}
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState(0)
@@ -45,7 +75,6 @@ export default function Home() {
   const { scrollYProgress } = useScroll()
   const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1])
 
-  // Example text animations (unchanged)
   const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"])
   const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1])
   const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0])
@@ -76,7 +105,6 @@ export default function Home() {
     "Blueprint 2",
     "Blueprint 3",
   ]
-
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   return (
@@ -135,10 +163,10 @@ export default function Home() {
               <div
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
+                  fontWeight: 600,
                   fontSize: "10px",
                   lineHeight: "125%",
-                  letterSpacing: "0%",
+                  letterSpacing: "0px",
                   // textTransform: "uppercase",
                   color: "#00000066",
                 }}
@@ -165,11 +193,24 @@ export default function Home() {
                     borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
                   }}
                 >
-                  {/* Container with two lines (same text).
-                     Container is only 12px tall, margin-top shifts by -12px on hover. */}
+                  {/* Vertical slide container for menu item */}
                   <div className="c--anim-btn">
                     <span className="c-anim-btn">{item}</span>
                     <span>{item}</span>
+                    <span className="menu-arrow">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </span>
                   </div>
                 </div>
               ))}
@@ -194,6 +235,20 @@ export default function Home() {
                   <div className="c--anim-btn">
                     <span className="c-anim-btn">{item}</span>
                     <span>{item}</span>
+                    <span className="menu-arrow">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </span>
                   </div>
                 </div>
               ))}
@@ -244,13 +299,13 @@ export default function Home() {
       {/* ============================
           SCROLL CONTAINER
       ============================ */}
-      <motion.div style={{ height: "300vh",  }} className="relative bg-[#F2F2F2]">
+      <motion.div style={{ height: "300vh", position: "relative", zIndex: 1000 }} className="bg-[#F2F2F2]">
         {/* PINNED LOGO IN CENTER */}
         <motion.div
           style={{
             position: "sticky",
             top: "25%",
-            zIndex: 0,
+            zIndex: 1100,
             opacity: logoOpacity,
           }}
           className="pointer-events-none flex justify-center"
@@ -284,7 +339,7 @@ export default function Home() {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "58px",
+                  fontSize: "3.625rem",
                   lineHeight: "110%",
                   letterSpacing: "0%",
                   verticalAlign: "middle",
@@ -313,36 +368,25 @@ export default function Home() {
                     color: "#00000099",
                   }}
                 >
-                  The underlying natural order of the universe - 
-                  circular continuity of the natural world. 
-                  Undifferentiated, endlessly self-replenishing, 
-                  immensely powerful and impassively generous.
+                  The underlying natural order of the universe - circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
                 </p>
-                <button
-                  className="w-fit px-[16px] py-[12px]"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "10px",
-                    lineHeight: "100%",
-                    letterSpacing: "0%",
-                    verticalAlign: "middle",
-                    backgroundColor: "#f2f2f2",
-                    border: "1px solid #000",
-                    cursor: "pointer",
-                  }}
-                >
-                  Know More
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                    alt="icon"
-                    width={16}
-                    height={16}
-                  />
-                </button>
+                <HoverButton>
+                  {(hovered) => (
+                    <>
+                      Know More
+                      <Image
+                        src={
+                          hovered
+                            ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                        }
+                        alt="icon"
+                        width={16}
+                        height={16}
+                      />
+                    </>
+                  )}
+                </HoverButton>
               </div>
             </div>
           </motion.div>
@@ -365,7 +409,7 @@ export default function Home() {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "58px",
+                  fontSize: "3.625rem",
                   lineHeight: "110%",
                   letterSpacing: "0%",
                   verticalAlign: "middle",
@@ -391,52 +435,32 @@ export default function Home() {
                     color: "#00000099",
                   }}
                 >
-                  WAE captures the heart of Indian innovation by 
-                  seamlessly blending the time-honoured ideals 
-                  with the latest technology. We are driven by the 
-                  mission to build a brand that not only saves the 
-                  planet but also creates a potent impact on 
-                  future generations for the country’s 
-                  advancements, integrity & innovation. Our 
-                  approach strengthens community resilience 
-                  while showcasing India’s Intellectual capital on 
-                  the world stage.
+                  WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology. We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations for the country’s advancements, integrity & innovation. Our approach strengthens community resilience while showcasing India’s Intellectual capital on the world stage.
                 </p>
-                <button
-                  className="w-fit px-[16px] py-[12px]"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "10px",
-                    lineHeight: "100%",
-                    letterSpacing: "0%",
-                    verticalAlign: "middle",
-                    backgroundColor: "#f2f2f2",
-                    border: "1px solid #000",
-                    cursor: "pointer",
-                  }}
-                >
-                  Know More
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                    alt="icon"
-                    width={16}
-                    height={16}
-                  />
-                </button>
+                <HoverButton>
+                  {(hovered) => (
+                    <>
+                      Know More
+                      <Image
+                        src={
+                          hovered
+                            ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                        }
+                        alt="icon"
+                        width={16}
+                        height={16}
+                      />
+                    </>
+                  )}
+                </HoverButton>
               </div>
             </div>
           </motion.div>
         </section>
       </motion.div>
 
-      {/* 
-        EXACT style snippet for a 12px-high container 
-        with margin-top shifting -12px on hover.
-      */}
+      {/* INLINE CSS for vertical slide hover animation and arrow emergence */}
       <style jsx>{`
         .c--anim-btn span {
           color: black;
@@ -473,7 +497,7 @@ export default function Home() {
         }
       `}</style>
 
-      {/* Related Information Section */}
+      {/* RELATED INFORMATION SECTION */}
       <section className="max-w-[72.5rem] mx-auto mb-[9.72%]">
         <h2 className="font-helvetica text-[3.63rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem] mt-[7.5rem]">
           Related Information
@@ -509,7 +533,6 @@ export default function Home() {
           />
         </div>
       </section>
-
     </main>
   )
 }
