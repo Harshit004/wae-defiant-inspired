@@ -42,24 +42,19 @@ export default function Home() {
   // 3) SCROLL-DRIVEN ANIMATION
   // =======================
   const { scrollYProgress } = useScroll()
-
-  // Pinned logo fade or scale (optional).
   const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1])
 
-  // Our Purpose text slides from bottom to center in [0.05 -> 0.25].
+  // Example text animations (unchanged)
   const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"])
   const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1])
-  // Then vanish [0.25 -> 0.35].
   const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0])
   const finalPurposeOpacity = useTransform(
     [purposeOpacity, purposeVanish],
     ([pO, pV]) => pO * pV
   )
 
-  // Made in India text slides in [0.35 -> 0.55].
   const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"])
   const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1])
-  // Then vanish [0.55 -> 0.65].
   const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0])
   const finalIndiaOpacity = useTransform(
     [indiaOpacity, indiaVanish],
@@ -69,22 +64,18 @@ export default function Home() {
   // =======================
   // 4) MENU ARRAYS
   // =======================
-  // Example: you can replace these with real items or a dynamic source.
   const productsItems = [
     "Products & Solutions A",
     "Products & Solutions B",
     "Products & Solutions C",
     "Products & Solutions D",
-    // ...add as many as you want
   ]
   const blueprintItems = [
     "Blueprint 1",
     "Blueprint 2",
     "Blueprint 3",
-    // ...add as many as you want
   ]
 
-  // The number of lines we want to draw is the smaller of the two lengths.
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   return (
@@ -113,7 +104,7 @@ export default function Home() {
             <div style={{ color: "#00000066" }}>News &amp; Updates</div>
           </div>
 
-          {/* Divider with 10px margin-bottom */}
+          {/* Divider */}
           <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
 
           {/* BOTTOM ROW */}
@@ -157,7 +148,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 4) Products & Solutions items - using productsItems array */}
+            {/* 4) Products & Solutions items */}
             <div className="flex flex-col justify-center space-y-2">
               {productsItems.map((item, i) => (
                 <div
@@ -170,17 +161,20 @@ export default function Home() {
                     lineHeight: "100%",
                     letterSpacing: "0px",
                     textAlign: "left",
-                    borderBottom:
-                      // Only add border if i < lineCount
-                      i < lineCount ? "1px solid #D9D9DC" : "none",
+                    borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
                   }}
                 >
-                  {item}
+                  {/* Container with two lines (same text).
+                     Container is only 12px tall, margin-top shifts by -12px on hover. */}
+                  <div className="c--anim-btn">
+                    <span className="c-anim-btn">{item}</span>
+                    <span>{item}</span>
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* 5) Blueprint items - using blueprintItems array */}
+            {/* 5) Blueprint items */}
             <div className="flex flex-col justify-center space-y-2">
               {blueprintItems.map((item, i) => (
                 <div
@@ -193,12 +187,13 @@ export default function Home() {
                     lineHeight: "100%",
                     letterSpacing: "0px",
                     textAlign: "left",
-                    borderBottom:
-                      // Only add border if i < lineCount
-                      i < lineCount ? "1px solid #D9D9DC" : "none",
+                    borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
                   }}
                 >
-                  {item}
+                  <div className="c--anim-btn">
+                    <span className="c-anim-btn">{item}</span>
+                    <span>{item}</span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -268,7 +263,7 @@ export default function Home() {
           />
         </motion.div>
 
-        {/* OUR PURPOSE: full screen, background #F2F2F2 */}
+        {/* OUR PURPOSE SECTION */}
         <section
           className="h-screen flex items-end justify-center"
           style={{ position: "relative" }}
@@ -352,7 +347,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* MADE IN INDIA: full screen, same approach */}
+        {/* MADE IN INDIA SECTION */}
         <section
           className="h-screen flex items-end justify-center"
           style={{ position: "relative" }}
@@ -436,6 +431,46 @@ export default function Home() {
           </motion.div>
         </section>
       </motion.div>
+
+      {/* 
+        EXACT style snippet for a 12px-high container 
+        with margin-top shifting -12px on hover.
+      */}
+      <style jsx>{`
+        .c--anim-btn span {
+          color: black;
+          text-decoration: none;
+          text-align: left;
+          display: block;
+
+          font-family: 'Arial', sans-serif;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 100%;
+          letter-spacing: 0px;
+        }
+
+        .c--anim-btn,
+        .c-anim-btn {
+          transition: 0.5s;
+        }
+
+        .c--anim-btn {
+          /* Container is only 12px tall */
+          height: 12px;
+          overflow: hidden;
+        }
+
+        /* The top line starts at margin-top: 0 */
+        .c-anim-btn {
+          margin-top: 0em;
+        }
+
+        /* On hover, shift top line by -12px */
+        .c--anim-btn:hover .c-anim-btn {
+          margin-top: -12px;
+        }
+      `}</style>
     </main>
   )
 }
