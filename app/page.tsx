@@ -30,10 +30,12 @@ function HoverButton({ children }: { children: (hovered: boolean) => React.React
         border: "1px solid #000",
         cursor: "pointer",
         color: hovered ? "#fff" : "#000",
+        transition: "all 650ms ease", // This adds the fade in effect
       }}
     >
       {children(hovered)}
     </button>
+
   )
 }
 
