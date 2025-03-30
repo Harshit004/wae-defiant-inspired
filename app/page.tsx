@@ -30,19 +30,21 @@ function HoverButton({ children }: { children: (hovered: boolean) => React.React
         border: "1px solid #000",
         cursor: "pointer",
         color: hovered ? "#fff" : "#000",
-        transition: "all 650ms ease", // This adds the fade in effect
+        transition: "all 650ms ease",
       }}
     >
       {children(hovered)}
     </button>
-
   )
 }
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState(0)
   const [currentTime, setCurrentTime] = useState("")
-  const sections = ["hero"] // We only have 'hero' now
+  const [headerHeight, setHeaderHeight] = useState(0)
+  const headerRef = useRef<HTMLDivElement>(null)
+  const [heroRef, heroInView] = useInView({ threshold: 0.5 })
+  const sections = ["hero"]
 
   // =======================
   // 1) TIME IN INDIA
@@ -66,7 +68,6 @@ export default function Home() {
   // =======================
   // 2) HERO IN-VIEW
   // =======================
-  const [heroRef, heroInView] = useInView({ threshold: 0.5 })
   useEffect(() => {
     if (heroInView) setActiveSection(0)
   }, [heroInView])
@@ -76,7 +77,6 @@ export default function Home() {
   // =======================
   const { scrollYProgress } = useScroll()
   const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1])
-
   const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"])
   const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1])
   const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0])
@@ -84,7 +84,6 @@ export default function Home() {
     [purposeOpacity, purposeVanish],
     ([pO, pV]) => pO * pV
   )
-
   const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"])
   const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1])
   const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0])
@@ -109,12 +108,26 @@ export default function Home() {
   ]
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
+  // =======================
+  // 5) MEASURE HEADER HEIGHT
+  // =======================
+  useEffect(() => {
+    if (headerRef.current) {
+      setHeaderHeight(headerRef.current.clientHeight)
+    }
+  }, [headerRef])
+
   return (
     <main className="relative">
       {/* ============================
           HEADER (unchanged)
+          Ensuring header is on top via zIndex and relative positioning
       ============================ */}
-      <header className="w-full bg-white" style={{ marginBottom: 0 }}>
+      <header
+        ref={headerRef}
+        className="w-full bg-white"
+        style={{ marginBottom: 0, position: "relative", zIndex: 1000 }}
+      >
         <div className="mx-auto w-full max-w-[1440px] px-[140px]">
           {/* TOP ROW */}
           <div
@@ -169,7 +182,6 @@ export default function Home() {
                   fontSize: "10px",
                   lineHeight: "125%",
                   letterSpacing: "0px",
-                  // textTransform: "uppercase",
                   color: "#00000066",
                 }}
               >
@@ -261,11 +273,13 @@ export default function Home() {
 
       {/* ============================
           HERO SECTION (VIDEO)
+          Negative top margin equals headerHeight
       ============================ */}
       <section
         id="hero"
         ref={heroRef}
-        className="relative h-[590px] w-full overflow-hidden"
+        className="relative h-[100vh] w-full overflow-hidden"
+        style={{ marginTop: `-${headerHeight}px`, zIndex: 0 }}
       >
         <video
           src="/a337333f-cbd25ca9.mp4"
@@ -469,31 +483,23 @@ export default function Home() {
           text-decoration: none;
           text-align: left;
           display: block;
-
           font-family: 'Arial', sans-serif;
           font-weight: 500;
           font-size: 12px;
           line-height: 100%;
           letter-spacing: 0px;
         }
-
         .c--anim-btn,
         .c-anim-btn {
           transition: 0.5s;
         }
-
         .c--anim-btn {
-          /* Container is only 12px tall */
           height: 12px;
           overflow: hidden;
         }
-
-        /* The top line starts at margin-top: 0 */
         .c-anim-btn {
           margin-top: 0em;
         }
-
-        /* On hover, shift top line by -12px */
         .c--anim-btn:hover .c-anim-btn {
           margin-top: -12px;
         }
