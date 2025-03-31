@@ -46,19 +46,18 @@ export default function Home() {
   const [heroRef, heroInView] = useInView({ threshold: 0.5 });
   const sections = ["hero"];
 
-  // State & ref for detecting scroll direction for tagline visibility.
-  // Reverse the logic: When scrolling down, hide tagline; when scrolling up, show tagline.
+  // Tagline visibility: When scrolling down, show tagline; when scrolling up, hide it.
   const [taglineVisible, setTaglineVisible] = useState(true);
   const prevScrollY = useRef(0);
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > prevScrollY.current) {
-        // Scrolling down: hide tagline.
-        setTaglineVisible(false);
-      } else {
-        // Scrolling up: show tagline.
+      if (currentScrollY < prevScrollY.current) {
+        // Scrolling down: show tagline.
         setTaglineVisible(true);
+      } else {
+        // Scrolling up: hide tagline.
+        setTaglineVisible(false);
       }
       prevScrollY.current = currentScrollY;
     };
@@ -123,6 +122,27 @@ export default function Home() {
     }
   }, [headerRef]);
 
+  // Prepare tagline lines.
+  const taglineLine1 = "Light out for the territory";
+  const taglineLine2 = "ahead of the rest.";
+  const taglineWords1 = taglineLine1.split(" ");
+  const taglineWords2 = taglineLine2.split(" ");
+
+  // Variants for staggered animation.
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+        ease: "easeInOut",
+      },
+    },
+  };
+  const childVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
+  };
+
   return (
     <main className="relative">
       {/* HEADER */}
@@ -174,27 +194,62 @@ export default function Home() {
                 height={18.93841552734375}
               />
             </div>
-            {/* Column 3: Tagline (animated) */}
-            <motion.div
-              animate={{ opacity: taglineVisible ? 1 : 0 }}
-              transition={{ duration: 1}}
-              className="flex flex-col justify-center"
-            >
-              <div
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "10px",
-                  lineHeight: "125%",
-                  letterSpacing: "0px",
-                  color: "#00000066",
-                }}
+            {/* Column 3: Tagline with staggered fade-in from left to right, split into two lines */}
+            <div className="flex flex-col items-start">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate={taglineVisible ? "visible" : "hidden"}
+                style={{ whiteSpace: "nowrap" }}
+                className="flex flex-row justify-center"
               >
-                Light out for the territory
-                <br />
-                ahead of the rest.
-              </div>
-            </motion.div>
+                {taglineWords1.map((word, index) => (
+                  <motion.span
+                    key={index}
+                    variants={childVariants}
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 600,
+                      fontSize: "10px",
+                      lineHeight: "125%",
+                      letterSpacing: "0px",
+                      color: "#00000066",
+                      marginRight: "0.2rem", // reduced gap between words
+                      display: "inline-block",
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </motion.div>
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate={taglineVisible ? "visible" : "hidden"}
+                style={{ whiteSpace: "nowrap" }}
+                className="flex flex-row justify-center"
+              >
+                {taglineWords2.map((word, index) => (
+                  <motion.span
+                    key={index}
+                    variants={childVariants}
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 600,
+                      fontSize: "10px",
+                      lineHeight: "125%",
+                      letterSpacing: "0px",
+                      color: "#00000066",
+                      marginRight: "0.2rem", // reduced gap between words
+                      display: "inline-block",
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </motion.div>
+            </div>
+
             {/* Column 4: Products & Solutions items */}
             <div className="flex flex-col justify-center space-y-2">
               {productsItems.map((item, i) => (
