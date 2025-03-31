@@ -1,17 +1,16 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import RelatedCard from "../components/related-card"
-import Footer from "@/components/footer"
+import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import RelatedCard from "../components/related-card";
+import Footer from "@/components/footer";
 
-// A reusable button component with the hover effect:
-// On hover, the button background becomes black, text becomes white, and the icon image changes.
+// A reusable button component with the hover effect.
 function HoverButton({ children }: { children: (hovered: boolean) => React.ReactNode }) {
-  const [hovered, setHovered] = useState(false)
+  const [hovered, setHovered] = useState(false);
   return (
     <button
       onMouseEnter={() => setHovered(true)}
@@ -36,20 +35,38 @@ function HoverButton({ children }: { children: (hovered: boolean) => React.React
     >
       {children(hovered)}
     </button>
-  )
+  );
 }
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState(0)
-  const [currentTime, setCurrentTime] = useState("")
-  const [headerHeight, setHeaderHeight] = useState(0)
-  const headerRef = useRef<HTMLDivElement>(null)
-  const [heroRef, heroInView] = useInView({ threshold: 0.5 })
-  const sections = ["hero"]
+  const [activeSection, setActiveSection] = useState(0);
+  const [currentTime, setCurrentTime] = useState("");
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [heroRef, heroInView] = useInView({ threshold: 0.5 });
+  const sections = ["hero"];
 
-  // =======================
-  // 1) TIME IN INDIA
-  // =======================
+  // State & ref for detecting scroll direction for tagline visibility.
+  // Reverse the logic: When scrolling down, hide tagline; when scrolling up, show tagline.
+  const [taglineVisible, setTaglineVisible] = useState(true);
+  const prevScrollY = useRef(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > prevScrollY.current) {
+        // Scrolling down: hide tagline.
+        setTaglineVisible(false);
+      } else {
+        // Scrolling up: show tagline.
+        setTaglineVisible(true);
+      }
+      prevScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // TIME IN INDIA
   useEffect(() => {
     const updateIndiaTime = () => {
       const options: Intl.DateTimeFormatOptions = {
@@ -57,80 +74,65 @@ export default function Home() {
         minute: "2-digit",
         hour12: false,
         timeZone: "Asia/Kolkata",
-      }
-      const indiaTime = new Date().toLocaleTimeString("en-US", options)
-      setCurrentTime(indiaTime)
-    }
-    updateIndiaTime()
-    const interval = setInterval(updateIndiaTime, 60000)
-    return () => clearInterval(interval)
-  }, [])
+      };
+      const indiaTime = new Date().toLocaleTimeString("en-US", options);
+      setCurrentTime(indiaTime);
+    };
+    updateIndiaTime();
+    const interval = setInterval(updateIndiaTime, 60000);
+    return () => clearInterval(interval);
+  }, []);
 
-  // =======================
-  // 2) HERO IN-VIEW
-  // =======================
+  // HERO IN-VIEW
   useEffect(() => {
-    if (heroInView) setActiveSection(0)
-  }, [heroInView])
+    if (heroInView) setActiveSection(0);
+  }, [heroInView]);
 
-  // =======================
-  // 3) SCROLL-DRIVEN ANIMATION
-  // =======================
-  const { scrollYProgress } = useScroll()
-  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1])
-  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"])
-  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1])
-  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0])
+  // SCROLL-DRIVEN ANIMATION (other elements)
+  const { scrollYProgress } = useScroll();
+  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
+  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"]);
+  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1]);
+  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]);
   const finalPurposeOpacity = useTransform(
     [purposeOpacity, purposeVanish],
     ([pO, pV]) => pO * pV
-  )
-  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"])
-  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1])
-  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0])
+  );
+  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"]);
+  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
+  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0]);
   const finalIndiaOpacity = useTransform(
     [indiaOpacity, indiaVanish],
     ([iO, iV]) => iO * iV
-  )
+  );
 
-  // =======================
-  // 4) MENU ARRAYS
-  // =======================
+  // MENU ARRAYS
   const productsItems = [
     "Products & Solutions A",
     "Products & Solutions B",
     "Products & Solutions C",
     "Products & Solutions D",
-  ]
-  const blueprintItems = [
-    "Blueprint 1",
-    "Blueprint 2",
-    "Blueprint 3",
-  ]
-  const lineCount = Math.min(productsItems.length, blueprintItems.length)
+  ];
+  const blueprintItems = ["Blueprint 1", "Blueprint 2", "Blueprint 3"];
+  const lineCount = Math.min(productsItems.length, blueprintItems.length);
 
-  // =======================
-  // 5) MEASURE HEADER HEIGHT
-  // =======================
+  // MEASURE HEADER HEIGHT
   useEffect(() => {
     if (headerRef.current) {
-      setHeaderHeight(headerRef.current.clientHeight)
+      setHeaderHeight(headerRef.current.clientHeight);
     }
-  }, [headerRef])
+  }, [headerRef]);
 
   return (
     <main className="relative">
-      {/* ============================
-          HEADER (unchanged)
-          Ensuring header is on top via zIndex and relative positioning
-      ============================ */}
+      {/* HEADER */}
       <header
         ref={headerRef}
         className="w-full bg-white"
         style={{ marginBottom: 0, position: "relative", zIndex: 1000 }}
       >
         <div className="mx-auto w-full max-w-[1440px] px-[140px]">
-          {/* TOP ROW */}
+          {/* TOP ROW (always visible) */}
           <div
             className="grid grid-cols-5 items-center pt-[30px] pb-[10px]"
             style={{
@@ -145,8 +147,8 @@ export default function Home() {
             <div style={{ color: "#00000066" }}>NOIDA</div>
             <div style={{ color: "#00000066" }}>INDIA</div>
             <div>{currentTime}</div>
-            <div style={{ color: "#00000066" }}>Products &amp; Solutions</div>
-            <div style={{ color: "#00000066" }}>News &amp; Updates</div>
+            <div style={{ color: "#00000066" }}>Products & Solutions</div>
+            <div style={{ color: "#00000066" }}>News & Updates</div>
           </div>
 
           {/* Divider */}
@@ -154,7 +156,7 @@ export default function Home() {
 
           {/* BOTTOM ROW */}
           <div className="grid grid-cols-5 items-start">
-            {/* 1) Logo under NOIDA */}
+            {/* Column 1: Logo */}
             <div className="flex flex-col justify-center">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
@@ -163,8 +165,7 @@ export default function Home() {
                 height={82.03529357910156}
               />
             </div>
-
-            {/* 2) Image under INDIA */}
+            {/* Column 2: WAE Text Image */}
             <div className="flex flex-col justify-center">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/45c6555a-9bdb-4f8a-3958-0df6cd00ac00/public"
@@ -173,9 +174,12 @@ export default function Home() {
                 height={18.93841552734375}
               />
             </div>
-
-            {/* 3) Tagline under TIME */}
-            <div className="flex flex-col justify-center">
+            {/* Column 3: Tagline (animated) */}
+            <motion.div
+              animate={{ opacity: taglineVisible ? 1 : 0 }}
+              transition={{ duration: 1}}
+              className="flex flex-col justify-center"
+            >
               <div
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -190,9 +194,8 @@ export default function Home() {
                 <br />
                 ahead of the rest.
               </div>
-            </div>
-
-            {/* 4) Products & Solutions items */}
+            </motion.div>
+            {/* Column 4: Products & Solutions items */}
             <div className="flex flex-col justify-center space-y-2">
               {productsItems.map((item, i) => (
                 <div
@@ -208,7 +211,6 @@ export default function Home() {
                     borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
                   }}
                 >
-                  {/* Vertical slide container for menu item */}
                   <div className="c--anim-btn">
                     <span className="c-anim-btn">{item}</span>
                     <span>{item}</span>
@@ -222,16 +224,15 @@ export default function Home() {
                         stroke="currentColor"
                         strokeWidth="2"
                       >
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
                       </svg>
                     </span>
                   </div>
                 </div>
               ))}
             </div>
-
-            {/* 5) Blueprint items */}
+            {/* Column 5: Blueprint items */}
             <div className="flex flex-col justify-center space-y-2">
               {blueprintItems.map((item, i) => (
                 <div
@@ -260,8 +261,8 @@ export default function Home() {
                         stroke="currentColor"
                         strokeWidth="2"
                       >
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
                       </svg>
                     </span>
                   </div>
@@ -272,10 +273,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ============================
-          HERO SECTION (VIDEO)
-          Negative top margin equals headerHeight
-      ============================ */}
+      {/* HERO SECTION */}
       <section
         id="hero"
         ref={heroRef}
@@ -290,7 +288,6 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Text Overlay */}
         <div
           className="absolute"
           style={{
@@ -313,11 +310,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============================
-          SCROLL CONTAINER
-      ============================ */}
+      {/* SCROLL CONTAINER */}
       <motion.div style={{ height: "300vh", position: "relative", zIndex: 1000 }} className="bg-[#F2F2F2]">
-        {/* PINNED LOGO IN CENTER */}
         <motion.div
           style={{
             position: "sticky",
@@ -336,11 +330,7 @@ export default function Home() {
           />
         </motion.div>
 
-        {/* OUR PURPOSE SECTION */}
-        <section
-          className="h-screen flex items-end justify-center"
-          style={{ position: "relative" }}
-        >
+        <section className="h-screen flex items-end justify-center" style={{ position: "relative" }}>
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -348,10 +338,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <div
-              style={{ width: "1160px", height: "115px" }}
-              className="flex justify-between items-start"
-            >
+            <div style={{ width: "1160px", height: "115px" }} className="flex justify-between items-start">
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -409,11 +396,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* MADE IN INDIA SECTION */}
-        <section
-          className="h-screen flex items-end justify-center"
-          style={{ position: "relative" }}
-        >
+        <section className="h-screen flex items-end justify-center" style={{ position: "relative" }}>
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -544,7 +527,6 @@ export default function Home() {
       </section>
 
       <Footer />
-
     </main>
-  )
+  );
 }
