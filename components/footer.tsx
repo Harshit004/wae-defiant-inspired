@@ -172,8 +172,8 @@ export default function Footer() {
               className="space-y-2 mb-[5rem]"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "18px",
+                fontWeight: 400,
+                fontSize: "13px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}
