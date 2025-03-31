@@ -6,6 +6,7 @@ import Link from "next/link"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import RelatedCard from "../components/related-card"
+import Footer from "@/components/footer"
 
 // A reusable button component with the hover effect:
 // On hover, the button background becomes black, text becomes white, and the icon image changes.
@@ -506,7 +507,7 @@ export default function Home() {
       `}</style>
 
       {/* RELATED INFORMATION SECTION */}
-      <section className="max-w-[72.5rem] mx-auto mb-[9.72%]">
+      <section className="max-w-full px-[8.75rem] py-[7.5rem] bg-white">
         <h2 className="font-helvetica text-[3.63rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem] mt-[7.5rem]">
           Related Information
         </h2>
@@ -541,6 +542,9 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <Footer />
+
     </main>
   )
 }
