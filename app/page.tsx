@@ -2,21 +2,26 @@
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import RelatedCard from "../components/related-card";
 import Footer from "@/components/footer";
 
-// A reusable button component with the hover effect.
+/**
+ * Reusable hover button component.
+ * Accepts a render prop (children) that receives the current hover state.
+ */
 function HoverButton({ children }: { children: (hovered: boolean) => React.ReactNode }) {
   const [hovered, setHovered] = useState(false);
+
   return (
     <button
+      type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="w-fit px-[16px] py-[12px]"
       style={{
+        pointerEvents: "auto",
         display: "inline-flex",
         alignItems: "center",
         gap: "8px",
@@ -38,7 +43,14 @@ function HoverButton({ children }: { children: (hovered: boolean) => React.React
   );
 }
 
+
+/**
+ * Main Home component.
+ * Contains the Header, Hero Section, Scroll Container with animated sections,
+ * Related Information, and Footer.
+ */
 export default function Home() {
+  // State variables
   const [activeSection, setActiveSection] = useState(0);
   const [currentTime, setCurrentTime] = useState("");
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -46,26 +58,24 @@ export default function Home() {
   const [heroRef, heroInView] = useInView({ threshold: 0.5 });
   const sections = ["hero"];
 
-  // Tagline visibility: When scrolling down, show tagline; when scrolling up, hide it.
+  // State for controlling tagline visibility on scroll
   const [taglineVisible, setTaglineVisible] = useState(true);
   const prevScrollY = useRef(0);
+
+  // Update tagline visibility based on scroll direction
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY < prevScrollY.current) {
-        // Scrolling down: show tagline.
-        setTaglineVisible(true);
-      } else {
-        // Scrolling up: hide tagline.
-        setTaglineVisible(false);
-      }
+      // Show tagline when scrolling down, hide when scrolling up
+      setTaglineVisible(currentScrollY < prevScrollY.current);
       prevScrollY.current = currentScrollY;
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // TIME IN INDIA
+  // Update current time (India Time) every minute
   useEffect(() => {
     const updateIndiaTime = () => {
       const options: Intl.DateTimeFormatOptions = {
@@ -77,17 +87,25 @@ export default function Home() {
       const indiaTime = new Date().toLocaleTimeString("en-US", options);
       setCurrentTime(indiaTime);
     };
+
     updateIndiaTime();
     const interval = setInterval(updateIndiaTime, 60000);
     return () => clearInterval(interval);
   }, []);
 
-  // HERO IN-VIEW
+  // Update active section when the hero is in view
   useEffect(() => {
     if (heroInView) setActiveSection(0);
   }, [heroInView]);
 
-  // SCROLL-DRIVEN ANIMATION (other elements)
+  // Measure header height for hero offset
+  useEffect(() => {
+    if (headerRef.current) {
+      setHeaderHeight(headerRef.current.clientHeight);
+    }
+  }, [headerRef]);
+
+  // Scroll-driven animations from framer-motion
   const { scrollYProgress } = useScroll();
   const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
   const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"]);
@@ -105,7 +123,7 @@ export default function Home() {
     ([iO, iV]) => iO * iV
   );
 
-  // MENU ARRAYS
+  // Arrays for menu items
   const productsItems = [
     "Products & Solutions A",
     "Products & Solutions B",
@@ -115,20 +133,13 @@ export default function Home() {
   const blueprintItems = ["Blueprint 1", "Blueprint 2", "Blueprint 3"];
   const lineCount = Math.min(productsItems.length, blueprintItems.length);
 
-  // MEASURE HEADER HEIGHT
-  useEffect(() => {
-    if (headerRef.current) {
-      setHeaderHeight(headerRef.current.clientHeight);
-    }
-  }, [headerRef]);
-
-  // Prepare tagline lines.
+  // Tagline lines to be animated (split into words)
   const taglineLine1 = "Light out for the territory";
   const taglineLine2 = "ahead of the rest.";
   const taglineWords1 = taglineLine1.split(" ");
   const taglineWords2 = taglineLine2.split(" ");
 
-  // Variants for staggered animation.
+  // Variants for staggered animations using framer-motion
   const containerVariants = {
     hidden: {},
     visible: {
@@ -145,232 +156,249 @@ export default function Home() {
 
   return (
     <main className="relative">
-      {/* HEADER */}
-      <header
-        ref={headerRef}
-        className="w-full bg-white"
-        style={{ marginBottom: 0, position: "relative", zIndex: 1000 }}
-      >
-        <div className="mx-auto w-full max-w-[1440px] px-[140px]">
-          {/* TOP ROW (always visible) */}
+      {/* 
+        HEADER SECTION 
+        The header remains as defined in your first version with its positioning and animations.
+      */}
+      <div style={{ top: 0, left: 0, width: "100%", zIndex: 0 }}>
+        <header
+          ref={headerRef}
+          className="w-full bg-white"
+          style={{ marginBottom: 0, position: "relative", zIndex: 1000 }}
+        >
+          <div className="mx-auto w-full max-w-[1440px] px-[140px]">
+            {/* Top Row: Location, Time, and Navigation */}
+            <div
+              className="grid grid-cols-5 items-center pt-[30px] pb-[10px]"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 600,
+                fontSize: "9px",
+                lineHeight: "100%",
+                letterSpacing: "0px",
+                textTransform: "uppercase",
+              }}
+            >
+              <div style={{ color: "#00000066" }}>NOIDA</div>
+              <div style={{ color: "#00000066" }}>INDIA</div>
+              <div>{currentTime}</div>
+              <div style={{ color: "#00000066" }}>Products & Solutions</div>
+              <div style={{ color: "#00000066" }}>News & Updates</div>
+            </div>
+
+            {/* Divider */}
+            <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+
+            {/* Bottom Row: Logo, Tagline, and Menu Items */}
+            <div className="grid grid-cols-5 items-start">
+              {/* Column 1: Logo */}
+              <div className="flex flex-col justify-center">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                  alt="WAE Logo"
+                  width={77.53575134277344}
+                  height={82.03529357910156}
+                />
+              </div>
+
+              {/* Column 2: WAE Text Image */}
+              <div className="flex flex-col justify-center">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/45c6555a-9bdb-4f8a-3958-0df6cd00ac00/public"
+                  alt="WAE Text"
+                  width={44.00027084350586}
+                  height={18.93841552734375}
+                />
+              </div>
+
+              {/* Column 3: Tagline (Animated by splitting into words) */}
+              <div className="flex flex-col items-start">
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate={taglineVisible ? "visible" : "hidden"}
+                  style={{ whiteSpace: "nowrap" }}
+                  className="flex flex-row justify-center"
+                >
+                  {taglineWords1.map((word, index) => (
+                    <motion.span
+                      key={index}
+                      variants={childVariants}
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 600,
+                        fontSize: "10px",
+                        lineHeight: "125%",
+                        letterSpacing: "0px",
+                        color: "#00000066",
+                        marginRight: "0.2rem",
+                        display: "inline-block",
+                      }}
+                    >
+                      {word}
+                    </motion.span>
+                  ))}
+                </motion.div>
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate={taglineVisible ? "visible" : "hidden"}
+                  style={{ whiteSpace: "nowrap" }}
+                  className="flex flex-row justify-center"
+                >
+                  {taglineWords2.map((word, index) => (
+                    <motion.span
+                      key={index}
+                      variants={childVariants}
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 600,
+                        fontSize: "10px",
+                        lineHeight: "125%",
+                        letterSpacing: "0px",
+                        color: "#00000066",
+                        marginRight: "0.2rem",
+                        display: "inline-block",
+                      }}
+                    >
+                      {word}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              </div>
+
+              {/* Column 4: Products & Solutions Menu Items */}
+              <div className="flex flex-col justify-center space-y-2">
+                {productsItems.map((item, i) => (
+                  <div
+                    key={i}
+                    className="pb-2"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "12px",
+                      lineHeight: "100%",
+                      letterSpacing: "0px",
+                      textAlign: "left",
+                      borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
+                    }}
+                  >
+                    <div className="c--anim-btn">
+                      <span className="c-anim-btn">{item}</span>
+                      <span>{item}</span>
+                      <span className="menu-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Column 5: Blueprint Menu Items */}
+              <div className="flex flex-col justify-center space-y-2">
+                {blueprintItems.map((item, i) => (
+                  <div
+                    key={i}
+                    className="pb-2"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "12px",
+                      lineHeight: "100%",
+                      letterSpacing: "0px",
+                      textAlign: "left",
+                      borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
+                    }}
+                  >
+                    <div className="c--anim-btn">
+                      <span className="c-anim-btn">{item}</span>
+                      <span>{item}</span>
+                      <span className="menu-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* 
+          HERO SECTION 
+          The hero video and text remain as defined in your first version.
+          Its top margin is adjusted based on the measured header height.
+        */}
+        <section
+          id="hero"
+          ref={heroRef}
+          className="relative h-[100vh] w-full overflow-hidden"
+          style={{ marginTop: `-${headerHeight}px`, zIndex: 0 }}
+        >
+          <video
+            src="/a337333f-cbd25ca9.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           <div
-            className="grid grid-cols-5 items-center pt-[30px] pb-[10px]"
+            className="absolute"
             style={{
+              top: "350px",
+              left: "60%",
+              width: "393px",
+              height: "159px",
+              color: "#000",
               fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 600,
-              fontSize: "9px",
-              lineHeight: "100%",
-              letterSpacing: "0px",
-              textTransform: "uppercase",
+              fontWeight: 500,
+              fontSize: "48px",
+              lineHeight: "110%",
+              letterSpacing: "0%",
+              verticalAlign: "middle",
             }}
           >
-            <div style={{ color: "#00000066" }}>NOIDA</div>
-            <div style={{ color: "#00000066" }}>INDIA</div>
-            <div>{currentTime}</div>
-            <div style={{ color: "#00000066" }}>Products & Solutions</div>
-            <div style={{ color: "#00000066" }}>News & Updates</div>
+            We are <br />
+            disrupting the <br />
+            status quo
           </div>
+        </section>
+      </div>
 
-          {/* Divider */}
-          <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
-
-          {/* BOTTOM ROW */}
-          <div className="grid grid-cols-5 items-start">
-            {/* Column 1: Logo */}
-            <div className="flex flex-col justify-center">
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                alt="WAE Logo"
-                width={77.53575134277344}
-                height={82.03529357910156}
-              />
-            </div>
-            {/* Column 2: WAE Text Image */}
-            <div className="flex flex-col justify-center">
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/45c6555a-9bdb-4f8a-3958-0df6cd00ac00/public"
-                alt="WAE Text"
-                width={44.00027084350586}
-                height={18.93841552734375}
-              />
-            </div>
-            {/* Column 3: Tagline with staggered fade-in from left to right, split into two lines */}
-            <div className="flex flex-col items-start">
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate={taglineVisible ? "visible" : "hidden"}
-                style={{ whiteSpace: "nowrap" }}
-                className="flex flex-row justify-center"
-              >
-                {taglineWords1.map((word, index) => (
-                  <motion.span
-                    key={index}
-                    variants={childVariants}
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 600,
-                      fontSize: "10px",
-                      lineHeight: "125%",
-                      letterSpacing: "0px",
-                      color: "#00000066",
-                      marginRight: "0.2rem", // reduced gap between words
-                      display: "inline-block",
-                    }}
-                  >
-                    {word}
-                  </motion.span>
-                ))}
-              </motion.div>
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate={taglineVisible ? "visible" : "hidden"}
-                style={{ whiteSpace: "nowrap" }}
-                className="flex flex-row justify-center"
-              >
-                {taglineWords2.map((word, index) => (
-                  <motion.span
-                    key={index}
-                    variants={childVariants}
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 600,
-                      fontSize: "10px",
-                      lineHeight: "125%",
-                      letterSpacing: "0px",
-                      color: "#00000066",
-                      marginRight: "0.2rem", // reduced gap between words
-                      display: "inline-block",
-                    }}
-                  >
-                    {word}
-                  </motion.span>
-                ))}
-              </motion.div>
-            </div>
-
-            {/* Column 4: Products & Solutions items */}
-            <div className="flex flex-col justify-center space-y-2">
-              {productsItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="pb-2"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "12px",
-                    lineHeight: "100%",
-                    letterSpacing: "0px",
-                    textAlign: "left",
-                    borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
-                  }}
-                >
-                  <div className="c--anim-btn">
-                    <span className="c-anim-btn">{item}</span>
-                    <span>{item}</span>
-                    <span className="menu-arrow">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {/* Column 5: Blueprint items */}
-            <div className="flex flex-col justify-center space-y-2">
-              {blueprintItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="pb-2"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "12px",
-                    lineHeight: "100%",
-                    letterSpacing: "0px",
-                    textAlign: "left",
-                    borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
-                  }}
-                >
-                  <div className="c--anim-btn">
-                    <span className="c-anim-btn">{item}</span>
-                    <span>{item}</span>
-                    <span className="menu-arrow">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* HERO SECTION */}
-      <section
-        id="hero"
-        ref={heroRef}
-        className="relative h-[100vh] w-full overflow-hidden"
-        style={{ marginTop: `-${headerHeight}px`, zIndex: 0 }}
-      >
-        <video
-          src="/a337333f-cbd25ca9.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div
-          className="absolute"
-          style={{
-            top: "350px",
-            left: "60%",
-            width: "393px",
-            height: "159px",
-            color: "#000",
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: "48px",
-            lineHeight: "110%",
-            letterSpacing: "0%",
-            verticalAlign: "middle",
-          }}
-        >
-          We are <br />
-          disrupting the <br />
-          status quo
-        </div>
-      </section>
-
-      {/* SCROLL CONTAINER */}
-      <motion.div style={{ height: "300vh", position: "relative", zIndex: 1000 }} className="bg-[#F2F2F2]">
+      {/* 
+        SCROLL CONTAINER SECTION 
+        Contains the fixed center logo and two animated content sections ("About WAE" and "Made in India").
+      */}
+      <motion.div style={{ height: "300vh", position: "relative", zIndex: -100 }} className="bg-[#F2F2F2]">
+        {/* Fixed Center Logo Overlay */}
         <motion.div
           style={{
-            position: "sticky",
-            top: "25%",
+            position: "fixed",
+            top: "27%",
+            left: "38.5%",
             zIndex: 1100,
             opacity: logoOpacity,
           }}
@@ -385,6 +413,7 @@ export default function Home() {
           />
         </motion.div>
 
+        {/* "About WAE" Section */}
         <section className="h-screen flex items-end justify-center" style={{ position: "relative" }}>
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
@@ -433,7 +462,7 @@ export default function Home() {
                   {(hovered) => (
                     <>
                       Know More
-                      <Image
+                      <Image 
                         src={
                           hovered
                             ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
@@ -451,6 +480,7 @@ export default function Home() {
           </motion.div>
         </section>
 
+        {/* "Made in India" Section */}
         <section className="h-screen flex items-end justify-center" style={{ position: "relative" }}>
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
@@ -515,36 +545,10 @@ export default function Home() {
         </section>
       </motion.div>
 
-      {/* INLINE CSS for vertical slide hover animation and arrow emergence */}
-      <style jsx>{`
-        .c--anim-btn span {
-          color: black;
-          text-decoration: none;
-          text-align: left;
-          display: block;
-          font-family: 'Arial', sans-serif;
-          font-weight: 500;
-          font-size: 12px;
-          line-height: 100%;
-          letter-spacing: 0px;
-        }
-        .c--anim-btn,
-        .c-anim-btn {
-          transition: 0.5s;
-        }
-        .c--anim-btn {
-          height: 12px;
-          overflow: hidden;
-        }
-        .c-anim-btn {
-          margin-top: 0em;
-        }
-        .c--anim-btn:hover .c-anim-btn {
-          margin-top: -12px;
-        }
-      `}</style>
-
-      {/* RELATED INFORMATION SECTION */}
+      {/* 
+        RELATED INFORMATION SECTION 
+        Displays related cards and is followed by the footer.
+      */}
       <section className="max-w-full px-[8.75rem] py-[7.5rem] bg-white">
         <h2 className="font-helvetica text-[3.63rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem] mt-[7.5rem]">
           Related Information
@@ -581,7 +585,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FOOTER SECTION */}
       <Footer />
+
+      {/* INLINE CSS for hover animations */}
+      <style jsx>{`
+        .c--anim-btn span {
+          color: black;
+          text-decoration: none;
+          text-align: left;
+          display: block;
+          font-family: 'Arial', sans-serif;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 100%;
+          letter-spacing: 0px;
+        }
+        .c--anim-btn,
+        .c-anim-btn {
+          transition: 0.5s;
+        }
+        .c--anim-btn {
+          height: 12px;
+          overflow: hidden;
+        }
+        .c-anim-btn {
+          margin-top: 0em;
+        }
+        .c--anim-btn:hover .c-anim-btn {
+          margin-top: -12px;
+        }
+      `}</style>
     </main>
   );
 }
