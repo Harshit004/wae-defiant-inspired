@@ -1,18 +1,20 @@
-"use client";
+"use client"
 
-import { useEffect, useState, useRef } from "react";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import RelatedCard from "../components/related-card";
-import Footer from "@/components/footer";
+import type React from "react"
+
+import { useEffect, useState, useRef } from "react"
+import Image from "next/image"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import RelatedCard from "../components/related-card"
+import Footer from "@/components/footer"
 
 /**
  * Reusable hover button component.
  * Accepts a render prop (children) that receives the current hover state.
  */
 function HoverButton({ children }: { children: (hovered: boolean) => React.ReactNode }) {
-  const [hovered, setHovered] = useState(false);
+  const [hovered, setHovered] = useState(false)
 
   return (
     <button
@@ -40,9 +42,8 @@ function HoverButton({ children }: { children: (hovered: boolean) => React.React
     >
       {children(hovered)}
     </button>
-  );
+  )
 }
-
 
 /**
  * Main Home component.
@@ -51,29 +52,33 @@ function HoverButton({ children }: { children: (hovered: boolean) => React.React
  */
 export default function Home() {
   // State variables
-  const [activeSection, setActiveSection] = useState(0);
-  const [currentTime, setCurrentTime] = useState("");
-  const [headerHeight, setHeaderHeight] = useState(0);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const [heroRef, heroInView] = useInView({ threshold: 0.5 });
-  const sections = ["hero"];
+  const [activeSection, setActiveSection] = useState(0)
+  const [currentTime, setCurrentTime] = useState("")
+  const [headerHeight, setHeaderHeight] = useState(0)
+  const headerRef = useRef<HTMLDivElement>(null)
+  const [heroRef, heroInView] = useInView({ threshold: 0.5 })
+  const sections = ["hero"]
 
   // State for controlling tagline visibility on scroll
-  const [taglineVisible, setTaglineVisible] = useState(true);
-  const prevScrollY = useRef(0);
+  const [taglineVisible, setTaglineVisible] = useState(true)
+  const prevScrollY = useRef(0)
+
+  // Add new state variable and ref for header/hero scaling
+  const [headerHeroScale, setHeaderHeroScale] = useState(1)
+  const headerHeroRef = useRef<HTMLDivElement>(null)
 
   // Update tagline visibility based on scroll direction
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      const currentScrollY = window.scrollY
       // Show tagline when scrolling down, hide when scrolling up
-      setTaglineVisible(currentScrollY < prevScrollY.current);
-      prevScrollY.current = currentScrollY;
-    };
+      setTaglineVisible(currentScrollY < prevScrollY.current)
+      prevScrollY.current = currentScrollY
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   // Update current time (India Time) every minute
   useEffect(() => {
@@ -83,45 +88,68 @@ export default function Home() {
         minute: "2-digit",
         hour12: false,
         timeZone: "Asia/Kolkata",
-      };
-      const indiaTime = new Date().toLocaleTimeString("en-US", options);
-      setCurrentTime(indiaTime);
-    };
+      }
+      const indiaTime = new Date().toLocaleTimeString("en-US", options)
+      setCurrentTime(indiaTime)
+    }
 
-    updateIndiaTime();
-    const interval = setInterval(updateIndiaTime, 60000);
-    return () => clearInterval(interval);
-  }, []);
+    updateIndiaTime()
+    const interval = setInterval(updateIndiaTime, 60000)
+    return () => clearInterval(interval)
+  }, [])
 
   // Update active section when the hero is in view
   useEffect(() => {
-    if (heroInView) setActiveSection(0);
-  }, [heroInView]);
+    if (heroInView) setActiveSection(0)
+  }, [heroInView])
 
   // Measure header height for hero offset
   useEffect(() => {
     if (headerRef.current) {
-      setHeaderHeight(headerRef.current.clientHeight);
+      setHeaderHeight(headerRef.current.clientHeight)
     }
-  }, [headerRef]);
+  }, [headerRef])
+
+  // Add scroll animation effect for header and hero
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!headerHeroRef.current) return
+
+      const scrollPosition = window.scrollY
+      const viewportHeight = window.innerHeight
+
+      // Calculate scale based on scroll position
+      // Start shrinking after 100px of scroll and disappear completely by 80% of viewport height
+      const maxScroll = viewportHeight * 0.8
+      const minScale = 0
+
+      if (scrollPosition <= 100) {
+        setHeaderHeroScale(1) // Full size when at top
+      } else if (scrollPosition >= maxScroll) {
+        setHeaderHeroScale(minScale) // Completely shrunk
+      } else {
+        // Linear interpolation between 1 and minScale
+        const scrollRange = maxScroll - 100
+        const scrollProgress = (scrollPosition - 100) / scrollRange
+        setHeaderHeroScale(1 - scrollProgress)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   // Scroll-driven animations from framer-motion
-  const { scrollYProgress } = useScroll();
-  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
-  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"]);
-  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1]);
-  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]);
-  const finalPurposeOpacity = useTransform(
-    [purposeOpacity, purposeVanish],
-    ([pO, pV]) => pO * pV
-  );
-  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"]);
-  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
-  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0]);
-  const finalIndiaOpacity = useTransform(
-    [indiaOpacity, indiaVanish],
-    ([iO, iV]) => iO * iV
-  );
+  const { scrollYProgress } = useScroll()
+  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1])
+  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"])
+  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1])
+  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0])
+  const finalPurposeOpacity = useTransform([purposeOpacity, purposeVanish], ([pO, pV]) => pO * pV)
+  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"])
+  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1])
+  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0])
+  const finalIndiaOpacity = useTransform([indiaOpacity, indiaVanish], ([iO, iV]) => iO * iV)
 
   // Arrays for menu items
   const productsItems = [
@@ -129,15 +157,15 @@ export default function Home() {
     "Products & Solutions B",
     "Products & Solutions C",
     "Products & Solutions D",
-  ];
-  const blueprintItems = ["Blueprint 1", "Blueprint 2", "Blueprint 3"];
-  const lineCount = Math.min(productsItems.length, blueprintItems.length);
+  ]
+  const blueprintItems = ["Blueprint 1", "Blueprint 2", "Blueprint 3"]
+  const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   // Tagline lines to be animated (split into words)
-  const taglineLine1 = "Light out for the territory";
-  const taglineLine2 = "ahead of the rest.";
-  const taglineWords1 = taglineLine1.split(" ");
-  const taglineWords2 = taglineLine2.split(" ");
+  const taglineLine1 = "Light out for the territory"
+  const taglineLine2 = "ahead of the rest."
+  const taglineWords1 = taglineLine1.split(" ")
+  const taglineWords2 = taglineLine2.split(" ")
 
   // Variants for staggered animations using framer-motion
   const containerVariants = {
@@ -148,23 +176,34 @@ export default function Home() {
         ease: "easeInOut",
       },
     },
-  };
+  }
   const childVariants = {
     hidden: { opacity: 0, x: -10 },
     visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
-  };
+  }
 
   return (
     <main className="relative">
       {/* 
-        HEADER SECTION 
-        The header remains as defined in your first version with its positioning and animations.
+        HEADER AND HERO CONTAINER
+        Fixed position so other content can overlap it
       */}
-      <div style={{ top: 0, left: 0, width: "100%", zIndex: 0 }}>
+      <div
+        ref={headerHeroRef}
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100vh",
+          zIndex: 0,
+        }}
+      >
+        {/* Header and hero content remains the same */}
         <header
           ref={headerRef}
           className="w-full bg-white"
-          style={{ marginBottom: 0, position: "relative", zIndex: 1000 }}
+          style={{ marginBottom: 0, position: "relative", zIndex: 1 }}
         >
           <div className="mx-auto w-full max-w-[1440px] px-[140px]">
             {/* Top Row: Location, Time, and Navigation */}
@@ -390,15 +429,26 @@ export default function Home() {
 
       {/* 
         SCROLL CONTAINER SECTION 
-        Contains the fixed center logo and two animated content sections ("About WAE" and "Made in India").
+        Higher z-index to overlap the header/hero with a parallax effect
       */}
-      <motion.div style={{ height: "300vh", position: "relative", zIndex: -100 }} className="bg-[#F2F2F2]">
+      <motion.div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          marginTop: "100vh", // Start after the viewport height (header/hero)
+          backgroundColor: "#F2F2F2",
+          borderTopLeftRadius: "30px",
+          borderTopRightRadius: "30px",
+          boxShadow: "0px -10px 30px rgba(0, 0, 0, 0.1)",
+        }}
+        className="min-h-[300vh]"
+      >
         {/* Fixed Center Logo Overlay */}
         <motion.div
           style={{
-            position: "fixed",
-            top: "27%",
-            left: "38.5%",
+            position: "sticky",
+            top: "25%",
+            // left: "50%",
             zIndex: 1100,
             opacity: logoOpacity,
           }}
@@ -456,13 +506,14 @@ export default function Home() {
                     color: "#00000099",
                   }}
                 >
-                  The underlying natural order of the universe - circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
+                  The underlying natural order of the universe - circular continuity of the natural world.
+                  Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
                 </p>
                 <HoverButton>
                   {(hovered) => (
                     <>
                       Know More
-                      <Image 
+                      <Image
                         src={
                           hovered
                             ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
@@ -520,7 +571,11 @@ export default function Home() {
                     color: "#00000099",
                   }}
                 >
-                  WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology. We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations for the country’s advancements, integrity & innovation. Our approach strengthens community resilience while showcasing India’s Intellectual capital on the world stage.
+                  WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the
+                  latest technology. We are driven by the mission to build a brand that not only saves the planet but
+                  also creates a potent impact on future generations for the country’s advancements, integrity &
+                  innovation. Our approach strengthens community resilience while showcasing India’s Intellectual
+                  capital on the world stage.
                 </p>
                 <HoverButton>
                   {(hovered) => (
@@ -547,9 +602,17 @@ export default function Home() {
 
       {/* 
         RELATED INFORMATION SECTION 
-        Displays related cards and is followed by the footer.
+        Maintain the higher z-index to continue overlapping
       */}
-      <section className="max-w-full px-[8.75rem] py-[7.5rem] bg-white">
+      <section
+        className="max-w-full px-[8.75rem] py-[7.5rem] bg-white"
+        style={{
+          position: "relative",
+          zIndex: 10,
+          borderTopLeftRadius: "0px",
+          borderTopRightRadius: "0px",
+        }}
+      >
         <h2 className="font-helvetica text-[3.63rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem] mt-[7.5rem]">
           Related Information
         </h2>
@@ -586,7 +649,9 @@ export default function Home() {
       </section>
 
       {/* FOOTER SECTION */}
-      <Footer />
+      <div style={{ position: "relative", zIndex: 10 }}>
+        <Footer />
+      </div>
 
       {/* INLINE CSS for hover animations */}
       <style jsx>{`
@@ -617,5 +682,6 @@ export default function Home() {
         }
       `}</style>
     </main>
-  );
+  )
 }
+
