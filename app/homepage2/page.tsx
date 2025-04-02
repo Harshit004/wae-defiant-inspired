@@ -419,30 +419,29 @@ export default function Home() {
         </section>
       </div>
 
-      {/* SCROLL CONTAINER SECTION */}
       <motion.div
         style={{
-          position: "relative",
-          zIndex: 10,
-          marginTop: "100vh",
-          backgroundColor: "#F2F2F2",
-          borderTopLeftRadius: "30px",
-          borderTopRightRadius: "30px",
-          boxShadow: "0px -10px 30px rgba(0, 0, 0, 0.1)",
+            position: "relative",
+            zIndex: 10,
+            marginTop: "100vh",
+            backgroundColor: "#F2F2F2",
+            borderTopLeftRadius: "30px",
+            borderTopRightRadius: "30px",
+            boxShadow: "0px -10px 30px rgba(0, 0, 0, 0.1)",
         }}
         className="min-h-[300vh]"
-      >
-        {/* Fixed Center Logo Overlay */}
+        >
+        {/* Sticky Logo Overlay */}
         <motion.div
-          style={{
+            style={{
             position: "sticky",
             top: "25%",
             zIndex: 1100,
             opacity: logoOpacity,
-          }}
-          className="pointer-events-none flex justify-center"
+            }}
+            className="pointer-events-none flex justify-center"
         >
-          <div className="max-w-[19.375rem] max-h-[19.375rem]">
+            <div className="max-w-[19.375rem] max-h-[19.375rem]">
             <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
                 alt="Center Logo"
@@ -450,424 +449,227 @@ export default function Home() {
                 height={310}
                 className="opacity-80"
             />
-          </div>
+            </div>
         </motion.div>
 
         {/* Purpose Section */}
-        <section className="h-screen flex items-end justify-center" style={{ position: "relative" }}>
-          <motion.div
+        <section className="h-screen flex items-end justify-center relative">
+            <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div style={{ width: "72.5rem", height: "115px" }} className="max-w-[72.5rem] flex justify-between items-start mx-[8.75rem]">
-              <h2
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "3.625rem",
-                  lineHeight: "110%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                }}
-              >
+            className="mb-20 w-full max-w-screen-xl mx-8 lg:mx-36"
+            style={{ height: "115px" }}
+            >
+            <div className="flex flex-col lg:flex-row items-start justify-between">
+                <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight" style={{ lineHeight: "110%" }}>
                 Purpose
-              </h2>
-              <div
-                style={{
-                  width: "251px",
-                  height: "115px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-start",
-                  gap: "20px",
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "12px",
-                    lineHeight: "110%",
-                    letterSpacing: "0%",
-                    verticalAlign: "middle",
-                    color: "#00000099",
-                  }}
-                >
-                  The underlying natural order of the universe - circular continuity of the natural world.
-                  Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
+                </h2>
+                <div className="flex flex-col gap-5 w-64" style={{ height: "115px" }}>
+                <p className="font-[Inter Tight] text-xs leading-[110%] text-black/70">
+                    The underlying natural order of the universe - circular continuity of the natural world.
+                    Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
                 </p>
                 <HoverButton>
-                  {(hovered) => (
+                    {(hovered) => (
                     <>
-                      Know More
-                      <div style={{ position: "relative", display: "inline-block", width: "16px", height: "16px" }}>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                         <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
                         />
                         <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          style={{ position: "absolute", top: 0, left: 0 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
                         >
-                          <Image
+                            <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                             alt="icon hover"
                             width={16}
                             height={16}
-                          />
+                            />
                         </motion.div>
-                      </div>
+                        </div>
                     </>
-                  )}
+                    )}
                 </HoverButton>
-              </div>
+                </div>
             </div>
-          </motion.div>
+            </motion.div>
         </section>
 
         {/* About WAE Section */}
-        <section className="h-screen flex items-end justify-center" style={{ position: "relative" }}>
-          <motion.div
+        <section className="h-screen flex items-end justify-center relative">
+            <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div style={{ width: "72.5rem" }} className="max-w-[72.5rem] flex justify-between mx-[8.75rem]">
-              <h2
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "3.625rem",
-                  lineHeight: "110%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                }}
-              >
+            className="mb-20 w-full max-w-screen-xl mx-8 lg:mx-36"
+            >
+            <div className="flex flex-col lg:flex-row items-start justify-between">
+                <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                 About WAE
-              </h2>
-              <div
-                style={{
-                  width: "251px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "20px",
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "12px",
-                    lineHeight: "110%",
-                    letterSpacing: "0%",
-                    verticalAlign: "middle",
-                    color: "#00000099",
-                  }}
-                >
-                  WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the
-                  latest technology. We are driven by the mission to build a brand that not only saves the planet but
-                  also creates a potent impact on future generations for the country’s advancements, integrity &
-                  innovation. Our approach strengthens community resilience while showcasing India’s Intellectual
-                  capital on the world stage.
+                </h2>
+                <div className="flex flex-col gap-5 w-64">
+                <p className="font-[Inter Tight] text-xs leading-[110%] text-black/70">
+                    WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology.
+                    We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations.
+                    Our approach strengthens community resilience while showcasing India’s Intellectual capital on the world stage.
                 </p>
                 <HoverButton>
-                  {(hovered) => (
+                    {(hovered) => (
                     <>
-                      Know More
-                      <div style={{ position: "relative", display: "inline-block", width: "16px", height: "16px" }}>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                         <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
                         />
                         <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          style={{ position: "absolute", top: 0, left: 0 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
                         >
-                          <Image
+                            <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                             alt="icon hover"
                             width={16}
                             height={16}
-                          />
+                            />
                         </motion.div>
-                      </div>
+                        </div>
                     </>
-                  )}
+                    )}
                 </HoverButton>
-              </div>
+                </div>
             </div>
-          </motion.div>
+            </motion.div>
         </section>
-      </motion.div>
 
-      {/* Products and Solutions Section */}
-
-
-      {/* SCROLL CONTAINER - 2 */}
-      <motion.div
-        style={{
-          position: "relative",
-          zIndex: 10,
-          marginTop: "100vh",
-          backgroundColor: "#F2F2F2",
-          borderTopLeftRadius: "30px",
-          borderTopRightRadius: "30px",
-          boxShadow: "0px -10px 30px rgba(0, 0, 0, 0.1)",
-        }}
-        className="min-h-[300vh]"
-      >
-        {/* Fixed Center Logo Overlay */}
-        <motion.div
-          style={{
-            position: "sticky",
-            top: "25%",
-            zIndex: 1100,
-            opacity: logoOpacity,
-          }}
-          className="pointer-events-none flex justify-center"
-        >
-          <div className="max-w-[26.4375rem] max-h-[12.625rem]">
+        {/* Image Section with Higher z-index */}
+        <div className="relative bg-white px-8 lg:px-36 py-8 lg:py-12" style={{ zIndex: 1200 }}>
             <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/192fe53c-1edb-49aa-fda7-29ad2e223c00/public"
-                alt="Make In India"
-                width={423}
-                height={202}
-                className="opacity-80"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/025c94b9-d481-47af-eed2-2db05a645a00/public"
+            alt="Products and Solutions"
+            width={1160}
+            height={928}
+            className="w-full h-auto"
             />
-          </div>
-        </motion.div>
+        </div>
 
         {/* Made in INDIA Section */}
-        <section className="h-screen flex items-end justify-center mb-[22.5rem] mx-[8.75rem]" style={{ position: "relative" }}>
-          <motion.div
+        <section className="h-screen flex items-end justify-center relative mx-8 lg:mx-36 mb-24">
+            <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div style={{ width: "72.5rem", height: "115px" }} className="max-w-[72.5rem] flex justify-between items-start">
-              <h2
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "3.625rem",
-                  lineHeight: "110%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                }}
-              >
+            className="mb-20 w-full max-w-screen-xl"
+            >
+            <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
+                <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                 Made in INDIA
-              </h2>
-
-              <div
-                style={{
-                  width: "251px",
-                  height: "115px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-start",
-                  gap: "20px",
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "12px",
-                    lineHeight: "110%",
-                    letterSpacing: "0%",
-                    verticalAlign: "middle",
-                    color: "#00000099",
-                  }}
-                >
-                  The underlying natural order of the universe - circular continuity of the natural world.
-                  Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
+                </h2>
+                <div className="relative" style={{ zIndex: 1200 }}>
+                    <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
+                    alt="Make In India"
+                    width={432}
+                    height={229}
+                    className="mr-[6rem]"
+                    />
+                </div>
+                <div className="flex flex-col gap-5 w-64">
+                <p className="font-[Inter Tight] text-xs leading-[110%] text-black/70">
+                    The underlying natural order of the universe - circular continuity of the natural world.
+                    Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
                 </p>
                 <HoverButton>
-                  {(hovered) => (
+                    {(hovered) => (
                     <>
-                      Know More
-                      <div style={{ position: "relative", display: "inline-block", width: "16px", height: "16px" }}>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                         <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
                         />
                         <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          style={{ position: "absolute", top: 0, left: 0 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
                         >
-                          <Image
+                            <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                             alt="icon hover"
                             width={16}
                             height={16}
-                          />
+                            />
                         </motion.div>
-                      </div>
+                        </div>
                     </>
-                  )}
+                    )}
                 </HoverButton>
-              </div>
+                </div>
             </div>
-          </motion.div>
+            </motion.div>
         </section>
 
-        {/* SUSTAINABILITY Section */}
-        <section className="h-screen flex items-end justify-center mx-[8.75rem]" style={{ position: "relative" }}>
-          <motion.div
+        {/* Sustainability Section */}
+        <section className="h-screen flex items-end justify-center relative mx-8 lg:mx-36">
+            <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div style={{ width: "72.5rem" }} className="max-w-[72.5rem] flex justify-between">
-              <h2
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "3.625rem",
-                  lineHeight: "110%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                }}
-              >
+            className="mb-20 w-full max-w-screen-xl flex flex-col lg:flex-row justify-between"
+            >
+            <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                 Sustainability
-              </h2>
-              <div
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "80px",
-                }}
-              >
-                <div
-                    style={{
-                    //   width: "251px",
-                    display: "flex",
-                    flexDirection: "column",
-                    //   gap: "20px",
-                    }}
-                >
-                    <p
-                    style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "48px",
-                        lineHeight: "140%",
-                        letterSpacing: "0%",
-                        verticalAlign: "middle",
-                        color: "#000000",
-                    }}
-                    >
+            </h2>
+            <div className="flex flex-col gap-20">
+                <div className="flex flex-col">
+                <p className="text-4xl font-normal text-black leading-snug">
                     1,012,120.25
-                    </p>
-                    <p
-                    style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "12px",
-                        lineHeight: "200%",
-                        letterSpacing: "1%",
-                        verticalAlign: "middle",
-                        color: "#00000099",
-                    }}
-                    >
+                </p>
+                <p className="text-xs font-normal text-black/70 tracking-wide">
                     TONNES CO2 EMISSIONS SAVED
-                    </p>
+                </p>
                 </div>
-
-                <div
-                    style={{
-                    //   width: "251px",
-                    display: "flex",
-                    flexDirection: "column",
-                    //   gap: "20px",
-                    }}
-                >
-                    <p
-                    style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "48px",
-                        lineHeight: "140%",
-                        letterSpacing: "0%",
-                        verticalAlign: "middle",
-                        color: "#000000",
-                    }}
-                    >
+                <div className="flex flex-col">
+                <p className="text-4xl font-normal text-black leading-snug">
                     12,185.4325
-                    </p>
-                    <p
-                    style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "12px",
-                        lineHeight: "200%",
-                        letterSpacing: "1%",
-                        verticalAlign: "middle",
-                        color: "#00000099",
-                    }}
-                    >
+                </p>
+                <p className="text-xs font-normal text-black/70 tracking-wide">
                     MILLION GALLONS WATER SAVED
-                    </p>
+                </p>
                 </div>
-
-                <div
-                    style={{
-                    //   width: "251px",
-                    display: "flex",
-                    flexDirection: "column",
-                    //   gap: "20px",
-                    }}
-                >
-                    <p
-                    style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "48px",
-                        lineHeight: "140%",
-                        letterSpacing: "0%",
-                        verticalAlign: "middle",
-                        color: "#000000",
-                    }}
-                    >
+                <div className="flex flex-col">
+                <p className="text-4xl font-normal text-black leading-snug">
                     22,253.65
-                    </p>
-                    <p
-                    style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "12px",
-                        lineHeight: "200%",
-                        letterSpacing: "1%",
-                        verticalAlign: "middle",
-                        color: "#00000099",
-                    }}
-                    >
+                </p>
+                <p className="text-xs font-normal text-black/70 tracking-wide">
                     TONNES PLASTIC REMOVED
-                    </p>
+                </p>
                 </div>
-              </div>
             </div>
-          </motion.div>
+            </motion.div>
         </section>
-      </motion.div>
+        </motion.div>
+
+
 
       {/* RELATED INFORMATION SECTION */}
       <section
