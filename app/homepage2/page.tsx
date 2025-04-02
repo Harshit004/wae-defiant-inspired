@@ -879,7 +879,7 @@ export default function Home() {
           borderTopRightRadius: "0px",
         }}
       >
-        <h2 className="font-helvetica text-[3.625rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem] mt-[7.5rem]" style={{fontWeight: "500"}}>
+        <h2 className="font-helvetica text-[3.625rem] leading-[110%] tracking-[0%] align-middle font-normal md:whitespace-nowrap mb-[2.5rem] mt-[7.5rem]" style={{fontWeight: "500"}}>
           Related Information
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
