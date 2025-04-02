@@ -112,8 +112,6 @@ export default function Home() {
 
       const scrollPosition = window.scrollY
       const viewportHeight = window.innerHeight
-
-      // Calculate scale based on scroll position
       const maxScroll = viewportHeight * 0.8
       const minScale = 0
 
@@ -355,7 +353,7 @@ export default function Home() {
                         <span className="c-anim-btn">{item}</span>
                         <span style={{ display: "block" }}>{item}</span>
                       </div>
-                      <span className="menu-arrow">
+                      <span className="menu-arrow blueprint-arrow">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="12"
@@ -677,7 +675,7 @@ export default function Home() {
         .c--anim-btn:hover .c-anim-btn {
           margin-top: -12px;
         }
-        /* Arrow sliding and fade-in animation */
+        /* Arrow sliding and fade-in animation for products */
         .menu-arrow {
           display: inline-block;
           opacity: 0;
@@ -686,6 +684,14 @@ export default function Home() {
         }
         .c--anim-btn:hover .menu-arrow {
           transform: translateX(0);
+          opacity: 1;
+        }
+        /* Additional styling for blueprint arrow: rotate to face top right */
+        .blueprint-arrow {
+          transform: rotate(-45deg) translateX(-10px);
+        }
+        .c--anim-btn:hover .blueprint-arrow {
+          transform: rotate(-45deg) translateX(0);
           opacity: 1;
         }
       `}</style>
