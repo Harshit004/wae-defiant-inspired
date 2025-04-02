@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
@@ -15,7 +14,6 @@ import Footer from "@/components/footer"
  */
 function HoverButton({ children }: { children: (hovered: boolean) => React.ReactNode }) {
   const [hovered, setHovered] = useState(false)
-
   return (
     <button
       type="button"
@@ -63,7 +61,7 @@ export default function Home() {
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
 
-  // Add new state variable and ref for header/hero scaling
+  // State and ref for header/hero scaling
   const [headerHeroScale, setHeaderHeroScale] = useState(1)
   const headerHeroRef = useRef<HTMLDivElement>(null)
 
@@ -71,11 +69,9 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      // Show tagline when scrolling down, hide when scrolling up
       setTaglineVisible(currentScrollY < prevScrollY.current)
       prevScrollY.current = currentScrollY
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -92,7 +88,6 @@ export default function Home() {
       const indiaTime = new Date().toLocaleTimeString("en-US", options)
       setCurrentTime(indiaTime)
     }
-
     updateIndiaTime()
     const interval = setInterval(updateIndiaTime, 60000)
     return () => clearInterval(interval)
@@ -119,22 +114,19 @@ export default function Home() {
       const viewportHeight = window.innerHeight
 
       // Calculate scale based on scroll position
-      // Start shrinking after 100px of scroll and disappear completely by 80% of viewport height
       const maxScroll = viewportHeight * 0.8
       const minScale = 0
 
       if (scrollPosition <= 100) {
-        setHeaderHeroScale(1) // Full size when at top
+        setHeaderHeroScale(1)
       } else if (scrollPosition >= maxScroll) {
-        setHeaderHeroScale(minScale) // Completely shrunk
+        setHeaderHeroScale(minScale)
       } else {
-        // Linear interpolation between 1 and minScale
         const scrollRange = maxScroll - 100
         const scrollProgress = (scrollPosition - 100) / scrollRange
         setHeaderHeroScale(1 - scrollProgress)
       }
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -184,10 +176,7 @@ export default function Home() {
 
   return (
     <main className="relative">
-      {/* 
-        HEADER AND HERO CONTAINER
-        Fixed position so other content can overlap it
-      */}
+      {/* HEADER AND HERO CONTAINER */}
       <div
         ref={headerHeroRef}
         style={{
@@ -199,7 +188,6 @@ export default function Home() {
           zIndex: 0,
         }}
       >
-        {/* Header and hero content remains the same */}
         <header
           ref={headerRef}
           className="w-full bg-white"
@@ -323,8 +311,10 @@ export default function Home() {
                     }}
                   >
                     <div className="c--anim-btn">
-                      <span className="c-anim-btn">{item}</span>
-                      <span>{item}</span>
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item}</span>
+                        <span style={{ display: "block" }}>{item}</span>
+                      </div>
                       <span className="menu-arrow">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -361,8 +351,10 @@ export default function Home() {
                     }}
                   >
                     <div className="c--anim-btn">
-                      <span className="c-anim-btn">{item}</span>
-                      <span>{item}</span>
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item}</span>
+                        <span style={{ display: "block" }}>{item}</span>
+                      </div>
                       <span className="menu-arrow">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -385,11 +377,7 @@ export default function Home() {
           </div>
         </header>
 
-        {/* 
-          HERO SECTION 
-          The hero video and text remain as defined in your first version.
-          Its top margin is adjusted based on the measured header height.
-        */}
+        {/* HERO SECTION */}
         <section
           id="hero"
           ref={heroRef}
@@ -427,15 +415,12 @@ export default function Home() {
         </section>
       </div>
 
-      {/* 
-        SCROLL CONTAINER SECTION 
-        Higher z-index to overlap the header/hero with a parallax effect
-      */}
+      {/* SCROLL CONTAINER SECTION */}
       <motion.div
         style={{
           position: "relative",
           zIndex: 10,
-          marginTop: "100vh", // Start after the viewport height (header/hero)
+          marginTop: "100vh",
           backgroundColor: "#F2F2F2",
           borderTopLeftRadius: "30px",
           borderTopRightRadius: "30px",
@@ -448,7 +433,6 @@ export default function Home() {
           style={{
             position: "sticky",
             top: "25%",
-            // left: "50%",
             zIndex: 1100,
             opacity: logoOpacity,
           }}
@@ -514,14 +498,12 @@ export default function Home() {
                     <>
                       Know More
                       <div style={{ position: "relative", display: "inline-block", width: "16px", height: "16px" }}>
-                        {/* Default image always visible */}
                         <Image
                           src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                           alt="icon default"
                           width={16}
                           height={16}
                         />
-                        {/* Overlay image fades in on hover */}
                         <motion.div
                           initial={{ opacity: 0 }}
                           animate={{ opacity: hovered ? 1 : 0 }}
@@ -595,14 +577,12 @@ export default function Home() {
                     <>
                       Know More
                       <div style={{ position: "relative", display: "inline-block", width: "16px", height: "16px" }}>
-                        {/* Default image always visible */}
                         <Image
                           src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                           alt="icon default"
                           width={16}
                           height={16}
                         />
-                        {/* Overlay image fades in on hover */}
                         <motion.div
                           initial={{ opacity: 0 }}
                           animate={{ opacity: hovered ? 1 : 0 }}
@@ -626,10 +606,7 @@ export default function Home() {
         </section>
       </motion.div>
 
-      {/* 
-        RELATED INFORMATION SECTION 
-        Maintain the higher z-index to continue overlapping
-      */}
+      {/* RELATED INFORMATION SECTION */}
       <section
         className="max-w-full px-[8.75rem] py-[7.5rem] bg-white"
         style={{
@@ -679,32 +656,37 @@ export default function Home() {
         <Footer />
       </div>
 
-      {/* INLINE CSS for hover animations */}
+      {/* INLINE CSS for hover and arrow animations */}
       <style jsx>{`
-        .c--anim-btn span {
-          color: black;
-          text-decoration: none;
-          text-align: left;
-          display: block;
-          font-family: 'Arial', sans-serif;
-          font-weight: 500;
-          font-size: 12px;
-          line-height: 100%;
-          letter-spacing: 0px;
-        }
-        .c--anim-btn,
-        .c-anim-btn {
-          transition: 0.5s;
-        }
         .c--anim-btn {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+        /* Text container with fixed height and overflow hidden */
+        .text-container {
           height: 12px;
           overflow: hidden;
         }
+        /* Text sliding animation */
         .c-anim-btn {
-          margin-top: 0em;
+          display: block;
+          margin-top: 0;
+          transition: margin-top 0.5s;
         }
         .c--anim-btn:hover .c-anim-btn {
           margin-top: -12px;
+        }
+        /* Arrow sliding and fade-in animation */
+        .menu-arrow {
+          display: inline-block;
+          opacity: 0;
+          transform: translateX(-10px);
+          transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .c--anim-btn:hover .menu-arrow {
+          transform: translateX(0);
+          opacity: 1;
         }
       `}</style>
     </main>
