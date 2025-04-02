@@ -445,8 +445,8 @@ export default function Home() {
             <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
                 alt="Center Logo"
-                width={310}
-                height={310}
+                width={250}
+                height={250}
                 className="opacity-80"
             />
             </div>
@@ -556,7 +556,7 @@ export default function Home() {
             </motion.div>
         </section>
 
-        {/* Image Section with Higher z-index */}
+        {/* Products and Solutions */}
         <div className="relative bg-white px-8 lg:px-36 py-8 lg:py-12" style={{ zIndex: 1200 }}>
             <Image
             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/025c94b9-d481-47af-eed2-2db05a645a00/public"
@@ -577,10 +577,10 @@ export default function Home() {
             className="mb-20 w-full max-w-screen-xl"
             >
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
-                <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
+                <h2 className="inline-block font-inter-tight font-medium text-[58px] leading-[1.1] tacking-[0%] bg-gradient-to-r from-[#FC702B] via-[#F5F3F3] to-[#0E703F] bg-clip-text text-transparent whitespace-nowrap">
                 Made in INDIA
                 </h2>
-                <div className="relative" style={{ zIndex: 1200 }}>
+                <div className="relative  bg-[#f2f2f2] pb-[25px]" style={{ zIndex: 1200 }}>
                     <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
                     alt="Make In India"
@@ -590,7 +590,7 @@ export default function Home() {
                     />
                 </div>
                 <div className="flex flex-col gap-5 w-64">
-                <p className="font-[Inter Tight] text-xs leading-[110%] text-black/70">
+                <p className="font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                     The underlying natural order of the universe - circular continuity of the natural world.
                     Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
                 </p>
@@ -636,7 +636,17 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-20 w-full max-w-screen-xl flex flex-col lg:flex-row justify-between"
             >
-            <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
+            <h2 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "58px",
+                lineHeight: "110%",
+                letterSpacing: "0px",
+                color: "#000000",
+                display: "inline-block",
+              }}
+            >
                 Sustainability
             </h2>
             <div className="flex flex-col gap-20">
