@@ -447,8 +447,8 @@ export default function Home() {
             <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
                 alt="Center Logo"
-                width={310}
-                height={310}
+                width={250}
+                height={250}
                 className="opacity-80"
             />
             </div>
@@ -577,7 +577,7 @@ export default function Home() {
         </div>
 
         {/* Made in INDIA Section */}
-        <section className="h-screen/2 flex items-end justify-center relative mx-8 lg:mx-36 pt-[180px] mb-24 bg-[#f2f2f2]" style={{ zIndex: 1200 }}>
+        <section className="h-screen/2 flex items-end justify-center relative mx-8 lg:mx-36 pt-[180px] mb-24" style={{ zIndex: 1200 }}>
             <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -587,7 +587,7 @@ export default function Home() {
             >
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5">
-                <h2 className="inline-block font-inter-tight font-medium text-[58px] leading-[1.1] tacking-[0%] whitespace-nowrap">
+                <h2 className="inline-block font-inter-tight font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
                     Made in INDIA
                 </h2>
                 <div className="relative" style={{ zIndex: 1200 }}>
