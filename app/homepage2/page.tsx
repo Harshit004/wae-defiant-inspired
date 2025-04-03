@@ -152,7 +152,7 @@ export default function Home() {
 
   // Tagline lines to be animated (split into words)
   const taglineLine1 = "To lead the way in sustainability"
-  const taglineLine2 = "ahead of the next"
+  const taglineLine2 = "ahead of the rest"
   const taglineWords1 = taglineLine1.split(" ")
   const taglineWords2 = taglineLine2.split(" ")
 
@@ -594,7 +594,7 @@ export default function Home() {
             />
         </div>
 
-        {/* Made in INDIA Section */}
+        {/* Make in INDIA Section */}
         <section className="h-screen/2 flex items-end justify-center relative mx-8 lg:mx-36 pt-[180px] mb-24" style={{ zIndex: 1200 }}>
             <motion.div
             initial={{ y: "100%", opacity: 0 }}
@@ -606,7 +606,7 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5">
                 <h2 className="inline-block font-inter-tight font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
-                    Made in INDIA
+                    Make in INDIA
                 </h2>
                 <div className="relative" style={{ zIndex: 1200 }}>
                     <Image
