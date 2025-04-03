@@ -205,7 +205,7 @@ export default function Home() {
             >
               <div style={{ color: "#00000066" }}>INSIGNIA</div>
               <div style={{ color: "#00000066" }}>ORIGIN</div>
-              <div>OBJECTIVE</div>
+              <div style={{ color: "#00000066" }}>OBJECTIVE</div>
               <div style={{ color: "#00000066" }}>Inside WAE</div>
               <div style={{ color: "#00000066" }}>ETCETERA</div>
             </div>
@@ -233,7 +233,7 @@ export default function Home() {
                     fontSize: "10px",
                     lineHeight: "125%",
                     letterSpacing: "0px",
-                    color: "#00000066",
+                    color: "#000000",
                     marginRight: "0.2rem",
                     display: "inline-block",
                   }}
@@ -261,7 +261,7 @@ export default function Home() {
                         fontSize: "10px",
                         lineHeight: "125%",
                         letterSpacing: "0px",
-                        color: "#00000066",
+                        color: "#000000",
                         marginRight: "0.2rem",
                         display: "inline-block",
                       }}
@@ -287,7 +287,7 @@ export default function Home() {
                         fontSize: "10px",
                         lineHeight: "125%",
                         letterSpacing: "0px",
-                        color: "#00000066",
+                        color: "#000000",
                         marginRight: "0.2rem",
                         display: "inline-block",
                       }}
@@ -577,7 +577,7 @@ export default function Home() {
             className="mb-20 w-full max-w-screen-xl"
             >
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
-                <h2 className="inline-block font-inter-tight font-medium text-[58px] leading-[1.1] tacking-[0%] bg-gradient-to-r from-[#FC702B] via-[#F5F3F3] to-[#0E703F] bg-clip-text text-transparent whitespace-nowrap">
+                <h2 className="inline-block font-inter-tight font-medium text-[58px] leading-[1.1] tacking-[0%] whitespace-nowrap">
                 Made in INDIA
                 </h2>
                 <div className="relative  bg-[#f2f2f2] pb-[25px]" style={{ zIndex: 1200 }}>
