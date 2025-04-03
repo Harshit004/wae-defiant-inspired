@@ -419,6 +419,8 @@ export default function Home() {
         </section>
       </div>
 
+      {/* Scroll Driven Container　*/}
+
       <motion.div
         style={{
             position: "relative",
@@ -435,32 +437,32 @@ export default function Home() {
         <motion.div
             style={{
             position: "sticky",
-            top: "25%",
+            top: "5%",
             zIndex: 1100,
             opacity: logoOpacity,
             }}
-            className="pointer-events-none flex justify-center"
+            className="pointer-events-none flex justify-center pt-[180px]"
         >
             <div className="max-w-[19.375rem] max-h-[19.375rem]">
             <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
                 alt="Center Logo"
-                width={250}
-                height={250}
+                width={310}
+                height={310}
                 className="opacity-80"
             />
             </div>
         </motion.div>
 
         {/* Purpose Section */}
-        <section className="h-screen flex items-end justify-center relative">
+        <section className="h-screen/2 flex items-end justify-center relative">
             <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="mb-20 w-full max-w-screen-xl mx-8 lg:mx-36"
-            style={{ height: "115px" }}
+            className="mb-[15] w-full max-w-screen-xl mx-8 lg:mx-36"
+            style={{ height: "0px" }}
             >
             <div className="flex flex-col lg:flex-row items-start justify-between">
                 <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight" style={{ lineHeight: "110%" }}>
@@ -505,7 +507,7 @@ export default function Home() {
         </section>
 
         {/* About WAE Section */}
-        <section className="h-screen flex items-end justify-center relative">
+        <section className="h-screen flex items-end justify-center relative mb-[180px]">
             <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -575,7 +577,7 @@ export default function Home() {
         </div>
 
         {/* Made in INDIA Section */}
-        <section className="h-screen flex items-end justify-center relative mx-8 lg:mx-36 mb-24">
+        <section className="h-screen/2 flex items-end justify-center relative mx-8 lg:mx-36 pt-[180px] mb-24 bg-[#f2f2f2]" style={{ zIndex: 1200 }}>
             <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -584,10 +586,11 @@ export default function Home() {
             className="mb-20 w-full max-w-screen-xl"
             >
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
+              <div className="flex flex-col gap-5">
                 <h2 className="inline-block font-inter-tight font-medium text-[58px] leading-[1.1] tacking-[0%] whitespace-nowrap">
-                Made in INDIA
+                    Made in INDIA
                 </h2>
-                <div className="relative bg-[#f2f2f2] " style={{ zIndex: 1200 }}>
+                <div className="relative" style={{ zIndex: 1200 }}>
                     <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
                     alt="Make In India"
@@ -596,6 +599,8 @@ export default function Home() {
                     className="pl-[1.875%] pr-[7.85%] pb-[25px]"
                     />
                 </div>
+              </div>
+                
                 <div className="flex flex-col gap-5 w-64">
                 <p className="w-[270px] font-inter-tight text-[12px] leading-[110%] tracking-[0%] text-black/70">
                   WAE captures the heart of Indian innovation by 
@@ -643,13 +648,13 @@ export default function Home() {
         </section>
 
         {/* Sustainability Section */}
-        <section className="h-screen flex items-end justify-center relative mx-8 lg:mx-36">
+        <section className="h-screen flex items-end justify-center relative mx-8 lg:mx-36 mt-[230px] pb-[180px]">
             <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mb-20 w-full max-w-screen-xl flex flex-col lg:flex-row justify-between"
+            className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between"
             >
             <h2 
               style={{
@@ -698,7 +703,7 @@ export default function Home() {
 
       {/* RELATED INFORMATION SECTION */}
       <section
-        className="max-w-full px-[8.75rem] py-[7.5rem] bg-white"
+        className="max-w-full px-[8.75rem] py-[120px] bg-white"
         style={{
           position: "relative",
           zIndex: 10,
@@ -706,7 +711,7 @@ export default function Home() {
           borderTopRightRadius: "0px",
         }}
       >
-        <h2 className="font-helvetica text-[3.625rem] leading-[110%] tracking-[0%] align-middle font-normal md:whitespace-nowrap mb-[2.5rem] mt-[7.5rem]" style={{fontWeight: "500"}}>
+        <h2 className="font-helvetica text-[3.625rem] leading-[110%] tracking-[0%] align-middle font-normal md:whitespace-nowrap mb-[2.5rem]" style={{fontWeight: "500"}}>
           Related Information
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
