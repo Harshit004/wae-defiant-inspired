@@ -467,7 +467,7 @@ export default function Home() {
                 Purpose
                 </h2>
                 <div className="flex flex-col gap-5 w-64" style={{ height: "115px" }}>
-                <p className="font-[Inter Tight] text-xs leading-[110%] text-black/70">
+                <p className="w-[270px] font-inter-tight text-[12px] leading-[110%] tracking-[0%] text-black/70">
                     The underlying natural order of the universe - circular continuity of the natural world.
                     Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
                 </p>
@@ -518,10 +518,17 @@ export default function Home() {
                 About WAE
                 </h2>
                 <div className="flex flex-col gap-5 w-64">
-                <p className="font-[Inter Tight] text-xs leading-[110%] text-black/70">
-                    WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology.
-                    We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations.
-                    Our approach strengthens community resilience while showcasing India’s Intellectual capital on the world stage.
+                <p className="w-[270px] font-inter-tight text-[12px] leading-[110%] tracking-[0%] text-black/70">
+                  WAE captures the heart of Indian innovation by 
+                  seamlessly blending the time-honoured ideals 
+                  with the latest technology. We are driven by the 
+                  mission to build a brand that not only saves the 
+                  planet but also creates a potent impact on 
+                  future generations for the country's 
+                  advancements, integrity & innovation. Our 
+                  approach strengthens community resilience 
+                  while showcasing India's Intellectual capital on 
+                  the world stage.
                 </p>
                 <HoverButton>
                     {(hovered) => (
@@ -580,19 +587,27 @@ export default function Home() {
                 <h2 className="inline-block font-inter-tight font-medium text-[58px] leading-[1.1] tacking-[0%] whitespace-nowrap">
                 Made in INDIA
                 </h2>
-                <div className="relative  bg-[#f2f2f2] pb-[25px]" style={{ zIndex: 1200 }}>
+                <div className="relative bg-[#f2f2f2] " style={{ zIndex: 1200 }}>
                     <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
                     alt="Make In India"
                     width={432}
                     height={229}
-                    className="mr-[6rem]"
+                    className="pl-[1.875%] pr-[7.85%] pb-[25px]"
                     />
                 </div>
                 <div className="flex flex-col gap-5 w-64">
-                <p className="font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                    The underlying natural order of the universe - circular continuity of the natural world.
-                    Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
+                <p className="w-[270px] font-inter-tight text-[12px] leading-[110%] tracking-[0%] text-black/70">
+                  WAE captures the heart of Indian innovation by 
+                  seamlessly blending the time-honoured ideals 
+                  with the latest technology. We are driven by the 
+                  mission to build a brand that not only saves the 
+                  planet but also creates a potent impact on 
+                  future generations for the country's 
+                  advancements, integrity & innovation. Our 
+                  approach strengthens community resilience 
+                  while showcasing India's Intellectual capital on 
+                  the world stage.
                 </p>
                 <HoverButton>
                     {(hovered) => (
