@@ -416,6 +416,24 @@ export default function Home() {
             disrupting the <br />
             status quo
           </div>
+          <div
+            className="absolute uppercase"
+            style={{
+              top: "558px",
+              left: "9.72%",
+              width: "104px",
+              height: "12px",
+              color: "#00000099",
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "10px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+              verticalAlign: "middle",
+            }}
+          >
+            Scroll for more ⤵︎
+          </div>
         </section>
       </div>
 
