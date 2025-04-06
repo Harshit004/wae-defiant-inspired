@@ -444,10 +444,7 @@ export default function Home() {
             position: "relative",
             zIndex: 10,
             marginTop: "100vh",
-            backgroundColor: "#F2F2F2",
-            borderTopLeftRadius: "30px",
-            borderTopRightRadius: "30px",
-            boxShadow: "0px -10px 30px rgba(0, 0, 0, 0.1)",
+            backgroundColor: "#F2F2F2"
         }}
         className="min-h-[300vh]"
         >
@@ -604,7 +601,7 @@ export default function Home() {
             className="mb-20 w-full max-w-screen-xl"
             >
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5 items-start">
                 <h2 className="inline-block font-inter-tight font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
                     Make in INDIA
                 </h2>
@@ -614,7 +611,7 @@ export default function Home() {
                     alt="Make In India"
                     width={432}
                     height={229}
-                    className="pl-[1.875%] pr-[7.85%] pb-[25px]"
+                    className="pl-[-2.875%] pr-[9.725%] pb-[25px]"
                     />
                 </div>
               </div>
@@ -715,59 +712,55 @@ export default function Home() {
             </div>
             </motion.div>
         </section>
+        {/* RELATED INFORMATION SECTION */}
+          <section
+            className="max-w-full px-[8.75rem] py-[120px] bg-white"
+            style={{
+              position: "relative",
+              zIndex: 1200,
+              borderTopLeftRadius: "0px",
+              borderTopRightRadius: "0px",
+            }}
+          >
+            <h2 className="font-helvetica text-[3.625rem] leading-[110%] tracking-[0%] align-middle font-normal md:whitespace-nowrap mb-[2.5rem]" style={{fontWeight: "500", zIndex: 1200 }}>
+              Related Information
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c32e685-fbfe-4edb-0e63-4bbf261b3100/public"
+                title="Awards and Other Information"
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                width={272}
+                height={270}
+              />
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/67063015-a309-4a59-9247-c67c4efea500/public"
+                title="News And Updates"
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                width={272}
+                height={162}
+              />
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/efbc7ed9-3a44-4bea-0cab-e1f7ba555500/public"
+                title="Impact We Enable For You"
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                width={272}
+                height={200}
+              />
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afdeb7b4-18e6-4bc2-0ed8-85d97cb6dc00/public"
+                title="Our Sustainable Water Solutions"
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                width={272}
+                height={238}
+              />
+            </div>
+          </section>
+          {/* FOOTER SECTION */}
+          <div style={{ position: "relative", zIndex: 1200 }}>
+            <Footer />
+          </div>
         </motion.div>
-
-
-
-      {/* RELATED INFORMATION SECTION */}
-      <section
-        className="max-w-full px-[8.75rem] py-[120px] bg-white"
-        style={{
-          position: "relative",
-          zIndex: 10,
-          borderTopLeftRadius: "0px",
-          borderTopRightRadius: "0px",
-        }}
-      >
-        <h2 className="font-helvetica text-[3.625rem] leading-[110%] tracking-[0%] align-middle font-normal md:whitespace-nowrap mb-[2.5rem]" style={{fontWeight: "500"}}>
-          Related Information
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c32e685-fbfe-4edb-0e63-4bbf261b3100/public"
-            title="Awards and Other Information"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-            width={272}
-            height={270}
-          />
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/67063015-a309-4a59-9247-c67c4efea500/public"
-            title="News And Updates"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-            width={272}
-            height={162}
-          />
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/efbc7ed9-3a44-4bea-0cab-e1f7ba555500/public"
-            title="Impact We Enable For You"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-            width={272}
-            height={200}
-          />
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afdeb7b4-18e6-4bc2-0ed8-85d97cb6dc00/public"
-            title="Our Sustainable Water Solutions"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-            width={272}
-            height={238}
-          />
-        </div>
-      </section>
-
-      {/* FOOTER SECTION */}
-      <div style={{ position: "relative", zIndex: 10 }}>
-        <Footer />
-      </div>
 
       {/* INLINE CSS for hover and arrow animations */}
       <style jsx>{`
