@@ -3,50 +3,15 @@
 import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion" // Re-added for tagline animation
 import { useInView } from "react-intersection-observer"
 import RelatedCard from "@/components/related-card"
 import Footer from "@/components/footer"
 
 /**
- * Reusable hover button component.
- * Accepts a render prop (children) that receives the current hover state.
- */
-function HoverButton({ children }: { children: (hovered: boolean) => React.ReactNode }) {
-  const [hovered, setHovered] = useState(false)
-  return (
-    <button
-      type="button"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="w-fit px-[16px] py-[12px]"
-      style={{
-        pointerEvents: "auto",
-        display: "inline-flex",
-        alignItems: "center",
-        gap: "8px",
-        fontFamily: "'Inter Tight', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
-        lineHeight: "100%",
-        letterSpacing: "0%",
-        verticalAlign: "middle",
-        backgroundColor: hovered ? "#000" : "#f2f2f2",
-        border: "1px solid #000",
-        cursor: "pointer",
-        color: hovered ? "#fff" : "#000",
-        transition: "all 650ms ease",
-      }}
-    >
-      {children(hovered)}
-    </button>
-  )
-}
-
-/**
  * Main Home component.
- * Contains the Header, Hero Section, Scroll Container with animated sections,
- * Related Information, and Footer.
+ * Contains the Header, Scroll Container with static sections,
+ * MD< LEadership and Footer.
  */
 export default function Home() {
   // State variables
@@ -54,16 +19,27 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState("")
   const [headerHeight, setHeaderHeight] = useState(0)
   const headerRef = useRef<HTMLDivElement>(null)
-  const [heroRef, heroInView] = useInView({ threshold: 0.5 })
-  const sections = ["hero"]
+
 
   // State for controlling tagline visibility on scroll
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
 
-  // State and ref for header/hero scaling
-  const [headerHeroScale, setHeaderHeroScale] = useState(1)
-  const headerHeroRef = useRef<HTMLDivElement>(null)
+
+  // Variants for staggered animations using framer-motion (used only for tagline)
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+        ease: "easeInOut",
+      },
+    },
+  }
+  const childVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
+  }
 
   // Update tagline visibility based on scroll direction
   useEffect(() => {
@@ -93,53 +69,11 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
-  // Update active section when the hero is in view
-  useEffect(() => {
-    if (heroInView) setActiveSection(0)
-  }, [heroInView])
-
-  // Measure header height for hero offset
-  useEffect(() => {
-    if (headerRef.current) {
-      setHeaderHeight(headerRef.current.clientHeight)
-    }
-  }, [headerRef])
-
-  // Add scroll animation effect for header and hero
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!headerHeroRef.current) return
-
-      const scrollPosition = window.scrollY
-      const viewportHeight = window.innerHeight
-      const maxScroll = viewportHeight * 0.8
-      const minScale = 0
-
-      if (scrollPosition <= 100) {
-        setHeaderHeroScale(1)
-      } else if (scrollPosition >= maxScroll) {
-        setHeaderHeroScale(minScale)
-      } else {
-        const scrollRange = maxScroll - 100
-        const scrollProgress = (scrollPosition - 100) / scrollRange
-        setHeaderHeroScale(1 - scrollProgress)
-      }
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  // Scroll-driven animations from framer-motion
-  const { scrollYProgress } = useScroll()
-  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1])
-  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"])
-  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1])
-  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0])
-  const finalPurposeOpacity = useTransform([purposeOpacity, purposeVanish], ([pO, pV]) => pO * pV)
-  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"])
-  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1])
-  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0])
-  const finalIndiaOpacity = useTransform([indiaOpacity, indiaVanish], ([iO, iV]) => iO * iV)
+  // Tagline lines (split into words)
+  const taglineLine1 = "Light out for the territory"
+  const taglineLine2 = "ahead of the rest."
+  const taglineWords1 = taglineLine1.split(" ")
+  const taglineWords2 = taglineLine2.split(" ")
 
   // Arrays for menu items
   const productsItems = [
@@ -151,32 +85,11 @@ export default function Home() {
   const blueprintItems = ["Blueprint 1", "Blueprint 2", "Blueprint 3"]
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
-  // Tagline lines to be animated (split into words)
-  const taglineLine1 = "Light out for the territory"
-  const taglineLine2 = "ahead of the rest."
-  const taglineWords1 = taglineLine1.split(" ")
-  const taglineWords2 = taglineLine2.split(" ")
-
-  // Variants for staggered animations using framer-motion
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.05,
-        ease: "easeInOut",
-      },
-    },
-  }
-  const childVariants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
-  }
-
   return (
     <main className="relative pb-[40px]">
-      {/* HEADER AND HERO CONTAINER */}
+      {/* HEADER */}
       <div
-        ref={headerHeroRef}
+        // ref={headerHeroRef}
         style={{
           top: 0,
           left: 0,
@@ -212,7 +125,7 @@ export default function Home() {
             {/* Divider */}
             <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
 
-            {/* Bottom Row: Logo, Tagline, and Menu Items */}
+            {/* Bottom Row: Logo, Animated Tagline, and Menu Items */}
             <div className="grid grid-cols-5 items-start">
               {/* Column 1: Logo */}
               <div className="flex flex-col justify-center">
@@ -234,7 +147,7 @@ export default function Home() {
                 />
               </div>
 
-              {/* Column 3: Tagline (Animated by splitting into words) */}
+              {/* Column 3: Tagline (Animated using framer-motion) */}
               <div className="flex flex-col items-start">
                 <motion.div
                   variants={containerVariants}
@@ -375,13 +288,13 @@ export default function Home() {
       </div>
 
       {/* SCROLL CONTAINER SECTION */}
-      <motion.div className="min-h-[300vh]">
-        {/* Fixed Center Logo Overlay */}
-        <motion.div
+      <div className="min-h-[300vh] mx-[140px]">
+        {/* Fixed Center Logo Overlay (Static version with constant opacity) */}
+        <div
           style={{
             position: "sticky",
             top: "15%",
-            opacity: logoOpacity,
+            opacity: 1,
           }}
           className="pointer-events-none flex justify-center"
         >
@@ -392,136 +305,167 @@ export default function Home() {
             height={508}
             className="opacity-80"
           />
-        </motion.div>
+        </div>
 
         {/* "About WAE" Section converted to a normal div */}
-        <div className=" flex items-end justify-center" style={{ position: "relative" }}>
-            <div style={{ width: "1160px", height: "115px" }} className="flex justify-between items-start">
-              <h2
+        <div
+          className="flex items-center justify-center mb-[220px]"
+          style={{
+            position: "absolute",
+            top: "480px", // Adjust this value if needed
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "100%",
+            zIndex: 2,
+          }}
+        >
+          <div style={{ width: "1160px", height: "115px" }} className="flex justify-between items-start">
+            <h2
+              style={{
+                width: "104px",
+                height: "12px",
+                color: "#00000099",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "10px",
+                lineHeight: "100%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+              }}
+            >
+              SCROLL FOR MORE ⤵︎
+            </h2>
+
+            <div
+              style={{
+                width: "251px",
+                height: "115px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                gap: "20px",
+              }}
+            >
+              <p
                 style={{
-                  left: "9.72%",
-                  width: "104px",
-                  height: "12px",
-                  color: "#00000099",
+                  width: "297px",
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "10px",
+                  fontSize: "32px",
                   lineHeight: "100%",
                   letterSpacing: "0%",
                   verticalAlign: "middle",
+                  color: "#000000",
                 }}
               >
-                SCROLL FOR MORE ⤵︎
-              </h2>
+                What defines us isn’t just what we build, but who we become in building it
+              </p>
+            </div>
+          </div>
+        </div>
 
+        {/* People Section */}
+        <div className="flex items-end justify-center" style={{ position: "relative" }}>
+          <div className="mb-20">
+            <div style={{ width: "1160px" }} className="flex justify-between">
               <div
                 style={{
-                  width: "251px",
-                  height: "115px",
+                  width: "260px",
                   display: "flex",
                   flexDirection: "column",
-                  justifyContent: "flex-start",
-                  gap: "20px",
+                  gap: "30px",
+                }}
+              >
+                <h2
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "3.625rem",
+                    lineHeight: "110%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                  }}
+                >
+                  People
+                </h2>
+                <div
+                  style={{
+                    width: "260px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}
+                >
+                  <h2
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "21px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                    }}
+                  >
+                    "Coming together is a beginning; keeping together is progress."
+                  </h2>
+                  <h2
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 300,
+                      fontSize: "21px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                    }}
+                  >
+                    – Henry Ford
+                  </h2>
+                </div>
+              </div>
+              <div 
+                style={{
+                  width: "260px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "10px",
                 }}
               >
                 <p
                   style={{
-                    width: "297px",
                     fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "32px",
+                    fontSize: "14px",
+                    fontWeight: 400,
                     lineHeight: "100%",
                     letterSpacing: "0%",
                     verticalAlign: "middle",
                     color: "#000000",
                   }}
                 >
-                  What defines us isn’t just what we build, but who we become in building it
+                  Behind every bold move and breakthrough at WAE is a collective of minds that power the momentum.
+                  These are the thinkers, builders, and catalysts who bring our vision to life. They work with
+                  curiosity, commitment, and a shared drive to create meaningful impact. Quietly confident, relentlessly
+                  capable, they are the energy behind the scenes, and the reason we move forward with purpose every day.
                 </p>
-              </div>
-            </div>
-          
-        </div>
-
-        {/* "Made in India" Section converted to a normal div */}
-        <div className="h-screen flex items-end justify-center" style={{ position: "relative" }}>
-          <motion.div
-            initial={{ y: "100%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div style={{ width: "1160px" }} className="flex justify-between">
-              <h2
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "3.625rem",
-                  lineHeight: "110%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                }}
-              >
-                Made in India
-              </h2>
-              <div
-                style={{
-                  width: "251px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "20px",
-                }}
-              >
                 <p
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "12px",
-                    lineHeight: "110%",
+                    fontSize: "14px",
+                    fontWeight: 400,
+                    lineHeight: "100%",
                     letterSpacing: "0%",
                     verticalAlign: "middle",
-                    color: "#00000099",
+                    color: "#000000",
                   }}
                 >
-                  WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the
-                  latest technology. We are driven by the mission to build a brand that not only saves the planet but
-                  also creates a potent impact on future generations for the country’s advancements, integrity &
-                  innovation. Our approach strengthens community resilience while showcasing India’s Intellectual
-                  capital on the world stage.
+                  Their strength lies not only in expertise but in collaboration across disciplines, cultures, and perspectives.
+                  At WAE, we believe that progress happens when diverse voices are heard and empowered. It’s this unity in
+                  diversity that fuels our resilience, sharpens our thinking, and shapes the future we’re building together.
                 </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div style={{ position: "relative", display: "inline-block", width: "16px", height: "16px" }}>
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          style={{ position: "absolute", top: 0, left: 0 }}
-                        >
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
-                            width={16}
-                            height={16}
-                          />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>
