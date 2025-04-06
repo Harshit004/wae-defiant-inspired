@@ -623,6 +623,7 @@ export default function Home() {
                   >
                     {item.name}
                   </p>
+                  <hr style={{ width: "189.25341796875px", margin: "10px 0" }} />
                 </div>
               ))}
             </div>
