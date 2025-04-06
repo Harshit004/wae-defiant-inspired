@@ -3,7 +3,7 @@ import Image from "next/image"
 export default function Footer() {
   return (
     <footer className="bg-[#f2f2f2] w-full" style={{ marginTop: 0 }}>
-      <div className="mx-auto w-full max-w-[1440px] px-[8.75rem] pt-[11rem] py-6">
+      <div className="mx-auto w-full max-w-[1440px] px-[8.75rem] pt-[11.25rem] py-6">
         {/* Overall horizontal rule at the top */}
         <div className="w-full h-px bg-[#D9D9DC] mb-[1rem]" />
 

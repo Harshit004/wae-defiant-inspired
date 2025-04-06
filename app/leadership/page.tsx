@@ -3,16 +3,25 @@
 import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion" // Re-added for tagline animation
+import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import RelatedCard from "@/components/related-card"
 import Footer from "@/components/footer"
 
-/**
- * Main Home component.
- * Contains the Header, Scroll Container with static sections,
- * MD< LEadership and Footer.
- */
+// Shared container class for consistent margins
+const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
+
+// Dummy leadership data
+const leadershipItems = [
+  { image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7e60fab3-2c8e-40db-ae2c-a158c26a9d00/public", title: "VP Sales", name: "Cristina Lasagni" },
+  { image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7e60fab3-2c8e-40db-ae2c-a158c26a9d00/public", title: "VP Sales", name: "Cristina Lasagni" },
+  { image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7e60fab3-2c8e-40db-ae2c-a158c26a9d00/public", title: "VP Sales", name: "Cristina Lasagni" },
+  { image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7e60fab3-2c8e-40db-ae2c-a158c26a9d00/public", title: "VP Sales", name: "Cristina Lasagni" },
+  { image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7e60fab3-2c8e-40db-ae2c-a158c26a9d00/public", title: "VP Sales", name: "Cristina Lasagni" },
+  { image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7e60fab3-2c8e-40db-ae2c-a158c26a9d00/public", title: "VP Sales", name: "Cristina Lasagni" },
+  { image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7e60fab3-2c8e-40db-ae2c-a158c26a9d00/public", title: "VP Sales", name: "Cristina Lasagni" },
+  { image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7e60fab3-2c8e-40db-ae2c-a158c26a9d00/public", title: "VP Sales", name: "Cristina Lasagni" },
+]
+
 export default function Home() {
   // State variables
   const [activeSection, setActiveSection] = useState(0)
@@ -20,11 +29,9 @@ export default function Home() {
   const [headerHeight, setHeaderHeight] = useState(0)
   const headerRef = useRef<HTMLDivElement>(null)
 
-
   // State for controlling tagline visibility on scroll
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
-
 
   // Variants for staggered animations using framer-motion (used only for tagline)
   const containerVariants = {
@@ -61,8 +68,7 @@ export default function Home() {
         hour12: false,
         timeZone: "Asia/Kolkata",
       }
-      const indiaTime = new Date().toLocaleTimeString("en-US", options)
-      setCurrentTime(indiaTime)
+      setCurrentTime(new Date().toLocaleTimeString("en-US", options))
     }
     updateIndiaTime()
     const interval = setInterval(updateIndiaTime, 60000)
@@ -88,21 +94,13 @@ export default function Home() {
   return (
     <main className="relative pb-[40px]">
       {/* HEADER */}
-      <div
-        // ref={headerHeroRef}
-        style={{
-          top: 0,
-          left: 0,
-          width: "100%",
-          zIndex: 0,
-        }}
-      >
+      <div style={{ top: 0, left: 0, width: "100%" }}>
         <header
           ref={headerRef}
           className="w-full"
           style={{ marginBottom: 0, position: "relative", zIndex: 1 }}
         >
-          <div className="mx-auto w-full max-w-[1440px] px-[140px]">
+          <div className={containerClass}>
             {/* Top Row: Location, Time, and Navigation */}
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px]"
@@ -147,7 +145,7 @@ export default function Home() {
                 />
               </div>
 
-              {/* Column 3: Tagline (Animated using framer-motion) */}
+              {/* Column 3: Animated Tagline */}
               <div className="flex flex-col items-start">
                 <motion.div
                   variants={containerVariants}
@@ -288,8 +286,8 @@ export default function Home() {
       </div>
 
       {/* SCROLL CONTAINER SECTION */}
-      <div className="min-h-[300vh] mx-[140px]">
-        {/* Fixed Center Logo Overlay (Static version with constant opacity) */}
+      <div className="mx-[140px] relative">
+        {/* Fixed Center Logo Overlay */}
         <div
           style={{
             position: "sticky",
@@ -307,14 +305,12 @@ export default function Home() {
           />
         </div>
 
-        {/* "About WAE" Section converted to a normal div */}
+        {/* "About WAE" Section */}
         <div
-          className="flex items-center justify-center mb-[220px]"
+          className="flex items-center justify-center"
           style={{
             position: "absolute",
-            top: "480px", // Adjust this value if needed
-            left: "50%",
-            transform: "translateX(-50%)",
+            top: "31%",
             width: "100%",
             zIndex: 2,
           }}
@@ -330,12 +326,10 @@ export default function Home() {
                 fontSize: "10px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
-                verticalAlign: "middle",
               }}
             >
               SCROLL FOR MORE ⤵︎
             </h2>
-
             <div
               style={{
                 width: "251px",
@@ -365,7 +359,7 @@ export default function Home() {
         </div>
 
         {/* People Section */}
-        <div className="flex items-end justify-center" style={{ position: "relative" }}>
+        <div className="mt-[20%] flex items-end justify-center" style={{ position: "relative" }}>
           <div className="mb-20">
             <div style={{ width: "1160px" }} className="flex justify-between">
               <div
@@ -422,7 +416,7 @@ export default function Home() {
                   </h2>
                 </div>
               </div>
-              <div 
+              <div
                 style={{
                   width: "260px",
                   display: "flex",
@@ -467,6 +461,175 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Horizontal Rule below Scroll Container */}
+      <hr className="mx-[140px] my-8" />
+
+      {/* Managing Director Section */}
+      <div className={containerClass}>
+        <div className="flex flex-row justify-between gap-[82px] mb-[120px]">
+          {/* Title Column */}
+          <div className="flex-1 max-w-[14.65%]">
+            <h2
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "48px",
+                lineHeight: "100%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+              }}
+            >
+              Managing Director
+            </h2>
+          </div>
+
+          {/* MD Details and Description Group */}
+          <div className="flex flex-row flex-1 gap-[5.7%]">
+            {/* MD Details Column */}
+            <div className="flex flex-col items-start">
+              {/* MD Image */}
+              <div style={{ height: "327px", display: "flex" }}>
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/feb7894d-303b-45bb-df3f-31062bb67d00/public"
+                  alt="Managing Director"
+                  style={{
+                    height: "327px",
+                    maxWidth: "263px",
+                    width: "auto",
+                    filter: "grayscale(100%)",
+                    transition: "filter 0.5s ease",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.filter = "grayscale(0%)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.filter = "grayscale(100%)")}
+                  width={263}
+                  height={327}
+                />
+              </div>
+              {/* MD Name */}
+              <p
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "13.5px",
+                  lineHeight: "16.2px",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  marginTop: "10px",
+                }}
+              >
+                A. Vikram Joshe
+              </p>
+              {/* Horizontal rule equal to image width */}
+              <hr style={{ width: "263px", margin: "10px 0" }} />
+            </div>
+
+            {/* MD Description Column */}
+            <div className="flex-1 max-w-[32%]">
+              <p
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                }}
+              >
+                What drives a future-forward organization isn’t just innovation, but the people whose thinking, values, and courage transform ambition into reality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Horizontal Rule below Managing Director Section */}
+      <hr className="mx-[140px] my-8" />
+
+      {/* Leadership Section */}
+      <div className={containerClass}>
+        <div className="flex flex-row items-start gap-[37px]">
+          {/* Leadership Heading Column */}
+          <div className="flex-shrink-0">
+            <h2
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "48px",
+                lineHeight: "50.4px",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+              }}
+            >
+              Leadership
+            </h2>
+          </div>
+          {/* Leadership Grid Column */}
+          <div className="flex-1">
+            <div
+              className="grid grid-cols-4 gap-x-[37px] gap-y-[60px]"
+              style={{ justifyContent: "center" }}
+            >
+              {leadershipItems.map((item, index) => (
+                <div
+                  key={index}
+                  style={{
+                    width: "189.25341796875px",
+                    height: "305px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "16px",
+                    alignItems: "left",
+                  }}
+                >
+                  {/* Leader Image */}
+                  <Image
+                    src={item.image}
+                    alt={`Leader ${index + 1}`}
+                    style={{
+                        filter: "grayscale(100%)",
+                        transition: "filter 0.5s ease",
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.filter = "grayscale(0%)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.filter = "grayscale(100%)")}
+                    width={189}
+                    height={230}
+                  />
+                  {/* Leader Title */}
+                  <p
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "10.5px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                      color: "#00000099",
+                      textAlign: "left",
+                    }}
+                  >
+                    {item.title}
+                  </p>
+                  {/* Leader Name */}
+                  <p
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "13.5px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                      textAlign: "left",
+                    }}
+                  >
+                    {item.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>
         <Footer />
@@ -479,12 +642,10 @@ export default function Home() {
           align-items: center;
           gap: 4px;
         }
-        /* Text container with fixed height and overflow hidden */
         .text-container {
           height: 12px;
           overflow: hidden;
         }
-        /* Text sliding animation */
         .c-anim-btn {
           display: block;
           margin-top: 0;
@@ -493,7 +654,6 @@ export default function Home() {
         .c--anim-btn:hover .c-anim-btn {
           margin-top: -12px;
         }
-        /* Arrow sliding and fade-in animation for products */
         .menu-arrow {
           display: inline-block;
           opacity: 0;
@@ -504,7 +664,6 @@ export default function Home() {
           transform: translateX(0);
           opacity: 1;
         }
-        /* Additional styling for blueprint arrow: rotate to face top right */
         .blueprint-arrow {
           transform: rotate(-45deg) translateX(-10px);
         }
