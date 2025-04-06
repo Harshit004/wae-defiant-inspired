@@ -316,7 +316,7 @@ export default function Home() {
           }}
         >
           <div style={{ width: "1160px", height: "115px" }} className="flex justify-between items-start">
-            <h2
+            <h2 className="mt-auto" //pushes the text to the bottom
               style={{
                 width: "104px",
                 height: "12px",
@@ -325,6 +325,7 @@ export default function Home() {
                 fontWeight: 500,
                 fontSize: "10px",
                 lineHeight: "100%",
+                verticalAlign: "bottom",
                 letterSpacing: "0%",
               }}
             >
