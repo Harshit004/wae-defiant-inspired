@@ -76,19 +76,18 @@ export default function Home() {
   }, [])
 
   // Tagline lines (split into words)
-  const taglineLine1 = "Light out for the territory"
+  const taglineLine1 = "To lead the way in sustainability"
   const taglineLine2 = "ahead of the rest."
   const taglineWords1 = taglineLine1.split(" ")
   const taglineWords2 = taglineLine2.split(" ")
 
   // Arrays for menu items
   const productsItems = [
-    "Products & Solutions A",
-    "Products & Solutions B",
-    "Products & Solutions C",
-    "Products & Solutions D",
+    "Identity & Ambition",
+    "Products & Solutions",
+    "Career",
   ]
-  const blueprintItems = ["Blueprint 1", "Blueprint 2", "Blueprint 3"]
+  const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"]
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   return (
@@ -113,11 +112,11 @@ export default function Home() {
                 textTransform: "uppercase",
               }}
             >
-              <div style={{ color: "#00000066" }}>NOIDA</div>
-              <div style={{ color: "#00000066" }}>INDIA</div>
-              <div>{currentTime}</div>
-              <div style={{ color: "#00000066" }}>Products & Solutions</div>
-              <div style={{ color: "#00000066" }}>News & Updates</div>
+              <div style={{ color: "#00000066" }}>INSIGNIA</div>
+              <div style={{ color: "#00000066" }}>ORIGIN</div>
+              <div style={{ color: "#00000066" }}>OBJECTIVE</div>
+              <div style={{ color: "#00000066" }}>Inside WAE</div>
+              <div style={{ color: "#00000066" }}>ETCETERA</div>
             </div>
 
             {/* Divider */}
@@ -135,14 +134,21 @@ export default function Home() {
                 />
               </div>
 
-              {/* Column 2: WAE Text Image */}
-              <div className="flex flex-col justify-center">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/45c6555a-9bdb-4f8a-3958-0df6cd00ac00/public"
-                  alt="WAE Text"
-                  width={44.00027084350586}
-                  height={18.93841552734375}
-                />
+              {/* Coordinates */}
+              <div className="flex flex-col justify-center"
+                style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "10px",
+                    lineHeight: "125%",
+                    letterSpacing: "0px",
+                    color: "#000000",
+                    marginRight: "0.2rem",
+                    display: "inline-block",
+                  }}
+              >
+                20.5937° N<br/>
+                78.9629° E
               </div>
 
               {/* Column 3: Animated Tagline */}
@@ -164,7 +170,7 @@ export default function Home() {
                         fontSize: "10px",
                         lineHeight: "125%",
                         letterSpacing: "0px",
-                        color: "#00000066",
+                        color: "#000000",
                         marginRight: "0.2rem",
                         display: "inline-block",
                       }}
@@ -190,7 +196,7 @@ export default function Home() {
                         fontSize: "10px",
                         lineHeight: "125%",
                         letterSpacing: "0px",
-                        color: "#00000066",
+                        color: "#000000",
                         marginRight: "0.2rem",
                         display: "inline-block",
                       }}
