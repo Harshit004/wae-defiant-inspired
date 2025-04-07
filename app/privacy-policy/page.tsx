@@ -284,7 +284,7 @@ export default function Home() {
             color: "#000000",
           }}
         >
-          Effective date: July 1, 2017
+          Effective date: May 1, 2025
         </p>
         <p
           style={{
