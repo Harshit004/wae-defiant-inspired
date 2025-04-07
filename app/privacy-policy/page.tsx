@@ -65,7 +65,7 @@ export default function Home() {
         <header
           ref={headerRef}
           className="w-full"
-          style={{ marginBottom: "120px", position: "relative", zIndex: 1 }}
+          style={{ marginBottom: "40px", position: "relative", zIndex: 1 }}
         >
           <div className={containerClass}>
             {/* Top Row: Location, Time, and Navigation */}
