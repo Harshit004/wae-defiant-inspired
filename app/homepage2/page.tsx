@@ -1,25 +1,28 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useEffect, useState, useRef } from "react"
-import Image from "next/image"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import RelatedCard from "@/components/related-card"
-import Footer from "@/components/footer"
+import { FC, useEffect, useState, useRef } from "react";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import RelatedCard from "@/components/related-card";
+import Footer from "@/components/footer";
+
+interface HoverButtonProps {
+  children: (hovered: boolean) => React.ReactNode;
+}
 
 /**
  * Reusable hover button component.
- * Accepts a render prop (children) that receives the current hover state.
  */
-function HoverButton({ children }: { children: (hovered: boolean) => React.ReactNode }) {
-  const [hovered, setHovered] = useState(false)
+const HoverButton: FC<HoverButtonProps> = ({ children }) => {
+  const [hovered, setHovered] = useState<boolean>(false);
+
   return (
     <button
       type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="w-fit px-[16px] py-[12px]"
+      className="w-fit px-4 py-3 transition-all duration-650 ease"
       style={{
         pointerEvents: "auto",
         display: "inline-flex",
@@ -29,52 +32,42 @@ function HoverButton({ children }: { children: (hovered: boolean) => React.React
         fontWeight: 500,
         fontSize: "10px",
         lineHeight: "100%",
-        letterSpacing: "0%",
-        verticalAlign: "middle",
+        textTransform: "uppercase",
         backgroundColor: hovered ? "#000" : "#f2f2f2",
         border: "1px solid #000",
         cursor: "pointer",
         color: hovered ? "#fff" : "#000",
-        transition: "all 650ms ease",
       }}
     >
       {children(hovered)}
     </button>
-  )
-}
+  );
+};
 
-/**
- * Main Home component.
- * Contains the Header, Hero Section, Scroll Container with animated sections,
- * Related Information, and Footer.
- */
-export default function Home() {
-  // State variables
-  const [activeSection, setActiveSection] = useState(0)
-  const [currentTime, setCurrentTime] = useState("")
-  const [headerHeight, setHeaderHeight] = useState(0)
-  const headerRef = useRef<HTMLDivElement>(null)
-  const [heroRef, heroInView] = useInView({ threshold: 0.5 })
-  const sections = ["hero"]
+const Home: FC = () => {
+  // State and refs
+  const [activeSection, setActiveSection] = useState<number>(0);
+  const [currentTime, setCurrentTime] = useState<string>("");
+  const [headerHeight, setHeaderHeight] = useState<number>(0);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [heroRef, heroInView] = useInView({ threshold: 0.5 });
+  const [taglineVisible, setTaglineVisible] = useState<boolean>(true);
+  const prevScrollY = useRef<number>(0);
+  const [headerHeroScale, setHeaderHeroScale] = useState<number>(1);
+  const headerHeroRef = useRef<HTMLDivElement>(null);
 
-  // State for controlling tagline visibility on scroll
-  const [taglineVisible, setTaglineVisible] = useState(true)
-  const prevScrollY = useRef(0)
+  const sections = ["hero"]; // Extendable for additional sections
 
-  // State and ref for header/hero scaling
-  const [headerHeroScale, setHeaderHeroScale] = useState(1)
-  const headerHeroRef = useRef<HTMLDivElement>(null)
-
-  // Update tagline visibility based on scroll direction
+  // Update tagline visibility on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      setTaglineVisible(currentScrollY < prevScrollY.current)
-      prevScrollY.current = currentScrollY
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      const currentScrollY = window.scrollY;
+      setTaglineVisible(currentScrollY < prevScrollY.current);
+      prevScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Update current time (India Time) every minute
   useEffect(() => {
@@ -84,186 +77,168 @@ export default function Home() {
         minute: "2-digit",
         hour12: false,
         timeZone: "Asia/Kolkata",
-      }
-      const indiaTime = new Date().toLocaleTimeString("en-US", options)
-      setCurrentTime(indiaTime)
-    }
-    updateIndiaTime()
-    const interval = setInterval(updateIndiaTime, 60000)
-    return () => clearInterval(interval)
-  }, [])
+      };
+      setCurrentTime(new Date().toLocaleTimeString("en-US", options));
+    };
 
-  // Update active section when the hero is in view
+    updateIndiaTime();
+    const interval = setInterval(updateIndiaTime, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Set active section when hero is in view
   useEffect(() => {
-    if (heroInView) setActiveSection(0)
-  }, [heroInView])
+    if (heroInView) setActiveSection(0);
+  }, [heroInView]);
 
-  // Measure header height for hero offset
+  // Measure header height to offset hero section
   useEffect(() => {
-    if (headerRef.current) {
-      setHeaderHeight(headerRef.current.clientHeight)
-    }
-  }, [headerRef])
+    if (headerRef.current) setHeaderHeight(headerRef.current.clientHeight);
+  }, [headerRef]);
 
-  // Add scroll animation effect for header and hero
+  // Scroll-driven header/hero scaling effect
   useEffect(() => {
     const handleScroll = () => {
-      if (!headerHeroRef.current) return
-
-      const scrollPosition = window.scrollY
-      const viewportHeight = window.innerHeight
-      const maxScroll = viewportHeight * 0.8
-      const minScale = 0
+      if (!headerHeroRef.current) return;
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const maxScroll = viewportHeight * 0.8;
+      const minScale = 0;
 
       if (scrollPosition <= 100) {
-        setHeaderHeroScale(1)
+        setHeaderHeroScale(1);
       } else if (scrollPosition >= maxScroll) {
-        setHeaderHeroScale(minScale)
+        setHeaderHeroScale(minScale);
       } else {
-        const scrollRange = maxScroll - 100
-        const scrollProgress = (scrollPosition - 100) / scrollRange
-        setHeaderHeroScale(1 - scrollProgress)
+        const scrollRange = maxScroll - 100;
+        const scrollProgress = (scrollPosition - 100) / scrollRange;
+        setHeaderHeroScale(1 - scrollProgress);
       }
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    };
 
-  // Scroll-driven animations from framer-motion
-  const { scrollYProgress } = useScroll()
-  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1])
-  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"])
-  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1])
-  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0])
-  const finalPurposeOpacity = useTransform([purposeOpacity, purposeVanish], ([pO, pV]) => pO * pV)
-  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"])
-  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1])
-  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0])
-  const finalIndiaOpacity = useTransform([indiaOpacity, indiaVanish], ([iO, iV]) => iO * iV)
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  // Arrays for menu items
+  // Framer Motion scroll-driven animations
+  const { scrollYProgress } = useScroll();
+  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
+  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"]);
+  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1]);
+  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]);
+  const finalPurposeOpacity = useTransform(
+    [purposeOpacity, purposeVanish],
+    ([pO, pV]) => pO * pV
+  );
+  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"]);
+  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
+  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0]);
+  const finalIndiaOpacity = useTransform(
+    [indiaOpacity, indiaVanish],
+    ([iO, iV]) => iO * iV
+  );
+
+  // Menu items arrays
   const productsItems = [
     "Identity and Ambition",
     "Products & Solution",
     "Career",
-  ]
-  const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"]
-  const lineCount = Math.min(productsItems.length, blueprintItems.length)
+  ];
+  const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"];
+  const lineCount = Math.min(productsItems.length, blueprintItems.length);
 
-  // Tagline lines to be animated (split into words)
-  const taglineLine1 = "To lead the way in sustainability"
-  const taglineLine2 = "ahead of the rest"
-  const taglineWords1 = taglineLine1.split(" ")
-  const taglineWords2 = taglineLine2.split(" ")
+  // Tagline words split for animation
+  const taglineLine1 = "To lead the way in sustainability";
+  const taglineLine2 = "ahead of the rest";
+  const taglineWords1 = taglineLine1.split(" ");
+  const taglineWords2 = taglineLine2.split(" ");
 
-  // Variants for staggered animations using framer-motion
+  // Framer Motion animation variants
   const containerVariants = {
     hidden: {},
     visible: {
-      transition: {
-        staggerChildren: 0.05,
-        ease: "easeInOut",
-      },
+      transition: { staggerChildren: 0.05, ease: "easeInOut" },
     },
-  }
+  };
   const childVariants = {
     hidden: { opacity: 0, x: -10 },
     visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
-  }
+  };
 
   return (
     <main className="relative">
-      {/* HEADER AND HERO CONTAINER */}
-      <div
-        ref={headerHeroRef}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100vh",
-          zIndex: 0,
-        }}
-      >
-        <header
-          ref={headerRef}
-          className="w-full bg-white"
-          style={{ marginBottom: 0, position: "relative", zIndex: 1 }}
-        >
+      {/* HEADER AND HERO SECTION */}
+      <div ref={headerHeroRef} className="fixed top-0 left-0 w-full h-screen z-0">
+        <header ref={headerRef} className="w-full bg-white relative z-10 mb-0">
           <div className="mx-auto w-full max-w-[1440px] px-[140px]">
-            {/* Top Row: Location, Time, and Navigation */}
+            {/* Top Row: Navigation */}
             <div
-              className="grid grid-cols-5 items-center pt-[30px] pb-[10px]"
+              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 600,
                 fontSize: "9px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
-                textTransform: "uppercase",
               }}
             >
-              <div style={{ color: "#00000066" }}>INSIGNIA</div>
-              <div style={{ color: "#00000066" }}>ORIGIN</div>
-              <div style={{ color: "#00000066" }}>OBJECTIVE</div>
-              <div style={{ color: "#00000066" }}>Inside WAE</div>
-              <div style={{ color: "#00000066" }}>ETCETERA</div>
+              <div className="text-gray-500">INSIGNIA</div>
+              <div className="text-gray-500">ORIGIN</div>
+              <div className="text-gray-500">OBJECTIVE</div>
+              <div className="text-gray-500">Inside WAE</div>
+              <div className="text-gray-500">ETCETERA</div>
             </div>
 
             {/* Divider */}
             <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
 
-            {/* Bottom Row: Logo, Tagline, and Menu Items */}
+            {/* Bottom Row: Logo, Tagline and Menu Items */}
             <div className="grid grid-cols-5 items-start">
-              {/* Column 1: Logo */}
+              {/* Logo */}
               <div className="flex flex-col justify-center">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
                   alt="WAE Logo"
-                  width={77.53575134277344}
-                  height={82.03529357910156}
+                  width={78}
+                  height={82}
                 />
               </div>
 
-              {/* Column 2: Coordinates */}
-              <div className="flex flex-col justify-center"
+              {/* Coordinates */}
+              <div
+                className="flex flex-col justify-center inline-block mr-1"
                 style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "10px",
-                    lineHeight: "125%",
-                    letterSpacing: "0px",
-                    color: "#000000",
-                    marginRight: "0.2rem",
-                    display: "inline-block",
-                  }}
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 600,
+                  fontSize: "10px",
+                  lineHeight: "125%",
+                  color: "#000",
+                }}
               >
-                20.5937° N<br/>
+                20.5937° N
+                <br />
                 78.9629° E
               </div>
 
-              {/* Column 3: Tagline (Animated by splitting into words) */}
+              {/* Tagline Animation */}
               <div className="flex flex-col items-start">
                 <motion.div
                   variants={containerVariants}
                   initial="hidden"
                   animate={taglineVisible ? "visible" : "hidden"}
-                  style={{ whiteSpace: "nowrap" }}
-                  className="flex flex-row justify-center"
+                  className="flex flex-row justify-center whitespace-nowrap"
                 >
                   {taglineWords1.map((word, index) => (
                     <motion.span
                       key={index}
                       variants={childVariants}
+                      className="mr-1"
                       style={{
                         fontFamily: "'Inter Tight', sans-serif",
                         fontWeight: 600,
                         fontSize: "10px",
                         lineHeight: "125%",
-                        letterSpacing: "0px",
-                        color: "#000000",
-                        marginRight: "0.2rem",
-                        display: "inline-block",
+                        color: "#000",
                       }}
                     >
                       {word}
@@ -274,22 +249,19 @@ export default function Home() {
                   variants={containerVariants}
                   initial="hidden"
                   animate={taglineVisible ? "visible" : "hidden"}
-                  style={{ whiteSpace: "nowrap" }}
-                  className="flex flex-row justify-center"
+                  className="flex flex-row justify-center whitespace-nowrap"
                 >
                   {taglineWords2.map((word, index) => (
                     <motion.span
                       key={index}
                       variants={childVariants}
+                      className="mr-1"
                       style={{
                         fontFamily: "'Inter Tight', sans-serif",
                         fontWeight: 600,
                         fontSize: "10px",
                         lineHeight: "125%",
-                        letterSpacing: "0px",
-                        color: "#000000",
-                        marginRight: "0.2rem",
-                        display: "inline-block",
+                        color: "#000",
                       }}
                     >
                       {word}
@@ -298,26 +270,23 @@ export default function Home() {
                 </motion.div>
               </div>
 
-              {/* Column 4: Inside WAE Menu Items */}
+              {/* Inside WAE Menu Items */}
               <div className="flex flex-col justify-center space-y-2">
                 {productsItems.map((item, i) => (
                   <div
                     key={i}
-                    className="pb-2"
+                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
                       fontSize: "12px",
                       lineHeight: "100%",
-                      letterSpacing: "0px",
-                      textAlign: "left",
-                      borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
                     }}
                   >
                     <div className="c--anim-btn">
                       <div className="text-container">
                         <span className="c-anim-btn">{item}</span>
-                        <span style={{ display: "block" }}>{item}</span>
+                        <span className="block">{item}</span>
                       </div>
                       <span className="menu-arrow">
                         <svg
@@ -338,26 +307,23 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Column 5: ETCETERA Menu Items */}
+              {/* ETCETERA Menu Items */}
               <div className="flex flex-col justify-center space-y-2">
                 {blueprintItems.map((item, i) => (
                   <div
                     key={i}
-                    className="pb-2"
+                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
                       fontSize: "12px",
                       lineHeight: "100%",
-                      letterSpacing: "0px",
-                      textAlign: "left",
-                      borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
                     }}
                   >
                     <div className="c--anim-btn">
                       <div className="text-container">
                         <span className="c-anim-btn">{item}</span>
-                        <span style={{ display: "block" }}>{item}</span>
+                        <span className="block">{item}</span>
                       </div>
                       <span className="menu-arrow blueprint-arrow">
                         <svg
@@ -385,8 +351,8 @@ export default function Home() {
         <section
           id="hero"
           ref={heroRef}
-          className="relative h-[100vh] w-full overflow-hidden"
-          style={{ marginTop: `-${headerHeight}px`, zIndex: 0 }}
+          className="relative h-screen w-full overflow-hidden"
+          style={{ marginTop: `-${headerHeight}px` }}
         >
           <video
             src="/a337333f-cbd25ca9.mp4"
@@ -403,13 +369,11 @@ export default function Home() {
               left: "60%",
               width: "393px",
               height: "159px",
-              color: "#000",
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
               fontSize: "48px",
               lineHeight: "110%",
-              letterSpacing: "0%",
-              verticalAlign: "middle",
+              color: "#000",
             }}
           >
             We are <br />
@@ -423,13 +387,11 @@ export default function Home() {
               left: "9.72%",
               width: "104px",
               height: "12px",
-              color: "#00000099",
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
               fontSize: "10px",
               lineHeight: "100%",
-              letterSpacing: "0%",
-              verticalAlign: "middle",
+              color: "#00000099",
             }}
           >
             Scroll for more ⤵︎
@@ -437,345 +399,444 @@ export default function Home() {
         </section>
       </div>
 
-      {/* Scroll Driven Container　*/}
-
+      {/* SCROLL-DRIVEN CONTAINER */}
       <motion.div
-        style={{
-            position: "relative",
-            zIndex: 10,
-            marginTop: "100vh",
-            backgroundColor: "#F2F2F2"
-        }}
-        className="min-h-[300vh]"
-        >
+        className="min-h-[300vh] relative bg-[#F2F2F2] mt-screen"
+        style={{ marginTop: "100vh" }}
+      >
         {/* Sticky Logo Overlay */}
         <motion.div
-            style={{
-            position: "sticky",
-            top: "5%",
-            zIndex: 1100,
-            opacity: logoOpacity,
-            }}
-            className="pointer-events-none flex justify-center pt-[180px]"
+          style={{ position: "sticky", top: "5%", zIndex: 1100, opacity: logoOpacity }}
+          className="pointer-events-none flex justify-center pt-[180px]"
         >
-            <div className="max-w-[19.375rem] max-h-[19.375rem]">
+          <div className="max-w-[19.375rem] max-h-[19.375rem]">
             <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
-                alt="Center Logo"
-                width={250}
-                height={250}
-                className="opacity-80"
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
+              alt="Center Logo"
+              width={250}
+              height={250}
+              className="opacity-80"
             />
-            </div>
+          </div>
         </motion.div>
 
         {/* Purpose Section */}
-        <section className="h-screen/2 flex items-end justify-center relative">
-            <motion.div
+        <section className="h-[50vh] flex items-end justify-center relative">
+          <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.3 }}
             viewport={{ once: true }}
-            className="mb-[15] w-full max-w-screen-xl mx-8 lg:mx-36"
+            className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-4"
             style={{ height: "0px" }}
-            >
+          >
             <div className="flex flex-col lg:flex-row items-start justify-between">
-                <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight" style={{ lineHeight: "110%" }}>
+              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                 Purpose
-                </h2>
-                <div className="flex flex-col gap-5 w-64" style={{ height: "115px" }}>
-                <p className="w-[270px] font-inter-tight text-[12px] leading-[110%] tracking-[0%] text-black/70">
-                    The underlying natural order of the universe - circular continuity of the natural world.
-                    Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
+              </h2>
+              <div className="flex flex-col gap-5 w-64" style={{ height: "115px" }}>
+                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
+                  The underlying natural order of the universe – circular continuity of the natural world.
+                  Undifferentiated, endlessly self-replenishing, immensely powerful, and impassively generous.
                 </p>
                 <HoverButton>
-                    {(hovered) => (
+                  {(hovered) => (
                     <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
+                      Know More
+                      <div className="relative inline-block w-4 h-4">
                         <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                          alt="icon default"
+                          width={16}
+                          height={16}
                         />
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
                         >
-                            <Image
+                          <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                             alt="icon hover"
                             width={16}
                             height={16}
-                            />
+                          />
                         </motion.div>
-                        </div>
+                      </div>
                     </>
-                    )}
+                  )}
                 </HoverButton>
-                </div>
+              </div>
             </div>
-            </motion.div>
+          </motion.div>
         </section>
 
         {/* About WAE Section */}
         <section className="h-screen flex items-end justify-center relative mb-[180px]">
-            <motion.div
+          <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mb-20 w-full max-w-screen-xl mx-8 lg:mx-36"
-            >
+            className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
+          >
             <div className="flex flex-col lg:flex-row items-start justify-between">
-                <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
+              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                 About WAE
-                </h2>
-                <div className="flex flex-col gap-5 w-64">
-                <p className="w-[270px] font-inter-tight text-[12px] leading-[110%] tracking-[0%] text-black/70">
-                  WAE captures the heart of Indian innovation by 
-                  seamlessly blending the time-honoured ideals 
-                  with the latest technology. We are driven by the 
-                  mission to build a brand that not only saves the 
-                  planet but also creates a potent impact on 
-                  future generations for the country's 
-                  advancements, integrity & innovation. Our 
-                  approach strengthens community resilience 
-                  while showcasing India's Intellectual capital on 
-                  the world stage.
+              </h2>
+              <div className="flex flex-col gap-5 w-64">
+                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
+                  WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
+                  We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
+                  strengthening community resilience and showcasing India's intellectual capital on the world stage.
                 </p>
                 <HoverButton>
-                    {(hovered) => (
+                  {(hovered) => (
                     <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
+                      Know More
+                      <div className="relative inline-block w-4 h-4">
                         <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                          alt="icon default"
+                          width={16}
+                          height={16}
                         />
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
                         >
-                            <Image
+                          <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                             alt="icon hover"
                             width={16}
                             height={16}
-                            />
+                          />
                         </motion.div>
-                        </div>
+                      </div>
                     </>
-                    )}
+                  )}
                 </HoverButton>
-                </div>
+              </div>
             </div>
-            </motion.div>
+          </motion.div>
         </section>
 
-        {/* Products and Solutions */}
-        <div className="relative bg-white px-8 lg:px-36 py-8 lg:py-12" style={{ zIndex: 1200 }}>
-            <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/025c94b9-d481-47af-eed2-2db05a645a00/public"
-            alt="Products and Solutions"
-            width={1160}
-            height={928}
-            className="w-full h-auto"
-            />
+        {/* Products and Solutions Section */}
+        <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200}}>
+          <table className="product-grid">
+            <tr>
+              <td colSpan={2} className="product-title whitespace-nowrap">
+                Products &amp; Solutions
+              </td>
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
+                <div className="product-category">DRINKING WATER STATIONS</div>
+              </td>
+              <td className="product-cell">
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/27917d14-ea56-4a80-93b9-c66ba9642400/public"
+                  alt="Drinking Water Station"
+                  className="placeholder-img"
+                />
+              </td>
+              <td className="product-cell !bg-white"></td>
+            </tr>
+            <tr>
+              <td className="product-cell">
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/685750d6-ec8e-491b-a214-24f13cfcb600/public"
+                  alt="Water Faucet"
+                  className="placeholder-img"
+                />
+              </td>
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
+                <div className="product-category">DRINKING WATER FAUCETS</div>
+              </td>
+              <td className="product-cell">
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b05d64d-0248-4aaf-b8c3-e8d7afccea00/public"
+                  alt="Water Dispenser"
+                  className="placeholder-img"
+                />
+              </td>
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
+                <div className="product-category">DRINKING WATER DISPENSERS</div>
+              </td>
+              <td className="product-cell">
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c4a14e-2e09-4da6-c363-84bae0088400/public"
+                  alt="Water Dispenser"
+                  className="placeholder-img"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td className="product-cell !bg-white"></td>
+              <td className="product-cell">
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf2a2e6e-9e0b-464a-c2ff-1a16cb1f9900/public"
+                  alt="Water Cooler"
+                  className="placeholder-img"
+                />
+              </td>
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
+                <div className="product-category">WATER COOLERS &amp; FOUNTAINS</div>
+              </td>
+              <td className="product-cell">
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d9688872-6e63-4d68-26e9-aec6cf1f3a00/public"
+                  alt="Water Fountain"
+                  className="placeholder-img"
+                />
+              </td>
+              <td className="product-cell !bg-white"></td>
+            </tr>
+            <tr>
+              <td className="product-cell">
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/54ccac68-6261-4097-e41c-cfa35c992100/public"
+                  alt="Public Utility"
+                  className="placeholder-img"
+                />
+              </td>
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
+                <div className="product-category">PUBLIC UTILITY SYSTEMS</div>
+              </td>
+              <td className="product-cell">
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
+                  alt="Commercial Plant"
+                  className="placeholder-img"
+                />
+              </td>
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
+                <div className="product-category">COMMERCIAL/INDUSTRIAL PLANTS</div>
+              </td>
+              <td className="product-cell">
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a0490312-e31b-44b0-2272-8645b0d0ef00/public"
+                  alt="Industrial Plant"
+                  className="placeholder-img"
+                />
+              </td>
+            </tr>
+          </table>
         </div>
 
         {/* Make in INDIA Section */}
-        <section className="h-screen/2 flex items-end justify-center relative mx-8 lg:mx-36 pt-[180px] mb-24" style={{ zIndex: 1200 }}>
-            <motion.div
+        <section className="h-[50vh] flex items-end justify-center relative mx-8 lg:mx-36 pt-[180px] mb-24" style={{ zIndex: 1200 }}>
+          <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="mb-20 w-full max-w-screen-xl"
-            >
+            className="w-full max-w-screen-xl mb-20"
+          >
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
-                <h2 className="inline-block font-inter-tight font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
-                    Make in INDIA
+                <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
+                  Make in INDIA
                 </h2>
                 <div className="relative" style={{ zIndex: 1200 }}>
-                    <Image
+                  <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
                     alt="Make In India"
                     width={432}
                     height={229}
                     className="pl-[-2.875%] pr-[9.725%] pb-[25px]"
-                    />
+                  />
                 </div>
               </div>
-                
-                <div className="flex flex-col gap-5 w-64">
-                <p className="w-[270px] font-inter-tight text-[12px] leading-[110%] tracking-[0%] text-black/70">
-                  The underlying natural order of the universe - circular continuity of the natural world.
-                  Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
+              <div className="flex flex-col gap-5 w-64">
+                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
+                  The underlying natural order of the universe – circular continuity of the natural world.
+                  Undifferentiated, endlessly self-replenishing, immensely powerful, and impassively generous.
                 </p>
                 <HoverButton>
-                    {(hovered) => (
+                  {(hovered) => (
                     <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
+                      Know More
+                      <div className="relative inline-block w-4 h-4">
                         <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                          alt="icon default"
+                          width={16}
+                          height={16}
                         />
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
                         >
-                            <Image
+                          <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                             alt="icon hover"
                             width={16}
                             height={16}
-                            />
+                          />
                         </motion.div>
-                        </div>
+                      </div>
                     </>
-                    )}
+                  )}
                 </HoverButton>
-                </div>
+              </div>
             </div>
-            </motion.div>
+          </motion.div>
         </section>
 
         {/* Sustainability Section */}
         <section className="h-screen flex items-end justify-center relative mx-8 lg:mx-36 mt-[230px] pb-[180px]">
-            <motion.div
+          <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
             className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between"
-            >
-            <h2 
+          >
+            <h2
+              className="inline-block"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
                 fontSize: "58px",
                 lineHeight: "110%",
-                letterSpacing: "0px",
-                color: "#000000",
-                display: "inline-block",
+                color: "#000",
               }}
             >
-                Sustainability
+              Sustainability
             </h2>
             <div className="flex flex-col gap-20">
-                <div className="flex flex-col">
+              <div className="flex flex-col">
                 <p className="text-4xl font-normal text-black leading-snug">
-                    1,012,120.25
+                  1,012,120.25
                 </p>
                 <p className="text-xs font-normal text-black/70 tracking-wide">
-                    TONNES CO2 EMISSIONS SAVED
+                  TONNES CO2 EMISSIONS SAVED
                 </p>
-                </div>
-                <div className="flex flex-col">
+              </div>
+              <div className="flex flex-col">
                 <p className="text-4xl font-normal text-black leading-snug">
-                    12,185.4325
+                  12,185.4325
                 </p>
                 <p className="text-xs font-normal text-black/70 tracking-wide">
-                    MILLION GALLONS WATER SAVED
+                  MILLION GALLONS WATER SAVED
                 </p>
-                </div>
-                <div className="flex flex-col">
+              </div>
+              <div className="flex flex-col">
                 <p className="text-4xl font-normal text-black leading-snug">
-                    22,253.65
+                  22,253.65
                 </p>
                 <p className="text-xs font-normal text-black/70 tracking-wide">
-                    TONNES PLASTIC REMOVED
+                  TONNES PLASTIC REMOVED
                 </p>
-                </div>
+              </div>
             </div>
-            </motion.div>
+          </motion.div>
         </section>
-        {/* RELATED INFORMATION SECTION */}
-          <section
-            className="max-w-full px-[8.75rem] py-[120px] bg-white"
-            style={{
-              position: "relative",
-              zIndex: 1200,
-              borderTopLeftRadius: "0px",
-              borderTopRightRadius: "0px",
-            }}
-          >
-            <h2 className="font-helvetica text-[3.625rem] leading-[110%] tracking-[0%] align-middle font-normal md:whitespace-nowrap mb-[2.5rem]" style={{fontWeight: "500", zIndex: 1200 }}>
-              Related Information
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-              <RelatedCard
-                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c32e685-fbfe-4edb-0e63-4bbf261b3100/public"
-                title="Awards and Other Information"
-                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-                width={272}
-                height={270}
-              />
-              <RelatedCard
-                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/67063015-a309-4a59-9247-c67c4efea500/public"
-                title="News And Updates"
-                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-                width={272}
-                height={162}
-              />
-              <RelatedCard
-                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/efbc7ed9-3a44-4bea-0cab-e1f7ba555500/public"
-                title="Impact We Enable For You"
-                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-                width={272}
-                height={200}
-              />
-              <RelatedCard
-                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afdeb7b4-18e6-4bc2-0ed8-85d97cb6dc00/public"
-                title="Our Sustainable Water Solutions"
-                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-                width={272}
-                height={238}
-              />
-            </div>
-          </section>
-          {/* FOOTER SECTION */}
-          <div style={{ position: "relative", zIndex: 1200 }}>
-            <Footer />
-          </div>
-        </motion.div>
 
-      {/* INLINE CSS for hover and arrow animations */}
+        {/* RELATED INFORMATION SECTION */}
+        <section
+          className="max-w-full px-[8.75rem] py-[120px] bg-white"
+          style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
+        >
+          <h2 className="font-helvetica text-[3.625rem] leading-[110%] mb-[2.5rem] font-normal">
+            Related Information
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <RelatedCard
+              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c32e685-fbfe-4edb-0e63-4bbf261b3100/public"
+              title="Awards and Other Information"
+              description="Information regarding awards and related announcements."
+              width={272}
+              height={270}
+            />
+            <RelatedCard
+              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/67063015-a309-4a59-9247-c67c4efea500/public"
+              title="News And Updates"
+              description="Latest news and updates about our innovations."
+              width={272}
+              height={162}
+            />
+            <RelatedCard
+              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/efbc7ed9-3a44-4bea-0cab-e1f7ba555500/public"
+              title="Impact We Enable For You"
+              description="How our solutions create impact."
+              width={272}
+              height={200}
+            />
+            <RelatedCard
+              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afdeb7b4-18e6-4bc2-0ed8-85d97cb6dc00/public"
+              title="Our Sustainable Water Solutions"
+              description="Explore our sustainable water solutions and their impact."
+              width={272}
+              height={238}
+            />
+          </div>
+        </section>
+
+        {/* FOOTER SECTION */}
+        <div style={{ position: "relative", zIndex: 1200 }}>
+          <Footer />
+        </div>
+      </motion.div>
+
+      {/* INLINE STYLES */}
       <style jsx>{`
+        .product-grid {
+          width: 1160px;
+          height: 928px;
+          border-collapse: collapse;
+        }
+        .product-title {
+          font-family: "Inter Tight", sans-serif;
+          font-weight: 500;
+          font-size: 48px;
+          line-height: 110%;
+          letter-spacing: 0px;
+          vertical-align: middle;
+          text-align: center;
+          width: calc(232px * 2);
+          height: 232px;
+          box-sizing: border-box;
+        }
+        .product-cell {
+          font-family: "Inter Tight", sans-serif;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 100%;
+          letter-spacing: 0px;
+          text-align: center;
+          vertical-align: middle;
+          text-transform: uppercase;
+          color: #1e1e1e;
+          background-color: #f2f2f2;
+          width: 232px;
+          height: 232px;
+          padding: 0px;
+          box-sizing: border-box;
+        }
+        .placeholder-img {
+          object-fit: cover;
+        }
         .c--anim-btn {
           display: flex;
           align-items: center;
           gap: 4px;
         }
-        /* Text container with fixed height and overflow hidden */
         .text-container {
           height: 12px;
           overflow: hidden;
         }
-        /* Text sliding animation */
         .c-anim-btn {
           display: block;
-          margin-top: 0;
           transition: margin-top 0.5s;
         }
         .c--anim-btn:hover .c-anim-btn {
           margin-top: -12px;
         }
-        /* Arrow sliding and fade-in animation for products */
         .menu-arrow {
           display: inline-block;
           opacity: 0;
@@ -786,7 +847,6 @@ export default function Home() {
           transform: translateX(0);
           opacity: 1;
         }
-        /* Additional styling for blueprint arrow: rotate to face top right */
         .blueprint-arrow {
           transform: rotate(-45deg) translateX(-10px);
         }
@@ -796,5 +856,7 @@ export default function Home() {
         }
       `}</style>
     </main>
-  )
-}
+  );
+};
+
+export default Home;
