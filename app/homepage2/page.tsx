@@ -474,7 +474,7 @@ export default function Home() {
             <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.3 }}
             viewport={{ once: true }}
             className="mb-[15] w-full max-w-screen-xl mx-8 lg:mx-36"
             style={{ height: "0px" }}
@@ -618,16 +618,8 @@ export default function Home() {
                 
                 <div className="flex flex-col gap-5 w-64">
                 <p className="w-[270px] font-inter-tight text-[12px] leading-[110%] tracking-[0%] text-black/70">
-                  WAE captures the heart of Indian innovation by 
-                  seamlessly blending the time-honoured ideals 
-                  with the latest technology. We are driven by the 
-                  mission to build a brand that not only saves the 
-                  planet but also creates a potent impact on 
-                  future generations for the country's 
-                  advancements, integrity & innovation. Our 
-                  approach strengthens community resilience 
-                  while showcasing India's Intellectual capital on 
-                  the world stage.
+                  The underlying natural order of the universe - circular continuity of the natural world.
+                  Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
                 </p>
                 <HoverButton>
                     {(hovered) => (
