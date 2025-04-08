@@ -421,7 +421,7 @@ const Home: FC = () => {
         </motion.div>
 
         {/* Purpose Section */}
-        <section className="h-[50vh] flex items-end justify-center relative">
+        <section className="flex items-end justify-center relative">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
