@@ -534,14 +534,20 @@ const Home: FC = () => {
         </section>
 
         {/* Products and Solutions Section */}
-        <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200}}>
+        <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200 }}>
           <table className="product-grid">
             <tr>
               <td colSpan={2} className="product-title whitespace-nowrap">
                 Products &amp; Solutions
               </td>
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="product-category">DRINKING WATER STATIONS</div>
+                <div className="flex items-center justify-center gap-1">
+                  <span className="product-category">DRINKING WATER STATIONS</span>
+                  {/* Right Arrow */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="8 6 16 12 8 18" />
+                  </svg>
+                </div>
               </td>
               <td className="product-cell">
                 <img
@@ -560,8 +566,23 @@ const Home: FC = () => {
                   className="placeholder-img"
                 />
               </td>
+              {/* DRINKING WATER FAUCETS with left and down arrows */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="product-category">DRINKING WATER FAUCETS</div>
+                <div className="relative h-full w-full flex flex-col items-center justify-center">
+                  <div className="flex items-center gap-1">
+                    {/* Left Arrow */}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="16 6 8 12 16 18" />
+                    </svg>
+                    <span className="product-category">DRINKING WATER FAUCETS</span>
+                  </div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
+                    {/* Down Arrow */}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="6 10 12 18 18 10" />
+                    </svg>
+                  </div>
+                </div>
               </td>
               <td className="product-cell">
                 <img
@@ -570,8 +591,19 @@ const Home: FC = () => {
                   className="placeholder-img"
                 />
               </td>
+              {/* DRINKING WATER DISPENSERS with left & right arrows */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="product-category">DRINKING WATER DISPENSERS</div>
+                <div className="flex items-center justify-center gap-1">
+                  {/* Left Arrow */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="16 6 8 12 16 18" />
+                  </svg>
+                  <span className="product-category">DRINKING WATER DISPENSERS</span>
+                  {/* Right Arrow */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="8 6 16 12 8 18" />
+                  </svg>
+                </div>
               </td>
               <td className="product-cell">
                 <img
@@ -590,8 +622,23 @@ const Home: FC = () => {
                   className="placeholder-img"
                 />
               </td>
+              {/* WATER COOLERS & FOUNTAINS with right and down arrows */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="product-category">WATER COOLERS &amp; FOUNTAINS</div>
+                <div className="relative h-full w-full flex flex-col items-center justify-center">
+                  <div className="flex items-center gap-1">
+                    <span className="product-category">WATER COOLERS &amp; FOUNTAINS</span>
+                    {/* Right Arrow */}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="8 6 16 12 8 18" />
+                    </svg>
+                  </div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
+                    {/* Down Arrow */}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="6 10 12 18 18 10" />
+                    </svg>
+                  </div>
+                </div>
               </td>
               <td className="product-cell">
                 <img
@@ -610,8 +657,15 @@ const Home: FC = () => {
                   className="placeholder-img"
                 />
               </td>
+              {/* PUBLIC UTILITY SYSTEMS with left arrow */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="product-category">PUBLIC UTILITY SYSTEMS</div>
+                <div className="flex items-center justify-center gap-1">
+                  {/* Left Arrow */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="16 6 8 12 16 18" />
+                  </svg>
+                  <span className="product-category">PUBLIC UTILITY SYSTEMS</span>
+                </div>
               </td>
               <td className="product-cell">
                 <img
@@ -620,8 +674,15 @@ const Home: FC = () => {
                   className="placeholder-img"
                 />
               </td>
+              {/* COMMERCIAL/INDUSTRIAL PLANTS with right arrow */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="product-category">COMMERCIAL/INDUSTRIAL PLANTS</div>
+                <div className="flex items-center justify-center gap-1">
+                  <span className="product-category">COMMERCIAL/INDUSTRIAL PLANTS</span>
+                  {/* Right Arrow */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="8 6 16 12 8 18" />
+                  </svg>
+                </div>
               </td>
               <td className="product-cell">
                 <img
@@ -633,6 +694,7 @@ const Home: FC = () => {
             </tr>
           </table>
         </div>
+
 
         {/* Make in INDIA Section */}
         <section className="h-[50vh] flex items-end justify-center relative mx-8 lg:mx-36 pt-[180px] mb-24" style={{ zIndex: 1200 }}>
