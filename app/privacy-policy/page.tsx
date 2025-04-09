@@ -65,7 +65,7 @@ export default function Home() {
         <header
           ref={headerRef}
           className="w-full"
-          style={{ marginBottom: "40px", position: "relative", zIndex: 1 }}
+          style={{ marginBottom: "120px", position: "relative", zIndex: 1 }}
         >
           <div className={containerClass}>
             {/* Top Row: Location, Time, and Navigation */}
@@ -261,7 +261,7 @@ export default function Home() {
       </div>
 
       {/* Privacy Policy Heading */}
-      <div className={containerClass} style={{ marginBottom: "auto" }}>
+      <div className={containerClass}>
         <h2
           style={{
             fontFamily: "'Inter Tight', sans-serif",
@@ -269,11 +269,12 @@ export default function Home() {
             fontSize: "48px",
             letterSpacing: "0%",
             verticalAlign: "middle",
+            marginBottom: "40px",
           }}
         >
           Privacy Policy
         </h2>
-        <p
+        {/* <p
           style={{
             fontFamily: "'Inter Tight', sans-serif",
             fontWeight: 500,
@@ -285,7 +286,7 @@ export default function Home() {
           }}
         >
           Effective date: May 1, 2025
-        </p>
+        </p> */}
         <p
           style={{
             fontFamily: "'Inter Tight', sans-serif",
@@ -295,11 +296,57 @@ export default function Home() {
             lineHeight: "150%",
             verticalAlign: "middle",
             color: "#00000099",
-            marginBottom: "120px",
+            marginBottom: "80px",
           }}
         >
           This policy describes how WAE India P Ltd. and its parent, subsidiary, and affiliate companies (collectively, “WAE,” “we,” or “us”) collect, use and share information collected through the mail, www.waecorp.com and other websites that link to this privacy policy, and WAE mobile services including our mobile application (the “App”) (collectively, the “WAE Services”).
         </p>
+
+        {/* Compliance Section */}
+        <div className="mb-[80px]">
+          <div
+            className="grid grid-cols-2 gap-y-[80px]"
+            style={{ justifyContent: "space-between" }}
+          >
+            {/* Left Column: Subheading */}
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              Compliance with the Digital 
+              Personal Data Protection Act, 
+              2023 (DPDP Act)	
+            </h3>
+            {/* Right Column: Policy Content */}
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "100%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                WAE complies with the provisions of the Digital Personal Data Protection Act, 2023 as applicable in India. 
+                This includes obligations related to lawful processing of personal data, obtaining consent for data usage, 
+                ensuring data security, enabling rights of data principals, and appointment of a Data Protection Officer 
+                (DPO) as mandated under the Act. Any data processing activity performed by WAE within the territorial 
+                scope of the DPDP Act adheres to its requirements.
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* KYC Section */}
         <div className="mb-[140px]">
@@ -312,13 +359,14 @@ export default function Home() {
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "24px",
+                fontSize: "32px",
+                lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
               }}
             >
-              Know Your Customer (“KYC”)
+              HOW WE COLLECT AND USE INFORMATION
             </h3>
             {/* Right Column: Policy Content */}
             <div
@@ -332,172 +380,85 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
+              <strong>Know Your Customer (“KYC”):</strong>
               <p className="mb-[20px]">
-                We may collect personally identifiable information (“KYC”) such as your name, your contact
-                information, your shipping information, and your billing information (such as credit card account
-                data). We collect KYC when you provide it to us through your use of the WAE Services, for example
-                when you interact with our websites, place an order, or sign up for our mailing list. We also receive
-                limited KYC when you choose to download or request the App. We may combine the KYC we collect with
-                additional information from other third-party sources.
+                We may collect personally identifiable information (“KYC”) such as your name, your contact information, 
+                your shipping information, and your billing information (such as credit card account data). We collect 
+                KYC when you provide it to us through your use of the WAE Services, for example when you interact 
+                with our websites, place an order, or sign up for our mailing list. We also receive limited KYC when you 
+                choose to download or request the App. We may combine the KYC we collect with additional 
+                information from other third-party sources. We use the KYC that we collect to provide the WAE Services 
+                (such as to respond to customer service requests), to analyze and improve the WAE Services, and to 
+                conduct marketing. If you register for email or if you provide your email address to us, we will send you 
+                emails about a variety of topics such as events, new products, promotional offers from our affiliates or 
+                other selected business partners, environmental issues, and employment opportunities. Please see 
+                below for your choices regarding how we collect, use, and share your KYC.
               </p>
               <p className="mb-[20px]">
-                We use the KYC that we collect to provide the WAE Services (such as to respond to customer service
-                requests), to analyze and improve the WAE Services, and to conduct marketing. If you register for
-                email or if you provide your email address to us, we will send you emails about a variety of topics such
-                as events, new products, promotional offers from our affiliates or other selected business partners,
-                environmental issues, and employment opportunities. Please see below for your choices regarding how we
-                collect, use, and share your KYC.
-              </p>
-              <p>
-                We share email activity data with our marketing email provider to help them better target email
-                deployments to consumers. While our marketing email provider has access to email address and email
-                activity and may share bulk/non-specific activity data, no email addresses or specific email actions are
-                ever shared with other third parties. Should a consumer wish to opt out of this sharing, that consumer
+                We share email activity data with our marketing email provider to help them better target email 
+                deployments to consumers. While our marketing email provider has access to email address and email 
+                activity and may share bulk/non-specific activity data, no Email addresses or specific email actions are 
+                ever shared with other third parties. Should a consumer wish to opt out of this sharing, that consumer 
                 simply needs to opt out of marketing email from us.
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Geographic Location Section */}
-        <div className="mb-[140px]">
-          <div
-            className="grid grid-cols-2 gap-y-[140px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "24px",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              Geographic Location
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "12px",
-                lineHeight: "100%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p>
-                Our App uses the GPS feature of your mobile device to determine the location of the device.
-                We and our third-party vendors or partners may collect and use this geographic location data for purposes such as
-                the functioning of the App, to make our advertising more relevant, and to improve WAE Services. We do not store
-                geographic location data in combination with KYC. If you do not want us or third parties to collect and use your
-                device’s geographic location, you can control this function in your application settings (if your device offers
-                this type of control), by disabling location services for your device, or by uninstalling the App, but these choices
-                will affect your ability to use the App.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Non-Personal Information Section */}
-        <div className="mb-[140px]">
-          <div
-            className="grid grid-cols-2 gap-y-[140px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "24px",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              Non-Personal Information
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "12px",
-                lineHeight: "100%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
+              <strong>Geographic Location: </strong>
               <p className="mb-[20px]">
-                We automatically collect certain non-personal information when you use WAE Services. For example, we collect
-                information about the devices you use to connect to our services (such as the IP address of your computer or
-                numeric identifier of your mobile device) and about how you use WAE Services (such as what time you visit our
-                websites). We, and our advertisers and ad servers, may also collect non-personal information outside the WAE
-                Services to measure the success of our advertising campaigns. We use the non-personal information that we collect
-                for a variety of purposes such as to provide and improve the WAE Services, and to analyze and offer our advertising.
+                Our Website/App uses the GPS feature of your mobile device to determine the 
+                location of the device. We and our third-party vendors or partners may collect and use this geographic 
+                location data for purposes such as the functioning of the App, to make our advertising more relevant, 
+                and to improve WAE Services. We do not store geographic location data in combination with KYC. 
+                If you do not want us or third parties to collect and use your device’s geographic location, you can 
+                control this function in your application settings (if your device offers this type of control), by disabling 
+                location services for your device, or by uninstalling the App, but these choices will affect your ability
+                to use the App.
               </p>
-              <p>
-                Our website also uses third-party analytics vendors such as Google Analytics. Please click here for more information about
-                how data is collected and processed in connection with the Google Analytics service: www.google.com/policies/privacy/partners/. 
-                We and our third-party vendors or partners use analytics data for a variety of purposes such as to improve the design and content of our 
-                websites, to help us learn things like what pages are most attractive to all of our visitors and what promotions visitors like to see, 
-                and to gauge the success of our advertising campaigns.
+              <strong>Non-Personal Information: </strong>
+              <p className="mb-[20px]">
+                We automatically collect certain non-personal information when you use 
+                WAE Services. For example, we collect information about the devices you use to connect to our services 
+                (such as the IP address of your computer or numeric identifier of your mobile device) and about how you 
+                use WAE Services (such as what time you visit our websites). We, and our advertisers and ad servers, 
+                may also collect non-personal information outside the WAE Services to measure the success of our 
+                advertising campaigns. We use the non-personal information that we collect for a variety of purposes 
+                such as to provide and improve the WAE Services, and to analyze and offer our advertising.
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Information You Post Section */}
-        <div className="mb-[140px]">
-          <div
-            className="grid grid-cols-2 gap-y-[140px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "24px",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              Information You Post
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "12px",
-                lineHeight: "100%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
+              <p className="mb-[20px]">
+                Our website also uses third-party analytics vendors such as Google Analytics. Please click here for more 
+                information about how data is collected and processed in connection with the Google Analytics service: 
+                www.google.com/policies/privacy/partners/. We and our third-party vendors or partners use analytics 
+                data for a variety of purposes such as to improve the design and content of our websites, to help us 
+                learn things like what pages are most attractive to all of our visitors and what promotions visitors like to 
+                see, and to gauge the success of our advertising campaigns.
+              </p>
+              <strong>Information You Post: </strong>
+              <p className="mb-[20px]">
+                All information that you share about yourself, whether KYC or not, in a public 
+                open forum – such as on a social network – will be considered public information for the purposes of this 
+                policy. If you don’t want it to be public, please don’t post it.
+              </p>
+              <strong>Legal Basis for Processing: </strong>
               <p>
-                All information that you share about yourself, whether KYC or not, in a public open forum – such as on a social
-                network – will be considered public information for the purposes of this policy. If you don’t want it to be public,
-                please don’t post it.
+                We process personal data based on various legal grounds: contract 
+                necessity (e.g., fulfilling an order), legitimate interests (e.g., customer service improvement), user 
+                consent (e.g., marketing opt-ins), and legal obligations (e.g., tax or accounting compliance), as required 
+                under applicable data protection regulations such as the GDPR.
               </p>
             </div>
           </div>
         </div>
 
         {/* HOW WE SHARE INFORMATION Section */}
-        <div className="mb-[140px]">
+        <div className="mb-[80px]">
           <div
-            className="grid grid-cols-2 gap-y-[140px]"
+            className="grid grid-cols-2 gap-y-[80px]"
             style={{ justifyContent: "space-between" }}
           >
             <h3
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "24px",
+                fontSize: "32px",
+                lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
@@ -508,7 +469,7 @@ export default function Home() {
             <div
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
+                fontWeight: 400,
                 fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
@@ -520,59 +481,61 @@ export default function Home() {
                 We do not disclose your KYC to third parties, except as follows:
               </p>
               <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
-                <li>
+                <li className="mb-[12px]">
                   After giving you notice and an opportunity to choose not to share the information.
                 </li>
-                <li>
+                <li className="mb-[12px]">
                   To companies that provide services to us or perform functions on our behalf (such as processing credit card payments or taking orders) and have agreed to use your information only for the purposes we request.
                 </li>
-                <li>
+                <li className="mb-[12px]">
                   For us to send offers to WAE customers on behalf of our affiliated companies and on behalf of other non-affiliated partners (such as environmental groups that we support).
                 </li>
-                <li>
+                <li className="mb-[12px]">
                   To other selected reputable companies, we may disclose your name and postal address (but not your email address or credit card information) so that they can mail you information that may interest you.
                 </li>
-                <li>
+                <li className="mb-[12px]">
                   When we believe disclosure is appropriate to comply with applicable law, legal process, and/or governmental authorities.
                 </li>
-                <li>
+                <li className="mb-[12px]">
                   When we believe disclosure is appropriate to enforce our Terms of Use and other agreements, or to protect our rights, our customers, our property, our employees, or others.
                 </li>
-                <li>
+                <li className="mb-[12px]">
                   If we are involved in a merger, acquisition, bankruptcy, partial or total sale of assets, or other corporate change.
                 </li>
               </ul>
-              <p>
+              <p className="mb-[20px]">
                 We may disclose de-identified, aggregated, or other non-personal information to third parties in our discretion. The WAE Services or our offerings on social media platforms may include commenting, forums, sharing, or other similar features. Information that you provide using these features may be available to other users or the general public.
               </p>
+              <strong>
+                International Data Transfers: If personal data is transferred outside India or the European Economic Area, WAE ensures appropriate safeguards are in place such as Standard Contractual Clauses (SCCs) or transfers to countries with an adequacy decision by relevant authorities.
+              </strong>
             </div>
           </div>
         </div>
 
-        {/* New Policy Sections */}
-
-        {/* YOUR CHOICES */}
-        <div className="mb-[140px]">
+        {/* HOW WE SHARE INFORMATION 2 Section */}
+        <div className="mb-[80px]">
           <div
-            className="grid grid-cols-2 gap-y-[140px]"
+            className="grid grid-cols-2 gap-y-[80px]"
             style={{ justifyContent: "space-between" }}
           >
             <h3
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "24px",
+                fontSize: "32px",
+                lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
               }}
             >
-              YOUR CHOICES
+              HOW WE SHARE INFORMATION
             </h3>
             <div
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
+                fontWeight: 400,
                 fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
@@ -583,18 +546,20 @@ export default function Home() {
               <p className="mb-[20px]">
                 With your KYC you always have the option to change or correct your information and the choice of not hearing from us again. There are several ways you can control our use of your KYC in connection with marketing and promotions.
               </p>
-              <p className="mb-[20px]">
-                To remove your name from our lists. You can choose to decline communications from us at the point that we request your KYC. After we have collected your KYC, you can choose to stop our communications or our service, or stop us from sharing your information with other companies for their marketing purposes. To exercise any of these options, please contact us by mail, email, or telephone using the contact information below.
-              </p>
-              <p className="mb-[20px]">
-                To stop email communications. If you receive email communications from us and want to opt out of receiving such communications in the future, you can click the “Unsubscribe” link at the bottom of the promotional email.
-              </p>
-              <p className="mb-[20px]">
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                  To remove your name from our lists. You can choose to decline communications from us at the point that we request your KYC. After we have collected your KYC, you can choose to stop our communications or our service, or stop us from sharing your information with other companies for their marketing purposes. To exercise any of these options, please contact us by mail, email, or telephone using the contact information below.
+                </li>
+                <li className="mb-[12px]">
+                  To stop email communications. If you receive email communications from us and want to opt out of receiving such communications in the future, you can click the “Unsubscribe” link at the bottom of the promotional email.
+                </li>
+                <li className="mb-[12px]">
                 To stop collection of geographic location. If you do not want us to collect your device’s geographic location through our App, you can disable that function when you first use the App or in your device settings. This will prevent you from using some features of the App.
-              </p>
-              <p>
-                Other choices. Please see below to learn about your choices with regard to our use of cookies and interest-based advertising.
-              </p>
+                </li>
+                <li className="mb-[12px]">
+                  Other choices. Please see below to learn about your choices with regard to our use of cookies and interest-based advertising.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -607,9 +572,11 @@ export default function Home() {
           >
             <h3
               style={{
+                width: "75%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "24px",
+                lineHeight: "130%",
+                fontSize: "32px",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
@@ -620,7 +587,7 @@ export default function Home() {
             <div
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
+                fontWeight: 400,
                 fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
@@ -636,16 +603,17 @@ export default function Home() {
         </div>
 
         {/* COOKIES */}
-        <div className="mb-[140px]">
+        <div className="mb-[80px]">
           <div
-            className="grid grid-cols-2 gap-y-[140px]"
+            className="grid grid-cols-2 gap-y-[80px]"
             style={{ justifyContent: "space-between" }}
           >
             <h3
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "24px",
+                fontSize: "32px",
+                lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
@@ -656,7 +624,7 @@ export default function Home() {
             <div
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
+                fontWeight: 400,
                 fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
@@ -665,26 +633,30 @@ export default function Home() {
               }}
             >
               <p className="mb-[20px]">
-                We may use “cookies,” “web beacons,” and other similar technologies to collect information in connection with the WAE Services and our advertisements. A “cookie” is a computer file that acts as an identification card for your computer to distinguish your browser from others and enable us to serve you better. For example, we use cookies to save products in your shopping cart while you browse our websites and to track the effectiveness of our marketing and advertising campaigns.
+                We may use “cookies,” “web beacons,” and other similar technologies to collect information in connection with the WAE Services and our advertisements. A “cookie” is a computer file that acts as an identification card for your computer to distinguish your browser from others and enable us to serve you better. For example, we use cookies to save products in your shopping cart while you browse our websites and to track the effectiveness of our marketing and advertising campaigns. Similarly, a “web beacon” is a technology that can recognize specific cookies and convey information about that browser. We do not use these technologies to collect KYC. We may also use technologies, such as our own cookies, to provide you with personalized online display advertising tailored to your interests.
               </p>
-              <p>
-                Similarly, a “web beacon” is a technology that can recognize specific cookies and convey information about that browser. We do not use these technologies to collect KYC. We may also use technologies, such as our own cookies, to provide you with personalized online display advertising tailored to your interests. To opt out of our cookies used for this online advertising, most browsers accept cookies automatically. You may be able to set your browser to reject and/or delete cookies. For instructions, check your browser’s technical information. However, if you reject or delete cookies then this may disable or interfere with features of the WAE Services or other websites you visit. We recommend that you leave cookies “turned on” so we can offer you a better shopping experience on our sites.
+              <p className="mb-[20px]">
+                Most browsers accept cookies automatically. You may be able to set your browser to reject and/or delete cookies. For instructions, check your browser’s technical information. However, if you reject or delete cookies then this may disable or interfere with features of the WAE Services or other websites you visit. We recommend that you leave cookies “turned on” so we can offer you a better shopping experience on our sites.
               </p>
+              <strong>
+                Data Retention: We retain personal data for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. For example, customer support interactions may be stored for 3 years, marketing consents for 5 years, and anonymized data indefinitely for statistical purposes.
+              </strong>
             </div>
           </div>
         </div>
 
         {/* INTEREST-BASED ADVERTISING */}
-        <div className="mb-[140px]">
+        <div className="mb-[80px]">
           <div
-            className="grid grid-cols-2 gap-y-[140px]"
+            className="grid grid-cols-2 gap-y-[80px]"
             style={{ justifyContent: "space-between" }}
           >
             <h3
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "24px",
+                lineHeight: "130%",
+                fontSize: "32px",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
@@ -695,7 +667,7 @@ export default function Home() {
             <div
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
+                fontWeight: 400,
                 fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
@@ -711,16 +683,17 @@ export default function Home() {
         </div>
 
         {/* CHILDREN */}
-        <div className="mb-[140px]">
+        <div className="mb-[80px]">
           <div
-            className="grid grid-cols-2 gap-y-[140px]"
+            className="grid grid-cols-2 gap-y-[80px]"
             style={{ justifyContent: "space-between" }}
           >
             <h3
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "24px",
+                fontSize: "32px",
+                lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
@@ -731,7 +704,7 @@ export default function Home() {
             <div
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
+                fontWeight: 400,
                 fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
@@ -739,35 +712,40 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
-              <p>
+              <p className="mb-[20px]">
                 The online WAE Services are not intended for the use of individuals under the age of 13, and we do not knowingly collect information online from individuals under the age of 13.
               </p>
+              <strong>
+                If WAE becomes aware that personal data has been inadvertently collected from a child under 13, appropriate steps will be taken to delete such information promptly.
+              </strong>
             </div>
           </div>
         </div>
 
         {/* Links to Third Parties and Social Media */}
-        <div className="mb-[140px]">
+        <div className="mb-[80px]">
           <div
-            className="grid grid-cols-2 gap-y-[140px]"
+            className="grid grid-cols-2 gap-y-[800px]"
             style={{ justifyContent: "space-between" }}
           >
             <h3
               style={{
+                width: "75%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "24px",
+                fontSize: "32px",
+                lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
               }}
             >
-              Links to Third Parties and Social Media
+              LINKS TO THIRD PARTIES AND SOCIAL MEDIA
             </h3>
             <div
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
+                fontWeight: 400,
                 fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
@@ -775,24 +753,28 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
+              <p className="mb-[20px]">
+                Our websites and App may contain links to third-party online properties. Such third parties have their own policies that govern their collection, use, and disclosure of information. We suggest that you read their privacy policies to learn about their practices.
+              </p>
               <p>
-                Our websites and App may contain links to third-party online properties. Such third parties have their own policies that govern their collection, use, and disclosure of information. We suggest that you read their privacy policies to learn about their practices. Social media provides tools that many of our customers use and enjoy, and we include links to various social media platforms on our websites. If you interact with these social media tools through our websites, your experience on those social media sites will be governed by the privacy and other policies of those sites. So, the privacy settings you have chosen on those sites will determine the degree to which your information is made public. We encourage you to choose your privacy settings on those sites accordingly.
+                Social media provides tools that many of our customers use and enjoy, and we include links to various social media platforms on our websites. If you interact with these social media tools through our websites, your experience on those social media sites will be governed by the privacy and other policies of those sites. So, the privacy settings you have chosen on those sites will determine the degree to which your information is made public. We encourage you to choose your privacy settings on those sites accordingly.
               </p>
             </div>
           </div>
         </div>
 
         {/* SAFEGUARDING YOUR KYC */}
-        <div className="mb-[140px]">
+        <div className="mb-[80px]">
           <div
-            className="grid grid-cols-2 gap-y-[140px]"
+            className="grid grid-cols-2 gap-y-[80px]"
             style={{ justifyContent: "space-between" }}
           >
             <h3
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "24px",
+                fontSize: "32px",
+                lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
@@ -811,9 +793,12 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
-              <p>
+              <p className="mb-[20px]">
                 We have reasonable and appropriate physical, electronic, and administrative measures in place to safeguard the security of your personal information. However, when you communicate with customer service via email or chat on our websites, these communications may not be encrypted. For that reason, we ask that you do not share sensitive information via these communication channels.
               </p>
+              <strong>
+                We continuously assess and improve our data security practices to ensure alignment with applicable data protection standards.
+              </strong>
             </div>
           </div>
         </div>
@@ -821,14 +806,16 @@ export default function Home() {
         {/* UPDATES TO THE PRIVACY POLICY */}
         <div>
           <div
-            className="grid grid-cols-2 gap-y-[140px]"
+            className="grid grid-cols-2"
             style={{ justifyContent: "space-between" }}
           >
             <h3
               style={{
+                width: "75%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "24px",
+                fontSize: "32px",
+                lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
@@ -839,7 +826,7 @@ export default function Home() {
             <div
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
+                fontWeight: 400,
                 fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
@@ -847,8 +834,15 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
-              <p>
+              <p className="mb-[20px]">
                 If we modify this Privacy Policy, we will post the revised Privacy Policy online. We will notify you if the policy changes in any material way by sending a notice to the email address you provided us or by placing a prominent notice on our website at www.waecorp.com. You should check regularly to see if this Privacy Policy has changed.
+              </p>
+              <strong>
+                The "Last Updated" date at the top of this page will reflect the most recent changes.
+              </strong>
+              <div className="mb-[20px]"></div>
+              <p>
+                CONTACT US If you have any questions about this Privacy Policy, you can email, write, or call us: privacyterms@waecorp.com H-18 Sector 63 Noida. 201301 India 120-4069800
               </p>
             </div>
           </div>

@@ -434,10 +434,19 @@ const Home: FC = () => {
               <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                 Purpose
               </h2>
-              <div className="flex flex-col gap-5 w-64" style={{ height: "115px" }}>
+              <div className="flex flex-col gap-[20px] w-64">
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  The underlying natural order of the universe – circular continuity of the natural world.
-                  Undifferentiated, endlessly self-replenishing, immensely powerful, and impassively generous.
+                  Being sustainable -The Underlying natural order 
+                  of the universe - circular continuity of the 
+                  natural world. Undifferentiated, endlessly self-
+                  replenishing, immensely powerful and 
+                  impassively generous. 
+                </p>
+                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
+                  Our purpose brings together the company, 
+                  employees, clients and our stakeholders and 
+                  reconciles economic performance with a 
+                  positive impact on people and the planet.
                 </p>
                 <HoverButton>
                   {(hovered) => (
