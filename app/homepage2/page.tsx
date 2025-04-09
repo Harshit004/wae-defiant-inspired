@@ -221,7 +221,7 @@ const Home: FC = () => {
               </div>
 
               {/* Tagline Animation */}
-              <div className="flex flex-col items-start">
+              {/* <div className="flex flex-col items-start">
                 <motion.div
                   variants={containerVariants}
                   initial="hidden"
@@ -268,6 +268,20 @@ const Home: FC = () => {
                     </motion.span>
                   ))}
                 </motion.div>
+              </div> */}
+              <div
+                className="flex flex-col justify-center inline-block mr-1"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 600,
+                  fontSize: "10px",
+                  lineHeight: "125%",
+                  color: "#000",
+                }}
+              >
+                To lead the way in sustainability
+                <br />
+                ahead of the rest
               </div>
 
               {/* Inside WAE Menu Items */}
@@ -425,9 +439,9 @@ const Home: FC = () => {
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-4"
+            className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
             style={{ height: "0px" }}
           >
             <div className="flex flex-col lg:flex-row items-start justify-between">
