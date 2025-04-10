@@ -435,33 +435,32 @@ const Home: FC = () => {
         </motion.div>
 
         {/* Purpose Section */}
-        <section className="flex items-end justify-center relative">
+        <section className="h-screen/2 flex items-end justify-center relative mb-[180px]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
             className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
-            style={{ height: "0px" }}
           >
             <div className="flex flex-col lg:flex-row items-start justify-between">
               <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                 Purpose
               </h2>
-              <div className="flex flex-col gap-[20px] w-64">
+              <div className="flex flex-col gap-5 w-64">
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  Being sustainable -The Underlying natural order 
-                  of the universe - circular continuity of the 
-                  natural world. Undifferentiated, endlessly self-
-                  replenishing, immensely powerful and 
-                  impassively generous. 
-                </p>
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  Our purpose brings together the company, 
-                  employees, clients and our stakeholders and 
-                  reconciles economic performance with a 
-                  positive impact on people and the planet.
-                </p>
+                    Being sustainable -The Underlying natural order 
+                    of the universe - circular continuity of the 
+                    natural world. Undifferentiated, endlessly self-
+                    replenishing, immensely powerful and 
+                    impassively generous. 
+                  </p>
+                  <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
+                    Our purpose brings together the company, 
+                    employees, clients and our stakeholders and 
+                    reconciles economic performance with a 
+                    positive impact on people and the planet.
+                  </p>
                 <HoverButton>
                   {(hovered) => (
                     <>
@@ -496,7 +495,7 @@ const Home: FC = () => {
         </section>
 
         {/* About WAE Section */}
-        <section className="h-screen flex items-end justify-center relative mb-[180px]">
+        <section className="h-screen/2 flex items-end justify-center relative mb-[180px]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -765,10 +764,9 @@ const Home: FC = () => {
         </div>
 
 
-
         {/* Make in INDIA Section */}
-        <section className="h-[50vh] flex items-end justify-center relative mx-8 lg:mx-36 pt-[180px] mb-24" style={{ zIndex: 1200 }}>
-          <motion.div
+        <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[180px]">
+        <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -828,9 +826,9 @@ const Home: FC = () => {
           </motion.div>
         </section>
 
-        {/* Sustainability Section */}
-        <section className="h-screen flex items-end justify-center relative mx-8 lg:mx-36 mt-[230px] pb-[180px]">
-          <motion.div
+        {/* About WAE Section */}
+        <section className="h-screen/2 flex items-end justify-center relative mb-[180px]">
+        <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -877,6 +875,7 @@ const Home: FC = () => {
             </div>
           </motion.div>
         </section>
+
 
         {/* RELATED INFORMATION SECTION */}
         <section
