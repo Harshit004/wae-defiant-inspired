@@ -858,7 +858,7 @@ export default function Home() {
         }
 
         .custom-bullet li::marker {
-          color: black;
+          color: #00000099;
         }
         .c--anim-btn {
           display: flex;
