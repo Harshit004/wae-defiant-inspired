@@ -331,7 +331,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "12px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#00000099",
@@ -349,9 +349,9 @@ export default function Home() {
         </div>
 
         {/* KYC Section */}
-        <div className="mb-[140px]">
+        <div className="mb-[80px]">
           <div
-            className="grid grid-cols-2 gap-y-[140px]"
+            className="grid grid-cols-2 gap-y-[80px]"
             style={{ justifyContent: "space-between" }}
           >
             {/* Left Column: Subheading */}
@@ -374,7 +374,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
                 fontSize: "12px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#00000099",
@@ -401,8 +401,7 @@ export default function Home() {
                 ever shared with other third parties. Should a consumer wish to opt out of this sharing, that consumer 
                 simply needs to opt out of marketing email from us.
               </p>
-              <strong>Geographic Location: </strong>
-              <p className="mb-[20px]">
+              <p className="mb-[20px]"> <strong>Geographic Location: </strong>
                 Our Website/App uses the GPS feature of your mobile device to determine the 
                 location of the device. We and our third-party vendors or partners may collect and use this geographic 
                 location data for purposes such as the functioning of the App, to make our advertising more relevant, 
@@ -412,8 +411,7 @@ export default function Home() {
                 location services for your device, or by uninstalling the App, but these choices will affect your ability
                 to use the App.
               </p>
-              <strong>Non-Personal Information: </strong>
-              <p className="mb-[20px]">
+              <p className="mb-[20px]"> <strong>Non-Personal Information: </strong>
                 We automatically collect certain non-personal information when you use 
                 WAE Services. For example, we collect information about the devices you use to connect to our services 
                 (such as the IP address of your computer or numeric identifier of your mobile device) and about how you 
@@ -430,14 +428,12 @@ export default function Home() {
                 learn things like what pages are most attractive to all of our visitors and what promotions visitors like to 
                 see, and to gauge the success of our advertising campaigns.
               </p>
-              <strong>Information You Post: </strong>
-              <p className="mb-[20px]">
+              <p className="mb-[20px]"> <strong>Information You Post: </strong>
                 All information that you share about yourself, whether KYC or not, in a public 
                 open forum – such as on a social network – will be considered public information for the purposes of this 
                 policy. If you don’t want it to be public, please don’t post it.
               </p>
-              <strong>Legal Basis for Processing: </strong>
-              <p>
+              <p> <strong>Legal Basis for Processing: </strong>
                 We process personal data based on various legal grounds: contract 
                 necessity (e.g., fulfilling an order), legitimate interests (e.g., customer service improvement), user 
                 consent (e.g., marketing opt-ins), and legal obligations (e.g., tax or accounting compliance), as required 
@@ -471,7 +467,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "12px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#00000099",
@@ -537,7 +533,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "12px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#00000099",
@@ -565,9 +561,9 @@ export default function Home() {
         </div>
 
         {/* CORRECTING OR UPDATING YOUR INFORMATION */}
-        <div className="mb-[140px]">
+        <div className="mb-[80px]">
           <div
-            className="grid grid-cols-2 gap-y-[140px]"
+            className="grid grid-cols-2 gap-y-[80px]"
             style={{ justifyContent: "space-between" }}
           >
             <h3
@@ -589,7 +585,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "12px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#00000099",
@@ -626,7 +622,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "12px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#00000099",
@@ -669,7 +665,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "12px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#00000099",
@@ -706,7 +702,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "12px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#00000099",
@@ -725,7 +721,7 @@ export default function Home() {
         {/* Links to Third Parties and Social Media */}
         <div className="mb-[80px]">
           <div
-            className="grid grid-cols-2 gap-y-[800px]"
+            className="grid grid-cols-2 gap-y-[80px]"
             style={{ justifyContent: "space-between" }}
           >
             <h3
@@ -747,7 +743,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "12px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#00000099",
@@ -787,7 +783,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
                 fontSize: "12px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#00000099",
@@ -828,7 +824,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "12px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#00000099",
@@ -856,6 +852,11 @@ export default function Home() {
 
       {/* INLINE CSS for hover, arrow animations, and custom bullet styling */}
       <style jsx>{`
+        .custom-bullet {
+          margin-left: 2%;
+          list-style-type: disc;
+        }
+
         .custom-bullet li::marker {
           color: black;
         }
