@@ -372,7 +372,7 @@ export default function Home() {
             <div
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
+                fontWeight: 400,
                 fontSize: "12px",
                 lineHeight: "120%",
                 letterSpacing: "0%",
@@ -401,7 +401,7 @@ export default function Home() {
                 ever shared with other third parties. Should a consumer wish to opt out of this sharing, that consumer 
                 simply needs to opt out of marketing email from us.
               </p>
-              <p className="mb-[20px]"> <strong>Geographic Location: </strong>
+              <p className="mb-[20px]"> 
                 Our Website/App uses the GPS feature of your mobile device to determine the 
                 location of the device. We and our third-party vendors or partners may collect and use this geographic 
                 location data for purposes such as the functioning of the App, to make our advertising more relevant, 
