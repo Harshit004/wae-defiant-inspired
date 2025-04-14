@@ -1028,7 +1028,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* COOKIES */}
+        {/* Data protection */}
         <div className="mb-[80px]">
           <div
             className="grid grid-cols-2 gap-y-[80px]"
@@ -1036,16 +1036,17 @@ export default function Home() {
           >
             <h3
               style={{
+                width: "85%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "32px",
                 lineHeight: "130%",
+                fontSize: "32px",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
               }}
             >
-              COOKIES
+              6. Your Data Protection Rights
             </h3>
             <div
               style={{
@@ -1059,19 +1060,55 @@ export default function Home() {
               }}
             >
               <p className="mb-[20px]">
-                We may use “cookies,” “web beacons,” and other similar technologies to collect information in connection with the WAE Services and our advertisements. A “cookie” is a computer file that acts as an identification card for your computer to distinguish your browser from others and enable us to serve you better. For example, we use cookies to save products in your shopping cart while you browse our websites and to track the effectiveness of our marketing and advertising campaigns. Similarly, a “web beacon” is a technology that can recognize specific cookies and convey information about that browser. We do not use these technologies to collect KYC. We may also use technologies, such as our own cookies, to provide you with personalized online display advertising tailored to your interests.
+                As a data subject, you have various rights under applicable data protection laws. WAE Ltd is committed to ensuring that your rights are upheld and will take appropriate measures to respond to your requests in a timely and lawful manner.
               </p>
-              <p className="mb-[20px]">
-                Most browsers accept cookies automatically. You may be able to set your browser to reject and/or delete cookies. For instructions, check your browser’s technical information. However, if you reject or delete cookies then this may disable or interfere with features of the WAE Services or other websites you visit. We recommend that you leave cookies “turned on” so we can offer you a better shopping experience on our sites.
-              </p>
-              <strong>
-                Data Retention: We retain personal data for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. For example, customer support interactions may be stored for 3 years, marketing consents for 5 years, and anonymized data indefinitely for statistical purposes.
-              </strong>
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Your Rights Include:
+              </div>
+              <p className="mb-[20px]"></p>
+              <strong className="mb-[8px]">1. Right of Access</strong>
+              <p className="mb-[16px]">You have the right to request confirmation of whether we process your personal data and to receive a copy of such data along with relevant information about the processing.</p>
+              <strong className="mb-[8px]">2. Right to Rectification</strong>
+              <p className="mb-[16px]">You may request the correction of inaccurate or incomplete personal data we hold about you.</p>
+              <strong className="mb-[8px]">3. Right to Erasure (Right to be Forgotten)</strong>
+              <p className="mb-[16px]">You may request the deletion of your personal data where:</p>
+              <ul className="mb-[16px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                It is no longer necessary for the purposes it was collected
+                </li>
+                <li className="mb-[12px]">
+                You withdraw your consent (where applicable)
+                </li>
+                <li className="mb-[12px]">
+                You object to processing and there are no overriding legitimate grounds
+                </li>
+                <li>
+                Processing is unlawful or required by law to be erased
+                </li>
+              </ul>
+              <strong className="mb-[8px]">4. Right to Restriction of Processing</strong>
+              <p className="mb-[16px]">You may request that we restrict processing of your data under certain conditions, such as when the accuracy of the data is contested or the processing is unlawful.</p>
+              <strong className="mb-[8px]">5. Right to Data Portability</strong>
+              <p className="mb-[16px]">You have the right to receive your personal data in a structured, commonly used, and machine-readable format, and to request the transfer of that data to another data controller where technically feasible.</p>
+              <strong className="mb-[8px]">6. Right to Object</strong>
+              <p className="mb-[16px]">You may object to processing based on legitimate interests or for direct marketing purposes. In such cases, we will cease processing unless we have compelling legitimate grounds or are required to do so by law.</p>
+              <strong className="mb-[8px]">7. Right to Withdraw Consent</strong>
+              <p className="mb-[16px]">Where processing is based on your consent, you have the right to withdraw it at any time without affecting the lawfulness of prior processing.</p>
             </div>
           </div>
         </div>
 
-        {/* INTEREST-BASED ADVERTISING */}
+        {/* Security Measures */}
         <div className="mb-[80px]">
           <div
             className="grid grid-cols-2 gap-y-[80px]"
@@ -1079,6 +1116,7 @@ export default function Home() {
           >
             <h3
               style={{
+                width: "85%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
                 lineHeight: "130%",
@@ -1088,7 +1126,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              INTEREST-BASED ADVERTISING
+              7. Security Measures
             </h3>
             <div
               style={{
@@ -1101,9 +1139,116 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
-              <p>
-                We may work with third-party advertising companies that collect and use information about your online activities across sites over time, in order to deliver more relevant advertising when you are using the WAE Services and elsewhere on the Internet. This practice is known as interest-based advertising. You may visit www.aboutads.info to learn more and to opt out of this type of advertising by companies participating in the Digital Advertising Alliance self-regulatory program. We do not operate or control this site, and are not responsible for the opt-out choices available there. Note that electing to opt out will not stop advertising from appearing in your browser or applications. It may make the ads you see less relevant to your interests. If you delete, block or otherwise restrict cookies or use a different computer or Internet browser, you may need to renew your opt-out choice.
+              <p className="mb-[20px]">
+                WAE Ltd takes the security of personal data seriously and has implemented a range of technical and organizational safeguards to protect personal data from unauthorized access, disclosure, alteration, or destruction.
               </p>
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Technical Measures:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">The specific retention period for personal data depends on the nature and purpose of processing. Key factors include:</p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                <strong>Data Encryption: </strong>We use encryption protocols (e.g., TLS/SSL) to protect data in transit over public networks and, where applicable, encryption for data at rest.
+                </li>
+                <li className="mb-[12px]">
+                <strong>Access Controls: </strong>We implement role-based access control, password policies, and authentication mechanisms to ensure that only authorized personnel have access to personal data.
+                </li>
+                <li className="mb-[12px]">
+                <strong>Network Security: </strong>Firewalls, intrusion detection systems (IDS), and antivirus technologies are in place to monitor and protect our networks from external threats.
+                </li>
+                <li>
+                <strong>Secure Configuration: </strong>Systems and applications are regularly updated and patched to address vulnerabilities.
+                </li>
+              </ul>
+              <p className="mb-[20px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Retention Periods:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">Examples of standard retention periods include:</p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                <strong>Customer service and sales records: </strong>up to 7 years after the conclusion of the service or transaction
+                </li>
+                <li className="mb-[12px]">
+                <strong>Marketing data: </strong>retained until the individual opts out or withdraws consent
+                </li>
+                <li className="mb-[12px]">
+                <strong>Web form submissions and inquiries: </strong>1–2 years from the last communication
+                </li>
+                <li>
+                <strong>Employment-related data: </strong>as per Indian labor laws or applicable regional laws
+                </li>
+              </ul>
+              <p className="mb-[20px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Organizational Measures:
+              </div>
+              <p className="mb-[20px]"></p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                <strong>Employee Training: </strong>All employees handling personal data are trained on data protection policies and cybersecurity hygiene.
+                </li>
+                <li className="mb-[12px]">
+                <strong>Data Handling Protocols: </strong>Clear procedures are defined for data processing, classification, retention, and disposal.
+                </li>
+                <li className="mb-[12px]">
+                <strong>Third-Party Risk Management: </strong>Vendors and service providers are subject to due diligence and required to sign data processing agreements ensuring adequate protection standards.
+                </li>
+                <li>
+                <strong>Incident Response Plan: </strong>WAE Ltd maintains a documented incident response plan to address potential data breaches or security events. If a data breach occurs that may impact individuals' rights, we will notify affected parties and regulators in accordance with applicable laws.
+                </li>
+              </ul>
+              <p className="mb-[20px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Review and Updates:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">WAE Ltd conducts periodic reviews of data retained across systems to ensure compliance with this policy. Retention periods are also adjusted based on changes in legal, operational, or technical requirements.</p>
             </div>
           </div>
         </div>

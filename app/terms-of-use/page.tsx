@@ -304,7 +304,9 @@ export default function Home() {
               }}
             >
               <p>
-                The Site is offered to you, the user (hereinafter “User(s)”, “You” or “Your”) who connects to the Site and uses Our services enabling access to a variety of resources, including download areas, product information, support services for customers and partners, other information and online purchasing of some of Our products (hereinafter the “Service”). You are responsible for obtaining access to the Service. Please note that such access may involve third-party fees (such as Internet service provider charges). In addition, You must provide and are responsible for the equipment necessary to access the Service. We will endeavor to allow uninterrupted access to the Site. However, access to the Site may be suspended, restricted or terminated at any time and without notice and We shall not be liable if for any reason the Site is unavailable.
+                The Site is offered to you, the user (hereinafter “User(s)”, “You” or “Your”) who connects to the Site and uses Our services enabling access to a variety of resources, including download areas, product information, support services for customers and partners, other information and online purchasing of some of Our products (hereinafter the “Service”).<br />
+                You are responsible for obtaining access to the Service. Please note that such access may involve third-party fees (such as Internet service provider charges). In addition, You must provide and are responsible for the equipment necessary to access the Service.<br />
+                We will endeavor to allow uninterrupted access to the Site. However, access to the Site may be suspended, restricted or terminated at any time and without notice and We shall not be liable if for any reason the Site is unavailable.
               </p>
             </div>
           </div>
@@ -325,7 +327,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              3. Registration – Password – Security
+              3. Registration –<br />Password – Security
             </h3>
             <div
               style={{
@@ -373,7 +375,7 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
-              <p>
+              <p className="mb-[20px]">
                 You understand that any content you post is solely your responsibility. You are solely responsible for your conduct on the Site and for all content that you may upload, post, license, sublicense, display or otherwise make available via the Service or the Site. WAE does not control such content and does not guarantee its accuracy, integrity, or quality. In addition, You will not:
               </p>
               <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
@@ -517,7 +519,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              8. SOFTWARE AVAILABLE
+              8. Software Available
             </h3>
             <div
               style={{
@@ -531,7 +533,7 @@ export default function Home() {
               }}
             >
               <p>
-                Any software available on this Site, whether free or licensed, is the copyrighted work of WAE, its affiliates, and/or suppliers. Your use of such Software is governed by the accompanying license agreement (if any) and must be accepted through any provided double-click acceptance process. Copying or redistributing the Software to any other server or location is prohibited. The Software is warranted only in accordance with its License Agreement and is subject to export control laws.
+                Any software available on this Site, whether free or licensed, is the copyrighted work of WAE, its affiliates, and/or suppliers. Your use of such Software is governed by the accompanying license agreement (if any) and must be accepted through any provided double-click acceptance process. Copying or redistributing the Software to any other server or location is prohibited.
               </p>
             </div>
           </div>
@@ -552,7 +554,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              9. EXCLUSIONS AND LIMITATIONS OF LIABILITY
+              9. Exclusions and Limitations of Liability
             </h3>
             <div
               style={{
@@ -587,7 +589,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              10. ELECTRONIC COMMUNICATIONS
+              10. Electronic Communications
             </h3>
             <div
               style={{
@@ -622,7 +624,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              11. INDEMNIFICATION
+              11. Indemnification
             </h3>
             <div
               style={{
@@ -657,7 +659,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              12. JURISDICTION AND GOVERNING LAW
+              12. Jurisdiction and Governing Law
             </h3>
             <div
               style={{
@@ -692,7 +694,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              13. CHANGES TO TERMS
+              13. Changes to Terms
             </h3>
             <div
               style={{
@@ -727,7 +729,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              14. EXPORT CONTROL COMPLIANCE
+              14. Export Control Compliance
             </h3>
             <div
               style={{
@@ -762,7 +764,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              15. COPYRIGHT INFRINGEMENT NOTIFICATION (DMCA EQUIVALENT)
+              15. Copyright Infringement Notification (DMCA Equivalent)
             </h3>
             <div
               style={{
@@ -778,7 +780,8 @@ export default function Home() {
               <p>
                 If you believe that your copyrighted work has been copied or used on this Site in a manner that constitutes copyright infringement, you may notify us with the following information:
               </p>
-              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+
+              <ul className="mb-[20px] mt-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
                 <li>A physical or electronic signature of the copyright owner or an authorized representative;</li>
                 <li>Identification of the copyrighted work claimed to have been infringed;</li>
                 <li>Identification of the material that is claimed to be infringing and its location on the Site;</li>
@@ -787,11 +790,11 @@ export default function Home() {
                 <li>A statement that the information in the notice is accurate and, under penalty of perjury, that you are the owner or authorized to act on behalf of the owner.</li>
               </ul>
               <p>
-                Please send copyright-related concerns to:<br />
-                Legal Compliance<br />
+                <strong>Please send copyright-related concerns to:</strong><br />
+                <strong>Legal Compliance</strong><br />
                 WAE India Pvt. Ltd.<br />
-                Email: legal@waecorp.com<br />
-                Subject Line: "Copyright Infringement Notice"
+                <strong>Email: </strong>legal@waecorp.com<br />
+                <strong>Subject Line: </strong>"Copyright Infringement Notice"
               </p>
             </div>
           </div>
@@ -812,7 +815,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              16. PAYMENT PROCESSING
+              16. Payment Processing
             </h3>
             <div
               style={{
@@ -843,6 +846,9 @@ export default function Home() {
         .custom-bullet {
           margin-left: 2%;
           list-style-type: disc;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
         }
 
         .custom-bullet li::marker {
