@@ -253,7 +253,7 @@ export default function Home() {
         </header>
       </div>
 
-      {/* Privacy Policy Heading */}
+      {/* Data Privacy Policy Heading */}
       <div className={containerClass}>
         <h2
           style={{
@@ -293,10 +293,10 @@ export default function Home() {
             marginBottom: "80px",
           }}
         >
-          This policy describes how WAE India P Ltd. and its parent, subsidiary, and affiliate companies (collectively, “WAE,” “we,” or “us”) collect, use and share information collected through the mail, www.waecorp.com and other websites that link to this privacy policy, and WAE mobile services including our mobile application (the “App”) (collectively, the “WAE Services”).
+          WAE Ltd ("we", "us", or "our") is committed to protecting the privacy and personal data of all individuals who interact with us, including users of our website, business partners, customers, and marketing contacts. This Data Privacy Policy outlines how we process personal data in accordance with applicable data protection laws, including Indian data protection legislation and internationally recognized frameworks. It reflects our commitment to responsible data governance, transparency, and information security.
         </p>
 
-        {/* Compliance Section */}
+        {/* Personal Data processing Section for web app and services */}
         <div className="mb-[80px]">
           <div
             className="grid grid-cols-2 gap-y-[80px]"
@@ -305,7 +305,7 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                width: "75%",
+                width: "85%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
                 fontSize: "32px",
@@ -315,9 +315,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              Compliance with the Digital 
-              Personal Data Protection Act, 
-              2023 (DPDP Act)	
+              1. Processing of Personal Data Related to Your Use of Our Websites, Applications, and Online Services	
             </h3>
             {/* Right Column: Policy Content */}
             <div
@@ -331,18 +329,127 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
-              <p>
-                WAE complies with the provisions of the Digital Personal Data Protection Act, 2023 as applicable in India. 
-                This includes obligations related to lawful processing of personal data, obtaining consent for data usage, 
-                ensuring data security, enabling rights of data principals, and appointment of a Data Protection Officer 
-                (DPO) as mandated under the Act. Any data processing activity performed by WAE within the territorial 
-                scope of the DPDP Act adheres to its requirements.
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Categories of Personal Data Processed:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[20px]">
+                When visiting our websites, using our digital services, or communicating with us online, we may collect the following categories of personal data:
               </p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                  <strong>Contact details: </strong>full name, email address, phone number, organization, job title
+                </li>
+                <li className="mb-[12px]">
+                  <strong>Information submitted</strong> through web forms, inquiry portals, or email communications
+                </li>
+                <li className="mb-[12px]">
+                  <strong>Cookies and tracking technologies: </strong>data collected through cookies or similar tools, subject to cookie policy preferences
+                </li>
+              </ul>
+              <p className="mb-[40px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Purpose of Processing:
+              </div>
+              <p className="mb-[20px]"></p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                  To provide, maintain, and improve the website and associated digital services
+                </li>
+                <li className="mb-[12px]">
+                  To create and administer user accounts or sessions
+                </li>
+                <li className="mb-[12px]">
+                  To personalize user experience and track usage for analytics
+                </li>
+                <li className="mb-[12px]">
+                  To provide support or respond to queries submitted via online forms
+                </li>
+                <li className="mb-[12px]">
+                To monitor system performance, ensure information security, and detect/prevent abuse
+                </li>
+                <li className="mb-[12px]">
+                To comply with legal requirements applicable to digital service provision
+                </li>
+              </ul>
+              <p className="mb-[40px]"></p>
+
+              <div className="whitespace-nowrap"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Online Offerings Provided by Your Organization:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p>
+                If you are using our Online Offerings on behalf of your organization (e.g., as an employee or vendor), your data may be processed as part of a business relationship between WAE Ltd and your organization. In such cases, your organization is responsible for determining how your personal data is used and shared, and we process it under their direction, in line with any applicable agreements.
+              </p>
+              <p className="mb-[40px]"></p>
+              
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Legal Basis for Processing:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">
+                Depending on jurisdiction and context, processing of personal data for these purposes may be justified by:
+              </p>
+              <ul className="custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                  Performance of a contract or to take steps at the request of the data subject
+                </li>
+                <li className="mb-[12px]">
+                  Legitimate interest in providing secure, functional online services
+                </li>
+                <li className="mb-[12px]">
+                  Compliance with legal obligations
+                </li>
+                <li className="mb-[12px]">
+                  Consent, where required (e.g., marketing or cookies)
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
-        {/* KYC Section */}
+        {/* Personal Data processing Section for marketing and cmmunications */}
         <div className="mb-[80px]">
           <div
             className="grid grid-cols-2 gap-y-[80px]"
@@ -351,6 +458,7 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
+                width: "85%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
                 fontSize: "32px",
@@ -360,7 +468,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              HOW WE COLLECT AND USE INFORMATION
+              2. Processing of Personal Data Related to Marketing, Customer Satisfaction Surveys, and Communications
             </h3>
             {/* Right Column: Policy Content */}
             <div
@@ -374,206 +482,144 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
-              <strong>Know Your Customer (“KYC”):</strong>
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Categories of Personal Data Processed:
+              </div>
+              <p className="mb-[20px]"></p>
               <p className="mb-[20px]">
-                We may collect personally identifiable information (“KYC”) such as your name, your contact information, 
-                your shipping information, and your billing information (such as credit card account data). We collect 
-                KYC when you provide it to us through your use of the WAE Services, for example when you interact 
-                with our websites, place an order, or sign up for our mailing list. We also receive limited KYC when you 
-                choose to download or request the App. We may combine the KYC we collect with additional 
-                information from other third-party sources. We use the KYC that we collect to provide the WAE Services 
-                (such as to respond to customer service requests), to analyze and improve the WAE Services, and to 
-                conduct marketing. If you register for email or if you provide your email address to us, we will send you 
-                emails about a variety of topics such as events, new products, promotional offers from our affiliates or 
-                other selected business partners, environmental issues, and employment opportunities. Please see 
-                below for your choices regarding how we collect, use, and share your KYC.
-              </p>
-              <p className="mb-[20px]">
-                We share email activity data with our marketing email provider to help them better target email 
-                deployments to consumers. While our marketing email provider has access to email address and email 
-                activity and may share bulk/non-specific activity data, no Email addresses or specific email actions are 
-                ever shared with other third parties. Should a consumer wish to opt out of this sharing, that consumer 
-                simply needs to opt out of marketing email from us.
-              </p>
-              <p className="mb-[20px]"> 
-                Our Website/App uses the GPS feature of your mobile device to determine the 
-                location of the device. We and our third-party vendors or partners may collect and use this geographic 
-                location data for purposes such as the functioning of the App, to make our advertising more relevant, 
-                and to improve WAE Services. We do not store geographic location data in combination with KYC. 
-                If you do not want us or third parties to collect and use your device’s geographic location, you can 
-                control this function in your application settings (if your device offers this type of control), by disabling 
-                location services for your device, or by uninstalling the App, but these choices will affect your ability
-                to use the App.
-              </p>
-              <p className="mb-[20px]"> <strong>Non-Personal Information: </strong>
-                We automatically collect certain non-personal information when you use 
-                WAE Services. For example, we collect information about the devices you use to connect to our services 
-                (such as the IP address of your computer or numeric identifier of your mobile device) and about how you 
-                use WAE Services (such as what time you visit our websites). We, and our advertisers and ad servers, 
-                may also collect non-personal information outside the WAE Services to measure the success of our 
-                advertising campaigns. We use the non-personal information that we collect for a variety of purposes 
-                such as to provide and improve the WAE Services, and to analyze and offer our advertising.
-              </p>
-              <p className="mb-[20px]">
-                Our website also uses third-party analytics vendors such as Google Analytics. Please click here for more 
-                information about how data is collected and processed in connection with the Google Analytics service: 
-                www.google.com/policies/privacy/partners/. We and our third-party vendors or partners use analytics 
-                data for a variety of purposes such as to improve the design and content of our websites, to help us 
-                learn things like what pages are most attractive to all of our visitors and what promotions visitors like to 
-                see, and to gauge the success of our advertising campaigns.
-              </p>
-              <p className="mb-[20px]"> <strong>Information You Post: </strong>
-                All information that you share about yourself, whether KYC or not, in a public 
-                open forum – such as on a social network – will be considered public information for the purposes of this 
-                policy. If you don’t want it to be public, please don’t post it.
-              </p>
-              <p> <strong>Legal Basis for Processing: </strong>
-                We process personal data based on various legal grounds: contract 
-                necessity (e.g., fulfilling an order), legitimate interests (e.g., customer service improvement), user 
-                consent (e.g., marketing opt-ins), and legal obligations (e.g., tax or accounting compliance), as required 
-                under applicable data protection regulations such as the GDPR.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* HOW WE SHARE INFORMATION Section */}
-        <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
-                lineHeight: "130%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              HOW WE SHARE INFORMATION
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p className="mb-[20px]">
-                We do not disclose your KYC to third parties, except as follows:
+                When visiting our websites, using our digital services, or communicating with us online, we may collect the following categories of personal data:
               </p>
               <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
                 <li className="mb-[12px]">
-                  After giving you notice and an opportunity to choose not to share the information.
+                Name, email address, phone number, and company information
                 </li>
                 <li className="mb-[12px]">
-                  To companies that provide services to us or perform functions on our behalf (such as processing credit card payments or taking orders) and have agreed to use your information only for the purposes we request.
+                Preferences and interests expressed in prior interactions
                 </li>
                 <li className="mb-[12px]">
-                  For us to send offers to WAE customers on behalf of our affiliated companies and on behalf of other non-affiliated partners (such as environmental groups that we support).
+                Survey responses and communication history
                 </li>
-                <li className="mb-[12px]">
-                  To other selected reputable companies, we may disclose your name and postal address (but not your email address or credit card information) so that they can mail you information that may interest you.
-                </li>
-                <li className="mb-[12px]">
-                  When we believe disclosure is appropriate to comply with applicable law, legal process, and/or governmental authorities.
-                </li>
-                <li className="mb-[12px]">
-                  When we believe disclosure is appropriate to enforce our Terms of Use and other agreements, or to protect our rights, our customers, our property, our employees, or others.
-                </li>
-                <li className="mb-[12px]">
-                  If we are involved in a merger, acquisition, bankruptcy, partial or total sale of assets, or other corporate change.
+                <li>
+                Engagement metrics (e.g., open rates, click-through rates)
                 </li>
               </ul>
-              <p className="mb-[20px]">
-                We may disclose de-identified, aggregated, or other non-personal information to third parties in our discretion. The WAE Services or our offerings on social media platforms may include commenting, forums, sharing, or other similar features. Information that you provide using these features may be available to other users or the general public.
-              </p>
-              <strong>
-                International Data Transfers: If personal data is transferred outside India or the European Economic Area, WAE ensures appropriate safeguards are in place such as Standard Contractual Clauses (SCCs) or transfers to countries with an adequacy decision by relevant authorities.
-              </strong>
-            </div>
-          </div>
-        </div>
+              <p className="mb-[40px]"></p>
 
-        {/* YOUR CHOICES Section */}
-        <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
-                lineHeight: "130%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              YOUR CHOICES
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p className="mb-[20px]">
-                With your KYC you always have the option to change or correct your information and the choice of not hearing from us again. There are several ways you can control our use of your KYC in connection with marketing and promotions.
-              </p>
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Purpose of Processing:
+              </div>
+              <p className="mb-[20px]"></p>
               <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
                 <li className="mb-[12px]">
-                  To remove your name from our lists. You can choose to decline communications from us at the point that we request your KYC. After we have collected your KYC, you can choose to stop our communications or our service, or stop us from sharing your information with other companies for their marketing purposes. To exercise any of these options, please contact us by mail, email, or telephone using the contact information below.
+                To send you updates about our products, services, promotions, or relevant events
                 </li>
                 <li className="mb-[12px]">
-                  To stop email communications. If you receive email communications from us and want to opt out of receiving such communications in the future, you can click the “Unsubscribe” link at the bottom of the promotional email.
+                To assess satisfaction levels through customer surveys
                 </li>
                 <li className="mb-[12px]">
-                To stop collection of geographic location. If you do not want us to collect your device’s geographic location through our App, you can disable that function when you first use the App or in your device settings. This will prevent you from using some features of the App.
+                To improve products, services, and communication strategies based on feedback
                 </li>
                 <li className="mb-[12px]">
-                  Other choices. Please see below to learn about your choices with regard to our use of cookies and interest-based advertising.
+                To conduct market analysis and campaign performance evaluation
+                </li>
+              </ul>
+              <p className="mb-[40px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Your Rights and Choices:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">
+              You may opt out of receiving marketing emails or surveys at any time by:
+              </p>
+              <ul className="custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                Clicking the "unsubscribe" link in marketing emails
+                </li>
+                <li className="mb-[12px]">
+                Contacting our legal team at <strong>legal@waecorp.com</strong>
+                </li>
+              </ul>
+              <p className="mb-[40px]"></p>
+              
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Legal Basis for Processing:
+              </div>
+              <p className="mb-[20px]"></p>
+              <ul className="custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                Your consent, where required
+                </li>
+                <li className="mb-[12px]">
+                Our legitimate interest in maintaining client relationships and improving services
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        {/* CORRECTING OR UPDATING YOUR INFORMATION */}
+        {/* Personal Data processing Section for business relationships */}
         <div className="mb-[80px]">
           <div
             className="grid grid-cols-2 gap-y-[80px]"
             style={{ justifyContent: "space-between" }}
           >
+            {/* Left Column: Subheading */}
             <h3
               style={{
-                width: "75%",
+                width: "85%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                lineHeight: "130%",
                 fontSize: "32px",
+                lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
               }}
             >
-              CORRECTING OR UPDATING YOUR INFORMATION
+              3. Processing of Personal Data in the Context of Business Relationships
             </h3>
+            {/* Right Column: Policy Content */}
             <div
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
@@ -585,9 +631,399 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Categories of Personal Data Processed:
+              </div>
+              <p className="mb-[20px]"></p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                Business contact details: name, title, email address, phone number, office location
+                </li>
+                <li className="mb-[12px]">
+                Relationship data: products/services ordered, inquiries made, project details, account communications
+                </li>
+                <li className="mb-[12px]">
+                Transactional data: billing, payment, and account information (excluding sensitive data)
+                </li>
+                <li>
+                Publicly available data (e.g., from corporate websites or public databases)
+                </li>
+              </ul>
+              <p className="mb-[40px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Purpose of Processing:
+              </div>
+              <p className="mb-[20px]"></p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                Planning, executing, and managing contractual relationshipsPlanning, executing, and managing contractual relationships
+                </li>
+                <li className="mb-[12px]">
+                Processing orders, invoices, and payments
+                </li>
+                <li className="mb-[12px]">
+                Providing after-sales services including maintenance and support
+                </li>
+                <li className="mb-[12px]">
+                Fulfilling contractual and compliance obligations
+                </li>
+                <li className="mb-[12px]">
+                Maintaining professional communication with representatives of vendors, suppliers, or partners
+                </li>
+                <li>
+                Establishing, exercising, or defending legal claims and ensuring regulatory compliance
+                </li>
+              </ul>
+              <p className="mb-[40px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Your Rights and Choices:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">
+              You may opt out of receiving marketing emails or surveys at any time by:
+              </p>
+              <ul className="custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                Clicking the "unsubscribe" link in marketing emails
+                </li>
+                <li className="mb-[12px]">
+                Contacting our legal team at <strong>legal@waecorp.com</strong>
+                </li>
+              </ul>
+              <p className="mb-[40px]"></p>
+              
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Legal Basis for Processing:
+              </div>
+              <p className="mb-[20px]"></p>
+              <ul className="custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                Performance of a contract or service relationship
+                </li>
+                <li className="mb-[12px]">
+                Compliance with legal obligations (e.g., tax laws, export compliance)
+                </li>
+                <li className="mb-[12px]">
+                Legitimate interest in business continuity and relationship management
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Personal Data Transfer */}
+        <div className="mb-[80px]">
+          <div
+            className="grid grid-cols-2 gap-y-[80px]"
+            style={{ justifyContent: "space-between" }}
+          >
+            {/* Left Column: Subheading */}
+            <h3
+              style={{
+                width: "85%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              4. Disclosure and Transfer of Personal Data
+            </h3>
+            {/* Right Column: Policy Content */}
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Categories of Recipients:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">We may disclose your personal data to the following categories of recipients:</p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                <strong>Affiliated Companies and Service Providers: </strong>These include IT service providers, cloud hosting partners, analytics vendors, email marketing platforms, and CRM software partners engaged by WAE Ltd. Such parties are contractually obligated to process personal data solely for the specified purposes and in accordance with applicable data protection laws.
+                </li>
+                <li className="mb-[12px]">
+                <strong>Professional Advisors: </strong>Such as auditors, accountants, lawyers, and consultants involved in corporate governance, legal compliance, or dispute resolution.
+                </li>
+                <li className="mb-[12px]">
+                <strong>Government Authorities and Law Enforcement: </strong>When required by applicable laws, regulations, legal processes, or enforceable government requests.
+                </li>
+                <li>
+                <strong>Event-Driven Disclosures: </strong>In the case of a merger, acquisition, restructuring, or asset sale, personal data may be transferred to the involved parties under strict confidentiality agreements.
+                </li>
+              </ul>
+              <p className="mb-[40px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Public and Community Features:
+              </div>
+              <p className="mb-[20px]"></p>
               <p>
-                If you would like to request changes to the KYC that you have previously provided to us, please contact us by mail, email, or telephone using the contact information below.
+              WAE Ltd may host blogs, forums, or other interactive platforms where users can voluntarily post content. Any information posted publicly can be accessed and used by others. We recommend caution when sharing personal data in such areas.
               </p>
+              <p className="mb-[40px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                International Transfers of Data:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">
+                WAE Ltd is headquartered in India and does not currently perform regular international transfers of personal data. However, should data need to be transferred to jurisdictions outside India:
+              </p>
+              <ul className="custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                We will ensure that such transfers are governed by contractual or legal safeguards (e.g., Standard Contractual Clauses or equivalent legal instruments).
+                </li>
+                <li className="mb-[12px]">
+                We will conduct necessary risk assessments and compliance reviews.
+                </li>
+                <li>
+                We will inform data subjects of such transfers and their rights, where legally required.
+                </li>
+              </ul>
+              <p className="mb-[16px]">
+                Transfers may be made to:
+              </p>
+              <ul className="custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                International cloud hosting providers for data storage or backup
+                </li>
+                <li className="mb-[12px]">
+                International service providers under binding contractual obligations
+                </li>
+                <li>
+                Affiliates in foreign jurisdictions supporting specific business operations
+                </li>
+              </ul>
+              <p >
+                Data transferred internationally will continue to be governed by this Privacy Policy and subject to reasonable and appropriate technical and organizational safeguards.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Data retention */}
+        <div className="mb-[80px]">
+          <div
+            className="grid grid-cols-2 gap-y-[80px]"
+            style={{ justifyContent: "space-between" }}
+          >
+            <h3
+              style={{
+                width: "85%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                lineHeight: "130%",
+                fontSize: "32px",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              5. Retention of Personal Data
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p className="mb-[20px]">
+                WAE Ltd retains personal data only for as long as it is necessary to fulfill the purposes for which the data was collected or to comply with legal, regulatory, or contractual obligations. Our data retention practices are designed to ensure that personal data is not held longer than required and that it is securely deleted or anonymized at the end of its lifecycle.
+              </p>
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Retention Criteria:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">The specific retention period for personal data depends on the nature and purpose of processing. Key factors include:</p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                The duration of the customer or business relationship
+                </li>
+                <li className="mb-[12px]">
+                Statutory or regulatory requirements (e.g., tax, employment, contractual laws)
+                </li>
+                <li className="mb-[12px]">
+                The need to retain data for dispute resolution or enforcement of agreements
+                </li>
+                <li>
+                Legitimate interests in maintaining records (e.g., marketing opt-outs, transactional logs)
+                </li>
+              </ul>
+              <p className="mb-[20px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Retention Periods:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">Examples of standard retention periods include:</p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                <strong>Customer service and sales records: </strong>up to 7 years after the conclusion of the service or transaction
+                </li>
+                <li className="mb-[12px]">
+                <strong>Marketing data: </strong>retained until the individual opts out or withdraws consent
+                </li>
+                <li className="mb-[12px]">
+                <strong>Web form submissions and inquiries: </strong>1–2 years from the last communication
+                </li>
+                <li>
+                <strong>Employment-related data: </strong>as per Indian labor laws or applicable regional laws
+                </li>
+              </ul>
+              <p className="mb-[20px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Secure Deletion and Anonymization:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">At the end of the retention period, WAE Ltd:</p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                The duration of the customer or business relationship
+                </li>
+                <li className="mb-[12px]">
+                Permanently deletes data from active databases and backup systems where feasible
+                </li>
+                <li className="mb-[12px]">
+                Anonymizes the data where ongoing use is required for statistical or historical analysis without identifying individuals
+                </li>
+              </ul>
+              <p className="mb-[20px]"></p>
+
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Review and Updates:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">WAE Ltd conducts periodic reviews of data retained across systems to ensure compliance with this policy. Retention periods are also adjusted based on changes in legal, operational, or technical requirements.</p>
             </div>
           </div>
         </div>

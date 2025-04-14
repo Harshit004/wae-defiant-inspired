@@ -62,7 +62,7 @@ export default function Home() {
     <main className="relative">
       {/* HEADER */}
       <div style={{ top: 0, left: 0, width: "100%" }}>
-      <header ref={headerRef} className="w-full relative z-10 mb-[120px]">
+        <header ref={headerRef} className="w-full relative z-10 mb-[120px]">
           <div className="mx-auto w-full max-w-[1440px] px-[140px]">
             {/* Top Row: Navigation */}
             <div
@@ -113,55 +113,8 @@ export default function Home() {
                 78.9629° E
               </div>
 
-              {/* Tagline Animation */}
-              {/* <div className="flex flex-col items-start">
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={taglineVisible ? "visible" : "hidden"}
-                  className="flex flex-row justify-center whitespace-nowrap"
-                >
-                  {taglineWords1.map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={childVariants}
-                      className="mr-1"
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "10px",
-                        lineHeight: "125%",
-                        color: "#000",
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </motion.div>
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={taglineVisible ? "visible" : "hidden"}
-                  className="flex flex-row justify-center whitespace-nowrap"
-                >
-                  {taglineWords2.map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={childVariants}
-                      className="mr-1"
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "10px",
-                        lineHeight: "125%",
-                        color: "#000",
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </motion.div>
-              </div> */}
+              {/* Tagline */}
+              {/* (Animated version commented out; using static text instead) */}
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
@@ -253,8 +206,9 @@ export default function Home() {
         </header>
       </div>
 
-      {/* Privacy Policy Heading */}
+      {/* MAIN CONTENT SECTION: TERMS OF USE */}
       <div className={containerClass}>
+        {/* Main Heading */}
         <h2
           style={{
             fontFamily: "'Inter Tight', sans-serif",
@@ -265,22 +219,11 @@ export default function Home() {
             marginBottom: "40px",
           }}
         >
-          Terms of Use
+          TERMS OF USE
         </h2>
-        {/* <p
-          style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: "12px",
-            letterSpacing: "0%",
-            lineHeight: "150%",
-            verticalAlign: "middle",
-            color: "#000000",
-          }}
-        >
-          Effective date: May 1, 2025
-        </p> */}
-        {/* <p
+
+        {/* Introduction Paragraph */}
+        <p
           style={{
             fontFamily: "'Inter Tight', sans-serif",
             fontWeight: 500,
@@ -289,326 +232,30 @@ export default function Home() {
             lineHeight: "150%",
             verticalAlign: "middle",
             color: "#00000099",
-            marginBottom: "80px",
+            marginBottom: "40px",
           }}
         >
-          This policy describes how WAE India P Ltd. and its parent, subsidiary, and affiliate companies (collectively, “WAE,” “we,” or “us”) collect, use and share information collected through the mail, www.waecorp.com and other websites that link to this privacy policy, and WAE mobile services including our mobile application (the “App”) (collectively, the “WAE Services”).
-        </p> */}
+          This page states the terms and conditions governing your use of the WAECORP.COM website. Please read them carefully. These terms and conditions may be updated and amended by us from time to time, so please visit this page periodically to review them. By using this site, you signify that you agree with these terms of use. If you do not accept the following terms and conditions, do not use this site or the services provided therein. In addition,<br />
+          (i) when you use any current or future service or purchase any current or future product on this site, you will also be subject to the applicable terms and conditions of sale, and<br />
+          (ii) when you join communities through the WAE Platform available at www.waecorp.com, you will also be subject to the “WWW.WAECORP.COM Terms of Use.”
+        </p>
 
-        {/* Scope Section */}
+        {/* Section 1: Acceptance of Terms of Use */}
         <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            {/* Left Column: Subheading */}
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
             <h3
               style={{
                 width: "75%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "40px",
+                fontSize: "32px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
               }}
             >
-              Scope	
-            </h3>
-            {/* Right Column: Policy Content */}
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p className="mb-[20px]"><strong>1.1 </strong>
-                Any use of this website provided by WAE Limited and/or its affiliates ("WAE Website") is subject to these Terms of Use. These Terms of Use may be amended, modified, or replaced by other terms and conditions, for example, those governing the purchase of products and services. By logging in, or where login is not required, by accessing or using the WAE Website, you accept these Terms of Use in their current version.
-              </p>
-              <p className="mb-[20px]"><strong>1.2 </strong>
-                In cases where this website is targeted toward businesses or public enterprises, such entities are represented by the individual user, who shall be presumed to possess the requisite authority and knowledge to act on their behalf.
-              </p>
-              <p><strong>1.3 </strong>
-                If the user accesses the WAE Website as a business customer, i.e., not acting for purposes unrelated to their trade, business, or profession, consumer protection laws (such as provisions under Indian Consumer Protection legislation) may not apply.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Services Section */}
-        <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            {/* Left Column: Subheading */}
-            <h3
-              style={{
-                width: "75%",
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "40px",
-                lineHeight: "130%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              Services	
-            </h3>
-            {/* Right Column: Policy Content */}
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p className="mb-[20px]"><strong>2.1 </strong>
-                The WAE Website contains specific information, product literature, downloadable resources, and other materials, including but not limited to documentation related to the products and technology, that may be accessed or downloaded.
-              </p>
-              <p className="mb-[20px]"><strong>2.2 </strong>
-                WAE reserves the right to modify, suspend, or terminate the operation of the WAE Website, in whole or in part, at any time without prior notice. Due to the inherent characteristics of the Internet and digital systems, WAE cannot accept any liability for the continuous, uninterrupted availability of the WAE Website.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Registration and Password Section */}
-        <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "40px",
-                lineHeight: "130%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              Registration and<br />Password
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p className="mb-[20px]"><strong>3.1 </strong>
-                Certain areas of the WAE Website may be restricted to registered users. For security and business transaction integrity, only registered users may access such areas. WAE reserves the right to refuse registration or to subject previously unrestricted areas to registration. WAE may also revoke a user’s access without notice, particularly if:
-              </p>
-              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
-                <li className="mb-[12px]">
-                    False or misleading data was used during registration
-                </li>
-                <li className="mb-[12px]">
-                    The Terms of Use are violated
-                </li>
-                <li className="mb-[12px]">
-                    The user acts in breach of applicable law when accessing or using the website
-                </li>
-                <li className="mb-[12px]">
-                    The user has not accessed the website for a prolonged period
-                </li>
-              </ul>
-              <p className="mb-[20px]"><strong>3.2 </strong>
-                Registered users must ensure that the data provided during registration is accurate and kept up-to-date. The user is responsible for maintaining an accurate email address where WAE can reach them.
-              </p>
-              <p className="mb-[20px]"><strong>3.3 </strong>
-                Upon registration (if applicable), the user will receive login credentials ("User Data"). On first access, the user must change the password to a secure one known only to them. These credentials allow the user to access their profile, view or modify data, or withdraw consent to data processing, if applicable.
-              </p>
-              <p className="mb-[20px]"><strong>3.4 </strong>
-                The user is responsible for ensuring that their login credentials are not disclosed to third parties. They shall be liable for all activities carried out using their User Data. Users must log out at the end of each session if they have logged in while using WAE’s website. If unauthorized access is suspected, WAE must be notified immediately in writing or via email.
-              </p>
-              <p className="mb-[20px]"><strong>3.5 </strong>
-                After receiving such notification, WAE will block access under the concerned User Data. Re-access will be granted upon application or new registration.
-              </p>
-              <p className="mb-[20px]"><strong>3.6 </strong>
-                The user may request termination of their registration at any time, provided that doing so does not conflict with ongoing contractual obligations. WAE will then delete all personal data no longer required.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Intellectual Property Section */}
-        <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "40px",
-                lineHeight: "130%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              Intellectual Property
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p className="mb-[20px]"><strong>4.1 </strong>
-                Except as otherwise provided in Section 4, users may not modify, reproduce, or commercially use any information or content on the WAE Website without prior written permission from WAE.
-              </p>
-              <p className="mb-[20px]"><strong>4.2 </strong>
-                No rights or licenses are granted to users beyond those explicitly stated. Patent rights are expressly excluded.
-              </p>
-              <p className="mb-[20px]"><strong>4.3 </strong>
-                WAE may freely use any suggestions or feedback provided by users for the improvement or development of its products and services.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* User Obligations */}
-        <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                width: "75%",
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                lineHeight: "130%",
-                fontSize: "40px",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              User Obligations
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p className="mb-[20px]"><strong>5.1 </strong>
-                When using the WAE Website, the user shall not:
-              </p>
-              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
-                <li className="mb-[12px]">
-                    Harm others, especially minors
-                </li>
-                <li className="mb-[12px]">
-                    Violate public decency or applicable laws
-                </li>
-                <li className="mb-[12px]">
-                    Infringe intellectual property or proprietary rights
-                </li>
-                <li className="mb-[12px]">
-                    Upload or distribute malware or other harmful programs
-                </li>
-                <li className="mb-[12px]">
-                    Post content or links that breach confidentiality obligations
-                </li>
-                <li className="mb-[12px]">
-                    Send unsolicited communications, advertisements, or spam
-                </li>
-              </ul>
-              <p className="mb-[20px]"><strong>5.2 </strong>
-                WAE may deny or restrict access for users violating these Terms.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Hyperlinks */}
-        <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "40px",
-                lineHeight: "130%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              Hyperlinks
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p className="mb-[20px]">
-                The WAE Website may include links to third-party sites. WAE is not responsible for the content of such external sites and does not endorse them. Access to such sites is at the user’s own risk.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Warranty and Disclaimer */}
-        <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                lineHeight: "130%",
-                fontSize: "40px",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              Warranty and<br />Disclaimer
+              1. Acceptance of Terms of Use
             </h3>
             <div
               style={{
@@ -622,160 +269,28 @@ export default function Home() {
               }}
             >
               <p>
-                The WAE Website may include links to third-party sites. WAE is not responsible for the content of such external sites and does not endorse them. Access to such sites is at the user’s own risk.
+                Welcome to WAE website (hereinafter “the Site”), a service provided by WAE India P Ltd. and its affiliates (hereinafter “We”, “Our” or “Us”). By visiting the Site, by providing Us with information, by using the services offered by the Site and/or by purchasing products from the Site, you agree to be bound by these Terms of Use. If you do not agree with any of these terms, then please do not use the Site.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Warranty and Disclaimer 2 */}
+        {/* Section 2: Description of Service */}
         <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "40px",
-                lineHeight: "130%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              Warranty and<br />Disclaimer
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p className="mb-[20px]"><strong>7.1 </strong>
-                All materials on the WAE Website are provided "as is." WAE disclaims all warranties, express or implied, including warranties of accuracy, fitness for a particular purpose, or non-infringement, except in cases of willful misconduct or fraud.
-              </p>
-              <p><strong>7.2 </strong>
-                Product specifications may vary or change without prior notice. Any required performance attributes must be agreed upon in a separate purchase contract.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Liability */}
-        <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "40px",
-                lineHeight: "130%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              Liability
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p className="mb-[20px]"><strong>8.1 </strong>
-                WAE shall not be liable for any damages unless mandated by applicable law. This includes liability under product liability law, intentional misconduct, gross negligence, personal injury, or failure to meet essential contractual obligations.
-              </p>
-              <p><strong>8.2 </strong>
-                While WAE strives to keep its website virus-free, users are responsible for using appropriate security software. WAE does not guarantee that the site is free from malware.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Export Control */}
-        <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "40px",
-                lineHeight: "130%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#000",
-              }}
-            >
-              Export Control
-            </h3>
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                color: "#00000099",
-              }}
-            >
-              <p className="mb-[20px]"><strong>9.1 </strong>
-                Users are responsible for ensuring that materials accessed or transferred from the WAE Website comply with applicable export control laws.
-              </p>
-              <p className="mb-[20px]"><strong>9.2 </strong>
-                Users must not transfer materials to sanctioned countries, organizations, or individuals.
-              </p>
-              <p className="mb-[20px]"><strong>9.3 </strong>
-                Upon request, users must provide WAE with relevant details for export control verification.
-              </p>
-              <p className="mb-[20px]"><strong>9.4 </strong>
-                Users shall indemnify WAE for any breach of export control regulations.
-              </p>
-              <p><strong>9.5 </strong>
-                WAE may decline to fulfill any request if restricted by trade regulations.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Data Protection */}
-        <div className="mb-[80px]">
-          <div
-            className="grid grid-cols-2"
-            style={{ justifyContent: "space-between" }}
-          >
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
             <h3
               style={{
                 width: "75%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "40px",
+                fontSize: "32px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
               }}
             >
-              Data Protection
+              2. Description of Service
             </h3>
             <div
               style={{
@@ -788,31 +303,29 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
-              <p className="mb-[20px]">
-                WAE will handle personal data in accordance with applicable laws and its Data Privacy Policy, accessible via hyperlink on the website.
+              <p>
+                The Site is offered to you, the user (hereinafter “User(s)”, “You” or “Your”) who connects to the Site and uses Our services enabling access to a variety of resources, including download areas, product information, support services for customers and partners, other information and online purchasing of some of Our products (hereinafter the “Service”). You are responsible for obtaining access to the Service. Please note that such access may involve third-party fees (such as Internet service provider charges). In addition, You must provide and are responsible for the equipment necessary to access the Service. We will endeavor to allow uninterrupted access to the Site. However, access to the Site may be suspended, restricted or terminated at any time and without notice and We shall not be liable if for any reason the Site is unavailable.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Legal Jurisdiction and Miscellaneous Section */}
-        <div>
-          <div
-            className="grid grid-cols-2 gap-y-[80px]"
-            style={{ justifyContent: "space-between" }}
-          >
+        {/* Section 3: Registration – Password – Security */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
             <h3
               style={{
+                width: "75%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "40px",
+                fontSize: "32px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
               }}
             >
-              Legal Jurisdiction and<br />Miscellaneous
+              3. Registration – Password – Security
             </h3>
             <div
               style={{
@@ -825,14 +338,495 @@ export default function Home() {
                 color: "#00000099",
               }}
             >
-              <p className="mb-[20px]"><strong>11.1 </strong>
-                Any supplementary agreements must be in writing.
+              <p>
+                In order to fully use the Site and buy Our products, You must register with Us by opening a free of charge account. In consideration of Your registration to the Service, You represent that You are at least 18 years of age, that You have the legal right to accept these Terms of Use (including on behalf of Your organization if using the Service for professional purposes) and are not barred from receiving products and services under the laws of any applicable jurisdiction. In doing so, You will be prompted to provide certain information and to create an account name and password. You agree to (a) provide true, accurate, current and complete information about Yourself; and (b) maintain and promptly update Your profile to keep it true, accurate, current and complete. You are fully responsible for maintaining the confidentiality of Your password and account for all activities that occur under Your password or account. The WAE Privacy Policy, available at the home page (http://www.waecorp.com), will govern the use of Your personal data.
               </p>
-              <p className="mb-[20px]"><strong>11.2 </strong>
-                The courts of Delhi, India shall have exclusive jurisdiction.
+            </div>
+          </div>
+        </div>
+
+        {/* Section 4: Your Conduct When Using the Site or the Service */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              4. Your Conduct When Using the Site or the Service
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                You understand that any content you post is solely your responsibility. You are solely responsible for your conduct on the Site and for all content that you may upload, post, license, sublicense, display or otherwise make available via the Service or the Site. WAE does not control such content and does not guarantee its accuracy, integrity, or quality. In addition, You will not:
               </p>
-              <p className="mb-[20px]"><strong>11.3 </strong>
-                The WAE Website is operated under Indian law. If accessed outside India, users are solely responsible for compliance with local laws.
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li>Upload, reproduce, post, display, license, sublicense or otherwise make available any content that is offensive, inappropriate, unlawful, harmful, threatening, abusive, harassing, tortious, defamatory, vulgar, obscene, libelous, invasive of another's privacy, hateful, or otherwise objectionable or contrary to applicable laws.</li>
+                <li>Harm minors in any way.</li>
+                <li>Forge headers or manipulate identifiers to disguise the origin of any content.</li>
+                <li>Upload or distribute content that (i) you do not have a right to make available, (ii) infringes any intellectual property rights, or (iii) contains viruses or harmful computer code.</li>
+                <li>Interfere with or disrupt the Site, Service, or its networks; disobey any network procedures or policies; modify or hack the Site; or misrepresent your affiliation with the Site.</li>
+                <li>Use any elements available on the Site except when specifically authorized; obtain materials or information through unauthorized means; stalk or harass others; collect personal data of other users; or otherwise violate applicable laws.</li>
+              </ul>
+              <p>
+                Do not insert hyperlinks to your or third party sites or content unless you have verified they comply with these guidelines. You acknowledge that (i) We may remove any content that violates these Terms and (ii) WAE may access, preserve and disclose your account and content as required by law or to protect rights, property, or safety.
+              </p>
+              <p>
+                By posting any content to WAE Community Sites or Blogs, You grant WAE a worldwide, royalty-free, sub-licensable, transferable and non-exclusive license to use, copy, distribute, reproduce, modify, translate, adapt, and publicly display such content in connection with the promotion of WAE products and services for the duration of the legal protection of the intellectual property rights.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 5: Links to Third Party Websites */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              5. Links to Third Party Websites
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                We have no control over third party websites linked from the Site. These links are provided solely for convenience. If You use them, You will leave the Site, and We assume no responsibility for any content or issues arising therefrom.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 6: Linking to the Site */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              6. Linking to the Site
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                You may link to the Site provided that you do not replicate the home page, remove or alter our logos, create frames or imply our endorsement of products/services other than our own, or misrepresent your relationship with Us. Your website must not contain distasteful, offensive or controversial content or violate any rights or laws. We reserve the right to revoke linking privileges for breach of these Terms.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 7: Limited License to Access and Use the Site – Proprietary Rights of WAE */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              7. Limited License to Access and Use the Site – Proprietary Rights of WAE
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                You acknowledge that the Site and its software contain proprietary and confidential information protected by intellectual property laws. All materials including design, text, software, scripts, graphics, photos, interactive features, and trademarks are owned or licensed by WAE and are subject to copyright and other rights. Except for the rights expressly granted herein, all rights are reserved.
+              </p>
+              <p>
+                You may not modify, reproduce, duplicate, copy, sell, transmit, store, or exploit any materials from the Site for any commercial purpose or public display, nor make any derivative use of the Site or its contents. Unauthorized use terminates any permission granted.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 8: Software Available */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              8. SOFTWARE AVAILABLE
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                Any software available on this Site, whether free or licensed, is the copyrighted work of WAE, its affiliates, and/or suppliers. Your use of such Software is governed by the accompanying license agreement (if any) and must be accepted through any provided double-click acceptance process. Copying or redistributing the Software to any other server or location is prohibited. The Software is warranted only in accordance with its License Agreement and is subject to export control laws.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 9: Exclusions and Limitations of Liability */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              9. EXCLUSIONS AND LIMITATIONS OF LIABILITY
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                The Site and its content are provided “as is” and “as available” without warranty of any kind. We exclude all warranties including, without limitation, merchantability, satisfactory quality, fitness for a particular purpose, non-infringement, and any warranty regarding the servers being free of viruses or other disruptive code. Use of the Site is entirely at Your risk. We will use reasonable endeavors to correct any errors once notified but assume no liability for any damages, errors, or omissions, whether indirect, consequential, or incidental. Nothing in these Terms shall limit liability for death, personal injury, fraud, or any liability that cannot be limited by law.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 10: Electronic Communications */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              10. ELECTRONIC COMMUNICATIONS
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                When you visit the Site, make purchases, or send emails to us, you are communicating with us electronically. You consent to receive communications electronically (via email or posted notices) which will satisfy any legal requirement that such communications be in writing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 11: Indemnification */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              11. INDEMNIFICATION
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                You agree to indemnify, defend, and hold harmless WAE India Pvt. Ltd., its affiliates, officers, directors, employees, agents, licensors, and suppliers from and against all losses, expenses, damages, and costs (including reasonable attorney fees) resulting from any violation of these Terms of Use or any activity related to your account.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 12: Jurisdiction and Governing Law */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              12. JURISDICTION AND GOVERNING LAW
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                These Terms of Use shall be governed by and construed in accordance with the laws of India. Any legal action arising out of or related to your use of the Site shall be subject to the exclusive jurisdiction of the courts located in New Delhi, India. You consent to the personal jurisdiction of such courts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 13: Changes to Terms */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              13. CHANGES TO TERMS
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                WAE reserves the right, at its sole discretion, to revise, modify, or update these Terms of Use at any time. Any such changes will be effective immediately upon posting on the Site, and continued use of the Site constitutes your acceptance of the modified Terms. It is your responsibility to check this page periodically for updates.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 14: Export Control Compliance */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              14. EXPORT CONTROL COMPLIANCE
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                You agree not to export or re-export any software, technology, or products from the Site in violation of applicable Indian export laws or regulations, and further agree to comply with all applicable Indian laws regarding the transmission of technical data exported from India.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 15: Copyright Infringement Notification (DMCA Equivalent) */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              15. COPYRIGHT INFRINGEMENT NOTIFICATION (DMCA EQUIVALENT)
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                If you believe that your copyrighted work has been copied or used on this Site in a manner that constitutes copyright infringement, you may notify us with the following information:
+              </p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li>A physical or electronic signature of the copyright owner or an authorized representative;</li>
+                <li>Identification of the copyrighted work claimed to have been infringed;</li>
+                <li>Identification of the material that is claimed to be infringing and its location on the Site;</li>
+                <li>Your contact information (address, phone number, and email);</li>
+                <li>A statement that you have a good faith belief that the use of the material is not authorized by the copyright owner, its agent, or the law;</li>
+                <li>A statement that the information in the notice is accurate and, under penalty of perjury, that you are the owner or authorized to act on behalf of the owner.</li>
+              </ul>
+              <p>
+                Please send copyright-related concerns to:<br />
+                Legal Compliance<br />
+                WAE India Pvt. Ltd.<br />
+                Email: legal@waecorp.com<br />
+                Subject Line: "Copyright Infringement Notice"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 16: Payment Processing */}
+        <div className="mb-[80px]">
+          <div className="grid grid-cols-2 gap-y-[80px]" style={{ justifyContent: "space-between" }}>
+            <h3
+              style={{
+                width: "75%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "32px",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              16. PAYMENT PROCESSING
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            >
+              <p>
+                Certain purchases or services may require payment. All payments made through the Site shall be processed through secure third-party gateways authorized in India. WAE is not liable for any issues arising out of payment processing. You agree to provide current, complete, and accurate purchase and account information and to promptly update your account with any changes.
               </p>
             </div>
           </div>

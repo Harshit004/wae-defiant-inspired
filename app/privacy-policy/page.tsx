@@ -359,7 +359,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              HOW WE COLLECT AND USE INFORMATION
+              How we collect information
             </h3>
             {/* Right Column: Policy Content */}
             <div
@@ -453,7 +453,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              HOW WE SHARE INFORMATION
+              How we share information
             </h3>
             <div
               style={{
@@ -519,7 +519,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              YOUR CHOICES
+              Your Choices
             </h3>
             <div
               style={{
@@ -571,7 +571,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              CORRECTING OR UPDATING YOUR INFORMATION
+              Correcting or Updating your information
             </h3>
             <div
               style={{
@@ -608,7 +608,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              COOKIES
+              Cookies
             </h3>
             <div
               style={{
@@ -651,7 +651,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              INTEREST-BASED ADVERTISING
+              Interest-based Advertising
             </h3>
             <div
               style={{
@@ -688,7 +688,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              CHILDREN
+              Children
             </h3>
             <div
               style={{
@@ -729,7 +729,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              LINKS TO THIRD PARTIES AND SOCIAL MEDIA
+              Links to Third paties and Social Media
             </h3>
             <div
               style={{
@@ -769,7 +769,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              SAFEGUARDING YOUR KYC
+              Safeguarding your KYC
             </h3>
             <div
               style={{
@@ -810,7 +810,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              UPDATES TO THE PRIVACY POLICY
+              Updates to the Privacy Policy
             </h3>
             <div
               style={{
