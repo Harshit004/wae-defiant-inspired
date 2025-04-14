@@ -4,6 +4,7 @@ import { FC, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import gsap from "gsap";
 import RelatedCard from "@/components/related-card";
 import Footer from "@/components/footer";
 
@@ -51,6 +52,7 @@ const Home: FC = () => {
   const [headerHeight, setHeaderHeight] = useState<number>(0);
   const headerRef = useRef<HTMLDivElement>(null);
   const [heroRef, heroInView] = useInView({ threshold: 0.5 });
+  const [openingsRef, openingsInView] = useInView({ threshold: 0.5 });
   const [taglineVisible, setTaglineVisible] = useState<boolean>(true);
   const prevScrollY = useRef<number>(0);
   const [headerHeroScale, setHeaderHeroScale] = useState<number>(1);
@@ -120,6 +122,19 @@ const Home: FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Trigger GSAP animation when the Current Openings section is no longer in view
+  useEffect(() => {
+    if (!openingsInView) {
+      gsap.to(".sticky-logo", {
+        duration: 2,
+        x: (index, target) =>
+          -((window.innerWidth / 2) - target.offsetWidth / 2) + 20,
+        y: (index, target) =>
+          -((window.innerHeight / 2) - target.offsetHeight / 2) + 20,
+      });
+    }
+  }, [openingsInView]);
+
   // Framer Motion scroll-driven animations
   const { scrollYProgress } = useScroll();
   const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
@@ -162,7 +177,11 @@ const Home: FC = () => {
   };
   const childVariants = {
     hidden: { opacity: 0, x: -10 },
-    visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { ease: "easeInOut", duration: 1 },
+    },
   };
 
   return (
@@ -220,55 +239,7 @@ const Home: FC = () => {
                 78.9629° E
               </div>
 
-              {/* Tagline Animation */}
-              {/* <div className="flex flex-col items-start">
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={taglineVisible ? "visible" : "hidden"}
-                  className="flex flex-row justify-center whitespace-nowrap"
-                >
-                  {taglineWords1.map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={childVariants}
-                      className="mr-1"
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "10px",
-                        lineHeight: "125%",
-                        color: "#000",
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </motion.div>
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={taglineVisible ? "visible" : "hidden"}
-                  className="flex flex-row justify-center whitespace-nowrap"
-                >
-                  {taglineWords2.map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={childVariants}
-                      className="mr-1"
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "10px",
-                        lineHeight: "125%",
-                        color: "#000",
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </motion.div>
-              </div> */}
+              {/* Tagline */}
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
@@ -368,57 +339,21 @@ const Home: FC = () => {
           className="relative h-[88%] w-full mt-[20px] overflow-hidden"
         >
           <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7555703d-4415-456f-dabb-9055ad5ec500/public"
-              alt="Career hero image"
-              width={250}
-              height={250}
-              className="w-full h-[88%]" />
-          {/* <div
-            className="absolute"
-            style={{
-              top: "350px",
-              left: "60%",
-              width: "393px",
-              height: "159px",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "48px",
-              lineHeight: "110%",
-              color: "#000",
-            }}
-          >
-            We are <br />
-            disrupting the <br />
-            status quo
-          </div>
-          <div
-            className="absolute uppercase"
-            style={{
-              top: "558px",
-              left: "9.72%",
-              width: "104px",
-              height: "12px",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "10px",
-              lineHeight: "100%",
-              color: "#00000099",
-            }}
-          >
-            Scroll for more ⤵︎
-          </div> */}
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7555703d-4415-456f-dabb-9055ad5ec500/public"
+            alt="Career hero image"
+            width={250}
+            height={250}
+            className="w-full h-[88%]"
+          />
         </section>
       </div>
 
       {/* SCROLL-DRIVEN CONTAINER */}
-      <motion.div
-        className="relative bg-[#F2F2F2] mt-screen"
-        style={{ marginTop: "100vh" }}
-      >
+      <motion.div className="relative bg-[#F2F2F2]" style={{ marginTop: "100vh" }}>
         {/* Sticky Logo Overlay */}
         <motion.div
           style={{ position: "sticky", top: "5%", zIndex: 1100, opacity: logoOpacity }}
-          className="pointer-events-none flex justify-center pt-[180px]"
+          className="sticky-logo pointer-events-none flex justify-center pt-[180px]"
         >
           <div className="max-w-[19.375rem] max-h-[19.375rem]">
             <Image
@@ -431,7 +366,7 @@ const Home: FC = () => {
           </div>
         </motion.div>
 
-        {/* Wgy WAE Section */}
+        {/* Why WAE Section */}
         <section className="h-screen/2 flex items-end justify-center relative mb-[180px]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
@@ -446,13 +381,11 @@ const Home: FC = () => {
               </h2>
               <div className="flex flex-col gap-5 w-64">
                 <p className="w-[270px] font-[Inter Tight] text-[14px] leading-[100%] text-black/70">
-                    Life at WAE is vibrant and inspiring. Our culture is 
-                    a tapestry of collaboration, inclusivity, and 
-                    continuous learning. Here, your professional 
-                    growth is as important as your personal well-
-                    being. Enjoy a work environment that fosters 
-                    creativity, supports balance, and celebrates 
-                    every success. At WAE, your journey is our story.
+                  Life at WAE is vibrant and inspiring. Our culture is a tapestry of
+                  collaboration, inclusivity, and continuous learning. Here, your
+                  professional growth is as important as your personal well-being.
+                  Enjoy a work environment that fosters creativity, supports balance,
+                  and celebrates every success. At WAE, your journey is our story.
                 </p>
               </div>
             </div>
@@ -460,7 +393,7 @@ const Home: FC = () => {
         </section>
 
         {/* Current Openings Section */}
-        <section className="h-screen/2 flex items-end justify-center relative">
+        <section className="h-screen/2 flex items-end justify-center relative" ref={openingsRef}>
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -470,11 +403,15 @@ const Home: FC = () => {
           >
             <div className="flex flex-col lg:flex-col gap-y-[40px] items-end justify-between">
               <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
-              Current<br/>Openings
+                Current
+                <br />
+                Openings
               </h2>
               <div className="flex flex-col gap-5">
                 <p className="w-[270px] font-[Inter Tight] text-[14px] leading-[110%] text-black/70">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc purus, posuere in placerat a, porttitor ac est. Proin nec maximus lectus, ac varius massa.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc
+                  purus, posuere in placerat a, porttitor ac est. Proin nec maximus
+                  lectus, ac varius massa.
                 </p>
                 <HoverButton>
                   {(hovered) => (

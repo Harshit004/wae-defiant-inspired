@@ -765,7 +765,7 @@ const Home: FC = () => {
 
 
         {/* Make in INDIA Section */}
-        <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[180px]">
+        <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[180px] px-[9.72%]">
         <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -826,8 +826,8 @@ const Home: FC = () => {
           </motion.div>
         </section>
 
-        {/* About WAE Section */}
-        <section className="h-screen/2 flex items-end justify-center relative mb-[180px]">
+        {/* Sustainability Section */}
+        <section className="h-screen/2 flex items-end justify-center relative mb-[180px] px-[9.72%]">
         <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
