@@ -509,7 +509,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* HOW WE SHARE INFORMATION 2 Section */}
+        {/* YOUR CHOICES Section */}
         <div className="mb-[80px]">
           <div
             className="grid grid-cols-2 gap-y-[80px]"
@@ -526,7 +526,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              HOW WE SHARE INFORMATION
+              YOUR CHOICES
             </h3>
             <div
               style={{

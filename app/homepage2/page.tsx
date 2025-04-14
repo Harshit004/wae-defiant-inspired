@@ -765,7 +765,7 @@ const Home: FC = () => {
 
 
         {/* Make in INDIA Section */}
-        <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[180px] px-[9.72%]">
+        <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[360px] px-[9.72%]">
         <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
