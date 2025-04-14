@@ -1504,68 +1504,17 @@ export default function Home() {
                 verticalAlign: "middle",
                 color: "#00000099",
               }}
-            >
-              <p className="mb-[20px]">
-                This section applies to personal data processed by WAE Ltd in the territory of India or in relation to data principals located in India, in accordance with the Digital Personal Data Protection (DPDP) Act, 2023.
-              </p>
-              <div
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "24px",
-                  lineHeight: "100%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  color: "#00000099",
-                }}
-              >
-                Data Fiduciary Responsibilities:
-              </div>
-              <p className="mb-[20px]"></p>
-              <p className="mb-[16px]">WAE Ltd acts as a <strong>Data Fiduciary</strong> when determining the purpose and means of processing personal data. As a fiduciary, we are obligated to:</p>
+            > 
+              <p className="mb-[16px]">WAE Ltd may update or revise this Data Privacy Policy from time to time to reflect changes in:</p>
               <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
                 <li className="mb-[12px]">
-                Ensure data is processed lawfully and for specific, clear, and lawful purposes
+                Applicable data protection laws and regulations
                 </li>
                 <li className="mb-[12px]">
-                Limit the collection of personal data to what is necessary for those purposes
-                </li>
-                <li className="mb-[12px]">
-                Implement reasonable security safeguards to prevent data breaches
-                </li>
-                <li className="mb-[12px]">
-                Inform data principals of their rights, the purpose of data collection, and methods for grievance redressal
+                The technologies or platforms we use
                 </li>
                 <li>
-                Erase personal data when it is no longer required or upon withdrawal of consent, unless retention is required by law
-                </li>
-              </ul>
-              <p className="mb-[20px]"></p>
-
-              <div
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "24px",
-                  lineHeight: "100%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  color: "#00000099",
-                }}
-              >
-                Consent and Notice Requirements:
-              </div>
-              <p className="mb-[20px]"></p>
-              <p className="mb-[16px]">We seek clear, specific, and informed consent before processing personal data, unless a legal exception applies. Notices are provided at the time of data collection and outline:</p>
-              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
-                <li className="mb-[12px]">
-                Purpose of processing
-                </li>
-                <li className="mb-[12px]">
-                Rights available to data principals
-                </li>
-                <li>
-                Contact details of the Grievance Officer
+                Our services, products, or business operations
                 </li>
               </ul>
               <p className="mb-[20px]"></p>
@@ -1618,25 +1567,25 @@ export default function Home() {
           </div>
         </div>
 
-        {/* UPDATES TO THE PRIVACY POLICY */}
-        <div>
+        {/* Document Governance and Version Control */}
+        <div className="mb-[80px]">
           <div
-            className="grid grid-cols-2"
+            className="grid grid-cols-2 gap-y-[80px]"
             style={{ justifyContent: "space-between" }}
           >
             <h3
               style={{
-                width: "75%",
+                width: "85%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "32px",
                 lineHeight: "130%",
+                fontSize: "32px",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
                 color: "#000",
               }}
             >
-              UPDATES TO THE PRIVACY POLICY
+              11. Document Governance and Version Control
             </h3>
             <div
               style={{
@@ -1648,20 +1597,100 @@ export default function Home() {
                 verticalAlign: "middle",
                 color: "#00000099",
               }}
-            >
-              <p className="mb-[20px]">
-                If we modify this Privacy Policy, we will post the revised Privacy Policy online. We will notify you if the policy changes in any material way by sending a notice to the email address you provided us or by placing a prominent notice on our website at www.waecorp.com. You should check regularly to see if this Privacy Policy has changed.
-              </p>
-              <strong>
-                The "Last Updated" date at the top of this page will reflect the most recent changes.
-              </strong>
-              <div className="mb-[20px]"></div>
-              <p>
-                CONTACT US If you have any questions about this Privacy Policy, you can email, write, or call us: privacyterms@waecorp.com H-18 Sector 63 Noida. 201301 India 120-4069800
-              </p>
+            > 
+              <p className="mb-[20px]">This section outlines how WAE Ltd manages, reviews, and controls the official version of its Data Privacy Policy.</p>
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#00000099",
+                }}
+              >
+                Ownership and Responsibility:
+              </div>
+              <p className="mb-[20px]"></p>
+              <p className="mb-[16px]">The Legal and Compliance Team at WAE Ltd is responsible for:</p>
+              <ul className="mb-[16px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                Maintaining this document
+                </li>
+                <li className="mb-[12px]">
+                Reviewing its relevance and accuracy
+                </li>
+                <li>
+                Ensuring updates comply with applicable legal and regulatory frameworks
+                </li>
+              </ul>
+              <p>All questions or requests for clarification regarding this document should be directed to <ul><strong>legal@waecorp.com.</strong></ul></p>
             </div>
           </div>
         </div>
+
+        {/* Contact Information */}
+        <div>
+          <div
+            className="grid grid-cols-2 gap-y-[80px]"
+            style={{ justifyContent: "space-between" }}
+          >
+            <h3
+              style={{
+                width: "85%",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                lineHeight: "130%",
+                fontSize: "32px",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#000",
+              }}
+            >
+              12. Contact Information
+            </h3>
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "120%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099",
+              }}
+            > 
+              <p className="mb-[20px]">WAE Ltd welcomes inquiries, feedback, and concerns regarding the handling of personal data and this Data Privacy Policy.</p>
+              <p className="mb-[16px]">For any of the following:</p>
+              <ul className="mb-[20px] custom-bullet" style={{ lineHeight: "120%" }}>
+                <li className="mb-[12px]">
+                Requests related to your data protection rights
+                </li>
+                <li className="mb-[12px]">
+                Questions about our privacy practices
+                </li>
+                <li className="mb-[12px]">
+                Concerns about how your personal data is handled
+                </li>
+                <li>
+                Reporting potential data breaches or incidents
+                </li>
+              </ul>
+
+              <p className="mb-[16px]"></p>
+
+              <p className="mb-[12px]">You may contact us at:</p>
+              <strong>WAE Ltd Legal and Compliance Team</strong>
+              <p className="mb-[8px]"></p>
+              <p className="mb-[8px]"><strong>Email: </strong>legal@waecorp.com</p>
+              <strong>Website:www.waecorp.com</strong>
+              <p className="mb-[12px]">We aim to respond to legitimate requests and inquiries within the timelines specified under applicable laws and regulations. We may request additional information to verify your identity before processing certain requests to ensure data security.</p>
+              <p>For sensitive concerns, you may mark your communication as <strong>“Confidential – Data Privacy Concern.”</strong></p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       {/* FOOTER SECTION */}
