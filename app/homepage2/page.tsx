@@ -176,17 +176,17 @@ const Home: FC = () => {
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 600,
-                fontSize: "9px",
+                fontWeight: 500,
+                fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}
             >
-              <div className="text-gray-500">INSIGNIA</div>
-              <div className="text-gray-500">ORIGIN</div>
-              <div className="text-gray-500">OBJECTIVE</div>
-              <div className="text-gray-500">Inside WAE</div>
-              <div className="text-gray-500">ETCETERA</div>
+              <div>IDENTITY</div>
+              <div>ORIGIN</div>
+              <div>OBJECTIVE</div>
+              <div>INSIDE WAE</div>
+              <div>ETCETERA</div>
             </div>
 
             {/* Divider */}
@@ -209,10 +209,10 @@ const Home: FC = () => {
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "10px",
-                  lineHeight: "125%",
-                  color: "#000",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "100%",
+                  color: "#00000066",
                 }}
               >
                 20.5937° N
@@ -273,15 +273,13 @@ const Home: FC = () => {
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "10px",
-                  lineHeight: "125%",
-                  color: "#000",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "100%",
+                  color: "#00000066",
                 }}
               >
-                To lead the way in sustainability
-                <br />
-                ahead of the rest
+                To lead the way in<br />sustainability ahead of the<br />rest
               </div>
 
               {/* Inside WAE Menu Items */}

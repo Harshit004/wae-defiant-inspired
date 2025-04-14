@@ -188,24 +188,24 @@ const Home: FC = () => {
     <main className="relative">
       {/* HEADER AND HERO SECTION */}
       <div ref={headerHeroRef} className="fixed top-0 left-0 w-full h-screen z-0">
-        <header ref={headerRef} className="w-full relative z-10 mb-0">
+      <header ref={headerRef} className="w-full relative z-10 mb-0">
           <div className="mx-auto w-full max-w-[1440px] px-[140px]">
             {/* Top Row: Navigation */}
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 600,
-                fontSize: "9px",
+                fontWeight: 500,
+                fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}
             >
-              <div className="text-gray-500">INSIGNIA</div>
-              <div className="text-gray-500">ORIGIN</div>
-              <div className="text-gray-500">OBJECTIVE</div>
-              <div className="text-gray-500">Inside WAE</div>
-              <div className="text-gray-500">ETCETERA</div>
+              <div>IDENTITY</div>
+              <div>ORIGIN</div>
+              <div>OBJECTIVE</div>
+              <div>INSIDE WAE</div>
+              <div>ETCETERA</div>
             </div>
 
             {/* Divider */}
@@ -228,10 +228,10 @@ const Home: FC = () => {
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "10px",
-                  lineHeight: "125%",
-                  color: "#000",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "100%",
+                  color: "#00000066",
                 }}
               >
                 20.5937° N
@@ -239,20 +239,66 @@ const Home: FC = () => {
                 78.9629° E
               </div>
 
-              {/* Tagline */}
+              {/* Tagline Animation */}
+              {/* <div className="flex flex-col items-start">
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate={taglineVisible ? "visible" : "hidden"}
+                  className="flex flex-row justify-center whitespace-nowrap"
+                >
+                  {taglineWords1.map((word, index) => (
+                    <motion.span
+                      key={index}
+                      variants={childVariants}
+                      className="mr-1"
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 600,
+                        fontSize: "10px",
+                        lineHeight: "125%",
+                        color: "#000",
+                      }}
+                    >
+                      {word}
+                    </motion.span>
+                  ))}
+                </motion.div>
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate={taglineVisible ? "visible" : "hidden"}
+                  className="flex flex-row justify-center whitespace-nowrap"
+                >
+                  {taglineWords2.map((word, index) => (
+                    <motion.span
+                      key={index}
+                      variants={childVariants}
+                      className="mr-1"
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 600,
+                        fontSize: "10px",
+                        lineHeight: "125%",
+                        color: "#000",
+                      }}
+                    >
+                      {word}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              </div> */}
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "10px",
-                  lineHeight: "125%",
-                  color: "#000",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "100%",
+                  color: "#00000066",
                 }}
               >
-                To lead the way in sustainability
-                <br />
-                ahead of the rest
+                To lead the way in<br />sustainability ahead of the<br />rest
               </div>
 
               {/* Inside WAE Menu Items */}

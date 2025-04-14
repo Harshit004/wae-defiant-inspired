@@ -265,9 +265,9 @@ export default function Home() {
             marginBottom: "40px",
           }}
         >
-          Privacy Policy
+          WAE Ltd - Data Privacy Policy
         </h2>
-        {/* <p
+        <p
           style={{
             fontFamily: "'Inter Tight', sans-serif",
             fontWeight: 500,
@@ -275,11 +275,12 @@ export default function Home() {
             letterSpacing: "0%",
             lineHeight: "150%",
             verticalAlign: "middle",
+            marginBottom: "20px",
             color: "#000000",
           }}
         >
           Effective date: May 1, 2025
-        </p> */}
+        </p>
         <p
           style={{
             fontFamily: "'Inter Tight', sans-serif",

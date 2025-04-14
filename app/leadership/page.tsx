@@ -94,85 +94,76 @@ export default function Home() {
     <main className="relative pb-[40px]">
       {/* HEADER */}
       <div style={{ top: 0, left: 0, width: "100%" }}>
-        <header
-          ref={headerRef}
-          className="w-full"
-          style={{ marginBottom: 0, position: "relative", zIndex: 1 }}
-        >
-          <div className={containerClass}>
-            {/* Top Row: Location, Time, and Navigation */}
+      <header ref={headerRef} className="w-full relative z-10 mb-0">
+          <div className="mx-auto w-full max-w-[1440px] px-[140px]">
+            {/* Top Row: Navigation */}
             <div
-              className="grid grid-cols-5 items-center pt-[30px] pb-[10px]"
+              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 600,
-                fontSize: "9px",
+                fontWeight: 500,
+                fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
-                textTransform: "uppercase",
               }}
             >
-              <div style={{ color: "#00000066" }}>INSIGNIA</div>
-              <div style={{ color: "#00000066" }}>ORIGIN</div>
-              <div style={{ color: "#00000066" }}>OBJECTIVE</div>
-              <div style={{ color: "#00000066" }}>Inside WAE</div>
-              <div style={{ color: "#00000066" }}>ETCETERA</div>
+              <div>IDENTITY</div>
+              <div>ORIGIN</div>
+              <div>OBJECTIVE</div>
+              <div>INSIDE WAE</div>
+              <div>ETCETERA</div>
             </div>
 
             {/* Divider */}
             <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
 
-            {/* Bottom Row: Logo, Animated Tagline, and Menu Items */}
+            {/* Bottom Row: Logo, Tagline and Menu Items */}
             <div className="grid grid-cols-5 items-start">
-              {/* Column 1: Logo */}
+              {/* Logo */}
               <div className="flex flex-col justify-center">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
                   alt="WAE Logo"
-                  width={77.53575134277344}
-                  height={82.03529357910156}
+                  width={78}
+                  height={82}
                 />
               </div>
 
               {/* Coordinates */}
-              <div className="flex flex-col justify-center"
+              <div
+                className="flex flex-col justify-center inline-block mr-1"
                 style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "10px",
-                    lineHeight: "125%",
-                    letterSpacing: "0px",
-                    color: "#000000",
-                    marginRight: "0.2rem",
-                    display: "inline-block",
-                  }}
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "100%",
+                  color: "#00000066",
+                }}
               >
-                20.5937° N<br/>
+                20.5937° N
+                <br />
                 78.9629° E
               </div>
 
-              {/* Column 3: Animated Tagline */}
-              <div className="flex flex-col items-start">
+              {/* Tagline Animation */}
+              {/* <div className="flex flex-col items-start">
                 <motion.div
                   variants={containerVariants}
                   initial="hidden"
                   animate={taglineVisible ? "visible" : "hidden"}
-                  style={{ whiteSpace: "nowrap" }}
-                  className="flex flex-row justify-center"
+                  className="flex flex-row justify-center whitespace-nowrap"
                 >
                   {taglineWords1.map((word, index) => (
                     <motion.span
                       key={index}
                       variants={childVariants}
+                      className="mr-1"
                       style={{
                         fontFamily: "'Inter Tight', sans-serif",
                         fontWeight: 600,
                         fontSize: "10px",
                         lineHeight: "125%",
-                        letterSpacing: "0px",
-                        color: "#000000",
-                        marginRight: "0.2rem",
-                        display: "inline-block",
+                        color: "#000",
                       }}
                     >
                       {word}
@@ -183,50 +174,56 @@ export default function Home() {
                   variants={containerVariants}
                   initial="hidden"
                   animate={taglineVisible ? "visible" : "hidden"}
-                  style={{ whiteSpace: "nowrap" }}
-                  className="flex flex-row justify-center"
+                  className="flex flex-row justify-center whitespace-nowrap"
                 >
                   {taglineWords2.map((word, index) => (
                     <motion.span
                       key={index}
                       variants={childVariants}
+                      className="mr-1"
                       style={{
                         fontFamily: "'Inter Tight', sans-serif",
                         fontWeight: 600,
                         fontSize: "10px",
                         lineHeight: "125%",
-                        letterSpacing: "0px",
-                        color: "#000000",
-                        marginRight: "0.2rem",
-                        display: "inline-block",
+                        color: "#000",
                       }}
                     >
                       {word}
                     </motion.span>
                   ))}
                 </motion.div>
+              </div> */}
+              <div
+                className="flex flex-col justify-center inline-block mr-1"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "100%",
+                  color: "#00000066",
+                }}
+              >
+                To lead the way in<br />sustainability ahead of the<br />rest
               </div>
 
-              {/* Column 4: Products & Solutions Menu Items */}
+              {/* Inside WAE Menu Items */}
               <div className="flex flex-col justify-center space-y-2">
                 {productsItems.map((item, i) => (
                   <div
                     key={i}
-                    className="pb-2"
+                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
                       fontSize: "12px",
                       lineHeight: "100%",
-                      letterSpacing: "0px",
-                      textAlign: "left",
-                      borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
                     }}
                   >
                     <div className="c--anim-btn">
                       <div className="text-container">
                         <span className="c-anim-btn">{item}</span>
-                        <span style={{ display: "block" }}>{item}</span>
+                        <span className="block">{item}</span>
                       </div>
                       <span className="menu-arrow">
                         <svg
@@ -247,26 +244,23 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Column 5: Blueprint Menu Items */}
+              {/* ETCETERA Menu Items */}
               <div className="flex flex-col justify-center space-y-2">
                 {blueprintItems.map((item, i) => (
                   <div
                     key={i}
-                    className="pb-2"
+                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
                       fontSize: "12px",
                       lineHeight: "100%",
-                      letterSpacing: "0px",
-                      textAlign: "left",
-                      borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
                     }}
                   >
                     <div className="c--anim-btn">
                       <div className="text-container">
                         <span className="c-anim-btn">{item}</span>
-                        <span style={{ display: "block" }}>{item}</span>
+                        <span className="block">{item}</span>
                       </div>
                       <span className="menu-arrow blueprint-arrow">
                         <svg
