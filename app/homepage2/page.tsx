@@ -140,9 +140,9 @@ const Home: FC = () => {
 
   // Menu items arrays
   const productsItems = [
-    "Identity and Ambition",
-    "Products & Solution",
-    "Career",
+    "This Is Us",
+    "Our Portfolio",
+    "Reimagine Work",
   ];
   const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"];
   const lineCount = Math.min(productsItems.length, blueprintItems.length);
