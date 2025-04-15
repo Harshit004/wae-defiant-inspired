@@ -70,7 +70,7 @@ const Home: FC = () => {
     <main>
       {/* Normal Header */}
       <header className="w-full">
-        <div className="mx-auto w-full max-w-[1440px] px-[140px] pt-[20px]">
+        <div className="mx-auto w-full max-w-[1440px] px-[140px] py-[20px]">
           {/* Top Row: Navigation */}
           <div
             className="grid grid-cols-5 items-center pb-2 uppercase"

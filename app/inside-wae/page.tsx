@@ -4,7 +4,6 @@ import { FC, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import RelatedCard from "@/components/related-card";
 import Footer from "@/components/footer";
 
 interface HoverButtonProps {
@@ -323,7 +322,7 @@ const Home: FC = () => {
         <section
           id="hero"
           ref={heroRef}
-          className="absolute w-full object-cover mt-[20px]"
+          className="absolute w-full object-fill mt-[20px]"
           style={{
             // Place the hero section just below the header
             top: headerHeight,
@@ -335,7 +334,7 @@ const Home: FC = () => {
             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5d0fe159-5f4f-45b4-49f7-f3928503ea00/public"
             alt="Hero background"
             layout="fill"
-            objectFit="cover"
+            objectFit="fill"
           />
         </section>
       </div>
@@ -361,7 +360,7 @@ const Home: FC = () => {
           </div>
         </motion.div>
 
-        {/* Two paras Section */}
+        {/* About WAE Section */}
         <section className="flex items-end justify-center relative mb-[150px]">
           <motion.div
             initial={{ y: "50%", opacity: 0 }}
@@ -373,10 +372,11 @@ const Home: FC = () => {
             <div className="flex flex-col lg:flex-row items-start justify-between">
               <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight"></h2>
               <div className="flex flex-col gap-5 w-64">
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
+                <h2 className="w-fit font-[Inter Tight] text-[58px] leading-[110%] text-black mb-5 whitespace-nowrap"> About WAE</h2>
+                <p className="w-[290px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                   WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology. We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations for the country’s advancements, integrity & innovation. Our approach strengthens community resilience while showcasing India’s Intellectual capital on the world stage.
                 </p>
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
+                <p className="w-[290px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                   WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology. We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations for the country’s advancements, integrity & innovation. Our approach strengthens community resilience while showcasing India’s Intellectual capital on the world stage.
                 </p>
               </div>
@@ -385,7 +385,7 @@ const Home: FC = () => {
         </section>
 
         {/* Vision and Mission Section */}
-        <section className="flex items-end justify-center relative mb-[250px]">
+        <section className="flex items-end justify-center relative mb-[180px]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -435,7 +435,7 @@ const Home: FC = () => {
         </section>
 
         {/* People & Culture Section */}
-        <section className="flex items-end justify-center relative pt-[180px] mb-[250px] px-[9.72%]">
+        <section className="flex items-end justify-center relative mb-[180px] px-[9.72%]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -487,7 +487,7 @@ const Home: FC = () => {
         </section>
 
         {/* Leadership Team Section */}
-        <section className="flex items-end justify-center relative pt-[180px] mb-[250px] px-[9.72%]">
+        <section className="flex items-end justify-center relative mb-[180px] px-[9.72%]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -539,7 +539,7 @@ const Home: FC = () => {
         </section>
 
         {/* Code of Conduct Section */}
-        <section className="flex items-end justify-center relative pt-[180px] mb-[250px] px-[9.72%]">
+        <section className="flex items-end justify-center relative mb-[180px] px-[9.72%]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -591,7 +591,7 @@ const Home: FC = () => {
         </section>
 
         {/* Sustainability Section */}
-        <section className="flex items-end justify-center relative pt-[180px] px-[9.72%]">
+        <section className="flex items-end justify-center relative px-[9.72%]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
