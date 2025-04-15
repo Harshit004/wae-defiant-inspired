@@ -177,7 +177,7 @@ const Home: FC = () => {
       {/* HEADER AND HERO SECTION */}
       <div ref={headerHeroRef} className="fixed top-0 left-0 w-full z-0">
         <header ref={headerRef} className="w-full bg-[#f2f2f2] relative z-10 mb-[20px]">
-          <div className="mx-auto w-full max-w-[1440px] px-[140px]">
+          <div className="mx-auto w-full max-w-[1440px] px-[9.72%]">
             {/* Top Row: Navigation */}
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
@@ -338,7 +338,7 @@ const Home: FC = () => {
             className="absolute"
             style={{
               bottom: "30%",
-              left: "60%",
+              right: "3.473%",
               width: "393px",
               height: "159px",
             }}
@@ -355,7 +355,7 @@ const Home: FC = () => {
             className="absolute uppercase"
             style={{
               bottom: "33%",
-              left: "9.72%",
+              left: "4.16666%",
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
               fontSize: "48px",
@@ -369,7 +369,7 @@ const Home: FC = () => {
             className="absolute uppercase"
             style={{
               bottom: "30%",
-              left: "9.8%",
+              left: "4.16666%",
               width: "104px",
               height: "12px",
               fontFamily: "'Inter Tight', sans-serif",
