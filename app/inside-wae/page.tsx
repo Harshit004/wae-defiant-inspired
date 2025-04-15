@@ -337,7 +337,7 @@ const Home: FC = () => {
           <div
             className="absolute"
             style={{
-              top: "27.77%",
+              bottom: "35%",
               left: "60%",
               width: "393px",
               height: "159px",
@@ -354,7 +354,7 @@ const Home: FC = () => {
           <div
             className="absolute uppercase"
             style={{
-              top: "37%",
+              bottom: "37%",
               left: "9.72%",
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
@@ -368,7 +368,7 @@ const Home: FC = () => {
           <div
             className="absolute uppercase"
             style={{
-              top: "46%",
+              bottom: "33%",
               left: "9.8%",
               width: "104px",
               height: "12px",
