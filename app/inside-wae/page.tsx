@@ -176,7 +176,7 @@ const Home: FC = () => {
     <main className="relative">
       {/* HEADER AND HERO SECTION */}
       <div ref={headerHeroRef} className="fixed top-0 left-0 w-full z-0">
-        <header ref={headerRef} className="w-full relative z-10 mb-[20px]">
+        <header ref={headerRef} className="w-full bg-[#f2f2f2] relative z-10 mb-[20px]">
           <div className="mx-auto w-full max-w-[1440px] px-[140px]">
             {/* Top Row: Navigation */}
             <div
@@ -322,20 +322,65 @@ const Home: FC = () => {
         <section
           id="hero"
           ref={heroRef}
-          className="absolute w-full object-fill mt-[20px]"
-          style={{
-            // Place the hero section just below the header
-            top: headerHeight,
-            // Set the hero height to the remaining viewport space
-            height: `calc(100vh - ${headerHeight}px)`,
-          }}
+          className="relative h-screen w-full overflow-hidden"
         >
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5d0fe159-5f4f-45b4-49f7-f3928503ea00/public"
-            alt="Hero background"
-            layout="fill"
-            objectFit="fill"
+          <video
+            src="/3f6940f6f51b6c16ee6d8104dc1d4344a4633a81.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
           />
+
+          {/* Replacing the text with the provided image */}
+          <div
+            className="absolute"
+            style={{
+              top: "27.77%",
+              left: "60%",
+              width: "393px",
+              height: "159px",
+            }}
+          >
+            <Image
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/baae1906-6288-4ad1-dac7-226c1109fb00/public"
+              alt="Disrupting the status quo"
+              width={393}
+              height={159}
+              className="object-contain"
+            />
+          </div>
+          <div
+            className="absolute uppercase"
+            style={{
+              top: "37%",
+              left: "9.72%",
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "48px",
+              lineHeight: "110%",
+              color: "#fff",
+            }}
+          >
+            INSIDE WAE
+          </div>
+          <div
+            className="absolute uppercase"
+            style={{
+              top: "46%",
+              left: "9.8%",
+              width: "104px",
+              height: "12px",
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "10px",
+              lineHeight: "100%",
+              color: "#fff",
+            }}
+          >
+            Scroll for more ⤵︎
+          </div>
         </section>
       </div>
 
