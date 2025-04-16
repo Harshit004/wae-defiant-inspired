@@ -1,11 +1,26 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useState } from "react";
 import Image from "next/image";
 import Footer from "@/components/footer";
 import RelatedCard from "@/components/related-card";
 
+const mountingOptions = [
+  "Free-standing",
+  "Floor-standing",
+  "On Wall",
+  "In Wall",
+  "Outdoor",
+  "Wall Hanging",
+  "Under Counter",
+  "Counter-top",
+  "Open-skid",
+  "Closed-skid",
+];
+
 const Home: FC = () => {
+  const [showMountingDropdown, setShowMountingDropdown] = useState(false);
+
   // Common button style based on the typography instructions.
   const buttonStyle: React.CSSProperties = {
     padding: "16px",
@@ -19,8 +34,6 @@ const Home: FC = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    flex: 1,
-    maxWidth: "16%",
   };
 
   // Data for the 4 buttons along with their alternating background and text colors.
@@ -196,46 +209,125 @@ const Home: FC = () => {
         {/* Gap of 120px after the hero */}
         <div style={{ height: "120px" }} />
 
-        <div
-          className="flex items-center gap-4"
-          style={{ justifyContent: "flex-start" }}
-        >
-          {buttons.map((btn, index) => (
-            <button
-              key={index}
-              style={{
-                ...buttonStyle,
-                backgroundColor: btn.background,
-                color: btn.color,
-              }}
-            >
-              <span className="flex items-center">
-                {btn.label}
-                {btn.label !== "FILTER BY" && (
-                  <svg
-                    className="w-2.5 h-2.5 ms-3"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 10 6"
+        <div className="flex items-center gap-4" style={{ justifyContent: "flex-start" }}>
+          {buttons.map((btn, index) => {
+            if (btn.label === "MOUNTING TYPE") {
+              return (
+                <div key={index} className="relative" style={{ width: "fit-content" }}>
+                  <button
+                    style={{
+                      ...buttonStyle,
+                      flex: "unset",
+                      width: "100%",
+                      backgroundColor: btn.background,
+                      color: btn.color,
+                    }}
+                    onClick={() => setShowMountingDropdown((prev) => !prev)}
+                    className="w-full"
                   >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="m1 1 4 4 4-4"
-                    />
-                  </svg>
-                )}
-              </span>
-            </button>
-          ))}
+                    <span className="flex items-center gap-4 whitespace-nowrap">
+                      {btn.label}
+                      <svg
+                        className={`w-2.5 h-2.5 transition-transform duration-500 ${
+                          showMountingDropdown ? "rotate-180" : ""
+                        }`}
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 10 6"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1"
+                          d="m1 1 4 4 4-4"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  {/* Dropdown Menu positioned directly under the button */}
+                  <div
+                    className={`absolute left-0 top-full w-full bg-white transition-all duration-500 ease-in-out ${
+                      showMountingDropdown
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 -translate-y-0.5 pointer-events-none"
+                    }`}
+                    style={{
+                      boxShadow: "0px 4px 4px 0px #00000040",
+                      padding: "20px 8px", // Increased right padding by using 20px on both sides
+                      zIndex: 10,
+                    }}
+                  >
+                    {mountingOptions.map((option, idx) => (
+                      <div key={idx} className="flex items-center mb-2">
+                        <input
+                          id={`mounting-option-${idx}`}
+                          type="checkbox"
+                          className="form-checkbox"
+                          style={{ accentColor: "#000" }}
+                        />
+                        <label
+                          htmlFor={`mounting-option-${idx}`}
+                          style={{
+                            fontFamily: "Inter Tight",
+                            fontWeight: 400,
+                            fontSize: "12px",
+                            lineHeight: "140%",
+                            letterSpacing: "0%",
+                            textAlign: "center",
+                            verticalAlign: "middle",
+                            marginLeft: "45px",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {option}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <button
+                key={index}
+                style={{
+                  ...buttonStyle,
+                  backgroundColor: btn.background,
+                  color: btn.color,
+                  flex: 1,
+                  maxWidth: "16%",
+                }}
+              >
+                <span className="flex items-center">
+                  {btn.label}
+                  {btn.label !== "FILTER BY" && (
+                    <svg
+                      className="w-2.5 h-2.5 ms-3"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1"
+                        d="m1 1 4 4 4-4"
+                      />
+                    </svg>
+                  )}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Gap of 12px before the horizontal rule */}
         <div style={{ height: "12px" }} />
-        
+
         {/* Horizontal rule */}
         <hr style={{ borderColor: "#00000066" }} />
       </section>

@@ -15,7 +15,6 @@ interface HoverButtonProps {
  */
 const HoverButton: FC<HoverButtonProps> = ({ children }) => {
   const [hovered, setHovered] = useState<boolean>(false);
-
   return (
     <button
       type="button"
@@ -55,20 +54,25 @@ const Home: FC = () => {
   const [headerHeroScale, setHeaderHeroScale] = useState<number>(1);
   const headerHeroRef = useRef<HTMLDivElement>(null);
 
-  const sections = ["hero"]; // Extendable for additional sections
-
-  // Update tagline visibility on scroll
+  // (Existing) Update tagline visibility on scroll
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setTaglineVisible(currentScrollY < prevScrollY.current);
-      prevScrollY.current = currentScrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          setTaglineVisible(currentScrollY < prevScrollY.current);
+          prevScrollY.current = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Update current time (India Time) every minute
+  // (Existing) Update current time (India Time) every minute
   useEffect(() => {
     const updateIndiaTime = () => {
       const options: Intl.DateTimeFormatOptions = {
@@ -85,49 +89,54 @@ const Home: FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Set active section when hero is in view
+  // (Existing) Set active section when hero is in view
   useEffect(() => {
     if (heroInView) setActiveSection(0);
   }, [heroInView]);
 
-  // Measure header height to offset hero section and update on window resize
+  // (Existing) Measure header height to offset hero section and update on window resize
   useEffect(() => {
     const updateHeaderHeight = () => {
       if (headerRef.current) {
         setHeaderHeight(headerRef.current.clientHeight);
       }
     };
-
     updateHeaderHeight();
     window.addEventListener("resize", updateHeaderHeight);
     return () => window.removeEventListener("resize", updateHeaderHeight);
   }, []);
 
-  // Scroll-driven header/hero scaling effect
+  // (Existing) Scroll-driven header/hero scaling effect
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (!headerHeroRef.current) return;
-      const scrollPosition = window.scrollY;
-      const viewportHeight = window.innerHeight;
-      const maxScroll = viewportHeight * 0.8;
-      const minScale = 0;
-
-      if (scrollPosition <= 100) {
-        setHeaderHeroScale(1);
-      } else if (scrollPosition >= maxScroll) {
-        setHeaderHeroScale(minScale);
-      } else {
-        const scrollRange = maxScroll - 100;
-        const scrollProgress = (scrollPosition - 100) / scrollRange;
-        setHeaderHeroScale(1 - scrollProgress);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (headerHeroRef.current) {
+            const scrollPosition = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const maxScroll = viewportHeight * 0.8;
+            const minScale = 0;
+            if (scrollPosition <= 100) {
+              setHeaderHeroScale(1);
+            } else if (scrollPosition >= maxScroll) {
+              setHeaderHeroScale(minScale);
+            } else {
+              const scrollRange = maxScroll - 100;
+              const scrollProgress = (scrollPosition - 100) / scrollRange;
+              setHeaderHeroScale(1 - scrollProgress);
+            }
+            ticking = false;
+          }
+        });
+        ticking = true;
       }
     };
-
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Framer Motion scroll-driven animations
+  // (Existing) Framer Motion scroll-driven animations
   const { scrollYProgress } = useScroll();
   const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
   const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"]);
@@ -145,22 +154,15 @@ const Home: FC = () => {
     ([iO, iV]) => iO * iV
   );
 
-  // Menu items arrays
-  const productsItems = [
-    "This Is Us",
-    "Our Portfolio",
-    "Reimagine Work",
-  ];
+  // Menu items arrays and tagline words (for animation if needed)
+  const productsItems = ["This Is Us", "Our Portfolio", "Reimagine Work"];
   const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"];
-  const lineCount = Math.min(productsItems.length, blueprintItems.length);
-
-  // Tagline words split for animation
   const taglineLine1 = "To lead the way in sustainability";
   const taglineLine2 = "ahead of the rest";
   const taglineWords1 = taglineLine1.split(" ");
   const taglineWords2 = taglineLine2.split(" ");
 
-  // Framer Motion animation variants
+  // Framer Motion animation variants (if used elsewhere)
   const containerVariants = {
     hidden: {},
     visible: {
@@ -171,6 +173,50 @@ const Home: FC = () => {
     hidden: { opacity: 0, x: -10 },
     visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
   };
+
+  // NEW: Inertia effect – delay in scroll stopping
+  useEffect(() => {
+    let lastScrollPos = window.scrollY;
+    let lastTimestamp = performance.now();
+    let velocity = 0;
+    let inertiaFrame: number;
+    let debounceTimer: NodeJS.Timeout;
+
+    const onScroll = () => {
+      const now = performance.now();
+      const currentScroll = window.scrollY;
+      const dt = now - lastTimestamp;
+      // Calculate instantaneous velocity (pixels per ms)
+      velocity = (currentScroll - lastScrollPos) / dt;
+      lastScrollPos = currentScroll;
+      lastTimestamp = now;
+      // Clear any pending inertia trigger
+      if (debounceTimer) clearTimeout(debounceTimer);
+      // After 100ms of no scroll event, start inertia animation
+      debounceTimer = setTimeout(startInertia, 100);
+    };
+
+    const startInertia = () => {
+      const step = () => {
+        // Apply friction: reduce velocity over time
+        velocity *= 0.7;
+        // Compute next scroll position: multiply velocity by an estimated frame duration (16ms)
+        window.scrollTo(0, window.scrollY + velocity * 11);
+        // Continue while velocity remains above a threshold
+        if (Math.abs(velocity) > 0.1) {
+          inertiaFrame = requestAnimationFrame(step);
+        }
+      };
+      inertiaFrame = requestAnimationFrame(step);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (inertiaFrame) cancelAnimationFrame(inertiaFrame);
+      if (debounceTimer) clearTimeout(debounceTimer);
+    };
+  }, []);
 
   return (
     <main className="relative">
@@ -199,7 +245,7 @@ const Home: FC = () => {
             {/* Divider */}
             <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
 
-            {/* Bottom Row: Logo, Tagline and Menu Items */}
+            {/* Bottom Row: Logo, Coordinates, Tagline and Menu Items */}
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
               <div className="flex flex-col justify-center">
@@ -406,7 +452,7 @@ const Home: FC = () => {
         </motion.div>
 
         {/* About WAE Section */}
-        <section className="flex items-end justify-center relative mb-[150px]">
+        <section className="flex items-end justify-center relative mb-[250px]">
           <motion.div
             initial={{ y: "50%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -417,7 +463,6 @@ const Home: FC = () => {
             <div className="flex flex-col lg:flex-row items-start justify-between">
               <h2 className="font-[Inter Tight] font-normal text-4xl lg:text-6xl leading-tight">About WAE</h2>
               <div className="flex flex-col gap-5 w-64">
-                {/* <h2 className="w-fit font-[Inter Tight] text-[58px] leading-[110%] text-black mb-5 whitespace-nowrap"> About WAE</h2> */}
                 <p className="w-[290px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                   WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology. We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations for the country’s advancements, integrity & innovation. Our approach strengthens community resilience while showcasing India’s Intellectual capital on the world stage.
                 </p>
@@ -430,7 +475,7 @@ const Home: FC = () => {
         </section>
 
         {/* Vision and Mission Section */}
-        <section className="flex items-end justify-center relative mb-[180px]">
+        <section className="flex items-end justify-center relative mb-[300px]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -480,7 +525,7 @@ const Home: FC = () => {
         </section>
 
         {/* People & Culture Section */}
-        <section className="flex items-end justify-center relative mb-[180px] px-[9.72%]">
+        <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -532,7 +577,7 @@ const Home: FC = () => {
         </section>
 
         {/* Leadership Team Section */}
-        <section className="flex items-end justify-center relative mb-[180px] px-[9.72%]">
+        <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -584,7 +629,7 @@ const Home: FC = () => {
         </section>
 
         {/* Code of Conduct Section */}
-        <section className="flex items-end justify-center relative mb-[180px] px-[9.72%]">
+        <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -763,6 +808,13 @@ const Home: FC = () => {
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
+        }
+      `}</style>
+
+      {/* Global Styles */}
+      <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
         }
       `}</style>
     </main>
