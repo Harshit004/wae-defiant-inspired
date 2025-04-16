@@ -255,7 +255,7 @@ const Home: FC = () => {
                     }`}
                     style={{
                       boxShadow: "0px 4px 4px 0px #00000040",
-                      padding: "20px 8px", // Increased right padding by using 20px on both sides
+                      padding: "20px 8px",
                       zIndex: 10,
                     }}
                   >
@@ -286,6 +286,37 @@ const Home: FC = () => {
                       </div>
                     ))}
                   </div>
+                </div>
+              );
+            } else if (btn.label === "FILTER BY") {
+              // FILTER BY button with horizontal padding of 41.67px on each side and a vertical rule.
+              return (
+                <div
+                  key={index}
+                  className="flex  justify-between"
+                  style={{ flex: 1, maxWidth: "16%" }}
+                >
+                  <button
+                    style={{
+                      ...buttonStyle,
+                      flex: 1,
+                      backgroundColor: btn.background,
+                      color: btn.color,
+                      paddingLeft: "41.67px",
+                      paddingRight: "41.67px",
+                      whiteSpace: "nowrap",
+                      borderRight: "5px rgb(68, 67, 67)",
+                    }}
+                  >
+                    {btn.label}
+                  </button>
+                  <div
+                    style={{
+                      height: "100%",
+                      width: "0.67px",
+                      backgroundColor: "#00000066",
+                    }}
+                  />
                 </div>
               );
             }

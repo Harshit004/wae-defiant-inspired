@@ -174,49 +174,159 @@ const Home: FC = () => {
     visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
   };
 
-  // NEW: Inertia effect – delay in scroll stopping
-  useEffect(() => {
-    let lastScrollPos = window.scrollY;
-    let lastTimestamp = performance.now();
-    let velocity = 0;
-    let inertiaFrame: number;
-    let debounceTimer: NodeJS.Timeout;
+  // ENHANCED: Ultra-smooth scroll inertia with 1.8x distance and extremely gradual ending
+    useEffect(() => {
+      let lastScrollY = window.scrollY;
+      let lastTimestamp = performance.now();
+      let velocity = 0;
+      let inertiaFrame: number;
+      let scrollTimeout: NodeJS.Timeout;
+      let isScrolling = false;
+      let velocityReadings: number[] = [];
+      
+      // Distance multiplier - this controls how far the page scrolls after user stops
+      const DISTANCE_MULTIPLIER = 2.5;
 
-    const onScroll = () => {
-      const now = performance.now();
-      const currentScroll = window.scrollY;
-      const dt = now - lastTimestamp;
-      // Calculate instantaneous velocity (pixels per ms)
-      velocity = (currentScroll - lastScrollPos) / dt;
-      lastScrollPos = currentScroll;
-      lastTimestamp = now;
-      // Clear any pending inertia trigger
-      if (debounceTimer) clearTimeout(debounceTimer);
-      // After 100ms of no scroll event, start inertia animation
-      debounceTimer = setTimeout(startInertia, 100);
-    };
-
-    const startInertia = () => {
-      const step = () => {
-        // Apply friction: reduce velocity over time
-        velocity *= 0.7;
-        // Compute next scroll position: multiply velocity by an estimated frame duration (16ms)
-        window.scrollTo(0, window.scrollY + velocity * 11);
-        // Continue while velocity remains above a threshold
-        if (Math.abs(velocity) > 0.1) {
-          inertiaFrame = requestAnimationFrame(step);
+      const onScroll = () => {
+        // Clear any existing timeout to reset the timer
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        
+        const now = performance.now();
+        const currentScrollY = window.scrollY;
+        const deltaTime = now - lastTimestamp;
+        
+        // Calculate velocity with improved smoothing
+        if (deltaTime > 5) {
+          const newVelocity = (currentScrollY - lastScrollY) / deltaTime;
+          
+          // Store recent velocity readings for better average
+          velocityReadings.push(newVelocity);
+          if (velocityReadings.length > 6) {
+            velocityReadings.shift(); // Keep only the most recent 6 readings
+          }
+          
+          // Calculate a weighted average of recent velocities
+          let weightedSum = 0;
+          let weightSum = 0;
+          velocityReadings.forEach((v, i) => {
+            // Exponential weighting for even smoother transitions
+            const weight = Math.pow(2, i); // Exponential weights: 1, 2, 4, 8, 16, 32
+            weightedSum += v * weight;
+            weightSum += weight;
+          });
+          
+          velocity = weightSum > 0 ? weightedSum / weightSum : 0;
         }
+        
+        lastScrollY = currentScrollY;
+        lastTimestamp = now;
+        isScrolling = true;
+        
+        // Reset the detection timeout
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+          
+          // Apply the distance multiplier to the final velocity to achieve 1.8x distance
+          velocity *= DISTANCE_MULTIPLIER;
+          
+          startInertia();
+        }, 50);
       };
-      inertiaFrame = requestAnimationFrame(step);
-    };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (inertiaFrame) cancelAnimationFrame(inertiaFrame);
-      if (debounceTimer) clearTimeout(debounceTimer);
-    };
-  }, []);
+      const startInertia = () => {
+        // Cancel any existing animation
+        if (inertiaFrame) cancelAnimationFrame(inertiaFrame);
+        
+        // Skip inertia if velocity is too low
+        if (Math.abs(velocity) < 0.01) return;
+        
+        // Store initial values for the animation
+        const initialVelocity = velocity;
+        const startTime = performance.now();
+        const duration = 2000; // Extended duration for ultra-smooth ending
+        
+        let lastFrameTime = startTime;
+        let lastVelocity = initialVelocity; // Track the last velocity for smoothing
+        
+        const animate = (timestamp: number) => {
+          // Exit if user has started scrolling again
+          if (isScrolling) return;
+          
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const frameTime = timestamp - lastFrameTime;
+          lastFrameTime = timestamp;
+          
+          // Ultra-smooth deceleration curve - extremely gradual at the end
+          // This custom curve is very gentle, especially in the final 30%
+          let frictionCurve;
+          
+          if (progress < 0.7) {
+            // First 70%: Standard smooth curve
+            frictionCurve = Math.pow(1 - progress, 2.2);
+          } else {
+            // Final 30%: Extra gentle curve with logarithmic tail
+            // This creates an extremely gradual fadeout
+            const endProgress = (progress - 0.7) / 0.3; // Normalize 0.7-1.0 to 0-1
+            const baseDeceleration = Math.pow(1 - progress, 2.2);
+            const gentleTail = 0.3 * Math.pow(1 - endProgress, 3); // Very gentle tail
+            frictionCurve = baseDeceleration + gentleTail;
+          }
+          
+          // Calculate target velocity using our custom friction curve
+          let targetVelocity = initialVelocity * frictionCurve;
+          
+          // Apply secondary smoothing to velocity changes for even smoother transitions
+          // This prevents any sudden changes in acceleration
+          lastVelocity = lastVelocity * 0.85 + targetVelocity * 0.15;
+          
+          // Calculate scroll amount for this frame
+          const scrollAmount = lastVelocity * frameTime;
+          
+          // Apply the scroll
+          window.scrollBy(0, scrollAmount);
+          
+          // Continue animation if not finished and still has meaningful velocity
+          // Extremely low threshold for ultra-smooth ending
+          if (progress < 1 && Math.abs(lastVelocity) > 0.0005) {
+            inertiaFrame = requestAnimationFrame(animate);
+          } else if (Math.abs(lastVelocity) > 0.0005) {
+            // If we've reached the end of our duration but still have velocity,
+            // continue with a final fadeout phase
+            const finalFadeout = () => {
+              if (isScrolling) return;
+              
+              const now = performance.now();
+              const frameTime = now - lastFrameTime;
+              lastFrameTime = now;
+              
+              // Reduce velocity very gradually
+              lastVelocity *= 0.95;
+              
+              const scrollAmount = lastVelocity * frameTime;
+              window.scrollBy(0, scrollAmount);
+              
+              if (Math.abs(lastVelocity) > 0.0001) {
+                inertiaFrame = requestAnimationFrame(finalFadeout);
+              }
+            };
+            
+            inertiaFrame = requestAnimationFrame(finalFadeout);
+          }
+        };
+        
+        inertiaFrame = requestAnimationFrame(animate);
+      };
+
+      // Add passive listener for better performance
+      window.addEventListener("scroll", onScroll, { passive: true });
+      
+      return () => {
+        window.removeEventListener("scroll", onScroll);
+        if (inertiaFrame) cancelAnimationFrame(inertiaFrame);
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+      };
+    }, []);
 
   return (
     <main className="relative">
