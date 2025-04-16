@@ -352,7 +352,7 @@ const Home: FC = () => {
             />
           </div>
           <div
-            className="absolute uppercase"
+            className="absolute"
             style={{
               bottom: "33%",
               left: "4.16666%",
@@ -363,7 +363,7 @@ const Home: FC = () => {
               color: "#fff",
             }}
           >
-            INSIDE WAE
+            This Is Us
           </div>
           <div
             className="absolute uppercase"
@@ -415,9 +415,9 @@ const Home: FC = () => {
             className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
           >
             <div className="flex flex-col lg:flex-row items-start justify-between">
-              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight"></h2>
+              <h2 className="font-[Inter Tight] font-normal text-4xl lg:text-6xl leading-tight">About WAE</h2>
               <div className="flex flex-col gap-5 w-64">
-                <h2 className="w-fit font-[Inter Tight] text-[58px] leading-[110%] text-black mb-5 whitespace-nowrap"> About WAE</h2>
+                {/* <h2 className="w-fit font-[Inter Tight] text-[58px] leading-[110%] text-black mb-5 whitespace-nowrap"> About WAE</h2> */}
                 <p className="w-[290px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                   WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology. We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations for the country’s advancements, integrity & innovation. Our approach strengthens community resilience while showcasing India’s Intellectual capital on the world stage.
                 </p>
