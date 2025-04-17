@@ -369,7 +369,7 @@ const Home: FC = () => {
           <video
             src="/93af6227858930534ba0ecad01b7f3f02b655c7d.mp4"
             autoPlay
-            loop
+            // loop
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
