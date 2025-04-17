@@ -739,7 +739,7 @@ const Home: FC = () => {
         </section>
 
         {/* Code of Conduct Section */}
-        <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
+        {/* <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -788,7 +788,7 @@ const Home: FC = () => {
               </div>
             </div>
           </motion.div>
-        </section>
+        </section> */}
 
         {/* Sustainability Section */}
         <section className="flex items-end justify-center relative px-[9.72%]">
