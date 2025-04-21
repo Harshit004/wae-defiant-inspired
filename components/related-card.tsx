@@ -40,10 +40,10 @@ export default function RelatedCard({ image, title, description, width, height }
       </motion.div>
 
       <div className="transition-all duration-300 relative h-[12rem]">
-        <h3 className="font-[Inter Tight] font-[400] text-[16px] leading-[120%] tracking-[0%] align-middle mb-[12px] group-hover:no-underline px-[10px] pt-[12px]">
+        <h3 className="font-[Inter Tight] font-[400] text-[22px] leading-[120%] tracking-[0%] align-middle mb-[12px] group-hover:no-underline pt-[12px]">
           {title}
         </h3>
-        <p className="font-[Inter Tight] font-[400] text-[12px] leading-[110%] tracking-[-2%] align-middle text-gray-600 mb-[3rem] px-[10px]">
+        <p className="font-[Inter Tight] font-[400] text-[10px] leading-[110%] tracking-[-2%] align-middle text-gray-600 mb-[3rem] max-w-[272px]">
           {description}
         </p>
 

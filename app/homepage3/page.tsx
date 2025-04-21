@@ -881,38 +881,38 @@ const Home: FC = () => {
           style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
         >
           <h2 className="font-helvetica text-[3.625rem] leading-[110%] mb-[2.5rem] font-normal">
-            Related Information
+            Blogs
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <RelatedCard
-              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c32e685-fbfe-4edb-0e63-4bbf261b3100/public"
-              title="Awards and Other Information"
-              description="Information regarding awards and related announcements."
-              width={272}
-              height={270}
-            />
-            <RelatedCard
-              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/67063015-a309-4a59-9247-c67c4efea500/public"
-              title="News And Updates"
-              description="Latest news and updates about our innovations."
-              width={272}
-              height={162}
-            />
-            <RelatedCard
-              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/efbc7ed9-3a44-4bea-0cab-e1f7ba555500/public"
-              title="Impact We Enable For You"
-              description="How our solutions create impact."
-              width={272}
-              height={200}
-            />
-            <RelatedCard
-              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afdeb7b4-18e6-4bc2-0ed8-85d97cb6dc00/public"
-              title="Our Sustainable Water Solutions"
-              description="Explore our sustainable water solutions and their impact."
-              width={272}
-              height={238}
-            />
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+          <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
+            title="Water Conservation"
+            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+            width={272}
+            height={270}
+          />
+          <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
+            title="Policy"
+            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+            width={272}
+            height={270}
+          />
+          <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
+            title="Climate Change & Water"
+            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+            width={272}
+            height={270}
+          />
+          <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
+            title="Industry Impact & Solutions"
+            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+            width={272}
+            height={270}
+          />
+        </div>
         </section>
 
         {/* FOOTER SECTION */}
