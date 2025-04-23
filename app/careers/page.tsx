@@ -153,12 +153,12 @@ const Home: FC = () => {
     ([iO, iV]) => iO * iV
   );
 
-  // Menu items arrays
+  // Arrays for menu items
   const productsItems = [
-    "Identity and Ambition",
-    "Products & Solution",
-    "Career",
-  ];
+    "This is Us",
+    "Our Portfolio",
+    "Reimagine Work",
+  ]
   const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"];
   const lineCount = Math.min(productsItems.length, blueprintItems.length);
 

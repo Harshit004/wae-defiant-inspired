@@ -158,7 +158,7 @@ export default function Footer() {
                 color: "#00000066",
               }}
             >
-              Product
+              Policies
             </h3>
             <hr
               style={{
@@ -178,10 +178,9 @@ export default function Footer() {
                 letterSpacing: "0px",
               }}
             >
-              <li>Products</li>
-              <li>Products</li>
-              <li>Products</li>
-              <li>Products</li>
+              <li>Privacy Policy</li>
+              <li>Data Privacy Policy</li>
+              <li>Terms of Use</li>
             </ul>
           </div>
         </div>

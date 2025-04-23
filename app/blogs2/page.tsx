@@ -87,7 +87,7 @@ export default function Home() {
   // --- STATIC DATA ---
   const tagline1 = "To lead the way in sustainability".split(" ")
   const tagline2 = "ahead of the rest.".split(" ")
-  const productsItems = ["Identity & Ambition", "Products & Solutions", "Career"]
+  const productsItems = ["This is Us", "Our Portfolio", "Reimagine Work"]
   const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"]
   const buttonLabels = [
     "Water conservation",

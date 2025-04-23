@@ -51,9 +51,9 @@ export default function Home() {
 
   // Arrays for menu items
   const productsItems = [
-    "Identity & Ambition",
-    "Products & Solutions",
-    "Career",
+    "This is Us",
+    "Our Portfolio",
+    "Reimagine Work",
   ]
   const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"]
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
