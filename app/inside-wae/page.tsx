@@ -158,7 +158,7 @@ const Home: FC = () => {
   // Menu items arrays and tagline words (for animation if needed)
   const productsItems = [
     { text: "This Is Us", href: "/inside-wae" },
-    { text: "Our Portfolio", href: "/category-listing3" },
+    { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers" },
   ];
   const blueprintItems = [

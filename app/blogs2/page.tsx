@@ -84,7 +84,7 @@ export default function Home() {
   const tagline2 = "ahead of the rest.".split(" ")
   const productsItems = [
     { text: "This is Us", href: "/inside-wae" },
-    { text: "Our Portfolio", href: "/category-listing3" },
+    { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers" },
   ]
   const blueprintItems = [
