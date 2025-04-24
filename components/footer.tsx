@@ -56,7 +56,7 @@ export default function Footer() {
                 <Link href="/inside-wae">This is Us</Link>
               </li>
               <li>
-                <Link href="/category-listing3">Our Protfolio</Link>
+                <Link href="/our-portfolio">Our Protfolio</Link>
               </li>
               <li>
                 <Link href="/careers">Reimagine Work</Link>
@@ -124,7 +124,7 @@ export default function Footer() {
                 <Link href="#">Sustainability</Link>
               </li>
               <li>
-                <Link href="#">The Activist C0.</Link>
+                <Link href="#">The Activist Co.</Link>
               </li>
               <li>
                 <Link href="/blogs2">Blogs</Link>
