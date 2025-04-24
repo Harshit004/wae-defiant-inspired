@@ -350,7 +350,7 @@ const Home: FC = () => {
           <div
             className="absolute uppercase"
             style={{
-              top: "558px",
+              bottom: "10%",
               left: "9.72%",
               width: "104px",
               height: "12px",
