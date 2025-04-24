@@ -9,16 +9,18 @@ export default function Footer() {
         <div className="w-full h-px bg-[#D9D9DC] mb-[1rem]" />
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-0 items-start pb-[2.935rem]">
-          {/* Logo on the left */}
-          <div className="flex flex-col mr-[2rem] sm:mb-[5rem]">
-            <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-              alt="WAE Logo"
-              width={173}
-              height={184}
-            />
+          {/* Logo */}
+          <div className="flex flex-col justify-center">
+            <Link href="/homepage3" passHref>
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                alt="WAE Logo"
+                width={173}
+                height={184}
+                style={{ cursor: 'pointer' }} // Add a pointer cursor on hover to indicate it's clickable
+              />
+            </Link>
           </div>
-
           {/* Column 1 */}
           <div className="flex flex-col">
             <h3

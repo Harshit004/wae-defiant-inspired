@@ -169,14 +169,28 @@ export default function Home() {
             {/* Bottom Row: Logo, Tagline and Menu Items */}
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
-              <div className="flex flex-col justify-center">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                  alt="WAE Logo"
-                  width={78}
-                  height={82}
-                />
-              </div>
+
+<div className="flex flex-col justify-center">
+
+  <Link href="/homepage3" passHref>
+
+    <Image
+
+      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+
+      alt="WAE Logo"
+
+      width={78}
+
+      height={82}
+
+      style={{ cursor: 'pointer' }}
+
+    />
+
+  </Link>
+
+</div>
 
               {/* Coordinates */}
               <div
