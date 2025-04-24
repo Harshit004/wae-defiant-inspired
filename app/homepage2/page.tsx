@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import RelatedCard from "@/components/related-card";
 import Footer from "@/components/footer";
+import Link from "next/link";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
