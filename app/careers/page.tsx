@@ -5,9 +5,9 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import gsap from "gsap";
-import RelatedCard from "@/components/related-card";
 import Footer from "@/components/footer";
 import Link from "next/link"; // Import the Link component
+
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
@@ -46,6 +46,14 @@ const HoverButton: FC<HoverButtonProps> = ({ children }) => {
   );
 };
 
+// Data for the additional sections
+const extraSections = [
+  { number: '01', title: 'Apprenticeship', description: 'Step into the professional world with hands-on experience and expert mentorship. Ideal for those eager to learn and grow.' },
+  { number: '02', title: 'Full-Time Positions', description: 'Step into the professional world with hands-on experience and expert mentorship. Ideal for those eager to learn and grow.' },
+  { number: '03', title: 'Internships', description: 'Step into the professional world with hands-on experience and expert mentorship. Ideal for those eager to learn and grow.' },
+  { number: '04', title: 'Short Term Projects', description: 'Step into the professional world with hands-on experience and expert mentorship. Ideal for those eager to learn and grow.' }
+];
+
 const Home: FC = () => {
   // State and refs
   const [activeSection, setActiveSection] = useState<number>(0);
@@ -55,17 +63,24 @@ const Home: FC = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.5 });
   const [openingsRef, openingsInView] = useInView({ threshold: 0.5 });
   const [taglineVisible, setTaglineVisible] = useState<boolean>(true);
-  const prevScrollY = useRef<number>(0);
   const [headerHeroScale, setHeaderHeroScale] = useState<number>(1);
   const headerHeroRef = useRef<HTMLDivElement>(null);
+  const prevScrollY = useRef<number>(0);
+  const [scrollingDown, setScrollingDown] = useState<boolean>(false);
+  const whyWAERef = useRef<HTMLDivElement>(null); // Ref for Why WAE section
+  const [whyWAEInView, whyWAEEntry] = useInView({ threshold: 0.5 }); // Track Why WAE visibility
+
+  console.log("Initial openingsInView:", openingsInView);
+  console.log("Initial whyWAEInView:", whyWAEInView);
 
   const sections = ["hero"]; // Extendable for additional sections
 
-  // Update tagline visibility on scroll
+  // Update tagline visibility and track scroll direction on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setTaglineVisible(currentScrollY < prevScrollY.current);
+      setScrollingDown(currentScrollY > prevScrollY.current); // Determine if scrolling down
       prevScrollY.current = currentScrollY;
     };
     window.addEventListener("scroll", handleScroll);
@@ -123,18 +138,29 @@ const Home: FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Trigger GSAP animation when the Current Openings section is no longer in view
+  // Trigger GSAP animation based on visibility and scroll direction
   useEffect(() => {
-    if (!openingsInView) {
+    console.log("openingsInView:", openingsInView);
+    console.log("whyWAEInView:", whyWAEInView);
+    console.log("scrollingDown:", scrollingDown);
+    if (!openingsInView && !whyWAEInView && scrollingDown) {
+      // Animate to the left only when scrolling down and both sections are out of view
       gsap.to(".sticky-logo", {
-        duration: 2,
-        x: (index, target) =>
-          -((window.innerWidth / 2) - target.offsetWidth / 2) + 20,
-        y: (index, target) =>
-          -((window.innerHeight / 2) - target.offsetHeight / 2) + 20,
+        duration: 0.8,
+        x: -400, // Ensure it moves to the left
+        y: 20,
+        ease: "power3.out",
+      });
+    } else {
+      // Animate back to the center when either "Why WAE" or "Current Openings" is in view
+      gsap.to(".sticky-logo", {
+        duration: 0.8,
+        x: 0,
+        y: 0,
+        ease: "power3.out",
       });
     }
-  }, [openingsInView]);
+  }, [openingsInView, whyWAEInView, scrollingDown]);
 
   // Framer Motion scroll-driven animations
   const { scrollYProgress } = useScroll();
@@ -374,30 +400,32 @@ const Home: FC = () => {
         </motion.div>
 
         {/* Why WAE Section */}
-        <section className="h-screen/2 flex items-end justify-center relative mb-[180px]">
-          <motion.div
-            initial={{ y: "100%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
-          >
-            <div className="flex flex-col lg:flex-col gap-y-[40px] items-start justify-between">
-              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
-                Why WAE
-              </h2>
-              <div className="flex flex-col gap-5 w-64">
-                <p className="w-[270px] font-[Inter Tight] text-[14px] leading-[100%] text-black/70">
-                  Life at WAE is vibrant and inspiring. Our culture is a tapestry of
-                  collaboration, inclusivity, and continuous learning. Here, your
-                  professional growth is as important as your personal well-being.
-                  Enjoy a work environment that fosters creativity, supports balance,
-                  and celebrates every success. At WAE, your journey is our story.
-                </p>
+        <div ref={whyWAERef}>
+          <section className="h-screen/2 flex items-end justify-center relative mb-[180px]">
+            <motion.div
+              initial={{ y: "100%", opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
+            >
+              <div className="flex flex-col lg:flex-col gap-y-[40px] items-start justify-between">
+                <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
+                  Why WAE
+                </h2>
+                <div className="flex flex-col gap-5 w-64">
+                  <p className="w-[270px] font-[Inter Tight] text-[14px] leading-[100%] text-black/70">
+                    Life at WAE is vibrant and inspiring. Our culture is a tapestry of
+                    collaboration, inclusivity, and continuous learning. Here, your
+                    professional growth is as important as your personal well-being.
+                    Enjoy a work environment that fosters creativity, supports balance,
+                    and celebrates every success. At WAE, your journey is our story.
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        </section>
+            </motion.div>
+          </section>
+        </div>
 
         {/* Current Openings Section */}
         <section className="h-screen/2 flex items-end justify-center relative" ref={openingsRef}>
@@ -406,7 +434,7 @@ const Home: FC = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
+            className="w-full max-w-screen-xl mx-8 lg:mx-36"
           >
             <div className="flex flex-col lg:flex-col gap-y-[40px] items-end justify-between">
               <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
@@ -452,6 +480,88 @@ const Home: FC = () => {
             </div>
           </motion.div>
         </section>
+
+        {/* 358px gap */}
+        <div style={{ height: '358px' }} />
+
+        {/* New Items-Left Sections */}
+        <div className="flex flex-col items-end justify-between px-[9.72%]" style={{ gap: '358px' }}>
+          {extraSections.map((sec, idx) => (
+            <section key={idx} className="w-[37%]">
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: '21px',
+                  lineHeight: '110%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#00000066'
+                }}
+              >
+                {sec.number}
+              </div>
+              <div style={{ height: '18px' }} />
+              <hr style={{ border: '0.5px solid #D9D9DC' }} />
+              <div style={{ height: '18px' }} />
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: '21px',
+                  lineHeight: '110%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle'
+                }}
+              >
+                {sec.title}
+              </div>
+              <div style={{ height: '60px' }} />
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: '21px',
+                  lineHeight: '110%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#00000099'
+                }}
+              >
+                {sec.description}
+              </div>
+              <div style={{ height: '20px' }} />
+              <HoverButton>
+                  {(hovered) => (
+                    <>
+                      Apply Now
+                      <div className="relative inline-block w-4 h-4">
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                          alt="icon default"
+                          width={16}
+                          height={16}
+                        />
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
+                        >
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
+                            width={16}
+                            height={16}
+                          />
+                        </motion.div>
+                      </div>
+                    </>
+                  )}
+                </HoverButton>
+            </section>
+          ))}
+        </div>
 
         {/* FOOTER SECTION */}
         <div style={{ position: "relative", zIndex: 1200 }}>

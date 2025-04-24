@@ -660,7 +660,7 @@ useEffect(() => {
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                   Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
                 </p>
-                <Link href="/leadership-team" className="contents">
+                <Link href="/leadership" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -703,7 +703,7 @@ useEffect(() => {
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                   Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
                 </p>
-                <Link href="/sustainability-overview" className="contents">
+                <Link href="/sustainability" className="contents">
                 <HoverButton>
                     {(hovered) => (
                       <>

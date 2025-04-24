@@ -32,7 +32,7 @@ export default function Footer() {
                 color: "#00000066",
               }}
             >
-              Explore
+              INSIDE WAE
             </h3>
             <hr
               style={{
@@ -53,16 +53,13 @@ export default function Footer() {
               }}
             >
               <li>
-                <Link href="#">Products</Link>
+                <Link href="/inside-wae">This is Us</Link>
               </li>
               <li>
-                <Link href="#">Products</Link>
+                <Link href="/category-listing3">Our Protfolio</Link>
               </li>
               <li>
-                <Link href="#">Products</Link>
-              </li>
-              <li>
-                <Link href="#">Products</Link>
+                <Link href="/careers">Reimagine Work</Link>
               </li>
             </ul>
             {/* Extra horizontal rule below list items */}
@@ -103,7 +100,7 @@ export default function Footer() {
                 color: "#00000066",
               }}
             >
-              Product
+              ETCETERA
             </h3>
             <hr
               style={{
@@ -124,16 +121,13 @@ export default function Footer() {
               }}
             >
               <li>
-                <Link href="#">Products</Link>
+                <Link href="#">Sustainability</Link>
               </li>
               <li>
-                <Link href="#">Products</Link>
+                <Link href="#">The Activist C0.</Link>
               </li>
               <li>
-                <Link href="#">Products</Link>
-              </li>
-              <li>
-                <Link href="#">Products</Link>
+                <Link href="/blogs2">Blogs</Link>
               </li>
             </ul>
             {/* Extra horizontal rule below list items */}
@@ -175,7 +169,7 @@ export default function Footer() {
                 color: "#00000066",
               }}
             >
-              Policies
+              POLICY
             </h3>
             <hr
               style={{
@@ -196,13 +190,13 @@ export default function Footer() {
               }}
             >
               <li>
+                <Link href="/terms-of-use">Terms of Use</Link>
+              </li>
+              <li>
                 <Link href="/privacy-policy">Privacy Policy</Link>
               </li>
               <li>
                 <Link href="/data-privacy-policy">Data Privacy Policy</Link>
-              </li>
-              <li>
-                <Link href="/terms-of-use">Terms of Use</Link>
               </li>
             </ul>
           </div>
