@@ -141,14 +141,14 @@ const Home: FC = () => {
 
   // Menu items arrays
   const productsItems = [
-    { text: "This Is Us", href: "/this-is-us" },
-    { text: "Our Portfolio", href: "/our-portfolio" },
-    { text: "Reimagine Work", href: "/reimagine-work" },
+    { text: "This Is Us", href: "/inside-wae" },
+    { text: "Our Portfolio", href: "/category-listing3" },
+    { text: "Reimagine Work", href: "/careers" },
   ];
   const blueprintItems = [
-    { text: "Sustainability", href: "/sustainability" },
-    { text: "The Activist Co.", href: "/the-activist-co" },
-    { text: "Blog", href: "/blog" },
+    { text: "Sustainability", href: "#" },
+    { text: "The Activist Co.", href: "#" },
+    { text: "Blog", href: "/blogs2" },
   ];
   const lineCount = Math.min(productsItems.length, blueprintItems.length);
 
