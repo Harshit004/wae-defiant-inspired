@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Footer from "@/components/footer"
+import Link from 'next/link';
 
 // Shared container class for consistent margins
 const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
