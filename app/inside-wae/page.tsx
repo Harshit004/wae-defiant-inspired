@@ -559,8 +559,8 @@ useEffect(() => {
         </section>
 
         {/* Vision and Mission Section */}
-        <section className="flex items-end justify-center relative mb-[300px]">
-          <motion.div>
+        <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
+          <motion.div className="w-full">
             <div className="flex flex-col lg:flex-row items-start justify-between">
               <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                 Vision and<br />Mission
@@ -606,7 +606,7 @@ useEffect(() => {
 
         {/* People & Culture Section */}
         <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
-          <motion.div>
+          <motion.div className="w-full">
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
                 <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
@@ -649,7 +649,7 @@ useEffect(() => {
 
         {/* Leadership Team Section */}
         <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
-          <motion.div>
+          <motion.div className="w-full">
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
                 <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
@@ -691,8 +691,8 @@ useEffect(() => {
         </section>
 
         {/* Sustainability Section */}
-        <section className="flex items-end justify-center relative px-[9.72%]">
-          <motion.div>
+        <section className="flex items-end justify-center relative px-[9.72%] mb-[55px]">
+          <motion.div className="w-full ">
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
                 <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
@@ -704,7 +704,7 @@ useEffect(() => {
                   Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
                 </p>
                 <Link href="/sustainability-overview" className="contents">
-                  <HoverButton>
+                <HoverButton>
                     {(hovered) => (
                       <>
                         Know More
