@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer";
 import gsap from "gsap";
 import RelatedCard from "@/components/related-card";
 import Footer from "@/components/footer";
+import Link from "next/link"; // Import the Link component
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
@@ -155,11 +156,15 @@ const Home: FC = () => {
 
   // Arrays for menu items
   const productsItems = [
-    "This is Us",
-    "Our Portfolio",
-    "Reimagine Work",
-  ]
-  const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"];
+    { text: "This is Us", href: "/inside-wae" },
+    { text: "Our Portfolio", href: "/category-listing-3" },
+    { text: "Reimagine Work", href: "/careers" },
+  ];
+  const blueprintItems = [
+    { text: "Sustainability", href: "#" },
+    { text: "The Activist Co.", href: "#" },
+    { text: "Blog", href: "/blogs2" },
+  ];
   const lineCount = Math.min(productsItems.length, blueprintItems.length);
 
   // Tagline words split for animation
@@ -188,7 +193,7 @@ const Home: FC = () => {
     <main className="relative">
       {/* HEADER AND HERO SECTION */}
       <div ref={headerHeroRef} className="fixed top-0 left-0 w-full h-screen z-0">
-      <header ref={headerRef} className="w-full relative z-10 mb-0">
+        <header ref={headerRef} className="w-full relative z-10 mb-0">
           <div className="mx-auto w-full max-w-[1440px] px-[140px]">
             {/* Top Row: Navigation */}
             <div
@@ -240,54 +245,6 @@ const Home: FC = () => {
               </div>
 
               {/* Tagline Animation */}
-              {/* <div className="flex flex-col items-start">
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={taglineVisible ? "visible" : "hidden"}
-                  className="flex flex-row justify-center whitespace-nowrap"
-                >
-                  {taglineWords1.map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={childVariants}
-                      className="mr-1"
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "10px",
-                        lineHeight: "125%",
-                        color: "#000",
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </motion.div>
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={taglineVisible ? "visible" : "hidden"}
-                  className="flex flex-row justify-center whitespace-nowrap"
-                >
-                  {taglineWords2.map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={childVariants}
-                      className="mr-1"
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "10px",
-                        lineHeight: "125%",
-                        color: "#000",
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </motion.div>
-              </div> */}
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
@@ -314,26 +271,28 @@ const Home: FC = () => {
                       lineHeight: "100%",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span className="block">{item}</span>
+                    <Link href={item.href}>
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -351,26 +310,28 @@ const Home: FC = () => {
                       lineHeight: "100%",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span className="block">{item}</span>
+                    <Link href={item.href}>
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow blueprint-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow blueprint-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>

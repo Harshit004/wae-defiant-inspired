@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import RelatedCard from "../components/related-card"
 import Footer from "@/components/footer"
+import Link from "next/link"
 
 /**
  * Reusable hover button component.
@@ -141,14 +142,18 @@ export default function Home() {
   const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0])
   const finalIndiaOpacity = useTransform([indiaOpacity, indiaVanish], ([iO, iV]) => iO * iV)
 
-  // Arrays for menu items
+  // Arrays for menu items with hrefs
   const productsItems = [
-    "Products & Solutions A",
-    "Products & Solutions B",
-    "Products & Solutions C",
-    "Products & Solutions D",
+    { text: "Products & Solutions A", href: "/products-a" },
+    { text: "Products & Solutions B", href: "/products-b" },
+    { text: "Products & Solutions C", href: "/products-c" },
+    { text: "Products & Solutions D", href: "/products-d" },
   ]
-  const blueprintItems = ["Blueprint 1", "Blueprint 2", "Blueprint 3"]
+  const blueprintItems = [
+    { text: "Blueprint 1", href: "/blueprint-1" },
+    { text: "Blueprint 2", href: "/blueprint-2" },
+    { text: "Blueprint 3", href: "/blueprint-3" },
+  ]
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   // Tagline lines to be animated (split into words)
@@ -308,26 +313,28 @@ export default function Home() {
                       borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span style={{ display: "block" }}>{item}</span>
+                    <Link href={item.href} className="contents">
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span style={{ display: "block" }}>{item.text}</span>
+                        </div>
+                        <span className="menu-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -348,26 +355,28 @@ export default function Home() {
                       borderBottom: i < lineCount ? "1px solid #D9D9DC" : "none",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span style={{ display: "block" }}>{item}</span>
+                    <Link href={item.href} className="contents">
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span style={{ display: "block" }}>{item.text}</span>
+                        </div>
+                        <span className="menu-arrow blueprint-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow blueprint-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -491,34 +500,36 @@ export default function Home() {
                   The underlying natural order of the universe - circular continuity of the natural world.
                   Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
                 </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div style={{ position: "relative", display: "inline-block", width: "16px", height: "16px" }}>
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          style={{ position: "absolute", top: 0, left: 0 }}
-                        >
+                <Link href="/about-wae" className="contents">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div style={{ position: "relative", display: "inline-block", width: "16px", height: "16px" }}>
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            style={{ position: "absolute", top: 0, left: 0 }}
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -570,34 +581,36 @@ export default function Home() {
                   innovation. Our approach strengthens community resilience while showcasing India’s Intellectual
                   capital on the world stage.
                 </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div style={{ position: "relative", display: "inline-block", width: "16px", height: "16px" }}>
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          style={{ position: "absolute", top: 0, left: 0 }}
-                        >
+                <Link href="/made-in-india" className="contents">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div style={{ position: "relative", display: "inline-block", width: "16px", height: "16px" }}>
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            style={{ position: "absolute", top: 0, left: 0 }}
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -624,6 +637,7 @@ export default function Home() {
             description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
             width={272}
             height={270}
+            href="/awards"
           />
           <RelatedCard
             image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/67063015-a309-4a59-9247-c67c4efea500/public"
@@ -631,6 +645,7 @@ export default function Home() {
             description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
             width={272}
             height={162}
+            href="/news"
           />
           <RelatedCard
             image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/efbc7ed9-3a44-4bea-0cab-e1f7ba555500/public"
@@ -638,6 +653,7 @@ export default function Home() {
             description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
             width={272}
             height={200}
+            href="/impact"
           />
           <RelatedCard
             image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afdeb7b4-18e6-4bc2-0ed8-85d97cb6dc00/public"
@@ -645,6 +661,7 @@ export default function Home() {
             description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
             width={272}
             height={238}
+            href="/water-solutions"
           />
         </div>
       </section>
@@ -693,6 +710,10 @@ export default function Home() {
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
+        }
+        /* Style for the HoverButton link */
+        .contents {
+          display: contents; /* Allows the Link to not interfere with button styles */
         }
       `}</style>
     </main>

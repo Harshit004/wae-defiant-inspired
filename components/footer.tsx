@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Footer() {
   return (
@@ -51,10 +52,18 @@ export default function Footer() {
                 letterSpacing: "0px",
               }}
             >
-              <li>Products</li>
-              <li>Products</li>
-              <li>Products</li>
-              <li>Products</li>
+              <li>
+                <Link href="#">Products</Link>
+              </li>
+              <li>
+                <Link href="#">Products</Link>
+              </li>
+              <li>
+                <Link href="#">Products</Link>
+              </li>
+              <li>
+                <Link href="#">Products</Link>
+              </li>
             </ul>
             {/* Extra horizontal rule below list items */}
             <hr
@@ -114,10 +123,18 @@ export default function Footer() {
                 letterSpacing: "0px",
               }}
             >
-              <li>Products</li>
-              <li>Products</li>
-              <li>Products</li>
-              <li>Products</li>
+              <li>
+                <Link href="#">Products</Link>
+              </li>
+              <li>
+                <Link href="#">Products</Link>
+              </li>
+              <li>
+                <Link href="#">Products</Link>
+              </li>
+              <li>
+                <Link href="#">Products</Link>
+              </li>
             </ul>
             {/* Extra horizontal rule below list items */}
             <hr
@@ -178,9 +195,15 @@ export default function Footer() {
                 letterSpacing: "0px",
               }}
             >
-              <li>Privacy Policy</li>
-              <li>Data Privacy Policy</li>
-              <li>Terms of Use</li>
+              <li>
+                <Link href="/privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="/data-privacy-policy">Data Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="/terms-of-use">Terms of Use</Link>
+              </li>
             </ul>
           </div>
         </div>

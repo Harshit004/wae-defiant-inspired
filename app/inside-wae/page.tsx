@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Footer from "@/components/footer";
+import Link from "next/link";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
@@ -155,8 +156,16 @@ const Home: FC = () => {
   );
 
   // Menu items arrays and tagline words (for animation if needed)
-  const productsItems = ["This Is Us", "Our Portfolio", "Reimagine Work"];
-  const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"];
+  const productsItems = [
+    { text: "This Is Us", href: "/this-is-us" },
+    { text: "Our Portfolio", href: "/our-portfolio" },
+    { text: "Reimagine Work", href: "/reimagine-work" },
+  ];
+  const blueprintItems = [
+    { text: "Sustainability", href: "/sustainability" },
+    { text: "The Activist Co.", href: "/the-activist-co" },
+    { text: "Blog", href: "/blog" },
+  ];
   const taglineLine1 = "To lead the way in sustainability";
   const taglineLine2 = "ahead of the rest";
   const taglineWords1 = taglineLine1.split(" ");
@@ -174,160 +183,111 @@ const Home: FC = () => {
     visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
   };
 
-  // ENHANCED: Ultra-smooth scroll inertia with 1.8x distance and extremely gradual ending
-    useEffect(() => {
-      let lastScrollY = window.scrollY;
-      let lastTimestamp = performance.now();
-      let velocity = 0;
-      let inertiaFrame: number;
-      let scrollTimeout: NodeJS.Timeout;
-      let isScrolling = false;
-      let velocityReadings: number[] = [];
-      
-      // Distance multiplier - this controls how far the page scrolls after user stops
-      const DISTANCE_MULTIPLIER = 2.5;
+  // ULTRA-SMOOTH SCROLL INERTIA EFFECT
+useEffect(() => {
+  let lastScrollY = window.scrollY;
+  let lastTimestamp = performance.now();
+  let velocity = 0;
+  let inertiaFrame: number | null = null;
+  let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
+  let isScrolling = false;
+  const velocityReadings: number[] = [];
+  const DISTANCE_MULTIPLIER = 2.5;
 
-      const onScroll = () => {
-        // Clear any existing timeout to reset the timer
-        if (scrollTimeout) clearTimeout(scrollTimeout);
-        
-        const now = performance.now();
-        const currentScrollY = window.scrollY;
-        const deltaTime = now - lastTimestamp;
-        
-        // Calculate velocity with improved smoothing
-        if (deltaTime > 5) {
-          const newVelocity = (currentScrollY - lastScrollY) / deltaTime;
-          
-          // Store recent velocity readings for better average
-          velocityReadings.push(newVelocity);
-          if (velocityReadings.length > 6) {
-            velocityReadings.shift(); // Keep only the most recent 6 readings
-          }
-          
-          // Calculate a weighted average of recent velocities
-          let weightedSum = 0;
-          let weightSum = 0;
-          velocityReadings.forEach((v, i) => {
-            // Exponential weighting for even smoother transitions
-            const weight = Math.pow(2, i); // Exponential weights: 1, 2, 4, 8, 16, 32
-            weightedSum += v * weight;
-            weightSum += weight;
-          });
-          
-          velocity = weightSum > 0 ? weightedSum / weightSum : 0;
-        }
-        
-        lastScrollY = currentScrollY;
-        lastTimestamp = now;
-        isScrolling = true;
-        
-        // Reset the detection timeout
-        scrollTimeout = setTimeout(() => {
-          isScrolling = false;
-          
-          // Apply the distance multiplier to the final velocity to achieve 1.8x distance
-          velocity *= DISTANCE_MULTIPLIER;
-          
-          startInertia();
-        }, 50);
-      };
+  const onScroll = () => {
+    if (scrollTimeout) clearTimeout(scrollTimeout);
 
-      const startInertia = () => {
-        // Cancel any existing animation
-        if (inertiaFrame) cancelAnimationFrame(inertiaFrame);
-        
-        // Skip inertia if velocity is too low
-        if (Math.abs(velocity) < 0.01) return;
-        
-        // Store initial values for the animation
-        const initialVelocity = velocity;
-        const startTime = performance.now();
-        const duration = 2000; // Extended duration for ultra-smooth ending
-        
-        let lastFrameTime = startTime;
-        let lastVelocity = initialVelocity; // Track the last velocity for smoothing
-        
-        const animate = (timestamp: number) => {
-          // Exit if user has started scrolling again
+    const now = performance.now();
+    const currentY = window.scrollY;
+    const deltaTime = now - lastTimestamp;
+
+    if (deltaTime > 5) {
+      const newV = (currentY - lastScrollY) / deltaTime;
+      velocityReadings.push(newV);
+      if (velocityReadings.length > 6) velocityReadings.shift();
+
+      // weighted average
+      let wSum = 0, weightSum = 0;
+      velocityReadings.forEach((v, i) => {
+        const w = Math.pow(2, i);
+        wSum += v * w;
+        weightSum += w;
+      });
+      velocity = weightSum ? wSum / weightSum : 0;
+    }
+
+    lastScrollY = currentY;
+    lastTimestamp = now;
+    isScrolling = true;
+
+    scrollTimeout = setTimeout(() => {
+      isScrolling = false;
+      velocity *= DISTANCE_MULTIPLIER;
+      startInertia();
+    }, 50);
+  };
+
+  const startInertia = () => {
+    if (inertiaFrame !== null) cancelAnimationFrame(inertiaFrame);
+    if (Math.abs(velocity) < 0.01) return;
+
+    const initialV = velocity;
+    const startTime = performance.now();
+    const duration = 2000;
+    let lastV = initialV;
+    let lastFrameTime = startTime;
+
+    const animate = (t: number) => {
+      if (isScrolling) return;
+      const elapsed = t - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      lastFrameTime = t;
+
+      let friction: number;
+      if (progress < 0.7) {
+        friction = Math.pow(1 - progress, 2.2);
+      } else {
+        const p2 = (progress - 0.7) / 0.3;
+        friction =
+          Math.pow(1 - progress, 2.2) + 0.3 * Math.pow(1 - p2, 3);
+      }
+
+      const targetV = initialV * friction;
+      lastV = lastV * 0.85 + targetV * 0.15;
+      const delta = lastV * (t - lastFrameTime);
+
+      window.scrollBy(0, delta);
+      if (progress < 1 && Math.abs(lastV) > 0.0005) {
+        inertiaFrame = requestAnimationFrame(animate);
+      } else if (Math.abs(lastV) > 0.0005) {
+        // final fade-out
+        const fadeout = () => {
           if (isScrolling) return;
-          
-          const elapsed = timestamp - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const frameTime = timestamp - lastFrameTime;
-          lastFrameTime = timestamp;
-          
-          // Ultra-smooth deceleration curve - extremely gradual at the end
-          // This custom curve is very gentle, especially in the final 30%
-          let frictionCurve;
-          
-          if (progress < 0.7) {
-            // First 70%: Standard smooth curve
-            frictionCurve = Math.pow(1 - progress, 2.2);
-          } else {
-            // Final 30%: Extra gentle curve with logarithmic tail
-            // This creates an extremely gradual fadeout
-            const endProgress = (progress - 0.7) / 0.3; // Normalize 0.7-1.0 to 0-1
-            const baseDeceleration = Math.pow(1 - progress, 2.2);
-            const gentleTail = 0.3 * Math.pow(1 - endProgress, 3); // Very gentle tail
-            frictionCurve = baseDeceleration + gentleTail;
-          }
-          
-          // Calculate target velocity using our custom friction curve
-          let targetVelocity = initialVelocity * frictionCurve;
-          
-          // Apply secondary smoothing to velocity changes for even smoother transitions
-          // This prevents any sudden changes in acceleration
-          lastVelocity = lastVelocity * 0.85 + targetVelocity * 0.15;
-          
-          // Calculate scroll amount for this frame
-          const scrollAmount = lastVelocity * frameTime;
-          
-          // Apply the scroll
-          window.scrollBy(0, scrollAmount);
-          
-          // Continue animation if not finished and still has meaningful velocity
-          // Extremely low threshold for ultra-smooth ending
-          if (progress < 1 && Math.abs(lastVelocity) > 0.0005) {
-            inertiaFrame = requestAnimationFrame(animate);
-          } else if (Math.abs(lastVelocity) > 0.0005) {
-            // If we've reached the end of our duration but still have velocity,
-            // continue with a final fadeout phase
-            const finalFadeout = () => {
-              if (isScrolling) return;
-              
-              const now = performance.now();
-              const frameTime = now - lastFrameTime;
-              lastFrameTime = now;
-              
-              // Reduce velocity very gradually
-              lastVelocity *= 0.95;
-              
-              const scrollAmount = lastVelocity * frameTime;
-              window.scrollBy(0, scrollAmount);
-              
-              if (Math.abs(lastVelocity) > 0.0001) {
-                inertiaFrame = requestAnimationFrame(finalFadeout);
-              }
-            };
-            
-            inertiaFrame = requestAnimationFrame(finalFadeout);
+          lastV *= 0.95;
+          const d = lastV * (performance.now() - lastFrameTime);
+          lastFrameTime = performance.now();
+          window.scrollBy(0, d);
+          if (Math.abs(lastV) > 0.0001) {
+            inertiaFrame = requestAnimationFrame(fadeout);
           }
         };
-        
-        inertiaFrame = requestAnimationFrame(animate);
-      };
+        inertiaFrame = requestAnimationFrame(fadeout);
+      }
+    };
 
-      // Add passive listener for better performance
-      window.addEventListener("scroll", onScroll, { passive: true });
-      
-      return () => {
-        window.removeEventListener("scroll", onScroll);
-        if (inertiaFrame) cancelAnimationFrame(inertiaFrame);
-        if (scrollTimeout) clearTimeout(scrollTimeout);
-      };
-    }, []);
+    inertiaFrame = requestAnimationFrame(animate);
+  };
 
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  return () => {
+    window.removeEventListener("scroll", onScroll);
+    if (inertiaFrame !== null) cancelAnimationFrame(inertiaFrame);
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+  };
+}, []);
+
+  
   return (
     <main className="relative">
       {/* HEADER AND HERO SECTION */}
@@ -345,11 +305,21 @@ const Home: FC = () => {
                 letterSpacing: "0px",
               }}
             >
-              <div>IDENTITY</div>
-              <div>ORIGIN</div>
-              <div>OBJECTIVE</div>
-              <div>INSIDE WAE</div>
-              <div>ETCETERA</div>
+              <div>
+                <Link href="#">IDENTITY</Link>
+              </div>
+              <div>
+                <Link href="#">ORIGIN</Link>
+              </div>
+              <div>
+                <Link href="#">OBJECTIVE</Link>
+              </div>
+              <div>
+                <Link href="#">INSIDE WAE</Link>
+              </div>
+              <div>
+                <Link href="#">ETCETERA</Link>
+              </div>
             </div>
 
             {/* Divider */}
@@ -410,26 +380,28 @@ const Home: FC = () => {
                       lineHeight: "100%",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span className="block">{item}</span>
+                    <Link href={item.href} className="contents">
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -447,26 +419,28 @@ const Home: FC = () => {
                       lineHeight: "100%",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span className="block">{item}</span>
+                    <Link href={item.href} className="contents">
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow blueprint-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow blueprint-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -586,13 +560,7 @@ const Home: FC = () => {
 
         {/* Vision and Mission Section */}
         <section className="flex items-end justify-center relative mb-[300px]">
-          <motion.div
-            initial={{ y: "100%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
-          >
+          <motion.div>
             <div className="flex flex-col lg:flex-row items-start justify-between">
               <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                 Vision and<br />Mission
@@ -601,34 +569,36 @@ const Home: FC = () => {
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                   Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
                 </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
+                <Link href="/vision-mission" className="contents">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -636,13 +606,7 @@ const Home: FC = () => {
 
         {/* People & Culture Section */}
         <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
-          <motion.div
-            initial={{ y: "100%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="w-full max-w-screen-xl mb-20"
-          >
+          <motion.div>
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
                 <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
@@ -653,34 +617,31 @@ const Home: FC = () => {
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc purus, posuere in placerat a, porttitor ac est. Proin nec maximus lectus, ac varius massa.
                 </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
+                <Link href="/people-culture" className="contents">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
+                          <motion.div>
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -688,13 +649,7 @@ const Home: FC = () => {
 
         {/* Leadership Team Section */}
         <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
-          <motion.div
-            initial={{ y: "100%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="w-full max-w-screen-xl mb-20"
-          >
+          <motion.div>
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
                 <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
@@ -705,100 +660,39 @@ const Home: FC = () => {
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                   Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
                 </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
+                <Link href="/leadership-team" className="contents">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
+                          <motion.div>
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
           </motion.div>
         </section>
 
-        {/* Code of Conduct Section */}
-        {/* <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
-          <motion.div
-            initial={{ y: "100%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="w-full max-w-screen-xl mb-20"
-          >
-            <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
-              <div className="flex flex-col gap-5 items-start">
-                <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
-                  Code of<br />Conduct
-                </h2>
-              </div>
-              <div className="flex flex-col gap-5 w-64">
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc purus, posuere in placerat a, porttitor ac est. Proin nec maximus lectus, ac varius massa.
-                </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
-                            width={16}
-                            height={16}
-                          />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
-              </div>
-            </div>
-          </motion.div>
-        </section> */}
-
         {/* Sustainability Section */}
         <section className="flex items-end justify-center relative px-[9.72%]">
-          <motion.div
-            initial={{ y: "100%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="w-full max-w-screen-xl mb-20"
-          >
+          <motion.div>
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
                 <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
@@ -809,34 +703,31 @@ const Home: FC = () => {
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                   Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
                 </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
+                <Link href="/sustainability-overview" className="contents">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
+                          <motion.div>
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -918,6 +809,9 @@ const Home: FC = () => {
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
+        }
+        .contents {
+          display: contents; /* Prevent Link from interfering with button styles */
         }
       `}</style>
 

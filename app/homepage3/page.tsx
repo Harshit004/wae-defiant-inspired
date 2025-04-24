@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import RelatedCard from "@/components/related-card";
 import Footer from "@/components/footer";
+import Link from "next/link";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
@@ -140,11 +141,15 @@ const Home: FC = () => {
 
   // Menu items arrays
   const productsItems = [
-    "This Is Us",
-    "Our Portfolio",
-    "Reimagine Work",
+    { text: "This Is Us", href: "/this-is-us" },
+    { text: "Our Portfolio", href: "/our-portfolio" },
+    { text: "Reimagine Work", href: "/reimagine-work" },
   ];
-  const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"];
+  const blueprintItems = [
+    { text: "Sustainability", href: "/sustainability" },
+    { text: "The Activist Co.", href: "/the-activist-co" },
+    { text: "Blog", href: "/blog" },
+  ];
   const lineCount = Math.min(productsItems.length, blueprintItems.length);
 
   // Tagline words split for animation
@@ -182,11 +187,21 @@ const Home: FC = () => {
                 letterSpacing: "0px",
               }}
             >
-              <div>IDENTITY</div>
-              <div>ORIGIN</div>
-              <div>OBJECTIVE</div>
-              <div>INSIDE WAE</div>
-              <div>ETCETERA</div>
+              <div>
+                <Link href="#">IDENTITY</Link>
+              </div>
+              <div>
+                <Link href="#">ORIGIN</Link>
+              </div>
+              <div>
+                <Link href="#">OBJECTIVE</Link>
+              </div>
+              <div>
+                <Link href="#">INSIDE WAE</Link>
+              </div>
+              <div>
+                <Link href="#">ETCETERA</Link>
+              </div>
             </div>
 
             {/* Divider */}
@@ -196,12 +211,14 @@ const Home: FC = () => {
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
               <div className="flex flex-col justify-center">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                  alt="WAE Logo"
-                  width={78}
-                  height={82}
-                />
+                <Link href="/">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                    alt="WAE Logo"
+                    width={78}
+                    height={82}
+                  />
+                </Link>
               </div>
 
               {/* Coordinates */}
@@ -220,55 +237,7 @@ const Home: FC = () => {
                 78.9629° E
               </div>
 
-              {/* Tagline Animation */}
-              {/* <div className="flex flex-col items-start">
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={taglineVisible ? "visible" : "hidden"}
-                  className="flex flex-row justify-center whitespace-nowrap"
-                >
-                  {taglineWords1.map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={childVariants}
-                      className="mr-1"
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "10px",
-                        lineHeight: "125%",
-                        color: "#000",
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </motion.div>
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={taglineVisible ? "visible" : "hidden"}
-                  className="flex flex-row justify-center whitespace-nowrap"
-                >
-                  {taglineWords2.map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={childVariants}
-                      className="mr-1"
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "10px",
-                        lineHeight: "125%",
-                        color: "#000",
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </motion.div>
-              </div> */}
+              {/* Tagline */}
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
@@ -295,26 +264,28 @@ const Home: FC = () => {
                       lineHeight: "100%",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span className="block">{item}</span>
+                    <Link href={item.href} className="contents">
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -332,26 +303,28 @@ const Home: FC = () => {
                       lineHeight: "100%",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span className="block">{item}</span>
+                    <Link href={item.href} className="contents">
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow blueprint-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow blueprint-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -374,24 +347,6 @@ const Home: FC = () => {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           />
-          {/* <div
-            className="absolute"
-            style={{
-              top: "350px",
-              left: "60%",
-              width: "393px",
-              height: "159px",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "48px",
-              lineHeight: "110%",
-              color: "#000",
-            }}
-          >
-            We are <br />
-            disrupting the <br />
-            status quo
-          </div> */}
           <div
             className="absolute uppercase"
             style={{
@@ -447,46 +402,48 @@ const Home: FC = () => {
               </h2>
               <div className="flex flex-col gap-5 w-64">
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                    Being sustainable -The Underlying natural order 
-                    of the universe - circular continuity of the 
-                    natural world. Undifferentiated, endlessly self-
-                    replenishing, immensely powerful and 
-                    impassively generous. 
-                  </p>
-                  <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                    Our purpose brings together the company, 
-                    employees, clients and our stakeholders and 
-                    reconciles economic performance with a 
-                    positive impact on people and the planet.
-                  </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
+                  Being sustainable -The Underlying natural order
+                  of the universe - circular continuity of the
+                  natural world. Undifferentiated, endlessly self-
+                  replenishing, immensely powerful and
+                  impassively generous.
+                </p>
+                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
+                  Our purpose brings together the company,
+                  employees, clients and our stakeholders and
+                  reconciles economic performance witha
+                  positive impact on people and the planet.
+                </p>
+                <Link href="/purpose" className="contents">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -511,34 +468,36 @@ const Home: FC = () => {
                   We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
                   strengthening community resilience and showcasing India's intellectual capital on the world stage.
                 </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
+                <Link href="/about-wae" className="contents">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -552,209 +511,248 @@ const Home: FC = () => {
                 Products &amp; Solutions
               </td>
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="relative w-full h-full">
-                  {/* Centered Text */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="product-category">DRINKING WATER<br />STATIONS</span>
+                <Link href="/products-solutions/drinking-water-stations" className="contents">
+                  <div className="relative w-full h-full">
+                    {/* Centered Text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="product-category">DRINKING WATER<br />STATIONS</span>
+                    </div>
+                    {/* Right Arrow flush at right */}
+                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                        alt="Right arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
                   </div>
-                  {/* Right Arrow flush at right */}
-                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                      alt="Right arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
+                </Link>
               </td>
               <td className="product-cell">
-                <img
+                <Image
+                  href="/products-solutions/drinking-water-stations"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/27917d14-ea56-4a80-93b9-c66ba9642400/public"
                   alt="Drinking Water Station"
                   className="placeholder-img"
+                  width={232}
+                  height={232}
                 />
               </td>
               <td className="product-cell !bg-white"></td>
             </tr>
             <tr>
               <td className="product-cell">
-                <img
+                <Image
+                  href="/products-solutions/drinking-water-faucets"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/685750d6-ec8e-491b-a214-24f13cfcb600/public"
                   alt="Water Faucet"
                   className="placeholder-img"
+                  width={232}
+                  height={232}
                 />
               </td>
               {/* DRINKING WATER FAUCETS with left and down arrows */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="relative w-full h-full">
-                  {/* Centered Text */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="product-category">DRINKING WATER<br />FAUCETS</span>
+                <Link href="/products-solutions/drinking-water-faucets" className="contents">
+                  <div className="relative w-full h-full">
+                    {/* Centered Text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="product-category">DRINKING WATER<br />FAUCETS</span>
+                    </div>
+                    {/* Left Arrow flush at left */}
+                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
+                        alt="Left arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
+                    {/* Down Arrow flush at bottom */}
+                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
+                        alt="Down arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
                   </div>
-                  {/* Left Arrow flush at left */}
-                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                      alt="Left arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                  {/* Down Arrow flush at bottom */}
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
-                      alt="Down arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
+                </Link>
               </td>
               <td className="product-cell">
-                <img
+                <Image
+                  href="/products-solutions/drinking-water-dispensers"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b05d64d-0248-4aaf-b8c3-e8d7afccea00/public"
                   alt="Water Dispenser"
                   className="placeholder-img"
+                  width={232}
+                  height={232}
                 />
               </td>
               {/* DRINKING WATER DISPENSERS with left and right arrows */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="relative w-full h-full">
-                  {/* Centered Text */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="product-category">DRINKING WATER<br />DISPENSERS</span>
+                <Link href="/products-solutions/drinking-water-dispensers" className="contents">
+                  <div className="relative w-full h-full">
+                    {/* Centered Text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="product-category">DRINKING WATER<br />DISPENSERS</span>
+                    </div>
+                    {/* Left Arrow flush at left */}
+                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
+                        alt="Left arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
+                    {/* Right Arrow flush at right */}
+                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                        alt="Right arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
                   </div>
-                  {/* Left Arrow flush at left */}
-                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                      alt="Left arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                  {/* Right Arrow flush at right */}
-                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                      alt="Right arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
+                </Link>
               </td>
               <td className="product-cell">
-                <img
+                <Image
+                  href="/products-solutions/drinking-water-dispensers"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c4a14e-2e09-4da6-c363-84bae0088400/public"
                   alt="Water Dispenser"
                   className="placeholder-img"
+                  width={232}
+                  height={232}
                 />
               </td>
             </tr>
             <tr>
               <td className="product-cell !bg-white"></td>
               <td className="product-cell">
-                <img
+                <Image
+                  href="/products-solutions/water-coolers-fountains"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf2a2e6e-9e0b-464a-c2ff-1a16cb1f9900/public"
                   alt="Water Cooler"
                   className="placeholder-img"
+                  width={232}
+                  height={232}
                 />
               </td>
               {/* WATER COOLERS & FOUNTAINS with right and down arrows */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="relative w-full h-full">
-                  {/* Centered Text */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="product-category">WATER COOLERS &amp;<br />FOUNTAINS</span>
+                <Link href="/products-solutions/water-coolers-fountains" className="contents">
+                  <div className="relative w-full h-full">
+                    {/* Centered Text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="product-category">WATER COOLERS &amp;<br />FOUNTAINS</span>
+                    </div>
+                    {/* Right Arrow flush at right */}
+                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                        alt="Right arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
+                    {/* Down Arrow flush at bottom */}
+                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
+                        alt="Down arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
                   </div>
-                  {/* Right Arrow flush at right */}
-                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                      alt="Right arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                  {/* Down Arrow flush at bottom */}
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
-                      alt="Down arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
+                </Link>
               </td>
               <td className="product-cell">
-                <img
+                <Image
+                  href="/products-solutions/water-coolers-fountains"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d9688872-6e63-4d68-26e9-aec6cf1f3a00/public"
                   alt="Water Fountain"
                   className="placeholder-img"
+                  width={232}
+                  height={232}
                 />
               </td>
               <td className="product-cell !bg-white"></td>
             </tr>
             <tr>
               <td className="product-cell">
-                <img
+                <Image
+                  href="/products-solutions/public-utility-systems"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/54ccac68-6261-4097-e41c-cfa35c992100/public"
                   alt="Public Utility"
                   className="placeholder-img"
+                  width={232}
+                  height={232}
                 />
               </td>
               {/* PUBLIC UTILITY SYSTEMS with left arrow */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="relative w-full h-full">
-                  {/* Centered Text */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="product-category">PUBLIC UTILITY<br />SYSTEMS</span>
+                <Link href="/products-solutions/public-utility-systems" className="contents">
+                  <div className="relative w-full h-full">
+                    {/* Centered Text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="product-category">PUBLIC UTILITY<br />SYSTEMS</span>
+                    </div>
+                    {/* Left Arrow flush at left */}
+                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
+                        alt="Left arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
                   </div>
-                  {/* Left Arrow flush at left */}
-                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                      alt="Left arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
+                </Link>
               </td>
               <td className="product-cell">
-                <img
+                <Image
+                  href="/products-solutions/commercial-industrial-plants"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
                   alt="Commercial Plant"
                   className="placeholder-img"
+                  width={232}
+                  height={232}
                 />
               </td>
               {/* COMMERCIAL/INDUSTRIAL PLANTS with right arrow */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110">
-                <div className="relative w-full h-full">
-                  {/* Centered Text */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="product-category">COMMERCIAL/<br />INDUSTRIAL PLANTS</span>
+                <Link href="/products-solutions/commercial-industrial-plants" className="contents">
+                  <div className="relative w-full h-full">
+                    {/* Centered Text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="product-category">COMMERCIAL/<br />INDUSTRIAL PLANTS</span>
+                    </div>
+                    {/* Right Arrow flushat right */}
+                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                        alt="Right arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
                   </div>
-                  {/* Right Arrow flush at right */}
-                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                      alt="Right arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
+                </Link>
               </td>
               <td className="product-cell">
-                <img
+                <Image
+                  href="/products-solutions/commercial-industrial-plants"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a0490312-e31b-44b0-2272-8645b0d0ef00/public"
                   alt="Industrial Plant"
                   className="placeholder-img"
+                  width={232}
+                  height={232}
                 />
               </td>
             </tr>
@@ -764,7 +762,7 @@ const Home: FC = () => {
 
         {/* Make in INDIA Section */}
         <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[360px] px-[9.72%]">
-        <motion.div
+          <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -791,34 +789,36 @@ const Home: FC = () => {
                   The underlying natural order of the universe – circular continuity of the natural world.
                   Undifferentiated, endlessly self-replenishing, immensely powerful, and impassively generous.
                 </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
+                <Link href="/make-in-india" className="contents">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -826,7 +826,7 @@ const Home: FC = () => {
 
         {/* Sustainability Section */}
         <section className="h-screen/2 flex items-end justify-center relative mb-[180px] px-[9.72%]">
-        <motion.div
+          <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -870,10 +870,39 @@ const Home: FC = () => {
                   TONNES PLASTIC REMOVED
                 </p>
               </div>
+              <Link href="/sustainability-overview" className="mt-10">
+                <HoverButton>
+                  {(hovered) => (
+                    <>
+                      Know More
+                      <div className="relative inline-block w-4 h-4">
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                          alt="icon default"
+                          width={16}
+                          height={16}
+                        />
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
+                        >
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
+                            width={16}
+                            height={16}
+                          />
+                        </motion.div>
+                      </div>
+                    </>
+                  )}
+                </HoverButton>
+              </Link>
             </div>
           </motion.div>
         </section>
-
 
         {/* RELATED INFORMATION SECTION */}
         <section
@@ -884,35 +913,43 @@ const Home: FC = () => {
             Blogs
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
-            title="Water Conservation"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-            width={272}
-            height={270}
-          />
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
-            title="Policy"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-            width={272}
-            height={270}
-          />
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
-            title="Climate Change & Water"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-            width={272}
-            height={270}
-          />
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
-            title="Industry Impact & Solutions"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-            width={272}
-            height={270}
-          />
-        </div>
+            <Link href="/blogs/water-conservation" className="contents">
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
+                title="Water Conservation"
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                width={272}
+                height={270}
+              />
+            </Link>
+            <Link href="/blogs/policy" className="contents">
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
+                title="Policy"
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                width={272}
+                height={270}
+              />
+            </Link>
+            <Link href="/blogs/climate-change-water" className="contents">
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
+                title="Climate Change & Water"
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                width={272}
+                height={270}
+              />
+            </Link>
+            <Link href="/blogs/industry-impact-solutions" className="contents">
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
+                title="Industry Impact & Solutions"
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                width={272}
+                height={270}
+              />
+            </Link>
+          </div>
         </section>
 
         {/* FOOTER SECTION */}

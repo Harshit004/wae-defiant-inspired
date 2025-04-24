@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Footer from "@/components/footer"
+import Link from "next/link" // Import the Link component
 
 // Shared container class for consistent margins
 const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
@@ -118,11 +119,15 @@ export default function Home() {
 
   // Arrays for menu items
   const productsItems = [
-    "Identity & Ambition",
-    "Products & Solutions",
-    "Career",
+    { text: "This is Us", href: "/inside-wae" },
+    { text: "Our Portfolio", href: "/category-listing-3" },
+    { text: "Reimagine Work", href: "/careers" },
   ]
-  const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"]
+  const blueprintItems = [
+    { text: "Sustainability", href: "#" },
+    { text: "The Activist Co.", href: "#" },
+    { text: "Blog", href: "/blogs2" },
+  ]
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   return (
@@ -207,26 +212,28 @@ export default function Home() {
                       lineHeight: "100%",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span className="block">{item}</span>
+                    <Link href={item.href}>
+                      <div className="c--anim-btn"> {/* Apply className here */}
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -244,26 +251,28 @@ export default function Home() {
                       lineHeight: "100%",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span className="block">{item}</span>
+                    <Link href={item.href}>
+                      <div className="c--anim-btn"> {/* Apply className here */}
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow blueprint-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow blueprint-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
