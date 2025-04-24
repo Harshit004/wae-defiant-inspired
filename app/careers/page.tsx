@@ -157,7 +157,7 @@ const Home: FC = () => {
   // Arrays for menu items
   const productsItems = [
     { text: "This is Us", href: "/inside-wae" },
-    { text: "Our Portfolio", href: "/category-listing-3" },
+    { text: "Our Portfolio", href: "/category-listing3" },
     { text: "Reimagine Work", href: "/careers" },
   ];
   const blueprintItems = [

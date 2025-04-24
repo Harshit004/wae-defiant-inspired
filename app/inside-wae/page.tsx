@@ -157,14 +157,14 @@ const Home: FC = () => {
 
   // Menu items arrays and tagline words (for animation if needed)
   const productsItems = [
-    { text: "This Is Us", href: "/this-is-us" },
-    { text: "Our Portfolio", href: "/our-portfolio" },
-    { text: "Reimagine Work", href: "/reimagine-work" },
+    { text: "This Is Us", href: "/inside-wae" },
+    { text: "Our Portfolio", href: "/category-listing3" },
+    { text: "Reimagine Work", href: "/careers" },
   ];
   const blueprintItems = [
-    { text: "Sustainability", href: "/sustainability" },
-    { text: "The Activist Co.", href: "/the-activist-co" },
-    { text: "Blog", href: "/blog" },
+    { text: "Sustainability", href: "#" },
+    { text: "The Activist Co.", href: "#" },
+    { text: "Blog", href: "/blogs2" },
   ];
   const taglineLine1 = "To lead the way in sustainability";
   const taglineLine2 = "ahead of the rest";

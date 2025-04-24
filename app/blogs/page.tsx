@@ -120,7 +120,7 @@ export default function Home() {
   // Arrays for menu items
   const productsItems = [
     { text: "This is Us", href: "/inside-wae" },
-    { text: "Our Portfolio", href: "/category-listing-3" },
+    { text: "Our Portfolio", href: "/category-listing3" },
     { text: "Reimagine Work", href: "/careers" },
   ]
   const blueprintItems = [
@@ -128,6 +128,7 @@ export default function Home() {
     { text: "The Activist Co.", href: "#" },
     { text: "Blog", href: "/blogs2" },
   ]
+
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   return (
