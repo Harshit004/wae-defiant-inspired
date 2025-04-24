@@ -183,7 +183,7 @@ const Home: FC = () => {
   // Arrays for menu items
   const productsItems = [
     { text: "This is Us", href: "/inside-wae" },
-    { text: "Our Portfolio", href: "/category-listing3" },
+    { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers" },
   ];
   const blueprintItems = [
@@ -245,14 +245,28 @@ const Home: FC = () => {
             {/* Bottom Row: Logo, Tagline and Menu Items */}
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
+
               <div className="flex flex-col justify-center">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                  alt="WAE Logo"
-                  width={78}
-                  height={82}
-                />
-              </div>
+
+<a href="/homepage3">
+
+  <Image
+
+    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+
+    alt="WAE Logo"
+
+    width={78}
+
+    height={82}
+
+    style={{ cursor: 'pointer' }}
+
+  />
+
+</a>
+
+</div>
 
               {/* Coordinates */}
               <div
