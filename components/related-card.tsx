@@ -27,7 +27,7 @@ export default function RelatedCard({ image, title, description, width, height }
       <motion.div
         ref={ref}
         className="mb-4 overflow-hidden"
-        style={{ y, position: "relative", zIndex: 9999 }}
+        style={{ position: "relative", zIndex: 9999 }}
       >
         <Image
             src={image || "/placeholder.svg"}
