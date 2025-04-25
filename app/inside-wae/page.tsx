@@ -233,7 +233,7 @@ useEffect(() => {
 
     const initialV = velocity;
     const startTime = performance.now();
-    const duration = 2000;
+    const duration = 2500; // Let's try a slightly longer duration again
     let lastV = initialV;
     let lastFrameTime = startTime;
 
@@ -243,31 +243,25 @@ useEffect(() => {
       const progress = Math.min(elapsed / duration, 1);
       lastFrameTime = t;
 
-      let friction: number;
-      if (progress < 0.7) {
-        friction = Math.pow(1 - progress, 2.2);
-      } else {
-        const p2 = (progress - 0.7) / 0.3;
-        friction =
-          Math.pow(1 - progress, 2.2) + 0.3 * Math.pow(1 - p2, 3);
-      }
-
+      // More gradual friction using a power function
+      const friction = Math.pow(1 - progress, 2); // Experiment with exponent 2
       const targetV = initialV * friction;
-      lastV = lastV * 0.85 + targetV * 0.15;
-      const delta = lastV * (t - lastFrameTime);
+      lastV = lastV * 0.88 + targetV * 0.12; // Slightly less influence from target
 
+      const delta = lastV * (t - lastFrameTime);
       window.scrollBy(0, delta);
-      if (progress < 1 && Math.abs(lastV) > 0.0005) {
+
+      if (progress < 1 && Math.abs(lastV) > 0.000005) { // Keep the lower threshold
         inertiaFrame = requestAnimationFrame(animate);
-      } else if (Math.abs(lastV) > 0.0005) {
-        // final fade-out
+      } else if (Math.abs(lastV) > 0.000005) {
+        // Gentle fade-out
         const fadeout = () => {
           if (isScrolling) return;
-          lastV *= 0.95;
+          lastV *= 0.96; // Very gentle damping
           const d = lastV * (performance.now() - lastFrameTime);
           lastFrameTime = performance.now();
           window.scrollBy(0, d);
-          if (Math.abs(lastV) > 0.0001) {
+          if (Math.abs(lastV) > 0.0000001) { // Even stricter final stop
             inertiaFrame = requestAnimationFrame(fadeout);
           }
         };

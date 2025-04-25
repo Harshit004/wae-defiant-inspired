@@ -534,7 +534,7 @@ const Home: FC = () => {
                   href="/products-solutions/drinking-water-stations"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/27917d14-ea56-4a80-93b9-c66ba9642400/public"
                   alt="Drinking Water Station"
-                  className="placeholder-img"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
                   width={232}
                   height={232}
                 />
@@ -547,7 +547,7 @@ const Home: FC = () => {
                   href="/products-solutions/drinking-water-faucets"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/685750d6-ec8e-491b-a214-24f13cfcb600/public"
                   alt="Water Faucet"
-                  className="placeholder-img"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
                   width={232}
                   height={232}
                 />
@@ -586,7 +586,7 @@ const Home: FC = () => {
                   href="/products-solutions/drinking-water-dispensers"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b05d64d-0248-4aaf-b8c3-e8d7afccea00/public"
                   alt="Water Dispenser"
-                  className="placeholder-img"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
                   width={232}
                   height={232}
                 />
@@ -625,7 +625,7 @@ const Home: FC = () => {
                   href="/products-solutions/drinking-water-dispensers"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c4a14e-2e09-4da6-c363-84bae0088400/public"
                   alt="Water Dispenser"
-                  className="placeholder-img"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
                   width={232}
                   height={232}
                 />
@@ -638,7 +638,7 @@ const Home: FC = () => {
                   href="/products-solutions/water-coolers-fountains"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf2a2e6e-9e0b-464a-c2ff-1a16cb1f9900/public"
                   alt="Water Cooler"
-                  className="placeholder-img"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
                   width={232}
                   height={232}
                 />
@@ -677,7 +677,7 @@ const Home: FC = () => {
                   href="/products-solutions/water-coolers-fountains"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d9688872-6e63-4d68-26e9-aec6cf1f3a00/public"
                   alt="Water Fountain"
-                  className="placeholder-img"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
                   width={232}
                   height={232}
                 />
@@ -690,7 +690,7 @@ const Home: FC = () => {
                   href="/products-solutions/public-utility-systems"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/54ccac68-6261-4097-e41c-cfa35c992100/public"
                   alt="Public Utility"
-                  className="placeholder-img"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
                   width={232}
                   height={232}
                 />
@@ -720,7 +720,7 @@ const Home: FC = () => {
                   href="/products-solutions/commercial-industrial-plants"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
                   alt="Commercial Plant"
-                  className="placeholder-img"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
                   width={232}
                   height={232}
                 />
@@ -750,7 +750,7 @@ const Home: FC = () => {
                   href="/products-solutions/commercial-industrial-plants"
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a0490312-e31b-44b0-2272-8645b0d0ef00/public"
                   alt="Industrial Plant"
-                  className="placeholder-img"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
                   width={232}
                   height={232}
                 />
@@ -995,6 +995,7 @@ const Home: FC = () => {
         }
         .placeholder-img {
           object-fit: cover;
+          
         }
         .c--anim-btn {
           display: flex;
