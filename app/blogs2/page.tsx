@@ -62,19 +62,39 @@ export default function Home() {
     return () => clearInterval(iv)
   }, [heroSlides.length])
 
-  // --- HEADER TAGLINE SCROLL STATE ---
+  // --- HEADER TAGLINE & LOGO SCROLL STATE ---
   const headerRef = useRef<HTMLDivElement>(null)
+  const [logoSize, setLogoSize] = useState({ width: 78, height: 82 }) // Initial logo size
   const [taglineVisible, setTaglineVisible] = useState(true)
+  const [coordinatesVisible, setCoordinatesVisible] = useState(true)
+  const [isMenuCollapsed, setIsMenuCollapsed] = useState(false) // State to control menu collapse
   const prevY = useRef(0)
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY
-      setTaglineVisible(y < prevY.current)
+
+      if (y > prevY.current) {
+        // Scrolling down: shrink logo, fade out tagline, coordinates, and Inside WAE menu; fade in Menu+
+        setLogoSize({ width: 19, height: 20 })
+        setTaglineVisible(false)
+        setCoordinatesVisible(false)
+        setIsMenuCollapsed(true)
+      } else {
+        // Scrolling up: expand logo, fade in tagline, coordinates, and Inside WAE menu; fade out Menu+
+        setLogoSize({ width: 78, height: 82 })
+        setTaglineVisible(true)
+        setCoordinatesVisible(true)
+        setIsMenuCollapsed(false)
+      }
       prevY.current = y
     }
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  const toggleMenu = () => {
+    setIsMenuCollapsed(!isMenuCollapsed)
+  }
 
   // --- BUTTONS SECTION STATE ---
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -169,28 +189,17 @@ export default function Home() {
             {/* Bottom Row: Logo, Tagline and Menu Items */}
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
-
-<div className="flex flex-col justify-center">
-
-  <Link href="/homepage3" passHref>
-
-    <Image
-
-      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-
-      alt="WAE Logo"
-
-      width={78}
-
-      height={82}
-
-      style={{ cursor: 'pointer' }}
-
-    />
-
-  </Link>
-
-</div>
+              <div className="flex flex-col justify-center">
+                <Link href="/homepage3" passHref>
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                    alt="WAE Logo"
+                    width={logoSize.width}
+                    height={logoSize.height}
+                    style={{ cursor: 'pointer', transition: 'width 1s ease-in-out, height 1s ease-in-out' }}
+                  />
+                </Link>
+              </div>
 
               {/* Coordinates */}
               <div
@@ -200,7 +209,9 @@ export default function Home() {
                   fontWeight: 500,
                   fontSize: "12px",
                   lineHeight: "100%",
-                  color: "#00000066",
+                  color: coordinatesVisible ? "#00000066" : "transparent",
+                  opacity: coordinatesVisible ? 1 : 0,
+                  transition: 'color 1s ease-in-out, opacity 1s ease-in-out'
                 }}
               >
                 20.5937° N
@@ -208,7 +219,7 @@ export default function Home() {
                 78.9629° E
               </div>
 
-              {/* Tagline Animation */}
+              {/* Tagline */}
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
@@ -216,53 +227,87 @@ export default function Home() {
                   fontWeight: 500,
                   fontSize: "12px",
                   lineHeight: "100%",
-                  color: "#00000066",
+                  color: taglineVisible ? "#00000066" : "transparent",
+                  opacity: taglineVisible ? 1 : 0,
+                  transition: 'color 1s ease-in-out, opacity 1s ease-in-out'
                 }}
               >
                 To lead the way in<br />sustainability ahead of the<br />rest
               </div>
 
-              {/* Inside WAE Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {productsItems.map((item, i) => (
+              {/* Inside WAE Menu Items / Collapsed Menu */}
+              <div className="flex flex-col justify-center" style={{ transition: 'opacity 1s ease-in-out' }}>
+                {isMenuCollapsed ? (
                   <div
-                    key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                    onClick={toggleMenu}
                     style={{
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '5px',
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
                       fontSize: "12px",
                       lineHeight: "100%",
+                      color: '#000',
+                      opacity: 1,
+                      transition: 'opacity 1s ease-in-out',
                     }}
                   >
-                    <Link href={item.href}>
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
-                      </div>
-                    </Link>
+                    Menu
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
                   </div>
-                ))}
+                ) : (
+                  <div
+                    className="flex flex-col justify-center space-y-2"
+                    style={{
+                      opacity: taglineVisible ? 1 : 0,
+                      transition: 'opacity 1s ease-in-out',
+                    }}
+                  >
+                    {productsItems.map((item, i) => (
+                      <div
+                        key={i}
+                        className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 500,
+                          fontSize: "12px",
+                          lineHeight: "100%",
+                        }}
+                      >
+                        <Link href={item.href}>
+                          <div className="c--anim-btn">
+                            <div className="text-container">
+                              <span className="c-anim-btn">{item.text}</span>
+                              <span className="block">{item.text}</span>
+                            </div>
+                            <span className="menu-arrow">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                              >
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 19" />
+                              </svg>
+                            </span>
+                          </div>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* ETCETERA Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
+              <div className="flex flex-col justify-center space-y-2" style={{ transition: 'opacity 1s ease-in-out' }}>
                 {blueprintItems.map((item, i) => (
                   <div
                     key={i}
@@ -272,6 +317,8 @@ export default function Home() {
                       fontWeight: 500,
                       fontSize: "12px",
                       lineHeight: "100%",
+                      opacity: taglineVisible ? 1 : 0,
+                      transition: 'color 1s ease-in-out, opacity 1s ease-in-out'
                     }}
                   >
                     <Link href={item.href}>
@@ -291,7 +338,7 @@ export default function Home() {
                             strokeWidth="2"
                           >
                             <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
+                            <polyline points="12 5 19 12 19" />
                           </svg>
                         </span>
                       </div>
