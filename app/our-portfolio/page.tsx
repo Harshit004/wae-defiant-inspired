@@ -15,35 +15,43 @@ const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
 /**
  * Reusable hover button component.
  */
-const HoverButton: FC<HoverButtonProps> = ({ children }) => {
-    const [hovered, setHovered] = useState<boolean>(false);
-  
-    return (
-      <button
-        type="button"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className="w-fit px-4 py-3 transition-all duration-650 ease"
-        style={{
-          pointerEvents: "auto",
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "8px",
-          fontFamily: "'Inter Tight', sans-serif",
-          fontWeight: 500,
-          fontSize: "10px",
-          lineHeight: "100%",
-          textTransform: "uppercase",
-          backgroundColor: hovered ? "#000" : "#f2f2f2",
-          border: "1px solid #000",
-          cursor: "pointer",
-          color: hovered ? "#fff" : "#000",
-        }}
-      >
-        {children(hovered)}
-      </button>
-    );
-  };
+
+interface HoverButtonProps {
+  children: (hovered: boolean) => React.ReactNode;
+  href?: string;
+}
+
+const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
+  const [hovered, setHovered] = useState<boolean>(false);
+
+  const buttonContent = (
+    <button
+      type="button"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="w-fit px-4 py-3 transition-all duration-650 ease"
+      style={{
+        pointerEvents: "auto",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "8px",
+        fontFamily: "'Inter Tight', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
+        lineHeight: "100%",
+        textTransform: "uppercase",
+        backgroundColor: hovered ? "#000" : "#f2f2f2",
+        border: "1px solid #000",
+        cursor: "pointer",
+        color: hovered ? "#fff" : "#000",
+      }}
+    >
+      {children(hovered)}
+    </button>
+  );
+
+  return href ? <Link href={href} className="contents">{buttonContent}</Link> : buttonContent;
+};
 
 // Placeholder for product category data : copied from blogs section, hence the same variable
 const blogPosts = [
@@ -397,7 +405,7 @@ export default function Home() {
                       {post.description}
                     </p>
                   </div>
-                  <HoverButton>
+                  <HoverButton href="/product-category">
                     {(hovered) => (
                       <>
                         Know More
