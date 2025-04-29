@@ -62,9 +62,12 @@ export default function Home() {
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
 
-  // State and ref for header/hero scaling
-  const [headerHeroScale, setHeaderHeroScale] = useState(1)
-  const headerHeroRef = useRef<HTMLDivElement>(null)
+  // !!! REMOVED: State and ref for header/hero scaling
+  // const [headerHeroScale, setHeaderHeroScale] = useState(1);
+  const headerHeroRef = useRef<HTMLDivElement>(null) // Keep the ref if you use it for other purposes, otherwise remove
+
+  // Ref for the scroll container section
+  const scrollContainerSectionRef = useRef<HTMLDivElement>(null);
 
   // Update tagline visibility based on scroll direction
   useEffect(() => {
@@ -106,37 +109,66 @@ export default function Home() {
     }
   }, [headerRef])
 
-  // Add scroll animation effect for header and hero
+  // !!! REMOVED: Scroll animation effect for header and hero scaling
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!headerHeroRef.current) return;
+  //     const scrollPosition = window.scrollY;
+  //     const viewportHeight = window.innerHeight;
+  //     const scrollProgress = Math.max(0, Math.min(1, scrollPosition / viewportHeight));
+  //     const scale = 1 - scrollProgress;
+  //     setHeaderHeroScale(scale);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
+
+  // !!! EFFECT FOR SCROLL SNAPPING THE CONTAINER TO TOP (Kept as is) !!!
   useEffect(() => {
-    const handleScroll = () => {
-      if (!headerHeroRef.current) return
+    const containerElement = scrollContainerSectionRef.current;
 
-      const scrollPosition = window.scrollY
-      const viewportHeight = window.innerHeight
-      const maxScroll = viewportHeight * 0.8
-      const minScale = 0
+    if (!containerElement) return;
 
-      if (scrollPosition <= 100) {
-        setHeaderHeroScale(1)
-      } else if (scrollPosition >= maxScroll) {
-        setHeaderHeroScale(minScale)
-      } else {
-        const scrollRange = maxScroll - 100
-        const scrollProgress = (scrollPosition - 100) / scrollRange
-        setHeaderHeroScale(1 - scrollProgress)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+           requestAnimationFrame(() => {
+             containerElement.scrollIntoView({
+               behavior: 'smooth',
+               block: 'start',
+             });
+           });
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.001,
       }
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    );
+
+    observer.observe(containerElement);
+
+    return () => {
+      observer.unobserve(containerElement);
+    };
+  }, [scrollContainerSectionRef]);
 
   // Scroll-driven animations from framer-motion
+  // These use scrollYProgress based on the entire page scroll.
+  // They might behave differently now that the snapping changes the scroll position.
+  // You may need to adjust these transforms or use alternative animation triggers
+  // if they don't behave as expected after removing the header/hero scaling.
   const { scrollYProgress } = useScroll()
   const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1])
+
   const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"])
   const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1])
   const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0])
   const finalPurposeOpacity = useTransform([purposeOpacity, purposeVanish], ([pO, pV]) => pO * pV)
+
   const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"])
   const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1])
   const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0])
@@ -179,16 +211,18 @@ export default function Home() {
 
   return (
     <main className="relative">
-      {/* HEADER AND HERO CONTAINER */}
+      {/* HEADER AND HERO CONTAINER (Fixed at the top, no scaling) */}
       <div
-        ref={headerHeroRef}
+        ref={headerHeroRef} // Keep ref if needed for other logic, otherwise remove
         style={{
-          position: "fixed",
+          position: "fixed", // Keep it fixed
           top: 0,
           left: 0,
           width: "100%",
-          height: "100vh",
-          zIndex: 0,
+          height: "100vh", // Keep initial full viewport height
+          zIndex: 0, // Lower zIndex than the scrollable container
+          // !!! REMOVED: transform: `scale(${headerHeroScale})`,
+          // !!! REMOVED: transformOrigin: 'top center',
         }}
       >
         <header
@@ -389,7 +423,7 @@ export default function Home() {
           id="hero"
           ref={heroRef}
           className="relative h-[100vh] w-full overflow-hidden"
-          style={{ marginTop: `-${headerHeight}px`, zIndex: 0 }}
+           style={{ zIndex: 0 }}
         >
           <video
             src="/a337333f-cbd25ca9.mp4"
@@ -422,12 +456,13 @@ export default function Home() {
         </section>
       </div>
 
-      {/* SCROLL CONTAINER SECTION */}
+      {/* SCROLL CONTAINER SECTION (This is the one that should snap) */}
       <motion.div
+        ref={scrollContainerSectionRef}
         style={{
           position: "relative",
           zIndex: 10,
-          marginTop: "100vh",
+          marginTop: "100vh", // Keep this to position it after the 100vh fixed section
           backgroundColor: "#F2F2F2",
           borderTopLeftRadius: "30px",
           borderTopRightRadius: "30px",
@@ -460,7 +495,7 @@ export default function Home() {
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, root: scrollContainerSectionRef.current }}
             className="mb-20"
           >
             <div style={{ width: "1160px", height: "115px" }} className="flex justify-between items-start">
@@ -541,7 +576,7 @@ export default function Home() {
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, root: scrollContainerSectionRef.current }}
             className="mb-20"
           >
             <div style={{ width: "1160px" }} className="flex justify-between">
@@ -615,6 +650,8 @@ export default function Home() {
             </div>
           </motion.div>
         </section>
+         {/* Keep adding your other sections here within this main scrollable container */}
+         {/* ... more sections ... */}
       </motion.div>
 
       {/* RELATED INFORMATION SECTION */}
@@ -713,8 +750,17 @@ export default function Home() {
         }
         /* Style for the HoverButton link */
         .contents {
-          display: contents; /* Allows the Link to not interfere with button styles */
+          display: contents;
         }
+
+        /* Add CSS to the body or a parent container to handle potential scroll-padding if needed */
+        /* This can help if the fixed header covers the snapped content */
+        /* You might need to add this in a global CSS file or adjust your layout */
+        /* For example:
+        body {
+           scroll-padding-top: 100px; // Adjust 100px to your header's height
+        }
+        */
       `}</style>
     </main>
   )

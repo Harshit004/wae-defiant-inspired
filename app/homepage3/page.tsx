@@ -59,6 +59,8 @@ const Home: FC = () => {
 
   const sections = ["hero"]; // Extendable for additional sections
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
   // Update tagline visibility on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -368,13 +370,13 @@ const Home: FC = () => {
 
       {/* SCROLL-DRIVEN CONTAINER */}
       <motion.div
-        className="min-h-[300vh] relative bg-[#F2F2F2] mt-screen"
+        className="min-h-[300vh] relative bg-[#F2F2F2] mt-screen snap-y"
         style={{ marginTop: "100vh" }}
       >
         {/* Sticky Logo Overlay */}
         <motion.div
           style={{ position: "sticky", top: "5%", zIndex: 1100, opacity: logoOpacity }}
-          className="pointer-events-none flex justify-center pt-[180px]"
+          className="pointer-events-none flex justify-center pt-[180px] snap-start"
         >
           <div className="max-w-[19.375rem] max-h-[19.375rem]">
             <Image
@@ -952,6 +954,24 @@ const Home: FC = () => {
 
       {/* INLINE STYLES */}
       <style jsx>{`
+        .container {
+          scroll-snap-type: y mandatory;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          height: 200vh; /* ADJUST THIS VALUE BASED ON YOUR CONTENT HEIGHT */
+        }
+
+        .section {
+          scroll-snap-align: start;
+          width: 100%;
+          flex-shrink: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+
         .product-grid {
           width: 1160px;
           height: 928px;

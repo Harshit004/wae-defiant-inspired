@@ -424,7 +424,7 @@ export default function Home() {
       </section>
 
       {/* ================= BLOG CARDS SECTION ================= */}
-      <section className="mb-40">
+      <section>
         <div className={containerClass}>
           <div className="grid grid-cols-3 gap-x-[4.166%] gap-y-[140px]">
             {blogPosts.map((post, idx) => (
