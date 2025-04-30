@@ -155,7 +155,7 @@ export default function Home() {
   const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
-    { text: "Blog", href: "/blog" },
+    { text: "Blog", href: "/blogs2" },
   ]
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
