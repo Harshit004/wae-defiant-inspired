@@ -61,6 +61,23 @@ const Home: FC = () => {
 
   const containerRef = useRef<HTMLDivElement>(null); // Ref is declared but not applied to an element
 
+   // --- ADDED: Explicitly scroll to top on mount ---
+   useEffect(() => {
+       // Use requestAnimationFrame to ensure it runs after the browser has potentially
+       // restored scroll or completed initial layout
+       requestAnimationFrame(() => {
+           window.scrollTo(0, 0);
+       });
+       // Optionally, add a slight delay if immediate scroll is jarring or ineffective
+       // const timer = setTimeout(() => {
+       //     window.scrollTo(0, 0);
+       // }, 100); // Adjust delay as needed
+       // return () => clearTimeout(timer); // Cleanup timeout
+
+   }, []); // Empty dependency array ensures it runs only once on mount
+   // --- END ADDED CODE ---
+
+
   // Update tagline visibility on scroll (logic present, but taglineVisible state not used)
   useEffect(() => {
     const handleScroll = () => {
@@ -380,14 +397,14 @@ const Home: FC = () => {
 
       {/* SCROLL-DRIVEN CONTAINER */}
       {/* This container provides the main scrollable content below the initial fixed header/hero. */}
-      {/* Removed snap-y class to prevent automatic snapping on load */}
+      {/* scroll-snap-y class is REMOVED */}
       <motion.div
         className="min-h-[300vh] relative bg-[#F2F2F2] mt-screen" // mt-screen is custom tailwind, likely h-screen or 100vh
         style={{ marginTop: "100vh" }} // Explicitly pushing content down by viewport height
       >
         {/* Sticky Logo Overlay */}
         {/* This element is positioned sticky inside the scrollable container. */}
-        {/* Removed snap-start class to prevent automatic snapping to this element on load */}
+        {/* snap-start class is REMOVED */}
         <motion.div
           style={{ position: "sticky", top: "5%", zIndex: 1100, opacity: logoOpacity }} // Framer Motion opacity + CSS Sticky
           className="pointer-events-none flex justify-center pt-[180px]" // snap-start removed
