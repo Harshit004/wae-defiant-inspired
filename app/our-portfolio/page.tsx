@@ -1,7 +1,6 @@
 "use client"
 
 import type React, { FC } from "react"
-import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -50,8 +49,16 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
     </button>
   );
 
-  return href ? <Link href={href} className="contents">{buttonContent}</Link> : buttonContent;
+  // Use a simple anchor tag if it's an internal page link, Link component for Next.js routes
+  return href ? (
+      href.startsWith('#') ? ( // Check if it's an anchor link
+        <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }}>{buttonContent}</a>
+      ) : ( // Assume it's a Next.js route link
+        <Link href={href} className="contents">{buttonContent}</Link>
+      )
+    ) : buttonContent;
 };
+
 
 // Placeholder for product category data : copied from blogs section, hence the same variable
 const blogPosts = [
@@ -86,6 +93,19 @@ const blogPosts = [
         description: "Power your facility with our large-scale hydration plants. Scalable and efficient, they offer high-volume water solutions with a commitment to sustainability.",
     },
   ];
+
+  // Helper function to create a URL-friendly slug from a title
+const slugify = (text: string) => {
+    return text
+      .toString()
+      .toLowerCase()
+      .replace(/\s+/g, '-') // Replace spaces with -
+      .replace(/[^\w-]+/g, '') // Remove all non-word chars
+      .replace(/--+/g, '-') // Replace multiple - with single -
+      .replace(/^-+/, '') // Trim - from start of text
+      .replace(/-+$/, ''); // Trim - from end of text
+  };
+
 
 export default function Home() {
   // State variables
@@ -321,18 +341,63 @@ export default function Home() {
             fontSize: "48px",
             letterSpacing: "0%",
             verticalAlign: "middle",
-            marginBottom: "180px",
+            marginBottom: "40px", // Reduced margin here to add the new section below
           }}
         >
-          Our Portfolio
+          Our Products
         </h2>
 
-        {/* LOGO */}
-        <div
+        {/* NEW SECTION: Product Category Grid */}
+        <div className="grid grid-cols-3 gap-x-[100px] gap-y-[60px] mb-[180px]"> {/* Added bottom margin to separate from next section */}
+          {blogPosts.map((post, index) => (
+            <div key={index}>
+                {/* Heading with Link */}
+              <a href={`#${slugify(post.title)}`} // Anchor link to the product section
+                 style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "16px",
+                  lineHeight: "140%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  textTransform: "uppercase",
+                  display: "block", // Ensure the link block wraps the text
+                  textDecoration: "none", // Remove default underline
+                  color: "inherit", // Inherit text color
+                 }}
+              >
+                {post.title}
+              </a>
+
+              {/* Horizontal Rule */}
+              <div style={{ paddingTop: "12px", paddingBottom: "12px" }}>
+                <hr style={{ border: "none", borderTop: "1px solid #00000033" }} />
+              </div>
+
+              {/* Description */}
+              <p
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "24px",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                }}
+              >
+                {post.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+
+        {/* LOGO (Position might need adjustment depending on where exactly you want it relative to the new section) */}
+        {/* <div
           style={{
             position: "fixed",
-            top: "30%",
-            left: "39.23%",
+            top: "30%", // You might want to adjust this
+            left: "39.23%", // You might want to adjust this
             opacity: 1,
           }}
           className="pointer-events-none flex justify-center"
@@ -344,14 +409,15 @@ export default function Home() {
             height={310}
             className="opacity-80"
           />
-        </div>
+        </div> */}
 
-        {/* Product Category Section */}
+        {/* Product Category Section (Modified to include IDs) */}
         <div>
           <div className="space-y-8">
             {blogPosts.map((post, index) => (
               <div
                 key={index}
+                id={slugify(post.title)} // Added ID here for anchor linking
                 className={`flex items-start space-x-8 justify-between ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}
                 style={{ marginBottom: index < blogPosts.length - 1 ? '180px' : '0' }}
               >
@@ -407,7 +473,8 @@ export default function Home() {
                       {post.description}
                     </p>
                   </div>
-                  <HoverButton href="/product-category">
+                  {/* Modified HoverButton href for internal anchor link */}
+                   <HoverButton href={`#${slugify(post.title)}`}>
                     {(hovered) => (
                       <>
                         Know More
