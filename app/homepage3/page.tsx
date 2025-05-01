@@ -538,14 +538,14 @@ const Home: FC = () => {
           </motion.div>
         </section>
 
-        {/* Products and Solutions Section */}
+        {/* Products Section */}
         {/* This section has a white background and higher z-index */}
         <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200 }}>
           {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
           <table className="product-grid"> {/* Custom CSS class */}
             <tr>
               <td colSpan={2} className="product-title whitespace-nowrap"> {/* Custom CSS class */}
-                Products &amp; Solutions
+                Products
               </td>
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/products-solutions/drinking-water-stations" className="contents"> {/* className="contents" again */}
@@ -805,6 +805,180 @@ const Home: FC = () => {
           </table>
         </div>
 
+        {/* Solution Section */}
+        {/* This section has a white background and higher z-index */}
+        <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200 }}>
+          {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
+          <table className="solutions-grid"> {/* Custom CSS class */}
+            <tr>
+              <td colSpan={2} className="product-title whitespace-nowrap"> {/* Custom CSS class */}
+                Solutions
+              </td>
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+                <Link href="/products-solutions/drinking-water-stations" className="contents"> {/* className="contents" again */}
+                  <div className="relative w-full h-full">
+                    {/* Centered Text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="product-category">WATER REUSE</span> {/* Custom CSS class */}
+                    </div>
+                    {/* Right Arrow flush at right */}
+                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                        alt="Right arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
+                  </div>
+                </Link>
+              </td>
+              <td className="product-cell"> {/* Custom CSS class */}
+                {/* Image wrapped in Link - not ideal, Link should wrap Image */}
+                <Image
+                  // href="/products-solutions/drinking-water-stations" // href attribute is not valid on Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8c357479-5a25-4527-7fde-a434fa498b00/public"
+                  alt="WATER REUSE"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  width={232}
+                  height={232}
+                />
+              </td>
+              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+            </tr>
+            <tr>
+              <td className="product-cell"> {/* Custom CSS class */}
+                 {/* Image wrapped in Link - not ideal */}
+                <Image
+                  // href="/products-solutions/drinking-water-faucets" // href attribute is not valid on Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c399819d-976c-49aa-332f-02a9db708200/public"
+                  alt="WATER TREATMENT LEFT"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  width={232}
+                  height={232}
+                />
+              </td>
+              {/* DRINKING WATER FAUCETS with left and down arrows */}
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+                <Link href="/products-solutions/drinking-water-faucets" className="contents"> {/* className="contents" again */}
+                  <div className="relative w-full h-full">
+                    {/* Centered Text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="product-category">WATER TREATMENT</span> {/* Custom CSS class */}
+                    </div>
+                    {/* Left Arrow flush at left */}
+                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
+                        alt="Left arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
+                    {/* Down Arrow flush at bottom */}
+                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
+                        alt="Down arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
+                  </div>
+                </Link>
+              </td>
+              <td className="product-cell"> {/* Custom CSS class */}
+                 {/* Image wrapped in Link - not ideal */}
+                <Image
+                  // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/16ca1b89-cf24-442f-0a41-3e3ad0c6cf00/public"
+                  alt="WATER AS A SERVICE LEFT"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  width={232}
+                  height={232}
+                />
+              </td>
+              {/* DRINKING WATER DISPENSERS with left and right arrows */}
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+                <Link href="/products-solutions/drinking-water-dispensers" className="contents"> {/* className="contents" again */}
+                  <div className="relative w-full h-full">
+                    {/* Centered Text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="product-category">WATER AS A SERVICE</span> {/* Custom CSS class */}
+                    </div>
+                    {/* Left Arrow flush at left */}
+                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
+                        alt="Left arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
+                    {/* Right Arrow flush at right */}
+                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                        alt="Right arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
+                  </div>
+                </Link>
+              </td>
+              <td className="product-cell"> {/* Custom CSS class */}
+                 {/* Image wrapped in Link - not ideal */}
+                <Image
+                  // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1374b15c-0e9d-4dbf-6524-c4b6ff10f900/public"
+                  alt="WATER AS A SERVICE RIGHT "
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  width={232}
+                  height={232}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+              <td className="product-cell"> {/* Custom CSS class */}
+                 {/* Image wrapped in Link - not ideal */}
+                <Image
+                  // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f492758-88ca-4c25-4a00-1a122cd22200/public"
+                  alt="WATER TREATMENT DOWN"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  width={232}
+                  height={232}
+                />
+              </td>
+              {/* empty white box */}
+              <td className="bg-white"> {/* Custom CSS class + Tailwind hover scale */}
+                <Link href="/products-solutions/water-coolers-fountains" className="contents"> {/* className="contents" again */}
+                  <div className="relative w-full h-full">
+                    {/* Centered Text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="product-category"></span> {/* Custom CSS class */}
+                    </div>
+                  </div>
+                </Link>
+              </td>
+              <td className="product-cell"> {/* Custom CSS class */}
+                 {/* Image wrapped in Link - not ideal */}
+                <Image
+                  // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e9e2498-7134-4994-642f-e95e90e1aa00/public"
+                  alt="WATER AS A SERVICE DOWN"
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  width={232}
+                  height={232}
+                />
+              </td>
+              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+            </tr>
+          </table>
+        </div>
+
         {/* Make in INDIA Section */}
         {/* Uses whileInView for entrance animation */}
         <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[360px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
@@ -1028,6 +1202,14 @@ const Home: FC = () => {
           height: 928px; /* Fixed height */
           border-collapse: collapse;
         }
+          
+         /* Solutions Grid Table Styles */
+        .solutions-grid {
+          width: 1160px; /* Fixed width */
+          height: 696px; /* Fixed height */
+          border-collapse: collapse;
+        }
+
         .product-title {
           font-family: "Inter Tight", sans-serif;
           font-weight: 500;
