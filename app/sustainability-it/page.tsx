@@ -10,7 +10,7 @@ import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 
 // Shared container class for consistent margins and max-width
-const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
+const containerClass = "mx-auto w-full px-[140px]"
 
 /**
  * Reusable hover button component.
@@ -308,11 +308,11 @@ export default function Home() {
         >
            {/* Reverted to Image as in the provided code */}
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afe31ab4-047a-42d2-84b5-5aad6f2cef00/public"
-            alt="Water reuse"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public"
+            alt="Success Stories - IT"
              width={1440} // Adjusted width for better fit if max-width is 1440px
              height={656} // Height from original image usage
-            className="object-cover w-full h-full" // Use h-full to fill the 100vh section
+            className="object-cover w-full" // Use h-full to fill the 100vh section
           />
 
           {/* Text and image overlays remain absolute within the hero */}
@@ -345,7 +345,7 @@ export default function Home() {
               color: "#fff",
             }}
           >
-            Water Reuse
+            Success Stories - IT
           </div>
           <div
             className="absolute uppercase"
