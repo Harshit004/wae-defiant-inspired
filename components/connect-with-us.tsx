@@ -24,8 +24,14 @@ const Icons = {
   </svg>,
 };
 
-const ConnectWithUs = () => {
-  const handleSubmit = (event) => {
+// Define an interface for the component's props
+interface ConnectWithUsProps {
+  introText: string; // Specify that introText is a string
+}
+
+// Use the interface to type the props
+const ConnectWithUs: React.FC<ConnectWithUsProps> = ({ introText }) => {
+  const handleSubmit = (event: React.FormEvent) => { // Add type for event
     event.preventDefault();
     console.log('Form submitted!');
     // Add your form submission logic here
@@ -43,14 +49,15 @@ const ConnectWithUs = () => {
       <div className="container flex md:justify-between items-start gap-20">
         {/* Left Side - Contact Information */}
         <div className="mb-8 md:mb-0 md:w-[calc(50%-10px)]">
+          {/* Use the introText prop here */}
           <p className="font-inter-tight text-lg leading-relaxed mb-4 w-[80%]">
-            Explore how WAE can help your business or community turn wastewater into a resource.
+            {introText}
           </p>
           <h2 className="font-inter-tight text-4xl uppercase leading-none">
             CONNECT WITH US
           </h2>
           <div className="my-4" />
-          
+
           <div className="mt-10 flex flex-row gap-10">
             <div className="flex">
               {Icons.Email}

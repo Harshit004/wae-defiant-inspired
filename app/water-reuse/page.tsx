@@ -312,7 +312,7 @@ export default function Home() {
             alt="Water reuse"
              width={1440} // Adjusted width for better fit if max-width is 1440px
              height={656} // Height from original image usage
-            className="object-cover w-full h-full" // Use h-full to fill the 100vh section
+            className="object-cover w-full" // Use h-full to fill the 100vh section
           />
 
           {/* Text and image overlays remain absolute within the hero */}
@@ -680,7 +680,7 @@ export default function Home() {
 
         {/* CONNECT WITH US FORM */}
         <section className=" px-[9.72%] pb-0">
-            <ConnectWithUs />
+            <ConnectWithUs introText="Explore how WAE can help your business or community turn wastewater into a resource." />
         </section>
 
       {/* FOOTER SECTION */}
