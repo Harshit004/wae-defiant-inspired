@@ -326,8 +326,8 @@ export default function Home() {
             }}
           >
             <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/baae1906-6288-4ad1-dac7-226c1109fb00/public"
-              alt="Disrupting the status quo"
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
+              alt="Innovation meets design"
               width={393}
               height={159}
               className="object-contain"
