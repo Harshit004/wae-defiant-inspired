@@ -174,7 +174,7 @@ const Home: FC = () => {
   ];
   const blueprintItems = [
     { text: "Sustainability", href: "#" },
-    { text: "The Activist Co.", href: "#" }, // Note: href="#"
+    { text: "The Activist Co.", href: "/the-activist-co" }, // Note: href="#"
     { text: "Blog", href: "/blogs2" },
   ];
   const lineCount = Math.min(productsItems.length, blueprintItems.length); // Declared but not used
@@ -1202,7 +1202,7 @@ const Home: FC = () => {
           height: 928px; /* Fixed height */
           border-collapse: collapse;
         }
-          
+
          /* Solutions Grid Table Styles */
         .solutions-grid {
           width: 1160px; /* Fixed width */
