@@ -8,6 +8,9 @@ import Link from "next/link"; // Import the Link component
 import ContactSection from "@/components/contact-section";
 import { motion } from "framer-motion";
 
+// Shared container class for consistent margins and max-width
+const containerClass = "mx-auto w-full px-[9.72%]"
+
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
 }
@@ -96,160 +99,217 @@ const Home: FC = () => {
   return (
     <main>
       {/* Normal Header */}
-      <header className="w-full">
-        <div className="mx-auto w-full max-w-[1440px] px-[140px] py-[20px]">
-          {/* Top Row: Navigation */}
+      <header className={`w-full relative z-10 mb-5`}> {/* Apply containerClass inside header content div */}
+          <div className={containerClass}> {/* Use containerClass for consistent padding */}
+            {/* Top Row: Navigation */}
+            <div
+              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "12px",
+                lineHeight: "100%",
+                letterSpacing: "0px",
+              }}
+            >
+              <div>IDENTITY</div>
+              <div>ORIGIN</div>
+              <div>OBJECTIVE</div>
+              <div>INSIDE WAE</div>
+              <div>ETCETERA</div>
+            </div>
+
+            {/* Divider */}
+            <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+
+            {/* Bottom Row: Logo, Tagline and Menu Items */}
+            <div className="grid grid-cols-5 items-start">
+              {/* Logo */}
+              <div className="flex flex-col justify-center">
+                <Link href="/homepage3">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                    alt="WAE Logo"
+                    width={78}
+                    height={82}
+                  />
+                </Link>
+              </div>
+
+              {/* Coordinates */}
+              <div
+                className="flex flex-col justify-center inline-block mr-1"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "100%",
+                  color: "#00000066",
+                }}
+              >
+                20.5937° N
+                <br />
+                78.9629° E
+              </div>
+
+              {/* Tagline */}
+              <div
+                className="flex flex-col justify-center inline-block mr-1"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "100%",
+                  color: "#00000066",
+                }}
+              >
+                To lead the way in<br />sustainability ahead of the<br />rest
+              </div>
+
+              {/* Inside WAE Menu Items */}
+              <div className="flex flex-col justify-center space-y-2">
+                {productsItems.map((item, i) => (
+                  <div
+                    key={i}
+                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "12px",
+                      lineHeight: "100%",
+                    }}
+                  >
+                    <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+
+              {/* ETCETERA Menu Items */}
+              <div className="flex flex-col justify-center space-y-2">
+                {blueprintItems.map((item, i) => (
+                  <div
+                    key={i}
+                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "12px",
+                      lineHeight: "100%",
+                    }}
+                  >
+                    <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow blueprint-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </header>
+
+      {/* Hero section */}
+      <section
+          id="hero"
+          className="relative h-screen w-full overflow-hidden mb-[140px]" // Hero has margin-bottom
+        >
+           {/* Reverted to Image as in the provided code */}
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public"
+            alt="product category"
+             width={1440} // Adjusted width for better fit if max-width is 1440px
+             height={656} // Height from original image usage
+            className="object-cover w-full" // Use h-full to fill the 100vh section
+          />
+
+          {/* Text and image overlays remain absolute within the hero */}
           <div
-            className="grid grid-cols-5 items-center pb-2 uppercase"
+            className="absolute"
             style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "12px",
-              lineHeight: "100%",
+              bottom: "30%",
+              right: "calc(3.473%)", // Adjust right position based on container padding
+              width: "393px",
+              height: "159px",
             }}
           >
-            <div>IDENTITY</div>
-            <div>ORIGIN</div>
-            <div>OBJECTIVE</div>
-            <div>INSIDE WAE</div>
-            <div>ETCETERA</div>
+            <Image
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
+              alt="Innovation meets design"
+              width={393}
+              height={159}
+              className="object-contain"
+            />
           </div>
-
-          {/* Divider */}
-          <div className="w-full h-px bg-[#D9D9DC] mb-4" />
-
-          {/* Bottom Row: Logo, Coordinates, Tagline and Menu Items */}
-          <div className="grid grid-cols-5 items-start">
-            {/* Logo */}
-            <div className="flex flex-col justify-center">
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                alt="WAE Logo"
-                width={78}
-                height={82}
-              />
-            </div>
-
-            {/* Coordinates */}
-            <div
-              className="flex flex-col justify-center"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "12px",
-                lineHeight: "100%",
-                color: "#00000066",
-              }}
-            >
-              20.5937° N
-              <br />
-              78.9629° E
-            </div>
-
-            {/* Tagline */}
-            <div
-              className="flex flex-col justify-center"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "12px",
-                lineHeight: "100%",
-                color: "#00000066",
-              }}
-            >
-              To lead the way in
-              <br />
-              sustainability ahead of the
-              <br />
-              rest
-            </div>
-
-            {/* Inside WAE Menu Items */}
-            <div className="flex flex-col justify-center space-y-2">
-              {productsItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "12px",
-                    lineHeight: "100%",
-                  }}
-                >
-                  <Link href={item.href} className="c--anim-btn">
-                    <div className="text-container">
-                      <span className="c-anim-btn">{item.text}</span>
-                      <span className="block">{item.text}</span>
-                    </div>
-                    <span className="menu-arrow">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                      </svg>
-                    </span>
-                  </Link>
-                </div>
-              ))}
-            </div>
-
-            {/* ETCETERA Menu Items */}
-            <div className="flex flex-col justify-center space-y-2">
-              {blueprintItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "12px",
-                    lineHeight: "100%",
-                  }}
-                >
-                  <Link href={item.href} className="c--anim-btn">
-                    <div className="text-container">
-                      <span className="c-anim-btn">{item.text}</span>
-                      <span className="block">{item.text}</span>
-                    </div>
-                    <span className="menu-arrow blueprint-arrow">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                      </svg>
-                    </span>
-                  </Link>
-                </div>
-              ))}
-            </div>
+          <div
+            className="absolute"
+            style={{
+              bottom: "33%",
+              left: "calc(4.16666%)", // Adjust left position based on container padding
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "48px",
+              lineHeight: "110%",
+              color: "#fff",
+            }}
+          >
+            DRINKING WATER STATIONS
           </div>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section id="hero" className="relative w-auto h-[656px] py-0 px-0 my-0 mx-0">
-        <Image
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2359943f-dce7-4e87-3f16-629da74ecc00/public"
-          alt="Hero background"
-          layout="fill"
-          objectFit="contain"
-        />
-      </section>
+          <div
+            className="absolute uppercase"
+            style={{
+              bottom: "30%",
+              left: "calc(4.16666%)", // Adjust left position based on container padding
+              width: "104px",
+              height: "12px",
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "10px",
+              lineHeight: "100%",
+              color: "#fff",
+            }}
+          >
+            Scroll for more ⤵︎
+          </div>
+        </section>
 
       {/* Product Category overview SECTION */}
       <section className="mx-[9.72%] my-[9.72%] flex md:justify-between items-start">
