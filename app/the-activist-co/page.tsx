@@ -1,16 +1,16 @@
 "use client"
 
-import type React, { FC } from "react"
+import type { FC } from "react"
+import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion" // motion is still needed for the icon animation in the HoverButton definition itself
-import { useInView } from "react-intersection-observer"
+import { motion } from "framer-motion" 
 import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 
 // Shared container class for consistent margins and max-width
-const containerClass = "mx-auto w-full px-[9.72%]"
+const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
 
 /**
  * Reusable hover button component.
@@ -146,110 +146,6 @@ export default function Home() {
     { text: "Blog", href: "/blogs2" },
   ]
   const lineCount = Math.min(productsItems.length, blueprintItems.length) // Note: lineCount is calculated but not used
-
-  interface Metric {
-    value: string;
-    label: string;
-  }
-  
-  interface StatRow {
-    imageSrc: string;
-    imageAlt: string;
-    company: string;
-    metrics: Metric[]; // must have exactly two items
-  }
-  
-  const statsData: StatRow[] = [
-    {
-      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/02e50917-68ad-4ad0-40ec-2ae553de2f00/public",
-      imageAlt: "Google Logo",
-      company: "GOOGLE",
-      metrics: [
-        { value: "85,536 KG", label: "CO2 Reduced" },
-        { value: "16.6M L",  label: "Water saved annually" },
-        { value: "14,256 KG",  label: "plastic removed" },
-      ],
-    },
-    {
-      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47fc1e10-d20b-4b49-26a3-d13a9d156200/public",
-      imageAlt: "Microsoft Logo",
-      company: "MICROSOFT",
-      metrics: [
-        { value: "2,85,120 KG", label: "CO2 Reduced" },
-        { value: "55M L",  label: "Water saved annually" },
-      ],
-    },
-    {
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4436eca1-1c71-405e-f9e4-b052eb394e00/public",
-        imageAlt: "EXL Logo",
-        company: "EXL",
-        metrics: [
-            { value: "42,768 KG", label: "CO2 Reduced" },
-            { value: "8M L",  label: "Water saved annually" },
-          ],
-      },
-      {
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/90498b25-eae7-4a81-0a5a-9b1e206ae400/public",
-        imageAlt: "Facebook Logo",
-        company: "FACEBOOK",
-        metrics: [
-            { value: "28,512 KG", label: "CO2 Reduced" },
-            { value: "55M L",  label: "Water saved annually" },
-          ],
-      },{
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09fded0b-5053-4a3d-7718-de7b11b12600/public",
-        imageAlt: "UBS Logo",
-        company: "UBS",
-        metrics: [
-            { value: "81,14,048 KG", label: "CO2 Reduced" },
-            { value: "22M L",  label: "Water saved annually" },
-          ],
-      },
-      {
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47d70a59-20a3-49df-4d6f-9fa138136100/public",
-        imageAlt: "TCS Logo",
-        company: "TCS: TATA CONSULTANCY SERVICES",
-        metrics: [
-            { value: "85,536 KG", label: "CO2 Reduced" },
-            { value: "16M L",  label: "Water saved annually" },
-          ],
-      },{
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a069dbd-cf63-438e-b4e8-5857a73c0d00/public",
-        imageAlt: "Fiserv Logo",
-        company: "FISERV",
-        metrics: [
-            { value: "99,792 KG", label: "CO2 Reduced" },
-            { value: "19M L",  label: "Water saved annually" },
-          ],
-      },
-      {
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/edba182a-03b8-4768-ca42-4ab52b9e4000/public",
-        imageAlt: "Siemens Logo",
-        company: "SIEMENS",
-        metrics: [
-            { value: "31,363 KG", label: "CO2 Reduced" },
-            { value: "6M L",  label: "Water saved annually" },
-          ],
-      },{
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a8a52e10-03c9-4977-670e-45abd7af2e00/public",
-        imageAlt: "Accenture Logo",
-        company: "ACCENTURE",
-        metrics: [
-            { value: "28,512 KG", label: "CO2 Reduced" },
-            { value: "5M L",  label: "Water saved annually" },
-          ],
-      },
-      {
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8b4029f-28c3-464f-d390-9d9727996b00/public",
-        imageAlt: "GlobalLogic Logo",
-        company: "GLOBALLOGIC",
-        metrics: [
-            { value: "49,896 KG", label: "CO2 Reduced" },
-            { value: "9M L",  label: "Water saved annually" },
-          ],
-      },
-  ];
-  
 
   return (
     <main className="relative pb-[40px]">
@@ -412,11 +308,11 @@ export default function Home() {
         >
            {/* Reverted to Image as in the provided code */}
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public"
-            alt="Success Stories - IT"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f20bec4f-1a7e-4f0d-64d0-715b99d6ed00/public"
+            alt="The Activist Co."
              width={1440} // Adjusted width for better fit if max-width is 1440px
              height={656} // Height from original image usage
-            className="object-cover w-full" // Use h-full to fill the 100vh section
+            className="object-cover w-full max-h-[656px]" // Use h-full to fill the 100vh section
           />
 
           {/* Text and image overlays remain absolute within the hero */}
@@ -449,7 +345,7 @@ export default function Home() {
               color: "#fff",
             }}
           >
-            Success Stories - IT
+            The Activist Co.
           </div>
           <div
             className="absolute uppercase"
@@ -469,187 +365,289 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Transforming Hydration Section */}
-        <section className={`${containerClass} flex justify-between items-start mb-[140px]`}>
-            {/* Left: Heading */}
-            <div className="w-[31.8%]"
-                style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "45px",
-                lineHeight: "110%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                }}
-            >
-                Transforming Hydration in the IT Sector
-            </div>
+        {/* NEW SECTION: Hardcoded Rows in a Single Grid */}
+        {/* The grid is applied to the inner div */}
+        <div className={`${containerClass} mb-[140px]`}> {/* Container for consistent horizontal padding and bottom margin */}
 
-            {/* Right: Description + Button */}
-            <div className="flex flex-col w-[33%] text-black/60"
-                style={{
+            {/* Fixed Center Logo Overlay */}
+        <motion.div
+          style={{
+            position: "sticky",
+            top: "9.72%",
+            zIndex: 1100,
+            opacity: 1,
+          }}
+          className="pointer-events-none flex justify-center"
+        >
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
+            alt="Center Logo"
+            width={310}
+            height={310}
+            className="opacity-80"
+          />
+        </motion.div>
+
+           {/* Single Grid Container for all rows */}
+           {/* Defined columns for Heading and Description, and row gap */}
+           <div style={{
+               display: 'grid',
+               gridTemplateColumns: '31.8% 32%', // Define column widths for heading and description
+               justifyContent: 'space-between', // Puts space between the two columns
+               rowGap: '280px', // Vertical space between rows
+               alignItems: 'start', // Align items to the start of their grid area (top)
+           }}>
+
+               {/* Row 1 Elements */}
+               {/* Heading 1 */}
+               <div style={{
+                   fontFamily: "'Inter Tight', sans-serif",
+                   fontWeight: 500,
+                   fontSize: "40px",
+                   lineHeight: "110%",
+                   letterSpacing: "0%",
+               }}>
+                   WAE: The Activist That Purifies Water… and Purpose
+               </div>
+               {/* Description 1 */}
+               <div style={{
                     fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
+                    fontWeight: 400, // Changed fontWeight to 400
                     fontSize: "12px",
                     lineHeight: "110%",
-                    letterSpacing: "5%",
-                    verticalAlign: "middle",
-                    }}
-            >
-                <p className="mb-4">
-                    Explore how IT leaders are not just crunching numbers but making every drop count in their journey towards a sustainable future.
-                </p>
-                <p className="mb-[60px]">
-                    In an era where every drop counts, the IT (Information Technology) sector is taking bold steps toward sustainability. Through partnerships with WAE, leading financial institutions are replacing traditional bottled water with state-of-the-art, point-of-use water purification systems that not only ensure pure hydration but also dramatically reduce environmental footprints. These initiatives are helping to eliminate mountains of plastic waste, save millions of liters of water, and cut carbon emissions, all while setting a new standard for corporate responsibility.
-                </p>
+                    letterSpacing: "0%",
+                    color: '#00000099', // Applied color
+                    // Add any unique styles for this description here
+               }}>
+                    <p className="mb-5">
+                      WAE is more than a water solutions company - it’s an activist in action. 
+                      Every drop we treat, every system we build, is driven by a commitment to a 
+                      sustainable future. We help organizations do more than just comply; we help 
+                      them contribute. Through smart water reuse and advanced treatment 
+                      technologies, WAE enables businesses to make measurable progress on 
+                      their environmental goals and become champions of the planet they 
+                      operate on.
+                    </p>
+               </div>
 
-                {/* Download Button */}
-                <HoverButton href="/download-success-stories">
-                {(hovered) => (
-                    <>
-                    <span>DOWNLOAD SUCCESS STORIES</span>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke={hovered ? '#fff' : '#000'}
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="ml-2"
-                    >
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                    </>
-                )}
-                </HoverButton>
-            </div>
-        </section>
-
-        {/* company grid */}
-        <section className={`${containerClass} flex flex-col gap-y-[140px] mb-[140px]`}>
-        {statsData.map((row, idx) => {
-            const isOdd = idx % 2 === 1;
-            return (
-            <div
-                key={idx}
-                className="flex justify-between items-start gap-x-[40px]"
-            >
-                {/* Image */}
-                <div className={isOdd ? 'order-2' : 'order-1'}>
-                <div className="group overflow-hidden w-[320px] h-[320px]">
-                    <Image
-                    src={row.imageSrc}
-                    alt={row.imageAlt}
-                    width={320}
-                    height={320}
-                    className="object-cover transform transition-transform duration-1000 ease-in-out group-hover:scale-110"
-                    />
-                </div>
-                </div>
-
-                {/* Description */}
-                <div
-                className={`${isOdd ? 'order-1' : 'order-2'} flex flex-col`}
-                style={{ width: '35%' }}
-                >
-                {/* Company Name */}
-                <div
-                    style={{
+               {/* Row 2 Elements */}
+               {/* Heading 1 */}
+               <div style={{
+                   fontFamily: "'Inter Tight', sans-serif",
+                   fontWeight: 500,
+                   fontSize: "40px",
+                   lineHeight: "110%",
+                   letterSpacing: "0%",
+               }}>
+                   The Activist Outcomes of WAE
+               </div>
+               {/* Description 1 */}
+               <div style={{
                     fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '14px',
-                    lineHeight: '140%',
-                    textTransform: 'uppercase',
-                    verticalAlign: 'middle',
-                    }}
-                >
-                    {row.company}
-                </div>
-
-                <div className="h-[40px]" />
-
-                <div className="flex justify-between">
-                    {row.metrics.map((m, i) => (
-                    <div key={i} className="flex flex-col items-start">
-                        <div
-                        style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 700,
-                            fontSize: '24px',
-                            lineHeight: '140%',
-                            textTransform: 'uppercase',
-                            verticalAlign: 'middle',
-                        }}
-                        >
-                        {m.value}
-                        </div>
-                        <div className="h-[12px]" />
-                        <div
-                        style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 400,
-                            fontSize: '12px',
-                            lineHeight: '130%',
-                            verticalAlign: 'middle',
-                        }}
-                        >
-                        {m.label}
-                        </div>
-                    </div>
-                    ))}
-                </div>
-                </div>
-            </div>
-            );
-        })}
-        </section>
-
-
-
-
-
-
-
-        {/* Achieve your goals Section */}
-        <section className={`${containerClass} flex justify-between items-start mb-[140px]`}>
-            {/* Left: Heading */}
-            <div className="w-[31.8%]"
-                style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "45px",
-                lineHeight: "110%",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                }}
-            >
-                Achieve Your Sustainability Goals with WAE
-            </div>
-
-            {/* Right: Description + Button */}
-            <div className="flex flex-col w-[33%] text-black/60"
-                style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
+                    fontWeight: 400, // Changed fontWeight to 400
                     fontSize: "12px",
                     lineHeight: "110%",
-                    letterSpacing: "5%",
-                    verticalAlign: "middle",
-                    }}
-            >
-                <p className="mb-4">
-                    At WAE, we empower organizations to turn environmental responsibility into measurable action. Our water reuse and treatment solutions are designed not just to optimize operations, but to directly support your sustainability goals, reduce freshwater dependency, and lower ecological impact.
-                </p>
-            </div>
-        </section>
+                    letterSpacing: "0%",
+                    color: '#00000099', // Applied color
+                    // Add any unique styles for this description here
+               }}>
+                    <p className="mb-5">
+                    At WAE, activism isn’t a statement — it’s a system. 
+                    We’ve eliminated over <b className="text-black">5.7 million kilograms of CO₂e emissions,</b> kept 
+                    900,000 plastic water jars out of circulation, and conserved more than <b className="text-black">92 
+                    million litres of water.</b> Not in theory. In buildings, campuses, and industries 
+                    that chose action over applause.
+                    </p>
+               </div>
+
+               {/* Row 3 Elements */}
+               {/* Heading 1 */}
+               <div style={{
+                   fontFamily: "'Inter Tight', sans-serif",
+                   fontWeight: 500,
+                   fontSize: "40px",
+                   lineHeight: "110%",
+                   letterSpacing: "0%",
+               }}>
+                   Sustainability that’s Backed by the Best
+               </div>
+               {/* Description 1 */}
+               <div style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400, // Changed fontWeight to 400
+                    fontSize: "12px",
+                    lineHeight: "110%",
+                    letterSpacing: "0%",
+                    color: '#00000099', // Applied color
+                    // Add any unique styles for this description here
+               }}>
+                    <p className="mb-5">
+                    Organizations like <b className="text-black">Google, Microsoft, ICICI, and Morgan Stanley</b> didn’t hire 
+                    WAE for a slogan. They partnered with us to engineer measurable change. 
+                    Across BFSI, IT, and tech sectors, our systems turn infrastructure into 
+                    advocacy — proving that when sustainability is built in, impact follows 
+                    naturally.
+                    </p>
+               </div>
+               
+
+                {/* Row 4 Elements */}
+               {/* Heading 4 */}
+               <div style={{
+                   fontFamily: "'Inter Tight', sans-serif",
+                   fontWeight: 500,
+                   fontSize: "40px",
+                   lineHeight: "110%",
+                   letterSpacing: "0%",
+               }}>
+                   Banking on a Better Tomorrow: Impact in the BFSI Sector
+               </div>
+               {/* Description 4 - Complex Structure */}
+               <div style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400, // Changed fontWeight to 400
+                    fontSize: "12px",
+                    lineHeight: "110%",
+                    letterSpacing: "0%",
+                    color: '#00000099', // Applied color
+                    // Add any unique styles for this description here
+               }}>
+                   {/* Paragraph 1 */}
+                   <p style={{ margin: 0 }}>In banking, trust is currency — and sustainability is the new gold standard. 
+                    WAE has helped leading BFSI institutions like <b className="text-black">ICICI and Morgan Stanley </b> 
+                    replace single-use systems with long-term water solutions. From corporate 
+                    campuses to data centers, we’ve enabled banks to meet ESG goals, reduce 
+                    operational waste, and lead by clean example.</p>
+                   
+                   {/* 60px Gap */}
+                   <div style={{ marginBottom: '60px' }}></div>
+                   {/* Know More Button */}
+                   <a href="/sustainability-bfsi" style={{ textDecoration: 'none' }}>
+                    <HoverButton>
+                        {(hovered) => (
+                        <>
+                            Know More
+                            <div className="relative inline-block w-4 h-4">
+                            <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                alt="icon default"
+                                width={16}
+                                height={16}
+                            />
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: hovered ? 1 : 0 }}
+                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                className="absolute top-0 left-0"
+                            >
+                                <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt="icon hover"
+                                width={16}
+                                height={16}
+                                />
+                            </motion.div>
+                            </div>
+                        </>
+                        )}
+                    </HoverButton>
+                   </a>
+               </div>
+
+               {/* Row 5 Elements */}
+               {/* Heading 5 */}
+                <div style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "40px",
+                    lineHeight: "110%",
+                    letterSpacing: "0%",
+                }}>
+                    Smart Water for Smart Tech: Impact in the IT Sector
+                </div>
+               {/* Description 5 - Complex Structure */}
+                <div style={{
+                     fontFamily: "'Inter Tight', sans-serif",
+                     fontWeight: 400, // Changed fontWeight to 400
+                     fontSize: "12px",
+                     lineHeight: "110%",
+                     letterSpacing: "0%",
+                     color: '#00000099', // Applied color
+                     // Add any unique styles for this description here
+                 }}>
+                    {/* Paragraph 1 */}
+                    <p>In the tech world, efficiency is everything. That includes water. 
+                        WAE works with giants like <b className="text-black">Google and Microsoft</b> to install intelligent reuse 
+                        and treatment systems that support sprawling campuses while slashing 
+                        resource consumption. In a sector where scale matters, WAE ensures that 
+                        growth and green can go hand in hand.
+                    </p>
+                    {/* 60px Gap */}
+                    <div style={{ marginBottom: '60px' }}></div>
+                    {/* Know More Button */}
+                    <a href="/sustainability-it" style={{ textDecoration: 'none' }}>
+                    <HoverButton>
+                        {(hovered) => (
+                        <>
+                            Know More
+                            <div className="relative inline-block w-4 h-4">
+                            <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                alt="icon default"
+                                width={16}
+                                height={16}
+                            />
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: hovered ? 1 : 0 }}
+                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                className="absolute top-0 left-0"
+                            >
+                                <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt="icon hover"
+                                width={16}
+                                height={16}
+                                />
+                            </motion.div>
+                            </div>
+                        </>
+                        )}
+                    </HoverButton>
+                   </a>
+                </div>
+
+               {/* Row 6 Elements */}
+               {/* Heading 6 */}
+                <div style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "40px",
+                    lineHeight: "110%",
+                    letterSpacing: "0%",
+                }}>
+                    Achieve your sustainable goals!
+                </div>
+               {/* Description 6 */}
+                <div style={{
+                     fontFamily: "'Inter Tight', sans-serif",
+                     fontWeight: 400, // Changed fontWeight to 400
+                     fontSize: "12px",
+                     lineHeight: "100%",
+                     letterSpacing: "0%",
+                     color: '#00000099', // Applied color
+                     // Add any unique styles for this description here
+                 }}>
+                    At WAE, we don’t just build water solutions. We build proof of impact, of intention, of leadership. Whether you're in finance, technology, infrastructure, or beyond, our systems are designed to help you eliminate waste, conserve water, and achieve your sustainability goals in ways the world can measure.
+                </div>
+
+           </div> {/* End Single Grid Container */}
+
+        </div>
 
         {/* CONNECT WITH US FORM */}
         <section className=" px-[9.72%] pb-0">
-            <ConnectWithUs introText = "Want to know how"/>
+            <ConnectWithUs introText="Explore how WAE can help your business or community turn wastewater into a resource." />
         </section>
 
       {/* FOOTER SECTION */}

@@ -308,8 +308,8 @@ export default function Home() {
         >
            {/* Reverted to Image as in the provided code */}
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1c10b92-e42a-4da1-87ec-64d63caaad00/public"
-            alt="Water reuse"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c865439-8242-491a-b71d-344464c0e100/public"
+            alt="Water treatment"
              width={1440} // Adjusted width for better fit if max-width is 1440px
              height={656} // Height from original image usage
             className="object-cover w-full max-h-[656px]" // Use h-full to fill the 100vh section
@@ -345,7 +345,7 @@ export default function Home() {
               color: "#fff",
             }}
           >
-            Water Reuse
+            Water Treatment
           </div>
           <div
             className="absolute uppercase"
@@ -374,7 +374,7 @@ export default function Home() {
            {/* Defined columns for Heading and Description, and row gap */}
            <div style={{
                display: 'grid',
-               gridTemplateColumns: '31.8% 27.78%', // Define column widths for heading and description
+               gridTemplateColumns: '31.8% 32%', // Define column widths for heading and description
                justifyContent: 'space-between', // Puts space between the two columns
                rowGap: '280px', // Vertical space between rows
                alignItems: 'start', // Align items to the start of their grid area (top)
@@ -389,20 +389,33 @@ export default function Home() {
                    lineHeight: "110%",
                    letterSpacing: "0%",
                }}>
-                   Why Does Water Reuse Matters?
+                   Why Water Treatment Matters?
                </div>
                {/* Description 1 */}
                <div style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400, // Changed fontWeight to 400
                     fontSize: "12px",
-                    lineHeight: "100%",
+                    lineHeight: "110%",
                     letterSpacing: "0%",
                     color: '#00000099', // Applied color
                     // Add any unique styles for this description here
                }}>
-                    Water reuse reduces the strain on freshwater sources, lowers environmental impact, and ensures a sustainable water future. WAE provides cutting-edge, reliable, and efficient solutions for grey water, sewage water, and effluent treatment to help industries, cities, and communities thrive sustainably.
+                    <p className="mb-5">
+                    Water is the lifeblood of industries, cities, and communities. However, raw 
+                    water sourced from rivers, lakes, groundwater, or industrial discharge often 
+                    contains harmful impurities that make it unsafe for consumption or reuse.
+                    </p>
+                    <p>
+                    At WAE, we deliver comprehensive water treatment solutions that 
+                    methodically cleanse, purify, and revitalize water through a three-tiered 
+                    process: <b className="text-black">Primary Treatment, Secondary Treatment, and Advanced 
+                    Purification.</b> Whether you require potable-grade water, industrial-grade 
+                    utility water, or specialized purified streams, WAE ensures unparalleled 
+                    quality and sustainability.
+                    </p>
                </div>
+               
 
                 {/* Row 2 Elements */}
                {/* Heading 2 */}
@@ -413,7 +426,7 @@ export default function Home() {
                    lineHeight: "110%",
                    letterSpacing: "0%",
                }}>
-                   Grey Water Reuse
+                   Primary Treatment
                </div>
                {/* Description 2 - Complex Structure */}
                <div style={{
@@ -426,9 +439,7 @@ export default function Home() {
                     // Add any unique styles for this description here
                }}>
                    {/* Paragraph 1 */}
-                   <p style={{ margin: 0 }}>Our approach integrates advanced technology with ecological principles, focusing on resource efficiency and circular systems.</p>
-                   {/* Paragraph 2 */}
-                   <p style={{ marginTop: '1em' }}>We tailor solutions to local needs, ensuring both environmental benefits and economic viability for our partners.</p>
+                   <p style={{ margin: 0 }}>Primary treatment is the crucial first step where large, visible contaminants are physically removed from raw water sources. This stage significantly reduces suspended solids and floating debris, preparing the water for more intensive biological and chemical treatments ahead. The result is partially clarified water, visibly cleaner, though still containing dissolved impurities that require further processing.</p>
                    {/* Key Benefits Heading */}
                    <div style={{
                        fontFamily: "'Inter Tight', sans-serif",
@@ -448,10 +459,9 @@ export default function Home() {
                        marginTop: '10px', // Space above list
                        padding: 0 // Remove default ul padding if any
                        }}>
-                       <li style={{ marginBottom: '5px' }}>Reduced strain on freshwater sources</li> {/* Placeholder content */}
-                       <li style={{ marginBottom: '5px' }}>Lower environmental impact</li> {/* Placeholder content */}
-                       <li style={{ marginBottom: '5px' }}>Enhanced water security</li> {/* Placeholder content */}
-                       <li>Support for sustainable urban development</li> {/* Placeholder content */}
+                       <li style={{ marginBottom: '5px' }}>Screening: Captures large debris such as plastics, leaves, and stones.</li> {/* Placeholder content */}
+                       <li style={{ marginBottom: '5px' }}>Sedimentation: Allows heavier particles like sand and sludge to settle at the tank’s bottom.</li> {/* Placeholder content */}
+                       <li>Skimming: Removes oils, fats, and other floating materials from the water’s surface</li> {/* Placeholder content */}
                    </ul>
                    {/* 60px Gap */}
                    <div style={{ marginBottom: '60px' }}></div>
@@ -495,7 +505,7 @@ export default function Home() {
                     lineHeight: "110%",
                     letterSpacing: "0%",
                 }}>
-                    Sewage Water Reuse
+                    Secondary Treatment
                 </div>
                {/* Description 3 - Complex Structure */}
                 <div style={{
@@ -508,9 +518,7 @@ export default function Home() {
                      // Add any unique styles for this description here
                  }}>
                     {/* Paragraph 1 */}
-                    <p style={{ margin: 0 }}>We leverage state-of-the-art filtration, biological treatment, and monitoring systems.</p>
-                    {/* Paragraph 2 */}
-                    <p style={{ marginTop: '1em' }}>Our proprietary processes ensure high water recovery rates and pollutant removal, setting new benchmarks in water treatment efficiency.</p>
+                    <p style={{ marginTop: '1em' }}>In the secondary treatment stage, microorganisms play a key role in breaking down dissolved and suspended organic matter in the water. This process drastically reduces Biochemical Oxygen Demand (BOD) and Chemical Oxygen Demand (COD), creating water that is substantially cleaner and safe for certain non-potable applications or ready for advanced purification if needed.</p>
                      {/* Key Benefits Heading */}
                     <div style={{
                         fontFamily: "'Inter Tight', sans-serif",
@@ -530,10 +538,9 @@ export default function Home() {
                         marginTop: '10px', // Space above list
                         padding: 0 // Remove default ul padding if any
                         }}>
-                        <li style={{ marginBottom: '5px' }}>Advanced pollutant removal</li> {/* Placeholder content */}
-                        <li style={{ marginBottom: '5px' }}>High water recovery rates</li> {/* Placeholder content */}
-                        <li style={{ marginBottom: '5px' }}>Compliance with strict standards</li> {/* Placeholder content */}
-                        <li>Reduced reliance on external water sources</li> {/* Placeholder content */}
+                        <li style={{ marginBottom: '5px' }}>Activated Sludge Process (ASP): Aerobic bacteria digest organic waste under oxygen-rich conditions.</li> {/* Placeholder content */}
+                        <li style={{ marginBottom: '5px' }}>Trickling Filters: Wastewater flows over a fixed bed of media where microbial communities break down contaminants.</li> {/* Placeholder content */}
+                        <li>Sequencing Batch Reactors (SBRs): Flexible, fill-and-draw systems treating wastewater in controlled batches.</li> {/* Placeholder content */}
                     </ul>
                     {/* 60px Gap */}
                     <div style={{ marginBottom: '60px' }}></div>
@@ -577,7 +584,7 @@ export default function Home() {
                     lineHeight: "110%",
                     letterSpacing: "0%",
                 }}>
-                    Effluent Treatment Services
+                    Purification
                 </div>
                {/* Description 4 - Complex Structure */}
                 <div style={{
@@ -590,9 +597,7 @@ export default function Home() {
                      // Add any unique styles for this description here
                  }}>
                     {/* Paragraph 1 */}
-                    <p style={{ margin: 0 }}>Beyond industrial applications, we work with municipalities and communities.</p>
-                    {/* Paragraph 2 */}
-                    <p style={{ marginTop: '1em' }}>To implement accessible and affordable water reuse systems, promoting public health and water security for all.</p>
+                    <p style={{ marginTop: '1em' }}>Purification, or tertiary treatment, elevates water quality to meet stringent safety standards, making it suitable for drinking, industrial production, and high-purity applications. This phase removes dissolved salts, fine suspended solids, and harmful microorganisms, ensuring the water is not just clean, but crystal-clear and safe.</p>
                      {/* Key Benefits Heading */}
                     <div style={{
                         fontFamily: "'Inter Tight', sans-serif",
@@ -612,10 +617,9 @@ export default function Home() {
                         marginTop: '10px', // Space above list
                         padding: 0 // Remove default ul padding if any
                         }}>
-                        <li style={{ marginBottom: '5px' }}>Customized solutions for industries</li> {/* Placeholder content */}
-                        <li style={{ marginBottom: '5px' }}>Compliance with environmental regulations</li> {/* Placeholder content */}
-                        <li style={{ marginBottom: '5px' }}>Cost-effective treatment processes</li> {/* Placeholder content */}
-                        <li>Support for circular economy principles</li> {/* Placeholder content */}
+                        <li style={{ marginBottom: '5px' }}>Reverse Osmosis (RO): Uses a semi-permeable membrane to eliminate dissolved salts, heavy metals, and pathogens, ideal for desalination and drinking water.</li> {/* Placeholder content */}
+                        <li style={{ marginBottom: '5px' }}>Ultrafiltration (UF): Filters out bacteria, viruses, and suspended solids with a larger pore membrane, often used as pre-treatment to RO.</li> {/* Placeholder content */}
+                        <li>Capacitive Deionization (CDI): An innovative, energy-efficient process that removes charged ions without chemicals, perfect for low TDS water.</li> {/* Placeholder content */}
                     </ul>
                     {/* 60px Gap */}
                     <div style={{ marginBottom: '60px' }}></div>
@@ -671,7 +675,7 @@ export default function Home() {
                      color: '#00000099', // Applied color
                      // Add any unique styles for this description here
                  }}>
-                    Whether you're looking to implement grey water reuse, treat sewage, or manage industrial effluents. WAE's expert team is ready to guide you. Fill out the form below, and let's build a sustainable water future together.
+                    From removing large contaminants to delivering ultra-pure water through advanced technologies, WAE brings deep expertise across all stages of treatment. Whether you need municipal, commercial, or industrial-grade solutions, we’re here to guide you every step of the way.
                 </div>
 
            </div> {/* End Single Grid Container */}

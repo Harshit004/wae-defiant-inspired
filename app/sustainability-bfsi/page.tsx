@@ -156,97 +156,112 @@ export default function Home() {
     imageSrc: string;
     imageAlt: string;
     company: string;
-    metrics: Metric[]; // must have exactly two items
+    description: string; // Added field for first paragraph
+    impact: string;     // Added field for second paragraph (after metrics)
+    metrics: Metric[]; 
   }
   
   const statsData: StatRow[] = [
     {
-      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/02e50917-68ad-4ad0-40ec-2ae553de2f00/public",
-      imageAlt: "Google Logo",
-      company: "GOOGLE",
+      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d684e16-3b2b-4cd9-1f6c-4abc0fc22400/public",
+      imageAlt: "Citibank Logo",
+      company: "Citibank: Banking on a Greener Tomorrow",
+      description: "Citibank has deployed 105 water-refill stations across its Indian offices, turning everyday hydration into an act of environmental stewardship.",
+      impact: "An equivalent of planting thousands of trees.",
       metrics: [
-        { value: "85,536 KG", label: "CO2 Reduced" },
-        { value: "16.6M L",  label: "Water saved annually" },
-        { value: "14,256 KG",  label: "plastic removed" },
+        { value: "14,173 kg", label: "Plastic waste Removed" },
+        { value: "16.5M L",  label: "Water saved annually" },
+        { value: "90,000 KG",  label: "CO2 emissions reduced" },
       ],
     },
     {
-      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47fc1e10-d20b-4b49-26a3-d13a9d156200/public",
-      imageAlt: "Microsoft Logo",
-      company: "MICROSOFT",
+      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/46a81604-4115-4667-9587-e16da4c8e100/public",
+      imageAlt: "Credit Suisse Logo",
+      company: "Credit Suisse: A Fresh Start for a Sustainable Future",
+      description: "Credit Suisse has integrated 70 refill stations in Pune, Gurgaon, and Mumbai, making clean, green hydration accessible to its workforce.",
+      impact: "Credit Suisse is proving that big financial institutions can make big environmental impacts.",
       metrics: [
-        { value: "2,85,120 KG", label: "CO2 Reduced" },
+        { value: "98,000 KG", label: "CO2 Reduced" },
+        { value: "17M L",  label: "Water saved annually" },
+      ],
+    },
+    {
+      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/21a38e4f-d5f1-4d20-5566-b31e949a1600/public",
+      imageAlt: "Deutsche Logo",
+      company: "Deutsche Bank: Banking on Blue",
+      description: "Deutsche Bank’s 73 refill stations are reducing reliance on bottled water across India.",
+      impact: "Deutsche Bank is setting a powerful example of sustainability in action.",
+      metrics: [
+        { value: "1,32,000 KG", label: "CO2 emissions reduced" },
+        { value: "23M L",  label: "Water saved annually" },
+      ],
+    },
+    {
+      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/edaf1eaf-99cb-420a-d360-618f789f2c00/public",
+      imageAlt: "Ericsson Logo",
+      company: "Ericsson: Connecting the Dots to a Greener Future",
+      description: "Ericsson’s installation of 138 water-refill stations across India showcases their commitment to sustainable practices",
+      impact: "Ericsson’s initiative is like removing the equivalent of two medium-sized SUVs from the roads each month.",
+      metrics: [
+        { value: "3,15,000 KG", label: "CO2 emission Reduced" },
         { value: "55M L",  label: "Water saved annually" },
       ],
     },
     {
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4436eca1-1c71-405e-f9e4-b052eb394e00/public",
-        imageAlt: "EXL Logo",
-        company: "EXL",
+      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fa2192f3-0ed6-43fa-248b-3b741acf6400/public",
+      imageAlt: "ICICI Logo",
+      company: "ICICI Bank: A Ripple of Change",
+      description: "ICICI Bank leads the pack with 624 water-refill stations across India.",
+      impact: "Turning everyday hydration into a force for good.",
+      metrics: [
+        { value: "53M L",  label: "Water saved annually" },
+        { value: "2,99,000 KG", label: "CO2 emissions reduced" },
+        { value: "94,000 KG", label: "CO2 emissions reduced" },
+      ],
+    },
+    {
+      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/659c55c6-14a0-4c61-f51c-b9bb2c64d600/public",
+      imageAlt: "J.P. Morgan Logo",
+      company: "J.P. Morgan: Investing in a Greener Tomorrow",
+      description: "J.P. Morgan has turned 241 locations into green spaces with their water-refill stations.",
+      impact: "J.P. Morgan is redefining the meaning of “investment” by investing in the planet.",
+      metrics: [
+        { value: "90,288 KG", label: "CO2 emission reduced" },
+        { value: "105M L",  label: "Water saved annually" },
+      ],
+    },
+    {
+      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09bc88d3-2806-4258-1e5e-46192a2ddc00/public",
+      imageAlt: "Max Life Logo",
+      company: "Max Life: Securing a Greener Future",
+      description: "Max Life has installed 323 refill stations, securing their commitment to sustainability.",
+      impact: "Max Life’s initiative underscores the power of green practices in everyday operations.",
+      metrics: [
+        { value: "2,83,000 KG", label: "CO2 emissions reduced" },
+        { value: "50M L",  label: "Water saved annually" },
+      ],
+    },
+    {
+      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/df18fbae-1da6-4806-bd55-527925802e00/public",
+      imageAlt: "RBS Logo",
+      company: "RBS (Royal Bank of Scotland): A Fresh Take on Finance",
+      description: "RBS has implemented 127 refill stations across major Indian cities, championing a fresh approach to hydration.",
+      impact: "An equivalent of planting thousands of trees.",
+      metrics: [
+        { value: "21,978 KG", label: "CO2 emissions reduced" },
+        { value: "26M L",  label: "Water saved annually" },
+      ],
+    },
+    {
+        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/af20eab2-011d-43e3-aad9-dac272a6cb00/public",
+        imageAlt: "Sapient Logo",
+        company: "Sapient: Redefining Smart Solutions",
+        description: "Sapient’s 103 refill stations in Gurgaon are helping redefine what it means to be a smart, sustainable business.",
+        impact: "Sapient’s actions speak louder than words, showing that smart solutions are sustainable solutions.",
         metrics: [
-            { value: "42,768 KG", label: "CO2 Reduced" },
-            { value: "8M L",  label: "Water saved annually" },
-          ],
-      },
-      {
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/90498b25-eae7-4a81-0a5a-9b1e206ae400/public",
-        imageAlt: "Facebook Logo",
-        company: "FACEBOOK",
-        metrics: [
-            { value: "28,512 KG", label: "CO2 Reduced" },
-            { value: "55M L",  label: "Water saved annually" },
-          ],
-      },{
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09fded0b-5053-4a3d-7718-de7b11b12600/public",
-        imageAlt: "UBS Logo",
-        company: "UBS",
-        metrics: [
-            { value: "81,14,048 KG", label: "CO2 Reduced" },
-            { value: "22M L",  label: "Water saved annually" },
-          ],
-      },
-      {
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47d70a59-20a3-49df-4d6f-9fa138136100/public",
-        imageAlt: "TCS Logo",
-        company: "TCS: TATA CONSULTANCY SERVICES",
-        metrics: [
-            { value: "85,536 KG", label: "CO2 Reduced" },
-            { value: "16M L",  label: "Water saved annually" },
-          ],
-      },{
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a069dbd-cf63-438e-b4e8-5857a73c0d00/public",
-        imageAlt: "Fiserv Logo",
-        company: "FISERV",
-        metrics: [
-            { value: "99,792 KG", label: "CO2 Reduced" },
-            { value: "19M L",  label: "Water saved annually" },
-          ],
-      },
-      {
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/edba182a-03b8-4768-ca42-4ab52b9e4000/public",
-        imageAlt: "Siemens Logo",
-        company: "SIEMENS",
-        metrics: [
-            { value: "31,363 KG", label: "CO2 Reduced" },
-            { value: "6M L",  label: "Water saved annually" },
-          ],
-      },{
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a8a52e10-03c9-4977-670e-45abd7af2e00/public",
-        imageAlt: "Accenture Logo",
-        company: "ACCENTURE",
-        metrics: [
-            { value: "28,512 KG", label: "CO2 Reduced" },
-            { value: "5M L",  label: "Water saved annually" },
-          ],
-      },
-      {
-        imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8b4029f-28c3-464f-d390-9d9727996b00/public",
-        imageAlt: "GlobalLogic Logo",
-        company: "GLOBALLOGIC",
-        metrics: [
-            { value: "49,896 KG", label: "CO2 Reduced" },
-            { value: "9M L",  label: "Water saved annually" },
-          ],
+          { value: "1,54,000 KG", label: "CO2 emissions reduced" },
+          { value: "27M L",  label: "Water saved annually" },
+        ],
       },
   ];
   
@@ -449,7 +464,7 @@ export default function Home() {
               color: "#fff",
             }}
           >
-            Success Stories - IT
+            Success Stories - BFSI
           </div>
           <div
             className="absolute uppercase"
@@ -482,7 +497,7 @@ export default function Home() {
                 verticalAlign: "middle",
                 }}
             >
-                Transforming Hydration in the IT Sector
+                Transforming Hydration in the BFSI Sector
             </div>
 
             {/* Right: Description + Button */}
@@ -497,10 +512,10 @@ export default function Home() {
                     }}
             >
                 <p className="mb-4">
-                    Explore how IT leaders are not just crunching numbers but making every drop count in their journey towards a sustainable future.
+                    Explore how BFSI leaders are not just crunching numbers but making every drop count in their journey towards a sustainable future.
                 </p>
                 <p className="mb-[60px]">
-                    In an era where every drop counts, the IT (Information Technology) sector is taking bold steps toward sustainability. Through partnerships with WAE, leading financial institutions are replacing traditional bottled water with state-of-the-art, point-of-use water purification systems that not only ensure pure hydration but also dramatically reduce environmental footprints. These initiatives are helping to eliminate mountains of plastic waste, save millions of liters of water, and cut carbon emissions, all while setting a new standard for corporate responsibility.
+                    In an era where every drop counts, the BFSI (Banking, Financial Services, and Insurance) sector is taking bold steps toward sustainability. Through partnerships with WAE, leading financial institutions are replacing traditional bottled water with state-of-the-art, point-of-use water purification systems that not only ensure pure hydration but also dramatically reduce environmental footprints. These initiatives are helping to eliminate mountains of plastic waste, save millions of liters of water, and cut carbon emissions, all while setting a new standard for corporate responsibility.
                 </p>
 
                 {/* Download Button */}
@@ -570,8 +585,27 @@ export default function Home() {
                     {row.company}
                 </div>
 
+                {/* 12px vertical gap */}
+                <div className="h-[12px]" />
+                
+                {/* Description paragraph */}
+                <p
+                    style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '130%',
+                    letterSpacing: '0%',
+                    verticalAlign: 'middle',
+                    }}
+                >
+                    {row.description}
+                </p>
+
+                {/* 40px vertical gap */}
                 <div className="h-[40px]" />
 
+                {/* Metrics */}
                 <div className="flex justify-between">
                     {row.metrics.map((m, i) => (
                     <div key={i} className="flex flex-col items-start">
@@ -602,17 +636,28 @@ export default function Home() {
                     </div>
                     ))}
                 </div>
+
+                {/* 40px vertical gap */}
+                <div className="h-[40px]" />
+                
+                {/* Impact paragraph */}
+                <p
+                    style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '24px',
+                    letterSpacing: '0%',
+                    verticalAlign: 'middle',
+                    }}
+                >
+                    {row.impact}
+                </p>
                 </div>
             </div>
             );
         })}
         </section>
-
-
-
-
-
-
 
         {/* Achieve your goals Section */}
         <section className={`${containerClass} flex justify-between items-start mb-[140px]`}>
