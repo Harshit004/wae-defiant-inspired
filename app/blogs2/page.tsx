@@ -109,7 +109,7 @@ export default function Home() {
   ]
   const blueprintItems = [
     { text: "Sustainability", href: "#" },
-    { text: "The Activist Co.", href: "#" },
+    { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs2" },
   ]
   const buttonLabels = [
@@ -209,7 +209,7 @@ export default function Home() {
                   fontWeight: 500,
                   fontSize: "12px",
                   lineHeight: "100%",
-                  color: coordinatesVisible ? "#00000066" : "transparent",
+                  color: coordinatesVisible ? "#000000" : "transparent",
                   opacity: coordinatesVisible ? 1 : 0,
                   transition: 'color 1s ease-in-out, opacity 1s ease-in-out'
                 }}
@@ -227,7 +227,7 @@ export default function Home() {
                   fontWeight: 500,
                   fontSize: "12px",
                   lineHeight: "100%",
-                  color: taglineVisible ? "#00000066" : "transparent",
+                  color: taglineVisible ? "#000000" : "transparent",
                   opacity: taglineVisible ? 1 : 0,
                   transition: 'color 1s ease-in-out, opacity 1s ease-in-out'
                 }}

@@ -1,6 +1,7 @@
 "use client"
 
-import type React, { FC } from "react"
+import type React from "react"
+import type { FC } from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion" // motion is still needed for the icon animation in the HoverButton definition itself

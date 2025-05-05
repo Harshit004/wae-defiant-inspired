@@ -488,7 +488,7 @@ export default function Home() {
                     lineHeight: "110%",
                     letterSpacing: "0%",
                 }}>
-                    Sewage Water Reuse
+                    Our Solutions
                 </div>
                {/* Description 3 - Complex Structure */}
                 <div style={{

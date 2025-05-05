@@ -51,14 +51,14 @@ const ContactSection = () => {
             Talk to our Water Expert
           </p>
           <div className="mt-10 flex flex-row gap-10">
-            <div className="flex i">
+            <div className="flex">
               {Icons.Email}
               <div className="ml-3 space-y-1">
                 <p className="font-inter-tight text-sm leading-relaxed hover:underline">info@waecorp.com</p>
                 <p className="font-inter-tight text-sm leading-relaxed hover:underline">marketing@waecorp.com</p>
               </div>
             </div>
-            <div className="flex ">
+            <div className="flex">
               {Icons.Phone}
               <p className="ml-3 font-inter-tight text-sm leading-relaxed hover:underline">+91 120687068</p>
             </div>
