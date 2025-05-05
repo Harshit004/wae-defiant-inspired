@@ -960,7 +960,11 @@ const Home: FC = () => {
           </table>
         </div>
 
-        {/* Make in INDIA Section */}
+      {/* wrapping these in a div to get them to overlap the sticky logo */}
+        <div className="bg-[#f2f2f2]"
+        style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
+        >
+          {/* Make in INDIA Section */}
         {/* Uses whileInView for entrance animation */}
         <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[360px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
           <motion.div
@@ -1027,7 +1031,7 @@ const Home: FC = () => {
 
       {/* Sustainability Section */}
        {/* Uses whileInView for entrance animation */}
-        <section className="h-screen/2 flex items-end justify-center relative mb-[180px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
+        <section className="h-screen/2 flex items-end justify-center relative pb-[180px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -1105,6 +1109,7 @@ const Home: FC = () => {
             </div>
           </motion.div>
         </section>
+        </div>
 
         {/* RELATED INFORMATION SECTION */}
         {/* This section has a white background and higher z-index */}
