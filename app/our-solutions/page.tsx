@@ -1,6 +1,7 @@
 "use client"
 
-import type React, { FC } from "react"
+import type React from "react"
+import type { FC } from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -317,7 +318,7 @@ export default function Home() {
         </header>
       </div>
 
-        {/* Our Portfolio Heading */}
+        {/* Our SOLUTIONS Heading */}
       <div className={containerClass} style={{marginTop: "120px"}}>
         <h2
           style={{
@@ -332,7 +333,7 @@ export default function Home() {
           Our Solutions
         </h2>
 
-        {/* NEW SECTION: Product Category Grid */}
+        {/* Solution Category Grid */}
         <div className="grid grid-cols-3 gap-x-[100px] gap-y-[60px] mb-[180px]"> {/* Added bottom margin to separate from next section */}
           {blogPosts.map((post, index) => (
             <div key={index}>
@@ -396,7 +397,7 @@ export default function Home() {
           />
         </div> */}
 
-        {/* Product Category Section (Modified to include IDs) */}
+        {/* Main Solutions Category Section (Modified to include IDs) */}
         <div>
           <div className="space-y-8">
             {blogPosts.map((post, index) => (
@@ -458,8 +459,7 @@ export default function Home() {
                       {post.description}
                     </p>
                   </div>
-                  {/* Modified HoverButton href for internal anchor link */}
-                   <HoverButton href={`#${slugify(post.title)}`}>
+                  <HoverButton href={`/${slugify(post.title)}`}>
                     {(hovered) => (
                       <>
                         Know More

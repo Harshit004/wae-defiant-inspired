@@ -548,13 +548,11 @@ const Home: FC = () => {
                 Products
               </td>
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/products-solutions/drinking-water-stations" className="contents"> {/* className="contents" again */}
+                <Link href="/product-category/drinking-water-stations" className="contents">
                   <div className="relative w-full h-full">
-                    {/* Centered Text */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">DRINKING WATER<br />STATIONS</span> {/* Custom CSS class */}
+                      <span className="product-category">DRINKING WATER<br />STATIONS</span>
                     </div>
-                    {/* Right Arrow flush at right */}
                     <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
@@ -593,13 +591,11 @@ const Home: FC = () => {
               </td>
               {/* DRINKING WATER FAUCETS with left and down arrows */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/products-solutions/drinking-water-faucets" className="contents"> {/* className="contents" again */}
+                <Link href="/product-category/drinking-water-faucets" className="contents">
                   <div className="relative w-full h-full">
-                    {/* Centered Text */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">DRINKING WATER<br />FAUCETS</span> {/* Custom CSS class */}
+                      <span className="product-category">DRINKING WATER<br />FAUCETS</span>
                     </div>
-                    {/* Left Arrow flush at left */}
                     <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
@@ -608,7 +604,6 @@ const Home: FC = () => {
                         height={24}
                       />
                     </span>
-                    {/* Down Arrow flush at bottom */}
                     <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
@@ -633,13 +628,11 @@ const Home: FC = () => {
               </td>
               {/* DRINKING WATER DISPENSERS with left and right arrows */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/products-solutions/drinking-water-dispensers" className="contents"> {/* className="contents" again */}
+                <Link href="/product-category/water-dispenser" className="contents">
                   <div className="relative w-full h-full">
-                    {/* Centered Text */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">DRINKING WATER<br />DISPENSERS</span> {/* Custom CSS class */}
+                      <span className="product-category">DRINKING WATER<br />DISPENSERS</span>
                     </div>
-                    {/* Left Arrow flush at left */}
                     <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
@@ -648,7 +641,6 @@ const Home: FC = () => {
                         height={24}
                       />
                     </span>
-                    {/* Right Arrow flush at right */}
                     <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
@@ -687,26 +679,15 @@ const Home: FC = () => {
               </td>
               {/* WATER COOLERS & FOUNTAINS with right and down arrows */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/products-solutions/water-coolers-fountains" className="contents"> {/* className="contents" again */}
+                <Link href="/product-category/water-cooler" className="contents">
                   <div className="relative w-full h-full">
-                    {/* Centered Text */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">WATER COOLERS &amp;<br />FOUNTAINS</span> {/* Custom CSS class */}
+                      <span className="product-category">WATER COOLERS &amp;<br />FOUNTAINS</span>
                     </div>
-                    {/* Right Arrow flush at right */}
                     <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
                         alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                    {/* Down Arrow flush at bottom */}
-                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
-                        alt="Down arrow"
                         width={24}
                         height={24}
                       />
@@ -741,11 +722,11 @@ const Home: FC = () => {
               </td>
               {/* PUBLIC UTILITY SYSTEMS with left arrow */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/products-solutions/public-utility-systems" className="contents"> {/* className="contents" again */}
+                <Link href="/product-category/public-utility-systems" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">PUBLIC UTILITY<br />SYSTEMS</span> {/* Custom CSS class */}
+                      <span className="product-category">PUBLIC UTILITY<br />SYSTEMS</span>
                     </div>
                     {/* Left Arrow flush at left */}
                     <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -772,11 +753,11 @@ const Home: FC = () => {
               </td>
               {/* COMMERCIAL/INDUSTRIAL PLANTS with right arrow */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/products-solutions/commercial-industrial-plants" className="contents"> {/* className="contents" again */}
+                <Link href="/product-category/commercial-industrial-plants" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">COMMERCIAL/<br />INDUSTRIAL PLANTS</span> {/* Custom CSS class */}
+                      <span className="product-category">COMMERCIAL/<br />INDUSTRIAL PLANTS</span>
                     </div>
                     {/* Right Arrow flushat right */}
                     <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
@@ -815,11 +796,11 @@ const Home: FC = () => {
                 Solutions
               </td>
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/products-solutions/drinking-water-stations" className="contents"> {/* className="contents" again */}
+                <Link href="/water-reuse" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">WATER REUSE</span> {/* Custom CSS class */}
+                      <span className="product-category">WATER REUSE</span>
                     </div>
                     {/* Right Arrow flush at right */}
                     <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
@@ -860,11 +841,11 @@ const Home: FC = () => {
               </td>
               {/* DRINKING WATER FAUCETS with left and down arrows */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/products-solutions/drinking-water-faucets" className="contents"> {/* className="contents" again */}
+                <Link href="/water-treatment" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">WATER TREATMENT</span> {/* Custom CSS class */}
+                      <span className="product-category">WATER TREATMENT</span>
                     </div>
                     {/* Left Arrow flush at left */}
                     <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -900,11 +881,11 @@ const Home: FC = () => {
               </td>
               {/* DRINKING WATER DISPENSERS with left and right arrows */}
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/products-solutions/drinking-water-dispensers" className="contents"> {/* className="contents" again */}
+                <Link href="/water-as-a-service" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">WATER AS A SERVICE</span> {/* Custom CSS class */}
+                      <span className="product-category">WATER AS A SERVICE</span>
                     </div>
                     {/* Left Arrow flush at left */}
                     <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -954,11 +935,11 @@ const Home: FC = () => {
               </td>
               {/* empty white box */}
               <td className="bg-white"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/products-solutions/water-coolers-fountains" className="contents"> {/* className="contents" again */}
+                <Link href="/product-category/water-coolers-fountains" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category"></span> {/* Custom CSS class */}
+                      <span className="product-category"></span>
                     </div>
                   </div>
                 </Link>
