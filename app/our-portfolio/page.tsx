@@ -366,7 +366,7 @@ export default function Home() {
             <div key={index}>
                 {/* Heading with Link */}
               <Link 
-                href={`/product-category/${titleToId(post.title)}`}
+                href={`#${titleToId(post.title)}`}
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 700,
@@ -431,7 +431,7 @@ export default function Home() {
             {blogPosts.map((post, index) => (
               <div
                 key={index}
-                id={slugify(post.title)} // Added ID here for anchor linking
+                id={titleToId(post.title)} // Added ID here for anchor linking
                 className={`flex items-start space-x-8 justify-between ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}
                 style={{ marginBottom: index < blogPosts.length - 1 ? '180px' : '0' }}
               >
