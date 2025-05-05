@@ -1,0 +1,46 @@
+{
+  "categories": {
+    "drinking-water-stations": {
+      "id": "drinking-water-stations",
+      "name": "DRINKING WATER STATION - BLUWAE Series",
+      "description": "Water dispensers with inbuilt purification —pure, safe water delivered efficiently. Designed to reduce plastic waste and energy consumption, making sustainability easy.",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public",
+      "productTypes": ["free-standing", "counter-top", "fountain", "indoor"]
+    },
+    "water-dispenser": {
+      "id": "water-dispenser",
+      "name": "WATER DISPENSER (W/O RO) - TRUBLU Series",
+      "description": "Stainless steel water dispensers give you fresh, clean water anytime. Compact, energy-efficient, and perfect for spaces where RO water is not readily available.",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
+      "productTypes": ["free-standing", "counter-top", "fountain", "indoor"]
+    },
+    "drinking-water-faucets": {
+      "id": "drinking-water-faucets",
+      "name": "DRINKING WATER FAUCETS - WATERMATIC Series",
+      "description": "Drinking water faucets with under the counter storage units to make access to fresh water simple. Precision-engineered for smooth flow, with a focus on reducing waste and energy use.",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
+      "productTypes": ["free-standing", "counter-top", "fountain", "indoor"]
+    },
+    "water-cooler": {
+      "id": "water-cooler",
+      "name": "WATER COOLER & FOUNTAINS - ZVR Series",
+      "description": "Water coolers cum bubblers provide chilled water on demand. Built to be energy-efficient, they're ideal for public spaces, reducing both costs and plastic waste.",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08a355dd-6233-4b12-1cf5-fee8716cca00/public",
+      "productTypes": ["free-standing", "counter-top", "fountain", "indoor"]
+    },
+    "public-utility": {
+      "id": "public-utility",
+      "name": "PUBLIC UTILITY SYSTEMS - PUS Series",
+      "description": "Designed for large public spaces, PUS systems ensure clean, accessible water. Engineered for durability and eco-friendliness, they support sustainable communities.",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
+      "productTypes": ["free-standing", "counter-top", "fountain", "indoor"]
+    },
+    "commercial-industrial": {
+      "id": "commercial-industrial",
+      "name": "COMMERCIAL/INDUSTRIAL PLANTS",
+      "description": "Power your facility with our large-scale hydration plants. Scalable and efficient, they offer high-volume water solutions with a commitment to sustainability.",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public",
+      "productTypes": ["free-standing", "counter-top", "fountain", "indoor"]
+    }
+  }
+} 

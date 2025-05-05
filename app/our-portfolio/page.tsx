@@ -1,6 +1,7 @@
 "use client"
 
-import type React, { FC } from "react"
+import type React from "react"
+import type { FC } from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -80,7 +81,7 @@ const blogPosts = [
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08a355dd-6233-4b12-1cf5-fee8716cca00/public",
       title: "WATER COOLER & FOUNTAINS - ZVR Series",
-      description: "Water coolers cum bubblers provide chilled water on demand. Built to be energy-efficient, they’re ideal for public spaces, reducing both costs and plastic waste.",
+      description: "Water coolers cum bubblers provide chilled water on demand. Built to be energy-efficient, they're ideal for public spaces, reducing both costs and plastic waste.",
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
@@ -106,6 +107,18 @@ const slugify = (text: string) => {
       .replace(/-+$/, ''); // Trim - from end of text
   };
 
+// Function to convert title to ID format
+const titleToId = (title: string) => {
+  const idMap: { [key: string]: string } = {
+    "DRINKING WATER STATION - BLUWAE Series": "drinking-water-stations",
+    "WATER DISPENSER (W/O RO) - TRUBLU Series": "water-dispenser",
+    "DRINKING WATER FAUCETS - WATERMATIC Series": "drinking-water-faucets",
+    "WATER COOLER & FOUNTAINS - ZVR Series": "water-cooler",
+    "PUBLIC UTILITY SYSTEMS - PUS Series": "public-utility-systems",
+    "COMMERCIAL/INDUSTRIAL PLANTS": "commercial-industrial-plants"
+  };
+  return idMap[title] || title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+};
 
 export default function Home() {
   // State variables
@@ -352,8 +365,9 @@ export default function Home() {
           {blogPosts.map((post, index) => (
             <div key={index}>
                 {/* Heading with Link */}
-              <a href={`#${slugify(post.title)}`} // Anchor link to the product section
-                 style={{
+              <Link 
+                href={`/product-category/${titleToId(post.title)}`}
+                style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 700,
                   fontSize: "16px",
@@ -361,13 +375,13 @@ export default function Home() {
                   letterSpacing: "0%",
                   verticalAlign: "middle",
                   textTransform: "uppercase",
-                  display: "block", // Ensure the link block wraps the text
-                  textDecoration: "none", // Remove default underline
-                  color: "inherit", // Inherit text color
-                 }}
+                  display: "block",
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
               >
                 {post.title}
-              </a>
+              </Link>
 
               {/* Horizontal Rule */}
               <div style={{ paddingTop: "12px", paddingBottom: "12px" }}>
@@ -474,7 +488,7 @@ export default function Home() {
                     </p>
                   </div>
                   {/* Modified HoverButton href for internal anchor link */}
-                   <HoverButton href={`#${slugify(post.title)}`}>
+                   <HoverButton href={`/product-category/${titleToId(post.title)}`}>
                     {(hovered) => (
                       <>
                         Know More
