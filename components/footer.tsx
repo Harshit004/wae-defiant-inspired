@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="flex flex-col justify-center">
             <Link href="/homepage3" passHref>
               <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
                 alt="WAE Logo"
                 width={173}
                 height={184}
@@ -48,8 +48,8 @@ export default function Footer() {
               className="space-y-2 mb-[5rem]"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "18px",
+                fontWeight: 400,
+                fontSize: "13px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}
@@ -116,8 +116,8 @@ export default function Footer() {
               className="space-y-2 mb-[5rem]"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "18px",
+                fontWeight: 400,
+                fontSize: "13px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}

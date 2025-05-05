@@ -8,15 +8,9 @@ import Link from "next/link"; // Import the Link component
 
 const mountingOptions = [
   "Free-standing",
-  "Floor-standing",
-  "On Wall",
-  "In Wall",
-  "Outdoor",
-  "Wall Hanging",
-  "Under Counter",
   "Counter-top",
-  "Open-skid",
-  "Closed-skid",
+  "Fountain",
+  "Indoor",
 ];
 
 const Home: FC = () => {

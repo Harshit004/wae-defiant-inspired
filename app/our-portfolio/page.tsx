@@ -1,21 +1,20 @@
 "use client"
 
-import type React from "react"
 import type { FC } from "react"
+import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import { motion } from "framer-motion" 
 import Footer from "@/components/footer"
 import Link from "next/link"
+import ConnectWithUs from "@/components/connect-with-us"
 
-// Shared container class for consistent margins
+// Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
 
 /**
  * Reusable hover button component.
  */
-
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
   href?: string;
@@ -36,7 +35,7 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
         alignItems: "center",
         gap: "8px",
         fontFamily: "'Inter Tight', sans-serif",
-        fontWeight: 500,
+        fontWeight: 500, // This fontWeight is for the button text itself (like "Know More")
         fontSize: "10px",
         lineHeight: "100%",
         textTransform: "uppercase",
@@ -46,7 +45,7 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
         color: hovered ? "#fff" : "#000",
       }}
     >
-      {children(hovered)}
+      {children(hovered)} {/* This is where the error happens if children is not a function */}
     </button>
   );
 
@@ -60,65 +59,6 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
     ) : buttonContent;
 };
 
-
-// Placeholder for product category data : copied from blogs section, hence the same variable
-const blogPosts = [
-    {
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public",
-      title: "DRINKING WATER STATION - BLUWAE Series",
-      description: "Water dispensers with inbuilt purification —pure, safe water delivered efficiently. Designed to reduce plastic waste and energy consumption, making sustainability easy.",
-    },
-    {
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
-      title: "WATER DISPENSER (W/O RO) - TRUBLU Series",
-      description: "Stainless steel water dispensers give you fresh, clean water anytime. Compact, energy-efficient, and perfect for spaces where RO water is not readily available.",
-    },
-    {
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
-      title: "DRINKING WATER FAUCETS - WATERMATIC Series",
-      description: "Drinking water faucets with under the counter storage units to make access to fresh water simple. Precision-engineered for smooth flow, with a focus on reducing waste and energy use.",
-    },
-    {
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08a355dd-6233-4b12-1cf5-fee8716cca00/public",
-      title: "WATER COOLER & FOUNTAINS - ZVR Series",
-      description: "Water coolers cum bubblers provide chilled water on demand. Built to be energy-efficient, they're ideal for public spaces, reducing both costs and plastic waste.",
-    },
-    {
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
-      title: "PUBLIC UTILITY SYSTEMS - PUS Series",
-      description: "Designed for large public spaces, PUS systems ensure clean, accessible water. Engineered for durability and eco-friendliness, they support sustainable communities.",
-    },
-    {
-        imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public",
-        title: "COMMERCIAL/INDUSTRIAL PLANTS",
-        description: "Power your facility with our large-scale hydration plants. Scalable and efficient, they offer high-volume water solutions with a commitment to sustainability.",
-    },
-  ];
-
-  // Helper function to create a URL-friendly slug from a title
-const slugify = (text: string) => {
-    return text
-      .toString()
-      .toLowerCase()
-      .replace(/\s+/g, '-') // Replace spaces with -
-      .replace(/[^\w-]+/g, '') // Remove all non-word chars
-      .replace(/--+/g, '-') // Replace multiple - with single -
-      .replace(/^-+/, '') // Trim - from start of text
-      .replace(/-+$/, ''); // Trim - from end of text
-  };
-
-// Function to convert title to ID format
-const titleToId = (title: string) => {
-  const idMap: { [key: string]: string } = {
-    "DRINKING WATER STATION - BLUWAE Series": "drinking-water-stations",
-    "WATER DISPENSER (W/O RO) - TRUBLU Series": "water-dispenser",
-    "DRINKING WATER FAUCETS - WATERMATIC Series": "drinking-water-faucets",
-    "WATER COOLER & FOUNTAINS - ZVR Series": "water-cooler",
-    "PUBLIC UTILITY SYSTEMS - PUS Series": "public-utility-systems",
-    "COMMERCIAL/INDUSTRIAL PLANTS": "commercial-industrial-plants"
-  };
-  return idMap[title] || title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-};
 
 export default function Home() {
   // State variables
@@ -147,14 +87,16 @@ export default function Home() {
   }
 
   // Update tagline visibility based on scroll direction
+  // Note: This state is calculated but not applied in the current JSX
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
       setTaglineVisible(currentScrollY < prevScrollY.current)
       prevScrollY.current = currentScrollY
     }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    // Using passive: true for better scroll performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [])
 
   // Update current time (India Time) every minute
@@ -173,6 +115,19 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
+   // Measure header height (Note: This height is calculated but not used in the current JSX)
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.clientHeight);
+      }
+    };
+    updateHeaderHeight();
+    window.addEventListener("resize", updateHeaderHeight);
+    return () => window.removeEventListener("resize", updateHeaderHeight);
+  }, []); // Dependency array is empty, runs once on mount and cleanup
+
+
   // Tagline lines (split into words)
   const taglineLine1 = "To lead the way in sustainability"
   const taglineLine2 = "ahead of the rest."
@@ -190,14 +145,15 @@ export default function Home() {
     { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs2" },
   ]
-  const lineCount = Math.min(productsItems.length, blueprintItems.length)
+  const lineCount = Math.min(productsItems.length, blueprintItems.length) // Note: lineCount is calculated but not used
 
   return (
     <main className="relative pb-[40px]">
-      {/* HEADER */}
-      <div style={{ top: 0, left: 0, width: "100%" }}>
-        <header ref={headerRef} className="w-full relative z-10 mb-0">
-          <div className="mx-auto w-full max-w-[1440px] px-[140px]">
+      {/* HEADER (Not Fixed in this version) */}
+      {/* The div with inline styles here seems unnecessary if not fixed */}
+      <div> {/* Consider removing this outer div or making it relative/static */}
+        <header ref={headerRef} className={`w-full relative z-10 mb-5`}> {/* Apply containerClass inside header content div */}
+          <div className={containerClass}> {/* Use containerClass for consistent padding */}
             {/* Top Row: Navigation */}
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
@@ -345,191 +301,301 @@ export default function Home() {
         </header>
       </div>
 
-        {/* Our Portfolio Heading */}
-      <div className={containerClass} style={{marginTop: "120px"}}>
-        <h2
-          style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: "48px",
-            letterSpacing: "0%",
-            verticalAlign: "middle",
-            marginBottom: "40px", // Reduced margin here to add the new section below
-          }}
+      {/* Hero section (Not Fixed in this version) */}
+      <section
+          id="hero"
+          className="relative h-screen w-full overflow-hidden mb-[140px]" // Hero has margin-bottom
         >
-          Our Products
-        </h2>
-
-        {/* NEW SECTION: Product Category Grid */}
-        <div className="grid grid-cols-3 gap-x-[100px] gap-y-[60px] mb-[180px]"> {/* Added bottom margin to separate from next section */}
-          {blogPosts.map((post, index) => (
-            <div key={index}>
-                {/* Heading with Link */}
-              <Link 
-                href={`#${titleToId(post.title)}`}
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "16px",
-                  lineHeight: "140%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  textTransform: "uppercase",
-                  display: "block",
-                  textDecoration: "none",
-                  color: "inherit",
-                }}
-              >
-                {post.title}
-              </Link>
-
-              {/* Horizontal Rule */}
-              <div style={{ paddingTop: "12px", paddingBottom: "12px" }}>
-                <hr style={{ border: "none", borderTop: "1px solid #00000033" }} />
-              </div>
-
-              {/* Description */}
-              <p
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "12px",
-                  lineHeight: "24px",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                }}
-              >
-                {post.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-
-        {/* LOGO (Position might need adjustment depending on where exactly you want it relative to the new section) */}
-        {/* <div
-          style={{
-            position: "fixed",
-            top: "30%", // You might want to adjust this
-            left: "39.23%", // You might want to adjust this
-            opacity: 1,
-          }}
-          className="pointer-events-none flex justify-center"
-        >
+           {/* Reverted to Image as in the provided code */}
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
-            alt="Center Logo"
-            width={310}
-            height={310}
-            className="opacity-80"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d2ea52c2-f6b2-4a26-e587-61e8ea26ab00/public"
+            alt="Our portfolio"
+             width={1440} // Adjusted width for better fit if max-width is 1440px
+             height={656} // Height from original image usage
+            className="object-cover w-full max-h-[656px]" // Use h-full to fill the 100vh section
           />
-        </div> */}
 
-        {/* Product Category Section (Modified to include IDs) */}
-        <div>
-          <div className="space-y-8">
-            {blogPosts.map((post, index) => (
-              <div
-                key={index}
-                id={titleToId(post.title)} // Added ID here for anchor linking
-                className={`flex items-start space-x-8 justify-between ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}
-                style={{ marginBottom: index < blogPosts.length - 1 ? '180px' : '0' }}
-              >
-                {/* Image */}
-                <div className="w-[320px] h-[320px] relative overflow-hidden group">
-                  {index === 1 ? ( // Check if it's the second blog post (index 1)
-                    <Image
-                      src={post.imageUrl}
-                      alt={post.title}
-                      className="transition-transform duration-700 ease-in-out transform-gpu group-hover:scale-110"
-                      width={320}
-                      height={320}
-                    />
-                  ) : (
-                    <Image
-                      src={post.imageUrl}
-                      alt={post.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-transform duration-700 ease-in-out transform-gpu group-hover:scale-110"
-                    />
-                  )}
-                </div>
-
-                {/* Title, Description, and Button */}
-                <div className="flex-1 flex flex-col justify-between" style={{ maxWidth: '320px' }}>
-                  <div>
-                    <h3
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 700,
-                        fontSize: "14px",
-                        lineHeight: "140%",
-                        letterSpacing: "0%",
-                        verticalAlign: "middle",
-                        textTransform: "uppercase",
-                        marginBottom: "12px",
-                      }}
-                    >
-                      {post.title}
-                    </h3>
-                    <p
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "12px",
-                        lineHeight: "24px",
-                        letterSpacing: "0%",
-                        verticalAlign: "middle",
-                        marginBottom: "40px",
-                      }}
-                    >
-                      {post.description}
-                    </p>
-                  </div>
-                  {/* Modified HoverButton href for internal anchor link */}
-                   <HoverButton href={`/product-category/${titleToId(post.title)}`}>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </div>
-              </div>
-            ))}
+          {/* Text and image overlays remain absolute within the hero */}
+          <div
+            className="absolute"
+            style={{
+              bottom: "30%",
+              right: "calc(3.473%)", // Adjust right position based on container padding
+              width: "393px",
+              height: "159px",
+            }}
+          >
+            <Image
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3785262c-3901-44fa-36ed-a4a936c6dc00/public"
+              alt="Sustainable products responsible solutions"
+              width={393}
+              height={159}
+              className="object-contain"
+            />
           </div>
+          <div
+            className="absolute"
+            style={{
+              bottom: "33%",
+              left: "calc(4.16666%)", // Adjust left position based on container padding
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "48px",
+              lineHeight: "110%",
+              color: "#fff",
+            }}
+          >
+            Our Portfolio
+          </div>
+          <div
+            className="absolute uppercase"
+            style={{
+              bottom: "30%",
+              left: "calc(4.16666%)", // Adjust left position based on container padding
+              width: "104px",
+              height: "12px",
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "10px",
+              lineHeight: "100%",
+              color: "#fff",
+            }}
+          >
+            Scroll for more ⤵︎
+          </div>
+        </section>
+
+        {/* NEW SECTION: Hardcoded Rows in a Single Grid */}
+        {/* This section will appear after the hero (thanks to hero's mb-[140px]) */}
+        {/* The grid is applied to the inner div */}
+        <div className={`${containerClass} mb-[140px]`}> {/* Container for consistent horizontal padding and bottom margin */}
+
+           {/* Single Grid Container for all rows */}
+           {/* Defined columns for Heading and Description, and row gap */}
+           <div style={{
+               display: 'grid',
+               gridTemplateColumns: '31.8% 27.78%', // Define column widths for heading and description
+               justifyContent: 'space-between', // Puts space between the two columns
+               rowGap: '280px', // Vertical space between rows
+               alignItems: 'start', // Align items to the start of their grid area (top)
+           }}>
+
+               {/* Row 1 Elements */}
+               {/* Heading 1 */}
+               <div style={{
+                   fontFamily: "'Inter Tight', sans-serif",
+                   fontWeight: 500,
+                   fontSize: "40px",
+                   lineHeight: "110%",
+                   letterSpacing: "0%",
+               }}>
+                   Our Green Is Blue
+               </div>
+               {/* Description 1 */}
+               <div style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400, // Changed fontWeight to 400
+                    fontSize: "12px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    color: '#00000099', // Applied color
+                    // Add any unique styles for this description here
+               }}>
+                    <p className="mb-4">
+                        At WAE, sustainability is not a feature - it’s our foundation. Guided by our core belief that Our Green is Blue, we engineer purpose-led products and intelligent solutions that address the world’s most pressing water challenges. From eliminating single-use plastics to enabling water reuse at scale, our portfolio empowers organizations to operate cleaner, smarter, and more responsibly.
+                    </p>
+                    <p>
+                        Explore how our offerings are creating meaningful environmental and operational impact for businesses, institutions, and communities alike.
+                    </p>
+               </div>
+
+                {/* Row 2 Elements */}
+               {/* Heading 2 */}
+               <div style={{
+                   fontFamily: "'Inter Tight', sans-serif",
+                   fontWeight: 500,
+                   fontSize: "40px",
+                   lineHeight: "110%",
+                   letterSpacing: "0%",
+               }}>
+                   Our Products
+               </div>
+               {/* Description 2 - Complex Structure */}
+               <div style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400, // Changed fontWeight to 400
+                    fontSize: "12px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    color: '#00000099', // Applied color
+                    // Add any unique styles for this description here
+               }}>
+                   {/* Paragraph 1 */}
+                   <p style={{ margin: 0 }}>WAE’s hydration systems are designed for modern, high-footfall environments - offices, airports, institutions, and public spaces. Crafted from stainless steel and built to eliminate plastic bottle dependency, our products contribute directly to zero-landfill goals while ensuring high-performance water dispensing.</p>
+                   
+                   {/* Bullet Points */}
+                   <ul style={{
+                       listStyleType: 'disc',
+                       marginLeft: '20px', // Indent list
+                       marginTop: '10px', // Space above list
+                       padding: 0 // Remove default ul padding if any
+                       }}>
+                       <li style={{ marginBottom: '5px' }}>Plastic-free hydration infrastructure</li> {/* Placeholder content */}
+                       <li style={{ marginBottom: '5px' }}>Zero-landfill stainless steel construction</li> {/* Placeholder content */}
+                       <li>IoT-enabled for real-time monitoring and usage optimization</li> {/* Placeholder content */}
+                   </ul>
+                   {/* 60px Gap */}
+                   <div style={{ marginBottom: '60px' }}></div>
+                   {/* Know More Button */}
+                   <a href="/our-products">
+                    <HoverButton>
+                        {(hovered) => (
+                        <>
+                            Explore Our Products
+                            <div className="relative inline-block w-4 h-4">
+                            <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                alt="icon default"
+                                width={16}
+                                height={16}
+                            />
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: hovered ? 1 : 0 }}
+                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                className="absolute top-0 left-0"
+                            >
+                                <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt="icon hover"
+                                width={16}
+                                height={16}
+                                />
+                            </motion.div>
+                            </div>
+                        </>
+                        )}
+                    </HoverButton>
+                    </a>
+               </div>
+
+               {/* Row 3 Elements */}
+               {/* Heading 3 */}
+                <div style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "40px",
+                    lineHeight: "110%",
+                    letterSpacing: "0%",
+                }}>
+                    Sewage Water Reuse
+                </div>
+               {/* Description 3 - Complex Structure */}
+                <div style={{
+                     fontFamily: "'Inter Tight', sans-serif",
+                     fontWeight: 400, // Changed fontWeight to 400
+                     fontSize: "12px",
+                     lineHeight: "100%",
+                     letterSpacing: "0%",
+                     color: '#00000099', // Applied color
+                     // Add any unique styles for this description here
+                 }}>
+                    {/* Paragraph 1 */}
+                    <p style={{ margin: 0 }}>WAE’s water treatment and reuse solutions are designed for long-term sustainability and compliance. From greywater reuse and effluent treatment to modular STPs and rainwater harvesting systems, our solutions help institutions close the water loop—reducing waste, conserving resources, and achieving sustainability mandates.</p>
+                    {/* Bullet Points */}
+                    <ul style={{
+                        listStyleType: 'disc',
+                        marginLeft: '20px', // Indent list
+                        marginTop: '10px', // Space above list
+                        padding: 0 // Remove default ul padding if any
+                        }}>
+                        <li style={{ marginBottom: '5px' }}>Custom-built water reuse and recycling systems</li> {/* Placeholder content */}
+                        <li style={{ marginBottom: '5px' }}>Energy-efficient and space-optimized designs</li> {/* Placeholder content */}
+                        <li>Aligned with SDG 6 and ESG compliance frameworks</li> {/* Placeholder content */}
+                    </ul>
+                    {/* 60px Gap */}
+                    <div style={{ marginBottom: '60px' }}></div>
+                    {/* Know More Button */}
+                    <a href="/our-solutions">
+                    <HoverButton>
+                        {(hovered) => (
+                        <>
+                            Explore Our Solutions
+                            <div className="relative inline-block w-4 h-4">
+                            <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                alt="icon default"
+                                width={16}
+                                height={16}
+                            />
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: hovered ? 1 : 0 }}
+                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                className="absolute top-0 left-0"
+                            >
+                                <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt="icon hover"
+                                width={16}
+                                height={16}
+                                />
+                            </motion.div>
+                            </div>
+                        </>
+                        )}
+                    </HoverButton>
+                    </a>
+                </div>
+
+               {/* Row 4 Elements */}
+               {/* Heading 4 */}
+                <div style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "40px",
+                    lineHeight: "110%",
+                    letterSpacing: "0%",
+                }}>
+                    We are disrupting the status quo
+                </div>
+               {/* Description 4 */}
+                <div style={{
+                     fontFamily: "'Inter Tight', sans-serif",
+                     fontWeight: 400, // Changed fontWeight to 400
+                     fontSize: "12px",
+                     lineHeight: "100%",
+                     letterSpacing: "0%",
+                     color: '#00000099', // Applied color
+                     // Add any unique styles for this description here
+                 }}>
+                    <p className="mb-5">
+                        We’re not here to tweak old systems, we’re here to transform them. Every product we build and every solution we implement is designed to challenge outdated practices and replace them with smarter, cleaner, and more sustainable alternatives.
+                    </p>
+                    <p>
+                        This isn’t evolution. It’s disruption - rooted in purpose, engineered for impact, and driven by the belief that better water solutions can create a better world.
+                    </p>
+                </div>
+
+           </div> {/* End Single Grid Container */}
+
         </div>
-      </div>
+
+        {/* CONNECT WITH US FORM */}
+        {/* <section className=" px-[9.72%] pb-0">
+            <ConnectWithUs introText="Explore how WAE can help your business or community turn wastewater into a resource." />
+        </section> */}
 
       {/* FOOTER SECTION */}
-      <div style={{ position: "relative", zIndex: 10 }}>
+      {/* This div now appears after the section container (which has margin) */}
+      <div style={{ position: "relative", zIndex: 10 }}> {/* zIndex 10 here is fine as it's not overlapping a fixed element */}
         <Footer />
       </div>
 
       {/* INLINE CSS for hover and arrow animations */}
       <style jsx>{`
+        /* Removed unused styles like product-grid, product-title, product-cell, placeholder-img */
+
         .c--anim-btn {
           display: flex;
           align-items: center;
@@ -563,6 +629,19 @@ export default function Home() {
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
+        }
+      `}</style>
+
+       {/* Global Styles */}
+      {/* Note: If you re-introduce smooth scrolling, be mindful of conflicts with custom JS */}
+      <style jsx global>{`
+        html {
+          /* scroll-behavior: smooth; *//* Commented out as per previous discussion */
+        }
+         /* Ensure body doesn't have extra margins/padding */
+        body {
+            margin: 0;
+            padding: 0;
         }
       `}</style>
     </main>
