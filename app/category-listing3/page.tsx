@@ -1,20 +1,86 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Footer from "@/components/footer";
 import RelatedCard from "@/components/related-card";
-import Link from "next/link"; // Import the Link component
+import Link from "next/link";
 
+// Options for the Mounting Type dropdown
 const mountingOptions = [
-  "Free-standing",
-  "Counter-top",
-  "Fountain",
-  "Indoor",
+  "FREE-STANDING",
+  "COUNTER-TOP",
+  "FOUNTAIN",
+  "INDOOR",
+  // Add more options here if needed
 ];
 
+// Options for the Category dropdown
+const categoryOptions = [
+  "DRINKING WATER STATION",
+  "WATER DISPENSER",
+  "DRINKING WATER FAUCETS",
+  "WATER COOLER & FOUNTAINS",
+  "PUBLIC UTILITY SYSTEMS",
+  "COMMERCIAL/INDUSTRIAL PLANTS",
+];
+
+
 const Home: FC = () => {
+  // State for each dropdown
   const [showMountingDropdown, setShowMountingDropdown] = useState(false);
+  const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
+
+  // Refs for the dropdowns and their buttons to detect outside clicks
+  const mountingDropdownRef = useRef<HTMLDivElement>(null);
+  const mountingButtonRef = useRef<HTMLButtonElement>(null);
+
+  const categoryDropdownRef = useRef<HTMLDivElement>(null);
+  const categoryButtonRef = useRef<HTMLButtonElement>(null);
+
+
+  // Effect to handle clicking outside ANY open dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+
+      // Check if the click was inside the Mounting dropdown area (button + dropdown)
+      const clickedInsideMountingArea = mountingButtonRef.current?.contains(target) || mountingDropdownRef.current?.contains(target);
+
+      // Check if the click was inside the Category dropdown area (button + dropdown)
+      const clickedInsideCategoryArea = categoryButtonRef.current?.contains(target) || categoryDropdownRef.current?.contains(target);
+
+      // If the click was outside BOTH areas AND the Mounting dropdown is open, close it
+      if (showMountingDropdown && !clickedInsideMountingArea) {
+        setShowMountingDropdown(false);
+      }
+
+      // If the click was outside BOTH areas AND the Category dropdown is open, close it
+      if (showCategoryDropdown && !clickedInsideCategoryArea) {
+         setShowCategoryDropdown(false);
+      }
+
+       // Close the *other* dropdown if one button is clicked.
+       // This ensures only one dropdown is open at a time.
+       if (showMountingDropdown && !clickedInsideMountingArea && clickedInsideCategoryArea) {
+            setShowMountingDropdown(false);
+       }
+        if (showCategoryDropdown && !clickedInsideCategoryArea && clickedInsideMountingArea) {
+            setShowCategoryDropdown(false);
+       }
+    };
+
+    // Add the event listener when EITHER dropdown is shown
+    if (showMountingDropdown || showCategoryDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    // Clean up the event listener when the component unmounts or dropdown states change
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showMountingDropdown, showCategoryDropdown]);
+
 
   // Common button style based on the typography instructions.
   const buttonStyle: React.CSSProperties = {
@@ -34,9 +100,9 @@ const Home: FC = () => {
   // Data for the 4 buttons along with their alternating background and text colors.
   const buttons = [
     { label: "FILTER BY", background: "#000", color: "#fff" },
-    { label: "CATEGORY", background: "#f2f2f2", color: "#000" },
+    { label: "CATEGORY", background: "#000", color: "#fff" },
     { label: "MOUNTING TYPE", background: "#000", color: "#fff" },
-    { label: "INSTALLATION TYPE", background: "#f2f2f2", color: "#000" },
+    { label: "INSTALLATION TYPE", background: "#000", color: "#fff" },
   ];
 
   // Sample data for product grid
@@ -86,6 +152,37 @@ const Home: FC = () => {
     { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs2" },
   ];
+
+  // Helper function to render dropdown content (checkboxes)
+  const renderDropdownOptions = (options: string[], type: 'mounting' | 'category') => {
+      return options.map((option, idx) => (
+        <div key={idx} className="flex items-center mb-2">
+          <input
+            id={`${type}-option-${idx}`}
+            type="checkbox"
+            className="form-checkbox"
+            style={{ accentColor: "#000" }}
+          />
+          <label
+            htmlFor={`${type}-option-${idx}`}
+            style={{
+              fontFamily: "Inter Tight",
+              fontWeight: 400,
+              fontSize: "12px",
+              lineHeight: "140%",
+              letterSpacing: "0%",
+              verticalAlign: "middle",
+              marginLeft: "45px",
+              whiteSpace: "nowrap",
+              cursor: "pointer" // Indicate it's clickable
+            }}
+          >
+            {option}
+          </label>
+        </div>
+      ));
+  }
+
 
   return (
     <main>
@@ -246,16 +343,43 @@ const Home: FC = () => {
       </section>
 
       {/* Buttons Section */}
-      <section className="mx-auto max-w-[1440px] px-[140px]">
+      <section className="mx-auto max-w-[1440px] px-[9.72%]">
         {/* Gap of 120px after the hero */}
         <div style={{ height: "120px" }} />
 
-        <div className="flex items-center gap-4" style={{ justifyContent: "flex-start" }}>
+        <div className="flex items-center gap-4" style={{ justifyContent: "space-between" }}>
           {buttons.map((btn, index) => {
-            if (btn.label === "MOUNTING TYPE") {
+            // --- FILTER BY Button ---
+            if (btn.label === "FILTER BY") {
               return (
-                <div key={index} className="relative" style={{ width: "fit-content" }}>
+                <div
+                  key={index}
+                  className="flex  justify-between"
+                  style={{ flex: 1, maxWidth: "16%" }} // Retains maxWidth
+                >
                   <button
+                    style={{
+                      ...buttonStyle,
+                      flex: 1,
+                      backgroundColor: btn.background,
+                      color: btn.color,
+                      paddingLeft: "41.67px",
+                      paddingRight: "41.67px",
+                      whiteSpace: "nowrap",
+                      borderRight: "0.67px solid #00000066", // Border on button
+                    }}
+                  >
+                    {btn.label}
+                  </button>
+                </div>
+              );
+            }
+            // --- CATEGORY Button (Dropdown) ---
+            else if (btn.label === "CATEGORY") {
+                 return (
+                <div key={index} className="relative" style={{ width: "23%" }}> {/* maxWidth removed */}
+                  <button
+                    ref={categoryButtonRef} // Attach category ref
                     style={{
                       ...buttonStyle,
                       flex: "unset",
@@ -263,14 +387,14 @@ const Home: FC = () => {
                       backgroundColor: btn.background,
                       color: btn.color,
                     }}
-                    onClick={() => setShowMountingDropdown((prev) => !prev)}
+                    onClick={() => setShowCategoryDropdown((prev) => !prev)} // Toggle category state
                     className="w-full"
                   >
                     <span className="flex items-center gap-4 whitespace-nowrap">
                       {btn.label}
                       <svg
                         className={`w-2.5 h-2.5 transition-transform duration-500 ${
-                          showMountingDropdown ? "rotate-180" : ""
+                          showCategoryDropdown ? "rotate-180" : "" // Use category state for rotation
                         }`}
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
@@ -287,10 +411,11 @@ const Home: FC = () => {
                       </svg>
                     </span>
                   </button>
-                  {/* Dropdown Menu positioned directly under the button */}
+                  {/* Category Dropdown Menu */}
                   <div
+                    ref={categoryDropdownRef} // Attach category ref
                     className={`absolute left-0 top-full w-full bg-white transition-all duration-500 ease-in-out ${
-                      showMountingDropdown
+                      showCategoryDropdown // Use category state for visibility
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 -translate-y-0.5 pointer-events-none"
                     }`}
@@ -298,69 +423,74 @@ const Home: FC = () => {
                       boxShadow: "0px 4px 4px 0px #00000040",
                       padding: "20px 8px",
                       zIndex: 10,
+                      maxHeight: "200px",
+                      overflowY: "auto",
                     }}
                   >
-                    {mountingOptions.map((option, idx) => (
-                      <div key={idx} className="flex items-center mb-2">
-                        <input
-                          id={`mounting-option-${idx}`}
-                          type="checkbox"
-                          className="form-checkbox"
-                          style={{ accentColor: "#000" }}
-                        />
-                        <label
-                          htmlFor={`mounting-option-${idx}`}
-                          style={{
-                            fontFamily: "Inter Tight",
-                            fontWeight: 400,
-                            fontSize: "12px",
-                            lineHeight: "140%",
-                            letterSpacing: "0%",
-                            textAlign: "center",
-                            verticalAlign: "middle",
-                            marginLeft: "45px",
-                            whiteSpace: "nowrap",
-                          }}
-                        >
-                          {option}
-                        </label>
-                      </div>
-                    ))}
+                    {renderDropdownOptions(categoryOptions, 'category')} {/* Render category options */}
                   </div>
                 </div>
               );
-            } else if (btn.label === "FILTER BY") {
-              // FILTER BY button with horizontal padding of 41.67px on each side and a vertical rule.
+            }
+            // --- MOUNTING TYPE Button (Dropdown) ---
+            else if (btn.label === "MOUNTING TYPE") {
               return (
-                <div
-                  key={index}
-                  className="flex  justify-between"
-                  style={{ flex: 1, maxWidth: "16%" }}
-                >
+                <div key={index} className="relative" style={{ width: "16%" }}> {/* maxWidth removed */}
                   <button
+                    ref={mountingButtonRef} // Attach mounting ref
                     style={{
                       ...buttonStyle,
-                      flex: 1,
+                      flex: "unset",
+                      width: "100%",
                       backgroundColor: btn.background,
                       color: btn.color,
-                      paddingLeft: "41.67px",
-                      paddingRight: "41.67px",
-                      whiteSpace: "nowrap",
-                      borderRight: "5px rgb(68, 67, 67)",
+                    }}
+                    onClick={() => setShowMountingDropdown((prev) => !prev)} // Toggle mounting state
+                    className="w-full"
+                  >
+                    <span className="flex items-center gap-4 whitespace-nowrap">
+                      {btn.label}
+                      <svg
+                        className={`w-2.5 h-2.5 transition-transform duration-500 ${
+                          showMountingDropdown ? "rotate-180" : "" // Use mounting state for rotation
+                        }`}
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 10 6"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1"
+                          d="m1 1 4 4 4-4"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  {/* Mounting Type Dropdown Menu */}
+                  <div
+                    ref={mountingDropdownRef} // Attach mounting ref
+                    className={`absolute left-0 top-full w-full bg-white transition-all duration-500 ease-in-out ${
+                      showMountingDropdown // Use mounting state for visibility
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 -translate-y-0.5 pointer-events-none"
+                    }`}
+                    style={{
+                      boxShadow: "0px 4px 4px 0px #00000040",
+                      padding: "20px 8px",
+                      zIndex: 10,
+                      maxHeight: "200px",
+                      overflowY: "auto",
                     }}
                   >
-                    {btn.label}
-                  </button>
-                  <div
-                    style={{
-                      height: "100%",
-                      width: "0.67px",
-                      backgroundColor: "#00000066",
-                    }}
-                  />
+                     {renderDropdownOptions(mountingOptions, 'mounting')} {/* Render mounting options */}
+                  </div>
                 </div>
               );
             }
+            // --- Default Button (INSTALLATION TYPE and any others) ---
             return (
               <button
                 key={index}
@@ -369,28 +499,12 @@ const Home: FC = () => {
                   backgroundColor: btn.background,
                   color: btn.color,
                   flex: 1,
-                  maxWidth: "16%",
+                  maxWidth: "23%", // Retains maxWidth
                 }}
               >
                 <span className="flex items-center">
                   {btn.label}
-                  {btn.label !== "FILTER BY" && (
-                    <svg
-                      className="w-2.5 h-2.5 ms-3"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 10 6"
-                    >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="1"
-                        d="m1 1 4 4 4-4"
-                      />
-                    </svg>
-                  )}
+                  {/* No SVG arrow here, as requested for Installation Type */}
                 </span>
               </button>
             );
