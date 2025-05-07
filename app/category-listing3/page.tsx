@@ -720,7 +720,7 @@ const Home: FC = () => {
             // Wrap the product item in a Link component
             <Link
               key={index}
-              href={`/products/${product.name.toLowerCase().replace(/ /g, "-")}`} // Placeholder URL
+              href={`/${product.name.toLowerCase().replace(/ /g, "-")}`} // Placeholder URL
               passHref // Use passHref with custom components
             >
               {/* The entire product item becomes clickable */}
