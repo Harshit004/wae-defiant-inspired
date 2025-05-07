@@ -122,150 +122,153 @@ const Home: FC = () => {
   return (
     <main>
       {/* Normal Header */}
-      <header className="w-full">
-        <div className="mx-auto w-full max-w-[1440px] px-[140px] py-[20px]">
-          {/* Top Row: Navigation */}
-          <div
-            className="grid grid-cols-5 items-center pb-2 uppercase"
-            style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "12px",
-              lineHeight: "100%",
-            }}
-          >
-            <div>IDENTITY</div>
-            <div>ORIGIN</div>
-            <div>OBJECTIVE</div>
-            <div>INSIDE WAE</div>
-            <div>ETCETERA</div>
-          </div>
-
-          {/* Divider */}
-          <div className="w-full h-px bg-[#D9D9DC] mb-4" />
-
-          {/* Bottom Row: Logo, Coordinates, Tagline and Menu Items */}
-          <div className="grid grid-cols-5 items-start">
-            {/* Logo */}
-            <div className="flex flex-col justify-center">
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                alt="WAE Logo"
-                width={78}
-                height={82}
-              />
-            </div>
-
-            {/* Coordinates */}
+      <header className={`w-full relative z-10 mb-5 px-[9.72%]`}> 
+          <div> 
+            {/* Top Row: Navigation */}
             <div
-              className="flex flex-col justify-center"
+              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
                 fontSize: "12px",
                 lineHeight: "100%",
-                color: "#000000",
+                letterSpacing: "0px",
               }}
             >
-              20.5937° N
-              <br />
-              78.9629° E
+              <div>IDENTITY</div>
+              <div>ORIGIN</div>
+              <div>OBJECTIVE</div>
+              <div>INSIDE WAE</div>
+              <div>ETCETERA</div>
             </div>
 
-            {/* Tagline */}
-            <div
-              className="flex flex-col justify-center"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "12px",
-                lineHeight: "100%",
-                color: "#000000",
-              }}
-            >
-              To lead the way in
-              <br />
-              sustainability ahead of the
-              <br />
-              rest
-            </div>
+            {/* Divider */}
+            <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
 
-            {/* Inside WAE Menu Items */}
-            <div className="flex flex-col justify-center space-y-2">
-              {productsItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "12px",
-                    lineHeight: "100%",
-                  }}
-                >
-                  <Link href={item.href} className="c--anim-btn">
-                    <div className="text-container">
-                      <span className="c-anim-btn">{item.text}</span>
-                      <span className="block">{item.text}</span>
-                    </div>
-                    <span className="menu-arrow">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                      </svg>
-                    </span>
-                  </Link>
-                </div>
-              ))}
-            </div>
+            {/* Bottom Row: Logo, Tagline and Menu Items */}
+            <div className="grid grid-cols-5 items-start">
+              {/* Logo */}
+              <div className="flex flex-col justify-center">
+                <Link href="/homepage3">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                    alt="WAE Logo"
+                    width={78}
+                    height={82}
+                  />
+                </Link>
+              </div>
 
-            {/* ETCETERA Menu Items */}
-            <div className="flex flex-col justify-center space-y-2">
-              {blueprintItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "12px",
-                    lineHeight: "100%",
-                  }}
-                >
-                  <Link href={item.href} className="c--anim-btn">
-                    <div className="text-container">
-                      <span className="c-anim-btn">{item.text}</span>
-                      <span className="block">{item.text}</span>
-                    </div>
-                    <span className="menu-arrow blueprint-arrow">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                      </svg>
-                    </span>
-                  </Link>
-                </div>
-              ))}
+              {/* Coordinates */}
+              <div
+                className="flex flex-col justify-center inline-block mr-1"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "100%",
+                  color: "#000000",
+                }}
+              >
+                20.5937° N
+                <br />
+                78.9629° E
+              </div>
+
+              {/* Tagline */}
+              <div
+                className="flex flex-col justify-center inline-block mr-1"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "100%",
+                  color: "#000000",
+                }}
+              >
+                To lead the way in<br />sustainability ahead of the<br />rest
+              </div>
+
+              {/* Inside WAE Menu Items */}
+              <div className="flex flex-col justify-center space-y-2">
+                {productsItems.map((item, i) => (
+                  <div
+                    key={i}
+                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "12px",
+                      lineHeight: "100%",
+                    }}
+                  >
+                    <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+
+              {/* ETCETERA Menu Items */}
+              <div className="flex flex-col justify-center space-y-2">
+                {blueprintItems.map((item, i) => (
+                  <div
+                    key={i}
+                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "12px",
+                      lineHeight: "100%",
+                    }}
+                  >
+                    <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow blueprint-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
       {/* Product Display Section */}
       <section className="mx-[9.72%] mb-[9.72%] flex items-start justify-between">
