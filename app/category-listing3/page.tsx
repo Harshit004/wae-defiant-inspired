@@ -293,8 +293,8 @@ const Home: FC = () => {
   // Get the filtered list of products
   const filteredProducts = filterProducts();
 
-  // Common button style based on the typography instructions.
-  const buttonStyle: React.CSSProperties = {
+  // Base button style (transparent background, black font)
+  const baseButtonStyle: React.CSSProperties = {
     padding: "16px",
     fontFamily: "'Inter Tight', sans-serif",
     fontWeight: 400,
@@ -306,14 +306,17 @@ const Home: FC = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "transparent", // Default transparent background
+    color: "#000", // Default black font
+    transition: "background-color 0.3s ease, color 0.3s ease", // Smooth transition
   };
 
-  // Data for the 4 buttons along with their alternating background and text colors.
+  // Data for the 4 buttons - Removed background/color as it's handled by base style and conditional logic
   const buttons = [
-    { label: "FILTER BY", background: "#000", color: "#fff" },
-    { label: "CATEGORY", background: "#000", color: "#fff" },
-    { label: "MOUNTING TYPE", background: "#000", color: "#fff" },
-    { label: "INSTALLATION TYPE", background: "#000", color: "#fff" },
+    { label: "FILTER BY" }, // Filter by button retains original styling
+    { label: "CATEGORY" },
+    { label: "MOUNTING TYPE" },
+    { label: "INSTALLATION TYPE" },
   ];
 
   // Arrays for menu items
@@ -526,27 +529,27 @@ const Home: FC = () => {
 
         <div
           className="flex items-center gap-4"
-          style={{ justifyContent: "space-between" }}
+          // style={{ justifyContent: "space-between" }}
         >
           {buttons.map((btn, index) => {
-            // --- FILTER BY Button ---
+            // --- FILTER BY Button (Always Black Background) ---
             if (btn.label === "FILTER BY") {
               return (
                 <div
                   key={index}
-                  className="flex  justify-between"
-                  style={{ flex: 1, maxWidth: "16%" }} // Retains maxWidth
+                  className="flex justify-between"
+                  style={{ flex: 1, maxWidth: "16%" }}
                 >
                   <button
                     style={{
-                      ...buttonStyle,
+                      ...baseButtonStyle, // Start with base styles
+                      backgroundColor: "#000", // Override for black background
+                      color: "#fff", // Override for white font
                       flex: 1,
-                      backgroundColor: btn.background,
-                      color: btn.color,
                       paddingLeft: "41.67px",
                       paddingRight: "41.67px",
                       whiteSpace: "nowrap",
-                      borderRight: "0.67px solid #00000066", // Border on button
+                      borderRight: "0.67px solid #00000066",
                     }}
                   >
                     {btn.label}
@@ -558,25 +561,23 @@ const Home: FC = () => {
             else if (btn.label === "CATEGORY") {
               return (
                 <div key={index} className="relative" style={{ width: "23%" }}>
-                  {" "}
-                  {/* maxWidth removed */}
                   <button
-                    ref={categoryButtonRef} // Attach category ref
+                    ref={categoryButtonRef}
                     style={{
-                      ...buttonStyle,
+                      ...baseButtonStyle, // Start with base styles (transparent/black)
                       flex: "unset",
                       width: "100%",
-                      backgroundColor: btn.background,
-                      color: btn.color,
+                      // Conditionally apply black background and white font if dropdown is open
+                      ...(showCategoryDropdown ? { backgroundColor: "#000", color: "#fff" } : {}),
                     }}
-                    onClick={() => setShowCategoryDropdown((prev) => !prev)} // Toggle category state
+                    onClick={() => setShowCategoryDropdown((prev) => !prev)}
                     className="w-full"
                   >
-                    <span className="flex items-center gap-4 whitespace-nowrap">
+                    <span className="flex gap-4 whitespace-nowrap">
                       {btn.label}
                       <svg
                         className={`w-2.5 h-2.5 transition-transform duration-500 ${
-                          showCategoryDropdown ? "rotate-180" : "" // Use category state for rotation
+                          showCategoryDropdown ? "rotate-180" : ""
                         }`}
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
@@ -595,9 +596,9 @@ const Home: FC = () => {
                   </button>
                   {/* Category Dropdown Menu */}
                   <div
-                    ref={categoryDropdownRef} // Attach category ref
+                    ref={categoryDropdownRef}
                     className={`absolute left-0 top-full w-full bg-white transition-all duration-500 ease-in-out ${
-                      showCategoryDropdown // Use category state for visibility
+                      showCategoryDropdown
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 -translate-y-0.5 pointer-events-none"
                     }`}
@@ -609,8 +610,7 @@ const Home: FC = () => {
                       overflowY: "auto",
                     }}
                   >
-                    {renderDropdownOptions(categoryOptions, "category")}{" "}
-                    {/* Render category options */}
+                    {renderDropdownOptions(categoryOptions, "category")}
                   </div>
                 </div>
               );
@@ -619,25 +619,23 @@ const Home: FC = () => {
             else if (btn.label === "MOUNTING TYPE") {
               return (
                 <div key={index} className="relative" style={{ width: "16%" }}>
-                  {" "}
-                  {/* maxWidth removed */}
                   <button
-                    ref={mountingButtonRef} // Attach mounting ref
+                    ref={mountingButtonRef}
                     style={{
-                      ...buttonStyle,
+                      ...baseButtonStyle, // Start with base styles (transparent/black)
                       flex: "unset",
                       width: "100%",
-                      backgroundColor: btn.background,
-                      color: btn.color,
+                      // Conditionally apply black background and white font if dropdown is open
+                      ...(showMountingDropdown ? { backgroundColor: "#000", color: "#fff" } : {}),
                     }}
-                    onClick={() => setShowMountingDropdown((prev) => !prev)} // Toggle mounting state
+                    onClick={() => setShowMountingDropdown((prev) => !prev)}
                     className="w-full"
                   >
                     <span className="flex items-center gap-4 whitespace-nowrap">
                       {btn.label}
                       <svg
                         className={`w-2.5 h-2.5 transition-transform duration-500 ${
-                          showMountingDropdown ? "rotate-180" : "" // Use mounting state for rotation
+                          showMountingDropdown ? "rotate-180" : ""
                         }`}
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
@@ -656,9 +654,9 @@ const Home: FC = () => {
                   </button>
                   {/* Mounting Type Dropdown Menu */}
                   <div
-                    ref={mountingDropdownRef} // Attach mounting ref
+                    ref={mountingDropdownRef}
                     className={`absolute left-0 top-full w-full bg-white transition-all duration-500 ease-in-out ${
-                      showMountingDropdown // Use mounting state for visibility
+                      showMountingDropdown
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 -translate-y-0.5 pointer-events-none"
                     }`}
@@ -670,30 +668,27 @@ const Home: FC = () => {
                       overflowY: "auto",
                     }}
                   >
-                    {renderDropdownOptions(mountingOptions, "mounting")}{" "}
-                    {/* Render mounting options */}
+                    {renderDropdownOptions(mountingOptions, "mounting")}
                   </div>
                 </div>
               );
             }
-            // --- Default Button (INSTALLATION TYPE and any others) ---
-            return (
-              <button
-                key={index}
-                style={{
-                  ...buttonStyle,
-                  backgroundColor: btn.background,
-                  color: btn.color,
-                  flex: 1,
-                  maxWidth: "23%", // Retains maxWidth
-                }}
-              >
-                <span className="flex items-center">
-                  {btn.label}
-                  {/* No SVG arrow here, as requested for Installation Type */}
-                </span>
-              </button>
-            );
+            // --- INSTALLATION TYPE Button (Transparent Background) ---
+            // return (
+            //   <button
+            //     key={index}
+            //     style={{
+            //       ...baseButtonStyle, // Start with base styles (transparent/black)
+            //       flex: 1,
+            //       maxWidth: "23%",
+            //     }}
+            //     // No onClick functionality or state change needed for styling based on prompt interpretation
+            //   >
+            //     <span className="flex items-center">
+            //       {btn.label}
+            //     </span>
+            //   </button>
+            // );
           })}
         </div>
 
@@ -806,7 +801,7 @@ const Home: FC = () => {
       {/* Footer Section */}
       <Footer />
 
-      {/* Custom styles for RelatedCard titles and descriptions */}
+      {/* Custom styles for animations, RelatedCard titles and descriptions */}
       <style jsx>{`
         .related-card-title {
           font-family: "Inter Tight", sans-serif;
