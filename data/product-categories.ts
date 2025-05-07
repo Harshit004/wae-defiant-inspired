@@ -12,6 +12,9 @@ export interface ProductCategory {
     name: string;
     image: string;
   }[];
+  // Added hero and overlay image properties
+  heroImage?: string; // Made optional with '?' in case some categories don't have them
+  overlayImage?: string; // Made optional
 }
 
 export const productCategories: Record<string, ProductCategory> = {
@@ -52,7 +55,10 @@ export const productCategories: Record<string, ProductCategory> = {
         name: "Counter Top",
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
-    ]
+    ],
+    // Added image URLs for this category
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
   },
   "water-dispenser": {
     id: "water-dispenser",
@@ -91,7 +97,10 @@ export const productCategories: Record<string, ProductCategory> = {
         name: "Counter Top",
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
-    ]
+    ],
+    // Added image URLs for this category (using placeholders)
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
   },
   "drinking-water-faucets": {
     id: "drinking-water-faucets",
@@ -125,7 +134,10 @@ export const productCategories: Record<string, ProductCategory> = {
         name: "Counter Top",
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
-    ]
+    ],
+     // Added image URLs for this category (using placeholders)
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
   },
   "water-cooler": {
     id: "water-cooler",
@@ -164,7 +176,10 @@ export const productCategories: Record<string, ProductCategory> = {
         name: "Indoors",
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
-    ]
+    ],
+     // Added image URLs for this category (using placeholders)
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
   },
   "public-utility-systems": {
     id: "public-utility-systems",
@@ -198,7 +213,10 @@ export const productCategories: Record<string, ProductCategory> = {
         name: "Free Standing",
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/708253cf-b3b1-4b4c-e9ed-73f9c05aa400/public"
       }
-    ]
+    ],
+     // Added image URLs for this category (using placeholders)
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
   },
   "commercial-industrial-plants": {
     id: "commercial-industrial-plants",
@@ -232,6 +250,9 @@ export const productCategories: Record<string, ProductCategory> = {
         name: "Free Standing",
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/708253cf-b3b1-4b4c-e9ed-73f9c05aa400/public"
       }
-    ]
+    ],
+     // Added image URLs for this category (using placeholders)
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
   }
-}; 
+};

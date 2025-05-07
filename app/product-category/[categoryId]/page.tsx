@@ -348,6 +348,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
             </div>
           ))}
           <div className="mt-15" style={{ marginTop: "60px" }}>
+          <Link href={`/category-listing3?category=${params.categoryId}`} passHref>
             <HoverButton>
               {(hovered) => (
                 <>
@@ -376,6 +377,8 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
                 </>
               )}
             </HoverButton>
+          </Link>
+            
           </div>
         </div>
       </section>
@@ -389,11 +392,11 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
         </h2>
         <div className="mt-[80px] flex justify-between">
           {category.mountingTypes.map((mountingType) => (
-            <Link 
-              key={mountingType.id}
-              href={`/${mountingType.id}`} 
-              className="group flex flex-col items-center"
-            >
+            <Link
+            key={mountingType.id}
+            href={`/category-listing3?category=${params.categoryId}&mounting=${mountingType.id}`}
+            className="group flex flex-col items-center"
+          >
               <div className="relative overflow-hidden rounded-md w-[480px] h-[480px]">
                 <Image
                   src={mountingType.image}
@@ -407,95 +410,57 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
               >
                 {mountingType.name}
               </p>
-            </Link>
+          </Link>
+            
           ))}
         </div>
       </section>
 
       {/* Explore Other Products SECTION */}
-
       <section
-
         className="max-w-full px-[8.75rem] py-[7.5rem] bg-white"
-
         style={{
-
           position: "relative",
-
           borderTopLeftRadius: "0px",
-
           borderTopRightRadius: "0px",
-
         }}
-
       >
-
         <h2 className="font-helvetica text-[3.63rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem]">
-
           Explore Other Products
-
         </h2>
-
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-
           <RelatedCard
-
             image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
-
             title="DRINKING WATER STATION - BLUWAE Series"
-
             description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-
             width={272}
-
             height={270}
-
           />
 
           <RelatedCard
-
             image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
-
             title="WATER DISPENSER (W/O RO) - TRUBLU Series"
-
             description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-
             width={272}
-
             height={270}
-
           />
 
           <RelatedCard
-
             image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
-
             title="DRINKING WATER FAUCETS - WATERMATIC Series"
-
             description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-
             width={272}
-
             height={270}
-
           />
 
           <RelatedCard
-
             image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
-
             title="WATER COOLER & FOUNTAINS - ZVR Series"
-
             description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-
             width={272}
-
             height={270}
-
           />
-
         </div>
-
       </section>
 
 

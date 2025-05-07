@@ -5,204 +5,253 @@ import Image from "next/image";
 import Footer from "@/components/footer";
 import RelatedCard from "@/components/related-card";
 import Link from "next/link"; // Import Link
+import { useSearchParams } from 'next/navigation'; // Import useSearchParams hook
 
-// Options for the Mounting Type dropdown
+// Options for the Mounting Type dropdown - These now EXACTLY match the 'name' property
+// in the mountingTypes array of your productCategories data.
 const mountingOptions = [
-  "FREE-STANDING",
-  "COUNTER-TOP",
-  "FOUNTAIN",
-  "INDOOR",
-  // Add more options here if needed
+  "Free Standing", // Aligned with productCategories.ts name
+  "Counter Top",  // Aligned with productCategories.ts name
+  "Fountains",    // Aligned with productCategories.ts name
+  "Indoors",      // Aligned with productCategories.ts name
+  // Add more options here if needed, ensuring they match productCategories.ts names
 ];
 
-// Options for the Category dropdown
+// Options for the Category dropdown - These now EXACTLY match the 'title' property
+// in your productCategories data.
 const categoryOptions = [
-  "DRINKING WATER STATION",
-  "WATER DISPENSER",
-  "DRINKING WATER FAUCETS",
-  "WATER COOLER & FOUNTAINS",
-  "PUBLIC UTILITY SYSTEMS",
-  "COMMERCIAL/INDUSTRIAL PLANTS",
+  "DRINKING WATER STATIONS", // Aligned with productCategories.ts title
+  "WATER DISPENSER",       // Aligned with productCategories.ts title
+  "DRINKING WATER FAUCETS",  // Aligned with productCategories.ts title
+  "WATER COOLER & FOUNTAINS",// Aligned with productCategories.ts title
+  "PUBLIC UTILITY SYSTEMS",  // Aligned with productCategories.ts title
+  "COMMERCIAL/INDUSTRIAL PLANTS", // Aligned with productCategories.ts title
 ];
+
 
 // Data for all products with their categories and mounting types
+// NOTE: In a real app, this data would likely be fetched based on the filters
+// or from a central source, not hardcoded here.
+// >>> IMPORTANT: Ensure the 'category' and 'mountingType' values in this data EXACTLY match
+// the strings in the updated categoryOptions and mountingOptions arrays respectively.
 const allProducts = [
   {
     name: "BLUWAE ASSISTIFLOW",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61bed0a3-d40d-46ec-2edd-a3fb53abe400/public",
-    category: "DRINKING WATER STATION",
-    mountingType: "FREE-STANDING",
+    category: "DRINKING WATER STATIONS", // Must match categoryOptions value
+    mountingType: "Free Standing", // Must match mountingOptions value
   },
   {
     name: "BLUWAE POS",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6a2acaf3-4e68-43ff-260a-e504100a5500/public",
-    category: "DRINKING WATER STATION",
-    mountingType: "FREE-STANDING",
+    category: "DRINKING WATER STATIONS",
+    mountingType: "Free Standing",
   },
   {
     name: "BLUWAE ENKI FS",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ea4dd229-e02c-4eb6-18d4-dbe962b36f00/public",
-    category: "DRINKING WATER STATION",
-    mountingType: "FREE-STANDING",
+    category: "DRINKING WATER STATIONS",
+    mountingType: "Free Standing",
   },
   {
     name: "BLUWAE ROM FS",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3cae59a6-2900-4329-3fc1-dafd4cfe4900/public",
-    category: "DRINKING WATER STATION",
-    mountingType: "FREE-STANDING",
+    category: "DRINKING WATER STATIONS",
+    mountingType: "Free Standing",
   },
   {
     name: "BLUWAE VAR FS",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/801e38f9-4666-4511-1462-1f8767824e00/public",
-    category: "DRINKING WATER STATION",
-    mountingType: "FREE-STANDING",
+    category: "DRINKING WATER STATIONS",
+    mountingType: "Free Standing",
   },
   {
     name: "BLUWAE REVA",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f5bd039-db57-440a-a392-1934736b8800/public",
-    category: "DRINKING WATER STATION",
-    mountingType: "FREE-STANDING",
+    category: "DRINKING WATER STATIONS",
+    mountingType: "Free Standing",
   },
   {
     name: "BLUWAE VAR CT",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1bc69e19-64e2-4b96-3158-916313af6300/public",
-    category: "DRINKING WATER STATION",
-    mountingType: "COUNTER-TOP",
+    category: "DRINKING WATER STATIONS",
+    mountingType: "Counter Top", // Must match mountingOptions value
   },
   {
     name: "BLUWAE ENKI CT",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/24affdcc-bfce-4544-a951-4ec4de4fb500/public",
-    category: "DRINKING WATER STATION",
-    mountingType: "COUNTER-TOP",
+    category: "DRINKING WATER STATIONS",
+    mountingType: "Counter Top",
   },
   {
     name: "BLUWAE ROM CT",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/636ec9ab-40e5-4d1e-cabd-d17e14278a00/public",
-    category: "DRINKING WATER STATION",
-    mountingType: "COUNTER-TOP",
+    category: "DRINKING WATER STATIONS",
+    mountingType: "Counter Top",
   },
   {
     name: "TRUBLU AENON",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ddbc704a-4273-46d8-0f4c-6a4cb44db600/public",
     category: "WATER DISPENSER",
-    mountingType: "FREE-STANDING",
+    mountingType: "Free Standing",
   },
   {
     name: "TRUBLU GAMMA",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7abb9117-87ea-4b69-59d9-4508515d8700/public",
     category: "WATER DISPENSER",
-    mountingType: "FREE-STANDING",
+    mountingType: "Free Standing",
   },
   {
     name: "TRUBLU DELTA",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bdd2aab0-0a69-4f74-551f-b9fcf45ada00/public",
     category: "WATER DISPENSER",
-    mountingType: "FREE-STANDING",
+    mountingType: "Free Standing",
   },
   {
     name: "TRUBLU ALFA 100",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4083db4d-1dbc-477b-d4d3-753ff8f39800/public",
     category: "WATER DISPENSER",
-    mountingType: "FREE-STANDING",
+    mountingType: "Free Standing",
   },
   {
     name: "TRUBLU ALFA TL",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4083db4d-1dbc-477b-d4d3-753ff8f39800/public",
     category: "WATER DISPENSER",
-    mountingType: "FREE-STANDING",
+    mountingType: "Free Standing",
   },
   {
     name: "TRUBLU ALFA BL",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4083db4d-1dbc-477b-d4d3-753ff8f39800/public",
     category: "WATER DISPENSER",
-    mountingType: "FREE-STANDING",
+    mountingType: "Free Standing",
   },
   {
     name: "TRUBLU LAGOON",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/500e920c-fb2e-43e9-fca0-db0c5d5d0f00/public",
     category: "WATER DISPENSER",
-    mountingType: "FREE-STANDING",
+    mountingType: "Free Standing",
   },
   {
     name: "TRUBLU ALFA CT",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/90990ee2-c40a-4116-573d-7f4ea188a700/public",
     category: "WATER DISPENSER",
-    mountingType: "COUNTER-TOP",
+    mountingType: "Counter Top",
   },
   {
     name: "Piper",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1d3b640-01ba-420a-bf17-b3145d223d00/public",
     category: "DRINKING WATER FAUCETS",
-    mountingType: "COUNTER-TOP",
+    mountingType: "Counter Top",
   },
   {
     name: "Indus",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5e3fd671-62bf-461f-f624-94099f554500/public",
     category: "DRINKING WATER FAUCETS",
-    mountingType: "COUNTER-TOP",
+    mountingType: "Counter Top",
   },
   {
     name: "Touch",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/374ef4c2-7b68-4f33-3fc9-7d4d3fc1ca00/public",
     category: "DRINKING WATER FAUCETS",
-    mountingType: "COUNTER-TOP",
+    mountingType: "Counter Top",
   },
   {
     name: "Moses",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e1ab0b09-5a47-41c8-eca8-f74bb2ab8b00/public",
     category: "DRINKING WATER FAUCETS",
-    mountingType: "COUNTER-TOP",
+    mountingType: "Counter Top",
   },
   {
     name: "TRX.TL",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e84e2022-b6ea-4f34-bb4d-3deb20d69700/public",
     category: "DRINKING WATER FAUCETS",
-    mountingType: "COUNTER-TOP",
+    mountingType: "Counter Top",
   },
   {
     name: "HKN",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/528c39ab-e15a-4b6e-8f1e-a9f7f09ef100/public",
     category: "DRINKING WATER FAUCETS",
-    mountingType: "COUNTER-TOP",
+    mountingType: "Counter Top",
   },
   {
     name: "YAMI",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/63c9d062-1079-41e1-6eb1-ca4c88045400/public",
     category: "WATER COOLER & FOUNTAINS",
-    mountingType: "FOUNTAIN",
+    mountingType: "Fountains", // Must match mountingOptions value
   },
   {
     name: "PLUSULTRA",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0aced016-3f7d-4d41-7cf5-41b6930eac00/public",
     category: "WATER COOLER & FOUNTAINS",
-    mountingType: "FOUNTAIN",
+    mountingType: "Fountains",
   },
   {
     name: "AQUA",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/20abb608-f632-4157-ce38-12646a5c8a00/public",
     category: "PUBLIC UTILITY SYSTEMS",
-    mountingType: "FREE-STANDING",
+    mountingType: "Free Standing",
   },
   {
     name: "HYDROBANKSERIES",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/822535eb-d4c2-472f-254f-8b4685410400/public",
     category: "PUBLIC UTILITY SYSTEMS",
-    mountingType: "FREE-STANDING",
+    mountingType: "Free Standing",
   },
   {
     name: "WATERMAKER",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fa2654df-e6ca-4b14-34d8-d52f1d4c5800/public",
     category: "COMMERCIAL/INDUSTRIAL PLANTS",
-    mountingType: "FREE-STANDING",
+    mountingType: "Free Standing",
   },
 ];
 
+// Helper function to map URL parameter values (from productCategories IDs)
+// to the display values used in the filters (matching productCategories titles/names).
+const mapUrlParamToFilterOption = (paramValue: string | null): { category: string | null, mounting: string | null } => {
+  const mapping: Record<string, { category?: string, mounting?: string }> = {
+    // Category Mappings (from productCategories ID to productCategories Title)
+    "drinking-water-stations": { category: "DRINKING WATER STATIONS" }, // Corrected to match title
+    "water-dispenser": { category: "WATER DISPENSER" },
+    "drinking-water-faucets": { category: "DRINKING WATER FAUCETS" },
+    "water-cooler": { category: "WATER COOLER & FOUNTAINS" },
+    "public-utility-systems": { category: "PUBLIC UTILITY SYSTEMS" },
+    "commercial-industrial-plants": { category: "COMMERCIAL/INDUSTRIAL PLANTS" },
+
+    // Mounting Type Mappings (from productCategories mountingType ID to productCategories Name)
+    "free-standing": { mounting: "Free Standing" }, // Corrected to match name
+    "counter-top": { mounting: "Counter Top" },  // Corrected to match name
+    "fountains": { mounting: "Fountains" },    // Corrected to match name (plural ID to plural Name)
+    "indoors": { mounting: "Indoors" },      // Corrected to match name (plural ID to plural Name)
+    // Add other specific mappings if needed, ensuring they map IDs to Names
+  };
+
+  // Find the mapping based on the URL parameter value
+  const mappedValues = mapping[paramValue || ''];
+
+  if (mappedValues) {
+    // Return the mapped category and mounting type
+    return {
+      category: mappedValues.category || null,
+      mounting: mappedValues.mounting || null
+    };
+  }
+
+  // If no specific mapping is found, return null for both
+  console.warn(`URL parameter "${paramValue}" did not map to a valid filter option.`);
+  return { category: null, mounting: null };
+};
+
+
 const Home: FC = () => {
+  // Get URL search parameters
+  // This hook allows you to read the query parameters from the current URL.
+  const searchParams = useSearchParams();
+
   // State for each dropdown visibility
   const [showMountingDropdown, setShowMountingDropdown] = useState(false);
   const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
 
-  // State for selected filter options
+  // State for selected filter options - Initialized as empty arrays
   const [selectedMountingTypes, setSelectedMountingTypes] = useState<string[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
@@ -212,6 +261,48 @@ const Home: FC = () => {
 
   const categoryDropdownRef = useRef<HTMLDivElement>(null);
   const categoryButtonRef = useRef<HTMLButtonElement>(null);
+
+  // >>> IMPORTANT: This useEffect hook runs when the component mounts (on initial page load)
+  // and whenever the searchParams object changes (e.g., if the URL query parameters change).
+  // It reads the parameters and updates the filter state.
+  useEffect(() => {
+    const categoryParam = searchParams.get('category'); // Get the 'category' parameter from the URL
+    const mountingParam = searchParams.get('mounting'); // Get the 'mounting' parameter from the URL
+
+    const initialCategories: string[] = [];
+    const initialMountingTypes: string[] = [];
+
+    // Map URL parameters to filter options using the improved mapping function
+    const mappedCategory = mapUrlParamToFilterOption(categoryParam).category;
+    if (mappedCategory) {
+      initialCategories.push(mappedCategory);
+    }
+
+    const mappedMounting = mapUrlParamToFilterOption(mountingParam).mounting;
+     if (mappedMounting) {
+      initialMountingTypes.push(mappedMounting);
+    }
+
+    // Update state only if there are parameters to apply
+    // This is where the state variables that control the filters are updated.
+    // Use functional updates to ensure you're working with the latest state
+    if (initialCategories.length > 0 || initialMountingTypes.length > 0) {
+        setSelectedCategories(initialCategories);
+        setSelectedMountingTypes(initialMountingTypes);
+
+        // Optionally, open the dropdowns if filters were applied via URL
+        // This might depend on desired UI behavior
+        // if (initialCategories.length > 0) setShowCategoryDropdown(true);
+        // if (initialMountingTypes.length > 0) setShowMountingDropdown(true);
+    } else {
+        // If no parameters are present, ensure filters are reset
+        setSelectedCategories([]);
+        setSelectedMountingTypes([]);
+    }
+
+
+  }, [searchParams]); // Dependency array includes searchParams so effect re-runs if URL changes
+
 
   // Effect to handle clicking outside ANY open dropdown
   useEffect(() => {
@@ -272,21 +363,27 @@ const Home: FC = () => {
         isChecked ? [...prevSelected, option] : prevSelected.filter((item) => item !== option)
       );
     }
+    // NOTE: You might want to update the URL here as well to reflect the selected filters
+    // This would make the filtered view shareable and bookmarkable.
   };
 
   // Function to filter products based on selected options
   const filterProducts = () => {
+    // If no filters are selected, show all products
     if (selectedMountingTypes.length === 0 && selectedCategories.length === 0) {
-      return allProducts; // Show all products if no filters are selected
+      return allProducts;
     }
 
+    // Filter products based on selected categories AND selected mounting types
     return allProducts.filter((product) => {
-      const passesMountingFilter =
-        selectedMountingTypes.length === 0 || selectedMountingTypes.includes(product.mountingType);
       const passesCategoryFilter =
         selectedCategories.length === 0 || selectedCategories.includes(product.category);
+      const passesMountingFilter =
+        selectedMountingTypes.length === 0 || selectedMountingTypes.includes(product.mountingType);
 
-      return passesMountingFilter && passesCategoryFilter;
+      // Product must match AT LEAST one selected category (if any are selected)
+      // AND AT LEAST one selected mounting type (if any are selected)
+      return passesCategoryFilter && passesMountingFilter;
     });
   };
 
@@ -341,7 +438,7 @@ const Home: FC = () => {
           type="checkbox"
           className="form-checkbox"
           style={{ accentColor: "#000" }}
-          checked={selectedOptions.includes(option)}
+          checked={selectedOptions.includes(option)} // Check if option is in selected state
           onChange={(e) => handleFilterChange(option, type, e.target.checked)}
         />
         <label
@@ -367,8 +464,8 @@ const Home: FC = () => {
   return (
     <main>
       {/* Normal Header */}
-      <header className={`w-full relative z-10 mb-5 px-[9.72%]`}> 
-          <div> 
+      <header className={`w-full relative z-10 mb-5 px-[9.72%]`}>
+          <div>
             {/* Top Row: Navigation */}
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
@@ -532,7 +629,7 @@ const Home: FC = () => {
 
         <div
           className="flex items-center gap-4"
-          // style={{ justifyContent: "space-between" }}
+          style={{ justifyContent: "space-between" }} // Restored space-between for button layout
         >
           {buttons.map((btn, index) => {
             // --- FILTER BY Button (Always Black Background) ---
@@ -563,15 +660,15 @@ const Home: FC = () => {
             // --- CATEGORY Button (Dropdown) ---
             else if (btn.label === "CATEGORY") {
               return (
-                <div key={index} className="relative" style={{ width: "23%" }}>
+                <div key={index} className="relative" style={{ width: "23%" }}> {/* Adjusted width */}
                   <button
                     ref={categoryButtonRef}
                     style={{
                       ...baseButtonStyle, // Start with base styles (transparent/black)
                       flex: "unset",
                       width: "100%",
-                      // Conditionally apply black background and white font if dropdown is open
-                      ...(showCategoryDropdown ? { backgroundColor: "#000", color: "#fff" } : {}),
+                      // Conditionally apply black background and white font if dropdown is open OR if category filter is selected
+                      ...(showCategoryDropdown || selectedCategories.length > 0 ? { backgroundColor: "#000", color: "#fff" } : {}),
                     }}
                     onClick={() => setShowCategoryDropdown((prev) => !prev)}
                     className="w-full"
@@ -621,15 +718,15 @@ const Home: FC = () => {
             // --- MOUNTING TYPE Button (Dropdown) ---
             else if (btn.label === "MOUNTING TYPE") {
               return (
-                <div key={index} className="relative" style={{ width: "16%" }}>
+                <div key={index} className="relative" style={{ width: "23%" }}> {/* Adjusted width */}
                   <button
                     ref={mountingButtonRef}
                     style={{
                       ...baseButtonStyle, // Start with base styles (transparent/black)
                       flex: "unset",
                       width: "100%",
-                      // Conditionally apply black background and white font if dropdown is open
-                      ...(showMountingDropdown ? { backgroundColor: "#000", color: "#fff" } : {}),
+                       // Conditionally apply black background and white font if dropdown is open OR if mounting filter is selected
+                      ...(showMountingDropdown || selectedMountingTypes.length > 0 ? { backgroundColor: "#000", color: "#fff" } : {}),
                     }}
                     onClick={() => setShowMountingDropdown((prev) => !prev)}
                     className="w-full"
@@ -677,21 +774,25 @@ const Home: FC = () => {
               );
             }
             // --- INSTALLATION TYPE Button (Transparent Background) ---
-            // return (
-            //   <button
-            //     key={index}
-            //     style={{
-            //       ...baseButtonStyle, // Start with base styles (transparent/black)
-            //       flex: 1,
-            //       maxWidth: "23%",
-            //     }}
-            //     // No onClick functionality or state change needed for styling based on prompt interpretation
-            //   >
-            //     <span className="flex items-center">
-            //       {btn.label}
-            //     </span>
-            //   </button>
-            // );
+             else if (btn.label === "INSTALLATION TYPE") { // Added condition for Installation Type
+                return (
+                  <button
+                    key={index}
+                    style={{
+                      ...baseButtonStyle, // Start with base styles (transparent/black)
+                      flex: 1,
+                      maxWidth: "23%", // Retains maxWidth
+                    }}
+                    // No onClick functionality or state change needed for styling based on prompt interpretation
+                  >
+                    <span className="flex items-center">
+                      {btn.label}
+                    </span>
+                  </button>
+                );
+             }
+             // Default case for any other buttons (shouldn't happen with current 'buttons' array)
+             return null;
           })}
         </div>
 
@@ -708,11 +809,11 @@ const Home: FC = () => {
         <div style={{ height: "80px" }} />
 
         <div
-          className="grid grid-cols-3"
-          style={{
-            rowGap: "120px",
-            columnGap: "2.7%",
-          }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" // Added responsive grid classes and gap
+          // style={{
+          //   rowGap: "120px", // Removed inline rowGap to use Tailwind gap-8
+          //   columnGap: "2.7%", // Removed inline columnGap to use Tailwind gap-8
+          // }}
         >
           {filteredProducts.map((product, index) => (
             // Wrap the product item in a Link component
@@ -724,7 +825,7 @@ const Home: FC = () => {
               {/* The entire product item becomes clickable */}
               <div className="flex flex-col items-center cursor-pointer"> {/* Added cursor-pointer for visual cue */}
                 {/* Wrap image in a container to apply the zoom effect */}
-                <div className="overflow-hidden">
+                <div className="overflow-hidden rounded-md"> {/* Added rounded-md */}
                   <div className="transition-transform duration-1000 ease-in-out hover:scale-110">
                     <Image
                       src={product.src}
@@ -755,6 +856,12 @@ const Home: FC = () => {
             </Link>
           ))}
         </div>
+         {/* Message if no products match the filters */}
+         {filteredProducts.length === 0 && (
+            <div className="text-center text-gray-600 mt-8">
+              No products found matching the selected filters.
+            </div>
+         )}
       </section>
 
       {/* More Products SECTION */}
