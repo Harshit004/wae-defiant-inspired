@@ -4,7 +4,7 @@ import { FC, useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Footer from "@/components/footer";
 import RelatedCard from "@/components/related-card";
-import Link from "next/link";
+import Link from "next/link"; // Import Link
 
 // Options for the Mounting Type dropdown
 const mountingOptions = [
@@ -25,11 +25,186 @@ const categoryOptions = [
   "COMMERCIAL/INDUSTRIAL PLANTS",
 ];
 
+// Data for all products with their categories and mounting types
+const allProducts = [
+  {
+    name: "BLUWAE ASSISTIFLOW",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61bed0a3-d40d-46ec-2edd-a3fb53abe400/public",
+    category: "DRINKING WATER STATION",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "BLUWAE POS",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6a2acaf3-4e68-43ff-260a-e504100a5500/public",
+    category: "DRINKING WATER STATION",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "BLUWAE ENKI FS",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ea4dd229-e02c-4eb6-18d4-dbe962b36f00/public",
+    category: "DRINKING WATER STATION",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "BLUWAE ROM FS",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3cae59a6-2900-4329-3fc1-dafd4cfe4900/public",
+    category: "DRINKING WATER STATION",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "BLUWAE VAR FS",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/801e38f9-4666-4511-1462-1f8767824e00/public",
+    category: "DRINKING WATER STATION",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "BLUWAE REVA",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f5bd039-db57-440a-a392-1934736b8800/public",
+    category: "DRINKING WATER STATION",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "BLUWAE VAR CT",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1bc69e19-64e2-4b96-3158-916313af6300/public",
+    category: "DRINKING WATER STATION",
+    mountingType: "COUNTER-TOP",
+  },
+  {
+    name: "BLUWAE ENKI CT",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/24affdcc-bfce-4544-a951-4ec4de4fb500/public",
+    category: "DRINKING WATER STATION",
+    mountingType: "COUNTER-TOP",
+  },
+  {
+    name: "BLUWAE ROM CT",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/636ec9ab-40e5-4d1e-cabd-d17e14278a00/public",
+    category: "DRINKING WATER STATION",
+    mountingType: "COUNTER-TOP",
+  },
+  {
+    name: "TRUBLU AENON",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ddbc704a-4273-46d8-0f4c-6a4cb44db600/public",
+    category: "WATER DISPENSER",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "TRUBLU GAMMA",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7abb9117-87ea-4b69-59d9-4508515d8700/public",
+    category: "WATER DISPENSER",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "TRUBLU DELTA",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bdd2aab0-0a69-4f74-551f-b9fcf45ada00/public",
+    category: "WATER DISPENSER",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "TRUBLU ALFA 100",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4083db4d-1dbc-477b-d4d3-753ff8f39800/public",
+    category: "WATER DISPENSER",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "TRUBLU ALFA TL",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4083db4d-1dbc-477b-d4d3-753ff8f39800/public",
+    category: "WATER DISPENSER",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "TRUBLU ALFA BL",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4083db4d-1dbc-477b-d4d3-753ff8f39800/public",
+    category: "WATER DISPENSER",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "TRUBLU LAGOON",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/500e920c-fb2e-43e9-fca0-db0c5d5d0f00/public",
+    category: "WATER DISPENSER",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "TRUBLU ALFA CT",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/90990ee2-c40a-4116-573d-7f4ea188a700/public",
+    category: "WATER DISPENSER",
+    mountingType: "COUNTER-TOP",
+  },
+  {
+    name: "Piper",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1d3b640-01ba-420a-bf17-b3145d223d00/public",
+    category: "DRINKING WATER FAUCETS",
+    mountingType: "COUNTER-TOP",
+  },
+  {
+    name: "Indus",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5e3fd671-62bf-461f-f624-94099f554500/public",
+    category: "DRINKING WATER FAUCETS",
+    mountingType: "COUNTER-TOP",
+  },
+  {
+    name: "Touch",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/374ef4c2-7b68-4f33-3fc9-7d4d3fc1ca00/public",
+    category: "DRINKING WATER FAUCETS",
+    mountingType: "COUNTER-TOP",
+  },
+  {
+    name: "Moses",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e1ab0b09-5a47-41c8-eca8-f74bb2ab8b00/public",
+    category: "DRINKING WATER FAUCETS",
+    mountingType: "COUNTER-TOP",
+  },
+  {
+    name: "TRX.TL",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e84e2022-b6ea-4f34-bb4d-3deb20d69700/public",
+    category: "DRINKING WATER FAUCETS",
+    mountingType: "COUNTER-TOP",
+  },
+  {
+    name: "HKN",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/528c39ab-e15a-4b6e-8f1e-a9f7f09ef100/public",
+    category: "DRINKING WATER FAUCETS",
+    mountingType: "COUNTER-TOP",
+  },
+  {
+    name: "YAMI",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/63c9d062-1079-41e1-6eb1-ca4c88045400/public",
+    category: "WATER COOLER & FOUNTAINS",
+    mountingType: "FOUNTAIN",
+  },
+  {
+    name: "PLUSULTRA",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0aced016-3f7d-4d41-7cf5-41b6930eac00/public",
+    category: "WATER COOLER & FOUNTAINS",
+    mountingType: "FOUNTAIN",
+  },
+  {
+    name: "AQUA",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/20abb608-f632-4157-ce38-12646a5c8a00/public",
+    category: "PUBLIC UTILITY SYSTEMS",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "HYDROBANKSERIES",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/822535eb-d4c2-472f-254f-8b4685410400/public",
+    category: "PUBLIC UTILITY SYSTEMS",
+    mountingType: "FREE-STANDING",
+  },
+  {
+    name: "WATERMAKER",
+    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fa2654df-e6ca-4b14-34d8-d52f1d4c5800/public",
+    category: "COMMERCIAL/INDUSTRIAL PLANTS",
+    mountingType: "FREE-STANDING",
+  },
+];
 
 const Home: FC = () => {
-  // State for each dropdown
+  // State for each dropdown visibility
   const [showMountingDropdown, setShowMountingDropdown] = useState(false);
   const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
+
+  // State for selected filter options
+  const [selectedMountingTypes, setSelectedMountingTypes] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   // Refs for the dropdowns and their buttons to detect outside clicks
   const mountingDropdownRef = useRef<HTMLDivElement>(null);
@@ -38,17 +213,18 @@ const Home: FC = () => {
   const categoryDropdownRef = useRef<HTMLDivElement>(null);
   const categoryButtonRef = useRef<HTMLButtonElement>(null);
 
-
   // Effect to handle clicking outside ANY open dropdown
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
 
       // Check if the click was inside the Mounting dropdown area (button + dropdown)
-      const clickedInsideMountingArea = mountingButtonRef.current?.contains(target) || mountingDropdownRef.current?.contains(target);
+      const clickedInsideMountingArea =
+        mountingButtonRef.current?.contains(target) || mountingDropdownRef.current?.contains(target);
 
       // Check if the click was inside the Category dropdown area (button + dropdown)
-      const clickedInsideCategoryArea = categoryButtonRef.current?.contains(target) || categoryDropdownRef.current?.contains(target);
+      const clickedInsideCategoryArea =
+        categoryButtonRef.current?.contains(target) || categoryDropdownRef.current?.contains(target);
 
       // If the click was outside BOTH areas AND the Mounting dropdown is open, close it
       if (showMountingDropdown && !clickedInsideMountingArea) {
@@ -57,17 +233,17 @@ const Home: FC = () => {
 
       // If the click was outside BOTH areas AND the Category dropdown is open, close it
       if (showCategoryDropdown && !clickedInsideCategoryArea) {
-         setShowCategoryDropdown(false);
+        setShowCategoryDropdown(false);
       }
 
-       // Close the *other* dropdown if one button is clicked.
-       // This ensures only one dropdown is open at a time.
-       if (showMountingDropdown && !clickedInsideMountingArea && clickedInsideCategoryArea) {
-            setShowMountingDropdown(false);
-       }
-        if (showCategoryDropdown && !clickedInsideCategoryArea && clickedInsideMountingArea) {
-            setShowCategoryDropdown(false);
-       }
+      // Close the *other* dropdown if one button is clicked.
+      // This ensures only one dropdown is open at a time.
+      if (showMountingDropdown && !clickedInsideMountingArea && clickedInsideCategoryArea) {
+        setShowMountingDropdown(false);
+      }
+      if (showCategoryDropdown && !clickedInsideCategoryArea && clickedInsideMountingArea) {
+        setShowCategoryDropdown(false);
+      }
     };
 
     // Add the event listener when EITHER dropdown is shown
@@ -81,6 +257,41 @@ const Home: FC = () => {
     };
   }, [showMountingDropdown, showCategoryDropdown]);
 
+  // Function to handle checkbox changes for filters
+  const handleFilterChange = (
+    option: string,
+    type: "mounting" | "category",
+    isChecked: boolean
+  ) => {
+    if (type === "mounting") {
+      setSelectedMountingTypes((prevSelected) =>
+        isChecked ? [...prevSelected, option] : prevSelected.filter((item) => item !== option)
+      );
+    } else if (type === "category") {
+      setSelectedCategories((prevSelected) =>
+        isChecked ? [...prevSelected, option] : prevSelected.filter((item) => item !== option)
+      );
+    }
+  };
+
+  // Function to filter products based on selected options
+  const filterProducts = () => {
+    if (selectedMountingTypes.length === 0 && selectedCategories.length === 0) {
+      return allProducts; // Show all products if no filters are selected
+    }
+
+    return allProducts.filter((product) => {
+      const passesMountingFilter =
+        selectedMountingTypes.length === 0 || selectedMountingTypes.includes(product.mountingType);
+      const passesCategoryFilter =
+        selectedCategories.length === 0 || selectedCategories.includes(product.category);
+
+      return passesMountingFilter && passesCategoryFilter;
+    });
+  };
+
+  // Get the filtered list of products
+  const filteredProducts = filterProducts();
 
   // Common button style based on the typography instructions.
   const buttonStyle: React.CSSProperties = {
@@ -105,42 +316,6 @@ const Home: FC = () => {
     { label: "INSTALLATION TYPE", background: "#000", color: "#fff" },
   ];
 
-  // Sample data for product grid
-  const products = [
-    {
-      name: "VAR",
-      src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0026821b-7053-4120-f885-bdca17c8d800/public",
-    },
-    {
-      name: "ENKI",
-      src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fe2b0283-da02-42aa-f25e-ab4e2539a200/public",
-    },
-    {
-      name: "ROM GRANDE",
-      src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/014b7943-c166-40b3-fdc4-6aaf851d6600/public",
-    },
-    {
-      name: "ASSISTFLOW",
-      src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ff43a14b-6822-4fc1-866c-31af48ae8e00/public",
-    },
-    {
-      name: "TRX.TL",
-      src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3a7dbc8a-edd3-4a15-ee1d-aa8ecee81c00/public",
-    },
-    {
-      name: "PIPER",
-      src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aee34c4-ed53-4d96-fde0-f5c2286b6b00/public",
-    },
-    {
-      name: "ROBUSTO",
-      src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/17d05e57-4f6c-4cae-75b0-c4a774c09400/public",
-    },
-    {
-      name: "ROBUSTO",
-      src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/349ed323-95cf-470a-55ca-98ba8093eb00/public",
-    },
-  ];
-
   // Arrays for menu items
   const productsItems = [
     { text: "This is Us", href: "/inside-wae" },
@@ -154,35 +329,37 @@ const Home: FC = () => {
   ];
 
   // Helper function to render dropdown content (checkboxes)
-  const renderDropdownOptions = (options: string[], type: 'mounting' | 'category') => {
-      return options.map((option, idx) => (
-        <div key={idx} className="flex items-center mb-2">
-          <input
-            id={`${type}-option-${idx}`}
-            type="checkbox"
-            className="form-checkbox"
-            style={{ accentColor: "#000" }}
-          />
-          <label
-            htmlFor={`${type}-option-${idx}`}
-            style={{
-              fontFamily: "Inter Tight",
-              fontWeight: 400,
-              fontSize: "12px",
-              lineHeight: "140%",
-              letterSpacing: "0%",
-              verticalAlign: "middle",
-              marginLeft: "45px",
-              whiteSpace: "nowrap",
-              cursor: "pointer" // Indicate it's clickable
-            }}
-          >
-            {option}
-          </label>
-        </div>
-      ));
-  }
-
+  const renderDropdownOptions = (options: string[], type: "mounting" | "category") => {
+    const selectedOptions = type === "mounting" ? selectedMountingTypes : selectedCategories;
+    return options.map((option, idx) => (
+      <div key={idx} className="flex items-center mb-2">
+        <input
+          id={`${type}-option-${idx}`}
+          type="checkbox"
+          className="form-checkbox"
+          style={{ accentColor: "#000" }}
+          checked={selectedOptions.includes(option)}
+          onChange={(e) => handleFilterChange(option, type, e.target.checked)}
+        />
+        <label
+          htmlFor={`${type}-option-${idx}`}
+          style={{
+            fontFamily: "Inter Tight",
+            fontWeight: 400,
+            fontSize: "12px",
+            lineHeight: "140%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+            marginLeft: "45px",
+            whiteSpace: "nowrap",
+            cursor: "pointer", // Indicate it's clickable
+          }}
+        >
+          {option}
+        </label>
+      </div>
+    ));
+  };
 
   return (
     <main>
@@ -347,7 +524,10 @@ const Home: FC = () => {
         {/* Gap of 120px after the hero */}
         <div style={{ height: "120px" }} />
 
-        <div className="flex items-center gap-4" style={{ justifyContent: "space-between" }}>
+        <div
+          className="flex items-center gap-4"
+          style={{ justifyContent: "space-between" }}
+        >
           {buttons.map((btn, index) => {
             // --- FILTER BY Button ---
             if (btn.label === "FILTER BY") {
@@ -376,8 +556,10 @@ const Home: FC = () => {
             }
             // --- CATEGORY Button (Dropdown) ---
             else if (btn.label === "CATEGORY") {
-                 return (
-                <div key={index} className="relative" style={{ width: "23%" }}> {/* maxWidth removed */}
+              return (
+                <div key={index} className="relative" style={{ width: "23%" }}>
+                  {" "}
+                  {/* maxWidth removed */}
                   <button
                     ref={categoryButtonRef} // Attach category ref
                     style={{
@@ -427,7 +609,8 @@ const Home: FC = () => {
                       overflowY: "auto",
                     }}
                   >
-                    {renderDropdownOptions(categoryOptions, 'category')} {/* Render category options */}
+                    {renderDropdownOptions(categoryOptions, "category")}{" "}
+                    {/* Render category options */}
                   </div>
                 </div>
               );
@@ -435,7 +618,9 @@ const Home: FC = () => {
             // --- MOUNTING TYPE Button (Dropdown) ---
             else if (btn.label === "MOUNTING TYPE") {
               return (
-                <div key={index} className="relative" style={{ width: "16%" }}> {/* maxWidth removed */}
+                <div key={index} className="relative" style={{ width: "16%" }}>
+                  {" "}
+                  {/* maxWidth removed */}
                   <button
                     ref={mountingButtonRef} // Attach mounting ref
                     style={{
@@ -485,7 +670,8 @@ const Home: FC = () => {
                       overflowY: "auto",
                     }}
                   >
-                     {renderDropdownOptions(mountingOptions, 'mounting')} {/* Render mounting options */}
+                    {renderDropdownOptions(mountingOptions, "mounting")}{" "}
+                    {/* Render mounting options */}
                   </div>
                 </div>
               );
@@ -530,37 +716,45 @@ const Home: FC = () => {
             columnGap: "2.7%",
           }}
         >
-          {products.map((product, index) => (
-            <div key={index} className="flex flex-col items-center">
-              {/* Wrap image in a container to apply the zoom effect */}
-              <div className="overflow-hidden">
-                <div className="transition-transform duration-1000 ease-in-out hover:scale-110">
-                  <Image
-                    src={product.src}
-                    alt={product.name}
-                    width={360}
-                    height={360}
-                  />
+          {filteredProducts.map((product, index) => (
+            // Wrap the product item in a Link component
+            <Link
+              key={index}
+              href={`/products/${product.name.toLowerCase().replace(/ /g, "-")}`} // Placeholder URL
+              passHref // Use passHref with custom components
+            >
+              {/* The entire product item becomes clickable */}
+              <div className="flex flex-col items-center cursor-pointer"> {/* Added cursor-pointer for visual cue */}
+                {/* Wrap image in a container to apply the zoom effect */}
+                <div className="overflow-hidden">
+                  <div className="transition-transform duration-1000 ease-in-out hover:scale-110">
+                    <Image
+                      src={product.src}
+                      alt={product.name}
+                      width={360}
+                      height={360}
+                    />
+                  </div>
+                </div>
+                {/* 24px gap before product name */}
+                <div style={{ height: "24px" }} />
+                <div
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "140%",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    verticalAlign: "middle",
+                    textTransform: "uppercase",
+                  }}
+                  className="related-card-title" // Keep existing styling
+                >
+                  {product.name}
                 </div>
               </div>
-              {/* 24px gap before product name */}
-              <div style={{ height: "24px" }} />
-              <div
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  lineHeight: "140%",
-                  letterSpacing: "0%",
-                  textAlign: "center",
-                  verticalAlign: "middle",
-                  textTransform: "uppercase",
-                }}
-                className="related-card-title"
-              >
-                {product.name}
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
