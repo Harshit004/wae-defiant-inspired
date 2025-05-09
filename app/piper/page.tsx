@@ -87,7 +87,7 @@ const Home: FC = () => {
     { text: "Reimagine Work", href: "/careers" },
   ];
   const blueprintItems = [
-    { text: "Sustainability", href: "#" },
+    { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs2" },
   ];
@@ -478,15 +478,15 @@ const Home: FC = () => {
                 <ul className="">
                 <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Plug and Play Operation.
+                    Built with durable SS-304 stainless steel for heavy-duty performance.
                 </li>
                 <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Inbuilt 5 stages of purification.
+                    Integrated with under the counter(UTC) storage unit - Hydropac and RO/booster unit(optional).
                 </li>
                 <li className="flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Can be customized as per client needs.
+                    Designed as a zero-landfill product, prioritizing sustainability and environmental responsibility.
                 </li>
                 </ul>
             </div>

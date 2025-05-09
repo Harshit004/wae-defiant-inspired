@@ -87,7 +87,7 @@ const Home: FC = () => {
     { text: "Reimagine Work", href: "/careers" },
   ];
   const blueprintItems = [
-    { text: "Sustainability", href: "#" },
+    { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs2" },
   ];
@@ -364,7 +364,7 @@ const Home: FC = () => {
               marginBottom: "32px", // Assuming 16px gap between heading and buttons
             }}
           >
-            TRUBLU ALFA TL
+            TRUBLU ALFA BL
           </h2>
           <div className="flex gap-4 mb-[57px]">
             <HoverButton href="/product-category">

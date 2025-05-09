@@ -87,7 +87,7 @@ const Home: FC = () => {
     { text: "Reimagine Work", href: "/careers" },
   ];
   const blueprintItems = [
-    { text: "Sustainability", href: "#" },
+    { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs2" },
   ];
@@ -112,7 +112,7 @@ const Home: FC = () => {
   ];
 
   const specificationsData = [
-    { subtext1: "Variant", heading: "FS", subtext2: "VAR 150/ 100/ 50" },
+    { subtext1: "Variant", heading: "CT", subtext2: "VAR 150/ 100/ 50" },
     { subtext1: "Drip Try Capacity", heading: "1000ml", subtext2: "Milli Ltires" },
     { subtext1: "Hot Temperature", heading: "30°C- 80°C", subtext2: "Default 50°C" },
     { subtext1: "Cold Temperature", heading: "5°C- 24°C", subtext2: "Default 8°C" },

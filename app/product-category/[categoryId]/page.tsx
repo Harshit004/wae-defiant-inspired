@@ -79,7 +79,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
     { text: "Reimagine Work", href: "/careers" },
   ];
   const blueprintItems = [
-    { text: "Sustainability", href: "#" },
+    { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs2" },
   ];
@@ -378,7 +378,6 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
               )}
             </HoverButton>
           </Link>
-            
           </div>
         </div>
       </section>
