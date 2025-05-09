@@ -883,7 +883,7 @@ const ClientSideContent: FC = () => {
 
      // Base button style (transparent background, black font) - Defined here as it's used in this component
     const baseButtonStyle: React.CSSProperties = {
-      padding: "16px",
+      padding: "16px 8px",
       fontFamily: "'Inter Tight', sans-serif",
       fontWeight: 400,
       fontSize: "12px",
@@ -949,8 +949,8 @@ const ClientSideContent: FC = () => {
               <div style={{ height: "120px" }} />
 
               <div
-                className="flex items-center gap-4"
-                style={{ justifyContent: "space-between" }} // Restored space-between for button layout
+                className="flex gap-4"
+                // style={{ justifyContent: "justify-between" }} // Restored space-between for button layout
               >
                 {buttons.map((btn, index) => {
                   // --- FILTER BY Button (Always Black Background) ---
@@ -992,7 +992,7 @@ const ClientSideContent: FC = () => {
                             ...(showCategoryDropdown || selectedCategories.length > 0 ? { backgroundColor: "#000", color: "#fff" } : {}),
                           }}
                           onClick={() => setShowCategoryDropdown((prev) => !prev)}
-                          className="w-full"
+                          className="w-full px-2 flex justify-between"
                         >
                           <span className="flex gap-4 whitespace-nowrap">
                             {btn.label}
@@ -1039,7 +1039,7 @@ const ClientSideContent: FC = () => {
                   // --- MOUNTING TYPE Button (Dropdown) ---
                   else if (btn.label === "MOUNTING TYPE") {
                     return (
-                      <div key={index} className="relative" style={{ width: "23%" }}> {/* Adjusted width */}
+                      <div key={index} className="relative" style={{ width: "16%" }}> {/* Adjusted width */}
                         <button
                           ref={mountingButtonRef}
                           style={{
@@ -1095,23 +1095,23 @@ const ClientSideContent: FC = () => {
                     );
                   }
                   // --- INSTALLATION TYPE Button (Transparent Background) ---
-                   else if (btn.label === "INSTALLATION TYPE") { // Added condition for Installation Type
-                      return (
-                        <button
-                          key={index}
-                          style={{
-                            ...baseButtonStyle, // Start with base styles (transparent/black)
-                            flex: 1,
-                            maxWidth: "23%", // Retains maxWidth
-                          }}
-                          // No onClick functionality or state change needed for styling based on prompt interpretation
-                        >
-                          <span className="flex items-center">
-                            {btn.label}
-                          </span>
-                        </button>
-                      );
-                   }
+                  //  else if (btn.label === "INSTALLATION TYPE") { // Added condition for Installation Type
+                  //     return (
+                  //       <button
+                  //         key={index}
+                  //         style={{
+                  //           ...baseButtonStyle, // Start with base styles (transparent/black)
+                  //           flex: 1,
+                  //           maxWidth: "23%", // Retains maxWidth
+                  //         }}
+                  //         // No onClick functionality or state change needed for styling based on prompt interpretation
+                  //       >
+                  //         <span className="flex items-center">
+                  //           {btn.label}
+                  //         </span>
+                  //       </button>
+                  //     );
+                  //  }
                    // Default case for any other buttons (shouldn't happen with current 'buttons' array)
                    return null;
                 })}
