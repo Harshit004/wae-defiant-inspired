@@ -240,28 +240,28 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
           id="hero"
           className="relative h-screen w-full overflow-hidden mb-[140px]" // Hero has margin-bottom
         >
-           {/* Reverted to Image as in the provided code */}
+           {/* Dynamic Hero Image */}
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public"
-            alt="product category"
-             width={1440} // Adjusted width for better fit if max-width is 1440px
-             height={656} // Height from original image usage
-            className="object-cover w-full" // Use h-full to fill the 100vh section
+            src={category.heroImage || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public"} // Use dynamic link, fallback to a default if none exists
+            alt={`Hero image for ${category.title}`} // Dynamic alt text
+            width={1440}
+            height={656}
+            className="object-cover w-full h-full" // Added h-full as per original analysis note
           />
 
-          {/* Text and image overlays remain absolute within the hero */}
+          {/* Text and dynamic image overlays remain absolute within the hero */}
           <div
             className="absolute"
             style={{
               bottom: "30%",
-              right: "calc(3.473%)", // Adjust right position based on container padding
+              right: "calc(3.473%)",
               width: "393px",
               height: "159px",
             }}
           >
             <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
-              alt="Innovation meets design"
+              src={category.overlayImage || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"} // Use dynamic overlay link, fallback if needed
+              alt={`Overlay graphic for ${category.title}`} // Dynamic alt text for overlay
               width={393}
               height={159}
               className="object-contain"

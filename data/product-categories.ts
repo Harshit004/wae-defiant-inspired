@@ -56,9 +56,9 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    // Added image URLs for this category
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
+    // UPDATED hero image URL
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0d5b5913-42bc-4d1e-d92b-c26f7555cf00/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
   },
   "water-dispenser": {
     id: "water-dispenser",
@@ -98,9 +98,9 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    // Added image URLs for this category (using placeholders)
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
+    // UPDATED hero image URL
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/90da93f5-08cb-4654-46ca-0b368dfea000/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
   },
   "drinking-water-faucets": {
     id: "drinking-water-faucets",
@@ -135,9 +135,9 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-     // Added image URLs for this category (using placeholders)
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
+    // UPDATED hero image URL
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1523cf1-02e9-46c8-33d4-111060e15b00/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
   },
   "water-cooler": {
     id: "water-cooler",
@@ -177,9 +177,9 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-     // Added image URLs for this category (using placeholders)
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
+    // UPDATED hero image URL
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9e486003-1d7c-41d2-2842-56ff33c48100/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
   },
   "public-utility-systems": {
     id: "public-utility-systems",
@@ -214,9 +214,9 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/708253cf-b3b1-4b4c-e9ed-73f9c05aa400/public"
       }
     ],
-     // Added image URLs for this category (using placeholders)
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
+    // UPDATED hero image URL
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/171fde6f-9288-4e19-8bd5-afef67c25100/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
   },
   "commercial-industrial-plants": {
     id: "commercial-industrial-plants",
@@ -251,8 +251,8 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/708253cf-b3b1-4b4c-e9ed-73f9c05aa400/public"
       }
     ],
-     // Added image URLs for this category (using placeholders)
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
+    // UPDATED hero image URL
+    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f26e3982-8dd8-4ae7-8290-c4e4417cfe00/public",
+    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
   }
 };
