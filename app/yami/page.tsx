@@ -440,7 +440,7 @@ const Home: FC = () => {
                     <path d="M4.39307 23.0943C4.2264 23.0943 4.05378 23.0288 3.92878 22.9038C3.67283 22.6479 3.67283 22.2312 3.92878 21.9752L6.4645 19.4395C6.72046 19.1836 7.13713 19.1836 7.39308 19.4395C7.64903 19.6955 7.64903 20.1121 7.39308 20.3681L4.85736 22.9038C4.7264 23.0348 4.55974 23.0943 4.39307 23.0943Z" fill="#FF470D"></path>
                     <path d="M19.9048 7.58258C19.7381 7.58258 19.5655 7.5171 19.4405 7.3921C19.1845 7.13614 19.1845 6.71948 19.4405 6.46352L21.9762 3.9278C22.2322 3.67185 22.6488 3.67185 22.9048 3.9278C23.1607 4.18376 23.1607 4.60042 22.9048 4.85638L20.3691 7.3921C20.2381 7.52305 20.0715 7.58258 19.9048 7.58258Z" fill="#FF470D"></path>
                     </svg>
-                    <h6 className="text-lg">Hot</h6>
+                    <h6 className="text-[12px]">Hot</h6>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-3">
                     <svg width="25" height="27" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ fill: 'blue' }}>
@@ -457,7 +457,7 @@ const Home: FC = () => {
                     <path d="M12.4999 14.0726C12.2737 14.0726 12.0534 13.9536 11.9284 13.7452C11.7439 13.4298 11.857 13.031 12.1665 12.8464L23.1725 6.48927C23.488 6.3107 23.8868 6.41784 24.0713 6.72737C24.2559 7.04284 24.1428 7.44165 23.8332 7.62618L12.8273 13.9833C12.7261 14.0429 12.613 14.0726 12.4999 14.0726Z" fill="#63CAFF"></path>
                     <path d="M23.2081 11.6013C23.1545 11.6013 23.095 11.5954 23.0355 11.5775L18.6426 10.399C18.476 10.3513 18.3331 10.2442 18.2438 10.0954C18.1545 9.94657 18.1307 9.76204 18.1783 9.59538L19.351 5.21442C19.4462 4.86323 19.8093 4.65488 20.1545 4.75012C20.5057 4.84536 20.7141 5.20251 20.6188 5.5537L19.6129 9.29776L23.3688 10.3037C23.72 10.399 23.9284 10.7561 23.8331 11.1073C23.7557 11.399 23.4879 11.5954 23.1962 11.5954L23.2081 11.6013Z" fill="#63CAFF"></path>
                     </svg>
-                    <h6 className="text-lg">Chilled</h6>
+                    <h6 className="text-[12px]">Chilled</h6>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-3">
                     <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ fill: '#FFBC3A' }}>
@@ -465,22 +465,22 @@ const Home: FC = () => {
                     <path d="M10.8941 26.8349C4.98337 26.8349 0.173828 22.0254 0.173828 16.1146C0.173828 9.03129 10.0489 0.513394 10.4715 0.15625C10.7155 -0.0520835 11.0786 -0.0520835 11.3286 0.15625C11.7512 0.513394 21.6263 9.03129 21.6263 16.1146C21.6263 22.0254 16.8167 26.8349 10.906 26.8349H10.8941ZM10.8941 1.53126C9.00124 3.24555 1.48931 10.4182 1.48931 16.1087C1.48931 21.2932 5.70957 25.5135 10.8941 25.5135C16.0786 25.5135 20.2989 21.2932 20.2989 16.1087C20.2989 10.4182 12.781 3.24555 10.8941 1.53126Z" fill="#FFBC3A"></path>
                     <path d="M17.3643 16.1192C17.7456 16.1192 18.0548 15.8101 18.0548 15.4288C18.0548 15.0474 17.7456 14.7383 17.3643 14.7383C16.983 14.7383 16.6738 15.0474 16.6738 15.4288C16.6738 15.8101 16.983 16.1192 17.3643 16.1192Z" fill="#FFBC3A"></path>
                     </svg>
-                    <h6 className="text-lg">Ambient</h6>
+                    <h6 className="text-[12px]">Ambient</h6>
                 </div>
                 </div>
                 {/* <div className="mb-4 text-sm uppercase xl:mb-6 xl:max-w-[90%]">
                 A Floor-standing model designed for convenient placement on the ground.
                 </div> */}
                 <ul className="">
-                <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
+                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 xl:text-base">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                     Vandal-resistant, modular design with a stylish ZERO landfill body.
                 </li>
-                <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
+                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 xl:text-base">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                     Traditional floor-standing unit for flexible placement.
                 </li>
-                <li className="flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
+                <li className="flex items-center gap-3 text-[12px] uppercase last:mb-0 xl:text-base">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                     Optional integration with a remote water chiller.
                 </li>

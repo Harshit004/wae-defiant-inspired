@@ -373,7 +373,7 @@ export default function Home() {
         <motion.div
           style={{
             position: "sticky",
-            top: "9.72%",
+            top: "30%",
             zIndex: 1100,
             opacity: 1,
           }}
