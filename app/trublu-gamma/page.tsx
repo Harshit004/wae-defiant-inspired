@@ -94,24 +94,24 @@ const Home: FC = () => {
 
   const featuresData = [
     {
-      headline: "Clean and SAFE WATER",
+      headline: "Clean and Safe Water",
       subtext: "Lead-free, bacteria-resistant tubing ensures pure and contaminant-free hydration.",
     },
     {
-      headline: "Energy Smart",
-      subtext: "Operates with 25% less power, reducing your energy expenses.",
+      headline: "Powerful LED UV-C Intank Sterilization",
+      subtext: "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration",
     },
     {
-      headline: "RAPID TOUCHLESS DISPENSING",
+      headline: "Rapid Touchless Dispensing",
       subtext: "Provides ice-cold and hot water at twice the speed of standard models.",
     },
     {
-      headline: "Effortless Integration",
-      subtext: "Connects seamlessly with coffee, tea, and beverage machines for a complete solution.",
+      headline: "Build to Use Made to Last",
+      subtext: "Tripple Coated GI with FRP Colour Customized Front",
     },
     {
-        headline: "Low-Maintenance Design",
-        subtext: "Features a spill-resistant, dishwasher-safe drip tray for easy, hassle-free cleaning.",
+        headline: "Green Specs",
+        subtext: "Griha Green Certified",
     },
   ];
 
@@ -371,14 +371,6 @@ const Home: FC = () => {
               {(hovered) => (
                 <>
                   FREE STANDING
-                  <div className="relative inline-block w-4 h-4">
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: hovered ? 1 : 0 }}
-                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                      className="absolute top-0 left-0"
-                    ></motion.div>
-                  </div>
                 </>
               )}
             </HoverButton>
@@ -386,14 +378,6 @@ const Home: FC = () => {
               {(hovered) => (
                 <>
                   COUNTER TOP
-                  <div className="relative inline-block w-4 h-4">
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: hovered ? 1 : 0 }}
-                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                      className="absolute top-0 left-0"
-                    ></motion.div>
-                  </div>
                 </>
               )}
             </HoverButton>
@@ -461,7 +445,7 @@ const Home: FC = () => {
                     <path d="M12.4999 14.0726C12.2737 14.0726 12.0534 13.9536 11.9284 13.7452C11.7439 13.4298 11.857 13.031 12.1665 12.8464L23.1725 6.48927C23.488 6.3107 23.8868 6.41784 24.0713 6.72737C24.2559 7.04284 24.1428 7.44165 23.8332 7.62618L12.8273 13.9833C12.7261 14.0429 12.613 14.0726 12.4999 14.0726Z" fill="#63CAFF"></path>
                     <path d="M23.2081 11.6013C23.1545 11.6013 23.095 11.5954 23.0355 11.5775L18.6426 10.399C18.476 10.3513 18.3331 10.2442 18.2438 10.0954C18.1545 9.94657 18.1307 9.76204 18.1783 9.59538L19.351 5.21442C19.4462 4.86323 19.8093 4.65488 20.1545 4.75012C20.5057 4.84536 20.7141 5.20251 20.6188 5.5537L19.6129 9.29776L23.3688 10.3037C23.72 10.399 23.9284 10.7561 23.8331 11.1073C23.7557 11.399 23.4879 11.5954 23.1962 11.5954L23.2081 11.6013Z" fill="#63CAFF"></path>
                     </svg>
-                    <h6 className="text-lg">Cold</h6>
+                    <h6 className="text-lg">Chilled</h6>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-3">
                     <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ fill: '#FFBC3A' }}>
@@ -472,22 +456,30 @@ const Home: FC = () => {
                     <h6 className="text-lg">Ambient</h6>
                 </div>
                 </div>
-                <div className="mb-4 text-sm uppercase xl:mb-6 xl:max-w-[90%]">
+                {/* <div className="mb-4 text-sm uppercase xl:mb-6 xl:max-w-[90%]">
                 A Floor-standing model designed for convenient placement on the ground.
-                </div>
+                </div> */}
                 <ul className="">
-                <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Modern and Compact Design.
-                </li>
-                <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Advanced 3 stage purification (UV, UF & LED-UVC)
-                </li>
-                <li className="flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Touchless/Sensor-based operation
-                </li>
+                    <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
+                        <div className="w-2 h-2 bg-black rounded-full"></div>
+                        Top Loading/Plumbed-in Water dispenser.
+                    </li>
+                    <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
+                        <div className="w-2 h-2 bg-black rounded-full"></div>
+                        LED UV-C Intank Sterilization.
+                    </li>
+                    <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
+                        <div className="w-2 h-2 bg-black rounded-full"></div>
+                        Touchless | Manual.
+                    </li>
+                    <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
+                        <div className="w-2 h-2 bg-black rounded-full"></div>
+                        75% Recyclable.
+                    </li>
+                    <li className="flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
+                        <div className="w-2 h-2 bg-black rounded-full"></div>
+                        Design and Manufactured in India.
+                    </li>
                 </ul>
             </div>
             </div>
