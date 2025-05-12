@@ -549,10 +549,10 @@ useEffect(() => {
               <h2 className="font-[Inter Tight] font-normal text-4xl lg:text-6xl leading-tight">About WAE</h2>
               <div className="flex flex-col gap-5 w-64">
                 <p className="w-[290px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology. We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations for the country’s advancements, integrity & innovation. Our approach strengthens community resilience while showcasing India’s Intellectual capital on the world stage.
+                WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology. We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations for the country’s advancements, integrity & innovation. Our approach strengthens community resilience while showcasing India’s Intellectual capital on the world stage.
                 </p>
                 <p className="w-[290px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc purus, posuere in placerat a, porttitor ac est. Proin nec maximus lectus, ac varius massa.
+                With a steadfast focus on sustainability and design excellence, WAE transforms challenges into opportunities through cutting-edge water and waste management solutions. Our diverse portfolio reflects our commitment to quality, responsible innovation, and a future-ready India where environmental care and technological progress work together.
                 </p>
               </div>
             </div>
@@ -568,7 +568,7 @@ useEffect(() => {
               </h2>
               <div className="flex flex-col gap-10 w-64">
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
+                WAE envisions a world where safe and sustainable water is accessible to all. Its mission is to develop innovative, eco-friendly solutions for hydration and water treatment that benefit both people and the environment. Guided by integrity, inclusivity, and a strong commitment to sustainability, WAE works to create lasting positive impact.
                 </p>
                 <Link href="/vision-mission" className="contents">
                   <HoverButton>
@@ -616,9 +616,9 @@ useEffect(() => {
               </div>
               <div className="flex flex-col gap-5 w-64">
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc purus, posuere in placerat a, porttitor ac est. Proin nec maximus lectus, ac varius massa.
+                At WAE, people are at the heart of innovation. The culture fosters inclusivity, continuous learning, and shared purpose. Employees are empowered to lead with integrity, collaborate across functions, and drive sustainable change. Diversity of thought and a participative spirit define how WAE grows together and delivers lasting impact.
                 </p>
-                <Link href="/people-culture" className="contents">
+                <Link href="/careers" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -630,7 +630,12 @@ useEffect(() => {
                             width={16}
                             height={16}
                           />
-                          <motion.div>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                               alt="icon hover"
@@ -659,7 +664,7 @@ useEffect(() => {
               </div>
               <div className="flex flex-col gap-5 w-64">
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
+                WAE’s leadership team blends visionary thinking with deep industry expertise to drive innovation and sustainable growth. Committed to ethical practices and inclusive progress, they inspire a culture of excellence, empower talent across the organization, and steer strategic initiatives that align business goals with environmental and social impact.
                 </p>
                 <Link href="/leadership" className="contents">
                   <HoverButton>
@@ -673,7 +678,12 @@ useEffect(() => {
                             width={16}
                             height={16}
                           />
-                          <motion.div>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                               alt="icon hover"
@@ -702,10 +712,10 @@ useEffect(() => {
               </div>
               <div className="flex flex-col gap-5 w-64">
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
+                Sustainability is at the core of WAE’s philosophy and operations. From reducing plastic waste to innovating water reuse and eco-friendly solutions, every initiative aims to protect the planet for future generations. WAE champions responsible resource use, circular practices, and technologies that turn environmental intent into tangible impact.
                 </p>
                 <Link href="/sustainability" className="contents">
-                <HoverButton>
+                  <HoverButton>
                     {(hovered) => (
                       <>
                         Know More
@@ -716,7 +726,12 @@ useEffect(() => {
                             width={16}
                             height={16}
                           />
-                          <motion.div>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                               alt="icon hover"
