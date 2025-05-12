@@ -308,7 +308,7 @@ export default function Home() {
         >
            {/* Reverted to Image as in the provided code */}
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1c10b92-e42a-4da1-87ec-64d63caaad00/public"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0e919661-002e-4d32-3e4d-718850f8fd00/public"
             alt="Water reuse"
              width={1440} // Adjusted width for better fit if max-width is 1440px
              height={656} // Height from original image usage

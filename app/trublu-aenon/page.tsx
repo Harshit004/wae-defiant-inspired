@@ -94,8 +94,8 @@ const Home: FC = () => {
 
   const featuresData = [
     {
-      headline: "Plumbed-In",
-      subtext: "Plumbed-in to Purified Water Supply.",
+      headline: "Plumbed-In/ Top Loading (Optional)",
+      subtext: "Plumbed-in to Purified Water Supply. Direct Jar Fill: Direct Tank Fill Optional",
     },
     {
       headline: "Built to Last",
@@ -460,7 +460,7 @@ const Home: FC = () => {
                 A Floor-standing model designed for convenient placement on the ground.
                 </div> */}
                 <ul className="">
-                <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">
+                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 ">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                     Heavy-duty | High Capacity Water Cooler/Dispensers.
                 </li>
