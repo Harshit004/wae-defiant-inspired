@@ -273,7 +273,7 @@ const Home: FC = () => {
       {/* Product Display Section */}
       <section className="mx-[9.72%] mb-[9.72%] flex items-start justify-between">
         {/* Main Image */}
-        <div className="relative w-[508px] h-[448px] mr-[9px] flex items-center justify-center overflow-hidden">
+        <div className="relative w-[550px] h-[448px] mr-[9px] flex items-center justify-center overflow-hidden">
           <motion.div
             key={productImages[currentImageIndex]}
             initial={{ opacity: 0 }}
@@ -367,14 +367,6 @@ const Home: FC = () => {
               {(hovered) => (
                 <>
                   FREE STANDING
-                  <div className="relative inline-block w-4 h-4">
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: hovered ? 1 : 0 }}
-                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                      className="absolute top-0 left-0"
-                    ></motion.div>
-                  </div>
                 </>
               )}
             </HoverButton>
@@ -382,14 +374,6 @@ const Home: FC = () => {
               {(hovered) => (
                 <>
                   COUNTER TOP
-                  <div className="relative inline-block w-4 h-4">
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: hovered ? 1 : 0 }}
-                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                      className="absolute top-0 left-0"
-                    ></motion.div>
-                  </div>
                 </>
               )}
             </HoverButton>

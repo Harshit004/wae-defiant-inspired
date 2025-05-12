@@ -371,7 +371,6 @@ const Home: FC = () => {
               {(hovered) => (
                 <>
                   FREE STANDING
-                   
                 </>
               )}
             </HoverButton>

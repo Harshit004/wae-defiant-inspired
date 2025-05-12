@@ -48,10 +48,10 @@ const HoverButton: FC<HoverButtonProps> = ({ children }) => {
 
 // Data for the additional sections
 const extraSections = [
-  { number: '01', title: 'Apprenticeship', description: 'Step into the professional world with hands-on experience and expert mentorship. Ideal for those eager to learn and grow.' },
-  { number: '02', title: 'Full-Time Positions', description: 'Step into the professional world with hands-on experience and expert mentorship. Ideal for those eager to learn and grow.' },
-  { number: '03', title: 'Internships', description: 'Step into the professional world with hands-on experience and expert mentorship. Ideal for those eager to learn and grow.' },
-  { number: '04', title: 'Short Term Projects', description: 'Step into the professional world with hands-on experience and expert mentorship. Ideal for those eager to learn and grow.' }
+  { number: '01', title: 'Apprenticeship', description: 'Kickstart your career with hands-on learning at WAE. Our apprenticeship programs offer real-world experience, mentorship from industry leaders, and the chance to contribute to sustainable innovation. Join us to build skills that shape a better future for you and the planet.' },
+  { number: '02', title: 'Full-Time Positions', description: 'We’re looking for passionate professionals ready to innovate, collaborate, and make a meaningful impact. Join our team full-time to shape sustainable solutions and contribute to a future where technology and responsibility go hand in hand.' },
+  { number: '03', title: 'Internships', description: 'Gain real-world experience and make a difference with an internship at WAE. Work alongside industry experts, contribute to sustainable projects, and grow your skills in an environment that values curiosity, innovation, and impact.' },
+  { number: '04', title: 'Short Term Projects', description: 'Collaborate on high-impact, short-term projects at WAE. Whether you are a student, freelancer, or specialist, bring your expertise to meaningful assignments that drive sustainability and innovation.' }
 ];
 
 const Home: FC = () => {
@@ -379,19 +379,68 @@ const Home: FC = () => {
           </div>
         </header>
 
-        {/* HERO SECTION */}
-        <section
+{/* Hero section (Not Fixed in this version) */}
+<section
           id="hero"
-          ref={heroRef}
-          className="relative h-[88%] w-full mt-[20px] overflow-hidden"
+          className="relative h-screen w-full overflow-hidden mb-[140px]" // Hero has margin-bottom
         >
+           {/* Reverted to Image as in the provided code */}
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7555703d-4415-456f-dabb-9055ad5ec500/public"
-            alt="Career hero image"
-            width={250}
-            height={250}
-            className="w-full h-[88%]"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3de3e5b8-ad6d-49f2-c1f5-1e926fa29400/public"
+            alt="careers hero"
+             width={1440} // Adjusted width for better fit if max-width is 1440px
+             height={656} // Height from original image usage
+            className="object-cover w-full max-h-[656px]" // Use h-full to fill the 100vh section
           />
+
+          {/* Text and image overlays remain absolute within the hero */}
+          <div
+            className="absolute"
+            style={{
+              bottom: "35%",
+              right: "calc(3.473%)", // Adjust right position based on container padding
+              width: "393px",
+              height: "159px",
+            }}
+          >
+            <Image
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0e650125-8541-4682-a4e4-82d7eac54200/public"
+              alt="careers overlay image"
+              width={393}
+              height={159}
+              className="object-contain"
+            />
+          </div>
+          <div
+            className="absolute"
+            style={{
+              bottom: "33%",
+              left: "calc(4.16666%)", // Adjust left position based on container padding
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "48px",
+              lineHeight: "110%",
+              color: "#fff",
+            }}
+          >
+            Careers
+          </div>
+          <div
+            className="absolute uppercase"
+            style={{
+              bottom: "30%",
+              left: "calc(4.16666%)", // Adjust left position based on container padding
+              width: "104px",
+              height: "12px",
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "10px",
+              lineHeight: "100%",
+              color: "#fff",
+            }}
+          >
+            Scroll for more ⤵︎
+          </div>
         </section>
       </div>
 
@@ -429,11 +478,7 @@ const Home: FC = () => {
                 </h2>
                 <div className="flex flex-col gap-5 w-64">
                   <p className="w-[270px] font-[Inter Tight] text-[14px] leading-[100%] text-black/70">
-                    Life at WAE is vibrant and inspiring. Our culture is a tapestry of
-                    collaboration, inclusivity, and continuous learning. Here, your
-                    professional growth is as important as your personal well-being.
-                    Enjoy a work environment that fosters creativity, supports balance,
-                    and celebrates every success. At WAE, your journey is our story.
+                  Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
                   </p>
                 </div>
               </div>
@@ -458,9 +503,7 @@ const Home: FC = () => {
               </h2>
               <div className="flex flex-col gap-5">
                 <p className="w-[270px] font-[Inter Tight] text-[14px] leading-[110%] text-black/70">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc
-                  purus, posuere in placerat a, porttitor ac est. Proin nec maximus
-                  lectus, ac varius massa.
+                Discover career opportunities where innovation meets impact. At WAE, we're building a sustainable future powered by technology and driven by purpose. Explore our current openings and become part of a team that values creativity, collaboration, and real-world change.
                 </p>
                 <HoverButton>
                   {(hovered) => (
@@ -498,10 +541,10 @@ const Home: FC = () => {
         {/* 358px gap */}
         <div style={{ height: '358px' }} />
 
-        {/* New Items-Left Sections */}
+        {/* New Items-Right Sections */}
         <div className="flex flex-col items-end justify-between px-[9.72%]" style={{ gap: '358px' }}>
           {extraSections.map((sec, idx) => (
-            <section key={idx} className="w-[37%]">
+            <section key={idx} className="w-[25%]">
               <div
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -535,8 +578,8 @@ const Home: FC = () => {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: '21px',
-                  lineHeight: '110%',
+                  fontSize: '14px',
+                  lineHeight: '100%',
                   letterSpacing: '0%',
                   verticalAlign: 'middle',
                   color: '#00000099'
