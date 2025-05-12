@@ -95,40 +95,29 @@ const Home: FC = () => {
   const featuresData = [
     {
       headline: "Counter-Top Friendly",
-      subtext: "Compact design ts perfectly on counters and in tight spaces.",
+      subtext: "Compact design fits perfectly on counters and in tight spaces.",
     },
     {
-      headline: "Perfect Pairing",
-      subtext: "Easily integrates with coffee and tea vending machines for a seamless setup.",
+        headline: "Top-Load Flexibility",
+        subtext: "Easily place a jar or bole on top for effortless water collection.",
+      },
+    {
+      headline: "Powerful LED  UV-C Intank Sterilization",
+      subtext: "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
     },
     {
-      headline: "Top-Load Flexibility",
-      subtext: "Easily place a jar or bole on top for effortless water collection.",
+        headline: "Hypergienic Hydration",
+        subtext: "IR Sensor based touch free dispensing.",
     },
-    {
-      headline: "Spill-Proof Tray",
-      subtext: "Dishwasher-safe drip tray minimizes spills and simplifies cleaning.",
-    },
-    {
-        headline: "Power Saver",
-        subtext: "Consumes 25% less energy, making it an eco-friendly choice.",
-    },
-    {
-        headline: "Clean and Carefree",
-        subtext: "Dishwasher-safe drip  tray keeps maintenance to a minimum.",
-    },
-    {
-        headline: "Effortless Integration",
-        subtext: "Connects seamlessly with coffee, tea, and beverage machines for a complete solution.",
-    },
+    
   ];
 
   const specificationsData = [
     { subtext1: "Variant", heading: "CT", subtext2: "ALFA CT" },
-    { subtext1: "Drip Try Capacity", heading: "750ml", subtext2: "Milli Ltires" },
-    { subtext1: "Hot Temperature", heading: "30°C- 80°C", subtext2: "Default 50°C" },
+    { subtext1: "Refrigerant", heading: "R-134a", subtext2: "-" },
+    { subtext1: "Hot Temperature", heading: "50°C- 80°C", subtext2: "Default 55°C" },
     { subtext1: "Cold Temperature", heading: "5°C- 24°C", subtext2: "Default 8°C" },
-    { subtext1: "Compressor", heading: "220V/50 HZ", subtext2: "RZ 134a 1/8 HP" },
+    { subtext1: "Power Requirement", heading: "Hertz 50", subtext2: "Volts 230-240" },
   ];
 
   return (
@@ -481,7 +470,7 @@ const Home: FC = () => {
                 </div>
                 </div>
                 <div className="mb-4 text-sm uppercase xl:mb-6 xl:max-w-[90%]">
-                A Floor-standing model designed for convenient placement on the ground.
+                High Capacity Plumbed-in Water Dispenser
                 </div>
                 <ul className="">
                 <li className="mb-3 flex items-center gap-3 text-sm uppercase last:mb-0 xl:text-base">

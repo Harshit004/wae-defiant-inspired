@@ -95,32 +95,28 @@ const Home: FC = () => {
   const featuresData = [
     {
       headline: "Top-Load Ready",
-      subtext: "Enjoy eortless, hygienic water access with sensor-based, touchless technology.",
+      subtext: "Place a jar or bole on top to easily collect water.",
     },
     {
-      headline: "Sleek Design",
-      subtext: "Modern, space-saving design that ts perfectly in any setting.",
+        headline: "Hypergienic Hydration",
+        subtext: "IR Sensor based touch free dispensing.",
+      },
+    {
+      headline: "Powerful LED UV-C Intank Sterilization",
+      subtext: "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
     },
     {
-      headline: "Power Saver",
-      subtext: "Consumes 25% less energy than regular dispensers.",
-    },
-    {
-      headline: "Quick Clean",
-      subtext: "Removable drip tray for easy cleaning and maintenance",
-    },
-    {
-        headline: "Touch-Free Convenience",
-        subtext: "Effortless, hands-free dispensing for ultimate ease.",
+        headline: "Sleek Design",
+        subtext: "Modern, space-saving design that ts perfectly in any seing.",
     },
   ];
 
   const specificationsData = [
     { subtext1: "Variant", heading: "FS", subtext2: "ALFA TL" },
-    { subtext1: "Drip Try Capacity", heading: "750ml", subtext2: "Milli Ltires" },
-    { subtext1: "Hot Temperature", heading: "30°C- 80°C", subtext2: "Default 50°C" },
+    { subtext1: "Refrigerant", heading: "R-134a", subtext2: "-" },
+    { subtext1: "Hot Temperature", heading: "50°C- 80°C", subtext2: "Default 55°C" },
     { subtext1: "Cold Temperature", heading: "5°C- 24°C", subtext2: "Default 8°C" },
-    { subtext1: "Compressor", heading: "220V/50 HZ", subtext2: "RZ 134a 1/8 HP" },
+    { subtext1: "Power Requirement", heading: "Hertz 50", subtext2: "Volts 230-240" },
   ];
 
   return (

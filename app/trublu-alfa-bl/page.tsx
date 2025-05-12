@@ -94,33 +94,29 @@ const Home: FC = () => {
 
   const featuresData = [
     {
-      headline: "Pure Inside",
-      subtext: "Lead-free, anti-corrosive tubing ensures clean, bacteria-free water flow.",
+      headline: "Bottom-Load Ease",
+      subtext: "Place jars or bottles below for easy water collection and reduced lifting.",
     },
     {
-      headline: "Touch-Free Dispense",
-      subtext: "Enjoy hassle-free, hygienic dispensing with a simple touch.",
+        headline: "Hypergienic Hydration",
+        subtext: "IR Sensor based touch free dispensing.",
+      },
+    {
+      headline: "Powerful LED UV-C Intank Sterilization",
+      subtext: "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
     },
     {
-      headline: "Boom-Load Ease",
-      subtext: "Place jars or boles below for easy water collection and reduced lifting.",
-    },
-    {
-      headline: "Spill-Free Design",
-      subtext: "Dishwasher-safe drip tray minimizes spills, making cleanup a breeze.",
-    },
-    {
-        headline: "Power Smart",
-        subtext: "Cuts energy use by 25%, making it eco-friendly and cost-effective.",
+        headline: "Touch-Free Dispense",
+        subtext: "Enjoy hassle-free, hygienic dispensing with a simple touch.",
     },
   ];
 
   const specificationsData = [
     { subtext1: "Variant", heading: "FS", subtext2: "ALFA BL" },
-    { subtext1: "Drip Try Capacity", heading: "750ml", subtext2: "Milli Ltires" },
-    { subtext1: "Hot Temperature", heading: "30°C- 80°C", subtext2: "Default 50°C" },
+    { subtext1: "Refrigerant", heading: "R-134a", subtext2: "-" },
+    { subtext1: "Hot Temperature", heading: "50°C- 80°C", subtext2: "Default 55°C" },
     { subtext1: "Cold Temperature", heading: "5°C- 24°C", subtext2: "Default 8°C" },
-    { subtext1: "Compressor", heading: "220V/50 HZ", subtext2: "RZ 134a 1/8 HP" },
+    { subtext1: "Power Requirement", heading: "Hertz 50", subtext2: "Volts 230-240" },
   ];
 
   return (

@@ -95,36 +95,28 @@ const Home: FC = () => {
   const featuresData = [
     {
       headline: "Plumbed-In",
-      subtext: "Can be directly connected to the input water supply (RO water)",
+      subtext: "Can be directly connected to the input water supply (purified)",
     },
     {
       headline: "Built to Last",
-      subtext: "Premium SS-304 stainless steel tank combines durability with sustainability.",
+      subtext: "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability and long term value.",
     },
     {
-      headline: "Pure Inside Out",
-      subtext: "Lead-free, corrosion-resistant tubing keeps water safe, fresh, and free from harmful bacteria.",
+      headline: "Powerful LED UV-C Intank Sterilization",
+      subtext: "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
     },
     {
-      headline: "Hygiene at Your Fingertips",
-      subtext: "Experience effortless, touch-free dispensing that puts cleanliness first.",
-    },
-    {
-        headline: "Perfectly Paired",
-        subtext: "Seamlessly integrates with coffee or tea vending machines.",
-    },
-    {
-        headline: "Clean and Carefree",
-        subtext: "Dishwasher-safe drip tray keeps maintenance to a minimum.",
+      headline: "Hypergienic Hydration",
+      subtext: "IR Sensor based touch free dispensing.",
     },
   ];
 
   const specificationsData = [
-    { subtext1: "Variant", heading: "FS", subtext2: "ALFA 100" },
-    { subtext1: "Drip Try Capacity", heading: "750ml", subtext2: "Milli Ltires" },
-    { subtext1: "Hot Temperature", heading: "30°C- 80°C", subtext2: "Default 50°C" },
+    { subtext1: "Variant", heading: "FS", subtext2: "ALFA BL" },
+    { subtext1: "Refrigerant", heading: "R-134a", subtext2: "-" },
+    { subtext1: "Hot Temperature", heading: "50°C- 80°C", subtext2: "Default 55°C" },
     { subtext1: "Cold Temperature", heading: "5°C- 24°C", subtext2: "Default 8°C" },
-    { subtext1: "Compressor", heading: "220V/50 HZ", subtext2: "RZ 134a 1/8 HP" },
+    { subtext1: "Power Requirement", heading: "Hertz 50", subtext2: "Volts 230-240" },
   ];
 
   return (
