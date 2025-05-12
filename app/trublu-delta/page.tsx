@@ -464,15 +464,15 @@ const Home: FC = () => {
                 A Floor-standing model designed for convenient placement on the ground.
                 </div>
                 <ul className="">
-                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 xl:text-base">
+                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                     Modern and Compact Design.
                 </li>
-                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 xl:text-base">
+                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                     Advanced 3 stage purification (UV, UF & LED-UVC)
                 </li>
-                <li className="flex items-center gap-3 text-[12px] uppercase last:mb-0 xl:text-base">
+                <li className="flex items-center gap-3 text-[12px] uppercase last:mb-0">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                     Touchless/Sensor-based operation
                 </li>

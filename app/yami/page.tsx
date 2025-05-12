@@ -472,15 +472,15 @@ const Home: FC = () => {
                 A Floor-standing model designed for convenient placement on the ground.
                 </div> */}
                 <ul className="">
-                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 xl:text-base">
+                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                     Vandal-resistant, modular design with a stylish ZERO landfill body.
                 </li>
-                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 xl:text-base">
+                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 ">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                     Traditional floor-standing unit for flexible placement.
                 </li>
-                <li className="flex items-center gap-3 text-[12px] uppercase last:mb-0 xl:text-base">
+                <li className="flex items-center gap-3 text-[12px] uppercase last:mb-0">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                     Optional integration with a remote water chiller.
                 </li>
