@@ -19,8 +19,8 @@ export default function RelatedCard({ image, title, description, width, height }
   const y = useTransform(scrollYProgress, [0, 1], [50, -50])
 
   return (
-    <Link
-      href="#"
+    <div
+      // href="#"
       className="group relative block transition-all duration-300 rounded-lg border border-transparent hover:border-white/20 hover:bg-white/10"
     >
       {/* Motion div with a high z-index to force it over the sticky header */}
@@ -58,6 +58,6 @@ export default function RelatedCard({ image, title, description, width, height }
           />
         </div>                        
       </div>
-    </Link>
+    </div>
   )
 }

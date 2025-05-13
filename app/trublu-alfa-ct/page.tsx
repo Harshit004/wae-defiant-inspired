@@ -582,48 +582,75 @@ const Home: FC = () => {
 
 
       {/* Explore Other Products SECTION */}
-      <section
-        className="max-w-full px-[8.75rem] py-[7.5rem] bg-white"
-        style={{
-          position: "relative",
-          borderTopLeftRadius: "0px",
-          borderTopRightRadius: "0px",
-        }}
-      >
-        <h2 className="font-helvetica text-[3.63rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem]">
-          Explore Other Products
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
+    <section
+    className="max-w-full px-[8.75rem] py-[7.5rem] bg-white"
+    style={{
+        position: "relative",
+        borderTopLeftRadius: "0px",
+        borderTopRightRadius: "0px",
+    }}
+    >
+    <h2 className="font-helvetica text-[3.63rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem]">
+        Explore Other Products
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+
+        {/* Card 1 - Using <a> tag */}
+        <a href="/product-category/drinking-water-stations" key="drinking-water-stations"> {/* Corrected path */}
+        <div> {/* Keep the div if needed for styling */}
+            <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public" // Ensure image URLs are correct
             title="DRINKING WATER STATION - BLUWAE Series"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+            description="Water dispensers with inbuilt purification —pure, safe water delivered efficiently. Designed to reduce plastic waste and energy consumption, making sustainability easy."
             width={272}
             height={270}
-          />
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
-            title="WATER DISPENSER (W/O RO) - TRUBLU Series"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-            width={272}
-            height={270}
-          />
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
-            title="DRINKING WATER FAUCETS - WATERMATIC Series"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-            width={272}
-            height={270}
-          />
-          <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b4d5a06d-b245-459f-4f81-32eb013a8000/public"
-            title="WATER COOLER & FOUNTAINS - ZVR Series"
-            description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-            width={272}
-            height={270}
-          />
+            />
         </div>
-      </section>
+        </a>
+
+        {/* Card 2 - Using <a> tag */}
+        <a href="/product-category/water-dispenser" key="water-dispenser"> {/* Corrected path */}
+        <div> {/* Keep the div if needed for styling */}
+            <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public" // Ensure image URLs are correct
+            title="WATER DISPENSER (W/O RO) - TRUBLU Series"
+            description="Stainless steel water dispensers give you fresh, clean water anytime. Compact, energy-efficient, and perfect for spaces where RO water is not readily available."
+            width={272}
+            height={270}
+            />
+        </div>
+        </a>
+
+        {/* Card 3 - Using <a> tag */}
+        <a href="/product-category/drinking-water-faucets" key="drinking-water-faucets"> {/* Corrected path */}
+        <div> {/* Keep the div if needed for styling */}
+            <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public" // Ensure image URLs are correct
+            title="DRINKING WATER FAUCETS - WATERMATIC Series"
+            description="Drinking water faucets with under the counter storage units to make access to fresh water simple. Precision-engineered for smooth flow, with a focus on reducing waste and energy use."
+            width={272}
+            height={270}
+            />
+        </div>
+        </a>
+
+        {/* Card 4 - Using <a> tag */}
+        <a href="/product-category/water-cooler" key="water-cooler"> {/* Corrected path */}
+        <div> {/* Keep the div if needed for styling */}
+            <RelatedCard
+            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08a355dd-6233-4b12-1cf5-fee8716cca00/public" // Ensure image URLs are correct
+            title="WATER COOLER & FOUNTAINS - ZVR Series"
+            description="Water coolers cum bubblers provide chilled water on demand. Built to be energy-efficient, they're ideal for public spaces, reducing both costs and plastic waste."
+            width={272}
+            height={270}
+            />
+        </div>
+        </a>
+
+        {/* Add other hardcoded cards here following the same pattern */}
+
+    </div>
+    </section>
 
       {/* Contact Form */}
       <section className="pt-[140px] px-[9.72%] pb-0">
