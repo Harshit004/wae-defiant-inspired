@@ -399,7 +399,7 @@ const ClientSideContent: FC = () => {
 
      // Base button style (transparent background, black font) - Defined here as it's used in this component
     const baseButtonStyle: React.CSSProperties = {
-      padding: "16px 8px",
+      padding: "16px 8px", // Restored padding
       fontFamily: "'Inter Tight', sans-serif",
       fontWeight: 400,
       fontSize: "12px",
@@ -427,7 +427,8 @@ const ClientSideContent: FC = () => {
     const renderDropdownOptions = (options: string[], type: "mounting" | "category") => {
       const selectedOptions = type === "mounting" ? selectedMountingTypes : selectedCategories;
       return options.map((option, idx) => (
-        <div key={idx} className="flex items-center mb-2">
+        // Modified className to use justify-between and w-full, removed fixed margin from label
+        <div key={idx} className="flex justify-between items-center mb-2 w-full px-2">
           <input
             id={`${type}-option-${idx}`}
             type="checkbox"
@@ -445,7 +446,7 @@ const ClientSideContent: FC = () => {
               lineHeight: "140%",
               letterSpacing: "0%",
               verticalAlign: "middle",
-              marginLeft: "45px",
+              // Removed marginLeft here as justify-between handles spacing
               whiteSpace: "nowrap",
               cursor: "pointer", // Indicate it's clickable
             }}
@@ -573,7 +574,8 @@ const ClientSideContent: FC = () => {
                   // --- CATEGORY Button (Dropdown) ---
                   else if (btn.label === "CATEGORY") {
                     return (
-                      <div key={index} className="relative" style={{ width: "23%" }}> {/* Adjusted width */}
+                      // Changed width to 20.833%
+                      <div key={index} className="relative" style={{ width: "20.833%" }}>
                         <button
                           ref={categoryButtonRef}
                           style={{
@@ -584,9 +586,11 @@ const ClientSideContent: FC = () => {
                             ...(showCategoryDropdown || selectedCategories.length > 0 ? { backgroundColor: "#000", color: "#fff" } : {}),
                           }}
                           onClick={() => setShowCategoryDropdown((prev) => !prev)}
-                          className="w-full px-2 flex justify-between items-center" // Added items-center
+                          // Applied w-full, flex, justify-between, items-center - removed px-2
+                          className="w-full flex justify-between items-center"
                         >
-                          <span className="flex gap-4 whitespace-nowrap">
+                          {/* The span wraps the text and SVG to allow justify-between on the button */}
+                          <span className="flex-grow flex justify-between items-center whitespace-nowrap">
                             {btn.label}
                             {/* SVG Arrow */}
                             <svg
@@ -633,7 +637,8 @@ const ClientSideContent: FC = () => {
                   // --- MOUNTING TYPE Button (Dropdown) ---
                   else if (btn.label === "MOUNTING TYPE") {
                     return (
-                      <div key={index} className="relative" style={{ width: "16%" }}> {/* Adjusted width */}
+                       // Changed width to 20.833%
+                      <div key={index} className="relative" style={{ width: "20.833%" }}>
                         <button
                           ref={mountingButtonRef}
                           style={{
@@ -644,9 +649,11 @@ const ClientSideContent: FC = () => {
                             ...(showMountingDropdown || selectedMountingTypes.length > 0 ? { backgroundColor: "#000", color: "#fff" } : {}),
                           }}
                           onClick={() => setShowMountingDropdown((prev) => !prev)}
-                          className="w-full px-2 flex justify-between items-center" // Added items-center
+                           // Applied w-full, flex, justify-between, items-center - removed px-2
+                          className="w-full flex justify-between items-center"
                         >
-                          <span className="flex items-center gap-4 whitespace-nowrap">
+                          {/* The span wraps the text and SVG to allow justify-between on the button */}
+                          <span className="flex-grow flex justify-between items-center whitespace-nowrap">
                             {btn.label}
                              {/* SVG Arrow */}
                             <svg
@@ -692,23 +699,25 @@ const ClientSideContent: FC = () => {
                   }
                    // --- INSTALLATION TYPE Button (Transparent Background) ---
                    // Render the Installation Type button
-                  //  else if (btn.label === "INSTALLATION TYPE") { // Added condition for Installation Type
-                  //     return (
-                  //       <button
-                  //         key={index}
-                  //         style={{
-                  //           ...baseButtonStyle, // Start with base styles (transparent/black)
-                  //           flex: 1, // Allow button to fill container div
-                  //           maxWidth: "23%", // Retains maxWidth
-                  //         }}
-                  //         // No onClick functionality or state change needed for styling based on prompt interpretation
-                  //       >
-                  //         <span className="flex items-center">
-                  //           {btn.label}
-                  //         </span>
-                  //       </button>
-                  //     );
-                  //  }
+                   // else if (btn.label === "INSTALLATION TYPE") { // Added condition for Installation Type
+                   //    return (
+                   //      // Added div wrapper with width 20.833% for consistent layout
+                   //      <div key={index} style={{ width: "20.833%" }}>
+                   //        <button
+                   //          style={{
+                   //            ...baseButtonStyle, // Start with base styles (transparent/black)
+                   //             flex: "unset", // Don't let flex grow
+                   //            width: "100%", // Fill parent div
+                   //          }}
+                   //          // No onClick functionality or state change needed for styling based on prompt interpretation
+                   //        >
+                   //          <span className="flex items-center">
+                   //            {btn.label}
+                   //          </span>
+                   //        </button>
+                   //      </div>
+                   //    );
+                   // }
                    // Default case for any other buttons (shouldn't happen with current 'buttons' array)
                    return null;
                 })}
