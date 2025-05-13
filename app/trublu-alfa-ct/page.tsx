@@ -368,14 +368,6 @@ const Home: FC = () => {
               {(hovered) => (
                 <>
                   FREE STANDING
-                  <div className="relative inline-block w-4 h-4">
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: hovered ? 1 : 0 }}
-                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                      className="absolute top-0 left-0"
-                    ></motion.div>
-                  </div>
                 </>
               )}
             </HoverButton>
@@ -383,14 +375,6 @@ const Home: FC = () => {
               {(hovered) => (
                 <>
                   COUNTER TOP
-                  <div className="relative inline-block w-4 h-4">
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: hovered ? 1 : 0 }}
-                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                      className="absolute top-0 left-0"
-                    ></motion.div>
-                  </div>
                 </>
               )}
             </HoverButton>

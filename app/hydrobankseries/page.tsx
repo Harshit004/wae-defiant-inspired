@@ -33,10 +33,10 @@ const HoverButton: FC<HoverButtonProps> = ({ children }) => {
         fontWeight: 500,
         fontSize: "12px",
         lineHeight: "100%",
-        backgroundColor: hovered ? "#000" : "#f2f2f2",
+        backgroundColor: hovered ? "#f2f2f2" : "#000",
         border: "1px solid #00000066",
         cursor: "pointer",
-        color: hovered ? "#fff" : "#000",
+        color: hovered ? "#000" : "#fff",
       }}
     >
       {children(hovered)}
@@ -371,14 +371,6 @@ const Home: FC = () => {
               {(hovered) => (
                 <>
                   FREE STANDING
-                  <div className="relative inline-block w-4 h-4">
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: hovered ? 1 : 0 }}
-                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                      className="absolute top-0 left-0"
-                    ></motion.div>
-                  </div>
                 </>
               )}
             </HoverButton>
