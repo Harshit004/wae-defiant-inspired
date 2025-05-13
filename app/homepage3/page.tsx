@@ -57,24 +57,20 @@ const Home: FC = () => {
   const [headerHeroScale, setHeaderHeroScale] = useState<number>(1); // State is declared and updated, but not applied to an element's style/transform in provided snippets
   const headerHeroRef = useRef<HTMLDivElement>(null); // Ref for the fixed header/hero container
 
+  // Ref for the Sustainability section wrapper for scroll animation
+  const sustainabilityScrollRef = useRef<HTMLDivElement>(null);
+
+
   const sections = ["hero"]; // Extendable for additional sections - used only to set active section based on heroInView
 
   const containerRef = useRef<HTMLDivElement>(null); // Ref is declared but not applied to an element
 
    // --- ADDED: Explicitly scroll to top on mount ---
    useEffect(() => {
-       // Use requestAnimationFrame to ensure it runs after the browser has potentially
-       // restored scroll or completed initial layout
        requestAnimationFrame(() => {
            window.scrollTo(0, 0);
        });
-       // Optionally, add a slight delay if immediate scroll is jarring or ineffective
-       // const timer = setTimeout(() => {
-       //     window.scrollTo(0, 0);
-       // }, 100); // Adjust delay as needed
-       // return () => clearTimeout(timer); // Cleanup timeout
-
-   }, []); // Empty dependency array ensures it runs only once on mount
+   }, []);
    // --- END ADDED CODE ---
 
 
@@ -140,9 +136,23 @@ const Home: FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Framer Motion scroll-driven animations (useScroll hook used)
+  // Framer Motion scroll-driven animations
   const { scrollYProgress } = useScroll(); // Tracks scroll progress of the window by default
   const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]); // Logo opacity linked to scroll
+
+  // Scroll-linked animation for Sustainability section's y position
+  const { scrollYProgress: sustainabilityScrollProgress } = useScroll({
+    target: sustainabilityScrollRef,
+    offset: ["start end", "end start"], // Maps scroll from when the element starts entering the viewport to when it finishes leaving
+  });
+
+  // Map scroll progress (0 to 1) to a y translation (e.g., from 360px to 0px)
+  const sustainabilityY = useTransform(
+    sustainabilityScrollProgress,
+    [0, 1], // Input: scroll progress from 0 (element just entering) to 1 (element just leaving)
+    [360, 0] // Output: y translation from 360px (pushed down) to 0px (natural position). Adjust 360 as needed.
+  );
+
 
   // --- POTENTIAL TROUBLESHOOTING AREA ---
   // These useTransform calls have incorrect syntax and are not used in the provided code structure.
@@ -424,7 +434,7 @@ const Home: FC = () => {
         {/* Uses whileInView for entrance animation */}
         <section className="h-screen/2 flex items-end justify-center relative mb-[180px]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
           <motion.div
-            initial={{ y: "100%", opacity: 0 }}
+            initial={{ y: "200%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
@@ -487,7 +497,7 @@ const Home: FC = () => {
          {/* Uses whileInView for entrance animation */}
         <section className="h-screen/2 flex items-end justify-center relative mb-[180px]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
           <motion.div
-            initial={{ y: "100%", opacity: 0 }}
+            initial={{ y: "200%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
@@ -681,9 +691,11 @@ const Home: FC = () => {
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/product-category/water-cooler" className="contents">
                   <div className="relative w-full h-full">
+                    {/* Centered Text */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="product-category">WATER COOLERS &amp;<br />FOUNTAINS</span>
                     </div>
+                    {/* Right Arrow flush at right */}
                     <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
@@ -960,13 +972,15 @@ const Home: FC = () => {
           </table>
         </div>
 
+
       {/* wrapping these in a div to get them to overlap the sticky logo */}
         <div className="bg-[#f2f2f2]"
         style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
         >
           {/* Make in INDIA Section */}
         {/* Uses whileInView for entrance animation */}
-        <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[360px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
+        {/* Removed mb-[360px] from this section to allow scroll-linked animation on the next section */}
+        <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[0px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -1029,86 +1043,90 @@ const Home: FC = () => {
           </motion.div>
         </section>
 
-      {/* Sustainability Section */}
-       {/* Uses whileInView for entrance animation */}
-        <section className="h-screen/2 flex items-end justify-center relative pb-[180px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
-          <motion.div
-            initial={{ y: "100%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between"
-          >
-            <h2
-              className="inline-block"
-              style={{ // Inline styles for typography
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "58px",
-                lineHeight: "110%",
-                color: "#000",
-              }}
+        {/* Sustainability Section */}
+         {/* Uses whileInView for entrance animation */}
+         {/* Wrapped in motion.div for scroll-linked y animation */}
+        <motion.div ref={sustainabilityScrollRef} style={{ y: sustainabilityY }}>
+          <section className="h-screen/2 flex items-end justify-center relative pb-[180px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
+            <motion.div
+              // Removed initial/whileInView y animation - now controlled by scroll
+              initial={{ opacity: 0 }} // Keep opacity animation if desired
+              whileInView={{ opacity: 1 }} // Keep opacity animation if desired
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between"
             >
-              Sustainability
-            </h2>
-            <div className="flex flex-col gap-20">
-              <div className="flex flex-col">
-                <p className="text-4xl font-normal text-black leading-snug">
-                  1,012,120.25
-                </p>
-                <p className="text-xs font-normal text-black/70 tracking-wide">
-                  TONNES CO2 EMISSIONS SAVED
-                </p>
-              </div>
-              <div className="flex flex-col">
-                <p className="text-4xl font-normal text-black leading-snug">
-                  12,185.4325
-                </p>
-                <p className="text-xs font-normal text-black/70 tracking-wide">
-                  MILLION GALLONS WATER SAVED
-                </p>
-              </div>
-              <div className="flex flex-col">
-                <p className="text-4xl font-normal text-black leading-snug">
-                  22,253.65
-                </p>
-                <p className="text-xs font-normal text-black/70 tracking-wide">
-                  TONNES PLASTIC REMOVED
-                </p>
-              </div>
-              <Link href="/sustainability-overview" className="mt-10">
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
+              <h2
+                className="inline-block"
+                style={{ // Inline styles for typography
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "58px",
+                  lineHeight: "110%",
+                  color: "#000",
+                }}
+              >
+                Sustainability
+              </h2>
+              <div className="flex flex-col gap-20">
+                <div className="flex flex-col">
+                  <p className="text-4xl font-normal text-black leading-snug">
+                    1,012,120.25
+                  </p>
+                  <p className="text-xs font-normal text-black/70 tracking-wide">
+                    TONNES CO2 EMISSIONS SAVED
+                  </p>
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-4xl font-normal text-black leading-snug">
+                    12,185.4325
+                  </p>
+                  <p className="text-xs font-normal text-black/70 tracking-wide">
+                    MILLION GALLONS WATER SAVED
+                  </p>
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-4xl font-normal text-black leading-snug">
+                    22,253.65
+                  </p>
+                  <p className="text-xs font-normal text-black/70 tracking-wide">
+                    TONNES PLASTIC REMOVED
+                  </p>
+                </div>
+                <Link href="/sustainability-overview" className="mt-10">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
-              </Link>
-            </div>
-          </motion.div>
-        </section>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
+              </div>
+            </motion.div>
+          </section>
+        </motion.div>
         </div>
 
         {/* RELATED INFORMATION SECTION */}
