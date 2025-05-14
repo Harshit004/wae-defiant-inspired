@@ -437,12 +437,12 @@ const ClientSideContent: FC = () => {
             checked={selectedOptions.includes(option)} // Check if option is in selected state
             onChange={(e) => handleFilterChange(option, type, e.target.checked)}
           />
-          <label
+          <label className="uppercase"
             htmlFor={`${type}-option-${idx}`}
             style={{
               fontFamily: "Inter Tight",
               fontWeight: 400,
-              fontSize: "12px",
+              fontSize: "10px",
               lineHeight: "140%",
               letterSpacing: "0%",
               verticalAlign: "middle",
