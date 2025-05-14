@@ -1052,7 +1052,7 @@ const Home: FC = () => {
               // Removed initial/whileInView y animation - now controlled by scroll
               initial={{ opacity: 0 }} // Keep opacity animation if desired
               whileInView={{ opacity: 1 }} // Keep opacity animation if desired
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               viewport={{ once: true }}
               className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between"
             >
@@ -1092,8 +1092,7 @@ const Home: FC = () => {
                   <p className="text-xs font-normal text-black/70 tracking-wide">
                     TONNES PLASTIC REMOVED
                   </p>
-                </div>
-                <Link href="/sustainability-overview" className="mt-10">
+                  <Link href="/sustainability" className="mt-10">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -1123,6 +1122,7 @@ const Home: FC = () => {
                     )}
                   </HoverButton>
                 </Link>
+                </div>
               </div>
             </motion.div>
           </section>

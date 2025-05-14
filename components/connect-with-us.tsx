@@ -50,7 +50,7 @@ const ConnectWithUs: React.FC<ConnectWithUsProps> = ({ introText }) => {
         {/* Left Side - Contact Information */}
         <div className="mb-8 md:mb-0 md:w-[calc(50%-10px)]">
           {/* Use the introText prop here */}
-          <p className="font-inter-tight text-lg leading-relaxed mb-4 w-[80%]">
+          <p className="font-inter-tight text-[14px] leading-relaxed mb-4 w-[80%]">
             {introText}
           </p>
           <h2 className="font-inter-tight text-4xl uppercase leading-none">
@@ -81,7 +81,8 @@ const ConnectWithUs: React.FC<ConnectWithUsProps> = ({ introText }) => {
                 type="text"
                 id="name"
                 name="name"
-                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-[9.72%] pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
+                // Changed pl-[9.72%] to pl-4 for 16px left padding
+                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-4 pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
                 placeholder="Name"
                 style={{ width: '100%' }}
                 required
@@ -92,7 +93,8 @@ const ConnectWithUs: React.FC<ConnectWithUsProps> = ({ introText }) => {
                 type="email"
                 id="email"
                 name="email"
-                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-[9.72%] pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
+                // Changed pl-[9.72%] to pl-4 for 16px left padding
+                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-4 pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
                 placeholder="Your Email"
                 style={{ width: '100%' }}
                 required
@@ -103,7 +105,8 @@ const ConnectWithUs: React.FC<ConnectWithUsProps> = ({ introText }) => {
                 type="tel"
                 id="contact"
                 name="contact"
-                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-[9.72%] pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
+                // Changed pl-[9.72%] to pl-4 for 16px left padding
+                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-4 pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
                 placeholder="Contact No."
                 style={{ width: '100%' }}
                 required
@@ -114,7 +117,8 @@ const ConnectWithUs: React.FC<ConnectWithUsProps> = ({ introText }) => {
                 type="text"
                 id="companyName"
                 name="companyName"
-                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-[9.72%] pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
+                // Changed pl-[9.72%] to pl-4 for 16px left padding
+                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-4 pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
                 placeholder="ABC Company"
                 style={{ width: '100%' }}
               />
@@ -126,7 +130,7 @@ const ConnectWithUs: React.FC<ConnectWithUsProps> = ({ introText }) => {
                 className="w-full h-[64px] bg-black text-white font-inter-tight font-normal text-base leading-none tracking-[0.04em] border border-black flex items-center justify-center gap-5"
                 style={{ width: '100%' }}
               >
-                Contact Us {Icons.ChevronRight}
+                Contact Us <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5abb7483-f3f4-4645-1950-b9df77dbd900/public" alt="Arrow icon" className="w-[60px]" />
               </button>
             </div>
           </form>

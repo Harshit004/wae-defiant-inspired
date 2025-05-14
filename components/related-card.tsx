@@ -50,7 +50,7 @@ export default function RelatedCard({ image, title, description, width, height }
         {/* Arrow icon in the bottom-right corner */}
         <div className="absolute bottom-0 right-0">
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/451a552f-d7cc-4e4d-3388-99ec27735200/public"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a54bcf4-0434-4919-b1f0-3f34262b1c00/public"
             alt="Arrow Icon"
             width={16}
             height={16}

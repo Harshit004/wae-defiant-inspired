@@ -463,7 +463,7 @@ const ClientSideContent: FC = () => {
 
              {/* --- Dynamic Hero Section (MOVED HERE into ClientSideContent) --- */}
              {/* This section now has access to searchParams and currentCategory */}
-             <section id="hero" className="relative w-auto h-[656px] mb-[140px]"> {/* Added mb-140px */}
+             <section id="hero" className="relative w-auto h-[656px]">
                  {/* Dynamic Hero Background Image */}
                  <Image
                    // Use the image from the found category, or a default if currentCategory is undefined or image is missing

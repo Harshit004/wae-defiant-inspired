@@ -607,14 +607,14 @@ export default function Home() {
                 <div className="h-[40px]" />
 
                 {/* Metrics */}
-                <div className="flex justify-between">
+                <div className="flex gap-[35px]">
                     {row.metrics.map((m, i) => (
                     <div key={i} className="flex flex-col items-start">
                         <div
                         style={{
                             fontFamily: "'Inter Tight', sans-serif",
                             fontWeight: 700,
-                            fontSize: '24px',
+                            fontSize: '17px',
                             lineHeight: '140%',
                             textTransform: 'uppercase',
                             verticalAlign: 'middle',
@@ -647,7 +647,7 @@ export default function Home() {
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
                     fontSize: '12px',
-                    lineHeight: '24px',
+                    lineHeight: '130%',
                     letterSpacing: '0%',
                     verticalAlign: 'middle',
                     }}

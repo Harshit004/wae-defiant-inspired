@@ -73,7 +73,7 @@ const ContactSection = () => {
                 type="text"
                 id="name"
                 name="name"
-                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-[9.72%] pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
+                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-4 pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
                 placeholder="Name"
                 style={{ width: '100%' }}
                 required
@@ -84,7 +84,7 @@ const ContactSection = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-[9.72%] pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
+                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-4 pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
                 placeholder="Your Email"
                 style={{ width: '100%' }}
                 required
@@ -95,7 +95,7 @@ const ContactSection = () => {
                 type="tel"
                 id="contact"
                 name="contact"
-                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-[9.72%] pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
+                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-4 pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
                 placeholder="Contact No."
                 style={{ width: '100%' }}
                 required
@@ -106,7 +106,7 @@ const ContactSection = () => {
                 type="text"
                 id="companyName"
                 name="companyName"
-                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-[9.72%] pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
+                className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-4 pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
                 placeholder="ABC Company"
                 style={{ width: '100%' }}
               />
@@ -118,7 +118,7 @@ const ContactSection = () => {
                 className="w-full h-[64px] bg-black text-white font-inter-tight font-normal text-base leading-none tracking-[0.04em] border border-black flex items-center justify-center gap-5"
                 style={{ width: '100%' }}
               >
-                Contact Us {Icons.ChevronRight}
+                Contact Us <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5abb7483-f3f4-4645-1950-b9df77dbd900/public" alt="Arrow icon" className="w-4 h-4" />
               </button>
             </div>
           </form>
