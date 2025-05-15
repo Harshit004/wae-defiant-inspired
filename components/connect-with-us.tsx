@@ -52,7 +52,7 @@ const ConnectWithUs: React.FC<ConnectWithUsProps> = ({ introText }) => {
     }
 
     // Replace with your deployed Google Apps Script Web app URL
-    const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbzRpPO8Gwpk_TQv6Uh4LB5lHEWXVyDJy4Zug_VywhVFEQDsJvYVLG7leBVjTdBc2PCYoA/exec';
+    const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxb3RywLHPRbyFITG58mPfv4nTsrRwKCx-9f131o9oaEcGt5dIDzaq-6EwQ00XTnif3Ig/exec';
 
     try {
       const response = await fetch(appsScriptUrl, {
