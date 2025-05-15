@@ -243,14 +243,25 @@ export default function Home() {
       ],
     },
     {
+      imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/25f2d9de-235b-443d-27b5-7c800c94a100/public",
+      imageAlt: "Morgan Stanley Logo",
+      company: "Morgan Stanley: Reimagining Impact",
+      description: "Morgan Stanley’s 47 refill stations in Mumbai and Bangalore are more than water sources—they’re symbols of change.",
+      impact: "Morgan Stanley’s commitment to sustainability is evident in every sip.",
+      metrics: [
+        { value: "2,83,000 KG", label: "CO2 emissions reduced" },
+        { value: "50M L",  label: "Water saved annually" },
+      ],
+    },
+    {
       imageSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/df18fbae-1da6-4806-bd55-527925802e00/public",
       imageAlt: "RBS Logo",
       company: "RBS (Royal Bank of Scotland): A Fresh Take on Finance",
       description: "RBS has implemented 127 refill stations across major Indian cities, championing a fresh approach to hydration.",
       impact: "An equivalent of planting thousands of trees.",
       metrics: [
-        { value: "21,978 KG", label: "CO2 emissions reduced" },
-        { value: "26M L",  label: "Water saved annually" },
+        { value: "103,000 KG", label: "CO2 emissions reduced" },
+        { value: "18M L",  label: "Water saved annually" },
       ],
     },
     {
