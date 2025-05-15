@@ -10,12 +10,14 @@ import { motion } from "framer-motion";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
+  href?: string; // Keep this if it was there before
+  invertedColors?: boolean; // <--- Add this line
 }
 
 /**
  * Reusable hover button component.
  */
-const HoverButton: FC<HoverButtonProps> = ({ children }) => {
+const HoverButton: FC<HoverButtonProps> = ({ children, href, invertedColors }) => { // <--- Add href and invertedColors here
   const [hovered, setHovered] = useState<boolean>(false);
 
   return (
@@ -33,10 +35,14 @@ const HoverButton: FC<HoverButtonProps> = ({ children }) => {
         fontWeight: 500,
         fontSize: "12px",
         lineHeight: "100%",
-        backgroundColor: hovered ? "#000" : "#f2f2f2",
+        backgroundColor: hovered
+          ? (invertedColors ? "#f2f2f2" : "#000") // If hovered, use light grey if inverted, else black
+          : (invertedColors ? "#000" : "#f2f2f2"), // If not hovered, use black if inverted, else light grey
         border: "1px solid #00000066",
         cursor: "pointer",
-        color: hovered ? "#fff" : "#000",
+        color: hovered
+          ? (invertedColors ? "#000" : "#fff") // If hovered, use black text if inverted, else white text
+          : (invertedColors ? "#fff" : "#000"), // If not hovered, use white text if inverted, else black text
       }}
     >
       {children(hovered)}
@@ -363,14 +369,16 @@ const Home: FC = () => {
             BLUWAE ENKI CT
           </h2>
           <div className="flex gap-4 mb-[57px]">
-            <HoverButton href="/product-category">
+            <a href="/bluwae-enki-fs">
+            <HoverButton href="/bluwae-enki-fs">
               {(hovered) => (
                 <>
                   FREE STANDING
                 </>
               )}
             </HoverButton>
-            <HoverButton href="/product-category">
+            </a>
+            <HoverButton href="#" invertedColors={true}>
               {(hovered) => (
                 <>
                   COUNTER TOP

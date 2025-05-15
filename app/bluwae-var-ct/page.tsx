@@ -10,19 +10,29 @@ import { motion } from "framer-motion";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
+  href?: string; // Keep this if it was there before
+  invertedColors?: boolean; // <--- Add this line
 }
 
 /**
  * Reusable hover button component.
+ * Modified to accept an invertedColors prop and correctly handle href.
  */
-const HoverButton: FC<HoverButtonProps> = ({ children }) => {
+const HoverButton: FC<HoverButtonProps> = ({ children, href, invertedColors }) => {
   const [hovered, setHovered] = useState<boolean>(false);
 
-  return (
-    <button
-      type="button"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+  // Determine background and text colors based on hovered state and invertedColors prop
+  const backgroundColor = hovered
+    ? (invertedColors ? "#f2f2f2" : "#000") // If hovered, use #f2f2f2 if inverted, else #000
+    : (invertedColors ? "#000" : "#f2f2f2"); // If not hovered, use #000 if inverted, else #f2f2f2
+
+  const color = hovered
+    ? (invertedColors ? "#000" : "#fff") // If hovered, use #000 if inverted, else #fff
+    : (invertedColors ? "#fff" : "#000"); // If not hovered, use #fff if inverted, else #000
+
+  // Content wrapped in a span/div to apply styles consistently
+  const content = (
+    <span
       className="w-fit px-4 py-3 transition-all duration-650 ease"
       style={{
         pointerEvents: "auto",
@@ -33,13 +43,30 @@ const HoverButton: FC<HoverButtonProps> = ({ children }) => {
         fontWeight: 500,
         fontSize: "12px",
         lineHeight: "100%",
-        backgroundColor: hovered ? "#000" : "#f2f2f2",
+        backgroundColor: backgroundColor, // Use calculated background color
         border: "1px solid #00000066",
         cursor: "pointer",
-        color: hovered ? "#fff" : "#000",
+        color: color, // Use calculated text color
       }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       {children(hovered)}
+    </span>
+  );
+
+
+  if (href) {
+    return (
+      <Link href={href} passHref>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button type="button">
+      {content}
     </button>
   );
 };
@@ -122,8 +149,8 @@ const Home: FC = () => {
   return (
     <main>
       {/* Normal Header */}
-      <header className={`w-full relative z-10 mb-5 px-[9.72%]`}> 
-          <div> 
+      <header className={`w-full relative z-10 mb-5 px-[9.72%]`}>
+          <div>
             {/* Top Row: Navigation */}
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
@@ -363,14 +390,16 @@ const Home: FC = () => {
             BLUWAE VAR
           </h2>
           <div className="flex gap-4 mb-[57px]">
-            <HoverButton href="/product-category">
+            {/* FREE STANDING button (Link updated) */}
+            <HoverButton href="/bluwae-var-fs">
               {(hovered) => (
                 <>
                   FREE STANDING
                 </>
               )}
             </HoverButton>
-            <HoverButton href="/product-category">
+            {/* COUNTER TOP button (colors inverted) */}
+            <HoverButton href="/product-category" invertedColors={true}>
               {(hovered) => (
                 <>
                   COUNTER TOP
@@ -559,7 +588,7 @@ const Home: FC = () => {
                                 <g id="Interface / Download">
                                     <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </g>
-                            </svg>  
+                            </svg>
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: hovered ? 1 : 0 }}
@@ -570,7 +599,7 @@ const Home: FC = () => {
                                 <g id="Interface / Download">
                                     <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </g>
-                            </svg>  
+                            </svg>
                           </motion.div>
                         </div>
                       </>

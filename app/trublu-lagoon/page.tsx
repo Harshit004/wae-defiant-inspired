@@ -33,10 +33,10 @@ const HoverButton: FC<HoverButtonProps> = ({ children }) => {
         fontWeight: 500,
         fontSize: "12px",
         lineHeight: "100%",
-        backgroundColor: hovered ? "#000" : "#f2f2f2",
+        backgroundColor: hovered ? "#fff" : "#000",
         border: "1px solid #00000066",
         cursor: "pointer",
-        color: hovered ? "#fff" : "#000",
+        color: hovered ? "#000" : "#fff",
       }}
     >
       {children(hovered)}
@@ -370,13 +370,13 @@ const Home: FC = () => {
                 </>
               )}
             </HoverButton>
-            <HoverButton href="/product-category">
+            {/* <HoverButton href="/product-category">
               {(hovered) => (
                 <>
                   COUNTER TOP
                 </>
               )}
-            </HoverButton>
+            </HoverButton> */}
           </div>
 
           {/* Smaller Images Carousel */}
