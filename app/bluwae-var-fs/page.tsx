@@ -48,9 +48,9 @@ const Home: FC = () => {
   const [showMountingDropdown, setShowMountingDropdown] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const productImages = [
-    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/de777aae-d5fd-4dde-d64a-ca8692543800/public", // Main image
-    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/faf6ac94-974b-4aa3-6175-0fa59d586200/public", // Carousel image 1
-    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/655fd93e-7fb0-4449-1f7a-92458eb28700/public", // Carousel image 2
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/66bec5ad-27db-4683-5feb-30cebbf47f00/public", // Main image
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0b375ab3-4888-4377-a0e9-e16c5eb27d00/public", // Carousel image 1
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b359fae2-8c4b-475f-f63e-c60c1fee7e00/public", // Carousel image 2
   ];
 
   const handlePrevImage = () => {
@@ -273,7 +273,7 @@ const Home: FC = () => {
       {/* Product Display Section */}
       <section className="mx-[9.72%] mb-[9.72%] flex items-start justify-between">
         {/* Main Image */}
-        <div className="relative w-[508px] h-[448px] mr-[9px] flex items-center justify-center overflow-hidden">
+        <div className="relative w-[550px] h-[448px] mr-[9px] flex items-center justify-center overflow-hidden">
           <motion.div
             key={productImages[currentImageIndex]}
             initial={{ opacity: 0 }}

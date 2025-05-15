@@ -270,7 +270,7 @@ const Home: FC = () => {
       {/* Product Display Section */}
       <section className="mx-[9.72%] mb-[9.72%] flex items-start justify-between">
         {/* Main Image */}
-        <div className="relative w-[508px] h-[448px] mr-[9px] flex items-center justify-center overflow-hidden">
+        <div className="relative w-[550px] h-[448px] mr-[9px] flex items-center justify-center overflow-hidden">
           <motion.div
             key={productImages[currentImageIndex]}
             initial={{ opacity: 0 }}
