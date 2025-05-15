@@ -31,10 +31,51 @@ interface ConnectWithUsProps {
 
 // Use the interface to type the props
 const ConnectWithUs: React.FC<ConnectWithUsProps> = ({ introText }) => {
-  const handleSubmit = (event: React.FormEvent) => { // Add type for event
+  const handleSubmit = async (event: React.FormEvent) => { // Added async
     event.preventDefault();
-    console.log('Form submitted!');
-    // Add your form submission logic here
+
+    // Get form data
+    const form = event.target as HTMLFormElement; // Cast event.target to HTMLFormElement
+    const formData = new FormData(form);
+
+    // Get the current page URL
+    const pageUrl = window.location.href;
+
+    // Append the page URL to the form data
+    formData.append('pageUrl', pageUrl);
+
+    // Convert FormData to a plain object or URLSearchParams for sending
+    // URLSearchParams is often easier for simple key-value pairs in POST requests
+    const urlSearchParams = new URLSearchParams();
+    for (const [key, value] of formData.entries()) {
+        urlSearchParams.append(key, value as string); // Ensure value is string
+    }
+
+    // Replace with your deployed Google Apps Script Web app URL
+    const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbzRpPO8Gwpk_TQv6Uh4LB5lHEWXVyDJy4Zug_VywhVFEQDsJvYVLG7leBVjTdBc2PCYoA/exec';
+
+    try {
+      const response = await fetch(appsScriptUrl, {
+        method: 'POST',
+        mode: 'no-cors', // Required for Apps Script web app
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded', // Match URLSearchParams
+        },
+        body: urlSearchParams.toString(), // Send data as URL-encoded string
+      });
+
+      // Note: With 'no-cors', you won't be able to read the actual response
+      // from the Apps Script, but the request will still be sent.
+      console.log('Form submission request sent to Google Apps Script.');
+      // You might want to show a success message to the user here
+      alert('Thank you for contacting us! Your message has been sent.');
+      form.reset(); // Clear the form after successful submission
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Show an error message to the user
+      alert('There was an error submitting the form. Please try again.');
+    }
   };
 
   const errors = {
