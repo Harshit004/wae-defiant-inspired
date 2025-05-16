@@ -173,7 +173,7 @@ const Home: FC = () => {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "12px",
+                  fontSize: "11px",
                   lineHeight: "100%",
                   color: "#000000",
                 }}
@@ -189,7 +189,7 @@ const Home: FC = () => {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "12px",
+                  fontSize: "11px",
                   lineHeight: "100%",
                   color: "#000000",
                 }}
@@ -206,8 +206,8 @@ const Home: FC = () => {
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
-                      fontSize: "12px",
-                      lineHeight: "100%",
+                      fontSize: "11px",
+                      lineHeight: "110%",
                     }}
                   >
                     <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
@@ -245,8 +245,8 @@ const Home: FC = () => {
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
-                      fontSize: "12px",
-                      lineHeight: "100%",
+                      fontSize: "11px",
+                      lineHeight: "110%",
                     }}
                   >
                     <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}

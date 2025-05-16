@@ -300,7 +300,7 @@ export default function Home() {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "12px",
+                  fontSize: "11px",
                   lineHeight: "100%",
                   color: "#000000",
                 }}
@@ -316,7 +316,7 @@ export default function Home() {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "12px",
+                  fontSize: "11px",
                   lineHeight: "100%",
                   color: "#000000",
                 }}
@@ -333,8 +333,8 @@ export default function Home() {
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
-                      fontSize: "12px",
-                      lineHeight: "100%",
+                      fontSize: "11px",
+                      lineHeight: "110%",
                     }}
                   >
                     <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
@@ -372,8 +372,8 @@ export default function Home() {
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
-                      fontSize: "12px",
-                      lineHeight: "100%",
+                      fontSize: "11px",
+                      lineHeight: "110%",
                     }}
                   >
                     <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}

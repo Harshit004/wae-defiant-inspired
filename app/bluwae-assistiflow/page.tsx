@@ -165,7 +165,7 @@ const Home: FC = () => {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "12px",
+                  fontSize: "11px",
                   lineHeight: "100%",
                   color: "#000000",
                 }}
@@ -181,7 +181,7 @@ const Home: FC = () => {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "12px",
+                  fontSize: "11px",
                   lineHeight: "100%",
                   color: "#000000",
                 }}
@@ -198,8 +198,8 @@ const Home: FC = () => {
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
-                      fontSize: "12px",
-                      lineHeight: "100%",
+                      fontSize: "11px",
+                      lineHeight: "110%",
                     }}
                   >
                     <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
@@ -237,8 +237,8 @@ const Home: FC = () => {
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
-                      fontSize: "12px",
-                      lineHeight: "100%",
+                      fontSize: "11px",
+                      lineHeight: "110%",
                     }}
                   >
                     <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}
@@ -273,7 +273,7 @@ const Home: FC = () => {
       {/* Product Display Section */}
       <section className="mx-[9.72%] mb-[9.72%] flex items-start justify-between">
         {/* Main Image */}
-        <div className="relative w-[550px] h-[448px] mr-[9px] flex items-center justify-center overflow-hidden">
+        <div className="relative w-[640px] h-[448px] mr-[9px] flex items-center justify-center overflow-hidden">
           <motion.div
             key={productImages[currentImageIndex]}
             initial={{ opacity: 0 }}

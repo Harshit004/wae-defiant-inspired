@@ -118,7 +118,7 @@ export default function Home() {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "12px",
+                  fontSize: "11px",
                   lineHeight: "100%",
                   color: "#000000",
                 }}
@@ -135,7 +135,7 @@ export default function Home() {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "12px",
+                  fontSize: "11px",
                   lineHeight: "100%",
                   color: "#000000",
                 }}
@@ -152,8 +152,8 @@ export default function Home() {
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
-                      fontSize: "12px",
-                      lineHeight: "100%",
+                      fontSize: "11px",
+                      lineHeight: "110%",
                     }}
                   >
                     <div className="c--anim-btn">
@@ -189,8 +189,8 @@ export default function Home() {
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
-                      fontSize: "12px",
-                      lineHeight: "100%",
+                      fontSize: "11px",
+                      lineHeight: "110%",
                     }}
                   >
                     <div className="c--anim-btn">
