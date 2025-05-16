@@ -396,7 +396,7 @@ export default function Home() {
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400, // Changed fontWeight to 400
                     fontSize: "12px",
-                    lineHeight: "100%",
+                    lineHeight: "130%",
                     letterSpacing: "0%",
                     color: '#00000099', // Applied color
                     // Add any unique styles for this description here
@@ -425,7 +425,7 @@ export default function Home() {
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400, // Changed fontWeight to 400
                     fontSize: "12px",
-                    lineHeight: "100%",
+                    lineHeight: "130%",
                     letterSpacing: "0%",
                     color: '#00000099', // Applied color
                     // Add any unique styles for this description here
@@ -495,7 +495,7 @@ export default function Home() {
                      fontFamily: "'Inter Tight', sans-serif",
                      fontWeight: 400, // Changed fontWeight to 400
                      fontSize: "12px",
-                     lineHeight: "100%",
+                     lineHeight: "130%",
                      letterSpacing: "0%",
                      color: '#00000099', // Applied color
                      // Add any unique styles for this description here
@@ -564,7 +564,7 @@ export default function Home() {
                      fontFamily: "'Inter Tight', sans-serif",
                      fontWeight: 400, // Changed fontWeight to 400
                      fontSize: "12px",
-                     lineHeight: "100%",
+                     lineHeight: "130%",
                      letterSpacing: "0%",
                      color: '#00000099', // Applied color
                      // Add any unique styles for this description here
