@@ -363,13 +363,14 @@ const Home: FC = () => {
             BLUWAE ENKI FS
           </h2>
           <div className="flex gap-4 mb-[57px]">
-            <HoverButton href="/product-category">
+            <HoverButton href="/product-category" invertedColors={true}>
               {(hovered) => (
                 <>
                   FREE STANDING
                 </>
               )}
             </HoverButton>
+            <a href="/bluwae-enki-ct">
             <HoverButton href="/product-category">
               {(hovered) => (
                 <>
@@ -377,6 +378,7 @@ const Home: FC = () => {
                 </>
               )}
             </HoverButton>
+            </a>
           </div>
 
           {/* Smaller Images Carousel */}
