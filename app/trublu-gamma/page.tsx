@@ -203,7 +203,7 @@ const Home: FC = () => {
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
                       fontSize: "11px",
-                      lineHeight: "1110%",
+                      lineHeight: "110%",
                     }}
                   >
                     <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}

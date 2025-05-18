@@ -409,9 +409,9 @@ const Home: FC = () => {
       {/* This container provides the main scrollable content below the initial fixed header/hero. */}
       {/* scroll-snap-y class is REMOVED */}
       <motion.div
-        className="min-h-[300vh] relative bg-[#F2F2F2] mt-screen" // mt-screen is custom tailwind, likely h-screen or 100vh
+        className="min-h-[300vh] relative bg-[#F2F2F2] mt-screen snap-y snap-mandatory" // Added snap-y and snap-mandatory
         style={{ marginTop: "100vh" }} // Explicitly pushing content down by viewport height
-      >
+      >                
         {/* Sticky Logo Overlay */}
         {/* This element is positioned sticky inside the scrollable container. */}
         {/* snap-start class is REMOVED */}
@@ -432,7 +432,7 @@ const Home: FC = () => {
 
         {/* Purpose Section */}
         {/* Uses whileInView for entrance animation */}
-        <section className="h-screen/2 flex items-end justify-center relative mb-[180px]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
+        <section className="h-screen/2 flex items-end justify-center relative mb-[180px] snap-center"> {/* Added snap-center */}
           <motion.div
             initial={{ y: "200%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -458,7 +458,7 @@ const Home: FC = () => {
                   reconciles economic performance witha
                   positive impact on people and the planet.
                 </p>
-                <Link href="/purpose" className="contents"> {/* className="contents" again */}
+                <Link href="/purpose" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -479,7 +479,7 @@ const Home: FC = () => {
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                               alt="icon hover"
-                               width={16}
+                              width={16}
                             height={16}
                             />
                           </motion.div>
@@ -494,8 +494,8 @@ const Home: FC = () => {
         </section>
 
         {/* About WAE Section */}
-         {/* Uses whileInView for entrance animation */}
-        <section className="h-screen/2 flex items-end justify-center relative mb-[180px]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
+        {/* Uses whileInView for entrance animation */}
+        <section className="h-screen/2 flex items-end justify-center relative mb-[180px] snap-center"> {/* Added snap-center */}
           <motion.div
             initial={{ y: "200%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -513,7 +513,7 @@ const Home: FC = () => {
                   We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
                   strengthening community resilience and showcasing India's intellectual capital on the world stage.
                 </p>
-                <Link href="/about-wae" className="contents"> {/* className="contents" again */}
+                <Link href="/about-wae" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -534,7 +534,7 @@ const Home: FC = () => {
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                               alt="icon hover"
-                               width={16}
+                              width={16}
                             height={16}
                             />
                           </motion.div>
@@ -977,10 +977,10 @@ const Home: FC = () => {
         <div className="bg-[#f2f2f2]"
         style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
         >
-          {/* Make in INDIA Section */}
+        {/* Make in INDIA Section */}
         {/* Uses whileInView for entrance animation */}
         {/* Removed mb-[360px] from this section to allow scroll-linked animation on the next section */}
-        <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[0px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
+        <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[0px] px-[9.72%] snap-center"> {/* Added snap-center */}
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -1008,17 +1008,17 @@ const Home: FC = () => {
                   The underlying natural order of the universe – circular continuity of the natural world.
                   Undifferentiated, endlessly self-replenishing, immensely powerful, and impassively generous.
                 </p>
-                
+
               </div>
             </div>
           </motion.div>
         </section>
 
         {/* Sustainability Section */}
-         {/* Uses whileInView for entrance animation */}
-         {/* Wrapped in motion.div for scroll-linked y animation */}
+        {/* Uses whileInView for entrance animation */}
+        {/* Wrapped in motion.div for scroll-linked y animation */}
         <motion.div ref={sustainabilityScrollRef} style={{ y: sustainabilityY }}>
-          <section className="h-screen/2 flex items-end justify-center relative pb-[180px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
+          <section className="h-screen/2 flex items-end justify-center relative pb-[180px] px-[9.72%] snap-center"> {/* Added snap-center */}
             <motion.div
               // Removed initial/whileInView y animation - now controlled by scroll
               initial={{ opacity: 0 }} // Keep opacity animation if desired
