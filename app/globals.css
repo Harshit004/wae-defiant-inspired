@@ -13,14 +13,33 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  /* Use 'mandatory' if you want it to always snap to a point */
+  /* 'proximity' is less strict, snaps if close enough */
+  scroll-behavior: smooth; /* Optional: makes the snapping animation smooth */
+  overflow-y: scroll; /* Ensure vertical scrolling is possible */
 }
+
 
 body {
   background-color: #f2f2f2;
   /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
+/* Ensure body doesn't interfere, might need to remove default margins/padding */
+margin: 0;
+padding: 0;
+/* Make body fit the viewport height if needed, depends on layout */
+/* min-height: 100vh; */
 }
+
+/* You might want to add margin or padding to the snapped elements
+so the content isn't right at the edge when centered. */
+/* Example:
+.snap-center {
+padding-top: 20px;
+padding-bottom: 20px;
+}
+*/
 
 /* Animation for navigation links */
 @keyframes underlineSlide {

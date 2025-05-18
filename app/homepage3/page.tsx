@@ -3,7 +3,7 @@
 import { FC, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useInView } from "react-intersection-observer"; // Still used for Hero InView
 import RelatedCard from "@/components/related-card"; // Assuming this component exists
 import Footer from "@/components/footer"; // Assuming this component exists
 import Link from "next/link";
@@ -57,8 +57,8 @@ const Home: FC = () => {
   const [headerHeroScale, setHeaderHeroScale] = useState<number>(1); // State is declared and updated, but not applied to an element's style/transform in provided snippets
   const headerHeroRef = useRef<HTMLDivElement>(null); // Ref for the fixed header/hero container
 
-  // Ref for the Sustainability section wrapper for scroll animation
-  const sustainabilityScrollRef = useRef<HTMLDivElement>(null);
+  // Ref for the Sustainability section wrapper for scroll animation - REMOVED as parallax is discarded
+  // const sustainabilityScrollRef = useRef<HTMLDivElement>(null);
 
 
   const sections = ["hero"]; // Extendable for additional sections - used only to set active section based on heroInView
@@ -136,43 +136,41 @@ const Home: FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Framer Motion scroll-driven animations
+  // Framer Motion scroll-driven animations (Keeping logo opacity as it seems unrelated to section snap)
   const { scrollYProgress } = useScroll(); // Tracks scroll progress of the window by default
   const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]); // Logo opacity linked to scroll
 
-  // Scroll-linked animation for Sustainability section's y position
-  const { scrollYProgress: sustainabilityScrollProgress } = useScroll({
-    target: sustainabilityScrollRef,
-    offset: ["start end", "end start"], // Maps scroll from when the element starts entering the viewport to when it finishes leaving
-  });
+  // Scroll-linked animation for Sustainability section's y position - REMOVED as parallax is discarded
+  // const { scrollYProgress: sustainabilityScrollProgress } = useScroll({
+  //   target: sustainabilityScrollRef,
+  //   offset: ["start end", "end start"],
+  // });
+  // Map scroll progress (0 to 1) to a y translation - REMOVED as parallax is discarded
+  // const sustainabilityY = useTransform(
+  //   sustainabilityScrollProgress,
+  //   [0, 1],
+  //   [360, 0]
+  // );
 
-  // Map scroll progress (0 to 1) to a y translation (e.g., from 360px to 0px)
-  const sustainabilityY = useTransform(
-    sustainabilityScrollProgress,
-    [0, 1], // Input: scroll progress from 0 (element just entering) to 1 (element just leaving)
-    [360, 0] // Output: y translation from 360px (pushed down) to 0px (natural position). Adjust 360 as needed.
+
+  // --- POTENTIAL TROUBLESHOOTING AREA (Declared but not used/Incorrect Syntax) ---
+  // These useTransform calls have incorrect syntax and are not used in the provided code structure.
+  // They were potentially intended for scroll animations now replaced by scroll-snap.
+  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"]);
+  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1]);
+  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]);
+  const finalPurposeOpacity = useTransform(
+    [purposeOpacity, purposeVanish] as any,
+    ([pO, pV]: any) => pO * pV
   );
 
-
-  // --- POTENTIAL TROUBLESHOOTING AREA ---
-  // These useTransform calls have incorrect syntax and are not used in the provided code structure.
-  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"]); // Declared but not used
-  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1]); // Declared but not used
-  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]); // Declared but not used
-  // Incorrect useTransform syntax: expects a MotionValue as the first arg, not an array
-  const finalPurposeOpacity = useTransform(
-    [purposeOpacity, purposeVanish] as any, // 'as any' to bypass TS error on incorrect usage
-    ([pO, pV]: any) => pO * pV
-  ); // Declared but not used
-
-  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"]); // Declared but not used
-  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]); // Declared but not used
-  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0]); // Declared but not used
-   // Incorrect useTransform syntax: expects a MotionValue as the first arg, not an array
+  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"]);
+  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
+  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0]);
   const finalIndiaOpacity = useTransform(
-    [indiaOpacity, indiaVanish] as any, // 'as any' to bypass TS error on incorrect usage
+    [indiaOpacity, indiaVanish] as any,
     ([iO, iV]: any) => iO * iV
-  ); // Declared but not used
+  );
   // --- END POTENTIAL TROUBLESHOOTING AREA ---
 
 
@@ -184,7 +182,7 @@ const Home: FC = () => {
   ];
   const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
-    { text: "The Activist Co.", href: "/the-activist-co" }, // Note: href="#"
+    { text: "The Activist Co.", href: "#" }, // Note: href="#"
     { text: "Blog", href: "/blogs2" },
   ];
   const lineCount = Math.min(productsItems.length, blueprintItems.length); // Declared but not used
@@ -372,6 +370,7 @@ const Home: FC = () => {
         </header>
 
         {/* HERO SECTION */}
+        {/* NOTE: If you want the Hero to be a scroll-snap point, add snap-center here as well */}
         <section
           id="hero"
           ref={heroRef}
@@ -406,15 +405,18 @@ const Home: FC = () => {
       </div>
 
       {/* SCROLL-DRIVEN CONTAINER */}
-      {/* This container provides the main scrollable content below the initial fixed header/hero. */}
-      {/* scroll-snap-y class is REMOVED */}
+      {/* This container provides the main scrollable content below the initial fixed header/hero.
+          NOTE: scroll-snap-type for this effect is applied to the html/body element in global CSS.
+          snap-y snap-mandatory classes are removed from this div. */}
+      {/* The min-height should accommodate the total height of all content */}
       <motion.div
-        className="min-h-[300vh] relative bg-[#F2F2F2] mt-screen" // mt-screen is custom tailwind, likely h-screen or 100vh
+        className="min-h-[400vh] relative bg-[#F2F2F2] mt-screen" // Increased min-height to better accommodate full-screen sections + other content
         style={{ marginTop: "100vh" }} // Explicitly pushing content down by viewport height
       >
         {/* Sticky Logo Overlay */}
         {/* This element is positioned sticky inside the scrollable container. */}
         {/* snap-start class is REMOVED */}
+        {/* NOTE: If you want the logo div itself to be a snap point, add snap-center here */}
         <motion.div
           style={{ position: "sticky", top: "5%", zIndex: 1100, opacity: logoOpacity }} // Framer Motion opacity + CSS Sticky
           className="pointer-events-none flex justify-center pt-[180px]" // snap-start removed
@@ -431,14 +433,16 @@ const Home: FC = () => {
         </motion.div>
 
         {/* Purpose Section */}
-        {/* Uses whileInView for entrance animation */}
-        <section className="h-screen/2 flex items-end justify-center relative mb-[180px]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
+        {/* Entrance animations removed for scroll-snap priority */}
+        {/* Changed to h-screen and centered content vertically */}
+        <section className="h-screen flex items-center justify-center relative snap-center"> {/* Changed height, removed mb, changed flex alignment */}
           <motion.div
-            initial={{ y: "200%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
+            // Removed initial and whileInView animation props
+            // initial={{ y: "200%", opacity: 0 }}
+            // whileInView={{ y: 0, opacity: 1 }}
+            // transition={{ duration: 0.8, delay: 0.2 }}
+            // viewport={{ once: true }}
+            className="w-full max-w-screen-xl mx-8 lg:mx-36" // Removed mb-20
           >
             <div className="flex flex-col lg:flex-row items-start justify-between">
               <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight"> {/* Font style via arbitrary value in JIT mode */}
@@ -494,14 +498,16 @@ const Home: FC = () => {
         </section>
 
         {/* About WAE Section */}
-         {/* Uses whileInView for entrance animation */}
-        <section className="h-screen/2 flex items-end justify-center relative mb-[180px]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
+         {/* Entrance animations removed for scroll-snap priority */}
+         {/* Changed to h-screen and centered content vertically */}
+        <section className="h-screen flex items-center justify-center relative snap-center"> {/* Changed height, removed mb, changed flex alignment */}
           <motion.div
-            initial={{ y: "200%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
+            // Removed initial and whileInView animation props
+            // initial={{ y: "200%", opacity: 0 }}
+            // whileInView={{ y: 0, opacity: 1 }}
+            // transition={{ duration: 0.8, delay: 0.2 }}
+            // viewport={{ once: true }}
+            className="w-full max-w-screen-xl mx-8 lg:mx-36" // Removed mb-20
           >
             <div className="flex flex-col lg:flex-row items-start justify-between">
               <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight"> {/* Font style via arbitrary value */}
@@ -550,6 +556,7 @@ const Home: FC = () => {
 
         {/* Products Section */}
         {/* This section has a white background and higher z-index */}
+        {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
         <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200 }}>
           {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
           <table className="product-grid"> {/* Custom CSS class */}
@@ -800,6 +807,7 @@ const Home: FC = () => {
 
         {/* Solution Section */}
         {/* This section has a white background and higher z-index */}
+        {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
         <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200 }}>
           {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
           <table className="solutions-grid"> {/* Custom CSS class */}
@@ -977,16 +985,17 @@ const Home: FC = () => {
         <div className="bg-[#f2f2f2]"
         style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
         >
-          {/* Make in INDIA Section */}
-        {/* Uses whileInView for entrance animation */}
-        {/* Removed mb-[360px] from this section to allow scroll-linked animation on the next section */}
-        <section className="h-screen/2 flex items-end justify-center relative pt-[180px] mb-[0px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
+        {/* Make in INDIA Section */}
+        {/* Entrance animations removed for scroll-snap priority */}
+        {/* Changed to h-screen and centered content vertically, removed padding */}
+        <section className="h-screen flex items-center justify-center relative snap-center px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment */}
           <motion.div
-            initial={{ y: "100%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="w-full max-w-screen-xl mb-20"
+            // Removed initial and whileInView animation props
+            // initial={{ y: "100%", opacity: 0 }}
+            // whileInView={{ y: 0, opacity: 1 }}
+            // transition={{ duration: 0.8 }}
+            // viewport={{ once: true }}
+            className="w-full max-w-screen-xl" // Removed mb-20
           >
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
@@ -1008,24 +1017,24 @@ const Home: FC = () => {
                   The underlying natural order of the universe – circular continuity of the natural world.
                   Undifferentiated, endlessly self-replenishing, immensely powerful, and impassively generous.
                 </p>
-                
+
               </div>
             </div>
           </motion.div>
         </section>
 
         {/* Sustainability Section */}
-         {/* Uses whileInView for entrance animation */}
-         {/* Wrapped in motion.div for scroll-linked y animation */}
-        <motion.div ref={sustainabilityScrollRef} style={{ y: sustainabilityY }}>
-          <section className="h-screen/2 flex items-end justify-center relative pb-[180px] px-[9.72%]"> {/* h-screen/2 is custom tailwind, likely 50vh */}
+         {/* Parallax motion.div wrapper and related hooks removed for scroll-snap priority */}
+         {/* Changed to h-screen and centered content vertically, removed padding */}
+        {/* <motion.div ref={sustainabilityScrollRef} style={{ y: sustainabilityY }}> // Removed outer motion.div */}
+          <section className="h-screen flex items-center justify-center relative snap-center px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment */}
             <motion.div
-              // Removed initial/whileInView y animation - now controlled by scroll
-              initial={{ opacity: 0 }} // Keep opacity animation if desired
-              whileInView={{ opacity: 1 }} // Keep opacity animation if desired
-              transition={{ duration: 0.8, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between"
+              // Removed initial and whileInView animation props for opacity
+              // initial={{ opacity: 0 }}
+              // whileInView={{ opacity: 1 }}
+              // transition={{ duration: 0.8, delay: 0.5 }}
+              // viewport={{ once: true }}
+              className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between" // This content will be centered
             >
               <h2
                 className="inline-block"
@@ -1059,6 +1068,7 @@ const Home: FC = () => {
                 <div className="flex flex-col">
                   <p className="text-4xl font-normal text-black leading-snug">
                     22,253.65
+                  {/* Note: Missing link/button inside this div */}
                   </p>
                   <p className="text-xs font-normal text-black/70 tracking-wide">
                     TONNES PLASTIC REMOVED
@@ -1097,11 +1107,13 @@ const Home: FC = () => {
               </div>
             </motion.div>
           </section>
-        </motion.div>
+        {/* </motion.div> // Removed outer motion.div */}
         </div>
 
         {/* RELATED INFORMATION SECTION */}
         {/* This section has a white background and higher z-index */}
+         {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
+         {/* NOTE: Adjust padding/margins if this section's height + content interferes with snapping */}
         <section
           className="max-w-full px-[8.75rem] py-[120px] bg-white" // Arbitrary padding
           style={{ position: "relative", zIndex: 1200, borderRadius: "0" }} // z-index to appear above the gray background
@@ -1144,6 +1156,8 @@ const Home: FC = () => {
 
         {/* FOOTER SECTION */}
         {/* Footer likely appears at the very bottom */}
+        {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
+        {/* NOTE: Adjust padding/margins if this section's height + content interferes with snapping */}
         <div style={{ position: "relative", zIndex: 1200 }}> {/* z-index to appear above the gray background */}
           {/* Assuming Footer is a valid component */}
           <Footer />
@@ -1153,15 +1167,17 @@ const Home: FC = () => {
       {/* INLINE STYLES */}
       {/* Custom CSS for specific elements and animations */}
       <style jsx>{`
-        .container { /* This class is defined but not applied to any element */
+        /* These classes were for a different scroll-snap setup and are likely not needed with global html/body snap */
+        /*
+        .container {
           scroll-snap-type: y mandatory;
           overflow-y: auto;
           display: flex;
           flex-direction: column;
-          height: 200vh; /* ADJUST THIS VALUE BASED ON YOUR CONTENT HEIGHT */
+          height: 200vh;
         }
 
-        .section { /* This class is defined but not applied to any element */
+        .section {
           scroll-snap-align: start;
           width: 100%;
           flex-shrink: 0;
@@ -1170,6 +1186,7 @@ const Home: FC = () => {
           align-items: center;
           height: 100vh;
         }
+        */
 
         /* Product Grid Table Styles */
         .product-grid {
