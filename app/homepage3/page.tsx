@@ -557,7 +557,7 @@ const Home: FC = () => {
               <td colSpan={2} className="product-title whitespace-nowrap"> {/* Custom CSS class */}
                 Products
               </td>
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+              <td className="product-cell transition  cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/product-category/drinking-water-stations" className="contents">
                   <div className="relative w-full h-full">
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -600,7 +600,7 @@ const Home: FC = () => {
                 />
               </td>
               {/* DRINKING WATER FAUCETS with left and down arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/product-category/drinking-water-faucets" className="contents">
                   <div className="relative w-full h-full">
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -637,7 +637,7 @@ const Home: FC = () => {
                 />
               </td>
               {/* DRINKING WATER DISPENSERS with left and right arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/product-category/water-dispenser" className="contents">
                   <div className="relative w-full h-full">
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -688,7 +688,7 @@ const Home: FC = () => {
                 />
               </td>
               {/* WATER COOLERS & FOUNTAINS with right and down arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/product-category/water-cooler" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
@@ -733,7 +733,7 @@ const Home: FC = () => {
                 />
               </td>
               {/* PUBLIC UTILITY SYSTEMS with left arrow */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/product-category/public-utility-systems" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
@@ -764,7 +764,7 @@ const Home: FC = () => {
                 />
               </td>
               {/* COMMERCIAL/INDUSTRIAL PLANTS with right arrow */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/product-category/commercial-industrial-plants" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
@@ -807,7 +807,7 @@ const Home: FC = () => {
               <td colSpan={2} className="product-title whitespace-nowrap"> {/* Custom CSS class */}
                 Solutions
               </td>
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/water-reuse" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
@@ -852,7 +852,7 @@ const Home: FC = () => {
                 />
               </td>
               {/* DRINKING WATER FAUCETS with left and down arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/water-treatment" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
@@ -892,7 +892,7 @@ const Home: FC = () => {
                 />
               </td>
               {/* DRINKING WATER DISPENSERS with left and right arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110"> {/* Custom CSS class + Tailwind hover scale */}
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/water-as-a-service" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
