@@ -456,70 +456,7 @@ const Home: FC = () => {
                   replenishing, immensely powerful and
                   impassively generous.
                 </p>
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
-                  Our purpose brings together the company,
-                  employees, clients and our stakeholders and
-                  reconciles economic performance witha
-                  positive impact on people and the planet.
-                </p>
                 <Link href="/purpose" className="contents"> {/* className="contents" again */}
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                               width={16}
-                            height={16}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* About WAE Section */}
-         {/* Entrance animations removed for scroll-snap priority */}
-         {/* Changed to h-screen and centered content vertically */}
-        <section className="h-screen flex items-center justify-center relative snap-center"> {/* Changed height, removed mb, changed flex alignment */}
-          <motion.div
-            // Removed initial and whileInView animation props
-            // initial={{ y: "200%", opacity: 0 }}
-            // whileInView={{ y: 0, opacity: 1 }}
-            // transition={{ duration: 0.8, delay: 0.2 }}
-            // viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36" // Removed mb-20
-          >
-            <div className="flex flex-col lg:flex-row items-start justify-between">
-              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight"> {/* Font style via arbitrary value */}
-                About WAE
-              </h2>
-              <div className="flex flex-col gap-5 w-64"> {/* Fixed width text container */}
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
-                  WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
-                  We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
-                  strengthening community resilience and showcasing India's intellectual capital on the world stage.
-                </p>
-                <Link href="/about-wae" className="contents"> {/* className="contents" again */}
                   <HoverButton>
                     {(hovered) => (
                       <>

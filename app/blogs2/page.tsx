@@ -163,7 +163,7 @@ export default function Home() {
 
       {/* HEADER */}
       <div style={{ top: 0, left: 0, width: "100%" }}>
-        <header ref={headerRef} className="w-full relative z-10 mb-[120px]">
+        <header ref={headerRef} className="w-full relative z-10">
           <div className="mx-auto w-full max-w-[1440px] px-[140px]">
             {/* Top Row: Navigation */}
             <div
@@ -353,7 +353,7 @@ export default function Home() {
 
       {/* ================= HERO SECTION ================= */}
       <section
-        className={`${containerClass} flex justify-between items-start mb-20`}
+        className={`${containerClass} flex justify-between items-start mt-5 mb-20`}
       >
         {/* Image (38.19% width & height) */}
         <div style={{ width: "38.19%", height: "38.19%" }}>

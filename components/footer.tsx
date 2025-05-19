@@ -76,8 +76,8 @@ export default function Footer() {
             {/* "Corporate office" text */}
             <div
               style={{
-                width: "2.6rem",      // Approx 41px
-                height: "1.4rem",     // Approx 22px
+                // width: "2.6rem",      // Approx 41px
+                // height: "1.4rem",     // Approx 22px
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
                 fontSize: "0.56rem",  // Approx 9px
@@ -85,7 +85,7 @@ export default function Footer() {
                 letterSpacing: "0px",
               }}
             >
-              Corporate office
+              Co-ordinates
             </div>
           </div>
 
@@ -141,20 +141,41 @@ export default function Footer() {
                 marginBottom: "1.25rem",
               }}
             />
-            {/* Address text */}
+            <div className="flex align-centre">
+              {/* Address text */}
             <div
               style={{
                 width: "11.3rem",     // Approx 181px (181/16 ≈ 11.3rem)
-                height: "1.4rem",     // Approx 22px
+                height: "1.4rem",     // Approx 22px - might be flexible with flex, check necessity
+                marginLeft: "-3.8rem",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "0.56rem",  // Approx 9px
                 lineHeight: "100%",
                 letterSpacing: "0px",
                 color: "#00000099",
+                // Added flex properties to allow text wrapping within its width if needed
+                flexShrink: 0, // Prevent shrinking if space is tight
               }}
             >
               H-18, H block, Sector 63, Noida, Uttar Pradesh, India, 201301
+            </div>
+
+            {/* Phone number text */}
+            <div
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "0.56rem", // Approx 9px
+                lineHeight: "100%",
+                letterSpacing: "0px",
+                color: "#00000099",
+                marginLeft: '3.2rem', // Add some space between address and phone number (adjust as needed)
+                flexShrink: 0, // Prevent shrinking
+              }}
+            >
+              +120 4069800
+            </div>
             </div>
           </div>
 

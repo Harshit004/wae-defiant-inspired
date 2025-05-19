@@ -3,10 +3,10 @@
 import { FC, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import gsap from "gsap";
+// Removed: import { useInView } from "react-intersection-observer";
+// Removed: import gsap from "gsap";
 import Footer from "@/components/footer";
-import Link from "next/link"; // Import the Link component
+import Link from "next/link";
 
 
 interface HoverButtonProps {
@@ -55,39 +55,36 @@ const extraSections = [
 ];
 
 const Home: FC = () => {
-  // State and refs
-  const [activeSection, setActiveSection] = useState<number>(0);
+  // State and refs - Removed unused and section-related ones
   const [currentTime, setCurrentTime] = useState<string>("");
   const [headerHeight, setHeaderHeight] = useState<number>(0);
   const headerRef = useRef<HTMLDivElement>(null);
-  const [heroRef, heroInView] = useInView({ threshold: 0.5 });
-  const [openingsRef, openingsInView] = useInView({ threshold: 0.5 });
-  const [taglineVisible, setTaglineVisible] = useState<boolean>(true);
-  const [headerHeroScale, setHeaderHeroScale] = useState<number>(1);
-  const headerHeroRef = useRef<HTMLDivElement>(null);
+  const [taglineVisible, setTaglineVisible] = useState<boolean>(true); // State is calculated but not used in UI
+  const headerHeroRef = useRef<HTMLDivElement>(null); // Still used in an unused effect
   const prevScrollY = useRef<number>(0);
-  const [scrollingDown, setScrollingDown] = useState<boolean>(false);
-  const whyWAERef = useRef<HTMLDivElement>(null); // Ref for Why WAE section
-  const [whyWAEInView, whyWAEEntry] = useInView({ threshold: 0.5 }); // Track Why WAE visibility
+  const [scrollingDown, setScrollingDown] = useState<boolean>(false); // Still calculated, but not used for logo movement anymore
 
-  console.log("Initial openingsInView:", openingsInView);
-  console.log("Initial whyWAEInView:", whyWAEInView);
+  // Effect to force scroll position to the top on component mount
+  useEffect(() => {
+    // Ensure the scroll position is at the very top when the component mounts
+    // Use 'instant' behavior to prevent a visible scroll animation if one was happening
+    window.scroll({ top: 0, left: 0, behavior: 'instant' });
+  }, []); // Empty dependency array means this effect runs only once after the initial render
 
-  const sections = ["hero"]; // Extendable for additional sections
 
   // Update tagline visibility and track scroll direction on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setTaglineVisible(currentScrollY < prevScrollY.current);
-      setScrollingDown(currentScrollY > prevScrollY.current); // Determine if scrolling down
+      setTaglineVisible(currentScrollY < prevScrollY.current); // taglineVisible state is unused
+      setScrollingDown(currentScrollY > prevScrollY.current); // Determine if scrolling down - not used for logo anymore
       prevScrollY.current = currentScrollY;
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Update current time (India Time) every minute
+  // Update current time (India Time) every minute - Still unused state
   useEffect(() => {
     const updateIndiaTime = () => {
       const options: Intl.DateTimeFormatOptions = {
@@ -104,17 +101,12 @@ const Home: FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Set active section when hero is in view
-  useEffect(() => {
-    if (heroInView) setActiveSection(0);
-  }, [heroInView]);
-
-  // Measure header height to offset hero section
+  // Measure header height to offset hero section - Still needed
   useEffect(() => {
     if (headerRef.current) setHeaderHeight(headerRef.current.clientHeight);
   }, [headerRef]);
 
-  // Scroll-driven header/hero scaling effect
+  // Scroll-driven header/hero scaling effect - Still unused state/effect, but kept ref for now
   useEffect(() => {
     const handleScroll = () => {
       if (!headerHeroRef.current) return;
@@ -124,13 +116,13 @@ const Home: FC = () => {
       const minScale = 0;
 
       if (scrollPosition <= 100) {
-        setHeaderHeroScale(1);
+        // setHeaderHeroScale(1); // Unused state
       } else if (scrollPosition >= maxScroll) {
-        setHeaderHeroScale(minScale);
+        // setHeaderHeroScale(minScale); // Unused state
       } else {
         const scrollRange = maxScroll - 100;
         const scrollProgress = (scrollPosition - 100) / scrollRange;
-        setHeaderHeroScale(1 - scrollProgress);
+        // setHeaderHeroScale(1 - scrollProgress); // Unused state
       }
     };
 
@@ -138,49 +130,27 @@ const Home: FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Trigger GSAP animation based on visibility and scroll direction
-  useEffect(() => {
-    console.log("openingsInView:", openingsInView);
-    console.log("whyWAEInView:", whyWAEInView);
-    console.log("scrollingDown:", scrollingDown);
-    if (!openingsInView && !whyWAEInView && scrollingDown) {
-      // Animate to the left only when scrolling down and both sections are out of view
-      gsap.to(".sticky-logo", {
-        duration: 0.8,
-        x: -400, // Ensure it moves to the left
-        y: 20,
-        ease: "power3.out",
-      });
-    } else {
-      // Animate back to the center when either "Why WAE" or "Current Openings" is in view
-      gsap.to(".sticky-logo", {
-        duration: 0.8,
-        x: 0,
-        y: 0,
-        ease: "power3.out",
-      });
-    }
-  }, [openingsInView, whyWAEInView, scrollingDown]);
-
-  // Framer Motion scroll-driven animations
+  // Framer Motion scroll-driven animations - Keep for logo opacity if desired
   const { scrollYProgress } = useScroll();
-  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
-  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"]);
-  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1]);
-  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]);
-  const finalPurposeOpacity = useTransform(
+  // Opacity for the sticky logo based on scroll (still using Framer Motion for this)
+  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]); // Currently maps to constant 1
+  // Other Framer Motion transforms appear unused in the current JSX - Still unused
+  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"]); // Unused
+  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1]); // Unused
+  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]); // Unused
+  const finalPurposeOpacity = useTransform( // Unused
     [purposeOpacity, purposeVanish],
     ([pO, pV]) => pO * pV
   );
-  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"]);
-  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
-  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0]);
-  const finalIndiaOpacity = useTransform(
+  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"]); // Unused
+  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]); // Unused
+  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0]); // Unused
+  const finalIndiaOpacity = useTransform( // Unused
     [indiaOpacity, indiaVanish],
     ([iO, iV]) => iO * iV
   );
 
-  // Arrays for menu items
+  // Arrays for menu items - Keep
   const productsItems = [
     { text: "This is Us", href: "/inside-wae" },
     { text: "Our Portfolio", href: "/our-portfolio" },
@@ -191,22 +161,23 @@ const Home: FC = () => {
     { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs2" },
   ];
+  // lineCount is calculated but not used - Still unused
   const lineCount = Math.min(productsItems.length, blueprintItems.length);
 
-  // Tagline words split for animation
+  // Tagline words split for animation - Still unused for animation
   const taglineLine1 = "To lead the way in sustainability";
   const taglineLine2 = "ahead of the rest";
-  const taglineWords1 = taglineLine1.split(" ");
-  const taglineWords2 = taglineLine2.split(" ");
+  const taglineWords1 = taglineLine1.split(" "); // Unused for animation
+  const taglineWords2 = taglineLine2.split(" "); // Unused for animation
 
-  // Framer Motion animation variants
-  const containerVariants = {
+   // Framer Motion animation variants - Still unused
+  const containerVariants = { // Unused
     hidden: {},
     visible: {
       transition: { staggerChildren: 0.05, ease: "easeInOut" },
     },
   };
-  const childVariants = {
+  const childVariants = { // Unused
     hidden: { opacity: 0, x: -10 },
     visible: {
       opacity: 1,
@@ -215,9 +186,11 @@ const Home: FC = () => {
     },
   };
 
+
   return (
     <main className="relative">
       {/* HEADER AND HERO SECTION */}
+      {/* headerHeroRef is used in an unused effect */}
       <div ref={headerHeroRef} className="fixed top-0 left-0 w-full h-screen z-0">
         <header ref={headerRef} className="w-full relative z-10 mb-0">
           <div className="mx-auto w-full max-w-[1440px] px-[140px]">
@@ -245,28 +218,18 @@ const Home: FC = () => {
             {/* Bottom Row: Logo, Tagline and Menu Items */}
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
-
               <div className="flex flex-col justify-center">
-
-<a href="/homepage3">
-
-  <Image
-
-    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-
-    alt="WAE Logo"
-
-    width={78}
-
-    height={82}
-
-    style={{ cursor: 'pointer' }}
-
-  />
-
-</a>
-
-</div>
+                {/* Changed <a> to <Link> for client-side navigation */}
+                <Link href="/homepage3">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                    alt="WAE Logo"
+                    width={78}
+                    height={82}
+                    style={{ cursor: 'pointer' }}
+                  />
+                </Link>
+              </div>
 
               {/* Coordinates */}
               <div
@@ -284,7 +247,7 @@ const Home: FC = () => {
                 78.9629° E
               </div>
 
-              {/* Tagline Animation */}
+              {/* Tagline Animation (Rendered statically) */}
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
@@ -379,7 +342,7 @@ const Home: FC = () => {
           </div>
         </header>
 
-{/* Hero section (Not Fixed in this version) */}
+{/* Hero section (Not Fixed in this version - it's inside a fixed parent) */}
 <section
           id="hero"
           className="relative h-screen w-full overflow-hidden mb-[140px]" // Hero has margin-bottom
@@ -445,13 +408,31 @@ const Home: FC = () => {
       </div>
 
       {/* SCROLL-DRIVEN CONTAINER */}
-      <motion.div className="relative bg-[#F2F2F2]" style={{ marginTop: "100vh" }}>
+       {/* Added initial/animate opacity to address the pop-up */}
+       {/* Increased delay on the transition - Note: The scroll-to-top effect might make this less noticeable/necessary */}
+      <motion.div
+        className="relative bg-[#F2F2F2]"
+        style={{ marginTop: "100vh" }}
+         initial={{ opacity: 0 }}
+         animate={{ opacity: 1 }}
+         transition={{ duration: 0.5, delay: 0.4 }}
+      >
         {/* Sticky Logo Overlay */}
-        <motion.div
-          style={{ position: "sticky", top: "5%", zIndex: 1100, opacity: logoOpacity }}
+         <motion.div
+          // KEEP flex justify-center class here
           className="sticky-logo pointer-events-none flex justify-center pt-[180px]"
+          style={{
+            position: "sticky", // Keep sticky
+            top: "5%", // Keep sticky top
+            zIndex: 1100, // Keep z-index
+            opacity: logoOpacity, // Keep Framer Motion opacity
+            // Removed transform and transition based on logoOnLeft as that logic is removed
+          }}
         >
-          <div className="max-w-[19.375rem] max-h-[19.375rem]">
+          {/* Inner div (flex item, centered by parent) */}
+          <div
+             className="max-w-[19.375rem] max-h-[19.375rem]"
+          >
             <Image
               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
               alt="Center Logo"
@@ -463,8 +444,9 @@ const Home: FC = () => {
         </motion.div>
 
         {/* Why WAE Section */}
-        <div ref={whyWAERef}>
+        <div>
           <section className="h-screen/2 flex items-end justify-center relative mb-[180px]">
+            {/* whileInView will still work on this motion.div using its own internal observer */}
             <motion.div
               initial={{ y: "100%", opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -487,7 +469,8 @@ const Home: FC = () => {
         </div>
 
         {/* Current Openings Section */}
-        <section className="h-screen/2 flex items-end justify-center relative" ref={openingsRef}>
+        <section className="h-screen/2 flex items-end justify-center relative">
+           {/* whileInView will still work on this motion.div using its own internal observer */}
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -581,7 +564,6 @@ const Home: FC = () => {
                   fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                  verticalAlign: 'middle',
                   color: '#00000099'
                 }}
               >
@@ -628,12 +610,12 @@ const Home: FC = () => {
 
       {/* INLINE STYLES */}
       <style jsx>{`
-        .product-grid {
+        .product-grid { /* Appears unused in the current JSX */
           width: 1160px;
           height: 928px;
           border-collapse: collapse;
         }
-        .product-title {
+        .product-title { /* Appears unused in the current JSX */
           font-family: "Inter Tight", sans-serif;
           font-weight: 500;
           font-size: 48px;
@@ -645,7 +627,7 @@ const Home: FC = () => {
           height: 232px;
           box-sizing: border-box;
         }
-        .product-cell {
+        .product-cell { /* Appears unused in the current JSX */
           font-family: "Inter Tight", sans-serif;
           font-weight: 400;
           font-size: 14px;
@@ -661,40 +643,42 @@ const Home: FC = () => {
           padding: 0px;
           box-sizing: border-box;
         }
-        .placeholder-img {
+        .placeholder-img { /* Appears unused in the current JSX */
           object-fit: cover;
         }
+        /* Styles for the custom menu hover effect */
         .c--anim-btn {
           display: flex;
           align-items: center;
           gap: 4px;
+          /* Add transition for smoothness if needed, but text-container handles main anim */
         }
         .text-container {
-          height: 12px;
-          overflow: hidden;
+          height: 12px; /* Must match line-height of the spans */
+          overflow: hidden; /* Hides the second span initially */
         }
         .c-anim-btn {
           display: block;
-          transition: margin-top 0.5s;
+          transition: margin-top 0.5s; /* Smooth slide animation */
         }
         .c--anim-btn:hover .c-anim-btn {
-          margin-top: -12px;
+          margin-top: -12px; /* Moves the first span up, showing the second */
         }
         .menu-arrow {
           display: inline-block;
           opacity: 0;
-          transform: translateX(-10px);
-          transition: transform 0.5s ease, opacity 0.5s ease;
+          transform: translateX(-10px); /* Start off-screen */
+          transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth animation */
         }
         .c--anim-btn:hover .menu-arrow {
-          transform: translateX(0);
-          opacity: 1;
+          transform: translateX(0); /* Slide in */
+          opacity: 1; /* Fade in */
         }
-        .blueprint-arrow {
-          transform: rotate(-45deg) translateX(-10px);
+        .blueprint-arrow { /* Specific style for Blueprint arrow */
+          transform: rotate(-45deg) translateX(-10px); /* Start rotated and off-screen */
         }
         .c--anim-btn:hover .blueprint-arrow {
-          transform: rotate(-45deg) translateX(0);
+          transform: rotate(-45deg) translateX(0); /* Slide in and maintain rotation */
           opacity: 1;
         }
       `}</style>
