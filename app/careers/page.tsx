@@ -522,82 +522,81 @@ const Home: FC = () => {
         </section>
 
         {/* New Items-Right Sections */}
-        <div className="flex flex-col items-end justify-between px-[9.72%]" style={{ gap: '320px' }}>
-          {extraSections.map((sec, idx) => (
-            <section key={idx} className="w-[25%]">
-              <div
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: '21px',
-                  lineHeight: '110%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#00000066'
-                }}
-              >
-                {sec.number}
-              </div>
-              <div style={{ height: '18px' }} />
-              <hr style={{ border: '0.5px solid #D9D9DC' }} />
-              <div style={{ height: '18px' }} />
-              <div
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: '21px',
-                  lineHeight: '110%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle'
-                }}
-              >
-                {sec.title}
-              </div>
-              <div style={{ height: '60px' }} />
-              <div
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: '14px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  color: '#00000099'
-                }}
-              >
-                {sec.description}
-              </div>
-              <div style={{ height: '20px' }} />
-              <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Apply Now
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
-                            width={16}
-                            height={16}
-                          />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
-            </section>
-          ))}
+<div className="flex flex-col justify-between px-[9.72%] gap-[320px]">
+  {extraSections.map((sec, idx) => (
+    // Each section will now be a flex container with items in a row
+    <section key={idx} className="flex flex-row lg:flex-row items-start justify-between">
+
+      {/* Left Column: Number, HR, and Title */}
+      <div className="flex flex-col mr-4 "> {/* Added flex-col and margin-right for spacing */}
+        <div
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: '21px',
+            lineHeight: '110%',
+            letterSpacing: '0%',
+            verticalAlign: 'middle',
+            color: '#00000066'
+          }}
+        >
+          {sec.number}
         </div>
+        <div style={{ height: '18px' }} />
+        <hr style={{ border: '0.5px solid #D9D9DC' }} />
+        <div style={{ height: '18px' }} />
+        <div
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: '21px',
+            lineHeight: '110%',
+            letterSpacing: '0%',
+            verticalAlign: 'middle'
+          }}
+        >
+          {sec.title}
+        </div>
+      </div>
+
+      {/* Right Column: Description and Button */}
+      <div className="flex flex-col items-start w-[290px]"> {/* Added flex-col, items-end, and text-right */}
+        <div className="font-inter-tight font-medium text-sm leading-[110%] tracking-normal text-[#00000099]">
+          {sec.description}
+        </div>
+        <div style={{ height: '20px' }} />
+        <HoverButton>
+            {(hovered) => (
+              <>
+                Apply Now
+                <div className="relative inline-block w-4 h-4 ml-2"> {/* Added ml-2 for spacing */}
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                    alt="icon default"
+                    width={16}
+                    height={16}
+                  />
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: hovered ? 1 : 0 }}
+                    transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                    className="absolute top-0 left-0"
+                  >
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                      alt="icon hover"
+                      width={16}
+                      height={16}
+                    />
+                  </motion.div>
+                </div>
+              </>
+            )}
+          </HoverButton>
+      </div>
+    </section>
+  ))}
+</div>
 
         {/* FOOTER SECTION */}
         <div style={{ position: "relative", zIndex: 1200 }}>
