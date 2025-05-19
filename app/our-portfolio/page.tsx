@@ -308,7 +308,7 @@ export default function Home() {
         >
            {/* Reverted to Image as in the provided code */}
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d2ea52c2-f6b2-4a26-e587-61e8ea26ab00/public"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3cc94962-6b68-4617-df3b-09aabd928700/public"
             alt="Our portfolio"
              width={1440} // Adjusted width for better fit if max-width is 1440px
              height={656} // Height from original image usage

@@ -961,20 +961,19 @@ const Home: FC = () => {
         </section>
 
         {/* Sustainability Section */}
-         {/* Parallax motion.div wrapper and related hooks removed for scroll-snap priority */}
-         {/* Changed to h-screen and centered content vertically, removed padding */}
-        {/* <motion.div ref={sustainabilityScrollRef} style={{ y: sustainabilityY }}> // Removed outer motion.div */}
-          <section className="h-screen flex items-center justify-center relative snap-center px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment */}
+        {/* Parallax motion.div wrapper and related hooks removed for scroll-snap priority */}
+        {/* Changed to h-screen and centered content vertically, removed padding */}
+        <section className="h-screen flex items-center justify-center relative snap-center px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment */}
             <motion.div
               // Removed initial and whileInView animation props for opacity
               // initial={{ opacity: 0 }}
               // whileInView={{ opacity: 1 }}
               // transition={{ duration: 0.8, delay: 0.5 }}
               // viewport={{ once: true }}
-              className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between" // This content will be centered
+              className="w-full max-w-screen-xl" // This content will be centered
             >
               <h2
-                className="inline-block"
+                className="inline-block mb-20"
                 style={{ // Inline styles for typography
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
@@ -985,66 +984,51 @@ const Home: FC = () => {
               >
                 Sustainability
               </h2>
-              <div className="flex flex-col gap-20">
+              {/* Div containing the three statistics */}
+              <div className="flex flex-row justify-between">
+                {/* First statistic column */}
                 <div className="flex flex-col">
-                  <p className="text-4xl font-normal text-black leading-snug">
+                  <p className="text-4xl font-bold text-black leading-snug">
                     1,012,120.25
                   </p>
+                  {/* Horizontal Rule between the number and the label */}
+                  {/* Using border-top and clearing default border for consistency */}
+                  <hr className="my-[12px] w-[20rem]" style={{ border: 'none', borderTop: '1px solid #00000033' }} />
                   <p className="text-xs font-normal text-black/70 tracking-wide">
                     TONNES CO2 EMISSIONS SAVED
                   </p>
                 </div>
+                {/* Second statistic column */}
                 <div className="flex flex-col">
-                  <p className="text-4xl font-normal text-black leading-snug">
+                  <p className="text-4xl font-bold text-black leading-snug">
                     12,185.4325
                   </p>
+                  {/* Horizontal Rule between the number and the label */}
+                  {/* Using border-top and clearing default border for consistency */}
+                  <hr className="my-[12px] w-[20rem]" style={{ border: 'none', borderTop: '1px solid #00000033' }} />
                   <p className="text-xs font-normal text-black/70 tracking-wide">
                     MILLION GALLONS WATER SAVED
                   </p>
                 </div>
+                {/* Third statistic column */}
                 <div className="flex flex-col">
-                  <p className="text-4xl font-normal text-black leading-snug">
+                  <p className="text-4xl font-bold text-black leading-snug">
                     22,253.65
                   {/* Note: Missing link/button inside this div */}
                   </p>
+                  {/* Horizontal Rule between the number and the label */}
+                  {/* Using border-top and clearing default border for consistency */}
+                  <hr className="my-[12px] w-[20rem]" style={{ border: 'none', borderTop: '1px solid #00000033' }} />
                   <p className="text-xs font-normal text-black/70 tracking-wide">
                     TONNES PLASTIC REMOVED
                   </p>
-                  <Link href="/sustainability" className="mt-10">
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
                 </div>
               </div>
+
+              {/* Removed the hr that was previously here */}
+
             </motion.div>
           </section>
-        {/* </motion.div> // Removed outer motion.div */}
         </div>
 
         {/* RELATED INFORMATION SECTION */}

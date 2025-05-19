@@ -445,7 +445,7 @@ const Home: FC = () => {
 
         {/* Why WAE Section */}
         <div>
-          <section className="h-screen/2 flex items-end justify-center relative mb-[180px]">
+          <section className="h-screen/2 flex items-end justify-center relative mb-[320px]">
             {/* whileInView will still work on this motion.div using its own internal observer */}
             <motion.div
               initial={{ y: "100%", opacity: 0 }}
@@ -454,7 +454,7 @@ const Home: FC = () => {
               viewport={{ once: true }}
               className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
             >
-              <div className="flex flex-col lg:flex-col gap-y-[40px] items-start justify-between">
+              <div className="flex flex-row lg:flex-row items-start justify-between">
                 <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                   Why WAE
                 </h2>
@@ -469,7 +469,7 @@ const Home: FC = () => {
         </div>
 
         {/* Current Openings Section */}
-        <section className="h-screen/2 flex items-end justify-center relative">
+        <section className="h-screen/2 flex items-end justify-center relative mb-[320px]">
            {/* whileInView will still work on this motion.div using its own internal observer */}
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
@@ -478,7 +478,7 @@ const Home: FC = () => {
             viewport={{ once: true }}
             className="w-full max-w-screen-xl mx-8 lg:mx-36"
           >
-            <div className="flex flex-col lg:flex-col gap-y-[40px] items-end justify-between">
+            <div className="flex flex-row lg:flex-row items-start justify-between">
               <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                 Current
                 <br />
@@ -521,11 +521,8 @@ const Home: FC = () => {
           </motion.div>
         </section>
 
-        {/* 358px gap */}
-        <div style={{ height: '358px' }} />
-
         {/* New Items-Right Sections */}
-        <div className="flex flex-col items-end justify-between px-[9.72%]" style={{ gap: '358px' }}>
+        <div className="flex flex-col items-end justify-between px-[9.72%]" style={{ gap: '320px' }}>
           {extraSections.map((sec, idx) => (
             <section key={idx} className="w-[25%]">
               <div
