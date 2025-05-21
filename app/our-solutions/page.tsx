@@ -1,10 +1,9 @@
 "use client"
 
-import type React from "react"
+import React, { useEffect, useState, useRef } from "react" // Corrected import
 import type { FC } from "react"
-import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion" // Imported AnimatePresence
 import { useInView } from "react-intersection-observer"
 import Footer from "@/components/footer"
 import Link from "next/link"
@@ -61,24 +60,60 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
 };
 
 
-// Placeholder for product category data : copied from blogs section, hence the same variable
-const blogPosts = [
+// Data for the main solutions categories, now with sub-sections for accordions
+const mainSolutionItems = [
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/16ca1b89-cf24-442f-0a41-3e3ad0c6cf00/public",
       title: "WATER REUSE",
-      description: "WAE empowers organizations to reclaim and reuse water across grey water, sewage, and effluent streams. Our solutions close the loop on water usage, helping clients reduce freshwater dependence, lower costs, and demonstrate real environmental impact.",
+      // main description removed from here based on screenshot
+      subSections: [
+        { title: "GREY WATER REUSE", content: "WAE's grey water reuse systems capture lightly used water from showers, sinks, and laundry, and treat it for reuse in non-potable applications like toilet flushing, cooling, and landscaping. It's a smart, cost-effective way for organizations to reduce water demand and improve operational sustainability without compromise." },
+        { title: "SEWAGE WATER", content: "Dummy content for Sewage Water: Advanced biological and chemical processes are employed to treat sewage, making it safe for industrial applications, agricultural irrigation, or discharge." },
+        { title: "EFFLUENT TREATMENT", content: "Dummy content for Effluent Treatment: Our solutions handle industrial and commercial effluent, removing pollutants to meet discharge standards or enable reuse within the facility." },
+      ],
+      buttonLink: "/solutions/water-reuse-details" // Specific page for this solution
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c399819d-976c-49aa-332f-02a9db708200/public",
       title: "WATER TREATMENT",
-      description: "WAE’s water treatment systems convert raw water into clean, safe supply through a multi-stage process - from physical removal to advanced purification. Built for industries and institutions, our solutions ensure water quality, regulatory compliance, and sustainable operations.",
+      // main description removed from here based on screenshot
+      subSections: [
+        { title: "PRIMARY TREATMENT", content: "Dummy content for Primary Treatment: Initial physical separation of solids and floating materials from raw water using screens and sedimentation." },
+        { title: "SECONDARY TREATMENT", content: "Dummy content for Secondary Treatment: Biological processes to remove dissolved and suspended organic matter, typically involving aeration and microbial activity." },
+        { title: "PURIFICATION", content: "Dummy content for Purification: Advanced filtration (e.g., RO, UV) and disinfection steps to ensure water meets specific quality standards for various applications." },
+      ],
+      buttonLink: "/solutions/water-treatment-details"
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f492758-88ca-4c25-4a00-1a122cd22200/public",
       title: "WATER AS A SERVICE",
-      description: "Water dispensers with inbuilt purification —pure, safe water delivered efficiently. Designed to reduce plastic waste and energy consumption, making sustainability easy.",
+      // main description removed from here based on screenshot
+      subSections: [ // Reusing the same sub-sections as Water Reuse for dummy purposes as requested
+        { title: "ECO-FRIENDLY DISPENSERS", content: "Dummy content for Eco-Friendly Dispensers: Our water dispensers are designed for minimal environmental impact, reducing plastic bottle waste." },
+        { title: "INTEGRATED PURIFICATION", content: "Dummy content for Integrated Purification: Each dispenser includes multi-stage purification, ensuring on-demand access to clean and safe drinking water." },
+        { title: "SUSTAINABLE SUBSCRIPTIONS", content: "Dummy content for Sustainable Subscriptions: Flexible service plans that simplify access to purified water, promoting long-term sustainability for businesses and homes." },
+      ],
+      buttonLink: "/solutions/water-as-a-service-details"
     },
   ];
+
+
+// Data source for the category grid (kept separate as requested)
+const solutionCategories = [
+  {
+    title: "Water Conservation",
+    description: "Discover innovative solutions for reducing water consumption and promoting sustainable usage across industries."
+  },
+  {
+    title: "Advanced Filtration",
+    description: "Explore our cutting-edge filtration technologies that ensure superior water purity for all applications."
+  },
+  {
+    title: "Smart Water Management",
+    description: "Implement intelligent systems for real-time monitoring and optimized control of your water infrastructure."
+  },
+];
+
 
   // Helper function to create a URL-friendly slug from a title
 const slugify = (text: string) => {
@@ -92,32 +127,58 @@ const slugify = (text: string) => {
       .replace(/-+$/, ''); // Trim - from end of text
   };
 
+// Modified Accordion Item Component (no content, just title and click handler)
+interface AccordionTitleProps {
+  title: string;
+  isActive: boolean; // Renamed from isOpen to isActive for clarity
+  onClick: () => void; // Renamed from setIsOpen to onClick for clarity
+}
+
+const AccordionTitle: FC<AccordionTitleProps> = ({ title, isActive, onClick }) => {
+  return (
+    <>
+        <button
+            className="w-full text-left py-4"
+            onClick={onClick}
+            style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700, // Make title bold
+                fontSize: "12px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                textTransform: "uppercase",
+                cursor: "pointer",
+                backgroundColor: "transparent",
+                border: "none",
+                padding: 0,
+                color: "#000",
+            }}
+        >
+            {title}
+        </button>
+        {/* Horizontal rule only if NOT active/expanded */}
+        {!isActive && (
+            <div style={{ paddingBottom: "12px" }}>
+                <hr style={{ border: "none", borderTop: "1px solid #D9D9DC" }} />
+            </div>
+        )}
+    </>
+  );
+};
+
 
 export default function Home() {
-  // State variables
-  const [activeSection, setActiveSection] = useState(0)
+  // State variables (cleaned up unused ones)
   const [currentTime, setCurrentTime] = useState("")
-  const [headerHeight, setHeaderHeight] = useState(0)
   const headerRef = useRef<HTMLDivElement>(null)
 
   // State for controlling tagline visibility on scroll
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
 
-  // Variants for staggered animations using framer-motion (used only for tagline)
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.05,
-        ease: "easeInOut",
-      },
-    },
-  }
-  const childVariants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
-  }
+  // State to manage which sub-accordion is open for each main solution item
+  // Map<mainItemIndex, subItemIndex>
+  const [openSubAccordions, setOpenSubAccordions] = useState<Map<number, number>>(new Map());
 
   // Update tagline visibility based on scroll direction
   useEffect(() => {
@@ -146,12 +207,6 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
-  // Tagline lines (split into words)
-  const taglineLine1 = "To lead the way in sustainability"
-  const taglineLine2 = "ahead of the rest."
-  const taglineWords1 = taglineLine1.split(" ")
-  const taglineWords2 = taglineLine2.split(" ")
-
   // Arrays for menu items with hrefs
   const productsItems = [
     { text: "This is Us", href: "/inside-wae" },
@@ -163,7 +218,6 @@ export default function Home() {
     { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs2" },
   ]
-  const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   return (
     <main className="relative pb-[40px]">
@@ -327,18 +381,18 @@ export default function Home() {
             fontSize: "48px",
             letterSpacing: "0%",
             verticalAlign: "middle",
-            marginBottom: "40px", // Reduced margin here to add the new section below
+            marginBottom: "40px",
           }}
         >
           Our Solutions
         </h2>
 
-        {/* Solution Category Grid */}
-        <div className="grid grid-cols-3 gap-x-[80px] gap-y-[60px] mb-[180px]"> {/* Added bottom margin to separate from next section */}
-          {blogPosts.map((post, index) => (
+        {/* Solution Category Grid - Uses solutionCategories */}
+        <div className="grid grid-cols-3 gap-x-[80px] gap-y-[60px] mb-[180px]">
+          {solutionCategories.map((category, index) => (
             <div key={index}>
                 {/* Heading with Link */}
-              <a href={`#${slugify(post.title)}`} // Anchor link to the product section
+              <a href={`#${slugify(category.title)}`} // Anchor link to the product section
                  style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 700,
@@ -347,12 +401,12 @@ export default function Home() {
                   letterSpacing: "0%",
                   verticalAlign: "middle",
                   textTransform: "uppercase",
-                  display: "block", // Ensure the link block wraps the text
-                  textDecoration: "none", // Remove default underline
-                  color: "inherit", // Inherit text color
+                  display: "block",
+                  textDecoration: "none",
+                  color: "inherit",
                  }}
               >
-                {post.title}
+                {category.title}
               </a>
 
               {/* Horizontal Rule */}
@@ -371,122 +425,140 @@ export default function Home() {
                   verticalAlign: "middle",
                 }}
               >
-                {post.description}
+                {category.description}
               </p>
             </div>
           ))}
         </div>
 
-
-        {/* LOGO (Position might need adjustment depending on where exactly you want it relative to the new section) */}
-        {/* <div
-          style={{
-            position: "fixed",
-            top: "30%", // You might want to adjust this
-            left: "39.23%", // You might want to adjust this
-            opacity: 1,
-          }}
-          className="pointer-events-none flex justify-center"
-        >
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
-            alt="Center Logo"
-            width={310}
-            height={310}
-            className="opacity-80"
-          />
-        </div> */}
-
-        {/* Main Solutions Category Section (Modified to include IDs) */}
+        {/* Main Solutions Category Section - Now matching screenshot layout */}
         <div>
           <div className="space-y-8">
-            {blogPosts.map((post, index) => (
+            {mainSolutionItems.map((item, mainIndex) => (
               <div
-                key={index}
-                id={slugify(post.title)} // Added ID here for anchor linking
-                className={`flex items-start space-x-8 justify-between ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}
-                style={{ marginBottom: index < blogPosts.length - 1 ? '180px' : '0' }}
+                key={mainIndex}
+                id={slugify(item.title)} // Added ID here for anchor linking
+                className={`flex items-start space-x-8 justify-between ${mainIndex % 2 !== 0 ? 'flex-row-reverse' : ''}`}
+                style={{ marginBottom: mainIndex < mainSolutionItems.length - 1 ? '180px' : '0' }}
               >
-                {/* Image */}
-                <div className="w-[320px] h-[320px] relative overflow-hidden group">
-                  {index === 1 ? ( // Check if it's the second blog post (index 1)
-                    <Image
-                      src={post.imageUrl}
-                      alt={post.title}
-                      className="transition-transform duration-700 ease-in-out transform-gpu group-hover:scale-110"
-                      width={320}
-                      height={320}
-                    />
-                  ) : (
-                    <Image
-                      src={post.imageUrl}
-                      alt={post.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-transform duration-700 ease-in-out transform-gpu group-hover:scale-110"
-                    />
-                  )}
+                {/* Main Solution Title (left side) and Image (left side) */}
+                <div className="flex flex-col items-start" style={{ width: '320px' }}> {/* Adjusted width */}
+                  <h2
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500, // Adjusting weight based on screenshot
+                      fontSize: "48px",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                      marginBottom: "40px",
+                      // Added text wrapping if title is long
+                      wordBreak: 'break-word',
+                      lineHeight: '1.1',
+                    }}
+                  >
+                    {item.title}
+                  </h2>
+                  <div className="w-[320px] h-[320px] relative overflow-hidden group">
+                    {mainIndex === 1 ? ( // Check if it's the second blog post (index 1) for specific image sizing
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.title}
+                        className="transition-transform duration-700 ease-in-out transform-gpu group-hover:scale-110"
+                        width={320}
+                        height={320}
+                      />
+                    ) : (
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="transition-transform duration-700 ease-in-out transform-gpu group-hover:scale-110"
+                      />
+                    )}
+                  </div>
                 </div>
 
-                {/* Title, Description, and Button */}
-                <div className="flex-1 flex flex-col justify-between" style={{ maxWidth: '320px' }}>
+
+                {/* Accordion Sub-sections and "Know More" button (right side) */}
+                <div className="flex-1 flex flex-col justify-between" style={{ maxWidth: '320px' }}> {/* Adjusted max-width */}
                   <div>
-                    <h3
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 700,
-                        fontSize: "14px",
-                        lineHeight: "140%",
-                        letterSpacing: "0%",
-                        verticalAlign: "middle",
-                        textTransform: "uppercase",
-                        marginBottom: "12px",
-                      }}
-                    >
-                      {post.title}
-                    </h3>
-                    <p
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "12px",
-                        lineHeight: "24px",
-                        letterSpacing: "0%",
-                        verticalAlign: "middle",
-                        marginBottom: "40px",
-                      }}
-                    >
-                      {post.description}
-                    </p>
+                    {item.subSections.map((subItem, subIndex) => (
+                      <React.Fragment key={subIndex}>
+                        <AccordionTitle
+                          title={subItem.title}
+                          isActive={openSubAccordions.get(mainIndex) === subIndex}
+                          onClick={() => {
+                            const currentActiveSub = openSubAccordions.get(mainIndex);
+                            const newMap = new Map(openSubAccordions);
+
+                            if (currentActiveSub === subIndex) {
+                                // If clicked item is already active, close it
+                                newMap.delete(mainIndex); // Remove entry for this main section
+                            } else {
+                                // Set new active item
+                                newMap.set(mainIndex, subIndex);
+                            }
+                            setOpenSubAccordions(newMap);
+                          }}
+                        />
+                        {/* Wrap the conditional content rendering with AnimatePresence */}
+                        <AnimatePresence mode="wait">
+                          {openSubAccordions.get(mainIndex) === subIndex && (
+                            <motion.p
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.3, ease: "easeInOut" }}
+                              className="pb-4 pt-2"
+                              style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontSize: "12px",
+                                lineHeight: "24px",
+                                letterSpacing: "0%",
+                                verticalAlign: "middle",
+                                color: "#555",
+                              }}
+                            >
+                              {subItem.content}
+                            </motion.p>
+                          )}
+                        </AnimatePresence>
+                      </React.Fragment>
+                    ))}
                   </div>
-                  <HoverButton href={`/${slugify(post.title)}`}>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
+                  {/* "Know More" button below all accordions */}
+                  <div className="mt-8">
+                    <HoverButton href={item.buttonLink}>
+                      {(hovered) => (
+                        <>
+                          Know More
+                          <div className="relative inline-block w-4 h-4">
                             <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                              alt="icon default"
                               width={16}
                               height={16}
                             />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: hovered ? 1 : 0 }}
+                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                              className="absolute top-0 left-0"
+                            >
+                              <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt="icon hover"
+                                width={16}
+                                height={16}
+                              />
+                            </motion.div>
+                          </div>
+                        </>
+                      )}
+                    </HoverButton>
+                  </div>
                 </div>
               </div>
             ))}
