@@ -66,12 +66,12 @@ const blogPosts = [
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/16ca1b89-cf24-442f-0a41-3e3ad0c6cf00/public",
       title: "WATER REUSE",
-      description: "Water dispensers with inbuilt purification —pure, safe water delivered efficiently. Designed to reduce plastic waste and energy consumption, making sustainability easy.",
+      description: "WAE empowers organizations to reclaim and reuse water across grey water, sewage, and effluent streams. Our solutions close the loop on water usage, helping clients reduce freshwater dependence, lower costs, and demonstrate real environmental impact.",
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c399819d-976c-49aa-332f-02a9db708200/public",
       title: "WATER TREATMENT",
-      description: "Water dispensers with inbuilt purification —pure, safe water delivered efficiently. Designed to reduce plastic waste and energy consumption, making sustainability easy.",
+      description: "WAE’s water treatment systems convert raw water into clean, safe supply through a multi-stage process - from physical removal to advanced purification. Built for industries and institutions, our solutions ensure water quality, regulatory compliance, and sustainable operations.",
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f492758-88ca-4c25-4a00-1a122cd22200/public",
@@ -334,7 +334,7 @@ export default function Home() {
         </h2>
 
         {/* Solution Category Grid */}
-        <div className="grid grid-cols-3 gap-x-[100px] gap-y-[60px] mb-[180px]"> {/* Added bottom margin to separate from next section */}
+        <div className="grid grid-cols-3 gap-x-[80px] gap-y-[60px] mb-[180px]"> {/* Added bottom margin to separate from next section */}
           {blogPosts.map((post, index) => (
             <div key={index}>
                 {/* Heading with Link */}
