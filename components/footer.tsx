@@ -85,7 +85,7 @@ export default function Footer() {
                 letterSpacing: "0px",
               }}
             >
-              Co-ordinates
+              Coordinates
             </div>
           </div>
 
@@ -135,7 +135,7 @@ export default function Footer() {
             {/* Extra horizontal rule below list items */}
             <hr
               style={{
-                width: "100%",
+                width: "66%",
                 borderTop: "1px solid #D9D9DC",
                 marginTop: "1rem",
                 marginBottom: "1.25rem",
@@ -147,7 +147,7 @@ export default function Footer() {
               style={{
                 width: "11.3rem",     // Approx 181px (181/16 ≈ 11.3rem)
                 height: "1.4rem",     // Approx 22px - might be flexible with flex, check necessity
-                marginLeft: "-3.8rem",
+                // marginLeft: "-3.8rem",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "0.56rem",  // Approx 9px
@@ -170,7 +170,7 @@ export default function Footer() {
                 lineHeight: "100%",
                 letterSpacing: "0px",
                 color: "#00000099",
-                marginLeft: '3.2rem', // Add some space between address and phone number (adjust as needed)
+                marginLeft: '10rem', // Add some space between address and phone number (adjust as needed)
                 flexShrink: 0, // Prevent shrinking
               }}
             >

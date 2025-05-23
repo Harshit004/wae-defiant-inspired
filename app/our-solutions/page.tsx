@@ -69,8 +69,8 @@ const mainSolutionItems = [
       mainDescription: "Innovative solutions for reducing water consumption and promoting sustainable usage across industries.", // Added main description
       subSections: [
         { title: "GREY WATER REUSE", content: "WAE's grey water reuse systems capture lightly used water from showers, sinks, and laundry, and treat it for reuse in non-potable applications like toilet flushing, cooling, and landscaping. It's a smart, cost-effective way for organizations to reduce water demand and improve operational sustainability without compromise." },
-        { title: "SEWAGE WATER", content: "Advanced biological and chemical processes are employed to treat sewage, making it safe for industrial applications, agricultural irrigation or discharge." },
-        { title: "EFFLUENT TREATMENT", content: "Our solutions handle industrial and commercial effluent, removing pollutants to meet discharge standards or enable reuse within the facility." },
+        { title: "SEWAGE WATER", content: "With advanced multi-stage treatment, WAE transforms sewage water into a valuable resource, making it safe for industrial cooling, agriculture, or even potable use where required. Our systems help clients tackle high-contamination challenges and turn waste into water security." },
+        { title: "EFFLUENT TREATMENT", content: "WAE’s effluent treatment solutions are built to handle the toughest industrial wastewater. Using chemical, biological, and physical processes, we remove harmful pollutants and enable safe discharge or reuse — helping organizations meet regulatory standards while protecting the environment." },
       ],
       buttonLink: "/solutions/water-reuse-details" // Specific page for this solution
     },
@@ -79,9 +79,9 @@ const mainSolutionItems = [
       title: "WATER TREATMENT",
       mainDescription: "Explore our cutting-edge filtration technologies that ensure superior water purity for all applications.", // Added main description
       subSections: [
-        { title: "PRIMARY TREATMENT", content: "Initial physical separation of solids and floating materials from raw water using screens and sedimentation." },
-        { title: "SECONDARY TREATMENT", content: "Biological processes to remove dissolved and suspended organic matter, typically involving aeration and microbial activity." },
-        { title: "PURIFICATION", content: "Advanced filtration (e.g., RO, UV) and disinfection steps to ensure water meets specific quality standards for various applications." },
+        { title: "PRIMARY TREATMENT", content: "WAE’s primary treatment systems are designed to remove large, visible contaminants from raw water using mechanical processes like screening, sedimentation, and skimming. This first stage significantly reduces suspended solids and prepares water for deeper biological or chemical treatment." },
+        { title: "SECONDARY TREATMENT", content: "Through biological processes like activated sludge, trickling filters, and SBRs, WAE’s secondary treatment systems break down dissolved organic matter in wastewater. This stage lowers BOD and COD levels, producing much cleaner water suitable for non-potable use or further purification." },
+        { title: "PURIFICATION", content: "WAE’s purification technologies including RO, UF, and CDI, deliver the final polish by removing fine contaminants, salts, and pathogens. Whether for drinking water or high-purity industrial needs, our systems ensure safe, reliable, and regulation-ready water output." },
       ],
       buttonLink: "/solutions/water-treatment-details"
     },
