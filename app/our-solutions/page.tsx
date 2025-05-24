@@ -3,7 +3,6 @@
 import React, { useEffect, useState, useRef } from "react"
 import type { FC } from "react"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Footer from "@/components/footer"
 import Link from "next/link"
@@ -178,6 +177,11 @@ export default function Home() {
     });
     return initialMap;
   });
+
+  // Ref to store the height of the accordion content for smooth transitions
+  const contentRefs = useRef<(HTMLDivElement | null)[][]>(
+    mainSolutionItems.map(item => item.subSections.map(() => null))
+  );
 
   // Function to determine which accordion should be open based on URL hash
   const parseHashAndOpenAccordion = (hash: string) => {
@@ -584,51 +588,61 @@ export default function Home() {
                 }}
               >
                 <div>
-                  {item.subSections.map((subItem, subIndex) => (
-                    <React.Fragment key={subIndex}>
-                      <AccordionTitle
-                        title={subItem.title}
-                        isActive={openSubAccordions.get(mainIndex) === subIndex}
-                        onClick={() => {
-                          const currentActiveSub = openSubAccordions.get(mainIndex);
-                          const newMap = new Map(openSubAccordions);
+                  {item.subSections.map((subItem, subIndex) => {
+                    const isActive = openSubAccordions.get(mainIndex) === subIndex;
+                    return (
+                      <React.Fragment key={subIndex}>
+                        <AccordionTitle
+                          title={subItem.title}
+                          isActive={isActive}
+                          onClick={() => {
+                            const currentActiveSub = openSubAccordions.get(mainIndex);
+                            const newMap = new Map(openSubAccordions);
 
-                          if (currentActiveSub === subIndex) {
-                              newMap.delete(mainIndex);
-                              // When closing, remove the hash or navigate to main section hash
-                              router.push(`#${slugify(item.title)}`, undefined); // Navigate to parent ID
-                          } else {
-                              newMap.set(mainIndex, subIndex);
-                              router.push(`#${slugify(item.title)}-${slugify(subItem.title)}`); // Set hash to new sub-accordion
-                          }
-                          setOpenSubAccordions(newMap);
-                        }}
-                        id={`${slugify(item.title)}-${slugify(subItem.title)}`} // Unique ID for each sub-accordion title
-                      />
-                      <AnimatePresence mode="wait">
-                        {openSubAccordions.get(mainIndex) === subIndex && (
-                          <motion.p
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="pb-4 pt-2"
-                            style={{
-                              fontFamily: "'Inter Tight', sans-serif",
-                              fontWeight: 400,
-                              fontSize: "12px",
-                              lineHeight: "24px",
-                              letterSpacing: "0%",
-                              verticalAlign: "middle",
-                              color: "#555",
-                            }}
-                          >
+                            if (currentActiveSub === subIndex) {
+                                newMap.delete(mainIndex);
+                                // When closing, remove the hash or navigate to main section hash
+                                router.push(`#${slugify(item.title)}`, undefined); // Navigate to parent ID
+                            } else {
+                                newMap.set(mainIndex, subIndex);
+                                router.push(`#${slugify(item.title)}-${slugify(subItem.title)}`); // Set hash to new sub-accordion
+                            }
+                            setOpenSubAccordions(newMap);
+                          }}
+                          id={`${slugify(item.title)}-${slugify(subItem.title)}`} // Unique ID for each sub-accordion title
+                        />
+                        {/* CSS Transition for content */}
+                        <div
+                          ref={el => {
+                            if (el) {
+                              if (!contentRefs.current[mainIndex]) {
+                                contentRefs.current[mainIndex] = [];
+                              }
+                              contentRefs.current[mainIndex][subIndex] = el;
+                            }
+                          }}
+                          className="accordion-content"
+                          style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 400,
+                            fontSize: "12px",
+                            lineHeight: "24px",
+                            letterSpacing: "0%",
+                            verticalAlign: "middle",
+                            color: "#555",
+                            overflow: 'hidden', // Crucial for height transition
+                            transition: 'height 0.3s ease-in-out, opacity 0.3s ease-in-out',
+                            height: isActive ? (contentRefs.current[mainIndex]?.[subIndex]?.scrollHeight || 0) + 'px' : '0px',
+                            opacity: isActive ? 1 : 0,
+                          }}
+                        >
+                          <p className="pb-4 pt-2">
                             {subItem.content}
-                          </motion.p>
-                        )}
-                      </AnimatePresence>
-                    </React.Fragment>
-                  ))}
+                          </p>
+                        </div>
+                      </React.Fragment>
+                    );
+                  })}
                 </div>
                 {/* "Know More" button below all accordions */}
                 <div className="mt-8">
@@ -643,11 +657,9 @@ export default function Home() {
                             width={16}
                             height={16}
                           />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
+                          {/* Replaced motion.div with a standard div and conditional class for opacity */}
+                          <div
+                            className={`absolute top-0 left-0 transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}`}
                           >
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
@@ -655,7 +667,7 @@ export default function Home() {
                               width={16}
                               height={16}
                             />
-                          </motion.div>
+                          </div>
                         </div>
                       </>
                     )}
@@ -672,7 +684,7 @@ export default function Home() {
         <Footer />
       </div>
 
-      {/* INLINE CSS for hover and arrow animations */}
+      {/* INLINE CSS for hover and arrow animations and accordion transitions */}
       <style jsx>{`
         .c--anim-btn {
           display: flex;
