@@ -168,7 +168,16 @@ export default function Home() {
 
   // State to manage which sub-accordion is open for each main solution item
   // Map<mainItemIndex, subItemIndex>
-  const [openSubAccordions, setOpenSubAccordions] = useState<Map<number, number>>(new Map());
+  const [openSubAccordions, setOpenSubAccordions] = useState<Map<number, number>>(() => {
+    // Initialize with the first sub-accordion of each main solution open
+    const initialMap = new Map<number, number>();
+    mainSolutionItems.forEach((mainItem, mainIndex) => {
+      if (mainItem.subSections.length > 0) {
+        initialMap.set(mainIndex, 0); // Open the first sub-section (index 0)
+      }
+    });
+    return initialMap;
+  });
 
   // Function to determine which accordion should be open based on URL hash
   const parseHashAndOpenAccordion = (hash: string) => {
