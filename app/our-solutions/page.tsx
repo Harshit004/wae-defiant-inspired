@@ -6,7 +6,7 @@ import Image from "next/image"
 import { useInView } from "react-intersection-observer"
 import Footer from "@/components/footer"
 import Link from "next/link"
-import { useRouter } from 'next/navigation'; // Using useRouter for hash changes
+import { useRouter } from 'next/navigation'; 
 
 // Shared container class for consistent margins
 const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
@@ -53,7 +53,7 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
   return href ? (
       href.startsWith('#') ? ( // Check if it's an anchor link
         <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }}>{buttonContent}</a>
-      ) : ( // Assume it's a Next.js route link
+      ) : ( // Next.js route link
         <Link href={href} className="contents">{buttonContent}</Link>
       )
     ) : buttonContent;
@@ -71,7 +71,7 @@ const mainSolutionItems = [
         { title: "SEWAGE WATER", content: "With advanced multi-stage treatment, WAE transforms sewage water into a valuable resource, making it safe for industrial cooling, agriculture, or even potable use where required. Our systems help clients tackle high-contamination challenges and turn waste into water security." },
         { title: "EFFLUENT TREATMENT", content: "WAE’s effluent treatment solutions are built to handle the toughest industrial wastewater. Using chemical, biological, and physical processes, we remove harmful pollutants and enable safe discharge or reuse — helping organizations meet regulatory standards while protecting the environment." },
       ],
-      buttonLink: "/solutions/water-reuse" // Specific page for this solution
+      buttonLink: "/water-reuse" // Specific page for this solution
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c399819d-976c-49aa-332f-02a9db708200/public",
@@ -82,7 +82,7 @@ const mainSolutionItems = [
         { title: "SECONDARY TREATMENT", content: "Through biological processes like activated sludge, trickling filters, and SBRs, WAE’s secondary treatment systems break down dissolved organic matter in wastewater. This stage lowers BOD and COD levels, producing much cleaner water suitable for non-potable use or further purification." },
         { title: "PURIFICATION", content: "WAE’s purification technologies including RO, UF, and CDI, deliver the final polish by removing fine contaminants, salts, and pathogens. Whether for drinking water or high-purity industrial needs, our systems ensure safe, reliable, and regulation-ready water output." },
       ],
-      buttonLink: "/solutions/water-treatment"
+      buttonLink: "/water-treatment"
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f492758-88ca-4c25-4a00-1a122cd22200/public",
