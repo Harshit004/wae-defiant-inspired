@@ -5,17 +5,92 @@ import type { FC } from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import Footer from "@/components/footer"
 import Link from "next/link"
+import Footer from "@/components/footer" // Assuming these components exist
+import ConnectWithUs from "@/components/connect-with-us" // Assuming this component exists
 
-// Shared container class for consistent margins
-const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
+// --- NEW MOBILE HEADER COMPONENT (Copied from Our Portfolio) ---
+interface MobileHeaderProps {
+  productsItems: { text: string; href: string }[];
+  blueprintItems: { text: string; href: string; }[];
+}
+
+const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintItems }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = ''; // Cleanup on unmount
+    };
+  }, [isMobileMenuOpen]);
+
+  return (
+    <>
+      {/* Fixed Mobile Header Bar (Visible only on small screens) */}
+      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-transparent md:hidden">
+        {/* Mobile Logo */}
+        <Link href="/homepage3">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce113ad4-0a6b-43dd-066c-26769520d000/public"
+            alt="WAE Logo Mobile"
+            width={40}
+            height={40}
+          />
+        </Link>
+        {/* Hamburger Menu Icon */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="flex flex-col justify-around w-6 h-5 relative z-50 focus:outline-none"
+          aria-label="Toggle mobile menu"
+        >
+          {/* Hamburger lines - always white for visibility on white background */}
+          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? 'rotate-45 translate-x-1.5 translate-y-1.5' : ''}`}></span>
+          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? '-rotate-45 translate-x-1.5 -translate-y-1.5' : ''}`}></span>
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay (Slides in from right) */}
+      <div
+        className={`fixed inset-0 bg-black z-40 flex flex-col items-start pt-[80px] pb-5 px-4 md:hidden transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+
+        {/* Menu Items */}
+        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full mb-8">
+          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Inside WAE</h3>
+          {productsItems.map((item, i) => (
+            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              {item.text}
+            </Link>
+          ))}
+        </div>
+        <div className="w-full h-px bg-[#D9D9DC] mb-8" /> {/* Divider */}
+        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full">
+          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Etcetera</h3>
+          {blueprintItems.map((item, i) => (
+            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              {item.text}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+// --- END MOBILE HEADER COMPONENT ---
+
+
+// Shared container class for consistent margins and max-width (Made responsive)
+const containerClass = "mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-[140px]";
 
 /**
  * Reusable hover button component.
  */
-
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
   href?: string;
@@ -50,18 +125,17 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
     </button>
   );
 
-  // Use a simple anchor tag if it's an internal page link, Link component for Next.js routes
   return href ? (
-      href.startsWith('#') ? ( // Check if it's an anchor link
+      href.startsWith('#') ? (
         <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }}>{buttonContent}</a>
-      ) : ( // Assume it's a Next.js route link
+      ) : (
         <Link href={href} className="contents">{buttonContent}</Link>
       )
     ) : buttonContent;
 };
 
 
-// Placeholder for product category data : copied from blogs section, hence the same variable
+// Placeholder for product category data
 const blogPosts = [
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public",
@@ -95,19 +169,7 @@ const blogPosts = [
     },
   ];
 
-  // Helper function to create a URL-friendly slug from a title
-const slugify = (text: string) => {
-    return text
-      .toString()
-      .toLowerCase()
-      .replace(/\s+/g, '-') // Replace spaces with -
-      .replace(/[^\w-]+/g, '') // Remove all non-word chars
-      .replace(/--+/g, '-') // Replace multiple - with single -
-      .replace(/^-+/, '') // Trim - from start of text
-      .replace(/-+$/, ''); // Trim - from end of text
-  };
-
-// Function to convert title to ID format
+  // Function to convert title to ID format
 const titleToId = (title: string) => {
   const idMap: { [key: string]: string } = {
     "DRINKING WATER STATION - BLUWAE Series": "drinking-water-stations",
@@ -127,11 +189,11 @@ export default function Home() {
   const [headerHeight, setHeaderHeight] = useState(0)
   const headerRef = useRef<HTMLDivElement>(null)
 
-  // State for controlling tagline visibility on scroll
+  // State for controlling tagline visibility on scroll (not used for this page's tagline directly)
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
 
-  // Variants for staggered animations using framer-motion (used only for tagline)
+  // Variants for staggered animations using framer-motion (not directly used on this page)
   const containerVariants = {
     hidden: {},
     visible: {
@@ -146,7 +208,7 @@ export default function Home() {
     visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
   }
 
-  // Update tagline visibility based on scroll direction
+  // Update tagline visibility based on scroll direction (retained for consistency with other pages)
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
@@ -157,7 +219,7 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Update current time (India Time) every minute
+  // Update current time (India Time) every minute (retained for consistency)
   useEffect(() => {
     const updateIndiaTime = () => {
       const options: Intl.DateTimeFormatOptions = {
@@ -173,11 +235,17 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
-  // Tagline lines (split into words)
-  const taglineLine1 = "To lead the way in sustainability"
-  const taglineLine2 = "ahead of the rest."
-  const taglineWords1 = taglineLine1.split(" ")
-  const taglineWords2 = taglineLine2.split(" ")
+  // Update header height on mount and resize (retained for consistency)
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.clientHeight);
+      }
+    };
+    updateHeaderHeight();
+    window.addEventListener("resize", updateHeaderHeight);
+    return () => window.removeEventListener("resize", updateHeaderHeight);
+  }, []);
 
   // Arrays for menu items with hrefs
   const productsItems = [
@@ -190,163 +258,266 @@ export default function Home() {
     { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs2" },
   ]
-  const lineCount = Math.min(productsItems.length, blueprintItems.length)
+  const lineCount = Math.min(productsItems.length, blueprintItems.length) // Not directly used but retained
 
   return (
     <main className="relative pb-[40px]">
-      {/* HEADER */}
-      <div style={{ top: 0, left: 0, width: "100%" }}>
-        <header ref={headerRef} className="w-full relative z-10 mb-0">
-          <div className="mx-auto w-full max-w-[1440px] px-[140px]">
-            {/* Top Row: Navigation */}
+      {/* RENDER MOBILE HEADER COMPONENT HERE (only on small screens) */}
+      <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
+
+      {/* DESKTOP HEADER (Hidden on small screens) */}
+      <header ref={headerRef} className={`w-full relative z-10 hidden mb-5 md:block`}>
+        <div className={containerClass}>
+          {/* Top Row: Navigation */}
+          <div
+            className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "12px",
+              lineHeight: "100%",
+              letterSpacing: "0px",
+            }}
+          >
+            <div>IDENTITY</div>
+            <div>ORIGIN</div>
+            <div>OBJECTIVE</div>
+            <div>INSIDE WAE</div>
+            <div>ETCETERA</div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+
+          {/* Bottom Row: Logo, Tagline and Menu Items */}
+          <div className="grid grid-cols-5 items-start">
+            {/* Logo */}
+            <div className="flex flex-col justify-center">
+              <Link href="/homepage3">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                  alt="WAE Logo"
+                  width={78}
+                  height={82}
+                />
+              </Link>
+            </div>
+
+            {/* Coordinates */}
             <div
-              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+              className="flex flex-col justify-center inline-block mr-1"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "12px",
+                fontSize: "11px",
                 lineHeight: "100%",
-                letterSpacing: "0px",
+                color: "#000000",
               }}
             >
-              <div>IDENTITY</div>
-              <div>ORIGIN</div>
-              <div>OBJECTIVE</div>
-              <div>INSIDE WAE</div>
-              <div>ETCETERA</div>
+              20.5937° N
+              <br />
+              78.9629° E
             </div>
 
-            {/* Divider */}
-            <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+            {/* Tagline */}
+            <div
+              className="flex flex-col justify-center inline-block mr-1"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "11px",
+                lineHeight: "100%",
+                color: "#000000",
+              }}
+            >
+              To lead the way in<br />sustainability ahead of the<br />rest
+            </div>
 
-            {/* Bottom Row: Logo, Tagline and Menu Items */}
-            <div className="grid grid-cols-5 items-start">
-              {/* Logo */}
-              <div className="flex flex-col justify-center">
-                <Link href="/homepage3">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                    alt="WAE Logo"
-                    width={78}
-                    height={82}
-                  />
-                </Link>
-              </div>
-
-              {/* Coordinates */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  lineHeight: "100%",
-                  color: "#000000",
-                }}
-              >
-                20.5937° N
-                <br />
-                78.9629° E
-              </div>
-
-              {/* Tagline */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  lineHeight: "100%",
-                  color: "#000000",
-                }}
-              >
-                To lead the way in<br />sustainability ahead of the<br />rest
-              </div>
-
-              {/* Inside WAE Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {productsItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
+            {/* Inside WAE Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {productsItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents">
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
                       </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                      <span className="menu-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
 
-              {/* ETCETERA Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {blueprintItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow blueprint-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
+            {/* ETCETERA Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {blueprintItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents">
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
                       </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                      <span className="menu-arrow blueprint-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
+         </div>
         </header>
-      </div>
 
-        {/* Our Portfolio Heading */}
-      <div className={containerClass} style={{marginTop: "120px"}}>
+        {/* Hero section - now starts directly after header with padding for content */}
+        <section
+            id="hero"
+            className="relative w-full overflow-hidden h-screen pt-[70px] md:pt-[160px]" // Added padding-top for header overlap
+        >
+            {/* Image - positioned absolutely to be behind content */}
+            <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/de750a02-1047-42f2-d7db-f10e559f4100/public" // Updated image URL
+                alt="Our Products Hero"
+                fill // Use fill for better responsiveness with absolute positioning
+                className="object-cover -z-10" // -z-10 ensures it's behind other content
+            />
+
+            {/* Text and image overlays - position relative to the padded area */}
+            {/* Hide the "Sustainable products" image on mobile */}
+            <div
+                className="absolute hidden md:block"
+                style={{
+                    bottom: "30%",
+                    right: "calc(3.473%)",
+                    width: "393px",
+                    height: "159px",
+                }}
+            >
+                <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3785262c-3901-44fa-36ed-a4a936c6dc00/public"
+                    alt="Sustainable products responsible solutions"
+                    width={393}
+                    height={159}
+                    className="object-contain"
+                />
+            </div>
+
+            {/* Our Products Text - Mobile Version */}
+            <div
+                className="absolute uppercase md:hidden" // Only visible on mobile
+                style={{
+                    bottom: "10%",
+                    left: "1rem",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "2rem", // 32px
+                    lineHeight: "110%",
+                    color: "#fff",
+                }}
+            >
+                Our Products
+            </div>
+
+            {/* Our Products Text - Desktop Version */}
+            <div
+                className="absolute uppercase hidden md:block" // Only visible on desktop
+                style={{
+                    bottom: "33%",
+                    left: "calc(4.16666%)", // Adjust left position based on container padding
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "48px",
+                    lineHeight: "110%",
+                    color: "#fff",
+                }}
+            >
+                Our Products
+            </div>
+
+            {/* Scroll for more Text - Mobile Version */}
+            <div
+                className="absolute uppercase md:hidden" // Only visible on mobile
+                style={{
+                    bottom: "5%",
+                    left: "1rem",
+                    width: "104px",
+                    height: "12px",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "0.625rem", // 10px
+                    lineHeight: "100%",
+                    color: "#fff",
+                }}
+            >
+                Scroll for more ⤵︎
+            </div>
+
+            {/* Scroll for more Text - Desktop Version */}
+            <div
+                className="absolute uppercase hidden md:block" // Only visible on desktop
+                style={{
+                    bottom: "30%",
+                    left: "calc(4.16666%)", // Adjust left position based on container padding
+                    width: "104px",
+                    height: "12px",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "10px",
+                    lineHeight: "100%",
+                    color: "#fff",
+                }}
+            >
+                Scroll for more ⤵︎
+            </div>
+        </section>
+
+        {/* Our Products Heading (Moved below hero and adjusted margin) */}
+      <div className={containerClass} style={{marginTop: "80px"}}> {/* Adjusted margin-top */}
         <h2
           style={{
             fontFamily: "'Inter Tight', sans-serif",
@@ -354,18 +525,18 @@ export default function Home() {
             fontSize: "48px",
             letterSpacing: "0%",
             verticalAlign: "middle",
-            marginBottom: "40px", // Reduced margin here to add the new section below
+            marginBottom: "40px",
           }}
         >
           Our Products
         </h2>
 
         {/* NEW SECTION: Product Category Grid */}
-        <div className="grid grid-cols-3 gap-x-[100px] gap-y-[60px] mb-[180px]"> {/* Added bottom margin to separate from next section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[100px] gap-y-[60px] mb-[180px]"> {/* Added responsive grid */}
           {blogPosts.map((post, index) => (
             <div key={index}>
                 {/* Heading with Link */}
-              <Link 
+              <Link
                 href={`#${titleToId(post.title)}`}
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -405,38 +576,18 @@ export default function Home() {
           ))}
         </div>
 
-
-        {/* LOGO (Position might need adjustment depending on where exactly you want it relative to the new section) */}
-        {/* <div
-          style={{
-            position: "fixed",
-            top: "30%", // You might want to adjust this
-            left: "39.23%", // You might want to adjust this
-            opacity: 1,
-          }}
-          className="pointer-events-none flex justify-center"
-        >
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
-            alt="Center Logo"
-            width={310}
-            height={310}
-            className="opacity-80"
-          />
-        </div> */}
-
         {/* Product Category Section (Modified to include IDs) */}
         <div>
-          <div className="space-y-8">
+          <div className="space-y-8 mb-20 sm:mb-0">
             {blogPosts.map((post, index) => (
               <div
                 key={index}
                 id={titleToId(post.title)} // Added ID here for anchor linking
-                className={`flex items-start space-x-8 justify-between ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}
+                className={`flex flex-col md:flex-row items-start space-y-8 md:space-y-0 md:space-x-8 justify-between ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`} // Added responsive flex direction
                 style={{ marginBottom: index < blogPosts.length - 1 ? '180px' : '0' }}
               >
                 {/* Image */}
-                <div className="w-[320px] h-[320px] relative overflow-hidden group">
+                <div className="w-full md:w-[320px] h-[320px] relative overflow-hidden group"> {/* Made image container responsive */}
                   {index === 1 ? ( // Check if it's the second blog post (index 1)
                     <Image
                       src={post.imageUrl}
@@ -457,7 +608,7 @@ export default function Home() {
                 </div>
 
                 {/* Title, Description, and Button */}
-                <div className="flex-1 flex flex-col justify-between" style={{ maxWidth: '320px' }}>
+                <div className="flex-1 flex flex-col justify-between lg:max-w-[31%]" > {/* Made max-width responsive */}
                   <div>
                     <h3
                       style={{
@@ -523,6 +674,8 @@ export default function Home() {
         </div>
       </div>
 
+      
+
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>
         <Footer />
@@ -563,6 +716,16 @@ export default function Home() {
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
+        }
+      `}</style>
+
+       {/* Global Styles */}
+      <style jsx global>{`
+        html {
+        }
+        body {
+            margin: 0;
+            padding: 0;
         }
       `}</style>
     </main>
