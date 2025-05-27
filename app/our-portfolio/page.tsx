@@ -482,7 +482,7 @@ export default function Home() {
                   letterSpacing: "0%",
                   verticalAlign: "middle",
                 }}
-                className="px-[4.44%] md:hidden"
+                className="md:hidden"
               >
                 Our Green Is Blue
               </div>
@@ -512,7 +512,7 @@ export default function Home() {
                   verticalAlign: "middle",
                   color: '#00000099',
                 }}
-                className="px-[4.44%] md:hidden"
+                className="md:hidden"
               >
                 <p className="mb-4">
                   At WAE, sustainability is not a feature - it's our foundation. Guided by our core belief that Our Green is Blue, we engineer purpose-led products and intelligent solutions that address the world's most pressing water challenges. From eliminating single-use plastics to enabling water reuse at scale, our portfolio empowers organizations to operate cleaner, smarter, and more responsibly.
@@ -556,7 +556,7 @@ export default function Home() {
                   letterSpacing: "0%",
                   verticalAlign: "middle",
                 }}
-                className="px-[4.44%] md:hidden"
+                className="md:hidden"
               >
                 Our Products
               </div>
@@ -586,7 +586,7 @@ export default function Home() {
                   verticalAlign: "middle",
                   color: '#00000099',
                 }}
-                className="px-[4.44%] md:hidden"
+                className="md:hidden"
               >
                 <p style={{ margin: 0, marginBottom: '10px' }}>
                   WAE's hydration systems are designed for modern, high-footfall environments - offices, airports, institutions, and public spaces. Crafted from stainless steel and built to eliminate plastic bottle dependency, our products contribute directly to zero-landfill goals while ensuring high-performance water dispensing.
@@ -732,7 +732,7 @@ export default function Home() {
                   letterSpacing: "0%",
                   verticalAlign: "middle",
                 }}
-                className="px-[4.44%] md:hidden"
+                className="md:hidden"
               >
                 Our Solutions
               </div>
@@ -762,7 +762,7 @@ export default function Home() {
                   verticalAlign: "middle",
                   color: '#00000099',
                 }}
-                className="px-[4.44%] md:hidden"
+                className="md:hidden"
               >
                 <p style={{ margin: 0, marginBottom: '10px' }}>
                   WAE's water treatment and reuse solutions are designed for long-term sustainability and compliance. From greywater reuse and effluent treatment to modular STPs and rainwater harvesting systems, our solutions help institutions close the water loop—reducing waste, conserving resources and achieving sustainability mandates.
@@ -908,7 +908,7 @@ export default function Home() {
                   letterSpacing: "0%",
                   verticalAlign: "middle",
                 }}
-                className="px-[4.44%] md:hidden"
+                className="md:hidden"
               >
                 We are disrupting the status quo
               </div>
@@ -938,7 +938,7 @@ export default function Home() {
                   verticalAlign: "middle",
                   color: '#00000099',
                 }}
-                className="px-[4.44%] md:hidden"
+                className="md:hidden"
               >
                 <p className="mb-5">
                   We're not here to tweak old systems, we're here to transform them. Every product we build and every solution we implement is designed to challenge outdated practices and replace them with smarter, cleaner, and more sustainable alternatives.
