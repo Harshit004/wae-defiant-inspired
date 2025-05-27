@@ -448,7 +448,7 @@ export default function Home() {
 
             {/* Our Products Text - Mobile Version */}
             <div
-                className="absolute uppercase md:hidden"
+                className="absolute md:hidden"
                 style={{
                     bottom: "10%",
                     left: "1rem",
@@ -464,7 +464,7 @@ export default function Home() {
 
             {/* Our Products Text - Desktop Version */}
             <div
-                className="absolute uppercase hidden md:block"
+                className="absolute  hidden md:block"
                 style={{
                     bottom: "33%",
                     left: "calc(4.16666%)",
