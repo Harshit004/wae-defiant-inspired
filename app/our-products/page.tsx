@@ -517,11 +517,11 @@ export default function Home() {
 
         {/* Our Products Heading (Moved below hero and adjusted margin) */}
       <div className={containerClass} style={{marginTop: "80px"}}>
-        <h2
+        <h2 className=" text-[32px] md:text-[48px]"
           style={{
             fontFamily: "'Inter Tight', sans-serif",
             fontWeight: 500,
-            fontSize: "48px",
+            // fontSize: "48px",
             letterSpacing: "0%",
             verticalAlign: "middle",
             marginBottom: "40px",
