@@ -417,18 +417,17 @@ export default function Home() {
         {/* Hero section - now starts directly after header with padding for content */}
         <section
             id="hero"
-            className="relative w-full overflow-hidden h-screen pt-[70px] md:pt-[160px]" // Added padding-top for header overlap
+            className="relative w-full overflow-hidden h-screen pt-[70px] md:pt-[160px]"
         >
             {/* Image - positioned absolutely to be behind content */}
             <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/de750a02-1047-42f2-d7db-f10e559f4100/public" // Updated image URL
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/de750a02-1047-42f2-d7db-f10e559f4100/public"
                 alt="Our Products Hero"
-                fill // Use fill for better responsiveness with absolute positioning
-                className="object-cover -z-10" // -z-10 ensures it's behind other content
+                fill
+                className="object-cover -z-10"
             />
 
             {/* Text and image overlays - position relative to the padded area */}
-            {/* Hide the "Sustainable products" image on mobile */}
             <div
                 className="absolute hidden md:block"
                 style={{
@@ -449,13 +448,13 @@ export default function Home() {
 
             {/* Our Products Text - Mobile Version */}
             <div
-                className="absolute uppercase md:hidden" // Only visible on mobile
+                className="absolute uppercase md:hidden"
                 style={{
                     bottom: "10%",
                     left: "1rem",
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 500,
-                    fontSize: "2rem", // 32px
+                    fontSize: "2rem",
                     lineHeight: "110%",
                     color: "#fff",
                 }}
@@ -465,10 +464,10 @@ export default function Home() {
 
             {/* Our Products Text - Desktop Version */}
             <div
-                className="absolute uppercase hidden md:block" // Only visible on desktop
+                className="absolute uppercase hidden md:block"
                 style={{
                     bottom: "33%",
-                    left: "calc(4.16666%)", // Adjust left position based on container padding
+                    left: "calc(4.16666%)",
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 500,
                     fontSize: "48px",
@@ -481,7 +480,7 @@ export default function Home() {
 
             {/* Scroll for more Text - Mobile Version */}
             <div
-                className="absolute uppercase md:hidden" // Only visible on mobile
+                className="absolute uppercase md:hidden"
                 style={{
                     bottom: "5%",
                     left: "1rem",
@@ -489,7 +488,7 @@ export default function Home() {
                     height: "12px",
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 500,
-                    fontSize: "0.625rem", // 10px
+                    fontSize: "0.625rem",
                     lineHeight: "100%",
                     color: "#fff",
                 }}
@@ -499,10 +498,10 @@ export default function Home() {
 
             {/* Scroll for more Text - Desktop Version */}
             <div
-                className="absolute uppercase hidden md:block" // Only visible on desktop
+                className="absolute uppercase hidden md:block"
                 style={{
                     bottom: "30%",
-                    left: "calc(4.16666%)", // Adjust left position based on container padding
+                    left: "calc(4.16666%)",
                     width: "104px",
                     height: "12px",
                     fontFamily: "'Inter Tight', sans-serif",
@@ -517,7 +516,7 @@ export default function Home() {
         </section>
 
         {/* Our Products Heading (Moved below hero and adjusted margin) */}
-      <div className={containerClass} style={{marginTop: "80px"}}> {/* Adjusted margin-top */}
+      <div className={containerClass} style={{marginTop: "80px"}}>
         <h2
           style={{
             fontFamily: "'Inter Tight', sans-serif",
@@ -531,17 +530,18 @@ export default function Home() {
           Our Products
         </h2>
 
-        {/* NEW SECTION: Product Category Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[100px] gap-y-[60px] mb-[180px]"> {/* Added responsive grid */}
+        {/* NEW SECTION: Product Category Grid (Grid 1 after hero) */}
+        {/* gap-y-[60px] already applies to mobile for grid layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[100px] gap-y-[60px] mb-[60px] md:mb-[180px]">
           {blogPosts.map((post, index) => (
             <div key={index}>
                 {/* Heading with Link */}
-              <Link
+              <Link className=" text-[14px] md:text-[16px]"
                 href={`#${titleToId(post.title)}`}
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 700,
-                  fontSize: "16px",
+                  // fontSize: "16px",
                   lineHeight: "140%",
                   letterSpacing: "0%",
                   verticalAlign: "middle",
@@ -576,19 +576,27 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Product Category Section (Modified to include IDs) */}
+        {/* Product Category Section (Grid 2 after hero - using Flexbox) */}
         <div>
-          <div className="space-y-8 mb-20 sm:mb-0">
+          {/* IMPORTANT: Removed conflicting inline style and added mb-[60px] for mobile, md:mb-[180px] for desktop */}
+          {/* The parent container uses space-y-[60px] to ensure internal children have gap,
+              and each mapped item now has a responsive bottom margin for section separation. */}
+          <div className="space-y-[60px] mb-20 sm:mb-0">
             {blogPosts.map((post, index) => (
               <div
                 key={index}
-                id={titleToId(post.title)} // Added ID here for anchor linking
-                className={`flex flex-col md:flex-row items-start space-y-8 md:space-y-0 md:space-x-8 justify-between ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`} // Added responsive flex direction
-                style={{ marginBottom: index < blogPosts.length - 1 ? '180px' : '0' }}
+                id={titleToId(post.title)}
+                // **UPDATED:** Added mb-[60px] for mobile, and md:mb-[180px] for desktop
+                // The `space-y-[60px]` on the parent still handles the gap *between* the content inside each flex item (image and text block).
+                // This `mb` handles the spacing between the *entire* product sections.
+                className={`flex flex-col md:flex-row items-start md:space-y-0 md:space-x-8 justify-between
+                           mb-[60px] md:mb-[180px]
+                           ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}
+                           ${index === blogPosts.length - 1 ? 'mb-0 md:mb-0' : ''} `} 
               >
                 {/* Image */}
-                <div className="w-full md:w-[320px] h-[320px] relative overflow-hidden group"> {/* Made image container responsive */}
-                  {index === 1 ? ( // Check if it's the second blog post (index 1)
+                <div className="w-full md:w-[320px] h-[320px] relative overflow-hidden group">
+                  {index === 1 ? (
                     <Image
                       src={post.imageUrl}
                       alt={post.title}
@@ -608,9 +616,9 @@ export default function Home() {
                 </div>
 
                 {/* Title, Description, and Button */}
-                <div className="flex-1 flex flex-col justify-between lg:max-w-[31%]" > {/* Made max-width responsive */}
+                <div className="flex-1 flex flex-col justify-between lg:max-w-[31%]" >
                   <div>
-                    <h3
+                    <h3 className="mt-[60px] md:mt-0"
                       style={{
                         fontFamily: "'Inter Tight', sans-serif",
                         fontWeight: 700,
