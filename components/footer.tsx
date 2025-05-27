@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Footer() {
   return (
     <footer className="bg-[#f2f2f2] w-full">
-      <div className="mx-auto w-full max-w-[1440px] px-[8%] pt-0 md:px-[8.75rem] md:pt-[11.25rem] pb-6 md:py-6">
+      <div className="mx-auto w-full max-w-[1440px] px-[4.44%] pt-0 md:px-[8.75rem] md:pt-[11.25rem] pb-6 md:py-6">
 
         {/* Overall horizontal rule at the top - Hidden on mobile, visible on desktop */}
         <div className="w-full h-px bg-[#D9D9DC] mb-4 hidden md:block" />
@@ -28,19 +28,11 @@ export default function Footer() {
 
           {/* Mobile Specific Grouping for Inside WAE & Etcetera Titles + HR */}
           <div className="block md:hidden"> {/* Only visible on mobile */}
-            <div className="grid grid-cols-2 gap-x-4">
+            <div className="grid grid-cols-2 gap-x-4"> {/* Keep this specific grid for mobile titles */}
               {/* Column 1: INSIDE WAE - Mobile Title */}
               <div className="flex flex-col">
                 <h3
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "9px",
-                    lineHeight: "100%",
-                    letterSpacing: "0px",
-                    textTransform: "uppercase",
-                    color: "#00000066",
-                  }}
+                  className="font-[Inter_Tight] font-semibold text-[9px] leading-[100%] tracking-[0px] uppercase text-[#00000066]"
                 >
                   INSIDE WAE
                 </h3>
@@ -48,15 +40,7 @@ export default function Footer() {
               {/* Column 2: ETCETERA - Mobile Title */}
               <div className="flex flex-col">
                 <h3
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "9px",
-                    lineHeight: "100%",
-                    letterSpacing: "0px",
-                    textTransform: "uppercase",
-                    color: "#00000066",
-                  }}
+                  className="font-[Inter_Tight] font-semibold text-[9px] leading-[100%] tracking-[0px] uppercase text-[#00000066] ml-[39%]"
                 >
                   ETCETERA
                 </h3>
@@ -64,53 +48,30 @@ export default function Footer() {
             </div>
             {/* Single Continuous HR for Mobile Below Titles */}
             <hr
-              style={{
-                width: "100%",
-                borderTop: "1px solid #D9D9DC",
-                marginTop: "1rem",
-                marginBottom: "1rem",
-              }}
+              className="w-full border-t border-[#D9D9DC] mt-4 mb-4"
             />
           </div>
 
           {/* --- Adjusted Mobile Layout for Inside WAE & Etcetera Lists --- */}
-          {/* This div will control the side-by-side layout for lists on mobile */}
-          <div className="grid grid-cols-2 gap-x-4 md:contents"> {/* `md:contents` makes its children participate in the parent grid on desktop */}
+          {/* CHANGE STARTS HERE: This div will control the side-by-side layout for lists on mobile */}
+          {/* We'll use flexbox for mobile here to easily push "Etcetera" to the right */}
+          <div className="flex justify-between md:grid md:grid-cols-2 md:gap-0 md:contents">
+            {/* The `md:contents` effectively "removes" this div on desktop,
+                making its children directly participate in the parent's desktop grid.
+                On mobile, it acts as a flex container. */}
 
             {/* INSIDE WAE Column - Mobile and Desktop versions combined using visibility */}
             <div className="flex flex-col">
               <h3
-                className="hidden md:block" // Desktop title only
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "9px",
-                  lineHeight: "100%",
-                  letterSpacing: "0px",
-                  textTransform: "uppercase",
-                  color: "#00000066",
-                }}
+                className="hidden md:block font-[Inter_Tight] font-semibold text-[9px] leading-[100%] tracking-[0px] uppercase text-[#00000066]" // Desktop title only
               >
                 INSIDE WAE
               </h3>
               <hr
-                className="hidden md:block" // Desktop HR only
-                style={{
-                  width: "100%",
-                  borderTop: "1px solid #D9D9DC",
-                  marginTop: "1rem",
-                  marginBottom: "1rem",
-                }}
+                className="hidden md:block w-full border-t border-[#D9D9DC] mt-4 mb-4" // Desktop HR only
               />
               <ul
-                className="space-y-2 mb-0 md:mb-[5rem] block" // Ensure visibility on both, adjust bottom margin for desktop
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "13px",
-                  lineHeight: "100%",
-                  letterSpacing: "0px",
-                }}
+                className="space-y-2 mb-0 md:mb-[5rem] block font-[Inter_Tight] font-normal text-[12px] leading-[100%] tracking-[0px]" // Ensure visibility on both, adjust bottom margin for desktop
               >
                 <li>
                   <Link href="/inside-wae">This is Us</Link>
@@ -124,68 +85,34 @@ export default function Footer() {
               </ul>
               {/* Extra HR and Coordinates for Desktop - Hidden on mobile */}
               <hr
-                className="hidden md:block"
-                style={{
-                  width: "100%",
-                  borderTop: "1px solid #D9D9DC",
-                  marginTop: "1rem",
-                  marginBottom: "1.25rem",
-                }}
+                className="hidden md:block w-full border-t border-[#D9D9DC] mt-4 mb-[1.25rem]"
               />
               <div
-                className="hidden md:block"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "0.56rem",
-                  lineHeight: "100%",
-                  letterSpacing: "0px",
-                }}
+                className="hidden md:block font-[Inter_Tight] font-medium text-[0.56rem] leading-[100%] tracking-[0px]"
               >
                 Coordinates
               </div>
             </div>
 
             {/* ETCETERA Column - Mobile and Desktop versions combined using visibility */}
-            <div className="flex flex-col md:ml-[-3rem]"> {/* Removed ml-[-3rem] on mobile by making it `md:ml-[-3rem]` */}
+            {/* Removed ml-[-3rem] on mobile by making it `md:ml-[-3rem]` and adding flex-shrink-0 for mobile */}
+            <div className="flex flex-col flex-shrink-0 md:ml-[-3rem]">
               <h3
-                className="hidden md:block" // Desktop title only
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "9px",
-                  lineHeight: "100%",
-                  letterSpacing: "0px",
-                  textTransform: "uppercase",
-                  color: "#00000066",
-                }}
+                className="hidden md:block font-[Inter_Tight] font-semibold text-[9px] leading-[100%] tracking-[0px] uppercase text-[#00000066]" // Desktop title only
               >
                 ETCETERA
               </h3>
               <hr
-                className="hidden md:block" // Desktop HR only
-                style={{
-                  width: "100%",
-                  borderTop: "1px solid #D9D9DC",
-                  marginTop: "1rem",
-                  marginBottom: "1rem",
-                }}
+                className="hidden md:block w-full border-t border-[#D9D9DC] mt-4 mb-4" // Desktop HR only
               />
               <ul
-                className="space-y-2 mb-0 md:mb-[5rem] block" // Ensure visibility on both, adjust bottom margin for desktop
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "13px",
-                  lineHeight: "100%",
-                  letterSpacing: "0px",
-                }}
+                className="space-y-2 ml-[-6%] mb-0 md:mb-[5rem] block font-[Inter_Tight] font-normal text-[12px] leading-[100%] tracking-[0px]" // Ensure visibility on both, adjust bottom margin for desktop
               >
                 <li>
-                  <Link href="#">Sustainability</Link>
+                  <Link href="/sustainability">Sustainability</Link>
                 </li>
                 <li>
-                  <Link href="#">The Activist Co.</Link>
+                  <Link href="/the-activist-co">The Activist Co.</Link>
                 </li>
                 <li>
                   <Link href="/blogs2">Blogs</Link>
@@ -193,84 +120,38 @@ export default function Footer() {
               </ul>
               {/* Extra HR, Address, and Phone for Desktop - Hidden on mobile */}
               <hr
-                className="hidden md:block"
-                style={{
-                  width: "66%",
-                  borderTop: "1px solid #D9D9DC",
-                  marginTop: "1rem",
-                  marginBottom: "1.25rem",
-                }}
+                className="hidden md:block w-[66%] border-t border-[#D9D9DC] mt-4 mb-[1.25rem]"
               />
               <div className="hidden md:flex align-centre"> {/* Use flex for horizontal alignment on desktop */}
                 <div
-                  style={{
-                    width: "11.3rem",
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "0.56rem",
-                    lineHeight: "100%",
-                    letterSpacing: "0px",
-                    color: "#00000099",
-                    flexShrink: 0,
-                  }}
+                  className="w-[11.3rem] font-[Inter_Tight] font-normal text-[0.56rem] leading-[100%] tracking-[0px] text-[#00000099] flex-shrink-0"
                 >
                   H-18, H block, Sector 63, Noida, Uttar Pradesh, India, 201301
                 </div>
                 <div
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "0.56rem",
-                    lineHeight: "100%",
-                    letterSpacing: "0px",
-                    color: "#00000099",
-                    marginLeft: '7.7rem',
-                    flexShrink: 0,
-                  }}
+                  className="font-[Inter_Tight] font-normal text-[0.56rem] leading-[100%] tracking-[0px] text-[#00000099] ml-[7.7rem] flex-shrink-0"
                 >
                   +120 4069800
                 </div>
               </div>
             </div>
-          </div> {/* End of grid for list items */}
+          </div> {/* End of grid/flex for list items */}
 
 
           {/* POLICY Column - Mobile and Desktop versions combined using visibility */}
           {/* Added mt-[40px] for mobile only, and md:mt-0 to remove it on desktop */}
           <div className="flex flex-col mt-[40px] md:mt-0">
             <h3
-              className="block" // Visible on both mobile and desktop now
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 600,
-                fontSize: "9px",
-                lineHeight: "100%",
-                letterSpacing: "0px",
-                textTransform: "uppercase",
-                color: "#00000066",
-              }}
+              className="block font-[Inter_Tight] font-semibold text-[9px] leading-[100%] tracking-[0px] uppercase text-[#00000066]" // Visible on both mobile and desktop now
             >
               POLICY
             </h3>
             <hr
-              className="block" // Always block for full width
-              style={{
-                width: "100%",
-                borderTop: "1px solid #D9D9DC",
-                marginTop: "1rem",
-                marginBottom: "1rem",
-              }}
+              className="block w-full border-t border-[#D9D9DC] mt-4 mb-4" // Always block for full width
             />
             <div className="flex flex-row items-start md:mr-[7.875rem]">
               <ul
-                className="space-y-2 mb-0 flex-grow block" // Visible on both mobile and desktop
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "13px",
-                  lineHeight: "100%",
-                  letterSpacing: "0px",
-                }}
+                className="space-y-2 mb-0 flex-grow block font-[Inter_Tight] font-normal text-[12px] leading-[100%] tracking-[0px]" // Visible on both mobile and desktop
               >
                 <li>
                   <Link href="/terms-of-use">Terms of Use</Link>
@@ -283,7 +164,7 @@ export default function Footer() {
                 </li>
               </ul>
               {/* Logo below HR, beside policy menu items on mobile */}
-              <div className="ml-4 flex-shrink-0 md:hidden"> {/* Margin left for spacing, hidden on desktop */}
+              <div className="mr-[15%] flex-shrink-0 md:hidden"> {/* Margin left for spacing, hidden on desktop */}
                 <Link href="/homepage3" passHref>
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
@@ -299,49 +180,24 @@ export default function Footer() {
 
         {/* Corporate Office, Address, Phone (ONLY mobile version now, desktop is integrated above) */}
         <div className="mt-[40px] md:hidden flex flex-col md:flex-row md:justify-between md:items-start md:space-x-4">
-            <div className="flex w-full justify-between items-start md:w-auto md:space-x-0">
+            <div className="flex w-full items-start md:w-auto md:space-x-0">
                 {/* Corporate Office */}
                 <div
-                    style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 500,
-                        fontSize: "0.56rem",
-                        lineHeight: "100%",
-                        letterSpacing: "0px",
-                        width: "11.38%",
-                    }}
-                    className="flex-shrink-0"
+                    className="font-[Inter_Tight] font-medium text-[8px] leading-[100%] tracking-[0px] max-w-[11.38%] flex-shrink-0 mr-[10%]"
                 >
                     Corporate Office
                 </div>
 
                 {/* Address text */}
                 <div
-                    style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "0.56rem",
-                        lineHeight: "100%",
-                        letterSpacing: "0px",
-                        color: "#00000099",
-                        width: "41%",
-                    }}
-                    className="flex-grow-0 flex-shrink-0"
+                    className="font-[Inter_Tight] font-normal text-[8px] leading-[100%] tracking-[0px] text-[#00000099] max-w-[41%] flex-grow-0 flex-shrink-0 mr-[6.5%]"
                 >
                     H-18, H block, Sector 63, Noida, Uttar Pradesh, India, 201301
                 </div>
 
                 {/* Phone number text */}
                 <div
-                    style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "0.56rem",
-                        lineHeight: "100%",
-                        letterSpacing: "0px",
-                        color: "#00000099",
-                    }}
-                    className="flex-shrink-0"
+                    className="font-[Inter_Tight] font-normal text-[8px] leading-[100%] tracking-[0px] text-[#00000099] max-w-[24.44%] flex-shrink-0 "
                 >
                     +120 4069800
                 </div>
