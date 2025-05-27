@@ -3,13 +3,89 @@
 import React, { useEffect, useState, useRef } from "react"
 import type { FC } from "react"
 import Image from "next/image"
-import { useInView } from "react-intersection-observer"
 import Footer from "@/components/footer"
 import Link from "next/link"
-import { useRouter } from 'next/navigation'; 
+import { useRouter } from 'next/navigation';
+import { motion } from "framer-motion"
 
-// Shared container class for consistent margins
-const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
+// --- MOBILE HEADER COMPONENT ---
+interface MobileHeaderProps {
+  productsItems: { text: string; href: string }[];
+  blueprintItems: { text: string; href: string; }[];
+}
+
+const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintItems }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = ''; // Cleanup on unmount
+    };
+  }, [isMobileMenuOpen]);
+
+  return (
+    <>
+      {/* Fixed Mobile Header Bar (Visible only on small screens) */}
+      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-transparent md:hidden">
+        {/* Mobile Logo */}
+        <Link href="/homepage3">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce113ad4-0a6b-43dd-066c-26769520d000/public"
+            alt="WAE Logo Mobile"
+            width={40}
+            height={40}
+          />
+        </Link>
+        {/* Hamburger Menu Icon */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="flex flex-col justify-around w-6 h-5 relative z-50 focus:outline-none"
+          aria-label="Toggle mobile menu"
+        >
+          {/* Hamburger lines - always white for visibility on white background */}
+          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? 'rotate-45 translate-x-1.5 translate-y-1.5' : ''}`}></span>
+          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? '-rotate-45 translate-x-1.5 -translate-y-1.5' : ''}`}></span>
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay (Slides in from right) */}
+      <div
+        className={`fixed inset-0 bg-black z-40 flex flex-col items-start pt-[80px] pb-5 px-4 md:hidden transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+
+        {/* Menu Items */}
+        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full mb-8">
+          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Inside WAE</h3>
+          {productsItems.map((item, i) => (
+            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              {item.text}
+            </Link>
+          ))}
+        </div>
+        <div className="w-full h-px bg-[#D9D9DC] mb-8" /> {/* Divider */}
+        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full">
+          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Etcetera</h3>
+          {blueprintItems.map((item, i) => (
+            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              {item.text}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+// --- END MOBILE HEADER COMPONENT ---
+
+
+// Shared container class for consistent margins (Made responsive like Our Products)
+const containerClass = "mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-[140px]";
 
 /**
  * Reusable hover button component.
@@ -49,7 +125,6 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
     </button>
   );
 
-  // Use a simple anchor tag if it's an internal page link, Link component for Next.js routes
   return href ? (
       href.startsWith('#') ? ( // Check if it's an anchor link
         <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }}>{buttonContent}</a>
@@ -64,7 +139,7 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
 const mainSolutionItems = [
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/16ca1b89-cf24-442f-0a41-3e3ad0c6cf00/public",
-      title: "WATER REUSE",
+      title: "Water Reuse",
       mainDescription: "Innovative solutions for reducing water consumption and promoting sustainable usage across industries.", // Added main description
       subSections: [
         { title: "GREY WATER REUSE", content: "WAE's grey water reuse systems capture lightly used water from showers, sinks, and laundry, and treat it for reuse in non-potable applications like toilet flushing, cooling, and landscaping. It's a smart, cost-effective way for organizations to reduce water demand and improve operational sustainability without compromise." },
@@ -75,7 +150,7 @@ const mainSolutionItems = [
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c399819d-976c-49aa-332f-02a9db708200/public",
-      title: "WATER TREATMENT",
+      title: "Water Treatment",
       mainDescription: "Explore our cutting-edge filtration technologies that ensure superior water purity for all applications.", // Added main description
       subSections: [
         { title: "PRIMARY TREATMENT", content: "WAE’s primary treatment systems are designed to remove large, visible contaminants from raw water using mechanical processes like screening, sedimentation, and skimming. This first stage significantly reduces suspended solids and prepares water for deeper biological or chemical treatment." },
@@ -86,7 +161,7 @@ const mainSolutionItems = [
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f492758-88ca-4c25-4a00-1a122cd22200/public",
-      title: "WATER AS A SERVICE",
+      title: "Water as a Service",
       mainDescription: "Implement intelligent systems for real-time monitoring and optimized control of your water infrastructure.", // Added main description
       subSections: [
         { title: "WATER AS A SERVICE", content: "Water dispensers with inbuilt purification —pure, safe water delivered efficiently. Designed to reduce plastic waste and energy consumption, making sustainability easy." },
@@ -161,7 +236,7 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState("")
   const headerRef = useRef<HTMLDivElement>(null)
 
-  // State for controlling tagline visibility on scroll
+  // State for controlling tagline visibility on scroll (retained for consistency with other pages)
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
 
@@ -292,178 +367,278 @@ export default function Home() {
 
   return (
     <main className="relative pb-[40px]">
-      {/* HEADER */}
-      <div style={{ top: 0, left: 0, width: "100%" }}>
-        <header ref={headerRef} className="w-full relative z-10 mb-0">
-          <div className="mx-auto w-full max-w-[1440px] px-[140px]">
-            {/* Top Row: Navigation */}
+      {/* RENDER MOBILE HEADER COMPONENT HERE */}
+      <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
+
+      {/* DESKTOP HEADER (Hidden on small screens) */}
+      <header ref={headerRef} className={`w-full relative z-10 hidden mb-5 md:block`}>
+        <div className={containerClass}>
+          {/* Top Row: Navigation */}
+          <div
+            className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "12px",
+              lineHeight: "100%",
+              letterSpacing: "0px",
+            }}
+          >
+            <div>IDENTITY</div>
+            <div>ORIGIN</div>
+            <div>OBJECTIVE</div>
+            <div>INSIDE WAE</div>
+            <div>ETCETERA</div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+
+          {/* Bottom Row: Logo, Tagline and Menu Items */}
+          <div className="grid grid-cols-5 items-start">
+            {/* Logo */}
+            <div className="flex flex-col justify-center">
+              <Link href="/homepage3">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                  alt="WAE Logo"
+                  width={78}
+                  height={82}
+                />
+              </Link>
+            </div>
+
+            {/* Coordinates */}
             <div
-              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+              className="flex flex-col justify-center inline-block mr-1"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "12px",
+                fontSize: "11px",
                 lineHeight: "100%",
-                letterSpacing: "0px",
+                color: "#000000",
               }}
             >
-              <div>IDENTITY</div>
-              <div>ORIGIN</div>
-              <div>OBJECTIVE</div>
-              <div>INSIDE WAE</div>
-              <div>ETCETERA</div>
+              20.5937° N
+              <br />
+              78.9629° E
             </div>
 
-            {/* Divider */}
-            <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+            {/* Tagline */}
+            <div
+              className="flex flex-col justify-center inline-block mr-1"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "11px",
+                lineHeight: "100%",
+                color: "#000000",
+              }}
+            >
+              To lead the way in<br />sustainability ahead of the<br />rest
+            </div>
 
-            {/* Bottom Row: Logo, Tagline and Menu Items */}
-            <div className="grid grid-cols-5 items-start">
-              {/* Logo */}
-              <div className="flex flex-col justify-center">
-                <Link href="/homepage3">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                    alt="WAE Logo"
-                    width={78}
-                    height={82}
-                  />
-                </Link>
-              </div>
-
-              {/* Coordinates */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  lineHeight: "100%",
-                  color: "#000000",
-                }}
-              >
-                20.5937° N
-                <br />
-                78.9629° E
-              </div>
-
-              {/* Tagline */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  lineHeight: "100%",
-                  color: "#000000",
-                }}
-              >
-                To lead the way in<br />sustainability ahead of the<br />rest
-              </div>
-
-              {/* Inside WAE Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {productsItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
+            {/* Inside WAE Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {productsItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents">
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
                       </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                      <span className="menu-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
 
-              {/* ETCETERA Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {blueprintItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow blueprint-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
+            {/* ETCETERA Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {blueprintItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents">
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
                       </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                      <span className="menu-arrow blueprint-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
+         </div>
         </header>
-      </div>
 
-        {/* Our SOLUTIONS Heading */}
-      <div className={containerClass} style={{marginTop: "120px"}}>
+        {/* Hero section */}
+        <section
+            id="hero"
+            className="relative w-full overflow-hidden h-screen pt-[70px] md:pt-[160px]"
+        >
+            {/* Image - positioned absolutely to be behind content */}
+            <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/73c75bcc-aeeb-408e-ad25-dd4ab07f2b00/public" // Updated banner image URL
+                alt="Our Solutions Hero"
+                fill
+                className="object-cover -z-10"
+            />
+
+            {/* Text and image overlays */}
+            {/* Hide the "innovation meets design" image on mobile */}
+            <div
+                className="absolute hidden md:block"
+                style={{
+                    bottom: "30%",
+                    right: "calc(3.473%)",
+                    width: "393px",
+                    height: "159px",
+                }}
+            >
+                <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Updated overlay image URL
+                    alt="innovation meets design"
+                    width={393}
+                    height={159}
+                    className="object-contain"
+                />
+            </div>
+
+            {/* Our Solutions Text - Mobile Version */}
+            <div
+                className="absolute uppercase md:hidden"
+                style={{
+                    bottom: "10%",
+                    left: "1rem",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "2rem", // This was already 32px (2rem)
+                    lineHeight: "110%", // This was already 110%
+                    color: "#fff",
+                }}
+            >
+                Our Solutions
+            </div>
+
+            {/* Our Solutions Text - Desktop Version */}
+            <div
+                className="absolute uppercase hidden md:block"
+                style={{
+                    bottom: "33%",
+                    left: "calc(4.16666%)",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "48px",
+                    lineHeight: "110%",
+                    color: "#fff",
+                }}
+            >
+                Our Solutions
+            </div>
+
+            {/* Scroll for more Text - Mobile Version */}
+            <div
+                className="absolute uppercase md:hidden"
+                style={{
+                    bottom: "5%",
+                    left: "1rem",
+                    width: "104px",
+                    height: "12px",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "0.625rem",
+                    lineHeight: "100%",
+                    color: "#fff",
+                }}
+            >
+                Scroll for more ⤵︎
+            </div>
+
+            {/* Scroll for more Text - Desktop Version */}
+            <div
+                className="absolute uppercase hidden md:block"
+                style={{
+                    bottom: "30%",
+                    left: "calc(4.16666%)",
+                    width: "104px",
+                    height: "12px",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "10px",
+                    lineHeight: "100%",
+                    color: "#fff",
+                }}
+            >
+                Scroll for more ⤵︎
+            </div>
+        </section>
+
+        {/* Our SOLUTIONS Heading (Main Content Title) */}
+      <div className={containerClass} style={{marginTop: "80px"}}> {/* 80px gap for mobile and desktop */}
         <h2
-          style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: "48px",
-            letterSpacing: "0%",
-            verticalAlign: "middle",
-            marginBottom: "40px",
-          }}
+          className={`
+            font-inter-tight font-medium tracking-tighter align-middle mb-[40px]
+            text-[32px] leading-[110%]
+            md:text-[48px] md:leading-[110%]
+          `}
         >
           Our Solutions
         </h2>
 
-        {/* Solution Category Grid - NOW POPULATED WITH MAIN SOLUTION TITLES AND SUB-ACCORDION TITLES */}
-        <div className="grid grid-cols-3 gap-x-[80px] gap-y-[60px] mb-[180px]">
-          {mainSolutionItems.map((mainItem, index) => ( // Iterate through mainSolutionItems
+        {/* Solution Category Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[80px] gap-y-[60px] mb-[80px] md:mb-[180px]"> {/* 80px gap on mobile, 180px on desktop */}
+          {mainSolutionItems.map((mainItem, index) => (
             <div key={index}>
                 {/* Main Solution Title for the grid */}
-              <a href={`#${slugify(mainItem.title)}`} // Anchor link to the main solution section
+              <a href={`#${slugify(mainItem.title)}`}
                  style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 700,
@@ -494,7 +669,7 @@ export default function Home() {
                   lineHeight: "24px",
                   letterSpacing: "0%",
                   verticalAlign: "middle",
-                  marginBottom: "20px", // Add some space below main description
+                  marginBottom: "20px",
                 }}
               >
                 {mainItem.mainDescription}
@@ -504,25 +679,23 @@ export default function Home() {
               {mainItem.subSections.map((subItem, subIndex) => (
                 <a
                   key={subIndex}
-                  href={`#${slugify(mainItem.title)}-${slugify(subItem.title)}`} // Unique ID for each sub-accordion title
+                  href={`#${slugify(mainItem.title)}-${slugify(subItem.title)}`}
                   onClick={(e) => {
-                    // Prevent default anchor jump for a moment to allow state to update
                     e.preventDefault();
-                    // Set the hash, which will be picked up by the useEffect
                     router.push(`#${slugify(mainItem.title)}-${slugify(subItem.title)}`);
                   }}
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400, // Same as description
-                    fontSize: "12px", // Same as description
-                    lineHeight: "24px", // Same as description
-                    letterSpacing: "0%", // Same as description
-                    verticalAlign: "middle", // Same as description
-                    textTransform: "uppercase", // Titles are uppercase
-                    display: "block", // Make it a block element for mb
-                    marginBottom: subIndex < mainItem.subSections.length - 1 ? '10px' : '0', // Small gap between sub-titles
-                    color: "#000", // Ensure good contrast
-                    textDecoration: 'none', // Remove underline from link
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "24px",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    textTransform: "uppercase",
+                    display: "block",
+                    marginBottom: subIndex < mainItem.subSections.length - 1 ? '10px' : '0',
+                    color: "#000",
+                    textDecoration: 'none',
                   }}
                 >
                     {subItem.title}
@@ -532,32 +705,27 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Main Solutions Category Section (with images and interactive accordions) */}
-        <div>
+        {/* Main Solutions Category Section (Detailed Accordions) */}
+        <div className="pb-[80px]"> {/* 80px gap before Footer for mobile and desktop */}
           {mainSolutionItems.map((item, mainIndex) => (
             <div
               key={mainIndex}
-              id={slugify(item.title)} // ID for anchor linking (main section)
-              className={`flex items-start space-x-8 justify-between ${mainIndex % 2 !== 0 ? 'flex-row-reverse' : ''}`}
-              style={{ marginBottom: mainIndex < mainSolutionItems.length - 1 ? '180px' : '0' }}
+              id={slugify(item.title)}
+              className={`flex flex-col md:flex-row items-start space-y-8 md:space-y-0 md:space-x-8 justify-between ${mainIndex % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+              style={{ marginBottom: mainIndex < mainSolutionItems.length - 1 ? '80px' : '0' }} 
             >
               {/* Left Column: Main Solution Title and Image */}
-              <div className="flex flex-col items-start" style={{ width: '320px' }}>
-                <h2
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "48px",
-                    letterSpacing: "0%",
-                    verticalAlign: "middle",
-                    marginBottom: "40px",
-                    wordBreak: 'break-word',
-                    lineHeight: '1.1',
-                  }}
-                >
-                  {item.title}
-                </h2>
-                <div className="w-[320px] h-[320px] relative overflow-hidden group">
+              <div className="flex flex-col items-start w-full md:w-[320px]">
+              <h2
+                className={`
+                  font-inter-tight font-medium tracking-tighter align-middle break-words
+                  text-[32px] leading-[110%] normal-case mb-[60px]
+                  md:text-[48px] md:leading-[110%] md:uppercase md:mb-[40px]
+                `}
+              >
+                {item.title}
+              </h2>
+                <div className="w-full md:w-[320px] h-[320px] relative overflow-hidden group">
                   {mainIndex === 1 ? (
                     <Image
                       src={item.imageUrl}
@@ -581,10 +749,9 @@ export default function Home() {
 
               {/* Right Column: Accordion Sub-sections and "Know More" button */}
               <div
-                className="flex-1 flex flex-col justify-between"
+                className="flex-1 flex flex-col justify-between lg:max-w-[31%]"
                 style={{
-                  maxWidth: '320px',
-                  marginTop: '93px' // Aligns accordion with image top
+                  marginTop: '93px'
                 }}
               >
                 <div>
@@ -601,15 +768,14 @@ export default function Home() {
 
                             if (currentActiveSub === subIndex) {
                                 newMap.delete(mainIndex);
-                                // When closing, remove the hash or navigate to main section hash
-                                router.push(`#${slugify(item.title)}`, undefined); // Navigate to parent ID
+                                router.push(`#${slugify(item.title)}`, undefined);
                             } else {
                                 newMap.set(mainIndex, subIndex);
-                                router.push(`#${slugify(item.title)}-${slugify(subItem.title)}`); // Set hash to new sub-accordion
+                                router.push(`#${slugify(item.title)}-${slugify(subItem.title)}`);
                             }
                             setOpenSubAccordions(newMap);
                           }}
-                          id={`${slugify(item.title)}-${slugify(subItem.title)}`} // Unique ID for each sub-accordion title
+                          id={`${slugify(item.title)}-${slugify(subItem.title)}`}
                         />
                         {/* CSS Transition for content */}
                         <div
@@ -630,7 +796,7 @@ export default function Home() {
                             letterSpacing: "0%",
                             verticalAlign: "middle",
                             color: "#555",
-                            overflow: 'hidden', // Crucial for height transition
+                            overflow: 'hidden',
                             transition: 'height 0.3s ease-in-out, opacity 0.3s ease-in-out',
                             height: isActive ? (contentRefs.current[mainIndex]?.[subIndex]?.scrollHeight || 0) + 'px' : '0px',
                             opacity: isActive ? 1 : 0,
@@ -657,7 +823,6 @@ export default function Home() {
                             width={16}
                             height={16}
                           />
-                          {/* Replaced motion.div with a standard div and conditional class for opacity */}
                           <div
                             className={`absolute top-0 left-0 transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}`}
                           >
@@ -719,6 +884,15 @@ export default function Home() {
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
+        }
+      `}</style>
+       {/* Global Styles */}
+      <style jsx global>{`
+        html {
+        }
+        body {
+            margin: 0;
+            padding: 0;
         }
       `}</style>
     </main>
