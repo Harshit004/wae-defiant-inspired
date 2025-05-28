@@ -4,13 +4,89 @@ import type { FC } from "react"
 import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion" 
+import { motion } from "framer-motion"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 
-// Shared container class for consistent margins and max-width
-const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
+// --- MOBILE HEADER COMPONENT ---
+interface MobileHeaderProps {
+  productsItems: { text: string; href: string }[];
+  blueprintItems: { text: string; href: string; }[];
+}
+
+const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintItems }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = ''; // Cleanup on unmount
+    };
+  }, [isMobileMenuOpen]);
+
+  return (
+    <>
+      {/* Fixed Mobile Header Bar (Visible only on small screens) */}
+      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-black/10 md:hidden">
+        {/* Mobile Logo */}
+        <Link href="/homepage3">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce113ad4-0a6b-43dd-066c-26769520d000/public"
+            alt="WAE Logo Mobile"
+            width={40}
+            height={40}
+          />
+        </Link>
+        {/* Hamburger Menu Icon */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="flex flex-col justify-around w-6 h-5 relative z-50 focus:outline-none"
+          aria-label="Toggle mobile menu"
+        >
+          {/* Hamburger lines - always white for visibility on white background */}
+          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? 'rotate-45 translate-x-1.5 translate-y-1.5' : ''}`}></span>
+          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? '-rotate-45 translate-x-1.5 -translate-y-1.5' : ''}`}></span>
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay (Slides in from right) */}
+      <div
+        className={`fixed inset-0 bg-black z-40 flex flex-col items-start pt-[80px] pb-5 px-4 md:hidden transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+        {/* Menu Items */}
+        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full mb-8">
+          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Inside WAE</h3>
+          {productsItems.map((item, i) => (
+            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              {item.text}
+            </Link>
+          ))}
+        </div>
+        <div className="w-full h-px bg-[#D9D9DC] mb-8" /> {/* Divider */}
+        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full">
+          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Etcetera</h3>
+          {blueprintItems.map((item, i) => (
+            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              {item.text}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+// --- END MOBILE HEADER COMPONENT ---
+
+
+// Shared container class for consistent margins (Adjusted for mobile padding as well)
+const containerClass = "mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-[140px]";
+
 
 /**
  * Reusable hover button component.
@@ -149,11 +225,13 @@ export default function Home() {
 
   return (
     <main className="relative pb-[40px]">
-      {/* HEADER (Not Fixed in this version) */}
-      {/* The div with inline styles here seems unnecessary if not fixed */}
-      <div> {/* Consider removing this outer div or making it relative/static */}
-        <header ref={headerRef} className={`w-full relative z-10 mb-5`}> {/* Apply containerClass inside header content div */}
-          <div className={containerClass}> {/* Use containerClass for consistent padding */}
+      {/* RENDER MOBILE HEADER COMPONENT HERE */}
+      <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
+
+      {/* DESKTOP HEADER (Hidden on small screens) */}
+      <div>
+        <header ref={headerRef} className={`w-full relative z-10 mb-5 hidden md:block`}> {/* Added hidden md:block */}
+          <div className={containerClass}>
             {/* Top Row: Navigation */}
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
@@ -301,26 +379,26 @@ export default function Home() {
         </header>
       </div>
 
-      {/* Hero section (Not Fixed in this version) */}
+      {/* Hero section */}
       <section
           id="hero"
-          className="relative h-screen w-full overflow-hidden mb-[140px]" // Hero has margin-bottom
+          className="relative w-full overflow-hidden h-screen pt-[70px] md:pt-[160px] mb-[60px]" // Responsive top padding, ADDED mb-[60px] here
         >
-           {/* Reverted to Image as in the provided code */}
+          {/* Image - positioned absolutely to be behind content */}
           <Image
             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/23d6df0a-507b-45bd-6ba7-4ac13a280700/public"
             alt="Water reuse"
-             width={1440} // Adjusted width for better fit if max-width is 1440px
-             height={656} // Height from original image usage
-            className="object-cover w-full max-h-[656px]" // Use h-full to fill the 100vh section
+            fill
+            className="object-cover -z-10" // Fill and object-cover for responsive background
           />
 
-          {/* Text and image overlays remain absolute within the hero */}
+          {/* Text and image overlays */}
+          {/* Hide the "innovation meets design" image on mobile */}
           <div
-            className="absolute"
+            className="absolute hidden md:block" // Hidden on mobile, block on desktop
             style={{
               bottom: "30%",
-              right: "calc(3.473%)", // Adjust right position based on container padding
+              right: "calc(3.473%)",
               width: "393px",
               height: "159px",
             }}
@@ -333,11 +411,29 @@ export default function Home() {
               className="object-contain"
             />
           </div>
+
+          {/* "Water Reuse" Text - Mobile Version */}
           <div
-            className="absolute"
+            className="absolute uppercase md:hidden" // Visible on mobile, hidden on desktop
+            style={{
+              bottom: "10%",
+              left: "1rem", // Adjusted for mobile padding
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "2rem", // 32px
+              lineHeight: "110%",
+              color: "#fff",
+            }}
+          >
+            Water Reuse
+          </div>
+
+          {/* "Water Reuse" Text - Desktop Version */}
+          <div
+            className="absolute uppercase hidden md:block" // Hidden on mobile, block on desktop
             style={{
               bottom: "33%",
-              left: "calc(4.16666%)", // Adjust left position based on container padding
+              left: "calc(4.16666%)",
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
               fontSize: "48px",
@@ -347,11 +443,31 @@ export default function Home() {
           >
             Water Reuse
           </div>
+
+          {/* Scroll for more Text - Mobile Version */}
           <div
-            className="absolute uppercase"
+            className="absolute uppercase md:hidden" // Visible on mobile, hidden on desktop
+            style={{
+              bottom: "5%",
+              left: "1rem", // Adjusted for mobile padding
+              width: "104px",
+              height: "12px",
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "0.625rem", // 10px
+              lineHeight: "100%",
+              color: "#fff",
+            }}
+          >
+            Scroll for more ⤵︎
+          </div>
+
+          {/* Scroll for more Text - Desktop Version */}
+          <div
+            className="absolute uppercase hidden md:block" // Hidden on mobile, block on desktop
             style={{
               bottom: "30%",
-              left: "calc(4.16666%)", // Adjust left position based on container padding
+              left: "calc(4.16666%)",
               width: "104px",
               height: "12px",
               fontFamily: "'Inter Tight', sans-serif",
@@ -365,10 +481,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* NEW SECTION: Hardcoded Rows in a Single Grid */}
+        {/* NEW SECTION: Hardcoded Rows in a Single Grid (DESKTOP ONLY) */}
         {/* This section will appear after the hero (thanks to hero's mb-[140px]) */}
         {/* The grid is applied to the inner div */}
-        <div className={`${containerClass} mb-[140px]`}> {/* Container for consistent horizontal padding and bottom margin */}
+        <div className={`${containerClass} mb-[140px] hidden md:block`}> {/* Desktop grid retains its original margin and visibility */}
 
            {/* Single Grid Container for all rows */}
            {/* Defined columns for Heading and Description, and row gap */}
@@ -385,9 +501,10 @@ export default function Home() {
                <div style={{
                    fontFamily: "'Inter Tight', sans-serif",
                    fontWeight: 500,
-                   fontSize: "40px",
-                   lineHeight: "110%",
+                   fontSize: "32px", /* CHANGED from 40px to 32px */
+                   lineHeight: "120%", /* CHANGED from 110% to 120% */
                    letterSpacing: "0%",
+                   verticalAlign: "middle", /* Added verticalAlign */
                }}>
                    Why Does Water Reuse Matters?
                </div>
@@ -409,9 +526,10 @@ export default function Home() {
                <div style={{
                    fontFamily: "'Inter Tight', sans-serif",
                    fontWeight: 500,
-                   fontSize: "40px",
-                   lineHeight: "110%",
+                   fontSize: "32px", /* CHANGED from 40px to 32px */
+                   lineHeight: "120%", /* CHANGED from 110% to 120% */
                    letterSpacing: "0%",
+                   verticalAlign: "middle", /* Added verticalAlign */
                }}>
                    Grey Water Reuse
                </div>
@@ -491,9 +609,10 @@ export default function Home() {
                 <div style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 500,
-                    fontSize: "40px",
-                    lineHeight: "110%",
+                    fontSize: "32px", /* Changed from 40px to 32px */
+                    lineHeight: "120%", /* Changed from 110% to 120% */
                     letterSpacing: "0%",
+                    verticalAlign: "middle", /* Added verticalAlign */
                 }}>
                     Sewage Water Reuse
                 </div>
@@ -573,9 +692,10 @@ export default function Home() {
                 <div style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 500,
-                    fontSize: "40px",
-                    lineHeight: "110%",
+                    fontSize: "32px", /* Changed from 40px to 32px */
+                    lineHeight: "120%", /* Changed from 110% to 120% */
                     letterSpacing: "0%",
+                    verticalAlign: "middle", /* Added verticalAlign */
                 }}>
                     Effluent Treatment Services
                 </div>
@@ -655,9 +775,10 @@ export default function Home() {
                 <div style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 500,
-                    fontSize: "40px",
-                    lineHeight: "110%",
+                    fontSize: "32px", /* Changed from 40px to 32px */
+                    lineHeight: "120%", /* Changed from 110% to 120% */
                     letterSpacing: "0%",
+                    verticalAlign: "middle", /* Added verticalAlign */
                 }}>
                     Connect With Us
                 </div>
@@ -678,8 +799,177 @@ export default function Home() {
 
         </div>
 
+        {/* --- MOBILE SECTIONS FOR CONTENT (NEW) --- */}
+        {/* Adjusted mb-[60px] to provide space after these sections before the form */}
+        <div className={`md:hidden ${containerClass} mb-[60px]`}> {/* Visible on mobile, hidden on desktop, smaller margin for mobile */}
+
+            {/* Why Does Water Reuse Matters? */}
+            <div className="mb-[60px]"> {/* Changed to mb-[60px] */}
+                <h2 className="text-[32px] leading-[120%] font-medium font-['Inter Tight', sans-serif] leading-tight mb-4">
+                    Why Does Water Reuse Matters?
+                </h2>
+                <p className="text-xs font-normal font-['Inter Tight', sans-serif] leading-tight text-black/60">
+                    Water reuse reduces the strain on freshwater sources, lowers environmental impact, and ensures a sustainable water future. WAE provides cutting-edge, reliable, and efficient solutions for grey water, sewage water, and effluent treatment to help industries, cities, and communities thrive sustainably.
+                </p>
+            </div>
+
+            {/* Grey Water Reuse */}
+            <div className="mb-[60px]"> {/* Changed to mb-[60px] */}
+                <h2 className="text-[32px] leading-[120%] font-medium font-['Inter Tight', sans-serif] leading-tight mb-4">
+                    Grey Water Reuse
+                </h2>
+                <p className="text-xs font-normal font-['Inter Tight', sans-serif] leading-tight text-black/60 mb-4">
+                    Our approach integrates advanced technology with ecological principles, focusing on resource efficiency and circular systems. We tailor solutions to local needs, ensuring both environmental benefits and economic viability for our partners.
+                </p>
+                <h3 className="text-xs font-bold font-['Inter Tight', sans-serif] leading-tight text-black/60 mb-2">
+                    Key Benefits:
+                </h3>
+                <ul className="list-disc ml-5 text-xs font-normal font-['Inter Tight', sans-serif] leading-tight text-black/60 space-y-1 mb-8">
+                    <li>Reduced strain on freshwater sources</li>
+                    <li>Lower environmental impact</li>
+                    <li>Enhanced water security</li>
+                    <li>Support for sustainable urban development</li>
+                </ul>
+                <HoverButton>
+                    {(hovered) => (
+                        <>
+                            Know More
+                            <div className="relative inline-block w-4 h-4">
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                    alt="icon default"
+                                    width={16}
+                                    height={16}
+                                />
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: hovered ? 1 : 0 }}
+                                    transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                    className="absolute top-0 left-0"
+                                >
+                                    <Image
+                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                        alt="icon hover"
+                                        width={16}
+                                        height={16}
+                                    />
+                                </motion.div>
+                            </div>
+                        </>
+                    )}
+                </HoverButton>
+            </div>
+
+            {/* Sewage Water Reuse */}
+            <div className="mb-[60px]"> {/* Changed to mb-[60px] */}
+                <h2 className="text-[32px] leading-[120%] font-medium font-['Inter Tight', sans-serif] leading-tight mb-4">
+                    Sewage Water Reuse
+                </h2>
+                <p className="text-xs font-normal font-['Inter Tight', sans-serif] leading-tight text-black/60 mb-4">
+                    We leverage state-of-the-art filtration, biological treatment, and monitoring systems. Our proprietary processes ensure high water recovery rates and pollutant removal, setting new benchmarks in water treatment efficiency.
+                </p>
+                <h3 className="text-xs font-bold font-['Inter Tight', sans-serif] leading-tight text-black/60 mb-2">
+                    Key Benefits:
+                </h3>
+                <ul className="list-disc ml-5 text-xs font-normal font-['Inter Tight', sans-serif] leading-tight text-black/60 space-y-1 mb-8">
+                    <li>Advanced pollutant removal</li>
+                    <li>High water recovery rates</li>
+                    <li>Compliance with strict standards</li>
+                    <li>Reduced reliance on external water sources</li>
+                </ul>
+                <HoverButton>
+                    {(hovered) => (
+                        <>
+                            Know More
+                            <div className="relative inline-block w-4 h-4">
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                    alt="icon default"
+                                    width={16}
+                                    height={16}
+                                />
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: hovered ? 1 : 0 }}
+                                    transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                    className="absolute top-0 left-0"
+                                >
+                                    <Image
+                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                        alt="icon hover"
+                                        width={16}
+                                        height={16}
+                                    />
+                                </motion.div>
+                            </div>
+                        </>
+                    )}
+                </HoverButton>
+            </div>
+
+            {/* Effluent Treatment Services */}
+            <div className="mb-[60px]"> {/* Changed to mb-[60px] */}
+                <h2 className="text-[32px] leading-[120%] font-medium font-['Inter Tight', sans-serif] leading-tight mb-4">
+                    Effluent Treatment Services
+                </h2>
+                <p className="text-xs font-normal font-['Inter Tight', sans-serif] leading-tight text-black/60 mb-4">
+                    Beyond industrial applications, we work with municipalities and communities. To implement accessible and affordable water reuse systems, promoting public health and water security for all.
+                </p>
+                <h3 className="text-xs font-bold font-['Inter Tight', sans-serif] leading-tight text-black/60 mb-2">
+                    Key Benefits:
+                </h3>
+                <ul className="list-disc ml-5 text-xs font-normal font-['Inter Tight', sans-serif] leading-tight text-black/60 space-y-1 mb-8">
+                    <li>Customized solutions for industries</li>
+                    <li>Compliance with environmental regulations</li>
+                    <li>Cost-effective treatment processes</li>
+                    <li>Support for circular economy principles</li>
+                </ul>
+                <HoverButton>
+                    {(hovered) => (
+                        <>
+                            Know More
+                            <div className="relative inline-block w-4 h-4">
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                    alt="icon default"
+                                    width={16}
+                                    height={16}
+                                />
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: hovered ? 1 : 0 }}
+                                    transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                    className="absolute top-0 left-0"
+                                >
+                                    <Image
+                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                        alt="icon hover"
+                                        width={16}
+                                        height={16}
+                                    />
+                                </motion.div>
+                            </div>
+                        </>
+                    )}
+                </HoverButton>
+            </div>
+
+            {/* Connect With Us - Mobile Introduction (matches desktop description 5) */}
+            {/* This section does NOT need mb-[60px] because the parent div (`md:hidden ${containerClass} mb-[60px]`) already provides the gap AFTER the last of these 4 sections and BEFORE the form. */}
+            <div className="">
+                <h2 className="text-[32px] leading-[120%] font-medium font-['Inter Tight', sans-serif] leading-tight mb-4">
+                    Connect With Us
+                </h2>
+                <p className="text-xs font-normal font-['Inter Tight', sans-serif] leading-tight text-black/60">
+                    Whether you're looking to implement grey water reuse, treat sewage, or manage industrial effluents. WAE's expert team is ready to guide you. Fill out the form below, and let's build a sustainable water future together.
+                </p>
+            </div>
+        </div>
+        {/* --- END MOBILE SECTIONS FOR CONTENT --- */}
+
         {/* CONNECT WITH US FORM */}
-        <section className=" px-[9.72%] pb-0">
+        {/* Removed pb-0 to let the padding/margin from elements above control spacing */}
+        <section className="pb-[60px] md:px-[9.72%]">
             <ConnectWithUs introText="Explore how WAE can help your business or community turn wastewater into a resource." />
         </section>
 
