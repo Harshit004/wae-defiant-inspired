@@ -41,6 +41,16 @@ padding-bottom: 20px;
 }
 */
 
+/* Hide scrollbar for elements with hide-scrollbar class */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 /* Animation for navigation links */
 @keyframes underlineSlide {
   from {

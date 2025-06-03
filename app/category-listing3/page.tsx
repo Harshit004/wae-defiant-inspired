@@ -554,7 +554,7 @@ const ClientSideContent: FC = () => {
                         className="flex justify-between" // Keep this or adjust parent flex?
                         style={{ flex: 1, maxWidth: "16%" }} // Max width retained
                       >
-                        <button
+                        <button className="mr-20px"
                           style={{
                             ...baseButtonStyle, // Start with base styles
                             backgroundColor: "#000", // Override for black background
@@ -1105,6 +1105,7 @@ const Home: FC = () => {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
         }
+        
       `}</style>
     </main>
   );

@@ -1,12 +1,89 @@
 "use client";
 
-import { FC, useEffect, useState, useRef } from "react";
+import { FC, useEffect, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer"; // Still used for Hero InView
 import RelatedCard from "@/components/related-card"; // Assuming this component exists
 import Footer from "@/components/footer"; // Assuming this component exists
 import Link from "next/link";
+import { useRouter } from 'next/navigation'; // Added useRouter for MobileHeader (if needed)
+
+
+// --- MOBILE HEADER COMPONENT (Copied from the first page) ---
+interface MobileHeaderProps {
+  productsItems: { text: string; href: string }[];
+  blueprintItems: { text: string; href: string; }[];
+}
+
+const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintItems }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = ''; // Cleanup on unmount
+    };
+  }, [isMobileMenuOpen]);
+
+  return (
+    <>
+      {/* Fixed Mobile Header Bar (Visible only on small screens) */}
+      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-black/10 md:hidden">
+        {/* Mobile Logo */}
+        <Link href="/homepage3">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public" // Ensure this is the correct mobile logo URL
+            alt="WAE Logo Mobile"
+            width={40}
+            height={40}
+          />
+        </Link>
+        {/* Hamburger Menu Icon */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="flex flex-col justify-around w-6 h-5 relative z-50 focus:outline-none"
+          aria-label="Toggle mobile menu"
+        >
+          {/* Hamburger lines - always white for visibility on white background */}
+          <span className={`block h-0.5 w-full bg-black transition-all duration-300 transform ${isMobileMenuOpen ? 'rotate-45 translate-x-1.5 translate-y-1.5' : ''}`}></span>
+          <span className={`block h-0.5 w-full bg-black transition-all duration-300 transform ${isMobileMenuOpen ? '-rotate-45 translate-x-1.5 -translate-y-1.5' : ''}`}></span>
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay (Slides in from right) */}
+      <div
+        className={`fixed inset-0 bg-black z-40 flex flex-col items-start pt-[80px] pb-5 px-4 md:hidden transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+
+        {/* Menu Items */}
+        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full mb-8">
+          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Inside WAE</h3>
+          {productsItems.map((item, i) => (
+            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              {item.text}
+            </Link>
+          ))}
+        </div>
+        <div className="w-full h-px bg-[#D9D9DC] mb-8" /> {/* Divider */}
+        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full">
+          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Etcetera</h3>
+          {blueprintItems.map((item, i) => (
+            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              {item.text}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+// --- END MOBILE HEADER COMPONENT ---
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
@@ -57,13 +134,27 @@ const Home: FC = () => {
   const [headerHeroScale, setHeaderHeroScale] = useState<number>(1); // State is declared and updated, but not applied to an element's style/transform in provided snippets
   const headerHeroRef = useRef<HTMLDivElement>(null); // Ref for the fixed header/hero container
 
-  // Ref for the Sustainability section wrapper for scroll animation - REMOVED as parallax is discarded
-  // const sustainabilityScrollRef = useRef<HTMLDivElement>(null);
-
+  const [isMobile, setIsMobile] = useState(false); // Declare isMobile state
 
   const sections = ["hero"]; // Extendable for additional sections - used only to set active section based on heroInView
 
   const containerRef = useRef<HTMLDivElement>(null); // Ref is declared but not applied to an element
+
+  // Effect to determine if the current view is mobile and update video source
+  useEffect(() => {
+    const checkScreenSize = () => {
+        // Adjust 768 to your desired breakpoint (e.g., common breakpoint for 'md' screens in Tailwind CSS)
+        setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreenSize(); // Set initial state
+    window.addEventListener('resize', checkScreenSize); // Listen for resizes
+
+    return () => {
+        window.removeEventListener('resize', checkScreenSize); // Clean up on unmount
+    };
+  }, []); // Empty dependency array means this effect runs once on mount and unmount
+
 
    // --- ADDED: Explicitly scroll to top on mount ---
    useEffect(() => {
@@ -140,19 +231,6 @@ const Home: FC = () => {
   const { scrollYProgress } = useScroll(); // Tracks scroll progress of the window by default
   const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]); // Logo opacity linked to scroll
 
-  // Scroll-linked animation for Sustainability section's y position - REMOVED as parallax is discarded
-  // const { scrollYProgress: sustainabilityScrollProgress } = useScroll({
-  //   target: sustainabilityScrollRef,
-  //   offset: ["start end", "end start"],
-  // });
-  // Map scroll progress (0 to 1) to a y translation - REMOVED as parallax is discarded
-  // const sustainabilityY = useTransform(
-  //   sustainabilityScrollProgress,
-  //   [0, 1],
-  //   [360, 0]
-  // );
-
-
   // --- POTENTIAL TROUBLESHOOTING AREA (Declared but not used/Incorrect Syntax) ---
   // These useTransform calls have incorrect syntax and are not used in the provided code structure.
   // They were potentially intended for scroll animations now replaced by scroll-snap.
@@ -205,13 +283,170 @@ const Home: FC = () => {
     visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
   };
 
+  // --- NEW: Ref and state for carousel navigation ---
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true); // Assuming it starts on the first slide
+  // --- END NEW ---
+
+  // --- NEW: Data for your Products Carousel ---
+  const productsData = [
+    {
+      href: "/product-category/drinking-water-stations",
+      imgSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/27917d14-ea56-4a80-93b9-c66ba9642400/public",
+      altText: "Drinking Water Station",
+      title: "Drinking Water Stations",
+    },
+    {
+      href: "/product-category/drinking-water-faucets",
+      imgSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/685750d6-ec8e-491b-a214-24f13cfcb600/public",
+      altText: "Water Faucet",
+      title: "Drinking Water Faucets",
+    },
+    {
+      href: "/product-category/water-dispenser",
+      imgSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b05d64d-0248-4aaf-b8c3-e8d7afccea00/public",
+      altText: "Water Dispenser",
+      title: "Drinking Water Dispensers",
+    },
+    {
+      href: "/product-category/water-cooler",
+      imgSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf2a2e6e-9e0b-464a-c2ff-1a16cb1f9900/public",
+      altText: "Water Cooler",
+      title: "Water Coolers & Fountains",
+    },
+    {
+      href: "/product-category/public-utility-systems",
+      imgSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/54ccac68-6261-4097-e41c-cfa35c992100/public",
+      altText: "Public Utility",
+      title: "Public Utility Systems",
+    },
+    {
+      href: "/product-category/commercial-industrial-plants",
+      imgSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public",
+      altText: "Commercial Plant",
+      title: "Commercial/Industrial Plants",
+    },
+  ];
+  // --- END Products Data ---
+
+  // --- NEW: Ref and state for PRODUCTS carousel navigation ---
+  const productsCarouselRef = useRef<HTMLDivElement>(null);
+  const [showProductsLeftArrow, setShowProductsLeftArrow] = useState(false);
+  const [showProductsRightArrow, setShowProductsRightArrow] = useState(true); // Assuming starts on first slide
+
+  // --- NEW: Products Carousel scroll logic (similar to solutions, but for productsRef) ---
+  const handleProductsScroll = useCallback(() => {
+    if (productsCarouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = productsCarouselRef.current;
+      const scrollThreshold = 5;
+      setShowProductsLeftArrow(scrollLeft > scrollThreshold);
+      setShowProductsRightArrow(scrollLeft + clientWidth < scrollWidth - scrollThreshold);
+    }
+  }, []);
+
+  const scrollProductsCarousel = (direction: 'left' | 'right') => {
+    if (productsCarouselRef.current) {
+      const slideWidth = productsCarouselRef.current.clientWidth;
+      const scrollAmount = direction === 'right' ? slideWidth : -slideWidth;
+      productsCarouselRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  useEffect(() => {
+    const carousel = productsCarouselRef.current;
+    if (carousel) {
+      carousel.addEventListener('scroll', handleProductsScroll);
+      handleProductsScroll(); // Initial check on mount
+    }
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener('scroll', handleProductsScroll);
+      }
+    };
+  }, [handleProductsScroll]);
+  // --- END NEW PRODUCTS CAROUSEL LOGIC ---
+
+  // ---Data for your Solutions Carousel ---
+  const solutionsData = [
+    {
+      href: "/water-reuse",
+      imgSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8c357479-5a25-4527-7fde-a434fa498b00/public",
+      altText: "Water Reuse Image",
+      title: "Water Reuse",
+    },
+    {
+      href: "/water-treatment",
+      imgSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c399819d-976c-49aa-332f-02a9db708200/public",
+      altText: "Water Treatment Image",
+      title: "Water Treatment",
+    },
+    {
+      href: "/water-as-a-service",
+      imgSrc: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/16ca1b89-cf24-442f-0a41-3e3ad0c6cf00/public",
+      altText: "Water as a Service Image",
+      title: "Water as a Service",
+    },
+    // Add more solution objects here following the same structure
+  ];
+  // --- END Data for your Solutions Carousel ---
+
+  // --- NEW: Carousel scroll logic ---
+  const handleScroll = useCallback(() => {
+    if (carouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      const scrollThreshold = 5; // A small threshold to account for potential floating point inaccuracies
+
+      // Show left arrow if we've scrolled past the beginning
+      setShowLeftArrow(scrollLeft > scrollThreshold);
+
+      // Show right arrow if we're not at the very end of the scrollable content
+      setShowRightArrow(scrollLeft + clientWidth < scrollWidth - scrollThreshold);
+    }
+  }, []);
+
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const slideWidth = carouselRef.current.clientWidth; // Get the visible width of the carousel container (which is also the slide width)
+      const scrollAmount = direction === 'right' ? slideWidth : -slideWidth;
+
+      carouselRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth', // Smooth scrolling animation
+      });
+    }
+  };
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (carousel) {
+      // Attach scroll event listener
+      carousel.addEventListener('scroll', handleScroll);
+      // Perform initial check on mount to set arrow visibility
+      handleScroll();
+    }
+    // Clean up event listener on unmount
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [handleScroll]); // Re-run effect if handleScroll memoization changes (unlikely here)
+  // --- END NEW ---
+
   return (
     <main className="relative">
+      {/* RENDER MOBILE HEADER COMPONENT HERE */}
+      <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
+
       {/* HEADER AND HERO SECTION */}
-      {/* This div is fixed and covers the initial viewport height.
-          The scroll-driven container below is pushed down by 100vh using margin-top. */}
+      {/* This div is fixed and covers the initial viewport height. */}
       <div ref={headerHeroRef} className="fixed top-0 left-0 w-full h-screen z-0"> {/* Note: z-index 0 on a fixed element might cause issues */}
-        <header ref={headerRef} className="w-full bg-white relative z-10 mb-0">
+        {/* DESKTOP HEADER (Hidden on small screens) */}
+        <header ref={headerRef} className="w-full bg-white relative z-10 mb-0 hidden md:block"> {/* Added hidden md:block */}
           <div className="mx-auto w-full max-w-[1440px] px-[140px]">
             {/* Top Row: Navigation */}
             <div
@@ -248,7 +483,7 @@ const Home: FC = () => {
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
               <div className="flex flex-col justify-center">
-                <Link href="#"> {/* Note: href="#" */}
+                <Link href="/homepage3"> {/* Updated href to /homepage3 */}
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
                     alt="WAE Logo"
@@ -370,33 +605,35 @@ const Home: FC = () => {
         </header>
 
         {/* HERO SECTION */}
-        {/* NOTE: If you want the Hero to be a scroll-snap point, add snap-center here as well */}
         <section
           id="hero"
           ref={heroRef}
           className="relative h-screen w-full overflow-hidden"
-          style={{ marginTop: `-${headerHeight}px` }} // Offset by header height
+          style={{ marginTop: `-${headerHeight}px`, paddingTop: "70px" }} // Added paddingTop for mobile
         >
           <video
-            src="/93af6227858930534ba0ecad01b7f3f02b655c7d.mp4" // Local video file
-            autoPlay
-            // loop // Loop is commented out
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          // --- CHANGE HERE: Conditionally set the src based on isMobile ---
+          src={isMobile ? "/MicrosoftTeams-video (1).mp4" : "/93af6227858930534ba0ecad01b7f3f02b655c7d.mp4"}
+          autoPlay
+          // loop // Loop is commented out
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          // --- ADD THIS: Key prop helps React re-mount the video element when src changes ---
+          key={isMobile ? 'mobile-video' : 'desktop-video'}
+        />
+          {/* Scroll for more text - Adjusted for mobile from previous page */}
           <div
-            className="absolute uppercase"
+            className="absolute uppercase text-[#00000099]"
             style={{ // Inline styles for positioning and typography
-              bottom: "10%",
-              left: "9.72%", // Specific percentage-based left
-              width: "104px",
-              height: "12px",
+              bottom: "5%", // From previous page's mobile hero
+              left: "1rem", // From previous page's mobile hero (16px)
+              // width: "104px", // Removed fixed width for better responsiveness if text changes
+              // height: "12px", // Removed fixed height
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
-              fontSize: "10px",
+              fontSize: "0.625rem", // From previous page's mobile hero (10px)
               lineHeight: "100%",
-              color: "#00000099",
             }}
           >
             Scroll for more ⤵︎ {/* Static text */}
@@ -456,7 +693,70 @@ const Home: FC = () => {
                   replenishing, immensely powerful and
                   impassively generous.
                 </p>
+                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
+                  Our purpose brings together the company,
+                  employees, clients and our stakeholders and
+                  reconciles economic performance witha
+                  positive impact on people and the planet.
+                </p>
                 <Link href="/purpose" className="contents"> {/* className="contents" again */}
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                               width={16}
+                            height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* About WAE Section */}
+         {/* Entrance animations removed for scroll-snap priority */}
+         {/* Changed to h-screen and centered content vertically */}
+        <section className="h-screen flex items-center justify-center relative snap-center"> {/* Changed height, removed mb, changed flex alignment */}
+          <motion.div
+            // Removed initial and whileInView animation props
+            // initial={{ y: "200%", opacity: 0 }}
+            // whileInView={{ y: 0, opacity: 1 }}
+            // transition={{ duration: 0.8, delay: 0.2 }}
+            // viewport={{ once: true }}
+            className="w-full max-w-screen-xl mx-8 lg:mx-36" // Removed mb-20
+          >
+            <div className="flex flex-col lg:flex-row items-start justify-between">
+              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight"> {/* Font style via arbitrary value */}
+                About WAE
+              </h2>
+              <div className="flex flex-col gap-5 w-64"> {/* Fixed width text container */}
+                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
+                  WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
+                  We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
+                  strengthening community resilience and showcasing India's intellectual capital on the world stage.
+                </p>
+                <Link href="/about-wae" className="contents"> {/* className="contents" again */}
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -494,9 +794,10 @@ const Home: FC = () => {
         {/* Products Section */}
         {/* This section has a white background and higher z-index */}
         {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
-        <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200 }}>
+        <div className="relative bg-white flex items-center justify-center py-[140px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}> {/* Added px-4 for mobile */}
           {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
-          <table className="product-grid"> {/* Custom CSS class */}
+          {/* Hide on mobile, use flexbox alternative */}
+          <table className="product-grid hidden md:table"> {/* Custom CSS class + hidden md:table */}
             <tr>
               <td colSpan={2} className="product-title whitespace-nowrap"> {/* Custom CSS class */}
                 Products
@@ -519,9 +820,7 @@ const Home: FC = () => {
                 </Link>
               </td>
               <td className="product-cell"> {/* Custom CSS class */}
-                {/* Image wrapped in Link - not ideal, Link should wrap Image */}
                 <Image
-                  // href="/products-solutions/drinking-water-stations" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/27917d14-ea56-4a80-93b9-c66ba9642400/public"
                   alt="Drinking Water Station"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -529,13 +828,11 @@ const Home: FC = () => {
                   height={232}
                 />
               </td>
-              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
             </tr>
             <tr>
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/drinking-water-faucets" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/685750d6-ec8e-491b-a214-24f13cfcb600/public"
                   alt="Water Faucet"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -570,9 +867,7 @@ const Home: FC = () => {
                 </Link>
               </td>
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b05d64d-0248-4aaf-b8c3-e8d7afccea00/public"
                   alt="Water Dispenser"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -607,9 +902,7 @@ const Home: FC = () => {
                 </Link>
               </td>
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c4a14e-2e09-4da6-c363-84bae0088400/public"
                   alt="Water Dispenser"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -619,11 +912,9 @@ const Home: FC = () => {
               </td>
             </tr>
             <tr>
-              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf2a2e6e-9e0b-464a-c2ff-1a16cb1f9900/public"
                   alt="Water Cooler"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -652,9 +943,7 @@ const Home: FC = () => {
                 </Link>
               </td>
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d9688872-6e63-4d68-26e9-aec6cf1f3a00/public"
                   alt="Water Fountain"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -662,13 +951,11 @@ const Home: FC = () => {
                   height={232}
                 />
               </td>
-              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
             </tr>
             <tr>
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/public-utility-systems" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/54ccac68-6261-4097-e41c-cfa35c992100/public"
                   alt="Public Utility"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -697,9 +984,7 @@ const Home: FC = () => {
                 </Link>
               </td>
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/commercial-industrial-plants" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
                   alt="Commercial Plant"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -728,9 +1013,7 @@ const Home: FC = () => {
                 </Link>
               </td>
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/commercial-industrial-plants" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a0490312-e31b-44b0-2272-8645b0d0ef00/public"
                   alt="Industrial Plant"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -740,14 +1023,90 @@ const Home: FC = () => {
               </td>
             </tr>
           </table>
+
+          {/* --- NEW: MOBILE PRODUCT CAROUSEL (Tailwind CSS Scroll Snap) --- */}
+          {/* Added 'relative' to the parent container for absolute positioning of arrows */}
+          <div className="md:hidden flex flex-col w-full max-w-sm mx-auto relative">
+            <h2 className="font-[Inter Tight] text-[32px] leading-[120%] px-[4.44%] mb-8">Products</h2>
+
+            {/* Carousel Track: Flex container with horizontal scrolling and scroll snap */}
+            <div
+              ref={productsCarouselRef} // Attach the NEW ref here
+              className="flex overflow-x-scroll snap-x snap-mandatory pb-4 -mx-4 px-4 hide-scrollbar"
+            >
+              {productsData.map((product, index) => (
+                <Link
+                  key={index}
+                  href={product.href}
+                  className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#fff] rounded-lg p-4" // Ensure consistency with solutions section
+                >
+                  <Image
+                    src={product.imgSrc}
+                    alt={product.altText}
+                    width={316} // Specified 316px width
+                    height={316} // Specified 316px height
+                    className="object-cover"
+                  />
+                  <div style={{ height: '20px' }} /> {/* 20px gap below image */}
+                  <span
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "140%",
+                      letterSpacing: "0%",
+                      textAlign: "center",
+                      textTransform: "uppercase",
+                    }}
+                    className="text-black"
+                  >
+                    {product.title}
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            {/* --- Navigation Arrows for Products --- */}
+            {showProductsLeftArrow && (
+              <button
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 p-2 ml-[4.44%] md:ml-4 bg-transparent"
+                onClick={() => scrollProductsCarousel('left')}
+                aria-label="Previous product"
+              >
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5ccb5886-74f3-436a-b9de-b9bf3945b400/public"
+                  alt="Left Arrow"
+                  width={24}
+                  height={24}
+                />
+              </button>
+            )}
+            {showProductsRightArrow && (
+              <button
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 p-2 mr-[4.44%] md:mr-4 bg-transparent"
+                onClick={() => scrollProductsCarousel('right')}
+                aria-label="Next product"
+              >
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/71db80ef-81f2-4210-48ee-18d5da045300/public"
+                  alt="Right Arrow"
+                  width={24}
+                  height={24}
+                />
+              </button>
+            )}
+            {/* --- END Navigation Arrows for Products --- */}
+          </div>
+          {/* --- END NEW MOBILE PRODUCT CAROUSEL --- */}
         </div>
 
         {/* Solution Section */}
         {/* This section has a white background and higher z-index */}
         {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
-        <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200 }}>
+        <div className="relative bg-white flex items-center justify-center py-[140px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}> {/* Added px-4 for mobile */}
           {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
-          <table className="solutions-grid"> {/* Custom CSS class */}
+          {/* Hide on mobile, use flexbox alternative */}
+          <table className="solutions-grid hidden md:table"> {/* Custom CSS class + hidden md:table */}
             <tr>
               <td colSpan={2} className="product-title whitespace-nowrap"> {/* Custom CSS class */}
                 Solutions
@@ -772,9 +1131,7 @@ const Home: FC = () => {
                 </Link>
               </td>
               <td className="product-cell"> {/* Custom CSS class */}
-                {/* Image wrapped in Link - not ideal, Link should wrap Image */}
                 <Image
-                  // href="/products-solutions/drinking-water-stations" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8c357479-5a25-4527-7fde-a434fa498b00/public"
                   alt="WATER REUSE"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -782,13 +1139,11 @@ const Home: FC = () => {
                   height={232}
                 />
               </td>
-              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
             </tr>
             <tr>
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/drinking-water-faucets" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c399819d-976c-49aa-332f-02a9db708200/public"
                   alt="WATER TREATMENT LEFT"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -826,9 +1181,7 @@ const Home: FC = () => {
                 </Link>
               </td>
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/16ca1b89-cf24-442f-0a41-3e3ad0c6cf00/public"
                   alt="WATER AS A SERVICE LEFT"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -866,9 +1219,7 @@ const Home: FC = () => {
                 </Link>
               </td>
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1374b15c-0e9d-4dbf-6524-c4b6ff10f900/public"
                   alt="WATER AS A SERVICE RIGHT "
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -878,11 +1229,9 @@ const Home: FC = () => {
               </td>
             </tr>
             <tr>
-              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f492758-88ca-4c25-4a00-1a122cd22200/public"
                   alt="WATER TREATMENT DOWN"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -902,9 +1251,7 @@ const Home: FC = () => {
                 </Link>
               </td>
               <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
                 <Image
-                  // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e9e2498-7134-4994-642f-e95e90e1aa00/public"
                   alt="WATER AS A SERVICE DOWN"
                   className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
@@ -912,11 +1259,85 @@ const Home: FC = () => {
                   height={232}
                 />
               </td>
-              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
             </tr>
           </table>
-        </div>
 
+          {/* --- NEW: MOBILE SOLUTION CAROUSEL (Tailwind CSS Scroll Snap) --- */}
+          {/* Added 'relative' to the parent container for absolute positioning of arrows */}
+          <div className="md:hidden flex flex-col w-full max-w-sm mx-auto relative">
+            <h2 className="font-[Inter Tight] text-[32px] leading-[120%] tracmking-0 px-[4.44%] mb-8">Solutions</h2>
+
+            {/* Carousel Track: Flex container with horizontal scrolling and scroll snap */}
+            <div
+              ref={carouselRef} // Attach the ref here
+              className="flex overflow-x-scroll snap-x snap-mandatory pb-4 -mx-4 px-4 hide-scrollbar"
+            >
+              {solutionsData.map((solution, index) => (
+                <Link
+                  key={index}
+                  href={solution.href}
+                  className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#fff] rounded-lg p-4"
+                >
+                  <Image
+                    src={solution.imgSrc}
+                    alt={solution.altText}
+                    width={316} // Specified 316px width
+                    height={316} // Specified 316px height
+                    className="object-cover"
+                  />
+                  <div style={{ height: '20px' }} />
+                  <span
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "140%",
+                      letterSpacing: "0%",
+                      textAlign: "center",
+                      textTransform: "uppercase",
+                    }}
+                    className="text-black"
+                  >
+                    {solution.title}
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            {/* --- Navigation Arrows --- */}
+            {showLeftArrow && (
+              <button
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 p-2 ml-[4.44%] md:ml-4 bg-transparent"
+                onClick={() => scrollCarousel('left')}
+                aria-label="Previous slide" // Important for accessibility
+              >
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5ccb5886-74f3-436a-b9de-b9bf3945b400/public"
+                  alt="Left Arrow"
+                  width={24}
+                  height={24}
+                />
+              </button>
+            )}
+            {showRightArrow && (
+              <button
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 p-2 mr-[4.44%] md:mr-4 bg-transparent"
+                onClick={() => scrollCarousel('right')}
+                aria-label="Next slide" // Important for accessibility
+              >
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/71db80ef-81f2-4210-48ee-18d5da045300/public"
+                  alt="Right Arrow"
+                  width={24}
+                  height={24}
+                />
+              </button>
+            )}
+            {/* --- END Navigation Arrows --- */}
+          </div>
+          {/* --- END NEW MOBILE SOLUTION CAROUSEL --- */}
+        </div>
 
       {/* wrapping these in a div to get them to overlap the sticky logo */}
         <div className="bg-[#f2f2f2]"
@@ -925,7 +1346,7 @@ const Home: FC = () => {
         {/* Make in INDIA Section */}
         {/* Entrance animations removed for scroll-snap priority */}
         {/* Changed to h-screen and centered content vertically, removed padding */}
-        <section className="h-screen flex items-center justify-center relative snap-center px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment */}
+        <section className="h-screen flex items-center justify-center relative snap-center px-4 md:px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment. Added px-4 for mobile */}
           <motion.div
             // Removed initial and whileInView animation props
             // initial={{ y: "100%", opacity: 0 }}
@@ -936,21 +1357,22 @@ const Home: FC = () => {
           >
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
-                <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap"> {/* Arbitrary values */}
+                <h2 className="inline-block font-[Inter Tight] font-medium text-[32px] md:text-[58px] leading-[1.1] w-full md:w-[23.5%] whitespace-nowrap"> {/* Arbitrary values. Added responsive font-size and width */}
                   Make in INDIA
                 </h2>
-                <div className="relative" style={{ zIndex: 1200 }}>
+                <div className="relative w-full h-auto md:w-[432px] md:h-[229px]" style={{ zIndex: 1200 }}> {/* Added responsive width/height */}
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
                     alt="Make In India"
-                    width={432}
-                    height={229}
-                    className="pl-[-2.875%] pr-[9.725%] pb-[25px]" // Negative padding/margins via arbitrary values
+                    // width={432} // Removed explicit width/height for responsive image within container
+                    // height={229}
+                    fill // Use fill for responsive image
+                    className="object-contain md:pl-[-2.875%] md:pr-[9.725%] md:pb-[25px]" // Negative padding/margins via arbitrary values
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-5 w-64"> {/* Fixed width text container */}
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
+              <div className="flex flex-col gap-5 w-full md:w-64"> {/* Fixed width text container. Made width full on mobile */}
+                <p className="w-full md:w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style. Made width full on mobile */}
                   The underlying natural order of the universe – circular continuity of the natural world.
                   Undifferentiated, endlessly self-replenishing, immensely powerful, and impassively generous.
                 </p>
@@ -961,72 +1383,87 @@ const Home: FC = () => {
         </section>
 
         {/* Sustainability Section */}
-        {/* Parallax motion.div wrapper and related hooks removed for scroll-snap priority */}
-        {/* Changed to h-screen and centered content vertically, removed padding */}
-        <section className="h-screen flex items-center justify-center relative snap-center px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment */}
+         {/* Parallax motion.div wrapper and related hooks removed for scroll-snap priority */}
+         {/* Changed to h-screen and centered content vertically, removed padding */}
+        {/* <motion.div ref={sustainabilityScrollRef} style={{ y: sustainabilityY }}> // Removed outer motion.div */}
+          <section className="h-screen flex items-center justify-center relative snap-center px-4 md:px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment. Added px-4 for mobile */}
             <motion.div
               // Removed initial and whileInView animation props for opacity
               // initial={{ opacity: 0 }}
               // whileInView={{ opacity: 1 }}
               // transition={{ duration: 0.8, delay: 0.5 }}
               // viewport={{ once: true }}
-              className="w-full max-w-screen-xl" // This content will be centered
+              className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between" // This content will be centered
             >
               <h2
-                className="inline-block mb-20"
+                className="inline-block text-[32px] md:text-[58px]" // Added responsive font-size
                 style={{ // Inline styles for typography
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  fontSize: "58px",
+                  // fontSize: "58px", // Moved to Tailwind class
                   lineHeight: "110%",
                   color: "#000",
                 }}
               >
                 Sustainability
               </h2>
-              {/* Div containing the three statistics */}
-              <div className="flex flex-row justify-between">
-                {/* First statistic column */}
+              <div className="flex flex-col gap-8 md:gap-20"> {/* Adjusted gap for mobile */}
                 <div className="flex flex-col">
-                  <p className="text-4xl font-bold text-black leading-snug">
+                  <p className="text-2xl md:text-4xl font-normal text-black leading-snug"> {/* Adjusted font size for mobile */}
                     1,012,120.25
                   </p>
-                  {/* Horizontal Rule between the number and the label */}
-                  {/* Using border-top and clearing default border for consistency */}
-                  <hr className="my-[12px] w-[20rem]" style={{ border: 'none', borderTop: '1px solid #00000033' }} />
                   <p className="text-xs font-normal text-black/70 tracking-wide">
                     TONNES CO2 EMISSIONS SAVED
                   </p>
                 </div>
-                {/* Second statistic column */}
                 <div className="flex flex-col">
-                  <p className="text-4xl font-bold text-black leading-snug">
+                  <p className="text-2xl md:text-4xl font-normal text-black leading-snug"> {/* Adjusted font size for mobile */}
                     12,185.4325
                   </p>
-                  {/* Horizontal Rule between the number and the label */}
-                  {/* Using border-top and clearing default border for consistency */}
-                  <hr className="my-[12px] w-[20rem]" style={{ border: 'none', borderTop: '1px solid #00000033' }} />
                   <p className="text-xs font-normal text-black/70 tracking-wide">
                     MILLION GALLONS WATER SAVED
                   </p>
                 </div>
-                {/* Third statistic column */}
                 <div className="flex flex-col">
-                  <p className="text-4xl font-bold text-black leading-snug">
+                  <p className="text-2xl md:text-4xl font-normal text-black leading-snug"> {/* Adjusted font size for mobile */}
                     22,253.65
                   {/* Note: Missing link/button inside this div */}
                   </p>
-                  {/* Horizontal Rule between the number and the label */}
-                  {/* Using border-top and clearing default border for consistency */}
-                  <hr className="my-[12px] w-[20rem]" style={{ border: 'none', borderTop: '1px solid #00000033' }} />
                   <p className="text-xs font-normal text-black/70 tracking-wide">
                     TONNES PLASTIC REMOVED
                   </p>
+                  <Link href="/sustainability" className="mt-6 md:mt-10"> {/* Adjusted mt for mobile */}
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
                 </div>
               </div>
-
-              {/* Removed the hr that was previously here */}
-
             </motion.div>
           </section>
         </div>
@@ -1036,13 +1473,13 @@ const Home: FC = () => {
          {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
          {/* NOTE: Adjust padding/margins if this section's height + content interferes with snapping */}
         <section
-          className="max-w-full px-[8.75rem] py-[120px] bg-white" // Arbitrary padding
+          className="max-w-full px-4 py-[60px] md:px-[8.75rem] md:py-[120px] bg-white" // Arbitrary padding. Added px-4 and py-[60px] for mobile
           style={{ position: "relative", zIndex: 1200, borderRadius: "0" }} // z-index to appear above the gray background
         >
-          <h2 className="font-helvetica text-[3.625rem] leading-[110%] mb-[2.5rem] font-normal"> {/* Arbitrary values for font */}
+          <h2 className="font-helvetica text-[2rem] leading-[110%] mb-[1.5rem] md:text-[3.625rem] md:mb-[2.5rem] font-normal"> {/* Arbitrary values for font. Added responsive font-size and mb */}
             Blogs
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8"> {/* Adjusted gap for mobile */}
             {/* Assuming RelatedCard is a valid component */}
             <RelatedCard
               image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c32e685-fbfe-4edb-0e63-4bbf261b3100/public"
@@ -1079,7 +1516,7 @@ const Home: FC = () => {
         {/* Footer likely appears at the very bottom */}
         {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
         {/* NOTE: Adjust padding/margins if this section's height + content interferes with snapping */}
-        <div style={{ position: "relative", zIndex: 1200 }}> {/* z-index to appear above the gray background */}
+        <div className="md:hidden pt-20 bg-[#f2f2f2]" style={{ position: "relative", zIndex: 1200 }}> {/* z-index to appear above the gray background */}
           {/* Assuming Footer is a valid component */}
           <Footer />
         </div>
@@ -1110,18 +1547,27 @@ const Home: FC = () => {
         */
 
         /* Product Grid Table Styles */
-        .product-grid {
-          width: 1160px; /* Fixed width */
-          height: 928px; /* Fixed height */
+        /* Hide on mobile, use flexbox alternative */
+        .product-grid, .solutions-grid {
+          /* width: 1160px; */ /* Fixed width, removed for responsiveness */
+          /* height: 928px; */ /* Fixed height, removed for responsiveness */
           border-collapse: collapse;
+          /* Default to display: none and then md:table for desktop */
+          display: none;
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+          .product-grid {
+            display: table;
+            width: 1160px; /* Fixed width for desktop */
+            height: 928px; /* Fixed height for desktop */
+          }
+          .solutions-grid {
+            display: table;
+            width: 1160px; /* Fixed width for desktop */
+            height: 696px; /* Fixed height for desktop */
+          }
         }
 
-         /* Solutions Grid Table Styles */
-        .solutions-grid {
-          width: 1160px; /* Fixed width */
-          height: 696px; /* Fixed height */
-          border-collapse: collapse;
-        }
 
         .product-title {
           font-family: "Inter Tight", sans-serif;
@@ -1152,14 +1598,9 @@ const Home: FC = () => {
           box-sizing: border-box;
         }
          /* Corrected invalid CSS */
-         .product-cell.bg-white-override { /* Added a class name */
+         .bg-white-override { /* Changed back to class name */
              background-color: #fff !important;
          }
-         /* You would need to update the HTML like:
-            <td className="product-cell bg-white-override"></td>
-            instead of:
-            <td className="product-cell !bg-white"></td>
-         */
 
 
         .placeholder-img {

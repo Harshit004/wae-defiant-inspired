@@ -43,12 +43,12 @@ export default function RelatedCard({ image, title, description, width, height }
         <h3 className="font-[Inter Tight] font-[400] text-[22px] leading-[120%] tracking-[0%] align-middle mb-[12px] group-hover:no-underline pt-[12px]">
           {title}
         </h3>
-        <p className="font-[Inter Tight] font-[400] text-[10px] leading-[110%] tracking-[-2%] align-middle text-gray-600 mb-[3rem] max-w-[272px]">
+        <p className="font-[Inter Tight] font-[400] text-[10px] leading-[110%] tracking-[-2%] align-middle text-gray-600 mb-0 md:mb-[3rem] max-w-[272px]">
           {description}
         </p>
 
-        {/* Arrow icon in the bottom-right corner */}
-        <div className="absolute bottom-0 right-0">
+        {/* Arrow icon in the bottom-right corner - Hidden on mobile, visible on medium screens and up */}
+        <div className="hidden absolute bottom-0 right-0 md:block">
           <Image
             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a54bcf4-0434-4919-b1f0-3f34262b1c00/public"
             alt="Arrow Icon"
