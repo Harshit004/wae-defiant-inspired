@@ -670,36 +670,29 @@ const Home: FC = () => {
         </motion.div>
 
         {/* Purpose Section */}
-        {/* Entrance animations removed for scroll-snap priority */}
-        {/* Changed to h-screen and centered content vertically */}
-        <section className="h-screen flex items-center justify-center relative snap-center"> {/* Changed height, removed mb, changed flex alignment */}
+        <section className="h-screen bg-[#f2f2f2] flex items-center justify-center relative snap-center mobile-purpose-zindex">
           <motion.div
-            // Removed initial and whileInView animation props
-            // initial={{ y: "200%", opacity: 0 }}
-            // whileInView={{ y: 0, opacity: 1 }}
-            // transition={{ duration: 0.8, delay: 0.2 }}
-            // viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36" // Removed mb-20
+            className="w-full max-w-screen-xl mx-8 lg:mx-36"
           >
             <div className="flex flex-col lg:flex-row items-start justify-between">
-              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight"> {/* Font style via arbitrary value in JIT mode */}
+              <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0"> {/* Mobile heading styles + bottom margin */}
                 Purpose
               </h2>
-              <div className="flex flex-col gap-5 w-64"> {/* Fixed width text container */}
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
+              <div className="flex flex-col w-64"> {/* Removed gap-5 here */}
+                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60"> {/* Mobile description 1 styles + bottom margin */}
                   Being sustainable -The Underlying natural order
                   of the universe - circular continuity of the
                   natural world. Undifferentiated, endlessly self-
                   replenishing, immensely powerful and
                   impassively generous.
                 </p>
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
+                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-[40px] lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60"> {/* Mobile description 2 styles + bottom margin */}
                   Our purpose brings together the company,
                   employees, clients and our stakeholders and
                   reconciles economic performance witha
                   positive impact on people and the planet.
                 </p>
-                <Link href="/purpose" className="contents"> {/* className="contents" again */}
+                <Link href="/purpose" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -720,8 +713,8 @@ const Home: FC = () => {
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                               alt="icon hover"
-                               width={16}
-                            height={16}
+                              width={16}
+                              height={16}
                             />
                           </motion.div>
                         </div>
@@ -734,29 +727,22 @@ const Home: FC = () => {
           </motion.div>
         </section>
 
-        {/* About WAE Section */}
-         {/* Entrance animations removed for scroll-snap priority */}
-         {/* Changed to h-screen and centered content vertically */}
-        <section className="h-screen flex items-center justify-center relative snap-center"> {/* Changed height, removed mb, changed flex alignment */}
+        {/* About WAE Section - Apply the exact same class modifications here */}
+        <section className="h-screen bg-[#f2f2f2] flex items-center justify-center relative snap-center mobile-purpose-zindex">
           <motion.div
-            // Removed initial and whileInView animation props
-            // initial={{ y: "200%", opacity: 0 }}
-            // whileInView={{ y: 0, opacity: 1 }}
-            // transition={{ duration: 0.8, delay: 0.2 }}
-            // viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36" // Removed mb-20
+            className="w-full max-w-screen-xl mx-8 lg:mx-36"
           >
             <div className="flex flex-col lg:flex-row items-start justify-between">
-              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight"> {/* Font style via arbitrary value */}
+              <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0"> {/* Mobile heading styles + bottom margin */}
                 About WAE
               </h2>
-              <div className="flex flex-col gap-5 w-64"> {/* Fixed width text container */}
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
+              <div className="flex flex-col w-64"> {/* Removed gap-5 here */}
+                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60"> {/* Mobile description 1 styles + bottom margin */}
                   WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
                   We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
                   strengthening community resilience and showcasing India's intellectual capital on the world stage.
                 </p>
-                <Link href="/about-wae" className="contents"> {/* className="contents" again */}
+                <Link href="/about-wae" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -777,8 +763,8 @@ const Home: FC = () => {
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                               alt="icon hover"
-                               width={16}
-                            height={16}
+                              width={16}
+                              height={16}
                             />
                           </motion.div>
                         </div>
@@ -1344,39 +1330,30 @@ const Home: FC = () => {
         style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
         >
         {/* Make in INDIA Section */}
-        {/* Entrance animations removed for scroll-snap priority */}
-        {/* Changed to h-screen and centered content vertically, removed padding */}
-        <section className="h-screen flex items-center justify-center relative snap-center px-4 md:px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment. Added px-4 for mobile */}
+        <section className="h-screen flex items-center justify-center relative snap-center px-8 md:px-[9.72%]">
           <motion.div
-            // Removed initial and whileInView animation props
-            // initial={{ y: "100%", opacity: 0 }}
-            // whileInView={{ y: 0, opacity: 1 }}
-            // transition={{ duration: 0.8 }}
-            // viewport={{ once: true }}
-            className="w-full max-w-screen-xl" // Removed mb-20
+            className="w-full max-w-screen-xl"
           >
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
-              <div className="flex flex-col gap-5 items-start">
-                <h2 className="inline-block font-[Inter Tight] font-medium text-[32px] md:text-[58px] leading-[1.1] w-full md:w-[23.5%] whitespace-nowrap"> {/* Arbitrary values. Added responsive font-size and width */}
+              <div className="flex flex-col items-start"> {/* Removed gap-5 here */}
+                <h2 className="inline-block font-[Inter Tight] text-[32px] leading-[110%] mb-[40px] md:text-[58px] md:leading-[1.1] md:w-[23.5%] md:mb-0 whitespace-nowrap"> {/* Mobile heading styles + bottom margin, reset for desktop */}
                   Make in INDIA
                 </h2>
-                <div className="relative w-full h-auto md:w-[432px] md:h-[229px]" style={{ zIndex: 1200 }}> {/* Added responsive width/height */}
+                <div className="relative w-full h-auto md:w-[432px] md:h-[229px]" style={{ zIndex: 1200 }}>
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
                     alt="Make In India"
-                    // width={432} // Removed explicit width/height for responsive image within container
-                    // height={229}
-                    fill // Use fill for responsive image
-                    className="object-contain md:pl-[-2.875%] md:pr-[9.725%] md:pb-[25px]" // Negative padding/margins via arbitrary values
+                    fill
+                    className="object-contain md:pl-[-2.875%] md:pr-[9.725%] md:pb-[25px]"
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-5 w-full md:w-64"> {/* Fixed width text container. Made width full on mobile */}
-                <p className="w-full md:w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style. Made width full on mobile */}
+              <div className="flex flex-col w-full md:w-64"> {/* Fixed width text container. Made width full on mobile */}
+                <p className="w-full font-[Inter Tight] font-medium text-[10px] leading-[130%] mb-[40px] md:w-[270px] md:text-[12px] md:leading-[110%] md:mb-0 text-black/60"> {/* Mobile description styles + bottom margin, reset for desktop */}
                   The underlying natural order of the universe – circular continuity of the natural world.
                   Undifferentiated, endlessly self-replenishing, immensely powerful, and impassively generous.
                 </p>
-
+                {/* If you add a button here, the mb-[40px] on the paragraph will create the gap */}
               </div>
             </div>
           </motion.div>
@@ -1386,7 +1363,7 @@ const Home: FC = () => {
          {/* Parallax motion.div wrapper and related hooks removed for scroll-snap priority */}
          {/* Changed to h-screen and centered content vertically, removed padding */}
         {/* <motion.div ref={sustainabilityScrollRef} style={{ y: sustainabilityY }}> // Removed outer motion.div */}
-          <section className="h-screen flex items-center justify-center relative snap-center px-4 md:px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment. Added px-4 for mobile */}
+        <section className="h-screen flex items-center justify-center relative snap-center px-8 md:px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment. Added px-4 for mobile */}
             <motion.div
               // Removed initial and whileInView animation props for opacity
               // initial={{ opacity: 0 }}
@@ -1396,40 +1373,47 @@ const Home: FC = () => {
               className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between" // This content will be centered
             >
               <h2
-                className="inline-block text-[32px] md:text-[58px]" // Added responsive font-size
-                style={{ // Inline styles for typography
+                className="inline-block text-[32px] leading-[110%] mb-[40px] md:text-[58px] md:leading-[110%]" // Adjusted for mobile font size, line height, and bottom margin
+                style={{ // Inline styles for typography (font-family, font-weight, color are kept here)
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
-                  // fontSize: "58px", // Moved to Tailwind class
-                  lineHeight: "110%",
                   color: "#000",
                 }}
               >
                 Sustainability
               </h2>
-              <div className="flex flex-col gap-8 md:gap-20"> {/* Adjusted gap for mobile */}
+              {/* Adjusted gap for mobile, and added bottom margin for the last item */}
+              <div className="flex flex-col gap-8 md:gap-20">
+                {/* Statistic 1 */}
                 <div className="flex flex-col">
-                  <p className="text-2xl md:text-4xl font-normal text-black leading-snug"> {/* Adjusted font size for mobile */}
+                  <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug"> {/* Adjusted font size, weight, line height, and text transform for mobile */}
                     1,012,120.25
                   </p>
-                  <p className="text-xs font-normal text-black/70 tracking-wide">
+                  {/* Horizontal Rule */}
+                  <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div> {/* Added for mobile only */}
+                  <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide"> {/* Adjusted font size and line height for mobile */}
                     TONNES CO2 EMISSIONS SAVED
                   </p>
                 </div>
+                {/* Statistic 2 */}
                 <div className="flex flex-col">
-                  <p className="text-2xl md:text-4xl font-normal text-black leading-snug"> {/* Adjusted font size for mobile */}
+                  <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug"> {/* Adjusted font size, weight, line height, and text transform for mobile */}
                     12,185.4325
                   </p>
-                  <p className="text-xs font-normal text-black/70 tracking-wide">
+                  {/* Horizontal Rule */}
+                  <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div> {/* Added for mobile only */}
+                  <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide"> {/* Adjusted font size and line height for mobile */}
                     MILLION GALLONS WATER SAVED
                   </p>
                 </div>
-                <div className="flex flex-col">
-                  <p className="text-2xl md:text-4xl font-normal text-black leading-snug"> {/* Adjusted font size for mobile */}
+                {/* Statistic 3 */}
+                <div className="flex flex-col mb-[40px] md:mb-0"> {/* Added bottom margin for mobile, reset for desktop */}
+                  <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug"> {/* Adjusted font size, weight, line height, and text transform for mobile */}
                     22,253.65
-                  {/* Note: Missing link/button inside this div */}
                   </p>
-                  <p className="text-xs font-normal text-black/70 tracking-wide">
+                  {/* Horizontal Rule */}
+                  <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div> {/* Added for mobile only */}
+                  <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide"> {/* Adjusted font size and line height for mobile */}
                     TONNES PLASTIC REMOVED
                   </p>
                   <Link href="/sustainability" className="mt-6 md:mt-10"> {/* Adjusted mt for mobile */}
