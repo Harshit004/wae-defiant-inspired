@@ -1516,7 +1516,7 @@ const Home: FC = () => {
         {/* Footer likely appears at the very bottom */}
         {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
         {/* NOTE: Adjust padding/margins if this section's height + content interferes with snapping */}
-        <div className="md:hidden pt-20 bg-[#f2f2f2]" style={{ position: "relative", zIndex: 1200 }}> {/* z-index to appear above the gray background */}
+        <div className="pt-20 bg-[#f2f2f2]" style={{ position: "relative", zIndex: 1200 }}> {/* z-index to appear above the gray background */}
           {/* Assuming Footer is a valid component */}
           <Footer />
         </div>
