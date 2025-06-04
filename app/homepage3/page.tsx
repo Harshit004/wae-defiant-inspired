@@ -34,7 +34,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
   return (
     <>
       {/* Fixed Mobile Header Bar (Visible only on small screens) */}
-      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-black/10 md:hidden">
+      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-transparent md:hidden">
         {/* Mobile Logo */}
         <Link href="/homepage3">
           <Image
@@ -437,6 +437,46 @@ const Home: FC = () => {
   }, [handleScroll]); // Re-run effect if handleScroll memoization changes (unlikely here)
   // --- END NEW ---
 
+  // --- NEW: Ref and state for BLOGS carousel navigation ---
+  const blogsCarouselRef = useRef<HTMLDivElement>(null);
+  const [showBlogsLeftArrow, setShowBlogsLeftArrow] = useState(false);
+  const [showBlogsRightArrow, setShowBlogsRightArrow] = useState(true);
+
+  // --- NEW: Blogs Carousel scroll logic ---
+  const handleBlogsScroll = useCallback(() => {
+    if (blogsCarouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = blogsCarouselRef.current;
+      const scrollThreshold = 5;
+      setShowBlogsLeftArrow(scrollLeft > scrollThreshold);
+      setShowBlogsRightArrow(scrollLeft + clientWidth < scrollWidth - scrollThreshold);
+    }
+  }, []);
+
+  const scrollBlogsCarousel = (direction: 'left' | 'right') => {
+    if (blogsCarouselRef.current) {
+      const slideWidth = blogsCarouselRef.current.clientWidth;
+      const scrollAmount = direction === 'right' ? slideWidth : -slideWidth;
+      blogsCarouselRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  useEffect(() => {
+    const carousel = blogsCarouselRef.current;
+    if (carousel) {
+      carousel.addEventListener('scroll', handleBlogsScroll);
+      handleBlogsScroll(); // Initial check on mount
+    }
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener('scroll', handleBlogsScroll);
+      }
+    };
+  }, [handleBlogsScroll]);
+  // --- END NEW BLOGS CAROUSEL LOGIC ---
+
   return (
     <main className="relative">
       {/* RENDER MOBILE HEADER COMPONENT HERE */}
@@ -778,9 +818,7 @@ const Home: FC = () => {
         </section>
 
         {/* Products Section */}
-        {/* This section has a white background and higher z-index */}
-        {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
-        <div className="relative bg-white flex items-center justify-center py-[140px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}> {/* Added px-4 for mobile */}
+        <div className="relative bg-white flex items-center justify-center py-[60px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}>
           {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
           {/* Hide on mobile, use flexbox alternative */}
           <table className="product-grid hidden md:table"> {/* Custom CSS class + hidden md:table */}
@@ -1087,9 +1125,7 @@ const Home: FC = () => {
         </div>
 
         {/* Solution Section */}
-        {/* This section has a white background and higher z-index */}
-        {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
-        <div className="relative bg-white flex items-center justify-center py-[140px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}> {/* Added px-4 for mobile */}
+        <div className="relative bg-white flex items-center justify-center py-[60px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}>
           {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
           {/* Hide on mobile, use flexbox alternative */}
           <table className="solutions-grid hidden md:table"> {/* Custom CSS class + hidden md:table */}
@@ -1456,46 +1492,93 @@ const Home: FC = () => {
         {/* This section has a white background and higher z-index */}
          {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
          {/* NOTE: Adjust padding/margins if this section's height + content interferes with snapping */}
-        <section
-          className="max-w-full px-4 py-[60px] md:px-[8.75rem] md:py-[120px] bg-white" // Arbitrary padding. Added px-4 and py-[60px] for mobile
-          style={{ position: "relative", zIndex: 1200, borderRadius: "0" }} // z-index to appear above the gray background
+         <section
+          className="max-w-full px-[4.44%] py-[60px] md:px-[8.75rem] md:py-[120px] bg-white" // px-4 (16px left/right) for mobile
+          style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
         >
-          <h2 className="font-helvetica text-[2rem] leading-[110%] mb-[1.5rem] md:text-[3.625rem] md:mb-[2.5rem] font-normal"> {/* Arbitrary values for font. Added responsive font-size and mb */}
+          <h2 className="font-helvetica font-normal text-[32px] leading-[110%] mb-[40px] md:text-[3.625rem] md:leading-[110%] md:mb-[2.5rem]"> {/* Adjusted for explicit mobile font size (32px) and gap (40px) */}
             Blogs
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8"> {/* Adjusted gap for mobile */}
-            {/* Assuming RelatedCard is a valid component */}
-            <RelatedCard
-              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c32e685-fbfe-4edb-0e63-4bbf261b3100/public"
-              title="Water Conservative"
-              description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-              width={272}
-              height={270}
-            />
-            <RelatedCard
-              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/67063015-a309-4a59-9247-c67c4efea500/public"
-              title="Policy"
-              description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-              width={272}
-              height={162}
-            />
-            <RelatedCard
-              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/efbc7ed9-3a44-4bea-0cab-e1f7ba555500/public"
-              title="Climate Change & Water"
-              description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-              width={272}
-              height={200}
-            />
-            <RelatedCard
-              image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afdeb7b4-18e6-4bc2-0ed8-85d97cb6dc00/public"
-              title="Industry Impacts and Solutions"
-              description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-              width={272}
-              height={238}
-            />
+          {/* Main carousel container: flex, scroll, snap, and gap */}
+          <div className="relative"> {/* Added relative positioning for arrow buttons */}
+            <div 
+              ref={blogsCarouselRef}
+              className="flex overflow-x-scroll snap-x snap-mandatory gap-4 md:grid md:grid-cols-4 md:gap-8"
+              style={{ position: 'relative', zIndex: 1 }}
+            >
+              {/* Wrap each RelatedCard in a div with the carousel/sizing classes */}
+              <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
+                <RelatedCard
+                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c32e685-fbfe-4edb-0e63-4bbf261b3100/public"
+                  title="Water Conservative"
+                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                  width={316}
+                  height={316}
+                />
+              </div>
+              <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
+                <RelatedCard
+                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/67063015-a309-4a59-9247-c67c4efea500/public"
+                  title="Policy"
+                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                  width={316}
+                  height={316}
+                />
+              </div>
+              <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
+                <RelatedCard
+                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/efbc7ed9-3a44-4bea-0cab-e1f7ba555500/public"
+                  title="Climate Change & Water"
+                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                  width={316}
+                  height={316}
+                />
+              </div>
+              <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
+                <RelatedCard
+                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afdeb7b4-18e6-4bc2-0ed8-85d97cb6dc00/public"
+                  title="Industry Impacts and Solutions"
+                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                  width={316}
+                  height={316}
+                />
+              </div>
+            </div>
+
+            {/* --- Navigation Arrows for Blogs (Mobile Only) --- */}
+            <div className="md:hidden" style={{ position: 'absolute', top: '158px', left: 0, right: 0, zIndex: 100 }}>
+              {showBlogsLeftArrow && (
+                <button
+                  className="absolute left-0 w-10 h-10 p-2 ml-[4.44%] bg-black/25 backdrop-blur-sm rounded-full shadow-sm flex items-center justify-center"
+                  onClick={() => scrollBlogsCarousel('left')}
+                  aria-label="Previous blog"
+                >
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5ccb5886-74f3-436a-b9de-b9bf3945b400/public"
+                    alt="Left Arrow"
+                    width={14}
+                    height={14}
+                  />
+                </button>
+              )}
+              {showBlogsRightArrow && (
+                <button
+                  className="absolute right-0 w-10 h-10 p-2 mr-[4.44%] bg-black/25 backdrop-blur-sm rounded-full shadow-sm flex items-center justify-center"
+                  onClick={() => scrollBlogsCarousel('right')}
+                  aria-label="Next blog"
+                >
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/71db80ef-81f2-4210-48ee-18d5da045300/public"
+                    alt="Right Arrow"
+                    width={14}
+                    height={14}
+                  />
+                </button>
+              )}
+            </div>
           </div>
         </section>
-
+        
         {/* FOOTER SECTION */}
         {/* Footer likely appears at the very bottom */}
         {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
