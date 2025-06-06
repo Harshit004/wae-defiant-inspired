@@ -1413,8 +1413,15 @@ const Home: FC = () => {
           >
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col items-start"> {/* Removed gap-5 here */}
-                <h2 className="inline-block font-[Inter Tight] text-[32px] leading-[110%] mb-[40px] md:text-[58px] md:leading-[1.1] md:w-[23.5%] md:mb-0 whitespace-nowrap"> {/* Mobile heading styles + bottom margin, reset for desktop */}
-                  Make in INDIA
+                <h2
+                  className="inline-block text-[32px] leading-[110%] mb-[40px] md:text-[58px] md:leading-[110%]"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    color: "#000",
+                  }}
+                >
+                  Make In India
                 </h2>
                 <div className="relative w-full h-auto md:w-[432px] md:h-[229px]" style={{ zIndex: 1200 }}>
                   <Image
