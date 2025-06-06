@@ -68,6 +68,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
         className={`fixed inset-0 bg-white z-40 flex flex-col pt-[80px] px-4 md:hidden transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         style={{ color: '#000' }}
       >
+        <div className="w-full h-px bg-black/10 mt[8px] mb-[30px]" />
         {/* ORIGIN & OBJECTIVE ROW */}
         <div className="grid mb-4" style={{ gridTemplateColumns: '40% 60%' }}>
           <div>
@@ -87,7 +88,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
 
         {/* INSIDE WAE SECTION - two-column grid */}
         <div className="grid mb-2" style={{ gridTemplateColumns: '40% 60%' }}>
-          <div className="flex items-start">
+          <div className="flex items-start mt-2">
             <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>INSIDE WAE</div>
           </div>
           <div className="flex flex-col">
@@ -101,11 +102,11 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
             ))}
           </div>
         </div>
-        <div className="w-full h-px bg-black/10 mb-2" />
+        <div className="w-full h-px bg-black/10 mt-[12px] mb-2" />
 
         {/* ETCETERA SECTION - two-column grid */}
         <div className="grid mb-2" style={{ gridTemplateColumns: '40% 60%' }}>
-          <div className="flex items-start">
+          <div className="flex items-start mt-2">
             <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>ETCETERA</div>
           </div>
           <div className="flex flex-col">
