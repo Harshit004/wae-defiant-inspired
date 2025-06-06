@@ -94,7 +94,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
           <div className="flex flex-col">
             {productsItems.map((item, i) => (
               <div key={i}>
-                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 14, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
                   {item.text}
                 </Link>
                 <div className="w-full h-px bg-black/10" />
@@ -112,7 +112,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
           <div className="flex flex-col">
             {blueprintItems.map((item, i) => (
               <div key={i}>
-                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 14, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
                   {item.text}
                 </Link>
                 <div className="w-full h-px bg-black/10" />

@@ -34,7 +34,7 @@ export default function RelatedCard({ image, title, description, width, height }
             alt={title}
             width={width}
             height={height}
-            className="object-cover md:transition-all duration-1000 group-hover:scale-110 filter grayscale group-hover:grayscale-0"
+            className="object-cover transition-all duration-1000 group-hover:scale-110 md:filter md:grayscale md:group-hover:grayscale-0"
         />
 
       </motion.div>
