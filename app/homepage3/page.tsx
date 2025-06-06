@@ -1509,8 +1509,8 @@ const Home: FC = () => {
               {/* Wrap each RelatedCard in a div with the carousel/sizing classes */}
               <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
                 <RelatedCard
-                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c32e685-fbfe-4edb-0e63-4bbf261b3100/public"
-                  title="Water Conservative"
+                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1de1d21f-1dec-4cc3-8720-f73efae23400/public"
+                  title="Water Conservation"
                   description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
                   width={316}
                   height={316}
@@ -1518,7 +1518,7 @@ const Home: FC = () => {
               </div>
               <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
                 <RelatedCard
-                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/67063015-a309-4a59-9247-c67c4efea500/public"
+                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8d76afb3-cd7f-4723-33df-bbabf4cbc900/public"
                   title="Policy"
                   description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
                   width={316}
@@ -1527,7 +1527,7 @@ const Home: FC = () => {
               </div>
               <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
                 <RelatedCard
-                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/efbc7ed9-3a44-4bea-0cab-e1f7ba555500/public"
+                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/022af5b3-ff4f-4da2-59f8-91dcf8a99700/public"
                   title="Climate Change & Water"
                   description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
                   width={316}
@@ -1536,7 +1536,7 @@ const Home: FC = () => {
               </div>
               <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
                 <RelatedCard
-                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afdeb7b4-18e6-4bc2-0ed8-85d97cb6dc00/public"
+                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/57ca2c2e-56ee-484e-2d71-21e2e5fa4a00/public"
                   title="Industry Impacts and Solutions"
                   description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
                   width={316}
