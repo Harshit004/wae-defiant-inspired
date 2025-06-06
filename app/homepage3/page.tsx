@@ -1427,8 +1427,12 @@ const Home: FC = () => {
               </div>
               <div className="flex flex-col w-full md:w-64"> {/* Fixed width text container. Made width full on mobile */}
                 <p className="w-full font-[Inter Tight] font-medium text-[10px] leading-[130%] mb-[40px] md:w-[270px] md:text-[12px] md:leading-[110%] md:mb-0 text-black/60"> {/* Mobile description styles + bottom margin, reset for desktop */}
-                  The underlying natural order of the universe – circular continuity of the natural world.
-                  Undifferentiated, endlessly self-replenishing, immensely powerful, and impassively generous.
+                  WAE captures the heart of Indian innovation by seamlessly blending the 
+                  time-honoured ideals with the latest technology. We are driven by the 
+                  mission to build a brand that not only saves the planet but also creates a 
+                  potent impact on future generations for the country's advancements, 
+                  integrity & innovation. Our approach strengthens community resilience 
+                  while showcasing India's intellectual capital on the world stage.
                 </p>
                 {/* If you add a button here, the mb-[40px] on the paragraph will create the gap */}
               </div>
