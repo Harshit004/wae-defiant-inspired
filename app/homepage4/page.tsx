@@ -1536,79 +1536,83 @@ const Home: FC = () => {
           <div className="relative"> {/* Added relative positioning for arrow buttons */}
             <div 
               ref={blogsCarouselRef}
-              className="flex overflow-x-scroll snap-x snap-mandatory gap-4 md:grid md:grid-cols-4 md:gap-8"
+              className="flex flex-col gap-8 md:grid md:grid-cols-4 md:gap-8"
               style={{ position: 'relative', zIndex: 1 }}
             >
-              {/* Wrap each RelatedCard in a div with the carousel/sizing classes */}
-              <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
-                <RelatedCard
-                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1de1d21f-1dec-4cc3-8720-f73efae23400/public"
-                  title="Water Conservation"
-                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-                  width={316}
-                  height={316}
-                />
+              {/* Water Conservation */}
+              <div className="w-full bg-[#f2f2f2] rounded-lg overflow-hidden shadow-sm">
+                <div className="relative w-full h-[316px]">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1de1d21f-1dec-4cc3-8720-f73efae23400/public"
+                    alt="Water Conservation"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="py-6">
+                  <h3 className="font-[Inter_Tight] font-bold text-[18px] leading-[140%] uppercase align-middle">Water Conservation</h3>
+                  <p className="text-sm text-gray-600 mt-2">
+                    Information regarding awards received by the Hitachi Group in various fields and related announcements.
+                  </p>
+                </div>
               </div>
-              <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
-                <RelatedCard
-                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8d76afb3-cd7f-4723-33df-bbabf4cbc900/public"
-                  title="Policy"
-                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-                  width={316}
-                  height={316}
-                />
+
+              {/* Policy */}
+              <div className="w-full bg-[#f2f2f2] rounded-lg overflow-hidden shadow-sm">
+                <div className="relative w-full h-[316px]">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8d76afb3-cd7f-4723-33df-bbabf4cbc900/public"
+                    alt="Policy"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="py-6">
+                  <h3 className="font-[Inter_Tight] font-bold text-[18px] leading-[140%] uppercase align-middle">Policy</h3>
+                  <p className="text-sm text-gray-600 mt-2">
+                    Information regarding awards received by the Hitachi Group in various fields and related announcements.
+                  </p>
+                </div>
               </div>
-              <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
-                <RelatedCard
-                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/022af5b3-ff4f-4da2-59f8-91dcf8a99700/public"
-                  title="Climate Change & Water"
-                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-                  width={316}
-                  height={316}
-                />
+
+              {/* Climate Change & Water */}
+              <div className="w-full bg-[#f2f2f2] rounded-lg overflow-hidden shadow-sm">
+                <div className="relative w-full h-[316px]">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/022af5b3-ff4f-4da2-59f8-91dcf8a99700/public"
+                    alt="Climate Change & Water"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="py-6">
+                  <h3 className="font-[Inter_Tight] font-bold text-[18px] leading-[140%] uppercase align-middle">Climate Change & Water</h3>
+                  <p className="text-sm text-gray-600 mt-2">
+                    Information regarding awards received by the Hitachi Group in various fields and related announcements.
+                  </p>
+                </div>
               </div>
-              <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
-                <RelatedCard
-                  image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/57ca2c2e-56ee-484e-2d71-21e2e5fa4a00/public"
-                  title="Industry Impacts and Solutions"
-                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
-                  width={316}
-                  height={316}
-                />
+
+              {/* Industry Impacts and Solutions */}
+              <div className="w-full bg-[#f2f2f2] rounded-lg overflow-hidden shadow-sm">
+                <div className="relative w-full h-[316px]">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/57ca2c2e-56ee-484e-2d71-21e2e5fa4a00/public"
+                    alt="Industry Impacts and Solutions"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="py-6">
+                  <h3 className="font-[Inter_Tight] font-bold text-[18px] leading-[140%] uppercase align-middle">Industry Impacts and Solutions</h3>
+                  <p className="text-sm text-gray-600 mt-2">
+                    Information regarding awards received by the Hitachi Group in various fields and related announcements.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* --- Navigation Arrows for Blogs (Mobile Only) --- */}
-            <div className="md:hidden" style={{ position: 'absolute', top: '158px', left: 0, right: 0, zIndex: 100 }}>
-              {showBlogsLeftArrow && (
-                <button
-                  className="absolute left-0 w-10 h-10 p-2 ml-[4.44%] bg-black/25 backdrop-blur-sm rounded-full shadow-sm flex items-center justify-center"
-                  onClick={() => scrollBlogsCarousel('left')}
-                  aria-label="Previous blog"
-                >
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5ccb5886-74f3-436a-b9de-b9bf3945b400/public"
-                    alt="Left Arrow"
-                    width={14}
-                    height={14}
-                  />
-                </button>
-              )}
-              {showBlogsRightArrow && (
-                <button
-                  className="absolute right-0 w-10 h-10 p-2 mr-[4.44%] bg-black/25 backdrop-blur-sm rounded-full shadow-sm flex items-center justify-center"
-                  onClick={() => scrollBlogsCarousel('right')}
-                  aria-label="Next blog"
-                >
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/71db80ef-81f2-4210-48ee-18d5da045300/public"
-                    alt="Right Arrow"
-                    width={14}
-                    height={14}
-                  />
-                </button>
-              )}
-            </div>
+            {/* Remove mobile navigation arrows since we're using stacked layout */}
           </div>
         </section>
         
