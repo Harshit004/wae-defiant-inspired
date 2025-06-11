@@ -518,6 +518,45 @@ const Home: FC = () => {
   }, [handleBlogsScroll]);
   // --- END NEW BLOGS CAROUSEL LOGIC ---
 
+  // State variables for combined carousel
+  const [showCombinedLeftArrow, setShowCombinedLeftArrow] = useState(false);
+  const [showCombinedRightArrow, setShowCombinedRightArrow] = useState(false);
+  const combinedCarouselRef = useRef<HTMLDivElement>(null);
+
+  // Update scroll function
+  const scrollCombinedCarousel = (direction: 'left' | 'right') => {
+    if (combinedCarouselRef.current) {
+      const scrollAmount = combinedCarouselRef.current.offsetWidth;
+      combinedCarouselRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Update useEffect for arrow visibility
+  useEffect(() => {
+    const checkScroll = () => {
+      if (combinedCarouselRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = combinedCarouselRef.current;
+        setShowCombinedLeftArrow(scrollLeft > 0);
+        setShowCombinedRightArrow(scrollLeft < scrollWidth - clientWidth - 1);
+      }
+    };
+
+    const carousel = combinedCarouselRef.current;
+    if (carousel) {
+      carousel.addEventListener('scroll', checkScroll);
+      checkScroll();
+    }
+
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener('scroll', checkScroll);
+      }
+    };
+  }, []);
+
   return (
     <main className="relative">
       {/* RENDER MOBILE HEADER COMPONENT HERE */}
@@ -750,110 +789,142 @@ const Home: FC = () => {
           </div>
         </motion.div>
 
-        {/* Purpose Section */}
+        {/* Combined Purpose and About WAE Section */}
         <section className="h-screen bg-[#f2f2f2] flex items-center justify-center relative mobile-purpose-zindex">
-          <motion.div
-            className="w-full max-w-screen-xl mx-8 lg:mx-36"
-          >
-            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left">
-              <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0">
-                Purpose
-              </h2>
-              <div className="flex flex-col items-center lg:items-start">
-                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
-                  Being sustainable -The Underlying natural order
-                  of the universe - circular continuity of the
-                  natural world. Undifferentiated, endlessly self-
-                  replenishing, immensely powerful and
-                  impassively generous.
-                </p>
-                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-[40px] lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
-                  Our purpose brings together the company,
-                  employees, clients and our stakeholders and
-                  reconciles economic performance witha
-                  positive impact on people and the planet.
-                </p>
-                <Link href="/purpose" className="contents">
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </section>
+          <motion.div className="w-full max-w-screen-xl mx-8 lg:mx-36">
+            <div className="relative">
+              <div 
+                ref={combinedCarouselRef}
+                className="flex overflow-x-scroll snap-x snap-mandatory pb-4 -mx-4 px-4 hide-scrollbar"
+              >
+                {/* Purpose Slide */}
+                <div className="flex-shrink-0 snap-center w-full">
+                  <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
+                    Purpose
+                  </h2>
+                  <div className="flex flex-col items-center">
+                    <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
+                      Being sustainable -The Underlying natural order
+                      of the universe - circular continuity of the
+                      natural world. Undifferentiated, endlessly self-
+                      replenishing, immensely powerful and
+                      impassively generous.
+                    </p>
+                    <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-[40px] lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
+                      Our purpose brings together the company,
+                      employees, clients and our stakeholders and
+                      reconciles economic performance witha
+                      positive impact on people and the planet.
+                    </p>
+                    <Link href="/purpose" className="contents">
+                      <HoverButton>
+                        {(hovered) => (
+                          <>
+                            Know More
+                            <div className="relative inline-block w-4 h-4">
+                              <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                alt="icon default"
+                                width={16}
+                                height={16}
+                              />
+                              <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: hovered ? 1 : 0 }}
+                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                className="absolute top-0 left-0"
+                              >
+                                <Image
+                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                  alt="icon hover"
+                                  width={16}
+                                  height={16}
+                                />
+                              </motion.div>
+                            </div>
+                          </>
+                        )}
+                      </HoverButton>
+                    </Link>
+                  </div>
+                </div>
 
-        {/* About WAE Section */}
-        <section className="h-screen bg-[#f2f2f2] flex items-center justify-center relative mobile-purpose-zindex">
-          <motion.div
-            className="w-full max-w-screen-xl mx-8 lg:mx-36"
-          >
-            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left">
-              <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0">
-                About WAE
-              </h2>
-              <div className="flex flex-col items-center lg:items-start">
-                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
-                  WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
-                  We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
-                  strengthening community resilience and showcasing India's intellectual capital on the world stage.
-                </p>
-                <Link href="/about-wae" className="contents">
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
+                {/* About WAE Slide */}
+                <div className="flex-shrink-0 snap-center w-full">
+                  <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
+                    About WAE
+                  </h2>
+                  <div className="flex flex-col items-center">
+                    <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
+                      WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
+                      We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
+                      strengthening community resilience and showcasing India's intellectual capital on the world stage.
+                    </p>
+                    <Link href="/about-wae" className="contents">
+                      <HoverButton>
+                        {(hovered) => (
+                          <>
+                            Know More
+                            <div className="relative inline-block w-4 h-4">
+                              <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                alt="icon default"
+                                width={16}
+                                height={16}
+                              />
+                              <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: hovered ? 1 : 0 }}
+                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                className="absolute top-0 left-0"
+                              >
+                                <Image
+                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                  alt="icon hover"
+                                  width={16}
+                                  height={16}
+                                />
+                              </motion.div>
+                            </div>
+                          </>
+                        )}
+                      </HoverButton>
+                    </Link>
+                  </div>
+                </div>
               </div>
+
+              {/* Navigation Arrows */}
+              {showCombinedLeftArrow && (
+                <button
+                  className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 p-2 ml-2 md:ml-4 bg-transparent hover:bg-white/10 rounded-full border-2 border-black/65 transition-all duration-300 flex items-center justify-center"
+                  onClick={() => scrollCombinedCarousel('left')}
+                  aria-label="Previous slide"
+                >
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5ccb5886-74f3-436a-b9de-b9bf3945b400/public"
+                    alt="Left Arrow"
+                    width={24}
+                    height={24}
+                    className="transform hover:scale-110 transition-transform duration-300"
+                  />
+                </button>
+              )}
+              {showCombinedRightArrow && (
+                <button
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 p-2 mr-2 md:mr-4 bg-transparent hover:bg-white/10 rounded-full border-2 border-black/65 transition-all duration-300 flex items-center justify-center"
+                  onClick={() => scrollCombinedCarousel('right')}
+                  aria-label="Next slide"
+                >
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/71db80ef-81f2-4210-48ee-18d5da045300/public"
+                    alt="Right Arrow"
+                    width={24}
+                    height={24}
+                    className="transform hover:scale-110 transition-transform duration-300"
+                  />
+                </button>
+              )}
             </div>
           </motion.div>
         </section>
