@@ -775,7 +775,7 @@ const Home: FC = () => {
         {/* snap-start class is REMOVED */}
         {/* NOTE: If you want the logo div itself to be a snap point, add snap-center here */}
         <motion.div
-          style={{ position: "sticky", top: "5%", zIndex: 1100, opacity: logoOpacity }} // Framer Motion opacity + CSS Sticky
+          style={{ top: "5%", zIndex: 1100, opacity: logoOpacity }} // Framer Motion opacity + CSS Sticky
           className="pointer-events-none flex justify-center pt-[180px]" // snap-start removed
         >
           <div className="max-w-[19.375rem] max-h-[19.375rem]"> {/* Fixed size container for the logo */}
@@ -790,7 +790,7 @@ const Home: FC = () => {
         </motion.div>
 
         {/* Combined Purpose and About WAE Section */}
-        <section className="h-screen bg-[#f2f2f2] flex items-center justify-center relative mobile-purpose-zindex">
+        <section className="flex items-center justify-center relative mobile-purpose-zindex mt-[-380px]">
           <motion.div className="w-full max-w-screen-xl mx-8 lg:mx-36">
             <div className="relative">
               <div 
@@ -799,18 +799,18 @@ const Home: FC = () => {
               >
                 {/* Purpose Slide */}
                 <div className="flex-shrink-0 snap-center w-full">
-                  <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
+                  <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[400px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
                     Purpose
                   </h2>
                   <div className="flex flex-col items-center">
-                    <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
+                    <p className="w-[270px] font-[Inter Tight] text-[10px] text-center leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
                       Being sustainable -The Underlying natural order
                       of the universe - circular continuity of the
                       natural world. Undifferentiated, endlessly self-
                       replenishing, immensely powerful and
                       impassively generous.
                     </p>
-                    <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-[40px] lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
+                    <p className="w-[270px] font-[Inter Tight] text-[10px] text-center leading-[130%] mb-[40px] lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
                       Our purpose brings together the company,
                       employees, clients and our stakeholders and
                       reconciles economic performance witha
@@ -851,11 +851,11 @@ const Home: FC = () => {
 
                 {/* About WAE Slide */}
                 <div className="flex-shrink-0 snap-center w-full">
-                  <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
+                  <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[400px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
                     About WAE
                   </h2>
                   <div className="flex flex-col items-center">
-                    <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
+                    <p className="w-[270px] font-[Inter Tight] text-[10px] text-center leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
                       WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
                       We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
                       strengthening community resilience and showcasing India's intellectual capital on the world stage.
