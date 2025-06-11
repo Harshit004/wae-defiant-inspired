@@ -755,19 +755,19 @@ const Home: FC = () => {
           <motion.div
             className="w-full max-w-screen-xl mx-8 lg:mx-36"
           >
-            <div className="flex flex-col lg:flex-row items-start justify-between">
-              <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0"> {/* Mobile heading styles + bottom margin */}
+            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left">
+              <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0">
                 Purpose
               </h2>
-              <div className="flex flex-col w-64"> {/* Removed gap-5 here */}
-                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60"> {/* Mobile description 1 styles + bottom margin */}
+              <div className="flex flex-col items-center lg:items-start">
+                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
                   Being sustainable -The Underlying natural order
                   of the universe - circular continuity of the
                   natural world. Undifferentiated, endlessly self-
                   replenishing, immensely powerful and
                   impassively generous.
                 </p>
-                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-[40px] lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60"> {/* Mobile description 2 styles + bottom margin */}
+                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-[40px] lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
                   Our purpose brings together the company,
                   employees, clients and our stakeholders and
                   reconciles economic performance witha
@@ -808,17 +808,17 @@ const Home: FC = () => {
           </motion.div>
         </section>
 
-        {/* About WAE Section - Apply the exact same class modifications here */}
+        {/* About WAE Section */}
         <section className="h-screen bg-[#f2f2f2] flex items-center justify-center relative mobile-purpose-zindex">
           <motion.div
             className="w-full max-w-screen-xl mx-8 lg:mx-36"
           >
-            <div className="flex flex-col lg:flex-row items-start justify-between">
-              <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0"> {/* Mobile heading styles + bottom margin */}
+            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left">
+              <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[40px] lg:text-6xl lg:leading-tight lg:mb-0">
                 About WAE
               </h2>
-              <div className="flex flex-col w-64"> {/* Removed gap-5 here */}
-                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60"> {/* Mobile description 1 styles + bottom margin */}
+              <div className="flex flex-col items-center lg:items-start">
+                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
                   WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
                   We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
                   strengthening community resilience and showcasing India's intellectual capital on the world stage.
@@ -859,7 +859,7 @@ const Home: FC = () => {
         </section>
 
         {/* Products Section */}
-        <div className="relative bg-white flex items-center justify-center py-[60px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}>
+        <div className="relative bg-[#f2f2f2] md:bg-white flex items-center justify-center py-[60px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}>
           {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
           {/* Hide on mobile, use flexbox alternative */}
           <table className="product-grid hidden md:table"> {/* Custom CSS class + hidden md:table */}
@@ -1103,7 +1103,7 @@ const Home: FC = () => {
                 <Link
                   key={index}
                   href={product.href}
-                  className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#fff] rounded-lg p-4" // Ensure consistency with solutions section
+                  className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
                 >
                   <Image
                     src={product.imgSrc}
@@ -1166,7 +1166,7 @@ const Home: FC = () => {
         </div>
 
         {/* Solution Section */}
-        <div className="relative bg-white flex items-center justify-center py-[60px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}>
+        <div className="relative bg-[#f2f2f2] md:bg-white flex items-center justify-center py-[60px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}>
           {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
           {/* Hide on mobile, use flexbox alternative */}
           <table className="solutions-grid hidden md:table"> {/* Custom CSS class + hidden md:table */}
@@ -1340,7 +1340,7 @@ const Home: FC = () => {
                 <Link
                   key={index}
                   href={solution.href}
-                  className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#fff] rounded-lg p-4"
+                  className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
                 >
                   <Image
                     src={solution.imgSrc}
