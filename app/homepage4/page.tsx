@@ -791,7 +791,7 @@ const Home: FC = () => {
 
         {/* Combined Purpose and About WAE Section */}
         <section className="flex items-center justify-center relative mobile-purpose-zindex mt-[-380px]">
-          <motion.div className="w-full max-w-screen-xl mx-8 lg:mx-36">
+          <motion.div className="w-full max-w-screen-xl mx-[4.44%] md:mx-8 lg:mx-36">
             <div className="relative">
               <div 
                 ref={combinedCarouselRef}
@@ -802,15 +802,15 @@ const Home: FC = () => {
                   <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[400px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
                     Purpose
                   </h2>
-                  <div className="flex flex-col items-center">
-                    <p className="w-[270px] font-[Inter Tight] text-[10px] text-center leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
+                  <div className="flex flex-col items-center mx-[4.44%]">
+                    <p className="w-full font-[Inter Tight] text-[10px] text-center leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
                       Being sustainable -The Underlying natural order
                       of the universe - circular continuity of the
                       natural world. Undifferentiated, endlessly self-
                       replenishing, immensely powerful and
                       impassively generous.
                     </p>
-                    <p className="w-[270px] font-[Inter Tight] text-[10px] text-center leading-[130%] mb-[40px] lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
+                    <p className="w-full font-[Inter Tight] text-[10px] text-center leading-[130%] mb-[40px] lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
                       Our purpose brings together the company,
                       employees, clients and our stakeholders and
                       reconciles economic performance witha
@@ -854,8 +854,8 @@ const Home: FC = () => {
                   <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[400px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
                     About WAE
                   </h2>
-                  <div className="flex flex-col items-center">
-                    <p className="w-[270px] font-[Inter Tight] text-[10px] text-center leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
+                  <div className="flex flex-col items-center mx-[4.44%]">
+                    <p className="w-full font-[Inter Tight] text-[10px] text-center leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
                       WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
                       We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
                       strengthening community resilience and showcasing India's intellectual capital on the world stage.
