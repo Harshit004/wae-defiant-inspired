@@ -1266,15 +1266,10 @@ const Home: FC = () => {
           </table>
         </div>
 
-        {/* wrapping these in a div to get them to overlap the sticky logo */}
-        <div className="bg-[#f2f2f2]" style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}>
-          {/* Make in INDIA Section */}
-          <section className="pt-20 flex items-center justify-center relative px-8 md:px-[9.72%]">
-            <motion.div className="w-full max-w-screen-xl">
-              <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between h-[115px]">
-                <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+        {/* Made in India Section - Mobile Only */}
+        <div className="md:hidden mt-8">
                   <h2
-                    className="inline-block text-[32px] leading-[110%] mb-[40px] md:text-[58px] md:leading-[110%]"
+                    className="w-full inline-block text-[32px] leading-[110%] text-center mb-[40px] md:text-[58px] md:leading-[110%]"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
@@ -1283,6 +1278,24 @@ const Home: FC = () => {
                   >
                     Make In India
                   </h2>
+          <div className="relative w-full h-[133px]">
+            <Image
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
+              alt="Make In India"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+
+        {/* wrapping these in a div to get them to overlap the sticky logo */}
+        <div className="bg-[#f2f2f2]" style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}>
+          {/* Make in INDIA Section */}
+          <section className="pt-[20px] flex items-center justify-center relative px-8 md:px-[9.72%]">
+            <motion.div className="w-full max-w-screen-xl">
+              <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between h-[115px]">
+                <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+                  
                   <div className="relative w-full h-auto md:w-[432px] md:h-[229px]" style={{ zIndex: 1200 }}>
                     <Image
                       src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
@@ -1307,7 +1320,7 @@ const Home: FC = () => {
           </section>
 
           {/* Sustainability Section */}
-          <section className="flex items-center justify-center relative px-8 pt-40 md:py-0 md:px-[9.72%]">
+          <section className="flex items-center justify-center relative px-8 pt-20 md:py-0 md:px-[9.72%]">
             <motion.div className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between items-center lg:items-start text-center lg:text-left">
               <h2
                 className="inline-block text-[32px] leading-[110%] mb-[40px] md:text-[58px] md:leading-[110%]"
