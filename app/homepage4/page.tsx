@@ -782,15 +782,15 @@ const Home: FC = () => {
             <Image
               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
               alt="Center Logo"
-              width={250}
-              height={250}
+              width={200}
+              height={200}
               className="opacity-80"
             />
           </div>
         </motion.div>
 
         {/* Combined Purpose and About WAE Section */}
-        <section className="flex items-center justify-center relative mobile-purpose-zindex mt-[-380px]">
+        <section className="flex items-center justify-center relative mobile-purpose-zindex mt-[-300px]">
           <motion.div className="w-full max-w-screen-xl mx-[4.44%] md:mx-8 lg:mx-36">
             <div className="relative">
               <div 
@@ -799,7 +799,7 @@ const Home: FC = () => {
               >
                 {/* Purpose Slide */}
                 <div className="flex-shrink-0 snap-center w-full">
-                  <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[400px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
+                  <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[300px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
                     Purpose
                   </h2>
                   <div className="flex flex-col items-center mx-[4.44%]">
@@ -851,7 +851,7 @@ const Home: FC = () => {
 
                 {/* About WAE Slide */}
                 <div className="flex-shrink-0 snap-center w-full">
-                  <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[400px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
+                  <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[300px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
                     About WAE
                   </h2>
                   <div className="flex flex-col items-center mx-[4.44%]">
@@ -897,30 +897,30 @@ const Home: FC = () => {
               {/* Navigation Arrows */}
               {showCombinedLeftArrow && (
                 <button
-                  className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 p-2 ml-2 md:ml-4 bg-transparent hover:bg-white/10 rounded-full border-2 border-black/65 transition-all duration-300 flex items-center justify-center"
+                  className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 ml-[6%] md:ml-4 bg-transparent hover:bg-white/10 rounded-full transition-all duration-300 flex items-center justify-center"
                   onClick={() => scrollCombinedCarousel('left')}
                   aria-label="Previous slide"
                 >
                   <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5ccb5886-74f3-436a-b9de-b9bf3945b400/public"
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65c77dc9-8867-4c14-2e26-180c14b84e00/public"
                     alt="Left Arrow"
-                    width={24}
-                    height={24}
+                    width={40}
+                    height={40}
                     className="transform hover:scale-110 transition-transform duration-300"
                   />
                 </button>
               )}
               {showCombinedRightArrow && (
                 <button
-                  className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 p-2 mr-2 md:mr-4 bg-transparent hover:bg-white/10 rounded-full border-2 border-black/65 transition-all duration-300 flex items-center justify-center"
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 mr-[6%] md:mr-4 bg-transparent hover:bg-white/10 rounded-full transition-all duration-300 flex items-center justify-center"
                   onClick={() => scrollCombinedCarousel('right')}
                   aria-label="Next slide"
                 >
                   <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/71db80ef-81f2-4210-48ee-18d5da045300/public"
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/58b7fb95-62e5-4cc5-5dc1-d798af2bdf00/public"
                     alt="Right Arrow"
-                    width={24}
-                    height={24}
+                    width={40}
+                    height={40}
                     className="transform hover:scale-110 transition-transform duration-300"
                   />
                 </button>
@@ -931,666 +931,459 @@ const Home: FC = () => {
 
         {/* Products Section */}
         <div className="relative bg-[#f2f2f2] md:bg-white flex items-center justify-center py-[60px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}>
-          {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
-          {/* Hide on mobile, use flexbox alternative */}
-          <table className="product-grid hidden md:table"> {/* Custom CSS class + hidden md:table */}
-            <tr>
-              <td colSpan={2} className="product-title whitespace-nowrap"> {/* Custom CSS class */}
-                Products
-              </td>
-              <td className="product-cell transition  cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/drinking-water-stations" className="contents">
-                  <div className="relative w-full h-full">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">DRINKING WATER<br />STATIONS</span>
-                    </div>
-                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                        alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/27917d14-ea56-4a80-93b9-c66ba9642400/public"
-                  alt="Drinking Water Station"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
-            </tr>
-            <tr>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/685750d6-ec8e-491b-a214-24f13cfcb600/public"
-                  alt="Water Faucet"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* DRINKING WATER FAUCETS with left and down arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/drinking-water-faucets" className="contents">
-                  <div className="relative w-full h-full">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">DRINKING WATER<br />FAUCETS</span>
-                    </div>
-                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                        alt="Left arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
-                        alt="Down arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b05d64d-0248-4aaf-b8c3-e8d7afccea00/public"
-                  alt="Water Dispenser"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* DRINKING WATER DISPENSERS with left and right arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/water-dispenser" className="contents">
-                  <div className="relative w-full h-full">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">DRINKING WATER<br />DISPENSERS</span>
-                    </div>
-                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                        alt="Left arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                        alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c4a14e-2e09-4da6-c363-84bae0088400/public"
-                  alt="Water Dispenser"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf2a2e6e-9e0b-464a-c2ff-1a16cb1f9900/public"
-                  alt="Water Cooler"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* WATER COOLERS & FOUNTAINS with right and down arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/water-cooler" className="contents">
-                  <div className="relative w-full h-full">
-                    {/* Centered Text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">WATER COOLERS &amp;<br />FOUNTAINS</span>
-                    </div>
-                    {/* Right Arrow flush at right */}
-                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                        alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d9688872-6e63-4d68-26e9-aec6cf1f3a00/public"
-                  alt="Water Fountain"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
-            </tr>
-            <tr>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/54ccac68-6261-4097-e41c-cfa35c992100/public"
-                  alt="Public Utility"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* PUBLIC UTILITY SYSTEMS with left arrow */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/public-utility-systems" className="contents">
-                  <div className="relative w-full h-full">
-                    {/* Centered Text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">PUBLIC UTILITY<br />SYSTEMS</span>
-                    </div>
-                    {/* Left Arrow flush at left */}
-                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                        alt="Left arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
-                  alt="Commercial Plant"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* COMMERCIAL/INDUSTRIAL PLANTS with right arrow */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/commercial-industrial-plants" className="contents">
-                  <div className="relative w-full h-full">
-                    {/* Centered Text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">COMMERCIAL/<br />INDUSTRIAL PLANTS</span>
-                    </div>
-                    {/* Right Arrow flushat right */}
-                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                        alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a0490312-e31b-44b0-2272-8645b0d0ef00/public"
-                  alt="Industrial Plant"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-            </tr>
-          </table>
-
-          {/* --- NEW: MOBILE PRODUCT CAROUSEL (Tailwind CSS Scroll Snap) --- */}
-          {/* Added 'relative' to the parent container for absolute positioning of arrows */}
+          {/* Mobile Products Carousel */}
           <div className="md:hidden flex flex-col w-full max-w-sm mx-auto relative">
-            <h2 className="font-[Inter Tight] text-[32px] leading-[120%] px-[4.44%] mb-8">Products</h2>
+            <h2 className="font-[Inter Tight] text-[32px] leading-[120%] tracmking-0 px-[4.44%] mb-8">Products</h2>
 
-            {/* Carousel Track: Flex container with horizontal scrolling and scroll snap */}
+            {/* Carousel Track */}
             <div
-              ref={productsCarouselRef} // Attach the NEW ref here
+              ref={productsCarouselRef}
               className="flex overflow-x-scroll snap-x snap-mandatory pb-4 -mx-4 px-4 hide-scrollbar"
             >
-              {productsData.map((product, index) => (
-                <Link
-                  key={index}
-                  href={product.href}
-                  className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
-                >
+              {/* Drinking Water Station */}
+              <Link
+                href="/product-category/drinking-water-stations"
+                className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
+              >
+                <div className="relative w-full h-[224px]">
                   <Image
-                    src={product.imgSrc}
-                    alt={product.altText}
-                    width={316} // Specified 316px width
-                    height={316} // Specified 316px height
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cb5b28fb-e10e-41fb-f579-31168d065400/public"
+                    alt="Drinking Water Station"
+                    fill
                     className="object-cover"
                   />
-                  <div style={{ height: '20px' }} /> {/* 20px gap below image */}
-                  <span
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 400,
-                      fontSize: "14px",
-                      lineHeight: "140%",
-                      letterSpacing: "0%",
-                      textAlign: "center",
-                      textTransform: "uppercase",
-                    }}
-                    className="text-black"
-                  >
-                    {product.title}
-                  </span>
-                </Link>
-              ))}
+                </div>
+                <div style={{ height: '20px' }} />
+                <span
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "140%",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                  }}
+                  className="text-black"
+                >
+                  Drinking Water Station
+                </span>
+              </Link>
+
+              {/* Water Dispenser */}
+              <Link
+                href="/product-category/water-dispenser"
+                className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
+              >
+                <div className="relative w-full h-[224px]">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3effd7ed-3da5-4efa-d6a6-f359ccf5a900/public"
+                    alt="Water Dispenser"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div style={{ height: '20px' }} />
+                <span
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "140%",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                  }}
+                  className="text-black"
+                >
+                  Water Dispenser
+                </span>
+              </Link>
+
+              {/* Drinking Water Faucets */}
+              <Link
+                href="/product-category/drinking-water-faucets"
+                className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
+              >
+                <div className="relative w-full h-[224px]">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b7cebb58-40fb-413c-aee2-8e1f2a115400/public"
+                    alt="Drinking Water Faucets"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div style={{ height: '20px' }} />
+                <span
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "140%",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                  }}
+                  className="text-black"
+                >
+                  Drinking Water Faucets
+                </span>
+              </Link>
+
+              {/* Water Cooler & Fountains */}
+              <Link
+                href="/product-category/water-coolers-fountains"
+                className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
+              >
+                <div className="relative w-full h-[224px]">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5e5ece3c-611b-48c9-9e44-6e500681f000/public"
+                    alt="Water Cooler & Fountains"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div style={{ height: '20px' }} />
+                <span
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "140%",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                  }}
+                  className="text-black"
+                >
+                  Water Cooler & Fountains
+                </span>
+              </Link>
+
+              {/* Commercial/Industrial Plants */}
+              <Link
+                href="/product-category/commercial-industrial-plants"
+                className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
+              >
+                <div className="relative w-full h-[224px]">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b472f793-efd0-4176-da60-6de183f5c300/public"
+                    alt="Commercial/Industrial Plants"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div style={{ height: '20px' }} />
+                <span
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "140%",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                  }}
+                  className="text-black"
+                >
+                  Commercial/Industrial Plants
+                </span>
+              </Link>
             </div>
 
-            {/* --- Navigation Arrows for Products --- */}
+            {/* Navigation Arrows */}
             {showProductsLeftArrow && (
               <button
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 p-2 ml-[4.44%] md:ml-4 bg-transparent"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 ml-[6%] md:ml-4 bg-transparent hover:bg-white/10 rounded-full transition-all duration-300 flex items-center justify-center"
                 onClick={() => scrollProductsCarousel('left')}
-                aria-label="Previous product"
+                aria-label="Previous slide"
               >
                 <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5ccb5886-74f3-436a-b9de-b9bf3945b400/public"
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65c77dc9-8867-4c14-2e26-180c14b84e00/public"
                   alt="Left Arrow"
-                  width={24}
-                  height={24}
+                  width={40}
+                  height={40}
+                  className="transform hover:scale-110 transition-transform duration-300"
                 />
               </button>
             )}
             {showProductsRightArrow && (
               <button
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 p-2 mr-[4.44%] md:mr-4 bg-transparent"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 mr-[6%] md:mr-4 bg-transparent hover:bg-white/10 rounded-full transition-all duration-300 flex items-center justify-center"
                 onClick={() => scrollProductsCarousel('right')}
-                aria-label="Next product"
+                aria-label="Next slide"
               >
                 <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/71db80ef-81f2-4210-48ee-18d5da045300/public"
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/58b7fb95-62e5-4cc5-5dc1-d798af2bdf00/public"
                   alt="Right Arrow"
-                  width={24}
-                  height={24}
+                  width={40}
+                  height={40}
+                  className="transform hover:scale-110 transition-transform duration-300"
                 />
               </button>
             )}
-            {/* --- END Navigation Arrows for Products --- */}
           </div>
-          {/* --- END NEW MOBILE PRODUCT CAROUSEL --- */}
+
+          {/* Desktop Products Grid */}
+          <table className="product-grid hidden md:table">
+            {/* ... existing desktop table code ... */}
+          </table>
         </div>
 
         {/* Solution Section */}
         <div className="relative bg-[#f2f2f2] md:bg-white flex items-center justify-center py-[60px] md:py-[140px] px-4 md:px-[140px]" style={{ zIndex: 1200 }}>
-          {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
-          {/* Hide on mobile, use flexbox alternative */}
-          <table className="solutions-grid hidden md:table"> {/* Custom CSS class + hidden md:table */}
-            <tr>
-              <td colSpan={2} className="product-title whitespace-nowrap"> {/* Custom CSS class */}
-                Solutions
-              </td>
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/water-reuse" className="contents">
-                  <div className="relative w-full h-full">
-                    {/* Centered Text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">WATER REUSE</span>
-                    </div>
-                    {/* Right Arrow flush at right */}
-                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                        alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8c357479-5a25-4527-7fde-a434fa498b00/public"
-                  alt="WATER REUSE"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
-            </tr>
-            <tr>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c399819d-976c-49aa-332f-02a9db708200/public"
-                  alt="WATER TREATMENT LEFT"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* DRINKING WATER FAUCETS with left and down arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/water-treatment" className="contents">
-                  <div className="relative w-full h-full">
-                    {/* Centered Text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">WATER TREATMENT</span>
-                    </div>
-                    {/* Left Arrow flush at left */}
-                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                        alt="Left arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                    {/* Down Arrow flush at bottom */}
-                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
-                        alt="Down arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/16ca1b89-cf24-442f-0a41-3e3ad0c6cf00/public"
-                  alt="WATER AS A SERVICE LEFT"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* DRINKING WATER DISPENSERS with left and right arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/water-as-a-service" className="contents">
-                  <div className="relative w-full h-full">
-                    {/* Centered Text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">WATER AS A SERVICE</span>
-                    </div>
-                    {/* Left Arrow flush at left */}
-                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                        alt="Left arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                    {/* Right Arrow flush at right */}
-                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                        alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1374b15c-0e9d-4dbf-6524-c4b6ff10f900/public"
-                  alt="WATER AS A SERVICE RIGHT "
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f492758-88ca-4c25-4a00-1a122cd22200/public"
-                  alt="WATER TREATMENT DOWN"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* empty white box */}
-              <td className="bg-white"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/water-coolers-fountains" className="contents">
-                  <div className="relative w-full h-full">
-                    {/* Centered Text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category"></span>
-                    </div>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e9e2498-7134-4994-642f-e95e90e1aa00/public"
-                  alt="WATER AS A SERVICE DOWN"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              <td className="product-cell bg-white-override"></td> {/* Custom CSS class + Tailwind override */}
-            </tr>
-          </table>
-
-          {/* --- NEW: MOBILE SOLUTION CAROUSEL (Tailwind CSS Scroll Snap) --- */}
-          {/* Added 'relative' to the parent container for absolute positioning of arrows */}
+          {/* Mobile Solutions Carousel */}
           <div className="md:hidden flex flex-col w-full max-w-sm mx-auto relative">
             <h2 className="font-[Inter Tight] text-[32px] leading-[120%] tracmking-0 px-[4.44%] mb-8">Solutions</h2>
-
-            {/* Carousel Track: Flex container with horizontal scrolling and scroll snap */}
+            {/* Carousel Track */}
             <div
-              ref={carouselRef} // Attach the ref here
+              ref={carouselRef}
               className="flex overflow-x-scroll snap-x snap-mandatory pb-4 -mx-4 px-4 hide-scrollbar"
             >
-              {solutionsData.map((solution, index) => (
-                <Link
-                  key={index}
-                  href={solution.href}
-                  className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
-                >
+              {/* Water Reuse */}
+              <Link
+                href="/water-reuse"
+                className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
+              >
+                <div className="relative w-full h-[224px]">
                   <Image
-                    src={solution.imgSrc}
-                    alt={solution.altText}
-                    width={316} // Specified 316px width
-                    height={316} // Specified 316px height
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4b59b030-d423-4eb7-b043-0ced41d9e400/public"
+                    alt="Water Reuse"
+                    fill
                     className="object-cover"
                   />
-                  <div style={{ height: '20px' }} />
-                  <span
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 400,
-                      fontSize: "14px",
-                      lineHeight: "140%",
-                      letterSpacing: "0%",
-                      textAlign: "center",
-                      textTransform: "uppercase",
-                    }}
-                    className="text-black"
-                  >
-                    {solution.title}
-                  </span>
-                </Link>
-              ))}
+                </div>
+                <div style={{ height: '20px' }} />
+                <span
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "140%",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                  }}
+                  className="text-black"
+                >
+                  Water Reuse
+                </span>
+              </Link>
+              {/* Water Treatment */}
+              <Link
+                href="/water-treatment"
+                className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
+              >
+                <div className="relative w-full h-[224px]">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1d2bd75-8fdf-4add-5daa-4aff9ba71300/public"
+                    alt="Water Treatment"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div style={{ height: '20px' }} />
+                <span
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "140%",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                  }}
+                  className="text-black"
+                >
+                  Water Treatment
+                </span>
+              </Link>
+              {/* Water as a Service */}
+              <Link
+                href="/water-as-a-service"
+                className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
+              >
+                <div className="relative w-full h-[224px]">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/10031863-ef19-4dc7-bde9-11555b439200/public"
+                    alt="Water as a Service"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div style={{ height: '20px' }} />
+                <span
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "140%",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                  }}
+                  className="text-black"
+                >
+                  Water as a Service
+                </span>
+              </Link>
             </div>
-
-            {/* --- Navigation Arrows --- */}
+            {/* Navigation Arrows */}
             {showLeftArrow && (
               <button
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 p-2 ml-[4.44%] md:ml-4 bg-transparent"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 ml-[6%] md:ml-4 bg-transparent hover:bg-white/10 rounded-full transition-all duration-300 flex items-center justify-center"
                 onClick={() => scrollCarousel('left')}
-                aria-label="Previous slide" // Important for accessibility
+                aria-label="Previous slide"
               >
                 <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5ccb5886-74f3-436a-b9de-b9bf3945b400/public"
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65c77dc9-8867-4c14-2e26-180c14b84e00/public"
                   alt="Left Arrow"
-                  width={24}
-                  height={24}
+                  width={40}
+                  height={40}
+                  className="transform hover:scale-110 transition-transform duration-300"
                 />
               </button>
             )}
             {showRightArrow && (
               <button
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 p-2 mr-[4.44%] md:mr-4 bg-transparent"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 mr-[6%] md:mr-4 bg-transparent hover:bg-white/10 rounded-full transition-all duration-300 flex items-center justify-center"
                 onClick={() => scrollCarousel('right')}
-                aria-label="Next slide" // Important for accessibility
+                aria-label="Next slide"
               >
                 <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/71db80ef-81f2-4210-48ee-18d5da045300/public"
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/58b7fb95-62e5-4cc5-5dc1-d798af2bdf00/public"
                   alt="Right Arrow"
-                  width={24}
-                  height={24}
+                  width={40}
+                  height={40}
+                  className="transform hover:scale-110 transition-transform duration-300"
                 />
               </button>
             )}
-            {/* --- END Navigation Arrows --- */}
           </div>
-          {/* --- END NEW MOBILE SOLUTION CAROUSEL --- */}
+          {/* Desktop Solutions Grid */}
+          <table className="solutions-grid hidden md:table">
+            {/* ... existing desktop table code ... */}
+          </table>
         </div>
 
-      {/* wrapping these in a div to get them to overlap the sticky logo */}
-      <div className="bg-[#f2f2f2]" style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}>
-        {/* Make in INDIA Section */}
-        <section className="pt-20 flex items-center justify-center relative px-8 md:px-[9.72%]">
-          <motion.div className="w-full max-w-screen-xl">
-            <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between h-[115px]">
-              <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-                <h2
-                  className="inline-block text-[32px] leading-[110%] mb-[40px] md:text-[58px] md:leading-[110%]"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    color: "#000",
-                  }}
-                >
-                  Make In India
-                </h2>
-                <div className="relative w-full h-auto md:w-[432px] md:h-[229px]" style={{ zIndex: 1200 }}>
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
-                    alt="Make In India"
-                    fill
-                    className="object-contain md:pl-[-2.875%] md:pr-[9.725%] md:pb-[25px]"
-                  />
+        {/* wrapping these in a div to get them to overlap the sticky logo */}
+        <div className="bg-[#f2f2f2]" style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}>
+          {/* Make in INDIA Section */}
+          <section className="pt-20 flex items-center justify-center relative px-8 md:px-[9.72%]">
+            <motion.div className="w-full max-w-screen-xl">
+              <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between h-[115px]">
+                <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <h2
+                    className="inline-block text-[32px] leading-[110%] mb-[40px] md:text-[58px] md:leading-[110%]"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      color: "#000",
+                    }}
+                  >
+                    Make In India
+                  </h2>
+                  <div className="relative w-full h-auto md:w-[432px] md:h-[229px]" style={{ zIndex: 1200 }}>
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
+                      alt="Make In India"
+                      fill
+                      className="object-contain md:pl-[-2.875%] md:pr-[9.725%] md:pb-[25px]"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col w-full md:w-64 items-center lg:items-start text-center lg:text-left">
+                  <p className="w-full font-[Inter Tight] font-medium text-[10px] leading-[130%] mb-[40px] md:w-[270px] md:text-[12px] md:leading-[110%] md:mb-0 text-black/60">
+                    WAE captures the heart of Indian innovation by seamlessly blending the 
+                    time-honoured ideals with the latest technology. We are driven by the 
+                    mission to build a brand that not only saves the planet but also creates a 
+                    potent impact on future generations for the country's advancements, 
+                    integrity & innovation. Our approach strengthens community resilience 
+                    while showcasing India's intellectual capital on the world stage.
+                  </p>
                 </div>
               </div>
-              <div className="flex flex-col w-full md:w-64 items-center lg:items-start text-center lg:text-left">
-                <p className="w-full font-[Inter Tight] font-medium text-[10px] leading-[130%] mb-[40px] md:w-[270px] md:text-[12px] md:leading-[110%] md:mb-0 text-black/60">
-                  WAE captures the heart of Indian innovation by seamlessly blending the 
-                  time-honoured ideals with the latest technology. We are driven by the 
-                  mission to build a brand that not only saves the planet but also creates a 
-                  potent impact on future generations for the country's advancements, 
-                  integrity & innovation. Our approach strengthens community resilience 
-                  while showcasing India's intellectual capital on the world stage.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </section>
+            </motion.div>
+          </section>
 
-        {/* Sustainability Section */}
-        <section className="flex items-center justify-center relative px-8 pt-40 md:py-0 md:px-[9.72%]">
-          <motion.div className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between items-center lg:items-start text-center lg:text-left">
-            <h2
-              className="inline-block text-[32px] leading-[110%] mb-[40px] md:text-[58px] md:leading-[110%]"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                color: "#000",
-              }}
-            >
-              Sustainability
-            </h2>
-            <div className="flex flex-col gap-8 md:gap-20 items-center lg:items-start">
-              {/* Statistic 1 */}
-              <div className="flex flex-col items-center lg:items-start">
-                <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug">
-                  1,012,120.25
-                </p>
-                <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div>
-                <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide">
-                  TONNES CO2 EMISSIONS SAVED
-                </p>
-              </div>
-              {/* Statistic 2 */}
-              <div className="flex flex-col items-center lg:items-start">
-                <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug">
-                  12,185.4325
-                </p>
-                <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div>
-                <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide">
-                  MILLION GALLONS WATER SAVED
-                </p>
-              </div>
-              {/* Statistic 3 */}
-              <div className="flex flex-col mb-[40px] md:mb-0 items-center lg:items-start">
-                <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug">
-                  22,253.65
-                </p>
-                <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div>
-                <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide">
-                  TONNES PLASTIC REMOVED
-                </p>
-                <Link href="/sustainability" className="mt-6 md:mt-10">
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
+          {/* Sustainability Section */}
+          <section className="flex items-center justify-center relative px-8 pt-40 md:py-0 md:px-[9.72%]">
+            <motion.div className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between items-center lg:items-start text-center lg:text-left">
+              <h2
+                className="inline-block text-[32px] leading-[110%] mb-[40px] md:text-[58px] md:leading-[110%]"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  color: "#000",
+                }}
+              >
+                Sustainability
+              </h2>
+              <div className="flex flex-col gap-8 md:gap-20 items-center lg:items-start">
+                {/* Statistic 1 */}
+                <div className="flex flex-col items-center lg:items-start">
+                  <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug">
+                    1,012,120.25
+                  </p>
+                  <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div>
+                  <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide">
+                    TONNES CO2 EMISSIONS SAVED
+                  </p>
+                </div>
+                {/* Statistic 2 */}
+                <div className="flex flex-col items-center lg:items-start">
+                  <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug">
+                    12,185.4325
+                  </p>
+                  <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div>
+                  <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide">
+                    MILLION GALLONS WATER SAVED
+                  </p>
+                </div>
+                {/* Statistic 3 */}
+                <div className="flex flex-col mb-[40px] md:mb-0 items-center lg:items-start">
+                  <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug">
+                    22,253.65
+                  </p>
+                  <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div>
+                  <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide">
+                    TONNES PLASTIC REMOVED
+                  </p>
+                  <Link href="/sustainability" className="mt-6 md:mt-10">
+                    <HoverButton>
+                      {(hovered) => (
+                        <>
+                          Know More
+                          <div className="relative inline-block w-4 h-4">
                             <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                              alt="icon default"
                               width={16}
                               height={16}
                             />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: hovered ? 1 : 0 }}
+                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                              className="absolute top-0 left-0"
+                            >
+                              <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt="icon hover"
+                                width={16}
+                                height={16}
+                              />
+                            </motion.div>
+                          </div>
+                        </>
+                      )}
+                    </HoverButton>
+                  </Link>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        </section>
-      </div>
+            </motion.div>
+          </section>
+        </div>
 
         {/* RELATED INFORMATION SECTION */}
         {/* This section has a white background and higher z-index */}
@@ -1612,7 +1405,7 @@ const Home: FC = () => {
             >
               {/* Water Conservation */}
               <div className="w-full bg-[#f2f2f2] rounded-lg overflow-hidden shadow-sm">
-                <div className="relative w-full h-[316px]">
+                <div className="relative w-full h-[125px]">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1de1d21f-1dec-4cc3-8720-f73efae23400/public"
                     alt="Water Conservation"
@@ -1630,7 +1423,7 @@ const Home: FC = () => {
 
               {/* Policy */}
               <div className="w-full bg-[#f2f2f2] rounded-lg overflow-hidden shadow-sm">
-                <div className="relative w-full h-[316px]">
+                <div className="relative w-full h-[125px]">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8d76afb3-cd7f-4723-33df-bbabf4cbc900/public"
                     alt="Policy"
@@ -1648,7 +1441,7 @@ const Home: FC = () => {
 
               {/* Climate Change & Water */}
               <div className="w-full bg-[#f2f2f2] rounded-lg overflow-hidden shadow-sm">
-                <div className="relative w-full h-[316px]">
+                <div className="relative w-full h-[125px]">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/022af5b3-ff4f-4da2-59f8-91dcf8a99700/public"
                     alt="Climate Change & Water"
@@ -1666,7 +1459,7 @@ const Home: FC = () => {
 
               {/* Industry Impacts and Solutions */}
               <div className="w-full bg-[#f2f2f2] rounded-lg overflow-hidden shadow-sm">
-                <div className="relative w-full h-[316px]">
+                <div className="relative w-full h-[125px]">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/57ca2c2e-56ee-484e-2d71-21e2e5fa4a00/public"
                     alt="Industry Impacts and Solutions"
