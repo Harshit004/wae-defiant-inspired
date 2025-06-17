@@ -72,14 +72,14 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
         {/* ORIGIN & OBJECTIVE ROW */}
         <div className="grid mb-4" style={{ gridTemplateColumns: '40% 60%' }}>
           <div>
-            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase', marginBottom: 12}}>ORIGIN</div>
-            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 14, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: '10px', lineHeight: '100%', letterSpacing: '0px', textTransform: 'uppercase', marginBottom: 12}}>ORIGIN & OBJECTIVE</div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: '10px', lineHeight: '100%', letterSpacing: '0%', verticalAlign: 'middle'}}>
               20.5937° N<br />78.9629° E
             </div>
           </div>
           <div>
-            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase', marginBottom: 12}}>OBJECTIVE</div>
-            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 14, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: '10px', lineHeight: '100%', letterSpacing: '0px', textTransform: 'uppercase', marginBottom: 12}}>OBJECTIVE</div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%', verticalAlign: 'middle'}}>
               To lead the way in sustainability<br />ahead of the next
             </div>
           </div>
@@ -89,15 +89,15 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
         {/* INSIDE WAE SECTION - two-column grid */}
         <div className="grid mb-2" style={{ gridTemplateColumns: '40% 60%' }}>
           <div className="flex items-start mt-2">
-            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>INSIDE WAE</div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 400, fontSize: '10px', lineHeight: '100%', letterSpacing: '0px', textTransform: 'uppercase'}}>INSIDE WAE</div>
           </div>
           <div className="flex flex-col">
             {productsItems.map((item, i) => (
               <div key={i}>
-                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: '20px', lineHeight: '100%', letterSpacing: '0%', verticalAlign: 'middle'}}>
                   {item.text}
                 </Link>
-                <div className="w-full h-px bg-black/10" />
+                {i < productsItems.length - 1 && <div className="w-full h-px bg-black/10" />}
               </div>
             ))}
           </div>
@@ -107,12 +107,12 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
         {/* ETCETERA SECTION - two-column grid */}
         <div className="grid mb-2" style={{ gridTemplateColumns: '40% 60%' }}>
           <div className="flex items-start mt-2">
-            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>ETCETERA</div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 400, fontSize: '10px', lineHeight: '100%', letterSpacing: '0px', textTransform: 'uppercase'}}>ETCETERA</div>
           </div>
           <div className="flex flex-col">
             {blueprintItems.map((item, i) => (
               <div key={i}>
-                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: '20px', lineHeight: '100%', letterSpacing: '0%', verticalAlign: 'middle'}}>
                   {item.text}
                 </Link>
                 <div className="w-full h-px bg-black/10" />
@@ -1269,7 +1269,7 @@ const Home: FC = () => {
         {/* Made in India Section - Mobile Only */}
         <div className="md:hidden mt-8">
                   <h2
-                    className="w-full inline-block text-[32px] leading-[110%] text-center mb-[40px] md:text-[58px] md:leading-[110%]"
+                    className="w-full inline-block text-[32px] leading-[110%] text-center px-auto pb-[40px] md:text-[58px] md:leading-[110%]"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
@@ -1338,7 +1338,9 @@ const Home: FC = () => {
                   <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug">
                     1,012,120.25
                   </p>
-                  <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div>
+                  <div className="w-full px-[4.44%] my-3 md:hidden">
+                    <div className="w-full h-[1px] bg-black/20"></div>
+                  </div>
                   <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide">
                     TONNES CO2 EMISSIONS SAVED
                   </p>
@@ -1348,7 +1350,9 @@ const Home: FC = () => {
                   <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug">
                     12,185.4325
                   </p>
-                  <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div>
+                  <div className="w-full px-[4.44%] my-3 md:hidden">
+                    <div className="w-full h-[1px] bg-black/20"></div>
+                  </div>
                   <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide">
                     MILLION GALLONS WATER SAVED
                   </p>
@@ -1358,7 +1362,9 @@ const Home: FC = () => {
                   <p className="font-[Inter Tight] font-bold text-[32px] leading-[140%] uppercase md:text-2xl md:font-normal md:leading-snug">
                     22,253.65
                   </p>
-                  <div className="w-full h-[1px] bg-black/20 my-3 md:hidden"></div>
+                  <div className="w-full px-[4.44%] my-3 md:hidden">
+                    <div className="w-full h-[1px] bg-black/20"></div>
+                  </div>
                   <p className="font-[Inter Tight] font-normal text-[12px] leading-[24px] md:text-xs md:leading-wide text-black/70 tracking-wide">
                     TONNES PLASTIC REMOVED
                   </p>
@@ -1423,7 +1429,7 @@ const Home: FC = () => {
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1de1d21f-1dec-4cc3-8720-f73efae23400/public"
                     alt="Water Conservation"
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale"
                   />
                 </div>
                 <div className="py-6">
@@ -1441,7 +1447,7 @@ const Home: FC = () => {
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8d76afb3-cd7f-4723-33df-bbabf4cbc900/public"
                     alt="Policy"
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale"
                   />
                 </div>
                 <div className="py-6">
@@ -1459,7 +1465,7 @@ const Home: FC = () => {
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/022af5b3-ff4f-4da2-59f8-91dcf8a99700/public"
                     alt="Climate Change & Water"
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale"
                   />
                 </div>
                 <div className="py-6">
