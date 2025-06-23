@@ -760,20 +760,20 @@ const Home: FC = () => {
                 Purpose
               </h2>
               <div className="flex flex-col w-64"> {/* Removed gap-5 here */}
-                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60"> {/* Mobile description 1 styles + bottom margin */}
+                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] lg:text-[12px] lg:leading-[110%] text-black/60" style={{ marginBottom: "20px" }}> {/* Removed mb-5 */}
                   Being sustainable -The Underlying natural order
                   of the universe - circular continuity of the
                   natural world. Undifferentiated, endlessly self-
                   replenishing, immensely powerful and
                   impassively generous.
                 </p>
-                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-[40px] lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60"> {/* Mobile description 2 styles + bottom margin */}
+                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] lg:text-[12px] lg:leading-[110%] text-black/60" style={{ marginBottom: "40px" }}> {/* Removed mb-[40px] */}
                   Our purpose brings together the company,
                   employees, clients and our stakeholders and
                   reconciles economic performance witha
                   positive impact on people and the planet.
                 </p>
-                <Link href="/purpose" className="contents">
+                <Link href="/purpose" className="purpose-know-more-link">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -818,12 +818,12 @@ const Home: FC = () => {
                 About WAE
               </h2>
               <div className="flex flex-col w-64"> {/* Removed gap-5 here */}
-                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60"> {/* Mobile description 1 styles + bottom margin */}
+                <p className="w-[270px] font-[Inter Tight] text-[10px] leading-[130%] lg:text-[12px] lg:leading-[110%] text-black/60" style={{ marginBottom: "40px" }}> {/* Removed mb-5 */}
                   WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
                   We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
                   strengthening community resilience and showcasing India's intellectual capital on the world stage.
                 </p>
-                <Link href="/about-wae" className="contents">
+                <Link href="/about-wae" className="aboutwae-know-more-link">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -1760,6 +1760,20 @@ const Home: FC = () => {
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
+        }
+        .purpose-know-more-link {
+          display: block;
+        }
+        .aboutwae-know-more-link {
+          display: block;
+        }
+        @media (min-width: 768px) {
+          .purpose-know-more-link {
+            margin-top: 60px;
+          }
+          .aboutwae-know-more-link {
+            margin-top: 60px;
+          }
         }
       `}</style>
     </main>
