@@ -888,7 +888,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/27917d14-ea56-4a80-93b9-c66ba9642400/public"
                   alt="Drinking Water Station"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -900,7 +900,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/685750d6-ec8e-491b-a214-24f13cfcb600/public"
                   alt="Water Faucet"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -935,7 +935,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b05d64d-0248-4aaf-b8c3-e8d7afccea00/public"
                   alt="Water Dispenser"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -970,7 +970,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c4a14e-2e09-4da6-c363-84bae0088400/public"
                   alt="Water Dispenser"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -982,7 +982,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf2a2e6e-9e0b-464a-c2ff-1a16cb1f9900/public"
                   alt="Water Cooler"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -1011,7 +1011,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d9688872-6e63-4d68-26e9-aec6cf1f3a00/public"
                   alt="Water Fountain"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -1023,7 +1023,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/54ccac68-6261-4097-e41c-cfa35c992100/public"
                   alt="Public Utility"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -1052,7 +1052,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
                   alt="Commercial Plant"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -1081,7 +1081,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a0490312-e31b-44b0-2272-8645b0d0ef00/public"
                   alt="Industrial Plant"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -1197,7 +1197,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8c357479-5a25-4527-7fde-a434fa498b00/public"
                   alt="WATER REUSE"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -1209,7 +1209,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c399819d-976c-49aa-332f-02a9db708200/public"
                   alt="WATER TREATMENT LEFT"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -1247,7 +1247,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/16ca1b89-cf24-442f-0a41-3e3ad0c6cf00/public"
                   alt="WATER AS A SERVICE LEFT"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -1285,7 +1285,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1374b15c-0e9d-4dbf-6524-c4b6ff10f900/public"
                   alt="WATER AS A SERVICE RIGHT "
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -1297,7 +1297,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f492758-88ca-4c25-4a00-1a122cd22200/public"
                   alt="WATER TREATMENT DOWN"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
@@ -1317,7 +1317,7 @@ const Home: FC = () => {
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e9e2498-7134-4994-642f-e95e90e1aa00/public"
                   alt="WATER AS A SERVICE DOWN"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500 object-cover w-[232px] h-[232px]"
                   width={232}
                   height={232}
                 />
