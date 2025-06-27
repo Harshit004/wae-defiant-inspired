@@ -375,21 +375,21 @@ const Home: FC = () => {
           id="hero"
           ref={heroRef}
           className="relative h-screen w-full overflow-hidden"
-          style={{ marginTop: `-${headerHeight}px` }} // Offset by header height
         >
-          <video
-            src="/banner-homepage5.mp4" // Local video file
-            autoPlay
-            // loop // Loop is commented out
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <div className="w-full h-full aspect-[16/9] mx-auto">
+            <video
+              src="/banner-homepage5.mp4"
+              autoPlay
+              muted
+              playsInline
+              className="w-fit h-fit object-cover"
+            />
+          </div>
           <div
             className="absolute uppercase"
-            style={{ // Inline styles for positioning and typography
+            style={{
               bottom: "10%",
-              left: "9.72%", // Specific percentage-based left
+              left: "9.72%",
               width: "104px",
               height: "12px",
               fontFamily: "'Inter Tight', sans-serif",
