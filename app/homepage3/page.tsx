@@ -92,15 +92,15 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
             <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>INSIDE WAE</div>
           </div>
           <div className="flex flex-col">
-            {productsItems.map((item, i) => (
+          {productsItems.map((item, i) => (
               <div key={i}>
                 <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
-                  {item.text}
-                </Link>
+              {item.text}
+            </Link>
                 <div className="w-full h-px bg-black/10" />
               </div>
-            ))}
-          </div>
+          ))}
+        </div>
         </div>
         <div className="w-full h-px bg-black/10 mt-[12px] mb-2" />
 
@@ -110,14 +110,14 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
             <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>ETCETERA</div>
           </div>
           <div className="flex flex-col">
-            {blueprintItems.map((item, i) => (
+          {blueprintItems.map((item, i) => (
               <div key={i}>
                 <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
-                  {item.text}
-                </Link>
+              {item.text}
+            </Link>
                 <div className="w-full h-px bg-black/10" />
               </div>
-            ))}
+          ))}
           </div>
         </div>
       </div>
@@ -1558,39 +1558,39 @@ const Home: FC = () => {
               className="flex overflow-x-scroll snap-x snap-mandatory gap-4 md:grid md:grid-cols-4 md:gap-8"
               style={{ position: 'relative', zIndex: 1 }}
             >
-              {/* Wrap each RelatedCard in a div with the carousel/sizing classes */}
+            {/* Wrap each RelatedCard in a div with the carousel/sizing classes */}
               <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
-                <RelatedCard
+              <RelatedCard
                   image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1de1d21f-1dec-4cc3-8720-f73efae23400/public"
                   title="Water Conservation"
-                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
                   width={316}
                   height={316}
-                />
-              </div>
+              />
+            </div>
               <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
-                <RelatedCard
+              <RelatedCard
                   image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8d76afb3-cd7f-4723-33df-bbabf4cbc900/public"
-                  title="Policy"
-                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                title="Policy"
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
                   width={316}
                   height={316}
-                />
-              </div>
+              />
+            </div>
               <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
-                <RelatedCard
+              <RelatedCard
                   image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/022af5b3-ff4f-4da2-59f8-91dcf8a99700/public"
-                  title="Climate Change & Water"
-                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                title="Climate Change & Water"
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
                   width={316}
                   height={316}
-                />
-              </div>
+              />
+            </div>
               <div className="flex-none w-[calc(100vw-32px)] snap-start md:w-auto" style={{ position: 'relative', zIndex: 1 }}>
-                <RelatedCard
+              <RelatedCard
                   image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/57ca2c2e-56ee-484e-2d71-21e2e5fa4a00/public"
-                  title="Industry Impacts and Solutions"
-                  description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
+                title="Industry Impacts and Solutions"
+                description="Information regarding awards received by the Hitachi Group in various fields and related announcements."
                   width={316}
                   height={316}
                 />

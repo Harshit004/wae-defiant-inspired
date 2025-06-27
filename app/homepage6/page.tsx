@@ -374,22 +374,23 @@ const Home: FC = () => {
         <section
           id="hero"
           ref={heroRef}
-          className="relative h-screen w-full overflow-hidden"
-          style={{ marginTop: `-${headerHeight}px` }} // Offset by header height
+          className="w-full flex items-center justify-center bg-white"
+          style={{ height: `calc(100vh - ${headerHeight}px)` }}
         >
-          <video
-            src="/banner-homepage6.mp4" // Local video file
-            autoPlay
-            // loop // Loop is commented out
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <div className="w-fit max-w-7xl aspect-[16/9] flex items-center justify-center">
+            <video
+              src="/banner-homepage6.mp4"
+              autoPlay
+              muted
+              playsInline
+              className="w-fit h-fit object-cover rounded-none"
+            />
+          </div>
           <div
             className="absolute uppercase"
-            style={{ // Inline styles for positioning and typography
+            style={{
               bottom: "10%",
-              left: "9.72%", // Specific percentage-based left
+              left: "9.72%",
               width: "104px",
               height: "12px",
               fontFamily: "'Inter Tight', sans-serif",

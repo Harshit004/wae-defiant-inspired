@@ -374,15 +374,16 @@ const Home: FC = () => {
         <section
           id="hero"
           ref={heroRef}
-          className="relative h-screen w-full overflow-hidden"
+          className="w-full flex items-center justify-center bg-white"
+          style={{ height: `calc(100vh - ${headerHeight}px)` }}
         >
-          <div className="w-full h-full aspect-[16/9] mx-auto">
+          <div className="w-fit max-w-7xl aspect-[16/9] flex items-center justify-center">
             <video
               src="/banner-homepage5.mp4"
               autoPlay
               muted
               playsInline
-              className="w-fit h-fit object-cover"
+              className="w-fit h-fit object-cover rounded-none"
             />
           </div>
           <div

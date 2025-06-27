@@ -800,99 +800,99 @@ const Home: FC = () => {
                 {/* Purpose Slide */}
                 <div className="flex-shrink-0 snap-center w-full">
                   <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[300px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
-                    Purpose
-                  </h2>
+                Purpose
+              </h2>
                   <div className="flex flex-col items-center mx-[4.44%]">
                     <p className="w-full font-[Inter Tight] text-[10px] text-center leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
-                      Being sustainable -The Underlying natural order
-                      of the universe - circular continuity of the
-                      natural world. Undifferentiated, endlessly self-
-                      replenishing, immensely powerful and
-                      impassively generous.
-                    </p>
+                  Being sustainable -The Underlying natural order
+                  of the universe - circular continuity of the
+                  natural world. Undifferentiated, endlessly self-
+                  replenishing, immensely powerful and
+                  impassively generous.
+                </p>
                     <p className="w-full font-[Inter Tight] text-[10px] text-center leading-[130%] mb-[40px] lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
-                      Our purpose brings together the company,
-                      employees, clients and our stakeholders and
-                      reconciles economic performance witha
-                      positive impact on people and the planet.
-                    </p>
-                    <Link href="/purpose" className="contents">
-                      <HoverButton>
-                        {(hovered) => (
-                          <>
-                            Know More
-                            <div className="relative inline-block w-4 h-4">
-                              <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                alt="icon default"
-                                width={16}
-                                height={16}
-                              />
-                              <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: hovered ? 1 : 0 }}
-                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                                className="absolute top-0 left-0"
-                              >
-                                <Image
-                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                  alt="icon hover"
-                                  width={16}
-                                  height={16}
-                                />
-                              </motion.div>
-                            </div>
-                          </>
-                        )}
-                      </HoverButton>
-                    </Link>
-                  </div>
-                </div>
+                  Our purpose brings together the company,
+                  employees, clients and our stakeholders and
+                  reconciles economic performance witha
+                  positive impact on people and the planet.
+                </p>
+                <Link href="/purpose" className="contents">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
+              </div>
+            </div>
 
                 {/* About WAE Slide */}
                 <div className="flex-shrink-0 snap-center w-full">
                   <h2 className="font-[Inter Tight] font-medium text-[32px] leading-[110%] mb-[300px] lg:text-6xl lg:leading-tight lg:mb-0 text-center lg:text-left">
-                    About WAE
-                  </h2>
+                About WAE
+              </h2>
                   <div className="flex flex-col items-center mx-[4.44%]">
                     <p className="w-full font-[Inter Tight] text-[10px] text-center leading-[130%] mb-5 lg:text-[12px] lg:leading-[110%] lg:mb-0 text-black/60">
-                      WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
-                      We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
-                      strengthening community resilience and showcasing India's intellectual capital on the world stage.
-                    </p>
-                    <Link href="/about-wae" className="contents">
-                      <HoverButton>
-                        {(hovered) => (
-                          <>
-                            Know More
-                            <div className="relative inline-block w-4 h-4">
-                              <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                alt="icon default"
-                                width={16}
-                                height={16}
-                              />
-                              <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: hovered ? 1 : 0 }}
-                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                                className="absolute top-0 left-0"
-                              >
-                                <Image
-                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                  alt="icon hover"
-                                  width={16}
-                                  height={16}
-                                />
-                              </motion.div>
-                            </div>
-                          </>
-                        )}
-                      </HoverButton>
-                    </Link>
-                  </div>
-                </div>
+                  WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
+                  We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
+                  strengthening community resilience and showcasing India's intellectual capital on the world stage.
+                </p>
+                <Link href="/about-wae" className="contents">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
+            </div>
+                    </div>
 
               {/* Navigation Arrows */}
               {showCombinedLeftArrow && (
@@ -901,7 +901,7 @@ const Home: FC = () => {
                   onClick={() => scrollCombinedCarousel('left')}
                   aria-label="Previous slide"
                 >
-                  <Image
+                      <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65c77dc9-8867-4c14-2e26-180c14b84e00/public"
                     alt="Left Arrow"
                     width={40}
@@ -916,7 +916,7 @@ const Home: FC = () => {
                   onClick={() => scrollCombinedCarousel('right')}
                   aria-label="Next slide"
                 >
-                  <Image
+                <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/58b7fb95-62e5-4cc5-5dc1-d798af2bdf00/public"
                     alt="Right Arrow"
                     width={40}
@@ -925,7 +925,7 @@ const Home: FC = () => {
                   />
                 </button>
               )}
-            </div>
+                    </div>
           </motion.div>
         </section>
 
@@ -946,13 +946,13 @@ const Home: FC = () => {
                 className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
               >
                 <div className="relative w-full h-[224px]">
-                  <Image
+                      <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cb5b28fb-e10e-41fb-f579-31168d065400/public"
                     alt="Drinking Water Station"
                     fill
                     className="object-cover"
                   />
-                </div>
+                  </div>
                 <div style={{ height: '20px' }} />
                 <span
                   style={{
@@ -967,8 +967,8 @@ const Home: FC = () => {
                   className="text-black"
                 >
                   Drinking Water Station
-                </span>
-              </Link>
+                    </span>
+                </Link>
 
               {/* Water Dispenser */}
               <Link
@@ -976,13 +976,13 @@ const Home: FC = () => {
                 className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
               >
                 <div className="relative w-full h-[224px]">
-                  <Image
+                <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3effd7ed-3da5-4efa-d6a6-f359ccf5a900/public"
-                    alt="Water Dispenser"
+                  alt="Water Dispenser"
                     fill
                     className="object-cover"
                   />
-                </div>
+                    </div>
                 <div style={{ height: '20px' }} />
                 <span
                   style={{
@@ -997,8 +997,8 @@ const Home: FC = () => {
                   className="text-black"
                 >
                   Water Dispenser
-                </span>
-              </Link>
+                    </span>
+                </Link>
 
               {/* Drinking Water Faucets */}
               <Link
@@ -1006,13 +1006,13 @@ const Home: FC = () => {
                 className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
               >
                 <div className="relative w-full h-[224px]">
-                  <Image
+                <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b7cebb58-40fb-413c-aee2-8e1f2a115400/public"
                     alt="Drinking Water Faucets"
                     fill
                     className="object-cover"
                   />
-                </div>
+                    </div>
                 <div style={{ height: '20px' }} />
                 <span
                   style={{
@@ -1027,8 +1027,8 @@ const Home: FC = () => {
                   className="text-black"
                 >
                   Drinking Water Faucets
-                </span>
-              </Link>
+                    </span>
+                </Link>
 
               {/* Water Cooler & Fountains */}
               <Link
@@ -1036,13 +1036,13 @@ const Home: FC = () => {
                 className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
               >
                 <div className="relative w-full h-[224px]">
-                  <Image
+                <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5e5ece3c-611b-48c9-9e44-6e500681f000/public"
                     alt="Water Cooler & Fountains"
                     fill
                     className="object-cover"
                   />
-                </div>
+                    </div>
                 <div style={{ height: '20px' }} />
                 <span
                   style={{
@@ -1057,14 +1057,14 @@ const Home: FC = () => {
                   className="text-black"
                 >
                   Water Cooler & Fountains
-                </span>
-              </Link>
+                    </span>
+                </Link>
 
               {/* Commercial/Industrial Plants */}
-              <Link
+                <Link
                 href="/product-category/commercial-industrial-plants"
                 className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
-              >
+                >
                 <div className="relative w-full h-[224px]">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b472f793-efd0-4176-da60-6de183f5c300/public"
@@ -1074,21 +1074,21 @@ const Home: FC = () => {
                   />
                 </div>
                 <div style={{ height: '20px' }} />
-                <span
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "14px",
-                    lineHeight: "140%",
-                    letterSpacing: "0%",
-                    textAlign: "center",
-                    textTransform: "uppercase",
-                  }}
-                  className="text-black"
-                >
+                  <span
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "140%",
+                      letterSpacing: "0%",
+                      textAlign: "center",
+                      textTransform: "uppercase",
+                    }}
+                    className="text-black"
+                  >
                   Commercial/Industrial Plants
-                </span>
-              </Link>
+                  </span>
+                </Link>
             </div>
 
             {/* Navigation Arrows */}
@@ -1146,13 +1146,13 @@ const Home: FC = () => {
                 className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
               >
                 <div className="relative w-full h-[224px]">
-                  <Image
+                      <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4b59b030-d423-4eb7-b043-0ced41d9e400/public"
                     alt="Water Reuse"
                     fill
                     className="object-cover"
                   />
-                </div>
+                  </div>
                 <div style={{ height: '20px' }} />
                 <span
                   style={{
@@ -1167,21 +1167,21 @@ const Home: FC = () => {
                   className="text-black"
                 >
                   Water Reuse
-                </span>
-              </Link>
+                    </span>
+                </Link>
               {/* Water Treatment */}
               <Link
                 href="/water-treatment"
                 className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
               >
                 <div className="relative w-full h-[224px]">
-                  <Image
+                <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1d2bd75-8fdf-4add-5daa-4aff9ba71300/public"
                     alt="Water Treatment"
                     fill
                     className="object-cover"
                   />
-                </div>
+                    </div>
                 <div style={{ height: '20px' }} />
                 <span
                   style={{
@@ -1196,13 +1196,13 @@ const Home: FC = () => {
                   className="text-black"
                 >
                   Water Treatment
-                </span>
-              </Link>
+                    </span>
+                </Link>
               {/* Water as a Service */}
-              <Link
+                <Link
                 href="/water-as-a-service"
                 className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] md:bg-white rounded-lg p-4"
-              >
+                >
                 <div className="relative w-full h-[224px]">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/10031863-ef19-4dc7-bde9-11555b439200/public"
@@ -1211,22 +1211,22 @@ const Home: FC = () => {
                     className="object-cover"
                   />
                 </div>
-                <div style={{ height: '20px' }} />
-                <span
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "14px",
-                    lineHeight: "140%",
-                    letterSpacing: "0%",
-                    textAlign: "center",
-                    textTransform: "uppercase",
-                  }}
-                  className="text-black"
-                >
+                  <div style={{ height: '20px' }} />
+                  <span
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "140%",
+                      letterSpacing: "0%",
+                      textAlign: "center",
+                      textTransform: "uppercase",
+                    }}
+                    className="text-black"
+                  >
                   Water as a Service
-                </span>
-              </Link>
+                  </span>
+                </Link>
             </div>
             {/* Navigation Arrows */}
             {showLeftArrow && (
@@ -1270,14 +1270,14 @@ const Home: FC = () => {
         <div className="md:hidden mt-8">
                   <h2
                     className="w-full inline-block text-[32px] leading-[110%] text-center px-auto pb-[40px] md:text-[58px] md:leading-[110%]"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      color: "#000",
-                    }}
-                  >
-                    Make In India
-                  </h2>
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    color: "#000",
+                  }}
+                >
+                  Make In India
+                </h2>
           <div className="relative w-full h-[133px]">
             <Image
               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
@@ -1296,30 +1296,30 @@ const Home: FC = () => {
               <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between h-[115px]">
                 <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                   
-                  <div className="relative w-full h-auto md:w-[432px] md:h-[229px]" style={{ zIndex: 1200 }}>
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
-                      alt="Make In India"
-                      fill
-                      className="object-contain md:pl-[-2.875%] md:pr-[9.725%] md:pb-[25px]"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col w-full md:w-64 items-center lg:items-start text-center lg:text-left">
-                  <p className="w-full font-[Inter Tight] font-medium text-[10px] leading-[130%] mb-[40px] md:w-[270px] md:text-[12px] md:leading-[110%] md:mb-0 text-black/60">
-                    WAE captures the heart of Indian innovation by seamlessly blending the 
-                    time-honoured ideals with the latest technology. We are driven by the 
-                    mission to build a brand that not only saves the planet but also creates a 
-                    potent impact on future generations for the country's advancements, 
-                    integrity & innovation. Our approach strengthens community resilience 
-                    while showcasing India's intellectual capital on the world stage.
-                  </p>
+                <div className="relative w-full h-auto md:w-[432px] md:h-[229px]" style={{ zIndex: 1200 }}>
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65e95d19-5da4-472d-67c7-755dd69be700/public"
+                    alt="Make In India"
+                    fill
+                    className="object-contain md:pl-[-2.875%] md:pr-[9.725%] md:pb-[25px]"
+                  />
                 </div>
               </div>
-            </motion.div>
-          </section>
+                <div className="flex flex-col w-full md:w-64 items-center lg:items-start text-center lg:text-left">
+                  <p className="w-full font-[Inter Tight] font-medium text-[10px] leading-[130%] mb-[40px] md:w-[270px] md:text-[12px] md:leading-[110%] md:mb-0 text-black/60">
+                  WAE captures the heart of Indian innovation by seamlessly blending the 
+                  time-honoured ideals with the latest technology. We are driven by the 
+                  mission to build a brand that not only saves the planet but also creates a 
+                  potent impact on future generations for the country's advancements, 
+                  integrity & innovation. Our approach strengthens community resilience 
+                  while showcasing India's intellectual capital on the world stage.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </section>
 
-          {/* Sustainability Section */}
+        {/* Sustainability Section */}
           <section className="flex items-center justify-center relative px-8 pt-20 md:py-0 md:px-[9.72%]">
             <motion.div className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between items-center lg:items-start text-center lg:text-left">
               <h2
@@ -1369,35 +1369,35 @@ const Home: FC = () => {
                     TONNES PLASTIC REMOVED
                   </p>
                   <Link href="/sustainability" className="mt-6 md:mt-10">
-                    <HoverButton>
-                      {(hovered) => (
-                        <>
-                          Know More
-                          <div className="relative inline-block w-4 h-4">
+                  <HoverButton>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
                             <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                              alt="icon default"
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
                               width={16}
                               height={16}
                             />
-                            <motion.div
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: hovered ? 1 : 0 }}
-                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                              className="absolute top-0 left-0"
-                            >
-                              <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                              />
-                            </motion.div>
-                          </div>
-                        </>
-                      )}
-                    </HoverButton>
-                  </Link>
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
                 </div>
               </div>
             </motion.div>
@@ -1430,14 +1430,14 @@ const Home: FC = () => {
                     alt="Water Conservation"
                     fill
                     className="object-cover grayscale"
-                  />
-                </div>
+                />
+              </div>
                 <div className="py-6">
                   <h3 className="font-[Inter_Tight] font-bold text-[18px] leading-[140%] uppercase align-middle">Water Conservation</h3>
                   <p className="text-sm text-gray-600 mt-2">
                     Information regarding awards received by the Hitachi Group in various fields and related announcements.
                   </p>
-                </div>
+              </div>
               </div>
 
               {/* Policy */}
@@ -1448,15 +1448,15 @@ const Home: FC = () => {
                     alt="Policy"
                     fill
                     className="object-cover grayscale"
-                  />
-                </div>
+                />
+              </div>
                 <div className="py-6">
                   <h3 className="font-[Inter_Tight] font-bold text-[18px] leading-[140%] uppercase align-middle">Policy</h3>
                   <p className="text-sm text-gray-600 mt-2">
                     Information regarding awards received by the Hitachi Group in various fields and related announcements.
                   </p>
                 </div>
-              </div>
+            </div>
 
               {/* Climate Change & Water */}
               <div className="w-full bg-[#f2f2f2] rounded-lg overflow-hidden shadow-sm">
@@ -1485,7 +1485,7 @@ const Home: FC = () => {
                     fill
                     className="object-cover"
                   />
-                </div>
+            </div>
                 <div className="py-6">
                   <h3 className="font-[Inter_Tight] font-bold text-[18px] leading-[140%] uppercase align-middle">Industry Impacts and Solutions</h3>
                   <p className="text-sm text-gray-600 mt-2">
