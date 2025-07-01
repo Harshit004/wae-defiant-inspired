@@ -609,7 +609,7 @@ export default function Home() {
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
                   fontSize: "12px",
-                  lineHeight: "24px",
+                  lineHeight: "120%",
                   letterSpacing: "0%",
                   verticalAlign: "middle",
                 }}
@@ -681,7 +681,7 @@ export default function Home() {
                         fontFamily: "'Inter Tight', sans-serif",
                         fontWeight: 400,
                         fontSize: "12px",
-                        lineHeight: "24px",
+                        lineHeight: "120%",
                         letterSpacing: "0%",
                         verticalAlign: "middle",
                         marginBottom: "40px",
