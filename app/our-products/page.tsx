@@ -9,7 +9,7 @@ import Link from "next/link"
 import Footer from "@/components/footer" // Assuming these components exist
 import ConnectWithUs from "@/components/connect-with-us" // Assuming this component exists
 
-// --- NEW MOBILE HEADER COMPONENT (Copied from Our Portfolio) ---
+// --- MOBILE HEADER COMPONENT (Copied from homepage3) ---
 interface MobileHeaderProps {
   productsItems: { text: string; href: string }[];
   blueprintItems: { text: string; href: string; }[];
@@ -26,18 +26,21 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
       document.body.style.overflow = '';
     }
     return () => {
-      document.body.style.overflow = ''; // Cleanup on unmount
+      document.body.style.overflow = '';
     };
   }, [isMobileMenuOpen]);
 
   return (
     <>
       {/* Fixed Mobile Header Bar (Visible only on small screens) */}
-      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-black/10 md:hidden">
+      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-transparent md:hidden">
         {/* Mobile Logo */}
         <Link href="/homepage3">
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce113ad4-0a6b-43dd-066c-26769520d000/public"
+            src={isMobileMenuOpen
+              ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+              : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce113ad4-0a6b-43dd-066c-26769520d000/public"
+            }
             alt="WAE Logo Mobile"
             width={40}
             height={40}
@@ -46,37 +49,78 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
         {/* Hamburger Menu Icon */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="flex flex-col justify-around w-6 h-5 relative z-50 focus:outline-none"
+          className="flex flex-col justify-center items-center w-8 h-8 relative z-50 focus:outline-none"
           aria-label="Toggle mobile menu"
         >
-          {/* Hamburger lines - always white for visibility on white background */}
-          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? 'rotate-45 translate-x-1.5 translate-y-1.5' : ''}`}></span>
-          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? '-rotate-45 translate-x-1.5 -translate-y-1.5' : ''}`}></span>
+          {/* Top bar */}
+          <span
+            className={`block absolute h-0.5 w-6 transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'bg-black' : 'bg-white'} ${isMobileMenuOpen ? 'rotate-45' : ''}`}
+            style={{ top: '18px', left: '8px', transform: isMobileMenuOpen ? 'rotate(45deg)' : 'translateY(-4px)' }}
+          ></span>
+          {/* Bottom bar */}
+          <span
+            className={`block absolute h-0.5 w-6 transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'bg-black' : 'bg-white'} ${isMobileMenuOpen ? '-rotate-45' : ''}`}
+            style={{ top: '18px', left: '8px', transform: isMobileMenuOpen ? 'rotate(-45deg)' : 'translateY(4px)' }}
+          ></span>
         </button>
       </div>
 
       {/* Mobile Menu Overlay (Slides in from right) */}
       <div
-        className={`fixed inset-0 bg-black z-40 flex flex-col items-start pt-[80px] pb-5 px-4 md:hidden transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed inset-0 bg-white z-40 flex flex-col pt-[80px] px-4 md:hidden transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        style={{ color: '#000' }}
       >
+        <div className="w-full h-px bg-black/10 mt[8px] mb-[30px]" />
+        {/* ORIGIN & OBJECTIVE ROW */}
+        <div className="grid mb-4" style={{ gridTemplateColumns: '40% 60%' }}>
+          <div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase', marginBottom: 12}}>ORIGIN</div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 14, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+              20.5937° N<br />78.9629° E
+            </div>
+          </div>
+          <div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase', marginBottom: 12}}>OBJECTIVE</div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 14, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+              To lead the way in sustainability<br />ahead of the next
+            </div>
+          </div>
+        </div>
+        <div className="w-full h-px bg-black/10 mb-2" />
 
-        {/* Menu Items */}
-        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full mb-8">
-          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Inside WAE</h3>
+        {/* INSIDE WAE SECTION - two-column grid */}
+        <div className="grid mb-2" style={{ gridTemplateColumns: '40% 60%' }}>
+          <div className="flex items-start mt-2">
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>INSIDE WAE</div>
+          </div>
+          <div className="flex flex-col">
           {productsItems.map((item, i) => (
-            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              <div key={i}>
+                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
               {item.text}
             </Link>
+                <div className="w-full h-px bg-black/10" />
+              </div>
           ))}
         </div>
-        <div className="w-full h-px bg-[#D9D9DC] mb-8" /> {/* Divider */}
-        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full">
-          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Etcetera</h3>
+        </div>
+        <div className="w-full h-px bg-black/10 mt-[12px] mb-2" />
+
+        {/* ETCETERA SECTION - two-column grid */}
+        <div className="grid mb-2" style={{ gridTemplateColumns: '40% 60%' }}>
+          <div className="flex items-start mt-2">
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>ETCETERA</div>
+          </div>
+          <div className="flex flex-col">
           {blueprintItems.map((item, i) => (
-            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              <div key={i}>
+                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
               {item.text}
             </Link>
+                <div className="w-full h-px bg-black/10" />
+              </div>
           ))}
+          </div>
         </div>
       </div>
     </>
@@ -517,7 +561,7 @@ export default function Home() {
 
         {/* Our Products Heading (Moved below hero and adjusted margin) */}
       <div className={containerClass} style={{marginTop: "80px"}}>
-        <h2 className=" text-[32px] md:text-[48px]"
+        <h2 className="text-[32px] md:text-[48px] text-center md:text-left"
           style={{
             fontFamily: "'Inter Tight', sans-serif",
             fontWeight: 500,
@@ -532,11 +576,11 @@ export default function Home() {
 
         {/* NEW SECTION: Product Category Grid (Grid 1 after hero) */}
         {/* gap-y-[60px] already applies to mobile for grid layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[100px] gap-y-[60px] mb-[60px] md:mb-[180px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[100px] gap-y-[60px] mb-[60px] md:mb-[180px] text-center md:text-left">
           {blogPosts.map((post, index) => (
             <div key={index}>
                 {/* Heading with Link */}
-              <Link className=" text-[14px] md:text-[16px]"
+              <Link className="text-[14px] md:text-[16px] block"
                 href={`#${titleToId(post.title)}`}
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
