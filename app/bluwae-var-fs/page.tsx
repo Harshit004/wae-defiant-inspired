@@ -410,7 +410,7 @@ const Home: FC = () => {
       </section>
 
       {/* Key Highlights SECTION */}
-      <section className="mx-[9.72%] mb-[9.72%] flex md:justify-between items-start">
+      <section className="mx-[9.72%] mb-[5rem] flex md:justify-between items-start">
         {/* Left Side - Heading */}
         <div className="md:w-[31.8%]">
           <h2 className="font-inter-tight font-medium text-4xl leading-[110%] tracking-normal align-middle">
@@ -483,21 +483,18 @@ const Home: FC = () => {
             </div>
       </section>
 
-      {/* 80px gap after Key Highlights */}
-      <div style={{ height: '80px' }} />
-
       {/* Two images, stacked, no gap/margin/padding between them */}
       <div>
         <Image
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ff38a7f1-6396-456c-41b9-9455840d3700/public"
-          alt="Product Detail 1"
+          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a36c528-3908-45d4-4692-a8a93078af00/public"
+          alt="BLUWAE VAR FS 1"
           width={1440}
           height={800}
           style={{ width: '100%', height: 'auto', display: 'block' }}
         />
         <Image
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c7bc4bf-6642-4eb0-d9b6-ffdde8427100/public"
-          alt="Product Detail 2"
+          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c6f71a7f-a47a-4855-8966-d5f067bddd00/public"
+          alt="BLUWAE VAR FS 2"
           width={1440}
           height={800}
           style={{ width: '100%', height: 'auto', display: 'block' }}
