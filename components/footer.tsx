@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Footer() {
   return (
     <footer className="bg-[#f2f2f2] w-full">
-      <div className="mx-auto w-full max-w-[1440px] px-[4.44%] pt-0 md:px-[8.75rem] md:pt-[11.25rem] pb-6 md:py-6">
+      <div className="mx-auto w-full max-w-[1440px] px-[4.44%] pt-0 md:px-[8.75rem] md:pt-[5rem] pb-6 md:py-6">
 
         {/* Overall horizontal rule at the top - Hidden on mobile, visible on desktop */}
         <div className="w-full h-px bg-[#D9D9DC] mb-4 hidden md:block" />

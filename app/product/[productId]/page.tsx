@@ -1,23 +1,23 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Footer from "@/components/footer";
 import RelatedCard from "@/components/related-card";
 import Link from "next/link"; // Import the Link component
 import ContactSection from "@/components/contact-section";
 import { motion } from "framer-motion";
+import { useParams, notFound } from "next/navigation";
+import products from "@/data/products";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
-  href?: string; // Keep this if it was there before
-  invertedColors?: boolean; // <--- Add this line
 }
 
 /**
  * Reusable hover button component.
  */
-const HoverButton: FC<HoverButtonProps> = ({ children, href, invertedColors }) => {
+const HoverButton: FC<HoverButtonProps> = ({ children }) => {
   const [hovered, setHovered] = useState<boolean>(false);
 
   return (
@@ -35,16 +35,10 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, invertedColors }) =
         fontWeight: 500,
         fontSize: "12px",
         lineHeight: "100%",
-        // Update backgroundColor calculation based on invertedColors
-        backgroundColor: hovered
-          ? (invertedColors ? "#f2f2f2" : "#000") // If hovered, use light grey if inverted, else black
-          : (invertedColors ? "#000" : "#f2f2f2"), // If not hovered, use black if inverted, else light grey
-        border: "1px solid #00000066", // Keep this line
-        cursor: "pointer", // Keep this line
-        // Update color calculation based on invertedColors
-        color: hovered
-          ? (invertedColors ? "#000" : "#fff") // If hovered, use black text if inverted, else white text
-          : (invertedColors ? "#fff" : "#000"), // If not hovered, use white text if inverted, else black text
+        backgroundColor: hovered ? "#f2f2f2" : "#000",
+        border: "1px solid #00000066",
+        cursor: "pointer",
+        color: hovered ? "#000" : "#fff",
       }}
     >
       {children(hovered)}
@@ -52,24 +46,140 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, invertedColors }) =
   );
 };
 
+// --- MOBILE HEADER COMPONENT (Copied from /our-products) ---
+interface MobileHeaderProps {
+  productsItems: { text: string; href: string }[];
+  blueprintItems: { text: string; href: string }[];
+}
+
+const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintItems }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
+  return (
+    <>
+      {/* Fixed Mobile Header Bar (Visible only on small screens) */}
+      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-transparent md:hidden">
+        {/* Mobile Logo */}
+        <Link href="/homepage3">
+          <Image
+            src={isMobileMenuOpen
+              ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+              : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce113ad4-0a6b-43dd-066c-26769520d000/public"
+            }
+            alt="WAE Logo Mobile"
+            width={40}
+            height={40}
+          />
+        </Link>
+        {/* Hamburger Menu Icon */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="flex flex-col justify-center items-center w-8 h-8 relative z-50 focus:outline-none"
+          aria-label="Toggle mobile menu"
+        >
+          {/* Top bar */}
+          <span
+            className={`block absolute h-0.5 w-6 transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'bg-black' : 'bg-white'} ${isMobileMenuOpen ? 'rotate-45' : ''}`}
+            style={{ top: '18px', left: '8px', transform: isMobileMenuOpen ? 'rotate(45deg)' : 'translateY(-4px)' }}
+          ></span>
+          {/* Bottom bar */}
+          <span
+            className={`block absolute h-0.5 w-6 transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'bg-black' : 'bg-white'} ${isMobileMenuOpen ? '-rotate-45' : ''}`}
+            style={{ top: '18px', left: '8px', transform: isMobileMenuOpen ? 'rotate(-45deg)' : 'translateY(4px)' }}
+          ></span>
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay (Slides in from right) */}
+      <div
+        className={`fixed inset-0 bg-white z-40 flex flex-col pt-[80px] px-4 md:hidden transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        style={{ color: '#000' }}
+      >
+        <div className="w-full h-px bg-black/10 mt[8px] mb-[30px]" />
+        {/* ORIGIN & OBJECTIVE ROW */}
+        <div className="grid mb-4" style={{ gridTemplateColumns: '40% 60%' }}>
+          <div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase', marginBottom: 12}}>ORIGIN</div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 14, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+              20.5937° N<br />78.9629° E
+            </div>
+          </div>
+          <div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase', marginBottom: 12}}>OBJECTIVE</div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 14, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+              To lead the way in sustainability<br />ahead of the next
+            </div>
+          </div>
+        </div>
+        <div className="w-full h-px bg-black/10 mb-2" />
+
+        {/* INSIDE WAE SECTION - two-column grid */}
+        <div className="grid mb-2" style={{ gridTemplateColumns: '40% 60%' }}>
+          <div className="flex items-start mt-2">
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>INSIDE WAE</div>
+          </div>
+          <div className="flex flex-col">
+          {productsItems.map((item, i) => (
+              <div key={i}>
+                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+              {item.text}
+            </Link>
+                <div className="w-full h-px bg-black/10" />
+              </div>
+          ))}
+        </div>
+        </div>
+        <div className="w-full h-px bg-black/10 mt-[12px] mb-2" />
+
+        {/* ETCETERA SECTION - two-column grid */}
+        <div className="grid mb-2" style={{ gridTemplateColumns: '40% 60%' }}>
+          <div className="flex items-start mt-2">
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>ETCETERA</div>
+          </div>
+          <div className="flex flex-col">
+          {blueprintItems.map((item, i) => (
+              <div key={i}>
+                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+              {item.text}
+            </Link>
+                <div className="w-full h-px bg-black/10" />
+              </div>
+          ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+// --- END MOBILE HEADER COMPONENT ---
+
 const Home: FC = () => {
-  const [showMountingDropdown, setShowMountingDropdown] = useState(false);
+  const { productId } = useParams();
+  const product = products[productId as keyof typeof products];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const productImages = [
-    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/66bec5ad-27db-4683-5feb-30cebbf47f00/public", // Main image
-    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0b375ab3-4888-4377-a0e9-e16c5eb27d00/public", // Carousel image 1
-    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b359fae2-8c4b-475f-f63e-c60c1fee7e00/public", // Carousel image 2
-  ];
+
+  if (!product) return notFound();
 
   const handlePrevImage = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : productImages.length - 1
+      prevIndex > 0 ? prevIndex - 1 : product.images.length - 1
     );
   };
 
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex < productImages.length - 1 ? prevIndex + 1 : 0
+      prevIndex < product.images.length - 1 ? prevIndex + 1 : 0
     );
   };
 
@@ -100,249 +210,236 @@ const Home: FC = () => {
     { text: "Blog", href: "/blogs2" },
   ];
 
-  const featuresData = [
-    {
-      headline: "Touch-Free Dispensing",
-      subtext: "Enjoy effortless, hygienic water access with sensor-based, touchless technology.",
-    },
-    {
-      headline: "Effortless Integration",
-      subtext: "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution.",
-    },
-    {
-      headline: "Built Tough, Made to Last",
-      subtext: "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
-    },
-    {
-      headline: "No Mess, No Stress",
-      subtext: "An efficient drip tray with generous capacity catches spills, keeping the space clean and orderly.",
-    },
-  ];
-
-  const specificationsData = [
-    { subtext1: "Variant", heading: "FS", subtext2: "VAR 150/ 100/ 50" },
-    { subtext1: "Drip Try Capacity", heading: "1000ml", subtext2: "Milli Ltires" },
-    { subtext1: "Hot Temperature", heading: "30°C- 80°C", subtext2: "Default 50°C" },
-    { subtext1: "Cold Temperature", heading: "5°C- 24°C", subtext2: "Default 8°C" },
-    { subtext1: "Compressor", heading: "220V/50 HZ", subtext2: "RZ 134a1/8 HP" },
-  ];
+  const containerClass = "mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-[140px]";
+  const headerRef = useRef<HTMLDivElement>(null);
 
   return (
     <main>
-      {/* Normal Header */}
-      <header className={`w-full relative z-10 mb-5 px-[9.72%]`}> 
-          <div> 
-            {/* Top Row: Navigation */}
+      {/* RENDER MOBILE HEADER COMPONENT HERE (only on small screens) */}
+      <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
+
+      {/* DESKTOP HEADER (Hidden on small screens) */}
+      <header ref={headerRef} className={`w-full relative z-10 hidden mb-5 md:block`}>
+        <div className={containerClass}>
+          {/* Top Row: Navigation */}
+          <div
+            className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "12px",
+              lineHeight: "100%",
+              letterSpacing: "0px",
+            }}
+          >
+            <div>IDENTITY</div>
+            <div>ORIGIN</div>
+            <div>OBJECTIVE</div>
+            <div>INSIDE WAE</div>
+            <div>ETCETERA</div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+
+          {/* Bottom Row: Logo, Tagline and Menu Items */}
+          <div className="grid grid-cols-5 items-start">
+            {/* Logo */}
+            <div className="flex flex-col justify-center">
+              <Link href="/homepage3">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                  alt="WAE Logo"
+                  width={78}
+                  height={82}
+                />
+              </Link>
+            </div>
+
+            {/* Coordinates */}
             <div
-              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+              className="flex flex-col justify-center inline-block mr-1"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "12px",
+                fontSize: "11px",
                 lineHeight: "100%",
-                letterSpacing: "0px",
+                color: "#000000",
               }}
             >
-              <div>IDENTITY</div>
-              <div>ORIGIN</div>
-              <div>OBJECTIVE</div>
-              <div>INSIDE WAE</div>
-              <div>ETCETERA</div>
+              20.5937° N
+              <br />
+              78.9629° E
             </div>
 
-            {/* Divider */}
-            <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+            {/* Tagline */}
+            <div
+              className="flex flex-col justify-center inline-block mr-1"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "11px",
+                lineHeight: "100%",
+                color: "#000000",
+              }}
+            >
+              To lead the way in<br />sustainability ahead of the<br />rest
+            </div>
 
-            {/* Bottom Row: Logo, Tagline and Menu Items */}
-            <div className="grid grid-cols-5 items-start">
-              {/* Logo */}
-              <div className="flex flex-col justify-center">
-                <Link href="/homepage3">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                    alt="WAE Logo"
-                    width={78}
-                    height={82}
-                  />
-                </Link>
-              </div>
-
-              {/* Coordinates */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  lineHeight: "100%",
-                  color: "#000000",
-                }}
-              >
-                20.5937° N
-                <br />
-                78.9629° E
-              </div>
-
-              {/* Tagline */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  lineHeight: "100%",
-                  color: "#000000",
-                }}
-              >
-                To lead the way in<br />sustainability ahead of the<br />rest
-              </div>
-
-              {/* Inside WAE Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {productsItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
+            {/* Inside WAE Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {productsItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents">
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
                       </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                      <span className="menu-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
 
-              {/* ETCETERA Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {blueprintItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow blueprint-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
+            {/* ETCETERA Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {blueprintItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents">
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
                       </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                      <span className="menu-arrow blueprint-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
+         </div>
         </header>
 
       {/* Product Display Section */}
       <section className="mx-[9.72%] mb-[9.72%] flex items-start justify-between">
-        {/* Main Image */}
-        <div className="relative w-[550px] h-[448px] mr-[9px] flex items-center justify-center overflow-hidden">
-          <motion.div
-            key={productImages[currentImageIndex]}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="absolute w-full h-full"
-          >
-            <Image
-              src={productImages[currentImageIndex]}
-              alt={`Product Image ${currentImageIndex + 1}`}
-              layout="fill"
-              objectFit="contain"
-            />
-          </motion.div>
-          {/* Previous Arrow */}
-          {productImages.length > 1 && (
-            <button
-              onClick={handlePrevImage}
-              className="absolute w-[32px] h-[32px] rounded-[8px] border border-black bg-transparent flex items-center justify-center cursor-pointer left-4 top-[calc(50% - 16px)] z-20"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-black"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+        {/* Left Side - Image Section */}
+        <div className="flex flex-col">
+          {/* Main Image + Arrows Wrapper */}
+          <div className="relative w-[400px] h-[400px] mr-[9px] flex items-center justify-center mb-4">
+            {/* Previous Arrow */}
+            {product.images.length > 1 && (
+              <button
+                onClick={handlePrevImage}
+                className="absolute z-30 w-[32px] h-[32px] rounded-[8px] border border-black bg-black flex items-center justify-center cursor-pointer left-[-42px] top-1/2 -translate-y-1/2"
+                style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
-          )}
-          {/* Next Arrow */}
-          {productImages.length > 1 && (
-            <button
-              onClick={handleNextImage}
-              className="absolute w-[32px] h-[32px] rounded-[8px] border border-black bg-transparent flex items-center justify-center cursor-pointer right-4 top-[calc(50% - 16px)] z-20"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-black"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+            )}
+            {/* Next Arrow */}
+            {product.images.length > 1 && (
+              <button
+                onClick={handleNextImage}
+                className="absolute z-30 w-[32px] h-[32px] rounded-[8px] border border-black bg-black flex items-center justify-center cursor-pointer right-[-42px] top-1/2 -translate-y-1/2"
+                style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            )}
+            {/* Main Image (with overflow-hidden) */}
+            <div className="absolute w-full h-full z-10 overflow-hidden">
+              <motion.div
+                key={product.images[currentImageIndex]}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="w-full h-full"
+              >
+                <Image
+                  src={product.images[currentImageIndex]}
+                  alt={`Product Image ${currentImageIndex + 1}`}
+                  layout="fill"
+                  objectFit="contain"
                 />
-              </svg>
-            </button>
-          )}
+              </motion.div>
+            </div>
+          </div>
         </div>
 
-        {/* Horizontal Carousel and Product Information */}
+        {/* Right Side - Product Information */}
         <div className="ml-[8.33%] flex flex-col justify-start">
           <h3
             style={{
@@ -355,7 +452,7 @@ const Home: FC = () => {
               marginBottom: "16px",
             }}
           >
-            DRINKING WATER STATION - BLUWAE Series
+            DRINKING WATER FAUCETS - WATERMATIC Series
           </h3>
           <h2
             style={{
@@ -365,47 +462,69 @@ const Home: FC = () => {
               lineHeight: "100%",
               letterSpacing: "-2%",
               verticalAlign: "middle",
-              marginBottom: "32px", // Assuming 16px gap between heading and buttons
+              marginBottom: "32px",
             }}
           >
-            BLUWAE VAR
+            {product.name}
           </h2>
           <div className="flex gap-4 mb-[57px]">
-            <a href="/bluwae-var-ct">
-            <HoverButton href="/product-category" >
+            <HoverButton>
               {(hovered) => (
                 <>
                   FREE STANDING
+                  <div className="relative inline-block w-4 h-4">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: hovered ? 1 : 0 }}
+                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                      className="absolute top-0 left-0"
+                    ></motion.div>
+                  </div>
                 </>
               )}
             </HoverButton>
-            </a>
-            <HoverButton href="#" invertedColors={true}>
+            <HoverButton>
               {(hovered) => (
                 <>
                   COUNTER TOP
+                  <div className="relative inline-block w-4 h-4">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: hovered ? 1 : 0 }}
+                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                      className="absolute top-0 left-0"
+                    ></motion.div>
+                  </div>
                 </>
               )}
             </HoverButton>
           </div>
-
-          {/* Smaller Images Carousel */}
-          <div className="flex gap-[20px]">
-            {productImages.slice(1).map((image, index) => (
-              <div
-                key={index}
-                className="relative w-[194px] h-[202px] cursor-pointer overflow-hidden rounded-md"
-                onClick={() => setCurrentImageIndex(index + 1)} // Update main image on click
-              >
-                <Image
-                  src={image}
-                  alt={`Carousel Image ${index + 1}`}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-            ))}
-          </div>
+          {/* Thumbnail Carousel on the right, below the buttons */}
+          {product.images.length > 1 && (
+            <div className="flex gap-[20px] mt-2">
+              {product.images
+                .map((image: string, index: number) => ({ image, index }))
+                .filter(({ index }) => index !== currentImageIndex)
+                .slice(0, 2)
+                .map(({ image, index }) => (
+                  <div
+                    key={index}
+                    className={`relative w-[194px] h-[202px] cursor-pointer overflow-hidden rounded-md border-2 flex-shrink-0 ${
+                      currentImageIndex === index ? 'border-black' : 'border-gray-300'
+                    }`}
+                    onClick={() => setCurrentImageIndex(index)}
+                    style={{ transition: 'border 0.2s' }}
+                  >
+                    <Image
+                      src={image}
+                      alt={`Thumbnail ${index + 1}`}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -468,44 +587,20 @@ const Home: FC = () => {
                 <ul className="">
                 <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 ">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Plug and Play Operation.
+                    Built with durable SS-304 stainless steel for heavy-duty performance.
                 </li>
                 <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 ">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Inbuilt 5 stages of purification.
+                    Integrated with under the counter(UTC) storage unit - Hydropac and RO/booster unit(optional).
                 </li>
                 <li className="flex items-center gap-3 text-[12px] uppercase last:mb-0 ">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Can be customized as per client needs.
+                    Designed as a zero-landfill product, prioritizing sustainability and environmental responsibility.
                 </li>
                 </ul>
             </div>
             </div>
       </section>
-
-      {/* 80px gap after Key Highlights */}
-      <div style={{ height: '80px' }} />
-
-      {/* Two images, stacked, no gap/margin/padding between them */}
-      <div>
-        <Image
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ff38a7f1-6396-456c-41b9-9455840d3700/public"
-          alt="Product Detail 1"
-          width={1440}
-          height={800}
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-        <Image
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c7bc4bf-6642-4eb0-d9b6-ffdde8427100/public"
-          alt="Product Detail 2"
-          width={1440}
-          height={800}
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-      </div>
-
-      {/* 80px gap before Features section */}
-      <div style={{ height: '80px' }} />
 
       {/* Features SECTION */}
       <section className="mx-[9.72%] mb-[9.72%] flex md:justify-between items-start">
@@ -518,13 +613,11 @@ const Home: FC = () => {
 
         {/* Right Side - Feature Details */}
         <div className="mt-8 md:mt-0 md:w-[37.7%] space-y-5">
-          {featuresData.map((feature, index) => (
+          {product.features.map((feature: any, index: number) => (
             <div key={index} className="space-y-2">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-black rounded-full" />
-                <h3
-                  className="font-inter-tight font-normal text-sm leading-none tracking-normal align-middle uppercase"
-                >
+                <h3 className="font-inter-tight font-normal text-sm leading-none tracking-normal align-middle uppercase">
                   {feature.headline}
                 </h3>
               </div>
@@ -547,7 +640,7 @@ const Home: FC = () => {
 
         {/* Right Side - SPECIFICATIONS Details */}
         <div className="mt-8 md:mt-0 md:w-[37.7%] grid grid-cols-2 gap-x-[20px] gap-y-[20px]">
-          {specificationsData.map((spec, index) => (
+          {product.specifications.map((spec: any, index: number) => (
             <React.Fragment key={index}>
               <div>
                 <p className="font-inter-tight font-normal text-sm leading-[21px] tracking-normal align-middle">
@@ -562,7 +655,6 @@ const Home: FC = () => {
                   {spec.subtext2}
                 </p>
               </div>
-              {/* Render horizontal rule after the 2nd and 4th items */}
               {(index === 1 || index === 3) && (
                 <div className="col-span-2">
                   <hr className="border-bottom-[1px] border-solid border-[#D9D9DC]" style={{ width: 'calc(50%)' }} />

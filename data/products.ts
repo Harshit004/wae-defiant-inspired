@@ -1,0 +1,235 @@
+const defaultFeatures = [
+  {
+    headline: "Touch-Free Dispensing",
+    subtext: "Enjoy effortless, hygienic water access with sensor-based, touchless technology.",
+  },
+  {
+    headline: "Effortless Integration",
+    subtext: "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution.",
+  },
+  {
+    headline: "Built Tough, Made to Last",
+    subtext: "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
+  },
+  {
+    headline: "No Mess, No Stress",
+    subtext: "An efficient drip tray with generous capacity catches spills, keeping the space clean and orderly.",
+  },
+];
+
+const defaultSpecifications = [
+  { subtext1: "Variant", heading: "CT", subtext2: "VAR 150/ 100/ 50" },
+  { subtext1: "Drip Try Capacity", heading: "1000ml", subtext2: "Milli Ltires" },
+  { subtext1: "Hot Temperature", heading: "30°C- 80°C", subtext2: "Default 50°C" },
+  { subtext1: "Cold Temperature", heading: "5°C- 24°C", subtext2: "Default 8°C" },
+  { subtext1: "Compressor", heading: "220V/50 HZ", subtext2: "RZ 134a1/8 HP" },
+];
+
+const products = {
+  "bluwae-assistiflow": {
+    id: "bluwae-assistiflow",
+    name: "BLUWAE ASSISTIFLOW",
+    images: [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61bed0a3-d40d-46ec-2edd-a3fb53abe400/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6cbe11d1-d684-43fd-b674-e948d745eb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/875719ac-2f9e-456b-662f-d437c10dca00/public"
+    ],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "bluwae-pos": {
+    id: "bluwae-pos",
+    name: "BLUWAE POS",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6a2acaf3-4e68-43ff-260a-e504100a5500/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "bluwae-enki-fs": {
+    id: "bluwae-enki-fs",
+    name: "BLUWAE ENKI FS",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ea4dd229-e02c-4eb6-18d4-dbe962b36f00/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "bluwae-rom-fs": {
+    id: "bluwae-rom-fs",
+    name: "BLUWAE ROM FS",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3cae59a6-2900-4329-3fc1-dafd4cfe4900/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "bluwae-var-fs": {
+    id: "bluwae-var-fs",
+    name: "BLUWAE VAR FS",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/801e38f9-4666-4511-1462-1f8767824e00/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "bluwae-reva": {
+    id: "bluwae-reva",
+    name: "BLUWAE REVA",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f5bd039-db57-440a-a392-1934736b8800/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "bluwae-var-ct": {
+    id: "bluwae-var-ct",
+    name: "BLUWAE VAR CT",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1bc69e19-64e2-4b96-3158-916313af6300/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "bluwae-enki-ct": {
+    id: "bluwae-enki-ct",
+    name: "BLUWAE ENKI CT",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/24affdcc-bfce-4544-a951-4ec4de4fb500/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "bluwae-rom-ct": {
+    id: "bluwae-rom-ct",
+    name: "BLUWAE ROM CT",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/636ec9ab-40e5-4d1e-cabd-d17e14278a00/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "trublu-aenon": {
+    id: "trublu-aenon",
+    name: "TRUBLU AENON",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ddbc704a-4273-46d8-0f4c-6a4cb44db600/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "trublu-gamma": {
+    id: "trublu-gamma",
+    name: "TRUBLU GAMMA",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7abb9117-87ea-4b69-59d9-4508515d8700/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "trublu-delta": {
+    id: "trublu-delta",
+    name: "TRUBLU DELTA",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bdd2aab0-0a69-4f74-551f-b9fcf45ada00/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "trublu-alfa-100": {
+    id: "trublu-alfa-100",
+    name: "TRUBLU ALFA 100",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4083db4d-1dbc-477b-d4d3-753ff8f39800/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "trublu-alfa-tl": {
+    id: "trublu-alfa-tl",
+    name: "TRUBLU ALFA TL",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4083db4d-1dbc-477b-d4d3-753ff8f39800/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "trublu-alfa-bl": {
+    id: "trublu-alfa-bl",
+    name: "TRUBLU ALFA BL",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4083db4d-1dbc-477b-d4d3-753ff8f39800/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "trublu-lagoon": {
+    id: "trublu-lagoon",
+    name: "TRUBLU LAGOON",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/500e920c-fb2e-43e9-fca0-db0c5d5d0f00/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "trublu-alfa-ct": {
+    id: "trublu-alfa-ct",
+    name: "TRUBLU ALFA CT",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/90990ee2-c40a-4116-573d-7f4ea188a700/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "piper": {
+    id: "piper",
+    name: "Piper",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1d3b640-01ba-420a-bf17-b3145d223d00/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "indus": {
+    id: "indus",
+    name: "Indus",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5e3fd671-62bf-461f-f624-94099f554500/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "touch": {
+    id: "touch",
+    name: "Touch",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/374ef4c2-7b68-4f33-3fc9-7d4d3fc1ca00/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "moses": {
+    id: "moses",
+    name: "Moses",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e1ab0b09-5a47-41c8-eca8-f74bb2ab8b00/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "trx.tl": {
+    id: "trx.tl",
+    name: "TRX.TL",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e84e2022-b6ea-4f34-bb4d-3deb20d69700/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "hkn": {
+    id: "hkn",
+    name: "HKN",
+    images: [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e897fea-6219-4096-1989-ac1855719800/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76de532d-a762-4789-d348-ffa6ddab9700/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e897fea-6219-4096-1989-ac1855719800/public"
+    ],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "yami": {
+    id: "yami",
+    name: "YAMI",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/63c9d062-1079-41e1-6eb1-ca4c88045400/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "plusultra": {
+    id: "plusultra",
+    name: "PLUSULTRA",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0aced016-3f7d-4d41-7cf5-41b6930eac00/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "aqua": {
+    id: "aqua",
+    name: "AQUA",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/20abb608-f632-4157-ce38-12646a5c8a00/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "hydrobankseries": {
+    id: "hydrobankseries",
+    name: "HYDROBANKSERIES",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/822535eb-d4c2-472f-254f-8b4685410400/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+  "watermaker": {
+    id: "watermaker",
+    name: "WATERMAKER",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fa2654df-e6ca-4b14-34d8-d52f1d4c5800/public"],
+    features: defaultFeatures,
+    specifications: defaultSpecifications,
+  },
+};
+
+export default products; 
