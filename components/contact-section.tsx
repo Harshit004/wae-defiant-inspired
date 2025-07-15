@@ -80,10 +80,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="bg-transparent text-black">
-      <div className="container flex md:justify-between items-start gap-20">
+    <section className="bg-transparent text-black pb-20 md:pb-0">
+      <div className="container flex flex-col md:flex-row md:justify-between items-start gap-8 px-4 md:px-0">
         {/* Left Side - Contact Information */}
-        <div className="mb-8 md:mb-0 md:w-[calc(50%-10px)]">
+        <div className="mb-8 md:mb-0 w-full md:w-[calc(50%-10px)]">
           <h2 className="font-inter-tight text-4xl uppercase leading-none">
             FOR MORE INFO
           </h2>
@@ -91,7 +91,7 @@ const ContactSection = () => {
           <p className="font-inter-tight text-lg leading-relaxed">
             Talk to our Water Expert
           </p>
-          <div className="mt-10 flex flex-row gap-10">
+          <div className="mt-6 flex flex-col gap-6 md:flex-row md:gap-10">
             <div className="flex">
               {Icons.Email}
               <div className="ml-3 space-y-1">
@@ -107,7 +107,7 @@ const ContactSection = () => {
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="bg-transparent p-6 md:w-[calc(50%-10px)]">
+        <div className="bg-transparent p-0 md:p-6 w-full md:w-[calc(50%-10px)]">
           <form onSubmit={handleSubmit} className="space-y-10">
             <div className="relative">
               <input

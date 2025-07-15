@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Footer from "@/components/footer";
 import RelatedCard from "@/components/related-card";
@@ -10,47 +10,164 @@ import { motion } from "framer-motion";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
-  href?: string; // Keep this if it was there before
-  invertedColors?: boolean; // <--- Add this line
+  href?: string;
+  invertedColors?: boolean;
+  className?: string; // Allow passing custom classes
 }
 
 /**
  * Reusable hover button component.
  */
-const HoverButton: FC<HoverButtonProps> = ({ children, href, invertedColors }) => {
+const HoverButton: FC<HoverButtonProps> = ({ children, href, invertedColors, className }) => {
   const [hovered, setHovered] = useState<boolean>(false);
 
+  // The button component now accepts a className prop to allow for customization.
+  // If no className is provided, it defaults to 'w-fit'.
   return (
     <button
       type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="w-fit px-4 py-3 transition-all duration-650 ease"
+      className={`px-4 py-3 transition-all duration-650 ease ${className || 'w-fit'}`}
       style={{
         pointerEvents: "auto",
         display: "inline-flex",
         alignItems: "center",
+        justifyContent: "center", // Center content within the button
         gap: "8px",
         fontFamily: "'Inter Tight', sans-serif",
         fontWeight: 500,
         fontSize: "12px",
         lineHeight: "100%",
-        // Update backgroundColor calculation based on invertedColors
         backgroundColor: hovered
-          ? (invertedColors ? "#f2f2f2" : "#000") // If hovered, use light grey if inverted, else black
-          : (invertedColors ? "#000" : "#f2f2f2"), // If not hovered, use black if inverted, else light grey
-        border: "1px solid #00000066", // Keep this line
-        cursor: "pointer", // Keep this line
-        // Update color calculation based on invertedColors
+          ? (invertedColors ? "#f2f2f2" : "#000")
+          : (invertedColors ? "#000" : "#f2f2f2"),
+        border: "1px solid #00000066",
+        cursor: "pointer",
         color: hovered
-          ? (invertedColors ? "#000" : "#fff") // If hovered, use black text if inverted, else white text
-          : (invertedColors ? "#fff" : "#000"), // If not hovered, use white text if inverted, else black text
+          ? (invertedColors ? "#000" : "#fff")
+          : (invertedColors ? "#fff" : "#000"),
       }}
     >
       {children(hovered)}
     </button>
   );
 };
+
+// --- MOBILE HEADER COMPONENT (Copied from homepage3) ---
+interface MobileHeaderProps {
+  productsItems: { text: string; href: string }[];
+  blueprintItems: { text: string; href: string }[];
+}
+
+const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintItems }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
+  return (
+    <>
+      {/* Fixed Mobile Header Bar (Visible only on small screens) */}
+      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-transparent md:hidden">
+        {/* Mobile Logo */}
+        <Link href="/homepage3">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+            alt="WAE Logo Mobile"
+            width={40}
+            height={40}
+          />
+        </Link>
+        {/* Hamburger Menu Icon */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="flex flex-col justify-center items-center w-8 h-8 relative z-50 focus:outline-none"
+          aria-label="Toggle mobile menu"
+        >
+          {/* Top bar */}
+          <span
+            className={`block absolute h-0.5 w-6 bg-black transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'rotate-45' : ''}`}
+            style={{ top: '18px', left: '8px', transform: isMobileMenuOpen ? 'rotate(45deg)' : 'translateY(-4px)' }}
+          ></span>
+          {/* Bottom bar */}
+          <span
+            className={`block absolute h-0.5 w-6 bg-black transition-all duration-300 ease-in-out ${isMobileMenuOpen ? '-rotate-45' : ''}`}
+            style={{ top: '18px', left: '8px', transform: isMobileMenuOpen ? 'rotate(-45deg)' : 'translateY(4px)' }}
+          ></span>
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay (Slides in from right) */}
+      <div
+        className={`fixed inset-0 bg-white z-40 flex flex-col pt-[80px] px-4 md:hidden transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        style={{ color: '#000' }}
+      >
+        <div className="w-full h-px bg-black/10 mt[8px] mb-[30px]" />
+        {/* ORIGIN & OBJECTIVE ROW */}
+        <div className="grid mb-4" style={{ gridTemplateColumns: '40% 60%' }}>
+          <div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase', marginBottom: 12}}>ORIGIN</div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 14, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+              20.5937° N<br />78.9629° E
+            </div>
+          </div>
+          <div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase', marginBottom: 12}}>OBJECTIVE</div>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 14, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+              To lead the way in sustainability<br />ahead of the next
+            </div>
+          </div>
+        </div>
+        <div className="w-full h-px bg-black/10 mb-2" />
+
+        {/* INSIDE WAE SECTION - two-column grid */}
+        <div className="grid mb-2" style={{ gridTemplateColumns: '40% 60%' }}>
+          <div className="flex items-start mt-2">
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>INSIDE WAE</div>
+          </div>
+          <div className="flex flex-col">
+          {productsItems.map((item, i) => (
+              <div key={i}>
+                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+              {item.text}
+            </Link>
+                <div className="w-full h-px bg-black/10" />
+              </div>
+          ))}
+        </div>
+        </div>
+        <div className="w-full h-px bg-black/10 mt-[12px] mb-2" />
+
+        {/* ETCETERA SECTION - two-column grid */}
+        <div className="grid mb-2" style={{ gridTemplateColumns: '40% 60%' }}>
+          <div className="flex items-start mt-2">
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: 12, lineHeight: '100%', letterSpacing: 0, textTransform: 'uppercase'}}>ETCETERA</div>
+          </div>
+          <div className="flex flex-col">
+          {blueprintItems.map((item, i) => (
+              <div key={i}>
+                <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-[16px] font-normal py-2" style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: 16, lineHeight: '100%', letterSpacing: 0, verticalAlign: 'middle'}}>
+              {item.text}
+            </Link>
+                <div className="w-full h-px bg-black/10" />
+              </div>
+          ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+// --- END MOBILE HEADER COMPONENT ---
 
 const Home: FC = () => {
   const [showMountingDropdown, setShowMountingDropdown] = useState(false);
@@ -127,180 +244,320 @@ const Home: FC = () => {
     { subtext1: "Compressor", heading: "220V/50 HZ", subtext2: "RZ 134a1/8 HP" },
   ];
 
+  // --- Mobile Products Carousel logic (from homepage4) ---
+  const productsCarouselRef = useRef<HTMLDivElement>(null);
+  const [showProductsLeftArrow, setShowProductsLeftArrow] = useState(false);
+  const [showProductsRightArrow, setShowProductsRightArrow] = useState(true);
+
+  const handleProductsScroll = useCallback(() => {
+    if (productsCarouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = productsCarouselRef.current;
+      const scrollThreshold = 5;
+      setShowProductsLeftArrow(scrollLeft > scrollThreshold);
+      setShowProductsRightArrow(scrollLeft + clientWidth < scrollWidth - scrollThreshold);
+    }
+  }, []);
+
+  const scrollProductsCarousel = (direction: 'left' | 'right') => {
+    if (productsCarouselRef.current) {
+      const slideWidth = productsCarouselRef.current.clientWidth;
+      const scrollAmount = direction === 'right' ? slideWidth : -slideWidth;
+      productsCarouselRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  useEffect(() => {
+    const carousel = productsCarouselRef.current;
+    if (carousel) {
+      carousel.addEventListener('scroll', handleProductsScroll);
+      handleProductsScroll();
+    }
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener('scroll', handleProductsScroll);
+      }
+    };
+  }, [handleProductsScroll]);
+
   return (
     <main>
-      {/* Normal Header */}
-      <header className={`w-full relative z-10 mb-5 px-[9.72%]`}> 
-          <div> 
-            {/* Top Row: Navigation */}
+      {/* RENDER MOBILE HEADER COMPONENT HERE (only on small screens) */}
+      <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
+      {/* DESKTOP HEADER (Hidden on small screens) */}
+      <header className="w-full bg-[#f2f2f2] relative z-10 mb-0 hidden md:block">
+        <div className="mx-auto w-full max-w-[1440px] px-[140px]">
+          {/* Top Row: Navigation */}
+          <div
+            className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "12px",
+              lineHeight: "100%",
+              letterSpacing: "0px",
+            }}
+          >
+            <div><Link href="#">IDENTITY</Link></div>
+            <div><Link href="#">ORIGIN</Link></div>
+            <div><Link href="#">OBJECTIVE</Link></div>
+            <div><Link href="#">INSIDE WAE</Link></div>
+            <div><Link href="#">ETCETERA</Link></div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+
+          {/* Bottom Row: Logo, Coordinates, Tagline, Menu Items */}
+          <div className="grid grid-cols-5 items-start">
+            {/* Logo */}
+            <div className="flex flex-col justify-center">
+              <Link href="/homepage3">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                  alt="WAE Logo"
+                  width={78}
+                  height={82}
+                />
+              </Link>
+            </div>
+
+            {/* Coordinates */}
             <div
-              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+              className="flex flex-col justify-center inline-block mr-1"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "12px",
+                fontSize: "11px",
                 lineHeight: "100%",
-                letterSpacing: "0px",
+                color: "#000000",
               }}
             >
-              <div>IDENTITY</div>
-              <div>ORIGIN</div>
-              <div>OBJECTIVE</div>
-              <div>INSIDE WAE</div>
-              <div>ETCETERA</div>
+              20.5937° N
+              <br />
+              78.9629° E
             </div>
 
-            {/* Divider */}
-            <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+            {/* Tagline */}
+            <div
+              className="flex flex-col justify-center inline-block mr-1"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "11px",
+                lineHeight: "100%",
+                color: "#000000",
+              }}
+            >
+              To lead the way in<br />sustainability ahead of the<br />rest
+            </div>
 
-            {/* Bottom Row: Logo, Tagline and Menu Items */}
-            <div className="grid grid-cols-5 items-start">
-              {/* Logo */}
-              <div className="flex flex-col justify-center">
-                <Link href="/homepage3">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                    alt="WAE Logo"
-                    width={78}
-                    height={82}
-                  />
-                </Link>
-              </div>
-
-              {/* Coordinates */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  lineHeight: "100%",
-                  color: "#000000",
-                }}
-              >
-                20.5937° N
-                <br />
-                78.9629° E
-              </div>
-
-              {/* Tagline */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  lineHeight: "100%",
-                  color: "#000000",
-                }}
-              >
-                To lead the way in<br />sustainability ahead of the<br />rest
-              </div>
-
-              {/* Inside WAE Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {productsItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
+            {/* Inside WAE Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {productsItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents">
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
                       </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                      <span className="menu-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
 
-              {/* ETCETERA Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {blueprintItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow blueprint-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
+            {/* ETCETERA Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {blueprintItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents">
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
                       </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                      <span className="menu-arrow blueprint-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
-        </header>
+        </div>
+      </header>
 
       {/* Product Display Section */}
-      <section className="mx-[9.72%] mb-[9.72%] flex items-start justify-between">
-        {/* Main Image */}
-        <div className="relative w-[550px] h-[448px] mr-[9px] flex items-center justify-center overflow-hidden">
-          <motion.div
-            key={productImages[currentImageIndex]}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="absolute w-full h-full"
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-[140px]">
+      {/* 80px gap after header on mobile */}
+      <div className="block md:hidden" style={{ height: '80px' }} />
+      <section className="mb-[9.72%] flex flex-col md:flex-row items-start justify-between gap-8 md:gap-0 pt-0 md:pt-[20px]">
+        
+        {/* FIX: Swapped the order of Title and Carousel for mobile view */}
+
+        {/* Product Title Section (mobile) */}
+        <div className="md:hidden w-full max-w-sm mx-auto mt-6 mb-0 px-0">
+          <h3
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "12px",
+              lineHeight: "140%",
+              letterSpacing: "0%",
+              verticalAlign: "middle",
+              marginBottom: "8px",
+              textTransform: "uppercase",
+            }}
+            className="text-center"
           >
-            <Image
-              src={productImages[currentImageIndex]}
-              alt={`Product Image ${currentImageIndex + 1}`}
-              layout="fill"
-              objectFit="contain"
-            />
-          </motion.div>
+            DRINKING WATER STATION - BLUWAE Series
+          </h3>
+          <h2
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "32px",
+              lineHeight: "110%",
+              letterSpacing: "0%",
+              verticalAlign: "middle",
+              marginBottom: "32px",
+            }}
+            className="text-center"
+          >
+            BLUWAE VAR
+          </h2>
+          <div className="flex w-full gap-3 mb-0 px-5" style={{marginLeft: 'auto', marginRight: 'auto'}}>
+            <a className="w-[42.77vw]" href="/bluwae-var-ct">
+              <HoverButton href="/product-category" className="w-full">
+                {(hovered) => (
+                  <>
+                    FREE STANDING
+                  </>
+                )}
+              </HoverButton>
+            </a>
+            <div className="w-[42.77vw]">
+              <HoverButton href="#" invertedColors={true} className="w-full">
+                {(hovered) => (
+                  <>
+                    COUNTER TOP
+                  </>
+                )}
+              </HoverButton>
+            </div>
+          </div>
+        </div>
+        {/* Reduce gap after buttons before carousel to 16px */}
+        <div className="block md:hidden" style={{ height: '16px' }} />
+
+        {/* Mobile Carousel (homepage4 style) */}
+        <div className="md:hidden w-full max-w-sm mx-auto relative">
+          <div
+            className="flex overflow-x-scroll snap-x snap-mandatory pb-4 -mx-4 px-4 hide-scrollbar"
+            style={{ scrollBehavior: 'smooth' }}
+            ref={productsCarouselRef}
+          >
+            {productImages.map((img, idx) => (
+              <div key={idx} className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] rounded-lg p-4">
+                <div className="relative w-full h-[224px]">
+                  <Image
+                    src={img}
+                    alt={`Product Image ${idx + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Navigation Arrows */}
+          {showProductsLeftArrow && (
+            <button
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 ml-[6%] bg-transparent hover:bg-white/10 rounded-full transition-all duration-300 flex items-center justify-center"
+              onClick={() => scrollProductsCarousel('left')}
+              aria-label="Previous slide"
+            >
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65c77dc9-8867-4c14-2e26-180c14b84e00/public"
+                alt="Left Arrow"
+                width={40}
+                height={40}
+                className="transform hover:scale-110 transition-transform duration-300"
+              />
+            </button>
+          )}
+          {showProductsRightArrow && (
+            <button
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 mr-[6%] bg-transparent hover:bg-white/10 rounded-full transition-all duration-300 flex items-center justify-center"
+              onClick={() => scrollProductsCarousel('right')}
+              aria-label="Next slide"
+            >
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/58b7fb95-62e5-4cc5-5dc1-d798af2bdf00/public"
+                alt="Right Arrow"
+                width={40}
+                height={40}
+                className="transform hover:scale-110 transition-transform duration-300"
+              />
+            </button>
+          )}
+        </div>
+
+        {/* Desktop Carousel (existing) */}
+        <div className="hidden md:flex relative w-full max-w-[550px] mb-6 md:mb-0 items-center justify-center mx-auto md:mx-0">
           {/* Previous Arrow */}
           {productImages.length > 1 && (
             <button
               onClick={handlePrevImage}
-              className="absolute w-[32px] h-[32px] rounded-[8px] border border-black bg-transparent flex items-center justify-center cursor-pointer left-4 top-[calc(50% - 16px)] z-20"
+              className="absolute w-[32px] h-[32px] rounded-[8px] border border-black bg-transparent flex items-center justify-center cursor-pointer left-[-40px] top-1/2 -translate-y-1/2 z-20"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -318,11 +575,27 @@ const Home: FC = () => {
               </svg>
             </button>
           )}
+          <div className="relative w-full h-[300px] md:h-[448px] overflow-hidden">
+            <motion.div
+              key={productImages[currentImageIndex]}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="w-full h-full"
+            >
+              <Image
+                src={productImages[currentImageIndex]}
+                alt={`Product Image ${currentImageIndex + 1}`}
+                layout="fill"
+                objectFit="contain"
+              />
+            </motion.div>
+          </div>
           {/* Next Arrow */}
           {productImages.length > 1 && (
             <button
               onClick={handleNextImage}
-              className="absolute w-[32px] h-[32px] rounded-[8px] border border-black bg-transparent flex items-center justify-center cursor-pointer right-4 top-[calc(50% - 16px)] z-20"
+              className="absolute w-[32px] h-[32px] rounded-[8px] border border-black bg-transparent flex items-center justify-center cursor-pointer right-[-40px] top-1/2 -translate-y-1/2 z-20"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -342,8 +615,8 @@ const Home: FC = () => {
           )}
         </div>
 
-        {/* Horizontal Carousel and Product Information */}
-        <div className="ml-[8.33%] flex flex-col justify-start">
+        {/* Horizontal Carousel and Product Information (desktop only) */}
+        <div className="hidden md:block w-full md:ml-[8.33%] flex flex-col justify-start">
           <h3
             style={{
               fontFamily: "'Inter Tight', sans-serif",
@@ -365,20 +638,20 @@ const Home: FC = () => {
               lineHeight: "100%",
               letterSpacing: "-2%",
               verticalAlign: "middle",
-              marginBottom: "32px", // Assuming 16px gap between heading and buttons
+              marginBottom: "32px",
             }}
           >
             BLUWAE VAR
           </h2>
-          <div className="flex gap-4 mb-[57px]">
+          <div className="flex gap-4 mb-[32px] flex-wrap">
             <a href="/bluwae-var-ct">
-            <HoverButton href="/product-category" >
-              {(hovered) => (
-                <>
-                  FREE STANDING
-                </>
-              )}
-            </HoverButton>
+              <HoverButton href="/product-category" >
+                {(hovered) => (
+                  <>
+                    FREE STANDING
+                  </>
+                )}
+              </HoverButton>
             </a>
             <HoverButton href="#" invertedColors={true}>
               {(hovered) => (
@@ -388,14 +661,13 @@ const Home: FC = () => {
               )}
             </HoverButton>
           </div>
-
-          {/* Smaller Images Carousel */}
-          <div className="flex gap-[20px]">
+          {/* Smaller Images Carousel (desktop only) */}
+          <div className="flex gap-[12px] md:gap-[20px] overflow-x-auto md:overflow-visible w-full pb-2">
             {productImages.slice(1).map((image, index) => (
               <div
                 key={index}
-                className="relative w-[194px] h-[202px] cursor-pointer overflow-hidden rounded-md"
-                onClick={() => setCurrentImageIndex(index + 1)} // Update main image on click
+                className="relative min-w-[120px] min-h-[120px] md:w-[194px] md:h-[202px] w-[40vw] h-[40vw] max-w-[194px] max-h-[202px] cursor-pointer overflow-hidden rounded-md border border-gray-200"
+                onClick={() => setCurrentImageIndex(index + 1)}
               >
                 <Image
                   src={image}
@@ -408,20 +680,24 @@ const Home: FC = () => {
           </div>
         </div>
       </section>
+      </div>
 
+      {/* 80px gap between sections on mobile */}
+      <div className="block md:hidden" style={{ height: '64px' }} />
       {/* Key Highlights SECTION */}
-      <section className="mx-[9.72%] mb-[5rem] flex md:justify-between items-start">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-[140px]">
+      <section className="mb-[3rem] flex flex-col items-center text-center md:items-start md:text-left md:flex-row md:justify-between gap-8 md:gap-0">
         {/* Left Side - Heading */}
-        <div className="md:w-[31.8%]">
-          <h2 className="font-inter-tight font-medium text-4xl leading-[110%] tracking-normal align-middle">
+        <div className="w-full md:w-[31.8%] mb-6 md:mb-0 flex flex-col items-center text-center">
+          <h2 className="font-inter-tight font-medium text-[32px] leading-[110%] tracking-normal align-middle md:text-4xl" style={{fontWeight: 500}}>
             KEY HIGHLIGHTS
           </h2>
         </div>
 
         {/* Right Side - Feature Details */}
-        <div className="mt-8 md:mt-0 md:w-[37.7%] space-y-5">
+        <div className="mt-4 md:mt-0 w-full md:w-[37.7%] space-y-5 flex flex-col items-center text-center md:items-start md:text-left">
             <div className="shrink-0 lg:flex-1 xl:w-[500px]">
-                <div className="mb-5 flex items-center gap-4 text-lg md:mb-8 lg:gap-9 xl:mb-10">
+                <div className="mb-5 flex flex-row justify-center gap-4 text-lg md:mb-8 md:justify-start md:gap-9 xl:mb-10">
                 <div className="flex flex-col items-center justify-center gap-3">
                     <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ fill: '#FF470D' }}>
                     <path d="M13.4167 20.3955C9.56553 20.3955 6.43457 17.2645 6.43457 13.4133C6.43457 9.56211 9.56553 6.43115 13.4167 6.43115C17.2679 6.43115 20.3989 9.56211 20.3989 13.4133C20.3989 17.2645 17.2679 20.3955 13.4167 20.3955ZM13.4167 7.74663C10.2917 7.74663 7.75005 10.2883 7.75005 13.4133C7.75005 16.5383 10.2917 19.08 13.4167 19.08C16.5417 19.08 19.0834 16.5383 19.0834 13.4133C19.0834 10.2883 16.5417 7.74663 13.4167 7.74663Z" fill="#FF470D"></path>
@@ -462,29 +738,32 @@ const Home: FC = () => {
                     <h6 className="text-[12px]">Ambient</h6>
                 </div>
                 </div>
-                <div className="mb-4 text-sm uppercase xl:mb-6 xl:max-w-[90%]">
+                <div className="mb-4 text-[12px] uppercase xl:mb-6 xl:max-w-[90%] text-center md:text-left" style={{fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, lineHeight: '140%'}}>
                 A Floor-standing model designed for convenient placement on the ground.
                 </div>
-                <ul className="">
-                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 ">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Plug and Play Operation.
-                </li>
-                <li className="mb-3 flex items-center gap-3 text-[12px] uppercase last:mb-0 ">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Inbuilt 5 stages of purification.
-                </li>
-                <li className="flex items-center gap-3 text-[12px] uppercase last:mb-0 ">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    Can be customized as per client needs.
-                </li>
+                {/* 40px gap after description before bullet points */}
+                <div className="block md:hidden" style={{ height: '40px' }} />
+                <ul className="flex flex-col items-center text-center md:items-start md:text-left">
+                  <li className="mb-3 flex items-center gap-3 text-[11px] uppercase last:mb-0 justify-center md:justify-start" style={{fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, lineHeight: '100%'}}>
+                      <div className="w-2 h-2 bg-black rounded-full mx-auto md:mx-0"></div>
+                      <span className="mx-auto md:mx-0 md:inline-block md:text-left">Plug and Play Operation.</span>
+                  </li>
+                  <li className="mb-3 flex items-center gap-3 text-[11px] uppercase last:mb-0 justify-center md:justify-start" style={{fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, lineHeight: '100%'}}>
+                      <div className="w-2 h-2 bg-black rounded-full mx-auto md:mx-0"></div>
+                      <span className="mx-auto md:mx-0 md:inline-block md:text-left">Inbuilt 5 stages of purification.</span>
+                  </li>
+                  <li className="flex items-center gap-3 text-[11px] uppercase last:mb-0 justify-center md:justify-start" style={{fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, lineHeight: '100%'}}>
+                      <div className="w-2 h-2 bg-black rounded-full mx-auto md:mx-0"></div>
+                      <span className="mx-auto md:mx-0 md:inline-block md:text-left">Can be customized as per client needs.</span>
+                  </li>
                 </ul>
             </div>
             </div>
       </section>
+      </div>
 
-      {/* Two images, stacked, no gap/margin/padding between them */}
-      <div>
+      {/* Two images, stacked, no gap/margin/padding between them (hidden on mobile) */}
+      <div className="hidden md:block">
         <Image
           src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a36c528-3908-45d4-4692-a8a93078af00/public"
           alt="BLUWAE VAR FS 1"
@@ -501,61 +780,65 @@ const Home: FC = () => {
         />
       </div>
 
-      {/* 80px gap before Features section */}
-      <div style={{ height: '80px' }} />
-
+      {/* 80px gap between sections on mobile */}
+      <div className="block md:hidden" style={{ height: '32px' }} />
       {/* Features SECTION */}
-      <section className="mx-[9.72%] mb-[9.72%] flex md:justify-between items-start">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-[140px]">
+      <section className="md:mb-[9.72%] flex flex-col items-center text-center md:items-start md:text-left md:flex-row md:justify-between gap-8 md:gap-0">
         {/* Left Side - Heading */}
-        <div className="md:w-[31.8%]">
-          <h2 className="font-inter-tight font-medium text-4xl leading-[110%] tracking-normal align-middle">
+        <div className="w-full md:w-[31.8%] mb-6 md:mb-0 flex flex-col items-center text-center">
+          <h2 className="font-inter-tight font-medium text-[32px] leading-[110%] tracking-normal align-middle md:text-4xl" style={{fontWeight: 500}}>
             FEATURES
           </h2>
         </div>
-
         {/* Right Side - Feature Details */}
-        <div className="mt-8 md:mt-0 md:w-[37.7%] space-y-5">
+        <div className="mt-4 md:mt-0 w-full md:w-[37.7%] space-y-5 flex flex-col items-center text-center md:items-start md:text-left">
           {featuresData.map((feature, index) => (
-            <div key={index} className="space-y-2">
-              <div className="flex items-center gap-3">
+            <div key={index} className="space-y-2 w-full">
+              {/* FIX: Centered the icon and headline on mobile */}
+              <div className="flex items-center justify-center md:justify-start gap-3">
                 <div className="w-2 h-2 bg-black rounded-full" />
                 <h3
-                  className="font-inter-tight font-normal text-sm leading-none tracking-normal align-middle uppercase"
+                  className="font-inter-tight font-normal text-[12px] leading-[100%] tracking-normal align-middle uppercase md:text-sm"
+                  style={{fontWeight: 400}}
                 >
                   {feature.headline}
                 </h3>
               </div>
-              <p className="font-inter-tight font-normal text-xs leading-[24px] tracking-normal align-middle">
+              <p className="font-inter-tight font-normal text-[10px] leading-[130%] tracking-normal align-middle text-center md:text-left" style={{fontWeight: 400}}>
                 {feature.subtext}
               </p>
             </div>
           ))}
         </div>
       </section>
+      </div>
 
+      {/* 80px gap between sections on mobile */}
+      <div className="block md:hidden" style={{ height: '80px' }} />
       {/* Specifications SECTION */}
-      <section className="mx-[9.72%] mb-[9.72%] flex md:justify-between items-start">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-[140px]">
+      <section className="md:mb-[9.72%] flex flex-col items-center text-center md:items-start md:text-left md:flex-row md:justify-between gap-8 md:gap-0">
         {/* Left Side - Heading */}
-        <div className="md:w-[31.8%]">
-          <h2 className="font-inter-tight font-medium text-4xl leading-[110%] tracking-normal align-middle">
+        <div className="w-full md:w-[31.8%] mb-6 md:mb-0 flex flex-col items-center text-center">
+          <h2 className="font-inter-tight font-medium text-[32px] leading-[110%] tracking-normal align-middle md:text-4xl" style={{fontWeight: 500}}>
             SPECIFICATIONS
           </h2>
         </div>
-
         {/* Right Side - SPECIFICATIONS Details */}
-        <div className="mt-8 md:mt-0 md:w-[37.7%] grid grid-cols-2 gap-x-[20px] gap-y-[20px]">
+        <div className="mt-4 md:mt-0 w-full md:w-[37.7%] grid grid-cols-1 md:grid-cols-2 gap-x-[20px] gap-y-[20px] items-start text-left">
           {specificationsData.map((spec, index) => (
             <React.Fragment key={index}>
               <div>
-                <p className="font-inter-tight font-normal text-sm leading-[21px] tracking-normal align-middle">
+                <p className="font-inter-tight font-normal text-[12px] leading-[21px] tracking-normal" style={{fontWeight: 400}}>
                   {spec.subtext1}
                 </p>
-                <div className="mb-[20px]" />
-                <h3 className="font-inter-tight font-light text-[32px] leading-[140%] tracking-normal align-middle">
+                <div className="mb-[12px]" />
+                <h3 className="font-inter-tight font-light text-[24px] leading-[140%] tracking-normal" style={{fontWeight: 400}}>
                   {spec.heading}
                 </h3>
-                <div className="mb-[20px]" />
-                <p className="font-inter-tight font-normal text-sm leading-[21px] tracking-normal align-middle">
+                <div className="mb-[12px]" />
+                <p className="font-inter-tight font-normal text-[12px] leading-[21px] tracking-normal" style={{fontWeight: 400}}>
                   {spec.subtext2}
                 </p>
               </div>
@@ -569,65 +852,84 @@ const Home: FC = () => {
           ))}
         </div>
       </section>
+      </div>
 
+      {/* 80px gap between sections on mobile */}
+      <div className="block md:hidden" style={{ height: '80px' }} />
       {/* Downloads SECTION */}
-      <section className="mx-[9.72%] mb-[9.72%] flex md:justify-between items-start">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-[140px]">
+      <section className="md:mb-[9.72%] flex flex-col items-center text-center md:items-start md:text-left md:flex-row md:justify-between gap-8 md:gap-0">
         {/* Left Side - Heading */}
-        <div className="md:w-[31.8%]">
-          <h2 className="font-inter-tight font-medium text-4xl leading-[110%] tracking-normal align-middle">
+        <div className="w-full md:w-[31.8%] mb-6 md:mb-0 flex flex-col items-center text-center">
+          <h2 className="font-inter-tight font-medium text-[32px] leading-[110%] tracking-normal align-middle md:text-4xl" style={{fontWeight: 500}}>
             DOWNLOADS
           </h2>
         </div>
-
         {/* Right Side - Downloads Button */}
-        <div className="mt-8 md:mt-0 md:w-[37.7%] grid grid-cols-2 gap-x-[20px] gap-y-[20px]">
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Download Brochure
-                        <div className="relative inline-block w-4 h-4">
-                            <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g id="Interface / Download">
-                                    <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </g>
-                            </svg>  
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: hovered ? 1 : 0 }}
-                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                                className="absolute top-0 left-0"
-                            >
-                            <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g id="Interface / Download">
-                                    <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </g>
-                            </svg>  
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
+        <div className="mt-0 md:mt-0 w-full md:w-[37.7%] grid grid-cols-1 gap-x-[20px] gap-y-[20px] items-center text-center md:items-start md:text-left">
+                  {/* FIX: Made button wrapper full width and passed w-full to the button */}
+                  <div className="w-full px-5 md:px-0">
+                    <HoverButton className="w-full">
+                      {(hovered) => (
+                        <>
+                          Download Brochure
+                          <div className="relative inline-block w-4 h-4">
+                              <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g id="Interface / Download">
+                                      <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                              </svg>  
+                              <motion.div
+                                  initial={{ opacity: 0 }}
+                                  animate={{ opacity: hovered ? 1 : 0 }}
+                                  transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                  className="absolute top-0 left-0"
+                              >
+                              <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g id="Interface / Download">
+                                      <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                              </svg>  
+                            </motion.div>
+                          </div>
+                        </>
+                      )}
+                    </HoverButton>
+                  </div>
         </div>
       </section>
+      </div>
 
-
+      {/* 80px gap between sections on mobile */}
+      <div className="block md:hidden" style={{ height: '80px' }} />
       {/* Explore Other Products SECTION */}
+
       <section
-      className="max-w-full px-[8.75rem] py-[7.5rem] bg-white"
-      style={{
+        className="max-w-full px-4 md:px-[8.75rem] py-10 md:py-[7.5rem] bg-white"
+        style={{
           position: "relative",
           borderTopLeftRadius: "0px",
           borderTopRightRadius: "0px",
-      }}
+        }}
       >
-      <h2 className="font-helvetica text-[3.63rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem]">
-          Explore Other Products
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        <h2
+          className="mb-6 md:mb-[2.5rem] text-center md:text-left"
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: "32px",
+            lineHeight: "120%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+          }}
+        >
+          Explore Other Categories
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-start">
 
           {/* Card 1 - Using <a> tag */}
           <a href="/product-category/drinking-water-stations" key="drinking-water-stations"> {/* Corrected path */}
-          <div> {/* Keep the div if needed for styling */}
+          <div className="w-full"> {/* Make card full width on mobile */}
               <RelatedCard
               image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public" // Ensure image URLs are correct
               title="Drinking Water Station - BLUWAE Series"
@@ -640,7 +942,7 @@ const Home: FC = () => {
 
           {/* Card 2 - Using <a> tag */}
           <a href="/product-category/water-dispenser" key="water-dispenser"> {/* Corrected path */}
-          <div> {/* Keep the div if needed for styling */}
+          <div className="w-full"> {/* Keep the div if needed for styling */}
               <RelatedCard
               image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public" // Ensure image URLs are correct
               title="Water Dispenser (W/O RO) - TRUBLU Series"
@@ -653,7 +955,7 @@ const Home: FC = () => {
 
           {/* Card 3 - Using <a> tag */}
           <a href="/product-category/drinking-water-faucets" key="drinking-water-faucets"> {/* Corrected path */}
-          <div> {/* Keep the div if needed for styling */}
+          <div className="w-full"> {/* Keep the div if needed for styling */}
               <RelatedCard
               image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public" // Ensure image URLs are correct
               title="Drinking Water Faucets - WATERMATIC Series"
@@ -666,7 +968,7 @@ const Home: FC = () => {
 
           {/* Card 4 - Using <a> tag */}
           <a href="/product-category/water-cooler" key="water-cooler"> {/* Corrected path */}
-          <div> {/* Keep the div if needed for styling */}
+          <div className="w-full"> {/* Keep the div if needed for styling */}
               <RelatedCard
               image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08a355dd-6233-4b12-1cf5-fee8716cca00/public" // Ensure image URLs are correct
               title="Water Cooler & Fountains - ZVR Series"
@@ -683,9 +985,11 @@ const Home: FC = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="pt-[140px] px-[9.72%] pb-0">
+      {/* <div className="mx-auto w-full max-w-[1440px] px-4 md:px-[140px]"> */}
+      <section className="pt-16 md:pt-[140px] pb-0">
         <ContactSection />
       </section>
+      {/* </div> */}
 
       {/* Footer Section */}
       <Footer />
