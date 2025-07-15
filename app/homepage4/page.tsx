@@ -1455,7 +1455,7 @@ const Home: FC = () => {
                   <p className="text-sm text-gray-600 mt-2">
                     Information regarding awards received by the Hitachi Group in various fields and related announcements.
                   </p>
-                </div>
+              </div>
             </div>
 
               {/* Climate Change & Water */}

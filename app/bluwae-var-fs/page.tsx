@@ -289,151 +289,151 @@ const Home: FC = () => {
       {/* DESKTOP HEADER (Hidden on small screens) */}
       <header className="w-full bg-[#f2f2f2] relative z-10 mb-0 hidden md:block">
         <div className="mx-auto w-full max-w-[1440px] px-[140px]">
-          {/* Top Row: Navigation */}
-          <div
-            className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
-            style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "12px",
-              lineHeight: "100%",
-              letterSpacing: "0px",
-            }}
-          >
+            {/* Top Row: Navigation */}
+            <div
+              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "12px",
+                lineHeight: "100%",
+                letterSpacing: "0px",
+              }}
+            >
             <div><Link href="#">IDENTITY</Link></div>
             <div><Link href="#">ORIGIN</Link></div>
             <div><Link href="#">OBJECTIVE</Link></div>
             <div><Link href="#">INSIDE WAE</Link></div>
             <div><Link href="#">ETCETERA</Link></div>
-          </div>
+            </div>
 
-          {/* Divider */}
-          <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+            {/* Divider */}
+            <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
 
           {/* Bottom Row: Logo, Coordinates, Tagline, Menu Items */}
-          <div className="grid grid-cols-5 items-start">
-            {/* Logo */}
-            <div className="flex flex-col justify-center">
-              <Link href="/homepage3">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                  alt="WAE Logo"
-                  width={78}
-                  height={82}
-                />
-              </Link>
-            </div>
+            <div className="grid grid-cols-5 items-start">
+              {/* Logo */}
+              <div className="flex flex-col justify-center">
+                <Link href="/homepage3">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                    alt="WAE Logo"
+                    width={78}
+                    height={82}
+                  />
+                </Link>
+              </div>
 
-            {/* Coordinates */}
-            <div
-              className="flex flex-col justify-center inline-block mr-1"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "11px",
-                lineHeight: "100%",
-                color: "#000000",
-              }}
-            >
-              20.5937° N
-              <br />
-              78.9629° E
-            </div>
+              {/* Coordinates */}
+              <div
+                className="flex flex-col justify-center inline-block mr-1"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "11px",
+                  lineHeight: "100%",
+                  color: "#000000",
+                }}
+              >
+                20.5937° N
+                <br />
+                78.9629° E
+              </div>
 
-            {/* Tagline */}
-            <div
-              className="flex flex-col justify-center inline-block mr-1"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "11px",
-                lineHeight: "100%",
-                color: "#000000",
-              }}
-            >
-              To lead the way in<br />sustainability ahead of the<br />rest
-            </div>
+              {/* Tagline */}
+              <div
+                className="flex flex-col justify-center inline-block mr-1"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "11px",
+                  lineHeight: "100%",
+                  color: "#000000",
+                }}
+              >
+                To lead the way in<br />sustainability ahead of the<br />rest
+              </div>
 
-            {/* Inside WAE Menu Items */}
-            <div className="flex flex-col justify-center space-y-2">
-              {productsItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "11px",
-                    lineHeight: "110%",
-                  }}
-                >
+              {/* Inside WAE Menu Items */}
+              <div className="flex flex-col justify-center space-y-2">
+                {productsItems.map((item, i) => (
+                  <div
+                    key={i}
+                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "11px",
+                      lineHeight: "110%",
+                    }}
+                  >
                   <Link href={item.href} className="contents">
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item.text}</span>
-                        <span className="block">{item.text}</span>
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
 
-            {/* ETCETERA Menu Items */}
-            <div className="flex flex-col justify-center space-y-2">
-              {blueprintItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "11px",
-                    lineHeight: "110%",
-                  }}
-                >
+              {/* ETCETERA Menu Items */}
+              <div className="flex flex-col justify-center space-y-2">
+                {blueprintItems.map((item, i) => (
+                  <div
+                    key={i}
+                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "11px",
+                      lineHeight: "110%",
+                    }}
+                  >
                   <Link href={item.href} className="contents">
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item.text}</span>
-                        <span className="block">{item.text}</span>
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow blueprint-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow blueprint-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
-                  </Link>
-                </div>
-              ))}
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
       {/* Product Display Section */}
       <div className="mx-auto w-full max-w-[1440px] px-4 md:px-[140px]">
@@ -508,7 +508,7 @@ const Home: FC = () => {
             {productImages.map((img, idx) => (
               <div key={idx} className="flex-shrink-0 snap-center w-full flex flex-col items-center bg-[#f2f2f2] rounded-lg p-4">
                 <div className="relative w-full h-[224px]">
-                  <Image
+            <Image
                     src={img}
                     alt={`Product Image ${idx + 1}`}
                     fill
@@ -645,13 +645,13 @@ const Home: FC = () => {
           </h2>
           <div className="flex gap-4 mb-[32px] flex-wrap">
             <a href="/bluwae-var-ct">
-              <HoverButton href="/product-category" >
-                {(hovered) => (
-                  <>
-                    FREE STANDING
-                  </>
-                )}
-              </HoverButton>
+            <HoverButton href="/product-category" >
+              {(hovered) => (
+                <>
+                  FREE STANDING
+                </>
+              )}
+            </HoverButton>
             </a>
             <HoverButton href="#" invertedColors={true}>
               {(hovered) => (
@@ -747,15 +747,15 @@ const Home: FC = () => {
                   <li className="mb-3 flex items-center gap-3 text-[11px] uppercase last:mb-0 justify-center md:justify-start" style={{fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, lineHeight: '100%'}}>
                       <div className="w-2 h-2 bg-black rounded-full mx-auto md:mx-0"></div>
                       <span className="mx-auto md:mx-0 md:inline-block md:text-left">Plug and Play Operation.</span>
-                  </li>
+                </li>
                   <li className="mb-3 flex items-center gap-3 text-[11px] uppercase last:mb-0 justify-center md:justify-start" style={{fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, lineHeight: '100%'}}>
                       <div className="w-2 h-2 bg-black rounded-full mx-auto md:mx-0"></div>
                       <span className="mx-auto md:mx-0 md:inline-block md:text-left">Inbuilt 5 stages of purification.</span>
-                  </li>
+                </li>
                   <li className="flex items-center gap-3 text-[11px] uppercase last:mb-0 justify-center md:justify-start" style={{fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, lineHeight: '100%'}}>
                       <div className="w-2 h-2 bg-black rounded-full mx-auto md:mx-0"></div>
                       <span className="mx-auto md:mx-0 md:inline-block md:text-left">Can be customized as per client needs.</span>
-                  </li>
+                </li>
                 </ul>
             </div>
             </div>
@@ -870,31 +870,31 @@ const Home: FC = () => {
                   {/* FIX: Made button wrapper full width and passed w-full to the button */}
                   <div className="w-full px-5 md:px-0">
                     <HoverButton className="w-full">
-                      {(hovered) => (
-                        <>
-                          Download Brochure
-                          <div className="relative inline-block w-4 h-4">
-                              <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g id="Interface / Download">
-                                      <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                              </svg>  
-                              <motion.div
-                                  initial={{ opacity: 0 }}
-                                  animate={{ opacity: hovered ? 1 : 0 }}
-                                  transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                                  className="absolute top-0 left-0"
-                              >
-                              <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g id="Interface / Download">
-                                      <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                              </svg>  
-                            </motion.div>
-                          </div>
-                        </>
-                      )}
-                    </HoverButton>
+                    {(hovered) => (
+                      <>
+                        Download Brochure
+                        <div className="relative inline-block w-4 h-4">
+                            <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="Interface / Download">
+                                    <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </svg>  
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: hovered ? 1 : 0 }}
+                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                className="absolute top-0 left-0"
+                            >
+                            <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="Interface / Download">
+                                    <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </svg>  
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
                   </div>
         </div>
       </section>
@@ -906,11 +906,11 @@ const Home: FC = () => {
 
       <section
         className="max-w-full px-4 md:px-[8.75rem] py-10 md:py-[7.5rem] bg-white"
-        style={{
+      style={{
           position: "relative",
           borderTopLeftRadius: "0px",
           borderTopRightRadius: "0px",
-        }}
+      }}
       >
         <h2
           className="mb-6 md:mb-[2.5rem] text-center md:text-left"
@@ -924,7 +924,7 @@ const Home: FC = () => {
           }}
         >
           Explore Other Categories
-        </h2>
+      </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-start">
 
           {/* Card 1 - Using <a> tag */}
