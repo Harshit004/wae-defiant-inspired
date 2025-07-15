@@ -460,103 +460,57 @@ export default function Home() {
 
         {/* Hero section - now starts directly after header with padding for content */}
         <section
-            id="hero"
-            className="relative w-full overflow-hidden h-screen pt-[70px] md:pt-[160px]"
+          id="hero"
+          className="relative w-full overflow-hidden h-[550px] pt-[70px] md:pt-[160px]"
         >
-            {/* Image - positioned absolutely to be behind content */}
-            <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/de750a02-1047-42f2-d7db-f10e559f4100/public"
-                alt="Our Products Hero"
-                fill
-                className="object-cover -z-10"
-            />
-
-            {/* Text and image overlays - position relative to the padded area */}
-            <div
-                className="absolute hidden md:block"
-                style={{
-                    bottom: "30%",
-                    right: "calc(9.72%)",
-                    width: "393px",
-                    height: "159px",
-                }}
-            >
-                <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3785262c-3901-44fa-36ed-a4a936c6dc00/public"
-                    alt="Sustainable products responsible solutions"
-                    width={393}
-                    height={159}
-                    className="object-contain"
-                />
-            </div>
-
-            {/* Our Products Text - Mobile Version */}
-            <div
-                className="absolute md:hidden"
-                style={{
-                    bottom: "10%",
-                    left: "1rem",
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "2rem",
-                    lineHeight: "110%",
-                    color: "#000",
-                }}
-            >
-                Our Products
-            </div>
-
-            {/* Our Products Text - Desktop Version */}
-            <div
-                className="absolute  hidden md:block"
-                style={{
-                    bottom: "33%",
-                    left: "calc(9.72%)",
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "48px",
-                    lineHeight: "110%",
-                    color: "#fff",
-                }}
-            >
-                Our Products
-            </div>
-
-            {/* Scroll for more Text - Mobile Version */}
-            <div
-                className="absolute uppercase md:hidden"
-                style={{
-                    bottom: "5%",
-                    left: "1rem",
-                    width: "104px",
-                    height: "12px",
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "0.625rem",
-                    lineHeight: "100%",
-                    color: "#fff",
-                }}
-            >
-                Scroll for more ⤵︎
-            </div>
-
-            {/* Scroll for more Text - Desktop Version */}
-            <div
-                className="absolute uppercase hidden md:block"
-                style={{
-                    bottom: "30%",
-                    left: "calc(9.72%)",
-                    width: "104px",
-                    height: "12px",
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "10px",
-                    lineHeight: "100%",
-                    color: "#fff",
-                }}
-            >
-                Scroll for more ⤵︎
-            </div>
+          {/* Desktop: Background video (cover, aspect ratio maintained) */}
+          <video
+            className="hidden md:block absolute inset-0 w-screen  object-contain z-0"
+            style={{objectFit: 'contain' }}
+            src="/MicrosoftTeams-video (3).mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          {/* Mobile: Background image as before */}
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/de750a02-1047-42f2-d7db-f10e559f4100/public"
+            alt="Our Products Hero"
+            fill
+            className="object-cover -z-10 md:hidden"
+          />
+          {/* Mobile overlays only */}
+          <div
+            className="absolute md:hidden"
+            style={{
+              bottom: "10%",
+              left: "1rem",
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "2rem",
+              lineHeight: "110%",
+              color: "#000",
+            }}
+          >
+            Our Products
+          </div>
+          <div
+            className="absolute uppercase md:hidden"
+            style={{
+              bottom: "5%",
+              left: "1rem",
+              width: "104px",
+              height: "12px",
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "0.625rem",
+              lineHeight: "100%",
+              color: "#fff",
+            }}
+          >
+            Scroll for more ⤵︎
+          </div>
         </section>
 
         {/* Our Products Heading (Moved below hero and adjusted margin) */}
