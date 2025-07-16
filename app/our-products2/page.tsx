@@ -183,33 +183,33 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
 const blogPosts = [
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public",
-      title: "DRINKING WATER STATION - BLUWAE Series",
-      description: "Water dispensers with inbuilt purification —pure, safe water delivered efficiently. Designed to reduce plastic waste and energy consumption, making sustainability easy.",
+      title: "BLUWAE",
+      description: "Our Point of Use purification systems offer decentralized water purification with integrated RO and multi-stage filtration—designed for high-performance, on-site treatment.\nIdeal for institutional and commercial environments seeking consistent, efficient, and compliant drinking water solutions.",
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
-      title: "WATER DISPENSER (W/O RO) - TRUBLU Series",
-      description: "Stainless steel water dispensers give you fresh, clean water anytime. Compact, energy-efficient, and perfect for spaces where RO water is not readily available.",
+      title: "TRUBLU",
+      description: "For enhanced microbial control in high-consumption environments, integrate our in-tank LED-UVC water dispensers with an external ultra filter—delivering advanced, multi-barrier purification suitable for institutional and commercial applications prioritizing safety and compliance.",
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
-      title: "DRINKING WATER FAUCETS - WATERMATIC Series",
-      description: "Drinking water faucets with under the counter storage units to make access to fresh water simple. Precision-engineered for smooth flow, with a focus on reducing waste and energy use.",
+      title: "WATERMATIC",
+      description: "Engineered for professional environments, our sensor-activated drinking water faucets enable touch-free, hygienic dispensing—combining advanced technology with a sleek, minimalist design to meet the safety, efficiency, and aesthetic needs of modern B2B infrastructures.",
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08a355dd-6233-4b12-1cf5-fee8716cca00/public",
-      title: "WATER COOLER & FOUNTAINS - ZVR Series",
-      description: "Water coolers cum bubblers provide chilled water on demand. Built to be energy-efficient, they're ideal for public spaces, reducing both costs and plastic waste.",
+      title: "ZVR",
+      description: "Designed for institutional and commercial use, all units feature a bubbler faucet for direct drinking. Cooling functionality varies by model. To ensure a streamlined aesthetic and operational efficiency, purification, chilling, and heating modules are discreetly wall-mounted.",
     },
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
-      title: "PUBLIC UTILITY SYSTEMS - PUS Series",
-      description: "Designed for large public spaces, PUS systems ensure clean, accessible water. Engineered for durability and eco-friendliness, they support sustainable communities.",
+      title: "PUS",
+      description: "Designed for public access environments, these advanced water systems provide 24/7 availability of safe, purified drinking water. Built for reliability and supported by research, they offer durable, low-maintenance solutions for institutions and commercial infrastructure.",
     },
     {
         imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public",
-        title: "COMMERCIAL/INDUSTRIAL PLANTS",
-        description: "Power your facility with our large-scale hydration plants. Scalable and efficient, they offer high-volume water solutions with a commitment to sustainability.",
+        title: "BLUBOX",
+        description: "Engineered for institutional and commercial applications, high-capacity RO plants enable efficient purification and storage of large volumes of potable water—ensuring a consistent, reliable supply to meet operational, regulatory, and health-focused requirements.",
     },
   ];
 
@@ -566,6 +566,7 @@ export default function Home() {
                   lineHeight: "120%",
                   letterSpacing: "0%",
                   verticalAlign: "middle",
+                  whiteSpace: 'pre-line',
                 }}
               >
                 {post.description}
@@ -610,7 +611,7 @@ export default function Home() {
                 >
                   {post.title}
                 </h3>
-                {/* Description */}
+                {/* Description (Grid 2: Use new descriptions) */}
                 <p
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -622,7 +623,14 @@ export default function Home() {
                     marginBottom: "40px",
                   }}
                 >
-                  {post.description}
+                  {[
+                    "Experience on-demand purified water with our Point of Use systems—integrated RO and multi-stage filtration ensure efficient, reliable, and decentralized treatment",
+                    "Enhance microbial safety by pairing our in-tank LED-UVC water dispensers with an external ultra filter—ideal for high-demand, compliance-focused environment.",
+                    "Sensor-activated drinking water faucets enable contactless, hygienic dispensing—engineered for modern B2B spaces that demand efficiency, safety, and minimalist design.",
+                    "All dispensing units include a bubbler faucet for direct consumption; cooling varies by model. For seamless integration, treatment modules are wall-concealed and modular.",
+                    "Robust, research-backed water systems engineered for public infrastructure—ensuring continuous access to safe, purified drinking water in all conditions.",
+                    "High-capacity RO systems are engineered for large-scale purification and storage—ensuring uninterrupted access to safe, potable water in institutional settings."
+                  ][index]}
                 </p>
                 {/* Know More Button */}
                 <HoverButton href={`/product-category/${titleToId(post.title)}`}>
