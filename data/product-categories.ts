@@ -12,16 +12,14 @@ export interface ProductCategory {
     name: string;
     image: string;
   }[];
-  // Added hero and overlay image properties
-  heroImage?: string; // Made optional with '?' in case some categories don't have them
-  overlayImage?: string; // Made optional
+  heroVideo?: string;
 }
 
 export const productCategories: Record<string, ProductCategory> = {
   "drinking-water-stations": {
     id: "drinking-water-stations",
-    title: "DRINKING WATER STATIONS",
-    subtitle: "DRINKING WATER STATIONS - BLUWAE Series",
+    title: "BLUWAE",
+    subtitle: "BLUWAE",
     description: [
       "Our Drinking Water Stations aren't just another water dispenser—they're a smarter way to hydrate. Powered by advanced RO technology, they deliver 99.99% pure, great-tasting water while cutting down on single-use plastics. Designed with sustainability at the core, these stations are energy-efficient, reliable, and built to minimize your environmental footprint. It's hydration, but better for the planet.",
       "Innovation drives everything we do. Our stations don't just quench your thirst—they align with your values. By choosing our RO-powered dispensers, you're making a conscious choice for a greener future. It's more than just water; it's a commitment to sustainability that doesn't compromise on convenience or quality."
@@ -56,14 +54,12 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    // UPDATED hero image URL
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0d5b5913-42bc-4d1e-d92b-c26f7555cf00/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
+    heroVideo: "videos-product-categories/MicrosoftTeams-video (5).mp4",
   },
   "water-dispenser": {
     id: "water-dispenser",
-    title: "WATER DISPENSER",
-    subtitle: "WATER DISPENSER (W/O RO) - TRUBLU Series",
+    title: "TRUBLU",
+    subtitle: "TRUBLU",
     description: [
       "Our TRUBLU Series Water Dispensers offer a perfect blend of functionality and style. Designed for spaces where RO purification isn't required, these dispensers provide instant access to refreshing water while maintaining a sleek, modern aesthetic.",
       "With energy-efficient operation and durable construction, the TRUBLU Series is built to last. Whether in offices, schools, or public spaces, these dispensers deliver reliable performance with minimal environmental impact."
@@ -98,14 +94,12 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    // UPDATED hero image URL
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/90da93f5-08cb-4654-46ca-0b368dfea000/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
+    heroVideo: "videos-product-categories/MicrosoftTeams-video (6).mp4",
   },
   "drinking-water-faucets": {
     id: "drinking-water-faucets",
-    title: "DRINKING WATER FAUCETS",
-    subtitle: "DRINKING WATER FAUCETS - WATERMATIC Series",
+    title: "WATERMATIC",
+    subtitle: "WATERMATIC",
     description: [
       "The WATERMATIC Series brings innovation to your tap. These advanced drinking water faucets combine cutting-edge technology with elegant design, delivering purified water directly from your sink.",
       "Perfect for modern kitchens and commercial spaces, our faucets provide a seamless integration of style and functionality, ensuring clean water is always within reach."
@@ -135,14 +129,12 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    // UPDATED hero image URL
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1523cf1-02e9-46c8-33d4-111060e15b00/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
+    heroVideo: "videos-product-categories/MicrosoftTeams-video (7).mp4",
   },
   "water-cooler": {
     id: "water-cooler",
-    title: "WATER COOLER & FOUNTAINS",
-    subtitle: "WATER COOLER & FOUNTAINS - ZVR Series",
+    title: "ZVR",
+    subtitle: "ZVR",
     description: [
       "The ZVR Series redefines water coolers and fountains with its innovative design and superior performance. These units combine the functionality of a water cooler with the elegance of a fountain, creating a centerpiece for any space.",
       "With advanced cooling technology and energy-efficient operation, the ZVR Series provides refreshing water while maintaining a minimal environmental footprint."
@@ -177,14 +169,12 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    // UPDATED hero image URL
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9e486003-1d7c-41d2-2842-56ff33c48100/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
+    heroVideo: "videos-product-categories/MicrosoftTeams-video (12).mp4",
   },
   "public-utility-systems": {
     id: "public-utility-systems",
-    title: "PUBLIC UTILITY SYSTEMS",
-    subtitle: "PUBLIC UTILITY SYSTEMS - PUS Series",
+    title: "PUS",
+    subtitle: "PUS",
     description: [
       "Our PUS Series is designed for large public spaces, providing clean, accessible water with a focus on durability and eco-friendliness. These systems are built to handle high-volume usage while maintaining consistent water quality.",
       "Perfect for public areas, transportation hubs, and large institutions, our public utility systems ensure reliable water access for everyone."
@@ -214,14 +204,12 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/708253cf-b3b1-4b4c-e9ed-73f9c05aa400/public"
       }
     ],
-    // UPDATED hero image URL
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/171fde6f-9288-4e19-8bd5-afef67c25100/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
+    heroVideo: "videos-product-categories/MicrosoftTeams-video (4).mp4",
   },
-  "commercial-industrial-plants": {
-    id: "commercial-industrial-plants",
-    title: "COMMERCIAL/INDUSTRIAL PLANTS",
-    subtitle: "COMMERCIAL/INDUSTRIAL PLANTS",
+  "blubox": {
+    id: "blubox",
+    title: "BLUBOX",
+    subtitle: "BLUBOX",
     description: [
       "Our Commercial/Industrial Plants provide large-scale hydration solutions for facilities. These systems are designed to handle high-volume water needs while maintaining efficiency and reliability.",
       "Perfect for industrial facilities, large commercial spaces, and institutions, our plants deliver consistent water quality at scale."
@@ -251,8 +239,6 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/708253cf-b3b1-4b4c-e9ed-73f9c05aa400/public"
       }
     ],
-    // UPDATED hero image URL
-    heroImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f26e3982-8dd8-4ae7-8290-c4e4417cfe00/public",
-    overlayImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Kept the original overlay image link
+    heroVideo: "videos-product-categories/MicrosoftTeams-video (8).mp4",
   }
 };

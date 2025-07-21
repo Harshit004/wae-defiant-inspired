@@ -238,19 +238,30 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
       {/* Hero section */}
       <section
           id="hero"
-          className="relative h-screen w-full overflow-hidden mb-[140px]" // Hero has margin-bottom
+          className="relative w-full overflow-hidden mb-[140px]" // Hero has margin-bottom
         >
-           {/* Dynamic Hero Image */}
-          <Image
-            src={category.heroImage || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public"} // Use dynamic link, fallback to a default if none exists
-            alt={`Hero image for ${category.title}`} // Dynamic alt text
-            width={1440}
-            height={656}
-            className="object-cover w-full h-full" // Added h-full as per original analysis note
-          />
+          {/* Dynamic Hero Video or Fallback Image */}
+          {category.heroVideo ? (
+            <video
+              src={`/${category.heroVideo.replace(/^app\//, "")}`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
+          ) : (
+            <Image
+              src={"https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public"}
+              alt={`Hero image for ${category.title}`}
+              width={1440}
+              height={656}
+              className="object-cover w-full h-full"
+            />
+          )}
 
           {/* Text and dynamic image overlays remain absolute within the hero */}
-          <div
+          {/* <div
             className="absolute"
             style={{
               bottom: "30%",
@@ -296,7 +307,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
             }}
           >
             Scroll for more ⤵︎
-          </div>
+          </div> */}
         </section>
 
       {/* Product Category overview SECTION */}
