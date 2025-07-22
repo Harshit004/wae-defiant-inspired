@@ -463,76 +463,62 @@ const ClientSideContent: FC = () => {
 
              {/* --- Dynamic Hero Section (MOVED HERE into ClientSideContent) --- */}
              {/* This section now has access to searchParams and currentCategory */}
-             <section id="hero" className="relative w-auto h-[656px]">
-                 {/* Dynamic Hero Background Image */}
-                 <Image
-                   // Use the image from the found category, or a default if currentCategory is undefined or image is missing
-                   src={currentCategory?.heroImage || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2359943f-dce7-4e87-3f16-629da74ecc00/public"} // Fallback static image
-                   alt={`Hero image for ${currentCategory?.title || 'Products'}`} // Dynamic alt text
-                   layout="fill"
-                   objectFit="cover" // Use cover to ensure it fills the space
-                 />
+             <section id="hero" className="relative w-auto">
+                 {/* Dynamic Hero Video or Fallback Image */}
+                 {currentCategory?.heroVideo ? (
+                   <video
+                     src={`/${currentCategory.heroVideo.replace(/^app\//, "")}`}
+                     autoPlay
+                     muted
+                     loop
+                     playsInline
+                     style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                   />
+                 ) : (
+                   <Image
+                     src={"https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public"}
+                     alt={`Hero image for ${currentCategory?.title || 'Products'}`}
+                     width={1440}
+                     height={656}
+                     className="object-cover w-full h-full"
+                   />
+                 )}
 
-                 {/* Dynamic Text and Image Overlays (Adjust positioning/styling as needed) */}
-                  {/* Add title element similar to the other page */}
-                  <div
-                     className="absolute"
-                     style={{
-                       bottom: "33%", // Example positioning
-                       left: "calc(4.16666%)", // Example positioning
-                       fontFamily: "'Inter Tight', sans-serif",
-                       fontWeight: 500,
-                       fontSize: "48px",
-                       lineHeight: "110%",
-                       color: "#fff", // Assuming white text on dark background
-                       zIndex: 20, // Ensure text is above background image
-                     }}
-                   >
-                     {/* Display category title if available, otherwise a default */}
-                     {currentCategory?.title || 'All Products'}
-                   </div>
-
-                 {/* Add overlay image element similar to the other page */}
+                 {/*
+                 <div
+                    className="absolute"
+                    style={{
+                      bottom: "33%",
+                      left: "calc(4.16666%)",
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "48px",
+                      lineHeight: "110%",
+                      color: "#fff",
+                      zIndex: 20,
+                    }}
+                  >
+                    {currentCategory?.title || 'All Products'}
+                  </div>
                  <div
                    className="absolute"
                    style={{
-                      bottom: "30%", // Example positioning
-                      right: "calc(3.473%)", // Example positioning
-                      width: "393px", // Example size
-                      height: "159px", // Example size
-                      zIndex: 20, // Ensure overlay is above background image
+                      bottom: "30%",
+                      right: "calc(3.473%)",
+                      width: "393px",
+                      height: "159px",
                    }}
                  >
                    <Image
-                     // Use the overlay image from the found category, or a default
-                     src={currentCategory?.overlayImage || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"} // Fallback static overlay image
-                     alt={`Overlay graphic for ${currentCategory?.title || 'Products'}`} // Dynamic alt text
-                     width={393} // Must match div size or use fill
-                     height={159} // Must match div size or use fill
+                     src={"https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"}
+                     alt="Overlay graphic"
+                     width={393}
+                     height={159}
                      className="object-contain"
                    />
                  </div>
-
-                  {/* Scroll indicator - you might want to keep this */}
-                   <div
-                     className="absolute uppercase"
-                     style={{
-                       bottom: "30%", // Example positioning
-                       left: "calc(4.16666%)", // Example positioning
-                       width: "104px",
-                       height: "12px",
-                       fontFamily: "'Inter Tight', sans-serif",
-                       fontWeight: 500,
-                       fontSize: "10px",
-                       lineHeight: "100%",
-                       color: "#fff", // Assuming white text
-                       zIndex: 20,
-                     }}
-                   >
-                     Scroll for more ⤵︎
-                   </div>
-
-               </section>
+                 */}
+             </section>
 
 
              {/* Buttons Section */}
