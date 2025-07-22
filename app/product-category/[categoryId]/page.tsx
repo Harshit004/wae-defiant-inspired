@@ -403,7 +403,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
           {category.description.map((paragraph, index) => (
             <p 
               key={index}
-              className="font-inter-tight font-medium text-xs leading-none tracking-normal align-middle text-[#00000099]"
+              className="font-inter-tight font-medium text-xs leading-[130%] tracking-normal align-middle text-[#00000099]"
             >
               {paragraph}
             </p>
