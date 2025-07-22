@@ -197,7 +197,7 @@ const blogPosts = [
       description: "Sensor-activated drinking water faucets enable contactless, hygienic dispensing—engineered for modern B2B spaces that demand efficiency, safety, and minimalist design.",
     },
     {
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08a355dd-6233-4b12-1cf5-fee8716cca00/public",
+      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/85bdf8ae-9a9c-4e51-262c-3086fce40d00/public",
       title: "ZVR",
       description: "All dispensing units include a bubbler faucet for direct consumption; cooling varies by model. For seamless integration, treatment modules are wall-concealed and modular.",
     },
@@ -221,7 +221,7 @@ const titleToId = (title: string) => {
     "DRINKING WATER FAUCETS - WATERMATIC Series": "drinking-water-faucets",
     "WATER COOLER & FOUNTAINS - ZVR Series": "water-cooler",
     "PUBLIC UTILITY SYSTEMS - PUS Series": "public-utility-systems",
-    "COMMERCIAL/INDUSTRIAL PLANTS": "commercial-industrial-plants"
+    "COMMERCIAL/INDUSTRIAL PLANTS": "blubox"
   };
   return idMap[title] || title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 };
@@ -303,6 +303,15 @@ export default function Home() {
     { text: "Blog", href: "/blogs2" },
   ]
   const lineCount = Math.min(productsItems.length, blueprintItems.length) // Not directly used but retained
+
+  const categorySlugs = [
+    "drinking-water-stations",
+    "water-dispenser",
+    "drinking-water-faucets",
+    "water-cooler",
+    "public-utility-systems",
+    "blubox"
+  ];
 
   return (
     <main className="relative pb-[40px]">
@@ -535,7 +544,7 @@ export default function Home() {
             <div key={index}>
                 {/* Heading with Link */}
               <Link className="text-[14px] md:text-[16px] block"
-                href={`#${titleToId(post.title)}`}
+                href={`#${categorySlugs[index]}`}
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 700,
@@ -634,7 +643,7 @@ export default function Home() {
                   ][index]}
                 </p>
                 {/* Know More Button */}
-                <HoverButton href={`/product-category/${titleToId(post.title)}`}>
+                <HoverButton href={`/product-category/${categorySlugs[index]}`}>
                   {(hovered) => (
                     <>
                       Know More

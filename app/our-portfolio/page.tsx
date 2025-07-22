@@ -605,7 +605,7 @@ export default function Home() {
                 </ul>
                 
                 <div className="mt-6">
-                  <a href="/our-products" className="w-[40%] md:w-fit">
+                  <a href="/our-products2" className="w-[40%] md:w-fit">
                     <HoverButton>
                       {(hovered) => (
                         <>
@@ -677,7 +677,7 @@ export default function Home() {
                 </ul>
                 
                 <div className="mt-6">
-                  <a href="/our-products" className="w-[40%] md:w-fit">
+                  <a href="/our-products2" className="w-[40%] md:w-fit">
                     <HoverButton>
                       {(hovered) => (
                         <>

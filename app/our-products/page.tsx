@@ -1,3 +1,4 @@
+// THIS FILE IS DEPRECATED. Use /our-products2 instead. This file is no longer linked in navigation or routes.
 "use client"
 
 import type React from "react"
