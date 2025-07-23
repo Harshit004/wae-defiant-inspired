@@ -377,9 +377,9 @@ const Home: FC = () => {
           className="w-full flex items-center justify-center bg-white"
           style={{ height: `calc(100vh - ${headerHeight}px)` }}
         >
-          <div className="w-fit max-w-7xl aspect-[16/9] flex items-center justify-center">
+          <div className="w-screen flex items-center justify-center">
             <video
-              src="/banner-homepage7.mp4"
+              src="/MicrosoftTeams-video (12).mp4"
               autoPlay
               muted
               playsInline
@@ -389,7 +389,7 @@ const Home: FC = () => {
           <div
             className="absolute uppercase"
             style={{
-              bottom: "10%",
+              bottom: "6%",
               left: "9.72%",
               width: "104px",
               height: "12px",
@@ -1067,8 +1067,16 @@ const Home: FC = () => {
               </div>
               <div className="flex flex-col gap-5 w-64"> {/* Fixed width text container */}
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
-                  The underlying natural order of the universe – circular continuity of the natural world.
-                  Undifferentiated, endlessly self-replenishing, immensely powerful, and impassively generous.
+                  WAE captures the heart of Indian innovation by 
+                  seamlessly blending the time-honoured ideals 
+                  with the latest technology. We are driven by the 
+                  mission to build a brand that not only saves the 
+                  planet but also creates a potent impact on 
+                  future generations for the country's 
+                  advancements, integrity & innovation. Our 
+                  approach strengthens community resilience 
+                  while showcasing India's intellectual capital on 
+                  the world stage.
                 </p>
 
               </div>
@@ -1077,90 +1085,55 @@ const Home: FC = () => {
         </section>
 
         {/* Sustainability Section */}
-         {/* Parallax motion.div wrapper and related hooks removed for scroll-snap priority */}
-         {/* Changed to h-screen and centered content vertically, removed padding */}
-        {/* <motion.div ref={sustainabilityScrollRef} style={{ y: sustainabilityY }}> // Removed outer motion.div */}
-          <section className="h-screen flex items-center justify-center relative snap-center px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment */}
-            <motion.div
-              // Removed initial and whileInView animation props for opacity
-              // initial={{ opacity: 0 }}
-              // whileInView={{ opacity: 1 }}
-              // transition={{ duration: 0.8, delay: 0.5 }}
-              // viewport={{ once: true }}
-              className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between" // This content will be centered
+        <section className="h-screen flex items-center justify-center relative snap-center px-[9.72%]">
+          <motion.div
+            className="w-full max-w-screen-xl flex flex-col items-start justify-center relative"
+          >
+            {/* Heading on top */}
+            <h2
+              className="mb-20 text-left"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "58px",
+                lineHeight: "110%",
+                color: "#000",
+              }}
             >
-              <h2
-                className="inline-block"
-                style={{ // Inline styles for typography
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "58px",
-                  lineHeight: "110%",
-                  color: "#000",
-                }}
-              >
-                Sustainability
-              </h2>
-              <div className="flex flex-col gap-20">
-                <div className="flex flex-col">
-                  <p className="text-4xl font-normal text-black leading-snug">
-                    1,012,120.25
-                  </p>
-                  <p className="text-xs font-normal text-black/70 tracking-wide">
-                    TONNES CO2 EMISSIONS SAVED
-                  </p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-4xl font-normal text-black leading-snug">
-                    12,185.4325
-                  </p>
-                  <p className="text-xs font-normal text-black/70 tracking-wide">
-                    MILLION GALLONS WATER SAVED
-                  </p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-4xl font-normal text-black leading-snug">
-                    22,253.65
-                  {/* Note: Missing link/button inside this div */}
-                  </p>
-                  <p className="text-xs font-normal text-black/70 tracking-wide">
-                    TONNES PLASTIC REMOVED
-                  </p>
-                  <Link href="/sustainability" className="mt-10">
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-                </div>
+              Sustainability
+            </h2>
+            {/* Metrics row below heading */}
+            <div className="flex flex-row gap-32 w-full">
+              <div className="flex flex-col items-start min-w-[220px]">
+                <p className="text-5xl font-semibold text-black leading-snug">
+                  1,012,120.25
+                </p>
+                <div className="h-px w-full bg-[#D9D9DC] my-2" />
+                <p className="text-sm font-normal text-black/70 tracking-wide mt-2">
+                  Tonnes CO2 Emissions Saved
+                </p>
               </div>
-            </motion.div>
-          </section>
-        {/* </motion.div> // Removed outer motion.div */}
+              <div className="flex flex-col items-start min-w-[220px]">
+                <p className="text-5xl font-semibold text-black leading-snug">
+                  12,185.43
+                </p>
+                <div className="h-px w-full bg-[#D9D9DC] my-2" />
+                <p className="text-sm font-normal text-black/70 tracking-wide mt-2">
+                  Million Gallons Water Saved
+                </p>
+              </div>
+              <div className="flex flex-col items-start min-w-[220px]">
+                <p className="text-5xl font-semibold text-black leading-snug">
+                  22,253.65
+                </p>
+                <div className="h-px w-full bg-[#D9D9DC] my-2" />
+                <p className="text-sm font-normal text-black/70 tracking-wide mt-2">
+                  Tonnes Plastic Removed
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </section>
         </div>
 
         {/* RELATED INFORMATION SECTION */}
