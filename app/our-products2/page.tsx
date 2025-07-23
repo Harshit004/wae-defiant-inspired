@@ -197,7 +197,7 @@ const blogPosts = [
       description: "Sensor-activated drinking water faucets enable contactless, hygienic dispensing—engineered for modern B2B spaces that demand efficiency, safety, and minimalist design.",
     },
     {
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/85bdf8ae-9a9c-4e51-262c-3086fce40d00/public",
+      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
       title: "ZVR",
       description: "All dispensing units include a bubbler faucet for direct consumption; cooling varies by model. For seamless integration, treatment modules are wall-concealed and modular.",
     },
