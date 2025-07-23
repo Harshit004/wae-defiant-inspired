@@ -379,7 +379,7 @@ const Home: FC = () => {
         >
           <div className="w-screen flex items-center justify-center">
             <video
-              src="/MicrosoftTeams-video (12).mp4"
+              src="/new-banner-homepage-7.mp4"
               autoPlay
               muted
               playsInline
