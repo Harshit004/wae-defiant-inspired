@@ -319,7 +319,7 @@ export default function Home() {
       <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
 
       {/* DESKTOP HEADER (Hidden on small screens) */}
-      <header ref={headerRef} className={`w-full relative z-10 hidden md:block`}>
+      <header ref={headerRef} className={`w-full relative z-10 hidden md:block bg-white pb-[20px]`} style={{background: '#fff', paddingBottom: 20}}>
         <div className={containerClass}>
           {/* Top Row: Navigation */}
           <div
