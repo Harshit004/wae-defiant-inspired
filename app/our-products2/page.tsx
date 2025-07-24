@@ -35,7 +35,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
       {/* Fixed Mobile Header Bar (Visible only on small screens) */}
       <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-transparent md:hidden">
         {/* Mobile Logo */}
-        <Link href="/homepage3">
+        <Link href="/homepage7">
           <Image
             src={isMobileMenuOpen
               ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
@@ -319,7 +319,7 @@ export default function Home() {
       <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
 
       {/* DESKTOP HEADER (Hidden on small screens) */}
-      <header ref={headerRef} className={`w-full relative z-10 hidden mb-5 md:block`}>
+      <header ref={headerRef} className={`w-full relative z-10 bg-[#fff] hidden mb-5 md:block`}>
         <div className={containerClass}>
           {/* Top Row: Navigation */}
           <div
