@@ -54,7 +54,7 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    heroVideo: "videos-product-categories/MicrosoftTeams-video (5).mp4",
+    heroVideo: "BLUWAE_EXP.mp4",
   },
   "water-dispenser": {
     id: "water-dispenser",
@@ -94,7 +94,7 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    heroVideo: "videos-product-categories/MicrosoftTeams-video (6).mp4",
+    heroVideo: "Water dispenser & cooler_EXP.mp4",
   },
   "drinking-water-faucets": {
     id: "drinking-water-faucets",
@@ -129,7 +129,7 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    heroVideo: "videos-product-categories/MicrosoftTeams-video (12).mp4",
+    heroVideo: "Bottle Filler_EXP.mp4",
   },
   "water-cooler": {
     id: "water-cooler",
@@ -169,7 +169,7 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    heroVideo: "videos-product-categories/MicrosoftTeams-video (7).mp4",
+    heroVideo: "ZVR_EXP.mp4",
   },
   "public-utility-systems": {
     id: "public-utility-systems",
@@ -204,7 +204,7 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/708253cf-b3b1-4b4c-e9ed-73f9c05aa400/public"
       }
     ],
-    heroVideo: "videos-product-categories/MicrosoftTeams-video (4).mp4",
+    heroVideo: "PUS_EXP.mp4",
   },
   "blubox": {
     id: "blubox",
@@ -239,6 +239,6 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/708253cf-b3b1-4b4c-e9ed-73f9c05aa400/public"
       }
     ],
-    heroVideo: "videos-product-categories/MicrosoftTeams-video (8).mp4",
+    heroVideo: "Bluebox_EXP.mp4",
   }
 };
