@@ -319,7 +319,7 @@ export default function Home() {
       <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
 
       {/* DESKTOP HEADER (Hidden on small screens) */}
-      <header ref={headerRef} className={`w-full relative z-10 bg-[#fff] hidden mb-5 md:block`}>
+      <header ref={headerRef} className={`w-full relative z-10 hidden md:block`}>
         <div className={containerClass}>
           {/* Top Row: Navigation */}
           <div
@@ -346,7 +346,7 @@ export default function Home() {
           <div className="grid grid-cols-5 items-start">
             {/* Logo */}
             <div className="flex flex-col justify-center">
-              <Link href="/homepage3">
+              <Link href="/homepage7">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
                   alt="WAE Logo"
@@ -523,7 +523,7 @@ export default function Home() {
         </section>
 
         {/* Our Products Heading (Moved below hero and adjusted margin) */}
-      <div className={containerClass} style={{marginTop: "80px"}}>
+      <div className={containerClass}>
         <h2 className="text-[32px] md:text-[48px] text-center md:text-left"
           style={{
             fontFamily: "'Inter Tight', sans-serif",
@@ -543,8 +543,7 @@ export default function Home() {
           {blogPosts.map((post, index) => (
             <div key={index}>
                 {/* Heading with Link */}
-              <Link className="text-[14px] md:text-[16px] block"
-                href={`#${categorySlugs[index]}`}
+              <a className="text-[14px] md:text-[16px] block" href={`#${categorySlugs[index]}`}
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 700,
@@ -559,7 +558,7 @@ export default function Home() {
                 }}
               >
                 {post.title}
-              </Link>
+              </a>
 
               {/* Horizontal Rule */}
               <div style={{ paddingTop: "12px", paddingBottom: "12px" }}>
@@ -590,7 +589,7 @@ export default function Home() {
             {blogPosts.map((post, index) => (
               <div
                 key={index}
-                id={titleToId(post.title)}
+                id={categorySlugs[index]}
                 className="flex flex-col justify-between items-start w-full max-w-[33.33vw]"
               >
                 {/* Image */}
