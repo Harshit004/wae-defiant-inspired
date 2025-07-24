@@ -182,7 +182,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
       <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
 
       {/* DESKTOP HEADER (Hidden on small screens) */}
-      <header className={`w-full relative z-10 bg-[#fff] hidden mb-5 md:block`}>
+      <header className={`w-full relative z-10 bg-[#fff] hidden md:block`}>
         <div className={containerClass}>
           {/* Top Row: Navigation */}
           <div

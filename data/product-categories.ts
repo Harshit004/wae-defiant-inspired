@@ -129,7 +129,7 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    heroVideo: "Bottle Filler_EXP.mp4",
+    heroVideo: "Faucet_EXP.mp4",
   },
   "water-cooler": {
     id: "water-cooler",
