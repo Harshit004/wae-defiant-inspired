@@ -475,7 +475,7 @@ const ClientSideContent: FC = () => {
                      style={{ width: "100%", height: "100%", objectFit: "contain" }}
                    />
                  ) : (
-                   <Image
+                 <Image
                      src={"https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public"}
                      alt={`Hero image for ${currentCategory?.title || 'Products'}`}
                      width={1440}
@@ -485,21 +485,21 @@ const ClientSideContent: FC = () => {
                  )}
 
                  {/*
-                 <div
-                    className="absolute"
-                    style={{
+                  <div
+                     className="absolute"
+                     style={{
                       bottom: "33%",
                       left: "calc(4.16666%)",
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "48px",
-                      lineHeight: "110%",
+                       fontFamily: "'Inter Tight', sans-serif",
+                       fontWeight: 500,
+                       fontSize: "48px",
+                       lineHeight: "110%",
                       color: "#fff",
                       zIndex: 20,
-                    }}
-                  >
-                    {currentCategory?.title || 'All Products'}
-                  </div>
+                     }}
+                   >
+                     {currentCategory?.title || 'All Products'}
+                   </div>
                  <div
                    className="absolute"
                    style={{
@@ -518,7 +518,7 @@ const ClientSideContent: FC = () => {
                    />
                  </div>
                  */}
-             </section>
+               </section>
 
 
              {/* Buttons Section */}

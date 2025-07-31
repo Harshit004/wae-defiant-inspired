@@ -73,7 +73,7 @@ export default function RelatedCard({ image, title, description, width, height }
             alt={title}
             width={width}
             height={height}
-            className="object-cover w-full h-[180px] md:h-[270px] transition-all duration-1000 group-hover:scale-110 md:filter md:grayscale md:group-hover:grayscale-0"
+            className="object-cover w-full h-[328px] md:h-[270px] transition-all duration-1000 group-hover:scale-110 md:filter md:grayscale md:group-hover:grayscale-0"
         />
       </motion.div>
 
