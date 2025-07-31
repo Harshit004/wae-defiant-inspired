@@ -75,10 +75,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
       <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-transparent md:hidden">
         <Link href="/homepage7">
           <Image
-            src={isMobileMenuOpen
-              ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-              : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce113ad4-0a6b-43dd-066c-26769520d000/public"
-            }
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
             alt="WAE Logo Mobile"
             width={40}
             height={40}
@@ -90,11 +87,11 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
           aria-label="Toggle mobile menu"
         >
           <span
-            className={`block absolute h-0.5 w-6 transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'bg-black' : 'bg-white'} ${isMobileMenuOpen ? 'rotate-45' : ''}`}
+            className={`block absolute h-0.5 w-6 transition-all duration-300 ease-in-out bg-black ${isMobileMenuOpen ? 'rotate-45' : ''}`}
             style={{ top: '18px', left: '8px', transform: isMobileMenuOpen ? 'rotate(45deg)' : 'translateY(-4px)' }}
           ></span>
           <span
-            className={`block absolute h-0.5 w-6 transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'bg-black' : 'bg-white'} ${isMobileMenuOpen ? '-rotate-45' : ''}`}
+            className={`block absolute h-0.5 w-6 transition-all duration-300 ease-in-out bg-black ${isMobileMenuOpen ? '-rotate-45' : ''}`}
             style={{ top: '18px', left: '8px', transform: isMobileMenuOpen ? 'rotate(-45deg)' : 'translateY(4px)' }}
           ></span>
         </button>
