@@ -419,7 +419,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
         {/* Left Side - Heading */}
         <div className="w-full md:w-[31.8%]">
           <h2 className="font-inter-tight font-medium text-2xl md:text-4xl leading-[110%] tracking-normal align-middle">
-            FEATURES
+            {params.categoryId === "drinking-water-stations" ? "SALIENCE AT A GLANCE" : "FEATURES"}
           </h2>
         </div>
 
@@ -427,17 +427,17 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
         <div className="w-full md:w-[37.7%] space-y-5">
           {category.features.map((feature, index) => (
             <div key={index} className="space-y-2">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-black rounded-full" />
-                <h3
-                  className="font-inter-tight font-normal text-sm leading-none tracking-normal align-middle uppercase"
-                >
-                  {feature.headline}
-                </h3>
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <span className="font-inter-tight font-bold text-sm leading-[24px] tracking-normal align-middle">
+                    {feature.headline}
+                  </span>
+                  <span className="font-inter-tight font-normal text-sm leading-[24px] tracking-normal align-middle">
+                    {" "}{feature.subtext}
+                  </span>
+                </div>
               </div>
-              <p className="font-inter-tight font-normal text-xs leading-[24px] tracking-normal align-middle">
-                {feature.subtext}
-              </p>
             </div>
           ))}
           <div className="mt-8 md:mt-15" style={{ marginTop: "60px" }}>
