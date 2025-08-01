@@ -491,7 +491,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
                 href={`/category-listing3?category=${params.categoryId}&mounting=${mountingType.id}`}
                 className="flex flex-col items-center w-full md:w-[33.33%]"
               >
-                <div className="relative w-full h-[300px] md:h-[33.33%] overflow-hidden cursor-pointer rounded-lg">
+                <div className="relative w-[480px] h-[480px] overflow-hidden cursor-pointer rounded-lg">
                   <Image
                     src={mountingType.image}
                     alt={mountingType.name}
