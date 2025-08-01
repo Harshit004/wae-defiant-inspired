@@ -407,9 +407,10 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
             <p 
               key={index}
               className={`font-inter-tight font-medium text-xs leading-[130%] tracking-normal align-middle text-[#00000099] ${index === 0 ? 'mb-5' : 'mb-0'}`}
-            >
-              {paragraph}
-            </p>
+              dangerouslySetInnerHTML={{
+                __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+              }}
+            />
           ))}
         </div>
       </section>

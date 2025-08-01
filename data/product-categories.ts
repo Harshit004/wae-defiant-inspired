@@ -21,8 +21,8 @@ export const productCategories: Record<string, ProductCategory> = {
     title: "BLUWAE",
     subtitle: "BLUWAE",
     description: [
-      "WAE's drinking water stations are not just dispensers—they are purpose-built hydration systems engineered for performance, sustainability, and operational efficiency. With built-in 5-stage purification and sterilization(UV,UF) options, these stations deliver 99.99% pure and safe water—on demand and at scale.",
-      "Designed to meet the rigorous needs of corporate campuses, manufacturing units, institutions, and public spaces, our stations help organizations reduce their dependency on bottled water, aligning seamlessly with sustainability mandates and ESG goals. By eliminating single-use plastics and minimizing water wastage, they significantly lower your carbon and water footprint."
+      "WAE's drinking water stations are not just dispensers—they are purpose-built hydration systems engineered for **performance**, **sustainability**, and **operational efficiency**. With built-in 5-stage purification and sterilization(UV,UF) options, these stations deliver **99.99% pure and safe water**—on demand and at scale.",
+      "Designed to meet the rigorous needs of **corporate campuses**, **manufacturing units**, **institutions**, and **public spaces**, our stations help organizations **reduce their dependency on bottled water**, aligning seamlessly with sustainability mandates and ESG goals. By eliminating single-use plastics and minimizing water wastage, they significantly lower your **carbon and water footprint**."
     ],
     features: [
       {
@@ -61,8 +61,8 @@ export const productCategories: Record<string, ProductCategory> = {
     title: "TRUBLU",
     subtitle: "TRUBLU",
     description: [
-      "This premium freestanding range of water dispensers is engineered from 100% recyclable, non-plastic materials, offering a zero-waste hydration solution for commercial and institutional environments. Designed for organizations prioritizing sustainability and ESG compliance, it eliminates single-use plastics while maintaining long-term durability and operational efficiency.",
-      "With a robust metal (SS 304) build, energy-efficient functionality, and seamless integration into modern interiors, the unit delivers reliable performance with minimal environmental impact—making it an ideal choice for forward-looking, sustainability-driven infrastructure."
+      "This premium freestanding range of water dispensers is engineered from **100% recyclable, non-plastic materials**, offering a zero-waste hydration solution for commercial and institutional environments. Designed for organizations prioritizing **sustainability and ESG compliance**, it eliminates single-use plastics while maintaining long-term durability and operational efficiency.",
+      "With a **robust metal (SS 304) build**, energy-efficient functionality, and seamless integration into modern interiors, the unit delivers reliable performance with minimal environmental impact—making it an ideal choice for forward-looking, sustainability-driven infrastructure."
     ],
     features: [
       {
@@ -101,8 +101,8 @@ export const productCategories: Record<string, ProductCategory> = {
     title: "WATERMATIC",
     subtitle: "WATERMATIC",
     description: [
-      "The Watermatic Drinking Water Faucet delivers hot, cold, ambient, and sparkling water—ideal for modern workspaces, hotels, and restaurants. Made from 100% recyclable, plastic-free materials, it features an under-the-counter storage unit - HYDROPAC, with in-tank LED UVC for 99.99% microbial protection and infrared sensor technology for touchless operation.",
-      "Built on a versatile modular system, designed and manufactured in India for seamless integration and scalable deployment."
+      "The Watermatic Drinking Water Faucet is a next-gen hydration solution designed for modern workspaces, hotels, and high-end dining spaces. It offers **hot, cold, ambient, and sparkling water** from a single unit—delivering convenience with a sleek, sustainable design crafted from **100% recyclable, plastic-free materials**. The faucet comes paired with an **under-the-counter storage unit – HYDROPAC**, ensuring compact and efficient utility.",
+      "Equipped with **in-tank LED UVC** for **99.99% microbial protection** and **infrared sensor technology** for touchless operation, it ensures safe, hygienic dispensing. Its **modular system**, proudly designed and manufactured in India, allows for seamless integration and scalability across diverse environments."
     ],
     features: [
       {
@@ -136,8 +136,8 @@ export const productCategories: Record<string, ProductCategory> = {
     title: "ZVR",
     subtitle: "ZVR",
     description: [
-      "Surface-mounted drinking water fountains with integrated bottle filling stations promote refill culture and support Zero Waste to Landfill (ZWTL) initiatives. These units feature touchless sensor technology and ADA-compliant accessibility, crafted from non-plastic materials to align with ESG goals.",
-      "Perfect for public spaces, educational institutions, and corporate environments seeking sustainable hydration solutions."
+      "Surface-mounted drinking water fountains with integrated bottle filling stations offer a sustainable and hygienic solution for modern hydration needs. Designed for high-traffic environments like offices, schools, and public facilities, these units encourage **refill culture** by supporting reusable bottles, helping reduce plastic waste and supporting **Zero Waste to Landfill (ZWTL)** initiatives.",
+      "Equipped with **touchless sensor technology** and **ADA-compliant accessibility**, they ensure safe, inclusive, and user-friendly operation. Constructed from **recyclable, non-plastic materials**, these systems align with **ESG goals** and green building standards—making them a smart investment in sustainable facility infrastructure."
     ],
     features: [
       {
@@ -176,8 +176,8 @@ export const productCategories: Record<string, ProductCategory> = {
     title: "PUS",
     subtitle: "PUS",
     description: [
-      "Public utility water dispensing systems designed for high-footfall public spaces such as railway stations, bus terminals, parks, educational institutions, and urban transit hubs. These systems prioritize durability, hygiene, accessibility, and environmental impact—reducing plastic waste and aligning with ESG goals.",
-      "Built with robust materials, touchless operation, and integrated purification for sustainable hydration in public environments."
+      "Public utility water dispensing systems are specially designed for **high-footfall public spaces** such as railway stations, bus terminals, parks, educational institutions, and urban transit hubs. Engineered for **durability, hygiene, and accessibility**, these systems offer **on-demand safe drinking water** to the public while minimizing environmental impact.",
+      "Built with **robust materials, touchless operation, and integrated purification (optional) technologies**, they support **sustainable hydration at scale**. Their design encourages the use of refillable containers, helping reduce plastic waste and aligning with **government mandates and ESG goals**. These systems play a vital role in expanding access to clean drinking water in both urban and rural settings."
     ],
     features: [
       {
