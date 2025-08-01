@@ -477,35 +477,40 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
       </section>
 
       {/* Browse by Product Type SECTION */}
-      <section className="px-4 md:mx-[9.72%] mb-[40px] md:mb-[9.72%]">
+      <section className="px-4 md:mx-[9.72%] mb-[40px] md:mb-[9.72%] mt-[40px] md:mt-[80px]">
         <h2
-          className="font-inter-tight font-medium text-2xl md:text-[48px] leading-[110%] tracking-[0%] align-middle uppercase"
+          className="font-inter-tight font-medium text-2xl md:text-[48px] leading-[110%] tracking-[0%] align-middle uppercase mb-[40px] md:mb-[80px]"
         >
           Browse by Product Type
         </h2>
-        <div className="mt-[40px] md:mt-[80px] flex flex-col md:flex-row justify-between gap-8 md:gap-0">
-          {category.mountingTypes.map((mountingType) => (
-            <Link
-            key={mountingType.id}
-            href={`/category-listing3?category=${params.categoryId}&mounting=${mountingType.id}`}
-            className="flex flex-col items-center w-full md:w-auto"
-          >
-              <div className="relative w-full max-w-[480px] h-[300px] md:h-[480px] overflow-hidden cursor-pointer">
-                <Image
-                  src={mountingType.image}
-                  alt={mountingType.name}
-                  fill
-                  className="object-contain transition-transform duration-1000 ease-in-out hover:scale-110"
-                />
-              </div>
-              <p
-                className="mt-[24px] font-inter-tight font-normal text-[14px] leading-[140%] tracking-[0%] text-center uppercase"
+        <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-0">
+          {category.mountingTypes && category.mountingTypes.length > 0 ? (
+            category.mountingTypes.map((mountingType) => (
+              <Link
+                key={mountingType.id}
+                href={`/category-listing3?category=${params.categoryId}&mounting=${mountingType.id}`}
+                className="flex flex-col items-center w-full md:w-auto"
               >
-                {mountingType.name}
-              </p>
-          </Link>
-            
-          ))}
+                <div className="relative w-full max-w-[480px] h-[300px] md:h-[480px] overflow-hidden cursor-pointer rounded-lg">
+                  <Image
+                    src={mountingType.image}
+                    alt={mountingType.name}
+                    fill
+                    className="object-contain transition-transform duration-1000 ease-in-out hover:scale-110"
+                  />
+                </div>
+                <p
+                  className="mt-[24px] font-inter-tight font-normal text-[14px] leading-[140%] tracking-[0%] text-center uppercase"
+                >
+                  {mountingType.name}
+                </p>
+              </Link>
+            ))
+          ) : (
+            <div className="w-full text-center py-8">
+              <p className="text-gray-500">No product types available for this category.</p>
+            </div>
+          )}
         </div>
       </section>
 
