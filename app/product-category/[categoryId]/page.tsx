@@ -430,10 +430,10 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0" />
                 <div>
-                  <span className="font-inter-tight font-bold text-sm leading-[24px] tracking-normal align-middle">
+                  <span className="font-inter-tight font-bold text-sm leading-[100%] tracking-normal align-middle">
                     {feature.headline}
                   </span>
-                  <span className="font-inter-tight font-normal text-sm leading-[24px] tracking-normal align-middle">
+                  <span className="font-inter-tight font-normal text-sm leading-[100%] tracking-normal align-middle">
                     {" "}{feature.subtext}
                   </span>
                 </div>
