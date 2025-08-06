@@ -146,7 +146,7 @@ export default function Careers2() {
       {/* MOBILE HEADER */}
       <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
       {/* DESKTOP HEADER */}
-      <header ref={headerRef} className={`w-full relative z-10 hidden md:block mb-[20px] bg-white`}>
+      <header ref={headerRef} className={`w-full relative z-10 hidden md:block pb-[20px] bg-white`}>
         <div className={containerClass}>
             {/* Top Row: Navigation */}
             <div
@@ -290,7 +290,7 @@ export default function Careers2() {
       {/* HERO SECTION */}
 <section
           id="hero"
-        className="relative h-screen w-full overflow-hidden mt- mb-[140px]"
+        className="relative h-screen w-full overflow-hidden mb-[140px]"
           >
             <Image
           src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/66b07bfd-3c69-4e9e-0bfc-339c10948c00/public"
