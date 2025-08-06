@@ -146,7 +146,7 @@ export default function Careers2() {
       {/* MOBILE HEADER */}
       <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
       {/* DESKTOP HEADER */}
-      <header ref={headerRef} className={`w-full relative z-10 hidden md:block mb-[20px]`}>
+      <header ref={headerRef} className={`w-full relative z-10 hidden md:block mb-[20px] bg-white`}>
         <div className={containerClass}>
             {/* Top Row: Navigation */}
             <div
@@ -302,8 +302,8 @@ export default function Careers2() {
           <div
             className="absolute"
             style={{
-              bottom: "33%",
-            left: "calc(9.722222%)",
+              bottom: "40%",
+              left: "calc(9.722222%)",
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
               fontSize: "48px",
@@ -311,13 +311,13 @@ export default function Careers2() {
               color: "#fff",
             }}
           >
-          Join Us. Be the Dfference.
+            Join Us. Be the Dfference.
           </div>
           <div
             className="absolute uppercase"
             style={{
-              bottom: "30%",
-            left: "calc(9.722222%)",
+              bottom: "37%",
+              left: "calc(9.722222%)",
               width: "104px",
               height: "12px",
               fontFamily: "'Inter Tight', sans-serif",
