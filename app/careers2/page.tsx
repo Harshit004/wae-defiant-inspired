@@ -336,9 +336,17 @@ export default function Careers2() {
         {/* Grid Layout for Sections 1 & 2 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 justify-between">
           {/* Row 1 */}
-          <div ></div>
           <div style={{
-
+            width: '80%',
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontStyle: "Medium",
+            fontSize: 32,
+            lineHeight: '110.00000000000001%',
+            letterSpacing: 0,
+            verticalAlign: 'middle',
+          }} className="mb-0">Join a team that transforms<br className="hidden md:block"/>challenges into solutions.</div>
+          <div style={{
             fontFamily: "'Inter Tight', sans-serif",
             fontWeight: 500,
             fontStyle: "Medium",
@@ -351,16 +359,7 @@ export default function Careers2() {
           </div>
 
           {/* Row 2 */}
-          <div style={{
-            width: '80%',
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontStyle: "Medium",
-            fontSize: 32,
-            lineHeight: '110.00000000000001%',
-            letterSpacing: 0,
-            verticalAlign: 'middle',
-          }} className="mb-0">Join a team that transforms<br className="hidden md:block"/>challenges into solutions.</div>
+          <div></div>
           <div className="flex flex-col">
             <div style={{
               fontFamily: "'Inter Tight', sans-serif",
