@@ -329,7 +329,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
 
       {/* Hero section - now starts directly after header with padding for content */}
       <section
-        id="hero"
+          id="hero"
         className="relative w-full overflow-hidden h-[550px] pt-[70px] md:pt-[160px]"
       >
         {/* Desktop: Background video (cover, aspect ratio maintained) */}
@@ -381,7 +381,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
             );
           } else {
             return (
-              <Image
+            <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/de750a02-1047-42f2-d7db-f10e559f4100/public"
                 alt={`${category.title} Hero`}
                 fill
@@ -390,7 +390,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
             );
           }
         })()}
-      </section>
+        </section>
 
       {/* Product Category overview SECTION */}
       <section className="px-4 md:mx-[9.72%] mt-[80px] md:my-[9.72%] flex flex-col md:flex-row md:justify-between items-start gap-8 md:gap-0">
@@ -432,7 +432,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
                 <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0" />
                 <div>
                   <span className="font-inter-tight font-bold text-sm leading-[100%] tracking-normal align-middle">
-                    {feature.headline}
+                  {feature.headline}
                   </span>
                   <span className="font-inter-tight font-normal text-sm leading-[100%] tracking-normal align-middle">
                     {" "}{feature.subtext}
@@ -486,25 +486,25 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
         <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-0">
           {category.mountingTypes && category.mountingTypes.length > 0 ? (
             category.mountingTypes.map((mountingType) => (
-              <Link
-                key={mountingType.id}
-                href={`/category-listing3?category=${params.categoryId}&mounting=${mountingType.id}`}
+            <Link
+            key={mountingType.id}
+            href={`/category-listing3?category=${params.categoryId}&mounting=${mountingType.id}`}
                 className="flex flex-col items-center w-full md:w-[33.33%]"
-              >
+          >
                 <div className="relative w-[480px] h-[480px] overflow-hidden cursor-pointer rounded-lg">
-                  <Image
-                    src={mountingType.image}
-                    alt={mountingType.name}
-                    fill
-                    className="object-contain transition-transform duration-1000 ease-in-out hover:scale-110"
-                  />
-                </div>
-                <p
-                  className="mt-[24px] font-inter-tight font-normal text-[14px] leading-[140%] tracking-[0%] text-center uppercase"
-                >
-                  {mountingType.name}
-                </p>
-              </Link>
+                <Image
+                  src={mountingType.image}
+                  alt={mountingType.name}
+                  fill
+                  className="object-contain transition-transform duration-1000 ease-in-out hover:scale-110"
+                />
+              </div>
+              <p
+                className="mt-[24px] font-inter-tight font-normal text-[14px] leading-[140%] tracking-[0%] text-center uppercase"
+              >
+                {mountingType.name}
+              </p>
+          </Link>
             ))
           ) : (
             <div className="w-full text-center py-8">
