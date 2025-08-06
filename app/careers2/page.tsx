@@ -311,7 +311,7 @@ export default function Careers2() {
               color: "#fff",
             }}
           >
-            Join Us. Be the Dfference.
+            Join Us. Be the Difference.
           </div>
           <div
             className="absolute uppercase"
