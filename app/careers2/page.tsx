@@ -288,49 +288,21 @@ export default function Careers2() {
           </div>
         </header>
       {/* HERO SECTION */}
-<section
-          id="hero"
-        className="relative h-screen w-full overflow-hidden mb-[140px]"
-          >
-            <Image
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/66b07bfd-3c69-4e9e-0bfc-339c10948c00/public"
-          alt="careers hero"
-          width={1440}
-          height={650}
-          className="object-cover w-full max-h-[650px]"
-        />
-          <div
-            className="absolute"
-            style={{
-              bottom: "40%",
-              left: "calc(9.722222%)",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "48px",
-              lineHeight: "110%",
-              color: "#fff",
-            }}
-          >
-            Join Us. Be the Difference.
-          </div>
-          <div
-            className="absolute uppercase"
-            style={{
-              bottom: "37%",
-              left: "calc(9.722222%)",
-              width: "104px",
-              height: "12px",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "10px",
-              lineHeight: "100%",
-              color: "#fff",
-            }}
-          >
-            Scroll for more ⤵︎
-          </div>
-        </section>
-
+              <section
+                id="hero"
+                className="relative w-full overflow-hidden h-[550px] pt-[70px] md:pt-[160px] mb-[140px]"
+              >
+                {/* Desktop: Background video (cover, aspect ratio maintained) */}
+                <video
+                  className="hidden md:block absolute inset-0 w-screen  object-contain z-0"
+                  style={{objectFit: 'contain' }}
+                  src="/Career_Page_update_video_banner.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              </section>
       {/* MAIN CONTENT SECTIONS */}
       <section className="w-full px-[9.722222%] max-w-[1440px] mx-auto">
         {/* Grid Layout for Sections 1 & 2 */}

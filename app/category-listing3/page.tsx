@@ -794,7 +794,7 @@ const Home: FC = () => {
   return (
     <main>
       {/* Normal Header (Remains here as it seems mostly static) */}
-      <header className={`w-full relative z-10 mb-5 px-[9.72%]`}>
+      <header className={`w-full relative z-10 pb-5 px-[9.72%] bg-white`}>
           {/* Apply containerClass inside header content div */}
           <div> {/* Removed containerClass here, used px-[9.72%] on header instead */}
             {/* Top Row: Navigation */}
