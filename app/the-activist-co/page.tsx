@@ -301,69 +301,22 @@ export default function Home() {
         </header>
       </div>
 
-      {/* Hero section (Not Fixed in this version) */}
+      {/* HERO SECTION */}
       <section
-          id="hero"
-          className="relative h-screen w-full overflow-hidden mb-[140px]" // Hero has margin-bottom
-        >
-           {/* Reverted to Image as in the provided code */}
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f20bec4f-1a7e-4f0d-64d0-715b99d6ed00/public"
-            alt="The Activist Co."
-             width={1440} // Adjusted width for better fit if max-width is 1440px
-             height={656} // Height from original image usage
-            className="object-cover w-full max-h-[656px]" // Use h-full to fill the 100vh section
-          />
-
-          {/* Text and image overlays remain absolute within the hero */}
-          <div
-            className="absolute"
-            style={{
-              bottom: "30%",
-              right: "calc(3.473%)", // Adjust right position based on container padding
-              width: "393px",
-              height: "159px",
-            }}
-          >
-            <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
-              alt="Innovation meets design"
-              width={393}
-              height={159}
-              className="object-contain"
-            />
-          </div>
-          <div
-            className="absolute"
-            style={{
-              bottom: "33%",
-              left: "calc(4.16666%)", // Adjust left position based on container padding
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "48px",
-              lineHeight: "110%",
-              color: "#fff",
-            }}
-          >
-            The Activist Co.
-          </div>
-          <div
-            className="absolute uppercase"
-            style={{
-              bottom: "30%",
-              left: "calc(4.16666%)", // Adjust left position based on container padding
-              width: "104px",
-              height: "12px",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "10px",
-              lineHeight: "100%",
-              color: "#fff",
-            }}
-          >
-            Scroll for more ⤵︎
-          </div>
-        </section>
+                id="hero"
+                className="relative w-full overflow-hidden h-[550px] pt-[70px] md:pt-[160px] mb-[140px]"
+              >
+                {/* Desktop: Background video (cover, aspect ratio maintained) */}
+                <video
+                  className="hidden md:block absolute inset-0 w-screen  object-contain z-0"
+                  style={{objectFit: 'contain' }}
+                  src="/Activist_Page (2).mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              </section>
 
         {/* NEW SECTION: Hardcoded Rows in a Single Grid */}
         {/* The grid is applied to the inner div */}
