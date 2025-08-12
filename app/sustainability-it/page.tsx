@@ -257,7 +257,7 @@ export default function Home() {
       {/* HEADER (Not Fixed in this version) */}
       {/* The div with inline styles here seems unnecessary if not fixed */}
       <div> {/* Consider removing this outer div or making it relative/static */}
-        <header ref={headerRef} className={`w-full relative z-10 mb-5`}> {/* Apply containerClass inside header content div */}
+        <header ref={headerRef} className={`w-full relative z-10 mb-5 bg-white`}> {/* Apply containerClass inside header content div */}
           <div className={containerClass}> {/* Use containerClass for consistent padding */}
             {/* Top Row: Navigation */}
             <div
