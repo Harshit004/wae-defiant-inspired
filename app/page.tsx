@@ -174,15 +174,17 @@ const Home: FC = () => {
   // --- END POTENTIAL TROUBLESHOOTING AREA ---
 
 
-  // Menu items arrays
+  // Menu items arrays - INSIDE WAE section
   const productsItems = [
     { text: "This Is Us", href: "/inside-wae" },
     { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers" },
   ];
+  
+  // ETCETERA section
   const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
-    { text: "The Activist Co.", href: "#" }, // Note: href="#"
+    { text: "The Activist Co.", href: "#" },
     { text: "Blog", href: "/blogs2" },
   ];
   const lineCount = Math.min(productsItems.length, blueprintItems.length); // Declared but not used
@@ -225,19 +227,19 @@ const Home: FC = () => {
               }}
             >
               <div>
-                <Link href="#">IDENTITY</Link> {/* Note: href="#" */}
+                <Link href="/identity">IDENTITY</Link>
               </div>
               <div>
-                <Link href="#">ORIGIN</Link> {/* Note: href="#" */}
+                <Link href="/origin">ORIGIN</Link>
               </div>
               <div>
-                <Link href="#">OBJECTIVE</Link> {/* Note: href="#" */}
+                <Link href="/objective">OBJECTIVE</Link>
               </div>
               <div>
-                <Link href="#">INSIDE WAE</Link> {/* Note: href="#" */}
+                <Link href="/inside-wae">INSIDE WAE</Link>
               </div>
               <div>
-                <Link href="#">ETCETERA</Link> {/* Note: href="#" */}
+                <Link href="/etcetera">ETCETERA</Link>
               </div>
             </div>
 
@@ -248,7 +250,7 @@ const Home: FC = () => {
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
               <div className="flex flex-col justify-center">
-                <Link href="#"> {/* Note: href="#" */}
+                <Link href="/">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
                     alt="WAE Logo"
@@ -374,22 +376,23 @@ const Home: FC = () => {
         <section
           id="hero"
           ref={heroRef}
-          className="relative h-screen w-full overflow-hidden"
-          style={{ marginTop: `-${headerHeight}px` }} // Offset by header height
+          className="w-full flex items-center justify-center bg-white"
+          style={{ height: `calc(100vh - ${headerHeight}px)` }}
         >
-          <video
-            src="/93af6227858930534ba0ecad01b7f3f02b655c7d.mp4" // Local video file
-            autoPlay
-            // loop // Loop is commented out
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <div className="w-screen flex items-center justify-center">
+            <video
+              src="/new-banner-homepage-7.mp4"
+              autoPlay
+              muted
+              playsInline
+              className="w-fit h-fit object-cover rounded-none"
+            />
+          </div>
           <div
             className="absolute uppercase"
-            style={{ // Inline styles for positioning and typography
-              bottom: "10%",
-              left: "9.72%", // Specific percentage-based left
+            style={{
+              bottom: "6%",
+              left: "9.72%",
               width: "104px",
               height: "12px",
               fontFamily: "'Inter Tight', sans-serif",
@@ -432,37 +435,63 @@ const Home: FC = () => {
           </div>
         </motion.div>
 
-        {/* Purpose Section */}
-        {/* Entrance animations removed for scroll-snap priority */}
-        {/* Changed to h-screen and centered content vertically */}
-        <section className="h-screen flex items-center justify-center relative snap-center"> {/* Changed height, removed mb, changed flex alignment */}
-          <motion.div
-            // Removed initial and whileInView animation props
-            // initial={{ y: "200%", opacity: 0 }}
-            // whileInView={{ y: 0, opacity: 1 }}
-            // transition={{ duration: 0.8, delay: 0.2 }}
-            // viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36" // Removed mb-20
-          >
-            <div className="flex flex-col lg:flex-row items-start justify-between">
-              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight"> {/* Font style via arbitrary value in JIT mode */}
-                Purpose
-              </h2>
-              <div className="flex flex-col gap-5 w-64"> {/* Fixed width text container */}
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
+        {/* Purpose & About WAE Combined Section */}
+        <section className="h-screen flex items-center justify-center relative snap-center">
+          <motion.div className="w-full max-w-screen-xl mx-8 lg:mx-36">
+            <div className="flex flex-col lg:flex-row justify-between w-full gap-12">
+              {/* Purpose (left on desktop) */}
+              <div className="flex-1 flex flex-col max-w-[251px] mx-auto lg:mx-0">
+                <h2
+                  style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '40px',
+                    lineHeight: '110%',
+                    letterSpacing: 0,
+                    verticalAlign: 'middle',
+                    color: '#000',
+                    marginBottom: '30px',
+                  }}
+                >
+                  Brand
+                </h2>
+                <p
+                  style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                    letterSpacing: 0,
+                    verticalAlign: 'middle',
+                    color: '#00000099',
+                    marginBottom: '20px',
+                  }}
+                >
                   Being sustainable -The Underlying natural order
                   of the universe - circular continuity of the
                   natural world. Undifferentiated, endlessly self-
                   replenishing, immensely powerful and
                   impassively generous.
                 </p>
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
+                <p
+                  style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                    letterSpacing: 0,
+                    verticalAlign: 'middle',
+                    color: '#00000099',
+                    marginBottom: '20px',
+                  }}
+                >
                   Our purpose brings together the company,
                   employees, clients and our stakeholders and
                   reconciles economic performance witha
                   positive impact on people and the planet.
                 </p>
-                <Link href="/purpose" className="contents"> {/* className="contents" again */}
+                <div style={{ marginBottom: '20px' }} />
+                <Link href="/purpose" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -483,8 +512,8 @@ const Home: FC = () => {
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                               alt="icon hover"
-                               width={16}
-                            height={16}
+                              width={16}
+                              height={16}
                             />
                           </motion.div>
                         </div>
@@ -493,33 +522,59 @@ const Home: FC = () => {
                   </HoverButton>
                 </Link>
               </div>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* About WAE Section */}
-         {/* Entrance animations removed for scroll-snap priority */}
-         {/* Changed to h-screen and centered content vertically */}
-        <section className="h-screen flex items-center justify-center relative snap-center"> {/* Changed height, removed mb, changed flex alignment */}
-          <motion.div
-            // Removed initial and whileInView animation props
-            // initial={{ y: "200%", opacity: 0 }}
-            // whileInView={{ y: 0, opacity: 1 }}
-            // transition={{ duration: 0.8, delay: 0.2 }}
-            // viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36" // Removed mb-20
-          >
-            <div className="flex flex-col lg:flex-row items-start justify-between">
-              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight"> {/* Font style via arbitrary value */}
-                About WAE
-              </h2>
-              <div className="flex flex-col gap-5 w-64"> {/* Fixed width text container */}
-                <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
-                  WAE captures the heart of Indian innovation by seamlessly blending time-honoured ideals with the latest technology.
-                  We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations,
-                  strengthening community resilience and showcasing India's intellectual capital on the world stage.
+              {/* About WAE (right on desktop) */}
+              <div className="flex-1 flex flex-col max-w-[251px] mx-auto lg:mx-0">
+                <h2
+                  style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '40px',
+                    lineHeight: '110%',
+                    letterSpacing: 0,
+                    verticalAlign: 'middle',
+                    color: '#000',
+                    marginBottom: '30px',
+                  }}
+                >
+                  Purpose
+                </h2>
+                <p
+                  style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                    letterSpacing: 0,
+                    verticalAlign: 'middle',
+                    color: '#00000099',
+                    marginBottom: '20px',
+                  }}
+                >
+                  Being sustainable -The Underlying natural order
+                  of the universe - circular continuity of the
+                  natural world. Undifferentiated, endlessly self-
+                  replenishing, immensely powerful and
+                  impassively generous.
                 </p>
-                <Link href="/about-wae" className="contents"> {/* className="contents" again */}
+                <p
+                  style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                    letterSpacing: 0,
+                    verticalAlign: 'middle',
+                    color: '#00000099',
+                    marginBottom: '20px',
+                  }}
+                >
+                  Our purpose brings together the company,
+                  employees, clients and our stakeholders and
+                  reconciles economic performance witha
+                  positive impact on people and the planet.
+                </p>
+                <div style={{ marginBottom: '20px' }} />
+                <Link href="/about-wae" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -540,8 +595,8 @@ const Home: FC = () => {
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                               alt="icon hover"
-                               width={16}
-                            height={16}
+                              width={16}
+                              height={16}
                             />
                           </motion.div>
                         </div>
@@ -1014,8 +1069,16 @@ const Home: FC = () => {
               </div>
               <div className="flex flex-col gap-5 w-64"> {/* Fixed width text container */}
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70"> {/* Fixed width + arbitrary font style */}
-                  The underlying natural order of the universe – circular continuity of the natural world.
-                  Undifferentiated, endlessly self-replenishing, immensely powerful, and impassively generous.
+                  WAE captures the heart of Indian innovation by 
+                  seamlessly blending the time-honoured ideals 
+                  with the latest technology. We are driven by the 
+                  mission to build a brand that not only saves the 
+                  planet but also creates a potent impact on 
+                  future generations for the country's 
+                  advancements, integrity & innovation. Our 
+                  approach strengthens community resilience 
+                  while showcasing India's intellectual capital on 
+                  the world stage.
                 </p>
 
               </div>
@@ -1024,90 +1087,55 @@ const Home: FC = () => {
         </section>
 
         {/* Sustainability Section */}
-         {/* Parallax motion.div wrapper and related hooks removed for scroll-snap priority */}
-         {/* Changed to h-screen and centered content vertically, removed padding */}
-        {/* <motion.div ref={sustainabilityScrollRef} style={{ y: sustainabilityY }}> // Removed outer motion.div */}
-          <section className="h-screen flex items-center justify-center relative snap-center px-[9.72%]"> {/* Changed height, removed padding, changed flex alignment */}
-            <motion.div
-              // Removed initial and whileInView animation props for opacity
-              // initial={{ opacity: 0 }}
-              // whileInView={{ opacity: 1 }}
-              // transition={{ duration: 0.8, delay: 0.5 }}
-              // viewport={{ once: true }}
-              className="w-full max-w-screen-xl flex flex-col lg:flex-row justify-between" // This content will be centered
+        <section className="h-screen flex items-center justify-center relative snap-center px-[9.72%]">
+          <motion.div
+            className="w-full max-w-screen-xl flex flex-col items-start justify-center relative"
+          >
+            {/* Heading on top */}
+            <h2
+              className="mb-20 text-left"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "58px",
+                lineHeight: "110%",
+                color: "#000",
+              }}
             >
-              <h2
-                className="inline-block"
-                style={{ // Inline styles for typography
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "58px",
-                  lineHeight: "110%",
-                  color: "#000",
-                }}
-              >
-                Sustainability
-              </h2>
-              <div className="flex flex-col gap-20">
-                <div className="flex flex-col">
-                  <p className="text-4xl font-normal text-black leading-snug">
-                    1,012,120.25
-                  </p>
-                  <p className="text-xs font-normal text-black/70 tracking-wide">
-                    TONNES CO2 EMISSIONS SAVED
-                  </p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-4xl font-normal text-black leading-snug">
-                    12,185.4325
-                  </p>
-                  <p className="text-xs font-normal text-black/70 tracking-wide">
-                    MILLION GALLONS WATER SAVED
-                  </p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-4xl font-normal text-black leading-snug">
-                    22,253.65
-                  {/* Note: Missing link/button inside this div */}
-                  </p>
-                  <p className="text-xs font-normal text-black/70 tracking-wide">
-                    TONNES PLASTIC REMOVED
-                  </p>
-                  <Link href="/sustainability" className="mt-10">
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-                </div>
+              Sustainability
+            </h2>
+            {/* Metrics row below heading */}
+            <div className="flex flex-row gap-32 w-full">
+              <div className="flex flex-col items-start min-w-[220px]">
+                <p className="text-5xl font-semibold text-black leading-snug">
+                  1,012,120.25
+                </p>
+                <div className="h-px w-full bg-[#D9D9DC] my-2" />
+                <p className="text-sm font-normal text-black/70 tracking-wide mt-2">
+                  Tonnes CO2 Emissions Saved
+                </p>
               </div>
-            </motion.div>
-          </section>
-        {/* </motion.div> // Removed outer motion.div */}
+              <div className="flex flex-col items-start min-w-[220px]">
+                <p className="text-5xl font-semibold text-black leading-snug">
+                  12,185.43
+                </p>
+                <div className="h-px w-full bg-[#D9D9DC] my-2" />
+                <p className="text-sm font-normal text-black/70 tracking-wide mt-2">
+                  Million Gallons Water Saved
+                </p>
+              </div>
+              <div className="flex flex-col items-start min-w-[220px]">
+                <p className="text-5xl font-semibold text-black leading-snug">
+                  22,253.65
+                </p>
+                <div className="h-px w-full bg-[#D9D9DC] my-2" />
+                <p className="text-sm font-normal text-black/70 tracking-wide mt-2">
+                  Tonnes Plastic Removed
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </section>
         </div>
 
         {/* RELATED INFORMATION SECTION */}
