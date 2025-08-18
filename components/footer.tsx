@@ -16,7 +16,7 @@ export default function Footer() {
 
           {/* Logo - Hidden on mobile, visible on desktop */}
           <div className="hidden md:flex flex-col justify-center">
-            <Link href="/homepage3" passHref>
+            <Link href="/" passHref>
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
                 alt="WAE Logo"
@@ -165,7 +165,7 @@ export default function Footer() {
               </ul>
               {/* Logo below HR, beside policy menu items on mobile */}
               <div className="mr-[15%] flex-shrink-0 md:hidden"> {/* Margin left for spacing, hidden on desktop */}
-                <Link href="/homepage3" passHref>
+                <Link href="/" passHref>
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
                     alt="WAE Logo"
