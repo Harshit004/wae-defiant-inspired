@@ -120,11 +120,11 @@ const Home: FC = () => {
   ];
 
   const specificationsData = [
-    { subtext1: "Variant", heading: "FS", subtext2: "GAMMA" },
-    { subtext1: "Drip Try Capacity", heading: "750ml", subtext2: "Milli Ltires" },
-    { subtext1: "Hot Temperature", heading: "30°C- 80°C", subtext2: "Default 50°C" },
-    { subtext1: "Cold Temperature", heading: "5°C- 24°C", subtext2: "Default 8°C" },
-    { subtext1: "Compressor", heading: "220V/50 HZ", subtext2: "RZ 134a 1/8 HP" },
+    { subtext1: "Variant", heading: "FS", subtext2: "DELTA" },
+    { subtext1: "Weight", heading: "55", subtext2: "Kilo Grams" },
+    { subtext1: "Dimensions", heading: "1295/350/445", subtext2: "MM" },
+    { subtext1: "Dimensions", heading: "1193/300/410", subtext2: "MM" },
+    { subtext1: "Storage Capacity", heading: "Hot 1| Cold 23", subtext2: "Litres (DELTA)" },
   ];
 
   return (
