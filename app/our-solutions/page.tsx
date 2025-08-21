@@ -521,105 +521,20 @@ export default function Home() {
 
         {/* Hero section */}
         <section
-            id="hero"
-            className="relative w-full overflow-hidden h-screen pt-[70px] md:pt-[160px]"
-        >
-            {/* Image - positioned absolutely to be behind content */}
-            <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/73c75bcc-aeeb-408e-ad25-dd4ab07f2b00/public" // Updated banner image URL
-                alt="Our Solutions Hero"
-                fill
-                className="object-cover -z-10"
-            />
-
-            {/* Text and image overlays */}
-            {/* Hide the "innovation meets design" image on mobile */}
-            <div
-                className="absolute hidden md:block"
-                style={{
-                    bottom: "30%",
-                    right: "calc(3.473%)",
-                    width: "393px",
-                    height: "159px",
-                }}
-            >
-                <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public" // Updated overlay image URL
-                    alt="innovation meets design"
-                    width={393}
-                    height={159}
-                    className="object-contain"
+                id="hero"
+                className="relative w-full overflow-hidden h-[550px] pt-[70px] md:pt-[160px] mb-[140px]"
+              >
+                {/* Desktop: Background video (cover, aspect ratio maintained) */}
+                <video
+                  className="hidden md:block absolute inset-0 w-screen  object-contain z-0"
+                  style={{objectFit: 'contain' }}
+                  src="/Water_Treatment (1).mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                 />
-            </div>
-
-            {/* Our Solutions Text - Mobile Version */}
-            <div
-                className="absolute uppercase md:hidden"
-                style={{
-                    bottom: "10%",
-                    left: "1rem",
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "2rem", // This was already 32px (2rem)
-                    lineHeight: "110%", // This was already 110%
-                    color: "#fff",
-                }}
-            >
-                Our Solutions
-            </div>
-
-            {/* Our Solutions Text - Desktop Version */}
-            <div
-                className="absolute uppercase hidden md:block"
-                style={{
-                    bottom: "33%",
-                    left: "calc(4.16666%)",
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "48px",
-                    lineHeight: "110%",
-                    color: "#fff",
-                }}
-            >
-                Our Solutions
-            </div>
-
-            {/* Scroll for more Text - Mobile Version */}
-            <div
-                className="absolute uppercase md:hidden"
-                style={{
-                    bottom: "5%",
-                    left: "1rem",
-                    width: "104px",
-                    height: "12px",
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "0.625rem",
-                    lineHeight: "100%",
-                    color: "#fff",
-                }}
-            >
-                Scroll for more ⤵︎
-            </div>
-
-            {/* Scroll for more Text - Desktop Version */}
-            <div
-                className="absolute uppercase hidden md:block"
-                style={{
-                    bottom: "30%",
-                    left: "calc(4.16666%)",
-                    width: "104px",
-                    height: "12px",
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "10px",
-                    lineHeight: "100%",
-                    color: "#fff",
-                }}
-            >
-                Scroll for more ⤵︎
-            </div>
-        </section>
+              </section>
 
         {/* Our SOLUTIONS Heading (Main Content Title) */}
       <div className={containerClass} style={{marginTop: "80px"}}> {/* 80px gap for mobile and desktop */}

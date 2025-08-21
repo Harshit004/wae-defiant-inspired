@@ -18,21 +18,12 @@ const nextConfig = {
   },
   experimental: {
     webpackBuildWorker: true,
-    // Enable new JSX transform
-    reactRoot: true,
   },
   compiler: {
     // Remove React properties in production
     reactRemoveProperties: process.env.NODE_ENV === 'production',
   },
   reactStrictMode: true,
-  // Enable SWC minification
-  swcMinify: true,
-  // Configure SWC for React 19
-  compilerOptions: {
-    jsx: 'automatic',
-    jsxImportSource: 'react',
-  },
 }
 
 async function mergeConfig(nextConfig, userConfig) {

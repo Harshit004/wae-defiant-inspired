@@ -384,101 +384,16 @@ export default function Home() {
           id="hero"
           className="relative w-full overflow-hidden h-screen pt-[70px] md:pt-[160px] mb-[60px]" // Responsive top padding, ADDED mb-[60px] here
         >
-          {/* Image - positioned absolutely to be behind content */}
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/23d6df0a-507b-45bd-6ba7-4ac13a280700/public"
-            alt="Water reuse"
-            fill
-            className="object-cover -z-10" // Fill and object-cover for responsive background
-          />
-
-          {/* Text and image overlays */}
-          {/* Hide the "innovation meets design" image on mobile */}
-          <div
-            className="absolute hidden md:block" // Hidden on mobile, block on desktop
-            style={{
-              bottom: "30%",
-              right: "calc(3.473%)",
-              width: "393px",
-              height: "159px",
-            }}
+          {/* Video Background */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover -z-10"
           >
-            <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c238dd1f-ef2b-4894-740e-0214c726b400/public"
-              alt="Innovation meets design"
-              width={393}
-              height={159}
-              className="object-contain"
-            />
-          </div>
-
-          {/* "Water Reuse" Text - Mobile Version */}
-          <div
-            className="absolute uppercase md:hidden" // Visible on mobile, hidden on desktop
-            style={{
-              bottom: "10%",
-              left: "1rem", // Adjusted for mobile padding
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "2rem", // 32px
-              lineHeight: "110%",
-              color: "#fff",
-            }}
-          >
-            Water Reuse
-          </div>
-
-          {/* "Water Reuse" Text - Desktop Version */}
-          <div
-            className="absolute uppercase hidden md:block" // Hidden on mobile, block on desktop
-            style={{
-              bottom: "33%",
-              left: "calc(4.16666%)",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "48px",
-              lineHeight: "110%",
-              color: "#fff",
-            }}
-          >
-            Water Reuse
-          </div>
-
-          {/* Scroll for more Text - Mobile Version */}
-          <div
-            className="absolute uppercase md:hidden" // Visible on mobile, hidden on desktop
-            style={{
-              bottom: "5%",
-              left: "1rem", // Adjusted for mobile padding
-              width: "104px",
-              height: "12px",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "0.625rem", // 10px
-              lineHeight: "100%",
-              color: "#fff",
-            }}
-          >
-            Scroll for more ⤵︎
-          </div>
-
-          {/* Scroll for more Text - Desktop Version */}
-          <div
-            className="absolute uppercase hidden md:block" // Hidden on mobile, block on desktop
-            style={{
-              bottom: "30%",
-              left: "calc(4.16666%)",
-              width: "104px",
-              height: "12px",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "10px",
-              lineHeight: "100%",
-              color: "#fff",
-            }}
-          >
-            Scroll for more ⤵︎
-          </div>
+            <source src="/Water_Reuse.mp4" type="video/mp4" />
+          </video>
         </section>
 
         {/* NEW SECTION: Hardcoded Rows in a Single Grid (DESKTOP ONLY) */}

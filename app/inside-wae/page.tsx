@@ -451,68 +451,20 @@ useEffect(() => {
 
         {/* HERO SECTION */}
         <section
-          id="hero"
-          ref={heroRef}
-          className="relative h-screen w-full overflow-hidden"
-        >
-          <video
-            src="/3f6940f6f51b6c16ee6d8104dc1d4344a4633a81.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-
-          {/* Replacing the text with the provided image */}
-          <div
-            className="absolute"
-            style={{
-              bottom: "30%",
-              right: "3.473%",
-              width: "393px",
-              height: "159px",
-            }}
-          >
-            <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/baae1906-6288-4ad1-dac7-226c1109fb00/public"
-              alt="Disrupting the status quo"
-              width={393}
-              height={159}
-              className="object-contain"
-            />
-          </div>
-          <div
-            className="absolute"
-            style={{
-              bottom: "33%",
-              left: "4.16666%",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "48px",
-              lineHeight: "110%",
-              color: "#fff",
-            }}
-          >
-            This Is Us
-          </div>
-          <div
-            className="absolute uppercase"
-            style={{
-              bottom: "30%",
-              left: "4.16666%",
-              width: "104px",
-              height: "12px",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "10px",
-              lineHeight: "100%",
-              color: "#fff",
-            }}
-          >
-            Scroll for more ⤵︎
-          </div>
-        </section>
+                id="hero"
+                className="relative w-full overflow-hidden h-[550px] pt-[70px] md:pt-[160px] mb-[140px]"
+              >
+                {/* Desktop: Background video (cover, aspect ratio maintained) */}
+                <video
+                  className="hidden md:block absolute inset-0 w-screen  object-contain z-0"
+                  style={{objectFit: 'contain' }}
+                  src="/This is us.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              </section>
       </div>
 
       {/* SCROLL-DRIVEN CONTAINER */}
