@@ -288,8 +288,8 @@ export default function Careers2() {
           </div>
         </header>
       {/* HERO SECTION */}
-              <section
-                id="hero"
+<section
+          id="hero"
                 className="relative w-full overflow-hidden h-[550px] pt-[70px] md:pt-[160px] mb-[140px]"
               >
                 {/* Desktop: Background video (cover, aspect ratio maintained) */}
@@ -409,7 +409,7 @@ export default function Careers2() {
             <a href="#" className="w-fit mb-10">
               <button className="border border-black px-6 py-3 text-xs font-medium uppercase font-['Inter Tight',sans-serif] hover:bg-black hover:text-white transition flex items-center gap-2">
                 Learn about life at WAE
-                <Image
+            <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d87555-09bc-466e-f870-061b0e7ae900/public"
                   alt="arrow"
                   width={16}

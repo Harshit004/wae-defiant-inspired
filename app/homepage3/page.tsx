@@ -36,7 +36,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
       {/* Fixed Mobile Header Bar (Visible only on small screens) */}
       <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-transparent md:hidden">
         {/* Mobile Logo */}
-        <Link href="/
+        <Link href="/">
           <Image
             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
             alt="WAE Logo Mobile"

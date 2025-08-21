@@ -18,31 +18,35 @@ const nextConfig = {
   },
   experimental: {
     webpackBuildWorker: true,
-    parallelServerBuildTraces: true,
-    parallelServerCompiles: true,
+    // Enable new JSX transform
+    reactRoot: true,
+  },
+  compiler: {
+    // Remove React properties in production
+    reactRemoveProperties: process.env.NODE_ENV === 'production',
+  },
+  reactStrictMode: true,
+  // Enable SWC minification
+  swcMinify: true,
+  // Configure SWC for React 19
+  compilerOptions: {
+    jsx: 'automatic',
+    jsxImportSource: 'react',
   },
 }
 
-mergeConfig(nextConfig, userConfig)
-
-function mergeConfig(nextConfig, userConfig) {
+async function mergeConfig(nextConfig, userConfig) {
   if (!userConfig) {
-    return
+    return nextConfig
   }
-
-  for (const key in userConfig) {
-    if (
-      typeof nextConfig[key] === 'object' &&
-      !Array.isArray(nextConfig[key])
-    ) {
-      nextConfig[key] = {
-        ...nextConfig[key],
-        ...userConfig[key],
-      }
-    } else {
-      nextConfig[key] = userConfig[key]
+  // If the user has a webpack function in their config, merge it with ours
+  if (userConfig.webpack) {
+    const originalWebpack = userConfig.webpack
+    userConfig.webpack = (config, options) => {
+      return originalWebpack(nextConfig.webpack(config, options), options)
     }
   }
+  return { ...nextConfig, ...userConfig }
 }
 
-export default nextConfig
+export default mergeConfig(nextConfig, userConfig?.default || userConfig)

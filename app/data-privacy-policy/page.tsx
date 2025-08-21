@@ -91,25 +91,15 @@ export default function Home() {
               {/* Logo */}
 
 <div className="flex flex-col justify-center">
-
-  <Link href="/
-
+  <Link href="/">
     <Image
-
       src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-
       alt="WAE Logo"
-
       width={78}
-
       height={82}
-
       style={{ cursor: 'pointer' }}
-
     />
-
   </Link>
-
 </div>
 
               {/* Coordinates */}

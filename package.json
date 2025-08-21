@@ -68,6 +68,8 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
     "@types/lodash": "^4.17.16",
     "@types/node": "^22",
     "@types/react": "^19",
