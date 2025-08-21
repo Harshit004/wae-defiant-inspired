@@ -310,7 +310,7 @@ export default function Home() {
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
               <div className="flex flex-col justify-center">
-                <Link href="/homepage3">
+                <Link href="/">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
                     alt="WAE Logo"

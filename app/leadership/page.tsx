@@ -128,7 +128,7 @@ export default function Home() {
 
 <div className="flex flex-col justify-center">
 
-  <Link href="/homepage3" passHref>
+  <Link href="/" passHref>
 
     <Image
 

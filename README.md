@@ -1,4 +1,4 @@
-# 🌊 WAE Website (Water & Environment)
+# 🌊 WAE Website (Water Air & Earth)
 
 Welcome to the WAE website! This is where we show off all our cool water and environment products. 🚰🌍
 
@@ -43,4 +43,4 @@ If something's not working, just ask! We're here to help. 😊
 
 ---
 
-Made with ❤️ by the WAE team
+Made with ❤️ by the Harshit

@@ -35,7 +35,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
       {/* Fixed Mobile Header Bar (Visible only on small screens) */}
       <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-black/10 md:hidden">
         {/* Mobile Logo */}
-        <Link href="/homepage3">
+        <Link href="/">
           <Image
             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce113ad4-0a6b-43dd-066c-26769520d000/public"
             alt="WAE Logo Mobile"
@@ -257,7 +257,7 @@ export default function Home() {
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
               <div className="flex flex-col justify-center">
-                <Link href="/homepage3">
+                <Link href="/">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
                     alt="WAE Logo"

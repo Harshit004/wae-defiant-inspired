@@ -220,7 +220,7 @@ const Home: FC = () => {
               {/* Logo */}
               <div className="flex flex-col justify-center">
                 {/* Changed <a> to <Link> for client-side navigation */}
-                <Link href="/homepage3">
+                <Link href="/">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
                     alt="WAE Logo"
