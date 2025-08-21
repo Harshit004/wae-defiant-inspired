@@ -368,8 +368,9 @@ const Home: FC = () => {
               marginBottom: "32px", // Assuming 16px gap between heading and buttons
             }}
           >
-            TRUBLU ALFA 100
+            TRUBLU ALFA 65/100
           </h2>
+          
           <div className="flex gap-4 mb-[57px]">
           <HoverButton href="/product-category" invertedColors={true}>
               {(hovered) => (
