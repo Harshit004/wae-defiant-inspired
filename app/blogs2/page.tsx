@@ -49,7 +49,9 @@ export default function Home() {
       subtitle: 'LOREM IPSUM',
       title: 'How to reduce your water foot print: From Shower to shopping',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis, dui nec molestie fringilla, diam velit facilisis ante, non tincidunt velit tortor id est. In tempor, risus eu feugiat tincidunt, justo nunc varius urna, a accumsan nibh justo nec turpis. In vehicula sodales laoreet.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis, dui nec molestie fringilla, diam velit facilisis ante, non tincidunt velit tortor id est. In tempor, risus eu feugiat tincidunt, justo nunc varius urna, a accumsan nibh justo nec turpis. In vehicula sodales laoreet. Curabitur semper, erat sit amet condimentum aliquet, velit justo volutpat mi, a lacinia tortor nunc vitae nunc.\n' +
+        '  \n\n' +
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis, dui nec molestie fringilla, diam velit facilisis ante, non tincidunt velit tortor id est. In tempor, risus eu feugiat tincidunt, justo nunc varius urna, a accumsan nibh justo nec turpis. In vehicula sodales laoreet. Curabitur semper, erat sit amet condimentum aliquet, velit justo volutpat mi, a lacinia tortor nunc vitae nunc.',
     },
 
   ]
@@ -355,14 +357,15 @@ export default function Home() {
       <section
         className={`${containerClass} flex justify-between items-start mt-5 mb-20`}
       >
-        {/* Image (38.19% width & height) */}
-        <div style={{ width: "38.19%", height: "38.19%" }}>
-          <Image
-            src={heroSlides[currentSlide].imageSrc}
-            alt={heroSlides[currentSlide].title}
-            width={800}
-            height={800}
-            className="object-cover w-full h-full"
+        {/* Video (38.19% width & height) */}
+        <div style={{ width: "38.19%"}}>
+          <video
+            src="/Blog_Video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="object-cover w-full"
           />
         </div>
 
