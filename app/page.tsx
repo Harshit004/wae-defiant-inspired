@@ -491,7 +491,7 @@ const Home: FC = () => {
                   positive impact on people and the planet.
                 </p>
                 <div style={{ marginBottom: '20px' }} />
-                <Link href="/purpose" className="contents">
+                {/* <Link href="/purpose" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -520,7 +520,7 @@ const Home: FC = () => {
                       </>
                     )}
                   </HoverButton>
-                </Link>
+                </Link> */}
               </div>
               {/* About WAE (right on desktop) */}
               <div className="flex-1 flex flex-col max-w-[251px] mx-auto lg:mx-0">
@@ -574,7 +574,7 @@ const Home: FC = () => {
                   positive impact on people and the planet.
                 </p>
                 <div style={{ marginBottom: '20px' }} />
-                <Link href="/about-wae" className="contents">
+                {/* <Link href="/about-wae" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -603,7 +603,7 @@ const Home: FC = () => {
                       </>
                     )}
                   </HoverButton>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </motion.div>
