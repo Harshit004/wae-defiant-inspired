@@ -399,7 +399,7 @@ const Home: FC = () => {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="relative w-full overflow-hidden h-[550px] pt-[70px] md:pt-[160px] mb-[140px]"
+        className="relative w-full overflow-hidden h-fit pt-[70px] md:pt-[160px] mb-[140px]"
       >
         {/* Desktop: Background video (cover, aspect ratio maintained) */}
         <video
