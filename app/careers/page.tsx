@@ -405,7 +405,7 @@ const Home: FC = () => {
         <video
           className="hidden md:block absolute inset-0 w-screen object-contain z-0"
           style={{objectFit: 'contain' }}
-          src="/Career_Page_update_video_banner.mp4"
+          src="/Career_Page_update (1).mp4.mp4"
           autoPlay
           muted
           loop
