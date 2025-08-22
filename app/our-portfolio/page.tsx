@@ -364,107 +364,22 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero section - now starts directly after header with padding for content */}
-      <section
-          id="hero"
-          className="relative w-full overflow-hidden h-screen pt-[70px] md:pt-[160px]" // Added padding-top for header overlap
-        >
-           {/* Image - positioned absolutely to be behind content */}
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3cc94962-6b68-4617-df3b-09aabd928700/public"
-            alt="Our portfolio"
-            fill // Use fill for better responsiveness with absolute positioning
-            className="object-cover -z-10" // -z-10 ensures it's behind other content
-          />
-
-          {/* Text and image overlays - position relative to the padded area */}
-          {/* Hide the "Sustainable products" image on mobile */}
-          <div
-            className="absolute hidden md:block"
-            style={{
-              bottom: "30%",
-              right: "calc(3.473%)",
-              width: "393px",
-              height: "159px",
-            }}
-          >
-            <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3785262c-3901-44fa-36ed-a4a936c6dc00/public"
-              alt="Sustainable products responsible solutions"
-              width={393}
-              height={159}
-              className="object-contain"
-            />
-          </div>
-
-          {/* Our Portfolio Text - Mobile Version */}
-          <div
-            className="absolute uppercase md:hidden" // Only visible on mobile
-            style={{
-              bottom: "10%",
-              left: "1rem",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "2rem", // 32px
-              lineHeight: "110%",
-              color: "#fff",
-            }}
-          >
-            Our Portfolio
-          </div>
-
-          {/* Our Portfolio Text - Desktop Version */}
-          <div
-            className="absolute uppercase hidden md:block" // Only visible on desktop
-            style={{
-              bottom: "33%",
-              left: "calc(4.16666%)", // Adjust left position based on container padding
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "48px",
-              lineHeight: "110%",
-              color: "#fff",
-            }}
-          >
-            Our Portfolio
-          </div>
-
-          {/* Scroll for more Text - Mobile Version */}
-          <div
-            className="absolute uppercase md:hidden" // Only visible on mobile
-            style={{
-              bottom: "5%",
-              left: "1rem",
-              width: "104px",
-              height: "12px",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "0.625rem", // 10px
-              lineHeight: "100%",
-              color: "#fff",
-            }}
-          >
-            Scroll for more ⤵︎
-          </div>
-
-          {/* Scroll for more Text - Desktop Version */}
-          <div
-            className="absolute uppercase hidden md:block" // Only visible on desktop
-            style={{
-              bottom: "30%",
-              left: "calc(4.16666%)", // Adjust left position based on container padding
-              width: "104px",
-              height: "12px",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "10px",
-              lineHeight: "100%",
-              color: "#fff",
-            }}
-          >
-            Scroll for more ⤵︎
-          </div>
-        </section>
+      {/* Hero section */}
+              <section
+                id="hero"
+                className="relative w-full overflow-hidden h-[550px] pt-[70px] md:pt-[160px] mb-[140px]"
+              >
+                {/* Desktop: Background video (cover, aspect ratio maintained) */}
+                <video
+                  className="hidden md:block absolute inset-0 w-screen  object-contain z-0"
+                  style={{objectFit: 'contain' }}
+                  src="/Our_portfolio.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              </section>
 
         {/* NEW SECTION: Responsive Grid Layout */}
         <div className={`${containerClass} mb-[80px] md:mb-[140px] mt-[60px]`}>
