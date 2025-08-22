@@ -418,7 +418,7 @@ const Home: FC = () => {
        {/* Increased delay on the transition - Note: The scroll-to-top effect might make this less noticeable/necessary */}
       <motion.div
         className="relative bg-[#F2F2F2]"
-        style={{ marginTop: "100vh" }}
+        style={{ marginTop: "10vh" }}
          initial={{ opacity: 0 }}
          animate={{ opacity: 1 }}
          transition={{ duration: 0.5, delay: 0.4 }}
