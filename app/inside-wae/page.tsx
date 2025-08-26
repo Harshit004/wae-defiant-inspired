@@ -522,7 +522,7 @@ useEffect(() => {
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                 WAE envisions a world where safe and sustainable water is accessible to all. Its mission is to develop innovative, eco-friendly solutions for hydration and water treatment that benefit both people and the environment. Guided by integrity, inclusivity, and a strong commitment to sustainability, WAE works to create lasting positive impact.
                 </p>
-                <Link href="/vision-mission" className="contents">
+                {/* <Link href="/vision-mission" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -551,7 +551,7 @@ useEffect(() => {
                       </>
                     )}
                   </HoverButton>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </motion.div>
