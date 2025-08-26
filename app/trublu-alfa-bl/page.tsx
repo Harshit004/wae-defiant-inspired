@@ -120,12 +120,14 @@ const Home: FC = () => {
   ];
 
   const specificationsData = [
-    { subtext1: "Variant", heading: "FS", subtext2: "ALFA BL" },
-    { subtext1: "Refrigerant", heading: "R-134a", subtext2: "-" },
-    { subtext1: "Hot Temperature", heading: "50°C- 80°C", subtext2: "Default 55°C" },
-    { subtext1: "Cold Temperature", heading: "5°C- 24°C", subtext2: "Default 8°C" },
-    { subtext1: "Power Requirement", heading: "Hertz 50", subtext2: "Volts 230-240" },
+    { subtext1: "Variant", heading: "CT", subtext2: "ALFA BL" },
+    { subtext1: "Weight", heading: "31", subtext2: "Kilo Grams" },
+    { subtext1: "Storage Capacity", heading: "Hot 1 | Cold 2", subtext2: "Litres (ALFA.TL.7CH)" },
+    { subtext1: "Storage Capacity", heading: "Hot 1 | Cold 2 | Reserve 4", subtext2: "Litres (ALFA.TL.7CHA)" },
+    { subtext1: "Dimensions", heading: "1195/340/375", subtext2: "MM" },
+    { subtext1: "Dimensions", heading: "1200/400/400", subtext2: "MM" },
   ];
+
 
   return (
     <main>

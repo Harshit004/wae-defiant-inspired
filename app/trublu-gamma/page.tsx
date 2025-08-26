@@ -116,12 +116,13 @@ const Home: FC = () => {
   ];
 
   const specificationsData = [
-    { subtext1: "Variant", heading: "CT", subtext2: "GAMMA" },
-    { subtext1: "Weight", heading: "37", subtext2: "Kilo Grams" },
+    { subtext1: "Variant", heading: "FS", subtext2: "DELTA" },
+    { subtext1: "Weight", heading: "55", subtext2: "Kilo Grams" },
+    { subtext1: "Dimensions", heading: "1295/350/445", subtext2: "MM" },
     { subtext1: "Dimensions", heading: "1193/300/410", subtext2: "MM" },
-    { subtext1: "Dimensions", heading: "1193/300/410", subtext2: "MM" },
-    { subtext1: "Storage Capacity", heading: "Hot 1| Cold 8", subtext2: "Litres (GAMMA HCA)" },
+    { subtext1: "Storage Capacity", heading: "Hot 1| Cold 23", subtext2: "Litres (DELTA)" },
   ];
+
 
   return (
     <main>

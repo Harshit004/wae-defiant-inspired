@@ -528,7 +528,7 @@ export default function Home() {
                 <video
                   className="hidden md:block absolute inset-0 w-screen  object-contain z-0"
                   style={{objectFit: 'contain' }}
-                  src="/Water_Treatment (1).mp4"
+                  src="/our_Solutions.mp4"
                   autoPlay
                   muted
                   loop
