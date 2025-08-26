@@ -279,7 +279,7 @@ useEffect(() => {
     <main className="relative">
       {/* HEADER AND HERO SECTION */}
       <div ref={headerHeroRef} className="fixed top-0 left-0 w-full z-0">
-        <header ref={headerRef} className="w-full bg-white relative z-10 mb-[20px]">
+        <header ref={headerRef} className="w-full bg-white relative z-10 pb-[20px]">
           <div className="mx-auto w-full max-w-[1440px] px-[9.72%]">
             {/* Top Row: Navigation */}
             <div
