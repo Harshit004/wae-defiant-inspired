@@ -46,12 +46,10 @@ export default function Home() {
   const heroSlides = [
     {
       imageSrc: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/64dcf049-c0f4-4796-e838-023963936100/public',
-      subtitle: 'LOREM IPSUM',
-      title: 'How to reduce your water foot print: From Shower to shopping',
+      subtitle: 'WAE LTD.',
+      title: 'From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet’s Future',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis, dui nec molestie fringilla, diam velit facilisis ante, non tincidunt velit tortor id est. In tempor, risus eu feugiat tincidunt, justo nunc varius urna, a accumsan nibh justo nec turpis. In vehicula sodales laoreet. Curabitur semper, erat sit amet condimentum aliquet, velit justo volutpat mi, a lacinia tortor nunc vitae nunc.\n' +
-        '  \n\n' +
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis, dui nec molestie fringilla, diam velit facilisis ante, non tincidunt velit tortor id est. In tempor, risus eu feugiat tincidunt, justo nunc varius urna, a accumsan nibh justo nec turpis. In vehicula sodales laoreet. Curabitur semper, erat sit amet condimentum aliquet, velit justo volutpat mi, a lacinia tortor nunc vitae nunc.',
+        "In the quiet halls of Kyoto in 1997, something monumental began  a collective awakening of the world’s conscience towards the mounting crisis of climate change. What followed was a turbulent yet determined journey, a series of historic global agreements that would shape the planet’s climate policy for decades to come, culminating (for now) in COP28. This is not just a timeline   it's the story of how humanity has tried, failed, and continued to try again in its battle against a warming world.",
     },
 
   ]
@@ -100,6 +98,7 @@ export default function Home() {
 
   // --- BUTTONS SECTION STATE ---
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
   // --- STATIC DATA ---
   const tagline1 = "To lead the way in sustainability".split(" ")
@@ -124,39 +123,51 @@ export default function Home() {
   const blogPosts = [
     {
       imageSrc:
-        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2af7fca1-0f0e-4152-9663-4e4ab29bd700/public",
-      title: "How to Reduce Your Water Footprint: From Shower to Shopping",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public",
+      imageSrcHover:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public",
+      title: "From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future",
+      description: "In the quiet halls of Kyoto in 1997, something monumental began   a collective awakening of the world's conscience towards the mounting crisis of climate change. ",
     },
     {
       imageSrc:
-        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7cd518f1-b756-48b4-f092-ff201fa8af00/public",
-      title: "Why Every Drop Counts: Understanding the Global Crisis",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public",
+      imageSrcHover:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public",
+      title: "Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective",
+      description: "The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.",
     },
     {
       imageSrc:
-        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/eb8715a4-ecf3-4d71-c660-6ae749ecdd00/public",
-      title: "Who Owns Water: Water Rights and Access",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public",
+      imageSrcHover:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c3eb242-b13a-443c-da32-a78bce6e7a00/public",
+      title: "The Ozone Crisis: A Success Story in Environmental Cooperation",
+      description: "It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth. This protective shield—the ozone layer—sits between 10 to 50 kilometres above the surface and has for millions of years absorbed nearly 97–99% of the Sun's harmful ultraviolet-B (UV-B) radiation. ",
     },
     {
       imageSrc:
-        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bbd20c7c-81c6-4e56-40fc-e82926f6ba00/public",
-      title: "Water Inequality: Making Water a Human Right",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2bcd53b1-c103-4faf-bd00-29a04ff0ee00/public",
+      imageSrcHover:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13245178-9299-4091-ebca-89c63b972600/public",
+      title: "Industrial Revolution to the Carbon Age: How We Got There",
+      description: "The story begins in the smoky heart of 18th-century England. Coal dust filled the air as the first every corner of the globe. What started as the Industrial Revolution an era of machines and mechanization quickly became something far more consequential: the dawn of the Carbon Age.",
     },
     {
       imageSrc:
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/acf3be78-0a74-4315-e8c7-92a9c5d8d900/public",
-      title: "Climate Change and Water Scarcity",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      imageSrcHover:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/acf3be78-0a74-4315-e8c7-92a9c5d8d900/public",
+      title: "The link between climate change and water scarcity",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.",
     },
     {
       imageSrc:
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/947c8083-4964-492f-a8bd-df9f8a972200/public",
-      title: "Melting Glaciers: Fresh Water Risks",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      imageSrcHover:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/947c8083-4964-492f-a8bd-df9f8a972200/public",
+      title: "Melting Glacier -Rising Risk : Climate change and fresh water supplies",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.",
     },
   ]
 
@@ -387,8 +398,9 @@ export default function Home() {
             style={{
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
-              fontSize: "58px",
-              lineHeight: "110%",
+              fontSize: "40px",
+              lineHeight: "120%",
+              letterSpacing: "0%",
             }}
           >
             {heroSlides[currentSlide].title}
@@ -404,6 +416,20 @@ export default function Home() {
           >
             {heroSlides[currentSlide].description}
           </p>
+          <a 
+            href="#" 
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "12px",
+              lineHeight: "130%",
+              letterSpacing: "0%",
+              textDecoration: "underline",
+              display: "inline-block"
+            }}
+          >
+            Read more
+          </a>
         </div>
       </section>
 
@@ -431,13 +457,18 @@ export default function Home() {
         <div className={containerClass}>
           <div className="grid grid-cols-3 gap-x-[4.166%] gap-y-[140px]">
             {blogPosts.map((post, idx) => (
-              <div key={idx} className="group">
+              <div 
+                key={idx} 
+                className="group"
+                onMouseEnter={() => setHoveredCard(idx)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
                 <Image
-                  src={post.imageSrc}
+                  src={hoveredCard === idx ? post.imageSrcHover : post.imageSrc}
                   alt={post.title}
                   width={347}
                   height={300}
-                  className="grayscale filter transition-filter duration-300 group-hover:grayscale-0 rounded-lg"
+                  className="rounded-lg transition-all duration-300 ease-in-out"
                 />
                 <div style={{ height: '60px' }} />
                 <h3
