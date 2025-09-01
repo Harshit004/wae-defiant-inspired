@@ -370,11 +370,14 @@ export default function Home() {
                 className="relative w-full overflow-hidden h-[713px] pt-[70px] md:pt-[160px] mb-[140px]"
               >
                 {/* Desktop: Background video (cover, aspect ratio maintained) */}
-                <img
-                  src="/office_VAR_Lineart (1) 1.png"
-                  alt="Climate Change & Water"
+                <video
+                  src="/Kyoto-COP28_Global-Climate-Agreements.mp4"
                   className="hidden md:block absolute inset-0 w-full h-full object-contain z-0"
-                  style={{ objectFit: 'contain' }}
+                  controls
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
               </section>
 
