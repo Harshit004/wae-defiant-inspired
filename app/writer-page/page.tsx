@@ -444,7 +444,7 @@ export default function Home() {
               }}>
                 <li className="flex items-start mb-[22.5px]">
                     <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/your-arrow-image-id/public"
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d0b60e46-f785-4b0e-3d1d-1c3840fc9700/public"
                         alt=""
                         width={24}
                         height={24}
@@ -454,7 +454,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start mb-[22.5px]">
                     <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/your-arrow-image-id/public"
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d0b60e46-f785-4b0e-3d1d-1c3840fc9700/public"
                         alt=""
                         width={24}
                         height={24}
@@ -464,7 +464,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start mb-[22.5px]">
                     <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/your-arrow-image-id/public"
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d0b60e46-f785-4b0e-3d1d-1c3840fc9700/public"
                         alt=""
                         width={24}
                         height={24}
@@ -474,7 +474,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start">
                     <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/your-arrow-image-id/public"
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d0b60e46-f785-4b0e-3d1d-1c3840fc9700/public"
                         alt=""
                         width={24}
                         height={24}
