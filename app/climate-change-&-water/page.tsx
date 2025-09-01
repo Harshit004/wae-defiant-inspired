@@ -367,7 +367,7 @@ export default function Home() {
       {/* Hero section */}
               <section
                 id="hero"
-                className="relative w-full overflow-hidden pt-[70px] md:mb-[140px]"
+                className="relative w-full overflow-hidden pt-0 md:mb-[140px]"
               >
                 {/* Desktop: Background video (full width, natural height) */}
                 <div className="w-full">
