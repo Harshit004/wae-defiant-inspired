@@ -367,19 +367,21 @@ export default function Home() {
       {/* Hero section */}
               <section
                 id="hero"
-                className="relative w-full overflow-hidden h-[650px] pt-[70px] md:mb-[140px]"
+                className="relative w-full overflow-hidden pt-[70px] md:mb-[140px]"
               >
-                {/* Desktop: Background video (cover, aspect ratio maintained) */}
-                <video
-                  src="/Kyoto-COP28_Global-Climate-Agreements.mp4"
-                  className="hidden md:block absolute inset-0 w-full h-full object-contain z-0"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                >
-                  Your browser does not support the video tag.
-                </video>
+                {/* Desktop: Background video (full width, natural height) */}
+                <div className="w-full">
+                  <video
+                    src="/Kyoto-COP28_Global-Climate-Agreements.mp4"
+                    className="hidden md:block w-full h-auto z-0"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </section>
 
         {/* Article Section */}
