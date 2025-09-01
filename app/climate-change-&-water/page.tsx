@@ -367,7 +367,7 @@ export default function Home() {
       {/* Hero section */}
               <section
                 id="hero"
-                className="relative w-full overflow-hidden h-[713px] pt-[70px] md:pt-[160px] mb-[140px]"
+                className="relative w-full overflow-hidden h-[713px] pt-[70px] md:mb-[140px]"
               >
                 {/* Desktop: Background video (cover, aspect ratio maintained) */}
                 <video
