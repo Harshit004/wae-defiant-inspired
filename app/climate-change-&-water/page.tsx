@@ -216,7 +216,7 @@ export default function Home() {
 
       {/* DESKTOP HEADER (Hidden on small screens) */}
       {/* Removed mb-5 to allow hero to start immediately after it */}
-      <header ref={headerRef} className={`w-full bg-[#f2f2f2] relative z-10 hidden md:block md:pb-[20px]`}>
+      <header ref={headerRef} className={`w-full bg-[#f2f2f2] relative z-10 hidden md:block`}>
         <div className={containerClass}>
           {/* Top Row: Navigation */}
           <div
@@ -367,7 +367,7 @@ export default function Home() {
       {/* Hero section */}
               <section
                 id="hero"
-                className="relative w-full overflow-hidden h-[713px] pt-[70px] md:mb-[140px]"
+                className="relative w-full overflow-hidden h-[650px] pt-[70px] md:mb-[140px]"
               >
                 {/* Desktop: Background video (cover, aspect ratio maintained) */}
                 <video
