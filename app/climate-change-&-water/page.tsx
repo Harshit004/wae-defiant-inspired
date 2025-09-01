@@ -216,7 +216,7 @@ export default function Home() {
 
       {/* DESKTOP HEADER (Hidden on small screens) */}
       {/* Removed mb-5 to allow hero to start immediately after it */}
-      <header ref={headerRef} className={`w-full bg-[#f2f2f2] relative z-10 hidden md:block`}>
+      <header ref={headerRef} className={`w-full bg-white relative z-10 hidden md:block`}>
         <div className={containerClass}>
           {/* Top Row: Navigation */}
           <div
@@ -373,12 +373,13 @@ export default function Home() {
                 <video
                   src="/Kyoto-COP28_Global-Climate-Agreements.mp4"
                   className="hidden md:block absolute inset-0 w-full h-full object-contain z-0"
-                  controls
                   autoPlay
                   loop
                   muted
                   playsInline
-                />
+                >
+                  Your browser does not support the video tag.
+                </video>
               </section>
 
         {/* Article Section */}
