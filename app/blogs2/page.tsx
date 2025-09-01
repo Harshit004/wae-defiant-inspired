@@ -459,17 +459,33 @@ export default function Home() {
             {blogPosts.map((post, idx) => (
               <div 
                 key={idx} 
-                className="group"
+                className="group relative"
                 onMouseEnter={() => setHoveredCard(idx)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <Image
-                  src={hoveredCard === idx ? post.imageSrcHover : post.imageSrc}
-                  alt={post.title}
-                  width={347}
-                  height={300}
-                  className="rounded-lg transition-all duration-300 ease-in-out"
-                />
+                <div className="relative">
+                  {/* Base image */}
+                  <Image
+                    src={post.imageSrc}
+                    alt={post.title}
+                    width={347}
+                    height={300}
+                    className="rounded-lg w-full h-auto"
+                  />
+                  {/* Hover image */}
+                  <div 
+                    className={`absolute inset-0 transition-opacity duration-700 ${hoveredCard === idx ? 'opacity-100' : 'opacity-0'}`}
+                    style={{ zIndex: 10 }}
+                  >
+                    <Image
+                      src={post.imageSrcHover}
+                      alt={post.title}
+                      width={347}
+                      height={300}
+                      className="rounded-lg w-full h-auto"
+                    />
+                  </div>
+                </div>
                 <div style={{ height: '60px' }} />
                 <h3
                   className="uppercase"
