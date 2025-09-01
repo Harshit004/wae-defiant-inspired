@@ -3,11 +3,11 @@
 import type { FC } from "react"
 import type React from "react"
 import { useEffect, useState, useRef } from "react"
+import CollaborateWithUs from "@/components/collaborate-with-us"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Footer from "@/components/footer"
 import Link from "next/link"
-import ConnectWithUs from "@/components/connect-with-us"
 
 // --- NEW MOBILE HEADER COMPONENT ---
 interface MobileHeaderProps {
@@ -567,6 +567,11 @@ export default function Home() {
       </section>
 
       
+
+      {/* COLLABORATE WITH US SECTION */}
+      <div className="mt-20">
+        <CollaborateWithUs introText="" />
+      </div>
 
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>
