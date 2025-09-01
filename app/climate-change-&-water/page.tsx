@@ -216,7 +216,7 @@ export default function Home() {
 
       {/* DESKTOP HEADER (Hidden on small screens) */}
       {/* Removed mb-5 to allow hero to start immediately after it */}
-      <header ref={headerRef} className={`w-full bg-white relative z-10 hidden md:block md:pb-[20px]`}>
+      <header ref={headerRef} className={`w-full bg-[#f2f2f2] relative z-10 hidden md:block md:pb-[20px]`}>
         <div className={containerClass}>
           {/* Top Row: Navigation */}
           <div
