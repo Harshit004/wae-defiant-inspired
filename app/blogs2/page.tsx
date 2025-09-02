@@ -455,7 +455,7 @@ export default function Home() {
       {/* ================= BLOG CARDS SECTION ================= */}
       <section>
         <div className={containerClass}>
-          <div className="grid grid-cols-3 gap-x-[4.166%] gap-y-[140px]">
+          <div className="mb-[140px] grid grid-cols-3 gap-x-[4.166%] gap-y-[140px]">
             {blogPosts.map((post, idx) => (
               <div 
                 key={idx} 
@@ -511,6 +511,197 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Writers SECTION */}
+      <section className="mb-20">
+        <div className={containerClass}>
+          <h2 
+            className="mb-16"
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "48px",
+              lineHeight: "110%",
+              letterSpacing: "0%",
+            }}
+          >
+            Our Writers
+          </h2>
+          
+          <div className="grid grid-cols-3 gap-x-[4.166%]">
+            {/* Writer 1 - ADITI SHARMA */}
+            <div className="text-left">
+              <div className="relative w-[347px] h-[346px] mb-8">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e4057d23-d562-4bdd-267f-2f1239d56200/public"
+                  alt="Aditi Sharma"
+                  width={347}
+                  height={346}
+                  className="rounded-full object-cover grayscale"
+                />
+              </div>
+              <h3 
+                className="uppercase mb-2"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                }}
+              >
+                ADITI SHARMA
+              </h3>
+              <p 
+                className="mb-4"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                }}
+              >
+                Climate Change and Water
+              </p>
+              <p 
+                className="mb-6"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                  color: "#666",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
+              </p>
+              <span
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                }}
+              >
+                <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+              </span>
+            </div>
+
+            {/* Writer 2 - REHNUMA ANSARI */}
+            <div className="text-left">
+              <div className="relative w-[347px] h-[346px] mb-8">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8550dccf-6a3a-43ae-8530-cb235c960b00/public"
+                  alt="Rehnam Ansari"
+                  width={347}
+                  height={346}
+                  className="rounded-full object-cover grayscale"
+                />
+              </div>
+              <h3 
+                className="uppercase mb-2"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                }}
+              >
+                REHNUMA ANSARI
+              </h3>
+              <p 
+                className="mb-4"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                }}
+              >
+                Climate Change and Water
+              </p>
+              <p 
+                className="mb-6"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                  color: "#666",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
+              </p>
+              <span
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                }}
+              >
+                <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+              </span>
+            </div>
+
+            {/* Writer 3 - SHAMBHAVI */}
+            <div className="text-left">
+              <div className="relative w-[347px] h-[346px] mb-8">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8e2eac37-95f7-42d4-1c31-01daf5d4ab00/public"
+                  alt="Shamishavi"
+                  width={347}
+                  height={346}
+                  className="rounded-full object-cover grayscale"
+                />
+              </div>
+              <h3 
+                className="uppercase mb-2"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                }}
+              >
+                SHAMBHAVI
+              </h3>
+              <p 
+                className="mb-4"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                }}
+              >
+                Climate Change and Water
+              </p>
+              <p 
+                className="mb-6"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                  color: "#666",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
+              </p>
+              <span
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                }}
+              >
+                <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+              </span>
+            </div>
           </div>
         </div>
       </section>
