@@ -427,10 +427,7 @@ export default function Home() {
                 <p>
                   Copenhagen's COP15 in 2009 was a diplomatic heartbreak. Expectations were sky-high, but no binding treaty emerged. However, it sowed seeds for future frameworks, like voluntary commitments and climate finance.
                 </p>
-              </div>
-              
-              {/* Right Column */}
-              <div className="space-y-6 text-sm leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
+
                 <p>
                   Finally, in 2015, the Paris Agreement was born at COP21. Unlike Kyoto, it brought both developed and developing nations under a single framework, aiming to limit global warming to "well below 2°C"—ideally 1.5°C. The Paris Agreement wasn't legally binding in terms of emission targets, but it required countries to submit Nationally Determined Contributions (NDCs), which would be reviewed every five years for ambition and progress.
                 </p>
@@ -438,6 +435,11 @@ export default function Home() {
                 <p>
                   It was less about enforcement, more about transparency and global peer pressure.
                 </p>
+              </div>
+              
+              {/* Right Column */}
+              <div className="space-y-6 text-sm leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
+                
                 
                 <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   The Present Storm: COP28 and the Crossroads of Climate Policy
