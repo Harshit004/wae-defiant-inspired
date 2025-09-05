@@ -415,6 +415,14 @@ export default function Home() {
         <p>
           But Kyoto had its flaws. While the EU and Japan took it seriously, the U.S.—one of the largest emitters—never ratified it. And developing countries, including China and India, had no binding targets, sparking criticism and limiting its global effectiveness. Still, Kyoto was a vital first step. It created a legal architecture and introduced the concept of accountability in climate policy.
         </p>
+        
+        <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+          Transition & Tension: From Kyoto to Paris
+        </h2>
+        
+        <p>
+          Post-Kyoto, the world grew more complex. Global emissions soared. China became the world's largest emitter. The global financial crisis diverted attention. Yet, scientific consensus deepened—IPCC reports warned of rising sea levels, glacial melt, extreme weather.
+        </p>
       </div>
       
       {/* Second Column */}
