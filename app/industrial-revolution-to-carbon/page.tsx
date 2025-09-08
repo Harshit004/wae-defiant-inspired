@@ -577,12 +577,19 @@ export default function Home() {
             <div className="group">
               <div className="overflow-hidden mb-4">
                 <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
-                  alt="From Kyoto to COP28"
-                  width={347}
-                  height={300}
-                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-                />
+                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
+                                  alt="From Kyoto to COP28"
+                                  width={347}
+                                  height={300}
+                                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                                />
+                                <Image
+                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
+                                  alt="From Kyoto to COP28 - Hover"
+                                  width={347}
+                                  height={300}
+                                  className="absolute top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                                />
               </div>
               <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
@@ -596,12 +603,19 @@ export default function Home() {
             <div className="group">
               <div className="overflow-hidden mb-4">
                 <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
-                  alt="Climate Change in the Indian Subcontinent"
-                  width={347}
-                  height={300}
-                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-                />
+                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
+                                  alt="Climate Change in the Indian Subcontinent"
+                                  width={347}
+                                  height={300}
+                                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                                />
+                                <Image
+                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public"
+                                  alt="Climate Change in the Indian Subcontinent - Hover"
+                                  width={347}
+                                  height={300}
+                                  className="absolute top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                                />
               </div>
               <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective
@@ -615,12 +629,19 @@ export default function Home() {
             <div className="group">
               <div className="overflow-hidden mb-4">
                 <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
-                  alt="The Ozone Crisis"
-                  width={347}
-                  height={300}
-                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-                />
+                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2bcd53b1-c103-4faf-bd00-29a04ff0ee00/public"
+                                  alt="The Ozone Crisis: A Success Story in Environmental Cooperation"
+                                  width={347}
+                                  height={300}
+                                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                                />
+                                <Image
+                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13245178-9299-4091-ebca-89c63b972600/public"
+                                  alt="The Ozone Crisis: A Success Story in Environmental Cooperation - Hover"
+                                  width={347}
+                                  height={300}
+                                  className="absolute top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                                />
               </div>
               <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 The Ozone Crisis: A Success Story in Environmental Cooperation
