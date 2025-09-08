@@ -372,7 +372,7 @@ export default function Home() {
                 {/* Desktop: Background video (full width, natural height) */}
                 <div className="w-full">
                   <video
-                    src="/Kyoto-COP28_Global-Climate-Agreements.mp4"
+                    src="/Industrial Revolution to the carbon age  2 (1).mp4"
                     className="hidden md:block w-full h-auto z-0"
                     autoPlay
                     loop
