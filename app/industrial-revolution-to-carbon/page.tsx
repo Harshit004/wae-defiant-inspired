@@ -628,7 +628,7 @@ export default function Home() {
             {/* Article 3 */}
             <div className="group">
               <div className="overflow-hidden mb-4">
-                <Image
+              <Image
                                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2bcd53b1-c103-4faf-bd00-29a04ff0ee00/public"
                                   alt="The Ozone Crisis: A Success Story in Environmental Cooperation"
                                   width={347}
