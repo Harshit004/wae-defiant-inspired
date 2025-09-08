@@ -575,7 +575,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Article 1 */}
             <div className="group">
-              <div className="overflow-hidden mb-4">
+              <div className="overflow-hidden mb-4 relative">
                 <Image
                                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
                                   alt="From Kyoto to COP28"
@@ -601,7 +601,7 @@ export default function Home() {
             
             {/* Article 2 */}
             <div className="group">
-              <div className="overflow-hidden mb-4">
+              <div className="overflow-hidden mb-4 relative">
                 <Image
                                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
                                   alt="Climate Change in the Indian Subcontinent"
@@ -627,7 +627,7 @@ export default function Home() {
             
             {/* Article 3 */}
             <div className="group">
-              <div className="overflow-hidden mb-4">
+              <div className="overflow-hidden mb-4 relative">
               <Image
                                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2bcd53b1-c103-4faf-bd00-29a04ff0ee00/public"
                                   alt="The Ozone Crisis: A Success Story in Environmental Cooperation"
