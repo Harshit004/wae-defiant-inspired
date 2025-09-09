@@ -310,7 +310,7 @@ export default function Home() {
         <video
           className="hidden md:block absolute inset-0 w-screen object-contain z-0"
           style={{objectFit: 'contain' }}
-          src="/Sustainability.mp4"
+          src="/Sustainability (2).mp4"
           autoPlay
           muted
           loop

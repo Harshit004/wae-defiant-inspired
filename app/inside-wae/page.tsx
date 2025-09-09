@@ -458,7 +458,7 @@ useEffect(() => {
                 <video
                   className="hidden md:block absolute inset-0 w-screen  object-contain z-0"
                   style={{objectFit: 'contain' }}
-                  src="/This is us_Update_1.mp4"
+                  src="/This Is US (3).mp4"
                   autoPlay
                   muted
                   loop
