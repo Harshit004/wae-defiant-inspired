@@ -469,13 +469,12 @@ useEffect(() => {
 
       {/* SCROLL-DRIVEN CONTAINER */}
       <motion.div
-        className="relative bg-[#F2F2F2] mt-screen"
-        style={{ marginTop: "100vh" }}
+        className="relative bg-[#F2F2F2] min-h-screen"
       >
         {/* Sticky Logo Overlay */}
         <motion.div
           style={{ position: "sticky", top: "5%", zIndex: 1100, opacity: logoOpacity }}
-          className="pointer-events-none flex justify-center pt-[180px]"
+          className="pointer-events-none flex justify-center pt-[180px] -mt-[100vh]"
         >
           <div className="max-w-[19.375rem] max-h-[19.375rem]">
             <Image
