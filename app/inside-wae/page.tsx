@@ -15,12 +15,12 @@ interface HoverButtonProps {
  * Reusable hover button component.
  */
 const HoverButton: FC<HoverButtonProps> = ({ children }) => {
-  const [hovered, setHovered] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
   return (
     <button
       type="button"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className="w-fit px-4 py-3 transition-all duration-650 ease"
       style={{
         pointerEvents: "auto",
@@ -32,13 +32,13 @@ const HoverButton: FC<HoverButtonProps> = ({ children }) => {
         fontSize: "10px",
         lineHeight: "100%",
         textTransform: "uppercase",
-        backgroundColor: hovered ? "#000" : "#f2f2f2",
+        backgroundColor: isHovered ? "#000" : "#f2f2f2",
         border: "1px solid #000",
         cursor: "pointer",
-        color: hovered ? "#fff" : "#000",
+        color: isHovered ? "#fff" : "#000",
       }}
     >
-      {children(hovered)}
+      {children(isHovered)}
     </button>
   );
 };
@@ -469,12 +469,24 @@ useEffect(() => {
 
       {/* SCROLL-DRIVEN CONTAINER */}
       <motion.div
-        className="relative bg-[#F2F2F2] min-h-screen"
+        className="relative bg-[#F2F2F2]"
+        style={{ 
+          marginTop: "100vh",
+          transform: "none"
+        }}
+        initial={false}
+        animate={false}
       >
         {/* Sticky Logo Overlay */}
         <motion.div
-          style={{ position: "sticky", top: "5%", zIndex: 1100, opacity: logoOpacity }}
-          className="pointer-events-none flex justify-center pt-[180px] -mt-[100vh]"
+          style={{ 
+            position: "sticky", 
+            top: "5%", 
+            zIndex: 1100, 
+            opacity: logoOpacity 
+          }}
+          className="pointer-events-none flex justify-center pt-[180px]"
+          initial={false}
         >
           <div className="max-w-[19.375rem] max-h-[19.375rem]">
             <Image
@@ -490,17 +502,17 @@ useEffect(() => {
         {/* About WAE Section */}
         <section className="flex items-end justify-center relative mb-[250px]">
           <motion.div
-            initial={{ y: "50%", opacity: 0 }}
+            initial={{ y: 0, opacity: 1 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
           >
             <div className="flex flex-col lg:flex-row items-start justify-between">
               <h2 className="font-[Inter Tight] font-normal text-4xl lg:text-6xl leading-tight">About WAE</h2>
               <div className="flex flex-col gap-5 w-64">
                 <p className="w-[290px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology. We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations for the country’s advancements, integrity & innovation. Our approach strengthens community resilience while showcasing India’s Intellectual capital on the world stage.
+                WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology. We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations for the country's advancements, integrity & innovation. Our approach strengthens community resilience while showcasing India's Intellectual capital on the world stage.
                 </p>
                 <p className="w-[290px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                 With a steadfast focus on sustainability and design excellence, WAE transforms challenges into opportunities through cutting-edge water and waste management solutions. Our diverse portfolio reflects our commitment to quality, responsible innovation, and a future-ready India where environmental care and technological progress work together.
@@ -512,7 +524,10 @@ useEffect(() => {
 
         {/* Vision and Mission Section */}
         <section className="flex items-end justify-center relative mb-[300px] px-[9.72%]">
-          <motion.div className="w-full">
+          <motion.div 
+            className="w-full"
+            initial={false}
+          >
             <div className="flex flex-col lg:flex-row items-start justify-between">
               <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
                 Vision and<br />Mission
@@ -521,36 +536,6 @@ useEffect(() => {
                 <p className="w-[270px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
                 WAE envisions a world where safe and sustainable water is accessible to all. Its mission is to develop innovative, eco-friendly solutions for hydration and water treatment that benefit both people and the environment. Guided by integrity, inclusivity, and a strong commitment to sustainability, WAE works to create lasting positive impact.
                 </p>
-                {/* <Link href="/vision-mission" className="contents">
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link> */}
               </div>
             </div>
           </motion.div>
@@ -571,30 +556,14 @@ useEffect(() => {
                 </p>
                 <Link href="/careers" className="contents">
                   <HoverButton>
-                    {(hovered) => (
+                    {(isHovered) => (
                       <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                            />
-                          </motion.div>
-                        </div>
+                        <span>Explore Careers</span>
+                        <span className="menu-arrow">
+                          <svg width="12" height="12" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </span>
                       </>
                     )}
                   </HoverButton>
