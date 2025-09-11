@@ -417,7 +417,7 @@ export default function Home() {
             {heroSlides[currentSlide].description}
           </p>
           <a 
-            href="#" 
+            href="/climate-change-&-water-v3" 
             style={{
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
