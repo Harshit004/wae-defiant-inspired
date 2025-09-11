@@ -1138,8 +1138,6 @@ const Home: FC = () => {
         </section>
         </div>
 
-        /* Replace the RELATED INFORMATION SECTION in your code with this: */
-
 {/* RELATED INFORMATION SECTION */}
 <section
   className="max-w-full px-[8.75rem] py-[120px] bg-white"
