@@ -1138,120 +1138,120 @@ const Home: FC = () => {
         </section>
         </div>
 
-{/* RELATED INFORMATION SECTION */}
-<section
-  className="max-w-full px-[8.75rem] py-[120px] bg-white"
-  style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
->
-  <h2 className="font-helvetica text-[3.625rem] leading-[110%] mb-[2.5rem] font-normal">
-    Blogs
-  </h2>
-  <div className="grid grid-cols-4 gap-8">
-    {/* Card 1 */}
-    <div className="relative overflow-hidden cursor-pointer">
-      <div className="relative w-[272px] h-[272px]">
-        {/* Base image - full opacity */}
-        <img
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
-          alt="From Kyoto to COP28"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{ opacity: 1 }}
-        />
-        {/* Hover image - initially transparent */}
-        <img
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
-          alt="From Kyoto to COP28 Hover"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
-          style={{ zIndex: 10 }}
-        />
-      </div>
-      <div className="mt-4">
-        <h3 className="text-lg font-medium mb-2">From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future</h3>
-        <p className="text-sm text-gray-600">
-          In the quiet halls of Kyoto in 1997, something monumental began   a collective awakening of the world's conscience towards the mounting crisis of climate change.
-        </p>
-      </div>
-    </div>
+        {/* RELATED INFORMATION SECTION */}
+        <section
+          className="max-w-full px-[8.75rem] py-[120px] bg-white"
+          style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
+        >
+          <h2 className="font-helvetica text-[3.625rem] leading-[110%] mb-[2.5rem] font-normal">
+            Blogs
+          </h2>
+          <div className="grid grid-cols-4 gap-8">
+            {/* Card 1 */}
+            <div className="relative overflow-hidden cursor-pointer">
+              <div className="relative w-[272px] h-[272px]">
+                {/* Base image - full opacity */}
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
+                  alt="From Kyoto to COP28"
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                  style={{ opacity: 1 }}
+                />
+                {/* Hover image - initially transparent */}
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
+                  alt="From Kyoto to COP28 Hover"
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
+                  style={{ zIndex: 10 }}
+                />
+              </div>
+              <div className="mt-4">
+                <h3 className="text-lg font-medium mb-2">From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future</h3>
+                <p className="text-sm text-gray-600">
+                  In the quiet halls of Kyoto in 1997, something monumental began   a collective awakening of the world's conscience towards the mounting crisis of climate change.
+                </p>
+              </div>
+            </div>
 
-    {/* Card 2 */}
-    <div className="relative overflow-hidden cursor-pointer">
-      <div className="relative w-[272px] h-[272px]">
-        {/* Base image - full opacity */}
-        <img
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
-          alt="Climate Change in the Indian Subcontinent"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{ opacity: 1 }}
-        />
-        {/* Hover image - initially transparent */}
-        <img
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public"
-          alt="Climate Change in the Indian Subcontinent Hover"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
-          style={{ zIndex: 10 }}
-        />
-      </div>
-      <div className="mt-4">
-        <h3 className="text-lg font-medium mb-2">Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective</h3>
-        <p className="text-sm text-gray-600">
-          The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
-        </p>
-      </div>
-    </div>
+            {/* Card 2 */}
+            <div className="relative overflow-hidden cursor-pointer">
+              <div className="relative w-[272px] h-[272px]">
+                {/* Base image - full opacity */}
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
+                  alt="Climate Change in the Indian Subcontinent"
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                  style={{ opacity: 1 }}
+                />
+                {/* Hover image - initially transparent */}
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public"
+                  alt="Climate Change in the Indian Subcontinent Hover"
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
+                  style={{ zIndex: 10 }}
+                />
+              </div>
+              <div className="mt-4">
+                <h3 className="text-lg font-medium mb-2">Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective</h3>
+                <p className="text-sm text-gray-600">
+                  The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
+                </p>
+              </div>
+            </div>
 
-    {/* Card 3 */}
-    <div className="relative overflow-hidden cursor-pointer">
-      <div className="relative w-[272px] h-[272px]">
-        {/* Base image - full opacity */}
-        <img
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
-          alt="The Ozone Crisis"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{ opacity: 1 }}
-        />
-        {/* Hover image - initially transparent */}
-        <img
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c3eb242-b13a-443c-da32-a78bce6e7a00/public"
-          alt="The Ozone Crisis Hover"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
-          style={{ zIndex: 10 }}
-        />
-      </div>
-      <div className="mt-4">
-        <h3 className="text-lg font-medium mb-2">The Ozone Crisis: A Success Story in Environmental Cooperation</h3>
-        <p className="text-sm text-gray-600">
-          It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth. This protective shield—the ozone layer—sits between 10 to 50 kilometres above the surface and has for millions of years absorbed nearly 97–99% of the Sun's harmful ultraviolet-B (UV-B) radiation.
-        </p>
-      </div>
-    </div>
+            {/* Card 3 */}
+            <div className="relative overflow-hidden cursor-pointer">
+              <div className="relative w-[272px] h-[272px]">
+                {/* Base image - full opacity */}
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
+                  alt="The Ozone Crisis"
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                  style={{ opacity: 1 }}
+                />
+                {/* Hover image - initially transparent */}
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c3eb242-b13a-443c-da32-a78bce6e7a00/public"
+                  alt="The Ozone Crisis Hover"
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
+                  style={{ zIndex: 10 }}
+                />
+              </div>
+              <div className="mt-4">
+                <h3 className="text-lg font-medium mb-2">The Ozone Crisis: A Success Story in Environmental Cooperation</h3>
+                <p className="text-sm text-gray-600">
+                  It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth. This protective shield—the ozone layer—sits between 10 to 50 kilometres above the surface and has for millions of years absorbed nearly 97–99% of the Sun's harmful ultraviolet-B (UV-B) radiation.
+                </p>
+              </div>
+            </div>
 
-    {/* Card 4 */}
-    <div className="relative overflow-hidden cursor-pointer">
-      <div className="relative w-[272px] h-[272px]">
-        {/* Base image - full opacity */}
-        <img
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2bcd53b1-c103-4faf-bd00-29a04ff0ee00/public"
-          alt="Industrial Revolution to the Carbon Age"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{ opacity: 1 }}
-        />
-        {/* Hover image - initially transparent */}
-        <img
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13245178-9299-4091-ebca-89c63b972600/public"
-          alt="Industrial Revolution to the Carbon Age Hover"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
-          style={{ zIndex: 10 }}
-        />
-      </div>
-      <div className="mt-4">
-        <h3 className="text-lg font-medium mb-2">Industrial Revolution to the Carbon Age: How We Got There</h3>
-        <p className="text-sm text-gray-600">
-          The story begins in the smoky heart of 18th-century England. Coal dust filled the air as the first every corner of the globe. What started as the Industrial Revolution an era of machines and mechanization quickly became something far more consequential: the dawn of the Carbon Age.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+            {/* Card 4 */}
+            <div className="relative overflow-hidden cursor-pointer">
+              <div className="relative w-[272px] h-[272px]">
+                {/* Base image - full opacity */}
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2bcd53b1-c103-4faf-bd00-29a04ff0ee00/public"
+                  alt="Industrial Revolution to the Carbon Age"
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                  style={{ opacity: 1 }}
+                />
+                {/* Hover image - initially transparent */}
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13245178-9299-4091-ebca-89c63b972600/public"
+                  alt="Industrial Revolution to the Carbon Age Hover"
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
+                  style={{ zIndex: 10 }}
+                />
+              </div>
+              <div className="mt-4">
+                <h3 className="text-lg font-medium mb-2">Industrial Revolution to the Carbon Age: How We Got There</h3>
+                <p className="text-sm text-gray-600">
+                  The story begins in the smoky heart of 18th-century England. Coal dust filled the air as the first every corner of the globe. What started as the Industrial Revolution an era of machines and mechanization quickly became something far more consequential: the dawn of the Carbon Age.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* FOOTER SECTION */}
         {/* Footer likely appears at the very bottom */}
