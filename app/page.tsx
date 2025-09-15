@@ -1166,7 +1166,7 @@ const Home: FC = () => {
                 />
               </div>
               <div className="mt-4">
-                <h3 className="text-lg font-medium mb-2">From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future</h3>
+                <h3 className="text-lg line-height-[120%] font-medium mb-2">From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future</h3>
                 <p className="text-sm text-gray-600">
                   In the quiet halls of Kyoto in 1997, something monumental began   a collective awakening of the world's conscience towards the mounting crisis of climate change.
                 </p>
@@ -1192,7 +1192,7 @@ const Home: FC = () => {
                 />
               </div>
               <div className="mt-4">
-                <h3 className="text-lg font-medium mb-2">Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective</h3>
+                <h3 className="text-lg font-medium line-height-[120%] mb-2">Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective</h3>
                 <p className="text-sm text-gray-600">
                   The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
                 </p>
@@ -1218,7 +1218,7 @@ const Home: FC = () => {
                 />
               </div>
               <div className="mt-4">
-                <h3 className="text-lg font-medium mb-2">The Ozone Crisis: A Success Story in Environmental Cooperation</h3>
+                <h3 className="text-lg font-medium line-height-[120%] mb-2">The Ozone Crisis: A Success Story in Environmental Cooperation</h3>
                 <p className="text-sm text-gray-600">
                   It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth. This protective shield—the ozone layer—sits between 10 to 50 kilometres above the surface and has for millions of years absorbed nearly 97–99% of the Sun's harmful ultraviolet-B (UV-B) radiation.
                 </p>
@@ -1244,7 +1244,7 @@ const Home: FC = () => {
                 />
               </div>
               <div className="mt-4">
-                <h3 className="text-lg font-medium mb-2">Industrial Revolution to the Carbon Age: How We Got There</h3>
+                <h3 className="text-lg font-medium line-height-[120%] mb-2">Industrial Revolution to the Carbon Age: How We Got There</h3>
                 <p className="text-sm text-gray-600">
                   The story begins in the smoky heart of 18th-century England. Coal dust filled the air as the first every corner of the globe. What started as the Industrial Revolution an era of machines and mechanization quickly became something far more consequential: the dawn of the Carbon Age.
                 </p>
