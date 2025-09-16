@@ -449,7 +449,7 @@ export default function Home() {
       </div>
       
       {/* Second Column */}
-      <div className="space-y-6 text-sm mt-[24px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
+      <div className="space-y-6 text-sm mt-[48px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
         
         <p>
         1989 marked a watershed: via Resolution 44/207, the General Assembly endorsed negotiations for a framework convention on climate change. That year, the Malé Declaration on Global Warming and Sea Level Rise was submitted by the Maldives; the Helsinki Declaration on ozone protection was also adopted. Crucially, the Montreal Protocol which limited ozone-depleting substances, entered into force, becoming one of the most effective environmental treaties in history.
@@ -489,7 +489,7 @@ export default function Home() {
       </div>
       
       {/* Third Column */}
-      <div className="space-y-6 text-sm leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
+      <div className="space-y-6 text-sm mt-[48px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
 
         <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
         2015: A Pivotal Year for Global Action
