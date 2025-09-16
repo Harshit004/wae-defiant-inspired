@@ -489,7 +489,7 @@ export default function Home() {
       </div>
       
       {/* Third Column */}
-      <div className="space-y-6 text-sm mt-[48px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
+      <div className="space-y-6 text-sm mt-[24px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
 
         <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
         2015: A Pivotal Year for Global Action
