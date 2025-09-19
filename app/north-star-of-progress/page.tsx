@@ -619,7 +619,7 @@ export default function Home() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
               </p>
               
-              <a href="#" className="inline-block mt-[40px]" style={{
+              <Link href="/shambhavi" className="inline-block mt-[40px]" style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: '20px',
@@ -630,7 +630,7 @@ export default function Home() {
                 color: 'inherit'
               }}>
                 View Profile ↗
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -675,6 +675,7 @@ export default function Home() {
                     <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                     In an era defined by climate volatility, rising inequalities, and fractured global priorities, sustainability as popularized by the United Nations Sustainable Development Goals (SDGs) ...
                     </p>
+                    <Link href="/north-star-of-progress" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
                   </div>
                   
                   {/* Article 2 */}
@@ -701,6 +702,7 @@ export default function Home() {
                     <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                     In 2015, the United Nations adopted the 2030 Agenda for Sustainable Development, anchored by 17 Sustainable Development Goals (SDGs) that serve as a shared global blueprint to end poverty, protect the planet, and ensure prosperity for all.
                     </p>
+                    <Link href="/climate-change-&-water" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
                   </div>
                   
                   {/* Article 3 */}
@@ -727,6 +729,7 @@ export default function Home() {
                     <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                       It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.
                     </p>
+                    <Link href="/plastic-bottle-industry-exploits-india" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
                   </div>
                 </div>
               </div>
