@@ -511,7 +511,7 @@ export default function Home() {
             {/* Left side - Image */}
             <div className="w-full md:w-[16.458%] mb-8 md:mb-0">
               <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e4057d23-d562-4bdd-267f-2f1239d56200/public"
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/471bde63-5514-44fd-67a7-d06a24417100/public"
                 alt="Aditi Sharma"
                 width={236}
                 height={236}

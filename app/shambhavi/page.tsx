@@ -3,11 +3,11 @@
 import type { FC } from "react"
 import type React from "react"
 import { useEffect, useState, useRef } from "react"
+import CollaborateWithUs from "@/components/collaborate-with-us"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Footer from "@/components/footer"
 import Link from "next/link"
-import ConnectWithUs from "@/components/connect-with-us"
 
 // --- NEW MOBILE HEADER COMPONENT ---
 interface MobileHeaderProps {
@@ -216,7 +216,7 @@ export default function Home() {
 
       {/* DESKTOP HEADER (Hidden on small screens) */}
       {/* Removed mb-5 to allow hero to start immediately after it */}
-      <header ref={headerRef} className={`w-full bg-white relative z-10 hidden md:block`}>
+      <header ref={headerRef} className={`w-full mb-[140px] relative z-10 hidden md:block`}>
         <div className={containerClass}>
           {/* Top Row: Navigation */}
           <div
@@ -364,159 +364,19 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero section */}
-              <section
-                id="hero"
-                className="relative w-full overflow-hidden pt-0 md:mb-[140px]"
-              >
-                {/* Desktop: Background video (full width, natural height) */}
-                <div className="w-full">
-                  <video
-                    src="/Kyoto-COP28_Global-Climate-Agreements.mp4"
-                    className="hidden md:block w-full h-auto z-0"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </section>
-
-        {/* Article Section */}
-<section className="w-full mb-[140px] px-[9.72%]">
-  <div className="mx-auto">
-    {/* Title spanning full width */}
-    <h1 className="text-[40px] font-medium mb-6 leading-[120%] mb-[44px]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}>
-      From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
-    </h1>
-    
-    {/* Three column layout for content */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-      {/* First Column */}
-      <div className="space-y-6 text-sm leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
-        <div className="text-sm font-bold mb-[24px] leading-[130%] underline text-[#80808099]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-          Aditi Sharma
-        </div>
-        
-        <p>
-          In the quiet halls of Kyoto in 1997, something monumental began—a collective awakening of the world's conscience towards the mounting crisis of climate change. What followed was a turbulent yet determined journey, a series of historic global agreements that would shape the planet's climate policy for decades to come, culminating (for now) in COP28. This is not just a timeline—it's the story of how humanity has tried, failed, and continued to try again in its battle against a warming world.
-        </p>
-        
-        <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-          The Dawn: Kyoto Protocol—the First Global Climate Commitment
-        </h2>
-        
-        <p>
-          The Kyoto Protocol, adopted in December 1997 and entered into force in 2005, was the first legally binding climate treaty. It asked industrialized nations—primarily responsible for historical emissions—to reduce greenhouse gases by an average of 5% below 1990 levels between 2008 and 2012. It was revolutionary. It introduced market-based mechanisms like the Clean Development Mechanism (CDM) and carbon trading—trying to make sustainability economically viable.
-        </p>
-        
-        <p>
-          But Kyoto had its flaws. While the EU and Japan took it seriously, the U.S.—one of the largest emitters—never ratified it. And developing countries, including China and India, had no binding targets, sparking criticism and limiting its global effectiveness. Still, Kyoto was a vital first step. It created a legal architecture and introduced the concept of accountability in climate policy.
-        </p>
-        
-        <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-          Transition & Tension: From Kyoto to Paris
-        </h2>
-        
-        <p>
-          Post-Kyoto, the world grew more complex. Global emissions soared. China became the world's largest emitter. The global financial crisis diverted attention. Yet, scientific consensus deepened—IPCC reports warned of rising sea levels, glacial melt, extreme weather.
-        </p>
-      </div>
       
-      {/* Second Column */}
-      <div className="space-y-6 text-sm mt-[24px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
-        
-        <p>
-          Copenhagen's COP15 in 2009 was a diplomatic heartbreak. Expectations were sky-high, but no binding treaty emerged. However, it sowed seeds for future frameworks, like voluntary commitments and climate finance.
-        </p>
-
-        <p>
-          Finally, in 2015, the Paris Agreement was born at COP21. Unlike Kyoto, it brought both developed and developing nations under a single framework, aiming to limit global warming to "well below 2°C"—ideally 1.5°C. The Paris Agreement wasn't legally binding in terms of emission targets, but it required countries to submit Nationally Determined Contributions (NDCs), which would be reviewed every five years for ambition and progress.
-        </p>
-        
-        <p>
-          It was less about enforcement, more about transparency and global peer pressure.
-        </p>
-        
-        <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-          The Present Storm: COP28 and the Crossroads of Climate Policy
-        </h2>
-        
-        <p>
-          Enter COP28, held in Dubai, UAE in 2023—a moment heavy with contradictions and expectations. Hosted by an oil-producing nation, led by Sultan Al Jaber, the summit faced scepticism but turned heads with a historic milestone: the first ever mention of "transitioning away from fossil fuels" in an official agreement.
-        </p>
-        
-        <p>
-          COP28 brought the first Global Stocktake—a comprehensive review of where the world stands since Paris. The results? Stark.
-        </p>
-        
-        <ul className="list-disc pl-5 mt-3 space-y-2">
-          <li>The world is not on track to meet 1.5°C.</li>
-          <li>Emissions must peak before 2025 and fall by 43% by 2030 to stay on course.</li>
-          <li>Adaptation financing is lagging, and loss-and-damage funding is still too slow.</li>
-        </ul>
-      </div>
-      
-      {/* Third Column */}
-      <div className="space-y-6 text-sm mt-[24px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
-        <p>
-          Key agreements included:
-        </p>
-        
-        <ul className="list-disc pl-5 mt-3 space-y-2">
-          <li>A Loss and Damage Fund finally operationalized, with pledges of over $700 million to support vulnerable countries.</li>
-          <li>A push for tripling renewable energy capacity by 2030.</li>
-          <li>Recognition of the need to phase out unabated fossil fuels although language remained ambiguous under pressure from oil-rich nations.</li>
-        </ul>
-
-        <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-          Scientific Backdrop & Climate Reality
-        </h2>
-        
-        <p>
-          Let's not forget the data.
-        </p>
-        
-        <ul className="list-disc pl-5 mt-3 space-y-2">
-          <li>The planet has already warmed by about 1.1°C since pre-industrial times.</li>
-          <li>The 2020s are set to be the hottest decade on record, with 2023 likely becoming the hottest year.</li>
-          <li>The Arctic is warming nearly four times faster than the global average.</li>
-          <li>Sea levels have risen by about 21–24 cm since 1880.</li>
-          <li>Climate-related disasters have increased fivefold over the past 50 years, according to WMO.</li>
-        </ul>
-
-        <p>
-          The science is unrelenting. We are running out of time, and the carbon budget for 1.5°C could be exhausted before 2030 if current trends continue.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-    
       {/* Know Our Writer SECTION */}
       <section className="w-full mb-[140px] px-[9.72%]">
         <div className="mx-auto">
-          <h2 className="mb-12" style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: '40px',
-            lineHeight: '110.00000000000001%',
-            letterSpacing: '0%',
-            verticalAlign: 'middle'
-          }}>
-            Know Our Writer
-          </h2>
           
           <div className="flex flex-col justify-between md:flex-row">
             {/* Left side - Image */}
-            <div className="w-full md:w-[346px] mb-8 md:mb-0">
+            <div className="w-full md:w-[16.458%] mb-8 md:mb-0">
               <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/471bde63-5514-44fd-67a7-d06a24417100/public"
-                alt="Aditi Sharma"
-                width={346}
-                height={346}
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
+                alt="Shambhavi Yadav"
+                width={236}
+                height={236}
                 className="w-full h-auto grayscale"
               />
             </div>
@@ -533,7 +393,7 @@ export default function Home() {
                 textTransform: 'uppercase',
                 marginBottom: '12px',
               }}>
-                Aditi Sharma
+                Shambhavi Yadav
               </h3>
               
               <p  style={{
@@ -557,27 +417,78 @@ export default function Home() {
                 verticalAlign: 'middle',
                 margin: 0
               }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
               </p>
-              
-              <a href="#" className="inline-block mt-[40px]" style={{
+
+              <h3 style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: '20px',
+                lineHeight: '140%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+                textTransform: 'uppercase',
+                marginTop: '40px',
+                marginBottom: '32px',
+              }}>
+                Writes About
+              </h3>
+              <ul style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: '20px',
+                fontSize: '17px',
                 lineHeight: '120%',
                 letterSpacing: '0%',
                 verticalAlign: 'middle',
-                textDecoration: 'underline',
-                color: 'inherit'
+                margin: 0
               }}>
-                View Profile ↗
-              </a>
+                <li className="flex items-start mb-[22.5px]">
+                    <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d0b60e46-f785-4b0e-3d1d-1c3840fc9700/public"
+                        alt=""
+                        width={24}
+                        height={24}
+                        className="mr-2 mt-0.5 flex-shrink-0"
+                    />
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                </li>
+                <li className="flex items-start mb-[22.5px]">
+                    <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d0b60e46-f785-4b0e-3d1d-1c3840fc9700/public"
+                        alt=""
+                        width={24}
+                        height={24}
+                        className="mr-2 mt-0.5 flex-shrink-0"
+                    />
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                </li>
+                <li className="flex items-start mb-[22.5px]">
+                    <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d0b60e46-f785-4b0e-3d1d-1c3840fc9700/public"
+                        alt=""
+                        width={24}
+                        height={24}
+                        className="mr-2 mt-0.5 flex-shrink-0"
+                    />
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                </li>
+                <li className="flex items-start">
+                    <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d0b60e46-f785-4b0e-3d1d-1c3840fc9700/public"
+                        alt=""
+                        width={24}
+                        height={24}
+                        className="mr-2 mt-0.5 flex-shrink-0"
+                    />
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Related Articles SECTION */}
+      {/* Write Ups SECTION */}
       <section className="w-full mb-[140px] px-[9.72%]">
         <div className="mx-auto">
           <h2 className="mb-12" style={{
@@ -588,7 +499,7 @@ export default function Home() {
             letterSpacing: '0%',
             verticalAlign: 'middle'
           }}>
-            Related Articles
+            Write Ups
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -609,6 +520,7 @@ export default function Home() {
               <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 In the quiet halls of Kyoto in 1997, something monumental began—a collective awakening of the world's conscience towards the mounting crisis of climate change.
               </p>
+              
             </div>
             
             {/* Article 2 */}
@@ -628,6 +540,7 @@ export default function Home() {
               <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
               </p>
+              
             </div>
             
             {/* Article 3 */}
@@ -647,118 +560,18 @@ export default function Home() {
               <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.
               </p>
+              
             </div>
           </div>
         </div>
       </section>
 
-      {/* Explore Categories SECTION */}
-      <section className="w-full mb-[140px] px-[9.72%]">
-        <div className="mx-auto">
-          <h2 className="mb-12" style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: '40px',
-            lineHeight: '110.00000000000001%',
-            letterSpacing: '0%',
-            verticalAlign: 'middle'
-          }}>
-            Explore Categories
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Category 1 */}
-            <div className="group">
-              <div className="overflow-hidden mb-4">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/abe4e4d0-cb21-4428-8d27-62ac59c62800/public"
-                  alt="Water Conservation"
-                  width={347}
-                  height={300}
-                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="mb-5" style={{ height: '60px' }}></div>
-              <p className="mb-5" style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 700,
-                fontSize: '12px',
-                lineHeight: '130%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
-                textDecoration: 'underline'
-              }}>
-                Aditi Sharma
-              </p>
-              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                WATER CONSERVATION
-              </h3>
-              <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.</p>
-            </div>
-            
-            {/* Category 2 */}
-            <div className="group">
-              <div className="overflow-hidden mb-4">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3082e23f-7ee0-47d0-338d-9d63943d0800/public"
-                  alt="Policy"
-                  width={347}
-                  height={300}
-                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="mb-5" style={{ height: '60px' }}></div>
-              <p className="mb-5" style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 700,
-                fontSize: '12px',
-                lineHeight: '130%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
-                textDecoration: 'underline'
-              }}>
-                Aditi Sharma
-              </p>
-              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                POLICY
-              </h3>
-              <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.</p>
-            </div>
-            
-            {/* Category 3 */}
-            <div className="group">
-              <div className="overflow-hidden mb-4">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/676e5a42-3d4b-4a29-facb-900980415000/public"
-                  alt="Climate Change And Water"
-                  width={347}
-                  height={300}
-                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="mb-5" style={{ height: '60px' }}></div>
-              <p className="mb-5" style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 700,
-                fontSize: '12px',
-                lineHeight: '130%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
-                textDecoration: 'underline'
-              }}>
-                Aditi Sharma
-              </p>
-              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                CLIMATE CHANGE AND WATER
-              </h3>
-              <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
+
+      {/* COLLABORATE WITH US SECTION */}
+      <div className="mt-20">
+        <CollaborateWithUs introText="" />
+      </div>
 
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>

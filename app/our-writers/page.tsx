@@ -409,7 +409,7 @@ export default function Home() {
                   <div className="text-left">
                     <div className="relative w-[347px] h-[346px] mb-8">
                       <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e4057d23-d562-4bdd-267f-2f1239d56200/public"
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/471bde63-5514-44fd-67a7-d06a24417100/public"
                         alt="Aditi Sharma"
                         width={347}
                         height={346}
@@ -450,23 +450,26 @@ export default function Home() {
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
                     </p>
-                    <span
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 500,
-                        fontSize: "12px",
-                        lineHeight: "130%",
-                      }}
-                    >
-                      <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
-                    </span>
+                    <Link href="/aditi-sharma">
+                      <span
+                        className="cursor-pointer"
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 500,
+                          fontSize: "12px",
+                          lineHeight: "130%",
+                        }}
+                      >
+                        <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+                      </span>
+                    </Link>
                   </div>
       
                   {/* Writer 2 - REHNUMA ANSARI */}
                   <div className="text-left">
                     <div className="relative w-[347px] h-[346px] mb-8">
                       <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8550dccf-6a3a-43ae-8530-cb235c960b00/public"
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f13e92f-a500-4052-dd61-2bd0951c1900/public"
                         alt="Rehnam Ansari"
                         width={347}
                         height={346}
@@ -507,16 +510,19 @@ export default function Home() {
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
                     </p>
-                    <span
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 500,
-                        fontSize: "12px",
-                        lineHeight: "130%",
-                      }}
-                    >
-                      <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
-                    </span>
+                    <Link href="/rehnuma-ansari">
+                      <span
+                        className="cursor-pointer"
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 500,
+                          fontSize: "12px",
+                          lineHeight: "130%",
+                        }}
+                      >
+                        <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+                      </span>
+                    </Link>
                   </div>
       
                   {/* Writer 3 - SHAMBHAVI */}
@@ -564,16 +570,19 @@ export default function Home() {
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
                     </p>
-                    <span
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 500,
-                        fontSize: "12px",
-                        lineHeight: "130%",
-                      }}
-                    >
-                      <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
-                    </span>
+                    <Link href="/shambhavi">
+                      <span
+                        className="cursor-pointer"
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 500,
+                          fontSize: "12px",
+                          lineHeight: "130%",
+                        }}
+                      >
+                        <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+                      </span>
+                    </Link>
                   </div>
                 </div>
                 <div className="grid grid-cols-3 gap-x-[4.166%] mb-[60px]">
@@ -581,7 +590,7 @@ export default function Home() {
                   <div className="text-left">
                     <div className="relative w-[347px] h-[346px] mb-8">
                       <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e4057d23-d562-4bdd-267f-2f1239d56200/public"
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/471bde63-5514-44fd-67a7-d06a24417100/public"
                         alt="Aditi Sharma"
                         width={347}
                         height={346}
@@ -622,23 +631,26 @@ export default function Home() {
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
                     </p>
-                    <span
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 500,
-                        fontSize: "12px",
-                        lineHeight: "130%",
-                      }}
-                    >
-                      <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
-                    </span>
+                    <Link href="/aditi-sharma">
+                      <span
+                        className="cursor-pointer"
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 500,
+                          fontSize: "12px",
+                          lineHeight: "130%",
+                        }}
+                      >
+                        <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+                      </span>
+                    </Link>
                   </div>
       
                   {/* Writer 2 - REHNUMA ANSARI */}
                   <div className="text-left">
                     <div className="relative w-[347px] h-[346px] mb-8">
                       <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8550dccf-6a3a-43ae-8530-cb235c960b00/public"
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f13e92f-a500-4052-dd61-2bd0951c1900/public"
                         alt="Rehnam Ansari"
                         width={347}
                         height={346}
@@ -679,16 +691,19 @@ export default function Home() {
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
                     </p>
-                    <span
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 500,
-                        fontSize: "12px",
-                        lineHeight: "130%",
-                      }}
-                    >
-                      <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
-                    </span>
+                    <Link href="/rehnuma-ansari">
+                      <span
+                        className="cursor-pointer"
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 500,
+                          fontSize: "12px",
+                          lineHeight: "130%",
+                        }}
+                      >
+                        <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+                      </span>
+                    </Link>
                   </div>
       
                   {/* Writer 3 - SHAMBHAVI */}
@@ -736,16 +751,19 @@ export default function Home() {
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
                     </p>
-                    <span
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 500,
-                        fontSize: "12px",
-                        lineHeight: "130%",
-                      }}
-                    >
-                      <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
-                    </span>
+                    <Link href="/shambhavi">
+                      <span
+                        className="cursor-pointer"
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 500,
+                          fontSize: "12px",
+                          lineHeight: "130%",
+                        }}
+                      >
+                        <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+                      </span>
+                    </Link>
                   </div>
                 </div>
               </div>

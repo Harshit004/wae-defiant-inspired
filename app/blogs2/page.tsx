@@ -456,48 +456,61 @@ export default function Home() {
       <section>
         <div className={containerClass}>
           <div className="mb-[140px] grid grid-cols-3 gap-x-[4.166%] gap-y-[140px]">
-            {blogPosts.map((post, idx) => (
+            {blogPosts.map((post, idx) => {
+              // Define the link URL based on the post title
+              let linkUrl = "#";
+              if (post.title.includes("From Kyoto to COP28")) {
+                linkUrl = "/climate-change-&-water-v3";
+              } else if (post.title.includes("Industrial Revolution to the Carbon Age")) {
+                linkUrl = "/industrial-revolution-to-carbon";
+              }
+              
+              return (
               <div 
                 key={idx} 
                 className="group relative"
                 onMouseEnter={() => setHoveredCard(idx)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <div className="relative">
-                  {/* Base image */}
-                  <Image
-                    src={post.imageSrc}
-                    alt={post.title}
-                    width={347}
-                    height={300}
-                    className="rounded-lg w-full h-auto"
-                  />
-                  {/* Hover image */}
-                  <div 
-                    className={`absolute inset-0 transition-opacity duration-700 ${hoveredCard === idx ? 'opacity-100' : 'opacity-0'}`}
-                    style={{ zIndex: 10 }}
-                  >
+                <Link href={linkUrl} className="block">
+                  <div className="relative">
+                    {/* Base image */}
                     <Image
-                      src={post.imageSrcHover}
+                      src={post.imageSrc}
                       alt={post.title}
                       width={347}
                       height={300}
                       className="rounded-lg w-full h-auto"
                     />
+                    {/* Hover image */}
+                    <div 
+                      className={`absolute inset-0 transition-opacity duration-700 ${hoveredCard === idx ? 'opacity-100' : 'opacity-0'}`}
+                      style={{ zIndex: 10 }}
+                    >
+                      <Image
+                        src={post.imageSrcHover}
+                        alt={post.title}
+                        width={347}
+                        height={300}
+                        className="rounded-lg w-full h-auto"
+                      />
+                    </div>
                   </div>
-                </div>
+                </Link>
                 <div style={{ height: '60px' }} />
-                <h3
-                  className="uppercase"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '14px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  {post.title}
-                </h3>
+                <Link href={linkUrl}>
+                  <h3
+                    className="uppercase hover:text-blue-600 transition-colors duration-300"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 700,
+                      fontSize: '14px',
+                      lineHeight: '140%',
+                    }}
+                  >
+                    {post.title}
+                  </h3>
+                </Link>
                 <div style={{ height: '12px' }} />
                 <p
                   style={{
@@ -510,7 +523,8 @@ export default function Home() {
                   {post.description}
                 </p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -534,26 +548,30 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-x-[4.166%]">
             {/* Writer 1 - ADITI SHARMA */}
             <div className="text-left">
-              <div className="relative w-[347px] h-[346px] mb-8">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/471bde63-5514-44fd-67a7-d06a24417100/public"
-                  alt="Aditi Sharma"
-                  width={347}
-                  height={346}
-                  className="rounded-full object-cover grayscale"
-                />
-              </div>
-              <h3 
-                className="uppercase mb-2"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "14px",
-                  lineHeight: "100%",
-                }}
-              >
-                ADITI SHARMA
-              </h3>
+              <Link href="/aditi-sharma" className="block">
+                <div className="relative w-[347px] h-[346px] mb-8">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/471bde63-5514-44fd-67a7-d06a24417100/public"
+                    alt="Aditi Sharma"
+                    width={347}
+                    height={346}
+                    className="rounded-full object-cover grayscale cursor-pointer"
+                  />
+                </div>
+              </Link>
+              <Link href="/aditi-sharma">
+                <h3 
+                  className="uppercase mb-2 cursor-pointer"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                  }}
+                >
+                  ADITI SHARMA
+                </h3>
+              </Link>
               <p 
                 className="mb-4"
                 style={{
@@ -577,40 +595,47 @@ export default function Home() {
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
               </p>
-              <span
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "12px",
-                  lineHeight: "130%",
-                }}
-              >
-                <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
-              </span>
+              <Link href="/aditi-sharma">
+                <span
+                  className="cursor-pointer"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "12px",
+                    lineHeight: "130%",
+                  }}
+                >
+                  <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+                </span>
+              </Link>
             </div>
 
             {/* Writer 2 - REHNUMA ANSARI */}
             <div className="text-left">
-              <div className="relative w-[347px] h-[346px] mb-8">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f13e92f-a500-4052-dd61-2bd0951c1900/public"
-                  alt="Rehnam Ansari"
-                  width={347}
-                  height={346}
-                  className="rounded-full object-cover grayscale"
-                />
-              </div>
-              <h3 
-                className="uppercase mb-2"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "14px",
-                  lineHeight: "100%",
-                }}
-              >
-                REHNUMA ANSARI
-              </h3>
+              <Link href="/rehnuma-ansari" className="block">
+                <div className="relative w-[347px] h-[346px] mb-8">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f13e92f-a500-4052-dd61-2bd0951c1900/public"
+                    alt="Rehnam Ansari"
+                    width={347}
+                    height={346}
+                    className="rounded-full object-cover grayscale cursor-pointer"
+                  />
+                </div>
+              </Link>
+              <Link href="/rehnuma-ansari">
+                <h3 
+                  className="uppercase mb-2 cursor-pointer"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                  }}
+                >
+                  REHNUMA ANSARI
+                </h3>
+              </Link>
               <p 
                 className="mb-4"
                 style={{
@@ -634,40 +659,47 @@ export default function Home() {
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
               </p>
-              <span
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "12px",
-                  lineHeight: "130%",
-                }}
-              >
-                <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
-              </span>
+              <Link href="/rehnuma-ansari">
+                <span
+                  className="cursor-pointer"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "12px",
+                    lineHeight: "130%",
+                  }}
+                >
+                  <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+                </span>
+              </Link>
             </div>
 
             {/* Writer 3 - SHAMBHAVI */}
             <div className="text-left">
-              <div className="relative w-[347px] h-[346px] mb-8">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
-                  alt="Shamishavi"
-                  width={347}
-                  height={346}
-                  className="rounded-full object-cover grayscale"
-                />
-              </div>
-              <h3 
-                className="uppercase mb-2"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "14px",
-                  lineHeight: "100%",
-                }}
-              >
-                SHAMBHAVI
-              </h3>
+              <Link href="/shambhavi" className="block">
+                <div className="relative w-[347px] h-[346px] mb-8">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
+                    alt="Shamishavi"
+                    width={347}
+                    height={346}
+                    className="rounded-full object-cover grayscale cursor-pointer"
+                  />
+                </div>
+              </Link>
+              <Link href="/shambhavi">
+                <h3 
+                  className="uppercase mb-2 cursor-pointer"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                  }}
+                >
+                  SHAMBHAVI
+                </h3>
+              </Link>
               <p 
                 className="mb-4"
                 style={{
@@ -691,18 +723,60 @@ export default function Home() {
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
               </p>
-              <span
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "12px",
-                  lineHeight: "130%",
-                }}
-              >
-                <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
-              </span>
+              <Link href="/shambhavi">
+                <span
+                  className="cursor-pointer"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "12px",
+                    lineHeight: "130%",
+                  }}
+                >
+                  <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+                </span>
+              </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* View All Writers Button */}
+      <section className="mb-20">
+        <div className="flex justify-center">
+          <Link href="/our-writers">
+            <button
+              className="view-all-writers-btn flex items-center justify-center transition-all duration-300"
+              style={{
+                borderWidth: '1px',
+                padding: '16px',
+                gap: '8px',
+                opacity: 1,
+                borderColor: '#00000066',
+                backgroundColor: 'transparent',
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: '14px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+                color: 'black',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'black';
+                e.currentTarget.style.borderColor = 'black';
+                e.currentTarget.style.color = 'white';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.borderColor = '#00000066';
+                e.currentTarget.style.color = 'black';
+              }}
+            >
+              View All Writers ↗
+            </button>
+          </Link>
         </div>
       </section>
 
