@@ -533,14 +533,31 @@ export default function Home() {
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   <Link href={linkUrl} className="block">
-                    <div className="overflow-hidden rounded-lg mb-4">
-                      <Image
-                        src={hoveredCard === index && post.imageSrcHover ? post.imageSrcHover : post.imageSrc}
-                        alt={post.title}
-                        width={347}
-                        height={300}
-                        className="w-full h-auto transition-all duration-1000"
-                      />
+                    <div className="overflow-hidden rounded-lg mb-4 relative" style={{ height: '300px' }}>
+                      {/* Main Image */}
+                      <div className="absolute inset-0 transition-opacity duration-1000" 
+                           style={{ opacity: hoveredCard === index ? 0 : 1 }}>
+                        <Image
+                          src={post.imageSrc}
+                          alt={post.title}
+                          width={347}
+                          height={300}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      {/* Hover Image */}
+                      {post.imageSrcHover && (
+                        <div className="absolute inset-0 transition-opacity duration-1000" 
+                             style={{ opacity: hoveredCard === index ? 1 : 0 }}>
+                          <Image
+                            src={post.imageSrcHover}
+                            alt={`${post.title} - Hover`}
+                            width={347}
+                            height={300}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      )}
                     </div>
                   </Link>
                   <Link href={linkUrl}>
