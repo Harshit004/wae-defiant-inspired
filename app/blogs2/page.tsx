@@ -114,6 +114,7 @@ export default function Home() {
     { text: "Blog", href: "/blogs2" },
   ]
   const buttonLabels = [
+    "All",
     "Water conservation",
     "Policy",
     "Climate Change & Water",
@@ -128,6 +129,7 @@ export default function Home() {
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public",
       title: "From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future",
       description: "In the quiet halls of Kyoto in 1997, something monumental began   a collective awakening of the world's conscience towards the mounting crisis of climate change. ",
+      category: "Climate Change & Water"
     },
     {
       imageSrc:
@@ -136,6 +138,7 @@ export default function Home() {
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public",
       title: "Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective",
       description: "The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.",
+      category: "Climate Change & Water"
     },
     {
       imageSrc:
@@ -143,7 +146,8 @@ export default function Home() {
       imageSrcHover:
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c3eb242-b13a-443c-da32-a78bce6e7a00/public",
       title: "The Ozone Crisis: A Success Story in Environmental Cooperation",
-      description: "It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth. This protective shield—the ozone layer—sits between 10 to 50 kilometres above the surface and has for millions of years absorbed nearly 97–99% of the Sun's harmful ultraviolet-B (UV-B) radiation. ",
+      description: "It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.",
+      category: "Policy"
     },
     {
       imageSrc:
@@ -151,7 +155,8 @@ export default function Home() {
       imageSrcHover:
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13245178-9299-4091-ebca-89c63b972600/public",
       title: "Industrial Revolution to the Carbon Age: How We Got There",
-      description: "The story begins in the smoky heart of 18th-century England. Coal dust filled the air as the first every corner of the globe. What started as the Industrial Revolution an era of machines and mechanization quickly became something far more consequential: the dawn of the Carbon Age.",
+      description: "The story begins in the smoky heart of 18th-century England...",
+      category: "Industry Impact and Solutions"
     },
     {
       imageSrc:
@@ -160,16 +165,62 @@ export default function Home() {
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9415d6a5-d78b-40ea-805a-726ed7ad5300/public",
       title: "The link between climate change and water scarcity",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.",
+      category: "Water conservation"
     },
     {
       imageSrc:
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61141311-204f-4b43-a860-e47337e84b00/public",
       imageSrcHover:
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/123e2424-f87e-44f6-c857-90f9e4553400/public",
-      title: "Melting Glacier -Rising Risk : Climate change and fresh water supplies",
+      title: "Melting Glacier - Rising Risk: Climate change and fresh water supplies",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.",
+      category: "Water conservation"
     },
+    {
+      imageSrc:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7e883368-e898-4dc0-31b8-301fbbcaaf00/public",
+      imageSrcHover:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9abaeabf-b8e5-4fc0-b8f8-46f5df2a4000/public",
+      title: "The Great Water Trade: How the Plastic Bottle Industry Exploits India's Groundwater",
+      description: "India's hydrological landscape has always been shaped by the monsoon...",
+      category: "Water conservation"
+    },
+    {
+      imageSrc:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1198ff4f-e6f9-4734-77c8-470433cff000/public",
+      imageSrcHover:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b9de44cb-3d6b-407c-730a-a15c44bc4c00/public",
+      title: "Shifting Monsoons: Transforming India's Climatic and Hydrological Systems",
+      description: "For centuries, the monsoon has been more than just a season in India...",
+      category: "Climate Change & Water"
+    },
+    {
+      imageSrc:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e44c37c6-3be1-4f60-27bd-8cbfcb181200/public",
+      imageSrcHover:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7b9cb7b8-1b96-42ca-b73b-4420a8b55800/public",
+      title: "The North Star of Progress: A Historical Lens on Climate Change and India's Sustainable Future",
+      description: "In an era defined by climate volatility, rising inequalities, and fractured global priorities...",
+      category: "Policy"
+    },
+    {
+      imageSrc:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dd28574f-052d-4cb2-e8a5-3b15ec4d6300/public",
+      imageSrcHover:
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5dfb00d6-e403-4101-7e01-6fcdee1b5900/public",
+      title: "Envisioning Sustainability: Why the SDGs Are the World's Shared Compass",
+      description: "In 2015, the United Nations adopted the 2030 Agenda for Sustainable Development...",
+      category: "Policy"
+    }
   ]
+
+  const getFilteredBlogs = () => {
+    const selectedCategory = buttonLabels[selectedIndex];
+    if (selectedCategory === "All") {
+      return blogPosts;
+    }
+    return blogPosts.filter(blog => blog.category === selectedCategory);
+  };
 
   return (
     <main className="relative">
@@ -433,96 +484,84 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= BUTTONS SECTION ================= */}
-      <section className="mb-20">
-        <div className={containerClass}>
-          <div className="flex space-x-4">
-            {buttonLabels.map((label, idx) => (
+      {/* ================= BUTTONS AND BLOGS SECTION ================= */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-4 mb-12 justify-center">
+            {buttonLabels.map((label, index) => (
               <SelectButton
-                key={idx}
-                selected={selectedIndex === idx}
-                onClick={() => setSelectedIndex(idx)}
+                key={label}
+                selected={selectedIndex === index}
+                onClick={() => setSelectedIndex(index)}
               >
                 {label}
               </SelectButton>
             ))}
           </div>
-          <div className="h-4" />
-          <hr className="w-full h-[1px] bg-[#00000088]" />
-        </div>
-      </section>
 
-      {/* ================= BLOG CARDS SECTION ================= */}
-      <section>
-        <div className={containerClass}>
-          <div className="mb-[140px] grid grid-cols-3 gap-x-[4.166%] gap-y-[140px]">
-            {blogPosts.map((post, idx) => {
+          {/* Blog Posts Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {getFilteredBlogs().map((post, index) => {
               // Define the link URL based on the post title
               let linkUrl = "#";
               if (post.title.includes("From Kyoto to COP28")) {
                 linkUrl = "/climate-change-&-water-v3";
               } else if (post.title.includes("Industrial Revolution to the Carbon Age")) {
                 linkUrl = "/industrial-revolution-to-carbon";
+              } else if (post.title.includes("Climate Change in the Indian Subcontinent")) {
+                linkUrl = "/climate-change-&-water-v2";
+              } else if (post.title.includes("The Ozone Crisis")) {
+                linkUrl = "/climate-change-&-water";
+              } else if (post.title.includes("The Great Water Trade")) {
+                linkUrl = "/plastic-bottle-industry-exploits-india";
+              } else if (post.title.includes("The North Star of Progress")) {
+                linkUrl = "/north-star-of-progress";
               }
-              
+
               return (
-              <div 
-                key={idx} 
-                className="group relative"
-                onMouseEnter={() => setHoveredCard(idx)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <Link href={linkUrl} className="block">
-                  <div className="relative">
-                    {/* Base image */}
-                    <Image
-                      src={post.imageSrc}
-                      alt={post.title}
-                      width={347}
-                      height={300}
-                      className="rounded-lg w-full h-auto"
-                    />
-                    {/* Hover image */}
-                    <div 
-                      className={`absolute inset-0 transition-opacity duration-700 ${hoveredCard === idx ? 'opacity-100' : 'opacity-0'}`}
-                      style={{ zIndex: 10 }}
-                    >
+                <div 
+                  key={index}
+                  className={`group relative transition-all duration-300 ${
+                    hoveredCard === index ? "scale-105" : "scale-100"
+                  }`}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <Link href={linkUrl} className="block">
+                    <div className="overflow-hidden rounded-lg mb-4">
                       <Image
-                        src={post.imageSrcHover}
+                        src={hoveredCard === index && post.imageSrcHover ? post.imageSrcHover : post.imageSrc}
                         alt={post.title}
                         width={347}
                         height={300}
-                        className="rounded-lg w-full h-auto"
+                        className="w-full h-auto transition-all duration-1000"
                       />
                     </div>
-                  </div>
-                </Link>
-                <div style={{ height: '60px' }} />
-                <Link href={linkUrl}>
-                  <h3
-                    className="uppercase hover:text-blue-600 transition-colors duration-300"
+                  </Link>
+                  <Link href={linkUrl}>
+                    <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] hover:text-blue-600 transition-colors duration-300" 
+                        style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                      {post.title}
+                    </h3>
+                  </Link>
+                  <p className="text-sm leading-[24px] mb-4" 
+                     style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    {post.description}
+                  </p>
+                  <Link
+                    href={linkUrl}
+                    className="text-sm font-medium underline"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 700,
-                      fontSize: '14px',
-                      lineHeight: '140%',
+                      letterSpacing: "0%",
+                      textDecoration: "underline",
+                      display: "inline-block"
                     }}
                   >
-                    {post.title}
-                  </h3>
-                </Link>
-                <div style={{ height: '12px' }} />
-                <p
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '24px',
-                  }}
-                >
-                  {post.description}
-                </p>
-              </div>
+                    Read more
+                  </Link>
+                </div>
               );
             })}
           </div>
