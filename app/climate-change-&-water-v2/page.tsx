@@ -591,7 +591,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Article 1 */}
-            <div className="group">
+            <Link href="/north-star-of-progress" className="group block">
               <div className="overflow-hidden mb-4">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
@@ -601,17 +601,16 @@ export default function Home() {
                   className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
               </h3>
               <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 In the quiet halls of Kyoto in 1997, something monumental began—a collective awakening of the world's conscience towards the mounting crisis of climate change.
               </p>
-              <Link href="/climate-change-&-water" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
-            </div>
+            </Link>
             
             {/* Article 2 */}
-            <div className="group">
+            <Link href="/climate-change-&-water-v2" className="group block">
               <div className="overflow-hidden mb-4">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
@@ -621,17 +620,16 @@ export default function Home() {
                   className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective
               </h3>
               <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
               </p>
-              <Link href="/industrial-revolution-to-carbon" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
-            </div>
+            </Link>
             
             {/* Article 3 */}
-            <div className="group">
+            <Link href="/climate-change-&-water-v3" className="group block">
               <div className="overflow-hidden mb-4">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
@@ -641,14 +639,13 @@ export default function Home() {
                   className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 The Ozone Crisis: A Success Story in Environmental Cooperation
               </h3>
               <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.
+                The story of the ozone layer's recovery stands as a testament to what global cooperation can achieve. This environmental success story offers valuable lessons for addressing climate change and other ecological challenges.
               </p>
-              <Link href="/climate-change-&-water-v3" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

@@ -574,85 +574,75 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Article 1 */}
-            <div className="group">
+            <Link href="/climate-change-&-water" className="group block">
               <div className="overflow-hidden mb-4 relative">
                 <Image
-                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
-                                  alt="From Kyoto to COP28"
-                                  width={347}
-                                  height={300}
-                                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-                                />
-                                <Image
-                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
-                                  alt="From Kyoto to COP28 - Hover"
-                                  width={347}
-                                  height={300}
-                                  className="absolute top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-                                />
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
+                  alt="From Kyoto to COP28"
+                  width={347}
+                  height={300}
+                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                />
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
+                  alt="From Kyoto to COP28 - Hover"
+                  width={347}
+                  height={300}
+                  className="absolute top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                />
               </div>
-              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
               </h3>
               <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 In the quiet halls of Kyoto in 1997, something monumental began—a collective awakening of the world's conscience towards the mounting crisis of climate change.
               </p>
-              <Link href="/climate-change-&-water" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
-            </div>
+            </Link>
             
             {/* Article 2 */}
-            <div className="group">
+            <Link href="/climate-change-&-water-v2" className="group block">
               <div className="overflow-hidden mb-4 relative">
                 <Image
-                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
-                                  alt="Climate Change in the Indian Subcontinent"
-                                  width={347}
-                                  height={300}
-                                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-                                />
-                                <Image
-                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public"
-                                  alt="Climate Change in the Indian Subcontinent - Hover"
-                                  width={347}
-                                  height={300}
-                                  className="absolute top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-                                />
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
+                  alt="Climate Change in the Indian Subcontinent"
+                  width={347}
+                  height={300}
+                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                />
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3a6b4c0d-9e1f-4b3e-8c5d-2f1e0d9c8b7a/public"
+                  alt="Climate Change in the Indian Subcontinent - Hover"
+                  width={347}
+                  height={300}
+                  className="absolute top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                />
               </div>
-              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective
               </h3>
               <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
               </p>
-              <Link href="/climate-change-&-water-v2" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
-            </div>
+            </Link>
             
             {/* Article 3 */}
-            <div className="group">
+            <Link href="/climate-change-&-water-v3" className="group block">
               <div className="overflow-hidden mb-4 relative">
-              <Image
-                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2bcd53b1-c103-4faf-bd00-29a04ff0ee00/public"
-                                  alt="The Ozone Crisis: A Success Story in Environmental Cooperation"
-                                  width={347}
-                                  height={300}
-                                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-                                />
-                                <Image
-                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13245178-9299-4091-ebca-89c63b972600/public"
-                                  alt="The Ozone Crisis: A Success Story in Environmental Cooperation - Hover"
-                                  width={347}
-                                  height={300}
-                                  className="absolute top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-                                />
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
+                  alt="The Ozone Crisis"
+                  width={347}
+                  height={300}
+                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
-              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 The Ozone Crisis: A Success Story in Environmental Cooperation
               </h3>
               <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.
+                The story of the ozone layer's recovery stands as a testament to what global cooperation can achieve. This environmental success story offers valuable lessons for addressing climate change and other ecological challenges.
               </p>
-              <Link href="/climate-change-&-water-v3" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
-            </div>
+            </Link>    
           </div>
         </div>
       </section>

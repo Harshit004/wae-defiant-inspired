@@ -652,7 +652,7 @@ export default function Home() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {/* Article 1 */}
-                  <div className="group">
+                  <Link href="/north-star-of-progress" className="group block">
                     <div className="overflow-hidden mb-4 relative">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e44c37c6-3be1-4f60-27bd-8cbfcb181200/public"
@@ -669,17 +669,16 @@ export default function Home() {
                         className="absolute top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                       />
                     </div>
-                    <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                     The North Star of Progress: A Historical Lens on Climate Change and India’s Sustainable Future
                     </h3>
                     <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                     In an era defined by climate volatility, rising inequalities, and fractured global priorities, sustainability as popularized by the United Nations Sustainable Development Goals (SDGs) ...
                     </p>
-                    <Link href="/north-star-of-progress" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
-                  </div>
+                  </Link>
                   
                   {/* Article 2 */}
-                  <div className="group">
+                  <Link href="/envisioning-sustainability" className="group block">
                     <div className="overflow-hidden mb-4 relative">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dd28574f-052d-4cb2-e8a5-3b15ec4d6300/public"
@@ -696,41 +695,39 @@ export default function Home() {
                         className="absolute top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                       />
                     </div>
-                    <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                     Envisioning Sustainability: Why the SDGs Are the World’s Shared Compass
                     </h3>
                     <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                    In 2015, the United Nations adopted the 2030 Agenda for Sustainable Development, anchored by 17 Sustainable Development Goals (SDGs) that serve as a shared global blueprint to end poverty, protect the planet, and ensure prosperity for all.
+                    The 17 Sustainable Development Goals (SDGs) adopted by the United Nations in 2015 represent a universal call to action to end poverty, protect the planet, and ensure prosperity for all by 2030...
                     </p>
-                    <Link href="/climate-change-&-water" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
-                  </div>
+                  </Link>
                   
                   {/* Article 3 */}
-                  <div className="group">
+                  <Link href="/climate-change-&-water-v3" className="group block">
                     <div className="overflow-hidden mb-4 relative">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
-                        alt="The Ozone Crisis: A Success Story in Environmental Cooperation"
+                        alt="The Ozone Crisis"
                         width={347}
                         height={300}
                         className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                       />
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c3eb242-b13a-443c-da32-a78bce6e7a00/public"
-                        alt="The Ozone Crisis: A Success Story in Environmental Cooperation - Hover"
+                        alt="The Ozone Crisis - Hover"
                         width={347}
                         height={300}
                         className="absolute top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                       />
                     </div>
-                    <h3 className="text-sm font-bold mb-2 uppercase leading-[140%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                      The Ozone Crisis: A Success Story in Environmental Cooperation
+                    <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    The Ozone Crisis: A Success Story in Environmental Cooperation
                     </h3>
                     <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                      It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.
+                    The story of the ozone layer's recovery stands as a testament to what global cooperation can achieve. This environmental success story offers valuable lessons for addressing climate change and other ecological challenges.
                     </p>
-                    <Link href="/plastic-bottle-industry-exploits-india" className="text-sm font-medium underline" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Read more</Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </section>
