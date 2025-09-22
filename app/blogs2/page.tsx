@@ -97,7 +97,7 @@ export default function Home() {
   }
 
   // --- BUTTONS SECTION STATE ---
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
   // --- STATIC DATA ---
@@ -114,7 +114,6 @@ export default function Home() {
     { text: "Blog", href: "/blogs2" },
   ]
   const buttonLabels = [
-    "All",
     "Water conservation",
     "Policy",
     "Climate Change & Water",
@@ -215,10 +214,10 @@ export default function Home() {
   ]
 
   const getFilteredBlogs = () => {
-    const selectedCategory = buttonLabels[selectedIndex];
-    if (selectedCategory === "All") {
+    if (selectedIndex === null) {
       return blogPosts;
     }
+    const selectedCategory = buttonLabels[selectedIndex];
     return blogPosts.filter(blog => blog.category === selectedCategory);
   };
 
@@ -484,24 +483,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= BUTTONS AND BLOGS SECTION ================= */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-4 mb-12 justify-center">
+      {/* ================= BUTTONS SECTION ================= */}
+      <section className="mb-20">
+        <div className={containerClass}>
+          <div className="flex flex-wrap gap-4 justify-center">
             {buttonLabels.map((label, index) => (
               <SelectButton
                 key={label}
                 selected={selectedIndex === index}
-                onClick={() => setSelectedIndex(index)}
+                onClick={() => setSelectedIndex(index === selectedIndex ? null : index)}
               >
                 {label}
               </SelectButton>
             ))}
           </div>
+          <div className="h-4" />
+          <hr className="w-full h-[1px] bg-[#00000088]" />
+        </div>
+      </section>
 
-          {/* Blog Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* ================= BLOG CARDS SECTION ================= */}
+      <section>
+        <div className={containerClass}>
+          <div className="mb-[140px] grid grid-cols-3 gap-x-[4.166%] gap-y-[140px]">
             {getFilteredBlogs().map((post, index) => {
               // Define the link URL based on the post title
               let linkUrl = "#";
