@@ -605,7 +605,7 @@ export default function Home() {
             Our Writers
           </h2>
           
-          <div className="grid grid-cols-4 justify-between">
+          <div className="grid grid-cols-3 justify-between">
             {/* Writer 1 - ADITI SHARMA */}
             <div className="text-left">
               <Link href="/aditi-sharma" className="block">
