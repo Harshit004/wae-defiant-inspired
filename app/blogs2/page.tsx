@@ -605,16 +605,16 @@ export default function Home() {
             Our Writers
           </h2>
           
-          <div className="grid grid-cols-3 gap-x-[4.166%]">
+          <div className="grid grid-cols-4 justify-between">
             {/* Writer 1 - ADITI SHARMA */}
             <div className="text-left">
               <Link href="/aditi-sharma" className="block">
-                <div className="relative w-[347px] h-[346px] mb-8">
+                <div className="relative w-[266px] h-[266px] mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/471bde63-5514-44fd-67a7-d06a24417100/public"
                     alt="Aditi Sharma"
-                    width={347}
-                    height={346}
+                    width={266}
+                    height={266}
                     className="rounded-full object-cover grayscale cursor-pointer"
                   />
                 </div>
@@ -673,12 +673,12 @@ export default function Home() {
             {/* Writer 2 - REHNUMA ANSARI */}
             <div className="text-left">
               <Link href="/rehnuma-ansari" className="block">
-                <div className="relative w-[347px] h-[346px] mb-8">
+                <div className="relative w-[266px] h-[266px] mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f13e92f-a500-4052-dd61-2bd0951c1900/public"
                     alt="Rehnam Ansari"
-                    width={347}
-                    height={346}
+                    width={266}
+                    height={266}
                     className="rounded-full object-cover grayscale cursor-pointer"
                   />
                 </div>
@@ -737,12 +737,76 @@ export default function Home() {
             {/* Writer 3 - SHAMBHAVI */}
             <div className="text-left">
               <Link href="/shambhavi" className="block">
-                <div className="relative w-[347px] h-[346px] mb-8">
+                <div className="relative w-[266px] h-[266px] mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
                     alt="Shamishavi"
-                    width={347}
-                    height={346}
+                    width={266}
+                    height={266}
+                    className="rounded-full object-cover grayscale cursor-pointer"
+                  />
+                </div>
+              </Link>
+              <Link href="/shambhavi">
+                <h3 
+                  className="uppercase mb-2 cursor-pointer"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                  }}
+                >
+                  SHAMBHAVI
+                </h3>
+              </Link>
+              <p 
+                className="mb-4"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                }}
+              >
+                Climate Change and Water
+              </p>
+              <p 
+                className="mb-6"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                  color: "#666",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
+              </p>
+              <Link href="/shambhavi">
+                <span
+                  className="cursor-pointer"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "12px",
+                    lineHeight: "130%",
+                  }}
+                >
+                  <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+                </span>
+              </Link>
+            </div>
+
+            {/* Writer 4 - SHAMBHAVI */}
+            <div className="text-left">
+              <Link href="/shambhavi" className="block">
+                <div className="relative w-[266px] h-[266px] mb-8">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
+                    alt="Shamishavi"
+                    width={266}
+                    height={266}
                     className="rounded-full object-cover grayscale cursor-pointer"
                   />
                 </div>
