@@ -430,7 +430,7 @@ export default function Home() {
       </div>
       
         {/* Second Column */}
-      <div className="space-y-6 text-sm mt-[48px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
+      <div className="space-y-6 text-sm mt-[0px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
         
         <h2 className="text-[14px] font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
         The Breakthrough: Intelligent Glass Bottling Plants
@@ -463,7 +463,7 @@ export default function Home() {
       </div>
       
       {/* Third Column */}
-      <div className="space-y-6 text-sm mt-[24px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
+      <div className="space-y-6 text-sm mt-[0px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
 
       <h2 className="text-[14px] font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
         The Architectural Shift
