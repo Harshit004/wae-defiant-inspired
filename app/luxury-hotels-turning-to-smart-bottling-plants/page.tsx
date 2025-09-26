@@ -400,7 +400,7 @@ export default function Home() {
           Rashi Tarika
         </div>
 
-        <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+        <h2 className="text-[14px] font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
         A New Law in Luxury Hospitality
         </h2>
         
@@ -408,7 +408,7 @@ export default function Home() {
         In advertising, Ogilvy would tell you: “The consumer isn’t a moron. She’s your wife.” In hospitality, the corollary is: Your guest isn’t just a guest. She’s a citizen of the planet. Today, that citizen is scrutinising every aspect of her stay — and plastic water bottles no longer pass the test.
         </p>
 
-        <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+        <h2 className="text-[14px] font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
         The Numbers Don’t Lie
         </h2>
 
@@ -420,7 +420,7 @@ export default function Home() {
         Much like ancient mariners navigating uncharted oceans with the North Star as their celestial constant, the SDGs illuminate a collective path forward—a visionary trajectory through uncertainty toward resilience, equity, and sustainability.
         </p>
         
-        <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+        <h2 className="text-[14px] font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
         The New Luxury Guest — Armed with Data
         </h2>
         
@@ -429,10 +429,10 @@ export default function Home() {
         </p>
       </div>
       
-      {/* Second Column */}
+        {/* Second Column */}
       <div className="space-y-6 text-sm mt-[48px] leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}>
         
-        <h2 className="text-xl font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+        <h2 className="text-[14px] font-bold mt-6 mb-6 leading-[130%]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
         The Breakthrough: Intelligent Glass Bottling Plants
         </h2>
         
