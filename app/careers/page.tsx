@@ -519,7 +519,7 @@ const Home: FC = () => {
                 <br />
                 Openings
               </h2>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5 w-64">
                 <p style={{
                     fontFamily: 'Inter Tight',
                     fontWeight: 500,
