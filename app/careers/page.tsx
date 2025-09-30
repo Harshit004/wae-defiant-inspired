@@ -461,11 +461,30 @@ const Home: FC = () => {
               className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
             >
               <div className="flex flex-row lg:flex-row items-start justify-between">
-                <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
+                <h2 style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '40px',
+                    lineHeight: '110%',
+                    letterSpacing: 0,
+                    verticalAlign: 'middle',
+                    color: '#000',
+                    marginBottom: '30px',
+                  }}
+                >
                   Why WAE
                 </h2>
                 <div className="flex flex-col gap-5 w-64">
-                  <p className="w-[270px] font-[Inter Tight] text-[14px] leading-[100%] text-black/70">
+                  <p style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                    letterSpacing: 0,
+                    verticalAlign: 'middle',
+                    color: '#00000099',
+                    marginBottom: '20px',
+                  }}>
                   Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
                   </p>
                 </div>
@@ -485,13 +504,33 @@ const Home: FC = () => {
             className="w-full max-w-screen-xl mx-8 lg:mx-36"
           >
             <div className="flex flex-row lg:flex-row items-start justify-between">
-              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
+              <h2 style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '40px',
+                    lineHeight: '110%',
+                    letterSpacing: 0,
+                    verticalAlign: 'middle',
+                    color: '#000',
+                    marginBottom: '30px',
+                  }}
+                >
                 Current
                 <br />
                 Openings
               </h2>
               <div className="flex flex-col gap-5">
-                <p className="w-[270px] font-[Inter Tight] text-[14px] leading-[110%] text-black/70">
+                <p style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                    letterSpacing: 0,
+                    verticalAlign: 'middle',
+                    color: '#00000099',
+                    marginBottom: '20px',
+                  }}
+                >
                 Discover career opportunities where innovation meets impact. At WAE, we're building a sustainable future powered by technology and driven by purpose. Explore our current openings and become part of a team that values creativity, collaboration, and real-world change.
                 </p>
                 <HoverButton>
@@ -567,7 +606,16 @@ const Home: FC = () => {
 
       {/* Right Column: Description and Button */}
       <div className="flex flex-col items-start w-[290px]"> {/* Added flex-col, items-end, and text-right */}
-        <div className="font-inter-tight font-medium text-sm leading-[110%] tracking-normal text-[#00000099]">
+        <div style={{
+          fontFamily: 'Inter Tight',
+          fontWeight: 500,
+          fontSize: '12px',
+          lineHeight: '100%',
+          letterSpacing: 0,
+          verticalAlign: 'middle',
+          color: '#00000099',
+          marginBottom: '20px',
+        }}>
           {sec.description}
         </div>
         <div style={{ height: '20px' }} />
@@ -689,3 +737,4 @@ const Home: FC = () => {
 };
 
 export default Home;
+
