@@ -509,12 +509,41 @@ useEffect(() => {
             className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
           >
             <div className="flex flex-col lg:flex-row items-start justify-between">
-              <h2 className="font-[Inter Tight] font-normal text-4xl lg:text-6xl leading-tight">About WAE</h2>
+              <h2 style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 500,
+                fontSize: '40px',
+                lineHeight: '110%',
+                letterSpacing: 0,
+                verticalAlign: 'middle',
+                color: '#000',
+                marginBottom: '30px',
+              }}>About WAE</h2>
               <div className="flex flex-col gap-5 w-64">
-                <p className="w-[290px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
+                <p style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  letterSpacing: 0,
+                  verticalAlign: 'middle',
+                  color: '#00000099',
+                  marginBottom: '20px',
+                  width: '290px'
+                }}>
                 WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology. We are driven by the mission to build a brand that not only saves the planet but also creates a potent impact on future generations for the country's advancements, integrity & innovation. Our approach strengthens community resilience while showcasing India's Intellectual capital on the world stage.
                 </p>
-                <p className="w-[290px] font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
+                <p style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  letterSpacing: 0,
+                  verticalAlign: 'middle',
+                  color: '#00000099',
+                  marginBottom: '20px',
+                  width: '290px'
+                }}>
                 With a steadfast focus on sustainability and design excellence, WAE transforms challenges into opportunities through cutting-edge water and waste management solutions. Our diverse portfolio reflects our commitment to quality, responsible innovation, and a future-ready India where environmental care and technological progress work together.
                 </p>
               </div>
@@ -529,7 +558,16 @@ useEffect(() => {
             initial={false}
           >
             <div className="flex flex-col lg:flex-row items-start justify-between">
-              <h2 className="font-[Inter Tight] font-medium text-4xl lg:text-6xl leading-tight">
+              <h2 style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 500,
+                fontSize: '40px',
+                lineHeight: '110%',
+                letterSpacing: 0,
+                verticalAlign: 'middle',
+                color: '#000',
+                marginBottom: '30px',
+              }}>
                 Vision and<br />Mission
               </h2>
               <div className="flex flex-col gap-10 w-64">
@@ -546,7 +584,19 @@ useEffect(() => {
           <motion.div className="w-full">
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
-                <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
+                <h2 style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '40px',
+                  lineHeight: '110%',
+                  letterSpacing: 0,
+                  verticalAlign: 'middle',
+                  color: '#000',
+                  marginBottom: '30px',
+                  display: 'inline-block',
+                  width: '23.5%',
+                  whiteSpace: 'nowrap'
+                }}>
                   People and<br />Culture
                 </h2>
               </div>
@@ -578,7 +628,19 @@ useEffect(() => {
           <motion.div className="w-full">
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
-                <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
+                <h2 style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '40px',
+                  lineHeight: '110%',
+                  letterSpacing: 0,
+                  verticalAlign: 'middle',
+                  color: '#000',
+                  marginBottom: '30px',
+                  display: 'inline-block',
+                  width: '23.5%',
+                  whiteSpace: 'nowrap'
+                }}>
                   Leadership<br />Team
                 </h2>
               </div>
@@ -626,7 +688,19 @@ useEffect(() => {
           <motion.div className="w-full ">
             <div className="flex flex-col lg:flex-row items-start justify-between h-[115px]">
               <div className="flex flex-col gap-5 items-start">
-                <h2 className="inline-block font-[Inter Tight] font-medium text-[58px] leading-[1.1] w-[23.5%] whitespace-nowrap">
+                <h2 style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '40px',
+                  lineHeight: '110%',
+                  letterSpacing: 0,
+                  verticalAlign: 'middle',
+                  color: '#000',
+                  marginBottom: '30px',
+                  display: 'inline-block',
+                  width: '23.5%',
+                  whiteSpace: 'nowrap'
+                }}>
                   Sustainability
                 </h2>
               </div>
