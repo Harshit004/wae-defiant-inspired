@@ -19,7 +19,7 @@ const HoverButton: React.FC<HoverButtonProps> = ({ children, className = '' }) =
     <button
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`flex items-center gap-2 ${className}`}
+      className={`flex items-center gap-2 border border-[#00000066] text-black px-4 py-2 rounded-md hover:bg-gray-50 transition-colors ${className}`}
     >
       {children(isHovered)}
     </button>
@@ -325,7 +325,7 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                width: "75%",
+                width: "55%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
                 fontSize: "32px",
