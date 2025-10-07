@@ -325,7 +325,7 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                width: "55%",
+                width: "65%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 700,
                 fontSize: "24px",
@@ -397,7 +397,7 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                width: "55%",
+                width: "65%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 700,
                 fontSize: "24px",
@@ -469,7 +469,7 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                width: "55%",
+                width: "65%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 700,
                 fontSize: "24px",
@@ -541,7 +541,7 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                width: "55%",
+                width: "65%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 700,
                 fontSize: "24px",
@@ -613,7 +613,7 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                width: "55%",
+                width: "65%",
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 700,
                 fontSize: "24px",
