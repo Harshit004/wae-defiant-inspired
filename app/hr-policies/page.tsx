@@ -19,7 +19,7 @@ const HoverButton: React.FC<HoverButtonProps> = ({ children, className = '' }) =
     <button
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`flex items-center gap-2 border border-[#00000066] text-black px-4 py-2 rounded-md hover:bg-gray-50 transition-colors ${className}`}
+      className={`flex items-center gap-2 border border-[#00000066] text-black px-4 py-2 rounded-md transition-colors hover:bg-black hover:text-white ${className}`}
     >
       {children(isHovered)}
     </button>
