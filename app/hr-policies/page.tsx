@@ -1116,7 +1116,7 @@ export default function Home() {
                 color: "#000",
               }}
             >
-              POLICY ON PREVENTION OF ABUSE & RELIGIOUS NEUTRALITY:
+              POLICY ON PREVENTION OF<br />ABUSE & RELIGIOUS<br />NEUTRALITY:
             </h3>
             {/* Right Column: Policy Content */}
             <div
