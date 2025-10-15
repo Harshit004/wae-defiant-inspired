@@ -287,7 +287,7 @@ export default function Home() {
         </header>
       </div>
 
-      {/* Explore Roles Heading */}
+      {/* Job Description Heading */}
       <div className={containerClass}>
         <h2
           style={{
@@ -299,8 +299,513 @@ export default function Home() {
             marginBottom: "80px",
           }}
         >
-          Job Description: Manager/Sr. Manager - Marketing Communications (MarComm) 
+          Job Description: Manager/Sr. Manager - Marketing Communications (MarComm) 
         </h2>
+      </div>
+
+      {/* POSITION OVERVIEW Section */}
+      <div className={containerClass} style={{ marginBottom: "80px" }}>
+        <h3
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 700,
+            fontSize: "24px",
+            lineHeight: "140%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+            textTransform: "uppercase",
+            marginBottom: "24px",
+          }}
+        >
+          Position Overview
+        </h3>
+        <p
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 400,
+            fontSize: "14px",
+            lineHeight: "120%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+            marginBottom: "24px",
+          }}
+        >
+          We are seeking a dynamic and experienced Manager/Sr. Manager - Marketing Communications to lead our MarComm team. The ideal candidate will be responsible for creating and implementing effective communication strategies to enhance brand awareness and drive engagement across multiple channels. This role requires a strategic thinker with a proven track record in managing integrated marketing campaigns, content creation (including brochures and presentations), brand positioning, and vendor/stakeholder management. The position is based in Noida.
+        </p>
+        <button
+          className="border border-black px-6 py-3 transition-all duration-300 hover:bg-black hover:text-white"
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: "10px",
+            textTransform: "uppercase",
+            letterSpacing: "0%",
+          }}
+        >
+          Apply Now&nbsp;&nbsp;<span style={{fontWeight: 700 as React.CSSProperties['fontWeight']}}>↗</span>
+        </button>
+      </div>
+
+      {/* KEY RESPONSIBILITIES Section */}
+      <div className={containerClass} style={{ marginBottom: "80px" }}>
+        <h3
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 700,
+            fontSize: "20px",
+            lineHeight: "140%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+            textTransform: "uppercase",
+            marginBottom: "24px",
+          }}
+        >
+          Key Responsibilities:
+        </h3>
+        
+        <ol style={{ listStyleType: "decimal", paddingLeft: "20px", marginBottom: "16px" }}>
+          {/* 1. STRATEGIC PLANNING & EXECUTION */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Strategic Planning & Execution:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Develop and execute comprehensive MarComm strategies aligned with company objectives and brand vision.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Plan, design, and oversee the creation of marketing materials, including digital, print, social, and video content.
+              </li>
+            </ul>
+          </li>
+
+          {/* 2. CONTENT DEVELOPMENT */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Content Development:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Lead the creation of high-quality content for brochures, presentations, white papers, blogs, and case studies.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Ensure consistency of voice, messaging, and branding across all communication channels.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Collaborate with internal teams to gather insights and translate technical information into compelling narratives.
+              </li>
+            </ul>
+          </li>
+
+          {/* 3. BRAND MANAGEMENT */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Brand Management:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Manage brand positioning and ensure all communications support the overall brand identity, values, and vision.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Monitor brand perception and implement strategies to strengthen brand equity and reputation.
+              </li>
+            </ul>
+          </li>
+
+          {/* 4. VENDOR & STAKEHOLDER ENGAGEMENT */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Vendor & Stakeholder Engagement:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Identify, onboard, and manage relationships with external agencies, freelancers, and vendors for creative, design, and production needs.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Negotiate contracts and ensure timely delivery of high-quality outputs within budget.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Collaborate with internal stakeholders (sales, product, leadership) to align messaging and support business objectives.
+              </li>
+            </ul>
+          </li>
+
+          {/* 5. DIGITAL MARKETING */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Digital Marketing:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Work with the digital team to drive SEO, SEM, email marketing, and social media campaigns.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Analyze campaign performance and optimize strategies to maximize reach, engagement, and ROI.
+              </li>
+            </ul>
+          </li>
+
+          {/* 6. PERFORMANCE ANALYTICS & REPORTING */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Performance Analytics & Reporting:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Establish KPIs and track the effectiveness of all MarComm initiatives using data-driven insights.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Prepare regular reports on campaign performance and ROI for senior leadership.
+              </li>
+            </ul>
+          </li>
+
+          {/* 7. TEAM LEADERSHIP & DEVELOPMENT */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Team Leadership & Development:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Lead, mentor, and develop a high-performing MarComm team, fostering collaboration and growth.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Manage team workflows, set clear goals, and ensure timely delivery of all initiatives.
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      {/* KEY RESULT AREAS (KRAs) Section */}
+      <div className={containerClass} style={{ marginBottom: "80px" }}>
+        <h3
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 700,
+            fontSize: "20px",
+            lineHeight: "140%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+            textTransform: "uppercase",
+            marginBottom: "24px",
+          }}
+        >
+          Key Result Areas (KRAs):
+        </h3>
+        
+        <ol style={{ listStyleType: "decimal", paddingLeft: "20px", marginBottom: "16px" }}>
+          {/* 1. CAMPAIGN EFFECTIVENESS */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Campaign Effectiveness:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Achieve targeted KPIs (reach, engagement, and lead generation) across all marketing and communication campaigns.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Demonstrate measurable improvement in brand awareness and market share.
+              </li>
+            </ul>
+          </li>
+
+          {/* 2. BRAND CONSISTENCY */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Brand Consistency:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Maintain a high level of consistency (>95%) across all communication materials and channels.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Ensure brand guidelines are adhered to across all touchpoints and by all stakeholders.
+              </li>
+            </ul>
+          </li>
+
+          {/* 3. VENDOR & STAKEHOLDER SATISFACTION */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Vendor & Stakeholder Satisfaction:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Build and maintain strong relationships with at least 5 key vendors and ensure 100% on-time delivery.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Achieve a stakeholder satisfaction score of 4.5/5 or higher in internal surveys.
+              </li>
+            </ul>
+          </li>
+
+          {/* 4. MEDIA COVERAGE */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Media Coverage:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Secure a minimum of 10 high-quality media mentions per quarter.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Increase share of voice in industry publications by 20% year-over-year.
+              </li>
+            </ul>
+          </li>
+
+          {/* 5. CONTENT QUALITY */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Content Quality:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Deliver high-quality, error-free content with a 98% approval rate from internal stakeholders.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Produce a minimum of 8 major content pieces (brochures, presentations, whitepapers) per quarter.
+              </li>
+            </ul>
+          </li>
+
+          {/* 6. TEAM PERFORMANCE */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Team Performance:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Maintain high team morale and productivity, reflected in a team engagement score of 4.5/5 or higher.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Achieve 100% on-time delivery of all major projects and campaigns.
+              </li>
+            </ul>
+          </li>
+
+          {/* 7. POSITIVE QUALITY */}
+          <li style={{ marginBottom: "20px" }}>
+            <h4
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontSize: "16px",
+                lineHeight: "140%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              Positive Quality:
+            </h4>
+            <ul className="custom-bullet">
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Maintain high quality of brochures and presentations delivered to the office within the prescribed time frame.
+              </li>
+              <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+                Ensure all deliverables meet brand standards and are free from errors.
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      {/* QUALIFICATIONS Section */}
+      <div className={containerClass} style={{ marginBottom: "120px" }}>
+        <h3
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 700,
+            fontSize: "20px",
+            lineHeight: "140%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+            textTransform: "uppercase",
+            marginBottom: "24px",
+          }}
+        >
+          Qualifications:
+        </h3>
+        
+        <ul className="custom-bullet" style={{ marginBottom: "24px" }}>
+          <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+            Post-grad in Marketing, Communications, Business, or a related field; MBA is a plus.
+          </li>
+          <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+            8+ years of experience in marketing communications, with at least 4 years in a managerial role.
+          </li>
+          <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+            Proven expertise in content creation (brochures, presentations, digital content) and brand management.
+          </li>
+          <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+            Strong vendor and stakeholder management skills.
+          </li>
+          <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+            Excellent written, verbal, and presentation skills.
+          </li>
+          <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#00000099", marginBottom: "8px" }}>
+            A creative thinker.
+          </li>
+        </ul>
+
+        <button
+          className="border border-black px-6 py-3 transition-all duration-300 hover:bg-black hover:text-white"
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: "10px",
+            textTransform: "uppercase",
+            letterSpacing: "0%",
+          }}
+        >
+          Apply Now&nbsp;&nbsp;<span style={{fontWeight: 700 as React.CSSProperties['fontWeight']}}>↗</span>
+        </button>
       </div>
 
       {/* FOOTER SECTION */}
