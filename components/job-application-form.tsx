@@ -22,11 +22,19 @@ const Icons = {
       strokeLinejoin="round"
     />
   </svg>,
+  ThumbsUp: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7 22V11M2 13V20C2 21.1046 2.89543 22 4 22H16.4262C17.907 22 19.1662 20.9197 19.3914 19.4562L20.4683 12.4562C20.7479 10.6389 19.3418 9 17.5032 9H14C13.4477 9 13 8.55228 13 8V4.46584C13 3.10399 11.896 2 10.5342 2C10.2093 2 9.91498 2.1913 9.78306 2.48812L7.26394 8.40614C7.09746 8.76727 6.74355 9 6.35013 9H4C2.89543 9 2 9.89543 2 11V13Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>,
 };
 
-const JobApplicationForm = () => {
+interface JobApplicationFormProps {
+  jobTitle?: string;
+}
+
+const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ jobTitle = 'Job Application' }) => {
   // State to hold the name of the selected file
   const [resumeFileName, setResumeFileName] = useState('');
+  const [showToast, setShowToast] = useState(false);
 
   const handleResumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     // Get the first file from the list of selected files
@@ -42,25 +50,60 @@ const JobApplicationForm = () => {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     
-    // FormData is required for file uploads.
+    // Get form data
     const formData = new FormData(form);
-    formData.append('pageUrl', window.location.href);
+    const applicantName = formData.get('applicantName') as string;
+    const applicantEmail = formData.get('applicantEmail') as string;
+    const applicantPhone = formData.get('applicantPhone') as string;
+    const resume = formData.get('resume') as File;
 
-    const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxb3RywLHPRbyFITG58mPfv4nTsrRwKCx-9f131o9oaEcGt5dIDzaq-6EwQ00XTnif3Ig/exec';
+    // Prepare email data
+    const emailData = {
+      to: 'wae.marktech@gmail.com',
+      subject: jobTitle,
+      body: `
+New Job Application Received
+
+Job Position: ${jobTitle}
+
+Applicant Details:
+- Name: ${applicantName}
+- Email: ${applicantEmail}
+- Phone: ${applicantPhone}
+- Resume: ${resume?.name || 'No file attached'}
+
+Page URL: ${window.location.href}
+      `.trim(),
+      applicantName,
+      applicantEmail,
+      applicantPhone,
+      jobTitle,
+      pageUrl: window.location.href,
+    };
 
     try {
-      // For file uploads, send the FormData object directly in the body.
-      // Do NOT set the 'Content-Type' header; the browser will set it automatically.
-      await fetch(appsScriptUrl, {
+      // Send email via API endpoint
+      const response = await fetch('/api/send-email', {
         method: 'POST',
-        mode: 'no-cors',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData),
       });
 
-      console.log('Form submission request sent to Google Apps Script.');
-      alert('Thank you for contacting us! Your message has been sent.');
-      form.reset();
-      setResumeFileName(''); // Clear the file name state after submission
+      if (response.ok) {
+        console.log('Form submission successful');
+        setShowToast(true);
+        form.reset();
+        setResumeFileName('');
+        
+        // Hide toast after 3 seconds
+        setTimeout(() => {
+          setShowToast(false);
+        }, 3000);
+      } else {
+        throw new Error('Failed to send email');
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
       alert('There was an error submitting the form. Please try again.');
@@ -163,6 +206,41 @@ const JobApplicationForm = () => {
           </form>
         </div>
       </div>
+
+      {/* Custom Toast Notification */}
+      {showToast && (
+        <div className="fixed bottom-8 right-8 z-50 animate-slide-up">
+          <div className="bg-white border-2 border-black rounded-lg shadow-2xl px-6 py-4 flex items-center gap-4 min-w-[300px]">
+            <div className="flex-shrink-0 text-black">
+              {Icons.ThumbsUp}
+            </div>
+            <div className="flex-1">
+              <p className="font-inter-tight font-semibold text-base text-black">
+                Application Submitted!
+              </p>
+              <p className="font-inter-tight text-sm text-gray-600">
+                We'll get back to you soon.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes slide-up {
+          from {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        .animate-slide-up {
+          animation: slide-up 0.3s ease-out;
+        }
+      `}</style>
     </section>
   );
 };
