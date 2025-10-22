@@ -6,6 +6,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import Footer from "@/components/footer"
 import Link from 'next/link';
+import JobApplicationForm from "@/components/job-application-form";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
@@ -36,6 +37,9 @@ export default function Home() {
   // State for controlling tagline visibility on scroll
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
+  
+  // State for controlling modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   // Variants for staggered animations using framer-motion (used only for tagline)
   const containerVariants = {
@@ -339,6 +343,7 @@ export default function Home() {
               We are seeking a dynamic and experienced Manager/Sr. Manager - Marketing Communications to lead our MarComm team. The ideal candidate will be responsible for creating and implementing effective communication strategies to enhance brand awareness and drive engagement across multiple channels. This role requires a strategic thinker with a proven track record in managing integrated marketing campaigns, content creation (including brochures and presentations), brand positioning, and vendor/stakeholder management. The position is based in Noida.
             </p>
             <button
+              onClick={() => setIsModalOpen(true)}
               className="border border-black px-6 py-3 transition-all duration-300 hover:bg-black hover:text-white"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
@@ -822,6 +827,7 @@ export default function Home() {
         </ul>
 
             <button
+              onClick={() => setIsModalOpen(true)}
               className="border border-black px-6 py-3 transition-all duration-300 hover:bg-black hover:text-white"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
@@ -836,6 +842,33 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* MODAL FOR JOB APPLICATION FORM */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto mx-4 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 text-black hover:text-gray-700 text-2xl font-bold z-10"
+              aria-label="Close modal"
+            >
+              ×
+            </button>
+            
+            {/* Form Content */}
+            <div className="p-8">
+              <JobApplicationForm />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>
