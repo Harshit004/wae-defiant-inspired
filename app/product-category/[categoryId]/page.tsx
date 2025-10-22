@@ -165,7 +165,7 @@ const Home: FC<{ params: { categoryId: string } }> = ({ params }) => {
   const productsItems = [
     { text: "This is Us", href: "/inside-wae" },
     { text: "Our Portfolio", href: "/our-portfolio" },
-    { text: "Reimagine Work", href: "/careers" },
+    { text: "Reimagine Work", href: "/careers3" },
   ];
   const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },

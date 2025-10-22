@@ -80,7 +80,7 @@ export default function Footer() {
                   <Link href="/our-portfolio">Our Portfolio</Link>
                 </li>
                 <li>
-                  <Link href="/careers">Reimagine Work</Link>
+                  <Link href="/careers3">Reimagine Work</Link>
                 </li>
               </ul>
               {/* Extra HR and Coordinates for Desktop - Hidden on mobile */}
