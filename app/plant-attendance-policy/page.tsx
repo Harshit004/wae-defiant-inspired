@@ -47,7 +47,7 @@ export default function PolicyPage() {
   const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"]
 
   return (
-    <main className="relative bg-[#EEEEEE] min-h-screen">
+    <main className="relative bg-[#f2f2f2] min-h-screen">
       {/* HEADER */}
       <div style={{ top: 0, left: 0, width: "100%" }}>
         <header ref={headerRef} className="w-full relative z-10 mb-[80px]">
@@ -198,27 +198,31 @@ export default function PolicyPage() {
 
       {/* MAIN CONTENT */}
       <div className={containerClass}>
-        <div className="pb-[120px]">
-          {/* Preface Heading */}
-          <h1 
-            style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontStyle: "Medium",
-              fontSize: "32px",
-              lineHeight: "110%",
-              letterSpacing: "0%",
-              verticalAlign: "middle",
-              textTransform: "capitalize",
-              color: "#000000",
-              marginBottom: "60px"
-            }}
-          >
-            Preface
-          </h1>
+        <div className="grid grid-cols-2 gap-[90px]">
+            <div>
+                {/* Preface Heading */}
+                <h1 
+                    style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontStyle: "Medium",
+                    fontSize: "32px",
+                    lineHeight: "110%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    textTransform: "capitalize",
+                    color: "#000000",
+                    marginBottom: "60px"
+                    }}
+                >
+                    Preface
+                </h1>
+            </div>
+            <div>
+          
 
           {/* Introduction Section */}
-          <div className="grid grid-cols-2 gap-[80px] mb-[60px]">
+          <div className="mb-[60px]">
             <div>
               <h2 
                 style={{
@@ -338,7 +342,8 @@ export default function PolicyPage() {
             {/* Table */}
             <table className="w-full mb-[30px]" style={{ 
               borderCollapse: 'collapse',
-              border: '1px solid #00000099'
+              border: 'none',
+              borderBottom: '1px solid #D2CFC6'
             }}>
               <thead>
                 <tr style={{ backgroundColor: '#D9D9D9' }}>
@@ -347,10 +352,11 @@ export default function PolicyPage() {
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#00000099",
+                    color: "#000",
                     padding: "12px 16px",
-                    border: '1px solid #00000099',
-                    textAlign: 'left',
+                    border: 'none',
+                    borderBottom: '1px solid #D2CFC6',
+                    textAlign: 'center',
                   }}>
                     YEAR
                   </th>
@@ -359,22 +365,25 @@ export default function PolicyPage() {
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#00000099",
+                    color: "#000",
                     padding: "12px 16px",
-                    border: '1px solid #00000099',
-                    textAlign: 'left',
+                    border: 'none',
+                    borderBottom: '1px solid #D2CFC6',
+                    textAlign: 'center',
+                    whiteSpace: 'nowrap'
                   }}>
-                    LOGIN / WINDOW
+                    LOGIN WINDOW
                   </th>
                   <th style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#00000099",
+                    color: "#000",
                     padding: "12px 16px",
-                    border: '1px solid #00000099',
-                    textAlign: 'left',
+                    border: 'none',
+                    borderBottom: '1px solid #D2CFC6',
+                    textAlign: 'center',
                   }}>
                     SHIFT TIME
                   </th>
@@ -383,17 +392,18 @@ export default function PolicyPage() {
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#00000099",
+                    color: "#000",
                     padding: "12px 16px",
-                    border: '1px solid #00000099',
-                    textAlign: 'left'
+                    border: 'none',
+                    borderBottom: '1px solid #D2CFC6',
+                    textAlign: 'center'
                   }}>
                     WORKING HOURS
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ backgroundColor: '#EEEEEE' }}>
+                <tr >
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
@@ -401,7 +411,9 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9',
+                    whiteSpace: 'nowrap'
+
                   }}>
                     Monday to Saturday
                   </td>
@@ -412,9 +424,9 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
-                    Fixed at 8:00 AM
+                    Fixed at 9:00 AM
                   </td>
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -423,9 +435,10 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9',
+                    whiteSpace: 'nowrap'
                   }}>
-                    8:00 AM to 5:30 PM
+                    9:00 AM to 5:30 PM
                   </td>
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -434,12 +447,12 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
-                    Employee needs to complete 9 hours & 30 min a day
+                    Employee needs to complete 8 hours & 30 mins a day
                   </td>
                 </tr>
-                <tr style={{ backgroundColor: '#EEEEEE' }}>
+                <tr>
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
@@ -447,7 +460,7 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
                     Weekly Off
                   </td>
@@ -458,7 +471,7 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
                     Every 3rd Saturday of every month.
                   </td>
@@ -573,7 +586,11 @@ export default function PolicyPage() {
               Disciplinary Measures for Non-Compliance
             </h2>
             
-            <table className="w-full" style={{ borderCollapse: 'collapse' }}>
+            <table className="w-full" style={{ 
+              borderCollapse: 'collapse',
+              border: 'none',
+              borderBottom: '1px solid #D2CFC6'
+            }}>
               <thead>
                 <tr style={{ backgroundColor: '#D9D9D9' }}>
                   <th style={{
@@ -581,10 +598,11 @@ export default function PolicyPage() {
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#00000099",
+                    color: "#000000",
                     padding: "12px 16px",
-                    border: '1px solid #00000099',
-                    textAlign: 'left',
+                    border: 'none',
+                    borderBottom: '1px solid #d9d9d9',
+                    textAlign: 'center',
                     width: '50%'
                   }}>
                     VIOLATION
@@ -594,10 +612,11 @@ export default function PolicyPage() {
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#00000099",
+                    color: "#000000",
                     padding: "12px 16px",
-                    border: '1px solid #00000099',
-                    textAlign: 'left',
+                    border: 'none',
+                    borderBottom: '1px solid #d9d9d9',
+                    textAlign: 'center',
                     width: '50%'
                   }}>
                     CONSEQUENCE
@@ -605,7 +624,7 @@ export default function PolicyPage() {
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ backgroundColor: '#EEEEEE' }}>
+                <tr>
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
@@ -613,7 +632,7 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
                     Habitual tardiness or absenteeism
                   </td>
@@ -624,12 +643,12 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
                     Managerial counselling → Written warning
                   </td>
                 </tr>
-                <tr style={{ backgroundColor: '#EEEEEE' }}>
+                <tr>
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
@@ -637,7 +656,7 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
                     Proxy attendance
                   </td>
@@ -648,12 +667,12 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
                     Immediate investigation → Disciplinary action
                   </td>
                 </tr>
-                <tr style={{ backgroundColor: '#EEEEEE' }}>
+                <tr>
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
@@ -661,7 +680,7 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
                     Repeated violations
                   </td>
@@ -672,12 +691,12 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
                     Impact on performance appraisal or bonus visibility
                   </td>
                 </tr>
-                <tr style={{ backgroundColor: '#EEEEEE' }}>
+                <tr>
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
@@ -685,7 +704,7 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
                     Non-compliance during probation
                   </td>
@@ -696,7 +715,7 @@ export default function PolicyPage() {
                     lineHeight: "160%",
                     color: "#00000099",
                     padding: "12px 16px",
-                    border: '1px solid #00000099'
+                    border: '1px solid #d9d9d9'
                   }}>
                     Extension or termination of probation
                   </td>
@@ -774,6 +793,8 @@ export default function PolicyPage() {
             </p>
           </div>
         </div>
+        </div>
+       
       </div>
 
       {/* FOOTER SECTION */}
