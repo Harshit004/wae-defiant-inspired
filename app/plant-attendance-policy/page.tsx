@@ -226,7 +226,7 @@ export default function PolicyPage() {
                   fontWeight: 600,
                   fontSize: "14px",
                   lineHeight: "140%",
-                  color: "#000000",
+                  color: "#00000099",
                   marginBottom: "16px"
                 }}
               >
@@ -240,7 +240,7 @@ export default function PolicyPage() {
                   fontWeight: 400,
                   fontSize: "13px",
                   lineHeight: "160%",
-                  color: "#000000",
+                  color: "#00000099",
                   marginBottom: "20px"
                 }}
               >
@@ -252,7 +252,7 @@ export default function PolicyPage() {
                   fontWeight: 400,
                   fontSize: "13px",
                   lineHeight: "160%",
-                  color: "#000000"
+                  color: "#00000099"
                 }}
               >
                 This policy aims to define clear standards regarding attendance, work hours, remote presence, and leave regulation rules, while also accommodating the need for flexibility and manpower well-being. It seeks to balance structure and empathy, reinforcing our belief that high performance is best achieved through trust, transparency, and professionalism.
@@ -347,7 +347,7 @@ export default function PolicyPage() {
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099',
                     textAlign: 'left',
@@ -359,7 +359,7 @@ export default function PolicyPage() {
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099',
                     textAlign: 'left',
@@ -371,7 +371,7 @@ export default function PolicyPage() {
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099',
                     textAlign: 'left',
@@ -383,7 +383,7 @@ export default function PolicyPage() {
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099',
                     textAlign: 'left'
@@ -399,7 +399,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -410,7 +410,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -421,7 +421,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -432,7 +432,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -445,7 +445,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -456,7 +456,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -465,18 +465,28 @@ export default function PolicyPage() {
                 </tr>
               </tbody>
             </table>
-
-            <p 
+            <p
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: "12px",
+                fontSize: "13px",
                 lineHeight: "160%",
-                color: "#000000",
-                marginBottom: "30px"
+                color: "#00000099",
+                marginBottom: "20px"
               }}
             >
-              o Tea Break timings - Morn. - Lunch Break - 30 Min - Evening Tea Break - 15 min (Included in the above working hours)
+              <span style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 700,
+                fontStyle: "Bold",
+                fontSize: "12px",
+                lineHeight: "100%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099"
+              }}>
+                :- Tea Break timings - Morn. - Lunch Break - 30 Min - Evening Tea Break - 15 min (Included in the above working hours)
+              </span>
             </p>
 
             {/* Work Timings */}
@@ -486,7 +496,7 @@ export default function PolicyPage() {
                 fontWeight: 600,
                 fontSize: "13px",
                 lineHeight: "140%",
-                color: "#000000",
+                color: "#00000099",
                 marginBottom: "16px"
               }}
             >
@@ -571,7 +581,7 @@ export default function PolicyPage() {
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099',
                     textAlign: 'left',
@@ -584,7 +594,7 @@ export default function PolicyPage() {
                     fontWeight: 600,
                     fontSize: "12px",
                     lineHeight: "140%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099',
                     textAlign: 'left',
@@ -601,7 +611,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -612,7 +622,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -625,7 +635,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -636,7 +646,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -649,7 +659,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -660,7 +670,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -673,7 +683,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -684,7 +694,7 @@ export default function PolicyPage() {
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
-                    color: "#000000",
+                    color: "#00000099",
                     padding: "12px 16px",
                     border: '1px solid #00000099'
                   }}>
@@ -703,7 +713,7 @@ export default function PolicyPage() {
                 fontWeight: 600,
                 fontSize: "14px",
                 lineHeight: "140%",
-                color: "#000000",
+                color: "#00000099",
                 marginBottom: "16px"
               }}
             >
@@ -715,7 +725,7 @@ export default function PolicyPage() {
                 fontWeight: 400,
                 fontSize: "13px",
                 lineHeight: "160%",
-                color: "#000000",
+                color: "#00000099",
                 marginBottom: "12px"
               }}
             >
@@ -727,7 +737,7 @@ export default function PolicyPage() {
                 fontWeight: 400,
                 fontSize: "13px",
                 lineHeight: "160%",
-                color: "#000000"
+                color: "#00000099"
               }}
             >
               Any exceptions must be approved by the Head of HR and Functional Head, with justification.
@@ -742,7 +752,7 @@ export default function PolicyPage() {
                 fontWeight: 600,
                 fontSize: "14px",
                 lineHeight: "140%",
-                color: "#000000",
+                color: "#00000099",
                 marginBottom: "16px"
               }}
             >
@@ -751,10 +761,13 @@ export default function PolicyPage() {
             <p 
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "13px",
-                lineHeight: "160%",
-                color: "#000000"
+                fontWeight: 700,
+                fontStyle: "Bold",
+                fontSize: "12px",
+                lineHeight: "100%",
+                letterSpacing: "0%",
+                verticalAlign: "middle",
+                color: "#00000099"
               }}
             >
               This document would be revised, modified, discontinued, or amended at any time, in whole or in part, for any reason, and without prior notice, consent or approval within the sole discretions of WAE. This document contains confidential information and solely for use by and distribution to authorized persons only.
