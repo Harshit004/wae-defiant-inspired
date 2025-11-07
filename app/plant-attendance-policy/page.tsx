@@ -5,16 +5,15 @@ import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Footer from "@/components/footer"
-import Link from 'next/link';
-import JobApplicationForm from "@/components/job-application-form";
+import Link from 'next/link'
 
 interface HoverButtonProps {
-  children: (hovered: boolean) => React.ReactNode;
-  className?: string;
+  children: (hovered: boolean) => React.ReactNode
+  className?: string
 }
 
 const HoverButton: React.FC<HoverButtonProps> = ({ children, className = '' }) => {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false)
   
   return (
     <button
@@ -24,39 +23,16 @@ const HoverButton: React.FC<HoverButtonProps> = ({ children, className = '' }) =
     >
       {children(isHovered)}
     </button>
-  );
-};
+  )
+}
 
-// Shared container class for consistent margins
 const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
 
-export default function Home() {
-  // State variables
+export default function PolicyPage() {
   const headerRef = useRef<HTMLDivElement>(null)
-
-  // State for controlling tagline visibility on scroll
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
-  
-  // State for controlling modal visibility
-  const [isModalOpen, setIsModalOpen] = useState(false)
 
-  // Variants for staggered animations using framer-motion (used only for tagline)
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.05,
-        ease: "easeInOut",
-      },
-    },
-  }
-  const childVariants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
-  }
-
-  // Update tagline visibility based on scroll direction
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
@@ -67,26 +43,14 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Tagline lines (split into words)
-  const taglineLine1 = "To lead the way in sustainability"
-  const taglineLine2 = "ahead of the rest."
-  const taglineWords1 = taglineLine1.split(" ")
-  const taglineWords2 = taglineLine2.split(" ")
-
-  // Arrays for menu items
-  const productsItems = [
-    "This is Us",
-    "Our Portfolio",
-    "Reimagine Work",
-  ]
+  const productsItems = ["This is Us", "Our Portfolio", "Reimagine Work"]
   const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"]
-  const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   return (
-    <main className="relative">
+    <main className="relative bg-[#EEEEEE] min-h-screen">
       {/* HEADER */}
       <div style={{ top: 0, left: 0, width: "100%" }}>
-      <header ref={headerRef} className="w-full relative z-10 mb-[120px]">
+        <header ref={headerRef} className="w-full relative z-10 mb-[80px]">
           <div className="mx-auto w-full max-w-[1440px] px-[140px]">
             {/* Top Row: Navigation */}
             <div
@@ -112,28 +76,17 @@ export default function Home() {
             {/* Bottom Row: Logo, Tagline and Menu Items */}
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
-
-<div className="flex flex-col justify-center">
-
-  <Link href="/" passHref>
-
-    <Image
-
-      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-
-      alt="WAE Logo"
-
-      width={78}
-
-      height={82}
-
-      style={{ cursor: 'pointer' }}
-
-    />
-
-  </Link>
-
-</div>
+              <div className="flex flex-col justify-center">
+                <Link href="/" passHref>
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                    alt="WAE Logo"
+                    width={78}
+                    height={82}
+                    style={{ cursor: 'pointer' }}
+                  />
+                </Link>
+              </div>
 
               {/* Coordinates */}
               <div
@@ -151,55 +104,7 @@ export default function Home() {
                 78.9629° E
               </div>
 
-              {/* Tagline Animation */}
-              {/* <div className="flex flex-col items-start">
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={taglineVisible ? "visible" : "hidden"}
-                  className="flex flex-row justify-center whitespace-nowrap"
-                >
-                  {taglineWords1.map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={childVariants}
-                      className="mr-1"
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "10px",
-                        lineHeight: "125%",
-                        color: "#000",
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </motion.div>
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={taglineVisible ? "visible" : "hidden"}
-                  className="flex flex-row justify-center whitespace-nowrap"
-                >
-                  {taglineWords2.map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={childVariants}
-                      className="mr-1"
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "10px",
-                        lineHeight: "125%",
-                        color: "#000",
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </motion.div>
-              </div> */}
+              {/* Tagline */}
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
@@ -291,23 +196,557 @@ export default function Home() {
         </header>
       </div>
 
-      
+      {/* MAIN CONTENT */}
+      <div className={containerClass}>
+        <div className="pb-[120px]">
+          {/* Preface Heading */}
+          <h1 
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 600,
+              fontSize: "48px",
+              lineHeight: "120%",
+              color: "#000000",
+              marginBottom: "60px"
+            }}
+          >
+            Preface
+          </h1>
+
+          {/* Introduction Section */}
+          <div className="grid grid-cols-2 gap-[80px] mb-[60px]">
+            <div>
+              <h2 
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 600,
+                  fontSize: "14px",
+                  lineHeight: "140%",
+                  color: "#000000",
+                  marginBottom: "16px"
+                }}
+              >
+                Upholding a Culture of Professionalism and Responsibility:
+              </h2>
+            </div>
+            <div>
+              <p 
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "13px",
+                  lineHeight: "160%",
+                  color: "#000000",
+                  marginBottom: "20px"
+                }}
+              >
+                At the heart of any successful corporate enterprise lies a culture of discipline, mutual respect, and personal accountability. Attendance is not just a logistical metric—it reflects work ethic, time management, and a commitment to the collective mission of the organization.
+              </p>
+              <p 
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "13px",
+                  lineHeight: "160%",
+                  color: "#000000"
+                }}
+              >
+                This policy aims to define clear standards regarding attendance, work hours, remote presence, and leave regulation rules, while also accommodating the need for flexibility and manpower well-being. It seeks to balance structure and empathy, reinforcing our belief that high performance is best achieved through trust, transparency, and professionalism.
+              </p>
+            </div>
+          </div>
+
+          {/* Policy Objectives */}
+          <div className="mb-[60px]">
+            <h2 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 600,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#000000",
+                marginBottom: "20px"
+              }}
+            >
+              Policy Objectives:
+            </h2>
+            <ul 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "13px",
+                lineHeight: "160%",
+                color: "#000000",
+                paddingLeft: "20px"
+              }}
+            >
+              <li style={{ marginBottom: "12px" }}>• To set expectations regarding employee presence during working hours.</li>
+              <li style={{ marginBottom: "12px" }}>• To maintain consistent productivity and inter-departmental coordination.</li>
+              <li style={{ marginBottom: "12px" }}>• To promote a transparent mechanism for leave, late coming, and absenteeism.</li>
+              <li>• To align attendance behaviour with the company's values of integrity and accountability.</li>
+            </ul>
+          </div>
+
+          {/* Scope */}
+          <div className="mb-[60px]">
+            <h2 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 600,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#000000",
+                marginBottom: "20px"
+              }}
+            >
+              Scope:
+            </h2>
+            <ul 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "13px",
+                lineHeight: "160%",
+                color: "#000000",
+                paddingLeft: "20px"
+              }}
+            >
+              <li style={{ marginBottom: "12px" }}>• This policy shall be applicable to all employees of WAE Limited working in Manufacturing Unit (Plant).</li>
+              <li>• Team members comprising of Production, Quality, WM/D & E, Plant Admin & HR, Stores, Purchase, Plant operations, CRM (Plant Inegrated), FI/Co and R&C (Plant visiting).</li>
+            </ul>
+          </div>
+
+          {/* Working Hours and Reporting Time */}
+          <div className="mb-[60px]">
+            <h2 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 600,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#000000",
+                marginBottom: "20px"
+              }}
+            >
+              Working Hours and reporting time:
+            </h2>
+            
+            {/* Table */}
+            <table className="w-full mb-[30px]" style={{ borderCollapse: 'collapse' }}>
+              <thead>
+                <tr style={{ backgroundColor: '#D9D9D9' }}>
+                  <th style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "12px",
+                    lineHeight: "140%",
+                    color: "#000000",
+                    padding: "12px 16px",
+                    textAlign: 'left',
+                    borderRight: '1px solid #FFFFFF'
+                  }}>
+                    YEAR
+                  </th>
+                  <th style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "12px",
+                    lineHeight: "140%",
+                    color: "#000000",
+                    padding: "12px 16px",
+                    textAlign: 'left',
+                    borderRight: '1px solid #FFFFFF'
+                  }}>
+                    LOGIN / WINDOW
+                  </th>
+                  <th style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "12px",
+                    lineHeight: "140%",
+                    color: "#000000",
+                    padding: "12px 16px",
+                    textAlign: 'left',
+                    borderRight: '1px solid #FFFFFF'
+                  }}>
+                    SHIFT TIME
+                  </th>
+                  <th style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "12px",
+                    lineHeight: "140%",
+                    color: "#000000",
+                    padding: "12px 16px",
+                    textAlign: 'left'
+                  }}>
+                    WORKING HOURS
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ backgroundColor: '#EEEEEE', borderBottom: '1px solid #D9D9D9' }}>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Monday to Saturday
+                  </td>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Fixed at 8:00 AM
+                  </td>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    8:00 AM to 5:30 PM
+                  </td>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Employee needs to complete 9 hours & 30 min a day
+                  </td>
+                </tr>
+                <tr style={{ backgroundColor: '#EEEEEE' }}>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Weekly Off
+                  </td>
+                  <td colSpan={3} style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Every 3rd Saturday of every month.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "160%",
+                color: "#000000",
+                marginBottom: "30px"
+              }}
+            >
+              o Tea Break timings - Morn. - Lunch Break - 30 Min - Evening Tea Break - 15 min (Included in the above working hours)
+            </p>
+
+            {/* Work Timings */}
+            <h3 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 600,
+                fontSize: "13px",
+                lineHeight: "140%",
+                color: "#000000",
+                marginBottom: "16px"
+              }}
+            >
+              Work Timings:
+            </h3>
+            <ul 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "160%",
+                color: "#000000",
+                paddingLeft: "20px"
+              }}
+            >
+              <li style={{ marginBottom: "12px" }}>• Daily work start time will be Monday to Saturday 8:00am to 5:30pm.</li>
+              <li style={{ marginBottom: "12px" }}>• Third Saturdays & Sundays shall be weekly off.</li>
+              <li style={{ marginBottom: "12px" }}>• Employees are expected to report on any on-time. Late entry shall be permitted for four instances in a month for only on-roll employees.</li>
+              <li style={{ marginBottom: "12px" }}>• Any further delay beyond 15 minutes from the maximum clocked half day leave shall be deducted for every such instances. For delays beyond 30 minutes in day shall be considered as half-day (Loss of Pay &/OR).</li>
+              <li style={{ marginBottom: "12px" }}>• No grace to be given if reporting time is at or 15 min.</li>
+              <li style={{ marginBottom: "12px" }}>• To avail a half-day leave, employees must complete a minimum of 4.5 working hours from Monday to Saturday. If reporting is after 1:30pm no leave will be deducted.</li>
+              <li style={{ marginBottom: "12px" }}>• It is the concerned HOD's responsibility to ensure that all employees work as per the Attendance timing policy and ensure compliance.</li>
+              <li>• Employees shall apply leaves on HRMS 2 working days in advance (subject to prior written approval). By end of day (EOD), failure to do so will attract a penalty. For Verbal Calen employees at Plant)</li>
+            </ul>
+          </div>
+
+          {/* Attendance Recording */}
+          <div className="mb-[60px]">
+            <h2 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 600,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#000000",
+                marginBottom: "20px"
+              }}
+            >
+              Attendance Recording:
+            </h2>
+            <ul 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "13px",
+                lineHeight: "160%",
+                color: "#000000",
+                paddingLeft: "20px"
+              }}
+            >
+              <li style={{ marginBottom: "12px" }}>• Attendance must be marked through the designated Biometric machine, HRMS platform, access card.</li>
+              <li style={{ marginBottom: "12px" }}>• Missed punch or login must be regularised within 48 hours of reporting to work, failing which will be considered as leave (SL) or LWP or culprit to credit a tentative.</li>
+              <li style={{ marginBottom: "12px" }}>• In case of an employee is ICU isn July as an official work, concerned employee must obtain approval from the respective supervisor before reporting through HRMS.</li>
+              <li style={{ marginBottom: "12px" }}>• Twice a month, employees can take a one-hour permission to late entry (morning) of late exit (evening) at any instance of any emergency. This must be informed to HDD and must to be regularised later.</li>
+              <li style={{ marginBottom: "12px" }}>• In case of late entry or early exit, employee must report such instances to HDD.</li>
+              <li style={{ marginBottom: "12px" }}>• Unauthorised absence beyond 1 day is treated as a violation of this policy.</li>
+              <li style={{ marginBottom: "12px" }}>• Absence must be communicated to the department HOD or before 10a am., whatsapp official email or HRMS.</li>
+              <li>• Three or more unintimated absences in a quarter, will lead to HR intervention and performance flagging.</li>
+            </ul>
+          </div>
+
+          {/* Disciplinary Measures */}
+          <div className="mb-[60px]">
+            <h2 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 600,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#000000",
+                marginBottom: "20px"
+              }}
+            >
+              Disciplinary Measures for Non-Compliance
+            </h2>
+            
+            <table className="w-full" style={{ borderCollapse: 'collapse' }}>
+              <thead>
+                <tr style={{ backgroundColor: '#D9D9D9' }}>
+                  <th style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "12px",
+                    lineHeight: "140%",
+                    color: "#000000",
+                    padding: "12px 16px",
+                    textAlign: 'left',
+                    borderRight: '1px solid #FFFFFF',
+                    width: '50%'
+                  }}>
+                    VIOLATION
+                  </th>
+                  <th style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "12px",
+                    lineHeight: "140%",
+                    color: "#000000",
+                    padding: "12px 16px",
+                    textAlign: 'left',
+                    width: '50%'
+                  }}>
+                    CONSEQUENCE
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ backgroundColor: '#EEEEEE', borderBottom: '1px solid #D9D9D9' }}>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Habitual tardiness or absenteeism
+                  </td>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Managerial counselling → Written warning
+                  </td>
+                </tr>
+                <tr style={{ backgroundColor: '#EEEEEE', borderBottom: '1px solid #D9D9D9' }}>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Proxy attendance
+                  </td>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Immediate investigation → Disciplinary action
+                  </td>
+                </tr>
+                <tr style={{ backgroundColor: '#EEEEEE', borderBottom: '1px solid #D9D9D9' }}>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Repeated violations
+                  </td>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Impact on performance appraisal or bonus visibility
+                  </td>
+                </tr>
+                <tr style={{ backgroundColor: '#EEEEEE' }}>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Non-compliance during probation
+                  </td>
+                  <td style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "160%",
+                    color: "#000000",
+                    padding: "12px 16px"
+                  }}>
+                    Extension or termination of probation
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Policy Review and Exceptions */}
+          <div className="mb-[60px]">
+            <h2 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 600,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#000000",
+                marginBottom: "16px"
+              }}
+            >
+              Policy Review and Exceptions
+            </h2>
+            <p 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "13px",
+                lineHeight: "160%",
+                color: "#000000",
+                marginBottom: "12px"
+              }}
+            >
+              This policy will be reviewed annually by the HR department.
+            </p>
+            <p 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "13px",
+                lineHeight: "160%",
+                color: "#000000"
+              }}
+            >
+              Any exceptions must be approved by the Head of HR and Functional Head, with justification.
+            </p>
+          </div>
+
+          {/* Disclaimer */}
+          <div>
+            <h2 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 600,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#000000",
+                marginBottom: "16px"
+              }}
+            >
+              Disclaimer:
+            </h2>
+            <p 
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "13px",
+                lineHeight: "160%",
+                color: "#000000"
+              }}
+            >
+              This document would be revised, modified, discontinued, or amended at any time, in whole or in part, for any reason, and without prior notice, consent or approval within the sole discretions of WAE. This document contains confidential information and solely for use by and distribution to authorized persons only.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>
         <Footer />
       </div>
 
-      {/* INLINE CSS for hover, arrow animations, and custom bullet styling */}
+      {/* INLINE CSS for hover and arrow animations */}
       <style jsx>{`
-        .custom-bullet {
-          margin-left: 2%;
-          list-style-type: disc;
-        }
-
-        .custom-bullet li::marker {
-          color: #00000099;
-        }
         .c--anim-btn {
           display: flex;
           align-items: center;
