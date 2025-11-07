@@ -203,9 +203,13 @@ export default function PolicyPage() {
           <h1 
             style={{
               fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 600,
-              fontSize: "48px",
-              lineHeight: "120%",
+              fontWeight: 500,
+              fontStyle: "Medium",
+              fontSize: "32px",
+              lineHeight: "110%",
+              letterSpacing: "0%",
+              verticalAlign: "middle",
+              textTransform: "capitalize",
               color: "#000000",
               marginBottom: "60px"
             }}
@@ -264,7 +268,7 @@ export default function PolicyPage() {
                 fontWeight: 600,
                 fontSize: "14px",
                 lineHeight: "140%",
-                color: "#000000",
+                color: "#00000099",
                 marginBottom: "20px"
               }}
             >
@@ -276,7 +280,7 @@ export default function PolicyPage() {
                 fontWeight: 400,
                 fontSize: "13px",
                 lineHeight: "160%",
-                color: "#000000",
+                color: "#00000099",
                 paddingLeft: "20px"
               }}
             >
@@ -295,7 +299,7 @@ export default function PolicyPage() {
                 fontWeight: 600,
                 fontSize: "14px",
                 lineHeight: "140%",
-                color: "#000000",
+                color: "#00000099",
                 marginBottom: "20px"
               }}
             >
@@ -307,7 +311,7 @@ export default function PolicyPage() {
                 fontWeight: 400,
                 fontSize: "13px",
                 lineHeight: "160%",
-                color: "#000000",
+                color: "#00000099",
                 paddingLeft: "20px"
               }}
             >
@@ -324,7 +328,7 @@ export default function PolicyPage() {
                 fontWeight: 600,
                 fontSize: "14px",
                 lineHeight: "140%",
-                color: "#000000",
+                color: "#00000099",
                 marginBottom: "20px"
               }}
             >
@@ -332,7 +336,10 @@ export default function PolicyPage() {
             </h2>
             
             {/* Table */}
-            <table className="w-full mb-[30px]" style={{ borderCollapse: 'collapse' }}>
+            <table className="w-full mb-[30px]" style={{ 
+              borderCollapse: 'collapse',
+              border: '1px solid #00000099'
+            }}>
               <thead>
                 <tr style={{ backgroundColor: '#D9D9D9' }}>
                   <th style={{
@@ -342,8 +349,8 @@ export default function PolicyPage() {
                     lineHeight: "140%",
                     color: "#000000",
                     padding: "12px 16px",
+                    border: '1px solid #00000099',
                     textAlign: 'left',
-                    borderRight: '1px solid #FFFFFF'
                   }}>
                     YEAR
                   </th>
@@ -354,8 +361,8 @@ export default function PolicyPage() {
                     lineHeight: "140%",
                     color: "#000000",
                     padding: "12px 16px",
+                    border: '1px solid #00000099',
                     textAlign: 'left',
-                    borderRight: '1px solid #FFFFFF'
                   }}>
                     LOGIN / WINDOW
                   </th>
@@ -366,8 +373,8 @@ export default function PolicyPage() {
                     lineHeight: "140%",
                     color: "#000000",
                     padding: "12px 16px",
+                    border: '1px solid #00000099',
                     textAlign: 'left',
-                    borderRight: '1px solid #FFFFFF'
                   }}>
                     SHIFT TIME
                   </th>
@@ -378,6 +385,7 @@ export default function PolicyPage() {
                     lineHeight: "140%",
                     color: "#000000",
                     padding: "12px 16px",
+                    border: '1px solid #00000099',
                     textAlign: 'left'
                   }}>
                     WORKING HOURS
@@ -385,14 +393,15 @@ export default function PolicyPage() {
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ backgroundColor: '#EEEEEE', borderBottom: '1px solid #D9D9D9' }}>
+                <tr style={{ backgroundColor: '#EEEEEE' }}>
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Monday to Saturday
                   </td>
@@ -402,7 +411,8 @@ export default function PolicyPage() {
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Fixed at 8:00 AM
                   </td>
@@ -412,7 +422,8 @@ export default function PolicyPage() {
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     8:00 AM to 5:30 PM
                   </td>
@@ -422,7 +433,8 @@ export default function PolicyPage() {
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Employee needs to complete 9 hours & 30 min a day
                   </td>
@@ -434,7 +446,8 @@ export default function PolicyPage() {
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Weekly Off
                   </td>
@@ -444,7 +457,8 @@ export default function PolicyPage() {
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Every 3rd Saturday of every month.
                   </td>
@@ -484,7 +498,7 @@ export default function PolicyPage() {
                 fontWeight: 400,
                 fontSize: "12px",
                 lineHeight: "160%",
-                color: "#000000",
+                color: "#00000099",
                 paddingLeft: "20px"
               }}
             >
@@ -507,7 +521,7 @@ export default function PolicyPage() {
                 fontWeight: 600,
                 fontSize: "14px",
                 lineHeight: "140%",
-                color: "#000000",
+                color: "#00000099",
                 marginBottom: "20px"
               }}
             >
@@ -519,7 +533,7 @@ export default function PolicyPage() {
                 fontWeight: 400,
                 fontSize: "13px",
                 lineHeight: "160%",
-                color: "#000000",
+                color: "#00000099",
                 paddingLeft: "20px"
               }}
             >
@@ -542,7 +556,7 @@ export default function PolicyPage() {
                 fontWeight: 600,
                 fontSize: "14px",
                 lineHeight: "140%",
-                color: "#000000",
+                color: "#00000099",
                 marginBottom: "20px"
               }}
             >
@@ -559,8 +573,8 @@ export default function PolicyPage() {
                     lineHeight: "140%",
                     color: "#000000",
                     padding: "12px 16px",
+                    border: '1px solid #00000099',
                     textAlign: 'left',
-                    borderRight: '1px solid #FFFFFF',
                     width: '50%'
                   }}>
                     VIOLATION
@@ -572,6 +586,7 @@ export default function PolicyPage() {
                     lineHeight: "140%",
                     color: "#000000",
                     padding: "12px 16px",
+                    border: '1px solid #00000099',
                     textAlign: 'left',
                     width: '50%'
                   }}>
@@ -580,14 +595,15 @@ export default function PolicyPage() {
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ backgroundColor: '#EEEEEE', borderBottom: '1px solid #D9D9D9' }}>
+                <tr style={{ backgroundColor: '#EEEEEE' }}>
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Habitual tardiness or absenteeism
                   </td>
@@ -597,19 +613,21 @@ export default function PolicyPage() {
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Managerial counselling → Written warning
                   </td>
                 </tr>
-                <tr style={{ backgroundColor: '#EEEEEE', borderBottom: '1px solid #D9D9D9' }}>
+                <tr style={{ backgroundColor: '#EEEEEE' }}>
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Proxy attendance
                   </td>
@@ -619,19 +637,21 @@ export default function PolicyPage() {
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Immediate investigation → Disciplinary action
                   </td>
                 </tr>
-                <tr style={{ backgroundColor: '#EEEEEE', borderBottom: '1px solid #D9D9D9' }}>
+                <tr style={{ backgroundColor: '#EEEEEE' }}>
                   <td style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Repeated violations
                   </td>
@@ -641,7 +661,8 @@ export default function PolicyPage() {
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Impact on performance appraisal or bonus visibility
                   </td>
@@ -653,7 +674,8 @@ export default function PolicyPage() {
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Non-compliance during probation
                   </td>
@@ -663,7 +685,8 @@ export default function PolicyPage() {
                     fontSize: "12px",
                     lineHeight: "160%",
                     color: "#000000",
-                    padding: "12px 16px"
+                    padding: "12px 16px",
+                    border: '1px solid #00000099'
                   }}>
                     Extension or termination of probation
                   </td>
