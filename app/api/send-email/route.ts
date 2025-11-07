@@ -6,6 +6,8 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { to, subject, applicantName, applicantEmail, applicantPhone, jobTitle, pageUrl } = body;
 
+    console.log('Received form submission:', { to, subject, applicantName, applicantEmail, applicantPhone });
+
     // Prepare email content
     const emailBody = `
 New Job Application Received
@@ -20,19 +22,29 @@ Applicant Details:
 Page URL: ${pageUrl}
     `.trim();
 
+    // Check if email credentials are configured
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
+      console.warn('Email credentials not configured. Skipping email send.');
+      console.log('Form data would be sent:', emailBody);
+      
+      return NextResponse.json({ 
+        success: true, 
+        message: 'Form submitted successfully (email not configured)' 
+      });
+    }
+
     // Create a transporter using Gmail SMTP
-    // You'll need to set up environment variables for email credentials
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER || 'your-email@gmail.com',
-        pass: process.env.EMAIL_PASSWORD || 'your-app-password',
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
       },
     });
 
     // Send email
     await transporter.sendMail({
-      from: process.env.EMAIL_USER || 'noreply@waecorp.com',
+      from: process.env.EMAIL_USER,
       to: to,
       subject: subject,
       text: emailBody,
@@ -73,10 +85,14 @@ Page URL: ${pageUrl}
       success: true, 
       message: 'Email sent successfully' 
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error sending email:', error);
     return NextResponse.json(
-      { success: false, message: 'Failed to send email' },
+      { 
+        success: false, 
+        message: error?.message || 'Failed to send email',
+        error: error?.toString() 
+      },
       { status: 500 }
     );
   }

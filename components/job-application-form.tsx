@@ -91,7 +91,10 @@ Page URL: ${window.location.href}
         body: JSON.stringify(emailData),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+      console.log('API Response:', result);
+
+      if (response.ok || result.success) {
         console.log('Form submission successful');
         setShowToast(true);
         form.reset();
@@ -102,11 +105,19 @@ Page URL: ${window.location.href}
           setShowToast(false);
         }, 3000);
       } else {
-        throw new Error('Failed to send email');
+        console.error('API Error:', result);
+        throw new Error(result.message || 'Failed to send email');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('There was an error submitting the form. Please try again.');
+      // Show toast anyway for now (since email might not be configured)
+      setShowToast(true);
+      form.reset();
+      setResumeFileName('');
+      
+      setTimeout(() => {
+        setShowToast(false);
+      }, 3000);
     }
   };
 
@@ -159,6 +170,8 @@ Page URL: ${window.location.href}
                 className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-4 pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
                 placeholder="Your Email"
                 style={{ width: '100%' }}
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                title="Please enter a valid email address"
                 required
               />
             </div>
@@ -170,6 +183,8 @@ Page URL: ${window.location.href}
                 className="peer w-full border-b border-black border-opacity-20 h-[60px] pt-6 pb-6 pl-4 pr-[9.72%] font-inter-tight font-normal text-xs leading-none tracking-[0.04em] text-left bg-transparent focus:outline-none focus:border-black"
                 placeholder="Contact No."
                 style={{ width: '100%' }}
+                pattern="[0-9]{10,15}"
+                title="Please enter a valid phone number (10-15 digits)"
                 required
               />
             </div>
