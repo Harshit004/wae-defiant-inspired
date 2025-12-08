@@ -1110,7 +1110,6 @@ const Home: FC = () => {
           </table>
         </div>
 
-
       {/* wrapping these in a div to get them to overlap the sticky logo */}
         <div className="bg-[#f2f2f2]"
         style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
@@ -1395,6 +1394,155 @@ const Home: FC = () => {
             </div>
             
           </div>
+        </section>
+
+        {/* NEWS & UPDATES SECTION */}
+        <section
+          className="max-w-full px-[8.75rem] py-[100px] bg-white"
+          style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
+        >
+          <h2 style={{
+            fontFamily: "Inter Tight",
+            fontWeight: 500,
+            fontStyle: "Medium",
+            fontSize: "40px",
+            lineHeight: "110.00000000000001%",
+            letterSpacing: "0px",
+            verticalAlign: "middle",
+            marginBottom: "40px",
+          }}>
+            News & Updates
+          </h2>
+          <div className="flex" style={{ gap: "1.6%" }}>
+            {/* Left Column - 60.3% */}
+            <div style={{ width: "60.3%" }}>
+              <div className="space-y-6">
+                {/* News Item 1 */}
+                <div>
+                  <img
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"
+                    alt="WAE ZED Gold Certification"
+                    className="w-full h-auto rounded-lg mb-4"
+                    style={{ marginBottom: "16px" }}
+                  />
+                  <h3 
+                    style={{
+                      fontFamily: "Inter Tight",
+                      fontWeight: 400,
+                      fontStyle: "Regular",
+                      fontSize: "24px",
+                      lineHeight: "40px",
+                      letterSpacing: "0%",
+                      marginBottom: "16px"
+                    }}
+                  >
+                    WAE shines with ZED Gold certification for sustainable excellence
+                  </h3>
+                  <div 
+                    className="flex justify-between items-center"
+                    style={{
+                      fontFamily: "Inter Tight",
+                      fontWeight: 400,
+                      fontStyle: "Regular",
+                      fontSize: "16px",
+                      lineHeight: "24px",
+                      letterSpacing: "-1.1%",
+                      color: "#808080"
+                    }}
+                  >
+                    <span>Staff Writer</span>
+                    <span>|</span>
+                    <span>Nov 04, 2025</span>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+            {/* Right Column - 37.58% */}
+            <div style={{ width: "37.58%" }}>
+              <div className="space-y-8">
+                {/* Row 1 */}
+                <div>
+                  <img
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/97d880ca-cfa0-4094-52b7-940402225a00/public"
+                    alt="Drinking Water Stations"
+                    className="w-full h-auto rounded-lg mb-1"
+                    style={{ marginBottom: "8px" }}
+                  />
+                  <h3 
+                    style={{
+                      fontFamily: "Inter Tight",
+                      fontWeight: 400,
+                      fontStyle: "Regular",
+                      fontSize: "18px",
+                      lineHeight: "28px",
+                      letterSpacing: "0%",
+                      marginBottom: "8px"
+                    }}
+                  >
+                    Drinking Water Stations Installed Across 28 Police...
+                  </h3>
+                  <div 
+                    className="flex justify-between items-center"
+                    style={{
+                      fontFamily: "Inter Tight",
+                      fontWeight: 400,
+                      fontStyle: "Regular",
+                      fontSize: "16px",
+                      lineHeight: "24px",
+                      letterSpacing: "-1.1%",
+                      color: "#808080"
+                    }}
+                  >
+                    <span>Hency Thacker</span>
+                    <span>|</span>
+                    <span>Oct 27, 2025</span>
+                  </div>
+                </div>
+                
+                {/* Row 2 */}
+                <div>
+                  <img
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public"
+                    alt="Sustainability in Hospitality"
+                    className="w-full h-auto rounded-lg"
+                    style={{ marginBottom: "8px" }}
+                  />
+                  <h3 
+                    style={{
+                      fontFamily: "Inter Tight",
+                      fontWeight: 400,
+                      fontStyle: "Regular",
+                      fontSize: "18px",
+                      lineHeight: "28px",
+                      letterSpacing: "0%",
+                      marginBottom: "8px"
+                    }}
+                  >
+                    Sustainability in India's hospitality industry
+                  </h3>
+                  <div 
+                    className="flex justify-between items-center"
+                    style={{
+                      fontFamily: "Inter Tight",
+                      fontWeight: 400,
+                      fontStyle: "Regular",
+                      fontSize: "16px",
+                      lineHeight: "24px",
+                      letterSpacing: "-1.1%",
+                      color: "#808080"
+                    }}
+                  >
+                    <span>ETHospitalityWorld</span>
+                    <span>|</span>
+                    <span>Dec 04, 2025</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </section>
 
         {/* FOOTER SECTION */}
