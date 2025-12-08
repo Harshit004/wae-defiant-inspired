@@ -708,7 +708,23 @@ const Home: FC = () => {
               <td className="product-cell transition  cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/product-category/drinking-water-stations" className="contents">
                   <div className="relative w-full h-full">
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <p
+                        style={{
+                          fontFamily: 'Inter Tight',
+                          fontWeight: 700,
+                          fontStyle: 'Bold',
+                          fontSize: '14px',
+                          lineHeight: '100%',
+                          letterSpacing: '0px',
+                          textAlign: 'center',
+                          verticalAlign: 'middle',
+                          textTransform: 'uppercase',
+                          marginBottom: '8px'
+                        }}
+                      >
+                        BLUWAE
+                      </p>
                       <span className="product-category">DRINKING WATER<br />STATIONS</span>
                     </div>
                     <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
@@ -751,7 +767,23 @@ const Home: FC = () => {
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/product-category/drinking-water-faucets" className="contents">
                   <div className="relative w-full h-full">
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <p
+                        style={{
+                          fontFamily: 'Inter Tight',
+                          fontWeight: 700,
+                          fontStyle: 'Bold',
+                          fontSize: '14px',
+                          lineHeight: '100%',
+                          letterSpacing: '0px',
+                          textAlign: 'center',
+                          verticalAlign: 'middle',
+                          textTransform: 'uppercase',
+                          marginBottom: '8px'
+                        }}
+                      >
+                        WATERMATIC
+                      </p>
                       <span className="product-category">DRINKING WATER<br />FAUCETS</span>
                     </div>
                     <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -788,7 +820,23 @@ const Home: FC = () => {
               <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
                 <Link href="/product-category/water-dispenser" className="contents">
                   <div className="relative w-full h-full">
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <p
+                        style={{
+                          fontFamily: 'Inter Tight',
+                          fontWeight: 700,
+                          fontStyle: 'Bold',
+                          fontSize: '14px',
+                          lineHeight: '100%',
+                          letterSpacing: '0px',
+                          textAlign: 'center',
+                          verticalAlign: 'middle',
+                          textTransform: 'uppercase',
+                          marginBottom: '8px'
+                        }}
+                      >
+                        TRUBLU
+                      </p>
                       <span className="product-category">DRINKING WATER<br />DISPENSERS</span>
                     </div>
                     <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -840,7 +888,23 @@ const Home: FC = () => {
                 <Link href="/product-category/water-cooler" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <p
+                        style={{
+                          fontFamily: 'Inter Tight',
+                          fontWeight: 700,
+                          fontStyle: 'Bold',
+                          fontSize: '14px',
+                          lineHeight: '100%',
+                          letterSpacing: '0px',
+                          textAlign: 'center',
+                          verticalAlign: 'middle',
+                          textTransform: 'uppercase',
+                          marginBottom: '8px'
+                        }}
+                      >
+                        ZVR
+                      </p>
                       <span className="product-category">WATER COOLERS &amp;<br />FOUNTAINS</span>
                     </div>
                     {/* Right Arrow flush at right */}
@@ -885,7 +949,23 @@ const Home: FC = () => {
                 <Link href="/product-category/public-utility-systems" className="contents">
                   <div className="relative w-full h-full">
                     {/* Centered Text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <p
+                        style={{
+                          fontFamily: 'Inter Tight',
+                          fontWeight: 700,
+                          fontStyle: 'Bold',
+                          fontSize: '14px',
+                          lineHeight: '100%',
+                          letterSpacing: '0px',
+                          textAlign: 'center',
+                          verticalAlign: 'middle',
+                          textTransform: 'uppercase',
+                          marginBottom: '8px'
+                        }}
+                      >
+                        PUS
+                      </p>
                       <span className="product-category">PUBLIC UTILITY<br />SYSTEMS</span>
                     </div>
                     {/* Left Arrow flush at left */}
