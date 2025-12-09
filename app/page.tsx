@@ -1391,7 +1391,16 @@ const Home: FC = () => {
           className="max-w-full px-[8.75rem] py-[120px] bg-white"
           style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
         >
-          <h2 className="font-helvetica text-[3.625rem] leading-[110%] mb-[2.5rem] font-normal">
+          <h2 style={{
+            fontFamily: 'Inter Tight',
+            fontWeight: 500,
+            fontStyle: 'Medium',
+            fontSize: '40px',
+            lineHeight: '110.00000000000001%',
+            letterSpacing: '0px',
+            verticalAlign: 'middle',
+            marginBottom: '2.5rem'
+          }}>
             Blogs
           </h2>
           <div className="grid grid-cols-3 gap-8">
