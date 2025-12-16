@@ -796,7 +796,7 @@ export default function Home() {
                   <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
                 </span>
               </Link>
-            </div>
+            </div> n
 
             
           </div>
