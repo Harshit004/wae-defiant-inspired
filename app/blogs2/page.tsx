@@ -605,16 +605,16 @@ export default function Home() {
             Our Writers
           </h2>
           
-          <div className="grid grid-cols-3 justify-between">
+          <div className="grid grid-cols-4 gap-x-[2.22%] justify-between">
             {/* Writer 1 - ADITI SHARMA */}
             <div className="text-left">
               <Link href="/aditi-sharma" className="block">
-                <div className="relative w-[310px] h-[310px] mb-8">
+                <div className="relative w-[18.5%] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/471bde63-5514-44fd-67a7-d06a24417100/public"
                     alt="Aditi Sharma"
-                    width={310}
-                    height={310}
+                    width={266}
+                    height={266}
                     className="rounded-full object-cover grayscale cursor-pointer"
                   />
                 </div>
@@ -673,12 +673,12 @@ export default function Home() {
             {/* Writer 2 - REHNUMA ANSARI */}
             <div className="text-left">
               <Link href="/rehnuma-ansari" className="block">
-                <div className="relative w-[310px] h-[310px] mb-8">
+                <div className="relative w-[18.5%] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f13e92f-a500-4052-dd61-2bd0951c1900/public"
                     alt="Rehnam Ansari"
-                    width={310}
-                    height={310}
+                    width={266}
+                    height={266}
                     className="rounded-full object-cover grayscale cursor-pointer"
                   />
                 </div>
@@ -737,12 +737,12 @@ export default function Home() {
             {/* Writer 3 - SHAMBHAVI */}
             <div className="text-left">
               <Link href="/shambhavi" className="block">
-                <div className="relative w-[310px] h-[310px] mb-8">
+                <div className="relative w-[18.5%] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
                     alt="Shamishavi"
-                    width={310}
-                    height={310}
+                    width={266}
+                    height={266}
                     className="rounded-full object-cover grayscale cursor-pointer"
                   />
                 </div>
@@ -797,6 +797,70 @@ export default function Home() {
                 </span>
               </Link>
             </div> n
+
+            {/* Writer 4 - SHAMBHAVI */}
+            <div className="text-left">
+              <Link href="/shambhavi" className="block">
+                <div className="relative w-[18.5%] h-auto mb-8">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
+                    alt="Shamishavi"
+                    width={266}
+                    height={266}
+                    className="rounded-full object-cover grayscale cursor-pointer"
+                  />
+                </div>
+              </Link>
+              <Link href="/shambhavi">
+                <h3 
+                  className="uppercase mb-2 cursor-pointer"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                  }}
+                >
+                  SHAMBHAVI
+                </h3>
+              </Link>
+              <p 
+                className="mb-4"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                }}
+              >
+                Climate Change and Water
+              </p>
+              <p 
+                className="mb-6"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                  color: "#666",
+                }}
+              >
+                Ms. Shambhavi Yadav explores sustainability, policy, and governance through a research-led lens. A seasoned professional with over 7 years of experience, she is NET qualified, a graduate from LSR, DU, and is a 3-time KPMG scholar and gold medalist. Through her work, she seeks to craft writing that informs and inspires.
+              </p>
+              <Link href="/shambhavi">
+                <span
+                  className="cursor-pointer"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "12px",
+                    lineHeight: "130%",
+                  }}
+                >
+                  <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
+                </span>
+              </Link>
+            </div>
 
             
           </div>
