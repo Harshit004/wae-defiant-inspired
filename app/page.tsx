@@ -1267,7 +1267,7 @@ const Home: FC = () => {
         </section>
 
         {/* Sustainability Section */}
-        <section className="flex items-center justify-center relative px-[9.72%] bg-[#F2F2F2] mb-[100px]">
+        <section className="flex items-center justify-center relative px-[9.72%] bg-white mb-[100px]">
           <motion.div
             className="w-full max-w-screen-xl flex flex-col items-start justify-center relative"
           >
@@ -1388,7 +1388,7 @@ const Home: FC = () => {
 
         {/* BLOGS SECTION */}
         <section
-          className="max-w-full px-[8.75rem] py-[120px] bg-white"
+          className="max-w-full px-[8.75rem] py-[120px] bg-[#F2F2F2]"
           style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
         >
           <h2 style={{
