@@ -605,11 +605,11 @@ export default function Home() {
             Our Writers
           </h2>
           
-          <div className="grid grid-cols-4 justify-between">
+          <div className="grid grid-cols-4 gap-x-[2.22%] justify-between">
             {/* Writer 1 - ADITI SHARMA */}
-            <div className="text-left max-w-[22.47%]">
+            <div className="text-left">
               <Link href="/aditi-sharma" className="block">
-                <div className="relative w-[256px] h-auto mb-8">
+                <div className="relative w-[250px] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/471bde63-5514-44fd-67a7-d06a24417100/public"
                     alt="Aditi Sharma"
@@ -648,7 +648,7 @@ export default function Home() {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
-                  fontSize: "12px",
+                  fontSize: "13px",
                   lineHeight: "130%",
                   color: "#666",
                 }}
@@ -671,9 +671,9 @@ export default function Home() {
             </div>
 
             {/* Writer 2 - REHNUMA ANSARI */}
-            <div className="text-left max-w-[22.47%]">
+            <div className="text-left">
               <Link href="/rehnuma-ansari" className="block">
-                <div className="relative w-[266px] h-auto mb-8">
+                <div className="relative w-[250px] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f13e92f-a500-4052-dd61-2bd0951c1900/public"
                     alt="Rehnam Ansari"
@@ -712,7 +712,7 @@ export default function Home() {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
-                  fontSize: "12px",
+                  fontSize: "13px",
                   lineHeight: "130%",
                   color: "#666",
                 }}
@@ -735,9 +735,9 @@ export default function Home() {
             </div>
 
             {/* Writer 3 - SHAMBHAVI */}
-            <div className="text-left max-w-[22.47%]">
+            <div className="text-left">
               <Link href="/shambhavi" className="block">
-                <div className="relative w-[266px] h-auto mb-8">
+                <div className="relative w-[250px] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
                     alt="Shamishavi"
@@ -776,7 +776,7 @@ export default function Home() {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
-                  fontSize: "12px",
+                  fontSize: "13px",
                   lineHeight: "130%",
                   color: "#666",
                 }}
@@ -796,12 +796,12 @@ export default function Home() {
                   <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
                 </span>
               </Link>
-            </div> n
+            </div> 
 
             {/* Writer 4 - SHAMBHAVI */}
-            <div className="text-left max-w-[22.47%]">
+            <div className="text-left">
               <Link href="/shambhavi" className="block">
-                <div className="relative w-[266px] h-auto mb-8">
+                <div className="relative w-[250px] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
                     alt="Shamishavi"
@@ -840,7 +840,7 @@ export default function Home() {
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
-                  fontSize: "12px",
+                  fontSize: "13px",
                   lineHeight: "130%",
                   color: "#666",
                 }}
