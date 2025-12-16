@@ -909,7 +909,7 @@ const Home: FC = () => {
       </section>
 
       {/* AWARDS & RECOGNITION */}
-      <section className="py-[100px] bg-black relative" style={{ paddingLeft: '140px', paddingRight: '140px' }}>
+      <section className="py-[100px] bg-black relative" style={{ paddingLeft: '9.72%', paddingRight: '9.72%' }}>
         {/* Title and Description - Absolute positioned at left */}
         <div style={{ 
           position: 'absolute',

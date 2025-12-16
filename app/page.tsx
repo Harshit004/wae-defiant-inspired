@@ -474,7 +474,7 @@ const Home: FC = () => {
                   WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
                 </p>
                 <div style={{ height: '20px' }} />
-                <Link href="/brand" className="contents">
+                <Link href="/inside-wae" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -567,7 +567,7 @@ const Home: FC = () => {
                   At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
                 </p>
                 <div style={{ height: '20px' }} />
-                <Link href="/purpose" className="contents">
+                <Link href="/sustainability" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
@@ -660,7 +660,7 @@ const Home: FC = () => {
                   In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
                 </p>
                 <div style={{ height: '20px' }} />
-                <Link href="/people" className="contents">
+                <Link href="/careers3" className="contents">
                   <HoverButton>
                     {(hovered) => (
                       <>
