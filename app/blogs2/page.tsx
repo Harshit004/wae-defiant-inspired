@@ -607,7 +607,7 @@ export default function Home() {
           
           <div className="grid grid-cols-4 justify-between">
             {/* Writer 1 - ADITI SHARMA */}
-            <div className="text-left">
+            <div className="text-left max-w-[22.47%]">
               <Link href="/aditi-sharma" className="block">
                 <div className="relative w-[256px] h-auto mb-8">
                   <Image
@@ -671,7 +671,7 @@ export default function Home() {
             </div>
 
             {/* Writer 2 - REHNUMA ANSARI */}
-            <div className="text-left">
+            <div className="text-left max-w-[22.47%]">
               <Link href="/rehnuma-ansari" className="block">
                 <div className="relative w-[266px] h-auto mb-8">
                   <Image
@@ -735,7 +735,7 @@ export default function Home() {
             </div>
 
             {/* Writer 3 - SHAMBHAVI */}
-            <div className="text-left">
+            <div className="text-left max-w-[22.47%]">
               <Link href="/shambhavi" className="block">
                 <div className="relative w-[266px] h-auto mb-8">
                   <Image
@@ -799,7 +799,7 @@ export default function Home() {
             </div> n
 
             {/* Writer 4 - SHAMBHAVI */}
-            <div className="text-left">
+            <div className="text-left max-w-[22.47%]">
               <Link href="/shambhavi" className="block">
                 <div className="relative w-[266px] h-auto mb-8">
                   <Image
