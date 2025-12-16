@@ -1500,7 +1500,7 @@ const Home: FC = () => {
             verticalAlign: "middle",
             marginBottom: "40px",
           }}>
-            News & Updates
+            Media & Updates
           </h2>
           <div className="flex" style={{ gap: "1.6%" }}>
             {/* Left Column - 60.3% */}

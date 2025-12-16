@@ -609,7 +609,7 @@ export default function Home() {
             {/* Writer 1 - ADITI SHARMA */}
             <div className="text-left">
               <Link href="/aditi-sharma" className="block">
-                <div className="relative w-[18.5%] h-auto mb-8">
+                <div className="relative w-[22%] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/471bde63-5514-44fd-67a7-d06a24417100/public"
                     alt="Aditi Sharma"
@@ -673,7 +673,7 @@ export default function Home() {
             {/* Writer 2 - REHNUMA ANSARI */}
             <div className="text-left">
               <Link href="/rehnuma-ansari" className="block">
-                <div className="relative w-[18.5%] h-auto mb-8">
+                <div className="relative w-[22%] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f13e92f-a500-4052-dd61-2bd0951c1900/public"
                     alt="Rehnam Ansari"
@@ -737,7 +737,7 @@ export default function Home() {
             {/* Writer 3 - SHAMBHAVI */}
             <div className="text-left">
               <Link href="/shambhavi" className="block">
-                <div className="relative w-[18.5%] h-auto mb-8">
+                <div className="relative w-[22%] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
                     alt="Shamishavi"
@@ -801,7 +801,7 @@ export default function Home() {
             {/* Writer 4 - SHAMBHAVI */}
             <div className="text-left">
               <Link href="/shambhavi" className="block">
-                <div className="relative w-[18.5%] h-auto mb-8">
+                <div className="relative w-[22%] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
                     alt="Shamishavi"
