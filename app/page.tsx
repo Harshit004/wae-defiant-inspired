@@ -1267,7 +1267,7 @@ const Home: FC = () => {
         </section>
 
         {/* Sustainability Section */}
-        <section className="flex items-center justify-center relative px-[9.72%] bg-white mb-[100px]">
+        <section className="flex items-center justify-center relative px-[9.72%] bg-white py-[100px]">
           <motion.div
             className="w-full max-w-screen-xl flex flex-col items-start justify-center relative"
           >
