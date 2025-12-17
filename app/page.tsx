@@ -389,22 +389,7 @@ const Home: FC = () => {
               className="w-fit h-fit object-cover rounded-none"
             />
           </div>
-          <div
-            className="absolute uppercase"
-            style={{
-              bottom: "6%",
-              left: "9.72%",
-              width: "104px",
-              height: "12px",
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "10px",
-              lineHeight: "100%",
-              color: "#00000099",
-            }}
-          >
-            Scroll for more ⤵︎ {/* Static text */}
-          </div>
+          
         </section>
       </div>
 
