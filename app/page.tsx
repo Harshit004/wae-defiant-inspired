@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer"; // Still used for Hero InView
 import RelatedCard from "@/components/related-card"; // Assuming this component exists
 import Footer from "@/components/footer"; // Assuming this component exists
+import ContactSection from "@/components/contact-section";
 import Link from "next/link";
 
 interface HoverButtonProps {
@@ -1271,21 +1272,7 @@ const Home: FC = () => {
           <motion.div
             className="w-full max-w-screen-xl flex flex-col items-start justify-center relative"
           >
-            {/* Heading on top */}
-            <h2
-              className="mb-4 text-left"
-              style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 500,
-                fontStyle: 'Medium',
-                fontSize: '40px',
-                lineHeight: '110%',
-                letterSpacing: '0px',
-                verticalAlign: 'middle'
-              }}
-            >
-              Sustainability
-            </h2>
+            
             {/* Text below section header */}
             <p className="mb-16"
               style={{
@@ -1302,7 +1289,7 @@ const Home: FC = () => {
             </p>
             {/* Metrics grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-              <div className="p-8 flex flex-col justify-between min-h-[280px] relative">
+              <div className="pt-8 pl-5 flex flex-col justify-between relative">
                 {/* Vertical line on the left */}
                 <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
                 <p 
@@ -1314,7 +1301,7 @@ const Home: FC = () => {
                     lineHeight: '140%',
                     letterSpacing: '0px',
                     verticalAlign: 'middle',
-                    marginBottom: '40px'
+                    marginBottom: '55px'
                   }}
                 >
                   It is a long established fact that a reader will be distracted by the readable content of a page when looking.
@@ -1351,7 +1338,7 @@ const Home: FC = () => {
                 </div>
               </div>
               
-              <div className="p-8 flex flex-col justify-between min-h-[280px] relative">
+              <div className="pt-8 pl-5 flex flex-col justify-between relative">
                 {/* Vertical line on the left */}
                 <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
                 <p 
@@ -1363,7 +1350,7 @@ const Home: FC = () => {
                     lineHeight: '140%',
                     letterSpacing: '0px',
                     verticalAlign: 'middle',
-                    marginBottom: '40px'
+                    marginBottom: '55px'
                   }}
                 >
                   It is a long established fact that a reader will be distracted by the readable content of a page when looking.
@@ -1400,7 +1387,7 @@ const Home: FC = () => {
                 </div>
               </div>
               
-              <div className="p-8 flex flex-col justify-between min-h-[280px] relative">
+              <div className="pt-8 pl-5 flex flex-col justify-between relative">
                 {/* Vertical line on the left */}
                 <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
                 <p 
@@ -1412,7 +1399,7 @@ const Home: FC = () => {
                     lineHeight: '140%',
                     letterSpacing: '0px',
                     verticalAlign: 'middle',
-                    marginBottom: '40px'
+                    marginBottom: '55px'
                   }}
                 >
                   It is a long established fact that a reader will be distracted by the readable content of a page when looking.
@@ -1491,9 +1478,36 @@ const Home: FC = () => {
               </div>
               <div className="mt-4">
                 <h3 className="text-lg line-height-[120%] font-medium mb-2" style={{ lineHeight: "120%" }}>From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 mb-[71px]">
                   In the quiet halls of Kyoto in 1997, something monumental began   a collective awakening of the world's conscience towards the mounting crisis of climate change.
                 </p>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-[#808080]" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 400,
+                  fontStyle: 'Regular',
+                  fontSize: '12px',
+                  lineHeight: '110.00000000000001%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  textDecoration: 'underline',
+                  textDecorationStyle: 'solid',
+                  textUnderlineOffset: '2px',
+                  textDecorationThickness: '0%',
+                  textDecorationSkipInk: 'auto',
+                  justifyContent: 'space-between'
+                }}>Read Article </span>
+                <span style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 400,
+                  fontStyle: 'Regular',
+                  fontSize: '12px',
+                  lineHeight: '110.00000000000001%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  justifyContent: 'space-between'
+                }}>&gt;</span>
               </div>
             </div>
 
@@ -1517,9 +1531,36 @@ const Home: FC = () => {
               </div>
               <div className="mt-4">
                 <h3 className="text-lg font-medium line-height-[120%] mb-2" style={{ lineHeight: "120%" }}>Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 mb-[71px]">
                   The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
                 </p>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-[#808080]" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 400,
+                  fontStyle: 'Regular',
+                  fontSize: '12px',
+                  lineHeight: '110.00000000000001%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  textDecoration: 'underline',
+                  textDecorationStyle: 'solid',
+                  textUnderlineOffset: '2px',
+                  textDecorationThickness: '0%',
+                  textDecorationSkipInk: 'auto',
+                  justifyContent: 'space-between'
+                }}>Read Article </span>
+                <span style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 400,
+                  fontStyle: 'Regular',
+                  fontSize: '12px',
+                  lineHeight: '110.00000000000001%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  justifyContent: 'space-between'
+                }}>&gt;</span>
               </div>
             </div>
 
@@ -1543,9 +1584,36 @@ const Home: FC = () => {
               </div>
               <div className="mt-4">
                 <h3 className="text-lg font-medium line-height-[120%] mb-2" style={{ lineHeight: "120%" }}>The Ozone Crisis: A Success Story in Environmental Cooperation</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 mb-[30px]">
                   It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth. This protective shield—the ozone layer—sits between 10 to 50 kilometres above the surface and has for millions of years absorbed nearly 97–99% of the Sun's harmful ultraviolet-B (UV-B) radiation.
                 </p>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-[#808080]" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 400,
+                  fontStyle: 'Regular',
+                  fontSize: '12px',
+                  lineHeight: '110.00000000000001%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  textDecoration: 'underline',
+                  textDecorationStyle: 'solid',
+                  textUnderlineOffset: '2px',
+                  textDecorationThickness: '0%',
+                  textDecorationSkipInk: 'auto',
+                  justifyContent: 'space-between'
+                }}>Read Article </span>
+                <span style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 400,
+                  fontStyle: 'Regular',
+                  fontSize: '12px',
+                  lineHeight: '110.00000000000001%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  justifyContent: 'space-between'
+                }}>&gt;</span>
               </div>
             </div>
             
@@ -1578,8 +1646,8 @@ const Home: FC = () => {
                   <img
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"
                     alt="WAE ZED Gold Certification"
-                    className="w-full h-auto rounded-lg mb-4"
-                    style={{ marginBottom: "16px" }}
+                    className="w-full h-auto rounded-lg"
+                    style={{ marginBottom: "8px" }}
                   />
                   <h3 
                     style={{
@@ -1589,12 +1657,12 @@ const Home: FC = () => {
                       fontSize: "24px",
                       lineHeight: "40px",
                       letterSpacing: "0%",
-                      marginBottom: "16px"
+                      marginBottom: "0px"
                     }}
                   >
                     WAE shines with ZED Gold certification for sustainable excellence
                   </h3>
-                  <div 
+                  {/* <div 
                     className="flex justify-between items-center"
                     style={{
                       fontFamily: "Inter Tight",
@@ -1609,7 +1677,7 @@ const Home: FC = () => {
                     <span>Staff Writer</span>
                     <span>|</span>
                     <span>Nov 04, 2025</span>
-                  </div>
+                  </div> */}
                 </div>
                 
               </div>
@@ -1639,7 +1707,7 @@ const Home: FC = () => {
                   >
                     Drinking Water Stations Installed Across 28 Police...
                   </h3>
-                  <div 
+                  {/* <div 
                     className="flex justify-between items-center"
                     style={{
                       fontFamily: "Inter Tight",
@@ -1654,7 +1722,7 @@ const Home: FC = () => {
                     <span>Hency Thacker</span>
                     <span>|</span>
                     <span>Oct 27, 2025</span>
-                  </div>
+                  </div> */}
                 </div>
                 
                 {/* Row 2 */}
@@ -1678,7 +1746,7 @@ const Home: FC = () => {
                   >
                     Sustainability in India's hospitality industry
                   </h3>
-                  <div 
+                  {/* <div 
                     className="flex justify-between items-center"
                     style={{
                       fontFamily: "Inter Tight",
@@ -1693,13 +1761,18 @@ const Home: FC = () => {
                     <span>ETHospitalityWorld</span>
                     <span>|</span>
                     <span>Dec 04, 2025</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
           
         </section>
+
+        {/* Contact Section */}
+        <div className="py-[100px] px-[9.72%]">
+          <ContactSection />
+        </div>
 
         {/* FOOTER SECTION */}
         {/* Footer likely appears at the very bottom */}
