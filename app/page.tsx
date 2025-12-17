@@ -1273,7 +1273,7 @@ const Home: FC = () => {
           >
             {/* Heading on top */}
             <h2
-              className="mb-20 text-left"
+              className="mb-4 text-left"
               style={{
                 fontFamily: 'Inter Tight',
                 fontWeight: 500,
@@ -1286,100 +1286,167 @@ const Home: FC = () => {
             >
               Sustainability
             </h2>
-            {/* Metrics row below heading */}
-            <div className="flex flex-row gap-32 w-full">
-              <div className="flex flex-col items-start min-w-[220px]">
-                <p 
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 700,
-                    fontStyle: 'Bold',
-                    fontSize: '40px',
-                    lineHeight: '140%',
-                    letterSpacing: '0px',
-                    verticalAlign: 'middle',
-                    textTransform: 'uppercase'
-                  }}
-                >
-                  1,012,120.25
-                </p>
-                <div className="h-px w-full bg-[#D9D9DC] my-2" />
+            {/* Text below section header */}
+            <p className="mb-16"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '14px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+              }}
+            >
+              It is a long established fact that a reader will be distracted by the readable content of a page when looking.
+            </p>
+            {/* Metrics grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+              <div className="p-8 flex flex-col justify-between min-h-[280px] relative">
+                {/* Vertical line on the left */}
+                <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
                 <p 
                   style={{
                     fontFamily: 'Inter Tight',
                     fontWeight: 400,
                     fontStyle: 'Regular',
                     fontSize: '12px',
-                    lineHeight: '24px',
+                    lineHeight: '140%',
                     letterSpacing: '0px',
                     verticalAlign: 'middle',
-                    textTransform: 'capitalize'
+                    marginBottom: '40px'
                   }}
                 >
-                  Tonnes CO2 Emissions Saved
+                  It is a long established fact that a reader will be distracted by the readable content of a page when looking.
                 </p>
+                <div>
+                  <div className="flex items-baseline gap-2">
+                    <span
+                      style={{
+                        fontFamily: 'Inter Tight',
+                        fontWeight: 500,
+                        fontStyle: 'Medium',
+                        fontSize: '48px',
+                        lineHeight: '100%',
+                        letterSpacing: '0px',
+                        verticalAlign: 'middle'
+                      }}
+                    >
+                      1,012,120.25
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: 'Inter Tight',
+                        fontWeight: 400,
+                        fontStyle: 'Regular',
+                        fontSize: '18px',
+                        lineHeight: '100%',
+                        letterSpacing: '0px',
+                        verticalAlign: 'middle'
+                      }}
+                    >
+                      Litres
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col items-start min-w-[220px]">
-                <p 
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 700,
-                    fontStyle: 'Bold',
-                    fontSize: '40px',
-                    lineHeight: '140%',
-                    letterSpacing: '0px',
-                    verticalAlign: 'middle',
-                    textTransform: 'uppercase'
-                  }}
-                >
-                  12,185.43
-                </p>
-                <div className="h-px w-full bg-[#D9D9DC] my-2" />
+              
+              <div className="p-8 flex flex-col justify-between min-h-[280px] relative">
+                {/* Vertical line on the left */}
+                <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
                 <p 
                   style={{
                     fontFamily: 'Inter Tight',
                     fontWeight: 400,
                     fontStyle: 'Regular',
                     fontSize: '12px',
-                    lineHeight: '24px',
+                    lineHeight: '140%',
                     letterSpacing: '0px',
                     verticalAlign: 'middle',
-                    textTransform: 'capitalize'
+                    marginBottom: '40px'
                   }}
                 >
-                  Million Gallons Water Saved
+                  It is a long established fact that a reader will be distracted by the readable content of a page when looking.
                 </p>
+                <div>
+                  <div className="flex items-baseline gap-2">
+                    <span
+                      style={{
+                        fontFamily: 'Inter Tight',
+                        fontWeight: 500,
+                        fontStyle: 'Medium',
+                        fontSize: '48px',
+                        lineHeight: '100%',
+                        letterSpacing: '0px',
+                        verticalAlign: 'middle'
+                      }}
+                    >
+                      12,185.43
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: 'Inter Tight',
+                        fontWeight: 400,
+                        fontStyle: 'Regular',
+                        fontSize: '18px',
+                        lineHeight: '100%',
+                        letterSpacing: '0px',
+                        verticalAlign: 'middle'
+                      }}
+                    >
+                      Gallon
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col items-start min-w-[220px]">
-                <p 
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 700,
-                    fontStyle: 'Bold',
-                    fontSize: '40px',
-                    lineHeight: '140%',
-                    letterSpacing: '0px',
-                    verticalAlign: 'middle',
-                    textTransform: 'uppercase'
-                  }}
-                >
-                  22,253.65
-                </p>
-                <div className="h-px w-full bg-[#D9D9DC] my-2" />
+              
+              <div className="p-8 flex flex-col justify-between min-h-[280px] relative">
+                {/* Vertical line on the left */}
+                <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
                 <p 
                   style={{
                     fontFamily: 'Inter Tight',
                     fontWeight: 400,
                     fontStyle: 'Regular',
                     fontSize: '12px',
-                    lineHeight: '24px',
+                    lineHeight: '140%',
                     letterSpacing: '0px',
                     verticalAlign: 'middle',
-                    textTransform: 'capitalize'
+                    marginBottom: '40px'
                   }}
                 >
-                  Tonnes Plastic Removed
+                  It is a long established fact that a reader will be distracted by the readable content of a page when looking.
                 </p>
+                <div>
+                  <div className="flex items-baseline gap-2">
+                    <span
+                      style={{
+                        fontFamily: 'Inter Tight',
+                        fontWeight: 500,
+                        fontStyle: 'Medium',
+                        fontSize: '48px',
+                        lineHeight: '100%',
+                        letterSpacing: '0px',
+                        verticalAlign: 'middle'
+                      }}
+                    >
+                      22,253.65
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: 'Inter Tight',
+                        fontWeight: 400,
+                        fontStyle: 'Regular',
+                        fontSize: '18px',
+                        lineHeight: '100%',
+                        letterSpacing: '0px',
+                        verticalAlign: 'middle'
+                      }}
+                    >
+                      Millions
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
