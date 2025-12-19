@@ -1257,7 +1257,19 @@ const Home: FC = () => {
           <motion.div
             className="w-full max-w-screen-xl flex flex-col items-start justify-center relative"
           >
-            
+            <div className="mb-4">
+              <h2 style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 500,
+                fontStyle: 'Medium',
+                fontSize: '40px',
+                lineHeight: '110.00000000000001%',
+                letterSpacing: '0px',
+                verticalAlign: 'middle',
+              }}>
+                Sustainability
+              </h2>
+            </div>
             {/* Text below section header */}
             <p className="mb-16"
               style={{
