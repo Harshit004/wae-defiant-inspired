@@ -405,346 +405,28 @@ const Home: FC = () => {
       </div>
 
       {/* HERO SECTION */}
-      <div className="relative w-full">
-        <img
-          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c347e0c1-d161-4635-e634-d10e5a8a5000/public"
-          alt="Media and Updates Hero"
-          className="w-full h-auto"
-          style={{ width: "100vw", height: "auto" }}
-        />
-        
-        {/* Text Overlay at 65% from top */}
-        <div 
-          className="absolute left-0 right-0 flex flex-col items-center justify-center"
-          style={{ top: "65%" }}
+        <section
+          id="hero"
+          ref={heroRef}
+          className="w-full flex items-center justify-center bg-white"
+          style={{ height: `calc(100vh - ${headerHeight}px)` }}
         >
-          <h1 
-            style={{
-              fontFamily: 'Inter Tight',
-              fontWeight: 500,
-              fontStyle: 'Medium',
-              fontSize: '58px',
-              lineHeight: '110.00000000000001%',
-              letterSpacing: '0%',
-              textAlign: 'center',
-              verticalAlign: 'middle',
-              color: '#fff',
-              marginBottom: '16px'
-            }}
-          >
-            Latest from WAE
-          </h1>
+          <div className="w-screen flex items-center justify-center">
+            <video
+              src="/News_Banner.mp4"
+              autoPlay
+              muted
+              playsInline
+              className="w-fit h-fit object-cover rounded-none"
+            />
+          </div>
           
-          <p 
-            style={{
-              fontFamily: 'Inter Tight',
-              fontWeight: 400,
-              fontStyle: 'Regular',
-              fontSize: '24px',
-              lineHeight: '110.00000000000001%',
-              letterSpacing: '0%',
-              textAlign: 'center',
-              verticalAlign: 'middle',
-              color: '#fff',
-              marginBottom: '32px',
-              maxWidth: '66.18%'
-            }}
-          >
-            Official announcements, media coverage, awards, and events that define our journey toward sustainable transformation.
-          </p>
-          
-          <HoverButton>
-            {(hovered) => (
-              <>
-                <span style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "10px",
-                  lineHeight: "100%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                }} className="md:text-[10px] md:font-medium">
-                  Explore All Updates
-                </span>
-                <div className="relative inline-block w-4 h-4">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                    alt="icon default"
-                    width={16}
-                    height={16}
-                  />
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: hovered ? 1 : 0 }}
-                    transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                    className="absolute top-0 left-0"
-                  >
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                      alt="icon hover"
-                      width={16}
-                      height={16}
-                    />
-                  </motion.div>
-                </div>
-              </>
-            )}
-          </HoverButton>
-        </div>
-      </div>
+        </section>
       
 
-      {/* NEWS AND UPDATES */}
-      <section className="px-[9.72%] py-[100px] bg-black">
-        <div>
-            <img
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/53ee5bb0-25f9-4a95-21e1-96d62b592e00/public"
-            alt="News and Updates"
-            className="w-full h-auto mb-4"
-            />
-            <p className="mb-4"
-              style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontStyle: 'Regular',
-                fontSize: '14px',
-                lineHeight: '24px',
-                letterSpacing: '0%',
-                textAlign: 'justify',
-                color: '#BAB8B8'
-              }}
-            >
-              Press Release
-            </p>
-            <h3 className="mb-3"
-              style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 600,
-                fontStyle: 'SemiBold',
-                fontSize: '24px',
-                lineHeight: '40px',
-                letterSpacing: '0%',
-                color: '#FFFFFF'
-              }}
-            >
-              WAE Receives CII Design Excellence Award 2025 for Sustainable Water Technology
-            </h3>
-            <p className="mb-4"
-              style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontStyle: 'Regular',
-                fontSize: '14px',
-                lineHeight: '130%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
-                color: '#FFFFFF'
-              }}
-            >
-              In the quiet halls of Kyoto in 1997, something monumental began a collective awakening of the world's conscience towards the mounting crisis of climate change. What followed was a turbulent 
-              yet determined journey, a series of historic global agreements that would shape the planet's climate policy for decades to come, culminating (for now) in COP28. This is not just a timeline it's the 
-              story of how humanity has tried, failed, and continued to try again in its battle against a warming world.
-            </p>
-            <div 
-              className="flex justify-between items-center"
-              style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontStyle: 'Regular',
-                fontSize: '14px',
-                lineHeight: '24px',
-                letterSpacing: '0%',
-                textAlign: 'justify',
-                color: '#BAB8B8'
-              }}
-            >
-              <span>Nov 04, 2025</span>
-              <span>|</span>
-              <Link href="#">
-                  <span 
-                    style={{
-                      textDecoration: 'underline',
-                      textDecorationStyle: 'solid',
-                      textDecorationThickness: '0%',
-                      textUnderlineOffset: '2px',
-                    }}
-                  >
-                    Read Release
-                  </span>
-                </Link>
-            </div>
-            
-        </div>
-        <div className="flex justify-between gap-x-[40px]">
-            <div>
-                <img
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8a9f68e5-d89a-411f-a65e-0190a1f90900/public"
-                alt="News and Updates"
-                className="w-full h-auto mb-4"
-                />
-                <p className="mb-4"
-                style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '14px',
-                    lineHeight: '24px',
-                    letterSpacing: '0%',
-                    textAlign: 'justify',
-                    color: '#BAB8B8'
-                }}
-                >
-                Press Release
-                </p>
-                <h3 className="mb-3"
-                style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 600,
-                    fontStyle: 'SemiBold',
-                    fontSize: '24px',
-                    lineHeight: '40px',
-                    letterSpacing: '0%',
-                    color: '#FFFFFF'
-                }}
-                >
-                WAE Introduces UV+UF Smart Hydration Systems for Corporate Campuses
-                </h3>
-                <p className="mb-4"
-                style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '14px',
-                    lineHeight: '130%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#FFFFFF'
-                }}
-                >
-                In the quiet halls of Kyoto in 1997, something monumental began a collective awakening of 
-                the world’s conscience towards the mounting crisis of climate change. What followed was a 
-                turbulent yet determined journey, a series of historic global agreements that would shape the 
-                planet’s climate policy for decades to come, culminating (for now) in COP28. This is not just a 
-                timeline it's the story of how humanity has tried, failed, and continued to try again in its battle 
-                against a warming world.  
-                </p>
-                <div 
-                className="flex justify-between items-center"
-                style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '14px',
-                    lineHeight: '24px',
-                    letterSpacing: '0%',
-                    textAlign: 'justify',
-                    color: '#BAB8B8'
-                }}
-                >
-                <span>Nov 04, 2025</span>
-                <span>|</span>
-                <Link href="#">
-                  <span 
-                    style={{
-                      textDecoration: 'underline',
-                      textDecorationStyle: 'solid',
-                      textDecorationThickness: '0%',
-                      textUnderlineOffset: '2px',
-                    }}
-                  >
-                    Read Release
-                  </span>
-                </Link>
-                </div>
-                
-            </div>
-            <div>
-                <img
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cfb2d014-953e-48c6-9ca6-bb0adba70f00/public"
-                alt="News and Updates"
-                className="w-full h-auto mb-4"
-                />
-                <p className="mb-4"
-                style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '14px',
-                    lineHeight: '24px',
-                    letterSpacing: '0%',
-                    textAlign: 'justify',
-                    color: '#BAB8B8'
-                }}
-                >
-                Press Release
-                </p>
-                <h3 className="mb-3"
-                style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 600,
-                    fontStyle: 'SemiBold',
-                    fontSize: '24px',
-                    lineHeight: '40px',
-                    letterSpacing: '0%',
-                    color: '#FFFFFF'
-                }}
-                >
-                WAE Unveils Next-Gen Glass Bottling Plant at IHE Expo 2025
-                </h3>
-                <p className="mb-4"
-                style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '14px',
-                    lineHeight: '130%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#FFFFFF'
-                }}
-                >
-                In the quiet halls of Kyoto in 1997, something monumental began a collective awakening of 
-                the world’s conscience towards the mounting crisis of climate change. What followed was a 
-                turbulent yet determined journey, a series of historic global agreements that would shape the 
-                planet’s climate policy for decades to come, culminating (for now) in COP28. This is not just a 
-                timeline it's the story of how humanity has tried, failed, and continued to try again in its battle 
-                against a warming world.  
-                </p>
-                <div 
-                className="flex justify-between items-center"
-                style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '14px',
-                    lineHeight: '24px',
-                    letterSpacing: '0%',
-                    textAlign: 'justify',
-                    color: '#BAB8B8'
-                }}
-                >
-                <span>Nov 04, 2025</span>
-                <span>|</span>
-                <Link href="#">
-                  <span 
-                    style={{
-                      textDecoration: 'underline',
-                      textDecorationStyle: 'solid',
-                      textDecorationThickness: '0%',
-                      textUnderlineOffset: '2px',
-                    }}
-                  >
-                    Read Release
-                  </span>
-                </Link>
-                </div>  
-            </div>
-        </div>
-      </section>
-
       {/* IN THE NEWS */}
-      <section className="px-[9.72%] py-[100px] bg-white">
-        <h2 className="mb-10"
+      <section className="px-[9.72%] py-[100px]">
+        <h2 className="mb-4"
             style={{
               fontFamily: 'Inter Tight',
               fontWeight: 500,
@@ -755,964 +437,312 @@ const Home: FC = () => {
               verticalAlign: 'middle',
             }}
         >
-          In the News
+          News & Press Release
         </h2>
-        <div className="flex justify-between gap-x-[24px]">
-            <div>
-                <img 
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2f5da517-eb84-4ad8-6c55-658fe1e3c300/public" 
-                alt="From Activism to Infrastructure: How WAE is Redefining Water Sustainability" 
-                className="mb-5"
-                />
-                <h3 className="mb-[34px]"
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                }}
-                >
-                From Activism to Infrastructure: How WAE is Redefining Water Sustainability
-                </h3>
-                <p className="mb-[71px]"
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '14px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#808080'
-                }}
-                >
-                A deep dive into how WAE is transforming sustainable water access at scale…
-                </p>
-                <div className="flex justify-between items-center"
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '12px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#808080'
-                }}
-                >
-                    <span>12 Nov 2024</span>
-                    <span>Read on FNBnews.com</span>
-                </div>
-            </div>
-            <div>
-                <img 
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2f5da517-eb84-4ad8-6c55-658fe1e3c300/public" 
-                alt="WAE’s ‘Our Green Is Blue’ Philosophy Leads the Circular Economy Movement" 
-                className="mb-5"
-                />
-                <h3 className="mb-[34px]"
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                }}
-                >
-                WAE’s ‘Our Green Is Blue’ Philosophy Leads the Circular Economy Movement
-                </h3>
-                <p className="mb-[71px]"
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '14px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#808080'
-                }}
-                >
-                The philosophy shaping India’s next leap in sustainable water management…
-                </p>
-                <div className="flex justify-between items-center"
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '12px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#808080'
-                }}
-                >
-                    <span>12 Nov 2024</span>
-                    <span>Read on FNBnews.com</span>
-                </div>
-            </div>
-            <div>
-                <img 
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2f5da517-eb84-4ad8-6c55-658fe1e3c300/public" 
-                alt="From Activism to Infrastructure: How WAE is Redefining Water Sustainability" 
-                className="mb-5"
-                />
-                <h3 className="mb-[34px]"
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                }}
-                >
-                From Activism to Infrastructure: How WAE is Redefining Water Sustainability
-                </h3>
-                <p className="mb-[71px]"
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '14px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#808080'
-                }}
-                >
-                A deep dive into how WAE is transforming sustainable water access at scale…
-                </p>
-                <div className="flex justify-between items-center"
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '12px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#808080'
-                }}
-                >
-                    <span>12 Nov 2024</span>
-                    <span>Read on FNBnews.com</span>
-                </div>
-            </div>
-        </div>
+
+        <p className="mb-15" style={{
+          fontFamily: 'Inter Tight',
+          fontWeight: 400,
+          fontStyle: 'Regular',
+          fontSize: '18px',
+          lineHeight: '100%',
+          letterSpacing: '0px',
+          color: '#00000099'
+        }}>
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its 
+          layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
+        </p>
+
+
+
+       
       </section>
 
       {/* AWARDS & RECOGNITION */}
-      <section className="py-[100px] bg-black relative" style={{ paddingLeft: '9.72%', paddingRight: '9.72%' }}>
-        {/* Title and Description - Absolute positioned at left */}
-        <div style={{ 
-          position: 'absolute',
-          top: '100px',
-          left: '140px',
-          width: '256px'
-        }}>
-          <h2 className="mb-4 text-white" style={{
+      <section className="px-[9.72%] py-[100px]">
+        <h2 className="mb-4"
+          style={{
             fontFamily: 'Inter Tight',
             fontWeight: 500,
+            fontStyle: 'Medium',
             fontSize: '40px',
             lineHeight: '100%',
             letterSpacing: '0px',
-          }}>
-            Awards & Recognitions
-          </h2>
-          <p style={{
-            fontFamily: 'Inter Tight',
-            fontWeight: 300,
-            fontSize: '18px',
-            lineHeight: '100%',
-            letterSpacing: '0px',
-            color: '#FFFFFF99'
-          }}>
-            It is a long established fact that a reader will be 
-            distracted by the readable content of a page 
-            when looking at its layout. The point of using 
-            Lorem Ipsum is that it has a more-or-less normal 
-            distribution of letters
-          </p>
-        </div>
+          }}
+        >
+          Awards & Recognitions
+        </h2>
 
-        {/* Container for all images - relative positioning */}
-        <div style={{ position: 'relative', height: '1261px' }}>
-          {/* Image 1: 568x509 at top: 100px, left: 436px */}
-          <div style={{
-            position: 'absolute',
-            // top: '100px',
-            left: '296px', // 436 - 140 (section padding)
-            width: '824px', // 568 + 20 + 256
-            display: 'flex',
-            gap: '40px'
-          }}>
-            <img 
-              src="https://placehold.co/568x509" 
-              alt="Award 1"
-              style={{ width: '568px', height: '509px', objectFit: 'cover' }}
-            />
-            {/* Text content for Image 1 */}
-            <div>
-              <div className="flex justify-between items-start mb-[12px]">
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  lineHeight: '110%',
-                  color: '#FFFFFF',
-                }}>
-                  12 Nov 2024
-                </span>
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  lineHeight: '110%',
-                  color: '#FFFFFF',
-                  textDecoration: 'underline',
-                }}>
-                  Read on FNBnews.com
-                </span>
-              </div>
-              
-              <h3 className="mb-[12px]" style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontSize: '18px',
-                lineHeight: '100%',
-                color: '#FFFFFF',
-              }}>
-                CII Design Excellence Award 2025
-              </h3>
-              
-              <p className="mb-[24px]" style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '110%',
-                color: '#FFFFFF',
-              }}>
-                WAE unveils its award-winning design-led<br />bottling system.
-              </p>
-              
-                <InvertedHoverButton>
-                    {(hovered) => (
-                        <>
-                        <span style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "10px",
-                            lineHeight: "100%",
-                        }}>
-                            View Story
-                        </span>
-                        <div className="relative inline-block w-4 h-4">
-                            <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            />
-                            <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                            >
-                            <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                            />
-                            </motion.div>
-                        </div>
-                        </>
-                    )}
-                </InvertedHoverButton>
-            </div>
-          </div>
+        <p className="mb-15" style={{
+          fontFamily: 'Inter Tight',
+          fontWeight: 400,
+          fontStyle: 'Regular',
+          fontSize: '18px',
+          lineHeight: '100%',
+          letterSpacing: '0px',
+          color: '#00000099'
+        }}>
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its 
+          layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
+        </p>
 
-          {/* Image 2: 256x252 at top: 314px, left: 1044px */}
-          <div style={{
-            position: 'absolute',
-            top: '214px',
-            left: '904px', // 1044 - 140 (section padding)
-            width: '256px',
-            height: '252px'
-          }}>
-            <img 
-              src="https://placehold.co/256x252" 
-              alt="Award 2"
-              className="w-full h-full object-cover"
-            />
-            
-            {/* Text content for Image 2 */}
-            <div className="mt-[20px]">
-              <div className="flex justify-between items-start mb-[12px]">
-                <span style={{
+        {/* Award Showcase */}
+        <div className="mt-12 space-y-10">
+          {/* First Row: Bigger then Smaller */}
+          <div className="flex gap-8">
+            {/* Bigger Image */}
+            <div style={{ width: '61.89655%' }}>
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f91b85c6-cabd-4e8e-af67-d80e0d161a00/public"
+                alt="CII Design Excellence Award"
+                width={717}
+                height={400}
+                className="w-full h-[356px]"
+              />
+              <div className="mt-4">
+                <h3 className="mb-2" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  color: '#000000'
+                }}>
+                  CII Design Excellence Award 2025
+                </h3>
+                <p className="mb-4" style={{
                   fontFamily: 'Inter Tight',
                   fontWeight: 400,
-                  fontSize: '12px',
-                  lineHeight: '110%',
-                  color: '#FFFFFF',
+                  fontSize: '14px',
+                  lineHeight: '100%',
+                  color: '#00000099'
                 }}>
-                  12 Nov 2024
-                </span>
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  lineHeight: '110%',
-                  color: '#FFFFFF',
-                  textDecoration: 'underline',
-                }}>
-                  Read on FNBnews.com
-                </span>
-              </div>
-              
-              <h3 className="mb-[12px]" style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontSize: '18px',
-                lineHeight: '100%',
-                color: '#FFFFFF',
-              }}>
-                IHE Expo 2025
-              </h3>
-              
-              <p className="mb-[24px]" style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '110%',
-                color: '#FFFFFF',
-              }}>
-                WAE unveils its award-winning design-led<br />bottling system.
-              </p>
-              
-              <InvertedHoverButton>
-                    {(hovered) => (
-                        <>
-                        <span style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "10px",
-                            lineHeight: "100%",
-                        }}>
-                            View Story
-                        </span>
-                        <div className="relative inline-block w-4 h-4">
-                            <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            />
-                            <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                            >
-                            <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                            />
-                            </motion.div>
-                        </div>
-                        </>
-                    )}
-                </InvertedHoverButton>
-            </div>
-          </div>
-
-          {/* Image 3: 522x224 at top: 649px, left: 140px */}
-          <div style={{
-            position: 'absolute',
-            top: '549px',
-            left: '0px', // 140 - 140 (section padding)
-            width: '778px', // 522 + 20 + 256
-            display: 'flex',
-            gap: '20px'
-          }}>
-            <img 
-              src="https://placehold.co/522x224" 
-              alt="Award 3"
-              style={{ width: '522px', height: '224px', objectFit: 'cover' }}
-            />
-            {/* Text content for Image 3 */}
-            <div>
-              <div className="flex justify-between items-start mb-[12px]">
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  lineHeight: '110%',
-                  color: '#FFFFFF',
-                }}>
-                  12 Nov 2024
-                </span>
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  lineHeight: '110%',
-                  color: '#FFFFFF',
-                  textDecoration: 'underline',
-                }}>
-                  Read on FNBnews.com
-                </span>
-              </div>
-              
-              <h3 className="mb-[12px]" style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontSize: '18px',
-                lineHeight: '100%',
-                color: '#FFFFFF',
-              }}>
-                IHE Expo 2025
-              </h3>
-              
-              <p className="mb-[24px] whitespace-nowrap" style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '110%',
-                color: '#FFFFFF',
-              }}>
-                WAE unveils its award-winning design-led<br />bottling system.
-              </p>
-              
-              <InvertedHoverButton>
-                    {(hovered) => (
-                        <>
-                        <span style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "10px",
-                            lineHeight: "100%",
-                        }}>
-                            View Story
-                        </span>
-                        <div className="relative inline-block w-4 h-4">
-                            <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            />
-                            <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                            >
-                            <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                            />
-                            </motion.div>
-                        </div>
-                        </>
-                    )}
-                </InvertedHoverButton>
-            </div>
-          </div>
-
-          {/* Image 4: 256x252 at top: 913px, left: 140px */}
-          <div style={{
-            position: 'absolute',
-            top: '813px',
-            left: '0px', // 140 - 140 (section padding)
-            width: '256px',
-            height: '252px'
-          }}>
-            <img 
-              src="https://placehold.co/256x252" 
-              alt="Award 4"
-              className="w-full h-full object-cover"
-            />
-            
-            {/* Text content for Image 4 */}
-            <div className="mt-[20px]">
-              <div className="flex justify-between items-start mb-[12px]">
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  lineHeight: '110%',
-                  color: '#FFFFFF',
-                }}>
-                  12 Nov 2024
-                </span>
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  lineHeight: '110%',
-                  color: '#FFFFFF',
-                  textDecoration: 'underline',
-                }}>
-                  Read on FNBnews.com
-                </span>
-              </div>
-              
-              <h3 className="mb-[12px]" style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontSize: '18px',
-                lineHeight: '100%',
-                color: '#FFFFFF',
-              }}>
-                IHE Expo 2025
-              </h3>
-              
-              <p className="mb-[24px]" style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '110%',
-                color: '#FFFFFF',
-              }}>
-                WAE unveils its award-winning design-led<br />bottling system.
-              </p>
-              
-              <InvertedHoverButton>
-                    {(hovered) => (
-                        <>
-                        <span style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "10px",
-                            lineHeight: "100%",
-                        }}>
-                            View Story
-                        </span>
-                        <div className="relative inline-block w-4 h-4">
-                            <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            />
-                            <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                            >
-                            <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                            />
-                            </motion.div>
-                        </div>
-                        </>
-                    )}
-                </InvertedHoverButton>
-            </div>
-          </div>
-
-          {/* Image 5: 588x348 at top: 913px, left: 436px */}
-          <div style={{
-            position: 'absolute',
-            top: '813px',
-            left: '296px', // 436 - 140 (section padding)
-            width: '844px', // 588 + 20 + 256
-            display: 'flex',
-            gap: '20px'
-          }}>
-            <img 
-              src="https://placehold.co/588x348" 
-              alt="Award 5"
-              style={{ width: '588px', height: '348px', objectFit: 'cover' }}
-            />
-            
-            {/* Text content for Image 5 */}
-            <div>
-              <div className="flex justify-between items-start mb-[12px]">
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  lineHeight: '110%',
-                  color: '#FFFFFF',
-                }}>
-                  12 Nov 2024
-                </span>
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  lineHeight: '110%',
-                  color: '#FFFFFF',
-                  textDecoration: 'underline',
-                }}>
-                  Read on FNBnews.com
-                </span>
-              </div>
-              
-              <h3 className="mb-[12px]" style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontSize: '18px',
-                lineHeight: '100%',
-                color: '#FFFFFF',
-              }}>
-                IHE Expo 2025
-              </h3>
-              
-              <p className="mb-[24px] whitespace-nowrap" style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '110%',
-                color: '#FFFFFF',
-              }}>
-                WAE unveils its award-winning design-led<br />bottling system.
-              </p>
-              
-              <InvertedHoverButton>
-                    {(hovered) => (
-                        <>
-                        <span style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "10px",
-                            lineHeight: "100%",
-                        }}>
-                            View Story
-                        </span>
-                        <div className="relative inline-block w-4 h-4">
-                            <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            />
-                            <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                            >
-                            <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                            />
-                            </motion.div>
-                        </div>
-                        </>
-                    )}
-                </InvertedHoverButton>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* EVENTS & EXHIBITIONS */}
-      <section className="px-[7.77%] py-[120px] bg-white" >
-        <div className="flex justify-between">
-            <div className="max-w-[24.5%] mr-16">
-                <h2 className="mb-4"
-                style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 700,
-                fontStyle: 'Bold',
-                fontSize: '40px',
-                lineHeight: '100%',
-                letterSpacing: '0px',
-                verticalAlign: 'middle',
-                }}>
-                Events & Exhibitions
-                </h2>
-                <p style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 300,
-                fontStyle: 'Regular',
-                fontSize: '14px',
-                lineHeight: '100%',
-                letterSpacing: '0px',
-                color: '#808080'
-                }}>
-                    It is a long established fact that a reader will be 
-                    distracted by the readable content of a page 
-                    when looking at its layout. The point of using 
-                    Lorem Ipsum is that it has a more-or-less normal 
-                    distribution of letters
+                  Recognized for breakthrough innovation in water technology.
                 </p>
+                <button className="px-6 py-3 bg-black text-white border border-black" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  transition: 'all 500ms ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = 'black';
+                  e.currentTarget.style.borderColor = 'black';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.transition = 'color 900ms ease';
+                    arrow.style.color = 'black';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'black';
+                  e.currentTarget.style.color = 'white';
+                  e.currentTarget.style.borderColor = 'black';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.color = 'white';
+                  }
+                }}>
+                  <span style={{ transition: 'color 500ms ease' }}>View Story </span>
+                  <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+                </button>
+              </div>
             </div>
-            <div className="flex items-start justify-between">
-                <div>
-                    <img className="mb-[10px]" src="https://placehold.co/260x307" alt="Placeholder"/>
-                    <div className="flex justify-between items-center mb-4"
-                    style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '12px',
-                    lineHeight: '110.00000000000001%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#C5C5C5'
-                    }}
-                    >
-                        <span>12 Nov 2024</span>
-                        <span><u>Read on FNBnews.com</u></span>
-                    </div>
-                    <div className="mb-3"
-                    style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 400,
-                        fontStyle: 'Regular',
-                        fontSize: '18px',
-                        lineHeight: '100%',
-                        letterSpacing: '0%',
-                        verticalAlign: 'middle'
-                    }}>
-                        IHE Expo 2025
-                    </div>
-                    <div className="mb-6"
-                    style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 400,
-                        fontStyle: 'Regular',
-                        fontSize: '14px',
-                        lineHeight: '110.00000000000001%',
-                        letterSpacing: '0%',
-                        verticalAlign: 'middle',
-                        color: '#C5C5C5'
-                    }}>
-                        WAE unveils its award-winning design-led<br />bottling system.
-                    </div>
-                    <HoverButton>
-                        {(hovered) => (
-                        <>
-                            <span style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "10px",
-                            lineHeight: "100%",
-                            letterSpacing: "0%",
-                            verticalAlign: "middle",
-                            }} className="md:text-[10px] md:font-medium">
-                            View Recap
-                            </span>
-                            <div className="relative inline-block w-4 h-4">
-                            <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                alt="icon default"
-                                width={16}
-                                height={16}
-                            />
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: hovered ? 1 : 0 }}
-                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                                className="absolute top-0 left-0"
-                            >
-                                <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                                />
-                            </motion.div>
-                            </div>
-                        </>
-                        )}
-                    </HoverButton>
-                </div>
-                <div className="h-px w-[41px] bg-black mt-[153.5px]"></div>
-                <div>
-                    <img className="mb-[10px]" src="https://placehold.co/260x307" alt="Placeholder"/>
-                    <div className="flex justify-between items-center mb-4"
-                    style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '12px',
-                    lineHeight: '110.00000000000001%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#C5C5C5'
-                    }}
-                    >
-                        <span>12 Nov 2024</span>
-                        <span><u>Read on FNBnews.com</u></span>
-                    </div>
-                    <div className="mb-3"
-                    style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 400,
-                        fontStyle: 'Regular',
-                        fontSize: '18px',
-                        lineHeight: '100%',
-                        letterSpacing: '0%',
-                        verticalAlign: 'middle'
-                    }}>
-                        IHE Expo 2025
-                    </div>
-                    <div className="mb-6"
-                    style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 400,
-                        fontStyle: 'Regular',
-                        fontSize: '14px',
-                        lineHeight: '110.00000000000001%',
-                        letterSpacing: '0%',
-                        verticalAlign: 'middle',
-                        color: '#C5C5C5'
-                    }}>
-                        WAE unveils its award-winning design-led<br />bottling system.
-                    </div>
-                    <HoverButton>
-                        {(hovered) => (
-                        <>
-                            <span style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "10px",
-                            lineHeight: "100%",
-                            letterSpacing: "0%",
-                            verticalAlign: "middle",
-                            }} className="md:text-[10px] md:font-medium">
-                            View Recap
-                            </span>
-                            <div className="relative inline-block w-4 h-4">
-                            <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                alt="icon default"
-                                width={16}
-                                height={16}
-                            />
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: hovered ? 1 : 0 }}
-                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                                className="absolute top-0 left-0"
-                            >
-                                <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                                />
-                            </motion.div>
-                            </div>
-                        </>
-                        )}
-                    </HoverButton>
-                </div>
-                <div className="h-px w-[41px] bg-black mt-[153.5px]"></div>
-                <div>
-                    <img className="mb-[10px]" src="https://placehold.co/260x307" alt="Placeholder"/>
-                    <div className="flex justify-between items-center mb-4"
-                    style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '12px',
-                    lineHeight: '110.00000000000001%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#C5C5C5'
-                    }}
-                    >
-                        <span>12 Nov 2024</span>
-                        <span><u>Read on FNBnews.com</u></span>
-                    </div>
-                    <div className="mb-3"
-                    style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 400,
-                        fontStyle: 'Regular',
-                        fontSize: '18px',
-                        lineHeight: '100%',
-                        letterSpacing: '0%',
-                        verticalAlign: 'middle'
-                    }}>
-                        IHE Expo 2025
-                    </div>
-                    <div className="mb-6"
-                    style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 400,
-                        fontStyle: 'Regular',
-                        fontSize: '14px',
-                        lineHeight: '110.00000000000001%',
-                        letterSpacing: '0%',
-                        verticalAlign: 'middle',
-                        color: '#C5C5C5'
-                    }}>
-                        WAE unveils its award-winning design-led<br />bottling system.
-                    </div>
-                    <HoverButton>
-                        {(hovered) => (
-                        <>
-                            <span style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "10px",
-                            lineHeight: "100%",
-                            letterSpacing: "0%",
-                            verticalAlign: "middle",
-                            }} className="md:text-[10px] md:font-medium">
-                            View Recap
-                            </span>
-                            <div className="relative inline-block w-4 h-4">
-                            <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                alt="icon default"
-                                width={16}
-                                height={16}
-                            />
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: hovered ? 1 : 0 }}
-                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                                className="absolute top-0 left-0"
-                            >
-                                <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                                />
-                            </motion.div>
-                            </div>
-                        </>
-                        )}
-                    </HoverButton>
-                </div>
+
+            {/* Smaller Image */}
+            <div style={{ width: '34.65517%' }}>
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a42c2a56-6e86-4058-f377-6eb119e82600/public"
+                alt="CII Design Excellence Award"
+                width={402}
+                height={400}
+                className="w-full h-[356px]"
+              />
+              <div className="mt-4">
+                <h3 className="mb-2" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  color: '#000000'
+                }}>
+                  CII Design Excellence Award 2025
+                </h3>
+                <p className="mb-4" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  lineHeight: '100%',
+                  color: '#00000099'
+                }}>
+                  Recognized for breakthrough innovation in water technology.
+                </p>
+                <button className="px-6 py-3 bg-black text-white border border-black" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  transition: 'all 500ms ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = 'black';
+                  e.currentTarget.style.borderColor = 'black';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.transition = 'color 900ms ease';
+                    arrow.style.color = 'black';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'black';
+                  e.currentTarget.style.color = 'white';
+                  e.currentTarget.style.borderColor = 'black';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.color = 'white';
+                  }
+                }}>
+                  <span style={{ transition: 'color 500ms ease' }}>View Story </span>
+                  <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+                </button>
+              </div>
             </div>
+          </div>
+
+          {/* Second Row: Smaller then Bigger */}
+          <div className="flex gap-8">
+            {/* Smaller Image */}
+            <div style={{ width: '34.65517%' }}>
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a42c2a56-6e86-4058-f377-6eb119e82600/public"
+                alt="CII Design Excellence Award"
+                width={718}
+                height={356}
+                className="w-full h-356"
+              />
+              <div className="mt-4">
+                <h3 className="mb-2" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  color: '#000000'
+                }}>
+                  CII Design Excellence Award 2025
+                </h3>
+                <p className="mb-4" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  lineHeight: '100%',
+                  color: '#00000099'
+                }}>
+                  Recognized for breakthrough innovation in water technology.
+                </p>
+                <button className="px-6 py-3 bg-black text-white border border-black" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  transition: 'all 500ms ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = 'black';
+                  e.currentTarget.style.borderColor = 'black';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.transition = 'color 900ms ease';
+                    arrow.style.color = 'black';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'black';
+                  e.currentTarget.style.color = 'white';
+                  e.currentTarget.style.borderColor = 'black';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.color = 'white';
+                  }
+                }}>
+                  <span style={{ transition: 'color 500ms ease' }}>View Story </span>
+                  <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Bigger Image */}
+            <div style={{ width: '61.89655%' }}>
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f91b85c6-cabd-4e8e-af67-d80e0d161a00/public"
+                alt="CII Design Excellence Award"
+                width={717}
+                height={400}
+                className="w-full h-[356px]"
+              />
+              <div className="mt-4">
+                <h3 className="mb-2" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  color: '#000000'
+                }}>
+                  CII Design Excellence Award 2025
+                </h3>
+                <p className="mb-4" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  lineHeight: '100%',
+                  color: '#00000099'
+                }}>
+                  Recognized for breakthrough innovation in water technology.
+                </p>
+                <button className="px-6 py-3 bg-black text-white border border-black" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  transition: 'all 500ms ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = 'black';
+                  e.currentTarget.style.borderColor = 'black';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.transition = 'color 900ms ease';
+                    arrow.style.color = 'black';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'black';
+                  e.currentTarget.style.color = 'white';
+                  e.currentTarget.style.borderColor = 'black';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.color = 'white';
+                  }
+                }}>
+                  <span style={{ transition: 'color 500ms ease' }}>View Story </span>
+                  <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-      
+
 
         {/* FOOTER SECTION */}
-        {/* Footer likely appears at the very bottom */}
-        {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
-        {/* NOTE: Adjust padding/margins if this section's height + content interferes with snapping */}
-        <div style={{ position: "relative", zIndex: 1200 }}> {/* z-index to appear above the gray background */}
-          {/* Assuming Footer is a valid component */}
+        <div style={{ position: "relative", zIndex: 1200 }}>
           <Footer />
         </div>
 
