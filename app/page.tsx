@@ -1020,38 +1020,48 @@ const Home: FC = () => {
                   height={232}
                 />
               </td>
-              <td className="product-cell"> {/* Custom CSS class - Text cell */}
-                <div className="flex flex-col items-center justify-center h-full">
-                  <p
-                    style={{
-                      fontFamily: 'Inter Tight',
-                      fontWeight: 700,
-                      fontStyle: 'Bold',
-                      fontSize: '14px',
-                      lineHeight: '100%',
-                      letterSpacing: '0px',
-                      textAlign: 'center',
-                      verticalAlign: 'middle',
-                      textTransform: 'uppercase'
-                    }}
-                  >
-                    WAEAU
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: 'Inter Tight',
-                      fontWeight: 400,
-                      fontStyle: 'Regular',
-                      fontSize: '14px',
-                      lineHeight: '100%',
-                      letterSpacing: '0px',
-                      textAlign: 'center',
-                      verticalAlign: 'middle',
-                      textTransform: 'uppercase'
-                    }}
-                  >
-                    SMALL RO UNITS
-                  </p>
+              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class - Text cell */}
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <p
+                      style={{
+                        fontFamily: 'Inter Tight',
+                        fontWeight: 700,
+                        fontStyle: 'Bold',
+                        fontSize: '14px',
+                        lineHeight: '100%',
+                        letterSpacing: '0px',
+                        textAlign: 'center',
+                        verticalAlign: 'middle',
+                        textTransform: 'uppercase'
+                      }}
+                    >
+                      WAEAU
+                    </p>
+                    <p
+                      style={{
+                        fontFamily: 'Inter Tight',
+                        fontWeight: 400,
+                        fontStyle: 'Regular',
+                        fontSize: '14px',
+                        lineHeight: '100%',
+                        letterSpacing: '0px',
+                        textAlign: 'center',
+                        verticalAlign: 'middle',
+                        textTransform: 'uppercase'
+                      }}
+                    >
+                      SMALL RO UNITS
+                    </p>
+                  </div>
+                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
+                      alt="Left arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
                 </div>
               </td>
               <td className="product-cell"> {/* Custom CSS class - Image cell */}
