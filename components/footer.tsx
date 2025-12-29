@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#f2f2f2] w-full">
       <hr style={{ border: "1px solid #00000033" }} />
-      <div className="mx-auto w-full max-w-[1440px] px-[4.44%] pt-0 md:px-[8.75rem] md:pt-[5rem] pb-6 md:py-6">
+      <div className="mx-auto w-full max-w-[1440px] px-[4.44%] pt-0 md:px-[8.75rem] md:pt-[24px] pb-6 md:py-6">
 
         {/* Newsletter Signup Form - Right Aligned */}
         <div className="flex justify-end mb-8 md:mb-[64px]">
@@ -178,10 +178,10 @@ export default function Footer() {
                 className="space-y-2 ml-[-6%] mb-0 md:mb-[5rem] block font-[Inter_Tight] font-normal text-[12px] leading-[100%] tracking-[0px]"
               >
                 <li>
-                  <Link href="/sustainability">Sustainability</Link>
+                  <Link href="/the-activist-co">The Activist Co.</Link>
                 </li>
                 <li>
-                  <Link href="/the-activist-co">The Activist Co.</Link>
+                  <Link href="#">Resouces</Link>
                 </li>
                 <li>
                   <Link href="/blogs2">Blogs</Link>

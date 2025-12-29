@@ -607,7 +607,7 @@ export default function Home() {
           
           <div className="grid grid-cols-4 gap-x-[2.22%] justify-between">
             {/* Writer 1 - ADITI SHARMA */}
-            <div className="text-left">
+            <div className="text-left flex flex-col h-full">
               <Link href="/aditi-sharma" className="block">
                 <div className="relative w-[250px] h-auto mb-8">
                   <Image
@@ -653,9 +653,9 @@ export default function Home() {
                   color: "#666",
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
+                Aditi Sharma explores sustainability and climate change with a focus on climate action and environmental responsibility. With over two years of professional experience, her work connects research, corporate sustainability practices, and strategic communication to frame sustainability as a critical environmental and societal priority.
               </p>
-              <Link href="/aditi-sharma">
+              <Link href="/aditi-sharma" className="mt-auto">
                 <span
                   className="cursor-pointer"
                   style={{
@@ -671,7 +671,7 @@ export default function Home() {
             </div>
 
             {/* Writer 2 - REHNUMA ANSARI */}
-            <div className="text-left">
+            <div className="text-left flex flex-col h-full">
               <Link href="/rehnuma-ansari" className="block">
                 <div className="relative w-[250px] h-auto mb-8">
                   <Image
@@ -717,9 +717,9 @@ export default function Home() {
                   color: "#666",
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
+                Ms. Rehnuma explores water conservation with a focus on groundwater, agriculture, and sustainability in India. With over 1.5 years of experience, her work connects research, policy context, and on-ground realities to frame water management as a social and economic issue.
               </p>
-              <Link href="/rehnuma-ansari">
+              <Link href="https://www.linkedin.com/in/rehnumashakir/" className="mt-auto">
                 <span
                   className="cursor-pointer"
                   style={{
@@ -735,7 +735,7 @@ export default function Home() {
             </div>
 
             {/* Writer 3 - SHAMBHAVI */}
-            <div className="text-left">
+            <div className="text-left flex flex-col h-full">
               <Link href="/shambhavi" className="block">
                 <div className="relative w-[250px] h-auto mb-8">
                   <Image
@@ -783,7 +783,7 @@ export default function Home() {
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
               </p>
-              <Link href="/shambhavi">
+              <Link href="/shambhavi" className="mt-auto">
                 <span
                   className="cursor-pointer"
                   style={{
@@ -799,7 +799,7 @@ export default function Home() {
             </div> 
 
             {/* Writer 4 - SHAMBHAVI */}
-            <div className="text-left">
+            <div className="text-left flex flex-col h-full">
               <Link href="/shambhavi" className="block">
                 <div className="relative w-[250px] h-auto mb-8">
                   <Image
@@ -847,7 +847,7 @@ export default function Home() {
               >
                 Ms. Shambhavi Yadav explores sustainability, policy, and governance through a research-led lens. A seasoned professional with over 7 years of experience, she is NET qualified, a graduate from LSR, DU, and is a 3-time KPMG scholar and gold medalist. Through her work, she seeks to craft writing that informs and inspires.
               </p>
-              <Link href="/shambhavi">
+              <Link href="https://in.linkedin.com/in/shambhavi-yadav-61b937276" className="mt-auto">
                 <span
                   className="cursor-pointer"
                   style={{

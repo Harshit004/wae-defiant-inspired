@@ -1505,16 +1505,16 @@ const Home: FC = () => {
                   textDecorationSkipInk: 'auto',
                   justifyContent: 'space-between'
                 }}>Read Article </span>
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '12px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  justifyContent: 'space-between'
-                }}>&gt;</span>
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                  alt="Chevron Right"
+                  width={16}
+                  height={16}
+                  style={{
+                    marginLeft: '5px',
+                    justifyContent: 'space-between'
+                  }}
+                />
               </div>
             </div>
 
@@ -1558,16 +1558,16 @@ const Home: FC = () => {
                   textDecorationSkipInk: 'auto',
                   justifyContent: 'space-between'
                 }}>Read Article </span>
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '12px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  justifyContent: 'space-between'
-                }}>&gt;</span>
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                  alt="Chevron Right"
+                  width={16}
+                  height={16}
+                  style={{
+                    marginLeft: '5px',
+                    justifyContent: 'space-between'
+                  }}
+                />
               </div>
             </div>
 
@@ -1611,16 +1611,16 @@ const Home: FC = () => {
                   textDecorationSkipInk: 'auto',
                   justifyContent: 'space-between'
                 }}>Read Article </span>
-                <span style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '12px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  justifyContent: 'space-between'
-                }}>&gt;</span>
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                  alt="Chevron Right"
+                  width={16}
+                  height={16}
+                  style={{
+                    marginLeft: '5px',
+                    justifyContent: 'space-between'
+                  }}
+                />
               </div>
             </div>
             
