@@ -175,7 +175,7 @@ export default function Footer() {
                 className="hidden md:block w-full border-t border-[#D9D9DC] mt-4 mb-4"
               />
               <ul
-                className="space-y-2 ml-[-6%] mb-0 md:mb-[5rem] block font-[Inter_Tight] font-normal text-[12px] leading-[100%] tracking-[0px]"
+                className="space-y-2  mb-0 md:mb-[5rem] block font-[Inter_Tight] font-normal text-[12px] leading-[100%] tracking-[0px]"
               >
                 <li>
                   <Link href="/the-activist-co">The Activist Co.</Link>
@@ -198,7 +198,7 @@ export default function Footer() {
                   H-18, H block, Sector 63, Noida, Uttar Pradesh, India, 201301
                 </div>
                 <div
-                  className="font-[Inter_Tight] font-normal text-[0.56rem] leading-[100%] tracking-[0px] text-[#00000099] ml-[7.7rem] flex-shrink-0"
+                  className="font-[Inter_Tight] font-normal text-[0.56rem] leading-[100%] tracking-[0px] text-[#00000099] ml-[9.7rem] flex-shrink-0"
                 >
                   +120 4069800
                 </div>
