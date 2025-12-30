@@ -1,0 +1,576 @@
+"use client"
+
+import type { FC } from "react"
+import type React from "react"
+import { useEffect, useState, useRef } from "react"
+import Image from "next/image"
+import { motion } from "framer-motion"
+import Footer from "@/components/footer"
+import Link from "next/link"
+import ConnectWithUs from "@/components/connect-with-us"
+
+// --- NEW MOBILE HEADER COMPONENT ---
+interface MobileHeaderProps {
+  productsItems: { text: string; href: string }[];
+  blueprintItems: { text: string; href: string; }[];
+}
+
+const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintItems }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = ''; // Cleanup on unmount
+    };
+  }, [isMobileMenuOpen]);
+
+  return (
+    <>
+      {/* Fixed Mobile Header Bar (Visible only on small screens) */}
+      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-black/10 md:hidden ">
+        {/* Mobile Logo */}
+        <Link href="/">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce113ad4-0a6b-43dd-066c-26769520d000/public"
+            alt="WAE Logo Mobile"
+            width={40}
+            height={40}
+          />
+        </Link>
+        {/* Hamburger Menu Icon */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="flex flex-col justify-around w-6 h-5 relative z-50 focus:outline-none"
+          aria-label="Toggle mobile menu"
+        >
+          {/* Hamburger lines - always black for visibility on white background */}
+          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? 'rotate-45 translate-x-1.5 translate-y-1.5' : ''}`}></span>
+          {/* <span className={`block h-0.5 w-full bg-black transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span> */}
+          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? '-rotate-45 translate-x-1.5 -translate-y-1.5' : ''}`}></span>
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay (Slides in from right) */}
+      <div
+        className={`fixed inset-0 bg-black z-40 flex flex-col items-start pt-[80px] pb-5 px-4 md:hidden transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+
+        {/* Menu Items - THIS IS THE CHANGE */}
+        {/* Changed flex-col to flex-row and added flex-wrap for multiple rows if needed */}
+        {/* Also adjusted spacing and alignment for a horizontal layout */}
+        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full mb-8">
+          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Inside WAE</h3>
+          {productsItems.map((item, i) => (
+            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              {item.text}
+            </Link>
+          ))}
+        </div>
+        <div className="w-full h-px bg-[#D9D9DC] mb-8" /> {/* Divider */}
+        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full">
+          <h3 className="text-white text-xs font-semibold uppercase mb-2 font-['Inter Tight', sans-serif] w-full">Etcetera</h3>
+          {blueprintItems.map((item, i) => (
+            <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-medium font-['Inter Tight', sans-serif] leading-[110%]">
+              {item.text}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+// --- END NEW MOBILE HEADER COMPONENT ---
+
+
+// Shared container class for consistent margins and max-width
+const containerClass = "mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-[140px]";
+
+/**
+ * Reusable hover button component.
+ */
+interface HoverButtonProps {
+  children: (hovered: boolean) => React.ReactNode;
+  href?: string;
+}
+
+const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
+  const [hovered, setHovered] = useState<boolean>(false);
+
+  const buttonContent = (
+    <button
+      type="button"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="w-fit px-4 py-3 transition-all duration-650 ease"
+      style={{
+        pointerEvents: "auto",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "8px",
+        fontFamily: "'Inter Tight', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
+        lineHeight: "100%",
+        textTransform: "uppercase",
+        backgroundColor: hovered ? "#000" : "#f2f2f2",
+        border: "1px solid #000",
+        cursor: "pointer",
+        color: hovered ? "#fff" : "#000",
+      }}
+    >
+      {children(hovered)}
+    </button>
+  );
+
+  return href ? (
+      href.startsWith('#') ? (
+        <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }}>{buttonContent}</a>
+      ) : (
+        <Link href={href} className="contents">{buttonContent}</Link>
+      )
+    ) : buttonContent;
+};
+
+
+export default function Home() {
+  const [activeSection, setActiveSection] = useState(0)
+  const [currentTime, setCurrentTime] = useState("")
+  const [headerHeight, setHeaderHeight] = useState(0)
+  const headerRef = useRef<HTMLDivElement>(null)
+
+  const [taglineVisible, setTaglineVisible] = useState(true)
+  const prevScrollY = useRef(0)
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+        ease: "easeInOut",
+      },
+    },
+  }
+  const childVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      setTaglineVisible(currentScrollY < prevScrollY.current)
+      prevScrollY.current = currentScrollY
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [])
+
+  useEffect(() => {
+    const updateIndiaTime = () => {
+      const options: Intl.DateTimeFormatOptions = {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+        timeZone: "Asia/Kolkata",
+      }
+      setCurrentTime(new Date().toLocaleTimeString("en-US", options))
+    }
+    updateIndiaTime()
+    const interval = setInterval(updateIndiaTime, 60000)
+    return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.clientHeight);
+      }
+    };
+    updateHeaderHeight();
+    window.addEventListener("resize", updateHeaderHeight);
+    return () => window.removeEventListener("resize", updateHeaderHeight);
+  }, []);
+
+  const productsItems = [
+    { text: "This is Us", href: "/inside-wae" },
+    { text: "Our Portfolio", href: "/our-portfolio" },
+    { text: "Reimagine Work", href: "/careers3" },
+  ]
+  const blueprintItems = [
+    { text: "Sustainability", href: "/sustainability" },
+    { text: "The Activist Co.", href: "/the-activist-co" },
+    { text: "Blog", href: "/blogs2" },
+  ]
+  const lineCount = Math.min(productsItems.length, blueprintItems.length)
+
+  const resourceCards = [
+    "BLUWAE Series",
+    "TRUBLU Series",
+    "ZVR Series",
+    "PUS Series",
+    "WATERMATIC Series",
+    "WAEAU Series",
+    "AUX Series",
+    "GBP Series",
+  ]
+
+  return (
+    <main className="relative pb-[40px]">
+      {/* RENDER MOBILE HEADER COMPONENT HERE (only on small screens) */}
+      <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
+
+      {/* DESKTOP HEADER (Hidden on small screens) */}
+      {/* Removed mb-5 to allow hero to start immediately after it */}
+      <header ref={headerRef} className={`w-full bg-white relative z-10 hidden md:block md:pb-[20px]`}>
+        <div className={containerClass}>
+          {/* Top Row: Navigation */}
+          <div
+            className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "12px",
+              lineHeight: "100%",
+              letterSpacing: "0px",
+            }}
+          >
+            <div>IDENTITY</div>
+            <div>ORIGIN</div>
+            <div>OBJECTIVE</div>
+            <div>INSIDE WAE</div>
+            <div>ETCETERA</div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+
+          {/* Bottom Row: Logo, Tagline and Menu Items */}
+          <div className="grid grid-cols-5 items-start">
+            {/* Logo */}
+            <div className="flex flex-col justify-center">
+              <Link href="/">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                  alt="WAE Logo"
+                  width={78}
+                  height={82}
+                />
+              </Link>
+            </div>
+
+            {/* Coordinates */}
+            <div
+              className="flex flex-col justify-center inline-block mr-1"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "11px",
+                lineHeight: "100%",
+                color: "#000000",
+              }}
+            >
+              20.5937° N
+              <br />
+              78.9629° E
+            </div>
+
+            {/* Tagline */}
+            <div
+              className="flex flex-col justify-center inline-block mr-1"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "11px",
+                lineHeight: "100%",
+                color: "#000000",
+              }}
+            >
+              To lead the way in<br />sustainability ahead of the<br />rest
+            </div>
+
+            {/* Inside WAE Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {productsItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents">
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
+                      </div>
+                      <span className="menu-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+            {/* ETCETERA Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {blueprintItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents">
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
+                      </div>
+                      <span className="menu-arrow blueprint-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* HERO SECTION*/}
+      <div className="bg-black py-[144px] px-[16.94%]">
+        <h2 className="mb-3"
+        style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 500,
+          fontStyle: "Medium",
+          fontSize: "58px",
+          lineHeight: "110.00000000000001%",
+          letterSpacing: "0%",
+          textAlign: "center",
+          verticalAlign: "middle",
+          color: "white"
+        }}>
+          Latest from WAE
+        </h2>
+        <h2 className="mb-8"
+        style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 400,
+          fontStyle: "Regular",
+          fontSize: "24px",
+          lineHeight: "110.00000000000001%",
+          letterSpacing: "0%",
+          textAlign: "center",
+          verticalAlign: "middle",
+          color: "white"
+        }}>
+          Official announcements, media coverage, awards, and events that define our journey toward sustainable transformation.
+        </h2>
+            <div className="flex justify-center">
+                <button className="px-6 py-3 bg-white text-black border border-black" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  transition: 'all 500ms ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'black';
+                  e.currentTarget.style.color = 'white';
+                  e.currentTarget.style.borderColor = 'white';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.transition = 'color 900ms ease';
+                    arrow.style.color = 'white';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'white';
+                  e.currentTarget.style.color = 'black';
+                  e.currentTarget.style.borderColor = 'black';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.color = 'black';
+                  }
+                }}>
+                  <span style={{ transition: 'color 500ms ease' }}>Explore All Updates </span>
+                  <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+                </button>
+            </div>
+      </div>
+
+      {/* RESOURCES SECTION */}
+      <div className="px-[9.72%] py-[100px]">
+        <h2 className="mb-10"
+        style={{
+          fontFamily: 'Inter Tight',
+          fontWeight: 500,
+          fontStyle: 'medium',
+          fontSize: '40px',
+          lineHeight: '110.00000000000001%',
+          letterSpacing: '0px',
+          verticalAlign: 'middle',
+        }}>
+          Resources
+        </h2>
+
+        {/* Resources Grid */}
+
+        <div className="grid grid-cols-1 gap-x-[40px] gap-y-[40px] md:grid-cols-3">
+          {resourceCards.map((title) => (
+            <div key={title} className="flex flex-col items-center">
+              <div className="relative w-full overflow-hidden">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
+                  alt={title}
+                  width={456}
+                  height={304}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+              <h3
+                className="mt-[20px] text-center"
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 400,
+                  fontStyle: 'Regular',
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                }}
+              >
+                {title}
+              </h3>
+              <button className="mt-[24px] px-6 py-3 bg-black text-white border border-black" style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  transition: 'all 500ms ease',
+                  cursor: 'pointer',
+                  width: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = 'black';
+                  e.currentTarget.style.borderColor = 'black';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.transition = 'color 900ms ease';
+                    arrow.style.color = 'black';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'black';
+                  e.currentTarget.style.color = 'white';
+                  e.currentTarget.style.borderColor = 'black';
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  if (arrow) {
+                    arrow.style.color = 'white';
+                  }
+                }}>
+                  <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+                  <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+                </button>
+            </div>
+          ))}
+        </div>
+
+      </div>
+
+      {/* FOOTER SECTION */}
+      <div style={{ position: "relative", zIndex: 10 }}>
+        <Footer />
+      </div>
+
+      {/* INLINE CSS for hover and arrow animations */}
+      <style jsx>{`
+        .c--anim-btn {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+        .text-container {
+          height: 12px;
+          overflow: hidden;
+        }
+        .c-anim-btn {
+          display: block;
+          margin-top: 0;
+          transition: margin-top 0.5s;
+        }
+        .c--anim-btn:hover .c-anim-btn {
+          margin-top: -12px;
+        }
+        .menu-arrow {
+          display: inline-block;
+          opacity: 0;
+          transform: translateX(-10px);
+          transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .c--anim-btn:hover .menu-arrow {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        .blueprint-arrow {
+          transform: rotate(-45deg) translateX(-10px);
+        }
+        .c--anim-btn:hover .blueprint-arrow {
+          transform: rotate(-45deg) translateX(0);
+          opacity: 1;
+        }
+      `}</style>
+
+       {/* Global Styles */}
+      <style jsx global>{`
+        html {
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+      `}</style>
+    </main>
+  )
+}
