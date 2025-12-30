@@ -441,7 +441,7 @@ const Home: FC = () => {
           News & Press Release
         </h2>
 
-        <p className="mb-15" style={{
+        <p style={{
           fontFamily: 'Inter Tight',
           fontWeight: 400,
           fontStyle: 'Regular',
@@ -455,7 +455,9 @@ const Home: FC = () => {
         </p>
 
         {/* News flash */}
-        <NewsGrid />
+        <div className="mt-[60px]">
+          <NewsGrid />
+        </div>
 
        
       </section>
