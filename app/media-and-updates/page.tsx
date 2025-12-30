@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer"; // Still used for Hero 
 import RelatedCard from "@/components/related-card"; // Assuming this component exists
 import Footer from "@/components/footer"; // Assuming this component exists
 import Link from "next/link";
+import NewsGrid from "@/components/news-grid"
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
@@ -453,7 +454,8 @@ const Home: FC = () => {
           layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
         </p>
 
-
+        {/* News flash */}
+        <NewsGrid />
 
        
       </section>
