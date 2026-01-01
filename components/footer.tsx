@@ -181,7 +181,7 @@ export default function Footer() {
                   <Link href="/the-activist-co">The Activist Co.</Link>
                 </li>
                 <li>
-                  <Link href="#">Resources</Link>
+                  <Link href="/resource-listing">Resources</Link>
                 </li>
                 <li>
                   <Link href="/blogs2">Blogs</Link>

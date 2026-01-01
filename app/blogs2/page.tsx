@@ -683,7 +683,7 @@ export default function Home() {
                   />
                 </div>
               </Link>
-              <Link href="/rehnuma-ansari">
+              <Link href="https://www.linkedin.com/in/rehnumashakir/">
                 <h3 
                   className="uppercase mb-2 cursor-pointer"
                   style={{
@@ -734,20 +734,20 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Writer 3 - SHAMBHAVI */}
+            {/* Writer 3 - RASHI TARIKA */}
             <div className="text-left flex flex-col h-full">
               <Link href="/shambhavi" className="block">
                 <div className="relative w-[250px] h-auto mb-8">
                   <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
-                    alt="Shamishavi"
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b6642388-9861-4396-d81f-219b1cd51100/public"
+                    alt="Rashi Tarika"
                     width={266}
                     height={266}
                     className="rounded-full object-cover grayscale cursor-pointer"
                   />
                 </div>
               </Link>
-              <Link href="/shambhavi">
+              <Link href="https://www.linkedin.com/in/rashi-tarika-89727a43/">
                 <h3 
                   className="uppercase mb-2 cursor-pointer"
                   style={{
@@ -757,7 +757,7 @@ export default function Home() {
                     lineHeight: "100%",
                   }}
                 >
-                  SHAMBHAVI
+                  RASHI TARIKA
                 </h3>
               </Link>
               <p 
@@ -783,7 +783,7 @@ export default function Home() {
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
               </p>
-              <Link href="/shambhavi" className="mt-auto">
+              <Link href="https://www.linkedin.com/in/rashi-tarika-89727a43/" className="mt-auto">
                 <span
                   className="cursor-pointer"
                   style={{
@@ -804,14 +804,14 @@ export default function Home() {
                 <div className="relative w-[250px] h-auto mb-8">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public"
-                    alt="Shamishavi"
+                    alt="Shambhavi"
                     width={266}
                     height={266}
                     className="rounded-full object-cover grayscale cursor-pointer"
                   />
                 </div>
               </Link>
-              <Link href="/shambhavi">
+              <Link href="https://in.linkedin.com/in/shambhavi-yadav-61b937276">
                 <h3 
                   className="uppercase mb-2 cursor-pointer"
                   style={{
@@ -868,7 +868,7 @@ export default function Home() {
       </section>
 
       {/* View All Writers Button */}
-      <section className="mb-20">
+      {/* <section className="mb-20">
         <div className="flex justify-center">
           <Link href="/our-writers">
             <button
@@ -904,7 +904,7 @@ export default function Home() {
             </button>
           </Link>
         </div>
-      </section>
+      </section> */}
 
       {/* ================= FOOTER ================= */}
       <Footer />

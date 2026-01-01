@@ -209,17 +209,6 @@ export default function Home() {
   ]
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
-  const resourceCards = [
-    "BLUWAE Series",
-    "TRUBLU Series",
-    "ZVR Series",
-    "PUS Series",
-    "WATERMATIC Series",
-    "WAEAU Series",
-    "AUX Series",
-    "GBP Series",
-  ]
-
   return (
     <main className="relative pb-[40px]">
       {/* RENDER MOBILE HEADER COMPONENT HERE (only on small screens) */}
@@ -457,64 +446,479 @@ export default function Home() {
         {/* Resources Grid */}
 
         <div className="grid grid-cols-1 gap-x-[40px] gap-y-[40px] md:grid-cols-3">
-          {resourceCards.map((title) => (
-            <div key={title} className="flex flex-col items-center">
-              <div className="relative w-full overflow-hidden">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
-                  alt={title}
-                  width={456}
-                  height={304}
-                  className="h-auto w-full object-cover"
-                />
-              </div>
-              <h3
-                className="mt-[20px] text-center"
+          <div className="flex flex-col items-center">
+            <div className="relative w-full overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
+                alt="BLUWAE Series"
+                width={456}
+                height={304}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <h3
+              className="mt-[20px] text-center"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '18px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+              }}
+            >
+              BLUWAE Series
+            </h3>
+            <Link className="w-full" href="#">
+              <button
+              className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
                 style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                }}
-              >
-                {title}
-              </h3>
-              <button className="mt-[24px] px-6 py-3 bg-black text-white border border-black" style={{
                   fontFamily: 'Inter Tight',
                   fontWeight: 500,
                   fontSize: '12px',
                   lineHeight: '100%',
                   transition: 'all 500ms ease',
                   cursor: 'pointer',
-                  width: '100%'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = 'black';
-                  e.currentTarget.style.borderColor = 'black';
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  e.currentTarget.style.backgroundColor = 'transparent'
+                  e.currentTarget.style.color = 'black'
+                  e.currentTarget.style.borderColor = 'black'
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
                   if (arrow) {
-                    arrow.style.transition = 'color 900ms ease';
-                    arrow.style.color = 'black';
+                    arrow.style.transition = 'color 900ms ease'
+                    arrow.style.color = 'black'
                   }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'black';
-                  e.currentTarget.style.color = 'white';
-                  e.currentTarget.style.borderColor = 'black';
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                  e.currentTarget.style.backgroundColor = 'black'
+                  e.currentTarget.style.color = 'white'
+                  e.currentTarget.style.borderColor = 'black'
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
                   if (arrow) {
-                    arrow.style.color = 'white';
+                    arrow.style.color = 'white'
                   }
-                }}>
-                  <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
-                  <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
-                </button>
+                }}
+              >
+                <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+                <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+              </button>
+            </Link>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="relative w-full overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
+                alt="TRUBLU Series"
+                width={456}
+                height={304}
+                className="h-auto w-full object-cover"
+              />
             </div>
-          ))}
+            <h3
+              className="mt-[20px] text-center"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '18px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+              }}
+            >
+              TRUBLU Series
+            </h3>
+            <button
+              className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 500,
+                fontSize: '12px',
+                lineHeight: '100%',
+                transition: 'all 500ms ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = 'black'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.transition = 'color 900ms ease'
+                  arrow.style.color = 'black'
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'black'
+                e.currentTarget.style.color = 'white'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.color = 'white'
+                }
+              }}
+            >
+              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+            </button>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="relative w-full overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
+                alt="ZVR Series"
+                width={456}
+                height={304}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <h3
+              className="mt-[20px] text-center"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '18px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+              }}
+            >
+              ZVR Series
+            </h3>
+            <button
+              className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 500,
+                fontSize: '12px',
+                lineHeight: '100%',
+                transition: 'all 500ms ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = 'black'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.transition = 'color 900ms ease'
+                  arrow.style.color = 'black'
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'black'
+                e.currentTarget.style.color = 'white'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.color = 'white'
+                }
+              }}
+            >
+              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+            </button>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="relative w-full overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
+                alt="PUS Series"
+                width={456}
+                height={304}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <h3
+              className="mt-[20px] text-center"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '18px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+              }}
+            >
+              PUS Series
+            </h3>
+            <button
+              className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 500,
+                fontSize: '12px',
+                lineHeight: '100%',
+                transition: 'all 500ms ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = 'black'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.transition = 'color 900ms ease'
+                  arrow.style.color = 'black'
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'black'
+                e.currentTarget.style.color = 'white'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.color = 'white'
+                }
+              }}
+            >
+              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+            </button>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="relative w-full overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
+                alt="WATERMATIC Series"
+                width={456}
+                height={304}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <h3
+              className="mt-[20px] text-center"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '18px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+              }}
+            >
+              WATERMATIC Series
+            </h3>
+            <button
+              className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 500,
+                fontSize: '12px',
+                lineHeight: '100%',
+                transition: 'all 500ms ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = 'black'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.transition = 'color 900ms ease'
+                  arrow.style.color = 'black'
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'black'
+                e.currentTarget.style.color = 'white'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.color = 'white'
+                }
+              }}
+            >
+              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+            </button>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="relative w-full overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
+                alt="WAEAU Series"
+                width={456}
+                height={304}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <h3
+              className="mt-[20px] text-center"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '18px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+              }}
+            >
+              WAEAU Series
+            </h3>
+            <button
+              className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 500,
+                fontSize: '12px',
+                lineHeight: '100%',
+                transition: 'all 500ms ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = 'black'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.transition = 'color 900ms ease'
+                  arrow.style.color = 'black'
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'black'
+                e.currentTarget.style.color = 'white'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.color = 'white'
+                }
+              }}
+            >
+              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+            </button>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="relative w-full overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
+                alt="AUX Series"
+                width={456}
+                height={304}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <h3
+              className="mt-[20px] text-center"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '18px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+              }}
+            >
+              AUX Series
+            </h3>
+            <button
+              className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 500,
+                fontSize: '12px',
+                lineHeight: '100%',
+                transition: 'all 500ms ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = 'black'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.transition = 'color 900ms ease'
+                  arrow.style.color = 'black'
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'black'
+                e.currentTarget.style.color = 'white'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.color = 'white'
+                }
+              }}
+            >
+              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+            </button>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="relative w-full overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
+                alt="GBP Series"
+                width={456}
+                height={304}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <h3
+              className="mt-[20px] text-center"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '18px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+              }}
+            >
+              GBP Series
+            </h3>
+            <button
+              className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
+              style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 500,
+                fontSize: '12px',
+                lineHeight: '100%',
+                transition: 'all 500ms ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = 'black'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.transition = 'color 900ms ease'
+                  arrow.style.color = 'black'
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'black'
+                e.currentTarget.style.color = 'white'
+                e.currentTarget.style.borderColor = 'black'
+                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                if (arrow) {
+                  arrow.style.color = 'white'
+                }
+              }}
+            >
+              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+            </button>
+          </div>
         </div>
 
       </div>
