@@ -445,7 +445,7 @@ export default function Home() {
         </h2>
 
         {/* FILTERS */}
-        <div className="mb-[40px]">
+        <div className="mb-[16px]">
           <div className="grid grid-cols-6 w-full">
             {["IMAGE LIBRARY", "SOCIAL MEDIA LIBRARY", "BROCHURE LIBRARY", "VIDEO LIBRARY", "TECHNICAL DATA SHEETS", "OPERATION MANUALS"].map((filter, index) => (
               <button
@@ -472,6 +472,8 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+        <hr className="mb-[39px]" style={{ border: '0.67px solid #00000066' }} />
 
 
         {/* Resources Grid */}
