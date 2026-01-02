@@ -143,6 +143,7 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState("")
   const [headerHeight, setHeaderHeight] = useState(0)
   const headerRef = useRef<HTMLDivElement>(null)
+  const [activeFilter, setActiveFilter] = useState<number>(2)
 
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
@@ -428,9 +429,9 @@ export default function Home() {
             </div>
       </div>
 
-      {/* RESOURCES SECTION */}
+      {/* BLUWAE RESOURCES SECTION */}
       <div className="px-[9.72%] py-[100px]">
-        <h2 className="mb-10"
+        <h2 className="mb-[40px]"
         style={{
           fontFamily: 'Inter Tight',
           fontWeight: 500,
@@ -440,8 +441,38 @@ export default function Home() {
           letterSpacing: '0px',
           verticalAlign: 'middle',
         }}>
-          Resources
+          BLUWAE Series
         </h2>
+
+        {/* FILTERS */}
+        <div className="mb-[40px]">
+          <div className="grid grid-cols-6 w-full">
+            {["IMAGE LIBRARY", "SOCIAL MEDIA LIBRARY", "BROCHURE LIBRARY", "VIDEO LIBRARY", "TECHNICAL DATA SHEETS", "OPERATION MANUALS"].map((filter, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveFilter(index)}
+                className={`py-3 px-4 transition-all duration-300 ${
+                  activeFilter === index 
+                    ? 'bg-black text-white border-none' 
+                    : 'bg-transparent text-black'
+                }`}
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 400,
+                  fontSize: '12px',
+                  lineHeight: '12px',
+                  letterSpacing: '0%',
+                  textAlign: 'center',
+                  textTransform: 'uppercase',
+                  borderRight: activeFilter === index || index === 5 ? 'none' : '1px solid #C5C5C5',
+                }}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+        </div>
+
 
         {/* Resources Grid */}
 
@@ -450,7 +481,7 @@ export default function Home() {
             <div className="relative w-full overflow-hidden">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
-                alt="BLUWAE Series"
+                alt="VAR"
                 width={456}
                 height={304}
                 className="h-auto w-full object-cover"
@@ -468,10 +499,9 @@ export default function Home() {
                 verticalAlign: 'middle',
               }}
             >
-              BLUWAE Series
+              VAR
             </h3>
-            <Link className="w-full" href="/bluwae-series-resources">
-              <button
+            <button
               className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
                 style={{
                   fontFamily: 'Inter Tight',
@@ -501,17 +531,16 @@ export default function Home() {
                   }
                 }}
               >
-                <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+                <span style={{ transition: 'color 500ms ease' }}>View Products </span>
                 <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
               </button>
-            </Link>
           </div>
 
           <div className="flex flex-col items-center">
             <div className="relative w-full overflow-hidden">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
-                alt="TRUBLU Series"
+                alt="POS"
                 width={456}
                 height={304}
                 className="h-auto w-full object-cover"
@@ -529,7 +558,7 @@ export default function Home() {
                 verticalAlign: 'middle',
               }}
             >
-              TRUBLU Series
+              POS
             </h3>
             <button
               className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
@@ -561,7 +590,7 @@ export default function Home() {
                 }
               }}
             >
-              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span style={{ transition: 'color 500ms ease' }}>View Products </span>
               <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
             </button>
           </div>
@@ -570,7 +599,7 @@ export default function Home() {
             <div className="relative w-full overflow-hidden">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
-                alt="ZVR Series"
+                alt="ROM"
                 width={456}
                 height={304}
                 className="h-auto w-full object-cover"
@@ -588,7 +617,7 @@ export default function Home() {
                 verticalAlign: 'middle',
               }}
             >
-              ZVR Series
+              ROM
             </h3>
             <button
               className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
@@ -620,7 +649,7 @@ export default function Home() {
                 }
               }}
             >
-              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span style={{ transition: 'color 500ms ease' }}>View Products </span>
               <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
             </button>
           </div>
@@ -629,7 +658,7 @@ export default function Home() {
             <div className="relative w-full overflow-hidden">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
-                alt="PUS Series"
+                alt="VENUS"
                 width={456}
                 height={304}
                 className="h-auto w-full object-cover"
@@ -647,7 +676,7 @@ export default function Home() {
                 verticalAlign: 'middle',
               }}
             >
-              PUS Series
+              VENUS
             </h3>
             <button
               className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
@@ -679,7 +708,7 @@ export default function Home() {
                 }
               }}
             >
-              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span style={{ transition: 'color 500ms ease' }}>View Products </span>
               <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
             </button>
           </div>
@@ -688,7 +717,7 @@ export default function Home() {
             <div className="relative w-full overflow-hidden">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
-                alt="WATERMATIC Series"
+                alt="ASSISTFLOW"
                 width={456}
                 height={304}
                 className="h-auto w-full object-cover"
@@ -706,7 +735,7 @@ export default function Home() {
                 verticalAlign: 'middle',
               }}
             >
-              WATERMATIC Series
+              ASSISTFLOW
             </h3>
             <button
               className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
@@ -738,7 +767,7 @@ export default function Home() {
                 }
               }}
             >
-              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span style={{ transition: 'color 500ms ease' }}>View Products </span>
               <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
             </button>
           </div>
@@ -747,7 +776,7 @@ export default function Home() {
             <div className="relative w-full overflow-hidden">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
-                alt="WAEAU Series"
+                alt="ENKI"
                 width={456}
                 height={304}
                 className="h-auto w-full object-cover"
@@ -765,7 +794,7 @@ export default function Home() {
                 verticalAlign: 'middle',
               }}
             >
-              WAEAU Series
+              ENKI
             </h3>
             <button
               className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
@@ -797,128 +826,11 @@ export default function Home() {
                 }
               }}
             >
-              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
+              <span style={{ transition: 'color 500ms ease' }}>View Products </span>
               <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
             </button>
           </div>
 
-          <div className="flex flex-col items-center">
-            <div className="relative w-full overflow-hidden">
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
-                alt="AUX Series"
-                width={456}
-                height={304}
-                className="h-auto w-full object-cover"
-              />
-            </div>
-            <h3
-              className="mt-[20px] text-center"
-              style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontStyle: 'Regular',
-                fontSize: '18px',
-                lineHeight: '100%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
-              }}
-            >
-              AUX Series
-            </h3>
-            <button
-              className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
-              style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 500,
-                fontSize: '12px',
-                lineHeight: '100%',
-                transition: 'all 500ms ease',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent'
-                e.currentTarget.style.color = 'black'
-                e.currentTarget.style.borderColor = 'black'
-                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
-                if (arrow) {
-                  arrow.style.transition = 'color 900ms ease'
-                  arrow.style.color = 'black'
-                }
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'black'
-                e.currentTarget.style.color = 'white'
-                e.currentTarget.style.borderColor = 'black'
-                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
-                if (arrow) {
-                  arrow.style.color = 'white'
-                }
-              }}
-            >
-              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
-              <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
-            </button>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <div className="relative w-full overflow-hidden">
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab073549-fa4e-4ee9-5e1a-9f6e35ab4000/public"
-                alt="GBP Series"
-                width={456}
-                height={304}
-                className="h-auto w-full object-cover"
-              />
-            </div>
-            <h3
-              className="mt-[20px] text-center"
-              style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontStyle: 'Regular',
-                fontSize: '18px',
-                lineHeight: '100%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
-              }}
-            >
-              GBP Series
-            </h3>
-            <button
-              className="mt-[24px] w-full px-6 py-3 bg-black text-white border border-black"
-              style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 500,
-                fontSize: '12px',
-                lineHeight: '100%',
-                transition: 'all 500ms ease',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent'
-                e.currentTarget.style.color = 'black'
-                e.currentTarget.style.borderColor = 'black'
-                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
-                if (arrow) {
-                  arrow.style.transition = 'color 900ms ease'
-                  arrow.style.color = 'black'
-                }
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'black'
-                e.currentTarget.style.color = 'white'
-                e.currentTarget.style.borderColor = 'black'
-                const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
-                if (arrow) {
-                  arrow.style.color = 'white'
-                }
-              }}
-            >
-              <span style={{ transition: 'color 500ms ease' }}>View Assets </span>
-              <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
-            </button>
-          </div>
         </div>
 
       </div>
