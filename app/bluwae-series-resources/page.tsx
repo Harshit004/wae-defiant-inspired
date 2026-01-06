@@ -144,6 +144,8 @@ export default function Home() {
   const [headerHeight, setHeaderHeight] = useState(0)
   const headerRef = useRef<HTMLDivElement>(null)
   const [activeFilter, setActiveFilter] = useState<number>(2)
+  const [isPopupOpen, setIsPopupOpen] = useState(false)
+  const [email, setEmail] = useState("")
 
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
@@ -198,6 +200,18 @@ export default function Home() {
     return () => window.removeEventListener("resize", updateHeaderHeight);
   }, []);
 
+  // Prevent body scrolling when popup is open
+  useEffect(() => {
+    if (isPopupOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isPopupOpen]);
+
   const productsItems = [
     { text: "This is Us", href: "/inside-wae" },
     { text: "Our Portfolio", href: "/our-portfolio" },
@@ -211,7 +225,7 @@ export default function Home() {
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   return (
-    <main className="relative pb-[40px]">
+    <main className={`relative pb-[40px] ${isPopupOpen ? 'overflow-hidden' : ''}`}>
       {/* RENDER MOBILE HEADER COMPONENT HERE (only on small screens) */}
       <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
 
@@ -513,6 +527,7 @@ export default function Home() {
                   transition: 'all 500ms ease',
                   cursor: 'pointer',
                 }}
+                onClick={() => setIsPopupOpen(true)}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent'
                   e.currentTarget.style.color = 'black'
@@ -572,6 +587,7 @@ export default function Home() {
                 transition: 'all 500ms ease',
                 cursor: 'pointer',
               }}
+              onClick={() => setIsPopupOpen(true)}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent'
                 e.currentTarget.style.color = 'black'
@@ -631,6 +647,7 @@ export default function Home() {
                 transition: 'all 500ms ease',
                 cursor: 'pointer',
               }}
+              onClick={() => setIsPopupOpen(true)}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent'
                 e.currentTarget.style.color = 'black'
@@ -690,6 +707,7 @@ export default function Home() {
                 transition: 'all 500ms ease',
                 cursor: 'pointer',
               }}
+              onClick={() => setIsPopupOpen(true)}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent'
                 e.currentTarget.style.color = 'black'
@@ -749,6 +767,7 @@ export default function Home() {
                 transition: 'all 500ms ease',
                 cursor: 'pointer',
               }}
+              onClick={() => setIsPopupOpen(true)}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent'
                 e.currentTarget.style.color = 'black'
@@ -808,6 +827,7 @@ export default function Home() {
                 transition: 'all 500ms ease',
                 cursor: 'pointer',
               }}
+              onClick={() => setIsPopupOpen(true)}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent'
                 e.currentTarget.style.color = 'black'
@@ -836,6 +856,147 @@ export default function Home() {
         </div>
 
       </div>
+
+      {/* POPUP MODAL */}
+      {isPopupOpen && (
+        <>
+          {/* Blurred Background Overlay */}
+          <div
+            className="fixed inset-0 bg-black/30 z-50"
+            onClick={() => setIsPopupOpen(false)}
+            style={{ backdropFilter: 'blur(4px)' }}
+          />
+          
+          {/* Popup Modal */}
+          <div
+            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white z-50"
+            style={{
+              width: '800px',
+              // height: 'auto',
+              padding: '32px 60px',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button (X) */}
+            <button
+              onClick={() => setIsPopupOpen(false)}
+              className="absolute top-4 right-4 text-black hover:text-gray-600"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontSize: '24px',
+                lineHeight: '1',
+                cursor: 'pointer',
+                background: 'none',
+                border: 'none',
+                padding: '4px 8px',
+              }}
+              aria-label="Close popup"
+            >
+              ×
+            </button>
+
+            {/* "Download Now" Title */}
+            <h2
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '40px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                textAlign: 'center',
+                verticalAlign: 'middle',
+                marginBottom: '12px',
+              }}
+            >
+              Download Now
+            </h2>
+
+            {/* Subtitle */}
+            <p
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '18px',
+                lineHeight: '110.00000000000001%',
+                letterSpacing: '0%',
+                textAlign: 'center',
+                verticalAlign: 'middle',
+                color: '#C5C5C5',
+                marginBottom: '24px',
+              }}
+            >
+              Enter your email address to get the downloaded files.
+            </p>
+
+            {/* Email Input Field */}
+            <input
+              type="email"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '12px',
+                lineHeight: '100%',
+                letterSpacing: '4%',
+                textAlign: 'left',
+                color: '#00000066',
+                width: '100%',
+                padding: '24px 16px',
+                border: 'none',
+                borderBottom: '1px solid #00000033',
+                outline: 'none',
+                marginBottom: '40px',
+              }}
+            />
+
+            {/* Download Now Button */}
+            <div className="flex justify-center">
+              <button
+                className="px-6 py-3 bg-black text-white border border-black"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontStyle: 'Medium',
+                  fontSize: '16px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  width: '244px',
+                  transition: 'all 500ms ease',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent'
+                  e.currentTarget.style.color = 'black'
+                  e.currentTarget.style.borderColor = 'black'
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                  if (arrow) {
+                    arrow.style.transition = 'color 900ms ease'
+                    arrow.style.color = 'black'
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'black'
+                  e.currentTarget.style.color = 'white'
+                  e.currentTarget.style.borderColor = 'black'
+                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                  if (arrow) {
+                    arrow.style.color = 'white'
+                  }
+                }}
+              >
+                <span style={{ transition: 'color 500ms ease' }}>Download Now </span>
+                <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+              </button>
+            </div>
+          </div>
+        </>
+      )}
 
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>
