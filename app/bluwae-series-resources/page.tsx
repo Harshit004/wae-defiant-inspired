@@ -146,6 +146,41 @@ export default function Home() {
   const [activeFilter, setActiveFilter] = useState<number>(2)
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const [email, setEmail] = useState("")
+  const [showThankYou, setShowThankYou] = useState(false)
+  const [emailError, setEmailError] = useState("")
+
+  // Email validation function
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+  }
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    setEmail(value)
+    // Clear error when user starts typing
+    if (emailError) {
+      setEmailError("")
+    }
+  }
+
+  const handleDownload = () => {
+    const trimmedEmail = email.trim()
+    
+    if (!trimmedEmail) {
+      setEmailError("Email address is required")
+      return
+    }
+    
+    if (!validateEmail(trimmedEmail)) {
+      setEmailError("Please enter a valid email address")
+      return
+    }
+    
+    // Email is valid, proceed with download
+    setEmailError("")
+    setShowThankYou(true)
+  }
 
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
@@ -879,7 +914,12 @@ export default function Home() {
           >
             {/* Close button (X) */}
             <button
-              onClick={() => setIsPopupOpen(false)}
+              onClick={() => {
+                setIsPopupOpen(false)
+                setShowThankYou(false)
+                setEmail("")
+                setEmailError("")
+              }}
               className="absolute top-4 right-4 text-black hover:text-gray-600"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
@@ -895,105 +935,173 @@ export default function Home() {
               ×
             </button>
 
-            {/* "Download Now" Title */}
-            <h2
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontStyle: 'Regular',
-                fontSize: '40px',
-                lineHeight: '100%',
-                letterSpacing: '0%',
-                textAlign: 'center',
-                verticalAlign: 'middle',
-                marginBottom: '12px',
-              }}
-            >
-              Download Now
-            </h2>
+            {!showThankYou ? (
+              <>
+                {/* "Download Now" Title */}
+                <h2
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: 'Regular',
+                    fontSize: '40px',
+                    lineHeight: '100%',
+                    letterSpacing: '0%',
+                    textAlign: 'center',
+                    verticalAlign: 'middle',
+                    marginBottom: '12px',
+                  }}
+                >
+                  Download Now
+                </h2>
 
-            {/* Subtitle */}
-            <p
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontStyle: 'Regular',
-                fontSize: '18px',
-                lineHeight: '110.00000000000001%',
-                letterSpacing: '0%',
-                textAlign: 'center',
-                verticalAlign: 'middle',
-                color: '#C5C5C5',
-                marginBottom: '24px',
-              }}
-            >
-              Enter your email address to get the downloaded files.
-            </p>
+                {/* Subtitle */}
+                <p
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: 'Regular',
+                    fontSize: '18px',
+                    lineHeight: '110.00000000000001%',
+                    letterSpacing: '0%',
+                    textAlign: 'center',
+                    verticalAlign: 'middle',
+                    color: '#C5C5C5',
+                    marginBottom: '24px',
+                  }}
+                >
+                  Enter your email address to get the downloaded files.
+                </p>
 
-            {/* Email Input Field */}
-            <input
-              type="email"
-              placeholder="Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontStyle: 'Regular',
-                fontSize: '12px',
-                lineHeight: '100%',
-                letterSpacing: '4%',
-                textAlign: 'left',
-                color: '#00000066',
-                width: '100%',
-                padding: '24px 16px',
-                border: 'none',
-                borderBottom: '1px solid #00000033',
-                outline: 'none',
-                marginBottom: '40px',
-              }}
-            />
+                {/* Email Input Field */}
+                <div style={{ marginBottom: emailError ? '8px' : '40px' }}>
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={handleEmailChange}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        e.preventDefault()
+                        handleDownload()
+                      }
+                    }}
+                    onBlur={() => {
+                      if (email.trim() && !validateEmail(email.trim())) {
+                        setEmailError("Please enter a valid email address")
+                      }
+                    }}
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontStyle: 'Regular',
+                      fontSize: '12px',
+                      lineHeight: '100%',
+                      letterSpacing: '4%',
+                      textAlign: 'left',
+                      color: '#00000066',
+                      width: '100%',
+                      padding: '24px 16px',
+                      border: 'none',
+                      borderBottom: emailError ? '1px solid #ff0000' : '1px solid #00000033',
+                      outline: 'none',
+                    }}
+                  />
+                  {emailError && (
+                    <p
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '12px',
+                        lineHeight: '100%',
+                        color: '#ff0000',
+                        marginTop: '8px',
+                        textAlign: 'left',
+                      }}
+                    >
+                      {emailError}
+                    </p>
+                  )}
+                </div>
 
-            {/* Download Now Button */}
-            <div className="flex justify-center">
-              <button
-                className="px-6 py-3 bg-black text-white border border-black"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontStyle: 'Medium',
-                  fontSize: '16px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  width: '244px',
-                  transition: 'all 500ms ease',
-                  cursor: 'pointer',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent'
-                  e.currentTarget.style.color = 'black'
-                  e.currentTarget.style.borderColor = 'black'
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
-                  if (arrow) {
-                    arrow.style.transition = 'color 900ms ease'
-                    arrow.style.color = 'black'
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'black'
-                  e.currentTarget.style.color = 'white'
-                  e.currentTarget.style.borderColor = 'black'
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
-                  if (arrow) {
-                    arrow.style.color = 'white'
-                  }
-                }}
-              >
-                <span style={{ transition: 'color 500ms ease' }}>Download Now </span>
-                <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
-              </button>
-            </div>
+                {/* Download Now Button */}
+                <div className="flex justify-center">
+                  <button
+                    className="px-6 py-3 bg-black text-white border border-black"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontStyle: 'Medium',
+                      fontSize: '16px',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      verticalAlign: 'middle',
+                      width: '244px',
+                      transition: 'all 500ms ease',
+                      cursor: 'pointer',
+                    }}
+                    onClick={handleDownload}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent'
+                      e.currentTarget.style.color = 'black'
+                      e.currentTarget.style.borderColor = 'black'
+                      const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                      if (arrow) {
+                        arrow.style.transition = 'color 900ms ease'
+                        arrow.style.color = 'black'
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'black'
+                      e.currentTarget.style.color = 'white'
+                      e.currentTarget.style.borderColor = 'black'
+                      const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement
+                      if (arrow) {
+                        arrow.style.color = 'white'
+                      }
+                    }}
+                  >
+                    <span style={{ transition: 'color 500ms ease' }}>Download Now </span>
+                    <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* "Thank You!" Title */}
+                <h2
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: 'Regular',
+                    fontSize: '40px',
+                    lineHeight: '100%',
+                    letterSpacing: '0%',
+                    textAlign: 'center',
+                    verticalAlign: 'middle',
+                    marginBottom: '12px',
+                  }}
+                >
+                  Thank You!
+                </h2>
+
+                {/* Thank You Message */}
+                <p
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: 'Regular',
+                    fontSize: '18px',
+                    lineHeight: '110.00000000000001%',
+                    letterSpacing: '0%',
+                    textAlign: 'center',
+                    verticalAlign: 'middle',
+                    color: '#C5C5C5',
+                  }}
+                >
+                  Please check your inbox for the downloaded files.
+                </p>
+              </>
+            )}
           </div>
         </>
       )}
