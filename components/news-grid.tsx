@@ -1,4 +1,7 @@
+"use client"
+
 import Image from "next/image"
+import { useEffect, useState, useRef } from "react"
 
 interface NewsCardProps {
   imageUrl: string
@@ -86,6 +89,9 @@ function NewsCard({ imageUrl, title, description, description2, date, imageHeigh
 }
 
 export default function NewsGrid() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [scale, setScale] = useState(1)
+
   const description =
     "In the quiet halls of Kyoto in 1997, something monumental began a collective awakening of the world's conscience towards the mounting crisis of climate change."
   const description2 =
@@ -128,36 +134,26 @@ export default function NewsGrid() {
     },
   }
 
-  // Gap between cards
+  // Base dimensions (original design size)
+  const baseWidth = 1160
   const gap = 40
-
-  // Column widths
   const col1 = 332
   const col2 = 332
   const col3 = 416
 
-  // Card positions calculated from pixel dimensions
-  // Card 1: 704x494 at (0, 0) - spans col1+col2
-  // Card 2: 416x340 at (col1+col2+gap*2, 0) - col3
-  // Card 3: 704x295 - spans col1+col2, below card 1
-  // Card 4: 416x726 - col3, below card 2
-  // Card 5: 332x591 - col1
-  // Card 6: 332x237 - col2
-  // Card 7: 788x314 - spans col2+col3
-
   // Calculate text area heights (title + description + date line ~135px for cards with text)
   const textHeight = 135
   const card1ImageHeight = 494
-  const card1TotalHeight = card1ImageHeight + textHeight // ~629
+  const card1TotalHeight = card1ImageHeight + textHeight
 
   const card2ImageHeight = 340
   const card2Top = 0
 
   const card3ImageHeight = 295
-  const card3Top = card1TotalHeight + gap // below card 1
+  const card3Top = card1TotalHeight + gap
 
   const card4ImageHeight = 726
-  const card4Top = card2ImageHeight + gap // below card 2
+  const card4Top = card2ImageHeight + gap
 
   const card5Top = card3Top + card3ImageHeight + gap
   const card5ImageHeight = 456
@@ -170,45 +166,95 @@ export default function NewsGrid() {
 
   const totalHeight = card7Top + card7ImageHeight + textHeight
 
+  // Calculate scale based on container width
+  useEffect(() => {
+    const updateScale = () => {
+      if (containerRef.current) {
+        // Get the actual available width (accounting for padding)
+        const containerWidth = containerRef.current.offsetWidth
+        const calculatedScale = Math.min(1, containerWidth / baseWidth)
+        setScale(Math.max(0.1, calculatedScale)) // Ensure scale is never too small
+      }
+    }
+
+    // Initial calculation with a small delay to ensure DOM is ready
+    const timeoutId = setTimeout(updateScale, 0)
+    
+    // Use ResizeObserver for more accurate measurements
+    let resizeObserver: ResizeObserver | null = null
+    if (containerRef.current && typeof ResizeObserver !== 'undefined') {
+      resizeObserver = new ResizeObserver(updateScale)
+      resizeObserver.observe(containerRef.current)
+    }
+
+    // Fallback to window resize listener
+    window.addEventListener("resize", updateScale)
+    
+    return () => {
+      clearTimeout(timeoutId)
+      window.removeEventListener("resize", updateScale)
+      if (resizeObserver) {
+        resizeObserver.disconnect()
+      }
+    }
+  }, [])
+
   return (
-    <div style={{ width: "1160px", height: `${totalHeight}px`, position: "relative" }}>
-      {/* Card 1: top-left, spans 2 cols */}
-      <div style={{ position: "absolute", top: 0, left: 0, width: `${col1 + gap + col2}px` }}>
-        <NewsCard {...cards.card1} imageHeight={card1ImageHeight} />
-      </div>
-
-      {/* Card 2: top-right, col3 */}
-      <div style={{ position: "absolute", top: card2Top, left: `${col1 + gap + col2 + gap}px`, width: `${col3}px` }}>
-        <NewsCard {...cards.card2} imageHeight={card2ImageHeight} />
-      </div>
-
-      {/* Card 3: below card 1, spans 2 cols */}
-      <div style={{ position: "absolute", top: `${card3Top}px`, left: 0, width: `${col1 + gap + col2}px` }}>
-        <NewsCard {...cards.card3} imageHeight={card3ImageHeight} />
-      </div>
-
-      {/* Card 4: below card 2, col3 */}
-      <div
-        style={{ position: "absolute", top: `${card4Top}px`, left: `${col1 + gap + col2 + gap}px`, width: `${col3}px` }}
+    <div 
+      ref={containerRef}
+      className="w-full max-w-full overflow-hidden"
+      style={{ 
+        position: "relative",
+        height: `${totalHeight * scale}px`
+      }}
+    >
+      <div 
+        style={{ 
+          width: `${baseWidth}px`, 
+          height: `${totalHeight}px`, 
+          position: "relative",
+          transform: `scale(${scale})`,
+          transformOrigin: "top left"
+        }}
       >
-        <NewsCard {...cards.card4} imageHeight={card4ImageHeight} />
-      </div>
+        {/* Card 1: top-left, spans 2 cols */}
+        <div style={{ position: "absolute", top: 0, left: 0, width: `${col1 + gap + col2}px` }}>
+          <NewsCard {...cards.card1} imageHeight={card1ImageHeight} />
+        </div>
 
-      {/* Card 5: col1 */}
-      <div style={{ position: "absolute", top: `${card5Top}px`, left: 0, width: `${col1}px` }}>
-        <NewsCard {...cards.card5} imageHeight={card5ImageHeight} />
-      </div>
+        {/* Card 2: top-right, col3 */}
+        <div style={{ position: "absolute", top: card2Top, left: `${col1 + gap + col2 + gap}px`, width: `${col3}px` }}>
+          <NewsCard {...cards.card2} imageHeight={card2ImageHeight} />
+        </div>
 
-      {/* Card 6: col2 */}
-      <div style={{ position: "absolute", top: `${card6Top}px`, left: `${col1 + gap}px`, width: `${col2}px` }}>
-        <NewsCard {...cards.card6} imageHeight={card6ImageHeight} />
-      </div>
+        {/* Card 3: below card 1, spans 2 cols */}
+        <div style={{ position: "absolute", top: `${card3Top}px`, left: 0, width: `${col1 + gap + col2}px` }}>
+          <NewsCard {...cards.card3} imageHeight={card3ImageHeight} />
+        </div>
 
-      {/* Card 7: spans col2+col3 */}
-      <div
-        style={{ position: "absolute", top: `${card7Top}px`, left: `${col1 + gap}px`, width: `${col2 + gap + col3}px` }}
-      >
-        <NewsCard {...cards.card7} imageHeight={card7ImageHeight} />
+        {/* Card 4: below card 2, col3 */}
+        <div
+          style={{ position: "absolute", top: `${card4Top}px`, left: `${col1 + gap + col2 + gap}px`, width: `${col3}px` }}
+        >
+          <NewsCard {...cards.card4} imageHeight={card4ImageHeight} />
+        </div>
+
+        {/* Card 5: col1 */}
+        <div style={{ position: "absolute", top: `${card5Top}px`, left: 0, width: `${col1}px` }}>
+          <NewsCard {...cards.card5} imageHeight={card5ImageHeight} />
+        </div>
+
+        {/* Card 6: col2 */}
+        <div style={{ position: "absolute", top: `${card6Top}px`, left: `${col1 + gap}px`, width: `${col2}px` }}>
+          <NewsCard {...cards.card6} imageHeight={card6ImageHeight} />
+        </div>
+
+        {/* Card 7: spans col2+col3 */}
+        <div
+          style={{ position: "absolute", top: `${card7Top}px`, left: `${col1 + gap}px`, width: `${col2 + gap + col3}px` }}
+        >
+          <NewsCard {...cards.card7} imageHeight={card7ImageHeight} />
+        </div>
       </div>
     </div>
   )
