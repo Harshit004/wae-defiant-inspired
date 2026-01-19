@@ -261,8 +261,8 @@ const Home: FC = () => {
     { text: "Reimagine Work", href: "/careers3" },
   ];
   const blueprintItems = [
-    { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
+    { text: "Resources", href: "/resource-listing" },
     { text: "Blog", href: "/blogs2" },
   ];
 
