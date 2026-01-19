@@ -92,8 +92,19 @@ export default function RelatedCard({ image, title, description, width, height }
         >
           {title}
         </h3>
-        {/* Desktop title remains unchanged */}
-        <h3 className="hidden md:block font-[Inter Tight] font-[400] text-[22px] leading-[120%] tracking-[0%] align-middle mb-[12px] group-hover:no-underline pt-[12px]">
+        {/* Desktop title */}
+        <h3 
+          className="hidden md:block mb-[12px] group-hover:no-underline pt-[12px]"
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 400,
+            fontStyle: 'Regular',
+            fontSize: '16px',
+            lineHeight: '120%',
+            letterSpacing: '0%',
+            verticalAlign: 'middle',
+          }}
+        >
           {title}
         </h3>
         <p
@@ -109,8 +120,21 @@ export default function RelatedCard({ image, title, description, width, height }
         >
           {description}
         </p>
-        {/* Desktop description remains unchanged */}
-        <p className="hidden md:block font-[Inter Tight] font-[400] text-[10px] leading-[110%] tracking-[-2%] align-middle text-gray-600 mb-0 md:mb-[3rem] max-w-full md:max-w-[272px]">
+        {/* Desktop description */}
+        <p 
+          className="hidden md:block mb-0 max-w-full "
+          style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 400,
+            fontStyle: 'Regular',
+            fontSize: '14px',
+            lineHeight: '110.00000000000001%',
+            letterSpacing: '0%',
+            verticalAlign: 'middle',
+            color: '#808080',
+            marginBottom: '63px',
+          }}
+        >
           {description}
         </p>
         {/* 40px gap and Know More button for mobile only */}

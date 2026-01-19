@@ -217,43 +217,43 @@ export default function NewsGrid() {
           transformOrigin: "top left"
         }}
       >
-        {/* Card 1: top-left, spans 2 cols */}
-        <div style={{ position: "absolute", top: 0, left: 0, width: `${col1 + gap + col2}px` }}>
-          <NewsCard {...cards.card1} imageHeight={card1ImageHeight} />
-        </div>
+      {/* Card 1: top-left, spans 2 cols */}
+      <div style={{ position: "absolute", top: 0, left: 0, width: `${col1 + gap + col2}px` }}>
+        <NewsCard {...cards.card1} imageHeight={card1ImageHeight} />
+      </div>
 
-        {/* Card 2: top-right, col3 */}
-        <div style={{ position: "absolute", top: card2Top, left: `${col1 + gap + col2 + gap}px`, width: `${col3}px` }}>
-          <NewsCard {...cards.card2} imageHeight={card2ImageHeight} />
-        </div>
+      {/* Card 2: top-right, col3 */}
+      <div style={{ position: "absolute", top: card2Top, left: `${col1 + gap + col2 + gap}px`, width: `${col3}px` }}>
+        <NewsCard {...cards.card2} imageHeight={card2ImageHeight} />
+      </div>
 
-        {/* Card 3: below card 1, spans 2 cols */}
-        <div style={{ position: "absolute", top: `${card3Top}px`, left: 0, width: `${col1 + gap + col2}px` }}>
-          <NewsCard {...cards.card3} imageHeight={card3ImageHeight} />
-        </div>
+      {/* Card 3: below card 1, spans 2 cols */}
+      <div style={{ position: "absolute", top: `${card3Top}px`, left: 0, width: `${col1 + gap + col2}px` }}>
+        <NewsCard {...cards.card3} imageHeight={card3ImageHeight} />
+      </div>
 
-        {/* Card 4: below card 2, col3 */}
-        <div
-          style={{ position: "absolute", top: `${card4Top}px`, left: `${col1 + gap + col2 + gap}px`, width: `${col3}px` }}
-        >
-          <NewsCard {...cards.card4} imageHeight={card4ImageHeight} />
-        </div>
+      {/* Card 4: below card 2, col3 */}
+      <div
+        style={{ position: "absolute", top: `${card4Top}px`, left: `${col1 + gap + col2 + gap}px`, width: `${col3}px` }}
+      >
+        <NewsCard {...cards.card4} imageHeight={card4ImageHeight} />
+      </div>
 
-        {/* Card 5: col1 */}
-        <div style={{ position: "absolute", top: `${card5Top}px`, left: 0, width: `${col1}px` }}>
-          <NewsCard {...cards.card5} imageHeight={card5ImageHeight} />
-        </div>
+      {/* Card 5: col1 */}
+      <div style={{ position: "absolute", top: `${card5Top}px`, left: 0, width: `${col1}px` }}>
+        <NewsCard {...cards.card5} imageHeight={card5ImageHeight} />
+      </div>
 
-        {/* Card 6: col2 */}
-        <div style={{ position: "absolute", top: `${card6Top}px`, left: `${col1 + gap}px`, width: `${col2}px` }}>
-          <NewsCard {...cards.card6} imageHeight={card6ImageHeight} />
-        </div>
+      {/* Card 6: col2 */}
+      <div style={{ position: "absolute", top: `${card6Top}px`, left: `${col1 + gap}px`, width: `${col2}px` }}>
+        <NewsCard {...cards.card6} imageHeight={card6ImageHeight} />
+      </div>
 
-        {/* Card 7: spans col2+col3 */}
-        <div
-          style={{ position: "absolute", top: `${card7Top}px`, left: `${col1 + gap}px`, width: `${col2 + gap + col3}px` }}
-        >
-          <NewsCard {...cards.card7} imageHeight={card7ImageHeight} />
+      {/* Card 7: spans col2+col3 */}
+      <div
+        style={{ position: "absolute", top: `${card7Top}px`, left: `${col1 + gap}px`, width: `${col2 + gap + col3}px` }}
+      >
+        <NewsCard {...cards.card7} imageHeight={card7ImageHeight} />
         </div>
       </div>
     </div>
