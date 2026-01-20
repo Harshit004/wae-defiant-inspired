@@ -6,8 +6,8 @@ import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import Footer from "@/components/footer" // Assuming these components exist
-import ConnectWithUs from "@/components/connect-with-us" // Assuming this component exists
+import Footer from "@/components/footer"
+import ConnectWithUs from "@/components/connect-with-us"
 
 // --- MOBILE HEADER COMPONENT (Copied from homepage3) ---
 interface MobileHeaderProps {
@@ -522,78 +522,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Our Products Heading (Moved below hero and adjusted margin) */}
-      <div className={containerClass}>
-        <h2 className="text-[32px] md:text-[48px] text-center md:text-left"
-          style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            // fontSize: "48px",
-            letterSpacing: "0%",
-            verticalAlign: "middle",
-            marginBottom: "40px",
-          }}
-        >
-          Our Products
-        </h2>
-
-        {/* NEW SECTION: Product Category Grid (Grid 1 after hero) */}
-        {/* gap-y-[60px] already applies to mobile for grid layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[100px] gap-y-[60px] mb-[60px] md:mb-[180px] text-center md:text-left">
-          {blogPosts.map((post, index) => (
-            <div key={index}>
-                {/* Heading with Link */}
-              <a className="text-[14px] md:text-[16px] block" href={`#${categorySlugs[index]}`}
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 700,
-                  // fontSize: "16px",
-                  lineHeight: "140%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  textTransform: "uppercase",
-                  display: "block",
-                  textDecoration: "none",
-                  color: "inherit",
-                }}
-              >
-                {post.title}
-              </a>
-
-              {/* Horizontal Rule */}
-              <div style={{ paddingTop: "12px", paddingBottom: "12px" }}>
-                <hr style={{ border: "none", borderTop: "1px solid #00000033" }} />
-              </div>
-
-              {/* Description */}
-              <p
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "12px",
-                  lineHeight: "120%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  
-                }}
-              >
-                {post.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Product Category Section (Grid 2 after hero - using Flexbox) */}
-        <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[14%] gap-y-[60px] mb-20 sm:mb-0">
+        {/* Our Products Grid - 3 columns, 2 rows */}
+      <div className="w-full py-[100px] px-[9.7%]">
+       
+        <div className="w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[120px] gap-x-[40px] sm:mb-0">
             {blogPosts.map((post, index) => (
               <div
                 key={index}
                 id={categorySlugs[index]}
-                className="flex flex-col justify-between items-start w-full max-w-[33.33vw]"
+                className="flex flex-col justify-between items-start"
+                style={{
+                  width: '100%',
+                }}
               >
                 {/* Image */}
-                <div className="w-[33.33vw] h-[33.33vw] relative overflow-hidden group">
+                <div className="w-full aspect-square relative overflow-hidden group mb-6">
                   <Image
                     src={post.imageUrl}
                     alt={post.title}
@@ -602,8 +546,6 @@ export default function Home() {
                     className="transition-transform duration-700 ease-in-out transform-gpu group-hover:scale-110"
                   />
                 </div>
-                {/* 24px gap below image */}
-                <div style={{ height: '24px' }} />
                 {/* Title */}
                 <h3
                   style={{
@@ -619,7 +561,7 @@ export default function Home() {
                 >
                   {post.title}
                 </h3>
-                {/* Description (Grid 2: Use new descriptions) */}
+                {/* Description */}
                 <p
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -633,12 +575,12 @@ export default function Home() {
                   }}
                 >
                   {[
-                    "Our Point of Use purification systems offer decentralized water purification with integrated RO and multi-stage filtration—designed for high-performance, on-site treatment. \n\nIdeal for institutional and commercial environments seeking consistent, efficient, and compliant drinking water solutions.",
-                    "For enhanced microbial control in high-consumption environments, integrate our in-tank LED-UVC water dispensers with an external ultra filter—delivering advanced, multi-barrier purification suitable for institutional and commercial applications prioritizing safety and compliance.",
-                    "Engineered for professional environments, our sensor-activated drinking water faucets enable touch-free, hygienic dispensing—combining advanced technology with a sleek, minimalist design to meet the safety, efficiency, and aesthetic needs of modern B2B infrastructures.",
-                    "Designed for institutional and commercial use, all units feature a bubbler faucet for direct drinking. Cooling functionality varies by model. To ensure a streamlined aesthetic and operational efficiency, purification, chilling, and heating modules are discreetly wall-mounted.",
-                    "Designed for public access environments, these advanced water systems provide 24/7 availability of safe, purified drinking water. Built for reliability and supported by research, they offer durable, low-maintenance solutions for institutions and commercial infrastructure.",
-                    "Engineered for institutional and commercial applications, high-capacity RO plants enable efficient purification and storage of large volumes of potable water—ensuring a consistent, reliable supply to meet operational, regulatory, and health-focused requirements."
+                    "Experience on-demand purified water with our Point of Use systems—integrated RO and multi-stage filtration ensure efficient, reliable, and decentralized treatment",
+                    "Stainless steel water dispensers give you fresh, clean water anytime. Compact, energy-efficient, and perfect for spaces where RO water is not readily available.",
+                    "Drinking water faucets with under the counter storage units to make access to fresh water simple. Precision-engineered for smooth flow, with a focus on reducing waste and energy use.",
+                    "Water coolers cum bubblers provide chilled water on demand. Built to be energy-efficient, they’re ideal for public spaces, reducing both costs and plastic waste.",
+                    "Designed for large public spaces, PUS systems ensure clean, accessible water. Engineered for durability and eco-friendliness, they support sustainable communities.",
+                    "Power your facility with our large-scale hydration plants. Scalable and efficient, they offer high-volume water solutions with a commitment to sustainability."
                   ][index]}
                 </p>
                 {/* Know More Button */}
