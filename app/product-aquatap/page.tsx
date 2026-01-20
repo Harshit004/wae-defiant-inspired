@@ -757,7 +757,7 @@ const Home: FC = () => {
       <section className="max-w-full px-4 md:px-[8.75rem] py-10 md:py-[6.25rem] flex flex-col md:flex-row items-center justify-center gap-6">
         <div className="w-full flex justify-center relative group">
           <img
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/185f2ec8-7ef2-40c2-be9d-bc5945c95f00/public"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7169b38f-141f-4569-233c-cd898cd54200/public"
             alt="Specification 1"
             className="rounded-lg object-contain transition-all duration-[700ms]"
             style={{ width: "38.5416vw", height: "auto" }}
@@ -816,7 +816,7 @@ const Home: FC = () => {
         </div>
         <div className="w-full flex justify-center relative group">
           <img
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8487f223-98c8-4e3b-d17b-6b760b747000/public"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5fa474e0-6155-417d-faa2-6ff8ee8b6600/public"
             alt="Specification 2"
             className="rounded-lg object-contain transition-all duration-[1000ms]"
             style={{ width: "38.5416vw", height: "auto" }}
