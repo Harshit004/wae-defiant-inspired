@@ -298,8 +298,8 @@ export default function Home() {
     { text: "Reimagine Work", href: "/careers3" },
   ]
   const blueprintItems = [
-    { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
+    { text: "Resources", href: "/resource-listing" },
     { text: "Blog", href: "/blogs2" },
   ]
   const lineCount = Math.min(productsItems.length, blueprintItems.length) // Not directly used but retained

@@ -98,13 +98,13 @@ const Home: FC = () => {
 
   const containerRef = useRef<HTMLDivElement>(null); // Ref is declared but not applied to an element
 
-   // --- ADDED: Explicitly scroll to top on mount ---
-   useEffect(() => {
-       requestAnimationFrame(() => {
-           window.scrollTo(0, 0);
-       });
-   }, []);
-   // --- END ADDED CODE ---
+  // --- ADDED: Explicitly scroll to top on mount ---
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+  }, []);
+  // --- END ADDED CODE ---
 
 
   // Update tagline visibility on scroll (logic present, but taglineVisible state not used)
@@ -213,7 +213,7 @@ const Home: FC = () => {
     { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers3" },
   ];
-  
+
   // ETCETERA section
   const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
@@ -406,37 +406,37 @@ const Home: FC = () => {
       </div>
 
       {/* HERO SECTION */}
-        <section
-          id="hero"
-          ref={heroRef}
-          className="w-full flex items-center justify-center bg-white"
-          style={{ height: `calc(100vh - ${headerHeight}px)` }}
-        >
-          <div className="w-screen flex items-center justify-center">
-            <video
-              src="/News_Banner.mp4"
-              autoPlay
-              muted
-              playsInline
-              className="w-fit h-fit object-cover rounded-none"
-            />
-          </div>
-          
-        </section>
-      
+      <section
+        id="hero"
+        ref={heroRef}
+        className="w-full flex items-center justify-center bg-white"
+        style={{ height: `calc(100vh - ${headerHeight}px)` }}
+      >
+        <div className="w-screen flex items-center justify-center">
+          <video
+            src="/News_Banner.mp4"
+            autoPlay
+            muted
+            playsInline
+            className="w-fit h-fit object-cover rounded-none"
+          />
+        </div>
+
+      </section>
+
 
       {/* IN THE NEWS */}
       <section className="px-[9.72%] py-[100px]">
         <h2 className="mb-4"
-            style={{
-              fontFamily: 'Inter Tight',
-              fontWeight: 500,
-              fontStyle: 'Medium',
-              fontSize: '40px',
-              lineHeight: '110.00000000000001%',
-              letterSpacing: '0px',
-              verticalAlign: 'middle',
-            }}
+          style={{
+            fontFamily: 'Inter Tight',
+            fontWeight: 500,
+            fontStyle: 'Medium',
+            fontSize: '40px',
+            lineHeight: '110.00000000000001%',
+            letterSpacing: '0px',
+            verticalAlign: 'middle',
+          }}
         >
           News & Press Release
         </h2>
@@ -450,7 +450,7 @@ const Home: FC = () => {
           letterSpacing: '0px',
           color: '#00000099'
         }}>
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its 
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its
           layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
         </p>
 
@@ -459,7 +459,7 @@ const Home: FC = () => {
           <NewsGrid />
         </div>
 
-       
+
       </section>
 
       {/* AWARDS & RECOGNITION */}
@@ -486,7 +486,7 @@ const Home: FC = () => {
           letterSpacing: '0px',
           color: '#00000099'
         }}>
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its 
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its
           layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
         </p>
 
@@ -497,8 +497,8 @@ const Home: FC = () => {
             {/* Bigger Image */}
             <div style={{ width: '61.89655%' }}>
               <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f91b85c6-cabd-4e8e-af67-d80e0d161a00/public"
-                alt="CII Design Excellence Award"
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/304b56a7-9d7b-41e8-31f4-0ee7f7168800/public"
+                alt="WAE Drinking Water Coolers Certified by BIS Under IS 1475:2024"
                 width={717}
                 height={400}
                 className="w-full h-[356px]"
@@ -511,7 +511,7 @@ const Home: FC = () => {
                   lineHeight: '100%',
                   color: '#000000'
                 }}>
-                  CII Design Excellence Award 2025
+                  WAE Drinking Water Coolers Certified by BIS Under IS 1475:2024
                 </h3>
                 <p className="mb-4" style={{
                   fontFamily: 'Inter Tight',
@@ -520,46 +520,48 @@ const Home: FC = () => {
                   lineHeight: '100%',
                   color: '#00000099'
                 }}>
-                  Recognized for breakthrough innovation in water technology.
+                  WAE, an Indian manufacturer of drinking water and water management systems for institutional and commercial use...
                 </p>
-                <button className="px-6 py-3 bg-black text-white border border-black" style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  transition: 'all 500ms ease',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = 'black';
-                  e.currentTarget.style.borderColor = 'black';
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
-                  if (arrow) {
-                    arrow.style.transition = 'color 900ms ease';
-                    arrow.style.color = 'black';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'black';
-                  e.currentTarget.style.color = 'white';
-                  e.currentTarget.style.borderColor = 'black';
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
-                  if (arrow) {
-                    arrow.style.color = 'white';
-                  }
-                }}>
-                  <span style={{ transition: 'color 500ms ease' }}>View Story </span>
-                  <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
-                </button>
+                <a href="https://themachinemaker.com/news/wae-drinking-water-coolers-certified-by-bis-under-is-14752024/">
+                  <button className="px-6 py-3 bg-black text-white border border-black" style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                    transition: 'all 500ms ease',
+                    cursor: 'pointer'
+                  }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = 'black';
+                      e.currentTarget.style.borderColor = 'black';
+                      const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                      if (arrow) {
+                        arrow.style.transition = 'color 900ms ease';
+                        arrow.style.color = 'black';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'black';
+                      e.currentTarget.style.color = 'white';
+                      e.currentTarget.style.borderColor = 'black';
+                      const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                      if (arrow) {
+                        arrow.style.color = 'white';
+                      }
+                    }}>
+                    <span style={{ transition: 'color 500ms ease' }}>View Story </span>
+                    <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+                  </button>
+                </a>
               </div>
             </div>
 
             {/* Smaller Image */}
             <div style={{ width: '34.65517%' }}>
               <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a42c2a56-6e86-4058-f377-6eb119e82600/public"
-                alt="CII Design Excellence Award"
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6fe3159e-1abc-45bc-2d8e-bdfd03a3fb00/public"
+                alt="WAE Felicitated with 15th CII Design Excellence..."
                 width={402}
                 height={400}
                 className="w-full h-[356px]"
@@ -572,7 +574,7 @@ const Home: FC = () => {
                   lineHeight: '100%',
                   color: '#000000'
                 }}>
-                  CII Design Excellence Award 2025
+                  WAE Felicitated with 15th CII Design Excellence...
                 </h3>
                 <p className="mb-4" style={{
                   fontFamily: 'Inter Tight',
@@ -581,38 +583,40 @@ const Home: FC = () => {
                   lineHeight: '100%',
                   color: '#00000099'
                 }}>
-                  Recognized for breakthrough innovation in water technology.
+                  WAE, India’s leading water solutions provider, has been conferred...
                 </p>
-                <button className="px-6 py-3 bg-black text-white border border-black" style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  transition: 'all 500ms ease',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = 'black';
-                  e.currentTarget.style.borderColor = 'black';
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
-                  if (arrow) {
-                    arrow.style.transition = 'color 900ms ease';
-                    arrow.style.color = 'black';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'black';
-                  e.currentTarget.style.color = 'white';
-                  e.currentTarget.style.borderColor = 'black';
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
-                  if (arrow) {
-                    arrow.style.color = 'white';
-                  }
-                }}>
-                  <span style={{ transition: 'color 500ms ease' }}>View Story </span>
-                  <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
-                </button>
+                <a href="https://www.passionateinmarketing.com/wae-felicitated-with-15th-cii-design-excellence-award-2025-for-communication-design/">
+                  <button className="px-6 py-3 bg-black text-white border border-black" style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                    transition: 'all 500ms ease',
+                    cursor: 'pointer'
+                  }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = 'black';
+                      e.currentTarget.style.borderColor = 'black';
+                      const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                      if (arrow) {
+                        arrow.style.transition = 'color 900ms ease';
+                        arrow.style.color = 'black';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'black';
+                      e.currentTarget.style.color = 'white';
+                      e.currentTarget.style.borderColor = 'black';
+                      const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                      if (arrow) {
+                        arrow.style.color = 'white';
+                      }
+                    }}>
+                    <span style={{ transition: 'color 500ms ease' }}>View Story </span>
+                    <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -622,8 +626,8 @@ const Home: FC = () => {
             {/* Smaller Image */}
             <div style={{ width: '34.65517%' }}>
               <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a42c2a56-6e86-4058-f377-6eb119e82600/public"
-                alt="CII Design Excellence Award"
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/97bae575-faf2-4522-ed06-48c53cd6d400/public"
+                alt="Anupam Vikram Joshe on WAE’s path to ZED Gold"
                 width={718}
                 height={356}
                 className="w-full h-356"
@@ -636,7 +640,7 @@ const Home: FC = () => {
                   lineHeight: '100%',
                   color: '#000000'
                 }}>
-                  CII Design Excellence Award 2025
+                  Anupam Vikram Joshe on WAE’s path to ZED Gold
                 </h3>
                 <p className="mb-4" style={{
                   fontFamily: 'Inter Tight',
@@ -645,46 +649,48 @@ const Home: FC = () => {
                   lineHeight: '100%',
                   color: '#00000099'
                 }}>
-                  Recognized for breakthrough innovation in water technology.
+                  In today’s rapidly evolving sustainability landscape, organisations...
                 </p>
-                <button className="px-6 py-3 bg-black text-white border border-black" style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  transition: 'all 500ms ease',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = 'black';
-                  e.currentTarget.style.borderColor = 'black';
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
-                  if (arrow) {
-                    arrow.style.transition = 'color 900ms ease';
-                    arrow.style.color = 'black';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'black';
-                  e.currentTarget.style.color = 'white';
-                  e.currentTarget.style.borderColor = 'black';
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
-                  if (arrow) {
-                    arrow.style.color = 'white';
-                  }
-                }}>
-                  <span style={{ transition: 'color 500ms ease' }}>View Story </span>
-                  <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
-                </button>
+                <a href="https://www.manufacturingtodayindia.com/waes-path-to-zed-gold">
+                  <button className="px-6 py-3 bg-black text-white border border-black" style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                    transition: 'all 500ms ease',
+                    cursor: 'pointer'
+                  }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = 'black';
+                      e.currentTarget.style.borderColor = 'black';
+                      const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                      if (arrow) {
+                        arrow.style.transition = 'color 900ms ease';
+                        arrow.style.color = 'black';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'black';
+                      e.currentTarget.style.color = 'white';
+                      e.currentTarget.style.borderColor = 'black';
+                      const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                      if (arrow) {
+                        arrow.style.color = 'white';
+                      }
+                    }}>
+                    <span style={{ transition: 'color 500ms ease' }}>View Story </span>
+                    <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+                  </button>
+                </a>
               </div>
             </div>
 
             {/* Bigger Image */}
             <div style={{ width: '61.89655%' }}>
               <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f91b85c6-cabd-4e8e-af67-d80e0d161a00/public"
-                alt="CII Design Excellence Award"
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee45de6e-2169-4590-0684-201b1d3d6200/public"
+                alt="WAE receives ZED gold certification for sustainable manufacturing"
                 width={717}
                 height={400}
                 className="w-full h-[356px]"
@@ -697,7 +703,7 @@ const Home: FC = () => {
                   lineHeight: '100%',
                   color: '#000000'
                 }}>
-                  CII Design Excellence Award 2025
+                  WAE receives ZED gold certification for sustainable manufacturing
                 </h3>
                 <p className="mb-4" style={{
                   fontFamily: 'Inter Tight',
@@ -706,38 +712,40 @@ const Home: FC = () => {
                   lineHeight: '100%',
                   color: '#00000099'
                 }}>
-                  Recognized for breakthrough innovation in water technology.
+                  The ZED Gold Certification places WAE among enterprises that mainatin high levels of product quality while...
                 </p>
-                <button className="px-6 py-3 bg-black text-white border border-black" style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  transition: 'all 500ms ease',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = 'black';
-                  e.currentTarget.style.borderColor = 'black';
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
-                  if (arrow) {
-                    arrow.style.transition = 'color 900ms ease';
-                    arrow.style.color = 'black';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'black';
-                  e.currentTarget.style.color = 'white';
-                  e.currentTarget.style.borderColor = 'black';
-                  const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
-                  if (arrow) {
-                    arrow.style.color = 'white';
-                  }
-                }}>
-                  <span style={{ transition: 'color 500ms ease' }}>View Story </span>
-                  <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
-                </button>
+                <a href="https://manufacturing.economictimes.indiatimes.com/news/industry/wae-receives-zed-gold-certification-for-sustainable-manufacturing/125057437">
+                  <button className="px-6 py-3 bg-black text-white border border-black" style={{
+                    fontFamily: 'Inter Tight',
+                    fontWeight: 500,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                    transition: 'all 500ms ease',
+                    cursor: 'pointer'
+                  }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = 'black';
+                      e.currentTarget.style.borderColor = 'black';
+                      const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                      if (arrow) {
+                        arrow.style.transition = 'color 900ms ease';
+                        arrow.style.color = 'black';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'black';
+                      e.currentTarget.style.color = 'white';
+                      e.currentTarget.style.borderColor = 'black';
+                      const arrow = e.currentTarget.querySelector('.button-arrow') as HTMLElement;
+                      if (arrow) {
+                        arrow.style.color = 'white';
+                      }
+                    }}>
+                    <span style={{ transition: 'color 500ms ease' }}>View Story </span>
+                    <span className="ml-2 button-arrow" style={{ transition: 'color 900ms ease' }}>↗</span>
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -745,10 +753,10 @@ const Home: FC = () => {
       </section>
 
 
-        {/* FOOTER SECTION */}
-        <div style={{ position: "relative", zIndex: 1200 }}>
-          <Footer />
-        </div>
+      {/* FOOTER SECTION */}
+      <div style={{ position: "relative", zIndex: 1200 }}>
+        <Footer />
+      </div>
 
       {/* INLINE STYLES */}
       {/* Custom CSS for specific elements and animations */}
