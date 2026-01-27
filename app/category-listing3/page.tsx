@@ -37,58 +37,46 @@ const categoryOptions = [
 // the strings in the updated categoryOptions and mountingOptions arrays respectively.
 const allProducts = [
   {
+    id: "product-assistflow",
     name: "BLUWAE ASSISTIFLOW",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61bed0a3-d40d-46ec-2edd-a3fb53abe400/public",
     category: "DRINKING WATER STATIONS", // Must match categoryOptions value
     mountingType: "Free Standing", // Must match mountingOptions value
   },
   {
+    id: "product-pos",
     name: "BLUWAE POS",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6a2acaf3-4e68-43ff-260a-e504100a5500/public",
     category: "DRINKING WATER STATIONS",
     mountingType: "Free Standing",
   },
   {
-    name: "BLUWAE ENKI FS",
+    id: "product-enki",
+    name: "BLUWAE ENKI",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ea4dd229-e02c-4eb6-18d4-dbe962b36f00/public",
     category: "DRINKING WATER STATIONS",
     mountingType: "Free Standing",
   },
   {
-    name: "BLUWAE ROM FS",
+    id: "product-rom-series",
+    name: "BLUWAE ROM",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3cae59a6-2900-4329-3fc1-dafd4cfe4900/public",
     category: "DRINKING WATER STATIONS",
     mountingType: "Free Standing",
   },
   {
-    name: "BLUWAE VAR FS",
+    id: "product-var-series",
+    name: "BLUWAE VAR",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/801e38f9-4666-4511-1462-1f8767824e00/public",
     category: "DRINKING WATER STATIONS",
     mountingType: "Free Standing",
   },
   {
+    id: "product-reva",
     name: "BLUWAE REVA",
     src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f5bd039-db57-440a-a392-1934736b8800/public",
     category: "DRINKING WATER STATIONS",
     mountingType: "Free Standing",
-  },
-  {
-    name: "BLUWAE VAR CT",
-    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1bc69e19-64e2-4b96-3158-916313af6300/public",
-    category: "DRINKING WATER STATIONS",
-    mountingType: "Counter Top", // Must match mountingOptions value
-  },
-  {
-    name: "BLUWAE ENKI CT",
-    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/24affdcc-bfce-4544-a951-4ec4de4fb500/public",
-    category: "DRINKING WATER STATIONS",
-    mountingType: "Counter Top",
-  },
-  {
-    name: "BLUWAE ROM CT",
-    src: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/636ec9ab-40e5-4d1e-cabd-d17e14278a00/public",
-    category: "DRINKING WATER STATIONS",
-    mountingType: "Counter Top",
   },
   {
     name: "TRUBLU AENON",
@@ -245,246 +233,246 @@ const mapUrlParamToFilterOption = (paramValue: string | null): { category: strin
 
 // Extract the client-side logic into a separate component
 const ClientSideContent: FC = () => {
-     // Get URL search parameters
-    const searchParams = useSearchParams();
+  // Get URL search parameters
+  const searchParams = useSearchParams();
 
-    // Get the category ID from the URL parameter
-    // Use a fallback like undefined if the parameter is not present
-    const categoryIdParam = searchParams.get('category');
+  // Get the category ID from the URL parameter
+  // Use a fallback like undefined if the parameter is not present
+  const categoryIdParam = searchParams.get('category');
 
-    // Look up the full category data object from the imported data
-    const currentCategory = categoryIdParam ? productCategories[categoryIdParam] : undefined;
+  // Look up the full category data object from the imported data
+  const currentCategory = categoryIdParam ? productCategories[categoryIdParam] : undefined;
 
 
-    // State for each dropdown visibility
-    const [showMountingDropdown, setShowMountingDropdown] = useState(false);
-    const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
+  // State for each dropdown visibility
+  const [showMountingDropdown, setShowMountingDropdown] = useState(false);
+  const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
 
-    // State for selected filter options - Initialized as empty arrays
-    const [selectedMountingTypes, setSelectedMountingTypes] = useState<string[]>([]);
-    const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  // State for selected filter options - Initialized as empty arrays
+  const [selectedMountingTypes, setSelectedMountingTypes] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-    // Refs for the dropdowns and their buttons to detect outside clicks
-    const mountingDropdownRef = useRef<HTMLDivElement>(null);
-    const mountingButtonRef = useRef<HTMLButtonElement>(null);
+  // Refs for the dropdowns and their buttons to detect outside clicks
+  const mountingDropdownRef = useRef<HTMLDivElement>(null);
+  const mountingButtonRef = useRef<HTMLButtonElement>(null);
 
-    const categoryDropdownRef = useRef<HTMLDivElement>(null);
-    const categoryButtonRef = useRef<HTMLButtonElement>(null);
+  const categoryDropdownRef = useRef<HTMLDivElement>(null);
+  const categoryButtonRef = useRef<HTMLButtonElement>(null);
 
-    // Effect to read URL parameters on initial load and set filter state
-    useEffect(() => {
-      const categoryParam = searchParams.get('category');
-      const mountingParam = searchParams.get('mounting');
+  // Effect to read URL parameters on initial load and set filter state
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    const mountingParam = searchParams.get('mounting');
 
-      const initialCategories: string[] = [];
-      const initialMountingTypes: string[] = [];
+    const initialCategories: string[] = [];
+    const initialMountingTypes: string[] = [];
 
-      // Map URL parameters to filter options using the improved mapping function
-      const mappedCategory = mapUrlParamToFilterOption(categoryParam).category;
-      if (mappedCategory) {
-        initialCategories.push(mappedCategory);
+    // Map URL parameters to filter options using the improved mapping function
+    const mappedCategory = mapUrlParamToFilterOption(categoryParam).category;
+    if (mappedCategory) {
+      initialCategories.push(mappedCategory);
+    }
+
+    const mappedMounting = mapUrlParamToFilterOption(mountingParam).mounting;
+    if (mappedMounting) {
+      initialMountingTypes.push(mappedMounting);
+    }
+
+    // Update state only if there are parameters to apply
+    if (initialCategories.length > 0 || initialMountingTypes.length > 0) {
+      setSelectedCategories(initialCategories);
+      setSelectedMountingTypes(initialMountingTypes);
+
+      // Optionally, open the dropdowns if filters were applied via URL
+      // if (initialCategories.length > 0) setShowCategoryDropdown(true);
+      // if (initialMountingTypes.length > 0) setShowMountingDropdown(true);
+    } else {
+      // If no parameters are present, ensure filters are reset
+      setSelectedCategories([]);
+      setSelectedMountingTypes([]);
+    }
+
+  }, [searchParams]); // Dependency array includes searchParams so effect re-runs if URL changes
+
+  // Effect to handle clicking outside ANY open dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+
+      // Check if the click was inside the Mounting dropdown area (button + dropdown)
+      const clickedInsideMountingArea =
+        mountingButtonRef.current?.contains(target) || mountingDropdownRef.current?.contains(target);
+
+      // Check if the click was inside the Category dropdown area (button + dropdown)
+      const clickedInsideCategoryArea =
+        categoryButtonRef.current?.contains(target) || categoryDropdownRef.current?.contains(target);
+
+      // If the click was outside BOTH areas AND the Mounting dropdown is open, close it
+      if (showMountingDropdown && !clickedInsideMountingArea) {
+        setShowMountingDropdown(false);
       }
 
-      const mappedMounting = mapUrlParamToFilterOption(mountingParam).mounting;
-       if (mappedMounting) {
-        initialMountingTypes.push(mappedMounting);
+      // If the click was outside BOTH areas AND the Category dropdown is open, close it
+      if (showCategoryDropdown && !clickedInsideCategoryArea) {
+        setShowCategoryDropdown(false);
       }
 
-      // Update state only if there are parameters to apply
-      if (initialCategories.length > 0 || initialMountingTypes.length > 0) {
-          setSelectedCategories(initialCategories);
-          setSelectedMountingTypes(initialMountingTypes);
-
-          // Optionally, open the dropdowns if filters were applied via URL
-          // if (initialCategories.length > 0) setShowCategoryDropdown(true);
-          // if (initialMountingTypes.length > 0) setShowMountingDropdown(true);
-      } else {
-          // If no parameters are present, ensure filters are reset
-          setSelectedCategories([]);
-          setSelectedMountingTypes([]);
+      // Close the *other* dropdown if one button is clicked.
+      // This ensures only one dropdown is open at a time.
+      // This logic seems slightly off if you click one dropdown button and the other is open -
+      // it might close the one you clicked. A simpler approach might be to just close both
+      // if clicking outside *either* dropdown button/area.
+      // Let's keep your existing logic for now based on the shared code, but note it.
+      if (showMountingDropdown && !clickedInsideMountingArea && clickedInsideCategoryArea) {
+        setShowMountingDropdown(false);
       }
-
-    }, [searchParams]); // Dependency array includes searchParams so effect re-runs if URL changes
-
-     // Effect to handle clicking outside ANY open dropdown
-    useEffect(() => {
-      const handleClickOutside = (event: MouseEvent) => {
-        const target = event.target as Node;
-
-        // Check if the click was inside the Mounting dropdown area (button + dropdown)
-        const clickedInsideMountingArea =
-          mountingButtonRef.current?.contains(target) || mountingDropdownRef.current?.contains(target);
-
-        // Check if the click was inside the Category dropdown area (button + dropdown)
-        const clickedInsideCategoryArea =
-          categoryButtonRef.current?.contains(target) || categoryDropdownRef.current?.contains(target);
-
-        // If the click was outside BOTH areas AND the Mounting dropdown is open, close it
-        if (showMountingDropdown && !clickedInsideMountingArea) {
-          setShowMountingDropdown(false);
-        }
-
-        // If the click was outside BOTH areas AND the Category dropdown is open, close it
-        if (showCategoryDropdown && !clickedInsideCategoryArea) {
-          setShowCategoryDropdown(false);
-        }
-
-        // Close the *other* dropdown if one button is clicked.
-        // This ensures only one dropdown is open at a time.
-        // This logic seems slightly off if you click one dropdown button and the other is open -
-        // it might close the one you clicked. A simpler approach might be to just close both
-        // if clicking outside *either* dropdown button/area.
-        // Let's keep your existing logic for now based on the shared code, but note it.
-        if (showMountingDropdown && !clickedInsideMountingArea && clickedInsideCategoryArea) {
-          setShowMountingDropdown(false);
-        }
-        if (showCategoryDropdown && !clickedInsideCategoryArea && clickedInsideMountingArea) {
-          setShowCategoryDropdown(false);
-        }
-      };
-
-      // Add the event listener when EITHER dropdown is shown
-      if (showMountingDropdown || showCategoryDropdown) {
-        document.addEventListener("mousedown", handleClickOutside);
+      if (showCategoryDropdown && !clickedInsideCategoryArea && clickedInsideMountingArea) {
+        setShowCategoryDropdown(false);
       }
-
-      // Clean up the event listener when the component unmounts or dropdown states change
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, [showMountingDropdown, showCategoryDropdown]); // Dependencies include dropdown states
-
-
-     // Function to handle checkbox changes for filters
-    const handleFilterChange = (
-      option: string,
-      type: "mounting" | "category",
-      isChecked: boolean
-    ) => {
-      if (type === "mounting") {
-        setSelectedMountingTypes((prevSelected) =>
-          isChecked ? [...prevSelected, option] : prevSelected.filter((item) => item !== option)
-        );
-      } else if (type === "category") {
-        setSelectedCategories((prevSelected) =>
-          isChecked ? [...prevSelected, option] : prevSelected.filter((item) => item !== option)
-        );
-      }
-      // NOTE: You might want to update the URL here as well to reflect the selected filters
-      // This would make the filtered view shareable and bookmarkable. (Using useRouter or useSearchParams replace)
     };
 
-    // Function to filter products based on selected options
-    const filterProducts = () => {
-      // If no filters are selected, show all products
-      if (selectedMountingTypes.length === 0 && selectedCategories.length === 0) {
-        return allProducts;
-      }
+    // Add the event listener when EITHER dropdown is shown
+    if (showMountingDropdown || showCategoryDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
 
-      // Filter products based on selected categories AND selected mounting types
-      return allProducts.filter((product) => {
-        const passesCategoryFilter =
-          selectedCategories.length === 0 || selectedCategories.includes(product.category);
-        const passesMountingFilter =
-          selectedMountingTypes.length === 0 || selectedMountingTypes.includes(product.mountingType);
-
-        // Product must match AT LEAST one selected category (if any are selected)
-        // AND AT LEAST one selected mounting type (if any are selected)
-        return passesCategoryFilter && passesMountingFilter;
-      });
+    // Clean up the event listener when the component unmounts or dropdown states change
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
     };
+  }, [showMountingDropdown, showCategoryDropdown]); // Dependencies include dropdown states
 
-    // Get the filtered list of products
-    const filteredProducts = filterProducts();
 
-     // Base button style (transparent background, black font) - Defined here as it's used in this component
-    const baseButtonStyle: React.CSSProperties = {
-      padding: "16px 8px", // Restored padding
-      fontFamily: "'Inter Tight', sans-serif",
-      fontWeight: 400,
-      fontSize: "12px",
-      lineHeight: "12px",
-      letterSpacing: "0%",
-      textAlign: "center",
-      textTransform: "uppercase",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: "transparent", // Default transparent background
-      color: "#000", // Default black font
-      transition: "background-color 0.3s ease, color 0.3s ease", // Smooth transition
-    };
+  // Function to handle checkbox changes for filters
+  const handleFilterChange = (
+    option: string,
+    type: "mounting" | "category",
+    isChecked: boolean
+  ) => {
+    if (type === "mounting") {
+      setSelectedMountingTypes((prevSelected) =>
+        isChecked ? [...prevSelected, option] : prevSelected.filter((item) => item !== option)
+      );
+    } else if (type === "category") {
+      setSelectedCategories((prevSelected) =>
+        isChecked ? [...prevSelected, option] : prevSelected.filter((item) => item !== option)
+      );
+    }
+    // NOTE: You might want to update the URL here as well to reflect the selected filters
+    // This would make the filtered view shareable and bookmarkable. (Using useRouter or useSearchParams replace)
+  };
 
-    // Data for the 4 buttons - Defined here as it's used in this component
-    const buttons = [
-      { label: "FILTER BY" }, // Filter by button retains original styling
-      { label: "CATEGORY" },
-      { label: "MOUNTING TYPE" },
-      { label: "INSTALLATION TYPE" },
-    ];
+  // Function to filter products based on selected options
+  const filterProducts = () => {
+    // If no filters are selected, show all products
+    if (selectedMountingTypes.length === 0 && selectedCategories.length === 0) {
+      return allProducts;
+    }
 
-     // Helper function to render dropdown content (checkboxes) - Defined here
-    const renderDropdownOptions = (options: string[], type: "mounting" | "category") => {
-      const selectedOptions = type === "mounting" ? selectedMountingTypes : selectedCategories;
-      return options.map((option, idx) => (
-        // Modified className to use justify-between and w-full, removed fixed margin from label
-        <div key={idx} className="flex justify-between items-center mb-2 w-full px-2">
-          <input
-            id={`${type}-option-${idx}`}
-            type="checkbox"
-            className="form-checkbox"
-            style={{ accentColor: "#000" }}
-            checked={selectedOptions.includes(option)} // Check if option is in selected state
-            onChange={(e) => handleFilterChange(option, type, e.target.checked)}
+    // Filter products based on selected categories AND selected mounting types
+    return allProducts.filter((product) => {
+      const passesCategoryFilter =
+        selectedCategories.length === 0 || selectedCategories.includes(product.category);
+      const passesMountingFilter =
+        selectedMountingTypes.length === 0 || selectedMountingTypes.includes(product.mountingType);
+
+      // Product must match AT LEAST one selected category (if any are selected)
+      // AND AT LEAST one selected mounting type (if any are selected)
+      return passesCategoryFilter && passesMountingFilter;
+    });
+  };
+
+  // Get the filtered list of products
+  const filteredProducts = filterProducts();
+
+  // Base button style (transparent background, black font) - Defined here as it's used in this component
+  const baseButtonStyle: React.CSSProperties = {
+    padding: "16px 8px", // Restored padding
+    fontFamily: "'Inter Tight', sans-serif",
+    fontWeight: 400,
+    fontSize: "12px",
+    lineHeight: "12px",
+    letterSpacing: "0%",
+    textAlign: "center",
+    textTransform: "uppercase",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "transparent", // Default transparent background
+    color: "#000", // Default black font
+    transition: "background-color 0.3s ease, color 0.3s ease", // Smooth transition
+  };
+
+  // Data for the 4 buttons - Defined here as it's used in this component
+  const buttons = [
+    { label: "FILTER BY" }, // Filter by button retains original styling
+    { label: "CATEGORY" },
+    { label: "MOUNTING TYPE" },
+    { label: "INSTALLATION TYPE" },
+  ];
+
+  // Helper function to render dropdown content (checkboxes) - Defined here
+  const renderDropdownOptions = (options: string[], type: "mounting" | "category") => {
+    const selectedOptions = type === "mounting" ? selectedMountingTypes : selectedCategories;
+    return options.map((option, idx) => (
+      // Modified className to use justify-between and w-full, removed fixed margin from label
+      <div key={idx} className="flex justify-between items-center mb-2 w-full px-2">
+        <input
+          id={`${type}-option-${idx}`}
+          type="checkbox"
+          className="form-checkbox"
+          style={{ accentColor: "#000" }}
+          checked={selectedOptions.includes(option)} // Check if option is in selected state
+          onChange={(e) => handleFilterChange(option, type, e.target.checked)}
+        />
+        <label className="uppercase"
+          htmlFor={`${type}-option-${idx}`}
+          style={{
+            fontFamily: "Inter Tight",
+            fontWeight: 400,
+            fontSize: "10px",
+            lineHeight: "140%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+            // Removed marginLeft here as justify-between handles spacing
+            whiteSpace: "nowrap",
+            cursor: "pointer", // Indicate it's clickable
+          }}
+        >
+          {option}
+        </label>
+      </div>
+    ));
+  };
+
+
+  return (
+    <> {/* Use a fragment to return multiple elements */}
+
+      {/* --- Dynamic Hero Section (MOVED HERE into ClientSideContent) --- */}
+      {/* This section now has access to searchParams and currentCategory */}
+      <section id="hero" className="relative w-auto">
+        {/* Dynamic Hero Video or Fallback Image */}
+        {currentCategory?.heroVideo ? (
+          <video
+            src={`/${currentCategory.heroVideo.replace(/^app\//, "")}`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
           />
-          <label className="uppercase"
-            htmlFor={`${type}-option-${idx}`}
-            style={{
-              fontFamily: "Inter Tight",
-              fontWeight: 400,
-              fontSize: "10px",
-              lineHeight: "140%",
-              letterSpacing: "0%",
-              verticalAlign: "middle",
-              // Removed marginLeft here as justify-between handles spacing
-              whiteSpace: "nowrap",
-              cursor: "pointer", // Indicate it's clickable
-            }}
-          >
-            {option}
-          </label>
-        </div>
-      ));
-    };
+        ) : (
+          <Image
+            src={"https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public"}
+            alt={`Hero image for ${currentCategory?.title || 'Products'}`}
+            width={1440}
+            height={656}
+            className="object-cover w-full h-full"
+          />
+        )}
 
-
-    return (
-        <> {/* Use a fragment to return multiple elements */}
-
-             {/* --- Dynamic Hero Section (MOVED HERE into ClientSideContent) --- */}
-             {/* This section now has access to searchParams and currentCategory */}
-             <section id="hero" className="relative w-auto">
-                 {/* Dynamic Hero Video or Fallback Image */}
-                 {currentCategory?.heroVideo ? (
-                   <video
-                     src={`/${currentCategory.heroVideo.replace(/^app\//, "")}`}
-                     autoPlay
-                     muted
-                     loop
-                     playsInline
-                     style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                   />
-                 ) : (
-                 <Image
-                     src={"https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cad8ebce-9713-4fa1-bf99-25684ba4cb00/public"}
-                     alt={`Hero image for ${currentCategory?.title || 'Products'}`}
-                     width={1440}
-                     height={656}
-                     className="object-cover w-full h-full"
-                   />
-                 )}
-
-                 {/*
+        {/*
                   <div
                      className="absolute"
                      style={{
@@ -518,260 +506,256 @@ const ClientSideContent: FC = () => {
                    />
                  </div>
                  */}
-               </section>
+      </section>
 
 
-             {/* Buttons Section */}
-            <section className="mx-auto max-w-[1440px] px-[9.72%]">
-              {/* Gap of 120px after the hero (This replaces the margin on the hero section above) */}
-               <div style={{ height: "120px" }} />
+      {/* Buttons Section */}
+      <section className="mx-auto max-w-[1440px] px-[9.72%]">
+        {/* Gap of 120px after the hero (This replaces the margin on the hero section above) */}
+        <div style={{ height: "120px" }} />
 
 
-              <div
-                className="flex gap-4 pb-4"
-                // style={{ justifyContent: "justify-between" }} // Consider using justify-between if flex items don't fill space
-              >
-                {buttons.map((btn, index) => {
-                  // --- FILTER BY Button (Always Black Background) ---
-                  if (btn.label === "FILTER BY") {
-                    return (
-                      <div
-                        key={index}
-                        className="flex justify-between" // Keep this or adjust parent flex?
-                        style={{ flex: 1, maxWidth: "16%" }} // Max width retained
-                      >
-                        <button className="mr-20px"
-                          style={{
-                            ...baseButtonStyle, // Start with base styles
-                            backgroundColor: "#000", // Override for black background
-                            color: "#fff", // Override for white font
-                            flex: 1, // Allow button to fill container div
-                            paddingLeft: "41.67px", // Specific padding
-                            paddingRight: "41.67px", // Specific padding
-                            whiteSpace: "nowrap",
-                            borderRight: "0.67px solid #00000066",
-                          }}
-                        >
-                          {btn.label}
-                        </button>
-                      </div>
-                    );
-                  }
-                  // --- CATEGORY Button (Dropdown) ---
-                  else if (btn.label === "CATEGORY") {
-                    return (
-                      // Changed width to 20.833%
-                      <div key={index} className="relative" style={{ width: "20.833%" }}>
-                        <button
-                          ref={categoryButtonRef}
-                          style={{
-                            ...baseButtonStyle, // Start with base styles (transparent/black)
-                            flex: "unset", // Don't let flex grow
-                            width: "100%", // Fill parent div
-                            // Conditionally apply black background and white font if dropdown is open OR if category filter is selected
-                            ...(showCategoryDropdown || selectedCategories.length > 0 ? { backgroundColor: "#000", color: "#fff" } : {}),
-                          }}
-                          onClick={() => setShowCategoryDropdown((prev) => !prev)}
-                          // Applied w-full, flex, justify-between, items-center - removed px-2
-                          className="w-full flex justify-between items-center"
-                        >
-                          {/* The span wraps the text and SVG to allow justify-between on the button */}
-                          <span className="flex-grow flex justify-between items-center whitespace-nowrap">
-                            {btn.label}
-                            {/* SVG Arrow */}
-                            <svg
-                              className={`w-2.5 h-2.5 transition-transform duration-500 ${
-                                showCategoryDropdown ? "rotate-180" : ""
-                              }`}
-                              aria-hidden="true"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 10 6"
-                            >
-                              <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="1"
-                                d="m1 1 4 4 4-4"
-                              />
-                            </svg>
-                          </span>
-                        </button>
-                        {/* Category Dropdown Menu */}
-                        <div
-                          ref={categoryDropdownRef}
-                          className={`absolute left-0 top-full w-full bg-white transition-all duration-500 ease-in-out ${
-                            showCategoryDropdown
-                              ? "opacity-100 translate-y-0"
-                              : "opacity-0 -translate-y-0.5 pointer-events-none"
-                          }`}
-                          style={{
-                            boxShadow: "0px 4px 4px 0px #00000040",
-                            padding: "20px 8px",
-                            zIndex: 10,
-                            maxHeight: "200px",
-                            overflowY: "auto",
-                            border: "1px solid #D9D9DC", // Added border for definition
-                          }}
-                        >
-                          {renderDropdownOptions(categoryOptions, "category")}
-                        </div>
-                      </div>
-                    );
-                  }
-                  // --- MOUNTING TYPE Button (Dropdown) ---
-                  else if (btn.label === "MOUNTING TYPE") {
-                    return (
-                       // Changed width to 20.833%
-                      <div key={index} className="relative" style={{ width: "20.833%" }}>
-                        <button
-                          ref={mountingButtonRef}
-                          style={{
-                            ...baseButtonStyle, // Start with base styles (transparent/black)
-                            flex: "unset", // Don't let flex grow
-                            width: "100%", // Fill parent div
-                             // Conditionally apply black background and white font if dropdown is open OR if mounting filter is selected
-                            ...(showMountingDropdown || selectedMountingTypes.length > 0 ? { backgroundColor: "#000", color: "#fff" } : {}),
-                          }}
-                          onClick={() => setShowMountingDropdown((prev) => !prev)}
-                           // Applied w-full, flex, justify-between, items-center - removed px-2
-                          className="w-full flex justify-between items-center"
-                        >
-                          {/* The span wraps the text and SVG to allow justify-between on the button */}
-                          <span className="flex-grow flex justify-between items-center whitespace-nowrap">
-                            {btn.label}
-                             {/* SVG Arrow */}
-                            <svg
-                              className={`w-2.5 h-2.5 transition-transform duration-500 ${
-                                showMountingDropdown ? "rotate-180" : ""
-                              }`}
-                              aria-hidden="true"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 10 6"
-                            >
-                              <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="1"
-                                d="m1 1 4 4 4-4"
-                              />
-                            </svg>
-                          </span>
-                        </button>
-                        {/* Mounting Type Dropdown Menu */}
-                        <div
-                          ref={mountingDropdownRef}
-                          className={`absolute left-0 top-full w-full bg-white transition-all duration-500 ease-in-out ${
-                            showMountingDropdown
-                              ? "opacity-100 translate-y-0"
-                              : "opacity-0 -translate-y-0.5 pointer-events-none"
-                          }`}
-                          style={{
-                            boxShadow: "0px 4px 4px 0px #00000040",
-                            padding: "20px 8px",
-                            zIndex: 10,
-                            maxHeight: "200px",
-                            overflowY: "auto",
-                             border: "1px solid #D9D9DC", // Added border for definition
-                          }}
-                        >
-                          {renderDropdownOptions(mountingOptions, "mounting")}
-                        </div>
-                      </div>
-                    );
-                  }
-                   // --- INSTALLATION TYPE Button (Transparent Background) ---
-                   // Render the Installation Type button
-                   // else if (btn.label === "INSTALLATION TYPE") { // Added condition for Installation Type
-                   //    return (
-                   //      // Added div wrapper with width 20.833% for consistent layout
-                   //      <div key={index} style={{ width: "20.833%" }}>
-                   //        <button
-                   //          style={{
-                   //            ...baseButtonStyle, // Start with base styles (transparent/black)
-                   //             flex: "unset", // Don't let flex grow
-                   //            width: "100%", // Fill parent div
-                   //          }}
-                   //          // No onClick functionality or state change needed for styling based on prompt interpretation
-                   //        >
-                   //          <span className="flex items-center">
-                   //            {btn.label}
-                   //          </span>
-                   //        </button>
-                   //      </div>
-                   //    );
-                   // }
-                   // Default case for any other buttons (shouldn't happen with current 'buttons' array)
-                   return null;
-                })}
-              </div>
-
-              {/* Horizontal rule */}
-              <hr style={{ borderColor: "#00000066" }} />
-            </section>
-
-            {/* Products Grid Section */}
-            <section className="mx-[9.72%] mb-[9.72%]">
-              {/* 80px gap after the horizontal rule */}
-              <div style={{ height: "80px" }} />
-
-              <div
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" // Added responsive grid classes and gap
-              >
-                {/* Map over filtered products */}
-                {filteredProducts.map((product, index) => (
-                  // Wrap the product item in a Link component
-                  <Link
-                    key={index}
-                    href={`/${product.name.toLowerCase().replace(/ /g, "-")}`} // Placeholder URL
-                    passHref // Use passHref with custom components like a styled div
+        <div
+          className="flex gap-4 pb-4"
+        // style={{ justifyContent: "justify-between" }} // Consider using justify-between if flex items don't fill space
+        >
+          {buttons.map((btn, index) => {
+            // --- FILTER BY Button (Always Black Background) ---
+            if (btn.label === "FILTER BY") {
+              return (
+                <div
+                  key={index}
+                  className="flex justify-between" // Keep this or adjust parent flex?
+                  style={{ flex: 1, maxWidth: "16%" }} // Max width retained
+                >
+                  <button className="mr-20px"
+                    style={{
+                      ...baseButtonStyle, // Start with base styles
+                      backgroundColor: "#000", // Override for black background
+                      color: "#fff", // Override for white font
+                      flex: 1, // Allow button to fill container div
+                      paddingLeft: "41.67px", // Specific padding
+                      paddingRight: "41.67px", // Specific padding
+                      whiteSpace: "nowrap",
+                      borderRight: "0.67px solid #00000066",
+                    }}
                   >
-                    {/* The entire product item becomes clickable */}
-                    <div className="flex flex-col items-center cursor-pointer"> {/* Added cursor-pointer for visual cue */}
-                      {/* Wrap image in a container to apply the zoom effect */}
-                      <div className="overflow-hidden rounded-md"> {/* Added rounded-md */}
-                        <div className="transition-transform duration-1000 ease-in-out hover:scale-110">
-                          <Image
-                            src={product.src}
-                            alt={product.name}
-                            width={360} // Example fixed size, adjust as needed
-                            height={360} // Example fixed size, adjust as needed
-                          />
-                        </div>
-                      </div>
-                      {/* 24px gap before product name */}
-                      <div style={{ height: "24px" }} />
-                      <div
-                        style={{
-                          fontFamily: "'Inter Tight', sans-serif",
-                          fontWeight: 400,
-                          fontSize: "14px",
-                          lineHeight: "140%",
-                          letterSpacing: "0%",
-                          textAlign: "center",
-                          verticalAlign: "middle",
-                          textTransform: "uppercase",
-                        }}
-                        className="related-card-title" // Keep existing styling
+                    {btn.label}
+                  </button>
+                </div>
+              );
+            }
+            // --- CATEGORY Button (Dropdown) ---
+            else if (btn.label === "CATEGORY") {
+              return (
+                // Changed width to 20.833%
+                <div key={index} className="relative" style={{ width: "20.833%" }}>
+                  <button
+                    ref={categoryButtonRef}
+                    style={{
+                      ...baseButtonStyle, // Start with base styles (transparent/black)
+                      flex: "unset", // Don't let flex grow
+                      width: "100%", // Fill parent div
+                      // Conditionally apply black background and white font if dropdown is open OR if category filter is selected
+                      ...(showCategoryDropdown || selectedCategories.length > 0 ? { backgroundColor: "#000", color: "#fff" } : {}),
+                    }}
+                    onClick={() => setShowCategoryDropdown((prev) => !prev)}
+                    // Applied w-full, flex, justify-between, items-center - removed px-2
+                    className="w-full flex justify-between items-center"
+                  >
+                    {/* The span wraps the text and SVG to allow justify-between on the button */}
+                    <span className="flex-grow flex justify-between items-center whitespace-nowrap">
+                      {btn.label}
+                      {/* SVG Arrow */}
+                      <svg
+                        className={`w-2.5 h-2.5 transition-transform duration-500 ${showCategoryDropdown ? "rotate-180" : ""
+                          }`}
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 10 6"
                       >
-                        {product.name}
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-               {/* Message if no products match the filters */}
-               {filteredProducts.length === 0 && (
-                  <div className="text-center text-gray-600 mt-8">
-                    No products found matching the selected filters.
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1"
+                          d="m1 1 4 4 4-4"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  {/* Category Dropdown Menu */}
+                  <div
+                    ref={categoryDropdownRef}
+                    className={`absolute left-0 top-full w-full bg-white transition-all duration-500 ease-in-out ${showCategoryDropdown
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 -translate-y-0.5 pointer-events-none"
+                      }`}
+                    style={{
+                      boxShadow: "0px 4px 4px 0px #00000040",
+                      padding: "20px 8px",
+                      zIndex: 10,
+                      maxHeight: "200px",
+                      overflowY: "auto",
+                      border: "1px solid #D9D9DC", // Added border for definition
+                    }}
+                  >
+                    {renderDropdownOptions(categoryOptions, "category")}
                   </div>
-               )}
-            </section>
-        </>
-    )
+                </div>
+              );
+            }
+            // --- MOUNTING TYPE Button (Dropdown) ---
+            else if (btn.label === "MOUNTING TYPE") {
+              return (
+                // Changed width to 20.833%
+                <div key={index} className="relative" style={{ width: "20.833%" }}>
+                  <button
+                    ref={mountingButtonRef}
+                    style={{
+                      ...baseButtonStyle, // Start with base styles (transparent/black)
+                      flex: "unset", // Don't let flex grow
+                      width: "100%", // Fill parent div
+                      // Conditionally apply black background and white font if dropdown is open OR if mounting filter is selected
+                      ...(showMountingDropdown || selectedMountingTypes.length > 0 ? { backgroundColor: "#000", color: "#fff" } : {}),
+                    }}
+                    onClick={() => setShowMountingDropdown((prev) => !prev)}
+                    // Applied w-full, flex, justify-between, items-center - removed px-2
+                    className="w-full flex justify-between items-center"
+                  >
+                    {/* The span wraps the text and SVG to allow justify-between on the button */}
+                    <span className="flex-grow flex justify-between items-center whitespace-nowrap">
+                      {btn.label}
+                      {/* SVG Arrow */}
+                      <svg
+                        className={`w-2.5 h-2.5 transition-transform duration-500 ${showMountingDropdown ? "rotate-180" : ""
+                          }`}
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 10 6"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1"
+                          d="m1 1 4 4 4-4"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  {/* Mounting Type Dropdown Menu */}
+                  <div
+                    ref={mountingDropdownRef}
+                    className={`absolute left-0 top-full w-full bg-white transition-all duration-500 ease-in-out ${showMountingDropdown
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 -translate-y-0.5 pointer-events-none"
+                      }`}
+                    style={{
+                      boxShadow: "0px 4px 4px 0px #00000040",
+                      padding: "20px 8px",
+                      zIndex: 10,
+                      maxHeight: "200px",
+                      overflowY: "auto",
+                      border: "1px solid #D9D9DC", // Added border for definition
+                    }}
+                  >
+                    {renderDropdownOptions(mountingOptions, "mounting")}
+                  </div>
+                </div>
+              );
+            }
+            // --- INSTALLATION TYPE Button (Transparent Background) ---
+            // Render the Installation Type button
+            // else if (btn.label === "INSTALLATION TYPE") { // Added condition for Installation Type
+            //    return (
+            //      // Added div wrapper with width 20.833% for consistent layout
+            //      <div key={index} style={{ width: "20.833%" }}>
+            //        <button
+            //          style={{
+            //            ...baseButtonStyle, // Start with base styles (transparent/black)
+            //             flex: "unset", // Don't let flex grow
+            //            width: "100%", // Fill parent div
+            //          }}
+            //          // No onClick functionality or state change needed for styling based on prompt interpretation
+            //        >
+            //          <span className="flex items-center">
+            //            {btn.label}
+            //          </span>
+            //        </button>
+            //      </div>
+            //    );
+            // }
+            // Default case for any other buttons (shouldn't happen with current 'buttons' array)
+            return null;
+          })}
+        </div>
+
+        {/* Horizontal rule */}
+        <hr style={{ borderColor: "#00000066" }} />
+      </section>
+
+      {/* Products Grid Section */}
+      <section className="mx-[9.72%] mb-[9.72%]">
+        {/* 80px gap after the horizontal rule */}
+        <div style={{ height: "80px" }} />
+
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" // Added responsive grid classes and gap
+        >
+          {/* Map over filtered products */}
+          {filteredProducts.map((product, index) => (
+            // Wrap the product item in a Link component
+            <Link
+              key={index}
+              href={`/${product.id || product.name.toLowerCase().replace(/ /g, "-")}`} // Use ID if available, fallback to name slug
+              passHref // Use passHref with custom components like a styled div
+            >
+              {/* The entire product item becomes clickable */}
+              <div className="flex flex-col items-center cursor-pointer"> {/* Added cursor-pointer for visual cue */}
+                {/* Wrap image in a container to apply the zoom effect */}
+                <div className="overflow-hidden rounded-md"> {/* Added rounded-md */}
+                  <div className="transition-transform duration-1000 ease-in-out hover:scale-110">
+                    <Image
+                      src={product.src}
+                      alt={product.name}
+                      width={360} // Example fixed size, adjust as needed
+                      height={360} // Example fixed size, adjust as needed
+                    />
+                  </div>
+                </div>
+                {/* 24px gap before product name */}
+                <div style={{ height: "24px" }} />
+                <div
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "140%",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    verticalAlign: "middle",
+                    textTransform: "uppercase",
+                  }}
+                  className="related-card-title" // Keep existing styling
+                >
+                  {product.name}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+        {/* Message if no products match the filters */}
+        {filteredProducts.length === 0 && (
+          <div className="text-center text-gray-600 mt-8">
+            No products found matching the selected filters.
+          </div>
+        )}
+      </section>
+    </>
+  )
 }
 
 
@@ -795,156 +779,156 @@ const Home: FC = () => {
     <main>
       {/* Normal Header (Remains here as it seems mostly static) */}
       <header className={`w-full relative z-10 pb-5 px-[9.72%] bg-white`}>
-          {/* Apply containerClass inside header content div */}
-          <div> {/* Removed containerClass here, used px-[9.72%] on header instead */}
-            {/* Top Row: Navigation */}
+        {/* Apply containerClass inside header content div */}
+        <div> {/* Removed containerClass here, used px-[9.72%] on header instead */}
+          {/* Top Row: Navigation */}
+          <div
+            className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "12px",
+              lineHeight: "100%",
+              letterSpacing: "0px",
+            }}
+          >
+            <div>IDENTITY</div>
+            <div>ORIGIN</div>
+            <div>OBJECTIVE</div>
+            <div>INSIDE WAE</div>
+            <div>ETCETERA</div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+
+          {/* Bottom Row: Logo, Tagline and Menu Items */}
+          <div className="grid grid-cols-5 items-start">
+            {/* Logo */}
+            <div className="flex flex-col justify-center">
+              <Link href="/">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                  alt="WAE Logo"
+                  width={78}
+                  height={82}
+                />
+              </Link>
+            </div>
+
+            {/* Coordinates */}
             <div
-              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+              className="flex flex-col justify-center inline-block mr-1"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
-                fontSize: "12px",
+                fontSize: "11px",
                 lineHeight: "100%",
-                letterSpacing: "0px",
+                color: "#000000",
               }}
             >
-              <div>IDENTITY</div>
-              <div>ORIGIN</div>
-              <div>OBJECTIVE</div>
-              <div>INSIDE WAE</div>
-              <div>ETCETERA</div>
+              20.5937° N
+              <br />
+              78.9629° E
             </div>
 
-            {/* Divider */}
-            <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+            {/* Tagline */}
+            <div
+              className="flex flex-col justify-center inline-block mr-1"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "11px",
+                lineHeight: "100%",
+                color: "#000000",
+              }}
+            >
+              To lead the way in<br />sustainability ahead of the<br />rest
+            </div>
 
-            {/* Bottom Row: Logo, Tagline and Menu Items */}
-            <div className="grid grid-cols-5 items-start">
-              {/* Logo */}
-              <div className="flex flex-col justify-center">
-                <Link href="/">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                    alt="WAE Logo"
-                    width={78}
-                    height={82}
-                  />
-                </Link>
-              </div>
-
-              {/* Coordinates */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  lineHeight: "100%",
-                  color: "#000000",
-                }}
-              >
-                20.5937° N
-                <br />
-                78.9629° E
-              </div>
-
-              {/* Tagline */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  lineHeight: "100%",
-                  color: "#000000",
-                }}
-              >
-                To lead the way in<br />sustainability ahead of the<br />rest
-              </div>
-
-              {/* Inside WAE Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {productsItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
+            {/* Inside WAE Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {productsItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
                       </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                      <span className="menu-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
 
-              {/* ETCETERA Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {blueprintItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow blueprint-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
+            {/* ETCETERA Menu Items */}
+            <div className="flex flex-col justify-center space-y-2">
+              {blueprintItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}
+                    <div className="c--anim-btn">
+                      <div className="text-container">
+                        <span className="c-anim-btn">{item.text}</span>
+                        <span className="block">{item.text}</span>
                       </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                      <span className="menu-arrow blueprint-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
-        </header>
+        </div>
+      </header>
 
-        {/* --- REMOVED STATIC HERO SECTION FROM HERE --- */}
-        {/*
+      {/* --- REMOVED STATIC HERO SECTION FROM HERE --- */}
+      {/*
         <section id="hero" className="relative w-auto h-[656px]">
           <Image
             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2359943f-dce7-4e87-3f16-629da74ecc00/public"
@@ -958,81 +942,81 @@ const Home: FC = () => {
       {/* >>> Wrap the content that uses useSearchParams and state in Suspense */}
       {/* The Dynamic Hero is now rendered inside ClientSideContent */}
       <Suspense fallback={<div>Loading filters and products...</div>}>
-         {/* Render the main content that uses client-side hooks */}
-         <ClientSideContent />
+        {/* Render the main content that uses client-side hooks */}
+        <ClientSideContent />
       </Suspense>
 
 
       {/* More Products SECTION  */}
       <section
-    className="max-w-full px-[8.75rem] py-[7.5rem] bg-white"
-    style={{
-        position: "relative",
-        borderTopLeftRadius: "0px",
-        borderTopRightRadius: "0px",
-    }}
-    >
-    <h2 className="font-helvetica text-[3.63rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem]">
-        Explore Other Products
-    </h2>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        className="max-w-full px-[8.75rem] py-[7.5rem] bg-white"
+        style={{
+          position: "relative",
+          borderTopLeftRadius: "0px",
+          borderTopRightRadius: "0px",
+        }}
+      >
+        <h2 className="font-helvetica text-[3.63rem] leading-[110%] tracking-[0%] align-middle font-normal uppercase md:whitespace-nowrap mb-[2.5rem]">
+          Explore Other Products
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
 
-        {/* Card 1 - Using <a> tag */}
-        <a href="/product-category/drinking-water-stations" key="drinking-water-stations"> {/* Corrected path */}
-        <div> {/* Keep the div if needed for styling */}
-            <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public" // Ensure image URLs are correct
-            title="Drinking Water Station - BLUWAE Series"
-            description="Water dispensers with inbuilt purification —pure, safe water delivered efficiently. Designed to reduce plastic waste and energy consumption, making sustainability easy."
-            width={272}
-            height={270}
-            />
+          {/* Card 1 - Using <a> tag */}
+          <a href="/product-category/drinking-water-stations" key="drinking-water-stations"> {/* Corrected path */}
+            <div> {/* Keep the div if needed for styling */}
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public" // Ensure image URLs are correct
+                title="Drinking Water Station - BLUWAE Series"
+                description="Water dispensers with inbuilt purification —pure, safe water delivered efficiently. Designed to reduce plastic waste and energy consumption, making sustainability easy."
+                width={272}
+                height={270}
+              />
+            </div>
+          </a>
+
+          {/* Card 2 - Using <a> tag */}
+          <a href="/product-category/water-dispenser" key="water-dispenser"> {/* Corrected path */}
+            <div> {/* Keep the div if needed for styling */}
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public" // Ensure image URLs are correct
+                title="Water Dispenser (W/O RO) - TRUBLU Series"
+                description="Stainless steel water dispensers give you fresh, clean water anytime. Compact, energy-efficient, and perfect for spaces where RO water is not readily available."
+                width={272}
+                height={270}
+              />
+            </div>
+          </a>
+
+          {/* Card 3 - Using <a> tag */}
+          <a href="/product-category/drinking-water-faucets" key="drinking-water-faucets"> {/* Corrected path */}
+            <div> {/* Keep the div if needed for styling */}
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public" // Ensure image URLs are correct
+                title="Drinking Water Faucets - WATERMATIC Series"
+                description="Drinking water faucets with under the counter storage units to make access to fresh water simple. Precision-engineered for smooth flow, with a focus on reducing waste and energy use."
+                width={272}
+                height={270}
+              />
+            </div>
+          </a>
+
+          {/* Card 4 - Using <a> tag */}
+          <a href="/product-category/water-cooler" key="water-cooler"> {/* Corrected path */}
+            <div> {/* Keep the div if needed for styling */}
+              <RelatedCard
+                image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08a355dd-6233-4b12-1cf5-fee8716cca00/public" // Ensure image URLs are correct
+                title="Water Cooler & Fountains - ZVR Series"
+                description="Water coolers cum bubblers provide chilled water on demand. Built to be energy-efficient, they're ideal for public spaces, reducing both costs and plastic waste."
+                width={272}
+                height={270}
+              />
+            </div>
+          </a>
+
+          {/* Add other hardcoded cards here following the same pattern */}
+
         </div>
-        </a>
-
-        {/* Card 2 - Using <a> tag */}
-        <a href="/product-category/water-dispenser" key="water-dispenser"> {/* Corrected path */}
-        <div> {/* Keep the div if needed for styling */}
-            <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public" // Ensure image URLs are correct
-            title="Water Dispenser (W/O RO) - TRUBLU Series"
-            description="Stainless steel water dispensers give you fresh, clean water anytime. Compact, energy-efficient, and perfect for spaces where RO water is not readily available."
-            width={272}
-            height={270}
-            />
-        </div>
-        </a>
-
-        {/* Card 3 - Using <a> tag */}
-        <a href="/product-category/drinking-water-faucets" key="drinking-water-faucets"> {/* Corrected path */}
-        <div> {/* Keep the div if needed for styling */}
-            <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public" // Ensure image URLs are correct
-            title="Drinking Water Faucets - WATERMATIC Series"
-            description="Drinking water faucets with under the counter storage units to make access to fresh water simple. Precision-engineered for smooth flow, with a focus on reducing waste and energy use."
-            width={272}
-            height={270}
-            />
-        </div>
-        </a>
-
-        {/* Card 4 - Using <a> tag */}
-        <a href="/product-category/water-cooler" key="water-cooler"> {/* Corrected path */}
-        <div> {/* Keep the div if needed for styling */}
-            <RelatedCard
-            image="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08a355dd-6233-4b12-1cf5-fee8716cca00/public" // Ensure image URLs are correct
-            title="Water Cooler & Fountains - ZVR Series"
-            description="Water coolers cum bubblers provide chilled water on demand. Built to be energy-efficient, they're ideal for public spaces, reducing both costs and plastic waste."
-            width={272}
-            height={270}
-            />
-        </div>
-        </a>
-
-        {/* Add other hardcoded cards here following the same pattern */}
-
-    </div>
-    </section>
+      </section>
 
       {/* Footer Section (Remains here) */}
       <Footer />

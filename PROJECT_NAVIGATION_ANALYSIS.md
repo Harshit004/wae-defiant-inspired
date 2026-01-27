@@ -39,15 +39,12 @@ The project contains **72 pages** (page.tsx files) organized in the `/app` direc
 17. `/category-listing3` - Category listing variant 3
 
 ### Product Series - BluWAE
-18. `/bluwae-assistiflow` - BluWAE Assistiflow
-19. `/bluwae-enki-ct` - BluWAE Enki Counter Top
-20. `/bluwae-enki-fs` - BluWAE Enki Free Standing
-21. `/bluwae-pos` - BluWAE POS
-22. `/bluwae-reva` - BluWAE Reva
-23. `/bluwae-rom-ct` - BluWAE ROM Counter Top
-24. `/bluwae-rom-fs` - BluWAE ROM Free Standing
-25. `/bluwae-var-ct` - BluWAE VAR Counter Top
-26. `/bluwae-var-fs` - BluWAE VAR Free Standing
+18. `/product-assistflow` - BluWAE Assistiflow
+19. `/product-enki` - BluWAE Enki Free Standing
+20. `/product-pos` - BluWAE POS
+21. `/product-reva` - BluWAE Reva
+22. `/product-rom-series` - BluWAE ROM Free Standing
+23. `/product-var-series` - BluWAE VAR Free Standing
 
 ### Product Series - TruBlu
 27. `/trublu-aenon` - TruBlu Aenon

@@ -26,8 +26,8 @@ const defaultSpecifications = [
 ];
 
 const products = {
-  "bluwae-assistiflow": {
-    id: "bluwae-assistiflow",
+  "product-assistflow": {
+    id: "product-assistflow",
     name: "BLUWAE ASSISTIFLOW",
     images: [
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61bed0a3-d40d-46ec-2edd-a3fb53abe400/public",
@@ -37,59 +37,38 @@ const products = {
     features: defaultFeatures,
     specifications: defaultSpecifications,
   },
-  "bluwae-pos": {
-    id: "bluwae-pos",
+  "product-pos": {
+    id: "product-pos",
     name: "BLUWAE POS",
     images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6a2acaf3-4e68-43ff-260a-e504100a5500/public"],
     features: defaultFeatures,
     specifications: defaultSpecifications,
   },
-  "bluwae-enki-fs": {
+  "product-enki": {
     id: "bluwae-enki-fs",
     name: "BLUWAE ENKI FS",
     images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ea4dd229-e02c-4eb6-18d4-dbe962b36f00/public"],
     features: defaultFeatures,
     specifications: defaultSpecifications,
   },
-  "bluwae-rom-fs": {
+  "product-rom-series": {
     id: "bluwae-rom-fs",
     name: "BLUWAE ROM FS",
     images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3cae59a6-2900-4329-3fc1-dafd4cfe4900/public"],
     features: defaultFeatures,
     specifications: defaultSpecifications,
   },
-  "bluwae-var-fs": {
+  "product-var-series": {
     id: "bluwae-var-fs",
     name: "BLUWAE VAR FS",
     images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/801e38f9-4666-4511-1462-1f8767824e00/public"],
     features: defaultFeatures,
     specifications: defaultSpecifications,
   },
-  "bluwae-reva": {
+  "product-reva": {
     id: "bluwae-reva",
     name: "BLUWAE REVA",
     images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f5bd039-db57-440a-a392-1934736b8800/public"],
-    features: defaultFeatures,
-    specifications: defaultSpecifications,
-  },
-  "bluwae-var-ct": {
-    id: "bluwae-var-ct",
-    name: "BLUWAE VAR CT",
-    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1bc69e19-64e2-4b96-3158-916313af6300/public"],
-    features: defaultFeatures,
-    specifications: defaultSpecifications,
-  },
-  "bluwae-enki-ct": {
-    id: "bluwae-enki-ct",
-    name: "BLUWAE ENKI CT",
-    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/24affdcc-bfce-4544-a951-4ec4de4fb500/public"],
-    features: defaultFeatures,
-    specifications: defaultSpecifications,
-  },
-  "bluwae-rom-ct": {
-    id: "bluwae-rom-ct",
-    name: "BLUWAE ROM CT",
-    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/636ec9ab-40e5-4d1e-cabd-d17e14278a00/public"],
     features: defaultFeatures,
     specifications: defaultSpecifications,
   },
@@ -232,4 +211,4 @@ const products = {
   },
 };
 
-export default products; 
+export default products;
