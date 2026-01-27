@@ -54,7 +54,7 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    heroVideo: "BLUWAE_EXP.mp4",
+    heroVideo: "Product_banners_Drinking water station.mp4",
   },
   "water-dispenser": {
     id: "water-dispenser",
@@ -94,7 +94,7 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    heroVideo: "Water dispenser & cooler_EXP.mp4",
+    heroVideo: "Product_banners_Dispenser.mp4",
   },
   "drinking-water-faucets": {
     id: "drinking-water-faucets",
@@ -129,7 +129,7 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    heroVideo: "Faucet_EXP.mp4",
+    heroVideo: "Product_banners_Faucet.mp4",
   },
   "water-cooler": {
     id: "water-cooler",
@@ -169,7 +169,7 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/989b9ed7-8668-4a62-7bf6-f32a540d2f00/public"
       }
     ],
-    heroVideo: "ZVR_EXP.mp4",
+    heroVideo: "Product_banners_Fountain.mp4",
   },
   "public-utility-systems": {
     id: "public-utility-systems",
@@ -204,7 +204,7 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/708253cf-b3b1-4b4c-e9ed-73f9c05aa400/public"
       }
     ],
-    heroVideo: "PUS_EXP.mp4",
+    heroVideo: "Product_banners_PUS.mp4",
   },
   "blubox": {
     id: "blubox",
@@ -239,6 +239,6 @@ export const productCategories: Record<string, ProductCategory> = {
         image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/708253cf-b3b1-4b4c-e9ed-73f9c05aa400/public"
       }
     ],
-    heroVideo: "Bluebox_EXP.mp4",
+    heroVideo: "Product_banners_Commercial_Plant.mp4",
   }
 };
