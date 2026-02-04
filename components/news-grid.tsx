@@ -115,7 +115,7 @@ export default function NewsGrid() {
       title: "2026 Outlook: ESG, sustainability and the next phase of India’s water infrastructure",
       description: "As India accelerates toward its developmental inflection point in the mid-2020s, water infrastructure and sustainability frameworks stand at the nexus of economic resilience, climate adaptation, and corporate governance imperatives.",
       date: "January 12, 2026",
-      link: "https://etedge-insights.com/sdgs-and-esg/sustainability/2026-outlook-esg-sustainability-and-the-next-phase-of-indias-water-infrastructure/",
+      link: "/2026-outlook",
     },
     card2: {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c5b5b9ca-0c88-466b-7d0d-8bfd8c79c000/public",
