@@ -484,7 +484,7 @@ export default function Home() {
                                     className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                                 />
                             </div>
-                            <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                            <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-black transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                                 Hotels advance sustainability with glass bottling
                             </h3>
                             <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
@@ -503,7 +503,7 @@ export default function Home() {
                                     className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                                 />
                             </div>
-                            <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                            <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-black transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                                 Strategic CSR: Creating Lasting Community Impact
                             </h3>
                             <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
@@ -522,7 +522,7 @@ export default function Home() {
                                     className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                                 />
                             </div>
-                            <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                            <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-black transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                                 From activism to infrastructure: How WAE is attempting to cut India’s plastic bottle use
                             </h3>
                             <p className="text-sm leading-[24px] mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
