@@ -481,7 +481,7 @@ export default function Home() {
                                     alt="From Kyoto to COP28"
                                     width={347}
                                     height={300}
-                                    className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                                    className="w-full h-[300px] transition-transform duration-300 group-hover:scale-105"
                                 />
                             </div>
                             <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-black transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
@@ -500,7 +500,7 @@ export default function Home() {
                                     alt="Climate Change in the Indian Subcontinent"
                                     width={347}
                                     height={300}
-                                    className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                                    className="w-full h-[300px] transition-transform duration-300 group-hover:scale-105"
                                 />
                             </div>
                             <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-black transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
@@ -519,7 +519,7 @@ export default function Home() {
                                     alt="The Ozone Crisis"
                                     width={347}
                                     height={300}
-                                    className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                                    className="w-full h-[300px] transition-transform duration-300 group-hover:scale-105"
                                 />
                             </div>
                             <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] group-hover:text-black transition-colors duration-300" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
