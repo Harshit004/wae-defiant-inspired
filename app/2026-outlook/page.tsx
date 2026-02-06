@@ -373,7 +373,7 @@ export default function Home() {
                 <div className="w-full">
                     <img
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aac756b-b040-4aa4-a27d-0afb88f87a00/public"
-                        className="hidden md:block w-full h-auto z-0 pt-1 bg-white"
+                        className="hidden md:block w-full h-auto z-0"
                         alt="2026 Outlook Hero"
                     />
                 </div>
@@ -477,7 +477,7 @@ export default function Home() {
                         <Link href="/north-star-of-progress" className="group block">
                             <div className="overflow-hidden mb-[60px]">
                                 <Image
-                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dd2118a9-6528-4673-a3ef-719ac8082200/public"
+                                    src="https://travtalkindia.com/wp-content/uploads/2026/01/whatsapp-image-2025-12-19-at-14.44.53-768x841.jpeg"
                                     alt="From Kyoto to COP28"
                                     width={347}
                                     height={300}
@@ -496,7 +496,7 @@ export default function Home() {
                         <Link href="/climate-change-&-water-v2" className="group block">
                             <div className="overflow-hidden mb-[60px]">
                                 <Image
-                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/162ac02d-889a-428a-3aa1-a2a4fbbb5c00/public"
+                                    src="https://indiacsr.in/wp-content/uploads/2024/08/corporate-social-responsibility-india-csr.jpg"
                                     alt="Climate Change in the Indian Subcontinent"
                                     width={347}
                                     height={300}
