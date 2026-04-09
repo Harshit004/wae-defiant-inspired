@@ -66,13 +66,13 @@ const Home: FC = () => {
 
   const containerRef = useRef<HTMLDivElement>(null); // Ref is declared but not applied to an element
 
-   // --- ADDED: Explicitly scroll to top on mount ---
-   useEffect(() => {
-       requestAnimationFrame(() => {
-           window.scrollTo(0, 0);
-       });
-   }, []);
-   // --- END ADDED CODE ---
+  // --- ADDED: Explicitly scroll to top on mount ---
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+  }, []);
+  // --- END ADDED CODE ---
 
 
   // Update tagline visibility on scroll (logic present, but taglineVisible state not used)
@@ -181,7 +181,7 @@ const Home: FC = () => {
     { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers3" },
   ];
-  
+
   // ETCETERA section
   const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
@@ -389,638 +389,310 @@ const Home: FC = () => {
               className="w-fit h-fit object-cover rounded-none"
             />
           </div>
-          
+
         </section>
       </div>
 
       {/* NORMAL SECTIONS AFTER HERO */}
-      
-        {/* Brand, Purpose & People Section */}
-        <section className="h-screen flex items-center justify-center relative bg-[#F2F2F2]">
-          <motion.div className="w-full max-w-screen-xl mx-8 lg:mx-36">
-            <div className="flex flex-col lg:flex-row justify-between w-full gap-8">
-              {/* Column 1: Brand */}
-              <div className="flex flex-col max-w-[22%]">
-                <h2
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontStyle: 'Medium',
-                    fontSize: '40px',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle'
-                  }}
-                >
-                  Brand
-                </h2>
-                <div style={{ height: '32px' }} />
-                <h3
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 700,
-                    fontStyle: 'Bold',
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#00000099'
-                  }}
-                >
-                  Being Sustainable
-                </h3>
-                <div style={{ height: '12px' }} />
-                <p
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontStyle: 'Medium',
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#00000099'
-                  }}
-                >
-                  The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
-                </p>
-                <div style={{ height: '12px' }} />
-                <p
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontStyle: 'Medium',
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#00000099'
-                  }}
-                >
-                  WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
-                </p>
-                <div style={{ height: '20px' }} />
-                <Link href="/inside-wae" className="contents">
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-              </div>
 
-              {/* Column 2: Purpose */}
-              <div className="flex flex-col max-w-[21%]">
-                <h2
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontStyle: 'Medium',
-                    fontSize: '40px',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle'
-                  }}
-                >
-                  Purpose
-                </h2>
-                <div style={{ height: '32px' }} />
-                <h3
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 700,
-                    fontStyle: 'Bold',
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#00000099'
-                  }}
-                >
-                  Our Green Is Blue
-                </h3>
-                <div style={{ height: '12px' }} />
-                <p
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontStyle: 'Medium',
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#00000099'
-                  }}
-                >
-                  It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
-                </p>
-                <div style={{ height: '12px' }} />
-                <p
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontStyle: 'Medium',
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#00000099'
-                  }}
-                >
-                  At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
-                </p>
-                <div style={{ height: '20px' }} />
-                <Link href="/sustainability" className="contents">
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
+      {/* Brand, Purpose & People Section */}
+      <section className="h-screen flex items-center justify-center relative bg-[#F2F2F2]">
+        <motion.div className="w-full max-w-screen-xl mx-8 lg:mx-36">
+          <div className="flex flex-col lg:flex-row justify-between w-full gap-8">
+            {/* Column 1: Brand */}
+            <div className="flex flex-col max-w-[22%]">
+              <h2
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontStyle: 'Medium',
+                  fontSize: '40px',
+                  lineHeight: '110%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle'
+                }}
+              >
+                Brand
+              </h2>
+              <div style={{ height: '32px' }} />
+              <h3
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 700,
+                  fontStyle: 'Bold',
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#00000099'
+                }}
+              >
+                Being Sustainable
+              </h3>
+              <div style={{ height: '12px' }} />
+              <p
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontStyle: 'Medium',
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#00000099'
+                }}
+              >
+                The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
+              </p>
+              <div style={{ height: '12px' }} />
+              <p
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontStyle: 'Medium',
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#00000099'
+                }}
+              >
+                WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
+              </p>
+              <div style={{ height: '20px' }} />
+              <Link href="/inside-wae" className="contents">
+                <HoverButton>
+                  {(hovered) => (
+                    <>
+                      Know More
+                      <div className="relative inline-block w-4 h-4">
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                          alt="icon default"
+                          width={16}
+                          height={16}
+                        />
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
+                        >
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
                             width={16}
                             height={16}
                           />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-              </div>
-
-              {/* Column 3: People */}
-              <div className="flex flex-col max-w-[20%]">
-                <h2
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontStyle: 'Medium',
-                    fontSize: '40px',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle'
-                  }}
-                >
-                  People
-                </h2>
-                <div style={{ height: '32px' }} />
-                <h3
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 700,
-                    fontStyle: 'Bold',
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#00000099'
-                  }}
-                >
-                  People First
-                </h3>
-                <div style={{ height: '12px' }} />
-                <p
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontStyle: 'Medium',
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#00000099'
-                  }}
-                >
-                  People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
-                </p>
-                <div style={{ height: '12px' }} />
-                <p
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontStyle: 'Medium',
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#00000099'
-                  }}
-                >
-                  In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
-                </p>
-                <div style={{ height: '20px' }} />
-                <Link href="/careers3" className="contents">
-                  <HoverButton>
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-              </div>
+                        </motion.div>
+                      </div>
+                    </>
+                  )}
+                </HoverButton>
+              </Link>
             </div>
-          </motion.div>
-        </section>
 
-        {/* Products Section */}
-        {/* This section has a white background and higher z-index */}
-        {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
-        <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200 }}>
-          {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
-          <table className="product-grid"> {/* Custom CSS class */}
-            <tr>
-              <td colSpan={2} className="product-title whitespace-nowrap"> {/* Custom CSS class */}
-                Products
-              </td>
-              <td className="product-cell transition  cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/drinking-water-stations" className="contents">
-                  <div className="relative w-full h-full">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <p
-                        style={{
-                          fontFamily: 'Inter Tight',
-                          fontWeight: 700,
-                          fontStyle: 'Bold',
-                          fontSize: '14px',
-                          lineHeight: '100%',
-                          letterSpacing: '0px',
-                          textAlign: 'center',
-                          verticalAlign: 'middle',
-                          textTransform: 'uppercase',
-                          marginBottom: '8px'
-                        }}
-                      >
-                        BLUWAE
-                      </p>
-                      <span className="product-category">DRINKING WATER<br />STATIONS</span>
-                    </div>
-                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                        alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                {/* Image wrapped in Link - not ideal, Link should wrap Image */}
-                <Image
-                  // href="/products-solutions/drinking-water-stations" // href attribute is not valid on Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/27917d14-ea56-4a80-93b9-c66ba9642400/public"
-                  alt="Drinking Water Station"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
-            </tr>
-            <tr>
-              <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
-                <Image
-                  // href="/products-solutions/drinking-water-faucets" // href attribute is not valid on Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/685750d6-ec8e-491b-a214-24f13cfcb600/public"
-                  alt="Water Faucet"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* DRINKING WATER FAUCETS with left and down arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/drinking-water-faucets" className="contents">
-                  <div className="relative w-full h-full">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <p
-                        style={{
-                          fontFamily: 'Inter Tight',
-                          fontWeight: 700,
-                          fontStyle: 'Bold',
-                          fontSize: '14px',
-                          lineHeight: '100%',
-                          letterSpacing: '0px',
-                          textAlign: 'center',
-                          verticalAlign: 'middle',
-                          textTransform: 'uppercase',
-                          marginBottom: '8px'
-                        }}
-                      >
-                        WATERMATIC
-                      </p>
-                      <span className="product-category">DRINKING WATER<br />FAUCETS</span>
-                    </div>
-                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                        alt="Left arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
-                        alt="Down arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
-                <Image
-                  // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b05d64d-0248-4aaf-b8c3-e8d7afccea00/public"
-                  alt="Water Dispenser"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* DRINKING WATER DISPENSERS with left and right arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/water-dispenser" className="contents">
-                  <div className="relative w-full h-full">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <p
-                        style={{
-                          fontFamily: 'Inter Tight',
-                          fontWeight: 700,
-                          fontStyle: 'Bold',
-                          fontSize: '14px',
-                          lineHeight: '100%',
-                          letterSpacing: '0px',
-                          textAlign: 'center',
-                          verticalAlign: 'middle',
-                          textTransform: 'uppercase',
-                          marginBottom: '8px'
-                        }}
-                      >
-                        TRUBLU
-                      </p>
-                      <span className="product-category">DRINKING WATER<br />DISPENSERS</span>
-                    </div>
-                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                        alt="Left arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                        alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
-                <Image
-                  // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c4a14e-2e09-4da6-c363-84bae0088400/public"
-                  alt="Water Dispenser"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
-              <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
-                <Image
-                  // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf2a2e6e-9e0b-464a-c2ff-1a16cb1f9900/public"
-                  alt="Water Cooler"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* WATER COOLERS & FOUNTAINS with right and down arrows */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/water-cooler" className="contents">
-                  <div className="relative w-full h-full">
-                    {/* Centered Text */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <p
-                        style={{
-                          fontFamily: 'Inter Tight',
-                          fontWeight: 700,
-                          fontStyle: 'Bold',
-                          fontSize: '14px',
-                          lineHeight: '100%',
-                          letterSpacing: '0px',
-                          textAlign: 'center',
-                          verticalAlign: 'middle',
-                          textTransform: 'uppercase',
-                          marginBottom: '8px'
-                        }}
-                      >
-                        ZVR
-                      </p>
-                      <span className="product-category">WATER COOLERS &amp;<br />FOUNTAINS</span>
-                    </div>
-                    {/* Right Arrow flush at right */}
-                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                        alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
-                <Image
-                  // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d9688872-6e63-4d68-26e9-aec6cf1f3a00/public"
-                  alt="Water Fountain"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
-            </tr>
-            <tr>
-              <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
-                <Image
-                  // href="/products-solutions/public-utility-systems" // href attribute is not valid on Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/54ccac68-6261-4097-e41c-cfa35c992100/public"
-                  alt="Public Utility"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* PUBLIC UTILITY SYSTEMS with left arrow */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/public-utility-systems" className="contents">
-                  <div className="relative w-full h-full">
-                    {/* Centered Text */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <p
-                        style={{
-                          fontFamily: 'Inter Tight',
-                          fontWeight: 700,
-                          fontStyle: 'Bold',
-                          fontSize: '14px',
-                          lineHeight: '100%',
-                          letterSpacing: '0px',
-                          textAlign: 'center',
-                          verticalAlign: 'middle',
-                          textTransform: 'uppercase',
-                          marginBottom: '8px'
-                        }}
-                      >
-                        PUS
-                      </p>
-                      <span className="product-category">PUBLIC UTILITY<br />SYSTEMS</span>
-                    </div>
-                    {/* Left Arrow flush at left */}
-                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                        alt="Left arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
-                <Image
-                  // href="/products-solutions/commercial-industrial-plants" // href attribute is not valid on Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
-                  alt="Commercial Plant"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-              {/* COMMERCIAL/INDUSTRIAL PLANTS with right arrow */}
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-                <Link href="/product-category/commercial-industrial-plants" className="contents">
-                  <div className="relative w-full h-full">
-                    {/* Centered Text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="product-category">COMMERCIAL/<br />INDUSTRIAL PLANTS</span>
-                    </div>
-                    {/* Right Arrow flushat right */}
-                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                        alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class */}
-                 {/* Image wrapped in Link - not ideal */}
-                <Image
-                  // href="/products-solutions/commercial-industrial-plants" // href attribute is not valid on Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a0490312-e31b-44b0-2272-8645b0d0ef00/public"
-                  alt="Industrial Plant"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                  width={232}
-                  height={232}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override - Empty cell */}
-              <td className="product-cell"> {/* Custom CSS class - Image cell */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/05160299-d316-435c-db6f-5f2a55a55300/public"
-                  alt="WAEAU"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
-                  width={232}
-                  height={232}
-                />
-              </td>
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class - Text cell */}
+            {/* Column 2: Purpose */}
+            <div className="flex flex-col max-w-[21%]">
+              <h2
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontStyle: 'Medium',
+                  fontSize: '40px',
+                  lineHeight: '110%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle'
+                }}
+              >
+                Purpose
+              </h2>
+              <div style={{ height: '32px' }} />
+              <h3
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 700,
+                  fontStyle: 'Bold',
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#00000099'
+                }}
+              >
+                Our Green Is Blue
+              </h3>
+              <div style={{ height: '12px' }} />
+              <p
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontStyle: 'Medium',
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#00000099'
+                }}
+              >
+                It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
+              </p>
+              <div style={{ height: '12px' }} />
+              <p
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontStyle: 'Medium',
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#00000099'
+                }}
+              >
+                At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
+              </p>
+              <div style={{ height: '20px' }} />
+              <Link href="/sustainability" className="contents">
+                <HoverButton>
+                  {(hovered) => (
+                    <>
+                      Know More
+                      <div className="relative inline-block w-4 h-4">
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                          alt="icon default"
+                          width={16}
+                          height={16}
+                        />
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
+                        >
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
+                            width={16}
+                            height={16}
+                          />
+                        </motion.div>
+                      </div>
+                    </>
+                  )}
+                </HoverButton>
+              </Link>
+            </div>
+
+            {/* Column 3: People */}
+            <div className="flex flex-col max-w-[20%]">
+              <h2
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontStyle: 'Medium',
+                  fontSize: '40px',
+                  lineHeight: '110%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle'
+                }}
+              >
+                People
+              </h2>
+              <div style={{ height: '32px' }} />
+              <h3
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 700,
+                  fontStyle: 'Bold',
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#00000099'
+                }}
+              >
+                People First
+              </h3>
+              <div style={{ height: '12px' }} />
+              <p
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontStyle: 'Medium',
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#00000099'
+                }}
+              >
+                People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
+              </p>
+              <div style={{ height: '12px' }} />
+              <p
+                style={{
+                  fontFamily: 'Inter Tight',
+                  fontWeight: 500,
+                  fontStyle: 'Medium',
+                  fontSize: '12px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#00000099'
+                }}
+              >
+                In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
+              </p>
+              <div style={{ height: '20px' }} />
+              <Link href="/careers3" className="contents">
+                <HoverButton>
+                  {(hovered) => (
+                    <>
+                      Know More
+                      <div className="relative inline-block w-4 h-4">
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                          alt="icon default"
+                          width={16}
+                          height={16}
+                        />
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
+                        >
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
+                            width={16}
+                            height={16}
+                          />
+                        </motion.div>
+                      </div>
+                    </>
+                  )}
+                </HoverButton>
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Products Section */}
+      {/* This section has a white background and higher z-index */}
+      {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
+      <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200 }}>
+        {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
+        <table className="product-grid"> {/* Custom CSS class */}
+          <tr>
+            <td colSpan={2} className="product-title whitespace-nowrap"> {/* Custom CSS class */}
+              Products
+            </td>
+            <td className="product-cell transition  cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
+              <Link href="/product-category/drinking-water-stations" className="contents">
                 <div className="relative w-full h-full">
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <p
@@ -1033,26 +705,72 @@ const Home: FC = () => {
                         letterSpacing: '0px',
                         textAlign: 'center',
                         verticalAlign: 'middle',
-                        textTransform: 'uppercase'
+                        textTransform: 'uppercase',
+                        marginBottom: '8px'
                       }}
                     >
-                      WAEAU
+                      BLUWAE
                     </p>
+                    <span className="product-category">DRINKING WATER<br />STATIONS</span>
+                  </div>
+                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                      alt="Right arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
+                </div>
+              </Link>
+            </td>
+            <td className="product-cell"> {/* Custom CSS class */}
+              {/* Image wrapped in Link - not ideal, Link should wrap Image */}
+              <Image
+                // href="/products-solutions/drinking-water-stations" // href attribute is not valid on Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/27917d14-ea56-4a80-93b9-c66ba9642400/public"
+                alt="Drinking Water Station"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                width={232}
+                height={232}
+              />
+            </td>
+            <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+          </tr>
+          <tr>
+            <td className="product-cell"> {/* Custom CSS class */}
+              {/* Image wrapped in Link - not ideal */}
+              <Image
+                // href="/products-solutions/drinking-water-faucets" // href attribute is not valid on Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/685750d6-ec8e-491b-a214-24f13cfcb600/public"
+                alt="Water Faucet"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                width={232}
+                height={232}
+              />
+            </td>
+            {/* DRINKING WATER FAUCETS with left and down arrows */}
+            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
+              <Link href="/product-category/drinking-water-faucets" className="contents">
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <p
                       style={{
                         fontFamily: 'Inter Tight',
-                        fontWeight: 400,
-                        fontStyle: 'Regular',
+                        fontWeight: 700,
+                        fontStyle: 'Bold',
                         fontSize: '14px',
                         lineHeight: '100%',
                         letterSpacing: '0px',
                         textAlign: 'center',
                         verticalAlign: 'middle',
-                        textTransform: 'uppercase'
+                        textTransform: 'uppercase',
+                        marginBottom: '8px'
                       }}
                     >
-                      SMALL RO UNITS
+                      WATERMATIC
                     </p>
+                    <span className="product-category">DRINKING WATER<br />FAUCETS</span>
                   </div>
                   <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
                     <Image
@@ -1062,134 +780,416 @@ const Home: FC = () => {
                       height={24}
                     />
                   </span>
+                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
+                      alt="Down arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
                 </div>
-              </td>
-              <td className="product-cell"> {/* Custom CSS class - Image cell */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
-                  alt="AUX"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
-                  width={232}
-                  height={232}
-                />
-              </td>
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale - Arrow and text cell */}
-                <Link href="/auxiliary-equipment" className="contents">
-                  <div className="relative w-full h-full">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <div className="text-center">
-                        <p
-                          style={{
-                            fontFamily: 'Inter Tight',
-                            fontWeight: 700,
-                            fontStyle: 'Bold',
-                            fontSize: '14px',
-                            lineHeight: '100%',
-                            letterSpacing: '0px',
-                            textAlign: 'center',
-                            verticalAlign: 'middle',
-                            textTransform: 'uppercase'
-                          }}
-                        >
-                          AUX
-                        </p>
-                        <p
-                          style={{
-                            fontFamily: 'Inter Tight',
-                            fontWeight: 400,
-                            fontStyle: 'Regular',
-                            fontSize: '14px',
-                            lineHeight: '100%',
-                            letterSpacing: '0px',
-                            textAlign: 'center',
-                            verticalAlign: 'middle',
-                            textTransform: 'uppercase'
-                          }}
-                        >
-                          AUXILIARY EQUIPMENT
-                        </p>
-                      </div>
-                    </div>
-                    {/* Left Arrow flush at left */}
-                    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                        alt="Left arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
+              </Link>
+            </td>
+            <td className="product-cell"> {/* Custom CSS class */}
+              {/* Image wrapped in Link - not ideal */}
+              <Image
+                // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b05d64d-0248-4aaf-b8c3-e8d7afccea00/public"
+                alt="Water Dispenser"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                width={232}
+                height={232}
+              />
+            </td>
+            {/* DRINKING WATER DISPENSERS with left and right arrows */}
+            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
+              <Link href="/product-category/water-dispenser" className="contents">
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <p
+                      style={{
+                        fontFamily: 'Inter Tight',
+                        fontWeight: 700,
+                        fontStyle: 'Bold',
+                        fontSize: '14px',
+                        lineHeight: '100%',
+                        letterSpacing: '0px',
+                        textAlign: 'center',
+                        verticalAlign: 'middle',
+                        textTransform: 'uppercase',
+                        marginBottom: '8px'
+                      }}
+                    >
+                      TRUBLU
+                    </p>
+                    <span className="product-category">DRINKING WATER<br />DISPENSERS</span>
                   </div>
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale - Text cell with arrow */}
-                <Link href="/glass-bottling-plant" className="contents">
-                  <div className="relative w-full h-full">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <div className="text-center">
-                        <p
-                          style={{
-                            fontFamily: 'Inter Tight',
-                            fontWeight: 700,
-                            fontStyle: 'Bold',
-                            fontSize: '14px',
-                            lineHeight: '100%',
-                            letterSpacing: '0px',
-                            textAlign: 'center',
-                            verticalAlign: 'middle',
-                            textTransform: 'uppercase'
-                          }}
-                        >
-                          GBP
-                        </p>
-                        <p
-                          style={{
-                            fontFamily: 'Inter Tight',
-                            fontWeight: 400,
-                            fontStyle: 'Regular',
-                            fontSize: '14px',
-                            lineHeight: '100%',
-                            letterSpacing: '0px',
-                            textAlign: 'center',
-                            verticalAlign: 'middle',
-                            textTransform: 'uppercase'
-                          }}
-                        >
-                          GLASS BOTTLING PLANT
-                        </p>
-                      </div>
-                    </div>
-                    {/* Right Arrow flush at right */}
-                    <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                      <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                        alt="Right arrow"
-                        width={24}
-                        height={24}
-                      />
-                    </span>
+                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
+                      alt="Left arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
+                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                      alt="Right arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
+                </div>
+              </Link>
+            </td>
+            <td className="product-cell"> {/* Custom CSS class */}
+              {/* Image wrapped in Link - not ideal */}
+              <Image
+                // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c4a14e-2e09-4da6-c363-84bae0088400/public"
+                alt="Water Dispenser"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                width={232}
+                height={232}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+            <td className="product-cell"> {/* Custom CSS class */}
+              {/* Image wrapped in Link - not ideal */}
+              <Image
+                // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf2a2e6e-9e0b-464a-c2ff-1a16cb1f9900/public"
+                alt="Water Cooler"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                width={232}
+                height={232}
+              />
+            </td>
+            {/* WATER COOLERS & FOUNTAINS with right and down arrows */}
+            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
+              <Link href="/product-category/water-cooler" className="contents">
+                <div className="relative w-full h-full">
+                  {/* Centered Text */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <p
+                      style={{
+                        fontFamily: 'Inter Tight',
+                        fontWeight: 700,
+                        fontStyle: 'Bold',
+                        fontSize: '14px',
+                        lineHeight: '100%',
+                        letterSpacing: '0px',
+                        textAlign: 'center',
+                        verticalAlign: 'middle',
+                        textTransform: 'uppercase',
+                        marginBottom: '8px'
+                      }}
+                    >
+                      ZVR
+                    </p>
+                    <span className="product-category">WATER COOLERS &amp;<br />FOUNTAINS</span>
                   </div>
-                </Link>
-              </td>
-              <td colSpan={3} className="product-cell"> {/* Custom CSS class - Spanning image cell */}
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8f04688-16ef-4c40-6161-b9a532be5500/public"
-                  alt="Glass Bottling Plant"
-                  className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
-                  width={696}
-                  height={232}
-                />
-              </td>
-            </tr>
-          </table>
-        </div>
+                  {/* Right Arrow flush at right */}
+                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                      alt="Right arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
+                </div>
+              </Link>
+            </td>
+            <td className="product-cell"> {/* Custom CSS class */}
+              {/* Image wrapped in Link - not ideal */}
+              <Image
+                // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d9688872-6e63-4d68-26e9-aec6cf1f3a00/public"
+                alt="Water Fountain"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                width={232}
+                height={232}
+              />
+            </td>
+            <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
+          </tr>
+          <tr>
+            <td className="product-cell"> {/* Custom CSS class */}
+              {/* Image wrapped in Link - not ideal */}
+              <Image
+                // href="/products-solutions/public-utility-systems" // href attribute is not valid on Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/54ccac68-6261-4097-e41c-cfa35c992100/public"
+                alt="Public Utility"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                width={232}
+                height={232}
+              />
+            </td>
+            {/* PUBLIC UTILITY SYSTEMS with left arrow */}
+            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
+              <Link href="/product-category/public-utility-systems" className="contents">
+                <div className="relative w-full h-full">
+                  {/* Centered Text */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <p
+                      style={{
+                        fontFamily: 'Inter Tight',
+                        fontWeight: 700,
+                        fontStyle: 'Bold',
+                        fontSize: '14px',
+                        lineHeight: '100%',
+                        letterSpacing: '0px',
+                        textAlign: 'center',
+                        verticalAlign: 'middle',
+                        textTransform: 'uppercase',
+                        marginBottom: '8px'
+                      }}
+                    >
+                      PUS
+                    </p>
+                    <span className="product-category">PUBLIC UTILITY<br />SYSTEMS</span>
+                  </div>
+                  {/* Left Arrow flush at left */}
+                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
+                      alt="Left arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
+                </div>
+              </Link>
+            </td>
+            <td className="product-cell"> {/* Custom CSS class */}
+              {/* Image wrapped in Link - not ideal */}
+              <Image
+                // href="/products-solutions/commercial-industrial-plants" // href attribute is not valid on Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
+                alt="Commercial Plant"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                width={232}
+                height={232}
+              />
+            </td>
+            {/* COMMERCIAL/INDUSTRIAL PLANTS with right arrow */}
+            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
+              <Link href="/product-category/commercial-industrial-plants" className="contents">
+                <div className="relative w-full h-full">
+                  {/* Centered Text */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="product-category">COMMERCIAL/<br />INDUSTRIAL PLANTS</span>
+                  </div>
+                  {/* Right Arrow flushat right */}
+                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                      alt="Right arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
+                </div>
+              </Link>
+            </td>
+            <td className="product-cell"> {/* Custom CSS class */}
+              {/* Image wrapped in Link - not ideal */}
+              <Image
+                // href="/products-solutions/commercial-industrial-plants" // href attribute is not valid on Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a0490312-e31b-44b0-2272-8645b0d0ef00/public"
+                alt="Industrial Plant"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
+                width={232}
+                height={232}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override - Empty cell */}
+            <td className="product-cell"> {/* Custom CSS class - Image cell */}
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/05160299-d316-435c-db6f-5f2a55a55300/public"
+                alt="WAEAU"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
+                width={232}
+                height={232}
+              />
+            </td>
+            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class - Text cell */}
+              <div className="relative w-full h-full">
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <p
+                    style={{
+                      fontFamily: 'Inter Tight',
+                      fontWeight: 700,
+                      fontStyle: 'Bold',
+                      fontSize: '14px',
+                      lineHeight: '100%',
+                      letterSpacing: '0px',
+                      textAlign: 'center',
+                      verticalAlign: 'middle',
+                      textTransform: 'uppercase'
+                    }}
+                  >
+                    WAEAU
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: 'Inter Tight',
+                      fontWeight: 400,
+                      fontStyle: 'Regular',
+                      fontSize: '14px',
+                      lineHeight: '100%',
+                      letterSpacing: '0px',
+                      textAlign: 'center',
+                      verticalAlign: 'middle',
+                      textTransform: 'uppercase'
+                    }}
+                  >
+                    SMALL RO UNITS
+                  </p>
+                </div>
+                <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
+                    alt="Left arrow"
+                    width={24}
+                    height={24}
+                  />
+                </span>
+              </div>
+            </td>
+            <td className="product-cell"> {/* Custom CSS class - Image cell */}
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
+                alt="AUX"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
+                width={232}
+                height={232}
+              />
+            </td>
+            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale - Arrow and text cell */}
+              <Link href="/auxiliary-equipment" className="contents">
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="text-center">
+                      <p
+                        style={{
+                          fontFamily: 'Inter Tight',
+                          fontWeight: 700,
+                          fontStyle: 'Bold',
+                          fontSize: '14px',
+                          lineHeight: '100%',
+                          letterSpacing: '0px',
+                          textAlign: 'center',
+                          verticalAlign: 'middle',
+                          textTransform: 'uppercase'
+                        }}
+                      >
+                        AUX
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: 'Inter Tight',
+                          fontWeight: 400,
+                          fontStyle: 'Regular',
+                          fontSize: '14px',
+                          lineHeight: '100%',
+                          letterSpacing: '0px',
+                          textAlign: 'center',
+                          verticalAlign: 'middle',
+                          textTransform: 'uppercase'
+                        }}
+                      >
+                        AUXILIARY EQUIPMENT
+                      </p>
+                    </div>
+                  </div>
+                  {/* Left Arrow flush at left */}
+                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
+                      alt="Left arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
+                </div>
+              </Link>
+            </td>
+          </tr>
+          <tr>
+            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale - Text cell with arrow */}
+              <Link href="/glass-bottling-plant" className="contents">
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="text-center">
+                      <p
+                        style={{
+                          fontFamily: 'Inter Tight',
+                          fontWeight: 700,
+                          fontStyle: 'Bold',
+                          fontSize: '14px',
+                          lineHeight: '100%',
+                          letterSpacing: '0px',
+                          textAlign: 'center',
+                          verticalAlign: 'middle',
+                          textTransform: 'uppercase'
+                        }}
+                      >
+                        GBP
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: 'Inter Tight',
+                          fontWeight: 400,
+                          fontStyle: 'Regular',
+                          fontSize: '14px',
+                          lineHeight: '100%',
+                          letterSpacing: '0px',
+                          textAlign: 'center',
+                          verticalAlign: 'middle',
+                          textTransform: 'uppercase'
+                        }}
+                      >
+                        GLASS BOTTLING PLANT
+                      </p>
+                    </div>
+                  </div>
+                  {/* Right Arrow flush at right */}
+                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                      alt="Right arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
+                </div>
+              </Link>
+            </td>
+            <td colSpan={3} className="product-cell"> {/* Custom CSS class - Spanning image cell */}
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8f04688-16ef-4c40-6161-b9a532be5500/public"
+                alt="Glass Bottling Plant"
+                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
+                width={696}
+                height={232}
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
 
       {/* wrapping these in a div to get them to overlap the sticky logo */}
-        <div className="bg-[#f2f2f2]"
+      <div className="bg-[#f2f2f2]"
         style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
-        >
+      >
         {/* Make in INDIA Section */}
         {/* Entrance animations removed for scroll-snap priority */}
         {/* Changed to h-screen and centered content vertically, removed padding */}
@@ -1205,7 +1205,7 @@ const Home: FC = () => {
             <div className="flex flex-col lg:flex-row items-center justify-between h-[115px] gap-8">
               {/* Column 1: Make in India Text */}
               <div className="flex flex-col items-start max-w-[19.8%]">
-                <h2 
+                <h2
                   style={{
                     fontFamily: 'Inter Tight',
                     fontWeight: 500,
@@ -1219,7 +1219,7 @@ const Home: FC = () => {
                 >
                   Make in India
                 </h2>
-                <p 
+                <p
                   style={{
                     fontFamily: 'Inter Tight',
                     fontWeight: 500,
@@ -1235,7 +1235,7 @@ const Home: FC = () => {
                   WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology.
                 </p>
               </div>
-              
+
               {/* Column 2: Lion Image */}
               <div className="relative flex items-center justify-center max-w-[20%]" style={{ zIndex: 1200 }}>
                 <Image
@@ -1246,15 +1246,15 @@ const Home: FC = () => {
                   className="pb-[25px]"
                 />
               </div>
-              
+
               {/* Column 3: Descriptive Text */}
               <div className="flex flex-col gap-5 max-w-[22%]">
                 <p className="font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  To make in India is to make with purpose — 
-                  crafted by hands that build with heart. 
-                  It is where innovation meets integrity, and 
+                  To make in India is to make with purpose —
+                  crafted by hands that build with heart.
+                  It is where innovation meets integrity, and
                   progress learns to walk softly on the earth.
-                  At WAE, every product born here carries the 
+                  At WAE, every product born here carries the
                   spirit of a nation that creates to conserve.
                 </p>
               </div>
@@ -1299,7 +1299,7 @@ const Home: FC = () => {
               <div className="pt-8 pl-5 flex flex-col justify-between relative">
                 {/* Vertical line on the left */}
                 <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
-                <p 
+                <p
                   style={{
                     fontFamily: 'Inter Tight',
                     fontWeight: 400,
@@ -1344,11 +1344,11 @@ const Home: FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="pt-8 pl-5 flex flex-col justify-between relative">
                 {/* Vertical line on the left */}
                 <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
-                <p 
+                <p
                   style={{
                     fontFamily: 'Inter Tight',
                     fontWeight: 400,
@@ -1393,11 +1393,11 @@ const Home: FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="pt-8 pl-5 flex flex-col justify-between relative">
                 {/* Vertical line on the left */}
                 <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
-                <p 
+                <p
                   style={{
                     fontFamily: 'Inter Tight',
                     fontWeight: 400,
@@ -1445,231 +1445,231 @@ const Home: FC = () => {
             </div>
           </motion.div>
         </section>
-        </div>
+      </div>
 
-        {/* BLOGS SECTION */}
-        <section
-          className="max-w-full px-[8.75rem] py-[120px] bg-[#F2F2F2]"
-          style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
-        >
-          <h2 style={{
-            fontFamily: 'Inter Tight',
-            fontWeight: 500,
-            fontStyle: 'Medium',
-            fontSize: '40px',
-            lineHeight: '110.00000000000001%',
-            letterSpacing: '0px',
-            verticalAlign: 'middle',
-            marginBottom: '2.5rem'
-          }}>
-            Blogs
-          </h2>
-          <div className="grid grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="relative overflow-hidden cursor-pointer">
-              <div className="relative w-[350px] h-[350px]">
-                {/* Base image - full opacity */}
-                <img
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
-                  alt="From Kyoto to COP28"
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-                  style={{ opacity: 1 }}
-                />
-                {/* Hover image - initially transparent */}
-                <img
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
-                  alt="From Kyoto to COP28 Hover"
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
-                  style={{ zIndex: 10 }}
-                />
-              </div>
-              <div className="mt-4">
-                <h3 className="text-lg line-height-[120%] font-medium mb-2" style={{ lineHeight: "120%" }}>From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future</h3>
-                <p className="text-sm text-gray-600 mb-[71px]">
-                  In the quiet halls of Kyoto in 1997, something monumental began   a collective awakening of the world's conscience towards the mounting crisis of climate change.
-                </p>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-[#808080]" style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '12px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  textDecoration: 'underline',
-                  textDecorationStyle: 'solid',
-                  textUnderlineOffset: '2px',
-                  textDecorationThickness: '0%',
-                  textDecorationSkipInk: 'auto',
-                  justifyContent: 'space-between'
-                }}>Read Article </span>
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                  alt="Chevron Right"
-                  width={16}
-                  height={16}
-                  style={{
-                    marginLeft: '5px',
-                    justifyContent: 'space-between'
-                  }}
-                />
-              </div>
+      {/* BLOGS SECTION */}
+      <section
+        className="max-w-full px-[8.75rem] py-[120px] bg-[#F2F2F2]"
+        style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
+      >
+        <h2 style={{
+          fontFamily: 'Inter Tight',
+          fontWeight: 500,
+          fontStyle: 'Medium',
+          fontSize: '40px',
+          lineHeight: '110.00000000000001%',
+          letterSpacing: '0px',
+          verticalAlign: 'middle',
+          marginBottom: '2.5rem'
+        }}>
+          Blogs
+        </h2>
+        <div className="grid grid-cols-3 gap-8">
+          {/* Card 1 */}
+          <div className="relative overflow-hidden cursor-pointer">
+            <div className="relative w-[350px] h-[350px]">
+              {/* Base image - full opacity */}
+              <img
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
+                alt="From Kyoto to COP28"
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                style={{ opacity: 1 }}
+              />
+              {/* Hover image - initially transparent */}
+              <img
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
+                alt="From Kyoto to COP28 Hover"
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
+                style={{ zIndex: 10 }}
+              />
             </div>
-
-            {/* Card 2 */}
-            <div className="relative overflow-hidden cursor-pointer">
-              <div className="relative w-[350px] h-[350px]">
-                {/* Base image - full opacity */}
-                <img
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
-                  alt="Climate Change in the Indian Subcontinent"
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-                  style={{ opacity: 1 }}
-                />
-                {/* Hover image - initially transparent */}
-                <img
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public"
-                  alt="Climate Change in the Indian Subcontinent Hover"
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
-                  style={{ zIndex: 10 }}
-                />
-              </div>
-              <div className="mt-4">
-                <h3 className="text-lg font-medium line-height-[120%] mb-2" style={{ lineHeight: "120%" }}>Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective</h3>
-                <p className="text-sm text-gray-600 mb-[71px]">
-                  The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
-                </p>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-[#808080]" style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '12px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  textDecoration: 'underline',
-                  textDecorationStyle: 'solid',
-                  textUnderlineOffset: '2px',
-                  textDecorationThickness: '0%',
-                  textDecorationSkipInk: 'auto',
-                  justifyContent: 'space-between'
-                }}>Read Article </span>
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                  alt="Chevron Right"
-                  width={16}
-                  height={16}
-                  style={{
-                    marginLeft: '5px',
-                    justifyContent: 'space-between'
-                  }}
-                />
-              </div>
+            <div className="mt-4">
+              <h3 className="text-lg line-height-[120%] font-medium mb-2" style={{ lineHeight: "120%" }}>From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future</h3>
+              <p className="text-sm text-gray-600 mb-[71px]">
+                In the quiet halls of Kyoto in 1997, something monumental began   a collective awakening of the world's conscience towards the mounting crisis of climate change.
+              </p>
             </div>
-
-            {/* Card 3 */}
-            <div className="relative overflow-hidden cursor-pointer">
-              <div className="relative w-[350px] h-[350px]">
-                {/* Base image - full opacity */}
-                <img
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
-                  alt="The Ozone Crisis"
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-                  style={{ opacity: 1 }}
-                />
-                {/* Hover image - initially transparent */}
-                <img
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c3eb242-b13a-443c-da32-a78bce6e7a00/public"
-                  alt="The Ozone Crisis Hover"
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
-                  style={{ zIndex: 10 }}
-                />
-              </div>
-              <div className="mt-4">
-                <h3 className="text-lg font-medium line-height-[120%] mb-2" style={{ lineHeight: "120%" }}>The Ozone Crisis: A Success Story in Environmental Cooperation</h3>
-                <p className="text-sm text-gray-600 mb-[30px]">
-                  It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth. This protective shield—the ozone layer—sits between 10 to 50 kilometres above the surface and has for millions of years absorbed nearly 97–99% of the Sun's harmful ultraviolet-B (UV-B) radiation.
-                </p>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-[#808080]" style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '12px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  textDecoration: 'underline',
-                  textDecorationStyle: 'solid',
-                  textUnderlineOffset: '2px',
-                  textDecorationThickness: '0%',
-                  textDecorationSkipInk: 'auto',
+            <div className="flex justify-between">
+              <span className="text-[#808080]" style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '12px',
+                lineHeight: '110.00000000000001%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+                textDecoration: 'underline',
+                textDecorationStyle: 'solid',
+                textUnderlineOffset: '2px',
+                textDecorationThickness: '0%',
+                textDecorationSkipInk: 'auto',
+                justifyContent: 'space-between'
+              }}>Read Article </span>
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                alt="Chevron Right"
+                width={16}
+                height={16}
+                style={{
+                  marginLeft: '5px',
                   justifyContent: 'space-between'
-                }}>Read Article </span>
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                  alt="Chevron Right"
-                  width={16}
-                  height={16}
-                  style={{
-                    marginLeft: '5px',
-                    justifyContent: 'space-between'
-                  }}
-                />
-              </div>
+                }}
+              />
             </div>
-            
           </div>
-        </section>
 
-        {/* NEWS & UPDATES SECTION */}
-        <section
-          className="max-w-full px-[8.75rem] py-[100px] bg-white"
-          style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
-        >
-          <h2 style={{
-            fontFamily: "Inter Tight",
-            fontWeight: 500,
-            fontStyle: "Medium",
-            fontSize: "40px",
-            lineHeight: "110.00000000000001%",
-            letterSpacing: "0px",
-            verticalAlign: "middle",
-            marginBottom: "40px",
-          }}>
-            Media & Updates
-          </h2>
-          <div className="flex" style={{ gap: "1.6%" }}>
-            {/* Left Column - 60.3% */}
-            <div style={{ width: "60.3%" }}>
-              <div className="space-y-6">
-                {/* News Item 1 */}
-                <div>
-                  <img
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"
-                    alt="WAE ZED Gold Certification"
-                    className="w-full h-auto rounded-lg"
-                    style={{ marginBottom: "8px" }}
-                  />
-                  <h3 
-                    style={{
-                      fontFamily: "Inter Tight",
-                      fontWeight: 400,
-                      fontStyle: "Regular",
-                      fontSize: "24px",
-                      lineHeight: "40px",
-                      letterSpacing: "0%",
-                      marginBottom: "0px"
-                    }}
-                  >
-                    WAE shines with ZED Gold certification for sustainable excellence
-                  </h3>
-                  {/* <div 
+          {/* Card 2 */}
+          <div className="relative overflow-hidden cursor-pointer">
+            <div className="relative w-[350px] h-[350px]">
+              {/* Base image - full opacity */}
+              <img
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
+                alt="Climate Change in the Indian Subcontinent"
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                style={{ opacity: 1 }}
+              />
+              {/* Hover image - initially transparent */}
+              <img
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public"
+                alt="Climate Change in the Indian Subcontinent Hover"
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
+                style={{ zIndex: 10 }}
+              />
+            </div>
+            <div className="mt-4">
+              <h3 className="text-lg font-medium line-height-[120%] mb-2" style={{ lineHeight: "120%" }}>Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective</h3>
+              <p className="text-sm text-gray-600 mb-[71px]">
+                The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
+              </p>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-[#808080]" style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '12px',
+                lineHeight: '110.00000000000001%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+                textDecoration: 'underline',
+                textDecorationStyle: 'solid',
+                textUnderlineOffset: '2px',
+                textDecorationThickness: '0%',
+                textDecorationSkipInk: 'auto',
+                justifyContent: 'space-between'
+              }}>Read Article </span>
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                alt="Chevron Right"
+                width={16}
+                height={16}
+                style={{
+                  marginLeft: '5px',
+                  justifyContent: 'space-between'
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="relative overflow-hidden cursor-pointer">
+            <div className="relative w-[350px] h-[350px]">
+              {/* Base image - full opacity */}
+              <img
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
+                alt="The Ozone Crisis"
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                style={{ opacity: 1 }}
+              />
+              {/* Hover image - initially transparent */}
+              <img
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c3eb242-b13a-443c-da32-a78bce6e7a00/public"
+                alt="The Ozone Crisis Hover"
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
+                style={{ zIndex: 10 }}
+              />
+            </div>
+            <div className="mt-4">
+              <h3 className="text-lg font-medium line-height-[120%] mb-2" style={{ lineHeight: "120%" }}>The Ozone Crisis: A Success Story in Environmental Cooperation</h3>
+              <p className="text-sm text-gray-600 mb-[30px]">
+                It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth. This protective shield—the ozone layer—sits between 10 to 50 kilometres above the surface and has for millions of years absorbed nearly 97–99% of the Sun's harmful ultraviolet-B (UV-B) radiation.
+              </p>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-[#808080]" style={{
+                fontFamily: 'Inter Tight',
+                fontWeight: 400,
+                fontStyle: 'Regular',
+                fontSize: '12px',
+                lineHeight: '110.00000000000001%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
+                textDecoration: 'underline',
+                textDecorationStyle: 'solid',
+                textUnderlineOffset: '2px',
+                textDecorationThickness: '0%',
+                textDecorationSkipInk: 'auto',
+                justifyContent: 'space-between'
+              }}>Read Article </span>
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
+                alt="Chevron Right"
+                width={16}
+                height={16}
+                style={{
+                  marginLeft: '5px',
+                  justifyContent: 'space-between'
+                }}
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* NEWS & UPDATES SECTION */}
+      <section
+        className="max-w-full px-[8.75rem] py-[100px] bg-white"
+        style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
+      >
+        <h2 style={{
+          fontFamily: "Inter Tight",
+          fontWeight: 500,
+          fontStyle: "Medium",
+          fontSize: "40px",
+          lineHeight: "110.00000000000001%",
+          letterSpacing: "0px",
+          verticalAlign: "middle",
+          marginBottom: "40px",
+        }}>
+          Media & Updates
+        </h2>
+        <div className="flex" style={{ gap: "1.6%" }}>
+          {/* Left Column - 60.3% */}
+          <div style={{ width: "60.3%" }}>
+            <div className="space-y-6">
+              {/* News Item 1 */}
+              <div>
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"
+                  alt="WAE ZED Gold Certification"
+                  className="w-full h-auto rounded-lg"
+                  style={{ marginBottom: "8px" }}
+                />
+                <h3
+                  style={{
+                    fontFamily: "Inter Tight",
+                    fontWeight: 400,
+                    fontStyle: "Regular",
+                    fontSize: "24px",
+                    lineHeight: "40px",
+                    letterSpacing: "0%",
+                    marginBottom: "0px"
+                  }}
+                >
+                  WAE shines with ZED Gold certification for sustainable excellence
+                </h3>
+                {/* <div 
                     className="flex justify-between items-center"
                     style={{
                       fontFamily: "Inter Tight",
@@ -1685,36 +1685,36 @@ const Home: FC = () => {
                     <span>|</span>
                     <span>Nov 04, 2025</span>
                   </div> */}
-                </div>
-                
               </div>
+
             </div>
-            
-            {/* Right Column - 37.58% */}
-            <div style={{ width: "37.58%" }}>
-              <div className="space-y-8">
-                {/* Row 1 */}
-                <div>
-                  <img
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/97d880ca-cfa0-4094-52b7-940402225a00/public"
-                    alt="Drinking Water Stations"
-                    className="w-full h-auto rounded-lg mb-1"
-                    style={{ marginBottom: "8px" }}
-                  />
-                  <h3 
-                    style={{
-                      fontFamily: "Inter Tight",
-                      fontWeight: 400,
-                      fontStyle: "Regular",
-                      fontSize: "18px",
-                      lineHeight: "28px",
-                      letterSpacing: "0%",
-                      marginBottom: "8px"
-                    }}
-                  >
-                    Drinking Water Stations Installed Across 28 Police...
-                  </h3>
-                  {/* <div 
+          </div>
+
+          {/* Right Column - 37.58% */}
+          <div style={{ width: "37.58%" }}>
+            <div className="space-y-8">
+              {/* Row 1 */}
+              <div>
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/97d880ca-cfa0-4094-52b7-940402225a00/public"
+                  alt="Drinking Water Stations"
+                  className="w-full h-auto rounded-lg mb-1"
+                  style={{ marginBottom: "8px" }}
+                />
+                <h3
+                  style={{
+                    fontFamily: "Inter Tight",
+                    fontWeight: 400,
+                    fontStyle: "Regular",
+                    fontSize: "18px",
+                    lineHeight: "28px",
+                    letterSpacing: "0%",
+                    marginBottom: "8px"
+                  }}
+                >
+                  Drinking Water Stations Installed Across 28 Police...
+                </h3>
+                {/* <div 
                     className="flex justify-between items-center"
                     style={{
                       fontFamily: "Inter Tight",
@@ -1730,30 +1730,30 @@ const Home: FC = () => {
                     <span>|</span>
                     <span>Oct 27, 2025</span>
                   </div> */}
-                </div>
-                
-                {/* Row 2 */}
-                <div>
-                  <img
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public"
-                    alt="Sustainability in Hospitality"
-                    className="w-full h-auto rounded-lg"
-                    style={{ marginBottom: "8px" }}
-                  />
-                  <h3 
-                    style={{
-                      fontFamily: "Inter Tight",
-                      fontWeight: 400,
-                      fontStyle: "Regular",
-                      fontSize: "18px",
-                      lineHeight: "28px",
-                      letterSpacing: "0%",
-                      marginBottom: "8px"
-                    }}
-                  >
-                    Sustainability in India's hospitality industry
-                  </h3>
-                  {/* <div 
+              </div>
+
+              {/* Row 2 */}
+              <div>
+                <img
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public"
+                  alt="Sustainability in Hospitality"
+                  className="w-full h-auto rounded-lg"
+                  style={{ marginBottom: "8px" }}
+                />
+                <h3
+                  style={{
+                    fontFamily: "Inter Tight",
+                    fontWeight: 400,
+                    fontStyle: "Regular",
+                    fontSize: "18px",
+                    lineHeight: "28px",
+                    letterSpacing: "0%",
+                    marginBottom: "8px"
+                  }}
+                >
+                  Sustainability in India's hospitality industry
+                </h3>
+                {/* <div 
                     className="flex justify-between items-center"
                     style={{
                       fontFamily: "Inter Tight",
@@ -1769,26 +1769,26 @@ const Home: FC = () => {
                     <span>|</span>
                     <span>Dec 04, 2025</span>
                   </div> */}
-                </div>
               </div>
             </div>
           </div>
-          
-        </section>
-
-        {/* Contact Section */}
-        <div className="py-[100px] px-[9.72%]">
-          <ContactSection />
         </div>
 
-        {/* FOOTER SECTION */}
-        {/* Footer likely appears at the very bottom */}
-        {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
-        {/* NOTE: Adjust padding/margins if this section's height + content interferes with snapping */}
-        <div style={{ position: "relative", zIndex: 1200 }}> {/* z-index to appear above the gray background */}
-          {/* Assuming Footer is a valid component */}
-          <Footer />
-        </div>
+      </section>
+
+      {/* Contact Section */}
+      <div className="py-[100px] px-[9.72%]">
+        <ContactSection />
+      </div>
+
+      {/* FOOTER SECTION */}
+      {/* Footer likely appears at the very bottom */}
+      {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
+      {/* NOTE: Adjust padding/margins if this section's height + content interferes with snapping */}
+      <div style={{ position: "relative", zIndex: 1200 }}> {/* z-index to appear above the gray background */}
+        {/* Assuming Footer is a valid component */}
+        <Footer />
+      </div>
 
       {/* INLINE STYLES */}
       {/* Custom CSS for specific elements and animations */}
