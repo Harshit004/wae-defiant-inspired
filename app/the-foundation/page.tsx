@@ -621,7 +621,9 @@ const Home: FC = () => {
                         This initiative, undertaken in collaboration with the Gautam Buddha Nagar Police Department, aims to provide a sustainable and hygienic source of drinking water to police officers, staff, and visitors. The Water Stations feature advanced purification and dispensing technology designed for minimal environmental impact – a reflection of WAE’s ongoing commitment to public health and sustainability.
                     </p>
                     <div className="h-[60px]"></div>
-                    <ReadMoreButton />
+                    <Link href="/drinking-water-stations-installed-across-28-police-stations-in-noida">
+                        <ReadMoreButton />
+                    </Link>
                 </div>
             </div>
 
