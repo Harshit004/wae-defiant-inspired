@@ -246,6 +246,155 @@ const DarkSectionButton = ({ href }: { href: string }) => {
     );
 };
 
+const timelineData = [
+    {
+        navLabel: '2010-12',
+        title: '2010- 2012',
+        items: [
+            'WAE incorporated, a company from water intake to water reuse'
+        ]
+    },
+    {
+        navLabel: '2013-14',
+        title: '2013-2014',
+        items: [
+            'Emergence of an activism: "say no to bottled water"',
+            'Point-of-use water purification stations launched',
+            'WAE Drinking Water Fountain range launched',
+            'Installed at Indira Gandhi International Airport & Airport Metro',
+            'Projects Business Unit started in Water & Wastewater management'
+        ]
+    },
+    {
+        navLabel: '2015-17',
+        title: '2015- 2017',
+        items: [
+            'Completed installation of over 10 Sewage Treatment Plants in India',
+            'First ETP of 500 KLD installed at Seemag Steel Plant, Orissa',
+            'Installed 1 MLD Biological & MBR Hybrid Sewage Treatment Plant at Gangotri, Uttarakhand',
+            'Signed master license agreement with HAWS Corporation, USA for hydration products'
+        ]
+    },
+    {
+        navLabel: '2018-19',
+        title: '2018- 2019',
+        items: [
+            'Research and Development team incubated'
+        ]
+    },
+    {
+        navLabel: '2020-21',
+        title: '2020- 2021',
+        items: [
+            'Embarked on a transformative digital journey',
+            'Completed a successful and innovative decade of Integrated Water Resource Management',
+            'Launched touchless dispensing with LED UV protection'
+        ]
+    },
+    {
+        navLabel: '2022-23',
+        title: '2022-2023',
+        items: [
+            'Revolutionizing hygiene with electronically operated drinking water taps',
+            'Innovative solutions tailored for the HoReCa segment'
+        ]
+    }
+];
+
+const TimelineSection = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    return (
+        <section className="w-full bg-[#f2f2f2] px-[8.541%] py-[120px] font-['Inter_Tight']">
+            <div className="max-w-[1440px] mx-auto w-full">
+                <h2 className="text-[36px] md:text-[44px] font-medium leading-[110%] text-black tracking-tight mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>WAE Chronicle</h2>
+                <p className="text-[16px] font-medium text-black mb-20">From Intent to Impact</p>
+
+                {/* Timeline Nav Area */}
+                <div className="relative w-full mb-16 flex justify-between px-1 md:px-2">
+                    {/* Background Line Container */}
+                    <div className="absolute top-[3px] md:top-[5px] left-[4px] right-[4px] md:left-[8px] md:right-[8px] h-[1px] md:h-[2px] bg-[#d9d9d9] z-0">
+                        {/* Active Line Fill */}
+                        <div
+                            className="absolute top-0 left-0 h-full bg-black transition-all duration-500 ease-in-out"
+                            style={{ width: `${(activeIndex / (timelineData.length - 1)) * 100}%` }}
+                        ></div>
+                    </div>
+                    {/* Stops */}
+                    {timelineData.map((data, index) => {
+                        const isPastOrActive = index <= activeIndex;
+                        return (
+                            <div
+                                key={index}
+                                className="relative z-10 flex flex-col items-center cursor-pointer group"
+                                onClick={() => setActiveIndex(index)}
+                            >
+                                <div className={`w-[8px] h-[8px] md:w-[12px] md:h-[12px] rounded-full mb-4 transition-colors duration-500 ${isPastOrActive ? 'bg-black' : 'bg-[#d9d9d9] group-hover:bg-gray-400'}`}></div>
+                                <span className={`text-[10px] md:text-[12px] font-bold absolute top-6 md:top-8 whitespace-nowrap transition-colors duration-500 ${isPastOrActive ? 'text-black' : 'text-[#8D8D8D] group-hover:text-gray-500'}`}>
+                                    {data.navLabel}
+                                </span>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                <div className="h-[40px] w-full"></div>
+
+                {/* Content Area */}
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch mt-8 w-full">
+                    {/* Image Column */}
+                    <div className="w-full lg:w-[45%]">
+                        <div className="relative aspect-[16/10] w-full bg-gray-200">
+                            <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cc623118-8d3c-4c0f-aa14-c4b9062c5500/public"
+                                alt="Chronicle Image"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Text Column */}
+                    <div className="w-full lg:w-[55%] flex flex-col justify-start relative min-h-[300px]">
+                        <h3 className="text-[18px] md:text-[20px] font-bold text-black mb-6">{timelineData[activeIndex].title}</h3>
+
+                        <ul className="list-disc pl-5 mb-auto space-y-3">
+                            {timelineData[activeIndex].items.map((item, idx) => (
+                                <li key={idx} className="text-[14px] font-medium leading-[140%] text-[#00000099]">
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+
+                        {/* Arrows */}
+                        <div className="absolute bottom-0 right-0 flex gap-4">
+                            <button
+                                onClick={() => setActiveIndex(Math.max(0, activeIndex - 1))}
+                                disabled={activeIndex === 0}
+                                className={`w-[32px] h-[32px] border rounded-[6px] flex items-center justify-center transition-colors ${activeIndex === 0 ? 'border-[#d9d9d9] text-[#d9d9d9] cursor-not-allowed' : 'border-black text-black hover:bg-black hover:text-white'}`}
+                            >
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 9L1 5L5 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </button>
+                            <button
+                                onClick={() => setActiveIndex(Math.min(timelineData.length - 1, activeIndex + 1))}
+                                disabled={activeIndex === timelineData.length - 1}
+                                className={`w-[32px] h-[32px] border rounded-[6px] flex items-center justify-center transition-colors ${activeIndex === timelineData.length - 1 ? 'border-[#d9d9d9] text-[#d9d9d9] cursor-not-allowed' : 'border-black text-black hover:bg-black hover:text-white'}`}
+                            >
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 9L5 5L1 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    );
+};
+
 export default function Home() {
     const [activeSection, setActiveSection] = useState(0)
     const [currentTime, setCurrentTime] = useState("")
@@ -942,6 +1091,75 @@ export default function Home() {
                             All CSR activities undertaken through the WAE Foundation follow structured processes and are supported by proper documentation. Each initiative is planned, executed, and recorded with clear accountability. Transparency and traceability are central to how we operate, ensuring that every contribution is meaningful, measurable, and aligned with responsible long-term growth.
                         </p>
                         <DarkSectionButton href="/the-foundation" />
+                    </div>
+
+                </div>
+            </section>
+
+            {/* Timeline Section */}
+            <TimelineSection />
+
+            {/* Awards & Recognitions */}
+
+            {/* 8. Awards & Recognition Section */}
+            <section className="w-full bg-[#f2f2f2] px-[9.72%] pb-[120px] font-['Inter_Tight']">
+                <h2 className="text-[32px] md:text-[40px] font-medium leading-[110%] mb-16 text-black tracking-tight">
+                    Awards & Recognition
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative items-start">
+
+                    {/* Column 1 */}
+                    <div className="flex flex-col items-start border-l border-[#8D8D8D] pl-6 md:pl-8 h-full">
+                        <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight">
+                            The competition has never<br />been fiercer. Here are the<br />ET MSME Awards 2025<br />nominees!
+                        </h3>
+                        <div className="text-[14px] font-medium leading-[140%] text-[#00000099] space-y-6 md:pr-4">
+                            <p>Every year, thousands of India's most ambitious micro, small and medium enterprises (MSMEs) throw their hats into the ring for the ET MSME Awards. Every year, the list gets longer. And the ceremony gets harder to ignore.</p>
+                            <p>This year is no different. Except that it somehow feels bigger.</p>
+                        </div>
+                    </div>
+
+                    {/* Column 2 */}
+                    <div className="flex flex-col items-start border-l border-[#8D8D8D] pl-6 md:pl-8 h-full">
+                        <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight">
+                            WAE Felicitated with 15th<br />CII Design Excellence<br />Award 2025 for<br />Communication Design
+                        </h3>
+                        <div className="text-[14px] font-medium leading-[140%] text-[#00000099] space-y-6 md:pr-4">
+                            <p>WAE, India's leading water solutions provider, has been conferred the prestigious 15th CII Design Excellence Award 2025, securing a place among India's Top 50 Designs in the Communication Design category. The recognition was conferred after a thorough nomination process, comprehensive jury assessment and a detailed evaluation by industry experts.</p>
+                        </div>
+                    </div>
+
+                    {/* Column 3 */}
+                    <div className="flex flex-col items-start border-l border-[#8D8D8D] pl-6 md:pl-8 h-full">
+                        <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight">
+                            WAE wins Product &<br />Service Innovation of the<br />Year &ndash; Silver by BW<br />Hotelier
+                        </h3>
+                        <div className="text-[14px] font-medium leading-[140%] text-[#00000099] space-y-6 md:pr-4">
+                            <p>WAE wins the Product & Service Innovation of the Year - Silver at the BW Businessworld Emerging Businesses Summit & Awards.</p>
+                            <p>Awards often celebrate what is visible. But at WAE, innovation lives deeper. In engineering that goes beyond the brief. In systems built for the real world, not the brochure. In deployments driven by intention. And in a service philosophy where delivery is only the beginning.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* 9. Join Our Team Section */}
+            <section className="w-full bg-[#0F0F0F] px-[9.72%] py-[137px] font-['Inter_Tight'] text-white">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-24 max-w-[1440px] mx-auto w-full">
+
+                    {/* Left Column */}
+                    <div className="w-full md:w-[45%] flex items-start">
+                        <h2 className="text-[36px] font-bold leading-[110%] text-white tracking-tight">
+                            Join Our Team
+                        </h2>
+                    </div>
+
+                    {/* Right Column */}
+                    <div className="w-full md:w-[39%] flex flex-col items-start lg:pr-12">
+                        <p className="text-[14px] font-medium leading-[140%] text-white md:leading-[100%]">
+                            Ready for what's next? We're proud to support our employees with opportunities to grow and thrive. We're looking for talented people like you from all across the globe.
+                        </p>
+                        <DarkSectionButton href="#" />
                     </div>
 
                 </div>
