@@ -903,8 +903,7 @@ export default function Home() {
                     {/* Satinder Kaur */}
                     <div className="flex flex-col">
                         <div className="relative aspect-[4/3] w-full mb-6 bg-gray-200">
-                            {/* Placeholder image (Nayna) */}
-                            <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4cedda8e-3f37-422a-920c-7c8241256400/public" alt="Satinder Kaur" fill className="object-cover" />
+                            <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b50e712a-a5aa-4ce7-31ae-9d624ef5f100/public" alt="Satinder Kaur" fill className="object-cover" />
                         </div>
                         <div className="flex justify-between items-start mb-4">
                             <div>
@@ -912,7 +911,7 @@ export default function Home() {
                                 <p className="text-[12px] font-bold text-black mt-1">Chief Revenue Officer</p>
                             </div>
                             {/* Placeholder link */}
-                            <LinkedInButton href="#" />
+                            <LinkedInButton href="https://www.linkedin.com/in/ksatinder/" />
                         </div>
                         <p className="text-[12px] font-medium leading-[140%] text-[#00000099]">
                             Leads WAE's revenue strategy and overall commercial growth, overseeing sales operations, key account management, and strategic partnership development to drive consistent, scalable, long-term institutional revenue.
@@ -922,8 +921,7 @@ export default function Home() {
                     {/* Avnesh Sharma */}
                     <div className="flex flex-col">
                         <div className="relative aspect-[4/3] w-full mb-6 bg-gray-200">
-                            {/* Placeholder image (Deepak) */}
-                            <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6bc35551-9c5a-4161-328f-da4114280600/public" alt="Avnesh Sharma" fill className="object-cover" />
+                            <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/469bb1e6-1c45-4f16-f7ea-6532aa9f5300/public" alt="Avnesh Sharma" fill className="object-cover" />
                         </div>
                         <div className="flex justify-between items-start mb-4">
                             <div>
@@ -931,7 +929,7 @@ export default function Home() {
                                 <p className="text-[12px] font-bold text-black mt-1">Director - Customer Value Management</p>
                             </div>
                             {/* Placeholder link */}
-                            <LinkedInButton href="#" />
+                            <LinkedInButton href="https://www.linkedin.com/in/avneshsharma/" />
                         </div>
                         <p className="text-[12px] font-medium leading-[140%] text-[#00000099]">
                             Drives customer value delivery and long-term retention across WAE's institutional client base, managing relationships and ensuring clients achieve measurable outcomes from their water infrastructure investments.
@@ -941,16 +939,14 @@ export default function Home() {
                     {/* Meenakshi Bora */}
                     <div className="flex flex-col">
                         <div className="relative aspect-[4/3] w-full mb-6 bg-gray-200">
-                            {/* Placeholder image (Nayna) */}
-                            <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4cedda8e-3f37-422a-920c-7c8241256400/public" alt="Meenakshi Bora" fill className="object-cover" />
+                            <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f88d5da-23ab-4e62-c172-f2d9b8581900/public" alt="Meenakshi Bora" fill className="object-cover" />
                         </div>
                         <div className="flex justify-between items-start mb-4">
                             <div>
                                 <h4 className="text-[20px] font-medium text-black tracking-tight" style={{ fontFamily: "Manrope, sans-serif" }}>Meenakshi Bora</h4>
                                 <p className="text-[12px] font-bold text-black mt-1">VP - Client Relations & Operations</p>
                             </div>
-                            {/* Placeholder link */}
-                            <LinkedInButton href="#" />
+                            <LinkedInButton href="https://www.linkedin.com/in/meenakshi-bora-005909aa/?skipRedirect=true" />
                         </div>
                         <p className="text-[12px] font-medium leading-[140%] text-[#00000099]">
                             Aligns client relations and operations at WAE, enabling efficient, responsive service delivery and consistent client satisfaction through strong coordination, cross-functional execution, and operational excellence throughout.
@@ -960,16 +956,14 @@ export default function Home() {
                     {/* Rashmi Bhatia */}
                     <div className="flex flex-col">
                         <div className="relative aspect-[4/3] w-full mb-6 bg-gray-200">
-                            {/* Placeholder image (Nayna) */}
-                            <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4cedda8e-3f37-422a-920c-7c8241256400/public" alt="Rashmi Bhatia" fill className="object-cover" />
+                            <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/00e1155b-84f2-4db0-591e-6a99630fdf00/public" alt="Rashmi Bhatia" fill className="object-cover" />
                         </div>
                         <div className="flex justify-between items-start mb-4">
                             <div>
                                 <h4 className="text-[20px] font-medium text-black tracking-tight" style={{ fontFamily: "Manrope, sans-serif" }}>Rashmi Bhatia</h4>
                                 <p className="text-[12px] font-bold text-black mt-1">Director - Finance & Accounts</p>
                             </div>
-                            {/* Placeholder link */}
-                            <LinkedInButton href="#" />
+                            <LinkedInButton href="https://www.linkedin.com/in/rashmi-bhatia-6987695a/" />
                         </div>
                         <p className="text-[12px] font-medium leading-[140%] text-[#00000099]">
                             Brings over 14 years in corporate finance. Leads WAE's finance and accounts function, ensuring financial governance, accuracy, compliance, and sustainable fiscal management across the organisation.
