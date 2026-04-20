@@ -248,7 +248,7 @@ export default function Home() {
   }, [isPopupOpen]);
 
   const productsItems = [
-    { text: "This is Us", href: "/inside-wae" },
+    { text: "This is Us", href: "/this-is-us" },
     { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers3" },
   ]

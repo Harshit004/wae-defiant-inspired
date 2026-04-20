@@ -157,7 +157,7 @@ const Home: FC = () => {
 
   // Menu items arrays and tagline words (for animation if needed)
   const productsItems = [
-    { text: "This Is Us", href: "/inside-wae" },
+    { text: "This Is Us", href: "/this-is-us" },
     { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers3" },
   ];

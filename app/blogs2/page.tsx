@@ -104,7 +104,7 @@ export default function Home() {
   const tagline1 = "To lead the way in sustainability".split(" ")
   const tagline2 = "ahead of the rest.".split(" ")
   const productsItems = [
-    { text: "This is Us", href: "/inside-wae" },
+    { text: "This is Us", href: "/this-is-us" },
     { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers3" },
   ]

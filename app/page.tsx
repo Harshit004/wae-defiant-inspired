@@ -177,7 +177,7 @@ const Home: FC = () => {
 
   // Menu items arrays - INSIDE WAE section
   const productsItems = [
-    { text: "This Is Us", href: "/inside-wae" },
+    { text: "This Is Us", href: "/this-is-us" },
     { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers3" },
   ];
@@ -237,7 +237,7 @@ const Home: FC = () => {
                 <Link href="/objective">OBJECTIVE</Link>
               </div>
               <div>
-                <Link href="/inside-wae">INSIDE WAE</Link>
+                <Link href="/this-is-us">INSIDE WAE</Link>
               </div>
               <div>
                 <Link href="/etcetera">ETCETERA</Link>
@@ -460,7 +460,7 @@ const Home: FC = () => {
                 WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
               </p>
               <div style={{ height: '20px' }} />
-              <Link href="/inside-wae" className="contents">
+              <Link href="/this-is-us" className="contents">
                 <HoverButton>
                   {(hovered) => (
                     <>

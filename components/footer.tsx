@@ -144,7 +144,7 @@ export default function Footer() {
                 className="space-y-2 mb-0 md:mb-[5rem] block font-[Inter_Tight] font-normal text-[12px] leading-[100%] tracking-[0px]"
               >
                 <li>
-                  <Link href="/inside-wae">This is Us</Link>
+                  <Link href="/this-is-us">This is Us</Link>
                 </li>
                 <li>
                   <Link href="/our-portfolio">Our Portfolio</Link>

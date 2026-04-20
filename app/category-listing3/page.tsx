@@ -770,7 +770,7 @@ const Home: FC = () => {
   // Arrays for menu items - These can remain outside ClientSideContent as they don't use searchParams
   // Moved these definitions inside Home as they are only used here now
   const productsItems = [
-    { text: "This is Us", href: "/inside-wae" },
+    { text: "This is Us", href: "/this-is-us" },
     { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers3" },
   ];
