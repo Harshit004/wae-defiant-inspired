@@ -462,7 +462,7 @@ export default function Home() {
                   We believe businesses shape behaviour, and behaviour shapes the planet. By offering viable, elegant alternatives to plastic dependency, we disrupt the status quo with substance. Leadership, for us, means solutions that are environmentally sound, commercially viable, and ethically grounded.
                 </p>
               </div>
-              <HoverButton href="#">
+              <HoverButton href="/the-activist">
                 {(hovered) => (
                   <>
                     <span>Know More</span>
