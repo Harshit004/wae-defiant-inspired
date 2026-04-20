@@ -39,7 +39,7 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
         fontSize: "10px",
         lineHeight: "100%",
         textTransform: "uppercase",
-        backgroundColor: hovered ? "#000" : "#f2f2f2",
+        backgroundColor: hovered ? "#000" : "#fff",
         border: "1px solid #000",
         cursor: "pointer",
         color: hovered ? "#fff" : "#000",
@@ -59,12 +59,80 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
   ) : buttonContent;
 };
 
+const governanceCards = [
+  {
+    id: "1.",
+    title: "ESG Policy",
+    text: "We set measurable targets, track outcomes, and align operations with long-term eco-logical balance. Sustainability is woven into procurement, partnerships.",
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="24" cy="24" r="10"></circle>
+        <path d="M16 16c-2-4-6-6-10-2 2 4 6 6 10 2z"></path>
+        <path d="M32 32c2 4 6 6 10 2-2-4-6-6-10-2z"></path>
+        <path d="M16 32c-2 4-6 6-10 2 2-4 6-6 10-2z"></path>
+        <path d="M32 16c2-4 6-6 10-2-2 4-6 6-10 2z"></path>
+        <path d="M20 20l4 4-2 6"></path>
+        <path d="M28 20l-2 4 4 2"></path>
+      </svg>
+    )
+  },
+  {
+    id: "2.",
+    title: "Compliances",
+    text: "Compliance is our baseline, not our benchmark. We adhere to environmental, safety, and statutory standards, reinforced through proactive audits and certifications.",
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M28 4H12a4 4 0 0 0-4 4v32a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V16z"></path>
+        <polyline points="28 4 28 16 40 16"></polyline>
+        <polyline points="16 26 22 32 32 20"></polyline>
+      </svg>
+    )
+  },
+  {
+    id: "3.",
+    title: "Ethical Sourcing",
+    text: "Impact begins upstream. We prioritise responsible suppliers, transparent processes, and durable materials. Responsibility must travel the entire value chain.",
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 32c-3 0-6 2-6 5s3 5 6 5h14c6 0 10-4 10-10H20l-4 5z"></path>
+        <path d="M24 18c-2-3-6-3-8 1-1 3 2 6 8 11 6-5 9-8 8-11-2-4-6-4-8-1z"></path>
+      </svg>
+    )
+  },
+  {
+    id: "4.",
+    title: "Sustainability Report",
+    text: "We report plastic reduction, carbon savings, water conservation, and community impact with clarity. It's an open ledger of progress.",
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M28 4H12a4 4 0 0 0-4 4v32a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V16z"></path>
+        <polyline points="28 4 28 16 40 16"></polyline>
+        <path d="M24 34c0-7-6-7-6-7s0-6 7-6 6 6 6 6-6 0-6 7z"></path>
+        <path d="M24 34v-7"></path>
+      </svg>
+    )
+  },
+  {
+    id: "5.",
+    title: "Impact Stories",
+    text: "Documented across three volumes, Impact Stories capture milestones and the growth toward responsible, refill-centric futures.",
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M10 12h28c2 0 4 2 4 4v8c0 2-2 4-4 4H26l-6 6v-6h-6c-2 0-4-2-4-4v-8c0-2 2-4 4-4z"></path>
+        <path d="M12 36l6-4h12l6 4v8h-24v-8z"></path>
+        <line x1="24" y1="32" x2="24" y2="44"></line>
+        <line x1="18" y1="18" x2="30" y2="18"></line>
+      </svg>
+    )
+  }
+];
 
 export default function Home() {
   // State variables
   const [activeSection, setActiveSection] = useState(0)
   const [currentTime, setCurrentTime] = useState("")
   const [headerHeight, setHeaderHeight] = useState(0)
+  const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
   const headerRef = useRef<HTMLDivElement>(null)
 
   // State for controlling tagline visibility on scroll
@@ -301,23 +369,289 @@ export default function Home() {
         </header>
       </div>
 
-      {/* Hero section */}
+      {/* HERO SECTION */}
+      {/* NOTE: If you want the Hero to be a scroll-snap point, add snap-center here */}
       <section
         id="hero"
-        className="relative w-full overflow-hidden pt-5 bg-white"
+        // ref={heroRef}
+        className="w-screen flex items-center justify-center bg-white"
+        style={{ height: `calc(100vh - ${headerHeight}px)` }}
       >
-        {/* Desktop: Background video (full width, natural height) */}
-        <div className="w-full">
-          <video
-            src="/3f6940f6f51b6c16ee6d8104dc1d4344a4633a81.mp4"
-            className="hidden md:block w-full h-auto z-0"
-            autoPlay
-            loop
-            muted
-            playsInline
+        <div className="w-screen flex items-center justify-center">
+          <img
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7d9e6714-27eb-4090-aeef-ee8f5e3f3e00/public"
+            alt="Hero image"
+            className="w-full h-fit object-cover rounded-none"
+          />
+        </div>
+      </section>
+
+      {/* APPROACH & IDEAS SECTION */}
+      <section className="w-full bg-[#f2f2f2] pl-[9.375%] pr-[13.95%] py-[135px] font-['Inter_Tight']">
+        <div className="flex flex-col gap-[160px] max-w-[1440px] mx-auto w-full">
+
+          {/* Block 1: Our Approach */}
+          <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-24 lg:gap-32">
+            <div className="w-full md:w-[40%] flex flex-col pt-2">
+              <p className="font-normal text-[14px] leading-[100%] text-[#00000099] uppercase mb-2">OUR APPROACH</p>
+              <h2 className="font-medium text-[36px] leading-[110%] text-black tracking-tight">
+                Our Green Is Blue
+              </h2>
+            </div>
+            <div className="w-full md:w-[40%] flex flex-col">
+              <div className="font-medium text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
+                <p>
+                  "Our Green Is Blue" is more than a tagline — it's a founding belief. The ecological truth is simple: without water, there is no life. Forests fail, food systems fracture, and futures fade.
+                </p>
+                <p>
+                  Water shapes climate, communities, commerce, and civilisation. That's why we don't treat the planet as a stakeholder in business. We treat business as a steward of the planet. Our vision is built on that principle: honour water, design responsibly, and build systems where progress serves the planet, not the other way around.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Block 2: Our Ideas */}
+          <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-24 lg:gap-32">
+            <div className="w-full md:w-[40%] flex flex-col pt-2">
+              <p className="font-normal text-[14px] leading-[100%] text-[#00000099] uppercase mb-2">OUR IDEAS</p>
+              <h2 className="font-medium text-[36px] leading-[110%] text-black tracking-tight">
+                Blue Innovation
+              </h2>
+            </div>
+            <div className="w-full md:w-[40%] flex flex-col">
+              <div className="font-medium text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
+                <p>
+                  Innovation starts with a question: what can we remove that harms the planet?
+                </p>
+                <p>
+                  We design out single-use plastics, excess packaging, and short product lifecycles. In their place, we build stainless steel dispensers, refill-based infrastructure, touchless hygiene systems, and purification technology that minimises waste. We engineer for longevity, because durability is climate action.
+                </p>
+                <p>
+                  Sustainability isn't layered onto our products as an afterthought. It's the blueprint.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ACTIVIST COMPANY SECTION */}
+      <section className="relative w-full font-['Inter_Tight'] bg-white">
+        <div className="relative w-full max-h-[611px] flex items-center">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dec126a3-d49c-4aa5-eb45-0a171454ac00/public"
+            alt="WAE Activist Company"
+            fill
+            className="object-cover object-[70%_center] md:object-[center_right] z-0"
+            priority
+          />
+          <div className="relative z-10 w-full max-w-[1440px] mx-auto px-[9.375%] py-[120px] lg:px-[140px]">
+            <div className="w-full md:w-[50%] lg:w-[45%] flex flex-col">
+              <h2 className="font-bold text-[36px] leading-[110%] text-black tracking-tight mb-8">
+                Activist Company
+              </h2>
+              <div className="font-medium text-[14px] leading-[120%] text-[#00000099] space-y-6 mb-12">
+                <p>
+                  WAE was founded on conviction: a deliberate refusal to accept waste as inevitable.
+                </p>
+                <p>
+                  We question systems that normalise single-use culture. We challenge practices that quietly degrade the environment. We advocate for refill ecosystems over bottled convenience, and for responsibility over routine. This isn't rebellion — it's reform.
+                </p>
+                <p>
+                  We believe businesses shape behaviour, and behaviour shapes the planet. By offering viable, elegant alternatives to plastic dependency, we disrupt the status quo with substance. Leadership, for us, means solutions that are environmentally sound, commercially viable, and ethically grounded.
+                </p>
+              </div>
+              <HoverButton href="#">
+                {(hovered) => (
+                  <>
+                    <span>Know More</span>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </>
+                )}
+              </HoverButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CORE PILLARS SECTION */}
+      <section className="w-full bg-[#f2f2f2] font-['Inter_Tight'] py-[99px] pl-[9.375%] pr-[13.95%] lg:px-[140px]">
+        <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] gap-0">
+
+          {/* Left Column */}
+          <div className="w-full flex flex-col pr-12 lg:pr-24">
+            <div className="flex flex-row justify-between items-start mb-12 lg:mb-[60px]">
+              <h2 className="font-bold text-[36px] leading-[110%] text-black tracking-tight" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+                Core Pillars
+              </h2>
+              <div className="w-[35px] h-[35px] border border-black flex items-center justify-center flex-shrink-0">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L11 11M11 11H3M11 11V3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </div>
+
+            <div className="font-medium text-[14px] leading-[120%] text-[#00000099] space-y-6 lg:pr-12">
+              <p>
+                The single-use economy has run unchallenged for too long - normalised by convenience, protected by habit, and ignored by the very institutions with the power to change it.
+              </p>
+              <p>
+                WAE was built to be the exception. Not through campaigns or pledges, but through infrastructure that makes the bottle redundant. Scalable, institutional, and permanent.
+              </p>
+              <p>
+                That is the standard we were founded on, and the one we refuse to lower
+              </p>
+            </div>
+          </div>
+
+          {/* Vertical Separator */}
+          <div className="hidden md:block w-[1px] bg-[#D9D9DC]"></div>
+
+          {/* Right Column */}
+          <div className="w-full flex flex-col pl-12 lg:pl-24 md:mt-0 mt-16">
+
+            {/* Item 1 */}
+            <div className="flex flex-col mb-10 text-left">
+              <h3 className="font-semibold text-[26px] leading-[110%] text-black mb-6" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+                Climate &amp; Resource Efficiency
+              </h3>
+              <p className="font-medium text-[14px] leading-[100%] text-[#00000099]">
+                Climate action is operational, not abstract. We reduce lifecycle emissions by replacing disposable plastic with durable stainless steel systems. Energy efficiency, material longevity, and logistics optimisation are built into everything we do. Resource efficiency means disciplined restraint: using less, wasting less, emitting less.
+              </p>
+            </div>
+
+            {/* Horizontal Line */}
+            <div className="w-full h-[1px] bg-[#D9D9DC] mb-10"></div>
+
+            {/* Item 2 */}
+            <div className="flex flex-col mb-10 text-left">
+              <h3 className="font-semibold text-[26px] leading-[110%] text-black mb-6" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+                Stewardship &amp; Conservation
+              </h3>
+              <p className="font-medium text-[14px] leading-[100%] text-[#00000099]">
+                Water isn't a product to be used — it's a resource to be respected. Our refill models reduce plastic leakage and lower environmental burden. Through efficient purification and conscious infrastructure, we make conservation a practice, not a pledge.
+              </p>
+            </div>
+
+            {/* Horizontal Line */}
+            <div className="w-full h-[1px] bg-[#D9D9DC] mb-10"></div>
+
+            {/* Item 3 */}
+            <div className="flex flex-col text-left">
+              <h3 className="font-semibold text-[26px] leading-[110%] text-black mb-6" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+                Blue Communities
+              </h3>
+              <p className="font-medium text-[14px] leading-[100%] text-[#00000099]">
+                Real change scales through participation. We partner with corporates, institutions, and hospitality leaders to build refill cultures that shift behaviour permanently. Blue Communities are ecosystems of shared accountability, where sustainability moves from policy to practice.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* BLUE GOVERNANCE SECTION */}
+      <section className="w-full bg-white font-['Inter_Tight'] pt-[87px] pb-[125px]">
+        {/* Title & Description */}
+        <div className="w-full max-w-[1440px] mx-auto px-[9.375%] lg:px-[140px] mb-[60px]">
+          <h2 className="font-bold text-[36px] leading-[110%] text-black tracking-tight mb-8" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+            Blue Governance
+          </h2>
+          <p className="font-medium text-[14px] leading-[120%] text-[#00000099] max-w-[800px]">
+            Blue Governance is WAE's commitment to embedding ecological intelligence, ethical discipline, and transparent accountability into every decision. It covers ESG policy, compliance, ethical sourcing, and annual sustainability reporting — ensuring responsibility is structural, not symbolic.
+          </p>
+        </div>
+
+        {/* Carousel Container */}
+        <div className="w-full max-w-[1440px] pl-[9.375%]">
+          <div
+            id="governance-track"
+            className="w-full border-t border-b border-l border-[#D9D9DC] flex overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory"
           >
-            Your browser does not support the video tag.
-          </video>
+            {governanceCards.map((card, index) => (
+              <div
+                key={card.id}
+                className={`snap-start flex-shrink-0 w-[85vw] md:w-[320px] lg:w-[23%] min-w-[250px] border-r border-[#D9D9DC] flex flex-col p-6 lg:p-8 transition-colors duration-300 ${activeGovernanceCard === index
+                  ? "bg-black text-white"
+                  : "bg-white text-black"
+                  }`}
+                style={{ maxHeight: "378px" }}
+              >
+                {/* Number */}
+                <div className="font-bold text-[20px] leading-[110%] mb-[40px] lg:mb-[60px]" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+                  {card.id}
+                </div>
+
+                {/* SVG Icon container */}
+                <div className={`flex items-center justify-center h-[48px] mb-[40px] lg:mb-[60px] transition-colors duration-300 ${activeGovernanceCard === index ? "text-white" : "text-black"
+                  }`}>
+                  {card.icon}
+                </div>
+
+                {/* Card Title */}
+                <h3 className="font-bold text-[20px] lg:text-[22px] leading-[110%] mb-4 tracking-tight" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+                  {card.title}
+                </h3>
+
+                {/* Card Description */}
+                <p className={`font-medium text-[12px] leading-[130%] transition-colors duration-300 ${activeGovernanceCard === index ? "text-[#ffffff99]" : "text-[#00000099]"
+                  }`}>
+                  {card.text}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Carousel Arrows */}
+          <div className="mt-[40px] flex justify-end gap-3 hidden md:flex mr-[9.72%]">
+            <button
+              disabled={activeGovernanceCard === 0}
+              onClick={() => {
+                if (activeGovernanceCard > 0) {
+                  const newIndex = activeGovernanceCard - 1;
+                  setActiveGovernanceCard(newIndex);
+                  const track = document.getElementById('governance-track');
+                  if (track) {
+                    const cardWidth = (track.children[0] as HTMLElement)?.clientWidth || 320;
+                    track.scrollTo({ left: newIndex * cardWidth, behavior: 'smooth' });
+                  }
+                }
+              }}
+              className={`w-[35px] h-[35px] border flex items-center justify-center transition-colors duration-300 ${activeGovernanceCard === 0
+                ? "border-[#D9D9DC] text-[#D9D9DC] cursor-not-allowed bg-white"
+                : "border-black text-black hover:bg-[#f2f2f2] cursor-pointer bg-white"
+                }`}
+            >
+              <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 9L1 5L5 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              disabled={activeGovernanceCard === governanceCards.length - 1}
+              onClick={() => {
+                if (activeGovernanceCard < governanceCards.length - 1) {
+                  const newIndex = activeGovernanceCard + 1;
+                  setActiveGovernanceCard(newIndex);
+                  const track = document.getElementById('governance-track');
+                  if (track) {
+                    const cardWidth = (track.children[0] as HTMLElement)?.clientWidth || 320;
+                    track.scrollTo({ left: newIndex * cardWidth, behavior: 'smooth' });
+                  }
+                }
+              }}
+              className={`w-[35px] h-[35px] border flex items-center justify-center transition-colors duration-300 ${activeGovernanceCard === governanceCards.length - 1
+                ? "border-[#D9D9DC] text-[#D9D9DC] cursor-not-allowed bg-white"
+                : "border-black text-black hover:bg-[#f2f2f2] cursor-pointer bg-white"
+                }`}
+            >
+              <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 9L5 5L1 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
