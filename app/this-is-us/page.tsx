@@ -835,8 +835,8 @@ export default function Home() {
                 {/* Founder Block */}
                 <div className="flex flex-col md:flex-row gap-8 md:gap-16 mb-24 items-start max-w-[1440px] mx-auto">
                     {/* Image */}
-                    <div className="h-[426px] w-fit mr-[5.972%]">
-                        <div className="relative aspect-[4/3] w-full">
+                    <div className="shrink-0 mr-0 md:mr-[5.972%] mb-8 md:mb-0">
+                        <div className="relative h-auto md:h-[426px] w-full md:w-[568px] aspect-[4/3]">
                             <Image
                                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/33375025-0570-4253-56a7-580216923b00/public"
                                 alt="A. Vikram Joshe"
