@@ -1075,14 +1075,14 @@ export default function Home() {
 
                     {/* Left Column */}
                     <div className="w-full md:w-[45%] flex items-start">
-                        <h2 className="text-[36px] font-bold leading-[110%] text-white tracking-tight">
+                        <h2 className="text-[36px] font-medium leading-[110%] text-white tracking-tight">
                             Serving with Purpose
                         </h2>
                     </div>
 
                     {/* Right Column */}
                     <div className="w-full md:w-[39%] flex flex-col items-start lg:pr-12">
-                        <p className="text-[14px] font-medium leading-[140%] text-white md:leading-[100%]">
+                        <p className="text-[14px] font-normal leading-[130%] text-white">
                             All CSR activities undertaken through the WAE Foundation follow structured processes and are supported by proper documentation. Each initiative is planned, executed, and recorded with clear accountability. Transparency and traceability are central to how we operate, ensuring that every contribution is meaningful, measurable, and aligned with responsible long-term growth.
                         </p>
                         <DarkSectionButton href="/the-foundation" />
