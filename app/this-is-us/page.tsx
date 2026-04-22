@@ -677,15 +677,15 @@ export default function Home() {
 
             {/* 2. Mission and Vision Section */}
             <section className="w-full bg-[#f2f2f2] px-[9.44%] py-[120px]">
-                <div className="flex flex-col gap-16 md:gap-[120px] max-w-[1440px] mx-auto">
+                <div className="flex flex-col gap-[60px] max-w-[1440px] mx-auto">
                     {/* Mission */}
                     <div className="flex flex-col md:flex-row justify-between items-start">
                         <div className="w-full md:w-1/3 flex flex-col mb-8 md:mb-0">
                             <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7a5568a3-3b06-40ae-0cfe-3030021e8800/public"
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/35121d4c-a399-4ab9-5c1f-8c5555a7fe00/public"
                                 alt="Mission Icon"
-                                width={35}
-                                height={35}
+                                width={28}
+                                height={28}
                                 className="mb-6"
                             />
                             <h2 style={{
@@ -703,10 +703,10 @@ export default function Home() {
                         <div className="w-full md:w-[36%] flex items-start">
                             <p style={{
                                 fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 500,
+                                fontWeight: 400,
                                 fontStyle: "normal",
                                 fontSize: "14px",
-                                lineHeight: "100%",
+                                lineHeight: "130%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
                                 color: "#00000099"
@@ -720,10 +720,10 @@ export default function Home() {
                     <div className="flex flex-col md:flex-row justify-between items-start">
                         <div className="w-full md:w-1/3 flex flex-col mb-8 md:mb-0">
                             <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d3de72ac-82e3-443f-9491-2a6dcca3d700/public"
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c4f0f773-6fa5-4f11-1419-c2f553c40800/public"
                                 alt="Vision Icon"
-                                width={35}
-                                height={35}
+                                width={29}
+                                height={28}
                                 className="mb-6"
                             />
                             <h2 style={{
@@ -741,10 +741,10 @@ export default function Home() {
                         <div className="w-full md:w-[36%] flex items-start">
                             <p style={{
                                 fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 500,
+                                fontWeight: 400,
                                 fontStyle: "normal",
                                 fontSize: "14px",
-                                lineHeight: "100%",
+                                lineHeight: "130%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
                                 color: "#00000099"
