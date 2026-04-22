@@ -761,14 +761,14 @@ export default function Home() {
                 <h2 className="text-[32px] md:text-[40px] font-medium leading-[110%] mb-16 text-black" style={{ fontFamily: "Manrope, sans-serif" }}>
                     Our Business Model
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative items-start">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-[80px] relative items-start">
 
                     {/* Column 1 */}
                     <div className="flex flex-col items-start border-l border-[#8D8D8D] pl-6 md:pl-8 h-full">
                         <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight" style={{ fontFamily: "Manrope, sans-serif" }}>
                             Single-use plastic is an<br />institutional problem
                         </h3>
-                        <div className="text-[14px] font-medium leading-[140%] text-[#00000099] space-y-6">
+                        <div className="text-[14px] font-normal leading-[130%] text-[#00000099] space-y-6">
                             <p>Most organisations have made sustainability commitments, but their water infrastructure contradicts them. Bottled water creates ongoing plastic waste, carbon cost from logistics, and reputational risk.</p>
                             <p>The market has no shortage of hydration products. It has a shortage of credible, scalable alternatives designed for institutional environments, with material integrity and ESG traceability built in.</p>
                             <p>What's missing is not intent—but infrastructure intelligence. Organizations need systems that integrate purification at the point of use, eliminate dependency on external supply chains, and provide measurable impact data across water, carbon, and waste metrics. Without this shift, sustainability remains a reported ambition rather than an operational reality.</p>
@@ -780,7 +780,7 @@ export default function Home() {
                         <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight" style={{ fontFamily: "Manrope, sans-serif" }}>
                             The bottle gets replaced<br />with infrastructure
                         </h3>
-                        <div className="text-[14px] font-medium leading-[140%] text-[#00000099] space-y-6">
+                        <div className="text-[14px] font-normal leading-[130%] text-[#00000099] space-y-6">
                             <p>WAE designs and deploys steel-first, point-of-use water systems for public institutions, corporate campuses, hospitality, and healthcare environments. Our systems connect directly to the water supply, eliminating plastic at the source, not the policy level.</p>
                             <div>
                                 <p className="mb-2">Key differentiators:</p>
@@ -799,7 +799,7 @@ export default function Home() {
                         <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight" style={{ fontFamily: "Manrope, sans-serif" }}>
                             How the model works in<br />practice
                         </h3>
-                        <div className="text-[14px] font-medium leading-[140%] text-[#00000099] space-y-6">
+                        <div className="text-[14px] font-normal leading-[130%] text-[#00000099] space-y-6">
                             <p>Site assessment: WAE audits the client's existing water usage, plastic footprint, and infrastructure</p>
                             <ol className="list-none space-y-3">
                                 <li><span className="font-semibold text-black/80">1. System design:</span> Custom-configured point-of-use units specified for the environment</li>
