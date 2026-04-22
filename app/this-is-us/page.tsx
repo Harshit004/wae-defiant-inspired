@@ -644,24 +644,25 @@ export default function Home() {
             {/* 1. Split Text Section */}
             <section className="w-full flex flex-col md:flex-row font-['Inter_Tight']">
                 {/* Left Side (White) */}
-                <div className="w-full md:w-1/2 bg-white flex flex-col justify-center px-[9.72%]">
+                <div className="w-full md:w-1/2 bg-white flex flex-col justify-start px-[9.72%] pt-[140px] pb-[89px]">
                     <p className="pb-[49px] text-[20px] text-[#00000099]">WAE</p>
                     <div className="max-w-[420px]">
                         <h2 className="text-[36px] md:text-[36px] font-medium leading-[120%] mb-12 text-black">
                             Built to end single-use plastic at scale
                         </h2>
-                        <p className="text-[14px] font-medium leading-[130%] text-[#00000099]">
+                        <p className="text-[14px] font-normal leading-[130%] text-[#00000099]">
                             WAE is a mission-led, technology-driven provider of steel-first, point-of-use drinking water systems. Founded in 2010 to replace single-use bottled water with infrastructure-grade alternatives.
                         </p>
                     </div>
                 </div>
                 {/* Right Side (Black) */}
-                <div className="w-full md:w-1/2 bg-[#0F0F0F] flex flex-col justify-center px-[9.72%] pt-[140px] pb-[89px]">
+                <div className="w-full md:w-1/2 bg-[#0F0F0F] flex flex-col justify-start px-[9.72%] pt-[140px] pb-[89px]">
+
                     <div className="max-w-[420px]">
                         <h2 className="text-[36px] md:text-[36px] font-medium leading-[120%] mb-12 text-white">
                             A $3B market shifting away from the bottle
                         </h2>
-                        <div className="text-[14px] font-medium leading-[130%] text-[#FFFFFF] space-y-6">
+                        <div className="text-[14px] font-normal leading-[130%] text-[#FFFFFF] space-y-6">
                             <p>The global water dispenser market is valued at $3.3B in 2025 and is projected to reach $7.6B by 2035, growing at 8.5% CAGR. Bottle-less, point-of-use systems are the fastest-growing segment, expanding at ~9.5% CAGR, driven by tightening plastic regulations across Europe, North America, and Asia.</p>
                             <p>Three forces are converging:</p>
                             <ul className="list-disc pl-4 space-y-2">
@@ -815,12 +816,12 @@ export default function Home() {
             {/* 4. Black Banner Context Section */}
             <section className="w-full bg-[#0F0F0F] py-[100px] md:py-[140px] px-[14.20%] font-['Inter_Tight'] text-white">
                 <div>
-                    <p className="text-[32px] font-normal leading-[120%] mb-0">
-                        WAE was built as an activist <span className="font-bold">organisation</span>, not a product company. That origin shapes everything: material choices, partnerships, pricing philosophy, and where we deploy.
+                    <p className="text-[32px] font-normal leading-[120%] mb-0 text-[#FFFFFF99]">
+                        WAE was built as an activist <span className="font-bold text-white">organisation</span>, not a product company. That origin shapes everything: material choices, partnerships, pricing philosophy, and where we deploy.
                         <br />
                         <br />
-                        It is not <span className="font-bold">positioning</span>.<br />
-                        It is <span className="font-bold">structure</span>.
+                        It is not <span className="font-bold text-white">positioning</span>.<br />
+                        It is <span className="font-bold text-white">structure</span>.
                     </p>
                 </div>
             </section>
