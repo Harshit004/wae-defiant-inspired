@@ -854,7 +854,8 @@ export default function Home() {
                             </div>
                             <LinkedInButton href="https://www.linkedin.com/in/avikramjoshie/" />
                         </div>
-                        <div className="pt-15">
+                        <div className="h-[60px]"></div>
+                        <div>
                             <blockquote className="text-[24px] md:text-[32px] font-normal text-black leading-[100%] mb-8 tracking-tight">
                                 "Water is one of the world's most visible expressions of care, and the future of care must include care for the planet."
                             </blockquote>
