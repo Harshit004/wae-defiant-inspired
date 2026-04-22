@@ -835,7 +835,7 @@ export default function Home() {
                 {/* Founder Block */}
                 <div className="flex flex-col md:flex-row gap-8 md:gap-16 mb-24 items-start max-w-[1440px] mx-auto">
                     {/* Image */}
-                    <div className="w-full md:w-[45%]">
+                    <div className="w-full md:w-[50%]">
                         <div className="relative aspect-[4/3] w-full">
                             <Image
                                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/33375025-0570-4253-56a7-580216923b00/public"
