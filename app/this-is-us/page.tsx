@@ -835,7 +835,7 @@ export default function Home() {
                 {/* Founder Block */}
                 <div className="flex flex-col md:flex-row gap-8 md:gap-16 mb-24 items-start max-w-[1440px] mx-auto">
                     {/* Image */}
-                    <div className="w-full md:w-[50%]">
+                    <div className="h-[426px]">
                         <div className="relative aspect-[4/3] w-full">
                             <Image
                                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/33375025-0570-4253-56a7-580216923b00/public"
@@ -849,12 +849,12 @@ export default function Home() {
                     <div className="w-full md:w-[55%] flex flex-col justify-start">
                         <div className="flex justify-between items-start mb-2">
                             <div>
-                                <h3 className="text-[28px] md:text-[40px] font-medium text-black">A. Vikram Joshe</h3>
+                                <h3 className="text-[28px] md:text-[40px] font-medium text-black mb-5">A. Vikram Joshe</h3>
                                 <p className="text-[24px] font-medium text-black mt-1">Founder & CEO</p>
                             </div>
                             <LinkedInButton href="https://www.linkedin.com/in/avikramjoshie/" />
                         </div>
-                        <div className="mt-15">
+                        <div className="pt-15">
                             <blockquote className="text-[24px] md:text-[32px] font-normal text-black leading-[100%] mb-8 tracking-tight">
                                 "Water is one of the world's most visible expressions of care, and the future of care must include care for the planet."
                             </blockquote>
