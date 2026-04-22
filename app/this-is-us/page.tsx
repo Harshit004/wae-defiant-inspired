@@ -1045,7 +1045,7 @@ export default function Home() {
                             </div>
 
                             {/* Vol 3 */}
-                            <div className="flex flex-col w-full lg:w-[20.83vw]">
+                            <div className="flex flex-col w-full lg:w-full">
                                 <p className="text-[12px] font-medium text-black mb-6">Volume 3:</p>
                                 <h3 className="text-[20px] md:text-[24px] font-medium leading-[120%] text-black tracking-tight mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>
                                     A Greener Stay for Every Guest
