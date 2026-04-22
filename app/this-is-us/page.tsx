@@ -849,16 +849,16 @@ export default function Home() {
                     <div className="w-full md:w-[55%] flex flex-col justify-start">
                         <div className="flex justify-between items-start mb-2">
                             <div>
-                                <h3 className="text-[28px] md:text-[32px] font-medium text-black">A. Vikram Joshe</h3>
-                                <p className="text-[14px] font-bold text-black mt-1">Founder & CEO</p>
+                                <h3 className="text-[28px] md:text-[40px] font-medium text-black">A. Vikram Joshe</h3>
+                                <p className="text-[24px] font-medium text-black mt-1">Founder & CEO</p>
                             </div>
                             <LinkedInButton href="https://www.linkedin.com/in/avikramjoshie/" />
                         </div>
-                        <div className="mt-12">
-                            <blockquote className="text-[24px] md:text-[28px] font-medium text-black leading-[120%] mb-8 tracking-tight">
+                        <div className="mt-15">
+                            <blockquote className="text-[24px] md:text-[32px] font-normal text-black leading-[100%] mb-8 tracking-tight">
                                 "Water is one of the world's most visible expressions of care, and the future of care must include care for the planet."
                             </blockquote>
-                            <p className="text-[14px] font-medium leading-[140%] text-[#00000099]">
+                            <p className="text-[18px] font-medium leading-[100%] text-[#00000099]">
                                 A sustainability entrepreneur with three decades of cross-sector experience, building a water-secure future by making sustainable water technologies accessible and mainstream through responsible, long-term solutions.
                             </p>
                         </div>
