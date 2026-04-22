@@ -1094,8 +1094,6 @@ export default function Home() {
             {/* Timeline Section */}
             <TimelineSection />
 
-            {/* Awards & Recognitions */}
-
             {/* 8. Awards & Recognition Section */}
             <section className="w-full bg-[#f2f2f2] px-[9.72%] pb-[120px] font-['Inter_Tight']">
                 <h2 className="text-[32px] md:text-[40px] font-medium leading-[110%] mb-16 text-black tracking-tight">
@@ -1104,7 +1102,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative items-start">
 
                     {/* Column 1 */}
-                    <div className="flex flex-col items-start border-l border-[#8D8D8D] pl-6 md:pl-8 h-full">
+                    <div className="flex flex-col items-start border-l border-black/20 pl-6 md:pl-8 h-full">
                         <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight">
                             The competition has never<br />been fiercer. Here are the<br />ET MSME Awards 2025<br />nominees!
                         </h3>
@@ -1115,7 +1113,7 @@ export default function Home() {
                     </div>
 
                     {/* Column 2 */}
-                    <div className="flex flex-col items-start border-l border-[#8D8D8D] pl-6 md:pl-8 h-full">
+                    <div className="flex flex-col items-start border-l border-black/20 pl-6 md:pl-8 h-full">
                         <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight">
                             WAE Felicitated with 15th<br />CII Design Excellence<br />Award 2025 for<br />Communication Design
                         </h3>
@@ -1125,7 +1123,7 @@ export default function Home() {
                     </div>
 
                     {/* Column 3 */}
-                    <div className="flex flex-col items-start border-l border-[#8D8D8D] pl-6 md:pl-8 h-full">
+                    <div className="flex flex-col items-start border-l border-black/20 pl-6 md:pl-8 h-full">
                         <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight">
                             WAE wins Product &<br />Service Innovation of the<br />Year &ndash; Silver by BW<br />Hotelier
                         </h3>
