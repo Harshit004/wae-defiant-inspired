@@ -307,11 +307,11 @@ const TimelineSection = () => {
     return (
         <section className="w-full bg-[#f2f2f2] px-[8.541%] py-[120px] font-['Inter_Tight']">
             <div className="max-w-[1440px] mx-auto w-full">
-                <h2 className="text-[36px] md:text-[44px] font-medium leading-[110%] text-black tracking-tight mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>WAE Chronicle</h2>
-                <p className="text-[16px] font-medium text-black mb-20">From Intent to Impact</p>
+                <h2 className="text-[36px] md:text-[44px] font-normal leading-[110%] text-black tracking-tight mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>WAE Chronicle</h2>
+                <p className="text-[16px] font-normal text-black mb-20">From Intent to Impact</p>
 
                 {/* Timeline Nav Area */}
-                <div className="relative w-full mb-16 flex justify-between px-1 md:px-2">
+                <div className="relative w-full flex justify-between px-1 md:px-2">
                     {/* Background Line Container */}
                     <div className="absolute top-[3px] md:top-[5px] left-[4px] right-[4px] md:left-[8px] md:right-[8px] h-[1px] md:h-[2px] bg-[#d9d9d9] z-0">
                         {/* Active Line Fill */}
@@ -330,7 +330,7 @@ const TimelineSection = () => {
                                 onClick={() => setActiveIndex(index)}
                             >
                                 <div className={`w-[8px] h-[8px] md:w-[12px] md:h-[12px] rounded-full mb-4 transition-colors duration-500 ${isPastOrActive ? 'bg-black' : 'bg-[#d9d9d9] group-hover:bg-gray-400'}`}></div>
-                                <span className={`text-[10px] md:text-[12px] font-bold absolute top-6 md:top-8 whitespace-nowrap transition-colors duration-500 ${isPastOrActive ? 'text-black' : 'text-[#8D8D8D] group-hover:text-gray-500'}`}>
+                                <span className={`text-[10px] md:text-[12px] font-medium absolute top-6 md:top-8 whitespace-nowrap transition-colors duration-500 ${isPastOrActive ? 'text-black' : 'text-[#8D8D8D] group-hover:text-gray-500'}`}>
                                     {data.navLabel}
                                 </span>
                             </div>
@@ -356,11 +356,11 @@ const TimelineSection = () => {
 
                     {/* Text Column */}
                     <div className="w-full lg:w-[55%] flex flex-col justify-start relative min-h-[300px]">
-                        <h3 className="text-[18px] md:text-[20px] font-bold text-black mb-6">{timelineData[activeIndex].title}</h3>
+                        <h3 className="text-[18px] md:text-[20px] font-medium text-black mb-6">{timelineData[activeIndex].title}</h3>
 
                         <ul className="list-disc pl-5 mb-auto space-y-3">
                             {timelineData[activeIndex].items.map((item, idx) => (
-                                <li key={idx} className="text-[14px] font-medium leading-[140%] text-[#00000099]">
+                                <li key={idx} className="text-[14px] font-normal leading-[140%] text-[#00000099]">
                                     {item}
                                 </li>
                             ))}
@@ -371,7 +371,7 @@ const TimelineSection = () => {
                             <button
                                 onClick={() => setActiveIndex(Math.max(0, activeIndex - 1))}
                                 disabled={activeIndex === 0}
-                                className={`w-[32px] h-[32px] border rounded-[6px] flex items-center justify-center transition-colors ${activeIndex === 0 ? 'border-[#d9d9d9] text-[#d9d9d9] cursor-not-allowed' : 'border-black text-black hover:bg-black hover:text-white'}`}
+                                className={`w-[32px] h-[32px] border rounded-none flex items-center justify-center transition-colors ${activeIndex === 0 ? 'border-[#d9d9d9] text-[#d9d9d9] cursor-not-allowed' : 'border-black text-black hover:bg-black hover:text-white'}`}
                             >
                                 <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5 9L1 5L5 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -380,7 +380,7 @@ const TimelineSection = () => {
                             <button
                                 onClick={() => setActiveIndex(Math.min(timelineData.length - 1, activeIndex + 1))}
                                 disabled={activeIndex === timelineData.length - 1}
-                                className={`w-[32px] h-[32px] border rounded-[6px] flex items-center justify-center transition-colors ${activeIndex === timelineData.length - 1 ? 'border-[#d9d9d9] text-[#d9d9d9] cursor-not-allowed' : 'border-black text-black hover:bg-black hover:text-white'}`}
+                                className={`w-[32px] h-[32px] border rounded-none flex items-center justify-center transition-colors ${activeIndex === timelineData.length - 1 ? 'border-[#d9d9d9] text-[#d9d9d9] cursor-not-allowed' : 'border-black text-black hover:bg-black hover:text-white'}`}
                             >
                                 <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1 9L5 5L1 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -1144,14 +1144,14 @@ export default function Home() {
 
                     {/* Left Column */}
                     <div className="w-full md:w-[45%] flex items-start">
-                        <h2 className="text-[36px] font-bold leading-[110%] text-white tracking-tight">
+                        <h2 className="text-[36px] font-medium leading-[110%] text-white tracking-tight">
                             Join Our Team
                         </h2>
                     </div>
 
                     {/* Right Column */}
                     <div className="w-full md:w-[39%] flex flex-col items-start lg:pr-12">
-                        <p className="text-[14px] font-medium leading-[140%] text-white md:leading-[100%]">
+                        <p className="text-[14px] font-normal leading-[130%] text-white">
                             Ready for what's next? We're proud to support our employees with opportunities to grow and thrive. We're looking for talented people like you from all across the globe.
                         </p>
                         <DarkSectionButton href="/careers3" />
