@@ -1014,7 +1014,7 @@ export default function Home() {
                             </div>
 
                             {/* Image Tall */}
-                            <div className="flex flex-col relative w-full h-[600px] md:h-auto">
+                            <div className="flex flex-col relative w-full lg:w-[20.83vw] h-[600px] md:h-auto">
                                 <Image
                                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a5a62ff4-c6a9-49c5-60d9-701b19f00600/public"
                                     alt="Case Study"
@@ -1045,7 +1045,7 @@ export default function Home() {
                             </div>
 
                             {/* Vol 3 */}
-                            <div className="flex flex-col w-full lg:w-full">
+                            <div className="flex flex-col w-full lg:w-[21.5vw]">
                                 <p className="text-[12px] font-medium text-black mb-6">Volume 3:</p>
                                 <h3 className="text-[20px] md:text-[24px] font-medium leading-[120%] text-black tracking-tight mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>
                                     A Greener Stay for Every Guest
