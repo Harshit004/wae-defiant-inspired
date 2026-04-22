@@ -814,14 +814,14 @@ export default function Home() {
             </section>
 
             {/* 4. Black Banner Context Section */}
-            <section className="w-full bg-[#0F0F0F] py-[100px] md:py-[140px] px-[14.20%] font-['Inter_Tight'] text-white">
+            <section className="w-full bg-[#0F0F0F] py-[100px] md:py-[140px] pr-[9.72%] pl-[22.77%] font-['Inter_Tight'] text-white">
                 <div>
-                    <p className="text-[32px] font-normal leading-[120%] mb-0 text-[#FFFFFF99]">
-                        WAE was built as an activist <span className="font-bold text-white">organisation</span>, not a product company. That origin shapes everything: material choices, partnerships, pricing philosophy, and where we deploy.
+                    <p className="text-[24px] font-normal leading-[120%] mb-0 text-[#FFFFFF99]">
+                        WAE was built as an activist <span className="font-medium text-white">organisation</span>, not a product company. That origin shapes everything: material choices, partnerships, pricing philosophy, and where we deploy.
                         <br />
                         <br />
-                        It is not <span className="font-bold text-white">positioning</span>.<br />
-                        It is <span className="font-bold text-white">structure</span>.
+                        It is not <span className="font-medium text-white">positioning</span>.<br />
+                        It is <span className="font-medium text-white">structure</span>.
                     </p>
                 </div>
             </section>
@@ -869,7 +869,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 gap-y-16 max-w-[1440px] mx-auto">
                     {/* Deepak Panwar */}
                     <div className="flex flex-col">
-                        <div className="relative aspect-[4/3] w-full mb-6 bg-gray-200">
+                        <div className="relative aspect-[4/3] w-full mb-6">
                             <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6bc35551-9c5a-4161-328f-da4114280600/public" alt="Deepak Panwar" fill className="object-cover" />
                         </div>
                         <div className="flex justify-between items-start mb-4">
@@ -886,7 +886,7 @@ export default function Home() {
 
                     {/* Nayna Swati Dewesar */}
                     <div className="flex flex-col">
-                        <div className="relative aspect-[4/3] w-full mb-6 bg-gray-200">
+                        <div className="relative aspect-[4/3] w-full mb-6">
                             <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4cedda8e-3f37-422a-920c-7c8241256400/public" alt="Nayna Swati Dewesar" fill className="object-cover" />
                         </div>
                         <div className="flex justify-between items-start mb-4">
@@ -903,7 +903,7 @@ export default function Home() {
 
                     {/* Satinder Kaur */}
                     <div className="flex flex-col">
-                        <div className="relative aspect-[4/3] w-full mb-6 bg-gray-200">
+                        <div className="relative aspect-[4/3] w-full mb-6">
                             <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b50e712a-a5aa-4ce7-31ae-9d624ef5f100/public" alt="Satinder Kaur" fill className="object-cover" />
                         </div>
                         <div className="flex justify-between items-start mb-4">
@@ -921,7 +921,7 @@ export default function Home() {
 
                     {/* Avnesh Sharma */}
                     <div className="flex flex-col">
-                        <div className="relative aspect-[4/3] w-full mb-6 bg-gray-200">
+                        <div className="relative aspect-[4/3] w-full mb-6">
                             <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/469bb1e6-1c45-4f16-f7ea-6532aa9f5300/public" alt="Avnesh Sharma" fill className="object-cover" />
                         </div>
                         <div className="flex justify-between items-start mb-4">
@@ -939,7 +939,7 @@ export default function Home() {
 
                     {/* Meenakshi Bora */}
                     <div className="flex flex-col">
-                        <div className="relative aspect-[4/3] w-full mb-6 bg-gray-200">
+                        <div className="relative aspect-[4/3] w-full mb-6">
                             <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f88d5da-23ab-4e62-c172-f2d9b8581900/public" alt="Meenakshi Bora" fill className="object-cover" />
                         </div>
                         <div className="flex justify-between items-start mb-4">
@@ -956,7 +956,7 @@ export default function Home() {
 
                     {/* Rashmi Bhatia */}
                     <div className="flex flex-col">
-                        <div className="relative aspect-[4/3] w-full mb-6 bg-gray-200">
+                        <div className="relative aspect-[4/3] w-full mb-6">
                             <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/00e1155b-84f2-4db0-591e-6a99630fdf00/public" alt="Rashmi Bhatia" fill className="object-cover" />
                         </div>
                         <div className="flex justify-between items-start mb-4">
@@ -992,21 +992,21 @@ export default function Home() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
 
                             {/* Vol 1 */}
-                            <div className="flex flex-col">
-                                <p className="text-[12px] font-bold text-black mb-6">Volume 1:</p>
+                            <div className="flex flex-col w-full lg:w-[20.83vw]">
+                                <p className="text-[12px] font-medium text-black mb-6">Volume 1:</p>
                                 <h3 className="text-[20px] md:text-[24px] font-medium leading-[120%] text-black tracking-tight mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>
-                                    Greener Banking, Better<br />Workplaces
+                                    Greener Banking, Better Workplaces
                                 </h3>
-                                <p className="text-[14px] font-medium leading-[140%] text-[#00000099] mb-8">
-                                    How BFSI organizations ditched plastic water jars<br />for a cleaner, safer alternative
+                                <p className="text-[14px] font-normal leading-[140%] text-[#00000099] mb-8">
+                                    How BFSI organizations ditched plastic water jars for a cleaner, safer alternative
                                 </p>
-                                <p className="text-[16px] font-bold italic leading-[130%] text-black mb-2">
-                                    "It was a small change on paper. The<br />impact was anything but."
+                                <p className="text-[16px] font-medium italic leading-[130%] text-black mb-2">
+                                    "It was a small change on paper. The impact was anything but."
                                 </p>
                                 <p className="text-[12px] font-medium italic leading-[130%] text-[#00000099] mb-6">
                                     - Facilities Head, Bank of America
                                 </p>
-                                <p className="text-[12px] font-medium leading-[140%] text-[#00000099] mb-4">
+                                <p className="text-[12px] font-normal leading-[140%] text-[#00000099] mb-4">
                                     Banks and insurance offices run 24/7, and so did their plastic water jar problem-spills, hygiene concerns, and hundreds of jars piling up every month. By switching to stainless steel dispensers, BFSI offices cut plastic waste significantly, reduced water contamination risks, and gave employees a cleaner, more professional workspace. One switch. A lasting difference.
                                 </p>
                                 <CaseStudyButton href="/sustainability-bfsi" />
@@ -1023,42 +1023,42 @@ export default function Home() {
                             </div>
 
                             {/* Vol 2 */}
-                            <div className="flex flex-col">
-                                <p className="text-[12px] font-bold text-black mb-6">Volume 2:</p>
+                            <div className="flex flex-col w-full lg:w-[20.83vw]">
+                                <p className="text-[12px] font-medium text-black mb-6">Volume 2:</p>
                                 <h3 className="text-[20px] md:text-[24px] font-medium leading-[120%] text-black tracking-tight mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>
-                                    Clean Hydration for High-<br />Performance IT Teams
+                                    Clean Hydration for High-Performance IT Teams
                                 </h3>
-                                <p className="text-[14px] font-medium leading-[140%] text-[#00000099] mb-8">
-                                    How IT campuses moved away from plastic jars<br />and never looked back
+                                <p className="text-[14px] font-normal leading-[140%] text-[#00000099] mb-8">
+                                    How IT campuses moved away from plastic jars and never looked back
                                 </p>
-                                <p className="text-[16px] font-bold italic leading-[130%] text-black mb-2">
-                                    "Our employees noticed the<br />difference from day one."
+                                <p className="text-[16px] font-medium italic leading-[130%] text-black mb-2">
+                                    "Our employees noticed the difference from day one."
                                 </p>
                                 <p className="text-[12px] font-medium italic leading-[130%] text-[#00000099] mb-6">
                                     - Admin Manager, Google
                                 </p>
-                                <p className="text-[12px] font-medium leading-[140%] text-[#00000099] mb-4">
+                                <p className="text-[12px] font-normal leading-[140%] text-[#00000099] mb-4">
                                     Large IT campuses consume enormous volumes of water daily. Plastic jars meant constant logistics, leakage, and avoidable plastic waste. Switching to in-situ dispensers simplified operations, eliminated single-use plastic from common areas, and gave teams access to hygienic, temperature-consistent water throughout the day. Less clutter, less waste, more focus.
                                 </p>
                                 <CaseStudyButton href="/sustainability-it" />
                             </div>
 
                             {/* Vol 3 */}
-                            <div className="flex flex-col">
-                                <p className="text-[12px] font-bold text-black mb-6">Volume 3:</p>
+                            <div className="flex flex-col w-full lg:w-[20.83vw]">
+                                <p className="text-[12px] font-medium text-black mb-6">Volume 3:</p>
                                 <h3 className="text-[20px] md:text-[24px] font-medium leading-[120%] text-black tracking-tight mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>
-                                    A Greener Stay for Every<br />Guest
+                                    A Greener Stay for Every Guest
                                 </h3>
-                                <p className="text-[14px] font-medium leading-[140%] text-[#00000099] mb-8">
-                                    How hospitality brands elevated their sustainability<br />commitment, one dispenser at a time
+                                <p className="text-[14px] font-normal leading-[140%] text-[#00000099] mb-8">
+                                    How hospitality brands elevated their sustainability commitment, one dispenser at a time
                                 </p>
-                                <p className="text-[16px] font-bold italic leading-[130%] text-black mb-2">
-                                    "Guests started commenting on it. It<br />became part of our story."
+                                <p className="text-[16px] font-medium italic leading-[130%] text-black mb-2">
+                                    "Guests started commenting on it. It became part of our story."
                                 </p>
                                 <p className="text-[12px] font-medium italic leading-[130%] text-[#00000099] mb-6">
                                     - Operations Director, Club Mahindra
                                 </p>
-                                <p className="text-[12px] font-medium leading-[140%] text-[#00000099] mb-4">
+                                <p className="text-[12px] font-normal leading-[140%] text-[#00000099] mb-4">
                                     In hospitality, every detail shapes the guest experience. Replacing plastic bottles with sleek and clean branded glass bottles helped hotels reduce plastic footprint, cut recurring supply costs, and signal a genuine commitment to sustainability. Guests noticed. Staff appreciated the ease. And the numbers backed it up with lower operational costs and stronger ratings.
                                 </p>
                                 <CaseStudyButton href="#" />
