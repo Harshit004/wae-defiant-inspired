@@ -1106,7 +1106,7 @@ export default function Home() {
                         <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight">
                             The competition has never<br />been fiercer. Here are the<br />ET MSME Awards 2025<br />nominees!
                         </h3>
-                        <div className="text-[14px] font-medium leading-[140%] text-[#00000099] space-y-6 md:pr-4">
+                        <div className="text-[14px] font-normal leading-[140%] text-[#00000099] space-y-6 md:pr-4">
                             <p>Every year, thousands of India's most ambitious micro, small and medium enterprises (MSMEs) throw their hats into the ring for the ET MSME Awards. Every year, the list gets longer. And the ceremony gets harder to ignore.</p>
                             <p>This year is no different. Except that it somehow feels bigger.</p>
                         </div>
@@ -1117,7 +1117,7 @@ export default function Home() {
                         <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight">
                             WAE Felicitated with 15th<br />CII Design Excellence<br />Award 2025 for<br />Communication Design
                         </h3>
-                        <div className="text-[14px] font-medium leading-[140%] text-[#00000099] space-y-6 md:pr-4">
+                        <div className="text-[14px] font-normal leading-[140%] text-[#00000099] space-y-6 md:pr-4">
                             <p>WAE, India's leading water solutions provider, has been conferred the prestigious 15th CII Design Excellence Award 2025, securing a place among India's Top 50 Designs in the Communication Design category. The recognition was conferred after a thorough nomination process, comprehensive jury assessment and a detailed evaluation by industry experts.</p>
                         </div>
                     </div>
@@ -1127,7 +1127,7 @@ export default function Home() {
                         <h3 className="text-[20px] md:text-[24px] font-medium text-black mb-8 leading-[120%] tracking-tight">
                             WAE wins Product &<br />Service Innovation of the<br />Year &ndash; Silver by BW<br />Hotelier
                         </h3>
-                        <div className="text-[14px] font-medium leading-[140%] text-[#00000099] space-y-6 md:pr-4">
+                        <div className="text-[14px] font-normal leading-[140%] text-[#00000099] space-y-6 md:pr-4">
                             <p>WAE wins the Product & Service Innovation of the Year - Silver at the BW Businessworld Emerging Businesses Summit & Awards.</p>
                             <p>Awards often celebrate what is visible. But at WAE, innovation lives deeper. In engineering that goes beyond the brief. In systems built for the real world, not the brochure. In deployments driven by intention. And in a service philosophy where delivery is only the beginning.</p>
                         </div>
