@@ -802,10 +802,10 @@ export default function Home() {
                         <div className="text-[14px] font-normal leading-[130%] text-[#00000099] space-y-6">
                             <p>Site assessment: WAE audits the client's existing water usage, plastic footprint, and infrastructure</p>
                             <ol className="list-none space-y-3">
-                                <li><span className="font-semibold text-black/80">1. System design:</span> Custom-configured point-of-use units specified for the environment</li>
-                                <li><span className="font-semibold text-black/80">2. Installation:</span> Steel-first systems installed directly into the water supply, zero plastic in the water path</li>
-                                <li><span className="font-semibold text-black/80">3. Service & reporting:</span> Ongoing maintenance with measurable plastic elimination data for ESG reporting</li>
-                                <li><span className="font-semibold text-black/80">4. Scale:</span> Systems are modular and replicable across sites, campuses, and geographies</li>
+                                <li><span className="font-semibold">1. System design:</span> Custom-configured point-of-use units specified for the environment</li>
+                                <li><span className="font-semibold">2. Installation:</span> Steel-first systems installed directly into the water supply, zero plastic in the water path</li>
+                                <li><span className="font-semibold">3. Service & reporting:</span> Ongoing maintenance with measurable plastic elimination data for ESG reporting</li>
+                                <li><span className="font-semibold">4. Scale:</span> Systems are modular and replicable across sites, campuses, and geographies</li>
                             </ol>
                         </div>
                     </div>
