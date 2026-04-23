@@ -250,6 +250,7 @@ const timelineData = [
     {
         navLabel: '2010-12',
         title: '2010- 2012',
+        img: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f0f1f182-5459-4c89-447e-95c3599ea100/public',
         items: [
             'WAE incorporated, a company from water intake to water reuse'
         ]
@@ -257,6 +258,7 @@ const timelineData = [
     {
         navLabel: '2013-14',
         title: '2013-2014',
+        img: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c82bf51e-3df5-4c7f-8c54-3e9f4d7cbd00/public',
         items: [
             'Emergence of an activism: "say no to bottled water"',
             'Point-of-use water purification stations launched',
@@ -268,6 +270,7 @@ const timelineData = [
     {
         navLabel: '2015-17',
         title: '2015- 2017',
+        img: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8a5e3834-15ae-4d53-0721-e5bcb1f9c800/public',
         items: [
             'Completed installation of over 10 Sewage Treatment Plants in India',
             'First ETP of 500 KLD installed at Seemag Steel Plant, Orissa',
@@ -278,6 +281,7 @@ const timelineData = [
     {
         navLabel: '2018-19',
         title: '2018- 2019',
+        img: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/44ca6a28-c6dc-41b7-e13a-47e7979f5a00/public',
         items: [
             'Research and Development team incubated'
         ]
@@ -285,6 +289,7 @@ const timelineData = [
     {
         navLabel: '2020-21',
         title: '2020- 2021',
+        img: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/df29575f-ecf9-477a-6eef-e060e0142700/public',
         items: [
             'Embarked on a transformative digital journey',
             'Completed a successful and innovative decade of Integrated Water Resource Management',
@@ -294,6 +299,7 @@ const timelineData = [
     {
         navLabel: '2022-23',
         title: '2022-2023',
+        img: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bb151381-799d-4ed2-1416-aa9e5a712d00/public',
         items: [
             'Revolutionizing hygiene with electronically operated drinking water taps',
             'Innovative solutions tailored for the HoReCa segment'
@@ -346,7 +352,7 @@ const TimelineSection = () => {
                     <div className="w-full lg:w-[45%]">
                         <div className="relative aspect-[16/10] w-full bg-gray-200">
                             <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cc623118-8d3c-4c0f-aa14-c4b9062c5500/public"
+                                src={timelineData[activeIndex].img}
                                 alt="Chronicle Image"
                                 fill
                                 className="object-cover"
