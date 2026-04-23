@@ -378,9 +378,12 @@ export default function Home() {
         style={{ height: `calc(100vh - ${headerHeight}px)` }}
       >
         <div className="w-screen flex items-center justify-center">
-          <img
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7d9e6714-27eb-4090-aeef-ee8f5e3f3e00/public"
-            alt="Hero image"
+          <video
+            src="/the-activist-co-hero.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-fit object-cover rounded-none"
           />
         </div>
