@@ -1060,7 +1060,7 @@ export default function Home() {
                                     - Operations Director, Club Mahindra
                                 </p>
                                 <p className="text-[12px] font-normal leading-[140%] text-[#00000099] mb-4">
-                                    In hospitality, every detail shapes the guest experience. Replacing plastic bottles with sleek and clean branded glass bottles helped hotels reduce plastic footprint, cut recurring supply costs, and signal a genuine commitment to sustainability. Guests noticed. Staff appreciated the ease. And the numbers backed it up with lower operational costs and stronger ratings.
+                                    In hospitality, every detail shapes the guest experience. Replacing plastic bottles with sleek and clean branded glass bottles helped hotels reduce plastic footprint, cut recurring supply costs, and signal a genuine commitment to sustainability. Guests noticed. Staff appreciated the ease. And the numbers backed it up with lower operational costs and stronger  ratings.
                                 </p>
                                 <CaseStudyButton href="#" />
                             </div>
