@@ -204,7 +204,7 @@ export default function Home() {
 
   // Arrays for menu items with hrefs
   const productsItems = [
-    { text: "This is Us", href: "/inside-wae" },
+    { text: "This is Us", href: "/this-is-us" },
     { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers3" },
   ]
@@ -399,7 +399,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="w-full md:w-[40%] flex flex-col">
-              <div className="font-medium text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
+              <div className="font-normal text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
                 <p>
                   "Our Green Is Blue" is more than a tagline — it's a founding belief. The ecological truth is simple: without water, there is no life. Forests fail, food systems fracture, and futures fade.
                 </p>
@@ -419,7 +419,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="w-full md:w-[40%] flex flex-col">
-              <div className="font-medium text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
+              <div className="font-normal text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
                 <p>
                   Innovation starts with a question: what can we remove that harms the planet?
                 </p>
@@ -448,10 +448,10 @@ export default function Home() {
           />
           <div className="relative z-10 w-full max-w-[1440px] mx-auto px-[9.375%] py-[120px] lg:px-[140px]">
             <div className="w-full md:w-[50%] lg:w-[45%] flex flex-col">
-              <h2 className="font-bold text-[36px] leading-[110%] text-black tracking-tight mb-8">
+              <h2 className="font-medium text-[36px] leading-[110%] text-black tracking-tight mb-8">
                 Activist Company
               </h2>
-              <div className="font-medium text-[14px] leading-[120%] text-[#00000099] space-y-6 mb-12">
+              <div className="font-normal text-[14px] leading-[120%] text-[#00000099] space-y-6 mb-12">
                 <p>
                   WAE was founded on conviction: a deliberate refusal to accept waste as inevitable.
                 </p>
@@ -462,7 +462,7 @@ export default function Home() {
                   We believe businesses shape behaviour, and behaviour shapes the planet. By offering viable, elegant alternatives to plastic dependency, we disrupt the status quo with substance. Leadership, for us, means solutions that are environmentally sound, commercially viable, and ethically grounded.
                 </p>
               </div>
-              <HoverButton href="/the-activist">
+              <HoverButton href="#">
                 {(hovered) => (
                   <>
                     <span>Know More</span>
@@ -484,7 +484,7 @@ export default function Home() {
           {/* Left Column */}
           <div className="w-full flex flex-col pr-12 lg:pr-24">
             <div className="flex flex-row justify-between items-start mb-12 lg:mb-[60px]">
-              <h2 className="font-bold text-[36px] leading-[110%] text-black tracking-tight" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+              <h2 className="font-medium text-[36px] leading-[110%] text-black tracking-tight" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                 Core Pillars
               </h2>
               <div className="w-[35px] h-[35px] border border-black flex items-center justify-center flex-shrink-0">
@@ -494,7 +494,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="font-medium text-[14px] leading-[120%] text-[#00000099] space-y-6 lg:pr-12">
+            <div className="font-normal text-[14px] leading-[120%] text-[#00000099] space-y-6 lg:pr-12">
               <p>
                 The single-use economy has run unchallenged for too long - normalised by convenience, protected by habit, and ignored by the very institutions with the power to change it.
               </p>
@@ -515,10 +515,10 @@ export default function Home() {
 
             {/* Item 1 */}
             <div className="flex flex-col mb-10 text-left">
-              <h3 className="font-semibold text-[26px] leading-[110%] text-black mb-6" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+              <h3 className="font-medium text-[26px] leading-[110%] text-black mb-6" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                 Climate &amp; Resource Efficiency
               </h3>
-              <p className="font-medium text-[14px] leading-[100%] text-[#00000099]">
+              <p className="font-normal text-[14px] leading-[100%] text-[#00000099]">
                 Climate action is operational, not abstract. We reduce lifecycle emissions by replacing disposable plastic with durable stainless steel systems. Energy efficiency, material longevity, and logistics optimisation are built into everything we do. Resource efficiency means disciplined restraint: using less, wasting less, emitting less.
               </p>
             </div>
@@ -528,10 +528,10 @@ export default function Home() {
 
             {/* Item 2 */}
             <div className="flex flex-col mb-10 text-left">
-              <h3 className="font-semibold text-[26px] leading-[110%] text-black mb-6" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+              <h3 className="font-medium text-[26px] leading-[110%] text-black mb-6" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                 Stewardship &amp; Conservation
               </h3>
-              <p className="font-medium text-[14px] leading-[100%] text-[#00000099]">
+              <p className="font-normal text-[14px] leading-[100%] text-[#00000099]">
                 Water isn't a product to be used — it's a resource to be respected. Our refill models reduce plastic leakage and lower environmental burden. Through efficient purification and conscious infrastructure, we make conservation a practice, not a pledge.
               </p>
             </div>
@@ -541,10 +541,10 @@ export default function Home() {
 
             {/* Item 3 */}
             <div className="flex flex-col text-left">
-              <h3 className="font-semibold text-[26px] leading-[110%] text-black mb-6" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+              <h3 className="font-medium text-[26px] leading-[110%] text-black mb-6" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                 Blue Communities
               </h3>
-              <p className="font-medium text-[14px] leading-[100%] text-[#00000099]">
+              <p className="font-normal text-[14px] leading-[100%] text-[#00000099]">
                 Real change scales through participation. We partner with corporates, institutions, and hospitality leaders to build refill cultures that shift behaviour permanently. Blue Communities are ecosystems of shared accountability, where sustainability moves from policy to practice.
               </p>
             </div>
@@ -557,10 +557,10 @@ export default function Home() {
       <section className="w-full bg-white font-['Inter_Tight'] pt-[87px] pb-[125px]">
         {/* Title & Description */}
         <div className="w-full max-w-[1440px] mx-auto px-[9.375%] lg:px-[140px] mb-[60px]">
-          <h2 className="font-bold text-[36px] leading-[110%] text-black tracking-tight mb-8" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+          <h2 className="font-medium text-[36px] leading-[110%] text-black tracking-tight mb-8" style={{ fontFamily: "Inter Tight, sans-serif" }}>
             Blue Governance
           </h2>
-          <p className="font-medium text-[14px] leading-[120%] text-[#00000099] max-w-[800px]">
+          <p className="font-normal text-[14px] leading-[120%] text-[#00000099] max-w-[800px]">
             Blue Governance is WAE's commitment to embedding ecological intelligence, ethical discipline, and transparent accountability into every decision. It covers ESG policy, compliance, ethical sourcing, and annual sustainability reporting — ensuring responsibility is structural, not symbolic.
           </p>
         </div>
@@ -581,7 +581,7 @@ export default function Home() {
                 style={{ maxHeight: "378px" }}
               >
                 {/* Number */}
-                <div className="font-bold text-[20px] leading-[110%] mb-[40px] lg:mb-[60px]" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+                <div className="font-medium text-[20px] leading-[110%] mb-[40px] lg:mb-[60px]" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                   {card.id}
                 </div>
 
@@ -592,12 +592,12 @@ export default function Home() {
                 </div>
 
                 {/* Card Title */}
-                <h3 className="font-bold text-[20px] lg:text-[22px] leading-[110%] mb-4 tracking-tight" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+                <h3 className="font-medium text-[20px] lg:text-[22px] leading-[110%] mb-4 tracking-tight" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                   {card.title}
                 </h3>
 
                 {/* Card Description */}
-                <p className={`font-medium text-[12px] leading-[130%] transition-colors duration-300 ${activeGovernanceCard === index ? "text-[#ffffff99]" : "text-[#00000099]"
+                <p className={`font-normal text-[12px] leading-[130%] transition-colors duration-300 ${activeGovernanceCard === index ? "text-[#ffffff99]" : "text-[#00000099]"
                   }`}>
                   {card.text}
                 </p>
@@ -606,7 +606,7 @@ export default function Home() {
           </div>
 
           {/* Carousel Arrows */}
-          <div className="mt-[40px] flex justify-end gap-3 hidden md:flex mr-[9.72%]">
+          <div className="w-full mt-[40px] flex justify-end gap-3 hidden md:flex">
             <button
               disabled={activeGovernanceCard === 0}
               onClick={() => {
