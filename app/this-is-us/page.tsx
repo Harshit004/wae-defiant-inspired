@@ -350,7 +350,7 @@ const TimelineSection = () => {
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch mt-8 w-full">
                     {/* Image Column */}
                     <div className="w-full lg:w-[45%]">
-                        <div className="relative aspect-[16/10] w-full bg-gray-200">
+                        <div className="relative w-full md:w-[579px] h-[239px] bg-gray-200">
                             <Image
                                 src={timelineData[activeIndex].img}
                                 alt="Chronicle Image"
