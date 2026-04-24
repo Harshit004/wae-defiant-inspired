@@ -432,14 +432,15 @@ export default function Home() {
                 <div className="w-full max-w-[1440px] mx-auto">
                     {/* Label */}
                     <p
-                        className="uppercase mb-[16px]"
                         style={{
                             fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "11px",
+                            fontWeight: 600,
+                            fontSize: "14px",
                             lineHeight: "100%",
-                            letterSpacing: "0px",
+                            letterSpacing: "0%",
                             color: "#00000099",
+                            margin: 0,
+                            marginBottom: "19px",
                         }}
                     >
                         An Activist Company
@@ -447,111 +448,118 @@ export default function Home() {
 
                     {/* Heading */}
                     <h2
-                        className="mb-[20px]"
                         style={{
                             fontFamily: "'Inter Tight', sans-serif",
                             fontWeight: 500,
-                            fontSize: "52px",
+                            fontSize: "36px",
                             lineHeight: "110%",
-                            letterSpacing: "-1px",
+                            letterSpacing: "0%",
                             color: "#000000",
+                            textTransform: "capitalize",
+                            margin: 0,
+                            marginBottom: "33px",
                         }}
                     >
-                        Say no to bottled water
+                        Say No To Bottled Water
                     </h2>
 
                     {/* Subheading */}
                     <p
-                        className="mb-[80px]"
                         style={{
                             fontFamily: "'Inter Tight', sans-serif",
                             fontWeight: 400,
-                            fontSize: "12px",
-                            lineHeight: "140%",
+                            fontSize: "14px",
+                            lineHeight: "100%",
+                            letterSpacing: "0%",
                             color: "#00000099",
+                            margin: 0,
+                            marginBottom: "83px",
                         }}
                     >
                         No bottle. No compromise. No excuses.<br />
                         Because when blue is protected, everything green that depends on it survives.
                     </p>
 
-                    {/* 3x2 Cards Grid */}
-                    <div className="grid grid-cols-3 gap-x-[40px] gap-y-[60px]">
-                        {/* Action */}
-                        <div className="flex flex-col">
-                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b2262a67-0658-41c8-b5e9-fc7671450500/public" alt="Action icon" width={37} height={37} className="mb-[24px]" />
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700, fontSize: "20px", lineHeight: "110%", color: "#000000", marginBottom: "16px" }}>Action</h3>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099", marginBottom: "8px" }}>
+                    {/* Row 1 */}
+                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "115px" }}>
+                        {/* Card 1 — Action */}
+                        <div style={{ width: "21.875vw" }}>
+                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b2262a67-0658-41c8-b5e9-fc7671450500/public" alt="Action icon" width={33} height={33} style={{ marginBottom: "24px", display: "block" }} />
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Action</h3>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 Talk is cheap. Plastic is cheaper. Action is everything.
                             </p>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099" }}>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0 }}>
                                 WAE builds stainless steel systems that outlast trends, purification technology that restores what pollution stole, and refill infrastructure that makes doing the right thing effortlessly human.…{" "}
-                                <span style={{ fontWeight: 700, cursor: "pointer", color: "#000000" }}>Read more</span>
+                                <span style={{ fontWeight: 500, cursor: "pointer", color: "#00000099" }}>Read more</span>
                             </p>
                         </div>
 
-                        {/* Activism */}
-                        <div className="flex flex-col">
-                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/950014d5-b09b-43f2-9ef0-75cd3e02bc00/public" alt="Activism icon" width={37} height={37} className="mb-[24px]" />
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700, fontSize: "20px", lineHeight: "110%", color: "#000000", marginBottom: "16px" }}>Activism</h3>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099", marginBottom: "8px" }}>
+                        {/* Card 2 — Activism */}
+                        <div style={{ width: "20.83333vw" }}>
+                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/950014d5-b09b-43f2-9ef0-75cd3e02bc00/public" alt="Activism icon" width={49} height={49} style={{ marginBottom: "24px", display: "block" }} />
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Activism</h3>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 Every bottle you throw away outlives you.
                             </p>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099" }}>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0 }}>
                                 Not by years. By centuries. Long after you're gone, that single-use plastic will still be breaking down, seeping into soils, drifting through oceans, and quietly entering the bodies of people not yet…{" "}
-                                <span style={{ fontWeight: 700, cursor: "pointer", color: "#000000" }}>Read more</span>
+                                <span style={{ fontWeight: 500, cursor: "pointer", color: "#00000099" }}>Read more</span>
                             </p>
                         </div>
 
-                        {/* Alignment */}
-                        <div className="flex flex-col">
-                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2c3dbfdd-cfa0-4967-1ef4-6270bcf0ca00/public" alt="Alignment icon" width={37} height={37} className="mb-[24px]" />
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700, fontSize: "20px", lineHeight: "110%", color: "#000000", marginBottom: "16px" }}>Alignment</h3>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099", marginBottom: "8px" }}>
+                        {/* Card 3 — Alignment */}
+                        <div style={{ width: "20.83333vw" }}>
+                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2c3dbfdd-cfa0-4967-1ef4-6270bcf0ca00/public" alt="Alignment icon" width={25} height={21} style={{ marginBottom: "24px", display: "block" }} />
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Alignment</h3>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 Here's the uncomfortable truth: the planet doesn't need us. We need it.
                             </p>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099" }}>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0 }}>
                                 Every river, forest, and ecosystem operated in elegant balance long before the first boardroom meeting. WAE operates from that humility. Ecology…{" "}
-                                <span style={{ fontWeight: 700, cursor: "pointer", color: "#000000" }}>Read more</span>
+                                <span style={{ fontWeight: 500, cursor: "pointer", color: "#00000099" }}>Read more</span>
                             </p>
                         </div>
+                    </div>
 
-                        {/* Ideas */}
-                        <div className="flex flex-col">
-                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8fbd3c5c-cb6f-4b16-3b12-bf1d6ea96400/public" alt="Ideas icon" width={37} height={37} className="mb-[24px]" />
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700, fontSize: "20px", lineHeight: "110%", color: "#000000", marginBottom: "16px" }}>Ideas</h3>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099", marginBottom: "8px" }}>
+                    {/* Row 2 */}
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        {/* Card 4 — Ideas */}
+                        <div style={{ width: "21.875vw" }}>
+                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8fbd3c5c-cb6f-4b16-3b12-bf1d6ea96400/public" alt="Ideas icon" width={37} height={37} style={{ marginBottom: "24px", display: "block" }} />
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Ideas</h3>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 The best ideas don't add to the problem — they dissolve it.
                             </p>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099" }}>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0 }}>
                                 At WAE, we asked: what if water never cost the Earth its health? What if every drink left things better than it found them? Those questions became products, systems, and a movement. Circular by design. Restorative by intention.…{" "}
-                                <span style={{ fontWeight: 700, cursor: "pointer", color: "#000000" }}>Read more</span>
+                                <span style={{ fontWeight: 500, cursor: "pointer", color: "#00000099" }}>Read more</span>
                             </p>
                         </div>
 
-                        {/* Impact */}
-                        <div className="flex flex-col">
-                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ebbf8084-97a2-4d28-4a1c-b57d66240200/public" alt="Impact icon" width={37} height={37} className="mb-[24px]" />
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700, fontSize: "20px", lineHeight: "110%", color: "#000000", marginBottom: "16px" }}>Impact</h3>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099", marginBottom: "8px" }}>
+                        {/* Card 5 — Impact */}
+                        <div style={{ width: "20.83333vw" }}>
+                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ebbf8084-97a2-4d28-4a1c-b57d66240200/public" alt="Impact icon" width={33} height={33} style={{ marginBottom: "24px", display: "block" }} />
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Impact</h3>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 The most powerful impact is invisible.
                             </p>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099" }}>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0 }}>
                                 It's the bottle that was never made. The microplastic that never entered a child's bloodstream. The ocean floor that remained undisturbed. You won't see it on a shelf or in an ad, but it's real, cumulative, and growing.…{" "}
-                                <span style={{ fontWeight: 700, cursor: "pointer", color: "#000000" }}>Read more</span>
+                                <span style={{ fontWeight: 500, cursor: "pointer", color: "#00000099" }}>Read more</span>
                             </p>
                         </div>
 
-                        {/* Innovation */}
-                        <div className="flex flex-col">
-                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5f584bfb-a14a-4213-328d-e63560b70100/public" alt="Innovation icon" width={37} height={37} className="mb-[24px]" />
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700, fontSize: "20px", lineHeight: "110%", color: "#000000", marginBottom: "16px" }}>Innovation</h3>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099", marginBottom: "8px" }}>
+                        {/* Card 6 — Innovation */}
+                        <div style={{ width: "20.83333vw" }}>
+                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5f584bfb-a14a-4213-328d-e63560b70100/public" alt="Innovation icon" width={36} height={36} style={{ marginBottom: "24px", display: "block" }} />
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Innovation</h3>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 Here's the uncomfortable truth: the planet doesn't need us. We need it.
                             </p>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "140%", color: "#00000099" }}>
+                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "100%", letterSpacing: "0%", color: "#00000099", margin: 0 }}>
                                 Every river, forest, and ecosystem operated in elegant balance long before the first boardroom meeting. WAE operates from that humility. Ecology…{" "}
-                                <span style={{ fontWeight: 700, cursor: "pointer", color: "#000000" }}>Read more</span>
+                                <span style={{ fontWeight: 500, cursor: "pointer", color: "#00000099" }}>Read more</span>
                             </p>
                         </div>
                     </div>
@@ -564,10 +572,10 @@ export default function Home() {
 
                     {/* Left: 01 and Title */}
                     <div className="flex flex-row items-center gap-6 lg:gap-[40px] w-full lg:w-[45%]">
-                        <div className="font-bold text-[110px] md:text-[160px] lg:text-[200px] leading-[110%] text-black tracking-tighter" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+                        <div style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "200px", lineHeight: "110%", letterSpacing: "0%", color: "#000000" }}>
                             01
                         </div>
-                        <div className="font-semibold text-[28px] md:text-[34px] lg:text-[40px] leading-[110%] text-black flex flex-col tracking-tight" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+                        <div style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "40px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", display: "flex", flexDirection: "column" }}>
                             <span>Per Cent</span>
                             <span>Principle</span>
                             <span>Planet</span>
@@ -579,7 +587,7 @@ export default function Home() {
                         <p className="font-normal text-[12px] leading-[140%] md:leading-[100%]" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                             One percent doesn't sound like much. Until you realise it's the difference between taking and giving back.
                         </p>
-                        <p className="font-bold text-[12px] leading-[140%] md:leading-[100%] text-black" style={{ fontFamily: "Inter Tight, sans-serif" }}>
+                        <p className="font-medium text-[12px] leading-[140%] md:leading-[100%] text-black" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                             WAE commits 1% to the planet, not as charity, not as a PR move, but as a discipline. A quiet acknowledgment that everything we build is borrowed. That profit built on extraction without return is just slow debt.
                         </p>
                         <p className="font-normal text-[12px] leading-[140%] md:leading-[100%]" style={{ fontFamily: "Inter Tight, sans-serif" }}>
