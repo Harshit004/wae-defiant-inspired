@@ -64,67 +64,37 @@ const governanceCards = [
     id: "1.",
     title: "ESG Policy",
     text: "We set measurable targets, track outcomes, and align operations with long-term eco-logical balance. Sustainability is woven into procurement, partnerships.",
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="24" cy="24" r="10"></circle>
-        <path d="M16 16c-2-4-6-6-10-2 2 4 6 6 10 2z"></path>
-        <path d="M32 32c2 4 6 6 10 2-2-4-6-6-10-2z"></path>
-        <path d="M16 32c-2 4-6 6-10 2 2-4 6-6 10-2z"></path>
-        <path d="M32 16c2-4 6-6 10-2-2 4-6 6-10 2z"></path>
-        <path d="M20 20l4 4-2 6"></path>
-        <path d="M28 20l-2 4 4 2"></path>
-      </svg>
-    )
+    blackIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bd561c8e-a7cf-462c-1e5a-2d3f208d7a00/public",
+    whiteIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b38c112f-705c-4daa-8f0d-5277d4f27800/public",
   },
   {
     id: "2.",
     title: "Compliances",
     text: "Compliance is our baseline, not our benchmark. We adhere to environmental, safety, and statutory standards, reinforced through proactive audits and certifications.",
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M28 4H12a4 4 0 0 0-4 4v32a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V16z"></path>
-        <polyline points="28 4 28 16 40 16"></polyline>
-        <polyline points="16 26 22 32 32 20"></polyline>
-      </svg>
-    )
+    blackIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6bebb66f-d576-4f75-38bc-05209726d500/public",
+    whiteIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13c2b491-a009-4b3c-14fd-43040a87a100/public",
   },
   {
     id: "3.",
     title: "Ethical Sourcing",
     text: "Impact begins upstream. We prioritise responsible suppliers, transparent processes, and durable materials. Responsibility must travel the entire value chain.",
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 32c-3 0-6 2-6 5s3 5 6 5h14c6 0 10-4 10-10H20l-4 5z"></path>
-        <path d="M24 18c-2-3-6-3-8 1-1 3 2 6 8 11 6-5 9-8 8-11-2-4-6-4-8-1z"></path>
-      </svg>
-    )
+    blackIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/becc0b46-db9e-4dc1-42d1-0d90f4a03700/public",
+    whiteIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/feb178e9-e739-4345-937a-9ec633912000/public",
   },
   {
     id: "4.",
     title: "Sustainability Report",
     text: "We report plastic reduction, carbon savings, water conservation, and community impact with clarity. It's an open ledger of progress.",
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M28 4H12a4 4 0 0 0-4 4v32a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V16z"></path>
-        <polyline points="28 4 28 16 40 16"></polyline>
-        <path d="M24 34c0-7-6-7-6-7s0-6 7-6 6 6 6 6-6 0-6 7z"></path>
-        <path d="M24 34v-7"></path>
-      </svg>
-    )
+    blackIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/543f53c5-cc9a-4d0d-f38f-996bc2992400/public",
+    whiteIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/06cc4c83-6679-4e7b-9161-bdcfd83d7700/public",
   },
   {
     id: "5.",
     title: "Impact Stories",
     text: "Documented across three volumes, Impact Stories capture milestones and the growth toward responsible, refill-centric futures.",
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10 12h28c2 0 4 2 4 4v8c0 2-2 4-4 4H26l-6 6v-6h-6c-2 0-4-2-4-4v-8c0-2 2-4 4-4z"></path>
-        <path d="M12 36l6-4h12l6 4v8h-24v-8z"></path>
-        <line x1="24" y1="32" x2="24" y2="44"></line>
-        <line x1="18" y1="18" x2="30" y2="18"></line>
-      </svg>
-    )
-  }
+    blackIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0455dd27-ed17-45d5-8ef3-8e0c7be16000/public",
+    whiteIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5cc77291-ca4c-4ba4-3808-dc78d0670900/public",
+  },
 ];
 
 export default function Home() {
@@ -132,8 +102,11 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState(0)
   const [currentTime, setCurrentTime] = useState("")
   const [headerHeight, setHeaderHeight] = useState(0)
-  const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
+  const [hoveredGovernanceCard, setHoveredGovernanceCard] = useState<number | null>(null)
+  const [carouselAtStart, setCarouselAtStart] = useState(true)
+  const [carouselAtEnd, setCarouselAtEnd] = useState(false)
   const headerRef = useRef<HTMLDivElement>(null)
+  const carouselRef = useRef<HTMLDivElement>(null)
 
   // State for controlling tagline visibility on scroll
   const [taglineVisible, setTaglineVisible] = useState(true)
@@ -402,7 +375,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="w-full md:w-[40%] flex flex-col">
-              <div className="font-normal text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
+              <div className="font-medium text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
                 <p>
                   "Our Green Is Blue" is more than a tagline — it's a founding belief. The ecological truth is simple: without water, there is no life. Forests fail, food systems fracture, and futures fade.
                 </p>
@@ -465,7 +438,7 @@ export default function Home() {
                   We believe businesses shape behaviour, and behaviour shapes the planet. By offering viable, elegant alternatives to plastic dependency, we disrupt the status quo with substance. Leadership, for us, means solutions that are environmentally sound, commercially viable, and ethically grounded.
                 </p>
               </div>
-              <HoverButton href="#">
+              <HoverButton href="/the-activist">
                 {(hovered) => (
                   <>
                     <span>Know More</span>
@@ -564,97 +537,148 @@ export default function Home() {
             Blue Governance
           </h2>
           <p className="font-normal text-[14px] leading-[120%] text-[#00000099] max-w-[800px]">
-            Blue Governance is WAE's commitment to embedding ecological intelligence, ethical discipline, and transparent accountability into every decision. It covers ESG policy, compliance, ethical sourcing, and annual sustainability reporting — ensuring responsibility is structural, not symbolic.
+            Blue Governance is WAE&apos;s commitment to embedding ecological intelligence, ethical discipline, and transparent accountability into every decision. It covers ESG policy, compliance, ethical sourcing, and annual sustainability reporting — ensuring responsibility is structural, not symbolic.
           </p>
         </div>
 
-        {/* Carousel Container */}
-        <div className="w-full max-w-[1440px] pl-[9.375%]">
+        {/* Outer wrapper — overflow:hidden clips the scrollbar track */}
+        <div style={{ overflow: "hidden" }}>
+          {/* Scrollable track */}
           <div
-            id="governance-track"
-            className="w-full border-t border-b border-l border-[#D9D9DC] flex overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory"
+            ref={carouselRef}
+            className="governance-carousel flex"
+            style={{
+              overflowX: "scroll",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none" as React.CSSProperties["msOverflowStyle"],
+              scrollBehavior: "smooth",
+              paddingLeft: "clamp(80px, 9.375vw, 140px)",
+            }}
+            onScroll={() => {
+              const el = carouselRef.current;
+              if (!el) return;
+              setCarouselAtStart(el.scrollLeft <= 4);
+              setCarouselAtEnd(el.scrollLeft >= el.scrollWidth - el.clientWidth - 4);
+            }}
           >
-            {governanceCards.map((card, index) => (
-              <div
-                key={card.id}
-                className={`snap-start flex-shrink-0 w-[85vw] md:w-[320px] lg:w-[23%] min-w-[250px] border-r border-[#D9D9DC] flex flex-col p-6 lg:p-8 transition-colors duration-300 ${activeGovernanceCard === index
-                  ? "bg-black text-white"
-                  : "bg-white text-black"
-                  }`}
-                style={{ maxHeight: "378px" }}
-              >
-                {/* Number */}
-                <div className="font-medium text-[20px] leading-[110%] mb-[40px] lg:mb-[60px]" style={{ fontFamily: "Inter Tight, sans-serif" }}>
-                  {card.id}
+            {governanceCards.map((card, index) => {
+              const isHovered = hoveredGovernanceCard === index;
+              const iconDims = [
+                { w: 104, h: 104 },
+                { w: 99, h: 99 },
+                { w: 87, h: 99 },
+                { w: 99, h: 99 },
+                { w: 128, h: 128 },
+              ][index];
+              const isFirst = index === 0;
+              const isLast = index === governanceCards.length - 1;
+              return (
+                <div
+                  key={card.id}
+                  onMouseEnter={() => setHoveredGovernanceCard(index)}
+                  onMouseLeave={() => setHoveredGovernanceCard(null)}
+                  className="flex-shrink-0 flex flex-col transition-colors duration-300 cursor-default"
+                  style={{
+                    width: "20vw",
+                    height: "378px",
+                    padding: "20px",
+                    backgroundColor: isHovered ? "#000" : "#fff",
+                    color: isHovered ? "#fff" : "#000",
+                    borderTop: "1px solid #D9D9DC",
+                    borderBottom: "1px solid #D9D9DC",
+                    borderLeft: isFirst ? "1px solid #D9D9DC" : "none",
+                    borderRight: "1px solid #D9D9DC",
+                  }}
+                >
+                  {/* Number */}
+                  <div style={{
+                    fontFamily: "Inter Tight, sans-serif",
+                    fontWeight: 500,
+                    fontSize: "20px",
+                    lineHeight: "100%",
+                    marginBottom: "40px",
+                  }}>
+                    {card.id}
+                  </div>
+
+                  {/* Icon — fixed 128px container so all titles align */}
+                  <div style={{ height: "128px", display: "flex", alignItems: "flex-start", marginBottom: "20px" }}>
+                    <Image
+                      src={isHovered ? card.whiteIcon : card.blackIcon}
+                      alt={card.title}
+                      width={iconDims.w}
+                      height={iconDims.h}
+                      style={{ objectFit: "contain", width: `${iconDims.w}px`, height: `${iconDims.h}px` }}
+                    />
+                  </div>
+
+                  {/* Card Title */}
+                  <h3 style={{
+                    fontFamily: "Inter Tight, sans-serif",
+                    fontWeight: 500,
+                    fontSize: "22px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    margin: 0,
+                    marginBottom: "20px",
+                  }}>
+                    {card.title}
+                  </h3>
+
+                  {/* Card Description */}
+                  <p style={{
+                    fontFamily: "Inter Tight, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    margin: 0,
+                    color: isHovered ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.6)",
+                    transition: "color 0.3s",
+                  }}>
+                    {card.text}
+                  </p>
                 </div>
+              );
+            })}
 
-                {/* SVG Icon container */}
-                <div className={`flex items-center justify-center h-[48px] mb-[40px] lg:mb-[60px] transition-colors duration-300 ${activeGovernanceCard === index ? "text-white" : "text-black"
-                  }`}>
-                  {card.icon}
-                </div>
-
-                {/* Card Title */}
-                <h3 className="font-medium text-[20px] lg:text-[22px] leading-[110%] mb-4 tracking-tight" style={{ fontFamily: "Inter Tight, sans-serif" }}>
-                  {card.title}
-                </h3>
-
-                {/* Card Description */}
-                <p className={`font-normal text-[12px] leading-[130%] transition-colors duration-300 ${activeGovernanceCard === index ? "text-[#ffffff99]" : "text-[#00000099]"
-                  }`}>
-                  {card.text}
-                </p>
-              </div>
-            ))}
+            {/* Right spacer — maintains right margin at scroll end */}
+            <div className="flex-shrink-0" style={{ width: "clamp(80px, 9.375vw, 140px)" }} />
           </div>
+        </div>
 
-          {/* Carousel Arrows */}
-          <div className="w-full mt-[40px] flex justify-end gap-3 hidden md:flex">
-            <button
-              disabled={activeGovernanceCard === 0}
-              onClick={() => {
-                if (activeGovernanceCard > 0) {
-                  const newIndex = activeGovernanceCard - 1;
-                  setActiveGovernanceCard(newIndex);
-                  const track = document.getElementById('governance-track');
-                  if (track) {
-                    const cardWidth = (track.children[0] as HTMLElement)?.clientWidth || 320;
-                    track.scrollTo({ left: newIndex * cardWidth, behavior: 'smooth' });
-                  }
-                }
-              }}
-              className={`w-[35px] h-[35px] border flex items-center justify-center transition-colors duration-300 ${activeGovernanceCard === 0
-                ? "border-[#D9D9DC] text-[#D9D9DC] cursor-not-allowed bg-white"
-                : "border-black text-black hover:bg-[#f2f2f2] cursor-pointer bg-white"
-                }`}
-            >
-              <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 9L1 5L5 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <button
-              disabled={activeGovernanceCard === governanceCards.length - 1}
-              onClick={() => {
-                if (activeGovernanceCard < governanceCards.length - 1) {
-                  const newIndex = activeGovernanceCard + 1;
-                  setActiveGovernanceCard(newIndex);
-                  const track = document.getElementById('governance-track');
-                  if (track) {
-                    const cardWidth = (track.children[0] as HTMLElement)?.clientWidth || 320;
-                    track.scrollTo({ left: newIndex * cardWidth, behavior: 'smooth' });
-                  }
-                }
-              }}
-              className={`w-[35px] h-[35px] border flex items-center justify-center transition-colors duration-300 ${activeGovernanceCard === governanceCards.length - 1
-                ? "border-[#D9D9DC] text-[#D9D9DC] cursor-not-allowed bg-white"
-                : "border-black text-black hover:bg-[#f2f2f2] cursor-pointer bg-white"
-                }`}
-            >
-              <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 9L5 5L1 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </div>
+        {/* Navigation Arrows */}
+        <div className="w-full px-[9.375%] lg:px-[140px] mt-[40px] flex justify-end gap-3">
+          <button
+            disabled={carouselAtStart}
+            onClick={() => {
+              const el = carouselRef.current;
+              if (el) el.scrollBy({ left: -window.innerWidth * 0.2, behavior: "smooth" });
+            }}
+            className={`w-[35px] h-[35px] border flex items-center justify-center transition-colors duration-300 ${carouselAtStart
+              ? "border-[#D9D9DC] text-[#D9D9DC] cursor-not-allowed bg-white"
+              : "border-black text-black hover:bg-[#f2f2f2] cursor-pointer bg-white"
+              }`}
+          >
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 9L1 5L5 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <button
+            disabled={carouselAtEnd}
+            onClick={() => {
+              const el = carouselRef.current;
+              if (el) el.scrollBy({ left: window.innerWidth * 0.2, behavior: "smooth" });
+            }}
+            className={`w-[35px] h-[35px] border flex items-center justify-center transition-colors duration-300 ${carouselAtEnd
+              ? "border-[#D9D9DC] text-[#D9D9DC] cursor-not-allowed bg-white"
+              : "border-black text-black hover:bg-[#f2f2f2] cursor-pointer bg-white"
+              }`}
+          >
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 9L5 5L1 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
         </div>
       </section>
 
@@ -666,8 +690,6 @@ export default function Home() {
 
       {/* INLINE CSS for hover and arrow animations */}
       <style jsx>{`
-        /* Removed unused styles like product-grid, product-title, product-cell, placeholder-img */
-
         .c--anim-btn {
           display: flex;
           align-items: center;
@@ -701,6 +723,14 @@ export default function Home() {
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
+        }
+        /* Hide scrollbar on carousel */
+        .governance-carousel::-webkit-scrollbar {
+          display: none;
+        }
+        .governance-carousel {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
 
