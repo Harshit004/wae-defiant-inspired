@@ -370,22 +370,60 @@ export default function Home() {
             </div>
 
             {/* HERO SECTION */}
-            {/* NOTE: If you want the Hero to be a scroll-snap point, add snap-center here */}
             <section
                 id="hero"
-                // ref={heroRef}
-                className="w-full flex items-center justify-center bg-white"
-            // style={{ height: `calc(100vh - ${headerHeight}px)` }}
+                className="w-full relative bg-white overflow-hidden"
+                style={{ height: `calc(100vh - ${headerHeight}px)` }}
             >
-                <div className="w-full flex items-center justify-center h-full">
-                    <video
-                        src="/the-activist-hero.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover rounded-none"
-                    />
+                {/* Background video */}
+                <video
+                    src="/the-activist-hero.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+
+                {/* Text overlay — 59px above bottom, left margin 9.72% */}
+                <div
+                    className="absolute"
+                    style={{ bottom: "59px", left: "9.72%" }}
+                >
+                    {/* Headline */}
+                    <p style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 500,
+                        fontSize: "47px",
+                        lineHeight: "110%",
+                        letterSpacing: "0%",
+                        color: "#FFFFFF",
+                        margin: 0,
+                        marginBottom: "20px",
+                    }}>
+                        Earth, Our Only Shareholder
+                    </p>
+
+                    {/* Scroll for more row */}
+                    <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+                        <span style={{
+                            fontFamily: "'Manrope', sans-serif",
+                            fontWeight: 500,
+                            fontSize: "10px",
+                            lineHeight: "100%",
+                            letterSpacing: "0%",
+                            color: "#FFFFFF",
+                        }}>
+                            SCROLL FOR MORE
+                        </span>
+                        <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab21a431-a08a-486f-1cd9-aba510ee8600/public"
+                            alt="Scroll"
+                            width={12}
+                            height={12}
+                            style={{ objectFit: "contain" }}
+                        />
+                    </div>
                 </div>
             </section>
 

@@ -343,22 +343,60 @@ export default function Home() {
       </div>
 
       {/* HERO SECTION */}
-      {/* NOTE: If you want the Hero to be a scroll-snap point, add snap-center here */}
       <section
         id="hero"
-        // ref={heroRef}
-        className="w-screen flex items-center justify-center bg-white"
+        className="w-screen relative bg-white overflow-hidden"
         style={{ height: `calc(100vh - ${headerHeight}px)` }}
       >
-        <div className="w-screen flex items-center justify-center">
-          <video
-            src="/the-activist-co-hero.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-fit object-cover rounded-none"
-          />
+        {/* Background video */}
+        <video
+          src="/the-activist-co-hero.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        {/* Text overlay — 59px above bottom, left margin 9.72% */}
+        <div
+          className="absolute"
+          style={{ bottom: "59px", left: "9.72%" }}
+        >
+          {/* Headline */}
+          <p style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: "47px",
+            lineHeight: "110%",
+            letterSpacing: "0%",
+            color: "#FFFFFF",
+            margin: 0,
+            marginBottom: "20px",
+          }}>
+            Refuse Plastic. Restore Balance. Return to the Planet.
+          </p>
+
+          {/* Scroll for more row */}
+          <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+            <span style={{
+              fontFamily: "'Manrope', sans-serif",
+              fontWeight: 500,
+              fontSize: "10px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+              color: "#FFFFFF",
+            }}>
+              SCROLL FOR MORE
+            </span>
+            <Image
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ab21a431-a08a-486f-1cd9-aba510ee8600/public"
+              alt="Scroll"
+              width={12}
+              height={12}
+              style={{ objectFit: "contain" }}
+            />
+          </div>
         </div>
       </section>
 
@@ -375,7 +413,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="w-full md:w-[40%] flex flex-col">
-              <div className="font-medium text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
+              <div className="font-normal text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
                 <p>
                   "Our Green Is Blue" is more than a tagline — it's a founding belief. The ecological truth is simple: without water, there is no life. Forests fail, food systems fracture, and futures fade.
                 </p>
