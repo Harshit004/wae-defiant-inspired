@@ -496,7 +496,7 @@ export default function Home() {
         <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] gap-0">
 
           {/* Left Column */}
-          <div className="w-full flex flex-col pr-12 lg:pr-24">
+          <div className="w-full flex flex-col pr-[3.5%]">
             <div className="flex flex-row justify-between items-start mb-12 lg:mb-[60px]">
               <h2 className="font-medium text-[36px] leading-[110%] text-black tracking-tight" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                 Core Pillars
@@ -525,7 +525,7 @@ export default function Home() {
           <div className="hidden md:block w-[1px] bg-[#D9D9DC]"></div>
 
           {/* Right Column */}
-          <div className="w-full flex flex-col pl-12 lg:pl-24 md:mt-0 mt-16">
+          <div className="w-full flex flex-col pl-[3.47%] md:mt-0 mt-16">
 
             {/* Item 1 */}
             <div className="flex flex-col mb-10 text-left">
