@@ -929,7 +929,7 @@ export default function Home() {
                     {/* Avnesh Sharma */}
                     <div className="flex flex-col">
                         <div className="relative aspect-[4/3] w-full mb-6">
-                            <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/469bb1e6-1c45-4f16-f7ea-6532aa9f5300/public" alt="Avnesh Sharma" fill className="object-cover" />
+                            <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/469bb1e6-1c45-4f16-f7ea-6532aa9f5300/public" alt="Avnesh Sharma" fill className="object-cover grayscale" />
                         </div>
                         <div className="flex justify-between items-start mb-4">
                             <div>
