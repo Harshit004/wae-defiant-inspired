@@ -79,7 +79,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
           </div>
           <div>
             <div style={{fontFamily: 'Inter Tight', fontWeight: 600, fontSize: '10px', lineHeight: '100%', letterSpacing: '0px', textTransform: 'uppercase', marginBottom: 12}}>OBJECTIVE</div>
-            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%', verticalAlign: 'middle'}}>
+            <div style={{fontFamily: 'Inter Tight', fontWeight: 500, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%', verticalAlign: 'middle', color: '#00000066'}}>
               To lead the way in sustainability<br />ahead of the next
             </div>
           </div>
@@ -621,7 +621,7 @@ const Home: FC = () => {
                   fontWeight: 500,
                   fontSize: "11px",
                   lineHeight: "100%",
-                  color: "#000000",
+                  color: "#00000066",
                 }}
               >
                 20.5937° N
@@ -637,7 +637,7 @@ const Home: FC = () => {
                   fontWeight: 500,
                   fontSize: "11px",
                   lineHeight: "100%",
-                  color: "#000000",
+                  color: "#00000066",
                 }}
               >
                 To lead the way in<br />sustainability ahead of the<br />rest

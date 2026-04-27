@@ -96,7 +96,7 @@ export default function PolicyPage() {
                   fontWeight: 500,
                   fontSize: "11px",
                   lineHeight: "130%",
-                  color: "#000000",
+                  color: "#00000066",
                 }}
               >
                 20.5937° N
@@ -112,7 +112,7 @@ export default function PolicyPage() {
                   fontWeight: 500,
                   fontSize: "11px",
                   lineHeight: "130%",
-                  color: "#000000",
+                  color: "#00000066",
                 }}
               >
                 To lead the way in<br />sustainability ahead of the<br />rest

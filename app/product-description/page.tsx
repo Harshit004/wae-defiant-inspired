@@ -164,7 +164,7 @@ const Home: FC = () => {
                 fontWeight: 500,
                 fontSize: "12px",
                 lineHeight: "100%",
-                color: "#000000",
+                color: "#00000066",
               }}
             >
               20.5937° N
@@ -180,7 +180,7 @@ const Home: FC = () => {
                 fontWeight: 500,
                 fontSize: "12px",
                 lineHeight: "100%",
-                color: "#000000",
+                color: "#00000066",
               }}
             >
               To lead the way in

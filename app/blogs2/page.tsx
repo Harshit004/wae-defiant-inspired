@@ -272,7 +272,7 @@ export default function Home() {
                   fontWeight: 500,
                   fontSize: "11px",
                   lineHeight: "100%",
-                  color: coordinatesVisible ? "#000000" : "transparent",
+                  color: coordinatesVisible ? "#00000066" : "transparent",
                   opacity: coordinatesVisible ? 1 : 0,
                   transition: 'color 1s ease-in-out, opacity 1s ease-in-out'
                 }}
@@ -290,7 +290,7 @@ export default function Home() {
                   fontWeight: 500,
                   fontSize: "11px",
                   lineHeight: "100%",
-                  color: taglineVisible ? "#000000" : "transparent",
+                  color: taglineVisible ? "#00000066" : "transparent",
                   opacity: taglineVisible ? 1 : 0,
                   transition: 'color 1s ease-in-out, opacity 1s ease-in-out'
                 }}
@@ -419,7 +419,7 @@ export default function Home() {
         className={`${containerClass} flex justify-between items-start mt-5 mb-20`}
       >
         {/* Video (38.19% width & height) */}
-        <div style={{ width: "38.19%"}}>
+        <div style={{ width: "38.19%" }}>
           <video
             src="/Blog_Video.mp4"
             autoPlay
@@ -466,8 +466,8 @@ export default function Home() {
           >
             {heroSlides[currentSlide].description}
           </p>
-          <a 
-            href="/climate-change-&-water-v3" 
+          <a
+            href="/climate-change-&-water-v3"
             style={{
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
@@ -524,19 +524,18 @@ export default function Home() {
               }
 
               return (
-                <div 
+                <div
                   key={index}
-                  className={`group relative transition-all duration-300 ${
-                    hoveredCard === index ? "scale-105" : "scale-100"
-                  }`}
+                  className={`group relative transition-all duration-300 ${hoveredCard === index ? "scale-105" : "scale-100"
+                    }`}
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   <Link href={linkUrl} className="block">
                     <div className="overflow-hidden rounded-lg mb-4 relative" style={{ height: '300px' }}>
                       {/* Main Image */}
-                      <div className="absolute inset-0 transition-opacity duration-1000" 
-                           style={{ opacity: hoveredCard === index ? 0 : 1 }}>
+                      <div className="absolute inset-0 transition-opacity duration-1000"
+                        style={{ opacity: hoveredCard === index ? 0 : 1 }}>
                         <Image
                           src={post.imageSrc}
                           alt={post.title}
@@ -547,8 +546,8 @@ export default function Home() {
                       </div>
                       {/* Hover Image */}
                       {post.imageSrcHover && (
-                        <div className="absolute inset-0 transition-opacity duration-1000" 
-                             style={{ opacity: hoveredCard === index ? 1 : 0 }}>
+                        <div className="absolute inset-0 transition-opacity duration-1000"
+                          style={{ opacity: hoveredCard === index ? 1 : 0 }}>
                           <Image
                             src={post.imageSrcHover}
                             alt={`${post.title} - Hover`}
@@ -561,13 +560,13 @@ export default function Home() {
                     </div>
                   </Link>
                   <Link href={linkUrl}>
-                    <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] hover:text-blue-600 transition-colors duration-300" 
-                        style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    <h3 className="text-sm font-bold mb-2 uppercase leading-[140%] hover:text-blue-600 transition-colors duration-300"
+                      style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                       {post.title}
                     </h3>
                   </Link>
-                  <p className="text-sm leading-[24px] mb-4" 
-                     style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                  <p className="text-sm leading-[24px] mb-4"
+                    style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                     {post.description}
                   </p>
                   <Link
@@ -592,7 +591,7 @@ export default function Home() {
       {/* Our Writers SECTION */}
       <section className="mb-20">
         <div className={containerClass}>
-          <h2 
+          <h2
             className="mb-16"
             style={{
               fontFamily: "'Inter Tight', sans-serif",
@@ -604,7 +603,7 @@ export default function Home() {
           >
             Our Writers
           </h2>
-          
+
           <div className="grid grid-cols-4 gap-x-[2.22%] justify-between">
             {/* Writer 1 - ADITI SHARMA */}
             <div className="text-left flex flex-col h-full">
@@ -620,7 +619,7 @@ export default function Home() {
                 </div>
               </Link>
               <Link href="/aditi-sharma">
-                <h3 
+                <h3
                   className="uppercase mb-2 cursor-pointer"
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -632,7 +631,7 @@ export default function Home() {
                   ADITI SHARMA
                 </h3>
               </Link>
-              <p 
+              <p
                 className="mb-4"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -643,7 +642,7 @@ export default function Home() {
               >
                 Climate Change and Water
               </p>
-              <p 
+              <p
                 className="mb-6"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -684,7 +683,7 @@ export default function Home() {
                 </div>
               </Link>
               <Link href="https://www.linkedin.com/in/rehnumashakir/">
-                <h3 
+                <h3
                   className="uppercase mb-2 cursor-pointer"
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -696,7 +695,7 @@ export default function Home() {
                   REHNUMA ANSARI
                 </h3>
               </Link>
-              <p 
+              <p
                 className="mb-4"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -707,7 +706,7 @@ export default function Home() {
               >
                 Climate Change and Water
               </p>
-              <p 
+              <p
                 className="mb-6"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -748,7 +747,7 @@ export default function Home() {
                 </div>
               </Link>
               <Link href="https://www.linkedin.com/in/rashi-tarika-89727a43/">
-                <h3 
+                <h3
                   className="uppercase mb-2 cursor-pointer"
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -760,7 +759,7 @@ export default function Home() {
                   RASHI TARIKA
                 </h3>
               </Link>
-              <p 
+              <p
                 className="mb-4"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -771,7 +770,7 @@ export default function Home() {
               >
                 Climate Change and Water
               </p>
-              <p 
+              <p
                 className="mb-6"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -796,7 +795,7 @@ export default function Home() {
                   <span style={{ textDecoration: "underline" }}>View Profile</span> ↗
                 </span>
               </Link>
-            </div> 
+            </div>
 
             {/* Writer 4 - SHAMBHAVI */}
             <div className="text-left flex flex-col h-full">
@@ -812,7 +811,7 @@ export default function Home() {
                 </div>
               </Link>
               <Link href="https://in.linkedin.com/in/shambhavi-yadav-61b937276">
-                <h3 
+                <h3
                   className="uppercase mb-2 cursor-pointer"
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -824,7 +823,7 @@ export default function Home() {
                   SHAMBHAVI
                 </h3>
               </Link>
-              <p 
+              <p
                 className="mb-4"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -835,7 +834,7 @@ export default function Home() {
               >
                 Climate Change and Water
               </p>
-              <p 
+              <p
                 className="mb-6"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -862,7 +861,7 @@ export default function Home() {
               </Link>
             </div>
 
-            
+
           </div>
         </div>
       </section>
