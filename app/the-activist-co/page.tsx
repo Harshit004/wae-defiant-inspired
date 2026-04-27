@@ -462,10 +462,10 @@ export default function Home() {
           />
           <div className="relative z-10 w-full max-w-[1440px] mx-auto px-[9.375%] py-[120px] lg:px-[140px]">
             <div className="w-full md:w-[50%] lg:w-[45%] flex flex-col">
-              <h2 className="font-medium text-[36px] leading-[110%] text-black tracking-tight mb-8">
+              <h2 className="font-medium text-[36px] leading-[110%] text-black tracking-tight mb-[60px]">
                 Activist Company
               </h2>
-              <div className="font-normal text-[14px] leading-[120%] text-[#00000099] space-y-6 mb-12">
+              <div className="font-normal text-[14px] leading-[120%] text-[#00000099] space-y-6 mb-[80px]">
                 <p>
                   WAE was founded on conviction: a deliberate refusal to accept waste as inevitable.
                 </p>
@@ -532,7 +532,7 @@ export default function Home() {
               <h3 className="font-medium text-[26px] leading-[110%] text-black mb-6" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                 Climate &amp; Resource Efficiency
               </h3>
-              <p className="font-normal text-[14px] leading-[100%] text-[#00000099]">
+              <p className="font-normal text-[14px] leading-[100%] text-[#00000099]" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                 Climate action is operational, not abstract. We reduce lifecycle emissions by replacing disposable plastic with durable stainless steel systems. Energy efficiency, material longevity, and logistics optimisation are built into everything we do. Resource efficiency means disciplined restraint: using less, wasting less, emitting less.
               </p>
             </div>
@@ -545,7 +545,7 @@ export default function Home() {
               <h3 className="font-medium text-[26px] leading-[110%] text-black mb-6" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                 Stewardship &amp; Conservation
               </h3>
-              <p className="font-normal text-[14px] leading-[100%] text-[#00000099]">
+              <p className="font-normal text-[14px] leading-[100%] text-[#00000099]" style={{ fontFamily: "Inter Tight, sans-serif" }}>
                 Water isn't a product to be used — it's a resource to be respected. Our refill models reduce plastic leakage and lower environmental burden. Through efficient purification and conscious infrastructure, we make conservation a practice, not a pledge.
               </p>
             </div>
