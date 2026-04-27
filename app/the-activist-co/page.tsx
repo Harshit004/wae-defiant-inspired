@@ -412,7 +412,7 @@ export default function Home() {
                 Our Green Is Blue
               </h2>
             </div>
-            <div className="w-full md:w-[40%] flex flex-col">
+            <div className="w-full md:w-[40%] flex flex-col pt-[30px]">
               <div className="font-normal text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
                 <p>
                   "Our Green Is Blue" is more than a tagline — it's a founding belief. The ecological truth is simple: without water, there is no life. Forests fail, food systems fracture, and futures fade.
@@ -432,7 +432,7 @@ export default function Home() {
                 Blue Innovation
               </h2>
             </div>
-            <div className="w-full md:w-[40%] flex flex-col">
+            <div className="w-full md:w-[40%] flex flex-col pt-[30px]">
               <div className="font-normal text-[14px] leading-[120%] text-[#00000099] space-y-8 lg:pr-12">
                 <p>
                   Innovation starts with a question: what can we remove that harms the planet?
