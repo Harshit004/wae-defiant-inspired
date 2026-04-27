@@ -313,7 +313,7 @@ const TimelineSection = () => {
     return (
         <section className="w-full bg-[#f2f2f2] px-[8.541%] py-[120px] font-['Inter_Tight']">
             <div className="max-w-[1440px] mx-auto w-full">
-                <h2 className="text-[36px] md:text-[44px] font-normal leading-[110%] text-black tracking-tight mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>WAE Chronicle</h2>
+                <h2 className="text-[36px] md:text-[44px] font-medium leading-[110%] text-black tracking-tight mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>WAE Chronicle</h2>
                 <p className="text-[16px] font-normal text-black mb-20">From Intent to Impact</p>
 
                 {/* Timeline Nav Area */}
