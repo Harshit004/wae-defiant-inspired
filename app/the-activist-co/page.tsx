@@ -640,7 +640,7 @@ export default function Home() {
                   </div>
 
                   {/* Icon — fixed 128px container so all titles align */}
-                  <div style={{ height: "128px", display: "flex", alignItems: "flex-start", marginBottom: "20px" }}>
+                  <div style={{ height: "128px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
                     <Image
                       src={isHovered ? card.whiteIcon : card.blackIcon}
                       alt={card.title}
