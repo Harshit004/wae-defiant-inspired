@@ -406,7 +406,7 @@ export default function Home() {
 
           {/* Block 1: Our Approach */}
           <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-24 lg:gap-32">
-            <div className="w-full md:w-[40%] flex flex-col pt-2">
+            <div className="w-full md:w-[40%] flex flex-col">
               <p className="font-normal text-[14px] leading-[100%] text-[#00000099] uppercase mb-2">OUR APPROACH</p>
               <h2 className="font-medium text-[36px] leading-[110%] text-black tracking-tight">
                 Our Green Is Blue
@@ -426,7 +426,7 @@ export default function Home() {
 
           {/* Block 2: Our Ideas */}
           <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-24 lg:gap-32">
-            <div className="w-full md:w-[40%] flex flex-col pt-2">
+            <div className="w-full md:w-[40%] flex flex-col">
               <p className="font-normal text-[14px] leading-[100%] text-[#00000099] uppercase mb-2">OUR IDEAS</p>
               <h2 className="font-medium text-[36px] leading-[110%] text-black tracking-tight">
                 Blue Innovation
