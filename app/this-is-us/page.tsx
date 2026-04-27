@@ -313,7 +313,7 @@ const TimelineSection = () => {
     return (
         <section className="w-full bg-[#f2f2f2] px-[8.541%] py-[120px] font-['Inter_Tight']">
             <div className="max-w-[1440px] mx-auto w-full">
-                <h2 className="text-[36px] md:text-[44px] font-normal leading-[110%] text-black tracking-tight mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>WAE Chronicle</h2>
+                <h2 className="text-[36px] md:text-[44px] font-normal leading-[110%] text-black tracking-tight mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>WAE Chronicle</h2>
                 <p className="text-[16px] font-normal text-black mb-20">From Intent to Impact</p>
 
                 {/* Timeline Nav Area */}
@@ -764,7 +764,7 @@ export default function Home() {
 
             {/* 3. Our Business Model Section */}
             <section className="w-full bg-white px-[9.72%] py-[120px] font-['Inter_Tight']">
-                <h2 className="text-[32px] md:text-[40px] font-medium leading-[110%] mb-16 text-black" style={{ fontFamily: "Manrope, sans-serif" }}>
+                <h2 className="text-[32px] md:text-[40px] font-medium leading-[110%] mb-16 text-black" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                     Our Business Model
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-[80px] relative items-start">
