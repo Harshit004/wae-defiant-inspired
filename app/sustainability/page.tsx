@@ -394,7 +394,7 @@ export default function Home() {
       >
         <div className="flex justify-between items-start">
           {/* Left Column */}
-          <div style={{ width: "20.83%" }}>
+          <div style={{ width: "20.83vw" }}>
             <h2 style={{
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
@@ -409,7 +409,7 @@ export default function Home() {
           </div>
 
           {/* Middle Column */}
-          <div style={{ width: "20.83%" }}>
+          <div style={{ width: "20.83vw" }}>
             <p style={{
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
@@ -424,7 +424,7 @@ export default function Home() {
           </div>
 
           {/* Right Column */}
-          <div style={{ width: "20.83%" }}>
+          <div style={{ width: "20.83vw" }}>
             <p style={{
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
