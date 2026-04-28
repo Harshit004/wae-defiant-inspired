@@ -18,10 +18,14 @@ const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
   href?: string;
+  variant?: "default" | "inverted";
 }
 
-const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
+const HoverButton: FC<HoverButtonProps> = ({ children, href, variant = "default" }) => {
   const [hovered, setHovered] = useState<boolean>(false);
+
+  // Define styles based on variant
+  const isDefault = variant === "default";
 
   const buttonContent = (
     <button
@@ -35,17 +39,23 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
         alignItems: "center",
         gap: "8px",
         fontFamily: "'Inter Tight', sans-serif",
-        fontWeight: 500, // This fontWeight is for the button text itself (like "Know More")
-        fontSize: "10px",
+        fontWeight: 500,
+        fontSize: "14px",
         lineHeight: "100%",
-        textTransform: "uppercase",
-        backgroundColor: hovered ? "#000" : "#f2f2f2",
-        border: "1px solid #000",
+        // textTransform: "uppercase",
+        backgroundColor: isDefault
+          ? (hovered ? "#000" : "#f2f2f2")
+          : (hovered ? "#fff" : "transparent"),
+        border: isDefault
+          ? "1px solid #000"
+          : "1px solid #fff",
         cursor: "pointer",
-        color: hovered ? "#fff" : "#000",
+        color: isDefault
+          ? (hovered ? "#fff" : "#000")
+          : (hovered ? "#000" : "#fff"),
       }}
     >
-      {children(hovered)} {/* This is where the error happens if children is not a function */}
+      {children(hovered)}
     </button>
   );
 
@@ -440,16 +450,111 @@ export default function Home() {
         </div>
       </section>
 
+      {/* THIS LEADS TO SECTION */}
+      <section
+        className="w-full bg-[#f2f2f2]"
+        style={{ padding: "120px 9.72%" }}
+      >
+        {/* Headline */}
+        <p style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 500,
+          fontSize: "32px",
+          lineHeight: "120%",
+          letterSpacing: "0%",
+          margin: 0
+        }}>
+          This leads to..
+        </p>
+
+        {/* 50px Gap */}
+        <div style={{ height: "50px" }} />
+
+        {/* Placeholder Div */}
+        <div>
+          {/* We will care about this later */}
+        </div>
+
+        {/* 67px Gap */}
+        <div style={{ height: "67px" }} />
+
+        {/* Impact Description */}
+        <p style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 400,
+          fontSize: "18px",
+          lineHeight: "100%",
+          letterSpacing: "0%",
+          margin: 0
+        }}>
+          Every bottle procured through your supply chain is a direct contribution to aquifer depletion. <br />
+          The exposure is financial, reputational, and regulatory - and it is{" "}
+          <span style={{
+            fontWeight: 600
+          }}>
+            growing.
+          </span>
+        </p>
+      </section>
+
+      {/* ENTERPRISE SYSTEMS SECTION */}
+      <section
+        className="w-full bg-[#000000] text-white"
+        style={{ padding: "120px 9.72%" }}
+      >
+        <div>
+          <p style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: "24px",
+            lineHeight: "120%",
+            letterSpacing: "0%",
+            margin: 0
+          }}>
+            WAE builds enterprise-grade, point-of-use water purification systems that make bottled water redundant - commercially, operationally, and environmentally.
+          </p>
+
+          <div style={{ height: "24px" }} />
+
+          <p style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: "24px",
+            lineHeight: "120%",
+            letterSpacing: "0%",
+            margin: 0
+          }}>
+            The model is simple: deliver pure, healthy water at the point of consumption, eliminate the supply chain that causes harm, and do it at one-tenth the cost of bottled water.
+          </p>
+
+          <div style={{ height: "60px" }} />
+
+          <HoverButton href="/our-portfolio" variant="inverted">
+            {(hovered) => (
+              <>
+                <span style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "12px",
+                }}>
+                  Know More
+                </span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </>
+            )}
+          </HoverButton>
+        </div>
+      </section>
+
       {/* FOOTER SECTION */}
-      {/* This div now appears after the section container (which has margin) */}
-      <div style={{ position: "relative", zIndex: 10 }}> {/* zIndex 10 here is fine as it's not overlapping a fixed element */}
+      <div style={{ position: "relative", zIndex: 10 }}>
         <Footer />
       </div>
 
       {/* INLINE CSS for hover and arrow animations */}
       <style jsx>{`
-        /* Removed unused styles like product-grid, product-title, product-cell, placeholder-img */
-
         .c--anim-btn {
           display: flex;
           align-items: center;
@@ -509,12 +614,10 @@ export default function Home() {
       `}</style>
 
       {/* Global Styles */}
-      {/* Note: If you re-introduce smooth scrolling, be mindful of conflicts with custom JS */}
       <style jsx global>{`
         html {
-          /* scroll-behavior: smooth; *//* Commented out as per previous discussion */
+          /* scroll-behavior: smooth; */
         }
-         /* Ensure body doesn't have extra margins/padding */
         body {
             margin: 0;
             padding: 0;
