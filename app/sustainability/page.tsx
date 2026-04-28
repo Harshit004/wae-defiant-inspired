@@ -147,6 +147,19 @@ export default function Home() {
   ]
   const lineCount = Math.min(productsItems.length, blueprintItems.length) // Note: lineCount is calculated but not used
 
+  // Brand logos for marquee
+  const brandLogos = [
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3f2f7aee-3341-40f0-83b0-9929fed77700/public",
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e2da048e-651a-463e-2689-58d8418b7700/public",
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/acad2e03-7926-494c-2661-e2ad69e80700/public",
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/84053b5e-b615-468f-2117-8b76f26e1d00/public",
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9436a14a-faf2-4320-7f65-6f5684bfb600/public",
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76665ccd-981b-4323-13f3-aae079a46500/public",
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d183040a-3d81-43a8-09ff-31cd03319f00/public",
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d9eb2793-e98a-45d8-1c96-a3d3985c3c00/public",
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2c5a5b3a-4e77-43fb-3735-3e9446a9a500/public"
+  ]
+
   return (
     <main className="relative pb-[40px]">
       {/* HEADER (Not Fixed in this version) */}
@@ -352,7 +365,27 @@ export default function Home() {
         </div>
       </section>
 
-
+      {/* BRAND LOGO MARQUEE SECTION */}
+      <section
+        className="w-full bg-[#f2f2f2] overflow-hidden"
+        style={{ padding: "80px 9.72%" }}
+      >
+        <div className="marquee-container relative">
+          <div className="marquee-content flex items-center" style={{ gap: "6.94vw" }}>
+            {[...brandLogos, ...brandLogos].map((logo, index) => (
+              <div key={index} className="flex-shrink-0">
+                <Image
+                  src={logo}
+                  alt={`Brand Logo ${index % 9 + 1}`}
+                  height={44}
+                  width={100} // width will be adjusted by image-rendering and css but we need a baseline for Next.js Image
+                  className="h-[44px] w-auto max-w-none grayscale"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* FOOTER SECTION */}
       {/* This div now appears after the section container (which has margin) */}
@@ -397,6 +430,28 @@ export default function Home() {
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
+        }
+
+        /* Marquee Animation */
+        .marquee-container {
+          overflow: hidden;
+          width: 100%;
+        }
+        .marquee-content {
+          display: flex;
+          width: fit-content;
+          animation: slide 30s linear infinite;
+        }
+        @keyframes slide {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .marquee-container:hover .marquee-content {
+          animation-play-state: paused;
         }
       `}</style>
 
