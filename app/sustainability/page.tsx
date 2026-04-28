@@ -387,6 +387,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ABOUT THE ORGANISATION SECTION */}
+      <section
+        className="w-full bg-white"
+        style={{ padding: "120px 9.72%" }}
+      >
+        <div className="flex justify-between items-start">
+          {/* Left Column */}
+          <div style={{ width: "20.83%" }}>
+            <h2 style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "32px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+              textTransform: "uppercase",
+              margin: 0
+            }}>
+              About the organisation
+            </h2>
+          </div>
+
+          {/* Middle Column */}
+          <div style={{ width: "20.83%" }}>
+            <p style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "16px",
+              lineHeight: "120%",
+              letterSpacing: "0%",
+              color: "#00000099",
+              margin: 0
+            }}>
+              We are a sustainability-driven activist firm enabling organisations to reduce their environmental footprint, embed ethical practices, and transition towards regenerative business models.
+            </p>
+          </div>
+
+          {/* Right Column */}
+          <div style={{ width: "20.83%" }}>
+            <p style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "16px",
+              lineHeight: "120%",
+              letterSpacing: "0%",
+              color: "#00000099",
+              margin: 0
+            }}>
+              The world is not running low on water. It is running out of patience for those who waste it.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER SECTION */}
       {/* This div now appears after the section container (which has margin) */}
       <div style={{ position: "relative", zIndex: 10 }}> {/* zIndex 10 here is fine as it's not overlapping a fixed element */}
