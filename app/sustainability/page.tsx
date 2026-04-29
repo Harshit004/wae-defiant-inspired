@@ -1,6 +1,6 @@
 "use client"
 
-import type { FC } from "react"
+import type { FC, ReactNode } from "react"
 import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
@@ -606,6 +606,316 @@ const CommitmentsGrid: FC = () => {
   );
 };
 
+/**
+ * Water Visual Section: Full-width background image section
+ */
+const WaterVisualSection: FC = () => {
+  return (
+    <section
+      style={{
+        width: "100vw",
+        height: "650px",
+        backgroundImage: "url('https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ad6f4a7c-2cd4-49d6-fe20-30eb48df2c00/public')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        position: "relative",
+        left: "50%",
+        right: "50%",
+        marginLeft: "-50vw",
+        marginRight: "-50vw"
+      }}
+    >
+      {/* Black Overlay from Left to Right */}
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: "45.138vw",
+          background: "linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.779088) 40.38%, rgba(0, 0, 0, 0) 100%)",
+          zIndex: 1
+        }}
+      />
+      <div
+        className="absolute inset-0 flex flex-col justify-start items-start"
+        style={{ padding: "120px 9.72%", zIndex: 2 }}
+      >
+        <h2 style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 500,
+          fontSize: "40px",
+          lineHeight: "120%",
+          letterSpacing: "0%",
+          color: "#FFFFFF",
+          margin: 0
+        }}>
+          Earth, Our Only Shareholder
+        </h2>
+
+        <div style={{ height: "138px" }} />
+
+        <div style={{ width: "40.83vw" }}>
+          <p style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 400,
+            fontSize: "24px",
+            lineHeight: "120%",
+            letterSpacing: "0%",
+            color: "#FFFFFF",
+            margin: 0
+          }}>
+            We&apos;re excited to share the progress we have made, reflecting our commitment to sustainability.
+          </p>
+          <div style={{ height: "24px" }} />
+          <p style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 400,
+            fontSize: "24px",
+            lineHeight: "120%",
+            letterSpacing: "0%",
+            color: "#FFFFFF",
+            margin: 0
+          }}>
+            Explore them to see how we&apos;re making a positive impact on the environment, society &amp; governance.
+          </p>
+        </div>
+
+        <div style={{ height: "60px" }} />
+
+        <button className="group relative border border-white text-white px-6 py-3 transition-colors duration-300 hover:bg-white hover:text-black flex items-center gap-2">
+          <span style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: "14px",
+            textTransform: "uppercase"
+          }}>
+            DOWNLOAD REPORT
+          </span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+            <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </section>
+  );
+};
+
+/**
+ * Compliance Requirement Section: Data cards with hover effects
+ */
+const ComplianceCard: FC<{
+  iconDefault: string,
+  iconHover: string,
+  iconSize: number,
+  children: (hovered: boolean) => ReactNode
+}> = ({ iconDefault, iconHover, iconSize, children }) => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="bg-white p-8 flex flex-col justify-between transition-colors duration-500 cursor-pointer"
+      style={{
+        backgroundColor: hovered ? "#000000" : "#FFFFFF",
+        height: "100%"
+      }}
+    >
+      <div style={{ width: `${iconSize}px`, height: `${iconSize}px` }}>
+        <img
+          src={hovered ? iconHover : iconDefault}
+          alt="icon"
+          className="w-full h-full object-contain transition-all duration-500"
+        />
+      </div>
+
+      <div style={{
+        marginTop: "40px",
+        fontFamily: "'Inter Tight', sans-serif",
+        fontWeight: 400,
+        fontSize: "18px",
+        lineHeight: "125%",
+        color: hovered ? "#FFFFFF" : "#00000099",
+        transition: "color 0.5s ease"
+      }}>
+        {children(hovered)}
+      </div>
+    </div>
+  );
+};
+
+const ComplianceRequirementSection: FC = () => {
+  const Highlight: FC<{ hovered: boolean, children: ReactNode }> = ({ hovered, children }) => (
+    <span style={{
+      fontWeight: 500,
+      color: hovered ? "#FFF" : "#000",
+      transition: "color 0.5s ease"
+    }}>
+      {children}
+    </span>
+  );
+
+  return (
+    <section className="w-full bg-[#f2f2f2]" style={{ padding: "120px 9.72%" }}>
+      <div
+        className="flex"
+        style={{ gap: "2.8372vw", alignItems: "flex-start" }}
+      >
+        {/* Left Column */}
+        <div style={{ width: "29.5138vw" }} className="flex flex-col">
+          <h3 style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: "24px",
+            lineHeight: "100%",
+            color: "#00000099",
+            margin: 0,
+            marginBottom: "20px"
+          }}>
+            Water stewardship is no longer a values statement. It is a compliance requirement.
+          </h3>
+
+          <div style={{ height: "461px" }}>
+            <ComplianceCard
+              iconSize={100}
+              iconDefault="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a9b742b7-ac33-464c-a85c-f03844b51400/public"
+              iconHover="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c8568be0-803f-41b4-5da9-3aa124b55400/public"
+            >
+              {(hovered) => (
+                <div style={{ marginTop: "auto" }}>
+                  <Highlight hovered={hovered}>6,000+</Highlight> companies have committed to science-based water targets <Highlight hovered={hovered}>(SBTN, 2024)</Highlight>
+                </div>
+              )}
+            </ComplianceCard>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div
+          style={{ width: "calc(22.708vw * 2 + 2.8372vw)" }}
+          className="flex flex-col"
+        >
+          {/* Top Cards Row */}
+          <div className="flex" style={{ gap: "2.8372vw" }}>
+            <div style={{ width: "22.708vw", height: "250px" }}>
+              <ComplianceCard
+                iconSize={69}
+                iconDefault="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3ff36ad7-4ef3-4e02-2660-43fc854e0a00/public"
+                iconHover="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5a7a3ae5-6631-4631-43a6-0fcca8326900/public"
+              >
+                {(hovered) => (
+                  <>The CEO Water Mandate nearly doubled in size in 2024 - now endorsed by close to <Highlight hovered={hovered}>400 organisations</Highlight></>
+                )}
+              </ComplianceCard>
+            </div>
+            <div style={{ width: "22.708vw", height: "250px" }}>
+              <ComplianceCard
+                iconSize={69}
+                iconDefault="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a7ce22a4-067c-4131-fefd-60f71376af00/public"
+                iconHover="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/baf9f1bb-ac8e-45c9-bd0e-d1927ae3ae00/public"
+              >
+                {(hovered) => (
+                  <><Highlight hovered={hovered}>CSRD, GRI 303, TNFD and CDP</Highlight> Water Security all now mandate detailed water risk disclosure</>
+                )}
+              </ComplianceCard>
+            </div>
+          </div>
+
+          <div style={{ height: "40px" }} />
+
+          {/* Card 4 (Wide) */}
+          <div style={{ width: "100%", height: "200px" }}>
+            <ComplianceCard
+              iconSize={69}
+              iconDefault="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/21589712-bd38-43ad-8774-ddfd29334a00/public"
+              iconHover="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a770e5ff-88cc-4417-c2cd-83208f65f100/public"
+            >
+              {(hovered) => (
+                <><Highlight hovered={hovered}>34%</Highlight> of consumers expect the companies they engage with to prioritise water conservation <Highlight hovered={hovered}>(PwC, 2024)</Highlight></>
+              )}
+            </ComplianceCard>
+          </div>
+
+          <div style={{ height: "20px" }} />
+
+          {/* Footer Text */}
+          <p style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: "24px",
+            lineHeight: "100%",
+            color: "#00000099",
+            margin: 0,
+            width: "100%"
+          }}>
+            The organisations moving now are building structural advantage. Those waiting are accumulating liability.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/**
+ * Connect Section: Final CTA section before footer
+ */
+const ConnectSection: FC = () => {
+  return (
+    <section
+      style={{
+        backgroundColor: "#000000",
+        color: "#FFFFFF",
+        padding: "120px 9.72%"
+      }}
+    >
+      <div className="flex justify-between items-start">
+        {/* Left Column */}
+        <div style={{ maxWidth: "480px" }}>
+          <h2 style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 500,
+            fontSize: "24px",
+            lineHeight: "120%",
+            margin: 0
+          }}>
+            Connect with us for a brighter tomorrow
+          </h2>
+        </div>
+
+        {/* Right Column */}
+        <div className="flex flex-col items-start">
+          <p style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 400,
+            fontSize: "16px",
+            lineHeight: "120%",
+            margin: 0
+          }}>
+            Let&apos;s create meaningful, measurable impact together.
+          </p>
+
+          <div style={{ height: "24px" }} />
+
+          <button className="group border border-white px-6 py-3 transition-all duration-300 hover:bg-white hover:text-black flex items-center gap-2">
+            <span style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "14px",
+              // textTransform: "uppercase"
+            }}>
+              Get in touch
+            </span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 
 export default function Home() {
   // State variables
@@ -1093,6 +1403,15 @@ export default function Home() {
 
       {/* SUSTAINABLE SUCCESS SECTION */}
       <SustainableSuccessSection />
+
+      {/* WATER VISUAL SECTION */}
+      <WaterVisualSection />
+
+      {/* COMPLIANCE REQUIREMENT SECTION */}
+      <ComplianceRequirementSection />
+
+      {/* CONNECT SECTION */}
+      <ConnectSection />
 
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>
