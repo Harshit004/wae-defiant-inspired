@@ -4,7 +4,7 @@ import type { FC, ReactNode } from "react"
 import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, useInView, animate } from "framer-motion"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
@@ -858,6 +858,57 @@ const ComplianceRequirementSection: FC = () => {
 };
 
 /**
+ * CountUp Component: Animates a numeric value from 0 to target
+ */
+const CountUp: FC<{ value: string; duration?: number }> = ({ value, duration = 2 }) => {
+  const [count, setCount] = useState(0);
+  const nodeRef = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(nodeRef, { once: true, margin: "-100px" });
+
+  useEffect(() => {
+    if (isInView) {
+      // Parse the number and surrounding characters
+      const match = value.match(/([\d,.]+)/);
+      if (!match) return;
+
+      const numStr = match[0].replace(/,/g, "");
+      const target = parseFloat(numStr);
+      const prefix = value.substring(0, value.indexOf(match[0]));
+      const suffix = value.substring(value.indexOf(match[0]) + match[0].length);
+
+      const controls = animate(0, target, {
+        duration: duration,
+        ease: [0.16, 1, 0.3, 1], // premium cubic-bezier
+        onUpdate: (latest) => {
+          setCount(latest);
+        },
+      });
+
+      return () => controls.stop();
+    }
+  }, [value, duration, isInView]);
+
+  // Format the number part (keep decimals if original has them)
+  const formatNumber = (num: number) => {
+    const hasDecimal = value.includes(".");
+    if (hasDecimal) {
+      return num.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 1 });
+    }
+    return Math.floor(num).toLocaleString();
+  };
+
+  const match = value.match(/([\d,.]+)/);
+  const prefix = match ? value.substring(0, value.indexOf(match[0])) : "";
+  const suffix = match ? value.substring(value.indexOf(match[0]) + match[0].length) : "";
+
+  return (
+    <span ref={nodeRef}>
+      {prefix}{formatNumber(count)}{suffix}
+    </span>
+  );
+};
+
+/**
  * This Leads To Section: Grid of images and alarming statistics
  */
 const ThisLeadsToSection: FC = () => {
@@ -932,7 +983,7 @@ const ThisLeadsToSection: FC = () => {
                   width: "250px",
                   verticalAlign: "middle"
                 }}>
-                  {stat.num}
+                  <CountUp value={stat.num} />
                 </span>
                 <span style={{
                   fontFamily: "'Inter Tight', sans-serif",
