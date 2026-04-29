@@ -559,12 +559,8 @@ const CommitmentsGrid: FC = () => {
           {/* Default Dark Overlay for readability */}
           {/* Precise Dark Gradient Overlay */}
           <div
+            className="absolute left-0 right-0 bottom-0 transition-all duration-1000 ease-in-out h-[102px] group-hover:h-[212px]"
             style={{
-              position: "absolute",
-              left: 0,
-              right: 0,
-              bottom: 0,
-              height: "102px",
               background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.779088) 40.38%, #000000 100%)",
               zIndex: 1
             }}
