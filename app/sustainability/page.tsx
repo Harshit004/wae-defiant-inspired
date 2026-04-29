@@ -70,6 +70,197 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, variant = "default"
 };
 
 
+
+/**
+ * Helping Clients Section: A carousel with hover-to-expand cards
+ */
+const HelpingClientsSection: FC = () => {
+  // First image remains expanded by default
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const sharedText = {
+    beforeHover: "Advanced filtration systems deliver certified, high-quality drinking water exactly where it’s needed—eliminating dependence on bottled supply chains... ",
+    afterHover: "Advanced filtration systems deliver certified, high-quality drinking water exactly where it’s needed—eliminating dependence on bottled supply chains. This ensures consistent quality, reduces operational complexity, and brings control back to the point of consumption."
+  };
+
+  const cards = [
+    {
+      overlayTitle: "Purify at the source of use",
+      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f7825f8c-a05f-4ad0-60e7-e52b3f9b1500/public",
+    },
+    {
+      overlayTitle: "Cut costs by up to 90%",
+      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f7825f8c-a05f-4ad0-60e7-e52b3f9b1500/public",
+    },
+    {
+      overlayTitle: "Embed circular principles",
+      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f7825f8c-a05f-4ad0-60e7-e52b3f9b1500/public",
+    },
+  ];
+
+  const handleNext = () => {
+    if (currentIndex < 1) setCurrentIndex(1);
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) setCurrentIndex(0);
+  };
+
+  return (
+    <section
+      className="w-full bg-[#f2f2f2] overflow-hidden"
+      style={{ padding: "120px 9.72%" }}
+    >
+      <div className="flex justify-between items-center mb-20">
+        <h2 style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 500,
+          fontSize: "40px",
+          lineHeight: "120%",
+          letterSpacing: "0%",
+          margin: 0
+        }}>
+          We are helping clients
+        </h2>
+        <div className="flex gap-4">
+          <button
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+            style={{ opacity: currentIndex === 0 ? 0.3 : 1, cursor: currentIndex === 0 ? "default" : "pointer" }}
+            className="w-[44px] h-[44px] border border-[#00000033] flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            onClick={handleNext}
+            disabled={currentIndex === 1}
+            style={{ opacity: currentIndex === 1 ? 0.3 : 1, cursor: currentIndex === 1 ? "default" : "pointer" }}
+            className="w-[44px] h-[44px] border border-[#00000033] flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div className="relative" style={{ minHeight: "650px" }}>
+        <motion.div
+          className="flex"
+          style={{ gap: "2.77vw" }}
+          onMouseLeave={() => setHoveredIndex(0)}
+          animate={{ x: `calc(-${currentIndex * (25 + 2.77)}vw)` }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {cards.map((card, index) => {
+            const isHovered = hoveredIndex === index;
+            return (
+              <motion.div
+                key={index}
+                className="flex-shrink-0"
+                style={{ width: isHovered ? (index === 2 ? "52.79vw" : "45.83vw") : "25vw" }}
+                animate={{ width: isHovered ? (index === 2 ? "52.79vw" : "45.83vw") : "25vw" }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                onMouseEnter={() => setHoveredIndex(index)}
+              >
+                {/* Image Container */}
+                <div
+                  className="relative overflow-hidden group cursor-pointer"
+                  style={{ height: "461px" }}
+                >
+                  <Image
+                    src={card.image}
+                    alt={card.overlayTitle}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20" />
+                  <div className="absolute bottom-14 left-10 right-10">
+                    <h3 style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "32px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      color: "#FFFFFF",
+                      margin: 0
+                    }}>
+                      {card.overlayTitle}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Textbox below */}
+                <div style={{ marginTop: "32px", maxWidth: isHovered ? "41.52vw" : "none" }}>
+                  <motion.div
+                    animate={{ height: isHovered ? "auto" : "80px" }}
+                  >
+                    <p style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "18px",
+                      lineHeight: "130%",
+                      letterSpacing: "0%",
+                      color: "#00000099",
+                      margin: 0
+                    }}>
+                      {isHovered ? (
+                        sharedText.afterHover
+                      ) : (
+                        <>
+                          {sharedText.beforeHover}
+                          <span style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 500,
+                            fontSize: "18px",
+                            lineHeight: "100%",
+                            color: "#00000099"
+                          }}>
+                            read more
+                          </span>
+                        </>
+                      )}
+                    </p>
+                  </motion.div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+
+      <div style={{ height: "60px" }} />
+
+      <div className="flex">
+        <HoverButton href="/this-is-us">
+          {(hovered) => (
+            <>
+              <span style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "14px",
+              }}>
+                Know More
+              </span>
+              <svg
+                width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                className="transition-transform duration-300"
+                style={{ transform: hovered ? "translate(2px, -2px)" : "none" }}
+              >
+                <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </>
+          )}
+        </HoverButton>
+      </div>
+    </section>
+  );
+};
+
+
 export default function Home() {
   // State variables
   const [activeSection, setActiveSection] = useState(0)
@@ -547,6 +738,9 @@ export default function Home() {
           </HoverButton>
         </div>
       </section>
+
+      {/* HELPING CLIENTS SECTION */}
+      <HelpingClientsSection />
 
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>
