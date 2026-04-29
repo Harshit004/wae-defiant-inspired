@@ -868,6 +868,8 @@ const ThisLeadsToSection: FC = () => {
     { num: "67%", text: "people worldwide will live in water-stressed regions by 2025" },
   ];
 
+  const totalHeight = 522; // 225px (R1) + 36px (gap) + 261px (R2)
+
   return (
     <section className="w-full bg-[#f2f2f2]" style={{ padding: "120px 9.72%" }}>
       <h2 style={{
@@ -883,16 +885,16 @@ const ThisLeadsToSection: FC = () => {
 
       <div className="flex justify-between items-start gap-[8.33vw]">
         {/* Left Column: Image Grid */}
-        <div style={{ width: "41vw" }}>
-          <div className="flex gap-5 mb-5" style={{ height: "350px" }}>
-            <div className="flex-1 relative">
+        <div style={{ width: "33.75vw" }}>
+          <div className="flex" style={{ height: "225px", gap: "2.5vw", marginBottom: "36px" }}>
+            <div style={{ width: "15.625vw", height: "225px" }} className="relative">
               <img
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42a74203-aa22-41c1-7642-aa46d8543a00/public"
                 alt="Tap water"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="flex-1 relative">
+            <div style={{ width: "15.625vw", height: "225px" }} className="relative">
               <img
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b00473f9-2a5b-435f-a80c-50b36ce10600/public"
                 alt="Pouring water"
@@ -900,7 +902,7 @@ const ThisLeadsToSection: FC = () => {
               />
             </div>
           </div>
-          <div style={{ width: "100%", height: "284px" }}>
+          <div style={{ width: "33.75vw", height: "261px" }}>
             <img
               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/16f55209-2340-4b05-cd86-4ee6a92bbb00/public"
               alt="Plastic bottles"
@@ -910,37 +912,43 @@ const ThisLeadsToSection: FC = () => {
         </div>
 
         {/* Right Column: Statistics */}
-        <div style={{ width: "38.88vw" }} className="flex flex-col">
+        <div style={{ width: "41.3149vw", height: `${totalHeight}px` }} className="flex flex-col justify-between">
           {stats.map((stat, index) => (
-            <div key={index}>
-              <div className="flex items-center justify-between py-10" style={{ borderTop: index === 0 ? "none" : "1px solid #0000001a" }}>
+            <div key={index} className="w-full">
+              <div
+                className="flex items-center justify-between"
+                style={{
+                  borderTop: index === 0 ? "none" : "1px solid #0000001a",
+                  paddingTop: index === 0 ? "0" : "20px",
+                  paddingBottom: "20px"
+                }}
+              >
                 <span style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "64px",
-                  lineHeight: "100%",
+                  fontWeight: 300,
+                  fontSize: "70px",
+                  lineHeight: "110%",
                   color: "#000000",
-                  width: "250px"
+                  width: "250px",
+                  verticalAlign: "middle"
                 }}>
                   {stat.num}
                 </span>
                 <span style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "16px",
-                  lineHeight: "120%",
+                  fontWeight: 500,
+                  fontSize: "18px",
+                  lineHeight: "100%",
                   color: "#00000099",
                   flex: 1,
-                  maxWidth: "240px"
+                  maxWidth: "280px",
+                  verticalAlign: "middle"
                 }}>
                   {stat.text}
                 </span>
               </div>
-              {/* Vertical spacing handled by py-10 and border */}
             </div>
           ))}
-          {/* Final Divider */}
-          <div style={{ borderTop: "1px solid #0000001a" }} />
         </div>
       </div>
 
