@@ -85,8 +85,8 @@ const governanceCards = [
     id: "4.",
     title: "Sustainability Report",
     text: "We report plastic reduction, carbon savings, water conservation, and community impact with clarity. It's an open ledger of progress.",
-    blackIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/543f53c5-cc9a-4d0d-f38f-996bc2992400/public",
-    whiteIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/06cc4c83-6679-4e7b-9161-bdcfd83d7700/public",
+    blackIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/976d38c4-284a-4f72-2310-217258157f00/public",
+    whiteIcon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8e344915-956c-4554-3147-52cb1e58ef00/public",
   },
   {
     id: "5.",
@@ -603,9 +603,9 @@ export default function Home() {
               const isHovered = hoveredGovernanceCard === index;
               const iconDims = [
                 { w: 104, h: 104 },
-                { w: 99, h: 99 },
+                { w: 61.88, h: 80.94 },
                 { w: 87, h: 99 },
-                { w: 99, h: 99 },
+                { w: 61.88, h: 80.94 },
                 { w: 128, h: 128 },
               ][index];
               const isFirst = index === 0;
@@ -634,13 +634,13 @@ export default function Home() {
                     fontWeight: 500,
                     fontSize: "20px",
                     lineHeight: "100%",
-                    marginBottom: "40px",
+                    marginBottom: "38px",
                   }}>
                     {card.id}
                   </div>
 
-                  {/* Icon — fixed 128px container so all titles align */}
-                  <div style={{ height: "128px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
+                  {/* Icon — Fixed height container ensures vertical title alignment */}
+                  <div style={{ height: "128px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "61px" }}>
                     <Image
                       src={isHovered ? card.whiteIcon : card.blackIcon}
                       alt={card.title}
