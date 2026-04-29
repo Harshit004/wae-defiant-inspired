@@ -178,7 +178,7 @@ const HelpingClientsSection: FC = () => {
                 className="flex-shrink-0"
                 style={{ width: isHovered ? (index === cards.length - 1 ? "52.79vw" : "45.83vw") : "25vw" }}
                 animate={{ width: isHovered ? (index === cards.length - 1 ? "52.79vw" : "45.83vw") : "25vw" }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
                 onMouseEnter={() => setHoveredIndex(index)}
               >
                 {/* Image Container */}
@@ -858,6 +858,110 @@ const ComplianceRequirementSection: FC = () => {
 };
 
 /**
+ * This Leads To Section: Grid of images and alarming statistics
+ */
+const ThisLeadsToSection: FC = () => {
+  const stats = [
+    { num: "50%", text: "rise in corporate water withdrawals globally, even as the crisis deepens" },
+    { num: "$425B+", text: "in water-related financial risk reported by companies worldwide" },
+    { num: "$100B", text: "in business revenue currently at risk from water-related disruption (CDP, 2023)" },
+    { num: "67%", text: "people worldwide will live in water-stressed regions by 2025" },
+  ];
+
+  return (
+    <section className="w-full bg-[#f2f2f2]" style={{ padding: "120px 9.72%" }}>
+      <h2 style={{
+        fontFamily: "'Inter Tight', sans-serif",
+        fontWeight: 500,
+        fontSize: "32px",
+        lineHeight: "120%",
+        margin: 0,
+        marginBottom: "60px"
+      }}>
+        This leads to..
+      </h2>
+
+      <div className="flex justify-between items-start gap-[8.33vw]">
+        {/* Left Column: Image Grid */}
+        <div style={{ width: "41vw" }}>
+          <div className="flex gap-5 mb-5" style={{ height: "350px" }}>
+            <div className="flex-1 relative">
+              <img
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42a74203-aa22-41c1-7642-aa46d8543a00/public"
+                alt="Tap water"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex-1 relative">
+              <img
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b00473f9-2a5b-435f-a80c-50b36ce10600/public"
+                alt="Pouring water"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div style={{ width: "100%", height: "284px" }}>
+            <img
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/16f55209-2340-4b05-cd86-4ee6a92bbb00/public"
+              alt="Plastic bottles"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Right Column: Statistics */}
+        <div style={{ width: "38.88vw" }} className="flex flex-col">
+          {stats.map((stat, index) => (
+            <div key={index}>
+              <div className="flex items-center justify-between py-10" style={{ borderTop: index === 0 ? "none" : "1px solid #0000001a" }}>
+                <span style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "64px",
+                  lineHeight: "100%",
+                  color: "#000000",
+                  width: "250px"
+                }}>
+                  {stat.num}
+                </span>
+                <span style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "16px",
+                  lineHeight: "120%",
+                  color: "#00000099",
+                  flex: 1,
+                  maxWidth: "240px"
+                }}>
+                  {stat.text}
+                </span>
+              </div>
+              {/* Vertical spacing handled by py-10 and border */}
+            </div>
+          ))}
+          {/* Final Divider */}
+          <div style={{ borderTop: "1px solid #0000001a" }} />
+        </div>
+      </div>
+
+      <div style={{ height: "60px" }} />
+
+      <p style={{
+        fontFamily: "'Inter Tight', sans-serif",
+        fontWeight: 400,
+        fontSize: "18px",
+        lineHeight: "140%",
+        color: "#000000",
+        margin: 0
+      }}>
+        Every bottle procured through your supply chain is a direct contribution to aquifer depletion.<br />
+        The exposure is financial, reputational, and regulatory - and it is <strong style={{ fontWeight: 600 }}>growing.</strong>
+      </p>
+    </section>
+  );
+};
+
+/**
  * Connect Section: Final CTA section before footer
  */
 const ConnectSection: FC = () => {
@@ -1297,52 +1401,10 @@ export default function Home() {
         </div>
       </section>
 
+
+
       {/* THIS LEADS TO SECTION */}
-      <section
-        className="w-full bg-[#f2f2f2]"
-        style={{ padding: "120px 9.72%" }}
-      >
-        {/* Headline */}
-        <p style={{
-          fontFamily: "'Inter Tight', sans-serif",
-          fontWeight: 500,
-          fontSize: "32px",
-          lineHeight: "120%",
-          letterSpacing: "0%",
-          margin: 0
-        }}>
-          This leads to..
-        </p>
-
-        {/* 50px Gap */}
-        <div style={{ height: "50px" }} />
-
-        {/* Placeholder Div */}
-        <div>
-          {/* We will care about this later */}
-        </div>
-
-        {/* 67px Gap */}
-        <div style={{ height: "67px" }} />
-
-        {/* Impact Description */}
-        <p style={{
-          fontFamily: "'Inter Tight', sans-serif",
-          fontWeight: 400,
-          fontSize: "18px",
-          lineHeight: "100%",
-          letterSpacing: "0%",
-          margin: 0
-        }}>
-          Every bottle procured through your supply chain is a direct contribution to aquifer depletion. <br />
-          The exposure is financial, reputational, and regulatory - and it is{" "}
-          <span style={{
-            fontWeight: 600
-          }}>
-            growing.
-          </span>
-        </p>
-      </section>
+      <ThisLeadsToSection />
 
       {/* ENTERPRISE SYSTEMS SECTION */}
       <section
