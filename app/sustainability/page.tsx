@@ -94,17 +94,29 @@ const HelpingClientsSection: FC = () => {
       image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f7825f8c-a05f-4ad0-60e7-e52b3f9b1500/public",
     },
     {
+      overlayTitle: "Remove the footprint entirely",
+      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f7825f8c-a05f-4ad0-60e7-e52b3f9b1500/public",
+    },
+    {
       overlayTitle: "Embed circular principles",
       image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f7825f8c-a05f-4ad0-60e7-e52b3f9b1500/public",
     },
   ];
 
   const handleNext = () => {
-    if (currentIndex < 1) setCurrentIndex(1);
+    if (currentIndex < 2) {
+      const nextIndex = currentIndex + 1;
+      setCurrentIndex(nextIndex);
+      if (nextIndex === 2) setHoveredIndex(3);
+    }
   };
 
   const handlePrev = () => {
-    if (currentIndex > 0) setCurrentIndex(0);
+    if (currentIndex > 0) {
+      const prevIndex = currentIndex - 1;
+      setCurrentIndex(prevIndex);
+      if (prevIndex === 0) setHoveredIndex(0);
+    }
   };
 
   return (
@@ -136,8 +148,8 @@ const HelpingClientsSection: FC = () => {
           </button>
           <button
             onClick={handleNext}
-            disabled={currentIndex === 1}
-            style={{ opacity: currentIndex === 1 ? 0.3 : 1, cursor: currentIndex === 1 ? "default" : "pointer" }}
+            disabled={currentIndex === 2}
+            style={{ opacity: currentIndex === 2 ? 0.3 : 1, cursor: currentIndex === 2 ? "default" : "pointer" }}
             className="w-[44px] h-[44px] border border-[#00000033] flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -147,11 +159,14 @@ const HelpingClientsSection: FC = () => {
         </div>
       </div>
 
-      <div className="relative" style={{ minHeight: "650px" }}>
+      <div className="relative" style={{ minHeight: "640px" }}>
         <motion.div
           className="flex"
           style={{ gap: "2.77vw" }}
-          onMouseLeave={() => setHoveredIndex(0)}
+          onMouseLeave={() => {
+            if (currentIndex === 0) setHoveredIndex(0);
+            else if (currentIndex === 2) setHoveredIndex(3);
+          }}
           animate={{ x: `calc(-${currentIndex * (25 + 2.77)}vw)` }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
@@ -161,8 +176,8 @@ const HelpingClientsSection: FC = () => {
               <motion.div
                 key={index}
                 className="flex-shrink-0"
-                style={{ width: isHovered ? (index === 2 ? "52.79vw" : "45.83vw") : "25vw" }}
-                animate={{ width: isHovered ? (index === 2 ? "52.79vw" : "45.83vw") : "25vw" }}
+                style={{ width: isHovered ? (index === cards.length - 1 ? "52.79vw" : "45.83vw") : "25vw" }}
+                animate={{ width: isHovered ? (index === cards.length - 1 ? "52.79vw" : "45.83vw") : "25vw" }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 onMouseEnter={() => setHoveredIndex(index)}
               >
@@ -255,6 +270,102 @@ const HelpingClientsSection: FC = () => {
             </>
           )}
         </HoverButton>
+      </div>
+    </section>
+  );
+};
+
+/**
+ * Impact Section: Data cards with results
+ */
+const ImpactSection: FC = () => {
+  const impactData = [
+    { number: "1,012,120.25", label: <>Tonnes CO<sub>2</sub> Emissions Saved</> },
+    { number: "12,185.43", label: "Million Gallons Water Saved" },
+    { number: "22,253.65", label: "Tonnes Plastic Removed" },
+  ];
+
+  return (
+    <section className="w-full bg-white" style={{ padding: "120px 9.72%" }}>
+      <div>
+        <h2 style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 500,
+          fontSize: "40px",
+          lineHeight: "120%",
+          letterSpacing: "0%",
+          margin: 0,
+        }}>
+          Real Impact. Measurable Change.
+        </h2>
+        <div style={{ height: "12px" }} />
+        <p style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 400,
+          fontSize: "24px",
+          lineHeight: "100%",
+          letterSpacing: "0%",
+          color: "#000000",
+          margin: 0
+        }}>
+          Here’s a snapshot of the results we’ve helped our clients achieve.
+        </p>
+      </div>
+
+      <div style={{ height: "60px" }} />
+
+      <div className="flex" style={{ gap: "4.166vw" }}>
+        {impactData.map((item, index) => (
+          <div
+            key={index}
+            className="bg-black text-white flex flex-col justify-between items-start"
+            style={{
+              width: "24.07vw",
+              height: "220px",
+              position: "relative",
+              padding: "20px 24px"
+            }}
+          >
+            {/* Vertical Line */}
+            <div
+              style={{
+                position: "absolute",
+                left: "24px",
+                top: "20px",
+                bottom: "20px",
+                width: "1px",
+                backgroundColor: "#FFFFFF"
+              }}
+            />
+
+            <div style={{ marginLeft: "12px" }}>
+              <span style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 300,
+                fontSize: "40px",
+                lineHeight: "110%",
+                letterSpacing: "0%",
+                color: "#FFFFFF"
+              }}>
+                {item.number}
+              </span>
+            </div>
+
+            <div style={{ marginLeft: "12px" }}>
+              <p style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "16px",
+                lineHeight: "100%",
+                letterSpacing: "0%",
+                color: "#FFFFFF",
+                margin: 0
+              }}>
+                {item.label}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -741,6 +852,9 @@ export default function Home() {
 
       {/* HELPING CLIENTS SECTION */}
       <HelpingClientsSection />
+
+      {/* IMPACT SECTION */}
+      <ImpactSection />
 
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>
