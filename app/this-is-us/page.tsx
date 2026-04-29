@@ -349,7 +349,7 @@ const TimelineSection = () => {
                 {/* Content Area */}
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch mt-8 w-full">
                     {/* Image Column */}
-                    <div className="w-full lg:w-[45%]">
+                    <div className="w-full mr-[4.3055vw] lg:w-[45%]">
                         <div className="relative w-full md:w-[579px] h-[239px] bg-gray-200">
                             <Image
                                 src={timelineData[activeIndex].img}
@@ -1082,7 +1082,7 @@ export default function Home() {
 
                     {/* Left Column */}
                     <div className="w-full md:w-[45%] flex items-start">
-                        <h2 className="text-[36px] font-medium leading-[110%] text-white tracking-tight">
+                        <h2 className="text-[36px] font-normal leading-[110%] text-white tracking-tight">
                             Serving with Purpose
                         </h2>
                     </div>
@@ -1149,7 +1149,7 @@ export default function Home() {
 
                     {/* Left Column */}
                     <div className="w-full md:w-[45%] flex items-start">
-                        <h2 className="text-[36px] font-medium leading-[110%] text-white tracking-tight">
+                        <h2 className="text-[36px] font-normal leading-[110%] text-white tracking-tight">
                             Join Our Team
                         </h2>
                     </div>
