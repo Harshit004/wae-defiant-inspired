@@ -371,6 +371,241 @@ const ImpactSection: FC = () => {
   );
 };
 
+/**
+ * Sustainable Success Section: Case studies and stories
+ */
+const SustainableSuccessSection: FC = () => {
+  const volumes = [
+    {
+      vol: "Volume 1:",
+      title: "Greener Banking, Better Workplaces",
+      desc: "How BFSI organizations ditched plastic water jars for a cleaner, safer alternative",
+      href: "/sustainability-bfsi"
+    },
+    {
+      vol: "Volume 2:",
+      title: "Clean Hydration for High-Performance IT Teams",
+      desc: "How IT campuses moved away from plastic jars and never looked back",
+      href: "/sustainability-it"
+    },
+    {
+      vol: "Volume 3:",
+      title: "A Greener Stay for Every Guest",
+      desc: "How hospitality brands elevated their sustainability commitment, one dispenser at a time",
+      href: "#"
+    }
+  ];
+
+  return (
+    <section className="w-full bg-[#f2f2f2]" style={{ padding: "120px 9.72%" }}>
+      <h2 style={{
+        fontFamily: "'Inter Tight', sans-serif",
+        fontWeight: 500,
+        fontSize: "40px",
+        lineHeight: "120%",
+        letterSpacing: "0%",
+        margin: 0,
+        marginBottom: "80px"
+      }}>
+        From idea to sustainable success
+      </h2>
+
+      <div className="flex justify-between items-start">
+        {/* Left Column */}
+        <div style={{ width: "41.11vw", height: "707px" }}>
+          <img
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/973fa860-5492-4195-d819-b12b854f6c00/public"
+            alt="Sustainable success"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Right Column */}
+        <div
+          className="flex flex-col justify-between"
+          style={{ width: "37.361vw", height: "710px" }}
+        >
+          {volumes.map((item, index) => (
+            <div key={index} className="w-full">
+              <span style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "18px",
+                lineHeight: "100%",
+                color: "#00000099",
+                display: "block",
+                marginBottom: "36px"
+              }}>
+                {item.vol}
+              </span>
+
+              <h3 style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "18px",
+                lineHeight: "100%",
+                margin: 0,
+                marginBottom: "16px"
+              }}>
+                {item.title}
+              </h3>
+
+              <p style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "14px",
+                lineHeight: "110%",
+                color: "#00000099",
+                margin: 0,
+                marginBottom: "40px"
+              }}>
+                {item.desc}
+              </p>
+
+              <Link href={item.href}>
+                <button className="group flex items-center gap-2 border border-[#00000033] px-4 py-2 hover:bg-black hover:text-white transition-all duration-300">
+                  <span style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "14px",
+                  }}>
+                    Read the full story
+                  </span>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                    <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </Link>
+
+              {index < volumes.length - 1 && (
+                <div style={{ paddingBottom: "0px", marginTop: "24px" }}>
+                  <div style={{ borderBottom: "1px solid #00000033" }} />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* THREE COMMITMENTS HEADER */}
+      <div style={{ height: "120px" }} />
+      <div className="flex justify-center text-center">
+        <h2 style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 500,
+          fontSize: "40px",
+          lineHeight: "120%",
+          letterSpacing: "0%",
+          margin: 0,
+          whiteSpace: "nowrap",
+        }}>
+          Three commitments WAE helps your organisation make
+        </h2>
+      </div>
+      <div style={{ height: "60px" }} />
+
+      {/* COMMITMENTS GRID */}
+      <CommitmentsGrid />
+    </section>
+  );
+};
+
+/**
+ * Commitments Grid: Hoverable images with sliding text
+ */
+const CommitmentsGrid: FC = () => {
+  const commitments = [
+    {
+      title: "Water Stewardship",
+      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/22a17004-59d1-4bc3-1afc-421343a5fb00/public",
+      desc: "The global economy faces resource reckoning. WAE equips organisations to move from passive observers to active participants - developing hydration infrastructure that aligns with circular-economy principles and long-term resource resilience."
+    },
+    {
+      title: "Water Neutrality",
+      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1901bbae-c22a-402d-6191-7dae53a74f00/public",
+      desc: "Corporate water withdrawals are rising at the same time the crisis is deepening. WAE replaces bottled water programmes with sustainable hydration solutions that make organisations water-positive - reducing their global water footprint in a measurable, reportable way."
+    },
+    {
+      title: "Water Restoration",
+      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/87d6d3fa-ec46-4666-7785-e1edb92d6400/public",
+      desc: "By 2030, an estimated 1.8 billion people will live under conditions of acute water scarcity. WAE's Water Restoration Programme goes beyond neutrality - helping organisations actively balance and offset their water footprint through targeted strategies and independently verified outcomes."
+    }
+  ];
+
+  return (
+    <div
+      className="flex"
+      style={{
+        width: "100vw",
+        position: "relative",
+        left: "50%",
+        right: "50%",
+        marginLeft: "-50vw",
+        marginRight: "-50vw"
+      }}
+    >
+      {commitments.map((item, index) => (
+        <div
+          key={index}
+          className="relative group cursor-pointer overflow-hidden"
+          style={{ width: "33.333%", height: "448px" }}
+        >
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-full object-cover"
+          />
+
+          {/* Default Dark Overlay for readability */}
+          {/* Precise Dark Gradient Overlay */}
+          <div
+            style={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              bottom: 0,
+              height: "102px",
+              background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.779088) 40.38%, #000000 100%)",
+              zIndex: 1
+            }}
+          />
+
+          {/* Sliding Text Container */}
+          <div
+            className="absolute left-10 bottom-10 right-10 transition-transform duration-1000 ease-in-out translate-y-[calc(100%-20px)] group-hover:translate-y-0"
+            style={{ zIndex: 10 }}
+          >
+            <h4 style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "20px",
+              lineHeight: "100%",
+              color: "#FFF",
+              margin: 0,
+              marginBottom: "24px"
+            }}>
+              {item.title}
+            </h4>
+            <p
+              className="opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-in-out"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "18px",
+                lineHeight: "130%",
+                color: "#FFF",
+                margin: 0
+              }}
+            >
+              {item.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 
 export default function Home() {
   // State variables
@@ -855,6 +1090,9 @@ export default function Home() {
 
       {/* IMPACT SECTION */}
       <ImpactSection />
+
+      {/* SUSTAINABLE SUCCESS SECTION */}
+      <SustainableSuccessSection />
 
       {/* FOOTER SECTION */}
       <div style={{ position: "relative", zIndex: 10 }}>
