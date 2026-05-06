@@ -91,15 +91,11 @@ const HelpingClientsSection: FC = () => {
     },
     {
       overlayTitle: "Cut costs by up to 90%",
-      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f7825f8c-a05f-4ad0-60e7-e52b3f9b1500/public",
+      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/14d5fde0-1ebe-48a0-d66a-c6817e444100/public",
     },
     {
       overlayTitle: "Remove the footprint entirely",
-      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f7825f8c-a05f-4ad0-60e7-e52b3f9b1500/public",
-    },
-    {
-      overlayTitle: "Embed circular principles",
-      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f7825f8c-a05f-4ad0-60e7-e52b3f9b1500/public",
+      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c695e08f-c86b-4c76-d91d-8efb8f950700/public",
     },
   ];
 
@@ -302,7 +298,7 @@ const ImpactSection: FC = () => {
         <p style={{
           fontFamily: "'Inter Tight', sans-serif",
           fontWeight: 400,
-          fontSize: "24px",
+          fontSize: "16px",
           lineHeight: "100%",
           letterSpacing: "0%",
           color: "#000000",
@@ -318,7 +314,7 @@ const ImpactSection: FC = () => {
         {impactData.map((item, index) => (
           <div
             key={index}
-            className="bg-black text-white flex flex-col justify-between items-start"
+            className="bg-[#f2f2f2] text-black flex flex-col justify-between items-start"
             style={{
               width: "24.07vw",
               height: "220px",
@@ -334,7 +330,7 @@ const ImpactSection: FC = () => {
                 top: "20px",
                 bottom: "20px",
                 width: "1px",
-                backgroundColor: "#FFFFFF"
+                backgroundColor: "#000"
               }}
             />
 
@@ -345,7 +341,7 @@ const ImpactSection: FC = () => {
                 fontSize: "40px",
                 lineHeight: "110%",
                 letterSpacing: "0%",
-                color: "#FFFFFF"
+                color: "#000"
               }}>
                 {item.number}
               </span>
@@ -358,7 +354,7 @@ const ImpactSection: FC = () => {
                 fontSize: "16px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
-                color: "#FFFFFF",
+                color: "#000",
                 margin: 0
               }}>
                 {item.label}
@@ -655,7 +651,7 @@ const WaterVisualSection: FC = () => {
           <p style={{
             fontFamily: "'Inter Tight', sans-serif",
             fontWeight: 400,
-            fontSize: "24px",
+            fontSize: "18px",
             lineHeight: "120%",
             letterSpacing: "0%",
             color: "#FFFFFF",
@@ -667,7 +663,7 @@ const WaterVisualSection: FC = () => {
           <p style={{
             fontFamily: "'Inter Tight', sans-serif",
             fontWeight: 400,
-            fontSize: "24px",
+            fontSize: "18px",
             lineHeight: "120%",
             letterSpacing: "0%",
             color: "#FFFFFF",
@@ -762,8 +758,8 @@ const ComplianceRequirementSection: FC = () => {
         <div style={{ width: "29.5138vw" }} className="flex flex-col">
           <h3 style={{
             fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: "24px",
+            fontWeight: 400,
+            fontSize: "20px",
             lineHeight: "100%",
             color: "#00000099",
             margin: 0,
@@ -775,8 +771,8 @@ const ComplianceRequirementSection: FC = () => {
           <div style={{ height: "461px" }}>
             <ComplianceCard
               iconSize={100}
-              iconDefault="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a9b742b7-ac33-464c-a85c-f03844b51400/public"
-              iconHover="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c8568be0-803f-41b4-5da9-3aa124b55400/public"
+              iconDefault="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c8568be0-803f-41b4-5da9-3aa124b55400/public"
+              iconHover="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a9b742b7-ac33-464c-a85c-f03844b51400/public"
             >
               {(hovered) => (
                 <div style={{ marginTop: "auto" }}>
@@ -838,8 +834,8 @@ const ComplianceRequirementSection: FC = () => {
           {/* Footer Text */}
           <p style={{
             fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: "24px",
+            fontWeight: 400,
+            fontSize: "20px",
             lineHeight: "100%",
             color: "#00000099",
             margin: 0,
