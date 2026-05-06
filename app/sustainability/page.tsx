@@ -763,7 +763,7 @@ const ComplianceRequirementSection: FC = () => {
             lineHeight: "100%",
             color: "#00000099",
             margin: 0,
-            marginBottom: "20px"
+            marginBottom: "40px"
           }}>
             Water stewardship is no longer a values statement. It is a compliance requirement.
           </h3>
