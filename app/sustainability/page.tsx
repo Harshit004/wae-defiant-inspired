@@ -1465,7 +1465,7 @@ export default function Home() {
         <div>
           <p style={{
             fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
+            fontWeight: 400,
             fontSize: "24px",
             lineHeight: "120%",
             letterSpacing: "0%",
