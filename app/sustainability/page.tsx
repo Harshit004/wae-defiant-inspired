@@ -100,10 +100,10 @@ const HelpingClientsSection: FC = () => {
   ];
 
   const handleNext = () => {
-    if (currentIndex < 2) {
+    if (currentIndex < 1) {
       const nextIndex = currentIndex + 1;
       setCurrentIndex(nextIndex);
-      if (nextIndex === 2) setHoveredIndex(3);
+      setHoveredIndex(2);
     }
   };
 
@@ -111,7 +111,7 @@ const HelpingClientsSection: FC = () => {
     if (currentIndex > 0) {
       const prevIndex = currentIndex - 1;
       setCurrentIndex(prevIndex);
-      if (prevIndex === 0) setHoveredIndex(0);
+      setHoveredIndex(0);
     }
   };
 
@@ -144,8 +144,8 @@ const HelpingClientsSection: FC = () => {
           </button>
           <button
             onClick={handleNext}
-            disabled={currentIndex === 2}
-            style={{ opacity: currentIndex === 2 ? 0.3 : 1, cursor: currentIndex === 2 ? "default" : "pointer" }}
+            disabled={currentIndex === 1}
+            style={{ opacity: currentIndex === 1 ? 0.3 : 1, cursor: currentIndex === 1 ? "default" : "pointer" }}
             className="w-[44px] h-[44px] border border-[#00000033] flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -159,10 +159,6 @@ const HelpingClientsSection: FC = () => {
         <motion.div
           className="flex"
           style={{ gap: "2.77vw" }}
-          onMouseLeave={() => {
-            if (currentIndex === 0) setHoveredIndex(0);
-            else if (currentIndex === 2) setHoveredIndex(3);
-          }}
           animate={{ x: `calc(-${currentIndex * (25 + 2.77)}vw)` }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
@@ -175,7 +171,14 @@ const HelpingClientsSection: FC = () => {
                 style={{ width: isHovered ? (index === cards.length - 1 ? "52.79vw" : "45.83vw") : "25vw" }}
                 animate={{ width: isHovered ? (index === cards.length - 1 ? "52.79vw" : "45.83vw") : "25vw" }}
                 transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseEnter={() => {
+                  setHoveredIndex(index);
+                  if (index === 2) {
+                    setCurrentIndex(1);
+                  } else if (index === 0) {
+                    setCurrentIndex(0);
+                  }
+                }}
               >
                 {/* Image Container */}
                 <div
