@@ -648,7 +648,7 @@ const WaterVisualSection: FC = () => {
           Earth, Our Only Shareholder
         </h2>
 
-        <div style={{ height: "138px" }} />
+        <div style={{ height: "60px" }} />
 
         <div style={{ width: "40.83vw" }}>
           <p style={{
