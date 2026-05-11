@@ -153,7 +153,7 @@ export default function Home() {
             {/* HEADER (Not Fixed in this version) */}
             {/* The div with inline styles here seems unnecessary if not fixed */}
             <div> {/* Consider removing this outer div or making it relative/static */}
-                <header ref={headerRef} className={`w-full relative z-10 pb-5 text-white`}> {/* Apply containerClass inside header content div */}
+                <header ref={headerRef} className="w-full absolute top-0 left-0 z-50 pb-5 bg-transparent text-white"> {/* Apply containerClass inside header content div */}
                     <div className={containerClass}> {/* Use containerClass for consistent padding */}
                         {/* Top Row: Navigation */}
                         <div
@@ -300,42 +300,26 @@ export default function Home() {
                         </div>
                     </div>
                 </header>
-                {/* HERO SECTION */}
-                <section
-                    id="hero"
-                    //   ref={heroRef}
-                    className="w-full flex items-center justify-center bg-white"
-                    style={{ height: `calc(100vh - ${headerHeight}px)` }}
-                >
-                    <div className="w-screen flex items-center justify-center">
-                        <video
-                            src="/home2-hero.mp4"
-                            autoPlay
-                            muted
-                            playsInline
-                            className="w-fit h-full object-cover rounded-none"
-                        />
-                    </div>
-                </section>
-                {/* HERO SECTION */}
-                <section
-                    id="hero"
-                    //   ref={heroRef}
-                    className="w-full flex items-center justify-center bg-white"
-                    style={{ height: `calc(100vh - ${headerHeight}px)` }}
-                >
-                    <div className="w-screen flex items-center justify-center">
-                        <video
-                            src="/home2-hero.mp4"
-                            autoPlay
-                            muted
-                            playsInline
-                            className="w-fit h-full object-cover rounded-none"
-                        />
-                    </div>
-                </section>
-
             </div>
+
+            {/* HERO SECTION */}
+            <section
+                id="hero"
+                //   ref={heroRef}
+                className="w-full h-screen flex items-center justify-center bg-black overflow-hidden"
+                style={{ height: "100vh" }}
+            >
+                <div className="w-full h-full flex items-center justify-center">
+                    <video
+                        src="/home2-hero.mp4"
+                        autoPlay
+                        muted
+                        playsInline
+                        loop
+                        className="w-full h-full object-cover rounded-none"
+                    />
+                </div>
+            </section>
 
             {/* Brand, Purpose & People Section */}
             <section className="h-screen flex items-center justify-center relative bg-[#F2F2F2]">
