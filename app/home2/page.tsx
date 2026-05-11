@@ -300,25 +300,42 @@ export default function Home() {
                         </div>
                     </div>
                 </header>
-            </div>
+                {/* HERO SECTION */}
+                <section
+                    id="hero"
+                    //   ref={heroRef}
+                    className="w-full flex items-center justify-center bg-white"
+                    style={{ height: `calc(100vh - ${headerHeight}px)` }}
+                >
+                    <div className="w-screen flex items-center justify-center">
+                        <video
+                            src="/home2-hero.mp4"
+                            autoPlay
+                            muted
+                            playsInline
+                            className="w-fit h-full object-cover rounded-none"
+                        />
+                    </div>
+                </section>
+                {/* HERO SECTION */}
+                <section
+                    id="hero"
+                    //   ref={heroRef}
+                    className="w-full flex items-center justify-center bg-white"
+                    style={{ height: `calc(100vh - ${headerHeight}px)` }}
+                >
+                    <div className="w-screen flex items-center justify-center">
+                        <video
+                            src="/home2-hero.mp4"
+                            autoPlay
+                            muted
+                            playsInline
+                            className="w-fit h-full object-cover rounded-none"
+                        />
+                    </div>
+                </section>
 
-            {/* HERO SECTION */}
-            <section
-                id="hero"
-                //   ref={heroRef}
-                className="w-full flex items-center justify-center bg-white"
-                style={{ height: `calc(100vh - ${headerHeight}px)` }}
-            >
-                <div className="w-screen flex items-center justify-center">
-                    <video
-                        src="/home2-hero.mp4"
-                        autoPlay
-                        muted
-                        playsInline
-                        className="w-fit h-full object-cover rounded-none"
-                    />
-                </div>
-            </section>
+            </div>
 
             {/* Brand, Purpose & People Section */}
             <section className="h-screen flex items-center justify-center relative bg-[#F2F2F2]">
