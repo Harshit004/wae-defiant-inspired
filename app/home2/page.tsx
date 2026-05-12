@@ -369,9 +369,8 @@ export default function Home() {
             </section>
 
             {/* Brand, Purpose & People Section */}
-            <section className="h-screen flex items-center justify-center relative bg-black text-white">
-                <div className="w-full h-[576px]">
-                    <div className="grid grid-cols-3 h-full border-t border-white">
+            <section className="relative bg-black text-white w-full h-[576px]">
+                <div className="grid grid-cols-3 h-full border-b border-white">
                         {/* Column 1: Brand */}
                         <div className="flex flex-col items-center justify-center border-r border-white px-12 lg:px-24 transition-colors duration-500 hover:bg-[#004063] cursor-pointer group">
                             <div className="flex flex-col w-full max-w-[320px]">
@@ -630,7 +629,6 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </div>
             </section>
 
 
