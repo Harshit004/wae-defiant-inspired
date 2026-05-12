@@ -819,7 +819,7 @@ export default function Home() {
 
             {/* Carbon Neutral Section */}
             <section
-                className="bg-black text-white"
+                className="bg-black text-white border-b border-white"
                 style={{
                     paddingTop: '123px',
                     paddingBottom: '123px',
@@ -852,7 +852,7 @@ export default function Home() {
                                     color: '#AEAEAE'
                                 }}
                             >
-                                Carbon neutrality isn't an afterthought at WAE. It is built into every stage.
+                                Carbon neutrality isn't an afterthought at WAE.<br />It is built into every stage.
                             </p>
                         </div>
 
@@ -961,7 +961,7 @@ export default function Home() {
                                     color: '#AEAEAE'
                                 }}
                             >
-                                Products eliminate plastic bottle waste at source Products eliminate plastic bottle waste at sourceProducts eliminate plastic bottle waste at source
+                                Products eliminate plastic bottle waste at source Products eliminate plastic bottle waste at sourceProducts eliminate plastic bottle waste at sourceProducts eliminate plastic bottle waste at source
                             </p>
                             <div style={{ height: '22px' }} />
                             <div className="w-full h-px bg-white/30" />
