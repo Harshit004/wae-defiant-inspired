@@ -1165,6 +1165,8 @@ export default function Home() {
                 </div>
             </section>
 
+            <div className="w-full h-px bg-white" />
+
             {/* BLOGS SECTION */}
             <section
                 className="bg-black text-white"
