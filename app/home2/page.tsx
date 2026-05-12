@@ -1104,7 +1104,7 @@ export default function Home() {
                     </div>
 
                     <div className="mt-[150px]">
-                        <div className="grid grid-cols-2 max-w-[900px] border-t border-white/20">
+                        <div className="grid grid-cols-2" style={{ maxWidth: '45.55vw', maxHeight: '267px' }}>
                             {/* Litres */}
                             <div className="border-r border-white/20 p-8 pl-0">
                                 <Counter value={1012120.45} suffix="+" />
@@ -1162,6 +1162,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                <div className="w-full h-px bg-white/30" />
             </section>
 
 
