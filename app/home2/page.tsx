@@ -18,9 +18,10 @@ const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
 interface HoverButtonProps {
     children: (hovered: boolean) => React.ReactNode;
     href?: string;
+    theme?: "light" | "dark";
 }
 
-const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
+const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) => {
     const [hovered, setHovered] = useState<boolean>(false);
 
     const buttonContent = (
@@ -39,10 +40,10 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
                 fontSize: "10px",
                 lineHeight: "100%",
                 textTransform: "uppercase",
-                backgroundColor: hovered ? "#000" : "#fff",
-                border: "1px solid #000",
+                backgroundColor: theme === "dark" ? "#000" : (hovered ? "#000" : "#fff"),
+                border: theme === "dark" ? "1px solid #fff" : "1px solid #000",
                 cursor: "pointer",
-                color: hovered ? "#fff" : "#000",
+                color: theme === "dark" ? "#fff" : (hovered ? "#fff" : "#000"),
             }}
         >
             {children(hovered)} {/* This is where the error happens if children is not a function */}
@@ -368,289 +369,268 @@ export default function Home() {
             </section>
 
             {/* Brand, Purpose & People Section */}
-            <section className="h-screen flex items-center justify-center relative bg-[#F2F2F2]">
-                <motion.div className="w-full max-w-screen-xl mx-8 lg:mx-36">
-                    <div className="flex flex-col lg:flex-row justify-between w-full gap-8">
+            <section className="h-screen flex items-center justify-center relative bg-black text-white">
+                <div className="w-full h-full">
+                    <div className="grid grid-cols-3 h-full border-t border-white/20">
                         {/* Column 1: Brand */}
-                        <div className="flex flex-col max-w-[22%]">
-                            <h2
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 500,
-                                    fontStyle: 'Medium',
-                                    fontSize: '40px',
-                                    lineHeight: '110%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle'
-                                }}
-                            >
-                                Brand
-                            </h2>
-                            <div style={{ height: '32px' }} />
-                            <h3
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 700,
-                                    fontStyle: 'Bold',
-                                    fontSize: '12px',
-                                    lineHeight: '100%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle',
-                                    color: '#00000099'
-                                }}
-                            >
-                                Being Sustainable
-                            </h3>
-                            <div style={{ height: '12px' }} />
-                            <p
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 500,
-                                    fontStyle: 'Medium',
-                                    fontSize: '12px',
-                                    lineHeight: '100%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle',
-                                    color: '#00000099'
-                                }}
-                            >
-                                The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
-                            </p>
-                            <div style={{ height: '12px' }} />
-                            <p
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 500,
-                                    fontStyle: 'Medium',
-                                    fontSize: '12px',
-                                    lineHeight: '100%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle',
-                                    color: '#00000099'
-                                }}
-                            >
-                                WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
-                            </p>
-                            <div style={{ height: '20px' }} />
-                            <Link href="/this-is-us" className="contents">
-                                <HoverButton>
-                                    {(hovered) => (
-                                        <>
-                                            Know More
-                                            <div className="relative inline-block w-4 h-4">
-                                                <Image
-                                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                                    alt="icon default"
-                                                    width={16}
-                                                    height={16}
-                                                />
-                                                <motion.div
-                                                    initial={{ opacity: 0 }}
-                                                    animate={{ opacity: hovered ? 1 : 0 }}
-                                                    transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                                                    className="absolute top-0 left-0"
-                                                >
+                        <div className="flex flex-col items-center justify-center border-r border-white/20 px-12 lg:px-24">
+                            <div className="flex flex-col w-full max-w-[320px]">
+                                <h2
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 500,
+                                        fontSize: '40px',
+                                        lineHeight: '110%',
+                                        letterSpacing: '0%',
+                                    }}
+                                >
+                                    Brand
+                                </h2>
+                                <div style={{ height: '32px' }} />
+                                <h3
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 700,
+                                        fontSize: '12px',
+                                        lineHeight: '100%',
+                                        color: '#ffffff99'
+                                    }}
+                                >
+                                    Being Sustainable
+                                </h3>
+                                <div style={{ height: '12px' }} />
+                                <p
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 500,
+                                        fontSize: '12px',
+                                        lineHeight: '140%',
+                                        color: '#ffffff99'
+                                    }}
+                                >
+                                    The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
+                                </p>
+                                <div style={{ height: '12px' }} />
+                                <p
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 500,
+                                        fontSize: '12px',
+                                        lineHeight: '140%',
+                                        color: '#ffffff99'
+                                    }}
+                                >
+                                    WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
+                                </p>
+                                <div style={{ height: '32px' }} />
+                                <Link href="/this-is-us" className="contents">
+                                    <HoverButton theme="dark">
+                                        {(hovered) => (
+                                            <>
+                                                Know More
+                                                <div className="relative inline-block w-4 h-4">
                                                     <Image
-                                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                                        alt="icon hover"
+                                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                                        alt="icon default"
                                                         width={16}
                                                         height={16}
+                                                        className="brightness-0 invert"
                                                     />
-                                                </motion.div>
-                                            </div>
-                                        </>
-                                    )}
-                                </HoverButton>
-                            </Link>
+                                                    <motion.div
+                                                        initial={{ opacity: 0 }}
+                                                        animate={{ opacity: hovered ? 1 : 0 }}
+                                                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                                        className="absolute top-0 left-0"
+                                                    >
+                                                        <Image
+                                                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                                            alt="icon hover"
+                                                            width={16}
+                                                            height={16}
+                                                            className="brightness-0 invert"
+                                                        />
+                                                    </motion.div>
+                                                </div>
+                                            </>
+                                        )}
+                                    </HoverButton>
+                                </Link>
+                            </div>
                         </div>
 
                         {/* Column 2: Purpose */}
-                        <div className="flex flex-col max-w-[21%]">
-                            <h2
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 500,
-                                    fontStyle: 'Medium',
-                                    fontSize: '40px',
-                                    lineHeight: '110%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle'
-                                }}
-                            >
-                                Purpose
-                            </h2>
-                            <div style={{ height: '32px' }} />
-                            <h3
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 700,
-                                    fontStyle: 'Bold',
-                                    fontSize: '12px',
-                                    lineHeight: '100%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle',
-                                    color: '#00000099'
-                                }}
-                            >
-                                Our Green Is Blue
-                            </h3>
-                            <div style={{ height: '12px' }} />
-                            <p
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 500,
-                                    fontStyle: 'Medium',
-                                    fontSize: '12px',
-                                    lineHeight: '100%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle',
-                                    color: '#00000099'
-                                }}
-                            >
-                                It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
-                            </p>
-                            <div style={{ height: '12px' }} />
-                            <p
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 500,
-                                    fontStyle: 'Medium',
-                                    fontSize: '12px',
-                                    lineHeight: '100%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle',
-                                    color: '#00000099'
-                                }}
-                            >
-                                At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
-                            </p>
-                            <div style={{ height: '20px' }} />
-                            <Link href="/sustainability" className="contents">
-                                <HoverButton>
-                                    {(hovered) => (
-                                        <>
-                                            Know More
-                                            <div className="relative inline-block w-4 h-4">
-                                                <Image
-                                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                                    alt="icon default"
-                                                    width={16}
-                                                    height={16}
-                                                />
-                                                <motion.div
-                                                    initial={{ opacity: 0 }}
-                                                    animate={{ opacity: hovered ? 1 : 0 }}
-                                                    transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                                                    className="absolute top-0 left-0"
-                                                >
+                        <div className="flex flex-col items-center justify-center border-r border-white/20 px-12 lg:px-24">
+                            <div className="flex flex-col w-full max-w-[320px]">
+                                <h2
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 500,
+                                        fontSize: '40px',
+                                        lineHeight: '110%',
+                                        letterSpacing: '0%',
+                                    }}
+                                >
+                                    Purpose
+                                </h2>
+                                <div style={{ height: '32px' }} />
+                                <h3
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 700,
+                                        fontSize: '12px',
+                                        lineHeight: '100%',
+                                        color: '#ffffff99'
+                                    }}
+                                >
+                                    Our Green Is Blue
+                                </h3>
+                                <div style={{ height: '12px' }} />
+                                <p
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 500,
+                                        fontSize: '12px',
+                                        lineHeight: '140%',
+                                        color: '#ffffff99'
+                                    }}
+                                >
+                                    It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
+                                </p>
+                                <div style={{ height: '12px' }} />
+                                <p
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 500,
+                                        fontSize: '12px',
+                                        lineHeight: '140%',
+                                        color: '#ffffff99'
+                                    }}
+                                >
+                                    At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
+                                </p>
+                                <div style={{ height: '32px' }} />
+                                <Link href="/sustainability" className="contents">
+                                    <HoverButton theme="dark">
+                                        {(hovered) => (
+                                            <>
+                                                Know More
+                                                <div className="relative inline-block w-4 h-4">
                                                     <Image
-                                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                                        alt="icon hover"
+                                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                                        alt="icon default"
                                                         width={16}
                                                         height={16}
+                                                        className="brightness-0 invert"
                                                     />
-                                                </motion.div>
-                                            </div>
-                                        </>
-                                    )}
-                                </HoverButton>
-                            </Link>
+                                                    <motion.div
+                                                        initial={{ opacity: 0 }}
+                                                        animate={{ opacity: hovered ? 1 : 0 }}
+                                                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                                        className="absolute top-0 left-0"
+                                                    >
+                                                        <Image
+                                                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                                            alt="icon hover"
+                                                            width={16}
+                                                            height={16}
+                                                            className="brightness-0 invert"
+                                                        />
+                                                    </motion.div>
+                                                </div>
+                                            </>
+                                        )}
+                                    </HoverButton>
+                                </Link>
+                            </div>
                         </div>
 
                         {/* Column 3: People */}
-                        <div className="flex flex-col max-w-[20%]">
-                            <h2
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 500,
-                                    fontStyle: 'Medium',
-                                    fontSize: '40px',
-                                    lineHeight: '110%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle'
-                                }}
-                            >
-                                People
-                            </h2>
-                            <div style={{ height: '32px' }} />
-                            <h3
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 700,
-                                    fontStyle: 'Bold',
-                                    fontSize: '12px',
-                                    lineHeight: '100%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle',
-                                    color: '#00000099'
-                                }}
-                            >
-                                People First
-                            </h3>
-                            <div style={{ height: '12px' }} />
-                            <p
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 500,
-                                    fontStyle: 'Medium',
-                                    fontSize: '12px',
-                                    lineHeight: '100%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle',
-                                    color: '#00000099'
-                                }}
-                            >
-                                People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
-                            </p>
-                            <div style={{ height: '12px' }} />
-                            <p
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 500,
-                                    fontStyle: 'Medium',
-                                    fontSize: '12px',
-                                    lineHeight: '100%',
-                                    letterSpacing: '0%',
-                                    verticalAlign: 'middle',
-                                    color: '#00000099'
-                                }}
-                            >
-                                In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
-                            </p>
-                            <div style={{ height: '20px' }} />
-                            <Link href="/careers3" className="contents">
-                                <HoverButton>
-                                    {(hovered) => (
-                                        <>
-                                            Know More
-                                            <div className="relative inline-block w-4 h-4">
-                                                <Image
-                                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                                    alt="icon default"
-                                                    width={16}
-                                                    height={16}
-                                                />
-                                                <motion.div
-                                                    initial={{ opacity: 0 }}
-                                                    animate={{ opacity: hovered ? 1 : 0 }}
-                                                    transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                                                    className="absolute top-0 left-0"
-                                                >
+                        <div className="flex flex-col items-center justify-center px-12 lg:px-24">
+                            <div className="flex flex-col w-full max-w-[320px]">
+                                <h2
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 500,
+                                        fontSize: '40px',
+                                        lineHeight: '110%',
+                                        letterSpacing: '0%',
+                                    }}
+                                >
+                                    People
+                                </h2>
+                                <div style={{ height: '32px' }} />
+                                <h3
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 700,
+                                        fontSize: '12px',
+                                        lineHeight: '100%',
+                                        color: '#ffffff99'
+                                    }}
+                                >
+                                    People First
+                                </h3>
+                                <div style={{ height: '12px' }} />
+                                <p
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 500,
+                                        fontSize: '12px',
+                                        lineHeight: '140%',
+                                        color: '#ffffff99'
+                                    }}
+                                >
+                                    People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
+                                </p>
+                                <div style={{ height: '12px' }} />
+                                <p
+                                    style={{
+                                        fontFamily: 'Inter Tight',
+                                        fontWeight: 500,
+                                        fontSize: '12px',
+                                        lineHeight: '140%',
+                                        color: '#ffffff99'
+                                    }}
+                                >
+                                    In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
+                                </p>
+                                <div style={{ height: '32px' }} />
+                                <Link href="/careers3" className="contents">
+                                    <HoverButton theme="dark">
+                                        {(hovered) => (
+                                            <>
+                                                Know More
+                                                <div className="relative inline-block w-4 h-4">
                                                     <Image
-                                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                                        alt="icon hover"
+                                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                                        alt="icon default"
                                                         width={16}
                                                         height={16}
+                                                        className="brightness-0 invert"
                                                     />
-                                                </motion.div>
-                                            </div>
-                                        </>
-                                    )}
-                                </HoverButton>
-                            </Link>
+                                                    <motion.div
+                                                        initial={{ opacity: 0 }}
+                                                        animate={{ opacity: hovered ? 1 : 0 }}
+                                                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                                        className="absolute top-0 left-0"
+                                                    >
+                                                        <Image
+                                                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                                            alt="icon hover"
+                                                            width={16}
+                                                            height={16}
+                                                            className="brightness-0 invert"
+                                                        />
+                                                    </motion.div>
+                                                </div>
+                                            </>
+                                        )}
+                                    </HoverButton>
+                                </Link>
+                            </div>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </section>
 
 
