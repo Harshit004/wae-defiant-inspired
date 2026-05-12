@@ -324,7 +324,7 @@ export default function Home() {
                 <div className="absolute top-0 left-0 w-1/2 h-full z-[5] backdrop-blur-[60px] bg-black/10" />
 
                 {/* Hero Content */}
-                <div className={`absolute top-0 left-0 w-full h-full z-10`}>
+                <div className={`absolute top-0 left-0 w-full z-10`}>
                     <div className={containerClass}>
                         <div
                             style={{
