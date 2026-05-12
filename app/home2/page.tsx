@@ -18,7 +18,7 @@ const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
 interface HoverButtonProps {
     children: (hovered: boolean) => React.ReactNode;
     href?: string;
-    theme?: "light" | "dark";
+    theme?: "light" | "dark" | "transparent-white";
 }
 
 const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) => {
@@ -40,10 +40,16 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
                 fontSize: "10px",
                 lineHeight: "100%",
                 textTransform: "uppercase",
-                backgroundColor: theme === "dark" ? "#000" : (hovered ? "#000" : "#fff"),
-                border: theme === "dark" ? "1px solid #fff" : "1px solid #000",
+                backgroundColor: 
+                    theme === "transparent-white" ? (hovered ? "#fff" : "transparent") :
+                    theme === "dark" ? "#000" : (hovered ? "#000" : "#fff"),
+                border: 
+                    theme === "transparent-white" ? "1px solid #fff" :
+                    theme === "dark" ? "1px solid #fff" : "1px solid #000",
                 cursor: "pointer",
-                color: theme === "dark" ? "#fff" : (hovered ? "#fff" : "#000"),
+                color: 
+                    theme === "transparent-white" ? (hovered ? "#004063" : "#fff") :
+                    theme === "dark" ? "#fff" : (hovered ? "#fff" : "#000"),
             }}
         >
             {children(hovered)} {/* This is where the error happens if children is not a function */}
@@ -424,7 +430,7 @@ export default function Home() {
                                 </p>
                                 <div style={{ height: '32px' }} />
                                 <Link href="/this-is-us" className="contents">
-                                    <HoverButton theme="dark">
+                                    <HoverButton theme="transparent-white">
                                         {(hovered) => (
                                             <>
                                                 Know More
@@ -434,7 +440,7 @@ export default function Home() {
                                                         alt="icon default"
                                                         width={16}
                                                         height={16}
-                                                        className="brightness-0 invert"
+                                                        className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                                                     />
                                                     <motion.div
                                                         initial={{ opacity: 0 }}
@@ -447,7 +453,7 @@ export default function Home() {
                                                             alt="icon hover"
                                                             width={16}
                                                             height={16}
-                                                            className="brightness-0 invert"
+                                                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                                                         />
                                                     </motion.div>
                                                 </div>
@@ -510,7 +516,7 @@ export default function Home() {
                                 </p>
                                 <div style={{ height: '32px' }} />
                                 <Link href="/sustainability" className="contents">
-                                    <HoverButton theme="dark">
+                                    <HoverButton theme="transparent-white">
                                         {(hovered) => (
                                             <>
                                                 Know More
@@ -520,7 +526,7 @@ export default function Home() {
                                                         alt="icon default"
                                                         width={16}
                                                         height={16}
-                                                        className="brightness-0 invert"
+                                                        className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                                                     />
                                                     <motion.div
                                                         initial={{ opacity: 0 }}
@@ -533,7 +539,7 @@ export default function Home() {
                                                             alt="icon hover"
                                                             width={16}
                                                             height={16}
-                                                            className="brightness-0 invert"
+                                                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                                                         />
                                                     </motion.div>
                                                 </div>
@@ -596,7 +602,7 @@ export default function Home() {
                                 </p>
                                 <div style={{ height: '32px' }} />
                                 <Link href="/careers3" className="contents">
-                                    <HoverButton theme="dark">
+                                    <HoverButton theme="transparent-white">
                                         {(hovered) => (
                                             <>
                                                 Know More
@@ -606,7 +612,7 @@ export default function Home() {
                                                         alt="icon default"
                                                         width={16}
                                                         height={16}
-                                                        className="brightness-0 invert"
+                                                        className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                                                     />
                                                     <motion.div
                                                         initial={{ opacity: 0 }}
@@ -619,7 +625,7 @@ export default function Home() {
                                                             alt="icon hover"
                                                             width={16}
                                                             height={16}
-                                                            className="brightness-0 invert"
+                                                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                                                         />
                                                     </motion.div>
                                                 </div>
@@ -643,6 +649,11 @@ export default function Home() {
 
             {/* INLINE CSS for hover and arrow animations */}
             <style jsx>{`
+        /* Custom filter for #004063 blue color */
+        .filter-wae-blue {
+          filter: invert(16%) sepia(93%) saturate(1599%) hue-rotate(180deg) brightness(96%) contrast(105%);
+        }
+
         /* Removed unused styles like product-grid, product-title, product-cell, placeholder-img */
 
         .c--anim-btn {
