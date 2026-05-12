@@ -817,6 +817,190 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Carbon Neutral Section */}
+            <section
+                className="bg-black text-white"
+                style={{
+                    paddingTop: '123px',
+                    paddingBottom: '123px',
+                    paddingLeft: '7.5vw',
+                    paddingRight: '7.5vw'
+                }}
+            >
+                <div className="flex justify-between items-start w-full">
+                    {/* Left Column */}
+                    <div style={{ width: '44.93vw' }} className="flex flex-col h-full justify-between">
+                        <div>
+                            <h2
+                                style={{
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '40px',
+                                    lineHeight: '110%',
+                                    color: '#FFFFFF'
+                                }}
+                            >
+                                Carbon neutral by design
+                            </h2>
+                            <div style={{ height: '32px' }} />
+                            <p
+                                style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 500,
+                                    fontSize: '14px',
+                                    lineHeight: '100%',
+                                    color: '#AEAEAE'
+                                }}
+                            >
+                                Carbon neutrality isn't an afterthought at WAE. It is built into every stage.
+                            </p>
+                        </div>
+
+                        <div className="mt-[150px]">
+                            <motion.div
+                                initial={{ filter: 'grayscale(100%)' }}
+                                whileHover={{ filter: 'grayscale(0%)' }}
+                                transition={{ duration: 0.8 }}
+                                className="w-full h-auto cursor-pointer"
+                            >
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fd6e76cf-b35a-46af-de19-8caa2b168300/public"
+                                    alt="Carbon Neutral Illustration"
+                                    width={645}
+                                    height={362}
+                                    className="w-full h-auto object-cover"
+                                />
+                            </motion.div>
+                        </div>
+                    </div>
+
+                    {/* Right Column */}
+                    <div style={{ width: '34.93vw' }}>
+                        {/* Manufacture */}
+                        <div className="flex flex-col">
+                            <h4
+                                style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '18px',
+                                    lineHeight: '100%',
+                                    color: '#FFFFFF'
+                                }}
+                            >
+                                1. Manufacture
+                            </h4>
+                            <div style={{ height: '12px' }} />
+                            <p
+                                style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '14px',
+                                    lineHeight: '110%',
+                                    color: '#AEAEAE'
+                                }}
+                            >
+                                Energy-efficient production, ZED Gold certified by India's MSME Ministry. Energy-efficient production, ZED Gold certified by India's MSME MinistryEnergy-efficient production, ZED Gold certified by India's MSME Ministry
+                            </p>
+                            <div style={{ height: '22px' }} />
+                            <div className="w-full h-px bg-white/30" />
+                        </div>
+
+                        <div style={{ height: '48px' }} />
+
+                        {/* Distribution */}
+                        <div className="flex flex-col">
+                            <h4
+                                style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '18px',
+                                    lineHeight: '100%',
+                                    color: '#FFFFFF'
+                                }}
+                            >
+                                2. Distribution
+                            </h4>
+                            <div style={{ height: '12px' }} />
+                            <p
+                                style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '14px',
+                                    lineHeight: '110%',
+                                    color: '#AEAEAE'
+                                }}
+                            >
+                                Optimised logistics to minimise transport emissions Optimised logistics to minimise transport emissionsOptimised logistics to minimise transport emissionsOptimised logistics to minimise transport emissions
+                            </p>
+                            <div style={{ height: '22px' }} />
+                            <div className="w-full h-px bg-white/30" />
+                        </div>
+
+                        <div style={{ height: '48px' }} />
+
+                        {/* Use */}
+                        <div className="flex flex-col">
+                            <h4
+                                style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '18px',
+                                    lineHeight: '100%',
+                                    color: '#FFFFFF'
+                                }}
+                            >
+                                3. Use
+                            </h4>
+                            <div style={{ height: '12px' }} />
+                            <p
+                                style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '14px',
+                                    lineHeight: '110%',
+                                    color: '#AEAEAE'
+                                }}
+                            >
+                                Products eliminate plastic bottle waste at source Products eliminate plastic bottle waste at sourceProducts eliminate plastic bottle waste at source
+                            </p>
+                            <div style={{ height: '22px' }} />
+                            <div className="w-full h-px bg-white/30" />
+                        </div>
+
+                        <div style={{ height: '48px' }} />
+
+                        {/* End of life */}
+                        <div className="flex flex-col">
+                            <h4
+                                style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '18px',
+                                    lineHeight: '100%',
+                                    color: '#FFFFFF'
+                                }}
+                            >
+                                4. End of life
+                            </h4>
+                            <div style={{ height: '12px' }} />
+                            <p
+                                style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '14px',
+                                    lineHeight: '110%',
+                                    color: '#AEAEAE'
+                                }}
+                            >
+                                Recyclable components and responsible disposal Recyclable components and responsible disposalRecyclable components and responsible disposalRecyclable components and responsible disposalRecyclable components and responsible disposal
+                            </p>
+                            <div style={{ height: '22px' }} />
+                            <div className="w-full h-px bg-white/30" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
 
             {/* FOOTER SECTION */}
