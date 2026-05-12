@@ -1217,16 +1217,17 @@ export default function Home() {
                                     className="object-cover transition-opacity duration-1000 opacity-0 group-hover:opacity-100"
                                 />
                             </div>
-                            <h3 style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: '18px',
-                                lineHeight: '120%',
-                                color: '#FFFFFF',
-                                marginBottom: '16px'
-                            }}>
-                                From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
-                            </h3>
+                            <div style={{ minHeight: '80px', marginBottom: '16px' }}>
+                                <h3 style={{
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '18px',
+                                    lineHeight: '120%',
+                                    color: '#FFFFFF'
+                                }}>
+                                    From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
+                                </h3>
+                            </div>
                             <p style={{
                                 fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
@@ -1268,16 +1269,17 @@ export default function Home() {
                                     className="object-cover transition-opacity duration-1000 opacity-0 group-hover:opacity-100"
                                 />
                             </div>
-                            <h3 style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: '18px',
-                                lineHeight: '120%',
-                                color: '#FFFFFF',
-                                marginBottom: '16px'
-                            }}>
-                                Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective
-                            </h3>
+                            <div style={{ minHeight: '80px', marginBottom: '16px' }}>
+                                <h3 style={{
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '18px',
+                                    lineHeight: '120%',
+                                    color: '#FFFFFF'
+                                }}>
+                                    Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective
+                                </h3>
+                            </div>
                             <p style={{
                                 fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
@@ -1319,16 +1321,17 @@ export default function Home() {
                                     className="object-cover transition-opacity duration-1000 opacity-0 group-hover:opacity-100"
                                 />
                             </div>
-                            <h3 style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: '18px',
-                                lineHeight: '120%',
-                                color: '#FFFFFF',
-                                marginBottom: '16px'
-                            }}>
-                                The Ozone Crisis: A Success Story in Environmental Cooperation
-                            </h3>
+                            <div style={{ minHeight: '80px', marginBottom: '16px' }}>
+                                <h3 style={{
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '18px',
+                                    lineHeight: '120%',
+                                    color: '#FFFFFF'
+                                }}>
+                                    The Ozone Crisis: A Success Story in Environmental Cooperation
+                                </h3>
+                            </div>
                             <p style={{
                                 fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,

@@ -99,12 +99,18 @@ const ContactSectionDark = () => {
             {/* Right Side - Form */}
             <div className="w-full md:w-[50%] mt-12 md:mt-0">
                 <form onSubmit={handleSubmit} className="flex flex-col gap-10">
+                    <style jsx>{`
+                        input::placeholder, textarea::placeholder {
+                            color: #FFFFFF !important;
+                            opacity: 1;
+                        }
+                    `}</style>
                     <div className="relative group">
                         <input
                             type="text"
                             name="name"
                             placeholder="*Name"
-                            className="w-full bg-transparent border-b border-white/50 py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-white py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
                             required
                         />
                     </div>
@@ -113,7 +119,7 @@ const ContactSectionDark = () => {
                             type="email"
                             name="email"
                             placeholder="*Your Email"
-                            className="w-full bg-transparent border-b border-white/50 py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-white py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
                             required
                         />
                     </div>
@@ -122,7 +128,7 @@ const ContactSectionDark = () => {
                             type="tel"
                             name="contact"
                             placeholder="*Contact No."
-                            className="w-full bg-transparent border-b border-white/50 py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-white py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
                             required
                         />
                     </div>
@@ -131,14 +137,14 @@ const ContactSectionDark = () => {
                             type="text"
                             name="companyName"
                             placeholder="*ABC Company"
-                            className="w-full bg-transparent border-b border-white/50 py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-white py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
                         />
                     </div>
                     <div className="relative group">
                         <textarea
                             name="message"
                             placeholder="Message"
-                            className="w-full bg-transparent border-b border-white/50 py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm resize-none h-32"
+                            className="w-full bg-transparent border-b border-white py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm resize-none h-32"
                         />
                     </div>
 
