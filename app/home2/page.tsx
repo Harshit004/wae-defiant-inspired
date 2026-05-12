@@ -942,7 +942,7 @@ export default function Home() {
                                 Energy-efficient production, ZED Gold certified by India's MSME Ministry. Energy-efficient production, ZED Gold certified by India's MSME MinistryEnergy-efficient production, ZED Gold certified by India's MSME Ministry
                             </p>
                             <div style={{ height: '22px' }} />
-                            <div className="w-full h-px bg-white/30" />
+                            <div className="w-full h-px bg-white" />
                         </div>
 
                         <div style={{ height: '48px' }} />
@@ -973,7 +973,7 @@ export default function Home() {
                                 Optimised logistics to minimise transport emissions Optimised logistics to minimise transport emissionsOptimised logistics to minimise transport emissionsOptimised logistics to minimise transport emissions
                             </p>
                             <div style={{ height: '22px' }} />
-                            <div className="w-full h-px bg-white/30" />
+                            <div className="w-full h-px bg-white" />
                         </div>
 
                         <div style={{ height: '48px' }} />
@@ -1004,7 +1004,7 @@ export default function Home() {
                                 Products eliminate plastic bottle waste at source Products eliminate plastic bottle waste at sourceProducts eliminate plastic bottle waste at sourceProducts eliminate plastic bottle waste at source
                             </p>
                             <div style={{ height: '22px' }} />
-                            <div className="w-full h-px bg-white/30" />
+                            <div className="w-full h-px bg-white" />
                         </div>
 
                         <div style={{ height: '48px' }} />
@@ -1035,7 +1035,7 @@ export default function Home() {
                                 Recyclable components and responsible disposal Recyclable components and responsible disposalRecyclable components and responsible disposalRecyclable components and responsible disposalRecyclable components and responsible disposal
                             </p>
                             <div style={{ height: '22px' }} />
-                            <div className="w-full h-px bg-white/30" />
+                            <div className="w-full h-px bg-white" />
                         </div>
                     </div>
                 </div>
@@ -1198,9 +1198,9 @@ export default function Home() {
                         WAE publishes perspectives on climate, water, and sustainability — because good water companies think beyond the tap.
                     </p>
 
-                    <div className="grid grid-cols-3 gap-x-12">
+                    <div className="grid grid-cols-3 gap-x-0">
                         {/* Card 1 */}
-                        <div className="group cursor-pointer">
+                        <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
                             <div className="relative w-full aspect-square overflow-hidden mb-6">
                                 <Image
                                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
@@ -1245,13 +1245,13 @@ export default function Home() {
                                     textUnderlineOffset: '4px'
                                 }}>Read Article</span>
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </div>
                         </div>
 
                         {/* Card 2 */}
-                        <div className="group cursor-pointer">
+                        <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
                             <div className="relative w-full aspect-square overflow-hidden mb-6">
                                 <Image
                                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
@@ -1296,13 +1296,13 @@ export default function Home() {
                                     textUnderlineOffset: '4px'
                                 }}>Read Article</span>
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </div>
                         </div>
 
                         {/* Card 3 */}
-                        <div className="group cursor-pointer">
+                        <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
                             <div className="relative w-full aspect-square overflow-hidden mb-6">
                                 <Image
                                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
@@ -1347,7 +1347,7 @@ export default function Home() {
                                     textUnderlineOffset: '4px'
                                 }}>Read Article</span>
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </div>
                         </div>
@@ -1429,7 +1429,7 @@ export default function Home() {
                                 color: '#FFFFFF',
                                 marginBottom: '12px'
                             }}>
-                                WAE shines with ZED Gold certification
+                                WAE shines with ZED Gold certification for sustainable excellence
                             </h3>
                             <p style={{
                                 fontFamily: "'Manrope', sans-serif",
@@ -1482,7 +1482,7 @@ export default function Home() {
             </section>
 
             {/* CONTACT SECTION */}
-            <section 
+            <section
                 className="bg-black text-white"
                 style={{
                     paddingTop: '123px',
