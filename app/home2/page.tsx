@@ -4,13 +4,52 @@ import type { FC } from "react"
 import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, animate } from "framer-motion"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
+
+/**
+ * Animated counter component
+ */
+const Counter: FC<{ value: number; suffix?: string }> = ({ value, suffix = "" }) => {
+    const [count, setCount] = useState(0);
+    const nodeRef = useRef<HTMLHeadingElement>(null);
+
+    useEffect(() => {
+        const node = nodeRef.current;
+        if (!node) return;
+
+        const controls = animate(0, value, {
+            duration: 2,
+            onUpdate(value) {
+                setCount(value);
+            },
+        });
+
+        return () => controls.stop();
+    }, [value]);
+
+    return (
+        <h3
+            ref={nodeRef}
+            style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 700,
+                fontSize: '40px',
+                lineHeight: '200%',
+                color: '#FFFFFF',
+                textTransform: 'uppercase'
+            }}
+        >
+            {count.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            {suffix}
+        </h3>
+    );
+};
 
 /**
  * Reusable hover button component.
@@ -996,6 +1035,129 @@ export default function Home() {
                             </p>
                             <div style={{ height: '22px' }} />
                             <div className="w-full h-px bg-white/30" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Sustainability Impact Section */}
+            <section
+                className="relative text-white"
+                style={{
+                    background: 'linear-gradient(146.59deg, #004063 4.52%, #000000 49.04%)',
+                    paddingTop: '124px',
+                    paddingBottom: '124px',
+                    paddingLeft: '7.5vw',
+                    paddingRight: '7.5vw',
+                    overflow: 'hidden'
+                }}
+            >
+                {/* Background Image (Globe) */}
+                <div className="absolute top-0 right-0 h-full w-auto opacity-80 pointer-events-none select-none z-0">
+                    <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4c85a864-1c67-40fb-c37a-dd689f3ed700/public"
+                        alt="Impact Background"
+                        width={1000}
+                        height={1000}
+                        className="h-full w-auto object-cover object-right"
+                    />
+                </div>
+
+                <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div className="max-w-[600px]">
+                        <p
+                            style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '20px',
+                                lineHeight: '110%',
+                                color: '#FFFFFF'
+                            }}
+                        >
+                            Real numbers. Real results.
+                        </p>
+                        <div style={{ height: '10px' }} />
+                        <h2
+                            style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '40px',
+                                lineHeight: '110%',
+                                color: '#FFFFFF'
+                            }}
+                        >
+                            Our sustainability impact
+                        </h2>
+                        <div style={{ height: '32px' }} />
+                        <p
+                            style={{
+                                fontFamily: "'Manrope', sans-serif",
+                                fontWeight: 500,
+                                fontSize: '14px',
+                                lineHeight: '100%',
+                                color: '#AEAEAE'
+                            }}
+                        >
+                            Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
+                        </p>
+                    </div>
+
+                    <div className="mt-[150px]">
+                        <div className="grid grid-cols-2 max-w-[900px] border-t border-white/20">
+                            {/* Litres */}
+                            <div className="border-r border-white/20 p-8 pl-0">
+                                <Counter value={1012120.45} suffix="+" />
+                                <p
+                                    style={{
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: '44px',
+                                        lineHeight: '100%',
+                                        color: '#FFFFFF',
+                                        textTransform: 'uppercase'
+                                    }}
+                                >
+                                    Litres
+                                </p>
+                            </div>
+                            
+                            <div className="p-8">
+                                {/* Empty space in grid? Screenshot shows 3 stats in a 2x2 grid structure but only 3 filled */}
+                            </div>
+
+                            {/* Gallon */}
+                            <div className="border-r border-t border-white/20 p-8 pl-0">
+                                <Counter value={12185.45} suffix="+" />
+                                <p
+                                    style={{
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: '44px',
+                                        lineHeight: '100%',
+                                        color: '#FFFFFF',
+                                        textTransform: 'uppercase'
+                                    }}
+                                >
+                                    Gallon
+                                </p>
+                            </div>
+
+                            {/* Millions */}
+                            <div className="border-t border-white/20 p-8">
+                                <Counter value={22253.65} suffix="+" />
+                                <p
+                                    style={{
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: '44px',
+                                        lineHeight: '100%',
+                                        color: '#FFFFFF',
+                                        textTransform: 'uppercase'
+                                    }}
+                                >
+                                    Millions
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
