@@ -1382,7 +1382,7 @@ export default function Home() {
                     <div className="grid grid-cols-12 gap-8">
                         {/* Main News Column */}
                         <div className="col-span-4">
-                            <div className="relative w-full aspect-[4/3] overflow-hidden mb-6">
+                            <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
                                 <Image
                                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"
                                     alt="WAE ZED Gold Certification"
@@ -1396,24 +1396,24 @@ export default function Home() {
                                 fontSize: '20px',
                                 lineHeight: '120%',
                                 color: '#FFFFFF',
-                                marginBottom: '16px'
+                                marginBottom: '12px'
                             }}>
                                 WAE shines with ZED Gold certification for sustainable excellence
                             </h3>
                             <p style={{
                                 fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
-                                fontSize: '14px',
-                                lineHeight: '140%',
+                                fontSize: '13px',
+                                lineHeight: '150%',
                                 color: '#AEAEAE'
                             }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nisl magna. Curabitur venenatis est non nibh ultricies dictum.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nisl magna. Curabitur venenatis est non nibh ultricies dictum. Curabitur venenatis est non nibh ultricies dictum.
                             </p>
                         </div>
 
                         {/* Middle News Column */}
                         <div className="col-span-4">
-                            <div className="relative w-full aspect-[4/3] overflow-hidden mb-6">
+                            <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
                                 <Image
                                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/97d880ca-cfa0-4094-52b7-940402225a00/public"
                                     alt="Manufacturing"
@@ -1427,41 +1427,40 @@ export default function Home() {
                                 fontSize: '20px',
                                 lineHeight: '120%',
                                 color: '#FFFFFF',
-                                marginBottom: '16px'
+                                marginBottom: '12px'
                             }}>
                                 WAE shines with ZED Gold certification
                             </h3>
                             <p style={{
                                 fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
-                                fontSize: '14px',
-                                lineHeight: '140%',
+                                fontSize: '13px',
+                                lineHeight: '150%',
                                 color: '#AEAEAE'
                             }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nisl magna. Curabitur venenatis est non nibh ultricies dictum.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nisl magna. Curabitur venenatis est non nibh ultricies dictum. Curabitur venenatis est non nibh ultricies dictum.
                             </p>
                         </div>
 
                         {/* Sidebar News Column */}
-                        <div className="col-span-4 flex flex-col gap-8">
+                        <div className="col-span-4 flex flex-col justify-between">
                             {[1, 2, 3].map((i) => (
-                                <div key={i} className="flex gap-4">
-                                    <div className="relative w-32 h-20 flex-shrink-0">
+                                <div key={i} className="flex gap-6 items-start">
+                                    <div className="relative w-[140px] aspect-[1.4/1] flex-shrink-0">
                                         <Image
-                                            src={i === 2 ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"}
+                                            src={i === 2 ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public" : i === 1 ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"}
                                             alt="Small news item"
                                             fill
                                             className="object-cover"
                                         />
                                     </div>
-                                    <div>
+                                    <div className="flex flex-col gap-2">
                                         <h4 style={{
                                             fontFamily: "'Inter Tight', sans-serif",
                                             fontWeight: 400,
-                                            fontSize: '14px',
+                                            fontSize: '16px',
                                             lineHeight: '120%',
-                                            color: '#FFFFFF',
-                                            marginBottom: '8px'
+                                            color: '#FFFFFF'
                                         }}>
                                             WAE shines with ZED Gold certification
                                         </h4>
@@ -1469,6 +1468,7 @@ export default function Home() {
                                             fontFamily: "'Manrope', sans-serif",
                                             fontWeight: 400,
                                             fontSize: '12px',
+                                            lineHeight: '140%',
                                             color: '#AEAEAE'
                                         }}>
                                             Lorem ipsum dolor sit amet,
