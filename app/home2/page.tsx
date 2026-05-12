@@ -836,7 +836,7 @@ export default function Home() {
                         </div>
 
                         {/* View All */}
-                        <div className="bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]">
+                        <Link href="/our-products2" className="bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]">
                             <div
                                 className="rounded-full border border-white flex items-center justify-center"
                                 style={{
@@ -852,7 +852,7 @@ export default function Home() {
                             >
                                 VIEW ALL
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </section>
