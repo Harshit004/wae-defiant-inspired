@@ -688,7 +688,7 @@ export default function Home() {
                                 lineHeight: '110%',
                                 letterSpacing: '0px',
                                 color: '#FFFFFF',
-                                maxWidth: '380px',
+                                maxWidth: '34.72vw',
                                 textAlign: 'right'
                             }}
                         >
@@ -698,7 +698,7 @@ export default function Home() {
 
                     <div style={{ height: '18px' }} />
 
-                    <div className="grid grid-cols-4 w-full" style={{ height: '506px' }}>
+                    <div className="grid grid-cols-4 w-full border-b border-white" style={{ height: '506px' }}>
                         {/* Aurela */}
                         <div className="relative group cursor-pointer h-full overflow-hidden">
                             <Image
