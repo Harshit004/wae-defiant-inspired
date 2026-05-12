@@ -639,6 +639,183 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Our Products Section */}
+            <section
+                className="bg-black text-white"
+                style={{
+                    paddingTop: '124px',
+                    paddingBottom: '124px',
+                    paddingLeft: '2.5vw',
+                    paddingRight: '2.5vw'
+                }}
+            >
+                <div className="w-full">
+                    <h2
+                        style={{
+                            fontFamily: 'Inter Tight',
+                            fontWeight: 500,
+                            fontSize: '60px',
+                            lineHeight: '105%',
+                            letterSpacing: '0%',
+                            color: '#FFFFFF',
+                            maxWidth: '1200px'
+                        }}
+                    >
+                        Every product is designed to replace plastic and reduce operational carbon footprint.
+                    </h2>
+
+                    <div style={{ height: '124px' }} />
+
+                    <div className="flex justify-between items-start">
+                        <h3
+                            style={{
+                                fontFamily: 'Manrope',
+                                fontWeight: 700,
+                                fontSize: '24px',
+                                lineHeight: '110%',
+                                letterSpacing: '0px',
+                                color: '#FFFFFF'
+                            }}
+                        >
+                            Our Products
+                        </h3>
+                        <p
+                            style={{
+                                fontFamily: 'Manrope',
+                                fontWeight: 400,
+                                fontSize: '16px',
+                                lineHeight: '110%',
+                                letterSpacing: '0px',
+                                color: '#FFFFFF',
+                                maxWidth: '380px',
+                                textAlign: 'right'
+                            }}
+                        >
+                            WAE's range of water systems is engineered for every environment - commercial, institutional, and industrial.
+                        </p>
+                    </div>
+
+                    <div style={{ height: '18px' }} />
+
+                    <div className="grid grid-cols-4 w-full" style={{ height: '506px' }}>
+                        {/* Aurela */}
+                        <div className="relative group cursor-pointer h-full overflow-hidden">
+                            <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/317e8eb4-d823-462a-c1d3-54cd0664ea00/public"
+                                alt="Aurela"
+                                fill
+                                className="object-cover"
+                            />
+                            <motion.div
+                                initial={{ opacity: 1 }}
+                                whileHover={{ opacity: 0 }}
+                                transition={{ duration: 0.5 }}
+                                className="absolute inset-0 bg-black/70 flex items-center justify-center z-10"
+                            >
+                                <div
+                                    className="rounded-full border border-white flex items-center justify-center"
+                                    style={{
+                                        width: '150px',
+                                        height: '150px',
+                                        fontFamily: 'Manrope',
+                                        fontWeight: 600,
+                                        fontSize: '18px',
+                                        lineHeight: '110%',
+                                        textTransform: 'uppercase',
+                                        textAlign: 'center'
+                                    }}
+                                >
+                                    AURELA
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        {/* Reva */}
+                        <div className="relative group cursor-pointer h-full overflow-hidden">
+                            <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/62a8a1c0-fffe-44c2-5ae2-ed461e445600/public"
+                                alt="Reva"
+                                fill
+                                className="object-cover"
+                            />
+                            <motion.div
+                                initial={{ opacity: 1 }}
+                                whileHover={{ opacity: 0 }}
+                                transition={{ duration: 0.5 }}
+                                className="absolute inset-0 bg-black/70 flex items-center justify-center z-10"
+                            >
+                                <div
+                                    className="rounded-full border border-white flex items-center justify-center"
+                                    style={{
+                                        width: '150px',
+                                        height: '150px',
+                                        fontFamily: 'Manrope',
+                                        fontWeight: 600,
+                                        fontSize: '18px',
+                                        lineHeight: '110%',
+                                        textTransform: 'uppercase',
+                                        textAlign: 'center'
+                                    }}
+                                >
+                                    REVA
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        {/* Venus */}
+                        <div className="relative group cursor-pointer h-full overflow-hidden">
+                            <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3ed4ddbf-f8ce-4cdb-f703-41fa25cbf400/public"
+                                alt="Venus"
+                                fill
+                                className="object-cover"
+                            />
+                            <motion.div
+                                initial={{ opacity: 1 }}
+                                whileHover={{ opacity: 0 }}
+                                transition={{ duration: 0.5 }}
+                                className="absolute inset-0 bg-black/70 flex items-center justify-center z-10"
+                            >
+                                <div
+                                    className="rounded-full border border-white flex items-center justify-center"
+                                    style={{
+                                        width: '150px',
+                                        height: '150px',
+                                        fontFamily: 'Manrope',
+                                        fontWeight: 600,
+                                        fontSize: '18px',
+                                        lineHeight: '110%',
+                                        textTransform: 'uppercase',
+                                        textAlign: 'center'
+                                    }}
+                                >
+                                    VENUS
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        {/* View All */}
+                        <div className="bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]">
+                            <div
+                                className="rounded-full border border-white flex items-center justify-center"
+                                style={{
+                                    width: '150px',
+                                    height: '150px',
+                                    fontFamily: 'Manrope',
+                                    fontWeight: 600,
+                                    fontSize: '18px',
+                                    lineHeight: '110%',
+                                    textTransform: 'uppercase',
+                                    textAlign: 'center'
+                                }}
+                            >
+                                VIEW ALL
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
 
             {/* FOOTER SECTION */}
