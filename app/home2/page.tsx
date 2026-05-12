@@ -369,8 +369,9 @@ export default function Home() {
             </section>
 
             {/* Brand, Purpose & People Section */}
-            <section className="relative bg-black text-white w-full h-[576px]">
-                <div className="grid grid-cols-3 h-full border-b border-white">
+            <section className="relative bg-black text-white w-full">
+                <div className="w-full h-[576px]">
+                    <div className="grid grid-cols-3 h-full border-b border-white">
                         {/* Column 1: Brand */}
                         <div className="flex flex-col items-center justify-center border-r border-white px-12 lg:px-24 transition-colors duration-500 hover:bg-[#004063] cursor-pointer group">
                             <div className="flex flex-col w-full max-w-[320px]">
@@ -387,36 +388,36 @@ export default function Home() {
                                 </h2>
                                 <div style={{ height: '32px' }} />
                                 <h3
+                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: 'Inter Tight',
                                         fontWeight: 700,
                                         fontSize: '12px',
                                         lineHeight: '100%',
-                                        color: '#ffffff99'
                                     }}
                                 >
                                     Being Sustainable
                                 </h3>
                                 <div style={{ height: '12px' }} />
                                 <p
+                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: 'Inter Tight',
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
-                                        color: '#ffffff99'
                                     }}
                                 >
                                     The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
                                 </p>
                                 <div style={{ height: '12px' }} />
                                 <p
+                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: 'Inter Tight',
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
-                                        color: '#ffffff99'
                                     }}
                                 >
                                     WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
@@ -473,36 +474,36 @@ export default function Home() {
                                 </h2>
                                 <div style={{ height: '32px' }} />
                                 <h3
+                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: 'Inter Tight',
                                         fontWeight: 700,
                                         fontSize: '12px',
                                         lineHeight: '100%',
-                                        color: '#ffffff99'
                                     }}
                                 >
                                     Our Green Is Blue
                                 </h3>
                                 <div style={{ height: '12px' }} />
                                 <p
+                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: 'Inter Tight',
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
-                                        color: '#ffffff99'
                                     }}
                                 >
                                     It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
                                 </p>
                                 <div style={{ height: '12px' }} />
                                 <p
+                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: 'Inter Tight',
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
-                                        color: '#ffffff99'
                                     }}
                                 >
                                     At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
@@ -559,36 +560,36 @@ export default function Home() {
                                 </h2>
                                 <div style={{ height: '32px' }} />
                                 <h3
+                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: 'Inter Tight',
                                         fontWeight: 700,
                                         fontSize: '12px',
                                         lineHeight: '100%',
-                                        color: '#ffffff99'
                                     }}
                                 >
                                     People First
                                 </h3>
                                 <div style={{ height: '12px' }} />
                                 <p
+                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: 'Inter Tight',
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
-                                        color: '#ffffff99'
                                     }}
                                 >
                                     People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
                                 </p>
                                 <div style={{ height: '12px' }} />
                                 <p
+                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: 'Inter Tight',
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
-                                        color: '#ffffff99'
                                     }}
                                 >
                                     In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
@@ -629,6 +630,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
+                </div>
             </section>
 
 
