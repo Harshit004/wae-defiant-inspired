@@ -368,7 +368,7 @@ export default function Home() {
                 </div>
 
                 {/* Glassmorphism Overlay (Left Half) */}
-                <div className="absolute top-0 left-0 w-1/2 h-full z-[5] backdrop-blur-[60px] bg-black/10" />
+                <div className="absolute top-0 left-0 w-1/2 h-full z-[5] backdrop-blur-[40px] bg-black/30" />
 
                 {/* Hero Content - pointer-events-none to allow interaction with elements below if needed, but here it's h-full of relative section */}
                 <div className={`absolute top-0 left-0 w-full h-full z-10 pointer-events-none`}>
