@@ -1112,10 +1112,10 @@ export default function Home() {
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 400,
-                                        fontSize: '44px',
+                                        fontSize: '18px',
                                         lineHeight: '100%',
                                         color: '#FFFFFF',
-                                        textTransform: 'uppercase'
+                                        // textTransform: 'uppercase'
                                     }}
                                 >
                                     Litres
@@ -1133,10 +1133,10 @@ export default function Home() {
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 400,
-                                        fontSize: '44px',
+                                        fontSize: '18px',
                                         lineHeight: '100%',
                                         color: '#FFFFFF',
-                                        textTransform: 'uppercase'
+                                        // textTransform: 'uppercase'
                                     }}
                                 >
                                     Gallon
@@ -1150,10 +1150,10 @@ export default function Home() {
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 400,
-                                        fontSize: '44px',
+                                        fontSize: '18px',
                                         lineHeight: '100%',
                                         color: '#FFFFFF',
-                                        textTransform: 'uppercase'
+                                        // textTransform: 'uppercase'
                                     }}
                                 >
                                     Millions
