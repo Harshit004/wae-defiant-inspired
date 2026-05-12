@@ -368,7 +368,7 @@ export default function Home() {
                 </div>
 
                 {/* Glassmorphism Overlay (Left Half) */}
-                <div className="absolute top-0 left-0 w-1/2 h-full z-[5] backdrop-blur-[40px] bg-black/30" />
+                <div className="absolute top-0 left-0 w-1/2 h-full z-[5] backdrop-blur-[25px] bg-black/30" />
 
                 {/* Hero Content - pointer-events-none to allow interaction with elements below if needed, but here it's h-full of relative section */}
                 <div className={`absolute top-0 left-0 w-full h-full z-10 pointer-events-none`}>
@@ -1205,16 +1205,10 @@ export default function Home() {
                         <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
                             <div className="relative w-full aspect-square overflow-hidden mb-6">
                                 <Image
-                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0d11c81d-cb15-4d1a-b552-895a9f264600/public"
                                     alt="From Kyoto to COP28"
                                     fill
-                                    className="object-cover transition-opacity duration-1000 group-hover:opacity-0"
-                                />
-                                <Image
-                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
-                                    alt="From Kyoto to COP28 Hover"
-                                    fill
-                                    className="object-cover transition-opacity duration-1000 opacity-0 group-hover:opacity-100"
+                                    className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
                                 />
                             </div>
                             <div style={{ minHeight: '80px', marginBottom: '16px' }}>
@@ -1257,16 +1251,10 @@ export default function Home() {
                         <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
                             <div className="relative w-full aspect-square overflow-hidden mb-6">
                                 <Image
-                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/50e6b6b0-4629-4ab6-0710-9ecc16700e00/public"
                                     alt="Climate Change in the Indian Subcontinent"
                                     fill
-                                    className="object-cover transition-opacity duration-1000 group-hover:opacity-0"
-                                />
-                                <Image
-                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public"
-                                    alt="Climate Change Hover"
-                                    fill
-                                    className="object-cover transition-opacity duration-1000 opacity-0 group-hover:opacity-100"
+                                    className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
                                 />
                             </div>
                             <div style={{ minHeight: '80px', marginBottom: '16px' }}>
@@ -1309,16 +1297,10 @@ export default function Home() {
                         <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
                             <div className="relative w-full aspect-square overflow-hidden mb-6">
                                 <Image
-                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/371f4ccb-4672-4c8e-2fba-a3a7ffe05900/public"
                                     alt="The Ozone Crisis"
                                     fill
-                                    className="object-cover transition-opacity duration-1000 group-hover:opacity-0"
-                                />
-                                <Image
-                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c3eb242-b13a-443c-da32-a78bce6e7a00/public"
-                                    alt="Ozone Crisis Hover"
-                                    fill
-                                    className="object-cover transition-opacity duration-1000 opacity-0 group-hover:opacity-100"
+                                    className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
                                 />
                             </div>
                             <div style={{ minHeight: '80px', marginBottom: '16px' }}>
