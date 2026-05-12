@@ -1095,7 +1095,8 @@ export default function Home() {
                                 fontWeight: 500,
                                 fontSize: '14px',
                                 lineHeight: '100%',
-                                color: '#AEAEAE'
+                                color: '#AEAEAE',
+                                maxWidth: '32.91vw'
                             }}
                         >
                             Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
@@ -1120,7 +1121,7 @@ export default function Home() {
                                     Litres
                                 </p>
                             </div>
-                            
+
                             <div className="p-8">
                                 {/* Empty space in grid? Screenshot shows 3 stats in a 2x2 grid structure but only 3 filled */}
                             </div>
