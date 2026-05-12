@@ -641,7 +641,7 @@ export default function Home() {
 
             {/* Our Products Section */}
             <section
-                className="bg-black text-white"
+                className="bg-black text-white border-b border-white"
                 style={{
                     paddingTop: '124px',
                     paddingBottom: '124px',
@@ -698,7 +698,7 @@ export default function Home() {
 
                     <div style={{ height: '18px' }} />
 
-                    <div className="grid grid-cols-4 w-full border-b border-white" style={{ height: '506px' }}>
+                    <div className="grid grid-cols-4 w-full" style={{ height: '506px' }}>
                         {/* Aurela */}
                         <div className="relative group cursor-pointer h-full overflow-hidden">
                             <Image
