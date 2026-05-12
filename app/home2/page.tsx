@@ -1162,12 +1162,337 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="w-full h-px bg-white/30" />
             </section>
 
+            {/* BLOGS SECTION */}
+            <section
+                className="bg-black text-white"
+                style={{
+                    paddingTop: '123px',
+                    paddingBottom: '123px',
+                    paddingLeft: '7.5vw',
+                    paddingRight: '7.5vw'
+                }}
+            >
+                <div className="w-full">
+                    <h2 style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '40px',
+                        lineHeight: '110%',
+                        color: '#FFFFFF',
+                        marginBottom: '20px'
+                    }}>
+                        From our blog
+                    </h2>
+                    <p style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '14px',
+                        lineHeight: '140%',
+                        color: '#AEAEAE',
+                        maxWidth: '450px',
+                        marginBottom: '60px'
+                    }}>
+                        WAE publishes perspectives on climate, water, and sustainability — because good water companies think beyond the tap.
+                    </p>
 
+                    <div className="grid grid-cols-3 gap-x-12">
+                        {/* Card 1 */}
+                        <div className="group cursor-pointer">
+                            <div className="relative w-full aspect-square overflow-hidden mb-6">
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
+                                    alt="From Kyoto to COP28"
+                                    fill
+                                    className="object-cover transition-opacity duration-1000 group-hover:opacity-0"
+                                />
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
+                                    alt="From Kyoto to COP28 Hover"
+                                    fill
+                                    className="object-cover transition-opacity duration-1000 opacity-0 group-hover:opacity-100"
+                                />
+                            </div>
+                            <h3 style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '18px',
+                                lineHeight: '120%',
+                                color: '#FFFFFF',
+                                marginBottom: '16px'
+                            }}>
+                                From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
+                            </h3>
+                            <p style={{
+                                fontFamily: "'Manrope', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '12px',
+                                lineHeight: '140%',
+                                color: '#AEAEAE',
+                                marginBottom: '32px'
+                            }}>
+                                In the quiet halls of Kyoto in 1997, something monumental began a collective awakening of the world's conscience towards the mounting crisis of climate change.
+                            </p>
+                            <div className="flex items-center gap-2">
+                                <span style={{
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '12px',
+                                    color: '#FFFFFF',
+                                    textDecoration: 'underline',
+                                    textUnderlineOffset: '4px'
+                                }}>Read Article</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
 
-            {/* FOOTER SECTION */}
+                        {/* Card 2 */}
+                        <div className="group cursor-pointer">
+                            <div className="relative w-full aspect-square overflow-hidden mb-6">
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
+                                    alt="Climate Change in the Indian Subcontinent"
+                                    fill
+                                    className="object-cover transition-opacity duration-1000 group-hover:opacity-0"
+                                />
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public"
+                                    alt="Climate Change Hover"
+                                    fill
+                                    className="object-cover transition-opacity duration-1000 opacity-0 group-hover:opacity-100"
+                                />
+                            </div>
+                            <h3 style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '18px',
+                                lineHeight: '120%',
+                                color: '#FFFFFF',
+                                marginBottom: '16px'
+                            }}>
+                                Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective
+                            </h3>
+                            <p style={{
+                                fontFamily: "'Manrope', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '12px',
+                                lineHeight: '140%',
+                                color: '#AEAEAE',
+                                marginBottom: '32px'
+                            }}>
+                                The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
+                            </p>
+                            <div className="flex items-center gap-2">
+                                <span style={{
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '12px',
+                                    color: '#FFFFFF',
+                                    textDecoration: 'underline',
+                                    textUnderlineOffset: '4px'
+                                }}>Read Article</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        {/* Card 3 */}
+                        <div className="group cursor-pointer">
+                            <div className="relative w-full aspect-square overflow-hidden mb-6">
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
+                                    alt="The Ozone Crisis"
+                                    fill
+                                    className="object-cover transition-opacity duration-1000 group-hover:opacity-0"
+                                />
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c3eb242-b13a-443c-da32-a78bce6e7a00/public"
+                                    alt="Ozone Crisis Hover"
+                                    fill
+                                    className="object-cover transition-opacity duration-1000 opacity-0 group-hover:opacity-100"
+                                />
+                            </div>
+                            <h3 style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '18px',
+                                lineHeight: '120%',
+                                color: '#FFFFFF',
+                                marginBottom: '16px'
+                            }}>
+                                The Ozone Crisis: A Success Story in Environmental Cooperation
+                            </h3>
+                            <p style={{
+                                fontFamily: "'Manrope', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '12px',
+                                lineHeight: '140%',
+                                color: '#AEAEAE',
+                                marginBottom: '32px'
+                            }}>
+                                It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.
+                            </p>
+                            <div className="flex items-center gap-2">
+                                <span style={{
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: '12px',
+                                    color: '#FFFFFF',
+                                    textDecoration: 'underline',
+                                    textUnderlineOffset: '4px'
+                                }}>Read Article</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* MEDIA & UPDATES SECTION */}
+            <section
+                className="bg-black text-white"
+                style={{
+                    paddingTop: '123px',
+                    paddingBottom: '123px',
+                    paddingLeft: '7.5vw',
+                    paddingRight: '7.5vw',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.3)'
+                }}
+            >
+                <div className="w-full">
+                    <h2 style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '40px',
+                        lineHeight: '110%',
+                        color: '#FFFFFF',
+                        marginBottom: '80px',
+                        maxWidth: '800px'
+                    }}>
+                        Stay informed with our latest media coverage and announcements
+                    </h2>
+
+                    <div className="grid grid-cols-12 gap-8">
+                        {/* Main News Column */}
+                        <div className="col-span-4">
+                            <div className="relative w-full aspect-[4/3] overflow-hidden mb-6">
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"
+                                    alt="WAE ZED Gold Certification"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <h3 style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '20px',
+                                lineHeight: '120%',
+                                color: '#FFFFFF',
+                                marginBottom: '16px'
+                            }}>
+                                WAE shines with ZED Gold certification for sustainable excellence
+                            </h3>
+                            <p style={{
+                                fontFamily: "'Manrope', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '14px',
+                                lineHeight: '140%',
+                                color: '#AEAEAE'
+                            }}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nisl magna. Curabitur venenatis est non nibh ultricies dictum.
+                            </p>
+                        </div>
+
+                        {/* Middle News Column */}
+                        <div className="col-span-4">
+                            <div className="relative w-full aspect-[4/3] overflow-hidden mb-6">
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/97d880ca-cfa0-4094-52b7-940402225a00/public"
+                                    alt="Manufacturing"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <h3 style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '20px',
+                                lineHeight: '120%',
+                                color: '#FFFFFF',
+                                marginBottom: '16px'
+                            }}>
+                                WAE shines with ZED Gold certification
+                            </h3>
+                            <p style={{
+                                fontFamily: "'Manrope', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '14px',
+                                lineHeight: '140%',
+                                color: '#AEAEAE'
+                            }}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nisl magna. Curabitur venenatis est non nibh ultricies dictum.
+                            </p>
+                        </div>
+
+                        {/* Sidebar News Column */}
+                        <div className="col-span-4 flex flex-col gap-8">
+                            {[1, 2, 3].map((i) => (
+                                <div key={i} className="flex gap-4">
+                                    <div className="relative w-32 h-20 flex-shrink-0">
+                                        <Image
+                                            src={i === 2 ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"}
+                                            alt="Small news item"
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div>
+                                        <h4 style={{
+                                            fontFamily: "'Inter Tight', sans-serif",
+                                            fontWeight: 400,
+                                            fontSize: '14px',
+                                            lineHeight: '120%',
+                                            color: '#FFFFFF',
+                                            marginBottom: '8px'
+                                        }}>
+                                            WAE shines with ZED Gold certification
+                                        </h4>
+                                        <p style={{
+                                            fontFamily: "'Manrope', sans-serif",
+                                            fontWeight: 400,
+                                            fontSize: '12px',
+                                            color: '#AEAEAE'
+                                        }}>
+                                            Lorem ipsum dolor sit amet,
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* CONTACT SECTION */}
+            <section 
+                className="bg-black text-white"
+                style={{
+                    paddingTop: '123px',
+                    paddingBottom: '123px',
+                    paddingLeft: '7.5vw',
+                    paddingRight: '7.5vw',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.3)'
+                }}
+            >
+                <ContactSection />
+            </section>
             {/* This div now appears after the section container (which has margin) */}
             <div style={{ position: "relative", zIndex: 10 }}> {/* zIndex 10 here is fine as it's not overlapping a fixed element */}
                 <Footer />
