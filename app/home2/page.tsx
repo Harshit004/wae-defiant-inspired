@@ -373,7 +373,7 @@ export default function Home() {
                 <div className="w-full h-[576px]">
                     <div className="grid grid-cols-3 h-full border-b border-white">
                         {/* Column 1: Brand */}
-                        <div className="flex flex-col items-center justify-center border-r border-white px-12 lg:px-24 transition-colors duration-500 hover:bg-[#004063] cursor-pointer group">
+                        <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 transition-colors duration-500 hover:bg-[#004063] cursor-pointer group">
                             <div className="flex flex-col w-full max-w-[320px]">
                                 <h2
                                     style={{
@@ -459,7 +459,7 @@ export default function Home() {
                         </div>
 
                         {/* Column 2: Purpose */}
-                        <div className="flex flex-col items-center justify-center border-r border-white px-12 lg:px-24 transition-colors duration-500 hover:bg-[#004063] cursor-pointer group">
+                        <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 transition-colors duration-500 hover:bg-[#004063] cursor-pointer group">
                             <div className="flex flex-col w-full max-w-[320px]">
                                 <h2
                                     style={{
@@ -545,7 +545,7 @@ export default function Home() {
                         </div>
 
                         {/* Column 3: People */}
-                        <div className="flex flex-col items-center justify-center px-12 lg:px-24 transition-colors duration-500 hover:bg-[#004063] cursor-pointer group">
+                        <div className="flex flex-col h-full items-center justify-center px-12 lg:px-24 transition-colors duration-500 hover:bg-[#004063] cursor-pointer group">
                             <div className="flex flex-col w-full max-w-[320px]">
                                 <h2
                                     style={{
