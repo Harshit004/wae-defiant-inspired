@@ -8,6 +8,7 @@ import { motion, animate } from "framer-motion"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
+import ContactSectionDark from "@/components/contact-section-dark"
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
@@ -1491,7 +1492,7 @@ export default function Home() {
                     borderTop: '1px solid rgba(255, 255, 255, 0.3)'
                 }}
             >
-                <ContactSection />
+                <ContactSectionDark />
             </section>
             {/* This div now appears after the section container (which has margin) */}
             <div style={{ position: "relative", zIndex: 10 }}> {/* zIndex 10 here is fine as it's not overlapping a fixed element */}
