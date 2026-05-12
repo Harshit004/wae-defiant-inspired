@@ -319,6 +319,52 @@ export default function Home() {
                         className="w-full h-full object-cover rounded-none"
                     />
                 </div>
+
+                {/* Glassmorphism Overlay (Left Half) */}
+                <div className="absolute top-0 left-0 w-1/2 h-full z-[5] backdrop-blur-[60px] bg-black/10" />
+
+                {/* Hero Content */}
+                <div className={`absolute top-0 left-0 w-full h-full z-10`}>
+                    <div className={containerClass}>
+                        <div
+                            style={{
+                                marginTop: `${headerHeight + 105}px`,
+                                width: "34.79vw",
+                                color: "#FFFFFF",
+                                fontFamily: "'Inter Tight', sans-serif",
+                            }}
+                        >
+                            <h1
+                                style={{
+                                    fontWeight: 500,
+                                    fontSize: "85px",
+                                    lineHeight: "105%",
+                                    letterSpacing: "0%",
+                                    verticalAlign: "middle",
+                                    margin: 0,
+                                }}
+                            >
+                                We're here<br />to disrupt the<br />status quo!
+                            </h1>
+                            <div style={{ height: "22px" }} />
+                            <p
+                                style={{
+                                    fontWeight: 400,
+                                    fontSize: "24px",
+                                    lineHeight: "115%",
+                                    letterSpacing: "0%",
+                                    verticalAlign: "middle",
+                                    color: "#AEAEAE",
+                                    margin: 0,
+                                }}
+                            >
+                                A good water company
+                                <br />
+                                from water intake to water reuse
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             {/* Brand, Purpose & People Section */}
