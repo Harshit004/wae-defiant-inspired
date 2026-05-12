@@ -40,16 +40,16 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
                 fontSize: "10px",
                 lineHeight: "100%",
                 textTransform: "uppercase",
-                backgroundColor: 
+                backgroundColor:
                     theme === "transparent-white" ? (hovered ? "#fff" : "transparent") :
-                    theme === "dark" ? "#000" : (hovered ? "#000" : "#fff"),
-                border: 
+                        theme === "dark" ? "#000" : (hovered ? "#000" : "#fff"),
+                border:
                     theme === "transparent-white" ? "1px solid #fff" :
-                    theme === "dark" ? "1px solid #fff" : "1px solid #000",
+                        theme === "dark" ? "1px solid #fff" : "1px solid #000",
                 cursor: "pointer",
-                color: 
+                color:
                     theme === "transparent-white" ? (hovered ? "#004063" : "#fff") :
-                    theme === "dark" ? "#fff" : (hovered ? "#fff" : "#000"),
+                        theme === "dark" ? "#fff" : (hovered ? "#fff" : "#000"),
             }}
         >
             {children(hovered)} {/* This is where the error happens if children is not a function */}
@@ -383,7 +383,7 @@ export default function Home() {
                             <div className="flex flex-col w-full max-w-[320px]">
                                 <h2
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 500,
                                         fontSize: '40px',
                                         lineHeight: '110%',
@@ -396,7 +396,7 @@ export default function Home() {
                                 <h3
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 700,
                                         fontSize: '12px',
                                         lineHeight: '100%',
@@ -408,7 +408,7 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
@@ -420,7 +420,7 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
@@ -469,7 +469,7 @@ export default function Home() {
                             <div className="flex flex-col w-full max-w-[320px]">
                                 <h2
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 500,
                                         fontSize: '40px',
                                         lineHeight: '110%',
@@ -482,7 +482,7 @@ export default function Home() {
                                 <h3
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 700,
                                         fontSize: '12px',
                                         lineHeight: '100%',
@@ -494,7 +494,7 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
@@ -506,7 +506,7 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
@@ -555,7 +555,7 @@ export default function Home() {
                             <div className="flex flex-col w-full max-w-[320px]">
                                 <h2
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 500,
                                         fontSize: '40px',
                                         lineHeight: '110%',
@@ -568,7 +568,7 @@ export default function Home() {
                                 <h3
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 700,
                                         fontSize: '12px',
                                         lineHeight: '100%',
@@ -580,7 +580,7 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
@@ -592,7 +592,7 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: 'Inter Tight',
+                                        fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 500,
                                         fontSize: '12px',
                                         lineHeight: '140%',
@@ -652,13 +652,14 @@ export default function Home() {
                 <div className="w-full">
                     <h2
                         style={{
-                            fontFamily: 'Inter Tight',
+                            fontFamily: "'Inter Tight', sans-serif",
                             fontWeight: 500,
                             fontSize: '60px',
                             lineHeight: '105%',
                             letterSpacing: '0%',
                             color: '#FFFFFF',
-                            maxWidth: '1200px'
+                            marginLeft: '5vw',
+                            maxWidth: '1300px'
                         }}
                     >
                         Every product is designed to replace plastic and reduce operational carbon footprint.
@@ -669,7 +670,7 @@ export default function Home() {
                     <div className="flex justify-between items-start">
                         <h3
                             style={{
-                                fontFamily: 'Manrope',
+                                fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 700,
                                 fontSize: '24px',
                                 lineHeight: '110%',
@@ -681,7 +682,7 @@ export default function Home() {
                         </h3>
                         <p
                             style={{
-                                fontFamily: 'Manrope',
+                                fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
                                 fontSize: '16px',
                                 lineHeight: '110%',
@@ -717,7 +718,7 @@ export default function Home() {
                                     style={{
                                         width: '150px',
                                         height: '150px',
-                                        fontFamily: 'Manrope',
+                                        fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 600,
                                         fontSize: '18px',
                                         lineHeight: '110%',
@@ -749,7 +750,7 @@ export default function Home() {
                                     style={{
                                         width: '150px',
                                         height: '150px',
-                                        fontFamily: 'Manrope',
+                                        fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 600,
                                         fontSize: '18px',
                                         lineHeight: '110%',
@@ -781,7 +782,7 @@ export default function Home() {
                                     style={{
                                         width: '150px',
                                         height: '150px',
-                                        fontFamily: 'Manrope',
+                                        fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 600,
                                         fontSize: '18px',
                                         lineHeight: '110%',
@@ -801,7 +802,7 @@ export default function Home() {
                                 style={{
                                     width: '150px',
                                     height: '150px',
-                                    fontFamily: 'Manrope',
+                                    fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 600,
                                     fontSize: '18px',
                                     lineHeight: '110%',
