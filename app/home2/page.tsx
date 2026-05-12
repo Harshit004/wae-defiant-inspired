@@ -370,7 +370,7 @@ export default function Home() {
 
             {/* Brand, Purpose & People Section */}
             <section className="h-screen flex items-center justify-center relative bg-black text-white">
-                <div className="w-full h-full">
+                <div className="w-full h-[576px]">
                     <div className="grid grid-cols-3 h-full border-t border-white/20">
                         {/* Column 1: Brand */}
                         <div className="flex flex-col items-center justify-center border-r border-white/20 px-12 lg:px-24">
