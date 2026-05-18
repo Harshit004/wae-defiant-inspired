@@ -935,11 +935,11 @@ export default function Home() {
                                     fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 400,
                                     fontSize: '14px',
-                                    lineHeight: '110%',
+                                    lineHeight: '100%',
                                     color: '#AEAEAE'
                                 }}
                             >
-                                Energy-efficient production, ZED Gold certified by India's MSME Ministry. Energy-efficient production, ZED Gold certified by India's MSME MinistryEnergy-efficient production, ZED Gold certified by India's MSME Ministry
+                                Energy-efficient production, ZED Gold certified by India's MSME Ministry. Energy-efficient production, ZED Gold certified by India's MSME MinistryEnergy-efficient production, ZED Gold certified
                             </p>
                             <div style={{ height: '22px' }} />
                             <div className="w-full h-px bg-white" />
@@ -966,7 +966,7 @@ export default function Home() {
                                     fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 400,
                                     fontSize: '14px',
-                                    lineHeight: '110%',
+                                    lineHeight: '100%',
                                     color: '#AEAEAE'
                                 }}
                             >
@@ -997,7 +997,7 @@ export default function Home() {
                                     fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 400,
                                     fontSize: '14px',
-                                    lineHeight: '110%',
+                                    lineHeight: '100%',
                                     color: '#AEAEAE'
                                 }}
                             >
@@ -1028,7 +1028,7 @@ export default function Home() {
                                     fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 400,
                                     fontSize: '14px',
-                                    lineHeight: '110%',
+                                    lineHeight: '100%',
                                     color: '#AEAEAE'
                                 }}
                             >
