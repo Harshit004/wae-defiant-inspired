@@ -867,7 +867,7 @@ export default function Home() {
                     paddingRight: '7.5vw'
                 }}
             >
-                <div className="flex justify-between items-stretch w-full">
+                <div className="flex justify-between items-start w-full">
                     {/* Left Column */}
                     <div style={{ width: '44.93vw' }} className="flex flex-col h-full justify-between">
                         <div>
@@ -896,7 +896,7 @@ export default function Home() {
                             </p>
                         </div>
 
-                        <div className="mt-8">
+                        <div className="mt-[130px]">
                             <motion.div
                                 initial={{ filter: 'grayscale(100%)' }}
                                 whileHover={{ filter: 'grayscale(0%)' }}
