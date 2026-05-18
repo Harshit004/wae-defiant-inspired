@@ -896,7 +896,7 @@ export default function Home() {
                             </p>
                         </div>
 
-                        <div className="mt-[130px]">
+                        <div className="mt-[125px]">
                             <motion.div
                                 initial={{ filter: 'grayscale(100%)' }}
                                 whileHover={{ filter: 'grayscale(0%)' }}
