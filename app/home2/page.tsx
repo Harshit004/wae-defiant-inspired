@@ -424,7 +424,7 @@ export default function Home() {
                                 <h2
                                     style={{
                                         fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 500,
+                                        fontWeight: 400,
                                         fontSize: '40px',
                                         lineHeight: '110%',
                                         letterSpacing: '0%',
@@ -448,8 +448,8 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 500,
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
                                         fontSize: '12px',
                                         lineHeight: '140%',
                                     }}
@@ -460,8 +460,8 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 500,
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
                                         fontSize: '12px',
                                         lineHeight: '140%',
                                     }}
@@ -510,7 +510,7 @@ export default function Home() {
                                 <h2
                                     style={{
                                         fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 500,
+                                        fontWeight: 400,
                                         fontSize: '40px',
                                         lineHeight: '110%',
                                         letterSpacing: '0%',
@@ -534,8 +534,8 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 500,
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
                                         fontSize: '12px',
                                         lineHeight: '140%',
                                     }}
@@ -546,8 +546,8 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 500,
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
                                         fontSize: '12px',
                                         lineHeight: '140%',
                                     }}
@@ -596,7 +596,7 @@ export default function Home() {
                                 <h2
                                     style={{
                                         fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 500,
+                                        fontWeight: 400,
                                         fontSize: '40px',
                                         lineHeight: '110%',
                                         letterSpacing: '0%',
@@ -620,8 +620,8 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 500,
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
                                         fontSize: '12px',
                                         lineHeight: '140%',
                                     }}
@@ -632,8 +632,8 @@ export default function Home() {
                                 <p
                                     className="text-white/60 transition-colors duration-500 group-hover:text-white"
                                     style={{
-                                        fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 500,
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
                                         fontSize: '12px',
                                         lineHeight: '140%',
                                     }}
