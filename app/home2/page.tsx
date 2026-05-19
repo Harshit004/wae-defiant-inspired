@@ -4,7 +4,7 @@ import type { FC } from "react"
 import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
-import { motion, animate } from "framer-motion"
+import { motion, animate, useInView } from "framer-motion"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
@@ -16,11 +16,13 @@ const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
 /**
  * Animated counter component
  */
-const Counter: FC<{ value: number; suffix?: string }> = ({ value, suffix = "" }) => {
+const Counter: FC<{ value: number; suffix?: string; trigger?: boolean }> = ({ value, suffix = "", trigger = true }) => {
     const [count, setCount] = useState(0);
     const nodeRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
+        if (!trigger) return;
+
         const node = nodeRef.current;
         if (!node) return;
 
@@ -32,7 +34,7 @@ const Counter: FC<{ value: number; suffix?: string }> = ({ value, suffix = "" })
         });
 
         return () => controls.stop();
-    }, [value]);
+    }, [value, trigger]);
 
     return (
         <h3
@@ -114,6 +116,8 @@ export default function Home() {
     const [headerHeight, setHeaderHeight] = useState(0)
     const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
     const headerRef = useRef<HTMLDivElement>(null)
+    const sectionRef = useRef<HTMLElement>(null)
+    const isInView = useInView(sectionRef, { once: true, amount: 0.5 })
 
     // State for controlling tagline visibility on scroll
     const [taglineVisible, setTaglineVisible] = useState(true)
@@ -1043,6 +1047,7 @@ export default function Home() {
 
             {/* Sustainability Impact Section */}
             <section
+                ref={sectionRef}
                 className="relative text-white"
                 style={{
                     background: 'linear-gradient(146.59deg, #004063 4.52%, #000000 49.04%)',
@@ -1108,7 +1113,7 @@ export default function Home() {
                         <div className="grid grid-cols-2" style={{ maxWidth: '45.55vw', maxHeight: '267px' }}>
                             {/* Litres */}
                             <div className="border-r border-white/20 p-8 pl-0">
-                                <Counter value={1012120.45} suffix="+" />
+                                <Counter value={1012120.45} suffix="+" trigger={isInView} />
                                 <p
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
@@ -1129,7 +1134,7 @@ export default function Home() {
 
                             {/* Gallon */}
                             <div className="border-r border-t border-white/20 p-8 pl-0">
-                                <Counter value={12185.45} suffix="+" />
+                                <Counter value={12185.45} suffix="+" trigger={isInView} />
                                 <p
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
@@ -1146,7 +1151,7 @@ export default function Home() {
 
                             {/* Millions */}
                             <div className="border-t border-white/20 p-8">
-                                <Counter value={22253.65} suffix="+" />
+                                <Counter value={22253.65} suffix="+" trigger={isInView} />
                                 <p
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
