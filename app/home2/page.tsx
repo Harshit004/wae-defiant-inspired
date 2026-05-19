@@ -423,7 +423,7 @@ export default function Home() {
                 <div className="w-full h-[576px]">
                     <div className="grid grid-cols-3 h-full border-b border-white">
                         {/* Column 1: Brand */}
-                        <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 transition-colors duration-500 hover:bg-[#004063] cursor-pointer group">
+                        <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
                             <div className="flex flex-col w-full max-w-[320px]">
                                 <h2
                                     style={{
@@ -438,7 +438,7 @@ export default function Home() {
                                 </h2>
                                 <div style={{ height: '32px' }} />
                                 <h3
-                                    className="text-white transition-colors duration-500 group-hover:text-white"
+                                    className="text-white group-hover:text-white"
                                     style={{
                                         fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 700,
@@ -450,7 +450,7 @@ export default function Home() {
                                 </h3>
                                 <div style={{ height: '12px' }} />
                                 <p
-                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
+                                    className="text-white/60 group-hover:text-white"
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 400,
@@ -462,7 +462,7 @@ export default function Home() {
                                 </p>
                                 <div style={{ height: '12px' }} />
                                 <p
-                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
+                                    className="text-white/60 group-hover:text-white"
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 400,
@@ -509,7 +509,7 @@ export default function Home() {
                         </div>
 
                         {/* Column 2: Purpose */}
-                        <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 transition-colors duration-500 hover:bg-[#004063] cursor-pointer group">
+                        <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
                             <div className="flex flex-col w-full max-w-[320px]">
                                 <h2
                                     style={{
@@ -524,7 +524,7 @@ export default function Home() {
                                 </h2>
                                 <div style={{ height: '32px' }} />
                                 <h3
-                                    className="text-white transition-colors duration-500 group-hover:text-white"
+                                    className="text-white group-hover:text-white"
                                     style={{
                                         fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 700,
@@ -536,7 +536,7 @@ export default function Home() {
                                 </h3>
                                 <div style={{ height: '12px' }} />
                                 <p
-                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
+                                    className="text-white/60 group-hover:text-white"
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 400,
@@ -548,7 +548,7 @@ export default function Home() {
                                 </p>
                                 <div style={{ height: '12px' }} />
                                 <p
-                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
+                                    className="text-white/60 group-hover:text-white"
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 400,
@@ -595,7 +595,7 @@ export default function Home() {
                         </div>
 
                         {/* Column 3: People */}
-                        <div className="flex flex-col h-full items-center justify-center px-12 lg:px-24 transition-colors duration-500 hover:bg-[#004063] cursor-pointer group">
+                        <div className="flex flex-col h-full items-center justify-center px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
                             <div className="flex flex-col w-full max-w-[320px]">
                                 <h2
                                     style={{
@@ -610,7 +610,7 @@ export default function Home() {
                                 </h2>
                                 <div style={{ height: '32px' }} />
                                 <h3
-                                    className="text-white transition-colors duration-500 group-hover:text-white"
+                                    className="text-white group-hover:text-white"
                                     style={{
                                         fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 700,
@@ -622,7 +622,7 @@ export default function Home() {
                                 </h3>
                                 <div style={{ height: '12px' }} />
                                 <p
-                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
+                                    className="text-white/60 group-hover:text-white"
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 400,
@@ -634,7 +634,7 @@ export default function Home() {
                                 </p>
                                 <div style={{ height: '12px' }} />
                                 <p
-                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
+                                    className="text-white/60 group-hover:text-white"
                                     style={{
                                         fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 400,
@@ -751,12 +751,7 @@ export default function Home() {
                                 fill
                                 className="object-cover"
                             />
-                            <motion.div
-                                initial={{ opacity: 1 }}
-                                whileHover={{ opacity: 0 }}
-                                transition={{ duration: 0.5 }}
-                                className="absolute inset-0 bg-black/70 flex items-center justify-center z-10"
-                            >
+                            <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-0">
                                 <div
                                     className="rounded-full border border-white flex items-center justify-center"
                                     style={{
@@ -772,7 +767,7 @@ export default function Home() {
                                 >
                                     AURELA
                                 </div>
-                            </motion.div>
+                            </div>
                         </div>
 
                         {/* Reva */}
@@ -783,12 +778,7 @@ export default function Home() {
                                 fill
                                 className="object-cover"
                             />
-                            <motion.div
-                                initial={{ opacity: 1 }}
-                                whileHover={{ opacity: 0 }}
-                                transition={{ duration: 0.5 }}
-                                className="absolute inset-0 bg-black/70 flex items-center justify-center z-10"
-                            >
+                            <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-0">
                                 <div
                                     className="rounded-full border border-white flex items-center justify-center"
                                     style={{
@@ -804,7 +794,7 @@ export default function Home() {
                                 >
                                     REVA
                                 </div>
-                            </motion.div>
+                            </div>
                         </div>
 
                         {/* Venus */}
@@ -815,12 +805,7 @@ export default function Home() {
                                 fill
                                 className="object-cover"
                             />
-                            <motion.div
-                                initial={{ opacity: 1 }}
-                                whileHover={{ opacity: 0 }}
-                                transition={{ duration: 0.5 }}
-                                className="absolute inset-0 bg-black/70 flex items-center justify-center z-10"
-                            >
+                            <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-0">
                                 <div
                                     className="rounded-full border border-white flex items-center justify-center"
                                     style={{
@@ -836,7 +821,7 @@ export default function Home() {
                                 >
                                     VENUS
                                 </div>
-                            </motion.div>
+                            </div>
                         </div>
 
                         {/* View All */}
