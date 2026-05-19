@@ -434,7 +434,7 @@ export default function Home() {
                                 </h2>
                                 <div style={{ height: '32px' }} />
                                 <h3
-                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
+                                    className="text-white transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 700,
@@ -520,7 +520,7 @@ export default function Home() {
                                 </h2>
                                 <div style={{ height: '32px' }} />
                                 <h3
-                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
+                                    className="text-white transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 700,
@@ -606,7 +606,7 @@ export default function Home() {
                                 </h2>
                                 <div style={{ height: '32px' }} />
                                 <h3
-                                    className="text-white/60 transition-colors duration-500 group-hover:text-white"
+                                    className="text-white transition-colors duration-500 group-hover:text-white"
                                     style={{
                                         fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 700,
