@@ -360,7 +360,8 @@ export default function Home() {
                 className="w-full h-screen relative flex items-center justify-center bg-black overflow-hidden"
                 style={{ height: "100vh" }}
             >
-                <div className="w-full h-full flex items-center justify-center">
+                {/* 1. Video (Bottommost) */}
+                <div className="absolute inset-0 w-full h-full flex items-center justify-center z-0">
                     <video
                         src="/home2-hero.mp4"
                         autoPlay
@@ -371,11 +372,30 @@ export default function Home() {
                     />
                 </div>
 
-                {/* Glassmorphism Overlay (Left Half) */}
-                <div className="absolute top-0 left-0 w-1/2 h-full z-[5] backdrop-blur-[25px] bg-black/30" />
+                {/* 2. Black Overlay (Above Video) */}
+                <div className="absolute inset-0 w-full h-full z-[1]">
+                    <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08bdc7d2-46d9-4096-5660-2e4400b2fa00/public"
+                        alt="Black Overlay"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </div>
 
-                {/* Hero Content - pointer-events-none to allow interaction with elements below if needed, but here it's h-full of relative section */}
-                <div className={`absolute top-0 left-0 w-full h-full z-10 pointer-events-none`}>
+                {/* 3. Left Half Image Overlay (Above Black Overlay) */}
+                <div className="absolute top-0 left-0 w-1/2 h-full z-[2]">
+                    <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4ea879f9-c132-4005-f9fd-f31d36824e00/public"
+                        alt="Hero Overlay"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </div>
+
+                {/* 4. Hero Content Text (Topmost) */}
+                <div className="absolute top-0 left-0 w-full h-full z-[3] pointer-events-none">
                     <div className={`${containerClass} pointer-events-auto`}>
                         <div
                             style={{
@@ -725,11 +745,11 @@ export default function Home() {
                             Our Products
                         </h3>
                         <p
+                            className="leading-normal"
                             style={{
                                 fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
                                 fontSize: '16px',
-                                lineHeight: '110%',
                                 letterSpacing: '0px',
                                 color: '#FFFFFF',
                                 maxWidth: '34.72vw',
@@ -873,11 +893,11 @@ export default function Home() {
                             </h2>
                             <div style={{ height: '32px' }} />
                             <p
+                                className="leading-normal"
                                 style={{
                                     fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 500,
                                     fontSize: '14px',
-                                    lineHeight: '100%',
                                     color: '#AEAEAE'
                                 }}
                             >
@@ -920,11 +940,11 @@ export default function Home() {
                             </h4>
                             <div style={{ height: '12px' }} />
                             <p
+                                className="leading-normal"
                                 style={{
                                     fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 400,
                                     fontSize: '14px',
-                                    lineHeight: '100%',
                                     color: '#AEAEAE'
                                 }}
                             >
@@ -951,11 +971,11 @@ export default function Home() {
                             </h4>
                             <div style={{ height: '12px' }} />
                             <p
+                                className="leading-normal"
                                 style={{
                                     fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 400,
                                     fontSize: '14px',
-                                    lineHeight: '100%',
                                     color: '#AEAEAE'
                                 }}
                             >
@@ -982,11 +1002,11 @@ export default function Home() {
                             </h4>
                             <div style={{ height: '12px' }} />
                             <p
+                                className="leading-normal"
                                 style={{
                                     fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 400,
                                     fontSize: '14px',
-                                    lineHeight: '100%',
                                     color: '#AEAEAE'
                                 }}
                             >
@@ -1013,11 +1033,11 @@ export default function Home() {
                             </h4>
                             <div style={{ height: '12px' }} />
                             <p
+                                className="leading-normal"
                                 style={{
                                     fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 400,
                                     fontSize: '14px',
-                                    lineHeight: '100%',
                                     color: '#AEAEAE'
                                 }}
                             >
