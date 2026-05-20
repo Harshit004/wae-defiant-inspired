@@ -384,7 +384,7 @@ export default function Home() {
                 </div>
 
                 {/* 3. Left Half Image Overlay (Above Black Overlay) */}
-                <div className="absolute top-0 left-0 w-1/2 h-full z-[2]">
+                <div className="opacity-50 absolute top-0 left-0 w-1/2 h-full z-[2]">
                     <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a64aad7f-4108-491d-9bf8-d1266178ab00/public"
                         alt="Hero Overlay"
