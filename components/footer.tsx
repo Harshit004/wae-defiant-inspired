@@ -14,7 +14,7 @@ export default function Footer() {
           paddingBottom: "48px",
         }}
       >
-        {/* Two equal halves — mirrors the contact section layout */}
+        {/* Two equal halves — mirrors the contact section layout for email input alignment */}
         <div className="flex flex-row items-start w-full">
 
           {/* ── LEFT HALF (50 vw - 7.5 vw = 42.5 vw): Logo + Coordinates + Social ── */}
