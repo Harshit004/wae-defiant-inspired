@@ -60,7 +60,7 @@ const Counter: FC<{ value: number; suffix?: string; trigger?: boolean }> = ({ va
 interface HoverButtonProps {
     children: (hovered: boolean) => React.ReactNode;
     href?: string;
-    theme?: "light" | "dark" | "transparent-white";
+    theme?: "light" | "dark" | "transparent-white" | "transparent-white-black-hover";
 }
 
 const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) => {
@@ -71,8 +71,9 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
             type="button"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="w-fit px-4 py-3 transition-all duration-650 ease"
+            className="w-fit px-4 py-3"
             style={{
+                transition: 'background-color 0.65s ease, color 0.65s ease, border-color 0.65s ease',
                 pointerEvents: "auto",
                 display: "inline-flex",
                 alignItems: "center",
@@ -81,18 +82,21 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
                 fontWeight: 500, // This fontWeight is for the button text itself (like "Know More")
                 fontSize: "10px",
                 lineHeight: "100%",
-                textTransform: "uppercase",
+                textTransform: "none",
                 backgroundColor:
                     theme === "transparent-white" ? (hovered ? "#fff" : "transparent") :
-                        theme === "dark" ? "#000" : (hovered ? "#000" : "#fff"),
+                        theme === "transparent-white-black-hover" ? (hovered ? "#fff" : "transparent") :
+                            theme === "dark" ? "#000" : (hovered ? "#000" : "#fff"),
                 border:
-                    theme === "transparent-white" ? "1px solid #fff" :
+                    theme === "transparent-white" || theme === "transparent-white-black-hover" ? "1px solid #fff" :
                         theme === "dark" ? "1px solid #fff" : "1px solid #000",
                 cursor: "pointer",
                 color:
                     theme === "transparent-white" ? (hovered ? "#004063" : "#fff") :
-                        theme === "dark" ? "#fff" : (hovered ? "#fff" : "#000"),
+                        theme === "transparent-white-black-hover" ? (hovered ? "#000" : "#fff") :
+                            theme === "dark" ? "#fff" : (hovered ? "#fff" : "#000"),
             }}
+
         >
             {children(hovered)} {/* This is where the error happens if children is not a function */}
         </button>
@@ -200,7 +204,7 @@ export default function Home() {
     const lineCount = Math.min(productsItems.length, blueprintItems.length) // Note: lineCount is calculated but not used
 
     return (
-        <main className="relative pb-[40px]">
+        <main className="relative">
             {/* HEADER (Not Fixed in this version) */}
             {/* The div with inline styles here seems unnecessary if not fixed */}
             <div> {/* Consider removing this outer div or making it relative/static */}
@@ -219,7 +223,7 @@ export default function Home() {
                         >
                             <div>IDENTITY</div>
                             <div>ORIGIN</div>
-                            <div>OBJECTIVE</div>
+                            <div style={{ position: "relative", left: "-20px" }}>OBJECTIVE</div>
                             <div>INSIDE WAE</div>
                             <div>ETCETERA</div>
                         </div>
@@ -230,12 +234,12 @@ export default function Home() {
                         {/* Bottom Row: Logo, Tagline and Menu Items */}
                         <div className="grid grid-cols-5 items-start">
                             {/* Logo */}
-                            <div className="flex flex-col justify-center">
+                            <div className="flex flex-col justify-center w-[77px] h-[82px]">
                                 <Link href="/">
                                     <Image
                                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
                                         alt="WAE Logo"
-                                        width={78}
+                                        width={77}
                                         height={82}
                                     />
                                 </Link>
@@ -266,6 +270,8 @@ export default function Home() {
                                     fontSize: "11px",
                                     lineHeight: "100%",
                                     color: "#ffffff",
+                                    position: "relative",
+                                    left: "-20px",
                                 }}
                             >
                                 To lead the way in<br />sustainability ahead of the<br />rest
@@ -845,7 +851,7 @@ export default function Home() {
                         </div>
 
                         {/* View All */}
-                        <Link href="/our-products2" className="bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]">
+                        <Link href="/our-portfolio" className="bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]">
                             <div
                                 className="rounded-full border border-white flex items-center justify-center"
                                 style={{
@@ -889,7 +895,7 @@ export default function Home() {
                                     color: '#FFFFFF'
                                 }}
                             >
-                                Carbon neutral by design
+                                Positive Hydration for a Net<br />Zero Future
                             </h2>
                             <div style={{ height: '32px' }} />
                             <p
@@ -905,7 +911,7 @@ export default function Home() {
                             </p>
                         </div>
 
-                        <div className="mt-[200px]">
+                        <div className="mt-[155px]">
                             <motion.div
                                 initial={{ filter: 'grayscale(100%)' }}
                                 whileHover={{ filter: 'grayscale(0%)' }}
@@ -936,7 +942,7 @@ export default function Home() {
                                     color: '#FFFFFF'
                                 }}
                             >
-                                1. Manufacture
+                                1. Carbon Neutrality by Design
                             </h4>
                             <div style={{ height: '12px' }} />
                             <p
@@ -948,7 +954,7 @@ export default function Home() {
                                     color: '#AEAEAE'
                                 }}
                             >
-                                Energy-efficient production, ZED Gold certified by India's MSME Ministry. Energy-efficient production, ZED Gold certified by India's MSME MinistryEnergy-efficient production, ZED Gold certified
+                                WAE engineers carbon neutrality across stages. From ZED Gold manufacturing to optimised distribution and point-of-use purification. Each verifiable installation helps reduce Scope 3 emissions by eliminating packaged water.
                             </p>
                             <div style={{ height: '22px' }} />
                             <div className="w-full h-px bg-white" />
@@ -967,7 +973,7 @@ export default function Home() {
                                     color: '#FFFFFF'
                                 }}
                             >
-                                2. Distribution
+                                2. ESG Performance & Reporting
                             </h4>
                             <div style={{ height: '12px' }} />
                             <p
@@ -979,7 +985,7 @@ export default function Home() {
                                     color: '#AEAEAE'
                                 }}
                             >
-                                Optimised logistics to minimise transport emissions Optimised logistics to minimise transport emissionsOptimised logistics to minimise transport emissionsOptimised logistics to minimise transport emissions
+                                WAE solutions deliver measurable outcomes across ESG. They reduce plastic and carbon, enable hydration, and meet GRIHA, CE, and IWQA standards. With 20,000+ installations, WAE gives sustainability teams reportable data.
                             </p>
                             <div style={{ height: '22px' }} />
                             <div className="w-full h-px bg-white" />
@@ -998,7 +1004,7 @@ export default function Home() {
                                     color: '#FFFFFF'
                                 }}
                             >
-                                3. Use
+                                3. Water Stewardship
                             </h4>
                             <div style={{ height: '12px' }} />
                             <p
@@ -1010,7 +1016,7 @@ export default function Home() {
                                     color: '#AEAEAE'
                                 }}
                             >
-                                Products eliminate plastic bottle waste at source Products eliminate plastic bottle waste at sourceProducts eliminate plastic bottle waste at sourceProducts eliminate plastic bottle waste at source
+                                WAE manages the full water lifecycle. From multi-stage RO purification to IoT-monitored point-of-use dispensing. Every installation enables traceability, accountability, zero waste, and water stewardship.
                             </p>
                             <div style={{ height: '22px' }} />
                             <div className="w-full h-px bg-white" />
@@ -1029,7 +1035,7 @@ export default function Home() {
                                     color: '#FFFFFF'
                                 }}
                             >
-                                4. End of life
+                                4. Net Zero Alignment
                             </h4>
                             <div style={{ height: '12px' }} />
                             <p
@@ -1041,7 +1047,7 @@ export default function Home() {
                                     color: '#AEAEAE'
                                 }}
                             >
-                                Recyclable components and responsible disposal Recyclable components and responsible disposalRecyclable components and responsible disposalRecyclable components and responsible disposalRecyclable components and responsible disposal
+                                WAE eliminates the emission chain of single-use plastic water. From production and transport to refrigeration and disposal. Each active system removes an estimated 20,000–30,000 bottles per year. It supports verified Scope 3 reductions aligned with SBTi and net zero goals.
                             </p>
                             <div style={{ height: '22px' }} />
                             <div className="w-full h-px bg-white" />
@@ -1103,7 +1109,7 @@ export default function Home() {
                         <p
                             style={{
                                 fontFamily: "'Manrope', sans-serif",
-                                fontWeight: 500,
+                                fontWeight: 400,
                                 fontSize: '14px',
                                 lineHeight: '100%',
                                 color: '#AEAEAE',
@@ -1112,6 +1118,39 @@ export default function Home() {
                         >
                             Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
                         </p>
+                        <div style={{ height: '46px' }} />
+                        <Link href="/sustainability" className="contents">
+                            <HoverButton theme="transparent-white">
+                                {(hovered) => (
+                                    <>
+                                        Know More
+                                        <div className="relative inline-block w-4 h-4">
+                                            <Image
+                                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                                alt="icon default"
+                                                width={16}
+                                                height={16}
+                                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                                            />
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: hovered ? 1 : 0 }}
+                                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                                className="absolute top-0 left-0"
+                                            >
+                                                <Image
+                                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                                    alt="icon hover"
+                                                    width={16}
+                                                    height={16}
+                                                    className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                                                />
+                                            </motion.div>
+                                        </div>
+                                    </>
+                                )}
+                            </HoverButton>
+                        </Link>
                     </div>
 
                     <div className="mt-[150px]">
@@ -1188,27 +1227,63 @@ export default function Home() {
                 }}
             >
                 <div className="w-full">
-                    <h2 style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '40px',
-                        lineHeight: '110%',
-                        color: '#FFFFFF',
-                        marginBottom: '20px'
-                    }}>
-                        From our blog
-                    </h2>
-                    <p style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '14px',
-                        lineHeight: '140%',
-                        color: '#AEAEAE',
-                        maxWidth: '450px',
-                        marginBottom: '60px'
-                    }}>
-                        WAE publishes perspectives on climate, water, and sustainability — because good water companies think beyond the tap.
-                    </p>
+                    <div className="flex justify-between items-start w-full" style={{ paddingLeft: '32px', paddingRight: '48px' }}>
+                        <div className="flex-1">
+                            <h2 style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '40px',
+                                lineHeight: '110%',
+                                color: '#FFFFFF',
+                                marginBottom: '20px'
+                            }}>
+                                From our blog
+                            </h2>
+                            <p style={{
+                                fontFamily: "'Manrope', sans-serif",
+                                fontWeight: 400,
+                                fontSize: '14px',
+                                lineHeight: '140%',
+                                color: '#AEAEAE',
+                                maxWidth: '450px',
+                                marginBottom: '60px'
+                            }}>
+                                WAE publishes perspectives on climate, water, and sustainability — because good water companies think beyond the tap.
+                            </p>
+                        </div>
+                        <div className="flex-shrink-0">
+                            <HoverButton href="/blogs2" theme="transparent-white-black-hover">
+                                {(hovered) => (
+                                    <>
+                                        Know More
+                                        <div className="relative inline-block w-4 h-4">
+                                            <Image
+                                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                                alt="icon default"
+                                                width={16}
+                                                height={16}
+                                                className={hovered ? "brightness-0" : "brightness-0 invert"}
+                                            />
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: hovered ? 1 : 0 }}
+                                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                                className="absolute top-0 left-0"
+                                            >
+                                                <Image
+                                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                                    alt="icon hover"
+                                                    width={16}
+                                                    height={16}
+                                                    className={hovered ? "brightness-0" : "brightness-0 invert"}
+                                                />
+                                            </motion.div>
+                                        </div>
+                                    </>
+                                )}
+                            </HoverButton>
+                        </div>
+                    </div>
 
                     <div className="grid grid-cols-3 gap-x-0">
                         {/* Card 1 */}
@@ -1364,91 +1439,125 @@ export default function Home() {
                 }}
             >
                 <div className="w-full">
-                    <h2 style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '40px',
-                        lineHeight: '110%',
-                        color: '#FFFFFF',
-                        marginBottom: '80px',
-                        maxWidth: '800px'
-                    }}>
-                        Stay informed with our latest media coverage and announcements
-                    </h2>
+                    <div className="flex justify-between items-start w-full" style={{ paddingRight: '48px' }}>
+                        <h2 style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 400,
+                            fontSize: '40px',
+                            lineHeight: '110%',
+                            color: '#FFFFFF',
+                            marginBottom: '80px',
+                            maxWidth: '800px'
+                        }}>
+                            Stay informed with our latest media coverage and announcements
+                        </h2>
+                        <div className="flex-shrink-0">
+                            <HoverButton href="/media-and-updates" theme="transparent-white-black-hover">
+                                {(hovered) => (
+                                    <>
+                                        Know More
+                                        <div className="relative inline-block w-4 h-4">
+                                            <Image
+                                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                                alt="icon default"
+                                                width={16}
+                                                height={16}
+                                                className={hovered ? "brightness-0" : "brightness-0 invert"}
+                                            />
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: hovered ? 1 : 0 }}
+                                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                                className="absolute top-0 left-0"
+                                            >
+                                                <Image
+                                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                                    alt="icon hover"
+                                                    width={16}
+                                                    height={16}
+                                                    className={hovered ? "brightness-0" : "brightness-0 invert"}
+                                                />
+                                            </motion.div>
+                                        </div>
+                                    </>
+                                )}
+                            </HoverButton>
+                        </div>
+                    </div>
 
                     <div className="grid grid-cols-12 gap-8">
                         {/* Main News Column */}
-                        <div className="col-span-4">
+                        <div className="col-span-4 group cursor-pointer">
                             <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
                                 <Image
-                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"
-                                    alt="WAE ZED Gold Certification"
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fac96cd3-ad63-42ff-23df-0d795cc52000/public"
+                                    alt="How Industrial Equipment Is Being Designed to Deliver Measurable Carbon Reductions "
                                     fill
-                                    className="object-cover"
+                                    className="object-cover grayscale group-hover:grayscale-0"
                                 />
                             </div>
                             <h3 style={{
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 400,
-                                fontSize: '20px',
-                                lineHeight: '120%',
+                                fontSize: '18px',
+                                lineHeight: '100%',
                                 color: '#FFFFFF',
-                                marginBottom: '12px'
+                                marginBottom: '18px'
                             }}>
-                                WAE shines with ZED Gold certification for sustainable excellence
+                                How Industrial Equipment Is Being Designed to Deliver Measurable Carbon Reductions
                             </h3>
                             <p style={{
                                 fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
-                                fontSize: '13px',
-                                lineHeight: '150%',
+                                fontSize: '14px',
+                                lineHeight: '100%',
                                 color: '#AEAEAE'
                             }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nisl magna. Curabitur venenatis est non nibh ultricies dictum. Curabitur venenatis est non nibh ultricies dictum.
+                                For over a century, industrial machinery has been engineered to convert energy into output which is faster, cheaper, and at scale. Carbon, if acknowledged at all, was incidental. That era has ended.
                             </p>
                         </div>
 
                         {/* Middle News Column */}
-                        <div className="col-span-4">
+                        <div className="col-span-4 group cursor-pointer">
                             <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
                                 <Image
-                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/97d880ca-cfa0-4094-52b7-940402225a00/public"
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/31701d9e-a471-46ff-4bb7-dac1ec8aac00/public"
                                     alt="Manufacturing"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover grayscale group-hover:grayscale-0"
                                 />
                             </div>
                             <h3 style={{
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 400,
-                                fontSize: '20px',
-                                lineHeight: '120%',
+                                fontSize: '18px',
+                                lineHeight: '100%',
                                 color: '#FFFFFF',
-                                marginBottom: '12px'
+                                marginBottom: '18px'
                             }}>
-                                WAE shines with ZED Gold certification for sustainable excellence
+                                Safari India Exclusive: Binita Singh of WAE F&B on Redefining Sustainable Water Solutions in..
                             </h3>
                             <p style={{
                                 fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
-                                fontSize: '13px',
-                                lineHeight: '150%',
+                                fontSize: '14px',
+                                lineHeight: '100%',
                                 color: '#AEAEAE'
                             }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nisl magna. Curabitur venenatis est non nibh ultricies dictum. Curabitur venenatis est non nibh ultricies dictum.
+                                In an exclusive conversation with Priyal Dutta, Senior Correspondent, Safari India, Ms. Binita Singh, Head – Brand Advocacy at WAE F&B, shares her perspective on the evolving sustainability landscape in the...
                             </p>
                         </div>
 
                         {/* Sidebar News Column */}
                         <div className="col-span-4 flex flex-col justify-between">
                             {[1, 2, 3].map((i) => (
-                                <div key={i} className="flex gap-6 items-start">
+                                <div key={i} className="flex gap-6 items-start group cursor-pointer">
                                     <div className="relative w-[140px] aspect-[1.4/1] flex-shrink-0">
                                         <Image
                                             src={i === 2 ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public" : i === 1 ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"}
                                             alt="Small news item"
                                             fill
-                                            className="object-cover"
+                                            className="object-cover grayscale group-hover:grayscale-0"
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2">
@@ -1491,16 +1600,13 @@ export default function Home() {
             >
                 <ContactSectionDark />
             </section>
-            {/* This div now appears after the section container (which has margin) */}
-            <div style={{ position: "relative", zIndex: 10 }}> {/* zIndex 10 here is fine as it's not overlapping a fixed element */}
-                <Footer />
-            </div>
+            <Footer />
 
             {/* INLINE CSS for hover and arrow animations */}
             <style jsx>{`
-        /* Custom filter for #004063 blue color */
-        .filter-wae-blue {
-          filter: invert(16%) sepia(93%) saturate(1599%) hue-rotate(180deg) brightness(96%) contrast(105%);
+        /* Custom filter for #004063 blue color - global selector to bypass styled-jsx scoping on Image tag */
+        :global(.filter-wae-blue) {
+          filter: invert(16%) sepia(93%) saturate(1599%) hue-rotate(180deg) brightness(96%) contrast(105%) !important;
         }
 
         /* Removed unused styles like product-grid, product-title, product-cell, placeholder-img */
