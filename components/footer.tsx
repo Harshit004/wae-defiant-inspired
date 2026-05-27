@@ -33,7 +33,7 @@ export default function Footer() {
             </div>
 
             {/* Coordinates & Social */}
-            <div className="flex flex-col justify-between min-h-[190px] ml-[7.5vw]">
+            <div className="flex flex-col justify-between min-h-[221px] ml-[7.5vw]">
               <div>
                 <h4 className="font-[Inter_Tight] font-medium text-[10px] uppercase text-white tracking-wider mb-3">
                   Co-ordinates
