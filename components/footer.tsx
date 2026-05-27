@@ -10,7 +10,7 @@ export default function Footer() {
         style={{
           paddingLeft: "7.5vw",
           paddingRight: "7.5vw",
-          paddingTop: "48px",
+          paddingTop: "66px",
           paddingBottom: "48px",
         }}
       >
@@ -38,17 +38,17 @@ export default function Footer() {
                 <h4 className="font-[Inter_Tight] font-medium text-[10px] uppercase text-white tracking-wider mb-3">
                   Co-ordinates
                 </h4>
-                <p className="font-[Inter_Tight] font-normal text-[11px] text-white leading-relaxed">
+                <p className="font-[Inter_Tight] font-normal text-[10px] text-white leading-relaxed mb-[10px]">
                   H-18, H block, Sector 63, Noida, Uttar Pradesh,<br />
                   India, 201301
                 </p>
-                <p className="font-[Inter_Tight] font-normal text-[11px] text-white mt-2">
+                <p className="font-[Inter_Tight] font-normal text-[10px] text-white">
                   +120 4069800
                 </p>
               </div>
 
               {/* Social Media Icons */}
-              <div className="flex gap-4 items-center mt-6">
+              <div className="flex gap-4 items-center mt-7">
                 <Link href="#" className="hover:opacity-80 transition-opacity">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f944e769-4d53-4737-1415-e379403c6900/public"
@@ -152,13 +152,13 @@ export default function Footer() {
             <div className="w-full">
               {/* Column headings */}
               <div className="grid grid-cols-3 gap-4">
-                <h3 className="font-[Inter_Tight] font-semibold text-[9px] uppercase text-white tracking-wider">
+                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider">
                   INSIDE WAE
                 </h3>
-                <h3 className="font-[Inter_Tight] font-semibold text-[9px] uppercase text-white tracking-wider">
+                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider">
                   ETCETERA
                 </h3>
-                <h3 className="font-[Inter_Tight] font-semibold text-[9px] uppercase text-white tracking-wider">
+                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider">
                   POLICY
                 </h3>
               </div>
@@ -176,21 +176,21 @@ export default function Footer() {
               {/* Link lists */}
               <div className="grid grid-cols-3 gap-4">
                 {/* INSIDE WAE */}
-                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[12px] text-white">
+                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
                   <li><Link href="/this-is-us" className="hover:opacity-80 transition-opacity">This is Us</Link></li>
                   <li><Link href="/our-portfolio" className="hover:opacity-80 transition-opacity">Our Portfolio</Link></li>
                   <li><Link href="/careers3" className="hover:opacity-80 transition-opacity">Reimagine Work</Link></li>
                 </ul>
 
                 {/* ETCETERA */}
-                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[12px] text-white">
+                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
                   <li><Link href="/the-activist-co" className="hover:opacity-80 transition-opacity">The Activist Co.</Link></li>
                   <li><Link href="/resource-listing" className="hover:opacity-80 transition-opacity">Resources</Link></li>
                   <li><Link href="/blogs2" className="hover:opacity-80 transition-opacity">Blog</Link></li>
                 </ul>
 
                 {/* POLICY */}
-                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[12px] text-white">
+                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
                   <li><Link href="/terms-of-use" className="hover:opacity-80 transition-opacity">Terms of Use</Link></li>
                   <li><Link href="/privacy-policy" className="hover:opacity-80 transition-opacity">Privacy Policy</Link></li>
                   <li><Link href="/data-privacy-policy" className="hover:opacity-80 transition-opacity">Data Privacy Policy</Link></li>
@@ -215,14 +215,13 @@ export default function Footer() {
         style={{
           paddingLeft: "7.5vw",
           paddingRight: "7.5vw",
-          paddingTop: "24px",
-          paddingBottom: "24px",
+          paddingTop: "23px",
+          paddingBottom: "27px",
         }}
         className="flex justify-between items-center font-[Manrope] text-[10px] text-white"
       >
         <span>&copy; Copy Right WAE 2026</span>
       </div>
-
     </footer>
   );
 }
