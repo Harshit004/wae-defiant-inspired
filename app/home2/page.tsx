@@ -406,7 +406,7 @@ export default function Home() {
                         <div
                             style={{
                                 marginTop: `${headerHeight + 105}px`,
-                                width: "34.79vw",
+                                width: "clamp(280px, 34.79vw, 600px)",
                                 color: "#FFFFFF",
                                 fontFamily: "'Inter Tight', sans-serif",
                             }}
@@ -414,7 +414,7 @@ export default function Home() {
                             <h1
                                 style={{
                                     fontWeight: 500,
-                                    fontSize: "85px",
+                                    fontSize: "clamp(36px, 5.9vw, 85px)",
                                     lineHeight: "105%",
                                     letterSpacing: "0%",
                                     verticalAlign: "middle",
@@ -423,11 +423,11 @@ export default function Home() {
                             >
                                 We're here<br />to disrupt the<br />status quo!
                             </h1>
-                            <div style={{ height: "22px" }} />
+                            <div style={{ height: "clamp(12px, 1.5vw, 22px)" }} />
                             <p
                                 style={{
                                     fontWeight: 400,
-                                    fontSize: "24px",
+                                    fontSize: "clamp(14px, 1.67vw, 24px)",
                                     lineHeight: "115%",
                                     letterSpacing: "0%",
                                     verticalAlign: "middle",
