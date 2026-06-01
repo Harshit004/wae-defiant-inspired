@@ -496,23 +496,7 @@ export default function Home() {
                 position: "relative",
                 backgroundColor: "#0f0f0f",
             }}>
-                {/* Background image - height dynamically measured to end between BLUWAE content and button */}
-                <img
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1382e08a-79bc-4586-a567-622ca5dfe400/public"
-                    alt=""
-                    aria-hidden="true"
-                    style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: bgImageHeight > 0 ? `${bgImageHeight + 31}px` : "auto",
-                        objectFit: "cover",
-                        objectPosition: "top center",
-                        pointerEvents: "none",
-                        zIndex: 0,
-                    }}
-                />
+                {/* Background is now the parent's backgroundColor: #0f0f0f */}
                 {/* Next Section: Highlight Quote */}
                 <section
                     style={{
