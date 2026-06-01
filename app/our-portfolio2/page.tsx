@@ -166,7 +166,7 @@ export default function Home() {
         },
         {
             id: "pus",
-            title: "Compact purification units - PUS",
+            title: "Compact purification units - WAEAU",
             description: "Robust, research-backed water systems engineered for public infrastructure—ensuring continuous access to safe, purified drinking water in all conditions.",
             imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
             href: "/product-category/public-utility-systems"
@@ -453,7 +453,7 @@ export default function Home() {
                     <video
                         src="/portfolio-hero.mp4"
                         autoPlay
-                        muted
+                        muted={false}
                         playsInline
                         loop
                         className="w-full h-full object-cover rounded-none"
@@ -471,34 +471,23 @@ export default function Home() {
                     />
                 </div>
 
-                {/* 3. Hero Content Text (Topmost) */}
-                <div className="absolute bottom-[110px] left-1/2 -translate-x-1/2 w-full z-[3] pointer-events-none flex justify-center">
-                    <div
-                        className="pointer-events-auto"
-                        style={{
-                            maxWidth: "67.3vw",
-                            width: "100%",
-                            color: "#FFFFFF",
-                            fontFamily: "'Inter Tight', sans-serif",
-                            textAlign: "center",
-                        }}
-                    >
-                        <h1
-                            style={{
-                                fontWeight: 500,
-                                fontSize: "70px",
-                                lineHeight: "105%",
-                                letterSpacing: "0%",
-                                textAlign: "center",
-                                verticalAlign: "middle",
-                                margin: 0,
-                                whiteSpace: "nowrap",
-                            }}
-                        >
-                            Sustainable hydration solutions
-                        </h1>
-                    </div>
+                {/* Scroll for more text */}
+                <div
+                    className="absolute uppercase text-[#ffffff99] z-10"
+                    style={{ // Inline styles for positioning and typography
+                        bottom: "5%",
+                        left: "1rem",
+                        marginLeft: "9.2%",
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 500,
+                        fontSize: "0.625rem", // From previous page's mobile hero (10px)
+                        lineHeight: "100%",
+                        zIndex: 10,
+                    }}
+                >
+                    Scroll for more ⤵︎ {/* Static text */}
                 </div>
+
             </section>
             <div ref={bgWrapperRef} style={{
                 width: "100%",
@@ -551,9 +540,10 @@ export default function Home() {
                             }}
                         >
                             WAE’s hydration system<br />
-                            <span style={{ color: "#FFFFFF" }}>deliver plastic-free</span> water dispensing for
-                            <span style={{ color: "#FFFFFF" }}> high-footfall<br />environments</span> while supporting
-                            <span style={{ color: "#FFFFFF" }}> zero-landfill goals</span>.
+                            <span style={{ color: "#FFFFFF" }}>deliver plastic-free</span> water dispensing for <span style={{ color: "#FFFFFF" }}>high-footfall</span><br />
+                            <span style={{ display: "inline-block", marginRight: "1.2em" }}>
+                                <span style={{ color: "#FFFFFF" }}>environments</span> while supporting <span style={{ color: "#FFFFFF" }}>zero-landfill goals</span>.
+                            </span>
                         </div>
 
                     </div>
@@ -608,7 +598,7 @@ export default function Home() {
                         {filterProduct(portfolioProducts[0]) && (
                             <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "80px", paddingBottom: "80px", borderBottom: "1px solid rgba(255,255,255,0.1)" }} className="grid-cols-1 md:grid-cols-[1.2fr_1fr]">
                                 {/* Image */}
-                                <div className="relative overflow-hidden group" style={{ width: "100%", height: "450px" }}>
+                                <div className="relative overflow-hidden group" style={{ width: "41.18vw", height: "500px" }}>
                                     <Image
                                         src={portfolioProducts[0].imageUrl}
                                         alt={portfolioProducts[0].title}
@@ -625,7 +615,7 @@ export default function Home() {
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "40px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
                                             {portfolioProducts[0].title}
                                         </h3>
-                                        <p ref={bluwaeDescRef} style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px", maxWidth: "480px" }}>
+                                        <p ref={bluwaeDescRef} style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px", maxWidth: "480px" }}>
                                             {portfolioProducts[0].description}
                                         </p>
                                     </div>
@@ -667,7 +657,7 @@ export default function Home() {
                                 {/* Left Column (TRUBLU) */}
                                 {filterProduct(portfolioProducts[1]) ? (
                                     <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-                                        <div className="relative overflow-hidden group" style={{ width: "100%", height: "350px", marginBottom: "24px" }}>
+                                        <div className="relative overflow-hidden group" style={{ width: "41.18vw", height: "500px", marginBottom: "24px" }}>
                                             <Image
                                                 src={portfolioProducts[1].imageUrl}
                                                 alt={portfolioProducts[1].title}
@@ -678,7 +668,7 @@ export default function Home() {
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "18px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
                                             {portfolioProducts[1].title}
                                         </h3>
-                                        <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
+                                        <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
                                             {portfolioProducts[1].description}
                                         </p>
                                         <HoverButton href={portfolioProducts[1].href} theme="transparent-white-black-hover">
@@ -715,7 +705,7 @@ export default function Home() {
                                 {/* Right Column (ZVR) */}
                                 {filterProduct(portfolioProducts[2]) ? (
                                     <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-                                        <div className="relative overflow-hidden group" style={{ width: "100%", height: "350px", marginBottom: "24px" }}>
+                                        <div className="relative overflow-hidden group" style={{ width: "41.18vw", height: "500px", marginBottom: "24px" }}>
                                             <Image
                                                 src={portfolioProducts[2].imageUrl}
                                                 alt={portfolioProducts[2].title}
@@ -726,7 +716,7 @@ export default function Home() {
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "18px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
                                             {portfolioProducts[2].title}
                                         </h3>
-                                        <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
+                                        <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
                                             {portfolioProducts[2].description}
                                         </p>
                                         <HoverButton href={portfolioProducts[2].href} theme="transparent-white-black-hover">
@@ -768,7 +758,7 @@ export default function Home() {
                                 {/* Left Column (WATERMATIC) */}
                                 {filterProduct(portfolioProducts[3]) ? (
                                     <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-                                        <div className="relative overflow-hidden group" style={{ width: "100%", height: "350px", marginBottom: "24px" }}>
+                                        <div className="relative overflow-hidden group" style={{ width: "41.18vw", height: "500px", marginBottom: "24px" }}>
                                             <Image
                                                 src={portfolioProducts[3].imageUrl}
                                                 alt={portfolioProducts[3].title}
@@ -779,7 +769,7 @@ export default function Home() {
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "18px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
                                             {portfolioProducts[3].title}
                                         </h3>
-                                        <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
+                                        <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
                                             {portfolioProducts[3].description}
                                         </p>
                                         <HoverButton href={portfolioProducts[3].href} theme="transparent-white-black-hover">
@@ -816,7 +806,7 @@ export default function Home() {
                                 {/* Right Column (PUS) */}
                                 {filterProduct(portfolioProducts[4]) ? (
                                     <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-                                        <div className="relative overflow-hidden group" style={{ width: "100%", height: "350px", marginBottom: "24px" }}>
+                                        <div className="relative overflow-hidden group" style={{ width: "41.18vw", height: "500px", marginBottom: "24px" }}>
                                             <Image
                                                 src={portfolioProducts[4].imageUrl}
                                                 alt={portfolioProducts[4].title}
@@ -827,7 +817,7 @@ export default function Home() {
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "18px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
                                             {portfolioProducts[4].title}
                                         </h3>
-                                        <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
+                                        <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
                                             {portfolioProducts[4].description}
                                         </p>
                                         <HoverButton href={portfolioProducts[4].href} theme="transparent-white-black-hover">
@@ -880,7 +870,7 @@ export default function Home() {
                                     <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "36px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
                                         {portfolioProducts[5].title}
                                     </h3>
-                                    <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px", maxWidth: "600px" }}>
+                                    <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px", maxWidth: "600px" }}>
                                         {portfolioProducts[5].description}
                                     </p>
                                     <HoverButton href={portfolioProducts[5].href} theme="transparent-white-black-hover">
