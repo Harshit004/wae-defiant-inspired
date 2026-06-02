@@ -449,7 +449,13 @@ export default function Home() {
                 style={{ height: "100vh" }}
             >
                 {/* 1. Video (Bottommost) */}
-                <div className="absolute inset-0 w-full h-full flex items-center justify-center z-0">
+                <div className="absolute inset-0 w-full h-full flex items-center justify-center z-0 cursor-pointer" onClick={(e) => {
+                    const video = e.currentTarget.querySelector('video');
+                    if (video) {
+                        video.muted = false;
+                        video.play().catch(() => {});
+                    }
+                }}>
                     <video
                         src="/portfolio-hero.mp4"
                         autoPlay
@@ -461,7 +467,7 @@ export default function Home() {
                 </div>
 
                 {/* 2. Black Overlay (Above Video) */}
-                <div className="absolute inset-0 w-full h-full z-[1]">
+                <div className="absolute inset-0 w-full h-full z-[1] pointer-events-none">
                     <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08bdc7d2-46d9-4096-5660-2e4400b2fa00/public"
                         alt="Black Overlay"
@@ -470,6 +476,41 @@ export default function Home() {
                         priority
                     />
                 </div>
+
+                {/* Volume/Sound Toggle Indicator */}
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        const video = document.querySelector('video');
+                        if (video) {
+                            video.muted = !video.muted;
+                            // Force play in case browser paused it
+                            video.play().catch(() => {});
+                            
+                            // Visual feedback
+                            const btn = e.currentTarget;
+                            const text = btn.querySelector('.volume-text');
+                            if (text) {
+                                text.textContent = video.muted ? "SOUND OFF" : "SOUND ON";
+                            }
+                        }
+                    }}
+                    className="absolute z-20 flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-all duration-300"
+                    style={{
+                        bottom: "5%",
+                        right: "10.8vw",
+                        fontFamily: "'Manrope', sans-serif",
+                        fontSize: "10px",
+                        letterSpacing: "0.05em",
+                        fontWeight: 500,
+                    }}
+                >
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span className="volume-text">SOUND OFF</span>
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                    </svg>
+                </button>
 
                 {/* Scroll for more text */}
                 <div
