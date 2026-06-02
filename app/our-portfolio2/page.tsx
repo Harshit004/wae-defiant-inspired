@@ -453,7 +453,7 @@ export default function Home() {
                     <video
                         src="/portfolio-hero.mp4"
                         autoPlay
-                        muted={false}
+                        muted
                         playsInline
                         loop
                         className="w-full h-full object-cover rounded-none"
