@@ -120,6 +120,7 @@ export default function Home() {
     const [headerHeight, setHeaderHeight] = useState(0)
     const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
     const [searchQuery, setSearchQuery] = useState("")
+    const [isMuted, setIsMuted] = useState(true)
     const headerRef = useRef<HTMLDivElement>(null)
     const sectionRef = useRef<HTMLElement>(null)
     const isInView = useInView(sectionRef, { once: true, amount: 0.5 })
@@ -453,13 +454,14 @@ export default function Home() {
                     const video = e.currentTarget.querySelector('video');
                     if (video) {
                         video.muted = false;
+                        setIsMuted(false);
                         video.play().catch(() => {});
                     }
                 }}>
                     <video
                         src="/portfolio-hero.mp4"
                         autoPlay
-                        muted
+                        muted={isMuted}
                         playsInline
                         loop
                         className="w-full h-full object-cover rounded-none"
@@ -483,16 +485,11 @@ export default function Home() {
                         e.stopPropagation();
                         const video = document.querySelector('video');
                         if (video) {
-                            video.muted = !video.muted;
+                            const newMuted = !video.muted;
+                            video.muted = newMuted;
+                            setIsMuted(newMuted);
                             // Force play in case browser paused it
                             video.play().catch(() => {});
-                            
-                            // Visual feedback
-                            const btn = e.currentTarget;
-                            const text = btn.querySelector('.volume-text');
-                            if (text) {
-                                text.textContent = video.muted ? "SOUND OFF" : "SOUND ON";
-                            }
                         }
                     }}
                     className="absolute z-20 flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-all duration-300"
@@ -505,10 +502,14 @@ export default function Home() {
                         fontWeight: 500,
                     }}
                 >
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span className="volume-text">SOUND OFF</span>
+                    <span className={`w-2 h-2 rounded-full animate-pulse ${isMuted ? 'bg-rose-500' : 'bg-emerald-500'}`}></span>
+                    <span className="volume-text">{isMuted ? "SOUND OFF" : "SOUND ON"}</span>
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                        {isMuted ? (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zm10.242-1.758a1 1 0 00-1.414-1.414l-4 4a1 1 0 001.414 1.414l4-4zm0-6.484a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414-1.414l-4-4z" />
+                        ) : (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                        )}
                     </svg>
                 </button>
 
