@@ -49,7 +49,7 @@ export default function Footer() {
 
               {/* Social Media Icons */}
               <div className="flex gap-4 items-center mt-7">
-                <Link href="#" className="hover:opacity-80 transition-opacity">
+                <Link href="in.linkedin.com/company/wae-limited" className="hover:opacity-80 transition-opacity">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f944e769-4d53-4737-1415-e379403c6900/public"
                     alt="LinkedIn"
@@ -58,7 +58,7 @@ export default function Footer() {
                     className="brightness-0 invert"
                   />
                 </Link>
-                <Link href="#" className="hover:opacity-80 transition-opacity">
+                <Link href="instagram.com/wae.limited" className="hover:opacity-80 transition-opacity">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c0755e5-5c07-4e1c-31f7-066dde50cb00/public"
                     alt="Instagram"
@@ -67,7 +67,7 @@ export default function Footer() {
                     className="brightness-0 invert"
                   />
                 </Link>
-                <Link href="#" className="hover:opacity-80 transition-opacity">
+                <Link href="facebook.com/waeltd" className="hover:opacity-80 transition-opacity">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3f100468-318f-4c5c-b006-b304966d4100/public"
                     alt="Facebook"
@@ -76,7 +76,7 @@ export default function Footer() {
                     className="brightness-0 invert"
                   />
                 </Link>
-                <Link href="#" className="hover:opacity-80 transition-opacity">
+                <Link href="x.com/WAE_LTD" className="hover:opacity-80 transition-opacity">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/abb4c68a-3cf5-425e-f2d9-62cb73630100/public"
                     alt="X"
@@ -85,7 +85,7 @@ export default function Footer() {
                     className="brightness-0 invert"
                   />
                 </Link>
-                <Link href="#" className="hover:opacity-80 transition-opacity">
+                <Link href="https://www.youtube.com/@wae-limited" className="hover:opacity-80 transition-opacity">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5e07270e-f6f2-466a-0a14-316b9a397000/public"
                     alt="YouTube"
