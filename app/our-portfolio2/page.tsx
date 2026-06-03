@@ -125,6 +125,32 @@ export default function Home() {
     const sectionRef = useRef<HTMLElement>(null)
     const isInView = useInView(sectionRef, { once: true, amount: 0.5 })
 
+    // hero refs
+    const heroRef = useRef<HTMLElement>(null)
+    const videoRef = useRef<HTMLVideoElement>(null)
+
+    // hero observer logic
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (!videoRef.current) return;
+                
+                if (entry.isIntersecting) {
+                    videoRef.current.play().catch(() => {});
+                } else {
+                    videoRef.current.pause();
+                }
+            },
+            { threshold: 0 } 
+        );
+
+        if (heroRef.current) observer.observe(heroRef.current);
+        
+        return () => {
+            if (heroRef.current) observer.unobserve(heroRef.current);
+        };
+    }, []);
+
     // Refs and state for dynamic background image height
     const bgWrapperRef = useRef<HTMLDivElement>(null)
     const bluwaeDescRef = useRef<HTMLParagraphElement>(null)
@@ -445,7 +471,7 @@ export default function Home() {
             {/* HERO SECTION */}
             <section
                 id="hero"
-                //   ref={heroRef}
+                ref={heroRef}
                 className="w-full h-screen relative flex items-center justify-center bg-black overflow-hidden"
                 style={{ height: "100vh" }}
             >
@@ -459,6 +485,7 @@ export default function Home() {
                     }
                 }}>
                     <video
+                        ref={videoRef}
                         src="/portfolio-hero.mp4"
                         autoPlay
                         muted={isMuted}
@@ -531,6 +558,8 @@ export default function Home() {
                 </div>
 
             </section>
+
+
             <div ref={bgWrapperRef} style={{
                 width: "100%",
                 margin: 0,
