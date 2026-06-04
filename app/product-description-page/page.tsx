@@ -168,13 +168,20 @@ export default function ProductDescriptionPage() {
               style={{ minWidth: "320px" }}
             >
               
-              {/* Expand icon in top-right corner of the image box and functional */}
+              {/* Expand icon in top-right corner using the requested image link */}
               <button 
                 onClick={() => setIsFullscreen(true)}
-                className="absolute top-[4%] right-[4%] z-20 w-[2.5rem] h-[2.5rem] rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-colors cursor-pointer"
+                className="absolute top-[4%] right-[4%] z-20 w-[2.5rem] h-[2.5rem] bg-transparent border-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
                 aria-label="Expand image"
               >
-                <span className="text-[0.75rem]">⤢</span>
+                <div className="relative w-full h-full">
+                  <Image 
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9042ba9b-be65-45f2-7287-06fccd284900/public"
+                    alt="Expand button"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </button>
 
               <AnimatePresence mode="wait">
@@ -215,21 +222,31 @@ export default function ProductDescriptionPage() {
                 })}
               </div>
               
-              {/* Arrow navigation buttons - styled matching mockup exactly */}
+              {/* Arrow navigation buttons - styled using requested custom images */}
               <div className="flex gap-[0.5rem]">
                 <button 
                   onClick={prevImage}
-                  className="w-[2.2rem] h-[2.2rem] border-0 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors duration-300 cursor-pointer"
+                  className="w-[2.2rem] h-[2.2rem] border-0 bg-transparent flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"
                   aria-label="Previous image"
                 >
-                  ⟨
+                  <Image 
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/23774ae4-4474-4209-6b7d-7b25ea8db300/public"
+                    alt="Left Arrow"
+                    width={35}
+                    height={35}
+                  />
                 </button>
                 <button 
                   onClick={nextImage}
-                  className="w-[2.2rem] h-[2.2rem] border-0 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors duration-300 cursor-pointer"
+                  className="w-[2.2rem] h-[2.2rem] border-0 bg-transparent flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"
                   aria-label="Next image"
                 >
-                  ⟩
+                  <Image 
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d99053fd-043e-4c0b-62c4-19e360388000/public"
+                    alt="Right Arrow"
+                    width={35}
+                    height={35}
+                  />
                 </button>
               </div>
             </div>
@@ -324,11 +341,16 @@ export default function ProductDescriptionPage() {
             <div className="border-b border-white/10">
               <button 
                 onClick={() => setFeaturesOpen(!featuresOpen)}
-                className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300"
+                className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300 cursor-pointer"
               >
                 <span className="text-[0.875rem] uppercase tracking-widest font-bold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>FEATURES</span>
-                <span className="w-[2rem] h-[2rem] rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[1rem] text-white/60 hover:text-white">
-                  {featuresOpen ? "−" : "+"}
+                <span className="w-[2rem] h-[2rem] flex items-center justify-center">
+                  <Image 
+                    src={featuresOpen ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/595e0004-b077-45cc-2fa8-3cd96cd2de00/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/452710c0-2114-441d-1220-296341388a00/public"}
+                    alt={featuresOpen ? "Collapse" : "Expand"}
+                    width={32}
+                    height={32}
+                  />
                 </span>
               </button>
               
@@ -428,11 +450,16 @@ export default function ProductDescriptionPage() {
             <div className="border-b border-white/10">
               <button 
                 onClick={() => setSpecsOpen(!specsOpen)}
-                className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300"
+                className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300 cursor-pointer"
               >
                 <span className="text-[0.875rem] uppercase tracking-widest font-bold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>TECHNICAL SPECS</span>
-                <span className="w-[2rem] h-[2rem] rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[1rem] text-white/60 hover:text-white">
-                  {specsOpen ? "−" : "+"}
+                <span className="w-[2rem] h-[2rem] flex items-center justify-center">
+                  <Image 
+                    src={specsOpen ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/595e0004-b077-45cc-2fa8-3cd96cd2de00/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/452710c0-2114-441d-1220-296341388a00/public"}
+                    alt={specsOpen ? "Collapse" : "Expand"}
+                    width={32}
+                    height={32}
+                  />
                 </span>
               </button>
               
@@ -580,7 +607,7 @@ export default function ProductDescriptionPage() {
                   e.preventDefault()
                   alert("Product Brochure download started successfully.")
                 }}
-                className="border border-white/35 hover:border-white bg-transparent text-center text-white text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center"
+                className="border border-white/35 hover:border-white bg-transparent text-center text-white text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
                 style={{ 
                   fontFamily: "'Inter Tight', sans-serif",
                   width: "14.722vw",
@@ -589,7 +616,15 @@ export default function ProductDescriptionPage() {
                   minHeight: "49px"
                 }}
               >
-                Product Brochure ⤓
+                <span>Product Brochure</span>
+                <span className="relative w-[0.875rem] h-[0.875rem] inline-block">
+                  <Image 
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/359ce7e1-0757-4c07-b9f1-d38ce36cf100/public"
+                    alt="Download Icon"
+                    fill
+                    className="object-contain"
+                  />
+                </span>
               </a>
               <a 
                 href="/datasheet-download.pdf"
@@ -597,7 +632,7 @@ export default function ProductDescriptionPage() {
                   e.preventDefault()
                   alert("Technical datasheet download started successfully.")
                 }}
-                className="border border-white/35 hover:border-white bg-transparent text-center text-white text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center"
+                className="border border-white/35 hover:border-white bg-transparent text-center text-white text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
                 style={{ 
                   fontFamily: "'Inter Tight', sans-serif",
                   width: "16.042vw",
@@ -606,7 +641,15 @@ export default function ProductDescriptionPage() {
                   minHeight: "49px"
                 }}
               >
-                Technical data sheet ⤓
+                <span>Technical data sheet</span>
+                <span className="relative w-[0.875rem] h-[0.875rem] inline-block">
+                  <Image 
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/359ce7e1-0757-4c07-b9f1-d38ce36cf100/public"
+                    alt="Download Icon"
+                    fill
+                    className="object-contain"
+                  />
+                </span>
               </a>
             </div>
 
@@ -620,7 +663,7 @@ export default function ProductDescriptionPage() {
       }}>
         <div className={containerClass}>
           <h2 
-            className="text-[2rem] sm:text-[2.5rem] font-light text-white mb-[4rem] text-left animate-pulse"
+            className="text-[2rem] sm:text-[2.5rem] font-light text-white mb-[4rem] text-left"
             style={{ fontFamily: "'Inter Tight', sans-serif", letterSpacing: "-0.01em", fontWeight: 300 }}
           >
             What else you might discover?
