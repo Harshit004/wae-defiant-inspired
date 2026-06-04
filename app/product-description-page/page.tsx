@@ -673,13 +673,13 @@ export default function ProductDescriptionPage() {
                                 className="group flex flex-col text-left cursor-pointer transition-all duration-500 hover:-translate-y-1"
                             >
                                 {/* Dispenser Image inside recommendation card */}
-                                <div className="relative w-full aspect-[4/3] mb-[1.5rem] overflow-hidden flex items-center justify-center rounded-none">
+                                <div className="relative w-full aspect-[515/646] mb-[1.5rem] overflow-hidden flex items-center justify-center rounded-none">
                                     <div className="relative w-full h-full transition-transform duration-700 group-hover:scale-105">
                                         <Image
                                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public"
                                             alt="BLUWAE ENKI Series"
                                             fill
-                                            className="object-contain"
+                                            className="object-cover"
                                         />
                                     </div>
                                 </div>
