@@ -1,7 +1,7 @@
 "use client"
 
 import type { FC } from "react"
-import { useState, useRef, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import Header from "@/components/header"
@@ -34,7 +34,7 @@ export default function ProductDescriptionPage() {
   const [featuresOpen, setFeaturesOpen] = useState(false)
   const [specsOpen, setSpecsOpen] = useState(false)
 
-  // Quick inquiry form state / modal trigger (for modern micro-interaction)
+  // Quick inquiry form state
   const [isInquired, setIsInquired] = useState(false)
 
   return (
@@ -60,7 +60,7 @@ export default function ProductDescriptionPage() {
 
         {/* Hero Central Text */}
         <div className={`${containerClass} z-20 flex-grow flex flex-col justify-end pb-12`}>
-          <div className="max-w-[800px] mb-8">
+          <div className="max-w-[800px] mb-8 text-left">
             <p className="text-[12px] uppercase tracking-[0.2em] text-[#AEAEAE] font-medium mb-3" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
               Experience on-demand
             </p>
@@ -76,16 +76,20 @@ export default function ProductDescriptionPage() {
           {/* Hero Navigation / Subbar */}
           <div className="w-full h-px bg-white/20 mb-6" />
           <div className="flex justify-between items-center text-[10px] uppercase tracking-[0.15em] text-[#AEAEAE] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-            <div>SCROLL / SWIPE ↴</div>
+            <div className="flex items-center gap-1">
+              SCROLL FOR MORE 
+              <span className="inline-block translate-y-[1px]">↴</span>
+            </div>
             <div>
               <button 
                 onClick={() => {
                   const element = document.getElementById("product-showcase");
                   element?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="border border-white/30 bg-transparent text-white px-5 py-3 hover:bg-white hover:text-black transition-all duration-500 cursor-pointer flex items-center gap-2"
+                className="bg-white text-black px-6 py-3 font-semibold hover:bg-white/90 transition-all duration-300 cursor-pointer flex items-center gap-2"
+                style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
-                Customize ↗
+                Contact Us ↗
               </button>
             </div>
           </div>
@@ -98,11 +102,11 @@ export default function ProductDescriptionPage() {
           
           {/* Left Column: Interactive Product Image Gallery */}
           <div className="flex flex-col w-full">
-            <div className="relative w-full aspect-[4/5] bg-[#111] border border-white/5 overflow-hidden flex items-center justify-center group">
+            <div className="relative w-full aspect-[4/5] bg-[#0c0c0c] border border-white/5 overflow-hidden flex items-center justify-center group">
               
-              {/* Expand icon in top-right */}
-              <button className="absolute top-5 right-5 z-20 w-8 h-8 rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-colors">
-                🔍
+              {/* Expand icon in top center */}
+              <button className="absolute top-5 left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-colors">
+                <span className="text-[12px]">⤢</span>
               </button>
 
               <AnimatePresence mode="wait">
@@ -130,15 +134,13 @@ export default function ProductDescriptionPage() {
             <div className="flex justify-between items-center mt-6 text-[11px] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
               {/* Dots / Page indicator */}
               <div className="flex items-center gap-3">
-                <span className="text-white/40">●</span>
-                {productImages.map((_, index) => (
+                {[0, 1, 2, 3, 4, 5].map((item) => (
                   <button
-                    key={index}
-                    onClick={() => setActiveImageIndex(index)}
-                    className={`transition-colors duration-300 ${activeImageIndex === index ? "text-white" : "text-white/40 hover:text-white"}`}
-                  >
-                    {index + 1}
-                  </button>
+                    key={item}
+                    onClick={() => setActiveImageIndex(item % productImages.length)}
+                    className={`w-[6px] h-[6px] rounded-full transition-colors duration-300 ${activeImageIndex === (item % productImages.length) ? "bg-white" : "bg-white/30 hover:bg-white"}`}
+                    aria-label={`Go to slide ${item + 1}`}
+                  />
                 ))}
               </div>
               
@@ -146,14 +148,14 @@ export default function ProductDescriptionPage() {
               <div className="flex gap-4">
                 <button 
                   onClick={prevImage}
-                  className="w-10 h-10 border border-white/20 hover:border-white rounded-full flex items-center justify-center text-white transition-colors duration-300"
+                  className="w-10 h-10 border border-white/20 bg-white/5 hover:border-white rounded-full flex items-center justify-center text-white transition-colors duration-300"
                   aria-label="Previous image"
                 >
                   ⟨
                 </button>
                 <button 
                   onClick={nextImage}
-                  className="w-10 h-10 border border-white/20 hover:border-white rounded-full flex items-center justify-center text-white transition-colors duration-300"
+                  className="w-10 h-10 border border-white/20 bg-white/5 hover:border-white rounded-full flex items-center justify-center text-white transition-colors duration-300"
                   aria-label="Next image"
                 >
                   ⟩
@@ -163,9 +165,9 @@ export default function ProductDescriptionPage() {
           </div>
 
           {/* Right Column: Product Spec and Information */}
-          <div className="flex flex-col w-full text-left">
-            <span className="text-[11px] uppercase tracking-[0.2em] text-[#0081C9] font-medium mb-3" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-              Drinking water station • BLUWAE series
+          <div className="flex flex-col w-full text-left pt-4">
+            <span className="text-[11px] uppercase tracking-[0.2em] text-[#AEAEAE] font-medium mb-3" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              Drinking water station - BLUWAE series
             </span>
             <h2 
               className="text-[40px] md:text-[48px] font-bold text-white mb-8"
@@ -178,10 +180,10 @@ export default function ProductDescriptionPage() {
             <div className="space-y-6 mb-12">
               <div>
                 <h3 className="text-[13px] font-bold uppercase tracking-wider text-white mb-2" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Powerful LED powerful UVC sterilization
+                  Powerful LED powerful LED sterilization
                 </h3>
                 <p className="text-[12px] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                  Eliminates bacteria, viruses and pathogens, delivering water purified up to 99.999% for point-last hydration.
+                  Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration
                 </p>
               </div>
 
@@ -190,16 +192,16 @@ export default function ProductDescriptionPage() {
                   Built tough, made to last
                 </h3>
                 <p className="text-[12px] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                  Crafted from premium Stainless Steel (SS 304) and corrosion-resistant GI, with built-in food-grade approval, critical for enduring performance.
+                  Crafted from premium Stainless Steel (SS-304) and corrosion -resistant GI, this unit is food-grade approved and built for enduring performance.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[13px] font-bold uppercase tracking-wider text-white mb-2" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Smart Dispensing Interface
+                  Built tough, made to last
                 </h3>
                 <p className="text-[12px] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                  Features sensor-based touchless dispensing, real-time diagnostic indicators, and eco-friendly standby operation mode.
+                  Lorem Ipsum dolor
                 </p>
               </div>
             </div>
@@ -207,16 +209,20 @@ export default function ProductDescriptionPage() {
             {/* Temperature Icons Row */}
             <div className="flex gap-10 border-t border-b border-white/10 py-6 mb-8 text-[11px] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
               <div className="flex flex-col items-center gap-2">
-                <span className="text-[#E74C3C] text-lg">☀</span>
-                <span>Hot</span>
+                <span className="text-[#D35400] text-xl">☀</span>
+                <span className="text-[#AEAEAE]">Hot</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <span className="text-[#3498DB] text-lg">❄</span>
-                <span>Cold</span>
+                <span className="text-[#3498DB] text-xl">❄</span>
+                <span className="text-[#AEAEAE]">Cold</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <span className="text-[#2ECC71] text-lg">☰</span>
-                <span>Ambient</span>
+                <span className="text-[#2ECC71] text-xl flex flex-col -space-y-2">
+                  <span>~</span>
+                  <span>~</span>
+                  <span>~</span>
+                </span>
+                <span className="text-[#AEAEAE]">Ambient</span>
               </div>
             </div>
 
@@ -226,10 +232,10 @@ export default function ProductDescriptionPage() {
                 setIsInquired(true)
                 setTimeout(() => setIsInquired(false), 3000)
               }}
-              className="w-full border border-white bg-transparent py-4 text-white text-[12px] uppercase tracking-widest font-semibold hover:bg-white hover:text-black transition-all duration-500 cursor-pointer"
+              className="w-full border border-white/40 bg-transparent py-4 text-white text-[12px] uppercase tracking-widest font-semibold hover:bg-white hover:text-black transition-all duration-500 cursor-pointer"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              {isInquired ? "Inquiry Sent ✓" : "Inquire Now ↗"}
+              {isInquired ? "Inquiry Sent ✓" : "Enquire Now ↗"}
             </button>
           </div>
         </div>
@@ -238,7 +244,7 @@ export default function ProductDescriptionPage() {
       {/* TECHNICAL DETAILS / ACCORDION SECTION */}
       <section className="bg-[#090909] pb-24">
         <div className={containerClass}>
-          <div className="max-w-[900px] mx-auto border-t border-white/20">
+          <div className="max-w-[900px] mx-auto border-t border-white/10 text-left">
             
             {/* Accordion 1: FEATURES */}
             <div className="border-b border-white/10">
@@ -246,8 +252,10 @@ export default function ProductDescriptionPage() {
                 onClick={() => setFeaturesOpen(!featuresOpen)}
                 className="w-full py-8 flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300"
               >
-                <span className="text-[14px] uppercase tracking-widest font-bold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Features</span>
-                <span className="text-[20px] font-light">{featuresOpen ? "−" : "+"}</span>
+                <span className="text-[14px] uppercase tracking-widest font-bold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>FEATURES</span>
+                <span className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[16px] text-white/60 hover:text-white">
+                  {featuresOpen ? "−" : "+"}
+                </span>
               </button>
               
               <AnimatePresence>
@@ -276,8 +284,10 @@ export default function ProductDescriptionPage() {
                 onClick={() => setSpecsOpen(!specsOpen)}
                 className="w-full py-8 flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300"
               >
-                <span className="text-[14px] uppercase tracking-widest font-bold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Technical Specs</span>
-                <span className="text-[20px] font-light">{specsOpen ? "−" : "+"}</span>
+                <span className="text-[14px] uppercase tracking-widest font-bold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>TECHNICAL SPECS</span>
+                <span className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[16px] text-white/60 hover:text-white">
+                  {specsOpen ? "−" : "+"}
+                </span>
               </button>
               
               <AnimatePresence>
@@ -321,14 +331,14 @@ export default function ProductDescriptionPage() {
             </div>
 
             {/* Document Download Buttons */}
-            <div className="flex flex-wrap gap-6 mt-12">
+            <div className="flex gap-6 mt-12">
               <a 
                 href="/brochure-download.pdf"
                 onClick={(e) => {
                   e.preventDefault()
                   alert("Product Brochure download started successfully.")
                 }}
-                className="flex-1 min-w-[200px] border border-white/30 hover:border-white bg-transparent py-4 text-center text-white text-[11px] uppercase tracking-wider font-semibold transition-all duration-300"
+                className="border border-white/30 hover:border-white bg-transparent px-8 py-3 text-center text-white text-[11px] uppercase tracking-wider font-semibold transition-all duration-300"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 Product Brochure ⤓
@@ -339,10 +349,10 @@ export default function ProductDescriptionPage() {
                   e.preventDefault()
                   alert("Technical Datasheet download started successfully.")
                 }}
-                className="flex-1 min-w-[200px] border border-white/30 hover:border-white bg-transparent py-4 text-center text-white text-[11px] uppercase tracking-wider font-semibold transition-all duration-300"
+                className="border border-white/30 hover:border-white bg-transparent px-8 py-3 text-center text-white text-[11px] uppercase tracking-wider font-semibold transition-all duration-300"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
-                Technical datasheet ⤓
+                Technical data sheet ⤓
               </a>
             </div>
 
@@ -356,7 +366,7 @@ export default function ProductDescriptionPage() {
       }}>
         <div className={containerClass}>
           <h2 
-            className="text-[32px] sm:text-[40px] font-medium text-white mb-16"
+            className="text-[32px] sm:text-[40px] font-medium text-white mb-16 text-left"
             style={{ fontFamily: "'Inter Tight', sans-serif", letterSpacing: "-0.01em" }}
           >
             What else you might discover?
@@ -366,10 +376,10 @@ export default function ProductDescriptionPage() {
             {[1, 2, 3].map((item, index) => (
               <div 
                 key={index} 
-                className="group flex flex-col bg-black/40 border border-white/5 p-6 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#004063]/20"
+                className="group flex flex-col bg-black/40 border border-white/5 p-6 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#004063]/20 text-left"
               >
                 {/* Dispenser Image inside recommendation card */}
-                <div className="relative w-full aspect-[4/3] bg-[#0d0d0d] mb-6 overflow-hidden flex items-center justify-center">
+                <div className="relative w-full aspect-[4/3] bg-[#898989]/10 mb-6 overflow-hidden flex items-center justify-center">
                   <div className="relative w-[60%] h-[80%] transition-transform duration-700 group-hover:scale-105">
                     <Image
                       src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public"
@@ -382,11 +392,11 @@ export default function ProductDescriptionPage() {
                 
                 <div className="flex items-center justify-between text-white font-semibold text-[14px] mb-3 hover:text-[#0081C9] transition-colors" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   <span>BLUWAE ENKI Series</span>
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">➔</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1 text-white/50 group-hover:text-white">➔</span>
                 </div>
 
                 <p className="text-[11px] leading-relaxed text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                  Information regarding awards received by the WAE Group in various fields and related announcements.
+                  Information regarding awards received by the Hitachi Group in various fields and related announcements.
                 </p>
               </div>
             ))}
