@@ -10,6 +10,39 @@ import Footer from "@/components/footer"
 // Shared container class for consistent margins and max-width using relative dimensions
 const containerClass = "mx-auto w-[85%] max-w-[1440px] px-[2vw]"
 
+// High-fidelity SVGs for Hot, Cold, and Ambient options
+const HotIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="5" stroke="#D35400" strokeWidth="2"/>
+    <line x1="12" y1="1" x2="12" y2="4" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="12" y1="20" x2="12" y2="23" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="1" y1="12" x2="4" y2="12" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="20" y1="12" x2="23" y2="12" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+)
+
+const ColdIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+    <line x1="12" y1="2" x2="12" y2="22" stroke="#3498DB" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="2" y1="12" x2="22" y2="12" stroke="#3498DB" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" stroke="#3498DB" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="4.93" y1="19.07" x2="19.07" y2="4.93" stroke="#3498DB" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M12 5l3-3M12 5l-3-3M12 19l3 3M12 19l-3 3M5 12l-3-3M5 12l-3 3M19 12l3-3M19 12l3 3" stroke="#3498DB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
+
+const AmbientIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 6c3.5-3 6.5-3 10 0s6.5 3 10 0" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M2 12c3.5-3 6.5-3 10 0s6.5 3 10 0" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M2 18c3.5-3 6.5-3 10 0s6.5 3 10 0" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+)
+
 export default function ProductDescriptionPage() {
   // State for image gallery slider
   const [activeImageIndex, setActiveImageIndex] = useState(0)
@@ -99,7 +132,7 @@ export default function ProductDescriptionPage() {
           {/* Hero Navigation / Subbar */}
           <div className="w-full h-px bg-white/20 mb-[3vh]" />
           <div className="flex justify-between items-center text-[0.625rem] uppercase tracking-[0.15em] text-[#AEAEAE] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-            <div className="flex items-center gap-[0.25em]">
+            <div className="flex items-center gap-1">
               SCROLL FOR MORE 
               <span className="inline-block translate-y-[1px]">↴</span>
             </div>
@@ -109,7 +142,7 @@ export default function ProductDescriptionPage() {
                   const element = document.getElementById("product-showcase");
                   element?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="bg-white text-black px-[2.5em] py-[1.25em] font-semibold hover:bg-white/90 transition-all duration-300 cursor-pointer flex items-center gap-[0.5em]"
+                className="bg-white text-black px-6 py-3 font-semibold hover:bg-white/90 transition-all duration-300 cursor-pointer flex items-center gap-2"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 Contact Us ↗
@@ -233,39 +266,19 @@ export default function ProductDescriptionPage() {
             <div className="flex gap-[2.5rem] border-t border-b border-white/10 py-[1.5rem] mb-[2rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
               <div className="flex flex-col items-center gap-[0.5rem]">
                 <div className="w-[1.5rem] h-[1.5rem]">
-                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="5" stroke="#D35400" strokeWidth="2"/>
-                    <line x1="12" y1="1" x2="12" y2="4" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
-                    <line x1="12" y1="20" x2="12" y2="23" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
-                    <line x1="1" y1="12" x2="4" y2="12" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
-                    <line x1="20" y1="12" x2="23" y2="12" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
-                    <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
-                    <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
-                    <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
-                    <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" stroke="#D35400" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
+                  <HotIcon />
                 </div>
                 <span className="text-[#AEAEAE]">Hot</span>
               </div>
               <div className="flex flex-col items-center gap-[0.5rem]">
                 <div className="w-[1.5rem] h-[1.5rem]">
-                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="12" y1="2" x2="12" y2="22" stroke="#3498DB" strokeWidth="2" strokeLinecap="round"/>
-                    <line x1="2" y1="12" x2="22" y2="12" stroke="#3498DB" strokeWidth="2" strokeLinecap="round"/>
-                    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" stroke="#3498DB" strokeWidth="2" strokeLinecap="round"/>
-                    <line x1="4.93" y1="19.07" x2="19.07" y2="4.93" stroke="#3498DB" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M12 5l3-3M12 5l-3-3M12 19l3 3M12 19l-3 3M5 12l-3-3M5 12l-3 3M19 12l3-3M19 12l3 3" stroke="#3498DB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  <ColdIcon />
                 </div>
                 <span className="text-[#AEAEAE]">Cold</span>
               </div>
               <div className="flex flex-col items-center gap-[0.5rem]">
                 <div className="w-[1.5rem] h-[1.5rem]">
-                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 6c3.5-3 6.5-3 10 0s6.5 3 10 0" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M2 12c3.5-3 6.5-3 10 0s6.5 3 10 0" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M2 18c3.5-3 6.5-3 10 0s6.5 3 10 0" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
+                  <AmbientIcon />
                 </div>
                 <span className="text-[#AEAEAE]">Ambient</span>
               </div>
@@ -298,7 +311,7 @@ export default function ProductDescriptionPage() {
                 className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300"
               >
                 <span className="text-[0.875rem] uppercase tracking-widest font-bold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>FEATURES</span>
-                <span className="w-[2rem] h-[2rem] rounded-full border border-white/10 flex items-center justify-center text-[1rem] text-white/60 hover:text-white">
+                <span className="w-[2rem] h-[2rem] rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[1rem] text-white/60 hover:text-white">
                   {featuresOpen ? "−" : "+"}
                 </span>
               </button>
@@ -312,11 +325,83 @@ export default function ProductDescriptionPage() {
                     transition={{ duration: 0.35, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="pb-[2rem] text-[0.8125rem] text-[#AEAEAE] leading-relaxed space-y-[1rem]" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                      <p>• Point-of-Use water station with intelligent 5-stage filtration.</p>
-                      <p>• Auto-cleaning sanitization cycle using custom-built ozone systems.</p>
-                      <p>• High-performance compressor cooling with environment-friendly R290 refrigerant.</p>
-                      <p>• Stainless steel water reservoir and custom drip tray.</p>
+                    <div className="pb-[2rem] text-[0.75rem] leading-relaxed space-y-[1.5rem]" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                      
+                      {/* Water Options */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white/95 mb-[0.75rem]">Water Options</h4>
+                        <div className="flex gap-[2rem] text-[0.625rem] uppercase tracking-wider text-white/80 font-medium">
+                          <div className="flex flex-col items-center gap-[0.35rem]">
+                            <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
+                            <span className="text-[#AEAEAE]">Hot</span>
+                          </div>
+                          <div className="flex flex-col items-center gap-[0.35rem]">
+                            <div className="w-[1.25rem] h-[1.25rem]"><ColdIcon /></div>
+                            <span className="text-[#AEAEAE]">Cold</span>
+                          </div>
+                          <div className="flex flex-col items-center gap-[0.35rem]">
+                            <div className="w-[1.25rem] h-[1.25rem]"><AmbientIcon /></div>
+                            <span className="text-[#AEAEAE]">Ambient</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Built to last */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Built to last</h4>
+                        <p className="text-[#AEAEAE] font-light">
+                          Crafted with premium Stainless Steel (SS-304) and corrosion-resistant Galvanized Iron (GI), ensuring durability and safety with food-grade materials.
+                        </p>
+                      </div>
+
+                      {/* Touch-free convenience */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Touch-free convenience</h4>
+                        <p className="text-[#AEAEAE] font-light">
+                          Experience the ease of sensor-based dispensing, delivering clean and safe water without the need for touch.
+                        </p>
+                      </div>
+
+                      {/* Powerful led uv-c intank sterilization */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Powerful led uv-c intank sterilization</h4>
+                        <p className="text-[#AEAEAE] font-light">
+                          Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution.
+                        </p>
+                      </div>
+
+                      {/* Effortless integration */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Effortless integration</h4>
+                        <p className="text-[#AEAEAE] font-light">
+                          Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration
+                        </p>
+                      </div>
+
+                      {/* American disabilities act */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">American disabilities act</h4>
+                        <p className="text-[#AEAEAE] font-light">
+                          Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.
+                        </p>
+                      </div>
+
+                      {/* Designed for everyone */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Designed for everyone</h4>
+                        <p className="text-[#AEAEAE] font-light">
+                          Thoughtfully engineered to be accessible for seniors, kids, and those with special needs, making hydration easy for all.
+                        </p>
+                      </div>
+
+                      {/* Water enrichments (optional) */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Water enrichments (optional)</h4>
+                        <p className="text-[#AEAEAE] font-light">
+                          Mineralization Alkaline
+                        </p>
+                      </div>
+
                     </div>
                   </motion.div>
                 )}
@@ -330,7 +415,7 @@ export default function ProductDescriptionPage() {
                 className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300"
               >
                 <span className="text-[0.875rem] uppercase tracking-widest font-bold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>TECHNICAL SPECS</span>
-                <span className="w-[2rem] h-[2rem] rounded-full border border-white/10 flex items-center justify-center text-[1rem] text-white/60 hover:text-white">
+                <span className="w-[2rem] h-[2rem] rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[1rem] text-white/60 hover:text-white">
                   {specsOpen ? "−" : "+"}
                 </span>
               </button>
@@ -344,31 +429,127 @@ export default function ProductDescriptionPage() {
                     transition={{ duration: 0.35, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="pb-[2rem] text-[0.75rem] text-[#AEAEAE]" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                      <table className="w-full border-collapse">
-                        <tbody>
-                          <tr className="border-b border-white/5">
-                            <td className="py-[0.75rem] font-semibold text-white/90">Purification Technology</td>
-                            <td className="py-[0.75rem] text-right">RO + UV + UVC + Mineral Balancer</td>
-                          </tr>
-                          <tr className="border-b border-white/5">
-                            <td className="py-[0.75rem] font-semibold text-white/90">Dispensing Capacity</td>
-                            <td className="py-[0.75rem] text-right">60 to 120 L/hr</td>
-                          </tr>
-                          <tr className="border-b border-white/5">
-                            <td className="py-[0.75rem] font-semibold text-white/90">Material Quality</td>
-                            <td className="py-[0.75rem] text-right">Premium SS 304 Food Grade</td>
-                          </tr>
-                          <tr className="border-b border-white/5">
-                            <td className="py-[0.75rem] font-semibold text-white/90">Refrigerant Type</td>
-                            <td className="py-[0.75rem] text-right">R-134a / R-290 Eco-safe</td>
-                          </tr>
-                          <tr>
-                            <td className="py-[0.75rem] font-semibold text-white/90">Power Supply</td>
-                            <td className="py-[0.75rem] text-right">220V - 240V / 50Hz</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <div className="pb-[2rem] text-[0.75rem] text-[#AEAEAE] space-y-[1.5rem]" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                      
+                      {/* Storage Capacity Variant Table */}
+                      <div>
+                        <div className="grid grid-cols-4 pb-2 border-b border-white/10 font-semibold text-white/90">
+                          <div>Variant</div>
+                          <div className="col-span-3 grid grid-cols-3 text-center">
+                            <div className="col-span-3 text-left pb-2">Storage Capacity (L )</div>
+                            <div className="flex flex-col items-center gap-1">
+                              <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
+                              <span className="text-[10px] text-white/60">Hot</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-1">
+                              <div className="w-[1.25rem] h-[1.25rem]"><ColdIcon /></div>
+                              <span className="text-[10px] text-white/60">Cold</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-1">
+                              <div className="w-[1.25rem] h-[1.25rem]"><AmbientIcon /></div>
+                              <span className="text-[10px] text-white/60">Ambient</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-4 py-2 border-b border-white/5 text-white/80">
+                          <div>Assistflow 100</div>
+                          <div className="col-span-3 grid grid-cols-3 text-center items-center">
+                            <div>3</div>
+                            <div>40</div>
+                            <div>15</div>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-4 py-2 border-b border-white/5 text-white/80">
+                          <div>Assistflow 50</div>
+                          <div className="col-span-3 grid grid-cols-3 text-center items-center">
+                            <div>3</div>
+                            <div>40</div>
+                            <div>15</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Water Temp */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">water temp.</h4>
+                        <p className="text-[#AEAEAE] font-light">Cold: 5°C - 20° C (default 8°C)</p>
+                        <p className="text-[#AEAEAE] font-light">Hot: 30°C - 65° C (default 55°C)</p>
+                      </div>
+
+                      {/* Green Certification */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Green certification</h4>
+                        <p className="text-[#AEAEAE] font-light">Confirms to green product certification, low discharge faucets : 1.5 LPM</p>
+                      </div>
+
+                      {/* Drip tray capacity */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Drip tray capacity</h4>
+                        <p className="text-[#AEAEAE] font-light">1300 ml</p>
+                      </div>
+
+                      {/* Refrigerant */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Refrigerant</h4>
+                        <p className="text-[#AEAEAE] font-light">R-134a</p>
+                      </div>
+
+                      {/* Dimensions Table */}
+                      <div>
+                        <div className="grid grid-cols-4 pb-2 border-b border-white/10 font-semibold text-white/90">
+                          <div>Variant</div>
+                          <div>Weight (Kg)</div>
+                          <div className="col-span-2 grid grid-cols-3 text-center">
+                            <div className="col-span-3 text-left pb-2">Dimensions (Mm)</div>
+                            <div>Height</div>
+                            <div>Width</div>
+                            <div>Depth</div>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-4 py-2 border-b border-white/5 text-white/80">
+                          <div>Assistflow 100</div>
+                          <div className="text-left">-</div>
+                          <div className="col-span-2 grid grid-cols-3 text-center items-center">
+                            <div>1631</div>
+                            <div>535</div>
+                            <div>654</div>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-4 py-2 border-b border-white/5 text-white/80">
+                          <div>Assistflow 51</div>
+                          <div className="text-left">-</div>
+                          <div className="col-span-2 grid grid-cols-3 text-center items-center">
+                            <div>1631</div>
+                            <div>535</div>
+                            <div>654</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Power requirement */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Power requirement</h4>
+                        <p className="text-[#AEAEAE] font-light">Hertz 50/Volts 230-240</p>
+                      </div>
+
+                      {/* Purification & sterilization system */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Purification & sterilization system</h4>
+                        <p className="text-[#AEAEAE] font-light">Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)</p>
+                      </div>
+
+                      {/* Point of use sterilization system(optional) */}
+                      <div>
+                        <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Point of use sterilization system(optional)</h4>
+                        <p className="text-[#AEAEAE] font-light">Germ GuardianTM</p>
+                      </div>
+
+                      {/* Bottom Footer Notes inside Specs */}
+                      <div className="text-right text-[10px] text-white/40 space-y-1 pt-4">
+                        <p>*water purification products complies with ngt requirements</p>
+                        <p>*Specifications are subject to change.</p>
+                      </div>
+
                     </div>
                   </motion.div>
                 )}
