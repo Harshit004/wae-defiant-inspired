@@ -52,21 +52,44 @@ export default function ProductDescriptionPage() {
           backgroundRepeat: "no-repeat"
         }}
       >
-        {/* Subtle Dark Overlays for Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
+        {/* Solid #00000080 Overlay between background image and text */}
+        <div className="absolute inset-0 bg-[#000000]/50 pointer-events-none z-10" style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }} />
         
         {/* Top Spacer to push content down past Header */}
-        <div className="h-[200px]" />
+        <div className="h-[200px] z-20" />
 
         {/* Hero Central Text */}
         <div className={`${containerClass} z-20 flex-grow flex flex-col justify-end pb-12`}>
-          <div className="max-w-[800px] mb-8 text-left">
-            <p className="text-[12px] uppercase tracking-[0.2em] text-[#AEAEAE] font-medium mb-3" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+          <div className="max-w-[900px] mb-8 text-left">
+            <p 
+              className="mb-0" 
+              style={{ 
+                fontFamily: "'Manrope', sans-serif", 
+                fontWeight: 400, 
+                fontSize: "20px", 
+                lineHeight: "100%", 
+                letterSpacing: "0%", 
+                verticalAlign: "middle",
+                color: "#AEAEAE"
+              }}
+            >
               Experience on-demand
             </p>
+            
+            {/* 23px Gap */}
+            <div style={{ height: "23px" }} />
+            
             <h1 
-              className="text-[36px] sm:text-[48px] md:text-[56px] font-medium leading-[1.15] text-white mb-6"
-              style={{ fontFamily: "'Inter Tight', sans-serif", letterSpacing: "-0.02em" }}
+              className="mb-6"
+              style={{ 
+                fontFamily: "'Inter Tight', sans-serif", 
+                fontWeight: 500, 
+                fontSize: "44px", 
+                lineHeight: "100%", 
+                letterSpacing: "0%", 
+                verticalAlign: "middle",
+                color: "#FFFFFF"
+              }}
             >
               Plastic is passe, Landfilling is zero.<br />
               Sustainability is the future.
@@ -347,7 +370,7 @@ export default function ProductDescriptionPage() {
                 href="/datasheet-download.pdf"
                 onClick={(e) => {
                   e.preventDefault()
-                  alert("Technical Datasheet download started successfully.")
+                  alert("Technical datasheet download started successfully.")
                 }}
                 className="border border-white/30 hover:border-white bg-transparent px-8 py-3 text-center text-white text-[11px] uppercase tracking-wider font-semibold transition-all duration-300"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
