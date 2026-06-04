@@ -607,7 +607,7 @@ export default function ProductDescriptionPage() {
                                     e.preventDefault()
                                     alert("Product Brochure download started successfully.")
                                 }}
-                                className="group border border-white bg-white hover:bg-black text-center text-black hover:text-white text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
+                                className="group border border-white bg-transparent hover:bg-white text-center text-white hover:text-black text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     width: "14.722vw",
@@ -622,7 +622,7 @@ export default function ProductDescriptionPage() {
                                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/359ce7e1-0757-4c07-b9f1-d38ce36cf100/public"
                                         alt="Download Icon"
                                         fill
-                                        className="object-contain invert group-hover:invert-0 transition-all duration-300"
+                                        className="object-contain group-hover:invert transition-all duration-300"
                                     />
                                 </span>
                             </a>
@@ -632,7 +632,7 @@ export default function ProductDescriptionPage() {
                                     e.preventDefault()
                                     alert("Technical datasheet download started successfully.")
                                 }}
-                                className="group border border-white bg-white hover:bg-black text-center text-black hover:text-white text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
+                                className="group border border-white bg-transparent hover:bg-white text-center text-white hover:text-black text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     width: "16.042vw",
@@ -647,7 +647,7 @@ export default function ProductDescriptionPage() {
                                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/359ce7e1-0757-4c07-b9f1-d38ce36cf100/public"
                                         alt="Download Icon"
                                         fill
-                                        className="object-contain invert group-hover:invert-0 transition-all duration-300"
+                                        className="object-contain group-hover:invert transition-all duration-300"
                                     />
                                 </span>
                             </a>
