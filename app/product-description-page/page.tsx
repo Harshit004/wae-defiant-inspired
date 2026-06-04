@@ -250,28 +250,28 @@ export default function ProductDescriptionPage() {
             {/* Structured Features Listing */}
             <div className="space-y-[1.5rem] mb-[2rem]">
               <div>
-                <h3 className="text-[0.8125rem] font-bold uppercase tracking-wider text-white mb-[0.5rem]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                <h3 className="text-[13px] font-bold uppercase tracking-wider text-white mb-[0.5rem]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Powerful LED powerful LED sterilization
                 </h3>
-                <p className="text-[0.75rem] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                <p className="text-[12px] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
                   Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[0.8125rem] font-bold uppercase tracking-wider text-white mb-[0.5rem]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                <h3 className="text-[13px] font-bold uppercase tracking-wider text-white mb-[0.5rem]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Built tough, made to last
                 </h3>
-                <p className="text-[0.75rem] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                <p className="text-[12px] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
                   Crafted from premium Stainless Steel (SS-304) and corrosion -resistant GI, this unit is food-grade approved and built for enduring performance.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[0.8125rem] font-bold uppercase tracking-wider text-white mb-[0.5rem]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                <h3 className="text-[13px] font-bold uppercase tracking-wider text-white mb-[0.5rem]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Built tough, made to last
                 </h3>
-                <p className="text-[0.75rem] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                <p className="text-[12px] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
                   Lorem Ipsum dolor
                 </p>
               </div>
@@ -620,20 +620,20 @@ export default function ProductDescriptionPage() {
       }}>
         <div className={containerClass}>
           <h2 
-            className="text-[2rem] sm:text-[2.5rem] font-medium text-white mb-[4rem] text-left"
-            style={{ fontFamily: "'Inter Tight', sans-serif", letterSpacing: "-0.01em" }}
+            className="text-[2rem] sm:text-[2.5rem] font-light text-white mb-[4rem] text-left animate-pulse"
+            style={{ fontFamily: "'Inter Tight', sans-serif", letterSpacing: "-0.01em", fontWeight: 300 }}
           >
             What else you might discover?
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[2rem]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[2.5vw]">
             {[1, 2, 3].map((item, index) => (
               <div 
                 key={index} 
-                className="group flex flex-col bg-black/40 border border-white/5 p-[1.5rem] hover:border-white/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#004063]/20 text-left"
+                className="group flex flex-col text-left cursor-pointer transition-all duration-500 hover:-translate-y-1"
               >
-                {/* Dispenser Image inside recommendation card */}
-                <div className="relative w-full aspect-[4/3] bg-[#898989]/10 mb-[1.5rem] overflow-hidden flex items-center justify-center">
+                {/* Dispenser Image inside recommendation card - styled with solid grey background */}
+                <div className="relative w-full aspect-[4/3] bg-[#898989] mb-[1.5rem] overflow-hidden flex items-center justify-center rounded-none">
                   <div className="relative w-[60%] h-[80%] transition-transform duration-700 group-hover:scale-105">
                     <Image
                       src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public"
@@ -644,9 +644,10 @@ export default function ProductDescriptionPage() {
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between text-white font-semibold text-[0.875rem] mb-[0.75rem] hover:text-[#0081C9] transition-colors" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                {/* Text and chevron matching the mockup exactly */}
+                <div className="flex items-center justify-between text-white font-medium text-[0.875rem] mt-[0.5rem] mb-[0.5rem] hover:text-[#0081C9] transition-colors" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   <span>BLUWAE ENKI Series</span>
-                  <span className="transition-transform duration-300 group-hover:translate-x-1 text-white/50 group-hover:text-white">➔</span>
+                  <span className="text-[0.875rem] text-white/80 font-normal">&gt;</span>
                 </div>
 
                 <p className="text-[0.6875rem] leading-relaxed text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
