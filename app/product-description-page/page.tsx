@@ -157,9 +157,12 @@ export default function ProductDescriptionPage() {
         <div className={`${containerClass} grid grid-cols-1 lg:grid-cols-2 gap-[6vw] items-start`}>
           
           {/* Left Column: Interactive Product Image Gallery */}
-          <div className="flex flex-col w-full">
-            <div className="relative w-full aspect-[4/5] bg-[#0c0c0c] border border-white/5 overflow-hidden flex items-center justify-center group">
-              
+          <div className="flex flex-col w-full items-start">
+            {/* Carousel Container aligned at 515x646 aspect ratio in responsive vw */}
+            <div 
+              className="relative w-full lg:w-[35.764vw] aspect-[515/646] bg-[#0c0c0c] border border-white/5 overflow-hidden flex items-center justify-center group"
+              style={{ minWidth: "320px" }}
+            >
               {/* Expand icon in top center */}
               <button className="absolute top-[4%] left-1/2 -translate-x-1/2 z-20 w-[2.5rem] h-[2.5rem] rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-colors">
                 <span className="text-[0.75rem]">⤢</span>
@@ -178,7 +181,7 @@ export default function ProductDescriptionPage() {
                     src={productImages[activeImageIndex]}
                     alt={`ASSISTFLOW dispenser view ${activeImageIndex + 1}`}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 1024px) 100vw, 35vw"
                     className="object-contain"
                     priority
                   />
@@ -187,7 +190,7 @@ export default function ProductDescriptionPage() {
             </div>
 
             {/* Slider Controls */}
-            <div className="flex justify-between items-center mt-[1.5rem] text-[0.7rem] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+            <div className="flex justify-between items-center w-full lg:w-[35.764vw] mt-[1.5rem] text-[0.7rem] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", minWidth: "320px" }}>
               {/* Dots / Page indicator */}
               <div className="flex items-center gap-[0.75rem]">
                 {[0, 1, 2, 3, 4, 5].map((item) => (
@@ -233,7 +236,7 @@ export default function ProductDescriptionPage() {
             </h2>
 
             {/* Structured Features Listing */}
-            <div className="space-y-[1.5rem] mb-[3rem]">
+            <div className="space-y-[1.5rem] mb-[2rem]">
               <div>
                 <h3 className="text-[0.8125rem] font-bold uppercase tracking-wider text-white mb-[0.5rem]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Powerful LED powerful LED sterilization
@@ -262,8 +265,8 @@ export default function ProductDescriptionPage() {
               </div>
             </div>
 
-            {/* Temperature Icons Row */}
-            <div className="flex gap-[2.5rem] border-t border-b border-white/10 py-[1.5rem] mb-[2rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+            {/* Temperature Icons Row - border lines removed per user request */}
+            <div className="flex gap-[2.5rem] py-[1rem] mb-[2rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
               <div className="flex flex-col items-center gap-[0.5rem]">
                 <div className="w-[1.5rem] h-[1.5rem]">
                   <HotIcon />
@@ -302,7 +305,8 @@ export default function ProductDescriptionPage() {
       {/* TECHNICAL DETAILS / ACCORDION SECTION */}
       <section className="bg-[#090909] pb-[8vh]">
         <div className={containerClass}>
-          <div className="max-w-[900px] mx-auto border-t border-white/10 text-left">
+          {/* Expanded to full containerClass width to align with left/right showcase columns */}
+          <div className="w-full border-t border-white/10 text-left">
             
             {/* Accordion 1: FEATURES */}
             <div className="border-b border-white/10">
@@ -556,16 +560,22 @@ export default function ProductDescriptionPage() {
               </AnimatePresence>
             </div>
 
-            {/* Document Download Buttons */}
-            <div className="flex gap-[1.5rem] mt-[3rem]">
+            {/* Document Download Buttons with responsive viewport layouts */}
+            <div className="flex mt-[3rem]" style={{ gap: "2.361vw" }}>
               <a 
                 href="/brochure-download.pdf"
                 onClick={(e) => {
                   e.preventDefault()
                   alert("Product Brochure download started successfully.")
                 }}
-                className="border border-white/30 hover:border-white bg-transparent px-[2rem] py-[0.75rem] text-center text-white text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300"
-                style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                className="border border-white/35 hover:border-white bg-transparent text-center text-white text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center"
+                style={{ 
+                  fontFamily: "'Inter Tight', sans-serif",
+                  width: "14.722vw",
+                  height: "3.403vw",
+                  minWidth: "212px",
+                  minHeight: "49px"
+                }}
               >
                 Product Brochure ⤓
               </a>
@@ -575,8 +585,14 @@ export default function ProductDescriptionPage() {
                   e.preventDefault()
                   alert("Technical datasheet download started successfully.")
                 }}
-                className="border border-white/30 hover:border-white bg-transparent px-[2rem] py-[0.75rem] text-center text-white text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300"
-                style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                className="border border-white/35 hover:border-white bg-transparent text-center text-white text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center"
+                style={{ 
+                  fontFamily: "'Inter Tight', sans-serif",
+                  width: "16.042vw",
+                  height: "3.403vw",
+                  minWidth: "231px",
+                  minHeight: "49px"
+                }}
               >
                 Technical data sheet ⤓
               </a>
