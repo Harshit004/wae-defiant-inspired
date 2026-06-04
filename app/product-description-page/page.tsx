@@ -43,6 +43,13 @@ const AmbientIcon = () => (
     </svg>
 )
 
+const DownloadIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 3V16M12 16L7 11M12 16L17 11M4 21H20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+)
+
+
 export default function ProductDescriptionPage() {
     // State for image gallery slider
     const [activeImageIndex, setActiveImageIndex] = useState(0)
@@ -617,13 +624,8 @@ export default function ProductDescriptionPage() {
                                 }}
                             >
                                 <span>Product Brochure</span>
-                                <span className="relative w-[0.875rem] h-[0.875rem] inline-block">
-                                    <Image
-                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/359ce7e1-0757-4c07-b9f1-d38ce36cf100/public"
-                                        alt="Download Icon"
-                                        fill
-                                        className="object-contain group-hover:invert transition-all duration-300"
-                                    />
+                                <span className="w-[1.1rem] h-[1.1rem] flex items-center justify-center">
+                                    <DownloadIcon />
                                 </span>
                             </a>
                             <a
@@ -642,13 +644,8 @@ export default function ProductDescriptionPage() {
                                 }}
                             >
                                 <span>Technical data sheet</span>
-                                <span className="relative w-[0.875rem] h-[0.875rem] inline-block">
-                                    <Image
-                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/359ce7e1-0757-4c07-b9f1-d38ce36cf100/public"
-                                        alt="Download Icon"
-                                        fill
-                                        className="object-contain group-hover:invert transition-all duration-300"
-                                    />
+                                <span className="w-[1.1rem] h-[1.1rem] flex items-center justify-center">
+                                    <DownloadIcon />
                                 </span>
                             </a>
                         </div>
