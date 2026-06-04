@@ -186,7 +186,7 @@ export default function ProductDescriptionPage() {
                                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9042ba9b-be65-45f2-7287-06fccd284900/public"
                                         alt="Expand button"
                                         fill
-                                        className="object-cover"
+                                        className="object-cover h-full w-auto"
                                     />
                                 </div>
                             </button>
