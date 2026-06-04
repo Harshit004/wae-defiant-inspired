@@ -46,12 +46,16 @@ const AmbientIcon = () => (
 export default function ProductDescriptionPage() {
   // State for image gallery slider
   const [activeImageIndex, setActiveImageIndex] = useState(0)
+  const [isFullscreen, setIsFullscreen] = useState(false)
   
-  // Gallery images (using high-quality WAE dispenser product variations/crops)
+  // Gallery images (using 6 unique WAE dispenser images to align with the 6 dots exactly)
   const productImages = [
-    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public",
-    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
-    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public"
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public", // Front view
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public", // Angle 1
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public", // Angle 2
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public", // Detail view 1
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public", // Detail view 2
+    "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public"  // Detailed setup
   ]
 
   // Handler for slider navigation
@@ -163,8 +167,13 @@ export default function ProductDescriptionPage() {
               className="relative w-full lg:w-[35.764vw] aspect-[515/646] bg-[#0c0c0c] border border-white/5 overflow-hidden flex items-center justify-center group"
               style={{ minWidth: "320px" }}
             >
-              {/* Expand icon in top center */}
-              <button className="absolute top-[4%] left-1/2 -translate-x-1/2 z-20 w-[2.5rem] h-[2.5rem] rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-colors">
+              
+              {/* Expand icon in top-right corner of the image box and functional */}
+              <button 
+                onClick={() => setIsFullscreen(true)}
+                className="absolute top-[4%] right-[4%] z-20 w-[2.5rem] h-[2.5rem] rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-colors cursor-pointer"
+                aria-label="Expand image"
+              >
                 <span className="text-[0.75rem]">⤢</span>
               </button>
 
@@ -191,30 +200,33 @@ export default function ProductDescriptionPage() {
 
             {/* Slider Controls */}
             <div className="flex justify-between items-center w-full lg:w-[35.764vw] mt-[1.5rem] text-[0.7rem] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", minWidth: "320px" }}>
-              {/* Dots / Page indicator */}
+              {/* Dots / Page indicator: Current dot is big (0.5rem), others are small (0.25rem) */}
               <div className="flex items-center gap-[0.75rem]">
-                {[0, 1, 2, 3, 4, 5].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => setActiveImageIndex(item % productImages.length)}
-                    className={`w-[0.375rem] h-[0.375rem] rounded-full transition-colors duration-300 ${activeImageIndex === (item % productImages.length) ? "bg-white" : "bg-white/30 hover:bg-white"}`}
-                    aria-label={`Go to slide ${item + 1}`}
-                  />
-                ))}
+                {productImages.map((_, index) => {
+                  const isActive = activeImageIndex === index;
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => setActiveImageIndex(index)}
+                      className={`rounded-full transition-all duration-300 ${isActive ? "w-[0.5rem] h-[0.5rem] bg-white" : "w-[0.25rem] h-[0.25rem] bg-white/30 hover:bg-white"}`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  );
+                })}
               </div>
               
-              {/* Arrow navigation buttons */}
-              <div className="flex gap-[1rem]">
+              {/* Arrow navigation buttons - styled matching mockup exactly */}
+              <div className="flex gap-[0.5rem]">
                 <button 
                   onClick={prevImage}
-                  className="w-[2.5rem] h-[2.5rem] border border-white/20 bg-white/5 hover:border-white rounded-full flex items-center justify-center text-white transition-colors duration-300"
+                  className="w-[2.2rem] h-[2.2rem] border-0 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors duration-300 cursor-pointer"
                   aria-label="Previous image"
                 >
                   ⟨
                 </button>
                 <button 
                   onClick={nextImage}
-                  className="w-[2.5rem] h-[2.5rem] border border-white/20 bg-white/5 hover:border-white rounded-full flex items-center justify-center text-white transition-colors duration-300"
+                  className="w-[2.2rem] h-[2.2rem] border-0 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors duration-300 cursor-pointer"
                   aria-label="Next image"
                 >
                   ⟩
@@ -265,7 +277,7 @@ export default function ProductDescriptionPage() {
               </div>
             </div>
 
-            {/* Temperature Icons Row - border lines removed per user request */}
+            {/* Temperature Icons Row - borders removed */}
             <div className="flex gap-[2.5rem] py-[1rem] mb-[2rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
               <div className="flex flex-col items-center gap-[0.5rem]">
                 <div className="w-[1.5rem] h-[1.5rem]">
@@ -648,6 +660,36 @@ export default function ProductDescriptionPage() {
 
       {/* FOOTER */}
       <Footer />
+
+      {/* FULLSCREEN LIGHTBOX OVERLAY */}
+      <AnimatePresence>
+        {isFullscreen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsFullscreen(false)}
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-6 cursor-zoom-out"
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setIsFullscreen(false)}
+              className="absolute top-8 right-8 z-[110] w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white text-[1.5rem]"
+            >
+              ×
+            </button>
+            <div className="relative w-[85vw] h-[85vh]">
+              <Image 
+                src={productImages[activeImageIndex]} 
+                alt="Product Fullscreen View" 
+                fill 
+                className="object-contain" 
+                priority
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Global CSS Style */}
       <style jsx global>{`
