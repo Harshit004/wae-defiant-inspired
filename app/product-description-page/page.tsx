@@ -57,7 +57,7 @@ export default function ProductDescriptionPage() {
 
     // Gallery images (using 6 unique WAE dispenser images to align with the 6 dots exactly)
     const productImages = [
-        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public", // Front view
+        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c23ff37-2f1a-4f67-4933-708d60af2000/public", // Front view
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public", // Angle 1
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public", // Angle 2
         "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public", // Detail view 1
@@ -75,8 +75,7 @@ export default function ProductDescriptionPage() {
     }
 
     // State for accordions
-    const [featuresOpen, setFeaturesOpen] = useState(false)
-    const [specsOpen, setSpecsOpen] = useState(false)
+    const [openAccordion, setOpenAccordion] = useState<"features" | "specs" | null>(null)
 
     // Quick inquiry form state
     const [isInquired, setIsInquired] = useState(false)
@@ -143,9 +142,8 @@ export default function ProductDescriptionPage() {
                     {/* Hero Navigation / Subbar */}
                     <div className="w-full h-px bg-white/20 mb-[3vh]" />
                     <div className="flex justify-between items-center text-[0.625rem] uppercase tracking-[0.15em] text-[#AEAEAE] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                        <div className="flex items-center gap-1">
-                            SCROLL FOR MORE
-                            <span className="inline-block translate-y-[1px]">↴</span>
+                        <div className="flex items-center gap-1 normal-case text-white/60 font-medium text-[10px]">
+                            Scroll for more ⤵︎
                         </div>
                         <div>
                             <button
@@ -153,8 +151,15 @@ export default function ProductDescriptionPage() {
                                     const element = document.getElementById("product-showcase");
                                     element?.scrollIntoView({ behavior: "smooth" });
                                 }}
-                                className="bg-white text-black px-6 py-3 font-semibold hover:bg-white/90 transition-all duration-300 cursor-pointer flex items-center gap-2"
-                                style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                                className="bg-white text-black px-6 py-3 rounded-none hover:bg-white/90 transition-all duration-300 cursor-pointer flex items-center gap-2"
+                                style={{
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 500,
+                                    fontSize: "10px",
+                                    lineHeight: "100%",
+                                    letterSpacing: "0%",
+                                    verticalAlign: "middle"
+                                }}
                             >
                                 Contact Us ↗
                             </button>
@@ -164,7 +169,7 @@ export default function ProductDescriptionPage() {
             </section>
 
             {/* PRODUCT SHOWCASE SECTION */}
-            <section id="product-showcase" className="relative w-full bg-[#090909] pt-[12vh] pb-[8vh]">
+            <section id="product-showcase" className="relative w-full bg-[#090909] pt-[12vh]" style={{ paddingBottom: "138px" }}>
                 <div className={`${containerClass} grid grid-cols-1 lg:grid-cols-2 gap-[6vw] items-start`}>
 
                     {/* Left Column: Interactive Product Image Gallery */}
@@ -261,12 +266,31 @@ export default function ProductDescriptionPage() {
 
                     {/* Right Column: Product Spec and Information */}
                     <div className="flex flex-col w-full text-left pt-[1%]">
-                        <span className="text-[0.6875rem] uppercase tracking-[0.2em] text-[#AEAEAE] font-medium mb-[0.75rem]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                            Drinking water station - BLUWAE series
+                        <span 
+                            className="uppercase text-[#AEAEAE]" 
+                            style={{ 
+                                fontFamily: "'Manrope', sans-serif",
+                                fontWeight: 400,
+                                fontSize: "14px",
+                                lineHeight: "100%",
+                                letterSpacing: "0%",
+                                verticalAlign: "middle",
+                                marginBottom: "26px"
+                            }}
+                        >
+                            DRINKING WATER STATION - BLUWAE Series
                         </span>
                         <h2
-                            className="text-[2.5rem] md:text-[3rem] font-bold text-white mb-[2rem]"
-                            style={{ fontFamily: "'Inter Tight', sans-serif", letterSpacing: "-0.01em" }}
+                            className="text-white"
+                            style={{ 
+                                fontFamily: "'Inter Tight', sans-serif", 
+                                fontWeight: 400,
+                                fontSize: "32px",
+                                lineHeight: "100%",
+                                letterSpacing: "-2%",
+                                verticalAlign: "middle",
+                                marginBottom: "40px"
+                            }}
                         >
                             ASSISTFLOW
                         </h2>
@@ -274,28 +298,88 @@ export default function ProductDescriptionPage() {
                         {/* Structured Features Listing */}
                         <div className="space-y-[1.5rem] mb-[2rem]">
                             <div>
-                                <h3 className="text-[13px] font-bold uppercase tracking-wider text-white mb-[0.5rem]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                                    Powerful LED powerful LED sterilization
+                                <h3 
+                                    className="text-white mb-[0.5rem]" 
+                                    style={{ 
+                                        fontFamily: "'Inter Tight', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: "16px",
+                                        lineHeight: "normal",
+                                        letterSpacing: "0%",
+                                        verticalAlign: "middle"
+                                    }}
+                                >
+                                    Powerful LED Powerful LED Sterilization
                                 </h3>
-                                <p className="text-[12px] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                                <p 
+                                    className="text-[#AEAEAE] font-light" 
+                                    style={{ 
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: "14px",
+                                        lineHeight: "normal",
+                                        letterSpacing: "0%",
+                                        verticalAlign: "middle"
+                                    }}
+                                >
                                     Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration
                                 </p>
                             </div>
 
                             <div>
-                                <h3 className="text-[13px] font-bold uppercase tracking-wider text-white mb-[0.5rem]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                                <h3 
+                                    className="text-white mb-[0.5rem]" 
+                                    style={{ 
+                                        fontFamily: "'Inter Tight', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: "16px",
+                                        lineHeight: "normal",
+                                        letterSpacing: "0%",
+                                        verticalAlign: "middle"
+                                    }}
+                                >
                                     Built tough, made to last
                                 </h3>
-                                <p className="text-[12px] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                                <p 
+                                    className="text-[#AEAEAE] font-light" 
+                                    style={{ 
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: "14px",
+                                        lineHeight: "normal",
+                                        letterSpacing: "0%",
+                                        verticalAlign: "middle"
+                                    }}
+                                >
                                     Crafted from premium Stainless Steel (SS-304) and corrosion -resistant GI, this unit is food-grade approved and built for enduring performance.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 className="text-[13px] font-bold uppercase tracking-wider text-white mb-[0.5rem]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                                <h3 
+                                    className="text-white mb-[0.5rem]" 
+                                    style={{ 
+                                        fontFamily: "'Inter Tight', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: "16px",
+                                        lineHeight: "normal",
+                                        letterSpacing: "0%",
+                                        verticalAlign: "middle"
+                                    }}
+                                >
                                     Built tough, made to last
                                 </h3>
-                                <p className="text-[12px] leading-[1.6] text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                                <p 
+                                    className="text-[#AEAEAE] font-light" 
+                                    style={{ 
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: "14px",
+                                        lineHeight: "normal",
+                                        letterSpacing: "0%",
+                                        verticalAlign: "middle"
+                                    }}
+                                >
                                     Lorem Ipsum dolor
                                 </p>
                             </div>
@@ -329,8 +413,17 @@ export default function ProductDescriptionPage() {
                                 setIsInquired(true)
                                 setTimeout(() => setIsInquired(false), 3000)
                             }}
-                            className="w-full border border-white/40 bg-transparent py-[1rem] text-white text-[0.75rem] uppercase tracking-widest font-semibold hover:bg-white hover:text-black transition-all duration-500 cursor-pointer"
-                            style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                            className="w-full border border-white/40 bg-transparent py-[1rem] text-white hover:bg-white hover:text-black transition-all duration-500 cursor-pointer"
+                            style={{ 
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 500,
+                                fontSize: "10px",
+                                leadingTrim: "none",
+                                lineHeight: "100%",
+                                letterSpacing: "0%",
+                                verticalAlign: "middle",
+                                textTransform: "none"
+                            }}
                         >
                             {isInquired ? "Inquiry Sent ✓" : "Enquire Now ↗"}
                         </button>
@@ -347,14 +440,22 @@ export default function ProductDescriptionPage() {
                         {/* Accordion 1: FEATURES */}
                         <div className="border-b border-white/10">
                             <button
-                                onClick={() => setFeaturesOpen(!featuresOpen)}
+                                onClick={() => setOpenAccordion(openAccordion === "features" ? null : "features")}
                                 className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300 cursor-pointer"
                             >
-                                <span className="text-[0.875rem] uppercase tracking-widest font-bold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>FEATURES</span>
+                                <span style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: "16px",
+                                    lineHeight: "100%",
+                                    letterSpacing: "0%",
+                                    verticalAlign: "middle",
+                                    textTransform: "uppercase"
+                                }}>FEATURES</span>
                                 <span className="w-[2rem] h-[2rem] flex items-center justify-center">
                                     <Image
-                                        src={featuresOpen ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/595e0004-b077-45cc-2fa8-3cd96cd2de00/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/452710c0-2114-441d-1220-296341388a00/public"}
-                                        alt={featuresOpen ? "Collapse" : "Expand"}
+                                        src={openAccordion === "features" ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/595e0004-b077-45cc-2fa8-3cd96cd2de00/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/452710c0-2114-441d-1220-296341388a00/public"}
+                                        alt={openAccordion === "features" ? "Collapse" : "Expand"}
                                         width={32}
                                         height={32}
                                     />
@@ -362,7 +463,7 @@ export default function ProductDescriptionPage() {
                             </button>
 
                             <AnimatePresence>
-                                {featuresOpen && (
+                                {openAccordion === "features" && (
                                     <motion.div
                                         initial={{ height: 0, opacity: 0 }}
                                         animate={{ height: "auto", opacity: 1 }}
@@ -456,14 +557,22 @@ export default function ProductDescriptionPage() {
                         {/* Accordion 2: TECHNICAL SPECS */}
                         <div className="border-b border-white/10">
                             <button
-                                onClick={() => setSpecsOpen(!specsOpen)}
+                                onClick={() => setOpenAccordion(openAccordion === "specs" ? null : "specs")}
                                 className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300 cursor-pointer"
                             >
-                                <span className="text-[0.875rem] uppercase tracking-widest font-bold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>TECHNICAL SPECS</span>
+                                <span style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: "16px",
+                                    lineHeight: "100%",
+                                    letterSpacing: "0%",
+                                    verticalAlign: "middle",
+                                    textTransform: "uppercase"
+                                }}>TECHNICAL SPECS</span>
                                 <span className="w-[2rem] h-[2rem] flex items-center justify-center">
                                     <Image
-                                        src={specsOpen ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/595e0004-b077-45cc-2fa8-3cd96cd2de00/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/452710c0-2114-441d-1220-296341388a00/public"}
-                                        alt={specsOpen ? "Collapse" : "Expand"}
+                                        src={openAccordion === "specs" ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/595e0004-b077-45cc-2fa8-3cd96cd2de00/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/452710c0-2114-441d-1220-296341388a00/public"}
+                                        alt={openAccordion === "specs" ? "Collapse" : "Expand"}
                                         width={32}
                                         height={32}
                                     />
@@ -471,7 +580,7 @@ export default function ProductDescriptionPage() {
                             </button>
 
                             <AnimatePresence>
-                                {specsOpen && (
+                                {openAccordion === "specs" && (
                                     <motion.div
                                         initial={{ height: 0, opacity: 0 }}
                                         animate={{ height: "auto", opacity: 1 }}
@@ -614,7 +723,7 @@ export default function ProductDescriptionPage() {
                                     e.preventDefault()
                                     alert("Product Brochure download started successfully.")
                                 }}
-                                className="group border border-white bg-transparent hover:bg-white text-center text-white hover:text-black text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
+                                className="group border border-white bg-transparent hover:bg-white text-center text-white hover:text-black transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     width: "14.722vw",
@@ -623,7 +732,14 @@ export default function ProductDescriptionPage() {
                                     minHeight: "49px"
                                 }}
                             >
-                                <span>Product Brochure</span>
+                                <span style={{
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 500,
+                                    fontSize: "14px",
+                                    lineHeight: "100%",
+                                    letterSpacing: "0%",
+                                    verticalAlign: "middle"
+                                }}>Product Brochure</span>
                                 <span className="w-[1.1rem] h-[1.1rem] flex items-center justify-center">
                                     <DownloadIcon />
                                 </span>
@@ -634,7 +750,7 @@ export default function ProductDescriptionPage() {
                                     e.preventDefault()
                                     alert("Technical datasheet download started successfully.")
                                 }}
-                                className="group border border-white bg-transparent hover:bg-white text-center text-white hover:text-black text-[0.6875rem] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
+                                className="group border border-white bg-transparent hover:bg-white text-center text-white hover:text-black transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     width: "16.042vw",
@@ -643,7 +759,14 @@ export default function ProductDescriptionPage() {
                                     minHeight: "49px"
                                 }}
                             >
-                                <span>Technical data sheet</span>
+                                <span style={{
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 500,
+                                    fontSize: "14px",
+                                    lineHeight: "100%",
+                                    letterSpacing: "0%",
+                                    verticalAlign: "middle"
+                                }}>Technical data sheet</span>
                                 <span className="w-[1.1rem] h-[1.1rem] flex items-center justify-center">
                                     <DownloadIcon />
                                 </span>
@@ -660,8 +783,15 @@ export default function ProductDescriptionPage() {
             }}>
                 <div className={containerClass}>
                     <h2
-                        className="text-[2rem] sm:text-[2.5rem] font-light text-white mb-[4rem] text-left"
-                        style={{ fontFamily: "'Inter Tight', sans-serif", letterSpacing: "-0.01em", fontWeight: 300 }}
+                        className="text-white mb-[4rem] text-left"
+                        style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 400,
+                            fontSize: "40px",
+                            lineHeight: "105%",
+                            letterSpacing: "0%",
+                            verticalAlign: "middle"
+                        }}
                     >
                         What else you might discover?
                     </h2>
@@ -676,7 +806,7 @@ export default function ProductDescriptionPage() {
                                 <div className="relative w-full aspect-[515/646] mb-[1.5rem] overflow-hidden flex items-center justify-center rounded-none">
                                     <div className="relative w-full h-full transition-transform duration-700 group-hover:scale-105">
                                         <Image
-                                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public"
+                                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/512052ef-fb15-4187-381e-3b7b38a0e000/public"
                                             alt="BLUWAE ENKI Series"
                                             fill
                                             className="object-cover"
