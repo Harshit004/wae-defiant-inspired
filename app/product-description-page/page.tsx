@@ -1,11 +1,13 @@
 "use client"
 
 import type { FC } from "react"
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { useSearchParams } from "next/navigation"
+import { PRODUCTS } from "@/data/products"
 
 // Shared container class for consistent margins and max-width using relative dimensions
 const containerClass = "mx-auto w-[85%] max-w-[1440px] px-[2vw]"
@@ -50,20 +52,17 @@ const DownloadIcon = () => (
 )
 
 
-export default function ProductDescriptionPage() {
+function ProductDescriptionPageContent() {
+    const searchParams = useSearchParams()
+    const productId = searchParams.get("product") || "assistflow"
+    const currentProduct = PRODUCTS[productId] || PRODUCTS.assistflow
+
     // State for image gallery slider
     const [activeImageIndex, setActiveImageIndex] = useState(0)
     const [isFullscreen, setIsFullscreen] = useState(false)
 
-    // Gallery images (using 6 unique WAE dispenser images to align with the 6 dots exactly)
-    const productImages = [
-        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c23ff37-2f1a-4f67-4933-708d60af2000/public", // Front view
-        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public", // Angle 1
-        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public", // Angle 2
-        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public", // Detail view 1
-        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public", // Detail view 2
-        "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public"  // Detailed setup
-    ]
+    // Gallery images
+    const productImages = currentProduct.images
 
     // Handler for slider navigation
     const nextImage = () => {
@@ -218,7 +217,7 @@ export default function ProductDescriptionPage() {
                                 >
                                     <Image
                                         src={productImages[activeImageIndex]}
-                                        alt={`ASSISTFLOW dispenser view ${activeImageIndex + 1}`}
+                                        alt={`${currentProduct.name} dispenser view ${activeImageIndex + 1}`}
                                         fill
                                         sizes="(max-width: 1024px) 100vw, 35vw"
                                         className="object-contain"
@@ -230,7 +229,7 @@ export default function ProductDescriptionPage() {
 
                         {/* Slider Controls */}
                         <div className="flex justify-between items-center w-full lg:w-[35.764vw] mt-[1.5rem] text-[0.7rem] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", minWidth: "320px" }}>
-                            {/* Dots / Page indicator: Current dot is big (0.5rem), others are small (0.25rem) */}
+                            {/* Dots / Page indicator */}
                             <div className="flex items-center gap-[0.75rem]">
                                 {productImages.map((_, index) => {
                                     const isActive = activeImageIndex === index;
@@ -245,7 +244,7 @@ export default function ProductDescriptionPage() {
                                 })}
                             </div>
 
-                            {/* Arrow navigation buttons - styled using requested custom images */}
+                            {/* Arrow navigation buttons */}
                             <div className="flex gap-[0.5rem]">
                                 <button
                                     onClick={prevImage}
@@ -289,7 +288,7 @@ export default function ProductDescriptionPage() {
                                 marginBottom: "26px"
                             }}
                         >
-                            DRINKING WATER STATION - BLUWAE Series
+                            {currentProduct.categoryName}
                         </span>
                         <h2
                             className="text-white"
@@ -303,100 +302,44 @@ export default function ProductDescriptionPage() {
                                 marginBottom: "40px"
                             }}
                         >
-                            ASSISTFLOW
+                            {currentProduct.name}
                         </h2>
 
                         {/* Structured Features Listing */}
                         <div className="space-y-[1.5rem] mb-[2rem]">
-                            <div>
-                                <h3 
-                                    className="text-white mb-[0.5rem]" 
-                                    style={{ 
-                                        fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 400,
-                                        fontSize: "16px",
-                                        lineHeight: "normal",
-                                        letterSpacing: "0%",
-                                        verticalAlign: "middle"
-                                    }}
-                                >
-                                    Powerful LED Powerful LED Sterilization
-                                </h3>
-                                <p 
-                                    className="text-[#AEAEAE] font-light" 
-                                    style={{ 
-                                        fontFamily: "'Manrope', sans-serif",
-                                        fontWeight: 400,
-                                        fontSize: "14px",
-                                        lineHeight: "normal",
-                                        letterSpacing: "0%",
-                                        verticalAlign: "middle"
-                                    }}
-                                >
-                                    Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 
-                                    className="text-white mb-[0.5rem]" 
-                                    style={{ 
-                                        fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 400,
-                                        fontSize: "16px",
-                                        lineHeight: "normal",
-                                        letterSpacing: "0%",
-                                        verticalAlign: "middle"
-                                    }}
-                                >
-                                    Built tough, made to last
-                                </h3>
-                                <p 
-                                    className="text-[#AEAEAE] font-light" 
-                                    style={{ 
-                                        fontFamily: "'Manrope', sans-serif",
-                                        fontWeight: 400,
-                                        fontSize: "14px",
-                                        lineHeight: "normal",
-                                        letterSpacing: "0%",
-                                        verticalAlign: "middle"
-                                    }}
-                                >
-                                    Crafted from premium Stainless Steel (SS-304) and corrosion -resistant GI, this unit is food-grade approved and built for enduring performance.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 
-                                    className="text-white mb-[0.5rem]" 
-                                    style={{ 
-                                        fontFamily: "'Inter Tight', sans-serif",
-                                        fontWeight: 400,
-                                        fontSize: "16px",
-                                        lineHeight: "normal",
-                                        letterSpacing: "0%",
-                                        verticalAlign: "middle"
-                                    }}
-                                >
-                                    Built tough, made to last
-                                </h3>
-                                <p 
-                                    className="text-[#AEAEAE] font-light" 
-                                    style={{ 
-                                        fontFamily: "'Manrope', sans-serif",
-                                        fontWeight: 400,
-                                        fontSize: "14px",
-                                        lineHeight: "normal",
-                                        letterSpacing: "0%",
-                                        verticalAlign: "middle"
-                                    }}
-                                >
-                                    Lorem Ipsum dolor
-                                </p>
-                            </div>
+                            {currentProduct.featuresList.slice(0, 3).map((feat, fIdx) => (
+                                <div key={fIdx}>
+                                    <h3 
+                                        className="text-white mb-[0.5rem]" 
+                                        style={{ 
+                                            fontFamily: "'Inter Tight', sans-serif",
+                                            fontWeight: 400,
+                                            fontSize: "16px",
+                                            lineHeight: "normal",
+                                            letterSpacing: "0%",
+                                            verticalAlign: "middle"
+                                        }}
+                                    >
+                                        {feat.title}
+                                    </h3>
+                                    <p 
+                                        className="text-[#AEAEAE] font-light" 
+                                        style={{ 
+                                            fontFamily: "'Manrope', sans-serif",
+                                            fontWeight: 400,
+                                            fontSize: "14px",
+                                            lineHeight: "normal",
+                                            letterSpacing: "0%",
+                                            verticalAlign: "middle"
+                                        }}
+                                    >
+                                        {feat.description}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
 
-                        {/* Temperature Icons Row - borders removed */}
+                        {/* Temperature Icons Row */}
                         <div className="flex gap-[2.5rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", marginTop: "43px", marginBottom: "61px" }}>
                             <div className="flex flex-col items-center gap-[0.5rem]">
                                 <div className="w-[1.5rem] h-[1.5rem]">
@@ -486,218 +429,50 @@ export default function ProductDescriptionPage() {
                                         className="overflow-hidden"
                                     >
                                         <div className="pb-[2rem]">
-
-                                            {/* Water Options */}
-                                            <div style={{ marginBottom: "38px" }}>
-                                                <h4 style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "16px",
-                                                    lineHeight: "100%",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    textTransform: "capitalize",
-                                                    color: "#FFFFFF",
-                                                    marginBottom: "8px"
-                                                }}>Water Options</h4>
-                                                <div className="flex gap-[2rem] text-[0.625rem] uppercase tracking-wider text-white/80 font-medium">
-                                                    <div className="flex flex-col items-center gap-[0.35rem]">
-                                                        <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
-                                                        <span className="text-[#AEAEAE]">Hot</span>
-                                                    </div>
-                                                    <div className="flex flex-col items-center gap-[0.35rem]">
-                                                        <div className="w-[1.25rem] h-[1.25rem]"><ColdIcon /></div>
-                                                        <span className="text-[#AEAEAE]">Cold</span>
-                                                    </div>
-                                                    <div className="flex flex-col items-center gap-[0.35rem]">
-                                                        <div className="w-[1.25rem] h-[1.25rem]"><AmbientIcon /></div>
-                                                        <span className="text-[#AEAEAE]">Ambient</span>
-                                                    </div>
+                                            {currentProduct.featuresList.map((feat, fIdx) => (
+                                                <div key={fIdx} style={{ marginBottom: "38px" }}>
+                                                    <h4 style={{
+                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                        fontWeight: 400,
+                                                        fontSize: "16px",
+                                                        lineHeight: "100%",
+                                                        letterSpacing: "0%",
+                                                        verticalAlign: "middle",
+                                                        textTransform: "capitalize",
+                                                        color: "#FFFFFF",
+                                                        marginBottom: "8px"
+                                                    }}>{feat.title}</h4>
+                                                    
+                                                    {feat.title.toLowerCase() === "water options" ? (
+                                                        <div className="flex gap-[2rem] text-[0.625rem] uppercase tracking-wider text-white/80 font-medium">
+                                                            <div className="flex flex-col items-center gap-[0.35rem]">
+                                                                <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
+                                                                <span className="text-[#AEAEAE]">Hot</span>
+                                                            </div>
+                                                            <div className="flex flex-col items-center gap-[0.35rem]">
+                                                                <div className="w-[1.25rem] h-[1.25rem]"><ColdIcon /></div>
+                                                                <span className="text-[#AEAEAE]">Cold</span>
+                                                            </div>
+                                                            <div className="flex flex-col items-center gap-[0.35rem]">
+                                                                <div className="w-[1.25rem] h-[1.25rem]"><AmbientIcon /></div>
+                                                                <span className="text-[#AEAEAE]">Ambient</span>
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <p style={{
+                                                            fontFamily: "'Inter Tight', sans-serif",
+                                                            fontWeight: 400,
+                                                            fontSize: "14px",
+                                                            lineHeight: "normal",
+                                                            letterSpacing: "0%",
+                                                            verticalAlign: "middle",
+                                                            color: "#FFFFFF80"
+                                                        }}>
+                                                            {feat.description}
+                                                        </p>
+                                                    )}
                                                 </div>
-                                            </div>
-
-                                            {/* Built to last */}
-                                            <div style={{ marginBottom: "38px" }}>
-                                                <h4 style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "16px",
-                                                    lineHeight: "100%",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    textTransform: "capitalize",
-                                                    color: "#FFFFFF",
-                                                    marginBottom: "8px"
-                                                }}>Built to last</h4>
-                                                <p style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "normal",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
-                                                }}>
-                                                    Crafted with premium Stainless Steel (SS-304) and corrosion-resistant Galvanized Iron (GI), ensuring durability and safety with food-grade materials.
-                                                </p>
-                                            </div>
-
-                                            {/* Touch-free convenience */}
-                                            <div style={{ marginBottom: "38px" }}>
-                                                <h4 style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "16px",
-                                                    lineHeight: "100%",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    textTransform: "capitalize",
-                                                    color: "#FFFFFF",
-                                                    marginBottom: "8px"
-                                                }}>Touch-free convenience</h4>
-                                                <p style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "normal",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
-                                                }}>
-                                                    Experience the ease of sensor-based dispensing, delivering clean and safe water without the need for touch.
-                                                </p>
-                                            </div>
-
-                                            {/* Powerful led uv-c intank sterilization */}
-                                            <div style={{ marginBottom: "38px" }}>
-                                                <h4 style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "16px",
-                                                    lineHeight: "100%",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    textTransform: "capitalize",
-                                                    color: "#FFFFFF",
-                                                    marginBottom: "8px"
-                                                }}>Powerful led uv-c intank sterilization</h4>
-                                                <p style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "normal",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
-                                                }}>
-                                                    Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution.
-                                                </p>
-                                            </div>
-
-                                            {/* Effortless integration */}
-                                            <div style={{ marginBottom: "38px" }}>
-                                                <h4 style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "16px",
-                                                    lineHeight: "100%",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    textTransform: "capitalize",
-                                                    color: "#FFFFFF",
-                                                    marginBottom: "8px"
-                                                }}>Effortless integration</h4>
-                                                <p style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "normal",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
-                                                }}>
-                                                    Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration
-                                                </p>
-                                            </div>
-
-                                            {/* American disabilities act */}
-                                            <div style={{ marginBottom: "38px" }}>
-                                                <h4 style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "16px",
-                                                    lineHeight: "100%",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    textTransform: "capitalize",
-                                                    color: "#FFFFFF",
-                                                    marginBottom: "8px"
-                                                }}>American disabilities act</h4>
-                                                <p style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "normal",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
-                                                }}>
-                                                    Designed to comply with ADA accessibility guidelines. Ideal for schools & public utilities.
-                                                </p>
-                                            </div>
-
-                                            {/* Designed for everyone */}
-                                            <div style={{ marginBottom: "38px" }}>
-                                                <h4 style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "16px",
-                                                    lineHeight: "100%",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    textTransform: "capitalize",
-                                                    color: "#FFFFFF",
-                                                    marginBottom: "8px"
-                                                }}>Designed for everyone</h4>
-                                                <p style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "normal",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
-                                                }}>
-                                                    Thoughtfully engineered to be accessible for seniors, kids, and those with special needs, making hydration easy for all.
-                                                </p>
-                                            </div>
-
-                                            {/* Water enrichments (optional) */}
-                                            <div style={{ marginBottom: "38px" }}>
-                                                <h4 style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "16px",
-                                                    lineHeight: "100%",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    textTransform: "capitalize",
-                                                    color: "#FFFFFF",
-                                                    marginBottom: "8px"
-                                                }}>Water enrichments (optional)</h4>
-                                                <p style={{
-                                                    fontFamily: "'Inter Tight', sans-serif",
-                                                    fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "normal",
-                                                    letterSpacing: "0%",
-                                                    verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
-                                                }}>
-                                                    Mineralization Alkaline
-                                                </p>
-                                            </div>
-
+                                            ))}
                                         </div>
                                     </motion.div>
                                 )}
@@ -769,18 +544,14 @@ export default function ProductDescriptionPage() {
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr className="text-[#AEAEAE]">
-                                                            <td className="py-2 text-[14px] pr-8">Assistflow 100</td>
-                                                            <td className="py-2 text-[14px] text-center">3</td>
-                                                            <td className="py-2 text-[14px] text-center">40</td>
-                                                            <td className="py-2 text-[14px] text-center">15</td>
-                                                        </tr>
-                                                        <tr className="text-[#AEAEAE]">
-                                                            <td className="py-2 text-[14px] pr-8">Assistflow 50</td>
-                                                            <td className="py-2 text-[14px] text-center">3</td>
-                                                            <td className="py-2 text-[14px] text-center">40</td>
-                                                            <td className="py-2 text-[14px] text-center">15</td>
-                                                        </tr>
+                                                        {currentProduct.specifications.storageCapacity.map((row, rIdx) => (
+                                                            <tr key={rIdx} className="text-[#AEAEAE]">
+                                                                <td className="py-2 text-[14px] pr-8">{row.variant}</td>
+                                                                <td className="py-2 text-[14px] text-center">{row.hot}</td>
+                                                                <td className="py-2 text-[14px] text-center">{row.cold}</td>
+                                                                <td className="py-2 text-[14px] text-center">{row.ambient}</td>
+                                                            </tr>
+                                                        ))}
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -806,7 +577,7 @@ export default function ProductDescriptionPage() {
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80"
-                                                }}>Cold: 5°C - 20° C (default 8°C)</p>
+                                                }}>{currentProduct.specifications.waterTemp.cold}</p>
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
@@ -815,7 +586,7 @@ export default function ProductDescriptionPage() {
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80"
-                                                }}>Hot: 30°C - 65° C (default 55°C)</p>
+                                                }}>{currentProduct.specifications.waterTemp.hot}</p>
                                             </div>
 
                                             {/* Green Certification */}
@@ -839,7 +610,7 @@ export default function ProductDescriptionPage() {
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80"
-                                                }}>Confirms to green product certification, low discharge faucets : 1.5 LPM</p>
+                                                }}>{currentProduct.specifications.greenCertification}</p>
                                             </div>
 
                                             {/* Drip tray capacity */}
@@ -863,7 +634,7 @@ export default function ProductDescriptionPage() {
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80"
-                                                }}>1300 ml</p>
+                                                }}>{currentProduct.specifications.dripTray}</p>
                                             </div>
 
                                             {/* Refrigerant */}
@@ -887,7 +658,7 @@ export default function ProductDescriptionPage() {
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80"
-                                                }}>R-134a</p>
+                                                }}>{currentProduct.specifications.refrigerant}</p>
                                             </div>
 
                                             {/* Dimensions Table */}
@@ -906,20 +677,15 @@ export default function ProductDescriptionPage() {
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr className="text-[#AEAEAE]">
-                                                            <td className="py-2 text-[14px] pr-8">Assistflow 100</td>
-                                                            <td className="py-2 text-[14px] pr-8">-</td>
-                                                            <td className="py-2 text-[14px] text-center">1631</td>
-                                                            <td className="py-2 text-[14px] text-center">535</td>
-                                                            <td className="py-2 text-[14px] text-center">654</td>
-                                                        </tr>
-                                                        <tr className="text-[#AEAEAE]">
-                                                            <td className="py-2 text-[14px] pr-8">Assistflow 51</td>
-                                                            <td className="py-2 text-[14px] pr-8">-</td>
-                                                            <td className="py-2 text-[14px] text-center">1631</td>
-                                                            <td className="py-2 text-[14px] text-center">535</td>
-                                                            <td className="py-2 text-[14px] text-center">654</td>
-                                                        </tr>
+                                                        {currentProduct.specifications.dimensions.map((row, rIdx) => (
+                                                            <tr key={rIdx} className="text-[#AEAEAE]">
+                                                                <td className="py-2 text-[14px] pr-8">{row.variant}</td>
+                                                                <td className="py-2 text-[14px] pr-8">{row.weight}</td>
+                                                                <td className="py-2 text-[14px] text-center">{row.height}</td>
+                                                                <td className="py-2 text-[14px] text-center">{row.width}</td>
+                                                                <td className="py-2 text-[14px] text-center">{row.depth}</td>
+                                                            </tr>
+                                                        ))}
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -945,7 +711,7 @@ export default function ProductDescriptionPage() {
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80"
-                                                }}>Hertz 50/Volts 230-240</p>
+                                                }}>{currentProduct.specifications.powerRequirement}</p>
                                             </div>
 
                                             {/* Purification & sterilization system */}
@@ -969,7 +735,7 @@ export default function ProductDescriptionPage() {
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80"
-                                                }}>Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)</p>
+                                                }}>{currentProduct.specifications.purificationSystem}</p>
                                             </div>
 
                                             {/* Point of use sterilization system(optional) */}
@@ -993,7 +759,7 @@ export default function ProductDescriptionPage() {
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80"
-                                                }}>Germ Guardian™</p>
+                                                }}>{currentProduct.specifications.pointOfUseSterilization}</p>
                                             </div>
 
                                             {/* Bottom Footer Notes inside Specs */}
@@ -1014,7 +780,7 @@ export default function ProductDescriptionPage() {
                                 href="/brochure-download.pdf"
                                 onClick={(e) => {
                                     e.preventDefault()
-                                    alert("Product Brochure download started successfully.")
+                                    alert(`${currentProduct.name} Brochure download started successfully.`)
                                 }}
                                 className="group border border-white bg-transparent hover:bg-white text-center text-white hover:text-black transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
                                 style={{
@@ -1041,7 +807,7 @@ export default function ProductDescriptionPage() {
                                 href="/datasheet-download.pdf"
                                 onClick={(e) => {
                                     e.preventDefault()
-                                    alert("Technical datasheet download started successfully.")
+                                    alert(`${currentProduct.name} Technical datasheet download started successfully.`)
                                 }}
                                 className="group border border-white bg-transparent hover:bg-white text-center text-white hover:text-black transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
                                 style={{
@@ -1090,8 +856,9 @@ export default function ProductDescriptionPage() {
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-[2.5vw]">
-                        {[1, 2, 3].map((item, index) => (
-                            <div
+                        {Object.values(PRODUCTS).filter(p => p.id !== currentProduct.id).slice(0, 3).map((item, index) => (
+                            <Link
+                                href={`/product-description-page?product=${item.id}`}
                                 key={index}
                                 className="group flex flex-col text-left cursor-pointer transition-all duration-500 hover:-translate-y-1"
                             >
@@ -1099,8 +866,8 @@ export default function ProductDescriptionPage() {
                                 <div className="relative w-full aspect-[515/646] mb-[1.5rem] overflow-hidden flex items-center justify-center rounded-none">
                                     <div className="relative w-full h-full transition-transform duration-700 group-hover:scale-105">
                                         <Image
-                                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/512052ef-fb15-4187-381e-3b7b38a0e000/public"
-                                            alt="BLUWAE ENKI Series"
+                                            src={item.images[0]}
+                                            alt={item.name}
                                             fill
                                             className="object-cover"
                                         />
@@ -1117,7 +884,7 @@ export default function ProductDescriptionPage() {
                                         letterSpacing: "0%",
                                         verticalAlign: "middle",
                                         textTransform: "uppercase"
-                                    }}>BLUWAE ENKI SERIES</span>
+                                    }}>{item.categoryName} {item.name}</span>
                                     <span className="text-[0.875rem] text-white/80 font-normal">&gt;</span>
                                 </div>
 
@@ -1130,9 +897,9 @@ export default function ProductDescriptionPage() {
                                     verticalAlign: "middle",
                                     color: "#808080"
                                 }}>
-                                    Information regarding awards received by the Hitachi Group in various fields and related announcements.
+                                    Information regarding WAE series drinking water dispensers and advanced purification modules.
                                 </p>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -1178,5 +945,13 @@ export default function ProductDescriptionPage() {
         }
       `}</style>
         </main>
+    )
+}
+
+export default function ProductDescriptionPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-black text-white flex items-center justify-center">Loading...</div>}>
+            <ProductDescriptionPageContent />
+        </Suspense>
     )
 }

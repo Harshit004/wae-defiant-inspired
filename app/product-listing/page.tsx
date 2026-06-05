@@ -2,7 +2,7 @@
 
 import type { FC } from "react"
 import type React from "react"
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, Suspense } from "react"
 import Image from "next/image"
 import { motion, animate, useInView } from "framer-motion"
 import Footer from "@/components/footer"
@@ -10,6 +10,8 @@ import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import Header from "@/components/header"
+import { useSearchParams } from "next/navigation"
+import { CATEGORIES } from "@/data/products"
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
@@ -114,8 +116,12 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
 };
 
 
-export default function Home() {
+function ProductListingContent() {
     // State variables
+    const searchParams = useSearchParams()
+    const categoryId = searchParams.get("category") || "bluwae"
+    const currentCategory = CATEGORIES[categoryId] || CATEGORIES.bluwae
+
     const [activeSection, setActiveSection] = useState(0)
     const [currentTime, setCurrentTime] = useState("")
     const [headerHeight, setHeaderHeight] = useState(0)
@@ -136,80 +142,8 @@ export default function Home() {
     const [taglineVisible, setTaglineVisible] = useState(true)
     const prevScrollY = useRef(0)
 
-    // Data for portfolio products categories
-    const portfolioProducts = [
-        {
-            id: "bluwae",
-            title: "Drinking water station - BLUWAE",
-            subtitle: "Experience on-demand",
-            description: "Point-of-Use drinking water stations with in-built 5-stage RO purification, LED UVC protection, and optional Germ Guardian™ hygiene technology.",
-            imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public",
-            href: "/product-category/drinking-water-stations"
-        },
-        {
-            id: "trublu",
-            title: "Water dispenser & cooler - TRUBLU",
-            description: "Plumbed-in water dispensers with in-tank LED-UVC protection, optional bottom-loading configuration, and advanced Germ Guardian™ hygiene technology.",
-            imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
-            href: "/product-category/water-dispenser"
-        },
-        {
-            id: "zvr",
-            title: "Drinking water fountain - ZVR",
-            description: "Direct-drinking stations with bubbler taps, featuring repository installed purification, chilling, and heating systems concealed seamlessly behind the wall.",
-            imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
-            href: "/product-category/water-cooler"
-        },
-        {
-            id: "watermatic",
-            title: "Drinking water faucets - WATERMATIC",
-            description: "Drinking water taps featuring sensor touch or push operation for hygienic dispensing, effortless usability, and seamless modern hydration experiences.",
-            imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
-            href: "/product-category/drinking-water-faucets"
-        },
-        {
-            id: "pus",
-            title: "Compact purification units - WAEAU",
-            description: "Robust, research-backed water systems engineered for public infrastructure—ensuring continuous access to safe, purified drinking water in all conditions.",
-            imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
-            href: "/product-category/public-utility-systems"
-        },
-        {
-            id: "glass-bottling",
-            title: "Glass bottling plant",
-            description: "Compact modular glass bottling plants enabling sustainable premium in-house bottled water production for hospitality, corporate, and luxury environments.",
-            imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public",
-            href: "/product-category/blubox"
-        }
-    ];
-
-    const filterProduct = (product: typeof portfolioProducts[0]) => {
-        if (!searchQuery) return true;
-        const query = searchQuery.toLowerCase();
-        return (
-            product.title.toLowerCase().includes(query) ||
-            product.description.toLowerCase().includes(query) ||
-            (product.subtitle && product.subtitle.toLowerCase().includes(query))
-        );
-    };
-
-    // BLUWAE product listing data with filter categories
-    const bluwaeProducts = [
-        { name: "BLUWAE VAR Series", image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public", category: "free-standing" as const },
-        { name: "BLUWAE ENKI Series", image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public", category: "free-standing" as const },
-        { name: "BLUWAE POS", image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public", category: "counter-top" as const },
-        { name: "BLUWAE ROM Grande", image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public", category: "free-standing" as const },
-        { name: "BLUWAE REVA", image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public", category: "free-standing" as const },
-        { name: "BLUWAE GSP", image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public", category: "free-standing" as const },
-        { name: "BLUWAE ASSISTFLOW", image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public", category: "free-standing" as const },
-        { name: "BLUWAE VENUS", image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public", category: "counter-top" as const },
-        { name: "BLUWAE ENO.CT (Part of series)", image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public", category: "counter-top" as const },
-        { name: "BLUWAE VAR.CT (Part of series)", image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public", category: "counter-top" as const },
-        { name: "BLUWAE ROM.CT (Part of series)", image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public", category: "counter-top" as const },
-    ];
-
-    // Filter bluwae products by category and search
-    const filteredBluwaeProducts = bluwaeProducts.filter(p => {
+    // Filter products by category and search
+    const filteredProducts = currentCategory.products.filter(p => {
         const matchesCategory = activeFilter === "all" || p.category === activeFilter;
         const matchesSearch = !productSearchQuery || p.name.toLowerCase().includes(productSearchQuery.toLowerCase());
         return matchesCategory && matchesSearch;
@@ -231,14 +165,12 @@ export default function Home() {
     }
 
     // Update tagline visibility based on scroll direction
-    // Note: This state is calculated but not applied in the current JSX
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY
             setTaglineVisible(currentScrollY < prevScrollY.current)
             prevScrollY.current = currentScrollY
         }
-        // Using passive: true for better scroll performance
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, [])
@@ -254,7 +186,6 @@ export default function Home() {
         }
         measure()
         window.addEventListener("resize", measure)
-        // Re-measure after fonts/images load
         window.addEventListener("load", measure)
         return () => {
             window.removeEventListener("resize", measure)
@@ -278,7 +209,7 @@ export default function Home() {
         return () => clearInterval(interval)
     }, [])
 
-    // Measure header height (Note: This height is calculated but not used in the current JSX)
+    // Measure header height
     useEffect(() => {
         const updateHeaderHeight = () => {
             if (headerRef.current) {
@@ -288,16 +219,13 @@ export default function Home() {
         updateHeaderHeight();
         window.addEventListener("resize", updateHeaderHeight);
         return () => window.removeEventListener("resize", updateHeaderHeight);
-    }, []); // Dependency array is empty, runs once on mount and cleanup
+    }, []);
 
-
-    // Tagline lines (split into words)
     const taglineLine1 = "To lead the way in sustainability"
     const taglineLine2 = "ahead of the rest."
     const taglineWords1 = taglineLine1.split(" ")
     const taglineWords2 = taglineLine2.split(" ")
 
-    // Arrays for menu items with hrefs
     const productsItems = [
         { text: "This is Us", href: "/this-is-us" },
         { text: "Our Portfolio", href: "/our-portfolio" },
@@ -308,7 +236,6 @@ export default function Home() {
         { text: "The Activist Co.", href: "/the-activist-co" },
         { text: "Blog", href: "/blogs2" },
     ]
-    const lineCount = Math.min(productsItems.length, blueprintItems.length) // Note: lineCount is calculated but not used
 
     return (
         <main className="relative">
@@ -336,7 +263,7 @@ export default function Home() {
                             textTransform: "uppercase",
                             margin: 0,
                         }}>
-                            ALL BALWAE <span style={{ color: "#ffffff66", fontSize: "18px", fontWeight: 400 }}>({filteredBluwaeProducts.length})</span>
+                            ALL {currentCategory.id === "bluwae" ? "BLUWAE" : "TRUBLU"} <span style={{ color: "#ffffff66", fontSize: "18px", fontWeight: 400 }}>({filteredProducts.length})</span>
                         </h1>
                         {/* Search Bar */}
                         <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
@@ -371,7 +298,7 @@ export default function Home() {
                 <div className="w-full px-[7.5vw]" style={{ paddingBottom: "48px" }}>
                     <div style={{ display: "flex", gap: "32px" }}>
                         {([
-                            { label: "ALL BLUWAE", value: "all" as const },
+                            { label: `ALL ${currentCategory.id === "bluwae" ? "BLUWAE" : "TRUBLU"}`, value: "all" as const },
                             { label: "FREE STANDING", value: "free-standing" as const },
                             { label: "COUNTER TOP", value: "counter-top" as const },
                         ]).map((tab) => (
@@ -405,34 +332,29 @@ export default function Home() {
                 {/* Product Grid - rendered in row groups with dividers */}
                 <div className="w-full px-[7.5vw]" style={{ paddingBottom: "80px" }}>
                     {(() => {
-                        // Split filtered products into row groups for dividers
-                        // Group 1: items 0–4 (featured big + 4 small)
-                        // Subsequent groups: 4 items each
-                        const groups: typeof filteredBluwaeProducts[] = [];
-                        const firstGroupSize = Math.min(5, filteredBluwaeProducts.length);
+                        const groups: typeof filteredProducts[] = [];
+                        const firstGroupSize = Math.min(5, filteredProducts.length);
                         if (firstGroupSize > 0) {
-                            groups.push(filteredBluwaeProducts.slice(0, firstGroupSize));
+                            groups.push(filteredProducts.slice(0, firstGroupSize));
                         }
                         let i = firstGroupSize;
-                        while (i < filteredBluwaeProducts.length) {
-                            groups.push(filteredBluwaeProducts.slice(i, i + 4));
+                        while (i < filteredProducts.length) {
+                            groups.push(filteredProducts.slice(i, i + 4));
                             i += 4;
                         }
 
                         return groups.map((group, groupIndex) => {
-                            // Calculate the global start index for this group
                             const globalStart = groupIndex === 0 ? 0 : 5 + (groupIndex - 1) * 4;
 
                             return (
                                 <div key={groupIndex}>
-                                    {/* Divider after the featured group only */}
                                     {groupIndex === 1 && (
                                         <div style={{
                                             width: "100%",
                                             height: "1px",
                                             background: "rgba(255, 255, 255, 0.1)",
                                             marginTop: "65px",
-                                            marginBottom: groupIndex === 1 ? "65px" : "85px",
+                                            marginBottom: "65px",
                                         }} />
                                     )}
                                     <div style={{
@@ -445,11 +367,13 @@ export default function Home() {
                                             const isFeatured = globalIndex === 0;
 
                                             return (
-                                                <div
+                                                <Link
+                                                    href={`/product-description-page?product=${product.id}`}
                                                     key={product.name}
                                                     style={{
                                                         gridColumn: isFeatured ? "span 2" : undefined,
                                                         gridRow: isFeatured ? "span 2" : undefined,
+                                                        display: "block"
                                                     }}
                                                 >
                                                     <div
@@ -478,7 +402,7 @@ export default function Home() {
                                                     }}>
                                                         {product.name}
                                                     </p>
-                                                </div>
+                                                </Link>
                                             );
                                         })}
                                     </div>
@@ -487,8 +411,7 @@ export default function Home() {
                         });
                     })()}
 
-                    {/* Final divider after last product row */}
-                    {filteredBluwaeProducts.length > 0 && (
+                    {filteredProducts.length > 0 && (
                         <div style={{
                             width: "100%",
                             height: "1px",
@@ -498,7 +421,7 @@ export default function Home() {
                     )}
                 </div>
 
-                {/* Description Section — width matched to 2 grid columns */}
+                {/* Description Section */}
                 <div className="w-full px-[7.5vw]" style={{ paddingBottom: "120px" }}>
                     <div style={{
                         display: "grid",
@@ -516,17 +439,13 @@ export default function Home() {
                                 margin: 0,
                                 marginBottom: "32px",
                             }}>
-                                Drinking water station - BLUWAE
+                                {currentCategory.title}
                             </h2>
-                            <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#AEAEAE", marginTop: 0, marginBottom: "24px" }}>
-                                BLUWAE™ Series is a next-generation Drinking Water Station designed to deliver safe, accessible, and sustainable hydration across workplaces and public environments. Combining advanced Reverse Osmosis (RO) purification with intelligent dispensing technology, it provides Purified Drinking Water directly at the point of consumption, reducing dependence on packaged bottled water.
-                            </p>
-                            <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#AEAEAE", marginTop: 0, marginBottom: "24px" }}>
-                                Ideal for offices, educational institutions, healthcare facilities, manufacturing units, and public spaces, BLUWAE™ functions as a reliable Commercial Hydration Solution. Available as a standalone unit or as part of Centralized Water Infrastructure, it supports ambient, chilled, and hot water dispensing, touch-free operation, and Bottle-Filling Capabilities.
-                            </p>
-                            <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#AEAEAE", marginTop: 0, marginBottom: 0 }}>
-                                Designed to improve Workplace Hydration, reduce plastic waste, and lower operational costs, BLUWAE™ combines Advanced Filtration, Smart Dispensing, and premium design. More than a water access point, it is a future-ready Hydration System supporting responsible consumption and long-term sustainability goals.
-                            </p>
+                            {currentCategory.paragraphs.map((pText, pIdx) => (
+                                <p key={pIdx} style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#AEAEAE", marginTop: 0, marginBottom: pIdx === currentCategory.paragraphs.length - 1 ? 0 : "24px" }}>
+                                    {pText}
+                                </p>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -534,26 +453,26 @@ export default function Home() {
 
             <Footer />
 
-            {/* INLINE CSS */}
             <style jsx>{`
-        /* Custom filter for #004063 blue color */
-        :global(.filter-wae-blue) {
-          filter: invert(16%) sepia(93%) saturate(1599%) hue-rotate(180deg) brightness(96%) contrast(105%) !important;
-        }
-      `}</style>
+                :global(.filter-wae-blue) {
+                  filter: invert(16%) sepia(93%) saturate(1599%) hue-rotate(180deg) brightness(96%) contrast(105%) !important;
+                }
+            `}</style>
 
-            {/* Global Styles */}
-            {/* Note: If you re-introduce smooth scrolling, be mindful of conflicts with custom JS */}
             <style jsx global>{`
-        html {
-          /* scroll-behavior: smooth; *//* Commented out as per previous discussion */
-        }
-         /* Ensure body doesn't have extra margins/padding */
-        body {
-            margin: 0;
-            padding: 0;
-        }
-      `}</style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+            `}</style>
         </main>
+    )
+}
+
+export default function Home() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-black text-white flex items-center justify-center">Loading...</div>}>
+            <ProductListingContent />
+        </Suspense>
     )
 }
