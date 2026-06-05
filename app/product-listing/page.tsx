@@ -359,7 +359,7 @@ function ProductListingContent() {
                                         display: "grid",
                                         gridTemplateColumns: "repeat(4, 1fr)",
                                         gap: "1.67vw",
-                                        rowGap: groupIndex > 0 ? "65px" : undefined,
+                                        rowGap: groupIndex === 0 ? "62px" : "65px",
                                     }}>
                                         {group.map((product, index) => {
                                             const globalIndex = globalStart + index;
