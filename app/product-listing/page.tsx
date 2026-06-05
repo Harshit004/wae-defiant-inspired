@@ -337,14 +337,12 @@ function ProductListingContent() {
                         if (firstGroupSize > 0) {
                             groups.push(filteredProducts.slice(0, firstGroupSize));
                         }
-                        let i = firstGroupSize;
-                        while (i < filteredProducts.length) {
-                            groups.push(filteredProducts.slice(i, i + 4));
-                            i += 4;
+                        if (filteredProducts.length > firstGroupSize) {
+                            groups.push(filteredProducts.slice(firstGroupSize));
                         }
 
                         return groups.map((group, groupIndex) => {
-                            const globalStart = groupIndex === 0 ? 0 : 5 + (groupIndex - 1) * 4;
+                            const globalStart = groupIndex === 0 ? 0 : 5;
 
                             return (
                                 <div key={groupIndex}>
