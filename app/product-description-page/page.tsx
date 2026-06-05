@@ -815,8 +815,16 @@ export default function ProductDescriptionPage() {
                                 </div>
 
                                 {/* Text and chevron matching the mockup exactly */}
-                                <div className="flex items-center justify-between text-white font-medium text-[0.875rem] mt-[0.5rem] mb-[0.5rem] hover:text-[#0081C9] transition-colors" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                                    <span>BLUWAE ENKI Series</span>
+                                <div className="flex items-center justify-between text-white mt-[0.5rem] mb-[0.5rem] hover:text-[#0081C9] transition-colors">
+                                    <span style={{
+                                        fontFamily: "'Inter Tight', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: "18px",
+                                        lineHeight: "105%",
+                                        letterSpacing: "0%",
+                                        verticalAlign: "middle",
+                                        textTransform: "uppercase"
+                                    }}>BLUWAE ENKI SERIES</span>
                                     <span className="text-[0.875rem] text-white/80 font-normal">&gt;</span>
                                 </div>
 
