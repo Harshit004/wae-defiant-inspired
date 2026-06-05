@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { useSearchParams } from "next/navigation"
+import Link from "next/link"
 import { PRODUCTS } from "@/data/products"
 
 // Shared container class for consistent margins and max-width using relative dimensions

@@ -3,7 +3,6 @@ export interface Product {
   name: string;
   category: string;
   image: string;
-  productType: "free-standing" | "counter-top";
 }
 
 export interface CategoryData {
