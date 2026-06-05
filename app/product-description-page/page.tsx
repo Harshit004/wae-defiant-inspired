@@ -142,7 +142,18 @@ export default function ProductDescriptionPage() {
                     {/* Hero Navigation / Subbar */}
                     <div className="w-full h-px bg-white/20 mb-[3vh]" />
                     <div className="flex justify-between items-center text-[0.625rem] uppercase tracking-[0.15em] text-[#AEAEAE] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                        <div className="flex items-center gap-1 normal-case text-white/60 font-medium text-[10px]">
+                        <div 
+                            style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 500,
+                                fontSize: "10px",
+                                lineHeight: "100%",
+                                letterSpacing: "0%",
+                                verticalAlign: "middle",
+                                color: "#FFFFFF99",
+                                textTransform: "none"
+                            }}
+                        >
                             Scroll for more ⤵︎
                         </div>
                         <div>
@@ -170,7 +181,7 @@ export default function ProductDescriptionPage() {
 
             {/* PRODUCT SHOWCASE SECTION */}
             <section id="product-showcase" className="relative w-full bg-[#090909] pt-[12vh]" style={{ paddingBottom: "138px" }}>
-                <div className={`${containerClass} grid grid-cols-1 lg:grid-cols-2 gap-[6vw] items-start`}>
+                <div className={`${containerClass} grid grid-cols-1 lg:grid-cols-2 gap-[6vw] items-center`}>
 
                     {/* Left Column: Interactive Product Image Gallery */}
                     <div className="flex flex-col w-full items-start">
@@ -265,7 +276,7 @@ export default function ProductDescriptionPage() {
                     </div>
 
                     {/* Right Column: Product Spec and Information */}
-                    <div className="flex flex-col w-full text-left pt-[1%]">
+                    <div className="flex flex-col w-full text-left">
                         <span 
                             className="uppercase text-[#AEAEAE]" 
                             style={{ 
@@ -386,7 +397,7 @@ export default function ProductDescriptionPage() {
                         </div>
 
                         {/* Temperature Icons Row - borders removed */}
-                        <div className="flex gap-[2.5rem] py-[1rem] mb-[2rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                        <div className="flex gap-[2.5rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", marginTop: "43px", marginBottom: "61px" }}>
                             <div className="flex flex-col items-center gap-[0.5rem]">
                                 <div className="w-[1.5rem] h-[1.5rem]">
                                     <HotIcon />
@@ -434,10 +445,10 @@ export default function ProductDescriptionPage() {
             <section className="bg-[#090909] pb-[8vh]">
                 <div className={containerClass}>
                     {/* Expanded to full containerClass width to align with left/right showcase columns */}
-                    <div className="w-full border-t border-white/10 text-left">
+                    <div className="w-full text-left" style={{ borderTop: "1px solid #FFFFFF4D" }}>
 
                         {/* Accordion 1: FEATURES */}
-                        <div className="border-b border-white/10">
+                        <div style={{ borderBottom: "1px solid #FFFFFF4D" }}>
                             <button
                                 onClick={() => setOpenAccordion(openAccordion === "features" ? null : "features")}
                                 className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300 cursor-pointer"
@@ -470,11 +481,21 @@ export default function ProductDescriptionPage() {
                                         transition={{ duration: 0.35, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="pb-[2rem] text-[0.75rem] leading-relaxed space-y-[1.5rem]" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                                        <div className="pb-[2rem]">
 
                                             {/* Water Options */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white/95 mb-[0.75rem]">Water Options</h4>
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Water Options</h4>
                                                 <div className="flex gap-[2rem] text-[0.625rem] uppercase tracking-wider text-white/80 font-medium">
                                                     <div className="flex flex-col items-center gap-[0.35rem]">
                                                         <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
@@ -492,57 +513,183 @@ export default function ProductDescriptionPage() {
                                             </div>
 
                                             {/* Built to last */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Built to last</h4>
-                                                <p className="text-[#AEAEAE] font-light">
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Built to last</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>
                                                     Crafted with premium Stainless Steel (SS-304) and corrosion-resistant Galvanized Iron (GI), ensuring durability and safety with food-grade materials.
                                                 </p>
                                             </div>
 
                                             {/* Touch-free convenience */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Touch-free convenience</h4>
-                                                <p className="text-[#AEAEAE] font-light">
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Touch-free convenience</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>
                                                     Experience the ease of sensor-based dispensing, delivering clean and safe water without the need for touch.
                                                 </p>
                                             </div>
 
                                             {/* Powerful led uv-c intank sterilization */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Powerful led uv-c intank sterilization</h4>
-                                                <p className="text-[#AEAEAE] font-light">
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Powerful led uv-c intank sterilization</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>
                                                     Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution.
                                                 </p>
                                             </div>
 
                                             {/* Effortless integration */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Effortless integration</h4>
-                                                <p className="text-[#AEAEAE] font-light">
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Effortless integration</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>
                                                     Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration
                                                 </p>
                                             </div>
 
                                             {/* American disabilities act */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">American disabilities act</h4>
-                                                <p className="text-[#AEAEAE] font-light">
-                                                    Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>American disabilities act</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>
+                                                    Designed to comply with ADA accessibility guidelines. Ideal for schools & public utilities.
                                                 </p>
                                             </div>
 
                                             {/* Designed for everyone */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Designed for everyone</h4>
-                                                <p className="text-[#AEAEAE] font-light">
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Designed for everyone</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>
                                                     Thoughtfully engineered to be accessible for seniors, kids, and those with special needs, making hydration easy for all.
                                                 </p>
                                             </div>
 
                                             {/* Water enrichments (optional) */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Water enrichments (optional)</h4>
-                                                <p className="text-[#AEAEAE] font-light">
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Water enrichments (optional)</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>
                                                     Mineralization Alkaline
                                                 </p>
                                             </div>
@@ -554,7 +701,7 @@ export default function ProductDescriptionPage() {
                         </div>
 
                         {/* Accordion 2: TECHNICAL SPECS */}
-                        <div className="border-b border-white/10">
+                        <div style={{ borderBottom: "1px solid #FFFFFF4D" }}>
                             <button
                                 onClick={() => setOpenAccordion(openAccordion === "specs" ? null : "specs")}
                                 className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300 cursor-pointer"
@@ -587,119 +734,262 @@ export default function ProductDescriptionPage() {
                                         transition={{ duration: 0.35, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="pb-[2rem] text-[0.75rem] text-[#AEAEAE] space-y-[1.5rem]" style={{ fontFamily: "'Manrope', sans-serif" }}>
-
+                                        <div className="pb-[2rem]">
                                             {/* Storage Capacity Variant Table */}
-                                            <div>
-                                                <div className="grid grid-cols-4 pb-2 border-b border-white/10 font-semibold text-white/90">
-                                                    <div>Variant</div>
-                                                    <div className="col-span-3 grid grid-cols-3 text-center">
-                                                        <div className="col-span-3 text-left pb-2">Storage Capacity (L )</div>
-                                                        <div className="flex flex-col items-center gap-1">
-                                                            <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
-                                                            <span className="text-[10px] text-white/60">Hot</span>
-                                                        </div>
-                                                        <div className="flex flex-col items-center gap-1">
-                                                            <div className="w-[1.25rem] h-[1.25rem]"><ColdIcon /></div>
-                                                            <span className="text-[10px] text-white/60">Cold</span>
-                                                        </div>
-                                                        <div className="flex flex-col items-center gap-1">
-                                                            <div className="w-[1.25rem] h-[1.25rem]"><AmbientIcon /></div>
-                                                            <span className="text-[10px] text-white/60">Ambient</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="grid grid-cols-4 py-2 border-b border-white/5 text-white/80">
-                                                    <div>Assistflow 100</div>
-                                                    <div className="col-span-3 grid grid-cols-3 text-center items-center">
-                                                        <div>3</div>
-                                                        <div>40</div>
-                                                        <div>15</div>
-                                                    </div>
-                                                </div>
-                                                <div className="grid grid-cols-4 py-2 border-b border-white/5 text-white/80">
-                                                    <div>Assistflow 50</div>
-                                                    <div className="col-span-3 grid grid-cols-3 text-center items-center">
-                                                        <div>3</div>
-                                                        <div>40</div>
-                                                        <div>15</div>
-                                                    </div>
-                                                </div>
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <table className="w-auto text-left border-collapse text-white" style={{ fontFamily: "'Inter Tight', sans-serif", width: "auto" }}>
+                                                    <thead>
+                                                        <tr>
+                                                            <th className="font-semibold pb-4 text-[14px] pr-8" rowSpan={2} style={{ verticalAlign: 'bottom', width: "160px" }}>Variant</th>
+                                                            <th className="font-semibold pb-2 text-[14px] text-center" colSpan={3} style={{ width: "240px" }}>Storage Capacity (L )</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
+                                                                <div className="flex flex-col items-center gap-1">
+                                                                    <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
+                                                                    <span className="text-[#AEAEAE]">Hot</span>
+                                                                </div>
+                                                            </th>
+                                                            <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
+                                                                <div className="flex flex-col items-center gap-1">
+                                                                    <div className="w-[1.25rem] h-[1.25rem]"><ColdIcon /></div>
+                                                                    <span className="text-[#AEAEAE]">Cold</span>
+                                                                </div>
+                                                            </th>
+                                                            <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
+                                                                <div className="flex flex-col items-center gap-1">
+                                                                    <div className="w-[1.25rem] h-[1.25rem]"><AmbientIcon /></div>
+                                                                    <span className="text-[#AEAEAE]">Ambient</span>
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr className="text-[#AEAEAE]">
+                                                            <td className="py-2 text-[14px] pr-8">Assistflow 100</td>
+                                                            <td className="py-2 text-[14px] text-center">3</td>
+                                                            <td className="py-2 text-[14px] text-center">40</td>
+                                                            <td className="py-2 text-[14px] text-center">15</td>
+                                                        </tr>
+                                                        <tr className="text-[#AEAEAE]">
+                                                            <td className="py-2 text-[14px] pr-8">Assistflow 50</td>
+                                                            <td className="py-2 text-[14px] text-center">3</td>
+                                                            <td className="py-2 text-[14px] text-center">40</td>
+                                                            <td className="py-2 text-[14px] text-center">15</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
 
                                             {/* Water Temp */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">water temp.</h4>
-                                                <p className="text-[#AEAEAE] font-light">Cold: 5°C - 20° C (default 8°C)</p>
-                                                <p className="text-[#AEAEAE] font-light">Hot: 30°C - 65° C (default 55°C)</p>
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>water temp.</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>Cold: 5°C - 20° C (default 8°C)</p>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>Hot: 30°C - 65° C (default 55°C)</p>
                                             </div>
 
                                             {/* Green Certification */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Green certification</h4>
-                                                <p className="text-[#AEAEAE] font-light">Confirms to green product certification, low discharge faucets : 1.5 LPM</p>
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Green certification</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>Confirms to green product certification, low discharge faucets : 1.5 LPM</p>
                                             </div>
 
                                             {/* Drip tray capacity */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Drip tray capacity</h4>
-                                                <p className="text-[#AEAEAE] font-light">1300 ml</p>
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Drip tray capacity</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>1300 ml</p>
                                             </div>
 
                                             {/* Refrigerant */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Refrigerant</h4>
-                                                <p className="text-[#AEAEAE] font-light">R-134a</p>
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Refrigerant</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>R-134a</p>
                                             </div>
 
                                             {/* Dimensions Table */}
-                                            <div>
-                                                <div className="grid grid-cols-4 pb-2 border-b border-white/10 font-semibold text-white/90">
-                                                    <div>Variant</div>
-                                                    <div>Weight (Kg)</div>
-                                                    <div className="col-span-2 grid grid-cols-3 text-center">
-                                                        <div className="col-span-3 text-left pb-2">Dimensions (Mm)</div>
-                                                        <div>Height</div>
-                                                        <div>Width</div>
-                                                        <div>Depth</div>
-                                                    </div>
-                                                </div>
-                                                <div className="grid grid-cols-4 py-2 border-b border-white/5 text-white/80">
-                                                    <div>Assistflow 100</div>
-                                                    <div className="text-left">-</div>
-                                                    <div className="col-span-2 grid grid-cols-3 text-center items-center">
-                                                        <div>1631</div>
-                                                        <div>535</div>
-                                                        <div>654</div>
-                                                    </div>
-                                                </div>
-                                                <div className="grid grid-cols-4 py-2 border-b border-white/5 text-white/80">
-                                                    <div>Assistflow 51</div>
-                                                    <div className="text-left">-</div>
-                                                    <div className="col-span-2 grid grid-cols-3 text-center items-center">
-                                                        <div>1631</div>
-                                                        <div>535</div>
-                                                        <div>654</div>
-                                                    </div>
-                                                </div>
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <table className="w-auto text-left border-collapse text-white" style={{ fontFamily: "'Inter Tight', sans-serif", width: "auto" }}>
+                                                    <thead>
+                                                        <tr>
+                                                            <th className="font-semibold pb-4 text-[14px] pr-8" rowSpan={2} style={{ verticalAlign: 'bottom', width: "160px" }}>Variant</th>
+                                                            <th className="font-semibold pb-4 text-[14px] pr-8" rowSpan={2} style={{ verticalAlign: 'bottom', width: "100px" }}>Weight (Kg)</th>
+                                                            <th className="font-semibold pb-2 text-[14px] text-center" colSpan={3} style={{ width: "240px" }}>Dimensions (Mm)</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th className="font-normal pb-4 text-[11px] text-center text-[#AEAEAE]" style={{ width: "80px" }}>Height</th>
+                                                            <th className="font-normal pb-4 text-[11px] text-center text-[#AEAEAE]" style={{ width: "80px" }}>Width</th>
+                                                            <th className="font-normal pb-4 text-[11px] text-center text-[#AEAEAE]" style={{ width: "80px" }}>Depth</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr className="text-[#AEAEAE]">
+                                                            <td className="py-2 text-[14px] pr-8">Assistflow 100</td>
+                                                            <td className="py-2 text-[14px] pr-8">-</td>
+                                                            <td className="py-2 text-[14px] text-center">1631</td>
+                                                            <td className="py-2 text-[14px] text-center">535</td>
+                                                            <td className="py-2 text-[14px] text-center">654</td>
+                                                        </tr>
+                                                        <tr className="text-[#AEAEAE]">
+                                                            <td className="py-2 text-[14px] pr-8">Assistflow 51</td>
+                                                            <td className="py-2 text-[14px] pr-8">-</td>
+                                                            <td className="py-2 text-[14px] text-center">1631</td>
+                                                            <td className="py-2 text-[14px] text-center">535</td>
+                                                            <td className="py-2 text-[14px] text-center">654</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
 
                                             {/* Power requirement */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Power requirement</h4>
-                                                <p className="text-[#AEAEAE] font-light">Hertz 50/Volts 230-240</p>
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Power requirement</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>Hertz 50/Volts 230-240</p>
                                             </div>
 
                                             {/* Purification & sterilization system */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Purification & sterilization system</h4>
-                                                <p className="text-[#AEAEAE] font-light">Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)</p>
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Purification & sterilization system</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)</p>
                                             </div>
 
                                             {/* Point of use sterilization system(optional) */}
-                                            <div>
-                                                <h4 className="text-[0.8125rem] font-bold text-white mb-[0.25rem]">Point of use sterilization system(optional)</h4>
-                                                <p className="text-[#AEAEAE] font-light">Germ GuardianTM</p>
+                                            <div style={{ marginBottom: "38px" }}>
+                                                <h4 style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "16px",
+                                                    lineHeight: "100%",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    textTransform: "capitalize",
+                                                    color: "#FFFFFF",
+                                                    marginBottom: "8px"
+                                                }}>Point of use sterilization system(optional)</h4>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80"
+                                                }}>Germ Guardian™</p>
                                             </div>
 
                                             {/* Bottom Footer Notes inside Specs */}

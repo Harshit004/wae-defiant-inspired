@@ -641,7 +641,7 @@ export default function Home() {
             </h4>
             <ul className="custom-bullet">
               <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#00000099", marginBottom: "12px" }}>
-                Maintain a high level of consistency (>95%) across all communication materials and channels.
+                Maintain a high level of consistency (&gt;95%) across all communication materials and channels.
               </li>
               <li style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#00000099", marginBottom: "12px" }}>
                 Ensure brand guidelines are adhered to across all touchpoints and by all stakeholders.
