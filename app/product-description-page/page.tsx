@@ -162,7 +162,7 @@ export default function ProductDescriptionPage() {
                                     const element = document.getElementById("product-showcase");
                                     element?.scrollIntoView({ behavior: "smooth" });
                                 }}
-                                className="bg-white text-black px-6 py-3 rounded-none hover:bg-white/90 transition-all duration-300 cursor-pointer flex items-center gap-2"
+                                className="bg-white text-black px-6 py-3 rounded-none hover:bg-white/90 transition-all duration-300 cursor-pointer flex items-center justify-center"
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     fontWeight: 500,
@@ -172,7 +172,7 @@ export default function ProductDescriptionPage() {
                                     verticalAlign: "middle"
                                 }}
                             >
-                                Contact Us ↗
+                                Contact Us <span style={{ marginLeft: "10px" }}>↗</span>
                             </button>
                         </div>
                     </div>
@@ -424,7 +424,7 @@ export default function ProductDescriptionPage() {
                                 setIsInquired(true)
                                 setTimeout(() => setIsInquired(false), 3000)
                             }}
-                            className="w-full border border-white/40 bg-transparent py-[1rem] text-white hover:bg-white hover:text-black transition-all duration-500 cursor-pointer"
+                            className="w-full border border-white/40 bg-transparent py-[1rem] text-white hover:bg-white hover:text-black transition-all duration-500 cursor-pointer flex items-center justify-center"
                             style={{ 
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 500,
@@ -435,7 +435,11 @@ export default function ProductDescriptionPage() {
                                 textTransform: "none"
                             }}
                         >
-                            {isInquired ? "Inquiry Sent ✓" : "Enquire Now ↗"}
+                            {isInquired ? (
+                                <>Inquiry Sent <span style={{ marginLeft: "10px" }}>✓</span></>
+                            ) : (
+                                <>Enquire Now <span style={{ marginLeft: "10px" }}>↗</span></>
+                            )}
                         </button>
                     </div>
                 </div>
@@ -462,12 +466,12 @@ export default function ProductDescriptionPage() {
                                     verticalAlign: "middle",
                                     textTransform: "uppercase"
                                 }}>FEATURES</span>
-                                <span className="w-[2rem] h-[2rem] flex items-center justify-center">
+                                <span className="w-[33px] h-[33px] flex items-center justify-center">
                                     <Image
                                         src={openAccordion === "features" ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/595e0004-b077-45cc-2fa8-3cd96cd2de00/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/452710c0-2114-441d-1220-296341388a00/public"}
                                         alt={openAccordion === "features" ? "Collapse" : "Expand"}
-                                        width={32}
-                                        height={32}
+                                        width={33}
+                                        height={33}
                                     />
                                 </span>
                             </button>
@@ -715,12 +719,12 @@ export default function ProductDescriptionPage() {
                                     verticalAlign: "middle",
                                     textTransform: "uppercase"
                                 }}>TECHNICAL SPECS</span>
-                                <span className="w-[2rem] h-[2rem] flex items-center justify-center">
+                                <span className="w-[33px] h-[33px] flex items-center justify-center">
                                     <Image
                                         src={openAccordion === "specs" ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/595e0004-b077-45cc-2fa8-3cd96cd2de00/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/452710c0-2114-441d-1220-296341388a00/public"}
                                         alt={openAccordion === "specs" ? "Collapse" : "Expand"}
-                                        width={32}
-                                        height={32}
+                                        width={33}
+                                        height={33}
                                     />
                                 </span>
                             </button>
