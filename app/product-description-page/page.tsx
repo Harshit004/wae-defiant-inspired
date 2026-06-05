@@ -418,7 +418,6 @@ export default function ProductDescriptionPage() {
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 500,
                                 fontSize: "10px",
-                                leadingTrim: "none",
                                 lineHeight: "100%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
@@ -828,7 +827,15 @@ export default function ProductDescriptionPage() {
                                     <span className="text-[0.875rem] text-white/80 font-normal">&gt;</span>
                                 </div>
 
-                                <p className="text-[0.6875rem] leading-relaxed text-[#AEAEAE] font-light" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                                <p style={{
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: "14px",
+                                    lineHeight: "110%",
+                                    letterSpacing: "0%",
+                                    verticalAlign: "middle",
+                                    color: "#808080"
+                                }}>
                                     Information regarding awards received by the Hitachi Group in various fields and related announcements.
                                 </p>
                             </div>
