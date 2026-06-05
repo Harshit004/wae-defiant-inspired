@@ -252,7 +252,7 @@ function ProductListingContent() {
                 paddingTop: "220px",
             }}>
                 {/* Title + Search Row */}
-                <div className="w-full px-[7.5vw]" style={{ paddingBottom: "40px" }}>
+                <div className="w-full px-[7.5vw]" style={{ marginTop: "65px", marginBottom: "65px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <h1 style={{
                             fontFamily: "'Inter Tight', sans-serif",
@@ -361,6 +361,7 @@ function ProductListingContent() {
                                         display: "grid",
                                         gridTemplateColumns: "repeat(4, 1fr)",
                                         gap: "1.67vw",
+                                        rowGap: "65px",
                                     }}>
                                         {group.map((product, index) => {
                                             const globalIndex = globalStart + index;
@@ -427,7 +428,7 @@ function ProductListingContent() {
                         display: "grid",
                         gridTemplateColumns: "repeat(4, 1fr)",
                         gap: "1.67vw",
-                        paddingTop: "60px",
+                        paddingTop: "0px",
                     }}>
                         <div style={{ gridColumn: "span 2" }}>
                             <h2 style={{
@@ -442,7 +443,7 @@ function ProductListingContent() {
                                 {currentCategory.title}
                             </h2>
                             {currentCategory.paragraphs.map((pText, pIdx) => (
-                                <p key={pIdx} style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#AEAEAE", marginTop: 0, marginBottom: pIdx === currentCategory.paragraphs.length - 1 ? 0 : "24px" }}>
+                                <p key={pIdx} style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "auto", color: "#AEAEAE", marginTop: 0, marginBottom: pIdx === currentCategory.paragraphs.length - 1 ? 0 : "24px" }}>
                                     {pText}
                                 </p>
                             ))}
