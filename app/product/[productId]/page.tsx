@@ -8,7 +8,7 @@ import Link from "next/link"; // Import the Link component
 import ContactSection from "@/components/contact-section";
 import { motion } from "framer-motion";
 import { useParams, notFound } from "next/navigation";
-import products from "@/data/products";
+import { PRODUCTS } from "@/data/products";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
@@ -166,10 +166,40 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintIte
 
 const Home: FC = () => {
   const { productId } = useParams();
-  const product = products[productId as keyof typeof products];
+  const product = PRODUCTS[productId as keyof typeof PRODUCTS];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   if (!product) return notFound();
+
+  // Dynamic features list mapper compatibility
+  const features = product.featuresList?.map((feature) => ({
+    headline: feature.title,
+    subtext: feature.description
+  })) || [];
+
+  // Dynamic specifications grid mapper compatibility
+  const specArray = [
+    {
+      heading: product.specifications?.waterTemp?.cold || "-",
+      subtext1: "Cold Water Temperature",
+      subtext2: product.specifications?.pointOfUseSterilization || "Point of Use Sterilization"
+    },
+    {
+      heading: product.specifications?.waterTemp?.hot || "-",
+      subtext1: "Hot Water Temperature",
+      subtext2: product.specifications?.powerRequirement || "Power Requirement"
+    },
+    {
+      heading: product.specifications?.refrigerant || "-",
+      subtext1: "Refrigerant",
+      subtext2: product.specifications?.greenCertification || "Green Certification"
+    },
+    {
+      heading: product.specifications?.dripTray || "-",
+      subtext1: "Drip Tray Capacity",
+      subtext2: product.specifications?.purificationSystem || "Purification System"
+    }
+  ];
 
   const handlePrevImage = () => {
     setCurrentImageIndex((prevIndex) =>
@@ -613,7 +643,7 @@ const Home: FC = () => {
 
         {/* Right Side - Feature Details */}
         <div className="mt-8 md:mt-0 md:w-[37.7%] space-y-5">
-          {product.features.map((feature: any, index: number) => (
+          {features.map((feature: any, index: number) => (
             <div key={index} className="space-y-2">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-black rounded-full" />
@@ -640,7 +670,7 @@ const Home: FC = () => {
 
         {/* Right Side - SPECIFICATIONS Details */}
         <div className="mt-8 md:mt-0 md:w-[37.7%] grid grid-cols-2 gap-x-[20px] gap-y-[20px]">
-          {product.specifications.map((spec: any, index: number) => (
+          {specArray.map((spec: any, index: number) => (
             <React.Fragment key={index}>
               <div>
                 <p className="font-inter-tight font-normal text-sm leading-[21px] tracking-normal align-middle">

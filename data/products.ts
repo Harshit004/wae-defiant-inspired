@@ -9,6 +9,7 @@ export interface CategoryData {
   id: string;
   title: string;
   description: string;
+  imageUrl?: string;
   paragraphs: string[];
   products: Product[];
 }
@@ -49,6 +50,7 @@ export interface ProductDetails {
     purificationSystem: string;
     pointOfUseSterilization: string;
   };
+  status?: 'Live' | 'Draft';
 }
 
 export const CATEGORIES: Record<string, CategoryData> = {
