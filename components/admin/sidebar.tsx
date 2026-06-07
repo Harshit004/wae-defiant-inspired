@@ -5,45 +5,36 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import {
-  LayoutDashboard,
+  Home,
   Package,
   ChevronDown,
   ChevronUp,
   FileText,
-  Radio,
-  Settings,
-  LogOut
+  PlaySquare,
+  Settings
 } from "lucide-react"
 
 export default function Sidebar() {
   const pathname = usePathname()
   const [productsOpen, setProductsOpen] = useState(true)
 
-  const handleLogout = async () => {
-    try {
-      await fetch("/api/auth/logout", { method: "POST" })
-      window.location.href = "/secret-cms-login"
-    } catch (err) {
-      alert("Failed to log out.")
-    }
-  }
+  const isCategoriesActive = pathname.startsWith("/admin/categories")
+  const isProductsActive = pathname.startsWith("/admin/products")
+  const isParentProductsActive = isCategoriesActive || isProductsActive
 
   return (
     <aside className="w-[260px] bg-[#04111d] border-r border-white/5 flex flex-col justify-between h-screen sticky top-0 text-[#AEAEAE]">
-      {/* Brand logo section */}
       <div>
-        <div className="px-6 py-[30px] border-b border-white/5 flex items-center gap-3">
-          <Link href="/admin/categories" className="flex items-center gap-2">
+        {/* Brand logo section */}
+        <div className="px-6 py-[24px] border-b border-white/5 flex items-center justify-start">
+          <Link href="/admin/categories" className="flex items-center">
             <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
               alt="WAE Logo"
-              width={40}
-              height={40}
+              width={75}
+              height={80}
+              priority
             />
-            <div className="flex flex-col text-left">
-              <span className="font-bold text-white tracking-wider text-sm">WAE</span>
-              <span className="text-[9px] uppercase tracking-widest text-[#0081C9]">Our Green is Blue</span>
-            </div>
           </Link>
         </div>
 
@@ -53,10 +44,12 @@ export default function Sidebar() {
           <Link
             href="/admin/categories"
             className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
-              pathname === "/admin/dashboard" ? "text-white bg-white/5" : ""
+              pathname === "/admin/dashboard" 
+                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3" 
+                : "text-[#AEAEAE]"
             }`}
           >
-            <LayoutDashboard size={18} />
+            <Home size={18} />
             <span>Dashboard</span>
           </Link>
 
@@ -64,7 +57,11 @@ export default function Sidebar() {
           <div>
             <button
               onClick={() => setProductsOpen(!productsOpen)}
-              className="w-full flex items-center justify-between px-4 py-3 text-sm font-medium transition-all hover:text-white text-left focus:outline-none"
+              className={`w-full flex items-center justify-between px-4 py-3 text-sm font-medium transition-all hover:text-white text-left focus:outline-none ${
+                isParentProductsActive
+                  ? "bg-[#082a45]/40 text-white border-l-4 border-[#0081C9] pl-3"
+                  : "text-[#AEAEAE]"
+              }`}
             >
               <div className="flex items-center gap-3">
                 <Package size={18} />
@@ -74,11 +71,11 @@ export default function Sidebar() {
             </button>
 
             {productsOpen && (
-              <div className="mt-1 ml-4 border-l border-white/5 pl-4 space-y-1">
+              <div className="mt-1 ml-[26px] pl-4 border-l border-white/10 space-y-1">
                 <Link
                   href="/admin/categories"
                   className={`block py-2 px-2 text-xs font-medium transition-all hover:text-white ${
-                    pathname === "/admin/categories" ? "text-[#0081C9] font-semibold" : ""
+                    isCategoriesActive ? "text-[#0081C9] font-semibold" : "text-[#AEAEAE]"
                   }`}
                 >
                   All Categories
@@ -86,7 +83,7 @@ export default function Sidebar() {
                 <Link
                   href="/admin/products"
                   className={`block py-2 px-2 text-xs font-medium transition-all hover:text-white ${
-                    pathname === "/admin/products" ? "text-[#0081C9] font-semibold" : ""
+                    isProductsActive ? "text-[#0081C9] font-semibold" : "text-[#AEAEAE]"
                   }`}
                 >
                   Product Listing
@@ -109,7 +106,7 @@ export default function Sidebar() {
             href="/admin/categories"
             className="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white"
           >
-            <Radio size={18} />
+            <PlaySquare size={18} />
             <span>News & Events</span>
           </Link>
 
@@ -122,17 +119,6 @@ export default function Sidebar() {
             <span>Settings</span>
           </Link>
         </nav>
-      </div>
-
-      {/* Logout button */}
-      <div className="p-4 border-t border-white/5">
-        <button
-          onClick={handleLogout}
-          className="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white text-left cursor-pointer"
-        >
-          <LogOut size={18} />
-          <span>Logout</span>
-        </button>
       </div>
     </aside>
   )

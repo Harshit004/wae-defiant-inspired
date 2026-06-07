@@ -12,17 +12,17 @@ export default function Header({ searchQuery = "", onSearchChange }: HeaderProps
     <header className="h-[80px] bg-[#04111d] border-b border-white/5 px-10 flex items-center justify-between sticky top-0 z-30">
       {/* Search Input Box */}
       <div className="relative w-full max-w-[400px]">
-        <Search
-          size={16}
-          className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"
-        />
         <input
           type="text"
           placeholder="Search product"
           value={searchQuery}
           onChange={(e) => onSearchChange?.(e.target.value)}
-          className="w-full bg-[#051424] border border-white/5 text-white placeholder-gray-500 px-4 py-2 pl-12 text-sm outline-none focus:border-white/10 transition-all rounded-none"
+          className="w-full bg-[#051424] border border-white/5 text-white placeholder-gray-500 px-4 py-2 pr-12 text-sm outline-none focus:border-white/10 transition-all rounded-none"
           style={{ fontFamily: "'Manrope', sans-serif" }}
+        />
+        <Search
+          size={16}
+          className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
         />
       </div>
 

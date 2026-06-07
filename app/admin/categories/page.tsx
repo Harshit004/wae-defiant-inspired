@@ -92,58 +92,64 @@ export default function CategoriesPage() {
         </div>
 
         {/* Categories Table */}
-        <div className="w-full bg-[#04111d]/40 border border-white/5 overflow-hidden">
+        <div className="w-full bg-[#02111d] border border-white/5 overflow-hidden">
           {loading ? (
             <div className="p-10 text-center text-gray-500 text-sm">Loading categories...</div>
           ) : filteredCategories.length === 0 ? (
             <div className="p-10 text-center text-gray-500 text-sm">No categories found.</div>
           ) : (
             <table className="w-full text-left border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-white/5 text-gray-400 text-xs uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  <th className="py-4 px-6 font-medium">Product Image and Name</th>
-                  <th className="py-4 px-6 font-medium">Summary</th>
-                  <th className="py-4 px-6 font-medium text-center">Products</th>
-                  <th className="py-4 px-6 font-medium text-right">Action</th>
+              <thead className="bg-[#051424]">
+                <tr className="border-b border-white/5 text-gray-400 text-xs" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                  <th className="py-4 px-6 font-medium w-[35%] text-left">Product Image and Name</th>
+                  <th className="py-4 px-6 font-medium w-[43%] text-left">Summary</th>
+                  <th className="py-4 px-6 font-medium w-[10%] text-center">Products</th>
+                  <th className="py-4 px-6 font-medium w-[12%] text-center">Action</th>
                 </tr>
               </thead>
               <tbody style={{ fontFamily: "'Manrope', sans-serif" }}>
                 {filteredCategories.map((cat) => (
                   <tr key={cat.id} className="border-b border-white/5 hover:bg-white/[0.01] transition-all">
-                    <td className="py-5 px-6 flex items-center gap-4">
-                      <div className="relative w-12 h-12 bg-white/5 border border-white/5 flex items-center justify-center overflow-hidden">
-                        {cat.imageUrl ? (
-                          <Image
-                            src={cat.imageUrl}
-                            alt={cat.title}
-                            fill
-                            className="object-contain"
-                          />
-                        ) : (
-                          <div className="text-[10px] text-gray-600 font-semibold uppercase">WAE</div>
-                        )}
+                    <td className="py-5 px-6">
+                      <div className="flex items-center gap-4">
+                        <div className="relative w-12 h-12 bg-[#051424] border border-white/5 flex items-center justify-center overflow-hidden flex-shrink-0">
+                          {cat.imageUrl ? (
+                            <Image
+                              src={cat.imageUrl}
+                              alt={cat.title}
+                              fill
+                              className="object-contain p-1"
+                            />
+                          ) : (
+                            <div className="text-[10px] text-gray-600 font-semibold uppercase">WAE</div>
+                          )}
+                        </div>
+                        <span className="font-semibold text-white tracking-wide text-xs uppercase">
+                          {cat.title}
+                        </span>
                       </div>
-                      <span className="font-semibold text-white tracking-wide text-xs">
-                        {cat.title}
-                      </span>
                     </td>
-                    <td className="py-5 px-6 max-w-[400px] text-gray-400 text-xs line-clamp-2 mt-4">
-                      {cat.description}
+                    <td className="py-5 px-6 align-middle">
+                      <div className="line-clamp-3 text-gray-400 text-xs max-w-[550px] leading-relaxed">
+                        {cat.description}
+                      </div>
                     </td>
-                    <td className="py-5 px-6 text-center text-white font-medium text-xs">
+                    <td className="py-5 px-6 text-center text-white font-medium text-xs align-middle">
                       {cat.products ? cat.products.length : 0}
                     </td>
-                    <td className="py-5 px-6 text-right">
-                      <div className="inline-flex gap-4">
+                    <td className="py-5 px-6 text-center align-middle">
+                      <div className="inline-flex gap-4 justify-center">
                         <Link
                           href={`/admin/categories/${cat.id}/edit`}
                           className="text-gray-400 hover:text-white transition-all"
+                          title="Edit Category"
                         >
                           <Edit3 size={16} />
                         </Link>
                         <button
                           onClick={() => setDeleteTarget(cat)}
-                          className="text-gray-400 hover:text-red-500 transition-all focus:outline-none cursor-pointer"
+                          className="text-red-500/80 hover:text-red-400 transition-all focus:outline-none cursor-pointer"
+                          title="Delete Category"
                         >
                           <Trash2 size={16} />
                         </button>

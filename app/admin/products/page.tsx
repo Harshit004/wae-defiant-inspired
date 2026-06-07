@@ -208,20 +208,20 @@ export default function ProductsPage() {
         </div>
 
         {/* Products Table */}
-        <div className="w-full bg-[#04111d]/40 border border-white/5 overflow-hidden">
+        <div className="w-full bg-[#02111d] border border-white/5 overflow-hidden">
           {loading ? (
             <div className="p-10 text-center text-gray-500 text-sm">Loading products...</div>
           ) : filteredProducts.length === 0 ? (
             <div className="p-10 text-center text-gray-500 text-sm">No products found.</div>
           ) : (
             <table className="w-full text-left border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-white/5 text-gray-400 text-xs uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  <th className="py-4 px-6 font-medium">Product Image and Name</th>
-                  <th className="py-4 px-6 font-medium">Category / Placement</th>
-                  <th className="py-4 px-6 font-medium">Hero Subtitle</th>
-                  <th className="py-4 px-6 font-medium text-center">Status</th>
-                  <th className="py-4 px-6 font-medium text-right">Action</th>
+              <thead className="bg-[#051424]">
+                <tr className="border-b border-white/5 text-gray-400 text-xs" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                  <th className="py-4 px-6 font-medium w-[32%] text-left">Product Image and Name</th>
+                  <th className="py-4 px-6 font-medium w-[23%] text-left">Category / Placement</th>
+                  <th className="py-4 px-6 font-medium w-[25%] text-left">Hero Subtitle</th>
+                  <th className="py-4 px-6 font-medium w-[10%] text-center">Status</th>
+                  <th className="py-4 px-6 font-medium w-[10%] text-center">Action</th>
                 </tr>
               </thead>
               <tbody style={{ fontFamily: "'Manrope', sans-serif" }}>
@@ -231,42 +231,44 @@ export default function ProductsPage() {
                   return (
                     <tr key={p.id} className="border-b border-white/5 hover:bg-white/[0.01] transition-all">
                       {/* Product Image & Name */}
-                      <td className="py-5 px-6 flex items-center gap-4">
-                        <div className="relative w-12 h-12 bg-white/5 border border-white/5 flex items-center justify-center overflow-hidden">
-                          {p.images && p.images[0] ? (
-                            <Image
-                              src={p.images[0]}
-                              alt={p.name}
-                              fill
-                              className="object-contain"
-                            />
-                          ) : (
-                            <div className="text-[10px] text-gray-600 font-semibold uppercase">WAE</div>
-                          )}
-                        </div>
-                        <div className="flex flex-col text-left">
-                          <span className="font-semibold text-white tracking-wide text-xs">
-                            {p.name}
-                          </span>
-                          <span className="text-[10px] text-gray-500 mt-0.5">
-                            ID: {p.id}
-                          </span>
+                      <td className="py-5 px-6">
+                        <div className="flex items-center gap-4">
+                          <div className="relative w-12 h-12 bg-[#051424] border border-white/5 flex items-center justify-center overflow-hidden flex-shrink-0">
+                            {p.images && p.images[0] ? (
+                              <Image
+                                src={p.images[0]}
+                                alt={p.name}
+                                fill
+                                className="object-contain p-1"
+                              />
+                            ) : (
+                              <div className="text-[10px] text-gray-600 font-semibold uppercase">WAE</div>
+                            )}
+                          </div>
+                          <div className="flex flex-col text-left">
+                            <span className="font-semibold text-white tracking-wide text-xs">
+                              {p.name}
+                            </span>
+                            <span className="text-[10px] text-gray-500 mt-0.5">
+                              ID: {p.id}
+                            </span>
+                          </div>
                         </div>
                       </td>
 
                       {/* Category & Placement */}
-                      <td className="py-5 px-6 text-xs">
+                      <td className="py-5 px-6 text-xs align-middle">
                         <div className="text-gray-200">{categoryTitle}</div>
                         <div className="text-gray-500 mt-1 capitalize text-[10px]">{placement.replace("-", " ")}</div>
                       </td>
 
                       {/* Hero Subtitle */}
-                      <td className="py-5 px-6 max-w-[250px] text-gray-400 text-xs truncate">
-                        {p.heroSubtitle || "-"}
+                      <td className="py-5 px-6 text-gray-400 text-xs align-middle">
+                        <div className="max-w-[220px] truncate">{p.heroSubtitle || "-"}</div>
                       </td>
 
                       {/* Status */}
-                      <td className="py-5 px-6 text-center">
+                      <td className="py-5 px-6 text-center align-middle">
                         <span className={`inline-block px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider rounded-none ${
                           isLive 
                             ? "bg-green-500/10 text-green-400 border border-green-500/20" 
@@ -277,8 +279,8 @@ export default function ProductsPage() {
                       </td>
 
                       {/* Actions */}
-                      <td className="py-5 px-6 text-right">
-                        <div className="inline-flex gap-4">
+                      <td className="py-5 px-6 text-center align-middle">
+                        <div className="inline-flex gap-4 justify-center">
                           <Link
                             href={`/admin/products/${p.id}/view`}
                             className="text-gray-400 hover:text-white transition-all"
@@ -295,7 +297,7 @@ export default function ProductsPage() {
                           </Link>
                           <button
                             onClick={() => setDeleteTarget(p)}
-                            className="text-gray-400 hover:text-red-500 transition-all focus:outline-none cursor-pointer"
+                            className="text-red-500/80 hover:text-red-400 transition-all focus:outline-none cursor-pointer"
                             title="Delete product"
                           >
                             <Trash2 size={16} />
