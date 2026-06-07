@@ -11,7 +11,8 @@ import {
   ChevronUp,
   FileText,
   PlaySquare,
-  Settings
+  Settings,
+  LogOut
 } from "lucide-react"
 
 export default function Sidebar() {
@@ -21,6 +22,15 @@ export default function Sidebar() {
   const isCategoriesActive = pathname.startsWith("/admin/categories")
   const isProductsActive = pathname.startsWith("/admin/products")
   const isParentProductsActive = isCategoriesActive || isProductsActive
+
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/logout", { method: "POST" })
+      window.location.href = "/secret-cms-login"
+    } catch (err) {
+      alert("Failed to log out.")
+    }
+  }
 
   return (
     <aside className="w-[260px] bg-[#04111d] border-r border-white/5 flex flex-col justify-between h-screen sticky top-0 text-[#AEAEAE]">
@@ -119,6 +129,17 @@ export default function Sidebar() {
             <span>Settings</span>
           </Link>
         </nav>
+      </div>
+
+      {/* Logout button */}
+      <div className="p-4 border-t border-white/5">
+        <button
+          onClick={handleLogout}
+          className="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white text-left cursor-pointer focus:outline-none"
+        >
+          <LogOut size={18} />
+          <span>Logout</span>
+        </button>
       </div>
     </aside>
   )
