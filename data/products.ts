@@ -303,12 +303,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "WATERMAKER",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fa2654df-e6ca-4b14-34d8-d52f1d4c5800/public",
         "category": "free-standing"
-      },
-      {
-        "id": "water-breaker",
-        "name": "WATER TREAKER ",
-        "category": "free-standing",
-        "image": "https://www.waecorp.com/frontend/can/wae_apsa_1%20(5).jpg"
       }
     ]
   }
@@ -2035,58 +2029,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "powerRequirement": "220V/50 HZ RZ 134a 1/8 HP",
       "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
       "pointOfUseSterilization": "Germ Guardian™"
-    },
-    "status": "Live"
-  },
-  "water-breaker": {
-    "id": "water-breaker",
-    "name": "WATER TREAKER ",
-    "categoryName": "Glass bottling plant",
-    "heroSubtitle": "It takes the water",
-    "images": [
-      "https://www.waecorp.com/frontend/can/wae_apsa_1%20(5).jpg",
-      "https://www.waecorp.com/frontend/can/wae_apsa_1%20(6).jpg",
-      "https://5.imimg.com/data5/VD/FM/OS/IOS-17958609/product-jpeg-500x500.png",
-      "https://vibgyorenterprise.com/assets/images/fully-automatic-glass-bottle-filling-plant-for-milk.png"
-    ],
-    "featuresList": [
-      {
-        "title": "F1",
-        "description": "Its the first feature"
-      },
-      {
-        "title": "F2",
-        "description": "Its the 2nd feature"
-      }
-    ],
-    "specifications": {
-      "storageCapacity": [
-        {
-          "variant": "WATER TAKER",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
-        }
-      ],
-      "waterTemp": {
-        "cold": "SAME AS THE OTHER UNIT",
-        "hot": "Cold: 5°C - 24° C  Hot: 30°C - 80° C"
-      },
-      "greenCertification": "YES",
-      "dripTray": "lorem ipsum dolor",
-      "refrigerant": "lorem ipsum dolor",
-      "dimensions": [
-        {
-          "variant": "WATER TAKER",
-          "weight": "-",
-          "height": "1630",
-          "width": "535",
-          "depth": "650"
-        }
-      ],
-      "powerRequirement": "As you wish",
-      "purificationSystem": "lorem ipsum dolor",
-      "pointOfUseSterilization": ""
     },
     "status": "Live"
   }
