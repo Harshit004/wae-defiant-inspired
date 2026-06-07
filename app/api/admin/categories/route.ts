@@ -70,8 +70,8 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ success: false, message: 'Invalid action.' }, { status: 400 });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error in Category API:', error);
-    return NextResponse.json({ success: false, message: 'Internal server error.' }, { status: 500 });
+    return NextResponse.json({ success: false, message: error.message || 'Internal server error.' }, { status: 500 });
   }
 }

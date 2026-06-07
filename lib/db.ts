@@ -113,10 +113,18 @@ export const CATEGORIES: Record<string, CategoryData> = ${JSON.stringify(state.c
 export const PRODUCTS: Record<string, ProductDetails> = ${JSON.stringify(state.products, null, 2)};
 `;
 
+  const isVercel = !!process.env.VERCEL;
+  const isProd = process.env.NODE_ENV === 'production' || isVercel;
+  const token = process.env.GITHUB_ACCESS_TOKEN;
+
   // 1. Local Development Write
-  if (process.env.NODE_ENV === 'development' || !process.env.GITHUB_ACCESS_TOKEN) {
+  if (!isProd) {
     fs.writeFileSync(PRODUCTS_FILE_PATH, content, 'utf-8');
     return;
+  }
+
+  if (!token) {
+    throw new Error('GITHUB_ACCESS_TOKEN environment variable is not configured on Vercel. Please add it to your Vercel project settings.');
   }
 
   // 2. Production Git-backed Write via GitHub API
@@ -125,7 +133,6 @@ export const PRODUCTS: Record<string, ProductDetails> = ${JSON.stringify(state.p
     const repo = process.env.GITHUB_REPO || 'wae-defiant-inspired';
     const branch = process.env.GITHUB_BRANCH || 'main';
     const filePath = 'data/products.ts';
-    const token = process.env.GITHUB_ACCESS_TOKEN;
 
     // Get current file sha
     const getFileUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}?ref=${branch}`;
@@ -136,11 +143,13 @@ export const PRODUCTS: Record<string, ProductDetails> = ${JSON.stringify(state.p
       },
     });
 
-    let sha = '';
-    if (getRes.ok) {
-      const fileData = await getRes.json();
-      sha = fileData.sha;
+    if (!getRes.ok) {
+      const errorText = await getRes.text();
+      throw new Error(`Failed to retrieve file metadata from GitHub (status: ${getRes.status}): ${errorText}`);
     }
+
+    const fileData = await getRes.json();
+    const sha = fileData.sha;
 
     // Put updated file
     const putFileUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
@@ -161,11 +170,12 @@ export const PRODUCTS: Record<string, ProductDetails> = ${JSON.stringify(state.p
 
     if (!putRes.ok) {
       const errorText = await putRes.text();
-      throw new Error(`GitHub API upload failed: ${errorText}`);
+      throw new Error(`GitHub API upload failed (status: ${putRes.status}): ${errorText}`);
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed committing to GitHub:', error);
-    // Fallback to local write in case of API issues
-    fs.writeFileSync(PRODUCTS_FILE_PATH, content, 'utf-8');
+    // Do not attempt local write fallback in production (Vercel has read-only filesystem)
+    throw new Error(`Git database write failed: ${error.message || error}`);
   }
 }
+
