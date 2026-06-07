@@ -127,7 +127,7 @@ function ProductListingContent() {
     const [headerHeight, setHeaderHeight] = useState(0)
     const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
     const [searchQuery, setSearchQuery] = useState("")
-    const [activeFilter, setActiveFilter] = useState<"all" | "free-standing" | "counter-top">("all")
+    const [activeFilter, setActiveFilter] = useState<string>("all")
     const [productSearchQuery, setProductSearchQuery] = useState("")
     const headerRef = useRef<HTMLDivElement>(null)
     const sectionRef = useRef<HTMLElement>(null)
@@ -142,12 +142,23 @@ function ProductListingContent() {
     const [taglineVisible, setTaglineVisible] = useState(true)
     const prevScrollY = useRef(0)
 
+    // Reset filter when category changes
+    useEffect(() => {
+        setActiveFilter("all")
+    }, [categoryId])
+
     // Filter products by category and search
     const filteredProducts = currentCategory.products.filter(p => {
         const matchesCategory = activeFilter === "all" || p.category === activeFilter;
         const matchesSearch = !productSearchQuery || p.name.toLowerCase().includes(productSearchQuery.toLowerCase());
         return matchesCategory && matchesSearch;
     });
+
+    // Get unique mounting types for tabs
+    const uniqueMountingTypes = Array.from(new Set(currentCategory.products.map(p => p.category)));
+    const shortCategoryName = currentCategory.title.includes(" - ") 
+        ? currentCategory.title.split(" - ")[1].toUpperCase() 
+        : currentCategory.title.toUpperCase();
 
     // Variants for staggered animations using framer-motion (used only for tagline)
     const containerVariants = {
@@ -263,7 +274,7 @@ function ProductListingContent() {
                             textTransform: "uppercase",
                             margin: 0,
                         }}>
-                            ALL {currentCategory.id === "bluwae" ? "BLUWAE" : "TRUBLU"} <span style={{ color: "#ffffff66", fontSize: "18px", fontWeight: 400 }}>({filteredProducts.length})</span>
+                            ALL {shortCategoryName} <span style={{ color: "#ffffff66", fontSize: "18px", fontWeight: 400 }}>({filteredProducts.length})</span>
                         </h1>
                         {/* Search Bar */}
                         <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
@@ -297,11 +308,13 @@ function ProductListingContent() {
                 {/* Filter Tabs */}
                 <div className="w-full px-[7.5vw]" style={{ paddingBottom: "48px" }}>
                     <div style={{ display: "flex", gap: "32px" }}>
-                        {([
-                            { label: `ALL ${currentCategory.id === "bluwae" ? "BLUWAE" : "TRUBLU"}`, value: "all" as const },
-                            { label: "FREE STANDING", value: "free-standing" as const },
-                            { label: "COUNTER TOP", value: "counter-top" as const },
-                        ]).map((tab) => (
+                        {[
+                            { label: `ALL ${shortCategoryName}`, value: "all" },
+                            ...uniqueMountingTypes.map(mt => ({
+                                label: mt.replace(/-/g, ' ').toUpperCase(),
+                                value: mt
+                            }))
+                        ].map((tab) => (
                             <button
                                 key={tab.value}
                                 onClick={() => setActiveFilter(tab.value)}

@@ -191,6 +191,118 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "counter-top"
       }
     ]
+  },
+  "zvr": {
+    "id": "zvr",
+    "title": "Drinking water fountain - ZVR",
+    "description": "Direct-drinking stations with bubbler taps, featuring repository installed purification, chilling, and heating systems concealed seamlessly behind the wall.",
+    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
+    "paragraphs": [
+      "Surface-mounted drinking water fountains with integrated bottle filling stations offer a sustainable and hygienic solution for modern hydration needs.",
+      "Designed for high-traffic environments like offices, schools, and public facilities, these units encourage refill culture by supporting reusable bottles, helping reduce plastic waste."
+    ],
+    "products": [
+      {
+        "id": "yami",
+        "name": "YAMI",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4617ef86-d822-4f26-a0e8-d81be539da00/public",
+        "category": "fountains"
+      },
+      {
+        "id": "plusultra",
+        "name": "PLUSULTRA",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0aced016-3f7d-4d41-7cf5-41b6930eac00/public",
+        "category": "fountains"
+      }
+    ]
+  },
+  "watermatic": {
+    "id": "watermatic",
+    "title": "Drinking water faucets - WATERMATIC",
+    "description": "Drinking water taps featuring sensor touch or push operation for hygienic dispensing, effortless usability, and seamless modern hydration experiences.",
+    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
+    "paragraphs": [
+      "Drinking water taps featuring sensor touch or push operation for hygienic dispensing, effortless usability, and seamless modern hydration experiences.",
+      "The Watermatic Drinking Water Faucet is a next-gen hydration solution designed for modern workspaces, hotels, and high-end dining spaces."
+    ],
+    "products": [
+      {
+        "id": "piper",
+        "name": "Piper",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1d3b640-01ba-420a-bf17-b3145d223d00/public",
+        "category": "counter-top"
+      },
+      {
+        "id": "watermatic",
+        "name": "Watermatic",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5e3fd671-62bf-461f-f624-94099f554500/public",
+        "category": "counter-top"
+      },
+      {
+        "id": "aquatap",
+        "name": "Aquatap",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/374ef4c2-7b68-4f33-3fc9-7d4d3fc1ca00/public",
+        "category": "counter-top"
+      },
+      {
+        "id": "moses",
+        "name": "Moses",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e1ab0b09-5a47-41c8-eca8-f74bb2ab8b00/public",
+        "category": "counter-top"
+      },
+      {
+        "id": "trx.tl",
+        "name": "TRX.TL",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e84e2022-b6ea-4f34-bb4d-3deb20d69700/public",
+        "category": "counter-top"
+      },
+      {
+        "id": "hkn",
+        "name": "HKN",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/528c39ab-e15a-4b6e-8f1e-a9f7f09ef100/public",
+        "category": "counter-top"
+      }
+    ]
+  },
+  "pus": {
+    "id": "pus",
+    "title": "Compact purification units - WAEAU",
+    "description": "Robust, research-backed water systems engineered for public infrastructure—ensuring continuous access to safe, purified drinking water in all conditions.",
+    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
+    "paragraphs": [
+      "Robust, research-backed water systems engineered for public infrastructure—ensuring continuous access to safe, purified drinking water in all conditions."
+    ],
+    "products": [
+      {
+        "id": "aqua",
+        "name": "AQUA",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/20abb608-f632-4157-ce38-12646a5c8a00/public",
+        "category": "free-standing"
+      },
+      {
+        "id": "hydrobankseries",
+        "name": "HYDROBANKSERIES",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/822535eb-d4c2-472f-254f-8b4685410400/public",
+        "category": "free-standing"
+      }
+    ]
+  },
+  "glass-bottling": {
+    "id": "glass-bottling",
+    "title": "Glass bottling plant",
+    "description": "Compact modular glass bottling plants enabling sustainable premium in-house bottled water production for hospitality, corporate, and luxury environments.",
+    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public",
+    "paragraphs": [
+      "Compact modular glass bottling plants enabling sustainable premium in-house bottled water production for hospitality, corporate, and luxury environments."
+    ],
+    "products": [
+      {
+        "id": "watermaker",
+        "name": "WATERMAKER",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fa2654df-e6ca-4b14-34d8-d52f1d4c5800/public",
+        "category": "free-standing"
+      }
+    ]
   }
 };
 
@@ -1268,5 +1380,654 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
       "pointOfUseSterilization": "Germ Guardian™"
     }
+  },
+  "yami": {
+    "id": "yami",
+    "name": "YAMI",
+    "categoryName": "WATER COOLER & FOUNTAINS - ZVR Series",
+    "heroSubtitle": "Powerful LED sterilization",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4617ef86-d822-4f26-a0e8-d81be539da00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/85bdf8ae-9a9c-4e51-262c-3086fce40d00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/916a4dbf-24a7-4130-00bf-c35c5693ce00/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Sleek Bubbler Head At a glance",
+        "description": "Chrome-plated brass head with a polished nish for a rened look and smooth water flow."
+      },
+      {
+        "title": "Hygienic Tubing",
+        "description": "100% lead-free, anti-bacterial tubes eliminate cross-contamination risks, ensuring pure, safe water."
+      },
+      {
+        "title": "Splash-Free Experience",
+        "description": "Engineered for a clean, controlled ow that minimizes spillage and water waste."
+      },
+      {
+        "title": "Smart Drainage System",
+        "description": "Ecient drainage eliminates standing water, keeping the area clean and dry."
+      },
+      {
+        "title": "Fully Accessible",
+        "description": "ADA-compliant design ensures effortless use for everyone."
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration"
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "1000ml Hydropac Classic TL",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C - 24° C",
+        "hot": "Hot: 30°C - 80° C"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000 ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "1000ml Hydropac Classic TL",
+          "weight": "-",
+          "height": "1631",
+          "width": "535",
+          "depth": "654"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live"
+  },
+  "plusultra": {
+    "id": "plusultra",
+    "name": "PLUSULTRA",
+    "categoryName": "WATER COOLER & FOUNTAINS - ZVR Series",
+    "heroSubtitle": "Powerful LED sterilization",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9db14c02-30db-4131-3b6d-7c5b2fa3fb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5fcb76d0-46a1-4f0e-37f0-a1b53c6b3600/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Heavy-Duty Build",
+        "description": "High-quality SS-304 stainless steel with a vandal-resistant boom plate for superior durability."
+      },
+      {
+        "title": "Optional Purification",
+        "description": "Customizable back-end purification available."
+      },
+      {
+        "title": "Efficient Drainage",
+        "description": "Designed with a proper drainage system to eliminate standing water."
+      },
+      {
+        "title": "Easy Installation",
+        "description": "Quick wall-hanging or wall-mount setup."
+      },
+      {
+        "title": "Bubbler Heads",
+        "description": "Polished single or dual bubble heads with a convenient basin."
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "1000ml Hydropac Classic TL",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C - 24° C",
+        "hot": "Hot: 30°C - 80° C"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000 ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "1000ml Hydropac Classic TL",
+          "weight": "-",
+          "height": "1631",
+          "width": "535",
+          "depth": "654"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live"
+  },
+  "piper": {
+    "id": "piper",
+    "name": "Piper",
+    "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
+    "heroSubtitle": "Powerful LED sterilization",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e4aee070-6aa9-430d-5009-f51a13b48800/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/55199965-30ce-4ef8-abf9-78a654bd3b00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/576c6473-9649-4eee-e31c-0e4ee5cc0d00/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Powerful LED Powerful LED Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Lorem Ipsum dolor"
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
+        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "weight": "-",
+          "height": "1631",
+          "width": "535",
+          "depth": "654"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live"
+  },
+  "watermatic": {
+    "id": "watermatic",
+    "name": "Watermatic",
+    "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
+    "heroSubtitle": "Powerful LED sterilization",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a63f294-a33c-470e-8aba-f6bef589a600/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5a89b2db-4c37-4e75-40cc-0d5afa2fac00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e0460e14-5904-4c18-9dc4-1cf913d7da00/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Powerful LED Powerful LED Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Lorem Ipsum dolor"
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
+        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "weight": "-",
+          "height": "1631",
+          "width": "535",
+          "depth": "654"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live"
+  },
+  "aquatap": {
+    "id": "aquatap",
+    "name": "Aquatap",
+    "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
+    "heroSubtitle": "Powerful LED sterilization",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0b994225-97de-4679-daf1-8e5008e73500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a1a596c2-4a97-4da4-72a4-577ccb20a900/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b24c06b-1752-47a0-4499-be61a2497800/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Powerful LED Powerful LED Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Lorem Ipsum dolor"
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
+        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "weight": "-",
+          "height": "1631",
+          "width": "535",
+          "depth": "654"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live"
+  },
+  "moses": {
+    "id": "moses",
+    "name": "Moses",
+    "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
+    "heroSubtitle": "Powerful LED sterilization",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8440a366-f65d-40b0-7b2c-582ad7f8cc00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47b3d27b-b65b-4e94-26d1-ac8bb35afd00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a6c1075-ac97-4c46-d1b9-42d3b6d82900/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Powerful LED Powerful LED Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Lorem Ipsum dolor"
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
+        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "weight": "-",
+          "height": "1631",
+          "width": "535",
+          "depth": "654"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live"
+  },
+  "trx.tl": {
+    "id": "trx.tl",
+    "name": "TRX.TL",
+    "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
+    "heroSubtitle": "Powerful LED sterilization",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a63f294-a33c-470e-8aba-f6bef589a600/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5a89b2db-4c37-4e75-40cc-0d5afa2fac00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e0460e14-5904-4c18-9dc4-1cf913d7da00/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Powerful LED Powerful LED Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Lorem Ipsum dolor"
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
+        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "weight": "-",
+          "height": "1631",
+          "width": "535",
+          "depth": "654"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live"
+  },
+  "hkn": {
+    "id": "hkn",
+    "name": "HKN",
+    "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
+    "heroSubtitle": "Powerful LED sterilization",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e897fea-6219-4096-1989-ac1855719800/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76de532d-a762-4789-d348-ffa6ddab9700/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e897fea-6219-4096-1989-ac1855719800/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Powerful LED Powerful LED Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+      },
+      {
+        "title": "Built Tough, Made to Last",
+        "description": "Lorem Ipsum dolor"
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
+        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "FS VAR 150/ 100/ 50",
+          "weight": "-",
+          "height": "1631",
+          "width": "535",
+          "depth": "654"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live"
+  },
+  "aqua": {
+    "id": "aqua",
+    "name": "AQUA",
+    "categoryName": "PUBLIC UTILITY SYSTEMS - PUS Series",
+    "heroSubtitle": "Powerful LED sterilization",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/972917c4-f986-4a07-11e3-4f5ad123cb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/41448980-c47f-4212-9bca-68bfd7c3db00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/11983264-8f58-4311-ec84-225eacf9c000/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Built to Endure",
+        "description": "Triple-coated galvanized iron with a protective powder finish."
+      },
+      {
+        "title": "Pure & Safe Storage",
+        "description": "Stainless steel tank guarantees 99.99% pure, contaminant-free water."
+      },
+      {
+        "title": "Extended Durability",
+        "description": "Optional anti-rust treatment and stainless steel 304 overhead protection."
+      },
+      {
+        "title": "Longer Lifespan",
+        "description": "Customizable design, easy maintenance, and energy-efficient operation."
+      },
+      {
+        "title": "High Capacity",
+        "description": "Designed to handle heavy water demand in busy environments."
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "FS AQUA",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
+        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "FS AQUA",
+          "weight": "-",
+          "height": "1631",
+          "width": "535",
+          "depth": "654"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a 1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live"
+  },
+  "hydrobankseries": {
+    "id": "hydrobankseries",
+    "name": "HYDROBANKSERIES",
+    "categoryName": "PUBLIC UTILITY SYSTEMS - PUS Series",
+    "heroSubtitle": "Powerful LED sterilization",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13d0a907-1c95-4c88-fccc-fbc499c75100/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fc19edb8-3d0e-475f-7a9c-fad84faa3a00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5a12692-239e-45be-fff0-42d2ba8d5100/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Installation",
+        "description": "Wall-mounted drinking water dispenser and fountain."
+      },
+      {
+        "title": "Optional Upgrades",
+        "description": "Swap the washer and dustbin for a built-in RO unit, ensuring purified water on demand"
+      },
+      {
+        "title": "Material & Construction",
+        "description": "Durable stainless steel 304 with galvanized iron for long-lasting performance."
+      },
+      {
+        "title": "Customization",
+        "description": "The backend unit is fully customizable to any space or design requirements."
+      },
+      {
+        "title": "Operation",
+        "description": "Convenient push-tap system for direct drinking (optional swan-neck taps available)."
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "FS AQUA",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
+        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "FS AQUA",
+          "weight": "-",
+          "height": "1631",
+          "width": "535",
+          "depth": "654"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a 1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live"
+  },
+  "watermaker": {
+    "id": "watermaker",
+    "name": "WATERMAKER",
+    "categoryName": "COMMERCIAL/INDUSTRIAL PLANTS",
+    "heroSubtitle": "Powerful LED sterilization",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13d0a907-1c95-4c88-fccc-fbc499c75100/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fc19edb8-3d0e-475f-7a9c-fad84faa3a00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5a12692-239e-45be-fff0-42d2ba8d5100/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Robust construct",
+        "description": "Heavy duty RO system designed for industrial applications"
+      },
+      {
+        "title": "Anti-bacterial",
+        "description": "Provides protection against bacteria, mould & fungi"
+      },
+      {
+        "title": "Pre-engineered & Pre-assembled",
+        "description": "A pre-assembled factory tested units to reduce installation & set up time"
+      },
+      {
+        "title": "Application",
+        "description": "Commercial kitchens, pantries, washing units & hospitality sector"
+      },
+      {
+        "title": "5 - stage purification",
+        "description": "Ensures pure water from any raw water source"
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "FS WATERMAKER",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C - 24° C",
+        "hot": "Hot: 30°C - 80° C"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000 ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "FS WATERMAKER",
+          "weight": "-",
+          "height": "1631",
+          "width": "535",
+          "depth": "654"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a 1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live"
   }
 };
