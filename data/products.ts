@@ -191,7 +191,8 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
         "category": "counter-top"
       }
-    ]
+    ],
+    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public"
   },
   "zvr": {
     "id": "zvr",
