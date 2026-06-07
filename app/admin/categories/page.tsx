@@ -99,8 +99,8 @@ export default function CategoriesPage() {
             <div className="p-10 text-center text-gray-500 text-sm">No categories found.</div>
           ) : (
             <table className="w-full text-left border-collapse text-sm">
-              <thead className="bg-[#051424]">
-                <tr className="border-b border-white/5 text-gray-400 text-xs" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              <thead>
+                <tr className="border-b border-white/10 text-gray-400 text-[11px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   <th className="py-4 px-6 font-medium w-[35%] text-left">Product Image and Name</th>
                   <th className="py-4 px-6 font-medium w-[43%] text-left">Summary</th>
                   <th className="py-4 px-6 font-medium w-[10%] text-center">Products</th>
@@ -109,7 +109,7 @@ export default function CategoriesPage() {
               </thead>
               <tbody style={{ fontFamily: "'Manrope', sans-serif" }}>
                 {filteredCategories.map((cat) => (
-                  <tr key={cat.id} className="border-b border-white/5 hover:bg-white/[0.01] transition-all">
+                  <tr key={cat.id} className="hover:bg-white/[0.01] transition-all">
                     <td className="py-5 px-6">
                       <div className="flex items-center gap-4">
                         <div className="relative w-12 h-12 bg-[#051424] border border-white/5 flex items-center justify-center overflow-hidden flex-shrink-0">
@@ -124,17 +124,17 @@ export default function CategoriesPage() {
                             <div className="text-[10px] text-gray-600 font-semibold uppercase">WAE</div>
                           )}
                         </div>
-                        <span className="font-semibold text-white tracking-wide text-xs uppercase">
+                        <span className="font-semibold text-white tracking-wide text-[11px] uppercase">
                           {cat.title}
                         </span>
                       </div>
                     </td>
                     <td className="py-5 px-6 align-middle">
-                      <div className="line-clamp-3 text-gray-400 text-xs max-w-[550px] leading-relaxed">
+                      <div className="line-clamp-3 text-gray-400 text-[11px] max-w-[550px] leading-relaxed">
                         {cat.description}
                       </div>
                     </td>
-                    <td className="py-5 px-6 text-center text-white font-medium text-xs align-middle">
+                    <td className="py-5 px-6 text-center text-white font-medium text-[11px] align-middle">
                       {cat.products ? cat.products.length : 0}
                     </td>
                     <td className="py-5 px-6 text-center align-middle">

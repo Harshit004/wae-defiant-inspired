@@ -29,10 +29,10 @@ export default function Sidebar() {
         <div className="px-6 py-[24px] border-b border-white/5 flex items-center justify-start">
           <Link href="/admin/categories" className="flex items-center">
             <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/66b9c744-127a-427d-bc84-3a0c3f3e5700/public"
               alt="WAE Logo"
-              width={75}
-              height={80}
+              width={102}
+              height={39}
               priority
             />
           </Link>
