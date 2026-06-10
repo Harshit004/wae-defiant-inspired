@@ -571,51 +571,128 @@ function ProductDescriptionPageContent() {
                                         transition={{ duration: 0.35, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="pb-[2rem]">
+                                        <div className="pb-[2rem]" style={{ paddingTop: "66.5px" }}>
                                             {/* Storage Capacity Variant Table */}
                                             <div style={{ marginBottom: "38px" }}>
                                                 <table className="w-auto text-left border-collapse text-white" style={{ fontFamily: "'Inter Tight', sans-serif", width: "auto" }}>
                                                     <thead>
                                                         <tr>
-                                                            <th className="font-semibold pb-4 text-[14px] pr-8" rowSpan={2} style={{ verticalAlign: 'top', width: "160px" }}>Variant</th>
-                                                            <th className="font-semibold pb-2 text-[14px] text-center" colSpan={activeVariantsCount || 1} style={{ width: `${(activeVariantsCount || 1) * 80}px` }}>Storage Capacity (L )</th>
+                                                            <th className="pr-8" rowSpan={2} style={{
+                                                                fontFamily: "'Inter Tight', sans-serif",
+                                                                fontWeight: 400,
+                                                                fontSize: "16px",
+                                                                lineHeight: "100%",
+                                                                letterSpacing: "0%",
+                                                                verticalAlign: 'middle',
+                                                                width: "160px"
+                                                            }}>Variant</th>
+                                                            <th className="text-center" colSpan={activeVariantsCount || 1} style={{
+                                                                fontFamily: "'Inter Tight', sans-serif",
+                                                                fontWeight: 400,
+                                                                fontSize: "16px",
+                                                                lineHeight: "100%",
+                                                                letterSpacing: "0%",
+                                                                verticalAlign: 'middle',
+                                                                width: `${(activeVariantsCount || 1) * 80}px`,
+                                                                paddingBottom: "31px"
+                                                            }}>Storage Capacity (L )</th>
                                                         </tr>
                                                         <tr>
                                                             {showHot && (
-                                                                <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
+                                                                <th className="font-normal text-center" style={{ width: "80px", paddingBottom: "24px" }}>
                                                                     <div className="flex flex-col items-center gap-1">
                                                                         <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
-                                                                        <span className="text-[#AEAEAE]">Hot</span>
+                                                                        <span className="text-[#AEAEAE]" style={{
+                                                                            fontFamily: "'Inter Tight', sans-serif",
+                                                                            fontWeight: 400,
+                                                                            fontSize: "11px",
+                                                                            lineHeight: "100%",
+                                                                            letterSpacing: "0%",
+                                                                            verticalAlign: "middle"
+                                                                        }}>Hot</span>
                                                                     </div>
                                                                 </th>
                                                             )}
                                                             {showCold && (
-                                                                <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
+                                                                <th className="font-normal text-center" style={{ width: "80px", paddingBottom: "24px" }}>
                                                                     <div className="flex flex-col items-center gap-1">
                                                                         <div className="w-[1.25rem] h-[1.25rem]"><ColdIcon /></div>
-                                                                        <span className="text-[#AEAEAE]">Cold</span>
+                                                                        <span className="text-[#AEAEAE]" style={{
+                                                                            fontFamily: "'Inter Tight', sans-serif",
+                                                                            fontWeight: 400,
+                                                                            fontSize: "11px",
+                                                                            lineHeight: "100%",
+                                                                            letterSpacing: "0%",
+                                                                            verticalAlign: "middle"
+                                                                        }}>Cold</span>
                                                                     </div>
                                                                 </th>
                                                             )}
                                                             {showAmbient && (
-                                                                <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
+                                                                <th className="font-normal text-center" style={{ width: "80px", paddingBottom: "24px" }}>
                                                                     <div className="flex flex-col items-center gap-1">
                                                                         <div className="w-[1.25rem] h-[1.25rem]"><AmbientIcon /></div>
-                                                                        <span className="text-[#AEAEAE]">Ambient</span>
+                                                                        <span className="text-[#AEAEAE]" style={{
+                                                                            fontFamily: "'Inter Tight', sans-serif",
+                                                                            fontWeight: 400,
+                                                                            fontSize: "11px",
+                                                                            lineHeight: "100%",
+                                                                            letterSpacing: "0%",
+                                                                            verticalAlign: "middle"
+                                                                        }}>Ambient</span>
                                                                     </div>
                                                                 </th>
                                                             )}
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        {currentProduct.specifications.storageCapacity.map((row, rIdx) => (
-                                                            <tr key={rIdx} className="text-[#AEAEAE]">
-                                                                <td className="py-2 text-[14px] pr-8">{row.variant}</td>
-                                                                {showHot && <td className="py-2 text-[14px] text-center">{row.hot}</td>}
-                                                                {showCold && <td className="py-2 text-[14px] text-center">{row.cold}</td>}
-                                                                {showAmbient && <td className="py-2 text-[14px] text-center">{row.ambient}</td>}
-                                                            </tr>
-                                                        ))}
+                                                        {currentProduct.specifications.storageCapacity.map((row, rIdx) => {
+                                                            const isLast = rIdx === currentProduct.specifications.storageCapacity.length - 1;
+                                                            return (
+                                                                <tr key={rIdx} className="text-[#AEAEAE]">
+                                                                    <td style={{
+                                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                                        fontWeight: 400,
+                                                                        fontSize: "14px",
+                                                                        lineHeight: "normal",
+                                                                        letterSpacing: "0%",
+                                                                        verticalAlign: "middle",
+                                                                        paddingTop: "0px",
+                                                                        paddingBottom: isLast ? "0px" : "24px"
+                                                                    }} className="pr-8">{row.variant}</td>
+                                                                    {showHot && <td style={{
+                                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                                        fontWeight: 400,
+                                                                        fontSize: "14px",
+                                                                        lineHeight: "normal",
+                                                                        letterSpacing: "0%",
+                                                                        verticalAlign: "middle",
+                                                                        paddingTop: "0px",
+                                                                        paddingBottom: isLast ? "0px" : "24px"
+                                                                    }} className="text-center">{row.hot}</td>}
+                                                                    {showCold && <td style={{
+                                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                                        fontWeight: 400,
+                                                                        fontSize: "14px",
+                                                                        lineHeight: "normal",
+                                                                        letterSpacing: "0%",
+                                                                        verticalAlign: "middle",
+                                                                        paddingTop: "0px",
+                                                                        paddingBottom: isLast ? "0px" : "24px"
+                                                                    }} className="text-center">{row.cold}</td>}
+                                                                    {showAmbient && <td style={{
+                                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                                        fontWeight: 400,
+                                                                        fontSize: "14px",
+                                                                        lineHeight: "normal",
+                                                                        letterSpacing: "0%",
+                                                                        verticalAlign: "middle",
+                                                                        paddingTop: "0px",
+                                                                        paddingBottom: isLast ? "0px" : "24px"
+                                                                    }} className="text-center">{row.ambient}</td>}
+                                                                </tr>
+                                                            );
+                                                        })}
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -629,9 +706,9 @@ function ProductDescriptionPageContent() {
                                                     lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
-                                                    textTransform: "capitalize",
+                                                    textTransform: "lowercase",
                                                     color: "#FFFFFF",
-                                                    marginBottom: "8px"
+                                                    marginBottom: "38px"
                                                 }}>water temp.</h4>
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
@@ -640,7 +717,8 @@ function ProductDescriptionPageContent() {
                                                     lineHeight: "normal",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
+                                                    color: "#FFFFFF80",
+                                                    marginBottom: "8px"
                                                 }}>{currentProduct.specifications.waterTemp.cold}</p>
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
@@ -649,7 +727,8 @@ function ProductDescriptionPageContent() {
                                                     lineHeight: "normal",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
+                                                    color: "#FFFFFF80",
+                                                    marginBottom: "0px"
                                                 }}>{currentProduct.specifications.waterTemp.hot}</p>
                                             </div>
 
@@ -670,10 +749,11 @@ function ProductDescriptionPageContent() {
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
                                                     fontSize: "14px",
-                                                    lineHeight: "normal",
+                                                    lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
+                                                    color: "#FFFFFF80",
+                                                    marginBottom: "0px"
                                                 }}>{currentProduct.specifications.greenCertification}</p>
                                             </div>
 
@@ -694,10 +774,11 @@ function ProductDescriptionPageContent() {
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
                                                     fontSize: "14px",
-                                                    lineHeight: "normal",
+                                                    lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
+                                                    color: "#FFFFFF80",
+                                                    marginBottom: "0px"
                                                 }}>{currentProduct.specifications.dripTray}</p>
                                             </div>
 
@@ -718,10 +799,11 @@ function ProductDescriptionPageContent() {
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
                                                     fontSize: "14px",
-                                                    lineHeight: "normal",
+                                                    lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
+                                                    color: "#FFFFFF80",
+                                                    marginBottom: "0px"
                                                 }}>{currentProduct.specifications.refrigerant}</p>
                                             </div>
 
@@ -730,26 +812,141 @@ function ProductDescriptionPageContent() {
                                                 <table className="w-auto text-left border-collapse text-white" style={{ fontFamily: "'Inter Tight', sans-serif", width: "auto" }}>
                                                     <thead>
                                                         <tr>
-                                                            <th className="font-semibold pb-4 text-[14px] pr-8" rowSpan={2} style={{ verticalAlign: 'bottom', width: "160px" }}>Variant</th>
-                                                            <th className="font-semibold pb-4 text-[14px] pr-8" rowSpan={2} style={{ verticalAlign: 'bottom', width: "100px" }}>Weight (Kg)</th>
-                                                            <th className="font-semibold pb-2 text-[14px] text-center" colSpan={3} style={{ width: "240px" }}>Dimensions (Mm)</th>
+                                                            <th className="pr-8" rowSpan={2} style={{
+                                                                fontFamily: "'Inter Tight', sans-serif",
+                                                                fontWeight: 400,
+                                                                fontSize: "16px",
+                                                                lineHeight: "100%",
+                                                                letterSpacing: "0%",
+                                                                verticalAlign: 'middle',
+                                                                width: "160px"
+                                                            }}>Variant</th>
+                                                            <th className="pr-8 text-center" style={{
+                                                                fontFamily: "'Inter Tight', sans-serif",
+                                                                fontWeight: 400,
+                                                                fontSize: "16px",
+                                                                lineHeight: "100%",
+                                                                letterSpacing: "0%",
+                                                                verticalAlign: 'middle',
+                                                                width: "100px",
+                                                                paddingBottom: "31px"
+                                                            }}>Weight</th>
+                                                            <th className="text-center" colSpan={3} style={{
+                                                                fontFamily: "'Inter Tight', sans-serif",
+                                                                fontWeight: 400,
+                                                                fontSize: "16px",
+                                                                lineHeight: "100%",
+                                                                letterSpacing: "0%",
+                                                                verticalAlign: 'middle',
+                                                                width: "240px",
+                                                                paddingBottom: "31px"
+                                                            }}>Dimensions</th>
                                                         </tr>
                                                         <tr>
-                                                            <th className="font-normal pb-4 text-[11px] text-center text-[#AEAEAE]" style={{ width: "80px" }}>Height</th>
-                                                            <th className="font-normal pb-4 text-[11px] text-center text-[#AEAEAE]" style={{ width: "80px" }}>Width</th>
-                                                            <th className="font-normal pb-4 text-[11px] text-center text-[#AEAEAE]" style={{ width: "80px" }}>Depth</th>
+                                                            <th className="text-center" style={{
+                                                                fontFamily: "'Inter Tight', sans-serif",
+                                                                fontWeight: 400,
+                                                                fontSize: "12px",
+                                                                lineHeight: "140%",
+                                                                letterSpacing: "0%",
+                                                                verticalAlign: 'middle',
+                                                                color: "#AEAEAE",
+                                                                width: "100px",
+                                                                paddingBottom: "21px"
+                                                            }}>Kg</th>
+                                                            <th className="text-center" style={{
+                                                                fontFamily: "'Inter Tight', sans-serif",
+                                                                fontWeight: 400,
+                                                                fontSize: "12px",
+                                                                lineHeight: "140%",
+                                                                letterSpacing: "0%",
+                                                                verticalAlign: 'middle',
+                                                                color: "#AEAEAE",
+                                                                width: "80px",
+                                                                paddingBottom: "21px"
+                                                            }}>Height (Mm)</th>
+                                                            <th className="text-center" style={{
+                                                                fontFamily: "'Inter Tight', sans-serif",
+                                                                fontWeight: 400,
+                                                                fontSize: "12px",
+                                                                lineHeight: "140%",
+                                                                letterSpacing: "0%",
+                                                                verticalAlign: 'middle',
+                                                                color: "#AEAEAE",
+                                                                width: "80px",
+                                                                paddingBottom: "21px"
+                                                            }}>Width (Mm)</th>
+                                                            <th className="text-center" style={{
+                                                                fontFamily: "'Inter Tight', sans-serif",
+                                                                fontWeight: 400,
+                                                                fontSize: "12px",
+                                                                lineHeight: "140%",
+                                                                letterSpacing: "0%",
+                                                                verticalAlign: 'middle',
+                                                                color: "#AEAEAE",
+                                                                width: "80px",
+                                                                paddingBottom: "21px"
+                                                            }}>Depth (Mm)</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        {currentProduct.specifications.dimensions.map((row, rIdx) => (
-                                                            <tr key={rIdx} className="text-[#AEAEAE]">
-                                                                <td className="py-2 text-[14px] pr-8">{row.variant}</td>
-                                                                <td className="py-2 text-[14px] pr-8">{row.weight}</td>
-                                                                <td className="py-2 text-[14px] text-center">{row.height}</td>
-                                                                <td className="py-2 text-[14px] text-center">{row.width}</td>
-                                                                <td className="py-2 text-[14px] text-center">{row.depth}</td>
-                                                            </tr>
-                                                        ))}
+                                                        {currentProduct.specifications.dimensions.map((row, rIdx) => {
+                                                            const isLast = rIdx === currentProduct.specifications.dimensions.length - 1;
+                                                            return (
+                                                                <tr key={rIdx} className="text-[#AEAEAE]">
+                                                                    <td style={{
+                                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                                        fontWeight: 400,
+                                                                        fontSize: "14px",
+                                                                        lineHeight: "normal",
+                                                                        letterSpacing: "0%",
+                                                                        verticalAlign: "middle",
+                                                                        paddingTop: "0px",
+                                                                        paddingBottom: isLast ? "0px" : "24px"
+                                                                    }} className="pr-8">{row.variant}</td>
+                                                                    <td style={{
+                                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                                        fontWeight: 400,
+                                                                        fontSize: "14px",
+                                                                        lineHeight: "normal",
+                                                                        letterSpacing: "0%",
+                                                                        verticalAlign: "middle",
+                                                                        paddingTop: "0px",
+                                                                        paddingBottom: isLast ? "0px" : "24px"
+                                                                    }} className="pr-8">{row.weight}</td>
+                                                                    <td style={{
+                                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                                        fontWeight: 400,
+                                                                        fontSize: "14px",
+                                                                        lineHeight: "normal",
+                                                                        letterSpacing: "0%",
+                                                                        verticalAlign: "middle",
+                                                                        paddingTop: "0px",
+                                                                        paddingBottom: isLast ? "0px" : "24px"
+                                                                    }} className="text-center">{row.height}</td>
+                                                                    <td style={{
+                                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                                        fontWeight: 400,
+                                                                        fontSize: "14px",
+                                                                        lineHeight: "normal",
+                                                                        letterSpacing: "0%",
+                                                                        verticalAlign: "middle",
+                                                                        paddingTop: "0px",
+                                                                        paddingBottom: isLast ? "0px" : "24px"
+                                                                    }} className="text-center">{row.width}</td>
+                                                                    <td style={{
+                                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                                        fontWeight: 400,
+                                                                        fontSize: "14px",
+                                                                        lineHeight: "normal",
+                                                                        letterSpacing: "0%",
+                                                                        verticalAlign: "middle",
+                                                                        paddingTop: "0px",
+                                                                        paddingBottom: isLast ? "0px" : "24px"
+                                                                    }} className="text-center">{row.depth}</td>
+                                                                </tr>
+                                                            );
+                                                        })}
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -771,10 +968,11 @@ function ProductDescriptionPageContent() {
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
                                                     fontSize: "14px",
-                                                    lineHeight: "normal",
+                                                    lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
+                                                    color: "#FFFFFF80",
+                                                    marginBottom: "0px"
                                                 }}>{currentProduct.specifications.powerRequirement}</p>
                                             </div>
 
@@ -795,10 +993,11 @@ function ProductDescriptionPageContent() {
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
                                                     fontSize: "14px",
-                                                    lineHeight: "normal",
+                                                    lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
+                                                    color: "#FFFFFF80",
+                                                    marginBottom: "0px"
                                                 }}>{currentProduct.specifications.purificationSystem}</p>
                                             </div>
 
@@ -819,17 +1018,38 @@ function ProductDescriptionPageContent() {
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
                                                     fontSize: "14px",
-                                                    lineHeight: "normal",
+                                                    lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
-                                                    color: "#FFFFFF80"
+                                                    color: "#FFFFFF80",
+                                                    marginBottom: "0px"
                                                 }}>{currentProduct.specifications.pointOfUseSterilization}</p>
                                             </div>
 
                                             {/* Bottom Footer Notes inside Specs */}
-                                            <div className="text-right text-[10px] text-white/40 space-y-1 pt-4">
-                                                <p>*water purification products complies with ngt requirements</p>
-                                                <p>*Specifications are subject to change.</p>
+                                            <div className="text-right pt-4 flex flex-col items-end" style={{ gap: "8px" }}>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    textAlign: "right",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80",
+                                                    margin: 0
+                                                }}>*Water Purification Products Complies with NGT Requirements</p>
+                                                <p style={{
+                                                    fontFamily: "'Inter Tight', sans-serif",
+                                                    fontWeight: 400,
+                                                    fontSize: "14px",
+                                                    lineHeight: "normal",
+                                                    letterSpacing: "0%",
+                                                    textAlign: "right",
+                                                    verticalAlign: "middle",
+                                                    color: "#FFFFFF80",
+                                                    margin: 0
+                                                }}>*Specifications are subject to change.</p>
                                             </div>
 
                                         </div>
