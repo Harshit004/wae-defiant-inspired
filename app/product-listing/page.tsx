@@ -124,7 +124,7 @@ function ProductListingContent() {
 
     const [activeSection, setActiveSection] = useState(0)
     const [currentTime, setCurrentTime] = useState("")
-    const [headerHeight, setHeaderHeight] = useState(0)
+    const [headerHeight, setHeaderHeight] = useState(155)
     const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
     const [searchQuery, setSearchQuery] = useState("")
     const [activeFilter, setActiveFilter] = useState<string>("all")
@@ -220,17 +220,22 @@ function ProductListingContent() {
         return () => clearInterval(interval)
     }, [])
 
-    // Measure header height
+    // Measure header height by querying the rendered header element
     useEffect(() => {
-        const updateHeaderHeight = () => {
-            if (headerRef.current) {
-                setHeaderHeight(headerRef.current.clientHeight);
+        const measureHeader = () => {
+            const headerEl = document.querySelector('header')
+            if (headerEl) {
+                setHeaderHeight(headerEl.getBoundingClientRect().height)
             }
-        };
-        updateHeaderHeight();
-        window.addEventListener("resize", updateHeaderHeight);
-        return () => window.removeEventListener("resize", updateHeaderHeight);
-    }, []);
+        }
+        // Small delay to ensure header has rendered fully
+        const timer = setTimeout(measureHeader, 50)
+        window.addEventListener("resize", measureHeader)
+        return () => {
+            clearTimeout(timer)
+            window.removeEventListener("resize", measureHeader)
+        }
+    }, [])
 
     const taglineLine1 = "To lead the way in sustainability"
     const taglineLine2 = "ahead of the rest."
