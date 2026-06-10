@@ -260,21 +260,29 @@ function ProductListingContent() {
                 backgroundImage: "linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)",
                 backgroundSize: "100% 60.76vw",
                 backgroundRepeat: "no-repeat",
-                paddingTop: "220px",
+                paddingTop: `${headerHeight + 65}px`,
             }}>
                 {/* Title + Search Row */}
-                <div className="w-full px-[7.5vw]" style={{ marginTop: "65px", marginBottom: "65px" }}>
+                <div className="w-full px-[7.5vw]" style={{ marginBottom: 0 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                        <h1 style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "36px",
-                            lineHeight: "100%",
-                            color: "#FFFFFF",
-                            textTransform: "uppercase",
-                            margin: 0,
-                        }}>
-                            ALL {shortCategoryName} <span style={{ color: "#ffffff66", fontSize: "18px", fontWeight: 400 }}>({filteredProducts.length})</span>
+                        <h1 style={{ margin: 0, display: "flex", alignItems: "baseline", gap: "8px" }}>
+                            <span style={{
+                                fontFamily: "'Manrope', sans-serif",
+                                fontWeight: 700,
+                                fontSize: "24px",
+                                lineHeight: "110%",
+                                color: "#FFFFFF",
+                                textTransform: "uppercase",
+                                letterSpacing: "0px",
+                            }}>ALL {shortCategoryName}</span>
+                            <span style={{
+                                fontFamily: "'Manrope', sans-serif",
+                                fontWeight: 400,
+                                fontSize: "14px",
+                                lineHeight: "100%",
+                                color: "#AEAEAE",
+                                letterSpacing: "0%",
+                            }}>({filteredProducts.length})</span>
                         </h1>
                         {/* Search Bar */}
                         <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
@@ -306,7 +314,7 @@ function ProductListingContent() {
                 </div>
 
                 {/* Filter Tabs */}
-                <div className="w-full px-[7.5vw]" style={{ paddingBottom: "48px" }}>
+                <div className="w-full px-[7.5vw]" style={{ marginTop: "65px", paddingBottom: "48px" }}>
                     <div style={{ display: "flex", gap: "32px" }}>
                         {[
                             { label: `ALL ${shortCategoryName}`, value: "all" },
@@ -373,6 +381,7 @@ function ProductListingContent() {
                                         gridTemplateColumns: "repeat(4, 1fr)",
                                         gap: "1.67vw",
                                         rowGap: groupIndex === 0 ? "62px" : "65px",
+                                        alignItems: groupIndex === 0 ? "end" : undefined,
                                     }}>
                                         {group.map((product, index) => {
                                             const globalIndex = globalStart + index;
