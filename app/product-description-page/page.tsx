@@ -126,13 +126,13 @@ function ProductDescriptionPageContent() {
 
                 {/* Hero Central Text */}
                 <div className={`${containerClass} z-20 flex-grow flex flex-col justify-end pb-[5vh]`}>
-                    <div className="max-w-[65vw] mb-[4vh] text-left">
+                    <div className="max-w-[65vw] text-left" style={{ marginBottom: "141px" }}>
                         <p
                             className="mb-0"
                             style={{
                                 fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
-                                fontSize: "1.25rem",
+                                fontSize: "20px",
                                 lineHeight: "100%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
@@ -146,11 +146,11 @@ function ProductDescriptionPageContent() {
                         <div style={{ height: "1.438rem" }} />
 
                         <h1
-                            className="mb-[3vh]"
+                            className="mb-0"
                             style={{
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 500,
-                                fontSize: "2.75rem",
+                                fontSize: "44px",
                                 lineHeight: "100%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
@@ -212,7 +212,7 @@ function ProductDescriptionPageContent() {
                     <div className="flex flex-col w-full items-start">
                         {/* Carousel Container aligned at 515x646 aspect ratio in responsive vw */}
                         <div
-                            className="relative w-full lg:w-[35.764vw] aspect-[515/646] overflow-hidden flex items-center justify-center group"
+                            className="relative w-full lg:w-[35.7638vw] lg:h-[44.8611vw] overflow-hidden flex items-center justify-center group"
                             style={{ minWidth: "320px" }}
                         >
 
@@ -254,7 +254,7 @@ function ProductDescriptionPageContent() {
                         </div>
 
                         {/* Slider Controls */}
-                        <div className="flex justify-between items-center w-full lg:w-[35.764vw] mt-[1.5rem] text-[0.7rem] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", minWidth: "320px" }}>
+                        <div className="flex justify-between items-center w-full lg:w-[35.7638vw] mt-[1.5rem] text-[0.7rem] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", minWidth: "320px" }}>
                             {/* Dots / Page indicator */}
                             <div className="flex items-center gap-[0.75rem]">
                                 {productImages.map((_, index) => {
@@ -303,14 +303,15 @@ function ProductDescriptionPageContent() {
                     {/* Right Column: Product Spec and Information */}
                     <div className="flex flex-col w-full text-left">
                         <span 
-                            className="uppercase text-[#AEAEAE]" 
+                            className="uppercase" 
                             style={{ 
                                 fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
                                 fontSize: "14px",
-                                lineHeight: "100%",
+                                lineHeight: "normal",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
+                                color: "#FFFFFF",
                                 marginBottom: "26px"
                             }}
                         >
@@ -349,14 +350,14 @@ function ProductDescriptionPageContent() {
                                         {feat.title}
                                     </h3>
                                     <p 
-                                        className="text-[#AEAEAE] font-light" 
                                         style={{ 
                                             fontFamily: "'Manrope', sans-serif",
                                             fontWeight: 400,
                                             fontSize: "14px",
                                             lineHeight: "normal",
                                             letterSpacing: "0%",
-                                            verticalAlign: "middle"
+                                            verticalAlign: "middle",
+                                            color: "#FFFFFF80"
                                         }}
                                     >
                                         {feat.description}
@@ -478,7 +479,7 @@ function ProductDescriptionPageContent() {
                                         transition={{ duration: 0.35, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="pb-[2rem]">
+                                        <div className="pb-[2rem]" style={{ paddingTop: "61px" }}>
                                             {currentProduct.featuresList.map((feat, fIdx) => (
                                                 <div key={fIdx} style={{ marginBottom: "38px" }}>
                                                     <h4 style={{
@@ -488,28 +489,28 @@ function ProductDescriptionPageContent() {
                                                         lineHeight: "100%",
                                                         letterSpacing: "0%",
                                                         verticalAlign: "middle",
-                                                        textTransform: "none",
+                                                        textTransform: feat.title.toLowerCase().includes("water") ? "capitalize" : "none",
                                                         color: "#FFFFFF",
                                                         marginBottom: "8px"
                                                     }}>{feat.title}</h4>
                                                     
-                                                    {feat.title.toLowerCase() === "water options" ? (
-                                                        <div className="flex gap-[2rem] text-[12px] font-normal mt-2" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                                                    {feat.title.toLowerCase().includes("water") ? (
+                                                        <div className="flex text-[12px] font-normal" style={{ fontFamily: "'Inter Tight', sans-serif", marginTop: "24px", gap: "35px" }}>
                                                             {showHot && (
-                                                                <div className="flex flex-col items-center gap-[0.5rem] w-[50px]">
-                                                                    <div className="w-[24px] h-[24px]"><HotIcon /></div>
+                                                                <div className="flex flex-col items-center gap-[0.5rem]">
+                                                                    <div style={{ width: "26.83px", height: "26.83px" }}><HotIcon /></div>
                                                                     <span className="text-[#AEAEAE]">Hot</span>
                                                                 </div>
                                                             )}
                                                             {showCold && (
-                                                                <div className="flex flex-col items-center gap-[0.5rem] w-[50px]">
-                                                                    <div className="w-[24px] h-[24px]"><ColdIcon /></div>
+                                                                <div className="flex flex-col items-center gap-[0.5rem]">
+                                                                    <div style={{ width: "23.34px", height: "26.72px" }}><ColdIcon /></div>
                                                                     <span className="text-[#AEAEAE]">Cold</span>
                                                                 </div>
                                                             )}
                                                             {showAmbient && (
-                                                                <div className="flex flex-col items-center gap-[0.5rem] w-[50px]">
-                                                                    <div className="w-[24px] h-[24px]"><AmbientIcon /></div>
+                                                                <div className="flex flex-col items-center gap-[0.5rem]">
+                                                                    <div style={{ width: "23.64px", height: "20.61px" }}><AmbientIcon /></div>
                                                                     <span className="text-[#AEAEAE]">Ambient</span>
                                                                 </div>
                                                             )}

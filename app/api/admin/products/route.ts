@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     const dbState = readDB();
 
     if (action === 'create') {
-      const { id: inputId, name, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants } = productData;
+      const { id: inputId, name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants } = productData;
       
       const generatedId = inputId
         ? inputId.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -47,7 +47,7 @@ export async function POST(request: Request) {
       const newProductDetails: ProductDetails = {
         id: generatedId,
         name,
-        categoryName: parentCategory.title,
+        categoryName: categoryName || parentCategory.title,
         heroSubtitle: heroSubtitle || '',
         images: images || [],
         featuresList: featuresList || [],
@@ -96,7 +96,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: false, message: 'Product not found.' }, { status: 404 });
       }
 
-      const { name, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants } = productData;
+      const { name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants } = productData;
       const existing = dbState.products[id];
 
       const parentCategory = dbState.categories[categoryId];
@@ -111,7 +111,7 @@ export async function POST(request: Request) {
       dbState.products[id] = {
         ...existing,
         name: name || existing.name,
-        categoryName: parentCategory.title,
+        categoryName: categoryName !== undefined ? categoryName : (existing.categoryName || parentCategory.title),
         heroSubtitle: heroSubtitle !== undefined ? heroSubtitle : existing.heroSubtitle,
         images: images || existing.images,
         featuresList: featuresList || existing.featuresList,

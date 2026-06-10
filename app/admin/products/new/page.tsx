@@ -77,6 +77,7 @@ export default function NewProductPage() {
 
   // CMS Customization Fields
   const [description, setDescription] = useState("")
+  const [categoryName, setCategoryName] = useState("")
   const [heroImage, setHeroImage] = useState("")
   const [heroTagline, setHeroTagline] = useState("")
   const [heroSubtext, setHeroSubtext] = useState("")
@@ -89,6 +90,9 @@ export default function NewProductPage() {
   const [hasHot, setHasHot] = useState(true)
   const [hasCold, setHasCold] = useState(true)
   const [hasAmbient, setHasAmbient] = useState(true)
+
+  const [uploadingBrochure, setUploadingBrochure] = useState(false)
+  const [uploadingDatasheet, setUploadingDatasheet] = useState(false)
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -173,6 +177,35 @@ export default function NewProductPage() {
     setIsDirty(true)
   }
 
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, type: "brochure" | "datasheet") => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    const setter = type === "brochure" ? setBrochurePdf : setDatasheetPdf
+    const setUploading = type === "brochure" ? setUploadingBrochure : setUploadingDatasheet
+
+    setUploading(true)
+    const formData = new FormData()
+    formData.append("file", file)
+
+    try {
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: formData,
+      })
+      const data = await res.json()
+      if (data.success) {
+        handleFieldChange(setter, data.url)
+      } else {
+        alert(data.message || "Failed to upload file")
+      }
+    } catch (err) {
+      alert("Error uploading file")
+    } finally {
+      setUploading(false)
+    }
+  }
+
   const handleBackClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (isDirty) {
       e.preventDefault()
@@ -198,6 +231,7 @@ export default function NewProductPage() {
       productData: {
         id: customId,
         name,
+        categoryName,
         heroSubtitle,
         images: activeImages,
         featuresList: activeFeatures,
@@ -281,28 +315,13 @@ export default function NewProductPage() {
         {/* Form */}
         <form onSubmit={handleSave} className="w-full bg-[#04111d]/20 border border-white/5 p-8 text-left space-y-8">
           
-          {/* Section: Basic Details */}
+          {/* Section 1: Basic Information */}
           <div>
             <h2 className="text-sm font-semibold text-white uppercase tracking-wider border-b border-white/5 pb-2 mb-6" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-              Basic Information
+              1. Basic Information
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Product Name *
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="e.g. BLUWAE VAR Series"
-                  value={name}
-                  onChange={(e) => handleFieldChange(setName, e.target.value)}
-                  className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                />
-              </div>
-
               <div>
                 <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Product Slug / ID (Optional - Auto generated if empty)
@@ -315,6 +334,21 @@ export default function NewProductPage() {
                   className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
                   style={{ fontFamily: "'Manrope', sans-serif" }}
                 />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                  Status
+                </label>
+                <select
+                  value={status}
+                  onChange={(e) => handleFieldChange(setStatus, e.target.value as any)}
+                  className="w-full bg-[#051424] border border-white/10 text-white px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none cursor-pointer"
+                  style={{ fontFamily: "'Manrope', sans-serif" }}
+                >
+                  <option value="Live">Live</option>
+                  <option value="Draft">Draft</option>
+                </select>
               </div>
 
               <div>
@@ -355,42 +389,13 @@ export default function NewProductPage() {
                   <option value="counter-top">Counter Top</option>
                 </select>
               </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Hero Subtitle
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Powerful LED sterilization"
-                  value={heroSubtitle}
-                  onChange={(e) => handleFieldChange(setHeroSubtitle, e.target.value)}
-                  className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Status
-                </label>
-                <select
-                  value={status}
-                  onChange={(e) => handleFieldChange(setStatus, e.target.value as any)}
-                  className="w-full bg-[#051424] border border-white/10 text-white px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none cursor-pointer"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                >
-                  <option value="Live">Live</option>
-                  <option value="Draft">Draft</option>
-                </select>
-              </div>
             </div>
           </div>
 
-          {/* Section: Hero & Showcase Customization */}
+          {/* Section 2: Hero Section Customization */}
           <div>
             <h2 className="text-sm font-semibold text-white uppercase tracking-wider border-b border-white/5 pb-2 mb-6" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-              Hero & Showcase Customization
+              2. Hero Section Customization
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -464,6 +469,58 @@ export default function NewProductPage() {
                 />
               </div>
 
+              <div className="md:col-span-2">
+                <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                  Hero Subtitle (Used in Cards/Lists)
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. Powerful LED sterilization"
+                  value={heroSubtitle}
+                  onChange={(e) => handleFieldChange(setHeroSubtitle, e.target.value)}
+                  className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                  style={{ fontFamily: "'Manrope', sans-serif" }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Section 3: Product Display Section (Showcase) Customization */}
+          <div>
+            <h2 className="text-sm font-semibold text-white uppercase tracking-wider border-b border-white/5 pb-2 mb-6" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              3. Product Display Section (Showcase) Customization
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                  Product Name *
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Product Name"
+                  value={name}
+                  onChange={(e) => handleFieldChange(setName, e.target.value)}
+                  className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                  style={{ fontFamily: "'Manrope', sans-serif" }}
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                  Category Name Override
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. DRINKING WATER STATION - BLUWAE Series"
+                  value={categoryName}
+                  onChange={(e) => handleFieldChange(setCategoryName, e.target.value)}
+                  className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                  style={{ fontFamily: "'Manrope', sans-serif" }}
+                />
+              </div>
+
               <div>
                 <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Showcase Button CTA Text
@@ -492,77 +549,216 @@ export default function NewProductPage() {
                 />
               </div>
             </div>
-          </div>
 
-          {/* Section: Water Variants */}
-          <div>
-            <h2 className="text-sm font-semibold text-white uppercase tracking-wider border-b border-white/5 pb-2 mb-6" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-              Available Water Variants
-            </h2>
-            <div className="flex flex-wrap gap-8 bg-[#051424]/30 border border-white/5 p-6">
-              <label className="flex items-center gap-3 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={hasHot}
-                  onChange={(e) => handleFieldChange(setHasHot, e.target.checked)}
-                  className="w-4 h-4 bg-[#051424] border border-white/20 text-[#0081C9] focus:ring-0 rounded-none cursor-pointer"
-                />
-                <span className="text-sm font-medium text-gray-300">Hot Variant</span>
+            {/* Water Variant Checkboxes */}
+            <div className="mb-8">
+              <label className="block text-xs font-semibold text-gray-400 mb-3 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                Available Water Variants
               </label>
-              <label className="flex items-center gap-3 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={hasCold}
-                  onChange={(e) => handleFieldChange(setHasCold, e.target.checked)}
-                  className="w-4 h-4 bg-[#051424] border border-white/20 text-[#0081C9] focus:ring-0 rounded-none cursor-pointer"
-                />
-                <span className="text-sm font-medium text-gray-300">Cold Variant</span>
+              <div className="flex flex-wrap gap-8 bg-[#051424]/30 border border-white/5 p-6">
+                <label className="flex items-center gap-3 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={hasHot}
+                    onChange={(e) => handleFieldChange(setHasHot, e.target.checked)}
+                    className="w-4 h-4 bg-[#051424] border border-white/20 text-[#0081C9] focus:ring-0 rounded-none cursor-pointer"
+                  />
+                  <span className="text-sm font-medium text-gray-300">Hot Variant</span>
+                </label>
+                <label className="flex items-center gap-3 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={hasCold}
+                    onChange={(e) => handleFieldChange(setHasCold, e.target.checked)}
+                    className="w-4 h-4 bg-[#051424] border border-white/20 text-[#0081C9] focus:ring-0 rounded-none cursor-pointer"
+                  />
+                  <span className="text-sm font-medium text-gray-300">Cold Variant</span>
+                </label>
+                <label className="flex items-center gap-3 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={hasAmbient}
+                    onChange={(e) => handleFieldChange(setHasAmbient, e.target.checked)}
+                    className="w-4 h-4 bg-[#051424] border border-white/20 text-[#0081C9] focus:ring-0 rounded-none cursor-pointer"
+                  />
+                  <span className="text-sm font-medium text-gray-300">Ambient Variant</span>
+                </label>
+              </div>
+            </div>
+
+            {/* Carousel Images Link Inputs */}
+            <div className="mb-8">
+              <label className="block text-xs font-semibold text-gray-400 mb-3 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                Carousel Images (Cloudflare CDN Links)
               </label>
-              <label className="flex items-center gap-3 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={hasAmbient}
-                  onChange={(e) => handleFieldChange(setHasAmbient, e.target.checked)}
-                  className="w-4 h-4 bg-[#051424] border border-white/20 text-[#0081C9] focus:ring-0 rounded-none cursor-pointer"
-                />
-                <span className="text-sm font-medium text-gray-300">Ambient Variant</span>
-              </label>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                {images.map((imgUrl, index) => (
+                  <div key={index}>
+                    <label className="block text-[10px] font-semibold text-gray-500 mb-1 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                      Image Link #{index + 1}
+                    </label>
+                    <input
+                      type="url"
+                      placeholder="https://imagedelivery.net/.../public"
+                      value={imgUrl}
+                      onChange={(e) => handleImageChange(index, e.target.value)}
+                      className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                      style={{ fontFamily: "'Manrope', sans-serif" }}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Images Preview Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-[#051424]/20 border border-dashed border-white/10 p-6">
+                {images.some((url) => url.trim() !== "") ? (
+                  images.map((url, idx) => {
+                    if (!url.trim()) return null
+                    return (
+                      <div key={idx} className="relative aspect-square bg-[#04111d] border border-white/10 flex items-center justify-center p-2 group overflow-hidden">
+                        <Image
+                          src={url}
+                          alt={`Preview ${idx + 1}`}
+                          fill
+                          className="object-contain"
+                          onError={(e) => {
+                            e.currentTarget.src = "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                          }}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => handleImageChange(idx, "")}
+                          className="absolute top-2 right-2 bg-red-600 text-white p-1 hover:bg-red-500 transition-all focus:outline-none opacity-0 group-hover:opacity-100 cursor-pointer"
+                        >
+                          <Trash2 size={12} />
+                        </button>
+                        <div className="absolute bottom-2 left-2 bg-black/60 px-1.5 py-0.5 text-[8px] uppercase tracking-wider text-gray-300 font-bold">
+                          Image {idx + 1}
+                        </div>
+                      </div>
+                    )
+                  })
+                ) : (
+                  <div className="col-span-full text-center text-xs text-gray-600 py-4">
+                    No images loaded. Enter Cloudflare image CDN links above to preview.
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Features List Section */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between border-b border-white/5 pb-2 mb-6">
+                <label className="block text-xs font-semibold text-gray-400 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                  Features List (Labels & Descriptions)
+                </label>
+                <button
+                  type="button"
+                  onClick={handleAddFeature}
+                  className="border border-[#104e7a]/40 hover:bg-[#104e7a]/20 text-[#0081C9] hover:text-white px-3 py-1.5 text-[10px] font-semibold flex items-center gap-1.5 transition-all rounded-none cursor-pointer"
+                  style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                >
+                  <Plus size={12} />
+                  <span>Add Feature</span>
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                {featuresList.map((f, idx) => (
+                  <div key={idx} className="flex gap-4 items-start bg-[#051424]/30 border border-white/5 p-4 relative">
+                    <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="md:col-span-1">
+                        <input
+                          type="text"
+                          placeholder="Feature Title"
+                          value={f.title}
+                          onChange={(e) => handleFeatureChange(idx, "title", e.target.value)}
+                          className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-2 outline-none focus:border-white/20 transition-all text-xs rounded-none"
+                          style={{ fontFamily: "'Manrope', sans-serif" }}
+                        />
+                      </div>
+                      <div className="md:col-span-2">
+                        <textarea
+                          rows={2}
+                          placeholder="Feature Description"
+                          value={f.description}
+                          onChange={(e) => handleFeatureChange(idx, "description", e.target.value)}
+                          className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-2 outline-none focus:border-white/20 transition-all text-xs rounded-none resize-none"
+                          style={{ fontFamily: "'Manrope', sans-serif" }}
+                        />
+                      </div>
+                    </div>
+                    {featuresList.length > 1 && (
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveFeature(idx)}
+                        className="text-gray-500 hover:text-red-500 p-2 transition-all focus:outline-none cursor-pointer mt-1"
+                      >
+                        <Trash2 size={16} />
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Section: Documents & Description */}
+          {/* Section 4: Specifications & Documents Customization */}
           <div>
             <h2 className="text-sm font-semibold text-white uppercase tracking-wider border-b border-white/5 pb-2 mb-6" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-              Documents & Description
+              4. Specifications & Documents Customization
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div>
                 <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Product Brochure PDF URL
                 </label>
-                <input
-                  type="text"
-                  placeholder="e.g. /brochure-download.pdf or https://..."
-                  value={brochurePdf}
-                  onChange={(e) => handleFieldChange(setBrochurePdf, e.target.value)}
-                  className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                />
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="e.g. /brochure-download.pdf or https://..."
+                    value={brochurePdf}
+                    onChange={(e) => handleFieldChange(setBrochurePdf, e.target.value)}
+                    className="flex-1 bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                  <label className="bg-[#104e7a]/40 hover:bg-[#104e7a]/60 text-white px-4 py-3 text-xs font-semibold cursor-pointer transition-all flex items-center justify-center min-w-[100px] select-none">
+                    {uploadingBrochure ? "Uploading..." : "Upload File"}
+                    <input
+                      type="file"
+                      accept="application/pdf"
+                      onChange={(e) => handleFileUpload(e, "brochure")}
+                      className="hidden"
+                    />
+                  </label>
+                </div>
               </div>
 
               <div>
                 <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Technical Datasheet PDF URL
                 </label>
-                <input
-                  type="text"
-                  placeholder="e.g. /datasheet-download.pdf or https://..."
-                  value={datasheetPdf}
-                  onChange={(e) => handleFieldChange(setDatasheetPdf, e.target.value)}
-                  className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                />
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="e.g. /datasheet-download.pdf or https://..."
+                    value={datasheetPdf}
+                    onChange={(e) => handleFieldChange(setDatasheetPdf, e.target.value)}
+                    className="flex-1 bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                  <label className="bg-[#104e7a]/40 hover:bg-[#104e7a]/60 text-white px-4 py-3 text-xs font-semibold cursor-pointer transition-all flex items-center justify-center min-w-[100px] select-none">
+                    {uploadingDatasheet ? "Uploading..." : "Upload File"}
+                    <input
+                      type="file"
+                      accept="application/pdf"
+                      onChange={(e) => handleFileUpload(e, "datasheet")}
+                      className="hidden"
+                    />
+                  </label>
+                </div>
               </div>
 
               <div className="md:col-span-2">
@@ -579,132 +775,8 @@ export default function NewProductPage() {
                 />
               </div>
             </div>
-          </div>
 
-          {/* Section: Image CDN URLs */}
-          <div>
-            <h2 className="text-sm font-semibold text-white uppercase tracking-wider border-b border-white/5 pb-2 mb-6" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-              Cloudflare CDN Image Links
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              {images.map((imgUrl, index) => (
-                <div key={index}>
-                  <label className="block text-[10px] font-semibold text-gray-500 mb-1 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                    Image Link #{index + 1}
-                  </label>
-                  <input
-                    type="url"
-                    placeholder="https://imagedelivery.net/.../public"
-                    value={imgUrl}
-                    onChange={(e) => handleImageChange(index, e.target.value)}
-                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
-                    style={{ fontFamily: "'Manrope', sans-serif" }}
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Images Preview Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-[#051424]/20 border border-dashed border-white/10 p-6">
-              {images.some((url) => url.trim() !== "") ? (
-                images.map((url, idx) => {
-                  if (!url.trim()) return null
-                  return (
-                    <div key={idx} className="relative aspect-square bg-[#04111d] border border-white/10 flex items-center justify-center p-2 group overflow-hidden">
-                      <Image
-                        src={url}
-                        alt={`Preview ${idx + 1}`}
-                        fill
-                        className="object-contain"
-                        onError={(e) => {
-                          e.currentTarget.src = "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                        }}
-                      />
-                      <button
-                        type="button"
-                        onClick={() => handleImageChange(idx, "")}
-                        className="absolute top-2 right-2 bg-red-600 text-white p-1 hover:bg-red-500 transition-all focus:outline-none opacity-0 group-hover:opacity-100 cursor-pointer"
-                      >
-                        <Trash2 size={12} />
-                      </button>
-                      <div className="absolute bottom-2 left-2 bg-black/60 px-1.5 py-0.5 text-[8px] uppercase tracking-wider text-gray-300 font-bold">
-                        Image {idx + 1}
-                      </div>
-                    </div>
-                  )
-                })
-              ) : (
-                <div className="col-span-full text-center text-xs text-gray-600 py-4">
-                  No images loaded. Enter Cloudflare image CDN links above to preview.
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Section: Features List */}
-          <div>
-            <div className="flex items-center justify-between border-b border-white/5 pb-2 mb-6">
-              <h2 className="text-sm font-semibold text-white uppercase tracking-wider" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                Key Features List
-              </h2>
-              <button
-                type="button"
-                onClick={handleAddFeature}
-                className="border border-[#104e7a]/40 hover:bg-[#104e7a]/20 text-[#0081C9] hover:text-white px-3 py-1.5 text-[10px] font-semibold flex items-center gap-1.5 transition-all rounded-none cursor-pointer"
-                style={{ fontFamily: "'Inter Tight', sans-serif" }}
-              >
-                <Plus size={12} />
-                <span>Add Feature</span>
-              </button>
-            </div>
-
-            <div className="space-y-4">
-              {featuresList.map((f, idx) => (
-                <div key={idx} className="flex gap-4 items-start bg-[#051424]/30 border border-white/5 p-4 relative">
-                  <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="md:col-span-1">
-                      <input
-                        type="text"
-                        placeholder="Feature Title"
-                        value={f.title}
-                        onChange={(e) => handleFeatureChange(idx, "title", e.target.value)}
-                        className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-2 outline-none focus:border-white/20 transition-all text-xs rounded-none"
-                        style={{ fontFamily: "'Manrope', sans-serif" }}
-                      />
-                    </div>
-                    <div className="md:col-span-2">
-                      <textarea
-                        rows={2}
-                        placeholder="Feature Description"
-                        value={f.description}
-                        onChange={(e) => handleFeatureChange(idx, "description", e.target.value)}
-                        className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-2 outline-none focus:border-white/20 transition-all text-xs rounded-none resize-none"
-                        style={{ fontFamily: "'Manrope', sans-serif" }}
-                      />
-                    </div>
-                  </div>
-                  {featuresList.length > 1 && (
-                    <button
-                      type="button"
-                      onClick={() => handleRemoveFeature(idx)}
-                      className="text-gray-500 hover:text-red-500 p-2 transition-all focus:outline-none cursor-pointer mt-1"
-                    >
-                      <Trash2 size={16} />
-                    </button>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Section: Specifications */}
-          <div>
-            <h2 className="text-sm font-semibold text-white uppercase tracking-wider border-b border-white/5 pb-2 mb-6" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-              Specifications
-            </h2>
-
-            {/* Sub-section: Single-string values */}
+            {/* Specifications Subsections */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div>
                 <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
