@@ -124,12 +124,10 @@ function ProductListingContent() {
 
     const [activeSection, setActiveSection] = useState(0)
     const [currentTime, setCurrentTime] = useState("")
-    const [headerHeight, setHeaderHeight] = useState(0)
     const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
     const [searchQuery, setSearchQuery] = useState("")
     const [activeFilter, setActiveFilter] = useState<string>("all")
     const [productSearchQuery, setProductSearchQuery] = useState("")
-    const headerRef = useRef<HTMLDivElement>(null)
     const sectionRef = useRef<HTMLElement>(null)
     const isInView = useInView(sectionRef, { once: true, amount: 0.5 })
 
@@ -220,17 +218,7 @@ function ProductListingContent() {
         return () => clearInterval(interval)
     }, [])
 
-    // Measure header height
-    useEffect(() => {
-        const updateHeaderHeight = () => {
-            if (headerRef.current) {
-                setHeaderHeight(headerRef.current.clientHeight);
-            }
-        };
-        updateHeaderHeight();
-        window.addEventListener("resize", updateHeaderHeight);
-        return () => window.removeEventListener("resize", updateHeaderHeight);
-    }, []);
+
 
     const taglineLine1 = "To lead the way in sustainability"
     const taglineLine2 = "ahead of the rest."
@@ -260,21 +248,22 @@ function ProductListingContent() {
                 backgroundImage: "linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)",
                 backgroundSize: "100% 60.76vw",
                 backgroundRepeat: "no-repeat",
-                paddingTop: "220px",
+                paddingTop: "230px",
             }}>
                 {/* Title + Search Row */}
-                <div className="w-full px-[7.5vw]" style={{ marginTop: "65px", marginBottom: "65px" }}>
+                <div className="w-full px-[7.5vw]" style={{ marginTop: "0px", marginBottom: "0px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <h1 style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "36px",
-                            lineHeight: "100%",
+                            fontFamily: "'Manrope', sans-serif",
+                            fontWeight: 700,
+                            fontSize: "24px",
+                            lineHeight: "110%",
                             color: "#FFFFFF",
                             textTransform: "uppercase",
                             margin: 0,
+                            verticalAlign: "middle",
                         }}>
-                            ALL {shortCategoryName} <span style={{ color: "#ffffff66", fontSize: "18px", fontWeight: 400 }}>({filteredProducts.length})</span>
+                            ALL {shortCategoryName} <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#AEAEAE", verticalAlign: "middle", marginLeft: "8px" }}>({filteredProducts.length})</span>
                         </h1>
                         {/* Search Bar */}
                         <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
@@ -306,7 +295,7 @@ function ProductListingContent() {
                 </div>
 
                 {/* Filter Tabs */}
-                <div className="w-full px-[7.5vw]" style={{ paddingBottom: "48px" }}>
+                <div className="w-full px-[7.5vw]" style={{ marginTop: "65px", paddingBottom: "48px" }}>
                     <div style={{ display: "flex", gap: "32px" }}>
                         {[
                             { label: `ALL ${shortCategoryName}`, value: "all" },
@@ -327,6 +316,7 @@ function ProductListingContent() {
                                     fontWeight: 400,
                                     fontSize: "14px",
                                     lineHeight: "100%",
+                                    verticalAlign: "middle",
                                     cursor: "pointer",
                                     paddingBottom: "8px",
                                     paddingTop: "0",
@@ -373,6 +363,7 @@ function ProductListingContent() {
                                         gridTemplateColumns: "repeat(4, 1fr)",
                                         gap: "1.67vw",
                                         rowGap: groupIndex === 0 ? "62px" : "65px",
+                                        alignItems: groupIndex === 0 ? "end" : undefined,
                                     }}>
                                         {group.map((product, index) => {
                                             const globalIndex = globalStart + index;
@@ -411,6 +402,9 @@ function ProductListingContent() {
                                                         color: "#FFFFFF",
                                                         marginTop: "50px",
                                                         marginBottom: "0",
+                                                        textTransform: "uppercase",
+                                                        letterSpacing: "0%",
+                                                        verticalAlign: "middle",
                                                     }}>
                                                         {product.name}
                                                     </p>
