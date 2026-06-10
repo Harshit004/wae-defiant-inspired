@@ -76,6 +76,21 @@ export default function EditProductPage({ params }: EditProductProps) {
   const [storageCapacity, setStorageCapacity] = useState<SpecRow[]>([])
   const [dimensions, setDimensions] = useState<DimensionRow[]>([])
 
+  // CMS Customization Fields
+  const [description, setDescription] = useState("")
+  const [heroImage, setHeroImage] = useState("")
+  const [heroTagline, setHeroTagline] = useState("")
+  const [heroSubtext, setHeroSubtext] = useState("")
+  const [heroCtaText, setHeroCtaText] = useState("")
+  const [heroCtaLink, setHeroCtaLink] = useState("")
+  const [showcaseCtaText, setShowcaseCtaText] = useState("")
+  const [showcaseCtaLink, setShowcaseCtaLink] = useState("")
+  const [brochurePdf, setBrochurePdf] = useState("")
+  const [datasheetPdf, setDatasheetPdf] = useState("")
+  const [hasHot, setHasHot] = useState(true)
+  const [hasCold, setHasCold] = useState(true)
+  const [hasAmbient, setHasAmbient] = useState(true)
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -126,6 +141,23 @@ export default function EditProductPage({ params }: EditProductProps) {
             // Dynamic lists
             setStorageCapacity(specs.storageCapacity || [])
             setDimensions(specs.dimensions || [])
+
+            // Customization Fields
+            setDescription(prod.description || "")
+            setHeroImage(prod.heroImage || "")
+            setHeroTagline(prod.heroTagline || "")
+            setHeroSubtext(prod.heroSubtext || "")
+            setHeroCtaText(prod.heroCtaText || "")
+            setHeroCtaLink(prod.heroCtaLink || "")
+            setShowcaseCtaText(prod.showcaseCtaText || "")
+            setShowcaseCtaLink(prod.showcaseCtaLink || "")
+            setBrochurePdf(prod.brochurePdf || "")
+            setDatasheetPdf(prod.datasheetPdf || "")
+            
+            const variants = prod.variants || { hot: true, cold: true, ambient: true }
+            setHasHot(variants.hot !== false)
+            setHasCold(variants.cold !== false)
+            setHasAmbient(variants.ambient !== false)
           }
         }
       } catch (err) {
@@ -241,7 +273,22 @@ export default function EditProductPage({ params }: EditProductProps) {
           purificationSystem: purificationSys,
           pointOfUseSterilization: pouSterilization
         },
-        status
+        status,
+        description,
+        heroImage,
+        heroTagline,
+        heroSubtext,
+        heroCtaText,
+        heroCtaLink,
+        showcaseCtaText,
+        showcaseCtaLink,
+        brochurePdf,
+        datasheetPdf,
+        variants: {
+          hot: hasHot,
+          cold: hasCold,
+          ambient: hasAmbient
+        }
       }
     }
 
@@ -392,6 +439,200 @@ export default function EditProductPage({ params }: EditProductProps) {
                     <option value="Live">Live</option>
                     <option value="Draft">Draft</option>
                   </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Section: Hero & Showcase Customization */}
+            <div>
+              <h2 className="text-sm font-semibold text-white uppercase tracking-wider border-b border-white/5 pb-2 mb-6" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                Hero & Showcase Customization
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Hero Background Image Link
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="https://imagedelivery.net/.../public"
+                    value={heroImage}
+                    onChange={(e) => handleFieldChange(setHeroImage, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Hero Subtext (Above Tagline)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Experience on-demand"
+                    value={heroSubtext}
+                    onChange={(e) => handleFieldChange(setHeroSubtext, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Hero Tagline
+                  </label>
+                  <textarea
+                    rows={2}
+                    placeholder="e.g. Plastic is passe, Landfilling is zero.&#10;Sustainability is the future."
+                    value={heroTagline}
+                    onChange={(e) => handleFieldChange(setHeroTagline, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none resize-y"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Hero Button CTA Text
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Contact Us"
+                    value={heroCtaText}
+                    onChange={(e) => handleFieldChange(setHeroCtaText, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Hero Button Link
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. #product-showcase or https://..."
+                    value={heroCtaLink}
+                    onChange={(e) => handleFieldChange(setHeroCtaLink, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Showcase Button CTA Text
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Enquire Now"
+                    value={showcaseCtaText}
+                    onChange={(e) => handleFieldChange(setShowcaseCtaText, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Showcase Button Link
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. https://... (Auto defaults to # and functions as dead button if blank)"
+                    value={showcaseCtaLink}
+                    onChange={(e) => handleFieldChange(setShowcaseCtaLink, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Section: Water Variants */}
+            <div>
+              <h2 className="text-sm font-semibold text-white uppercase tracking-wider border-b border-white/5 pb-2 mb-6" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                Available Water Variants
+              </h2>
+              <div className="flex flex-wrap gap-8 bg-[#051424]/30 border border-white/5 p-6">
+                <label className="flex items-center gap-3 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={hasHot}
+                    onChange={(e) => handleFieldChange(setHasHot, e.target.checked)}
+                    className="w-4 h-4 bg-[#051424] border border-white/20 text-[#0081C9] focus:ring-0 rounded-none cursor-pointer"
+                  />
+                  <span className="text-sm font-medium text-gray-300">Hot Variant</span>
+                </label>
+                <label className="flex items-center gap-3 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={hasCold}
+                    onChange={(e) => handleFieldChange(setHasCold, e.target.checked)}
+                    className="w-4 h-4 bg-[#051424] border border-white/20 text-[#0081C9] focus:ring-0 rounded-none cursor-pointer"
+                  />
+                  <span className="text-sm font-medium text-gray-300">Cold Variant</span>
+                </label>
+                <label className="flex items-center gap-3 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={hasAmbient}
+                    onChange={(e) => handleFieldChange(setHasAmbient, e.target.checked)}
+                    className="w-4 h-4 bg-[#051424] border border-white/20 text-[#0081C9] focus:ring-0 rounded-none cursor-pointer"
+                  />
+                  <span className="text-sm font-medium text-gray-300">Ambient Variant</span>
+                </label>
+              </div>
+            </div>
+
+            {/* Section: Documents & Description */}
+            <div>
+              <h2 className="text-sm font-semibold text-white uppercase tracking-wider border-b border-white/5 pb-2 mb-6" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                Documents & Description
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Product Brochure PDF URL
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. /brochure-download.pdf or https://..."
+                    value={brochurePdf}
+                    onChange={(e) => handleFieldChange(setBrochurePdf, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Technical Datasheet PDF URL
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. /datasheet-download.pdf or https://..."
+                    value={datasheetPdf}
+                    onChange={(e) => handleFieldChange(setDatasheetPdf, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Product Description (CMS only)
+                  </label>
+                  <textarea
+                    rows={3}
+                    placeholder="Enter product description here..."
+                    value={description}
+                    onChange={(e) => handleFieldChange(setDescription, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none resize-y"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
                 </div>
               </div>
             </div>

@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     const dbState = readDB();
 
     if (action === 'create') {
-      const { id: inputId, name, heroSubtitle, images, featuresList, specifications, status } = productData;
+      const { id: inputId, name, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants } = productData;
       
       const generatedId = inputId
         ? inputId.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -62,8 +62,19 @@ export async function POST(request: Request) {
           purificationSystem: '',
           pointOfUseSterilization: ''
         },
-        status: status || 'Live'
-      } as any; // Cast in case interface isn't updated yet
+        status: status || 'Live',
+        description: description || '',
+        heroImage: heroImage || '',
+        heroTagline: heroTagline || '',
+        heroSubtext: heroSubtext || '',
+        heroCtaText: heroCtaText || '',
+        heroCtaLink: heroCtaLink || '',
+        showcaseCtaText: showcaseCtaText || '',
+        showcaseCtaLink: showcaseCtaLink || '',
+        brochurePdf: brochurePdf || '',
+        datasheetPdf: datasheetPdf || '',
+        variants: variants || { hot: true, cold: true, ambient: true }
+      };
 
       dbState.products[generatedId] = newProductDetails;
 
@@ -85,7 +96,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: false, message: 'Product not found.' }, { status: 404 });
       }
 
-      const { name, heroSubtitle, images, featuresList, specifications, status } = productData;
+      const { name, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants } = productData;
       const existing = dbState.products[id];
 
       const parentCategory = dbState.categories[categoryId];
@@ -105,8 +116,19 @@ export async function POST(request: Request) {
         images: images || existing.images,
         featuresList: featuresList || existing.featuresList,
         specifications: specifications || existing.specifications,
-        status: status || existing.status || 'Live'
-      } as any;
+        status: status || existing.status || 'Live',
+        description: description !== undefined ? description : existing.description,
+        heroImage: heroImage !== undefined ? heroImage : existing.heroImage,
+        heroTagline: heroTagline !== undefined ? heroTagline : existing.heroTagline,
+        heroSubtext: heroSubtext !== undefined ? heroSubtext : existing.heroSubtext,
+        heroCtaText: heroCtaText !== undefined ? heroCtaText : existing.heroCtaText,
+        heroCtaLink: heroCtaLink !== undefined ? heroCtaLink : existing.heroCtaLink,
+        showcaseCtaText: showcaseCtaText !== undefined ? showcaseCtaText : existing.showcaseCtaText,
+        showcaseCtaLink: showcaseCtaLink !== undefined ? showcaseCtaLink : existing.showcaseCtaLink,
+        brochurePdf: brochurePdf !== undefined ? brochurePdf : existing.brochurePdf,
+        datasheetPdf: datasheetPdf !== undefined ? datasheetPdf : existing.datasheetPdf,
+        variants: variants || existing.variants || { hot: true, cold: true, ambient: true }
+      };
 
       // Update/Move category placement
       // Find where the product currently is and remove it

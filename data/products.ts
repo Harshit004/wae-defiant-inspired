@@ -51,6 +51,22 @@ export interface ProductDetails {
     pointOfUseSterilization: string;
   };
   status?: 'Live' | 'Draft';
+  // CMS Customization Fields
+  description?: string;
+  heroImage?: string;
+  heroTagline?: string;
+  heroSubtext?: string;
+  heroCtaText?: string;
+  heroCtaLink?: string;
+  showcaseCtaText?: string;
+  showcaseCtaLink?: string;
+  brochurePdf?: string;
+  datasheetPdf?: string;
+  variants?: {
+    hot: boolean;
+    cold: boolean;
+    ambient: boolean;
+  };
 }
 
 export const CATEGORIES: Record<string, CategoryData> = {
@@ -638,6 +654,22 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "name": "ASSISTFLOW",
     "categoryName": "Drinking water station - BLUWAE",
     "heroSubtitle": "Powerful LED sterilization",
+    "status": "Live",
+    "description": "Information regarding WAE series drinking water dispensers and advanced purification modules.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c69c6e9-f765-4d92-a80d-ef0688cd6600/public",
+    "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
+    "heroSubtext": "Experience on-demand",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "#",
+    "brochurePdf": "/brochure-download.pdf",
+    "datasheetPdf": "/datasheet-download.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
     "images": [
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c729a1c1-b2a7-44fa-8f25-9b77e8bd0d00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6cbe11d1-d684-43fd-b674-e948d745eb00/public",
@@ -646,16 +678,36 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     ],
     "featuresList": [
       {
-        "title": "Powerful LED Powerful LED Sterilization",
+        "title": "Water Options",
+        "description": ""
+      },
+      {
+        "title": "Built to last",
+        "description": "Crafted with premium Stainless Steel (SS-304) and corrosion-resistant Galvanized\nIron (GI), ensuring durability and safety with food-grade materials."
+      },
+      {
+        "title": "Touch-free convenience",
+        "description": "Experience the ease of sensor-based dispensing, delivering clean and safe water without the need for touch."
+      },
+      {
+        "title": "Powerful led uv-c intank sterilization",
+        "description": "Seamlessly connects with carbonated beverage dispensers\nand coffee/tea vending machines for a versatile, all-in-one solution."
+      },
+      {
+        "title": "Effortless integration",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "title": "American disabilities act",
+        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities."
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "title": "Designed for everyone",
+        "description": "Thoughtfully engineered to be accessible for seniors, kids, and\nthose with special needs, making hydration easy for all."
+      },
+      {
+        "title": "Water enrichments (optional)",
+        "description": "Mineralization Alkaline"
       }
     ],
     "specifications": {

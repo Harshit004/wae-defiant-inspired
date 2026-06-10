@@ -13,37 +13,29 @@ import { PRODUCTS } from "@/data/products"
 // Shared container class for consistent margins and max-width using relative dimensions
 const containerClass = "mx-auto w-[85%] max-w-[1440px] px-[2vw]"
 
-// High-fidelity SVGs for Hot, Cold, and Ambient options
+// High-fidelity images for Hot, Cold, and Ambient options
 const HotIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="5" stroke="#D35400" strokeWidth="2" />
-        <line x1="12" y1="1" x2="12" y2="4" stroke="#D35400" strokeWidth="2" strokeLinecap="round" />
-        <line x1="12" y1="20" x2="12" y2="23" stroke="#D35400" strokeWidth="2" strokeLinecap="round" />
-        <line x1="1" y1="12" x2="4" y2="12" stroke="#D35400" strokeWidth="2" strokeLinecap="round" />
-        <line x1="20" y1="12" x2="23" y2="12" stroke="#D35400" strokeWidth="2" strokeLinecap="round" />
-        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="#D35400" strokeWidth="2" strokeLinecap="round" />
-        <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="#D35400" strokeWidth="2" strokeLinecap="round" />
-        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" stroke="#D35400" strokeWidth="2" strokeLinecap="round" />
-        <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" stroke="#D35400" strokeWidth="2" strokeLinecap="round" />
-    </svg>
+    <img
+        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/494ad209-e33f-4eeb-a538-a2d3a09c6200/public"
+        alt="Hot"
+        className="w-full h-full object-contain"
+    />
 )
 
 const ColdIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-        <line x1="12" y1="2" x2="12" y2="22" stroke="#3498DB" strokeWidth="2" strokeLinecap="round" />
-        <line x1="2" y1="12" x2="22" y2="12" stroke="#3498DB" strokeWidth="2" strokeLinecap="round" />
-        <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" stroke="#3498DB" strokeWidth="2" strokeLinecap="round" />
-        <line x1="4.93" y1="19.07" x2="19.07" y2="4.93" stroke="#3498DB" strokeWidth="2" strokeLinecap="round" />
-        <path d="M12 5l3-3M12 5l-3-3M12 19l3 3M12 19l-3 3M5 12l-3-3M5 12l-3 3M19 12l3-3M19 12l3 3" stroke="#3498DB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <img
+        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/691e766e-420a-4f9f-ac94-135788fcd900/public"
+        alt="Cold"
+        className="w-full h-full object-contain"
+    />
 )
 
 const AmbientIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 6c3.5-3 6.5-3 10 0s6.5 3 10 0" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" />
-        <path d="M2 12c3.5-3 6.5-3 10 0s6.5 3 10 0" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" />
-        <path d="M2 18c3.5-3 6.5-3 10 0s6.5 3 10 0" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" />
-    </svg>
+    <img
+        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c2d10166-e1f7-48e6-2a71-5c20d8251f00/public"
+        alt="Ambient"
+        className="w-full h-full object-contain"
+    />
 )
 
 const DownloadIcon = () => (
@@ -57,6 +49,24 @@ function ProductDescriptionPageContent() {
     const searchParams = useSearchParams()
     const productId = searchParams.get("product") || "assistflow"
     const currentProduct = PRODUCTS[productId] || PRODUCTS.assistflow
+
+    const heroImage = currentProduct.heroImage || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c69c6e9-f765-4d92-a80d-ef0688cd6600/public"
+    const heroSubtext = currentProduct.heroSubtext || "Experience on-demand"
+    const heroTagline = currentProduct.heroTagline || "Plastic is passe, Landfilling is zero.\nSustainability is the future."
+    const taglineLines = heroTagline.replace(/<br\s*\/?>/gi, '\n').split('\n')
+    const heroCtaText = currentProduct.heroCtaText || "Contact Us"
+    const heroCtaLink = currentProduct.heroCtaLink || "#"
+    const showcaseCtaText = currentProduct.showcaseCtaText || "Enquire Now"
+    const showcaseCtaLink = currentProduct.showcaseCtaLink || "#"
+    const brochureLink = currentProduct.brochurePdf || "#"
+    const datasheetLink = currentProduct.datasheetPdf || "#"
+    const isBrochureDead = brochureLink === "#"
+    const isDatasheetDead = datasheetLink === "#"
+
+    const showHot = currentProduct.variants ? currentProduct.variants.hot : true
+    const showCold = currentProduct.variants ? currentProduct.variants.cold : true
+    const showAmbient = currentProduct.variants ? currentProduct.variants.ambient : true
+    const activeVariantsCount = [showHot, showCold, showAmbient].filter(Boolean).length
 
     // State for image gallery slider
     const [activeImageIndex, setActiveImageIndex] = useState(0)
@@ -80,6 +90,19 @@ function ProductDescriptionPageContent() {
     // Quick inquiry form state
     const [isInquired, setIsInquired] = useState(false)
 
+    const handleHeroCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (heroCtaLink.startsWith("#")) {
+            e.preventDefault()
+            const targetId = heroCtaLink.slice(1)
+            const element = targetId ? document.getElementById(targetId) : null
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" })
+            } else if (heroCtaLink === "#") {
+                document.getElementById("product-showcase")?.scrollIntoView({ behavior: "smooth" })
+            }
+        }
+    }
+
     return (
         <main className="relative bg-[#000000] text-white min-h-screen overflow-x-hidden selection:bg-[#004063] selection:text-white">
             {/* HEADER */}
@@ -89,7 +112,7 @@ function ProductDescriptionPageContent() {
             <section
                 className="relative w-full h-[100vh] flex flex-col justify-between bg-black z-10"
                 style={{
-                    backgroundImage: "url('https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c69c6e9-f765-4d92-a80d-ef0688cd6600/public')",
+                    backgroundImage: `url('${heroImage}')`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat"
@@ -116,7 +139,7 @@ function ProductDescriptionPageContent() {
                                 color: "#AEAEAE"
                             }}
                         >
-                            Experience on-demand
+                            {heroSubtext}
                         </p>
 
                         {/* 23px relative equivalent (approx 1.4rem) */}
@@ -134,8 +157,12 @@ function ProductDescriptionPageContent() {
                                 color: "#FFFFFF"
                             }}
                         >
-                            Plastic is passe, Landfilling is zero.<br />
-                            Sustainability is the future.
+                            {taglineLines.map((line, idx) => (
+                                <span key={idx}>
+                                    {line}
+                                    {idx < taglineLines.length - 1 && <br />}
+                                </span>
+                            ))}
                         </h1>
                     </div>
 
@@ -157,11 +184,9 @@ function ProductDescriptionPageContent() {
                             Scroll for more ⤵︎
                         </div>
                         <div>
-                            <button
-                                onClick={() => {
-                                    const element = document.getElementById("product-showcase");
-                                    element?.scrollIntoView({ behavior: "smooth" });
-                                }}
+                            <Link
+                                href={heroCtaLink}
+                                onClick={handleHeroCtaClick}
                                 className="bg-white text-black px-6 py-3 rounded-none hover:bg-white/90 transition-all duration-300 cursor-pointer flex items-center justify-center"
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
@@ -172,8 +197,8 @@ function ProductDescriptionPageContent() {
                                     verticalAlign: "middle"
                                 }}
                             >
-                                Contact Us <span style={{ marginLeft: "10px" }}>↗</span>
-                            </button>
+                                {heroCtaText} <span style={{ marginLeft: "10px" }}>↗</span>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -187,7 +212,7 @@ function ProductDescriptionPageContent() {
                     <div className="flex flex-col w-full items-start">
                         {/* Carousel Container aligned at 515x646 aspect ratio in responsive vw */}
                         <div
-                            className="relative w-full lg:w-[35.764vw] aspect-[515/646] border border-white/5 overflow-hidden flex items-center justify-center group"
+                            className="relative w-full lg:w-[35.764vw] aspect-[515/646] overflow-hidden flex items-center justify-center group"
                             style={{ minWidth: "320px" }}
                         >
 
@@ -342,49 +367,73 @@ function ProductDescriptionPageContent() {
 
                         {/* Temperature Icons Row */}
                         <div className="flex gap-[2.5rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", marginTop: "43px", marginBottom: "61px" }}>
-                            <div className="flex flex-col items-center gap-[0.5rem]">
-                                <div className="w-[1.5rem] h-[1.5rem]">
-                                    <HotIcon />
+                            {showHot && (
+                                <div className="flex flex-col items-center gap-[0.5rem]">
+                                    <div className="w-[1.5rem] h-[1.5rem]">
+                                        <HotIcon />
+                                    </div>
+                                    <span className="text-[#AEAEAE]">Hot</span>
                                 </div>
-                                <span className="text-[#AEAEAE]">Hot</span>
-                            </div>
-                            <div className="flex flex-col items-center gap-[0.5rem]">
-                                <div className="w-[1.5rem] h-[1.5rem]">
-                                    <ColdIcon />
+                            )}
+                            {showCold && (
+                                <div className="flex flex-col items-center gap-[0.5rem]">
+                                    <div className="w-[1.5rem] h-[1.5rem]">
+                                        <ColdIcon />
+                                    </div>
+                                    <span className="text-[#AEAEAE]">Cold</span>
                                 </div>
-                                <span className="text-[#AEAEAE]">Cold</span>
-                            </div>
-                            <div className="flex flex-col items-center gap-[0.5rem]">
-                                <div className="w-[1.5rem] h-[1.5rem]">
-                                    <AmbientIcon />
+                            )}
+                            {showAmbient && (
+                                <div className="flex flex-col items-center gap-[0.5rem]">
+                                    <div className="w-[1.5rem] h-[1.5rem]">
+                                        <AmbientIcon />
+                                    </div>
+                                    <span className="text-[#AEAEAE]">Ambient</span>
                                 </div>
-                                <span className="text-[#AEAEAE]">Ambient</span>
-                            </div>
+                            )}
                         </div>
 
                         {/* CTA Action button */}
-                        <button
-                            onClick={() => {
-                                setIsInquired(true)
-                                setTimeout(() => setIsInquired(false), 3000)
-                            }}
-                            className="w-full border border-white/40 bg-transparent py-[1rem] text-white hover:bg-white hover:text-black transition-all duration-500 cursor-pointer flex items-center justify-center"
-                            style={{ 
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 500,
-                                fontSize: "10px",
-                                lineHeight: "100%",
-                                letterSpacing: "0%",
-                                verticalAlign: "middle",
-                                textTransform: "none"
-                            }}
-                        >
-                            {isInquired ? (
-                                <>Inquiry Sent <span style={{ marginLeft: "10px" }}>✓</span></>
-                            ) : (
-                                <>Enquire Now <span style={{ marginLeft: "10px" }}>↗</span></>
-                            )}
-                        </button>
+                        {showcaseCtaLink && showcaseCtaLink !== "#" ? (
+                            <Link
+                                href={showcaseCtaLink}
+                                className="w-full border border-white/40 bg-transparent py-[1rem] text-white hover:bg-white hover:text-black transition-all duration-500 cursor-pointer flex items-center justify-center"
+                                style={{ 
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 500,
+                                    fontSize: "10px",
+                                    lineHeight: "100%",
+                                    letterSpacing: "0%",
+                                    verticalAlign: "middle",
+                                    textTransform: "none"
+                                }}
+                            >
+                                {showcaseCtaText} <span style={{ marginLeft: "10px" }}>↗</span>
+                            </Link>
+                        ) : (
+                            <button
+                                onClick={() => {
+                                    setIsInquired(true)
+                                    setTimeout(() => setIsInquired(false), 3000)
+                                }}
+                                className="w-full border border-white/40 bg-transparent py-[1rem] text-white hover:bg-white hover:text-black transition-all duration-500 cursor-pointer flex items-center justify-center"
+                                style={{ 
+                                    fontFamily: "'Inter Tight', sans-serif",
+                                    fontWeight: 500,
+                                    fontSize: "10px",
+                                    lineHeight: "100%",
+                                    letterSpacing: "0%",
+                                    verticalAlign: "middle",
+                                    textTransform: "none"
+                                }}
+                            >
+                                {isInquired ? (
+                                    <>Inquiry Sent <span style={{ marginLeft: "10px" }}>✓</span></>
+                                ) : (
+                                    <>{showcaseCtaText} <span style={{ marginLeft: "10px" }}>↗</span></>
+                                )}
+                            </button>
+                        )}
                     </div>
                 </div>
             </section>
@@ -399,7 +448,7 @@ function ProductDescriptionPageContent() {
                         <div style={{ borderBottom: "1px solid #FFFFFF4D" }}>
                             <button
                                 onClick={() => setOpenAccordion(openAccordion === "features" ? null : "features")}
-                                className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300 cursor-pointer"
+                                className="w-full py-[2rem] flex justify-between items-center text-left text-white transition-colors duration-300 cursor-pointer"
                             >
                                 <span style={{
                                     fontFamily: "'Manrope', sans-serif",
@@ -439,25 +488,31 @@ function ProductDescriptionPageContent() {
                                                         lineHeight: "100%",
                                                         letterSpacing: "0%",
                                                         verticalAlign: "middle",
-                                                        textTransform: "capitalize",
+                                                        textTransform: "none",
                                                         color: "#FFFFFF",
                                                         marginBottom: "8px"
                                                     }}>{feat.title}</h4>
                                                     
                                                     {feat.title.toLowerCase() === "water options" ? (
-                                                        <div className="flex gap-[2rem] text-[0.625rem] uppercase tracking-wider text-white/80 font-medium">
-                                                            <div className="flex flex-col items-center gap-[0.35rem]">
-                                                                <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
-                                                                <span className="text-[#AEAEAE]">Hot</span>
-                                                            </div>
-                                                            <div className="flex flex-col items-center gap-[0.35rem]">
-                                                                <div className="w-[1.25rem] h-[1.25rem]"><ColdIcon /></div>
-                                                                <span className="text-[#AEAEAE]">Cold</span>
-                                                            </div>
-                                                            <div className="flex flex-col items-center gap-[0.35rem]">
-                                                                <div className="w-[1.25rem] h-[1.25rem]"><AmbientIcon /></div>
-                                                                <span className="text-[#AEAEAE]">Ambient</span>
-                                                            </div>
+                                                        <div className="flex gap-[2rem] text-[12px] font-normal mt-2" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                                                            {showHot && (
+                                                                <div className="flex flex-col items-center gap-[0.5rem] w-[50px]">
+                                                                    <div className="w-[24px] h-[24px]"><HotIcon /></div>
+                                                                    <span className="text-[#AEAEAE]">Hot</span>
+                                                                </div>
+                                                            )}
+                                                            {showCold && (
+                                                                <div className="flex flex-col items-center gap-[0.5rem] w-[50px]">
+                                                                    <div className="w-[24px] h-[24px]"><ColdIcon /></div>
+                                                                    <span className="text-[#AEAEAE]">Cold</span>
+                                                                </div>
+                                                            )}
+                                                            {showAmbient && (
+                                                                <div className="flex flex-col items-center gap-[0.5rem] w-[50px]">
+                                                                    <div className="w-[24px] h-[24px]"><AmbientIcon /></div>
+                                                                    <span className="text-[#AEAEAE]">Ambient</span>
+                                                                </div>
+                                                            )}
                                                         </div>
                                                     ) : (
                                                         <p style={{
@@ -467,7 +522,8 @@ function ProductDescriptionPageContent() {
                                                             lineHeight: "normal",
                                                             letterSpacing: "0%",
                                                             verticalAlign: "middle",
-                                                            color: "#FFFFFF80"
+                                                            color: "#FFFFFF80",
+                                                            whiteSpace: "pre-line"
                                                         }}>
                                                             {feat.description}
                                                         </p>
@@ -484,7 +540,7 @@ function ProductDescriptionPageContent() {
                         <div style={{ borderBottom: "1px solid #FFFFFF4D" }}>
                             <button
                                 onClick={() => setOpenAccordion(openAccordion === "specs" ? null : "specs")}
-                                className="w-full py-[2rem] flex justify-between items-center text-left text-white hover:text-[#0081C9] transition-colors duration-300 cursor-pointer"
+                                className="w-full py-[2rem] flex justify-between items-center text-left text-white transition-colors duration-300 cursor-pointer"
                             >
                                 <span style={{
                                     fontFamily: "'Manrope', sans-serif",
@@ -520,37 +576,43 @@ function ProductDescriptionPageContent() {
                                                 <table className="w-auto text-left border-collapse text-white" style={{ fontFamily: "'Inter Tight', sans-serif", width: "auto" }}>
                                                     <thead>
                                                         <tr>
-                                                            <th className="font-semibold pb-4 text-[14px] pr-8" rowSpan={2} style={{ verticalAlign: 'bottom', width: "160px" }}>Variant</th>
-                                                            <th className="font-semibold pb-2 text-[14px] text-center" colSpan={3} style={{ width: "240px" }}>Storage Capacity (L )</th>
+                                                            <th className="font-semibold pb-4 text-[14px] pr-8" rowSpan={2} style={{ verticalAlign: 'top', width: "160px" }}>Variant</th>
+                                                            <th className="font-semibold pb-2 text-[14px] text-center" colSpan={activeVariantsCount || 1} style={{ width: `${(activeVariantsCount || 1) * 80}px` }}>Storage Capacity (L )</th>
                                                         </tr>
                                                         <tr>
-                                                            <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
-                                                                <div className="flex flex-col items-center gap-1">
-                                                                    <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
-                                                                    <span className="text-[#AEAEAE]">Hot</span>
-                                                                </div>
-                                                            </th>
-                                                            <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
-                                                                <div className="flex flex-col items-center gap-1">
-                                                                    <div className="w-[1.25rem] h-[1.25rem]"><ColdIcon /></div>
-                                                                    <span className="text-[#AEAEAE]">Cold</span>
-                                                                </div>
-                                                            </th>
-                                                            <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
-                                                                <div className="flex flex-col items-center gap-1">
-                                                                    <div className="w-[1.25rem] h-[1.25rem]"><AmbientIcon /></div>
-                                                                    <span className="text-[#AEAEAE]">Ambient</span>
-                                                                </div>
-                                                            </th>
+                                                            {showHot && (
+                                                                <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
+                                                                    <div className="flex flex-col items-center gap-1">
+                                                                        <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
+                                                                        <span className="text-[#AEAEAE]">Hot</span>
+                                                                    </div>
+                                                                </th>
+                                                            )}
+                                                            {showCold && (
+                                                                <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
+                                                                    <div className="flex flex-col items-center gap-1">
+                                                                        <div className="w-[1.25rem] h-[1.25rem]"><ColdIcon /></div>
+                                                                        <span className="text-[#AEAEAE]">Cold</span>
+                                                                    </div>
+                                                                </th>
+                                                            )}
+                                                            {showAmbient && (
+                                                                <th className="font-normal pb-4 text-[11px] text-center" style={{ width: "80px" }}>
+                                                                    <div className="flex flex-col items-center gap-1">
+                                                                        <div className="w-[1.25rem] h-[1.25rem]"><AmbientIcon /></div>
+                                                                        <span className="text-[#AEAEAE]">Ambient</span>
+                                                                    </div>
+                                                                </th>
+                                                            )}
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         {currentProduct.specifications.storageCapacity.map((row, rIdx) => (
                                                             <tr key={rIdx} className="text-[#AEAEAE]">
                                                                 <td className="py-2 text-[14px] pr-8">{row.variant}</td>
-                                                                <td className="py-2 text-[14px] text-center">{row.hot}</td>
-                                                                <td className="py-2 text-[14px] text-center">{row.cold}</td>
-                                                                <td className="py-2 text-[14px] text-center">{row.ambient}</td>
+                                                                {showHot && <td className="py-2 text-[14px] text-center">{row.hot}</td>}
+                                                                {showCold && <td className="py-2 text-[14px] text-center">{row.cold}</td>}
+                                                                {showAmbient && <td className="py-2 text-[14px] text-center">{row.ambient}</td>}
                                                             </tr>
                                                         ))}
                                                     </tbody>
@@ -778,12 +840,17 @@ function ProductDescriptionPageContent() {
                         {/* Document Download Buttons with responsive viewport layouts */}
                         <div className="flex mt-[3rem]" style={{ gap: "2.361vw" }}>
                             <a
-                                href="/brochure-download.pdf"
+                                href={brochureLink}
+                                target={isBrochureDead ? undefined : "_blank"}
+                                rel="noopener noreferrer"
                                 onClick={(e) => {
-                                    e.preventDefault()
-                                    alert(`${currentProduct.name} Brochure download started successfully.`)
+                                    if (isBrochureDead) {
+                                        e.preventDefault()
+                                    }
                                 }}
-                                className="group border border-white bg-transparent hover:bg-white text-center text-white hover:text-black transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
+                                className={`group border border-white bg-transparent text-center text-white transition-all duration-300 flex items-center justify-center gap-[0.5rem] ${
+                                    isBrochureDead ? "opacity-40 cursor-not-allowed" : "hover:bg-white hover:text-black cursor-pointer"
+                                }`}
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     width: "14.722vw",
@@ -805,12 +872,17 @@ function ProductDescriptionPageContent() {
                                 </span>
                             </a>
                             <a
-                                href="/datasheet-download.pdf"
+                                href={datasheetLink}
+                                target={isDatasheetDead ? undefined : "_blank"}
+                                rel="noopener noreferrer"
                                 onClick={(e) => {
-                                    e.preventDefault()
-                                    alert(`${currentProduct.name} Technical datasheet download started successfully.`)
+                                    if (isDatasheetDead) {
+                                        e.preventDefault()
+                                    }
                                 }}
-                                className="group border border-white bg-transparent hover:bg-white text-center text-white hover:text-black transition-all duration-300 flex items-center justify-center gap-[0.5rem]"
+                                className={`group border border-white bg-transparent text-center text-white transition-all duration-300 flex items-center justify-center gap-[0.5rem] ${
+                                    isDatasheetDead ? "opacity-40 cursor-not-allowed" : "hover:bg-white hover:text-black cursor-pointer"
+                                }`}
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     width: "16.042vw",

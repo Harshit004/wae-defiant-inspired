@@ -48,6 +48,21 @@ interface ProductDetails {
     pointOfUseSterilization: string;
   }
   status?: "Live" | "Draft"
+  description?: string
+  heroImage?: string
+  heroTagline?: string
+  heroSubtext?: string
+  heroCtaText?: string
+  heroCtaLink?: string
+  showcaseCtaText?: string
+  showcaseCtaLink?: string
+  brochurePdf?: string
+  datasheetPdf?: string
+  variants?: {
+    hot: boolean
+    cold: boolean
+    ambient: boolean
+  }
 }
 
 interface ViewProductProps {

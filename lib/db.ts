@@ -106,6 +106,22 @@ export interface ProductDetails {
     pointOfUseSterilization: string;
   };
   status?: 'Live' | 'Draft';
+  // CMS Customization Fields
+  description?: string;
+  heroImage?: string;
+  heroTagline?: string;
+  heroSubtext?: string;
+  heroCtaText?: string;
+  heroCtaLink?: string;
+  showcaseCtaText?: string;
+  showcaseCtaLink?: string;
+  brochurePdf?: string;
+  datasheetPdf?: string;
+  variants?: {
+    hot: boolean;
+    cold: boolean;
+    ambient: boolean;
+  };
 }
 
 export const CATEGORIES: Record<string, CategoryData> = ${JSON.stringify(state.categories, null, 2)};
