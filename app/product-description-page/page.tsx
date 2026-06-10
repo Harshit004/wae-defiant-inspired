@@ -1156,8 +1156,8 @@ function ProductDescriptionPageContent() {
                                 key={index}
                                 className="group flex flex-col text-left cursor-pointer transition-all duration-500 hover:-translate-y-1"
                             >
-                                {/* Dispenser Image inside recommendation card */}
-                                <div className="relative w-full aspect-[515/646] mb-[1.5rem] overflow-hidden flex items-center justify-center rounded-none">
+                                {/* Dispenser Image inside recommendation card — 381×322 ratio */}
+                                <div className="relative w-full overflow-hidden flex items-center justify-center rounded-none" style={{ aspectRatio: "381 / 322", marginBottom: "50px" }}>
                                     <div className="relative w-full h-full transition-transform duration-700 group-hover:scale-105">
                                         <Image
                                             src={item.images[0]}
@@ -1168,8 +1168,8 @@ function ProductDescriptionPageContent() {
                                     </div>
                                 </div>
 
-                                {/* Text and chevron matching the mockup exactly */}
-                                <div className="flex items-center justify-between text-white mt-[0.5rem] mb-[0.5rem] hover:text-[#0081C9] transition-colors">
+                                {/* Product title */}
+                                <div className="flex items-center justify-between text-white hover:text-[#0081C9] transition-colors" style={{ marginBottom: "5px" }}>
                                     <span style={{
                                         fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 400,
@@ -1182,6 +1182,7 @@ function ProductDescriptionPageContent() {
                                     <span className="text-[0.875rem] text-white/80 font-normal">&gt;</span>
                                 </div>
 
+                                {/* Description */}
                                 <p style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     fontWeight: 400,
@@ -1189,7 +1190,8 @@ function ProductDescriptionPageContent() {
                                     lineHeight: "110%",
                                     letterSpacing: "0%",
                                     verticalAlign: "middle",
-                                    color: "#808080"
+                                    color: "#808080",
+                                    margin: 0
                                 }}>
                                     Information regarding WAE series drinking water dispensers and advanced purification modules.
                                 </p>
