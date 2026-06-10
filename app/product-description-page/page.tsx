@@ -489,12 +489,12 @@ function ProductDescriptionPageContent() {
                                                         lineHeight: "100%",
                                                         letterSpacing: "0%",
                                                         verticalAlign: "middle",
-                                                        textTransform: feat.title.toLowerCase().includes("water") ? "capitalize" : "none",
+                                                        textTransform: feat.title.toLowerCase() === "water options" ? "capitalize" : "none",
                                                         color: "#FFFFFF",
                                                         marginBottom: "8px"
                                                     }}>{feat.title}</h4>
                                                     
-                                                    {feat.title.toLowerCase().includes("water") ? (
+                                                    {feat.title.toLowerCase() === "water options" ? (
                                                         <div className="flex text-[12px] font-normal" style={{ fontFamily: "'Inter Tight', sans-serif", marginTop: "24px", gap: "35px" }}>
                                                             {showHot && (
                                                                 <div className="flex flex-col items-center gap-[0.5rem]">
