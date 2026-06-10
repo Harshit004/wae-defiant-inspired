@@ -101,12 +101,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "free-standing"
       },
       {
-        "id": "assistflow",
-        "name": "BLUWAE ASSISTFLOW",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c23ff37-2f1a-4f67-4933-708d60af2000/public",
-        "category": "free-standing"
-      },
-      {
         "id": "venus",
         "name": "BLUWAE VENUS",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
@@ -129,6 +123,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "BLUWAE ROM.CT",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
         "category": "counter-top"
+      },
+      {
+        "id": "assistflow",
+        "name": "ASSISTFLOW",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c729a1c1-b2a7-44fa-8f25-9b77e8bd0d00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public"
@@ -636,12 +636,13 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   "assistflow": {
     "id": "assistflow",
     "name": "ASSISTFLOW",
-    "categoryName": "DRINKING WATER STATION - BLUWAE Series",
+    "categoryName": "Drinking water station - BLUWAE",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61bed0a3-d40d-46ec-2edd-a3fb53abe400/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c729a1c1-b2a7-44fa-8f25-9b77e8bd0d00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6cbe11d1-d684-43fd-b674-e948d745eb00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/875719ac-2f9e-456b-662f-d437c10dca00/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/875719ac-2f9e-456b-662f-d437c10dca00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61bed0a3-d40d-46ec-2edd-a3fb53abe400/public"
     ],
     "featuresList": [
       {
@@ -685,7 +686,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
       "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
       "pointOfUseSterilization": "Germ Guardian™"
-    }
+    },
+    "status": "Live"
   },
   "venus": {
     "id": "venus",
