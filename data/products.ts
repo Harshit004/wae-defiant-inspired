@@ -744,8 +744,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
           "variant": "Assistflow 50",
           "weight": "45",
           "height": "1631",
-          "width": "535650",
-          "depth": ""
+          "width": "535",
+          "depth": "650"
         }
       ],
       "powerRequirement": "Hertz 50/Volts 230-240",

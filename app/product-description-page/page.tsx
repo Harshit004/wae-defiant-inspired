@@ -821,7 +821,7 @@ function ProductDescriptionPageContent() {
                                                                 verticalAlign: 'middle',
                                                                 width: "160px"
                                                             }}>Variant</th>
-                                                            <th className="pr-8 text-center" style={{
+                                                            <th className="text-center" style={{
                                                                 fontFamily: "'Inter Tight', sans-serif",
                                                                 fontWeight: 400,
                                                                 fontSize: "16px",
@@ -913,7 +913,7 @@ function ProductDescriptionPageContent() {
                                                                         verticalAlign: "middle",
                                                                         paddingTop: "0px",
                                                                         paddingBottom: isLast ? "0px" : "24px"
-                                                                    }} className="pr-8">{row.weight}</td>
+                                                                    }} className="text-center">{row.weight}</td>
                                                                     <td style={{
                                                                         fontFamily: "'Inter Tight', sans-serif",
                                                                         fontWeight: 400,
