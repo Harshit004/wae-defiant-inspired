@@ -1,10 +1,10 @@
 "use client"
 
-import { useEffect, useState, use } from "react"
+import { useEffect, useState, use, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import Header from "@/components/admin/header"
-import { ChevronLeft, Trash2, Plus, Save } from "lucide-react"
+import { ChevronLeft, Trash2, Plus, Save, GripVertical } from "lucide-react"
 
 interface SpecRow {
   variant: string
@@ -201,6 +201,37 @@ export default function EditProductPage({ params }: EditProductProps) {
     updated[index][field] = val
     setFeaturesList(updated)
     setIsDirty(true)
+  }
+
+  // Drag-and-drop state for feature reordering
+  const dragIndexRef = useRef<number | null>(null)
+  const dragOverIndexRef = useRef<number | null>(null)
+
+  const handleFeatureDragStart = (index: number) => {
+    dragIndexRef.current = index
+  }
+
+  const handleFeatureDragOver = (e: React.DragEvent, index: number) => {
+    e.preventDefault()
+    dragOverIndexRef.current = index
+  }
+
+  const handleFeatureDrop = (index: number) => {
+    const from = dragIndexRef.current
+    const to = index
+    if (from === null || from === to) return
+    const updated = [...featuresList]
+    const [moved] = updated.splice(from, 1)
+    updated.splice(to, 0, moved)
+    setFeaturesList(updated)
+    setIsDirty(true)
+    dragIndexRef.current = null
+    dragOverIndexRef.current = null
+  }
+
+  const handleFeatureDragEnd = () => {
+    dragIndexRef.current = null
+    dragOverIndexRef.current = null
   }
 
   const handleAddStorage = () => {
@@ -721,9 +752,31 @@ export default function EditProductPage({ params }: EditProductProps) {
                   </button>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-2">
                   {featuresList.map((f, idx) => (
-                    <div key={idx} className="flex gap-4 items-start bg-[#051424]/30 border border-white/5 p-4 relative">
+                    <div
+                      key={idx}
+                      draggable
+                      onDragStart={() => handleFeatureDragStart(idx)}
+                      onDragOver={(e) => handleFeatureDragOver(e, idx)}
+                      onDrop={() => handleFeatureDrop(idx)}
+                      onDragEnd={handleFeatureDragEnd}
+                      className="flex gap-3 items-start bg-[#051424]/30 border border-white/5 p-4 relative transition-all duration-150 hover:border-white/10 group"
+                      style={{ cursor: "grab" }}
+                    >
+                      {/* Drag Handle */}
+                      <div
+                        className="flex-shrink-0 flex items-center self-stretch text-gray-600 hover:text-gray-400 transition-colors cursor-grab active:cursor-grabbing pt-1"
+                        title="Drag to reorder"
+                      >
+                        <GripVertical size={16} />
+                      </div>
+
+                      {/* Index Badge */}
+                      <div className="flex-shrink-0 w-5 h-5 bg-white/5 border border-white/10 flex items-center justify-center text-[9px] font-bold text-gray-500 mt-1" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                        {idx + 1}
+                      </div>
+
                       <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="md:col-span-1">
                           <input
@@ -732,7 +785,7 @@ export default function EditProductPage({ params }: EditProductProps) {
                             value={f.title}
                             onChange={(e) => handleFeatureChange(idx, "title", e.target.value)}
                             className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-2 outline-none focus:border-white/20 transition-all text-xs rounded-none"
-                            style={{ fontFamily: "'Manrope', sans-serif" }}
+                            style={{ fontFamily: "'Manrope', sans-serif", cursor: "text" }}
                           />
                         </div>
                         <div className="md:col-span-2">
@@ -742,19 +795,18 @@ export default function EditProductPage({ params }: EditProductProps) {
                             value={f.description}
                             onChange={(e) => handleFeatureChange(idx, "description", e.target.value)}
                             className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-2 outline-none focus:border-white/20 transition-all text-xs rounded-none resize-none"
-                            style={{ fontFamily: "'Manrope', sans-serif" }}
+                            style={{ fontFamily: "'Manrope', sans-serif", cursor: "text" }}
                           />
                         </div>
                       </div>
-                      {featuresList.length > 1 && (
-                        <button
-                          type="button"
-                          onClick={() => handleRemoveFeature(idx)}
-                          className="text-gray-500 hover:text-red-500 p-2 transition-all focus:outline-none cursor-pointer mt-1"
-                        >
-                          <Trash2 size={16} />
-                        </button>
-                      )}
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveFeature(idx)}
+                        className="flex-shrink-0 text-gray-600 hover:text-red-500 p-2 transition-all focus:outline-none cursor-pointer mt-0.5"
+                        title="Remove feature"
+                      >
+                        <Trash2 size={15} />
+                      </button>
                     </div>
                   ))}
                 </div>
