@@ -713,7 +713,13 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
+          "variant": "Assistflow 100",
+          "hot": "3",
+          "cold": "40",
+          "ambient": "15"
+        },
+        {
+          "variant": "Assistflow 50",
           "hot": "3",
           "cold": "40",
           "ambient": "15"
@@ -728,18 +734,24 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "weight": "-",
+          "variant": "Assistflow 100",
+          "weight": "85",
           "height": "1631",
           "width": "535",
           "depth": "654"
+        },
+        {
+          "variant": "Assistflow 50",
+          "weight": "45",
+          "height": "1631",
+          "width": "535650",
+          "depth": ""
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
-    },
-    "status": "Live"
+    }
   },
   "venus": {
     "id": "venus",
