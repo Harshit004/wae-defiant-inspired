@@ -124,12 +124,10 @@ function ProductListingContent() {
 
     const [activeSection, setActiveSection] = useState(0)
     const [currentTime, setCurrentTime] = useState("")
-    const [headerHeight, setHeaderHeight] = useState(155)
     const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
     const [searchQuery, setSearchQuery] = useState("")
     const [activeFilter, setActiveFilter] = useState<string>("all")
     const [productSearchQuery, setProductSearchQuery] = useState("")
-    const headerRef = useRef<HTMLDivElement>(null)
     const sectionRef = useRef<HTMLElement>(null)
     const isInView = useInView(sectionRef, { once: true, amount: 0.5 })
 
@@ -220,23 +218,6 @@ function ProductListingContent() {
         return () => clearInterval(interval)
     }, [])
 
-    // Measure header height by querying the rendered header element
-    useEffect(() => {
-        const measureHeader = () => {
-            const headerEl = document.querySelector('header')
-            if (headerEl) {
-                setHeaderHeight(headerEl.getBoundingClientRect().height)
-            }
-        }
-        // Small delay to ensure header has rendered fully
-        const timer = setTimeout(measureHeader, 50)
-        window.addEventListener("resize", measureHeader)
-        return () => {
-            clearTimeout(timer)
-            window.removeEventListener("resize", measureHeader)
-        }
-    }, [])
-
     const taglineLine1 = "To lead the way in sustainability"
     const taglineLine2 = "ahead of the rest."
     const taglineWords1 = taglineLine1.split(" ")
@@ -265,7 +246,7 @@ function ProductListingContent() {
                 backgroundImage: "linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)",
                 backgroundSize: "100% 60.76vw",
                 backgroundRepeat: "no-repeat",
-                paddingTop: `${headerHeight + 65}px`,
+                paddingTop: "232px",
             }}>
                 {/* Title + Search Row */}
                 <div className="w-full px-[7.5vw]" style={{ marginBottom: 0 }}>
