@@ -678,16 +678,20 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     ],
     "featuresList": [
       {
+        "title": "Water Options",
+        "description": ""
+      },
+      {
+        "title": "Powerful led uv-c intank sterilization",
+        "description": "Seamlessly connects with carbonated beverage dispensers\nand coffee/tea vending machines for a versatile, all-in-one solution."
+      },
+      {
         "title": "Built to last",
         "description": "Crafted with premium Stainless Steel (SS-304) and corrosion-resistant Galvanized\nIron (GI), ensuring durability and safety with food-grade materials."
       },
       {
         "title": "Touch-free convenience",
         "description": "Experience the ease of sensor-based dispensing, delivering clean and safe water without the need for touch."
-      },
-      {
-        "title": "Powerful led uv-c intank sterilization",
-        "description": "Seamlessly connects with carbonated beverage dispensers\nand coffee/tea vending machines for a versatile, all-in-one solution."
       },
       {
         "title": "Effortless integration",
