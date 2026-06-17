@@ -690,12 +690,12 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "description": "Crafted with premium Stainless Steel (SS-304) and corrosion-resistant Galvanized\nIron (GI), ensuring durability and safety with food-grade materials."
       },
       {
-        "title": "Touch-free convenience",
-        "description": "Experience the ease of sensor-based dispensing, delivering clean and safe water without the need for touch."
-      },
-      {
         "title": "Effortless integration",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+      },
+      {
+        "title": "Touch-free convenience",
+        "description": "Experience the ease of sensor-based dispensing, delivering clean and safe water without the need for touch."
       },
       {
         "title": "American disabilities act",
