@@ -7,7 +7,7 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 
 // Center layout container matching standard padding & max-width
-const containerClass = "mx-auto w-full max-w-[1440px] px-[5vw] lg:px-[140px]"
+const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
 
 interface SelectButtonProps {
   children: React.ReactNode
@@ -22,16 +22,20 @@ const SelectButton: FC<SelectButtonProps> = ({ children, selected, onClick }) =>
   <button
     type="button"
     onClick={onClick}
-    className="transition-all duration-300 ease-in-out w-full border border-white/20 hover:bg-white/10 uppercase tracking-[0.05em]"
+    className="transition-all duration-300 ease-in-out border border-white/20 hover:bg-white/10 w-full md:w-[15.764vw]"
     style={{
+      maxWidth: "227px",
       padding: '14px 8px',
       backgroundColor: selected ? '#ffffff' : 'transparent',
       color: selected ? '#000000' : '#ffffff',
       fontFamily: "'Inter Tight', sans-serif",
-      fontWeight: 500,
-      fontSize: '11px',
-      lineHeight: '100%',
+      fontWeight: 400,
+      fontSize: '12px',
+      lineHeight: '12px',
+      letterSpacing: '0%',
       textAlign: 'center',
+      verticalAlign: 'middle',
+      textTransform: 'uppercase',
       cursor: 'pointer',
       borderRadius: '0px'
     }}
@@ -169,10 +173,10 @@ export default function Home() {
 
   return (
     <main
-      className="relative bg-[#000000] text-white min-h-screen overflow-x-hidden selection:bg-[#004063] selection:text-white"
+      className="relative bg-[#0F0F0F] text-white min-h-screen overflow-x-hidden selection:bg-[#004063] selection:text-white"
     >
       {/* Top wrapper with hero gradient background */}
-      <div 
+      <div
         className="w-full relative"
         style={{
           background: "linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)"
@@ -185,10 +189,10 @@ export default function Home() {
         <div className="h-[180px] lg:h-[220px]" />
 
         {/* ================= FEATURED HERO SECTION ================= */}
-        <section className={`${containerClass} pb-20 lg:pb-[120px]`}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-[40px] lg:gap-[80px] items-center">
+        <section className={`${containerClass} pb-20 lg:pb-[112px]`}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-[40px] lg:gap-[80px] items-stretch">
             {/* Left Side: Large Photo */}
-            <div className="lg:col-span-6 w-full relative aspect-[1.2] lg:aspect-[1.1] overflow-hidden">
+            <div className="lg:col-span-6 w-full relative aspect-[1.1] overflow-hidden">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
                 alt="From Kyoto to COP28 Featured Image"
@@ -198,65 +202,91 @@ export default function Home() {
               />
             </div>
 
-            {/* Right Side: Featured Info */}
-            <div className="lg:col-span-6 flex flex-col justify-center text-left">
-              <span
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "12px",
-                  lineHeight: "130%",
-                  color: "#ffffff66",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em",
-                  marginBottom: "16px"
-                }}
-              >
-                WAE LTD.
-              </span>
+            {/* Right Side: Featured Info (Starts and ends on the same height as the image) */}
+            <div className="lg:col-span-6 flex flex-col justify-between h-full text-left">
+              <div>
+                {/* WAE LTD. Subtitle */}
+                <div className="w-fit" style={{ borderBottom: "1px solid #808080", paddingBottom: "4px" }}>
+                  <span
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "12px",
+                      lineHeight: "130%",
+                      letterSpacing: "0%",
+                      color: "#ffffff",
+                      display: "inline-block"
+                    }}
+                  >
+                    WAE LTD.
+                  </span>
+                </div>
 
-              <h1
-                className="mb-6 font-normal"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "clamp(28px, 3.2vw, 40px)",
-                  lineHeight: "120%",
-                  letterSpacing: "-0.02em",
-                  color: "#ffffff"
-                }}
-              >
-                From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
-              </h1>
+                {/* 40px gap */}
+                <div style={{ height: "40px" }} />
 
-              <p
-                className="mb-8"
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  lineHeight: "160%",
-                  color: "#ffffff80"
-                }}
-              >
-                In the quiet halls of Kyoto in 1997, something monumental began: a collective awakening of the world's conscience towards the mounting crisis of climate change. What followed was a turbulent yet determined journey, a series of historic global agreements that would shape the planet's climate policy for decades to come, culminating (for now) in COP28. This is not just a timeline - it's the story of how humanity has tried, failed, and continued to try again in its battle against a warming world.
-              </p>
+                {/* Title */}
+                <h1
+                  className="m-0"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "40px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    color: "#ffffff"
+                  }}
+                >
+                  From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
+                </h1>
 
-              <Link
-                href="/climate-change-&-water-v3"
-                className="inline-flex items-center text-[11px] font-medium uppercase tracking-[0.1em] text-white hover:opacity-80 transition-opacity"
-                style={{ fontFamily: "'Inter Tight', sans-serif", borderBottom: "1px solid white", width: "fit-content", paddingBottom: "2px" }}
-              >
-                Read More <span style={{ marginLeft: "6px" }}>↗</span>
-              </Link>
+                {/* 40px gap */}
+                <div style={{ height: "40px" }} />
+
+                {/* Description */}
+                <p
+                  className="m-0"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    color: "#AEAEAE"
+                  }}
+                >
+                  In the quiet halls of Kyoto in 1997, something monumental began &nbsp;&nbsp;a collective awakening of the world's conscience towards the mounting crisis of climate change. What followed was a turbulent yet determined journey, a series of historic global agreements that would shape the planet's climate policy for decades to come, culminating (for now) in COP28. This is not just a timeline&nbsp; &nbsp;it's the story of how humanity has tried, failed, and continued to try again in its battle against a warming world.
+                </p>
+              </div>
+
+              {/* Read More Link (at bottom) */}
+              <div className="mt-8 lg:mt-0">
+                <Link
+                  href="/climate-change-&-water-v3"
+                  className="inline-flex items-center hover:opacity-85 transition-opacity"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "12px",
+                    lineHeight: "130%",
+                    letterSpacing: "0%",
+                    color: "#ffffff",
+                    borderBottom: "1px solid #808080",
+                    paddingBottom: "4px"
+                  }}
+                >
+                  Read More
+                </Link>
+              </div>
             </div>
           </div>
         </section>
       </div>
 
       {/* ================= CATEGORY FILTER TABS ROW ================= */}
-      <section className="mb-[60px]">
+      <section style={{ marginBottom: "62px" }}>
         <div className={containerClass}>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-[12px] w-full">
+          <div className="flex flex-wrap gap-3 md:gap-0 justify-between w-full">
             {buttonLabels.map((label, index) => (
               <SelectButton
                 key={label}
@@ -267,15 +297,13 @@ export default function Home() {
               </SelectButton>
             ))}
           </div>
-          <div className="h-[40px]" />
-          <hr className="w-full h-px bg-white/20 border-0" />
         </div>
       </section>
 
       {/* ================= BLOG CARDS GRID SECTION ================= */}
       <section className="mb-[140px] lg:mb-[180px]">
         <div className={containerClass}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[4.166%] gap-y-[80px] lg:gap-y-[120px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[4.166%] gap-y-[130px]">
             {getFilteredBlogs().map((post, index) => {
               // Map links based on title keywords
               let linkUrl = "#"
@@ -296,75 +324,104 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="group flex flex-col text-left transition-all duration-300"
+                  className="group flex items-stretch transition-all duration-300"
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <Link href={linkUrl} className="block mb-6 relative aspect-[1.3] w-full overflow-hidden">
-                    {/* Primary Image */}
-                    <div
-                      className="absolute inset-0 transition-opacity duration-[800ms]"
-                      style={{ opacity: hoveredCard === index ? 0 : 1 }}
-                    >
-                      <Image
-                        src={post.imageSrc}
-                        alt={post.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    {/* Hover Image */}
-                    {post.imageSrcHover && (
+                  {/* Vertical divider line before every card */}
+                  <div className="w-px bg-white/20 self-stretch shrink-0" />
+                  {/* Between every line and card, there is 22/1440 vw gap */}
+                  <div style={{ width: "calc(22 / 1440 * 100vw)" }} className="shrink-0" />
+
+                  {/* Card Content wrapper */}
+                  <div className="flex flex-col flex-grow text-left">
+                    <Link href={linkUrl} className="block relative aspect-[364/270] w-full overflow-hidden">
+                      {/* Primary Image */}
                       <div
                         className="absolute inset-0 transition-opacity duration-[800ms]"
-                        style={{ opacity: hoveredCard === index ? 1 : 0 }}
+                        style={{ opacity: hoveredCard === index ? 0 : 1 }}
                       >
                         <Image
-                          src={post.imageSrcHover}
-                          alt={`${post.title} hover`}
+                          src={post.imageSrc}
+                          alt={post.title}
                           fill
                           className="object-cover"
                         />
                       </div>
-                    )}
-                  </Link>
+                      {/* Hover Image */}
+                      {post.imageSrcHover && (
+                        <div
+                          className="absolute inset-0 transition-opacity duration-[800ms]"
+                          style={{ opacity: hoveredCard === index ? 1 : 0 }}
+                        >
+                          <Image
+                            src={post.imageSrcHover}
+                            alt={`${post.title} hover`}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      )}
+                    </Link>
 
-                  <Link href={linkUrl}>
-                    <h3
-                      className="hover:opacity-80 transition-opacity"
+                    {/* 20px gap */}
+                    <div style={{ height: "20px" }} />
+
+                    <Link href={linkUrl}>
+                      <h3
+                        className="hover:opacity-80 transition-opacity m-0"
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 400,
+                          fontSize: "18px",
+                          lineHeight: "100%",
+                          letterSpacing: "0%",
+                          color: "#ffffff",
+                          verticalAlign: "middle"
+                        }}
+                      >
+                        {post.title}
+                      </h3>
+                    </Link>
+
+                    {/* 12px gap */}
+                    <div style={{ height: "12px" }} />
+
+                    <p
+                      className="m-0"
                       style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 500,
-                        fontSize: "18px",
-                        lineHeight: "135%",
-                        color: "#ffffff",
-                        marginBottom: "12px"
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        fontSize: "14px",
+                        lineHeight: "100%",
+                        letterSpacing: "0%",
+                        color: "#AEAEAE",
+                        verticalAlign: "middle"
                       }}
                     >
-                      {post.title}
-                    </h3>
-                  </Link>
+                      {post.description}
+                    </p>
 
-                  <p
-                    className="mb-6 flex-grow"
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 400,
-                      fontSize: "13px",
-                      lineHeight: "150%",
-                      color: "#ffffff80"
-                    }}
-                  >
-                    {post.description}
-                  </p>
+                    {/* 52px gap */}
+                    <div style={{ height: "52px" }} />
 
-                  <Link
-                    href={linkUrl}
-                    className="inline-flex items-center text-[11px] font-medium uppercase tracking-[0.1em] text-white hover:opacity-80 transition-opacity"
-                    style={{ fontFamily: "'Inter Tight', sans-serif", borderBottom: "1px solid white", width: "fit-content", paddingBottom: "1px" }}
-                  >
-                    Read Article <span style={{ marginLeft: "6px" }}>↗</span>
-                  </Link>
+                    <Link
+                      href={linkUrl}
+                      className="inline-flex items-center hover:opacity-80 transition-opacity mt-auto"
+                      style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        fontSize: "12px",
+                        lineHeight: "110%",
+                        letterSpacing: "0%",
+                        color: "#ffffff",
+                        verticalAlign: "middle",
+                        textDecoration: "underline solid"
+                      }}
+                    >
+                      Read Article
+                    </Link>
+                  </div>
                 </div>
               )
             })}
