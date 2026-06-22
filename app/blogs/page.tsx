@@ -170,83 +170,88 @@ export default function Home() {
   return (
     <main
       className="relative bg-[#000000] text-white min-h-screen overflow-x-hidden selection:bg-[#004063] selection:text-white"
-      style={{
-        background: "radial-gradient(circle at 10% 10%, #001f37 0%, #000000 45%)"
-      }}
     >
-      {/* HEADER */}
-      <Header />
+      {/* Top wrapper with hero gradient background */}
+      <div 
+        className="w-full relative"
+        style={{
+          background: "linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)"
+        }}
+      >
+        {/* HEADER */}
+        <Header />
 
-      {/* spacer to prevent overlay under absolute header */}
-      <div className="h-[180px] lg:h-[220px]" />
+        {/* spacer to prevent overlay under absolute header */}
+        <div className="h-[180px] lg:h-[220px]" />
 
-      {/* ================= FEATURED HERO SECTION ================= */}
-      <section className={`${containerClass} mb-20 lg:mb-[120px]`}>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[40px] lg:gap-[80px] items-center">
-          {/* Left Side: Large Photo */}
-          <div className="lg:col-span-6 w-full relative aspect-[1.2] lg:aspect-[1.1] overflow-hidden">
-            <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
-              alt="From Kyoto to COP28 Featured Image"
-              fill
-              className="object-cover transition-transform duration-[800ms] hover:scale-103"
-              priority
-            />
+        {/* ================= FEATURED HERO SECTION ================= */}
+        <section className={`${containerClass} pb-20 lg:pb-[120px]`}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-[40px] lg:gap-[80px] items-center">
+            {/* Left Side: Large Photo */}
+            <div className="lg:col-span-6 w-full relative aspect-[1.2] lg:aspect-[1.1] overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
+                alt="From Kyoto to COP28 Featured Image"
+                fill
+                className="object-cover transition-transform duration-[800ms] hover:scale-103"
+                priority
+              />
+            </div>
+
+            {/* Right Side: Featured Info */}
+            <div className="lg:col-span-6 flex flex-col justify-center text-left">
+              <span
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 600,
+                  fontSize: "12px",
+                  lineHeight: "130%",
+                  color: "#ffffff66",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                  marginBottom: "16px"
+                }}
+              >
+                WAE LTD.
+              </span>
+
+              <h1
+                className="mb-6 font-normal"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontSize: "clamp(28px, 3.2vw, 40px)",
+                  lineHeight: "120%",
+                  letterSpacing: "-0.02em",
+                  color: "#ffffff"
+                }}
+              >
+                From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
+              </h1>
+
+              <p
+                className="mb-8"
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  lineHeight: "160%",
+                  color: "#ffffff80"
+                }}
+              >
+                In the quiet halls of Kyoto in 1997, something monumental began: a collective awakening of the world's conscience towards the mounting crisis of climate change. What followed was a turbulent yet determined journey, a series of historic global agreements that would shape the planet's climate policy for decades to come, culminating (for now) in COP28. This is not just a timeline - it's the story of how humanity has tried, failed, and continued to try again in its battle against a warming world.
+              </p>
+
+              <Link
+                href="/climate-change-&-water-v3"
+                className="inline-flex items-center text-[11px] font-medium uppercase tracking-[0.1em] text-white hover:opacity-80 transition-opacity"
+                style={{ fontFamily: "'Inter Tight', sans-serif", borderBottom: "1px solid white", width: "fit-content", paddingBottom: "2px" }}
+              >
+                Read More <span style={{ marginLeft: "6px" }}>↗</span>
+              </Link>
+            </div>
           </div>
-
-          {/* Right Side: Featured Info */}
-          <div className="lg:col-span-6 flex flex-col justify-center text-left">
-            <span
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 600,
-                fontSize: "12px",
-                lineHeight: "130%",
-                color: "#ffffff66",
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-                marginBottom: "16px"
-              }}
-            >
-              WAE LTD.
-            </span>
-
-            <h1
-              className="mb-6 font-normal"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "clamp(28px, 3.2vw, 40px)",
-                lineHeight: "120%",
-                letterSpacing: "-0.02em",
-                color: "#ffffff"
-              }}
-            >
-              From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
-            </h1>
-
-            <p
-              className="mb-8"
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontWeight: 400,
-                fontSize: "14px",
-                lineHeight: "160%",
-                color: "#ffffff80"
-              }}
-            >
-              In the quiet halls of Kyoto in 1997, something monumental began: a collective awakening of the world's conscience towards the mounting crisis of climate change. What followed was a turbulent yet determined journey, a series of historic global agreements that would shape the planet's climate policy for decades to come, culminating (for now) in COP28. This is not just a timeline - it's the story of how humanity has tried, failed, and continued to try again in its battle against a warming world.
-            </p>
-
-            <Link
-              href="/climate-change-&-water-v3"
-              className="inline-flex items-center text-[11px] font-medium uppercase tracking-[0.1em] text-white hover:opacity-80 transition-opacity"
-              style={{ fontFamily: "'Inter Tight', sans-serif", borderBottom: "1px solid white", width: "fit-content", paddingBottom: "2px" }}
-            >
-              Read More <span style={{ marginLeft: "6px" }}>↗</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* ================= CATEGORY FILTER TABS ROW ================= */}
       <section className="mb-[60px]">
