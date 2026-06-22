@@ -301,7 +301,7 @@ export default function Home() {
       </section>
 
       {/* ================= BLOG CARDS GRID SECTION ================= */}
-      <section className="mb-[140px] lg:mb-[180px]">
+      <section className="mb-[123px] lg:mb-[123px]">
         <div className={containerClass}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[4.166%] gap-y-[130px]">
             {getFilteredBlogs().map((post, index) => {
@@ -430,17 +430,22 @@ export default function Home() {
       </section>
 
       {/* ================= "OUR WRITERS" SECTION ================= */}
-      <section className="mb-[140px] lg:mb-[180px]">
+      <section className="mb-[149px] lg:mb-[149px]">
         <div className={containerClass}>
+          {/* Horizontal rule with solid color and 86px gap */}
+          <hr style={{ border: "none", borderTop: "1px solid #FFFFFF4D", marginBottom: "86px" }} />
+
           <h2
             className="text-left font-normal"
             style={{
               fontFamily: "'Inter Tight', sans-serif",
-              fontSize: "clamp(30px, 3.5vw, 40px)",
+              fontWeight: 500,
+              fontSize: "40px",
               lineHeight: "110%",
+              letterSpacing: "0%",
               color: "#ffffff",
-              marginBottom: "60px",
-              letterSpacing: "-0.01em"
+              verticalAlign: "middle",
+              marginBottom: "76.5px"
             }}
           >
             Our Writers
@@ -451,7 +456,15 @@ export default function Home() {
               <div key={idx} className="flex flex-col text-left h-full">
                 <Link
                   href={writer.link}
-                  className="block mb-6 relative w-[160px] h-[160px] rounded-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-[600ms]"
+                  className="block relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-[600ms] rounded-full"
+                  style={{
+                    width: "calc(222 / 1440 * 100vw)",
+                    height: "calc(224 / 1440 * 100vw)",
+                    maxWidth: "222px",
+                    maxHeight: "224px",
+                    minWidth: "150px",
+                    minHeight: "151px"
+                  }}
                 >
                   <Image
                     src={writer.image}
@@ -461,56 +474,81 @@ export default function Home() {
                   />
                 </Link>
 
+                {/* 38px gap */}
+                <div style={{ height: "38px" }} />
+
                 <Link href={writer.link}>
                   <h3
-                    className="hover:opacity-80 transition-opacity"
+                    className="hover:opacity-80 transition-opacity m-0"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
+                      fontWeight: 700,
                       fontSize: "18px",
-                      lineHeight: "120%",
+                      lineHeight: "140%",
+                      letterSpacing: "0%",
                       color: "#ffffff",
-                      marginBottom: "6px"
+                      verticalAlign: "middle",
+                      textTransform: "capitalize"
                     }}
                   >
                     {writer.name}
                   </h3>
                 </Link>
 
+                {/* 8px gap */}
+                <div style={{ height: "8px" }} />
+
                 <span
                   style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "11px",
-                    color: "#ffffff55",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.05em",
-                    marginBottom: "16px",
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "120%",
+                    letterSpacing: "0%",
+                    color: "#ffffff",
+                    verticalAlign: "middle",
                     display: "block"
                   }}
                 >
                   {writer.role}
                 </span>
 
+                {/* 16px gap */}
+                <div style={{ height: "16px" }} />
+
                 <p
-                  className="mb-6 flex-grow"
+                  className="m-0 flex-grow"
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
-                    fontSize: "13px",
-                    lineHeight: "150%",
-                    color: "#ffffff80"
+                    fontSize: "12px",
+                    lineHeight: "120%",
+                    letterSpacing: "0%",
+                    color: "#AEAEAE",
+                    verticalAlign: "middle"
                   }}
                 >
                   {writer.bio}
                 </p>
 
+                {/* 40px gap */}
+                <div style={{ height: "40px" }} />
+
                 <Link
                   href={writer.link}
-                  className="inline-flex items-center text-[11px] font-medium tracking-[0.1em] uppercase text-white hover:opacity-80 transition-opacity mt-auto"
-                  style={{ fontFamily: "'Inter Tight', sans-serif", borderBottom: "1px solid white", width: "fit-content", paddingBottom: "1px" }}
+                  className="inline-flex items-center hover:opacity-80 transition-opacity mt-auto"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "16px",
+                    lineHeight: "120%",
+                    letterSpacing: "0%",
+                    color: "#ffffff",
+                    verticalAlign: "middle"
+                  }}
                 >
-                  View Profile <span style={{ marginLeft: "6px" }}>↗</span>
+                  <span style={{ textDecoration: "underline solid #ffffff" }}>View Profile</span>
+                  <span style={{ marginLeft: "10px" }}>↗</span>
                 </Link>
               </div>
             ))}
