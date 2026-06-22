@@ -683,7 +683,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       },
       {
         "title": "Powerful led uv-c intank sterilization",
-        "description": "Seamlessly connects with carbonated beverage dispensers\nand coffee/tea vending machines for a versatile, all-in-one solution."
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
       },
       {
         "title": "Built to last",
@@ -691,7 +691,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       },
       {
         "title": "Effortless integration",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Seamlessly connects with carbonated beverage dispensers\nand coffee/tea vending machines for a versatile, all-in-one solution."
       },
       {
         "title": "Touch-free convenience",

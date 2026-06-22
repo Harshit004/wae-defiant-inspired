@@ -334,36 +334,39 @@ function ProductDescriptionPageContent() {
 
                         {/* Structured Features Listing */}
                         <div className="space-y-[1.5rem] mb-[2rem]">
-                            {currentProduct.featuresList.slice(0, 3).map((feat, fIdx) => (
-                                <div key={fIdx}>
-                                    <h3 
-                                        className="text-white mb-[0.5rem]" 
-                                        style={{ 
-                                            fontFamily: "'Inter Tight', sans-serif",
-                                            fontWeight: 400,
-                                            fontSize: "16px",
-                                            lineHeight: "normal",
-                                            letterSpacing: "0%",
-                                            verticalAlign: "middle"
-                                        }}
-                                    >
-                                        {feat.title}
-                                    </h3>
-                                    <p 
-                                        style={{ 
-                                            fontFamily: "'Manrope', sans-serif",
-                                            fontWeight: 400,
-                                            fontSize: "14px",
-                                            lineHeight: "normal",
-                                            letterSpacing: "0%",
-                                            verticalAlign: "middle",
-                                            color: "#FFFFFF80"
-                                        }}
-                                    >
-                                        {feat.description}
-                                    </p>
-                                </div>
-                            ))}
+                            {currentProduct.featuresList
+                                .filter(feat => feat.title.toLowerCase() !== "water options")
+                                .slice(0, 3)
+                                .map((feat, fIdx) => (
+                                    <div key={fIdx}>
+                                        <h3 
+                                            className="text-white mb-[0.5rem]" 
+                                            style={{ 
+                                                fontFamily: "'Inter Tight', sans-serif",
+                                                fontWeight: 400,
+                                                fontSize: "16px",
+                                                lineHeight: "normal",
+                                                letterSpacing: "0%",
+                                                verticalAlign: "middle"
+                                            }}
+                                        >
+                                            {feat.title}
+                                        </h3>
+                                        <p 
+                                            style={{ 
+                                                fontFamily: "'Manrope', sans-serif",
+                                                fontWeight: 400,
+                                                fontSize: "14px",
+                                                lineHeight: "normal",
+                                                letterSpacing: "0%",
+                                                verticalAlign: "middle",
+                                                color: "#FFFFFF80"
+                                            }}
+                                        >
+                                            {feat.description}
+                                        </p>
+                                    </div>
+                                ))}
                         </div>
 
                         {/* Temperature Icons Row */}
