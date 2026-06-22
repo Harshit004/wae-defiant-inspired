@@ -81,12 +81,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "var-series",
-        "name": "BLUWAE VAR Series",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public",
-        "category": "free-standing"
-      },
-      {
         "id": "enki",
         "name": "BLUWAE ENKI Series",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
@@ -145,6 +139,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ASSISTFLOW",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c729a1c1-b2a7-44fa-8f25-9b77e8bd0d00/public"
+      },
+      {
+        "id": "var-series",
+        "name": "VAR Series",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b2619dfc-30cf-4b2b-c95b-e3f4acbc8d00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public"
@@ -331,7 +331,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/66bec5ad-27db-4683-5feb-30cebbf47f00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b2619dfc-30cf-4b2b-c95b-e3f4acbc8d00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0b375ab3-4888-4377-a0e9-e16c5eb27d00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b359fae2-8c4b-475f-f63e-c60c1fee7e00/public"
     ],
@@ -377,6 +377,22 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
       "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
       "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "",
+    "heroTagline": "",
+    "heroSubtext": "",
+    "heroCtaText": "",
+    "heroCtaLink": "",
+    "showcaseCtaText": "",
+    "showcaseCtaLink": "",
+    "brochurePdf": "",
+    "datasheetPdf": "",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
     }
   },
   "enki": {
