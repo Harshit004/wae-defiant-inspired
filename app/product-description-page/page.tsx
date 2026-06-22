@@ -1171,7 +1171,7 @@ function ProductDescriptionPageContent() {
                                 </div>
 
                                 {/* Product title */}
-                                <div className="flex items-center justify-between text-white" style={{ marginBottom: "5px" }}>
+                                <div className="flex items-center justify-between text-white" style={{ marginBottom: "20px" }}>
                                     <span style={{
                                         fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 400,

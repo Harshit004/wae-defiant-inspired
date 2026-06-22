@@ -416,7 +416,6 @@ export default function Home() {
                         letterSpacing: "0%",
                         color: "#ffffff",
                         verticalAlign: "middle",
-                        textDecoration: "underline solid"
                       }}
                     >
                       Read Article
