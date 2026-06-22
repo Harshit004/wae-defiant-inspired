@@ -1178,9 +1178,7 @@ function ProductDescriptionPageContent() {
                                         fontSize: "18px",
                                         lineHeight: "105%",
                                         letterSpacing: "0%",
-                                        verticalAlign: "middle",
-                                        textTransform: "uppercase"
-                                    }}>{item.categoryName} {item.name}</span>
+                                    }}>{item.name}</span>
                                     <span className="text-[0.875rem] text-white/80 font-normal">&gt;</span>
                                 </div>
 
