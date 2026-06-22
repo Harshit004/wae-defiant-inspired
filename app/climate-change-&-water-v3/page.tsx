@@ -369,18 +369,16 @@ export default function Home() {
                 id="hero"
                 className="relative w-full overflow-hidden pt-0 md:mb-[140px]"
               >
-                {/* Desktop: Background video (full width, natural height) */}
+                {/* Hero image (full width, natural height) */}
                 <div className="w-full">
-                  <video
-                    src="/Kyoto-COP28_Global-Climate-Agreements.mp4"
-                    className="hidden md:block w-full h-auto z-0"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  >
-                    Your browser does not support the video tag.
-                  </video>
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public"
+                    alt="Climate Agreements Hero"
+                    width={1440}
+                    height={810}
+                    priority
+                    className="w-full h-auto z-0"
+                  />
                 </div>
               </section>
 
