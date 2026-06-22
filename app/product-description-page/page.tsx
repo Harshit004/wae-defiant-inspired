@@ -331,9 +331,8 @@ function ProductDescriptionPageContent() {
                         >
                             {currentProduct.name}
                         </h2>
-
                         {/* Structured Features Listing */}
-                        <div className="space-y-[1.5rem] mb-[2rem]">
+                        <div className="space-y-[1.5rem] mb-0">
                             {currentProduct.featuresList
                                 .filter(feat => feat.title.toLowerCase() !== "water options")
                                 .slice(0, 3)
@@ -370,7 +369,7 @@ function ProductDescriptionPageContent() {
                         </div>
 
                         {/* Temperature Icons Row */}
-                        <div className="flex gap-[2.5rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", marginTop: "43px", marginBottom: "61px" }}>
+                        <div className="flex gap-[2.5rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", marginTop: "42.5px", marginBottom: "60px" }}>
                             {showHot && (
                                 <div className="flex flex-col items-center gap-[0.5rem]">
                                     <div className="w-[1.5rem] h-[1.5rem]">
