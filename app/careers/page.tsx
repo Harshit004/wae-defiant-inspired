@@ -222,7 +222,7 @@ const Home: FC = () => {
   const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
-    { text: "Blog", href: "/blogs2" },
+    { text: "Blog", href: "/blogs" },
   ];
   // lineCount is calculated but not used - Still unused
   const lineCount = Math.min(productsItems.length, blueprintItems.length);

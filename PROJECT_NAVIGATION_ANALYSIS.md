@@ -79,7 +79,7 @@ The project contains **72 pages** (page.tsx files) organized in the `/app` direc
 50. `/sustainability-bfsi` - Sustainability BFSI
 51. `/sustainability-it` - Sustainability IT
 52. `/the-activist-co` - The Activist Co.
-53. `/blogs2` - Blog listing
+53. `/blogs` - Blog listing
 
 ### Blog Articles
 54. `/climate-change-&-water` - Climate Change & Water
@@ -138,7 +138,7 @@ The project has **TWO main navigation components**:
 |-----------|-------------|-------------|
 | Sustainability | `/sustainability` | Sustainability initiatives |
 | The Activist Co. | `/the-activist-co` | Activist company page |
-| Blog | `/blogs2` | Blog articles |
+| Blog | `/blogs` | Blog articles |
 
 #### Logo Link:
 | Element | Destination | Description |
@@ -162,7 +162,7 @@ The project has **TWO main navigation components**:
 |-----------|-------------|-------------|
 | Sustainability | `/sustainability` | Sustainability page |
 | The Activist Co. | `/the-activist-co` | Activist company page |
-| Blogs | `/blogs2` | Blog listing |
+| Blogs | `/blogs` | Blog listing |
 
 #### Footer Section - "POLICY":
 | Link Text | Destination | Description |
@@ -188,7 +188,7 @@ Displays all items from both "INSIDE WAE" and "ETCETERA" sections:
 - Reimagine Work → `/careers3`
 - Sustainability → `/sustainability`
 - The Activist Co. → `/the-activist-co`
-- Blog → `/blogs2`
+- Blog → `/blogs`
 
 #### Mobile Logo:
 | Element | Destination | Description |
@@ -215,7 +215,7 @@ Displays all items from both "INSIDE WAE" and "ETCETERA" sections:
 **ETCETERA Section:**
 4. **Sustainability** → `/sustainability`
 5. **The Activist Co.** → `/the-activist-co`
-6. **Blog** → `/blogs2`
+6. **Blog** → `/blogs`
 
 ### Footer Navigation - 9 Links
 **INSIDE WAE:**
@@ -226,7 +226,7 @@ Displays all items from both "INSIDE WAE" and "ETCETERA" sections:
 **ETCETERA:**
 4. **Sustainability** → `/sustainability`
 5. **The Activist Co.** → `/the-activist-co`
-6. **Blogs** → `/blogs2`
+6. **Blogs** → `/blogs`
 
 **POLICY:**
 7. **Terms of Use** → `/terms-of-use`
@@ -250,7 +250,7 @@ Displays all items from both "INSIDE WAE" and "ETCETERA" sections:
 8. `/careers3` - Reimagine Work / Careers
 9. `/sustainability` - Sustainability
 10. `/the-activist-co` - The Activist Co.
-11. `/blogs2` - Blog/Blogs
+11. `/blogs` - Blog/Blogs
 12. `/terms-of-use` - Terms of Use
 13. `/privacy-policy` - Privacy Policy
 14. `/data-privacy-policy` - Data Privacy Policy
@@ -271,7 +271,7 @@ Displays all items from both "INSIDE WAE" and "ETCETERA" sections:
 
 6. **Duplicate Links**: Some navigation items appear in multiple places:
    - `/inside-wae` appears in top nav, header dropdown, and footer
-   - `/careers3`, `/our-portfolio`, `/sustainability`, `/the-activist-co`, `/blogs2` appear in both header and footer
+   - `/careers3`, `/our-portfolio`, `/sustainability`, `/the-activist-co`, `/blogs` appear in both header and footer
 
 ---
 

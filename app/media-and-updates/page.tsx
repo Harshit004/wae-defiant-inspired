@@ -216,9 +216,9 @@ const Home: FC = () => {
 
   // ETCETERA section
   const blueprintItems = [
-    { text: "The Activist Co.", href: "the-activist-co" },
-    { text: "Resources", href: "/resource-listing" },
-    { text: "Blog", href: "/blogs2" },
+    { text: "Sustainability", href: "/sustainability" },
+    { text: "The Activist Co.", href: "/the-activist-co" },
+    { text: "Blog", href: "/blogs" },
   ];
   const lineCount = Math.min(productsItems.length, blueprintItems.length); // Declared but not used
 

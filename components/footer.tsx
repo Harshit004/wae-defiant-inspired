@@ -184,9 +184,9 @@ export default function Footer() {
 
                 {/* ETCETERA */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/the-activist-co" className="hover:opacity-80 transition-opacity">The Activist Co.</Link></li>
-                  <li><Link href="/resource-listing" className="hover:opacity-80 transition-opacity">Resources</Link></li>
-                  <li><Link href="/blogs2" className="hover:opacity-80 transition-opacity">Blog</Link></li>
+                  <li><Link href="/sustainability" className="hover:opacity-80 transition-opacity">Sustainability</Link></li>
+                  <li><Link href="/the-activist" className="hover:opacity-80 transition-opacity">The Activist</Link></li>
+                  <li><Link href="/blogs" className="hover:opacity-80 transition-opacity">Blogs</Link></li>
                 </ul>
 
                 {/* POLICY */}

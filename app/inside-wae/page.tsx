@@ -164,7 +164,7 @@ const Home: FC = () => {
   const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
-    { text: "Blog", href: "/blogs2" },
+    { text: "Blog", href: "/blogs" },
   ];
   const taglineLine1 = "To lead the way in sustainability";
   const taglineLine2 = "ahead of the rest";

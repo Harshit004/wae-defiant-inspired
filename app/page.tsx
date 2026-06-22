@@ -1,92 +1,161 @@
-"use client";
+"use client"
 
-import { FC, useEffect, useState, useRef } from "react";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useInView } from "react-intersection-observer"; // Still used for Hero InView
-import RelatedCard from "@/components/related-card"; // Assuming this component exists
-import Footer from "@/components/footer"; // Assuming this component exists
-import ContactSection from "@/components/contact-section";
-import Link from "next/link";
+import type { FC } from "react"
+import type React from "react"
+import { useEffect, useState, useRef } from "react"
+import Image from "next/image"
+import { motion, animate, useInView } from "framer-motion"
+import Footer from "@/components/footer"
+import Link from "next/link"
+import ConnectWithUs from "@/components/connect-with-us"
+import ContactSectionDark from "@/components/contact-section-dark"
 
-interface HoverButtonProps {
-  children: (hovered: boolean) => React.ReactNode;
-}
+// Shared container class for consistent margins and max-width
+const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
+
+/**
+ * Animated counter component
+ */
+const Counter: FC<{ value: number; suffix?: string; trigger?: boolean }> = ({ value, suffix = "", trigger = true }) => {
+  const [count, setCount] = useState(0);
+  const nodeRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    if (!trigger) return;
+
+    const node = nodeRef.current;
+    if (!node) return;
+
+    const controls = animate(0, value, {
+      duration: 2,
+      onUpdate(value) {
+        setCount(value);
+      },
+    });
+
+    return () => controls.stop();
+  }, [value, trigger]);
+
+  return (
+    <h3
+      ref={nodeRef}
+      style={{
+        fontFamily: "'Manrope', sans-serif",
+        fontWeight: 700,
+        fontSize: '40px',
+        lineHeight: '200%',
+        color: '#FFFFFF',
+        textTransform: 'uppercase'
+      }}
+    >
+      {count.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+      {suffix}
+    </h3>
+  );
+};
 
 /**
  * Reusable hover button component.
  */
-const HoverButton: FC<HoverButtonProps> = ({ children }) => {
+interface HoverButtonProps {
+  children: (hovered: boolean) => React.ReactNode;
+  href?: string;
+  theme?: "light" | "dark" | "transparent-white" | "transparent-white-black-hover";
+}
+
+const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) => {
   const [hovered, setHovered] = useState<boolean>(false);
 
-  return (
+  const buttonContent = (
     <button
       type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="w-fit px-4 py-3 transition-all duration-650 ease"
+      className="w-fit px-4 py-3"
       style={{
+        transition: 'background-color 0.65s ease, color 0.65s ease, border-color 0.65s ease',
         pointerEvents: "auto",
         display: "inline-flex",
         alignItems: "center",
         gap: "8px",
-        fontFamily: "'Inter Tight', sans-serif", // Note: Inline style for font
-        fontWeight: 500,
+        fontFamily: "'Inter Tight', sans-serif",
+        fontWeight: 500, // This fontWeight is for the button text itself (like "Know More")
         fontSize: "10px",
         lineHeight: "100%",
-        textTransform: "uppercase",
-        backgroundColor: hovered ? "#000" : "#f2f2f2",
-        border: "1px solid #000",
+        textTransform: "none",
+        backgroundColor:
+          theme === "transparent-white" ? (hovered ? "#fff" : "transparent") :
+            theme === "transparent-white-black-hover" ? (hovered ? "#fff" : "transparent") :
+              theme === "dark" ? "#000" : (hovered ? "#000" : "#fff"),
+        border:
+          theme === "transparent-white" || theme === "transparent-white-black-hover" ? "1px solid #fff" :
+            theme === "dark" ? "1px solid #fff" : "1px solid #000",
         cursor: "pointer",
-        color: hovered ? "#fff" : "#000",
+        color:
+          theme === "transparent-white" ? (hovered ? "#004063" : "#fff") :
+            theme === "transparent-white-black-hover" ? (hovered ? "#000" : "#fff") :
+              theme === "dark" ? "#fff" : (hovered ? "#fff" : "#000"),
       }}
+
     >
-      {children(hovered)}
+      {children(hovered)} {/* This is where the error happens if children is not a function */}
     </button>
   );
+
+  // Use a simple anchor tag if it's an internal page link, Link component for Next.js routes
+  return href ? (
+    href.startsWith('#') ? ( // Check if it's an anchor link
+      <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }}>{buttonContent}</a>
+    ) : ( // Assume it's a Next.js route link
+      <Link href={href} className="contents">{buttonContent}</Link>
+    )
+  ) : buttonContent;
 };
 
-const Home: FC = () => {
-  // State and refs
-  const [activeSection, setActiveSection] = useState<number>(0);
-  const [currentTime, setCurrentTime] = useState<string>(""); // State is declared but not used in the provided snippets
-  const [headerHeight, setHeaderHeight] = useState<number>(0);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const [heroRef, heroInView] = useInView({ threshold: 0.5 });
-  const [taglineVisible, setTaglineVisible] = useState<boolean>(true); // State is declared but not used for conditional rendering in provided snippets
-  const prevScrollY = useRef<number>(0); // Used for tagline visibility logic
-  const [headerHeroScale, setHeaderHeroScale] = useState<number>(1); // State is declared and updated, but not applied to an element's style/transform in provided snippets
-  const headerHeroRef = useRef<HTMLDivElement>(null); // Ref for the fixed header/hero container
 
-  // Ref for the Sustainability section wrapper for scroll animation - REMOVED as parallax is discarded
-  // const sustainabilityScrollRef = useRef<HTMLDivElement>(null);
+export default function Home() {
+  // State variables
+  const [activeSection, setActiveSection] = useState(0)
+  const [currentTime, setCurrentTime] = useState("")
+  const [headerHeight, setHeaderHeight] = useState(0)
+  const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
+  const headerRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const isInView = useInView(sectionRef, { once: true, amount: 0.5 })
 
+  // State for controlling tagline visibility on scroll
+  const [taglineVisible, setTaglineVisible] = useState(true)
+  const prevScrollY = useRef(0)
 
-  const sections = ["hero"]; // Extendable for additional sections - used only to set active section based on heroInView
+  // Variants for staggered animations using framer-motion (used only for tagline)
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+        ease: "easeInOut",
+      },
+    },
+  }
+  const childVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
+  }
 
-  const containerRef = useRef<HTMLDivElement>(null); // Ref is declared but not applied to an element
-
-  // --- ADDED: Explicitly scroll to top on mount ---
-  useEffect(() => {
-    requestAnimationFrame(() => {
-      window.scrollTo(0, 0);
-    });
-  }, []);
-  // --- END ADDED CODE ---
-
-
-  // Update tagline visibility on scroll (logic present, but taglineVisible state not used)
+  // Update tagline visibility based on scroll direction
+  // Note: This state is calculated but not applied in the current JSX
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setTaglineVisible(currentScrollY < prevScrollY.current);
-      prevScrollY.current = currentScrollY;
-    };
-    window.addEventListener("scroll", handleScroll);
+      const currentScrollY = window.scrollY
+      setTaglineVisible(currentScrollY < prevScrollY.current)
+      prevScrollY.current = currentScrollY
+    }
+    // Using passive: true for better scroll performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [])
 
-  // Update current time (India Time) every minute (logic present, but currentTime state not used)
+  // Update current time (India Time) every minute
   useEffect(() => {
     const updateIndiaTime = () => {
       const options: Intl.DateTimeFormatOptions = {
@@ -94,168 +163,83 @@ const Home: FC = () => {
         minute: "2-digit",
         hour12: false,
         timeZone: "Asia/Kolkata",
-      };
-      setCurrentTime(new Date().toLocaleTimeString("en-US", options));
-    };
+      }
+      setCurrentTime(new Date().toLocaleTimeString("en-US", options))
+    }
+    updateIndiaTime()
+    const interval = setInterval(updateIndiaTime, 60000)
+    return () => clearInterval(interval)
+  }, [])
 
-    updateIndiaTime();
-    const interval = setInterval(updateIndiaTime, 60000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Set active section when hero is in view (logic present, but activeSection state not used)
+  // Measure header height (Note: This height is calculated but not used in the current JSX)
   useEffect(() => {
-    if (heroInView) setActiveSection(0);
-  }, [heroInView]);
-
-  // Measure header height to offset hero section (logic present, headerHeight state used)
-  useEffect(() => {
-    if (headerRef.current) setHeaderHeight(headerRef.current.clientHeight);
-  }, [headerRef]);
-
-  // Scroll-driven header/hero scaling effect (logic present, headerHeroScale state updated, but state not applied)
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!headerHeroRef.current) return;
-      const scrollPosition = window.scrollY;
-      const viewportHeight = window.innerHeight;
-      const maxScroll = viewportHeight * 0.8;
-      const minScale = 0; // Scaling down to 0 might make it disappear abruptly
-
-      if (scrollPosition <= 100) {
-        setHeaderHeroScale(1);
-      } else if (scrollPosition >= maxScroll) {
-        setHeaderHeroScale(minScale);
-      } else {
-        const scrollRange = maxScroll - 100;
-        const scrollProgress = (scrollPosition - 100) / scrollRange;
-        setHeaderHeroScale(1 - scrollProgress);
+    const updateHeaderHeight = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.clientHeight);
       }
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Framer Motion scroll-driven animations (Keeping logo opacity as it seems unrelated to section snap)
-  const { scrollYProgress } = useScroll(); // Tracks scroll progress of the window by default
-  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]); // Logo opacity linked to scroll
-
-  // Scroll-linked animation for Sustainability section's y position - REMOVED as parallax is discarded
-  // const { scrollYProgress: sustainabilityScrollProgress } = useScroll({
-  //   target: sustainabilityScrollRef,
-  //   offset: ["start end", "end start"],
-  // });
-  // Map scroll progress (0 to 1) to a y translation - REMOVED as parallax is discarded
-  // const sustainabilityY = useTransform(
-  //   sustainabilityScrollProgress,
-  //   [0, 1],
-  //   [360, 0]
-  // );
+    updateHeaderHeight();
+    window.addEventListener("resize", updateHeaderHeight);
+    return () => window.removeEventListener("resize", updateHeaderHeight);
+  }, []); // Dependency array is empty, runs once on mount and cleanup
 
 
-  // --- POTENTIAL TROUBLESHOOTING AREA (Declared but not used/Incorrect Syntax) ---
-  // These useTransform calls have incorrect syntax and are not used in the provided code structure.
-  // They were potentially intended for scroll animations now replaced by scroll-snap.
-  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"]);
-  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1]);
-  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]);
-  const finalPurposeOpacity = useTransform(
-    [purposeOpacity, purposeVanish] as any,
-    ([pO, pV]: any) => pO * pV
-  );
+  // Tagline lines (split into words)
+  const taglineLine1 = "To lead the way in sustainability"
+  const taglineLine2 = "ahead of the rest."
+  const taglineWords1 = taglineLine1.split(" ")
+  const taglineWords2 = taglineLine2.split(" ")
 
-  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"]);
-  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
-  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0]);
-  const finalIndiaOpacity = useTransform(
-    [indiaOpacity, indiaVanish] as any,
-    ([iO, iV]: any) => iO * iV
-  );
-  // --- END POTENTIAL TROUBLESHOOTING AREA ---
-
-
-  // Menu items arrays - INSIDE WAE section
+  // Arrays for menu items with hrefs
   const productsItems = [
-    { text: "This Is Us", href: "/this-is-us" },
+    { text: "This is Us", href: "/this-is-us" },
     { text: "Our Portfolio", href: "/our-portfolio" },
     { text: "Reimagine Work", href: "/careers3" },
-  ];
-
-  // ETCETERA section
+  ]
   const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
-    { text: "The Activist Co.", href: "the-activist-co" },
-    { text: "Blog", href: "/blogs2" },
-  ];
-  const lineCount = Math.min(productsItems.length, blueprintItems.length); // Declared but not used
-
-  // Tagline words split for animation (logic present, but taglineWords1/2 not used for animation in provided code)
-  const taglineLine1 = "To lead the way in sustainability"; // Declared but not used
-  const taglineLine2 = "ahead of the rest"; // Declared but not used
-  const taglineWords1 = taglineLine1.split(" "); // Declared but not used
-  const taglineWords2 = taglineLine2.split(" "); // Declared but not used
-
-  // Framer Motion animation variants (declared but not applied in provided code)
-  const containerVariants = { // Declared but not used
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.05, ease: "easeInOut" },
-    },
-  };
-  const childVariants = { // Declared but not used
-    hidden: { opacity: 0, x: -10 },
-    visible: { opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1 } },
-  };
+    { text: "The Activist Co.", href: "/the-activist-co" },
+    { text: "Blog", href: "/blogs" },
+  ]
+  const lineCount = Math.min(productsItems.length, blueprintItems.length) // Note: lineCount is calculated but not used
 
   return (
     <main className="relative">
-      {/* HEADER AND HERO SECTION */}
-      {/* This div is fixed and covers the initial viewport height.
-          The scroll-driven container below is pushed down by 100vh using margin-top. */}
-      <div ref={headerHeroRef} className="w-full z-0"> {/* Changed from fixed to normal flow */}
-        <header ref={headerRef} className="w-full bg-white relative z-10 mb-0">
-          <div className="mx-auto w-full max-w-[1440px] px-[140px]">
+      {/* HEADER (Not Fixed in this version) */}
+      {/* The div with inline styles here seems unnecessary if not fixed */}
+      <div> {/* Consider removing this outer div or making it relative/static */}
+        <header ref={headerRef} className="w-full absolute top-0 left-0 z-50 pb-5 bg-transparent text-white"> {/* Apply containerClass inside header content div */}
+          <div className={containerClass}> {/* Use containerClass for consistent padding */}
             {/* Top Row: Navigation */}
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
-                fontFamily: "'Inter Tight', sans-serif", // Inline style
+                fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 500,
                 fontSize: "12px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}
             >
-              <div>
-                <Link href="/identity">IDENTITY</Link>
-              </div>
-              <div>
-                <Link href="/origin">ORIGIN</Link>
-              </div>
-              <div>
-                <Link href="/objective">OBJECTIVE</Link>
-              </div>
-              <div>
-                <Link href="/this-is-us">INSIDE WAE</Link>
-              </div>
-              <div>
-                <Link href="/etcetera">ETCETERA</Link>
-              </div>
+              <div>IDENTITY</div>
+              <div>ORIGIN</div>
+              <div style={{ position: "relative", left: "-20px" }}>OBJECTIVE</div>
+              <div>INSIDE WAE</div>
+              <div>ETCETERA</div>
             </div>
 
             {/* Divider */}
-            <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
+            <div className="w-full h-px bg-white mb-[10px]" />
 
-            {/* Bottom Row: Logo, Coordinates, Tagline, Menu Items */}
+            {/* Bottom Row: Logo, Tagline and Menu Items */}
             <div className="grid grid-cols-5 items-start">
               {/* Logo */}
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center w-[77px] h-[82px]">
                 <Link href="/">
                   <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
                     alt="WAE Logo"
-                    width={78}
+                    width={77}
                     height={82}
                   />
                 </Link>
@@ -265,11 +249,11 @@ const Home: FC = () => {
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif", // Inline style
+                  fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
                   fontSize: "11px",
                   lineHeight: "100%",
-                  color: "#00000066",
+                  color: "#ffffff",
                 }}
               >
                 20.5937° N
@@ -281,11 +265,13 @@ const Home: FC = () => {
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif", // Inline style
+                  fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,
                   fontSize: "11px",
                   lineHeight: "100%",
-                  color: "#00000066",
+                  color: "#ffffff",
+                  position: "relative",
+                  left: "-20px",
                 }}
               >
                 To lead the way in<br />sustainability ahead of the<br />rest
@@ -296,21 +282,21 @@ const Home: FC = () => {
                 {productsItems.map((item, i) => (
                   <div
                     key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                    className="pb-2 border-b border-white last:border-0"
                     style={{
-                      fontFamily: "'Inter Tight', sans-serif", // Inline style
+                      fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
                       fontSize: "11px",
                       lineHeight: "110%",
                     }}
                   >
-                    <Link href={item.href} className="contents"> {/* className="contents" might affect layout/hover */}
-                      <div className="c--anim-btn"> {/* Custom CSS class for hover animation */}
-                        <div className="text-container"> {/* Custom CSS class */}
-                          <span className="c-anim-btn">{item.text}</span> {/* Custom CSS class */}
+                    <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
                           <span className="block">{item.text}</span>
                         </div>
-                        <span className="menu-arrow"> {/* Custom CSS class for arrow animation */}
+                        <span className="menu-arrow">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="12"
@@ -335,21 +321,21 @@ const Home: FC = () => {
                 {blueprintItems.map((item, i) => (
                   <div
                     key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                    className="pb-2 border-b border-white last:border-0"
                     style={{
-                      fontFamily: "'Inter Tight', sans-serif", // Inline style
+                      fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
                       fontSize: "11px",
                       lineHeight: "110%",
                     }}
                   >
-                    <Link href={item.href} className="contents"> {/* className="contents" might affect layout/hover */}
-                      <div className="c--anim-btn"> {/* Custom CSS class for hover animation */}
-                        <div className="text-container"> {/* Custom CSS class */}
-                          <span className="c-anim-btn">{item.text}</span> {/* Custom CSS class */}
+                    <Link href={item.href} className="contents"> {/* Use 'contents' here as well */}
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
                           <span className="block">{item.text}</span>
                         </div>
-                        <span className="menu-arrow blueprint-arrow"> {/* Custom CSS class for arrow animation + rotation */}
+                        <span className="menu-arrow blueprint-arrow">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="12"
@@ -371,1544 +357,1312 @@ const Home: FC = () => {
             </div>
           </div>
         </header>
-
-        {/* HERO SECTION */}
-        {/* NOTE: If you want the Hero to be a scroll-snap point, add snap-center here as well */}
-        <section
-          id="hero"
-          ref={heroRef}
-          className="w-full flex items-center justify-center bg-white"
-          style={{ height: `calc(100vh - ${headerHeight}px)` }}
-        >
-          <div className="w-screen flex items-center justify-center">
-            <video
-              src="/new-banner-homepage-7.mp4"
-              autoPlay
-              muted
-              playsInline
-              className="w-fit h-fit object-cover rounded-none"
-            />
-          </div>
-
-        </section>
       </div>
 
-      {/* NORMAL SECTIONS AFTER HERO */}
+      {/* HERO SECTION */}
+      <section
+        id="hero"
+        //   ref={heroRef}
+        className="w-full h-screen relative flex items-center justify-center bg-black overflow-hidden"
+        style={{ height: "100vh" }}
+      >
+        {/* 1. Video (Bottommost) */}
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center z-0">
+          <video
+            src="/home2-hero.mp4"
+            autoPlay
+            muted
+            playsInline
+            loop
+            className="w-full h-full object-cover rounded-none"
+          />
+        </div>
+
+        {/* 2. Black Overlay (Above Video) */}
+        <div className="absolute inset-0 w-full h-full z-[1]">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08bdc7d2-46d9-4096-5660-2e4400b2fa00/public"
+            alt="Black Overlay"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* 3. Left Half Image Overlay (Above Black Overlay) */}
+        <div className="opacity-85 absolute top-0 left-0 w-1/2 h-full z-[2]">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a64aad7f-4108-491d-9bf8-d1266178ab00/public"
+            alt="Hero Overlay"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* 4. Hero Content Text (Topmost) */}
+        <div className="absolute top-0 left-0 w-full h-full z-[3] pointer-events-none">
+          <div className={`${containerClass} pointer-events-auto`}>
+            <div
+              style={{
+                marginTop: `${headerHeight + 105}px`,
+                width: "clamp(280px, 34.79vw, 600px)",
+                color: "#FFFFFF",
+                fontFamily: "'Inter Tight', sans-serif",
+              }}
+            >
+              <h1
+                style={{
+                  fontWeight: 500,
+                  fontSize: "clamp(36px, 5.9vw, 85px)",
+                  lineHeight: "105%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  margin: 0,
+                }}
+              >
+                We're here<br />to disrupt the<br />status quo!
+              </h1>
+              <div style={{ height: "clamp(12px, 1.5vw, 22px)" }} />
+              <p
+                style={{
+                  fontWeight: 400,
+                  fontSize: "clamp(14px, 1.67vw, 24px)",
+                  lineHeight: "115%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#AEAEAE",
+                  margin: 0,
+                }}
+              >
+                A good water company
+                <br />
+                from water intake to water reuse
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Brand, Purpose & People Section */}
-      <section className="h-screen flex items-center justify-center relative bg-[#F2F2F2]">
-        <motion.div className="w-full max-w-screen-xl mx-8 lg:mx-36">
-          <div className="flex flex-col lg:flex-row justify-between w-full gap-8">
+      <section className="relative bg-black text-white w-full">
+        <div className="w-full h-[576px]">
+          <div className="grid grid-cols-3 h-full border-b border-white">
             {/* Column 1: Brand */}
-            <div className="flex flex-col max-w-[22%]">
-              <h2
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontStyle: 'Medium',
-                  fontSize: '40px',
-                  lineHeight: '110%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle'
-                }}
-              >
-                Brand
-              </h2>
-              <div style={{ height: '32px' }} />
-              <h3
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 700,
-                  fontStyle: 'Bold',
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#00000099'
-                }}
-              >
-                Being Sustainable
-              </h3>
-              <div style={{ height: '12px' }} />
-              <p
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontStyle: 'Medium',
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#00000099'
-                }}
-              >
-                The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
-              </p>
-              <div style={{ height: '12px' }} />
-              <p
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontStyle: 'Medium',
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#00000099'
-                }}
-              >
-                WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
-              </p>
-              <div style={{ height: '20px' }} />
-              <Link href="/this-is-us" className="contents">
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
+            <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
+              <div className="flex flex-col w-full max-w-[320px]">
+                <h2
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '40px',
+                    lineHeight: '110%',
+                    letterSpacing: '0%',
+                  }}
+                >
+                  Brand
+                </h2>
+                <div style={{ height: '32px' }} />
+                <h3
+                  className="text-white group-hover:text-white"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                  }}
+                >
+                  Being Sustainable
+                </h3>
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
+                </p>
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
+                </p>
+                <div style={{ height: '32px' }} />
+                <Link href="/this-is-us" className="contents">
+                  <HoverButton theme="transparent-white">
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
-              </Link>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
+              </div>
             </div>
 
             {/* Column 2: Purpose */}
-            <div className="flex flex-col max-w-[21%]">
-              <h2
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontStyle: 'Medium',
-                  fontSize: '40px',
-                  lineHeight: '110%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle'
-                }}
-              >
-                Purpose
-              </h2>
-              <div style={{ height: '32px' }} />
-              <h3
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 700,
-                  fontStyle: 'Bold',
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#00000099'
-                }}
-              >
-                Our Green Is Blue
-              </h3>
-              <div style={{ height: '12px' }} />
-              <p
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontStyle: 'Medium',
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#00000099'
-                }}
-              >
-                It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
-              </p>
-              <div style={{ height: '12px' }} />
-              <p
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontStyle: 'Medium',
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#00000099'
-                }}
-              >
-                At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
-              </p>
-              <div style={{ height: '20px' }} />
-              <Link href="/sustainability" className="contents">
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
+            <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
+              <div className="flex flex-col w-full max-w-[320px]">
+                <h2
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '40px',
+                    lineHeight: '110%',
+                    letterSpacing: '0%',
+                  }}
+                >
+                  Purpose
+                </h2>
+                <div style={{ height: '32px' }} />
+                <h3
+                  className="text-white group-hover:text-white"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                  }}
+                >
+                  Our Green Is Blue
+                </h3>
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
+                </p>
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
+                </p>
+                <div style={{ height: '32px' }} />
+                <Link href="/sustainability" className="contents">
+                  <HoverButton theme="transparent-white">
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
                           <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
                             width={16}
                             height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                           />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
-              </Link>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
+              </div>
             </div>
 
             {/* Column 3: People */}
-            <div className="flex flex-col max-w-[20%]">
-              <h2
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontStyle: 'Medium',
-                  fontSize: '40px',
-                  lineHeight: '110%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle'
-                }}
-              >
-                People
-              </h2>
-              <div style={{ height: '32px' }} />
-              <h3
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 700,
-                  fontStyle: 'Bold',
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#00000099'
-                }}
-              >
-                People First
-              </h3>
-              <div style={{ height: '12px' }} />
-              <p
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontStyle: 'Medium',
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#00000099'
-                }}
-              >
-                People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
-              </p>
-              <div style={{ height: '12px' }} />
-              <p
-                style={{
-                  fontFamily: 'Inter Tight',
-                  fontWeight: 500,
-                  fontStyle: 'Medium',
-                  fontSize: '12px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#00000099'
-                }}
-              >
-                In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
-              </p>
-              <div style={{ height: '20px' }} />
-              <Link href="/careers3" className="contents">
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
-                            width={16}
-                            height={16}
-                          />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
-              </Link>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Products Section */}
-      {/* This section has a white background and higher z-index */}
-      {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
-      <div className="relative bg-white flex items-center justify-center py-[140px]" style={{ zIndex: 1200 }}>
-        {/* Uses a table for layout, with fixed sizes defined in custom CSS */}
-        <table className="product-grid"> {/* Custom CSS class */}
-          <tr>
-            <td colSpan={2} className="product-title whitespace-nowrap"> {/* Custom CSS class */}
-              Products
-            </td>
-            <td className="product-cell transition  cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-              <Link href="/product-category/drinking-water-stations" className="contents">
-                <div className="relative w-full h-full">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <p
-                      style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 700,
-                        fontStyle: 'Bold',
-                        fontSize: '14px',
-                        lineHeight: '100%',
-                        letterSpacing: '0px',
-                        textAlign: 'center',
-                        verticalAlign: 'middle',
-                        textTransform: 'uppercase',
-                        marginBottom: '8px'
-                      }}
-                    >
-                      BLUWAE
-                    </p>
-                    <span className="product-category">DRINKING WATER<br />STATIONS</span>
-                  </div>
-                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                      alt="Right arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
-              </Link>
-            </td>
-            <td className="product-cell"> {/* Custom CSS class */}
-              {/* Image wrapped in Link - not ideal, Link should wrap Image */}
-              <Image
-                // href="/products-solutions/drinking-water-stations" // href attribute is not valid on Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/27917d14-ea56-4a80-93b9-c66ba9642400/public"
-                alt="Drinking Water Station"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                width={232}
-                height={232}
-              />
-            </td>
-            <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
-          </tr>
-          <tr>
-            <td className="product-cell"> {/* Custom CSS class */}
-              {/* Image wrapped in Link - not ideal */}
-              <Image
-                // href="/products-solutions/drinking-water-faucets" // href attribute is not valid on Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/685750d6-ec8e-491b-a214-24f13cfcb600/public"
-                alt="Water Faucet"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                width={232}
-                height={232}
-              />
-            </td>
-            {/* DRINKING WATER FAUCETS with left and down arrows */}
-            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-              <Link href="/product-category/drinking-water-faucets" className="contents">
-                <div className="relative w-full h-full">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <p
-                      style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 700,
-                        fontStyle: 'Bold',
-                        fontSize: '14px',
-                        lineHeight: '100%',
-                        letterSpacing: '0px',
-                        textAlign: 'center',
-                        verticalAlign: 'middle',
-                        textTransform: 'uppercase',
-                        marginBottom: '8px'
-                      }}
-                    >
-                      WATERMATIC
-                    </p>
-                    <span className="product-category">DRINKING WATER<br />FAUCETS</span>
-                  </div>
-                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                      alt="Left arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1592737-4cb5-4079-b1ea-9073ebbc4500/public"
-                      alt="Down arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
-              </Link>
-            </td>
-            <td className="product-cell"> {/* Custom CSS class */}
-              {/* Image wrapped in Link - not ideal */}
-              <Image
-                // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b05d64d-0248-4aaf-b8c3-e8d7afccea00/public"
-                alt="Water Dispenser"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                width={232}
-                height={232}
-              />
-            </td>
-            {/* DRINKING WATER DISPENSERS with left and right arrows */}
-            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-              <Link href="/product-category/water-dispenser" className="contents">
-                <div className="relative w-full h-full">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <p
-                      style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 700,
-                        fontStyle: 'Bold',
-                        fontSize: '14px',
-                        lineHeight: '100%',
-                        letterSpacing: '0px',
-                        textAlign: 'center',
-                        verticalAlign: 'middle',
-                        textTransform: 'uppercase',
-                        marginBottom: '8px'
-                      }}
-                    >
-                      TRUBLU
-                    </p>
-                    <span className="product-category">DRINKING WATER<br />DISPENSERS</span>
-                  </div>
-                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                      alt="Left arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                      alt="Right arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
-              </Link>
-            </td>
-            <td className="product-cell"> {/* Custom CSS class */}
-              {/* Image wrapped in Link - not ideal */}
-              <Image
-                // href="/products-solutions/drinking-water-dispensers" // href attribute is not valid on Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c4a14e-2e09-4da6-c363-84bae0088400/public"
-                alt="Water Dispenser"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                width={232}
-                height={232}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
-            <td className="product-cell"> {/* Custom CSS class */}
-              {/* Image wrapped in Link - not ideal */}
-              <Image
-                // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf2a2e6e-9e0b-464a-c2ff-1a16cb1f9900/public"
-                alt="Water Cooler"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                width={232}
-                height={232}
-              />
-            </td>
-            {/* WATER COOLERS & FOUNTAINS with right and down arrows */}
-            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-              <Link href="/product-category/water-cooler" className="contents">
-                <div className="relative w-full h-full">
-                  {/* Centered Text */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <p
-                      style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 700,
-                        fontStyle: 'Bold',
-                        fontSize: '14px',
-                        lineHeight: '100%',
-                        letterSpacing: '0px',
-                        textAlign: 'center',
-                        verticalAlign: 'middle',
-                        textTransform: 'uppercase',
-                        marginBottom: '8px'
-                      }}
-                    >
-                      ZVR
-                    </p>
-                    <span className="product-category">WATER COOLERS &amp;<br />FOUNTAINS</span>
-                  </div>
-                  {/* Right Arrow flush at right */}
-                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                      alt="Right arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
-              </Link>
-            </td>
-            <td className="product-cell"> {/* Custom CSS class */}
-              {/* Image wrapped in Link - not ideal */}
-              <Image
-                // href="/products-solutions/water-coolers-fountains" // href attribute is not valid on Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d9688872-6e63-4d68-26e9-aec6cf1f3a00/public"
-                alt="Water Fountain"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                width={232}
-                height={232}
-              />
-            </td>
-            <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override */}
-          </tr>
-          <tr>
-            <td className="product-cell"> {/* Custom CSS class */}
-              {/* Image wrapped in Link - not ideal */}
-              <Image
-                // href="/products-solutions/public-utility-systems" // href attribute is not valid on Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/54ccac68-6261-4097-e41c-cfa35c992100/public"
-                alt="Public Utility"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                width={232}
-                height={232}
-              />
-            </td>
-            {/* PUBLIC UTILITY SYSTEMS with left arrow */}
-            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-              <Link href="/product-category/public-utility-systems" className="contents">
-                <div className="relative w-full h-full">
-                  {/* Centered Text */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <p
-                      style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 700,
-                        fontStyle: 'Bold',
-                        fontSize: '14px',
-                        lineHeight: '100%',
-                        letterSpacing: '0px',
-                        textAlign: 'center',
-                        verticalAlign: 'middle',
-                        textTransform: 'uppercase',
-                        marginBottom: '8px'
-                      }}
-                    >
-                      PUS
-                    </p>
-                    <span className="product-category">PUBLIC UTILITY<br />SYSTEMS</span>
-                  </div>
-                  {/* Left Arrow flush at left */}
-                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                      alt="Left arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
-              </Link>
-            </td>
-            <td className="product-cell"> {/* Custom CSS class */}
-              {/* Image wrapped in Link - not ideal */}
-              <Image
-                // href="/products-solutions/commercial-industrial-plants" // href attribute is not valid on Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
-                alt="Commercial Plant"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                width={232}
-                height={232}
-              />
-            </td>
-            {/* COMMERCIAL/INDUSTRIAL PLANTS with right arrow */}
-            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale */}
-              <Link href="/product-category/commercial-industrial-plants" className="contents">
-                <div className="relative w-full h-full">
-                  {/* Centered Text */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="product-category">COMMERCIAL/<br />INDUSTRIAL PLANTS</span>
-                  </div>
-                  {/* Right Arrow flushat right */}
-                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                      alt="Right arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
-              </Link>
-            </td>
-            <td className="product-cell"> {/* Custom CSS class */}
-              {/* Image wrapped in Link - not ideal */}
-              <Image
-                // href="/products-solutions/commercial-industrial-plants" // href attribute is not valid on Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a0490312-e31b-44b0-2272-8645b0d0ef00/public"
-                alt="Industrial Plant"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500" // Custom CSS class + Tailwind filters/transitions
-                width={232}
-                height={232}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td className="product-cell !bg-white"></td> {/* Custom CSS class + Tailwind override - Empty cell */}
-            <td className="product-cell"> {/* Custom CSS class - Image cell */}
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/05160299-d316-435c-db6f-5f2a55a55300/public"
-                alt="WAEAU"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
-                width={232}
-                height={232}
-              />
-            </td>
-            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class - Text cell */}
-              <div className="relative w-full h-full">
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <p
-                    style={{
-                      fontFamily: 'Inter Tight',
-                      fontWeight: 700,
-                      fontStyle: 'Bold',
-                      fontSize: '14px',
-                      lineHeight: '100%',
-                      letterSpacing: '0px',
-                      textAlign: 'center',
-                      verticalAlign: 'middle',
-                      textTransform: 'uppercase'
-                    }}
-                  >
-                    WAEAU
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: 'Inter Tight',
-                      fontWeight: 400,
-                      fontStyle: 'Regular',
-                      fontSize: '14px',
-                      lineHeight: '100%',
-                      letterSpacing: '0px',
-                      textAlign: 'center',
-                      verticalAlign: 'middle',
-                      textTransform: 'uppercase'
-                    }}
-                  >
-                    SMALL RO UNITS
-                  </p>
-                </div>
-                <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                    alt="Left arrow"
-                    width={24}
-                    height={24}
-                  />
-                </span>
-              </div>
-            </td>
-            <td className="product-cell"> {/* Custom CSS class - Image cell */}
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1de8f36-85d7-4958-a678-0702ece63a00/public"
-                alt="AUX"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
-                width={232}
-                height={232}
-              />
-            </td>
-            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale - Arrow and text cell */}
-              <Link href="/auxiliary-equipment" className="contents">
-                <div className="relative w-full h-full">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-center">
-                      <p
-                        style={{
-                          fontFamily: 'Inter Tight',
-                          fontWeight: 700,
-                          fontStyle: 'Bold',
-                          fontSize: '14px',
-                          lineHeight: '100%',
-                          letterSpacing: '0px',
-                          textAlign: 'center',
-                          verticalAlign: 'middle',
-                          textTransform: 'uppercase'
-                        }}
-                      >
-                        AUX
-                      </p>
-                      <p
-                        style={{
-                          fontFamily: 'Inter Tight',
-                          fontWeight: 400,
-                          fontStyle: 'Regular',
-                          fontSize: '14px',
-                          lineHeight: '100%',
-                          letterSpacing: '0px',
-                          textAlign: 'center',
-                          verticalAlign: 'middle',
-                          textTransform: 'uppercase'
-                        }}
-                      >
-                        AUXILIARY EQUIPMENT
-                      </p>
-                    </div>
-                  </div>
-                  {/* Left Arrow flush at left */}
-                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/907338d4-a5ff-4fdc-e4b3-c1b257b2d100/public"
-                      alt="Left arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
-              </Link>
-            </td>
-          </tr>
-          <tr>
-            <td className="product-cell transition cursor-pointer duration-500 hover:scale-110 relative z-10"> {/* Custom CSS class + Tailwind hover scale - Text cell with arrow */}
-              <Link href="/glass-bottling-plant" className="contents">
-                <div className="relative w-full h-full">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-center">
-                      <p
-                        style={{
-                          fontFamily: 'Inter Tight',
-                          fontWeight: 700,
-                          fontStyle: 'Bold',
-                          fontSize: '14px',
-                          lineHeight: '100%',
-                          letterSpacing: '0px',
-                          textAlign: 'center',
-                          verticalAlign: 'middle',
-                          textTransform: 'uppercase'
-                        }}
-                      >
-                        GBP
-                      </p>
-                      <p
-                        style={{
-                          fontFamily: 'Inter Tight',
-                          fontWeight: 400,
-                          fontStyle: 'Regular',
-                          fontSize: '14px',
-                          lineHeight: '100%',
-                          letterSpacing: '0px',
-                          textAlign: 'center',
-                          verticalAlign: 'middle',
-                          textTransform: 'uppercase'
-                        }}
-                      >
-                        GLASS BOTTLING PLANT
-                      </p>
-                    </div>
-                  </div>
-                  {/* Right Arrow flush at right */}
-                  <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                      alt="Right arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </span>
-                </div>
-              </Link>
-            </td>
-            <td colSpan={3} className="product-cell"> {/* Custom CSS class - Spanning image cell */}
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8f04688-16ef-4c40-6161-b9a532be5500/public"
-                alt="Glass Bottling Plant"
-                className="placeholder-img filter grayscale hover:grayscale-0 transition duration-500"
-                width={696}
-                height={232}
-              />
-            </td>
-          </tr>
-        </table>
-      </div>
-
-      {/* wrapping these in a div to get them to overlap the sticky logo */}
-      <div className="bg-[#f2f2f2]"
-        style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
-      >
-        {/* Make in INDIA Section */}
-        {/* Entrance animations removed for scroll-snap priority */}
-        {/* Changed to h-screen and centered content vertically, removed padding */}
-        <section className="flex items-center justify-center relative px-[9.72%] bg-[#F2F2F2] my-[100px] py-[100px]"> {/* Changed height, removed padding, changed flex alignment */}
-          <motion.div
-            // Removed initial and whileInView animation props
-            // initial={{ y: "100%", opacity: 0 }}
-            // whileInView={{ y: 0, opacity: 1 }}
-            // transition={{ duration: 0.8 }}
-            // viewport={{ once: true }}
-            className="w-full max-w-screen-xl" // Removed mb-20
-          >
-            <div className="flex flex-col lg:flex-row items-center justify-between h-[115px] gap-8">
-              {/* Column 1: Make in India Text */}
-              <div className="flex flex-col items-start max-w-[19.8%]">
+            <div className="flex flex-col h-full items-center justify-center px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
+              <div className="flex flex-col w-full max-w-[320px]">
                 <h2
                   style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontStyle: 'Medium',
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
                     fontSize: '40px',
                     lineHeight: '110%',
-                    letterSpacing: '0px',
-                    verticalAlign: 'middle'
+                    letterSpacing: '0%',
                   }}
-
                 >
-                  Make in India
+                  People
                 </h2>
-                <p
+                <div style={{ height: '32px' }} />
+                <h3
+                  className="text-white group-hover:text-white"
                   style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontStyle: 'Medium',
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
                     fontSize: '12px',
                     lineHeight: '100%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#00000099'
                   }}
-                  className="mt-[10px]"
                 >
-                  WAE captures the heart of Indian innovation by seamlessly blending the time-honoured ideals with the latest technology.
+                  People First
+                </h3>
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
                 </p>
-              </div>
-
-              {/* Column 2: Lion Image */}
-              <div className="relative flex items-center justify-center max-w-[20%]" style={{ zIndex: 1200 }}>
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b98b2fe-e201-4ef1-32c7-8040c82d2200/public"
-                  alt="Make In India"
-                  width={224}
-                  height={122}
-                  className="pb-[25px]"
-                />
-              </div>
-
-              {/* Column 3: Descriptive Text */}
-              <div className="flex flex-col gap-5 max-w-[22%]">
-                <p className="font-[Inter Tight] text-[12px] leading-[110%] text-black/70">
-                  To make in India is to make with purpose —
-                  crafted by hands that build with heart.
-                  It is where innovation meets integrity, and
-                  progress learns to walk softly on the earth.
-                  At WAE, every product born here carries the
-                  spirit of a nation that creates to conserve.
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
                 </p>
+                <div style={{ height: '32px' }} />
+                <Link href="/careers3" className="contents">
+                  <HoverButton theme="transparent-white">
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
-          </motion.div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        {/* Sustainability Section */}
-        <section className="flex items-center justify-center relative px-[9.72%] bg-white py-[100px]">
-          <motion.div
-            className="w-full max-w-screen-xl flex flex-col items-start justify-center relative"
+      {/* Our Products Section */}
+      <section
+        className="bg-black text-white border-b border-white"
+        style={{
+          paddingTop: '124px',
+          paddingBottom: '124px',
+          paddingLeft: '2.5vw',
+          paddingRight: '2.5vw'
+        }}
+      >
+        <div className="w-full">
+          <h2
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: '60px',
+              lineHeight: '105%',
+              letterSpacing: '0%',
+              color: '#FFFFFF',
+              marginLeft: '5vw',
+              maxWidth: '1300px'
+            }}
           >
-            <div className="mb-4">
-              <h2 style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 500,
-                fontStyle: 'Medium',
-                fontSize: '40px',
-                lineHeight: '110.00000000000001%',
-                letterSpacing: '0px',
-                verticalAlign: 'middle',
-              }}>
-                Sustainability
-              </h2>
-            </div>
-            {/* Text below section header */}
-            <p className="mb-16"
+            Every product is designed to replace plastic and reduce operational carbon footprint.
+          </h2>
+
+          <div style={{ height: '124px' }} />
+
+          <div className="flex justify-between items-start">
+            <h3
               style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontStyle: 'Regular',
-                fontSize: '14px',
-                lineHeight: '100%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 700,
+                fontSize: '24px',
+                lineHeight: '110%',
+                letterSpacing: '0px',
+                color: '#FFFFFF'
               }}
             >
-              It is a long established fact that a reader will be distracted by the readable content of a page when looking.
+              Our Products
+            </h3>
+            <p
+              className="leading-normal"
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: '16px',
+                letterSpacing: '0px',
+                color: '#FFFFFF',
+                maxWidth: '34.72vw',
+                textAlign: 'right'
+              }}
+            >
+              WAE's range of water systems is engineered for every environment - commercial, institutional, and industrial.
             </p>
-            {/* Metrics grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-              <div className="pt-8 pl-5 flex flex-col justify-between relative">
-                {/* Vertical line on the left */}
-                <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
-                <p
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                    letterSpacing: '0px',
-                    verticalAlign: 'middle',
-                    marginBottom: '55px'
-                  }}
-                >
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking.
-                </p>
-                <div>
-                  <div className="flex items-baseline gap-2">
-                    <span
-                      style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 500,
-                        fontStyle: 'Medium',
-                        fontSize: '48px',
-                        lineHeight: '100%',
-                        letterSpacing: '0px',
-                        verticalAlign: 'middle'
-                      }}
-                    >
-                      1,012,120.25
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 400,
-                        fontStyle: 'Regular',
-                        fontSize: '18px',
-                        lineHeight: '100%',
-                        letterSpacing: '0px',
-                        verticalAlign: 'middle'
-                      }}
-                    >
-                      Litres
-                    </span>
-                  </div>
-                </div>
-              </div>
+          </div>
 
-              <div className="pt-8 pl-5 flex flex-col justify-between relative">
-                {/* Vertical line on the left */}
-                <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
-                <p
-                  style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                    letterSpacing: '0px',
-                    verticalAlign: 'middle',
-                    marginBottom: '55px'
-                  }}
-                >
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking.
-                </p>
-                <div>
-                  <div className="flex items-baseline gap-2">
-                    <span
-                      style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 500,
-                        fontStyle: 'Medium',
-                        fontSize: '48px',
-                        lineHeight: '100%',
-                        letterSpacing: '0px',
-                        verticalAlign: 'middle'
-                      }}
-                    >
-                      12,185.43
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 400,
-                        fontStyle: 'Regular',
-                        fontSize: '18px',
-                        lineHeight: '100%',
-                        letterSpacing: '0px',
-                        verticalAlign: 'middle'
-                      }}
-                    >
-                      Gallon
-                    </span>
-                  </div>
-                </div>
-              </div>
+          <div style={{ height: '18px' }} />
 
-              <div className="pt-8 pl-5 flex flex-col justify-between relative">
-                {/* Vertical line on the left */}
-                <div className="absolute top-0 left-0 w-[2px] h-full bg-[#D9D9DC]"></div>
-                <p
+          <div className="grid grid-cols-4 w-full" style={{ height: '506px' }}>
+            {/* Aurela */}
+            <div className="relative group cursor-pointer h-full overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/317e8eb4-d823-462a-c1d3-54cd0664ea00/public"
+                alt="Aurela"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-0">
+                <div
+                  className="rounded-full border border-white flex items-center justify-center"
                   style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 400,
-                    fontStyle: 'Regular',
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                    letterSpacing: '0px',
-                    verticalAlign: 'middle',
-                    marginBottom: '55px'
+                    width: '150px',
+                    height: '150px',
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 600,
+                    fontSize: '18px',
+                    lineHeight: '110%',
+                    textTransform: 'uppercase',
+                    textAlign: 'center'
                   }}
                 >
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking.
-                </p>
-                <div>
-                  <div className="flex items-baseline gap-2">
-                    <span
-                      style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 500,
-                        fontStyle: 'Medium',
-                        fontSize: '48px',
-                        lineHeight: '100%',
-                        letterSpacing: '0px',
-                        verticalAlign: 'middle'
-                      }}
-                    >
-                      22,253.65
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: 'Inter Tight',
-                        fontWeight: 400,
-                        fontStyle: 'Regular',
-                        fontSize: '18px',
-                        lineHeight: '100%',
-                        letterSpacing: '0px',
-                        verticalAlign: 'middle'
-                      }}
-                    >
-                      Millions
-                    </span>
-                  </div>
+                  AURELA
                 </div>
               </div>
             </div>
-          </motion.div>
-        </section>
-      </div>
+
+            {/* Reva */}
+            <div className="relative group cursor-pointer h-full overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/62a8a1c0-fffe-44c2-5ae2-ed461e445600/public"
+                alt="Reva"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-0">
+                <div
+                  className="rounded-full border border-white flex items-center justify-center"
+                  style={{
+                    width: '150px',
+                    height: '150px',
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 600,
+                    fontSize: '18px',
+                    lineHeight: '110%',
+                    textTransform: 'uppercase',
+                    textAlign: 'center'
+                  }}
+                >
+                  REVA
+                </div>
+              </div>
+            </div>
+
+            {/* Venus */}
+            <div className="relative group cursor-pointer h-full overflow-hidden">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3ed4ddbf-f8ce-4cdb-f703-41fa25cbf400/public"
+                alt="Venus"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-0">
+                <div
+                  className="rounded-full border border-white flex items-center justify-center"
+                  style={{
+                    width: '150px',
+                    height: '150px',
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 600,
+                    fontSize: '18px',
+                    lineHeight: '110%',
+                    textTransform: 'uppercase',
+                    textAlign: 'center'
+                  }}
+                >
+                  VENUS
+                </div>
+              </div>
+            </div>
+
+            {/* View All */}
+            <Link href="/our-portfolio" className="bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]">
+              <div
+                className="rounded-full border border-white flex items-center justify-center"
+                style={{
+                  width: '150px',
+                  height: '150px',
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 600,
+                  fontSize: '18px',
+                  lineHeight: '110%',
+                  textTransform: 'uppercase',
+                  textAlign: 'center'
+                }}
+              >
+                VIEW ALL
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Carbon Neutral Section */}
+      <section
+        className="bg-black text-white border-b border-white"
+        style={{
+          paddingTop: '123px',
+          paddingBottom: '123px',
+          paddingLeft: '7.5vw',
+          paddingRight: '7.5vw'
+        }}
+      >
+        <div className="flex justify-between items-stretch w-full">
+
+          {/* Left Column */}
+          <div style={{ width: '44.93vw' }} className="flex flex-col">
+            <div>
+              <h2
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '40px',
+                  lineHeight: '110%',
+                  color: '#FFFFFF'
+                }}
+              >
+                Positive Hydration for a Net<br />Zero Future
+              </h2>
+              <div style={{ height: '32px' }} />
+              <p
+                className="leading-normal"
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 500,
+                  fontSize: '14px',
+                  color: '#AEAEAE'
+                }}
+              >
+                Carbon neutrality isn't an afterthought at WAE.<br />It is built into every stage.
+              </p>
+            </div>
+
+            {/* Image pinned to bottom */}
+            <div className="mt-auto pt-8">
+              <motion.div
+                initial={{ filter: 'grayscale(100%)' }}
+                whileHover={{ filter: 'grayscale(0%)' }}
+                transition={{ duration: 0.8 }}
+                className="w-full h-auto cursor-pointer"
+              >
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fd6e76cf-b35a-46af-de19-8caa2b168300/public"
+                  alt="Carbon Neutral Illustration"
+                  width={645}
+                  height={362}
+                  className="w-full h-auto object-cover"
+                />
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div style={{ width: '34.93vw' }}>
+
+            {/* 1. Carbon Neutrality by Design */}
+            <div className="flex flex-col">
+              <h4
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  color: '#FFFFFF'
+                }}
+              >
+                1. Carbon Neutrality by Design
+              </h4>
+              <div style={{ height: '12px' }} />
+              <p
+                className="leading-normal"
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  color: '#AEAEAE'
+                }}
+              >
+                WAE engineers carbon neutrality across stages. From ZED Gold manufacturing to optimised distribution and point-of-use purification. Each verifiable installation helps reduce Scope 3 emissions by eliminating packaged water.
+              </p>
+              <div style={{ height: '22px' }} />
+              <div className="w-full h-px bg-white" />
+            </div>
+
+            <div style={{ height: '48px' }} />
+
+            {/* 2. ESG Performance & Reporting */}
+            <div className="flex flex-col">
+              <h4
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  color: '#FFFFFF'
+                }}
+              >
+                2. ESG Performance & Reporting
+              </h4>
+              <div style={{ height: '12px' }} />
+              <p
+                className="leading-normal"
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  color: '#AEAEAE'
+                }}
+              >
+                WAE solutions deliver measurable outcomes across ESG. They reduce plastic and carbon, enable hydration, and meet GRIHA, CE, and IWQA standards. With 20,000+ installations, WAE gives sustainability teams reportable data.
+              </p>
+              <div style={{ height: '22px' }} />
+              <div className="w-full h-px bg-white" />
+            </div>
+
+            <div style={{ height: '48px' }} />
+
+            {/* 3. Water Stewardship */}
+            <div className="flex flex-col">
+              <h4
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  color: '#FFFFFF'
+                }}
+              >
+                3. Water Stewardship
+              </h4>
+              <div style={{ height: '12px' }} />
+              <p
+                className="leading-normal"
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  color: '#AEAEAE'
+                }}
+              >
+                WAE manages the full water lifecycle. From multi-stage RO purification to IoT-monitored point-of-use dispensing. Every installation enables traceability, accountability, zero waste, and water stewardship.
+              </p>
+              <div style={{ height: '22px' }} />
+              <div className="w-full h-px bg-white" />
+            </div>
+
+            <div style={{ height: '48px' }} />
+
+            {/* 4. Net Zero Alignment */}
+            <div className="flex flex-col">
+              <h4
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  color: '#FFFFFF'
+                }}
+              >
+                4. Net Zero Alignment
+              </h4>
+              <div style={{ height: '12px' }} />
+              <p
+                className="leading-normal"
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  color: '#AEAEAE'
+                }}
+              >
+                WAE eliminates the emission chain of single-use plastic water. From production and transport to refrigeration and disposal. Each active system removes an estimated 20,000–30,000 bottles per year. It supports verified Scope 3 reductions aligned with SBTi and net zero goals.
+              </p>
+              <div style={{ height: '22px' }} />
+              <div className="w-full h-px bg-white" />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Sustainability Impact Section */}
+      <section
+        ref={sectionRef}
+        className="relative text-white"
+        style={{
+          background: 'linear-gradient(146.59deg, #004063 4.52%, #000000 49.04%)',
+          paddingTop: '124px',
+          paddingBottom: '124px',
+          paddingLeft: '7.5vw',
+          paddingRight: '7.5vw',
+          overflow: 'hidden'
+        }}
+      >
+        {/* Background Image (Globe) */}
+        <div className="absolute top-0 right-0 h-full w-auto opacity-80 pointer-events-none select-none z-0">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4c85a864-1c67-40fb-c37a-dd689f3ed700/public"
+            alt="Impact Background"
+            width={1000}
+            height={1000}
+            className="h-full w-auto object-cover object-right"
+          />
+        </div>
+
+        <div className="relative z-10 flex flex-col justify-between h-full">
+          <div className="max-w-[600px]">
+            <p
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: '20px',
+                lineHeight: '110%',
+                color: '#FFFFFF'
+              }}
+            >
+              Real numbers. Real results.
+            </p>
+            <div style={{ height: '10px' }} />
+            <h2
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: '40px',
+                lineHeight: '110%',
+                color: '#FFFFFF'
+              }}
+            >
+              Our sustainability impact
+            </h2>
+            <div style={{ height: '32px' }} />
+            <p
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '100%',
+                color: '#AEAEAE',
+                maxWidth: '32.91vw'
+              }}
+            >
+              Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
+            </p>
+            <div style={{ height: '46px' }} />
+            <Link href="/sustainability" className="contents">
+              <HoverButton theme="transparent-white">
+                {(hovered) => (
+                  <>
+                    Know More
+                    <div className="relative inline-block w-4 h-4">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                        alt="icon default"
+                        width={16}
+                        height={16}
+                        className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                      />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hovered ? 1 : 0 }}
+                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                        className="absolute top-0 left-0"
+                      >
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                          alt="icon hover"
+                          width={16}
+                          height={16}
+                          className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                        />
+                      </motion.div>
+                    </div>
+                  </>
+                )}
+              </HoverButton>
+            </Link>
+          </div>
+
+          <div className="mt-[150px]">
+            <div className="grid grid-cols-2" style={{ maxWidth: '45.55vw', maxHeight: '267px' }}>
+              {/* Litres */}
+              <div className="border-r border-white/20 p-8 pl-0">
+                <Counter value={1012120.45} suffix="+" trigger={isInView} />
+                <p
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '18px',
+                    lineHeight: '100%',
+                    color: '#FFFFFF',
+                    // textTransform: 'uppercase'
+                  }}
+                >
+                  Litres
+                </p>
+              </div>
+
+              <div className="p-8">
+                {/* Empty space in grid? Screenshot shows 3 stats in a 2x2 grid structure but only 3 filled */}
+              </div>
+
+              {/* Gallon */}
+              <div className="border-r border-t border-white/20 p-8 pl-0">
+                <Counter value={12185.45} suffix="+" trigger={isInView} />
+                <p
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '18px',
+                    lineHeight: '100%',
+                    color: '#FFFFFF',
+                    // textTransform: 'uppercase'
+                  }}
+                >
+                  Gallon
+                </p>
+              </div>
+
+              {/* Millions */}
+              <div className="border-t border-white/20 p-8">
+                <Counter value={22253.65} suffix="+" trigger={isInView} />
+                <p
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '18px',
+                    lineHeight: '100%',
+                    color: '#FFFFFF',
+                    // textTransform: 'uppercase'
+                  }}
+                >
+                  Millions
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="w-full h-px bg-white" />
 
       {/* BLOGS SECTION */}
       <section
-        className="max-w-full px-[8.75rem] py-[120px] bg-[#F2F2F2]"
-        style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
+        className="bg-black text-white"
+        style={{
+          paddingTop: '123px',
+          paddingBottom: '123px',
+          paddingLeft: '7.5vw',
+          paddingRight: '7.5vw'
+        }}
       >
-        <h2 style={{
-          fontFamily: 'Inter Tight',
-          fontWeight: 500,
-          fontStyle: 'Medium',
-          fontSize: '40px',
-          lineHeight: '110.00000000000001%',
-          letterSpacing: '0px',
-          verticalAlign: 'middle',
-          marginBottom: '2.5rem'
-        }}>
-          Blogs
-        </h2>
-        <div className="grid grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <div className="relative overflow-hidden cursor-pointer">
-            <div className="relative w-[350px] h-[350px]">
-              {/* Base image - full opacity */}
-              <img
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
-                alt="From Kyoto to COP28"
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-                style={{ opacity: 1 }}
-              />
-              {/* Hover image - initially transparent */}
-              <img
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
-                alt="From Kyoto to COP28 Hover"
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
-                style={{ zIndex: 10 }}
-              />
-            </div>
-            <div className="mt-4">
-              <h3 className="text-lg line-height-[120%] font-medium mb-2" style={{ lineHeight: "120%" }}>From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future</h3>
-              <p className="text-sm text-gray-600 mb-[71px]">
-                In the quiet halls of Kyoto in 1997, something monumental began   a collective awakening of the world's conscience towards the mounting crisis of climate change.
+        <div className="w-full">
+          <div className="flex justify-between items-start w-full" style={{ paddingLeft: '32px', paddingRight: '48px' }}>
+            <div className="flex-1">
+              <h2 style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: '40px',
+                lineHeight: '110%',
+                color: '#FFFFFF',
+                marginBottom: '20px'
+              }}>
+                From our blog
+              </h2>
+              <p style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '140%',
+                color: '#AEAEAE',
+                maxWidth: '450px',
+                marginBottom: '60px'
+              }}>
+                WAE publishes perspectives on climate, water, and sustainability — because good water companies think beyond the tap.
               </p>
             </div>
-            <div className="flex justify-between">
-              <span className="text-[#808080]" style={{
-                fontFamily: 'Inter Tight',
-                fontWeight: 400,
-                fontStyle: 'Regular',
-                fontSize: '12px',
-                lineHeight: '110.00000000000001%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
-                textDecoration: 'underline',
-                textDecorationStyle: 'solid',
-                textUnderlineOffset: '2px',
-                textDecorationThickness: '0%',
-                textDecorationSkipInk: 'auto',
-                justifyContent: 'space-between'
-              }}>Read Article </span>
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                alt="Chevron Right"
-                width={16}
-                height={16}
-                style={{
-                  marginLeft: '5px',
-                  justifyContent: 'space-between'
-                }}
-              />
+            <div className="flex-shrink-0">
+              <HoverButton href="/blogs" theme="transparent-white-black-hover">
+                {(hovered) => (
+                  <>
+                    Know More
+                    <div className="relative inline-block w-4 h-4">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                        alt="icon default"
+                        width={16}
+                        height={16}
+                        className={hovered ? "brightness-0" : "brightness-0 invert"}
+                      />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hovered ? 1 : 0 }}
+                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                        className="absolute top-0 left-0"
+                      >
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                          alt="icon hover"
+                          width={16}
+                          height={16}
+                          className={hovered ? "brightness-0" : "brightness-0 invert"}
+                        />
+                      </motion.div>
+                    </div>
+                  </>
+                )}
+              </HoverButton>
             </div>
           </div>
 
-          {/* Card 2 */}
-          <div className="relative overflow-hidden cursor-pointer">
-            <div className="relative w-[350px] h-[350px]">
-              {/* Base image - full opacity */}
-              <img
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public"
-                alt="Climate Change in the Indian Subcontinent"
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-                style={{ opacity: 1 }}
-              />
-              {/* Hover image - initially transparent */}
-              <img
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public"
-                alt="Climate Change in the Indian Subcontinent Hover"
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
-                style={{ zIndex: 10 }}
-              />
+          <div className="grid grid-cols-3 gap-x-0">
+            {/* Card 1 */}
+            <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
+              <div className="relative w-full aspect-square overflow-hidden mb-6">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0d11c81d-cb15-4d1a-b552-895a9f264600/public"
+                  alt="From Kyoto to COP28"
+                  fill
+                  className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
+                />
+              </div>
+              <div style={{ minHeight: '80px', marginBottom: '16px' }}>
+                <h3 style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '18px',
+                  lineHeight: '120%',
+                  color: '#FFFFFF'
+                }}>
+                  From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
+                </h3>
+              </div>
+              <p style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: '12px',
+                lineHeight: '140%',
+                color: '#AEAEAE',
+                marginBottom: '32px'
+              }}>
+                In the quiet halls of Kyoto in 1997, something monumental began a collective awakening of the world's conscience towards the mounting crisis of climate change.
+              </p>
+              <div className="flex items-center gap-2">
+                <span style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '12px',
+                  color: '#FFFFFF',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '4px'
+                }}>Read Article</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
             </div>
-            <div className="mt-4">
-              <h3 className="text-lg font-medium line-height-[120%] mb-2" style={{ lineHeight: "120%" }}>Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective</h3>
-              <p className="text-sm text-gray-600 mb-[71px]">
+
+            {/* Card 2 */}
+            <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
+              <div className="relative w-full aspect-square overflow-hidden mb-6">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/50e6b6b0-4629-4ab6-0710-9ecc16700e00/public"
+                  alt="Climate Change in the Indian Subcontinent"
+                  fill
+                  className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
+                />
+              </div>
+              <div style={{ minHeight: '80px', marginBottom: '16px' }}>
+                <h3 style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '18px',
+                  lineHeight: '120%',
+                  color: '#FFFFFF'
+                }}>
+                  Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective
+                </h3>
+              </div>
+              <p style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: '12px',
+                lineHeight: '140%',
+                color: '#AEAEAE',
+                marginBottom: '32px'
+              }}>
                 The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
               </p>
+              <div className="flex items-center gap-2">
+                <span style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '12px',
+                  color: '#FFFFFF',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '4px'
+                }}>Read Article</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
             </div>
-            <div className="flex justify-between">
-              <span className="text-[#808080]" style={{
-                fontFamily: 'Inter Tight',
+
+            {/* Card 3 */}
+            <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
+              <div className="relative w-full aspect-square overflow-hidden mb-6">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/371f4ccb-4672-4c8e-2fba-a3a7ffe05900/public"
+                  alt="The Ozone Crisis"
+                  fill
+                  className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
+                />
+              </div>
+              <div style={{ minHeight: '80px', marginBottom: '16px' }}>
+                <h3 style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '18px',
+                  lineHeight: '120%',
+                  color: '#FFFFFF'
+                }}>
+                  The Ozone Crisis: A Success Story in Environmental Cooperation
+                </h3>
+              </div>
+              <p style={{
+                fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
-                fontStyle: 'Regular',
                 fontSize: '12px',
-                lineHeight: '110.00000000000001%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
-                textDecoration: 'underline',
-                textDecorationStyle: 'solid',
-                textUnderlineOffset: '2px',
-                textDecorationThickness: '0%',
-                textDecorationSkipInk: 'auto',
-                justifyContent: 'space-between'
-              }}>Read Article </span>
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                alt="Chevron Right"
-                width={16}
-                height={16}
-                style={{
-                  marginLeft: '5px',
-                  justifyContent: 'space-between'
-                }}
-              />
+                lineHeight: '140%',
+                color: '#AEAEAE',
+                marginBottom: '32px'
+              }}>
+                It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.
+              </p>
+              <div className="flex items-center gap-2">
+                <span style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '12px',
+                  color: '#FFFFFF',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '4px'
+                }}>Read Article</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MEDIA & UPDATES SECTION */}
+      <section
+        className="bg-black text-white"
+        style={{
+          paddingTop: '123px',
+          paddingBottom: '123px',
+          paddingLeft: '7.5vw',
+          paddingRight: '7.5vw',
+          borderTop: '1px solid rgba(255, 255, 255, 1)'
+        }}
+      >
+        <div className="w-full">
+          <div className="flex justify-between items-start w-full" style={{ paddingRight: '48px' }}>
+            <h2 style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: '40px',
+              lineHeight: '110%',
+              color: '#FFFFFF',
+              marginBottom: '80px',
+              maxWidth: '800px'
+            }}>
+              Stay informed with our latest media coverage and announcements
+            </h2>
+            <div className="flex-shrink-0">
+              <HoverButton href="/media-and-updates" theme="transparent-white-black-hover">
+                {(hovered) => (
+                  <>
+                    Know More
+                    <div className="relative inline-block w-4 h-4">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                        alt="icon default"
+                        width={16}
+                        height={16}
+                        className={hovered ? "brightness-0" : "brightness-0 invert"}
+                      />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hovered ? 1 : 0 }}
+                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                        className="absolute top-0 left-0"
+                      >
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                          alt="icon hover"
+                          width={16}
+                          height={16}
+                          className={hovered ? "brightness-0" : "brightness-0 invert"}
+                        />
+                      </motion.div>
+                    </div>
+                  </>
+                )}
+              </HoverButton>
             </div>
           </div>
 
-          {/* Card 3 */}
-          <div className="relative overflow-hidden cursor-pointer">
-            <div className="relative w-[350px] h-[350px]">
-              {/* Base image - full opacity */}
-              <img
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public"
-                alt="The Ozone Crisis"
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-                style={{ opacity: 1 }}
-              />
-              {/* Hover image - initially transparent */}
-              <img
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c3eb242-b13a-443c-da32-a78bce6e7a00/public"
-                alt="The Ozone Crisis Hover"
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 hover:opacity-100"
-                style={{ zIndex: 10 }}
-              />
-            </div>
-            <div className="mt-4">
-              <h3 className="text-lg font-medium line-height-[120%] mb-2" style={{ lineHeight: "120%" }}>The Ozone Crisis: A Success Story in Environmental Cooperation</h3>
-              <p className="text-sm text-gray-600 mb-[30px]">
-                It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth. This protective shield—the ozone layer—sits between 10 to 50 kilometres above the surface and has for millions of years absorbed nearly 97–99% of the Sun's harmful ultraviolet-B (UV-B) radiation.
+          <div className="grid grid-cols-12 gap-8">
+            {/* Main News Column */}
+            <div className="col-span-4 group cursor-pointer">
+              <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fac96cd3-ad63-42ff-23df-0d795cc52000/public"
+                  alt="How Industrial Equipment Is Being Designed to Deliver Measurable Carbon Reductions "
+                  fill
+                  className="object-cover grayscale group-hover:grayscale-0"
+                />
+              </div>
+              <h3 style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: '18px',
+                lineHeight: '100%',
+                color: '#FFFFFF',
+                marginBottom: '18px'
+              }}>
+                How Industrial Equipment Is Being Designed to Deliver Measurable Carbon Reductions
+              </h3>
+              <p style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '100%',
+                color: '#AEAEAE'
+              }}>
+                For over a century, industrial machinery has been engineered to convert energy into output which is faster, cheaper, and at scale. Carbon, if acknowledged at all, was incidental. That era has ended.
               </p>
             </div>
-            <div className="flex justify-between">
-              <span className="text-[#808080]" style={{
-                fontFamily: 'Inter Tight',
+
+            {/* Middle News Column */}
+            <div className="col-span-4 group cursor-pointer">
+              <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/31701d9e-a471-46ff-4bb7-dac1ec8aac00/public"
+                  alt="Manufacturing"
+                  fill
+                  className="object-cover grayscale group-hover:grayscale-0"
+                />
+              </div>
+              <h3 style={{
+                fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontStyle: 'Regular',
-                fontSize: '12px',
-                lineHeight: '110.00000000000001%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
-                textDecoration: 'underline',
-                textDecorationStyle: 'solid',
-                textUnderlineOffset: '2px',
-                textDecorationThickness: '0%',
-                textDecorationSkipInk: 'auto',
-                justifyContent: 'space-between'
-              }}>Read Article </span>
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/adce5fa8-f9f5-4cab-0656-920dda8ca800/public"
-                alt="Chevron Right"
-                width={16}
-                height={16}
-                style={{
-                  marginLeft: '5px',
-                  justifyContent: 'space-between'
-                }}
-              />
+                fontSize: '18px',
+                lineHeight: '100%',
+                color: '#FFFFFF',
+                marginBottom: '18px'
+              }}>
+                Safari India Exclusive: Binita Singh of WAE F&B on Redefining Sustainable Water Solutions in..
+              </h3>
+              <p style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '100%',
+                color: '#AEAEAE'
+              }}>
+                In an exclusive conversation with Priyal Dutta, Senior Correspondent, Safari India, Ms. Binita Singh, Head – Brand Advocacy at WAE F&B, shares her perspective on the evolving sustainability landscape in the...
+              </p>
+            </div>
+
+            {/* Sidebar News Column */}
+            <div className="col-span-4 flex flex-col justify-between">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="flex gap-6 items-start group cursor-pointer">
+                  <div className="relative w-[140px] aspect-[1.4/1] flex-shrink-0">
+                    <Image
+                      src={i === 2 ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public" : i === 1 ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"}
+                      alt="Small news item"
+                      fill
+                      className="object-cover grayscale group-hover:grayscale-0"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <h4 style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '16px',
+                      lineHeight: '120%',
+                      color: '#FFFFFF'
+                    }}>
+                      WAE shines with ZED Gold certification
+                    </h4>
+                    <p style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '12px',
+                      lineHeight: '140%',
+                      color: '#AEAEAE'
+                    }}>
+                      Lorem ipsum dolor sit amet,
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* NEWS & UPDATES SECTION */}
+      {/* CONTACT SECTION */}
       <section
-        className="max-w-full px-[8.75rem] py-[100px] bg-white"
-        style={{ position: "relative", zIndex: 1200, borderRadius: "0" }}
+        className="bg-black text-white"
+        style={{
+          paddingTop: '123px',
+          paddingBottom: '123px',
+          paddingLeft: '7.5vw',
+          paddingRight: '7.5vw',
+          borderTop: '1px solid rgba(255, 255, 255, 1)'
+        }}
       >
-        <h2 style={{
-          fontFamily: "Inter Tight",
-          fontWeight: 500,
-          fontStyle: "Medium",
-          fontSize: "40px",
-          lineHeight: "110.00000000000001%",
-          letterSpacing: "0px",
-          verticalAlign: "middle",
-          marginBottom: "40px",
-        }}>
-          Media & Updates
-        </h2>
-        <div className="flex" style={{ gap: "1.6%" }}>
-          {/* Left Column - 60.3% */}
-          <div style={{ width: "60.3%" }}>
-            <div className="space-y-6">
-              {/* News Item 1 */}
-              <div>
-                <img
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"
-                  alt="WAE ZED Gold Certification"
-                  className="w-full h-auto rounded-lg"
-                  style={{ marginBottom: "8px" }}
-                />
-                <h3
-                  style={{
-                    fontFamily: "Inter Tight",
-                    fontWeight: 400,
-                    fontStyle: "Regular",
-                    fontSize: "24px",
-                    lineHeight: "40px",
-                    letterSpacing: "0%",
-                    marginBottom: "0px"
-                  }}
-                >
-                  WAE shines with ZED Gold certification for sustainable excellence
-                </h3>
-                {/* <div 
-                    className="flex justify-between items-center"
-                    style={{
-                      fontFamily: "Inter Tight",
-                      fontWeight: 400,
-                      fontStyle: "Regular",
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                      letterSpacing: "-1.1%",
-                      color: "#808080"
-                    }}
-                  >
-                    <span>Staff Writer</span>
-                    <span>|</span>
-                    <span>Nov 04, 2025</span>
-                  </div> */}
-              </div>
-
-            </div>
-          </div>
-
-          {/* Right Column - 37.58% */}
-          <div style={{ width: "37.58%" }}>
-            <div className="space-y-8">
-              {/* Row 1 */}
-              <div>
-                <img
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/97d880ca-cfa0-4094-52b7-940402225a00/public"
-                  alt="Drinking Water Stations"
-                  className="w-full h-auto rounded-lg mb-1"
-                  style={{ marginBottom: "8px" }}
-                />
-                <h3
-                  style={{
-                    fontFamily: "Inter Tight",
-                    fontWeight: 400,
-                    fontStyle: "Regular",
-                    fontSize: "18px",
-                    lineHeight: "28px",
-                    letterSpacing: "0%",
-                    marginBottom: "8px"
-                  }}
-                >
-                  Drinking Water Stations Installed Across 28 Police...
-                </h3>
-                {/* <div 
-                    className="flex justify-between items-center"
-                    style={{
-                      fontFamily: "Inter Tight",
-                      fontWeight: 400,
-                      fontStyle: "Regular",
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                      letterSpacing: "-1.1%",
-                      color: "#808080"
-                    }}
-                  >
-                    <span>Hency Thacker</span>
-                    <span>|</span>
-                    <span>Oct 27, 2025</span>
-                  </div> */}
-              </div>
-
-              {/* Row 2 */}
-              <div>
-                <img
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public"
-                  alt="Sustainability in Hospitality"
-                  className="w-full h-auto rounded-lg"
-                  style={{ marginBottom: "8px" }}
-                />
-                <h3
-                  style={{
-                    fontFamily: "Inter Tight",
-                    fontWeight: 400,
-                    fontStyle: "Regular",
-                    fontSize: "18px",
-                    lineHeight: "28px",
-                    letterSpacing: "0%",
-                    marginBottom: "8px"
-                  }}
-                >
-                  Sustainability in India's hospitality industry
-                </h3>
-                {/* <div 
-                    className="flex justify-between items-center"
-                    style={{
-                      fontFamily: "Inter Tight",
-                      fontWeight: 400,
-                      fontStyle: "Regular",
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                      letterSpacing: "-1.1%",
-                      color: "#808080"
-                    }}
-                  >
-                    <span>ETHospitalityWorld</span>
-                    <span>|</span>
-                    <span>Dec 04, 2025</span>
-                  </div> */}
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <ContactSectionDark />
       </section>
+      <Footer />
 
-      {/* Contact Section */}
-      <div className="py-[100px] px-[9.72%]">
-        <ContactSection />
-      </div>
-
-      {/* FOOTER SECTION */}
-      {/* Footer likely appears at the very bottom */}
-      {/* NOTE: If you want this section to be a scroll-snap point, add snap-center here */}
-      {/* NOTE: Adjust padding/margins if this section's height + content interferes with snapping */}
-      <div style={{ position: "relative", zIndex: 1200 }}> {/* z-index to appear above the gray background */}
-        {/* Assuming Footer is a valid component */}
-        <Footer />
-      </div>
-
-      {/* INLINE STYLES */}
-      {/* Custom CSS for specific elements and animations */}
+      {/* INLINE CSS for hover and arrow animations */}
       <style jsx>{`
-        /* These classes were for a different scroll-snap setup and are likely not needed with global html/body snap */
-        /*
-        .container {
-          scroll-snap-type: y mandatory;
-          overflow-y: auto;
-          display: flex;
-          flex-direction: column;
-          height: 200vh;
+        /* Custom filter for #004063 blue color - global selector to bypass styled-jsx scoping on Image tag */
+        :global(.filter-wae-blue) {
+          filter: invert(16%) sepia(93%) saturate(1599%) hue-rotate(180deg) brightness(96%) contrast(105%) !important;
         }
 
-        .section {
-          scroll-snap-align: start;
-          width: 100%;
-          flex-shrink: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
-        */
+        /* Removed unused styles like product-grid, product-title, product-cell, placeholder-img */
 
-        /* Product Grid Table Styles */
-        .product-grid {
-          width: 1160px; /* Fixed width */
-          height: 928px; /* Fixed height */
-          border-collapse: collapse;
-        }
-
-         /* Solutions Grid Table Styles */
-        .solutions-grid {
-          width: 1160px; /* Fixed width */
-          height: 696px; /* Fixed height */
-          border-collapse: collapse;
-        }
-
-        .product-title {
-          font-family: "Inter Tight", sans-serif;
-          font-weight: 500;
-          font-size: 48px;
-          line-height: 110%;
-          letter-spacing: 0px;
-          vertical-align: middle;
-          text-align: center;
-          width: calc(232px * 2); /* Fixed width based on cell size */
-          height: 232px; /* Fixed height */
-          box-sizing: border-box;
-        }
-        .product-cell {
-          font-family: "Inter Tight", sans-serif;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 100%;
-          letter-spacing: 0px;
-          text-align: center;
-          vertical-align: middle;
-          text-transform: uppercase;
-          color: #1e1e1e;
-          background-color: #f2f2f2; /* Default background for most cells */
-          width: 232px; /* Fixed width */
-          height: 232px; /* Fixed height */
-          padding: 0px;
-          box-sizing: border-box;
-        }
-         /* Corrected invalid CSS */
-         .product-cell.bg-white-override { /* Added a class name */
-             background-color: #fff !important;
-         }
-         /* You would need to update the HTML like:
-            <td className="product-cell bg-white-override"></td>
-            instead of:
-            <td className="product-cell !bg-white"></td>
-         */
-
-
-        .placeholder-img {
-          object-fit: cover;
-          /* Potential issue: no explicit max-width/height, might overflow fixed cell */
-        }
-
-        /* Custom Button Hover Animation Styles */
         .c--anim-btn {
           display: flex;
           align-items: center;
           gap: 4px;
         }
         .text-container {
-          height: 12px; /* Fixed height */
-          overflow: hidden; /* Hides the second text span by default */
+          height: 12px;
+          overflow: hidden;
         }
         .c-anim-btn {
           display: block;
-          transition: margin-top 0.5s; /* Animates the text moving up */
+          margin-top: 0;
+          transition: margin-top 0.5s;
         }
         .c--anim-btn:hover .c-anim-btn {
-          margin-top: -12px; /* Moves the first text span up by its height */
+          margin-top: -12px;
         }
         .menu-arrow {
           display: inline-block;
-          opacity: 0; /* Hidden by default */
-          transform: translateX(-10px); /* Starts off-position */
-          transition: transform 0.5s ease, opacity 0.5s ease; /* Animates movement and fade */
+          opacity: 0;
+          transform: translateX(-10px);
+          transition: transform 0.5s ease, opacity 0.5s ease;
         }
         .c--anim-btn:hover .menu-arrow {
-          transform: translateX(0); /* Moves arrow into position */
-          opacity: 1; /* Fades arrow in */
+          transform: translateX(0);
+          opacity: 1;
         }
         .blueprint-arrow {
-          transform: rotate(-45deg) translateX(-10px); /* Additional rotation + initial position */
+          transform: rotate(-45deg) translateX(-10px);
         }
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
         }
       `}</style>
-    </main>
-  );
-};
 
-export default Home;
+      {/* Global Styles */}
+      {/* Note: If you re-introduce smooth scrolling, be mindful of conflicts with custom JS */}
+      <style jsx global>{`
+        html {
+          /* scroll-behavior: smooth; *//* Commented out as per previous discussion */
+        }
+         /* Ensure body doesn't have extra margins/padding */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+      `}</style>
+    </main>
+  )
+}

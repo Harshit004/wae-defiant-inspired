@@ -134,7 +134,7 @@ export default function Careers2() {
   const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
-    { text: "Blog", href: "/blogs2" },
+    { text: "Blog", href: "/blogs" },
   ];
 
   useEffect(() => {
