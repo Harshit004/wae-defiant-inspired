@@ -81,12 +81,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "enki",
-        "name": "BLUWAE ENKI Series",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
-        "category": "free-standing"
-      },
-      {
         "id": "pos",
         "name": "BLUWAE POS",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
@@ -143,6 +137,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
       {
         "id": "var-series",
         "name": "VAR Series",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b2619dfc-30cf-4b2b-c95b-e3f4acbc8d00/public"
+      },
+      {
+        "id": "enki",
+        "name": "ENKI",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b2619dfc-30cf-4b2b-c95b-e3f4acbc8d00/public"
       }
@@ -401,7 +401,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b2619dfc-30cf-4b2b-c95b-e3f4acbc8d00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1f9571c7-362c-4490-95d3-f9072bbe5500/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/db728b19-a0dd-45a4-812b-e7594a1b6900/public"
     ],
@@ -447,6 +447,22 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
       "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
       "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "",
+    "heroTagline": "",
+    "heroSubtext": "",
+    "heroCtaText": "",
+    "heroCtaLink": "",
+    "showcaseCtaText": "",
+    "showcaseCtaLink": "",
+    "brochurePdf": "",
+    "datasheetPdf": "",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
     }
   },
   "pos": {
