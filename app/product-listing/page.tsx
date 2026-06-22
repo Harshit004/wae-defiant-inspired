@@ -363,7 +363,6 @@ function ProductListingContent() {
                                         gridTemplateColumns: "repeat(4, 1fr)",
                                         gap: "1.67vw",
                                         rowGap: groupIndex === 0 ? "62px" : "65px",
-                                        alignItems: groupIndex === 0 ? "end" : undefined,
                                     }}>
                                         {group.map((product, index) => {
                                             const globalIndex = globalStart + index;
@@ -376,14 +375,17 @@ function ProductListingContent() {
                                                     style={{
                                                         gridColumn: isFeatured ? "span 2" : undefined,
                                                         gridRow: isFeatured ? "span 2" : undefined,
-                                                        display: "block"
+                                                        display: isFeatured ? "flex" : "block",
+                                                        flexDirection: isFeatured ? "column" : undefined,
+                                                        height: isFeatured ? "100%" : undefined,
                                                     }}
                                                 >
                                                     <div
                                                         className="relative overflow-hidden group"
                                                         style={{
                                                             width: "100%",
-                                                            aspectRatio: isFeatured ? "593 / 599" : "277 / 234",
+                                                            aspectRatio: isFeatured ? undefined : "277 / 234",
+                                                            flex: isFeatured ? 1 : undefined,
                                                             backgroundColor: "#1a1a1a",
                                                         }}
                                                     >
