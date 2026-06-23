@@ -18,8 +18,6 @@ export interface BlogPost {
   title: string;
   category: string;
   description: string;
-  imageSrc: string;
-  imageSrcHover: string;
   heroImage: string;
   writerId: string;
   readTime: string;
@@ -69,8 +67,6 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future",
     "category": "Climate Change & Water",
     "description": "In the quiet halls of Kyoto in 1997, something monumental began: a collective awakening of the world's conscience towards the mounting crisis of climate change.",
-    "imageSrc": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public",
-    "imageSrcHover": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
     "writerId": "aditi-sharma",
     "readTime": "2 min read",
@@ -196,8 +192,6 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "Industrial Revolution to the Carbon Age: How We Got There",
     "category": "Industry Impact and Solutions",
     "description": "The story begins in the smoky heart of 18th-century England...",
-    "imageSrc": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2bcd53b1-c103-4faf-bd00-29a04ff0ee00/public",
-    "imageSrcHover": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13245178-9299-4091-ebca-89c63b972600/public",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
     "writerId": "aditi-sharma",
     "readTime": "3 min read",
@@ -281,8 +275,6 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective",
     "category": "Climate Change & Water",
     "description": "The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.",
-    "imageSrc": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c1a66615-4c62-4975-d446-cffbf3c92300/public",
-    "imageSrcHover": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4addca72-6f79-4c23-9c24-c400cd9b6a00/public",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
     "writerId": "aditi-sharma",
     "readTime": "3 min read",
@@ -326,8 +318,6 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "The Ozone Crisis: A Success Story in Environmental Cooperation",
     "category": "Policy",
     "description": "It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.",
-    "imageSrc": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b5e02f3-da40-4cad-61e2-dd1eb34f8b00/public",
-    "imageSrcHover": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0c3eb242-b13a-443c-da32-a78bce6e7a00/public",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
     "writerId": "aditi-sharma",
     "readTime": "2 min read",
@@ -363,8 +353,6 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "The Great Water Trade: How the Plastic Bottle Industry Exploits India's Groundwater",
     "category": "Water conservation",
     "description": "India's hydrological landscape has always been shaped by the monsoon...",
-    "imageSrc": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7e883368-e898-4dc0-31b8-301fbbcaaf00/public",
-    "imageSrcHover": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9abaeabf-b8e5-4fc0-b8f8-46f5df2a4000/public",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
     "writerId": "rehnuma-ansari",
     "readTime": "4 min read",
@@ -400,8 +388,6 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "The North Star of Progress: A Historical Lens on Climate Change and India's Sustainable Future",
     "category": "Policy",
     "description": "In an era defined by climate volatility, rising inequalities, and fractured global priorities...",
-    "imageSrc": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e44c37c6-3be1-4f60-27bd-8cbfcb181200/public",
-    "imageSrcHover": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7b9cb7b8-1b96-42ca-b73b-4420a8b55800/public",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
     "writerId": "shambhavi",
     "readTime": "3 min read",
@@ -433,8 +419,6 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "The link between climate change and water scarcity",
     "category": "Water conservation",
     "description": "Exploring the fragile link between rising temperatures, shifts in weather patterns, and the direct impact on global freshwater resources.",
-    "imageSrc": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e08117e-8553-489e-9837-0a565ca57d00/public",
-    "imageSrcHover": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9415d6a5-d78b-40ea-805a-726ed7ad5300/public",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
     "writerId": "rehnuma-ansari",
     "readTime": "2 min read",
@@ -466,8 +450,6 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "Melting Glacier - Rising Risk: Climate change and fresh water supplies",
     "category": "Water conservation",
     "description": "How rapid glacial retreat in major mountain ranges is redefining fresh water security for millions of downstream communities.",
-    "imageSrc": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61141311-204f-4b43-a860-e47337e84b00/public",
-    "imageSrcHover": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/123e2424-f87e-44f6-c857-90f9e4553400/public",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
     "writerId": "rashi-tarika",
     "readTime": "3 min read",
@@ -499,8 +481,6 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "Shifting Monsoons: Transforming India's Climatic and Hydrological Systems",
     "category": "Climate Change & Water",
     "description": "For centuries, the monsoon has been more than just a season in India...",
-    "imageSrc": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1198ff4f-e6f9-4734-77c8-470433cff000/public",
-    "imageSrcHover": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b9de44cb-3d6b-407c-730a-a15c44bc4c00/public",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
     "writerId": "shambhavi",
     "readTime": "2 min read",
@@ -532,8 +512,6 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "Envisioning Sustainability: Why the SDGs Are the World's Shared Compass",
     "category": "Policy",
     "description": "In 2015, the United Nations adopted the 2030 Agenda for Sustainable Development...",
-    "imageSrc": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dd28574f-052d-4cb2-e8a5-3b15ec4d6300/public",
-    "imageSrcHover": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5dfb00d6-e403-4101-7e01-6fcdee1b5900/public",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
     "writerId": "shambhavi",
     "readTime": "3 min read",

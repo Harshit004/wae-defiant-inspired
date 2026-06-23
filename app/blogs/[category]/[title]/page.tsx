@@ -30,10 +30,19 @@ export default function DynamicBlogPost() {
         const writer = WRITERS[post.writerId]
         setWriterData(writer || null)
 
-        // Find up to 3 related posts (excluding the current one)
-        const related = Object.values(BLOGS)
-          .filter(b => b.id !== post.id && b.status === "Live")
-          .slice(0, 3)
+        // Find up to 3 related posts of the same category (excluding the current one)
+        const sameCategoryRelated = Object.values(BLOGS)
+          .filter(b => b.id !== post.id && b.category === post.category && b.status === "Live")
+        
+        let related = sameCategoryRelated.slice(0, 3)
+        
+        // If we don't have 3, fill with other categories
+        if (related.length < 3) {
+          const otherRelated = Object.values(BLOGS)
+            .filter(b => b.id !== post.id && b.category !== post.category && b.status === "Live")
+          related = [...related, ...otherRelated].slice(0, 3)
+        }
+
         setRelatedPosts(related)
       }
     }
@@ -461,7 +470,7 @@ export default function DynamicBlogPost() {
                       <div className="flex flex-col flex-grow text-left">
                         <Link href={linkUrl} className="block relative aspect-[364/270] w-full overflow-hidden">
                           <Image
-                            src={post.imageSrcHover}
+                            src={post.heroImage}
                             alt={post.title}
                             fill
                             className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"

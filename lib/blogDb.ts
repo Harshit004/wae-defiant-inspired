@@ -72,8 +72,6 @@ export interface BlogPost {
   title: string;
   category: string;
   description: string;
-  imageSrc: string;
-  imageSrcHover: string;
   heroImage: string;
   writerId: string;
   readTime: string;

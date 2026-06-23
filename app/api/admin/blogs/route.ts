@@ -18,11 +18,25 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { action, id, blogData } = body;
+    const { action, id, blogData, writerData } = body;
     const dbState = readBlogDB();
 
+    // Helper to update writer details if provided
+    const updateWriterState = () => {
+      if (writerData && writerData.id) {
+        dbState.writers[writerData.id] = {
+          id: writerData.id,
+          name: writerData.name || dbState.writers[writerData.id]?.name || '',
+          role: writerData.role || dbState.writers[writerData.id]?.role || '',
+          bio: writerData.bio || dbState.writers[writerData.id]?.bio || '',
+          image: writerData.image || dbState.writers[writerData.id]?.image || '',
+          link: writerData.link || dbState.writers[writerData.id]?.link || ''
+        };
+      }
+    };
+
     if (action === 'create') {
-      const { title, category, description, imageSrc, imageSrcHover, heroImage, writerId, readTime, status, contentColumns } = blogData;
+      const { title, category, description, heroImage, writerId, readTime, status, contentColumns } = blogData;
 
       const generatedId = title
         .toLowerCase()
@@ -42,8 +56,6 @@ export async function POST(request: Request) {
         title,
         category,
         description,
-        imageSrc: imageSrc || '',
-        imageSrcHover: imageSrcHover || '',
         heroImage: heroImage || '',
         writerId: writerId || 'aditi-sharma',
         readTime: readTime || '2 min read',
@@ -53,6 +65,7 @@ export async function POST(request: Request) {
       };
 
       dbState.blogs[generatedId] = newBlogPost;
+      updateWriterState();
       await writeBlogDB(dbState);
 
       return NextResponse.json({ success: true, blog: newBlogPost });
@@ -63,7 +76,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: false, message: 'Blog not found.' }, { status: 404 });
       }
 
-      const { title, category, description, imageSrc, imageSrcHover, heroImage, writerId, readTime, status, contentColumns } = blogData;
+      const { title, category, description, heroImage, writerId, readTime, status, contentColumns } = blogData;
       const existing = dbState.blogs[id];
 
       dbState.blogs[id] = {
@@ -71,8 +84,6 @@ export async function POST(request: Request) {
         title: title || existing.title,
         category: category || existing.category,
         description: description !== undefined ? description : existing.description,
-        imageSrc: imageSrc !== undefined ? imageSrc : existing.imageSrc,
-        imageSrcHover: imageSrcHover !== undefined ? imageSrcHover : existing.imageSrcHover,
         heroImage: heroImage !== undefined ? heroImage : existing.heroImage,
         writerId: writerId || existing.writerId,
         readTime: readTime || existing.readTime,
@@ -80,6 +91,7 @@ export async function POST(request: Request) {
         contentColumns: contentColumns || existing.contentColumns,
       };
 
+      updateWriterState();
       await writeBlogDB(dbState);
       return NextResponse.json({ success: true, blog: dbState.blogs[id] });
     }

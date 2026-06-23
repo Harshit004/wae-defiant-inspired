@@ -43,6 +43,7 @@ export default function BlogsPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState("all")
   const [selectedStatusFilter, setSelectedStatusFilter] = useState("all")
+  const [selectedWriterFilter, setSelectedWriterFilter] = useState("all")
 
   // Delete modal state
   const [deleteTarget, setDeleteTarget] = useState<BlogPost | null>(null)
@@ -117,7 +118,12 @@ export default function BlogsPage() {
       selectedStatusFilter === "all" ||
       b.status === selectedStatusFilter
 
-    return matchesSearch && matchesCategory && matchesStatus
+    // 4. Writer Filter
+    const matchesWriter =
+      selectedWriterFilter === "all" ||
+      b.writerId === selectedWriterFilter
+
+    return matchesSearch && matchesCategory && matchesStatus && matchesWriter
   })
 
   return (
@@ -168,6 +174,23 @@ export default function BlogsPage() {
               </select>
             </div>
 
+            {/* Writer Filter */}
+            <div className="flex items-center gap-2 bg-[#04111d] border border-white/5 px-3 py-2">
+              <select
+                value={selectedWriterFilter}
+                onChange={(e) => setSelectedWriterFilter(e.target.value)}
+                className="bg-transparent text-xs text-gray-300 outline-none cursor-pointer pr-4 animate-none"
+                style={{ fontFamily: "'Inter Tight', sans-serif" }}
+              >
+                <option value="all" className="bg-[#04111d] text-white">All Writers</option>
+                {writers.map((w) => (
+                  <option key={w.id} value={w.id} className="bg-[#04111d] text-white">
+                    {w.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             {/* Add Blog button */}
             <Link
               href="/admin/blogs/new"
@@ -211,9 +234,9 @@ export default function BlogsPage() {
                       <td className="py-5 px-6">
                         <div className="flex items-center gap-4">
                           <div className="relative w-16 h-12 bg-[#051424] border border-white/5 flex items-center justify-center overflow-hidden flex-shrink-0">
-                            {b.imageSrcHover ? (
+                            {b.heroImage ? (
                               <Image
-                                src={b.imageSrcHover}
+                                src={b.heroImage}
                                 alt={b.title}
                                 fill
                                 className="object-cover"

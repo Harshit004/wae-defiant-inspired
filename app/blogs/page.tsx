@@ -61,6 +61,10 @@ export default function Home() {
   const blogPosts = Object.values(BLOGS).filter(b => b.status === "Live")
   const writers = Object.values(WRITERS)
 
+  const featuredPost = blogPosts.find(b => b.id === "from-kyoto-to-cop28") || blogPosts[0]
+  const featuredCategorySlug = featuredPost?.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  const featuredLinkUrl = featuredPost ? `/blogs/${featuredCategorySlug}/${featuredPost.id}` : '#'
+
   const getFilteredBlogs = () => {
     if (selectedIndex === null) {
       return blogPosts
@@ -93,13 +97,15 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-[40px] lg:gap-[80px] items-stretch">
             {/* Left Side: Large Photo */}
             <div className="lg:col-span-6 w-full relative aspect-[1.1] overflow-hidden">
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
-                alt="From Kyoto to COP28 Featured Image"
-                fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-[800ms] hover:scale-103"
-                priority
-              />
+              {featuredPost && (
+                <Image
+                  src={featuredPost.heroImage}
+                  alt={featuredPost.title}
+                  fill
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-[800ms] hover:scale-103"
+                  priority
+                />
+              )}
             </div>
 
             {/* Right Side: Featured Info (Starts and ends on the same height as the image) */}
@@ -132,12 +138,12 @@ export default function Home() {
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
                     fontSize: "40px",
-                    lineHeight: "100%",
+                    lineHeight: "110%",
                     letterSpacing: "0%",
                     color: "#ffffff"
                   }}
                 >
-                  From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
+                  {featuredPost?.title}
                 </h1>
 
                 {/* 40px gap */}
@@ -150,19 +156,19 @@ export default function Home() {
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
                     fontSize: "14px",
-                    lineHeight: "100%",
+                    lineHeight: "1.5",
                     letterSpacing: "0%",
                     color: "#AEAEAE"
                   }}
                 >
-                  In the quiet halls of Kyoto in 1997, something monumental began &nbsp;&nbsp;a collective awakening of the world's conscience towards the mounting crisis of climate change. What followed was a turbulent yet determined journey, a series of historic global agreements that would shape the planet's climate policy for decades to come, culminating (for now) in COP28. This is not just a timeline&nbsp; &nbsp;it's the story of how humanity has tried, failed, and continued to try again in its battle against a warming world.
+                  {featuredPost?.description}
                 </p>
               </div>
 
               {/* Read More Link (at bottom) */}
               <div className="mt-8 lg:mt-0">
                 <Link
-                  href="/climate-change-&-water-v3"
+                  href={featuredLinkUrl}
                   className="inline-flex items-center hover:opacity-85 transition-opacity"
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -224,7 +230,7 @@ export default function Home() {
                   <div className="flex flex-col flex-grow text-left">
                     <Link href={linkUrl} className="block relative aspect-[364/270] w-full overflow-hidden">
                       <Image
-                        src={post.imageSrcHover}
+                        src={post.heroImage}
                         alt={post.title}
                         fill
                         className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"

@@ -31,12 +31,17 @@ export default function NewBlogPage() {
   const [title, setTitle] = useState("")
   const [category, setCategory] = useState("Climate Change & Water")
   const [description, setDescription] = useState("")
-  const [imageSrc, setImageSrc] = useState("")
-  const [imageSrcHover, setImageSrcHover] = useState("")
   const [heroImage, setHeroImage] = useState("")
-  const [writerId, setWriterId] = useState("aditi-sharma")
+  const [writerId, setWriterId] = useState("")
   const [readTime, setReadTime] = useState("2 min read")
   const [status, setStatus] = useState<"Live" | "Draft">("Live")
+
+  // Selected Writer Profile Editing Fields
+  const [writerName, setWriterName] = useState("")
+  const [writerRole, setWriterRole] = useState("")
+  const [writerBio, setWriterBio] = useState("")
+  const [writerImage, setWriterImage] = useState("")
+  const [writerLink, setWriterLink] = useState("")
 
   // Content Columns (3 Columns)
   const [col1, setCol1] = useState<ContentBlock[]>([])
@@ -63,6 +68,17 @@ export default function NewBlogPage() {
     }
     fetchWriters()
   }, [])
+
+  useEffect(() => {
+    const selectedWriter = writers.find(w => w.id === writerId);
+    if (selectedWriter) {
+      setWriterName(selectedWriter.name);
+      setWriterRole(selectedWriter.role);
+      setWriterBio(selectedWriter.bio);
+      setWriterImage(selectedWriter.image);
+      setWriterLink(selectedWriter.link);
+    }
+  }, [writerId, writers]);
 
   const handleFieldChange = (setter: any, value: any) => {
     setter(value)
@@ -170,13 +186,19 @@ export default function NewBlogPage() {
         title,
         category,
         description,
-        imageSrc,
-        imageSrcHover,
         heroImage,
         writerId,
         readTime,
         status,
         contentColumns: [cleanCol(col1), cleanCol(col2), cleanCol(col3)]
+      },
+      writerData: {
+        id: writerId,
+        name: writerName,
+        role: writerRole,
+        bio: writerBio,
+        image: writerImage,
+        link: writerLink
       }
     }
 
@@ -306,6 +328,56 @@ export default function NewBlogPage() {
                 )}
               </div>
 
+              {writerId && (
+                <div className="md:col-span-2 bg-[#051424]/40 border border-white/5 p-6 space-y-4">
+                  <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-2" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Writer Profile Details (Editable)
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[10px] font-semibold text-gray-400 mb-1 uppercase">Writer Name</label>
+                      <input
+                        type="text"
+                        required
+                        value={writerName}
+                        onChange={(e) => handleFieldChange(setWriterName, e.target.value)}
+                        className="w-full bg-[#030d17] border border-white/10 text-white px-3 py-2 text-xs outline-none focus:border-white/20 rounded-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-semibold text-gray-400 mb-1 uppercase">Role / Designation</label>
+                      <input
+                        type="text"
+                        required
+                        value={writerRole}
+                        onChange={(e) => handleFieldChange(setWriterRole, e.target.value)}
+                        className="w-full bg-[#030d17] border border-white/10 text-white px-3 py-2 text-xs outline-none focus:border-white/20 rounded-none"
+                      />
+                    </div>
+                    <div className="md:col-span-2">
+                      <label className="block text-[10px] font-semibold text-gray-400 mb-1 uppercase">Avatar Image URL</label>
+                      <input
+                        type="url"
+                        required
+                        value={writerImage}
+                        onChange={(e) => handleFieldChange(setWriterImage, e.target.value)}
+                        className="w-full bg-[#030d17] border border-white/10 text-white px-3 py-2 text-xs outline-none focus:border-white/20 rounded-none"
+                      />
+                    </div>
+                    <div className="md:col-span-2">
+                      <label className="block text-[10px] font-semibold text-gray-400 mb-1 uppercase">Bio / Description</label>
+                      <textarea
+                        rows={3}
+                        required
+                        value={writerBio}
+                        onChange={(e) => handleFieldChange(setWriterBio, e.target.value)}
+                        className="w-full bg-[#030d17] border border-white/10 text-white px-3 py-2 text-xs outline-none focus:border-white/20 rounded-none resize-y"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div>
                 <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Read Time *
@@ -344,39 +416,10 @@ export default function NewBlogPage() {
               2. Media Assets (Cloudflare CDN Links)
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="md:col-span-2">
                 <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Card Cover Image (Pre-hover / Grayscale Backup)
-                </label>
-                <input
-                  type="url"
-                  placeholder="https://imagedelivery.net/.../public"
-                  value={imageSrc}
-                  onChange={(e) => handleFieldChange(setImageSrc, e.target.value)}
-                  className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Card Hover Image (Color / Default) *
-                </label>
-                <input
-                  type="url"
-                  required
-                  placeholder="https://imagedelivery.net/.../public"
-                  value={imageSrcHover}
-                  onChange={(e) => handleFieldChange(setImageSrcHover, e.target.value)}
-                  className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Hero Top Banner Image *
+                  Hero Banner & Card Image *
                 </label>
                 <input
                   type="url"
