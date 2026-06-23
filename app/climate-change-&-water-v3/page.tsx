@@ -72,7 +72,7 @@ export default function Home() {
                 className="relative w-full overflow-hidden pt-0 md:mb-[140px]"
               >
                 {/* Hero image (full width, natural height) */}
-                <div className="w-full">
+                <div className="relative w-full">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public"
                     alt="Climate Agreements Hero"
@@ -81,17 +81,41 @@ export default function Home() {
                     priority
                     className="w-full h-auto z-0"
                   />
+                  {/* Top Gradient */}
+                  <div 
+                    className="absolute top-0 left-0 right-0 pointer-events-none z-10"
+                    style={{
+                      height: '430px',
+                      background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%)',
+                    }}
+                  />
+                  {/* Bottom Gradient */}
+                  <div 
+                    className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
+                    style={{
+                      height: '270px',
+                      background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%)',
+                    }}
+                  />
                 </div>
-              </section>      {/* Background Gradient Wrapper (875px height, screen width, transitions to solid black #0c0c0c) */}
-      <div style={{
-        background: 'linear-gradient(180deg, #00223d 0px, #0c0c0c 875px) no-repeat',
-        backgroundSize: '100% 875px',
-        backgroundColor: '#0c0c0c',
-        color: '#ffffff',
-        width: '100%'
-      }}>
+              </section>      {/* Background Gradient Wrapper (max 875px gradient height, screen width, transitions to solid black #0c0c0c) */}
+      <div 
+        className="relative w-full bg-[#0c0c0c]" 
+        style={{
+          color: '#ffffff',
+        }}
+      >
+        {/* Gradient background with max height of 875px */}
+        <div 
+          className="absolute top-0 left-0 right-0 pointer-events-none z-0"
+          style={{
+            height: '875px',
+            maxHeight: '875px',
+            background: 'linear-gradient(180deg, #00223d 0px, #0c0c0c 100%) no-repeat',
+          }}
+        />
         {/* Article Section */}
-        <section className="w-full mb-[140px] px-[9.72%] pt-[60px]">
+        <section className="relative z-10 w-full mb-[140px] px-[9.72%] pt-[60px]">
           <div className="mx-auto">
             {/* Category label above title */}
             <div className="text-[14px] font-normal mb-3 text-[#FFFFFFB3]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
@@ -235,10 +259,10 @@ export default function Home() {
         </section>
 
         {/* Divider above writer info */}
-        <div className="mx-[9.72%] h-px bg-white/10 mb-12" />
+        <div className="relative z-10 mx-[9.72%] h-px bg-white/10 mb-12" />
 
         {/* Writer Card Section */}
-        <section className="w-full mb-[140px] px-[9.72%]">
+        <section className="relative z-10 w-full mb-[140px] px-[9.72%]">
           <div className="mx-auto">
             <div className="flex flex-col md:flex-row items-center md:items-start md:gap-[60px]">
               {/* Left side - Circular Image */}
@@ -310,7 +334,7 @@ export default function Home() {
         </section>
 
         {/* Related Articles SECTION */}
-        <section className="w-full pb-[140px] px-[9.72%]">
+        <section className="relative z-10 w-full pb-[140px] px-[9.72%]">
           <div className="mx-auto">
             <h2 className="mb-12 text-white" style={{
               fontFamily: "'Inter Tight', sans-serif",
