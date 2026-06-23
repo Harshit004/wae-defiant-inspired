@@ -194,10 +194,10 @@ export default function Home() {
             {/* Left Side: Large Photo */}
             <div className="lg:col-span-6 w-full relative aspect-[1.1] overflow-hidden">
               <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/384e8a97-27a3-4c0f-f02e-348a8a0bfa00/public"
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bf4fc4f5-cfc3-4eb9-ac32-bac46f834a00/public"
                 alt="From Kyoto to COP28 Featured Image"
                 fill
-                className="object-cover transition-transform duration-[800ms] hover:scale-103"
+                className="object-cover grayscale hover:grayscale-0 transition-all duration-[800ms] hover:scale-103"
                 priority
               />
             </div>
@@ -336,32 +336,12 @@ export default function Home() {
                   {/* Card Content wrapper */}
                   <div className="flex flex-col flex-grow text-left">
                     <Link href={linkUrl} className="block relative aspect-[364/270] w-full overflow-hidden">
-                      {/* Primary Image */}
-                      <div
-                        className="absolute inset-0 transition-opacity duration-[800ms]"
-                        style={{ opacity: hoveredCard === index ? 0 : 1 }}
-                      >
-                        <Image
-                          src={post.imageSrc}
-                          alt={post.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      {/* Hover Image */}
-                      {post.imageSrcHover && (
-                        <div
-                          className="absolute inset-0 transition-opacity duration-[800ms]"
-                          style={{ opacity: hoveredCard === index ? 1 : 0 }}
-                        >
-                          <Image
-                            src={post.imageSrcHover}
-                            alt={`${post.title} hover`}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                      )}
+                      <Image
+                        src={post.imageSrcHover}
+                        alt={post.title}
+                        fill
+                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"
+                      />
                     </Link>
 
                     {/* 20px gap */}

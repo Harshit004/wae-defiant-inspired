@@ -456,7 +456,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-6 md:mt-0 flex items-end">
-                  <Link href="/aditi-sharma" className="inline-flex items-center text-white hover:text-blue-400 transition-colors" style={{
+                  <Link href="/aditi-sharma" className="inline-flex items-center text-white cursor-pointer" style={{
                     fontFamily: "var(--font-inter-tight), sans-serif",
                     fontWeight: 400,
                     fontSize: '18px',
@@ -518,32 +518,12 @@ export default function Home() {
                   {/* Card Content wrapper */}
                   <div className="flex flex-col flex-grow text-left">
                     <Link href={post.linkUrl} className="block relative aspect-[364/270] w-full overflow-hidden">
-                      {/* Primary Image */}
-                      <div
-                        className="absolute inset-0 transition-opacity duration-[800ms]"
-                        style={{ opacity: hoveredRelatedCard === index ? 0 : 1 }}
-                      >
-                        <Image
-                          src={post.imageSrc}
-                          alt={post.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      {/* Hover Image */}
-                      {post.imageSrcHover && (
-                        <div
-                          className="absolute inset-0 transition-opacity duration-[800ms]"
-                          style={{ opacity: hoveredRelatedCard === index ? 1 : 0 }}
-                        >
-                          <Image
-                            src={post.imageSrcHover}
-                            alt={`${post.title} hover`}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                      )}
+                      <Image
+                        src={post.imageSrcHover}
+                        alt={post.title}
+                        fill
+                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"
+                      />
                     </Link>
 
                     {/* 20px gap */}
