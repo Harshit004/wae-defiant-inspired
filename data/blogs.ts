@@ -155,7 +155,7 @@ export const BLOGS: Record<string, BlogPost> = {
           "text": "Scientific Backdrop & Climate Reality"
         },
         {
-          "type": "heading",
+          "type": "paragraph",
           "text": "Let's not forget the data:"
         },
         {
