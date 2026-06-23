@@ -1073,10 +1073,10 @@ export default function Home() {
           overflow: 'hidden'
         }}
       >
-        {/* Background Image (Globe) */}
+        {/* Background Image (Buildings) */}
         <div className="absolute top-0 right-0 h-full w-auto opacity-80 pointer-events-none select-none z-0">
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4c85a864-1c67-40fb-c37a-dd689f3ed700/public"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/084ce471-4fdc-42c1-261a-44e4abcc7a00/publichttps://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/084ce471-4fdc-42c1-261a-44e4abcc7a00/public"
             alt="Impact Background"
             width={1000}
             height={1000}
@@ -1159,7 +1159,7 @@ export default function Home() {
 
           <div className="mt-[150px]">
             <div className="grid grid-cols-2" style={{ maxWidth: '45.55vw', maxHeight: '267px' }}>
-              {/* Litres */}
+              {/* Tonnes CO₂ emissions saved */}
               <div className="border-r border-white/20 p-8 pl-0">
                 <Counter value={1012120.45} suffix="+" trigger={isInView} />
                 <p
@@ -1172,7 +1172,7 @@ export default function Home() {
                     // textTransform: 'uppercase'
                   }}
                 >
-                  Litres
+                  Tonnes CO₂ emissions saved
                 </p>
               </div>
 
@@ -1180,7 +1180,7 @@ export default function Home() {
                 {/* Empty space in grid? Screenshot shows 3 stats in a 2x2 grid structure but only 3 filled */}
               </div>
 
-              {/* Gallon */}
+              {/* Million gallons of water saved */}
               <div className="border-r border-t border-white/20 p-8 pl-0">
                 <Counter value={12185.45} suffix="+" trigger={isInView} />
                 <p
@@ -1193,11 +1193,11 @@ export default function Home() {
                     // textTransform: 'uppercase'
                   }}
                 >
-                  Gallon
+                  Million gallons of water saved
                 </p>
               </div>
 
-              {/* Millions */}
+              {/* Tonnes plastic removed */}
               <div className="border-t border-white/20 p-8">
                 <Counter value={22253.65} suffix="+" trigger={isInView} />
                 <p
@@ -1210,7 +1210,7 @@ export default function Home() {
                     // textTransform: 'uppercase'
                   }}
                 >
-                  Millions
+                  Tonnes plastic removed
                 </p>
               </div>
             </div>
