@@ -430,6 +430,18 @@ export default function NewBlogPage() {
                   className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
                   style={{ fontFamily: "'Manrope', sans-serif" }}
                 />
+                {heroImage && (
+                  <div className="mt-3 relative w-full max-w-[280px] aspect-[16/10] border border-white/10 overflow-hidden bg-[#030d17]">
+                    <img
+                      src={heroImage}
+                      alt="Hero Preview"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = 'none';
+                      }}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>

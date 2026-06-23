@@ -86,7 +86,7 @@ export default function DynamicBlogPost() {
     fontFamily: "var(--font-manrope), sans-serif",
     fontWeight: 400,
     fontSize: '14px',
-    lineHeight: '1.7',
+    lineHeight: '1.5',
     letterSpacing: '0%',
     color: '#AEAEAE',
   }
@@ -94,8 +94,8 @@ export default function DynamicBlogPost() {
   const headingStyle = {
     fontFamily: "var(--font-inter-tight), sans-serif",
     fontWeight: 400,
-    fontSize: '28px',
-    lineHeight: '110%',
+    fontSize: '18px',
+    lineHeight: '1.3',
     letterSpacing: '0%',
     color: '#fff',
   }
@@ -438,9 +438,9 @@ export default function DynamicBlogPost() {
               <h2
                 style={{
                   fontFamily: "var(--font-inter-tight), sans-serif",
-                  fontWeight: 500,
+                  fontWeight: 400,
                   fontSize: '40px',
-                  lineHeight: '110%',
+                  lineHeight: '110.00000000000001%',
                   letterSpacing: '0%',
                   verticalAlign: 'middle',
                   color: '#fff',
@@ -503,8 +503,8 @@ export default function DynamicBlogPost() {
                           style={{
                             fontFamily: "var(--font-manrope), sans-serif",
                             fontWeight: 400,
-                            fontSize: "12px",
-                            lineHeight: "120%",
+                            fontSize: "14px",
+                            lineHeight: "100%",
                             letterSpacing: "0%",
                             color: "#AEAEAE",
                             verticalAlign: "middle"
@@ -513,26 +513,23 @@ export default function DynamicBlogPost() {
                           {post.description}
                         </p>
 
-                        <div style={{ height: "20px" }} />
+                        <div style={{ height: "52px" }} />
 
-                        <div className="mt-auto">
-                          <Link
-                            href={linkUrl}
-                            className="inline-flex items-center hover:opacity-85 transition-opacity"
-                            style={{
-                              fontFamily: "var(--font-inter-tight), sans-serif",
-                              fontWeight: 500,
-                              fontSize: "12px",
-                              lineHeight: "130%",
-                              letterSpacing: "0%",
-                              color: "#ffffff",
-                              borderBottom: "1px solid #808080",
-                              paddingBottom: "4px"
-                            }}
-                          >
-                            Read More
-                          </Link>
-                        </div>
+                        <Link
+                          href={linkUrl}
+                          className="inline-flex items-center hover:opacity-80 transition-opacity mt-auto"
+                          style={{
+                            fontFamily: "var(--font-manrope), sans-serif",
+                            fontWeight: 400,
+                            fontSize: "12px",
+                            lineHeight: "110%",
+                            letterSpacing: "0%",
+                            color: "#ffffff",
+                            verticalAlign: "middle",
+                          }}
+                        >
+                          Read Article
+                        </Link>
                       </div>
                     </div>
                   )
