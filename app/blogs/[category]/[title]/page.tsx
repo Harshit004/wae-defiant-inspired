@@ -486,7 +486,7 @@ export default function DynamicBlogPost() {
                               fontFamily: "var(--font-inter-tight), sans-serif",
                               fontWeight: 400,
                               fontSize: "18px",
-                              lineHeight: "100%",
+                              lineHeight: "130%",
                               letterSpacing: "0%",
                               color: "#ffffff",
                               verticalAlign: "middle"

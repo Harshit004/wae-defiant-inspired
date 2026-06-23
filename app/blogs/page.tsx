@@ -247,7 +247,7 @@ export default function Home() {
                           fontFamily: "'Inter Tight', sans-serif",
                           fontWeight: 400,
                           fontSize: "18px",
-                          lineHeight: "100%",
+                          lineHeight: "130%",
                           letterSpacing: "0%",
                           color: "#ffffff",
                           verticalAlign: "middle"
@@ -266,7 +266,7 @@ export default function Home() {
                         fontFamily: "'Manrope', sans-serif",
                         fontWeight: 400,
                         fontSize: "14px",
-                        lineHeight: "100%",
+                        lineHeight: "1.5",
                         letterSpacing: "0%",
                         color: "#AEAEAE",
                         verticalAlign: "middle"
