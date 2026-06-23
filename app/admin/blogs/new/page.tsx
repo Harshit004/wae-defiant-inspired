@@ -363,6 +363,18 @@ export default function NewBlogPage() {
                         onChange={(e) => handleFieldChange(setWriterImage, e.target.value)}
                         className="w-full bg-[#030d17] border border-white/10 text-white px-3 py-2 text-xs outline-none focus:border-white/20 rounded-none"
                       />
+                      {writerImage && (
+                        <div className="mt-2 relative w-16 h-16 rounded-full border border-white/10 overflow-hidden bg-[#030d17]">
+                          <img
+                            src={writerImage}
+                            alt="Writer Preview"
+                            className="w-full h-full object-cover grayscale"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).style.display = 'none';
+                            }}
+                          />
+                        </div>
+                      )}
                     </div>
                     <div className="md:col-span-2">
                       <label className="block text-[10px] font-semibold text-gray-400 mb-1 uppercase">Bio / Description</label>
