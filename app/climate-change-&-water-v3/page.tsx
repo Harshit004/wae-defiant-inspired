@@ -52,12 +52,12 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
   );
 
   return href ? (
-      href.startsWith('#') ? (
-        <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }}>{buttonContent}</a>
-      ) : (
-        <Link href={href} className="contents">{buttonContent}</Link>
-      )
-    ) : buttonContent;
+    href.startsWith('#') ? (
+      <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }}>{buttonContent}</a>
+    ) : (
+      <Link href={href} className="contents">{buttonContent}</Link>
+    )
+  ) : buttonContent;
 };
 
 
@@ -123,46 +123,46 @@ export default function Home() {
       <Header />
 
       {/* Hero section */}
-              <section
-                id="hero"
-                className="relative w-full overflow-hidden pt-0 md:mb-[140px]"
-              >
-                {/* Hero image (full width, natural height) */}
-                <div className="relative w-full">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public"
-                    alt="Climate Agreements Hero"
-                    width={1440}
-                    height={810}
-                    priority
-                    className="w-full h-auto z-0"
-                  />
-                  {/* Top Gradient */}
-                  <div 
-                    className="absolute top-0 left-0 right-0 pointer-events-none z-10"
-                    style={{
-                      height: '430px',
-                      background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%)',
-                    }}
-                  />
-                  {/* Bottom Gradient */}
-                  <div 
-                    className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
-                    style={{
-                      height: '270px',
-                      background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%)',
-                    }}
-                  />
-                </div>
-              </section>      {/* Background Gradient Wrapper (max 875px gradient height, screen width, transitions to solid black #0c0c0c) */}
-      <div 
-        className="relative w-full bg-[#0c0c0c]" 
+      <section
+        id="hero"
+        className="relative w-full overflow-hidden pt-0"
+      >
+        {/* Hero image (full width, natural height) */}
+        <div className="relative w-full">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public"
+            alt="Climate Agreements Hero"
+            width={1440}
+            height={810}
+            priority
+            className="w-full h-auto z-0"
+          />
+          {/* Top Gradient */}
+          <div
+            className="absolute top-0 left-0 right-0 pointer-events-none z-10"
+            style={{
+              height: '430px',
+              background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%)',
+            }}
+          />
+          {/* Bottom Gradient */}
+          <div
+            className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
+            style={{
+              height: '270px',
+              background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%)',
+            }}
+          />
+        </div>
+      </section>      {/* Background Gradient Wrapper (max 875px gradient height, screen width, transitions to solid black #0c0c0c) */}
+      <div
+        className="relative w-full bg-[#0c0c0c]"
         style={{
           color: '#ffffff',
         }}
       >
         {/* Gradient background with max height of 875px */}
-        <div 
+        <div
           className="absolute top-0 left-0 right-0 pointer-events-none z-0"
           style={{
             height: '875px',
@@ -171,19 +171,19 @@ export default function Home() {
           }}
         />
         {/* Article Section */}
-        <section 
-          className="relative z-10 w-full" 
-          style={{ 
-            paddingTop: '6.319vw', 
-            paddingLeft: '7.5vw', 
-            paddingRight: '7.5vw', 
-            paddingBottom: '7.43vw' 
+        <section
+          className="relative z-10 w-full"
+          style={{
+            paddingTop: '6.319vw',
+            paddingLeft: '7.5vw',
+            paddingRight: '7.5vw',
+            paddingBottom: '7.43vw'
           }}
         >
           <div className="mx-auto">
             {/* Category label above title */}
-            <div 
-              style={{ 
+            <div
+              style={{
                 fontFamily: "var(--font-inter-tight), sans-serif",
                 fontWeight: 400,
                 fontSize: '14px',
@@ -198,8 +198,8 @@ export default function Home() {
             </div>
 
             {/* Title spanning full width */}
-            <h1 
-              style={{ 
+            <h1
+              style={{
                 fontFamily: "var(--font-inter-tight), sans-serif",
                 fontWeight: 400,
                 fontSize: '40px',
@@ -214,14 +214,14 @@ export default function Home() {
             </h1>
 
             {/* Author and Read Time Metadata Row */}
-            <div 
-              className="flex justify-between items-center text-white" 
-              style={{ 
+            <div
+              className="flex justify-between items-center text-white"
+              style={{
                 marginBottom: '38px',
               }}
             >
-              <Link 
-                href="/aditi-sharma" 
+              <Link
+                href="/aditi-sharma"
                 style={{
                   fontFamily: "var(--font-inter-tight), sans-serif",
                   fontWeight: 700,
@@ -236,9 +236,9 @@ export default function Home() {
               >
                 Aditi Sharma
               </Link>
-              
+
               <div className="flex items-center gap-[12px]">
-                <span 
+                <span
                   style={{
                     fontFamily: "var(--font-inter-tight), sans-serif",
                     fontWeight: 400,
@@ -251,21 +251,21 @@ export default function Home() {
                 >
                   2 min read
                 </span>
-                
-                <button 
+
+                <button
                   onClick={handleShare}
-                  aria-label="Share article" 
+                  aria-label="Share article"
                   className="hover:opacity-80 transition-opacity relative flex items-center"
                 >
-                  <Image 
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cefe6cc9-95e7-4e11-0008-900d4d407600/public" 
-                    alt="Share" 
-                    width={24} 
-                    height={24} 
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cefe6cc9-95e7-4e11-0008-900d4d407600/public"
+                    alt="Share"
+                    width={24}
+                    height={24}
                     className="w-6 h-6 object-contain"
                   />
                   {copied && (
-                    <span 
+                    <span
                       className="absolute bottom-full right-0 mb-2 px-2 py-1 text-[10px] bg-black/95 text-white rounded border border-white/20 whitespace-nowrap backdrop-blur-sm shadow-md"
                       style={{ fontFamily: "var(--font-inter-tight), sans-serif" }}
                     >
@@ -278,7 +278,7 @@ export default function Home() {
 
             {/* Horizontal rule with 1px solid #FFFFFF4D */}
             <div className="relative z-10 w-full" style={{ borderTop: '1px solid #FFFFFF4D' }} />
-            
+
             {/* Three column layout for content with 58px gap */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12" style={{ marginTop: '58px' }}>
               {/* First Column */}
@@ -286,23 +286,23 @@ export default function Home() {
                 <p style={{ ...paragraphStyle, marginTop: 0 }}>
                   In the quiet halls of Kyoto in 1997, something monumental began—a collective awakening of the world's conscience towards the mounting crisis of climate change. What followed was a turbulent yet determined journey, a series of historic global agreements that would shape the planet's climate policy for decades to come, culminating (for now) in COP28. This is not just a timeline—it's the story of how humanity has tried, failed, and continued to try again in its battle against a warming world.
                 </p>
-                
+
                 <h2 style={{ ...headingStyle, marginTop: '46px', marginBottom: '20px' }}>
                   The Dawn: Kyoto Protocol—the First Global Climate Commitment
                 </h2>
-                
+
                 <p style={{ ...paragraphStyle, marginTop: '20px' }}>
                   The Kyoto Protocol, adopted in December 1997 and entered into force in 2005, was the first legally binding climate treaty. It asked industrialized nations—primarily responsible for historical emissions—to reduce greenhouse gases by an average of 5% below 1990 levels between 2008 and 2012. It was revolutionary. It introduced market-based mechanisms like the Clean Development Mechanism (CDM) and carbon trading—trying to make sustainability economically viable.
                 </p>
-                
+
                 <p style={{ ...paragraphStyle, marginTop: '12px' }}>
                   But Kyoto had its flaws. While the U.S.—one of the largest emitters—never ratified it. And developing countries, including China and India, had no binding targets, sparking criticism and limiting its global effectiveness. Still, Kyoto was a vital first step. It created a legal architecture and introduced the concept of accountability in climate policy.
                 </p>
-                
+
                 <h2 style={{ ...headingStyle, marginTop: '46px', marginBottom: '20px' }}>
                   Transition & Tension: From Kyoto to Paris
                 </h2>
-                
+
                 <p style={{ ...paragraphStyle, marginTop: '20px' }}>
                   Post-Kyoto, the world grew more complex. Global emissions soared. China became the world's largest emitter. The global financial crisis diverted attention. Yet, scientific consensus deepened—IPCC reports warned of rising sea levels, glacial melt, extreme weather.
                 </p>
@@ -311,29 +311,29 @@ export default function Home() {
                   Copenhagen's COP15 in 2009 was a diplomatic heartbreak. Expectations were sky-high, but no binding treaty emerged. However, it sowed seeds for future frameworks, like voluntary commitments and climate finance.
                 </p>
               </div>
-              
+
               {/* Second Column */}
               <div>
                 <p style={{ ...paragraphStyle, marginTop: 0 }}>
                   Finally, in 2015, the Paris Agreement was born at COP21. Unlike Kyoto, it brought both developed and developing nations under a single framework, aiming to limit global warming to "well below 2°C"—ideally 1.5°C. The Paris Agreement wasn't legally binding in terms of emission targets, but it required countries to submit Nationally Determined Contributions (NDCs), which would be reviewed every five years for ambition and progress.
                 </p>
-                
+
                 <p style={{ ...paragraphStyle, marginTop: '12px' }}>
                   It was less about enforcement, more about transparency and global peer pressure.
                 </p>
-                
+
                 <h2 style={{ ...headingStyle, marginTop: '46px', marginBottom: '20px' }}>
                   The Present Storm: COP28 and the Crossroads of Climate Policy
                 </h2>
-                
+
                 <p style={{ ...paragraphStyle, marginTop: '20px' }}>
                   Enter COP28, held in Dubai, UAE in 2023—a moment heavy with contradictions and expectations. Hosted by an oil-producing nation, led by Sultan Al Jaber, the summit faced scepticism but turned heads with a historic milestone: the first ever mention of "transitioning away from fossil fuels" in an official agreement.
                 </p>
-                
+
                 <p style={{ ...paragraphStyle, marginTop: '12px' }}>
                   COP28 brought the first Global Stocktake—a comprehensive review of where the world stands since Paris. The results? Stark.
                 </p>
-                
+
                 <ul className="list-disc pl-5 mt-[20px]" style={{ ...paragraphStyle }}>
                   <li style={{ marginBottom: '8px' }}>The world is not on track to meet 1.5°C.</li>
                   <li style={{ marginBottom: '8px' }}>Emissions must peak before 2025 and fall by 43% by 2030 to stay on course.</li>
@@ -343,24 +343,24 @@ export default function Home() {
                 <p style={{ ...headingStyle, fontWeight: 700, marginTop: '20px', marginBottom: '12px' }}>
                   Key agreements included:
                 </p>
-                
+
                 <ul className="list-disc pl-5 mt-[12px]" style={{ ...paragraphStyle }}>
                   <li style={{ marginBottom: '8px' }}>A Loss and Damage Fund finally operationalized, with pledges of over $700 million to support vulnerable countries.</li>
                   <li style={{ marginBottom: '8px' }}>A push for tripling renewable energy capacity by 2030.</li>
                   <li style={{ marginBottom: '0px' }}>Recognition of the need to phase out unabated fossil fuels although language remained ambiguous under pressure from oil-rich nations.</li>
                 </ul>
               </div>
-              
+
               {/* Third Column */}
               <div>
                 <h2 style={{ ...headingStyle, marginTop: 0, marginBottom: '20px' }}>
                   Scientific Backdrop & Climate Reality
                 </h2>
-                
+
                 <p style={{ ...headingStyle, fontWeight: 700, marginTop: '20px', marginBottom: '12px' }}>
                   Let's not forget the data:
                 </p>
-                
+
                 <ul className="list-disc pl-5 mt-[12px]" style={{ ...paragraphStyle }}>
                   <li style={{ marginBottom: '8px' }}>The planet has already warmed by about 1.1°C since pre-industrial times.</li>
                   <li style={{ marginBottom: '8px' }}>The 2020s are set to be the hottest decade on record, with 2023 likely becoming the hottest year.</li>
@@ -410,7 +410,7 @@ export default function Home() {
                   className="rounded-full object-cover grayscale w-[242px] h-[244px]"
                 />
               </div>
-              
+
               {/* Right side - Content */}
               <div className="flex flex-col justify-between flex-grow md:py-[2px]" style={{ minHeight: '244px' }}>
                 <div>
@@ -426,7 +426,7 @@ export default function Home() {
                   }}>
                     Aditi Sharma
                   </h3>
-                  
+
                   <p style={{
                     fontFamily: "var(--font-inter-tight), sans-serif",
                     fontWeight: 400,
@@ -439,7 +439,7 @@ export default function Home() {
                   }}>
                     Executive - Marketing, WAE
                   </p>
-                  
+
                   <p style={{
                     fontFamily: "var(--font-manrope), sans-serif",
                     fontWeight: 400,
@@ -454,7 +454,7 @@ export default function Home() {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, metus eu pulvinar vestibulum, orci eros vehicula nunc, id scelerisque odio libero vel lorem. Quisque quis tortor a ipsum facilisis maximus. Sed eget massa nulla. Aliquam lobortis.
                   </p>
                 </div>
-                
+
                 <div className="mt-6 md:mt-0 flex items-end">
                   <Link href="/aditi-sharma" className="inline-flex items-center text-white hover:text-blue-400 transition-colors" style={{
                     fontFamily: "var(--font-inter-tight), sans-serif",
@@ -477,16 +477,16 @@ export default function Home() {
 
         {/* Horizontal rule with 76px gap before it */}
         <div className="relative z-10 mx-[7.5vw] h-px bg-white/30" style={{ borderTop: '1px solid #FFFFFF4D' }} />
-        
+
 
         {/* Related Articles SECTION */}
-        <section 
-          className="relative z-10 w-full" 
-          style={{ 
-            paddingTop: '76px', 
-            paddingBottom: '15.347vw', 
-            paddingLeft: '7.5vw', 
-            paddingRight: '7.5vw' 
+        <section
+          className="relative z-10 w-full"
+          style={{
+            paddingTop: '76px',
+            paddingBottom: '15.347vw',
+            paddingLeft: '7.5vw',
+            paddingRight: '7.5vw'
           }}
         >
           <div className="mx-auto">
@@ -501,7 +501,7 @@ export default function Home() {
             }}>
               Related Articles
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[4.166%] gap-y-[130px]">
               {relatedPosts.map((post, index) => (
                 <div
@@ -616,7 +616,7 @@ export default function Home() {
       </div>
 
 
-       {/* Global Styles */}
+      {/* Global Styles */}
       <style jsx global>{`
         html {
         }
