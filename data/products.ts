@@ -81,12 +81,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "pos",
-        "name": "BLUWAE POS",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
-        "category": "counter-top"
-      },
-      {
         "id": "rom-grande",
         "name": "BLUWAE ROM Grande",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
@@ -145,6 +139,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ENKI",
         "category": "free-standing",
         "image": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
+      },
+      {
+        "id": "pos",
+        "name": "POS",
+        "category": "free-standing",
+        "image": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
       }
     ],
     "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -518,52 +518,94 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b2da797-9d52-40d1-3323-c86ddd384c00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8fab5f68-c2e5-4ec8-f700-cfcea83f7600/public"
+      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public",
+      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7fb71cd5-561b-4185-722f-57a910512d00/public",
+      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/77bfbe22-5122-407c-5b71-8415a1ca3500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f56d1bb2-8196-4815-7449-5a9481526600/public"
     ],
     "featuresList": [
       {
-        "title": "Powerful LED Powerful LED Sterilization",
+        "title": " Water Options",
+        "description": " Hot, Cold, Ambient"
+      },
+      {
+        "title": " Touch-Free Dispensing",
+        "description": " Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless."
+      },
+      {
+        "title": " Smooth, Splash-Free Flow",
+        "description": " Designed for a clean, laminar water flow that minimizes spillage, paired with an efficient drainage system."
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "title": "Versatile Integration",
+        "description": "Effortlessly integrates with carbonated beverage dispensers and coffee/tea vending machines, providing a flexible, all-in-one hydration solution."
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "title": "Water Enrichments (Optional)",
+        "description": "Water Enrichments\n(Optional)"
       }
     ],
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
+          "variant": " POS 100",
           "hot": "3",
-          "cold": "40",
+          "cold": " 35",
+          "ambient": "15"
+        },
+        {
+          "variant": "POS 50",
+          "hot": "3",
+          "cold": "35",
           "ambient": "15"
         }
       ],
       "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+        "cold": " Cold: 5°C - 20° C (default 8°C)",
+        "hot": " Hot: 30°C - 65°C (default 55°C)"
       },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000ml",
-      "refrigerant": "R-134a",
+      "greenCertification": " Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": " 1300 ml",
+      "refrigerant": " R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
+          "variant": "  POS 100",
+          "weight": " 131",
+          "height": " 1392",
+          "width": " 480",
+          "depth": " 647"
+        },
+        {
+          "variant": "POS 50",
+          "weight": "120",
+          "height": " 1392",
+          "width": " 480",
+          "depth": " 647"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "powerRequirement": " Hertz 50/Volts 230-240",
+      "purificationSystem": " Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live",
+    "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/84acd2dc-5215-4649-f50f-27c75c576600/public",
+    "heroTagline": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "heroSubtext": "Sustainability at Core",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "/Comtactus",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "/enquiry",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/POS.pdf",
+    "datasheetPdf": "file:///C:/Users/WAE/Downloads/POS.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
     }
   },
   "rom-grande": {
