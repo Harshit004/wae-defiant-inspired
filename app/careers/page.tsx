@@ -2,6 +2,7 @@
 
 import { FC, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -10,20 +11,31 @@ const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]";
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
   className?: string;
+  href?: string;
 }
 
-const HoverButton: FC<HoverButtonProps> = ({ children, className = "" }) => {
+const HoverButton: FC<HoverButtonProps> = ({ children, className = "", href }) => {
   const [hovered, setHovered] = useState<boolean>(false);
+  const commonProps = {
+    onMouseEnter: () => setHovered(true),
+    onMouseLeave: () => setHovered(false),
+    className: `transition-all duration-300 ease flex items-center justify-center border border-white text-white ${className}`,
+    style: {
+      backgroundColor: hovered ? "#fff" : "transparent",
+      color: hovered ? "#000" : "#fff",
+    }
+  };
+
+  if (href) {
+    return (
+      <Link href={href} {...commonProps}>
+        {children(hovered)}
+      </Link>
+    );
+  }
+
   return (
-    <button
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className={`transition-all duration-300 ease flex items-center justify-center border border-white text-white ${className}`}
-      style={{
-        backgroundColor: hovered ? "#fff" : "transparent",
-        color: hovered ? "#000" : "#fff",
-      }}
-    >
+    <button {...commonProps}>
       {children(hovered)}
     </button>
   );
@@ -168,7 +180,7 @@ export default function CareersPage() {
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Join WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Explore current job openings</p>
 
-            <HoverButton className="mt-[68px] w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
+            <HoverButton href="/join-wae" className="mt-[68px] w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
               {(hovered) => (
                 <div className="flex items-center justify-center gap-[8px]">
                   <span className="font-['Manrope'] font-medium text-[10px] leading-none">Know More</span>
