@@ -18,7 +18,7 @@ const HoverButton: FC<HoverButtonProps> = ({ children, className = "" }) => {
     <button
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`transition-all duration-300 ease flex items-center justify-center gap-2 border border-[#333] text-white text-[11px] uppercase font-medium ${className}`}
+      className={`transition-all duration-300 ease flex items-center justify-center border border-white text-white ${className}`}
       style={{
         backgroundColor: hovered ? "#fff" : "transparent",
         color: hovered ? "#000" : "#fff",
@@ -121,11 +121,11 @@ export default function CareersPage() {
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Life @ WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">People first</p>
 
-            <HoverButton className="mt-[68px] w-[99px] h-[35px]">
+            <HoverButton className="mt-[68px] w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
               {(hovered) => (
-                <>
-                  Know More
-                  <div className="relative inline-block w-3 h-3 ml-1 overflow-hidden">
+                <div className="flex items-center justify-center gap-[8px]">
+                  <span className="font-['Manrope'] font-medium text-[10px] leading-none">Know More</span>
+                  <div className="relative inline-block w-3 h-3 overflow-hidden">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`transition-transform duration-300 ${hovered ? 'translate-x-full -translate-y-full' : 'translate-x-0 translate-y-0'}`}>
                       <line x1="5" y1="19" x2="19" y2="5" />
                       <polyline points="12 5 19 5 19 12" />
@@ -135,7 +135,7 @@ export default function CareersPage() {
                       <polyline points="12 5 19 5 19 12" />
                     </svg>
                   </div>
-                </>
+                </div>
               )}
             </HoverButton>
           </div>
@@ -168,11 +168,11 @@ export default function CareersPage() {
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Join WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Explore current job openings</p>
 
-            <HoverButton className="mt-[68px] w-[99px] h-[35px]">
+            <HoverButton className="mt-[68px] w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
               {(hovered) => (
-                <>
-                  Know More
-                  <div className="relative inline-block w-3 h-3 ml-1 overflow-hidden">
+                <div className="flex items-center justify-center gap-[8px]">
+                  <span className="font-['Manrope'] font-medium text-[10px] leading-none">Know More</span>
+                  <div className="relative inline-block w-3 h-3 overflow-hidden">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`transition-transform duration-300 ${hovered ? 'translate-x-full -translate-y-full' : 'translate-x-0 translate-y-0'}`}>
                       <line x1="5" y1="19" x2="19" y2="5" />
                       <polyline points="12 5 19 5 19 12" />
@@ -182,7 +182,7 @@ export default function CareersPage() {
                       <polyline points="12 5 19 5 19 12" />
                     </svg>
                   </div>
-                </>
+                </div>
               )}
             </HoverButton>
           </div>
