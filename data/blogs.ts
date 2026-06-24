@@ -189,7 +189,7 @@ export const BLOGS: Record<string, BlogPost> = {
   },
   "industrial-revolution-to-the-carbon-age": {
     "id": "industrial-revolution-to-the-carbon-age",
-    "title": "Industrial Revolution to the Carbon Age: How We Got There",
+    "title": "Industrial Revolution to the Carbon Age: How We Got There--test",
     "category": "Industry Impact and Solutions",
     "description": "The story begins in the smoky heart of 18th-century England...",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
