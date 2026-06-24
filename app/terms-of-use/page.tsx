@@ -9,6 +9,13 @@ const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]";
 export default function TermsOfUse() {
   return (
     <main className="relative min-h-screen bg-[#0F0F0F] text-white selection:bg-white selection:text-black overflow-x-hidden font-sans">
+      {/* Dark background gradient */}
+      <div
+        className="absolute top-0 left-0 w-full pointer-events-none"
+        style={{
+          background: 'linear-gradient(160deg, #004063 4.52%, #0F0F0F 40%)', height: 'clamp(500px, 80vh, 875px)'
+        }}
+      />
       <Header />
 
       <div className={`${containerClass} relative z-10 pt-[180px] lg:pt-[220px] pb-[120px]`}>
