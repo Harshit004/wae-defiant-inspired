@@ -36,7 +36,7 @@ export default function CareersPage() {
       <div 
         className="absolute top-0 left-0 w-full pointer-events-none" 
         style={{ 
-          background: 'linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 100%)',
+          background: 'linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)',
           height: 'clamp(500px, 80vh, 875px)'
         }} 
       />
@@ -222,7 +222,7 @@ export default function CareersPage() {
             <div className="w-full mt-[41px] flex justify-between items-center">
               {[1, 2, 3].map((_, idx) => (
                 <div key={idx} className="relative w-[5.9vw] aspect-[85/154]">
-                  <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dbd80a00-9a7f-4fdc-e4ef-8aa766ad7100/public" alt="Great Place to Work Badge" fill className="object-contain" />
+                  <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/328dea5e-933c-4d22-7648-58fa383fcd00/public" alt="Great Place to Work Badge" fill className="object-contain" />
                 </div>
               ))}
             </div>
