@@ -121,7 +121,7 @@ export default function JoinWaePage() {
         </div>
       </section>
 
-      <section className="relative z-10 pb-[32px]">
+      <section className="relative z-10">
         <div className={containerClass}>
           <div className="flex flex-col">
             {jobs.map((job) => (
@@ -165,7 +165,7 @@ export default function JoinWaePage() {
 
       {/* Great Place to Work Section */}
       <div className={`${containerClass} relative z-10`}>
-        <div className="flex justify-between items-start pt-[66px] pb-[100px]">
+        <div className="flex justify-between items-start pt-[32px] pb-[100px]">
           <h2 className="font-['Inter_Tight'] font-normal text-[64px] leading-[1.1] text-white">
             Great Place<br />to Work
           </h2>
