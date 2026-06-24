@@ -37,14 +37,28 @@ export default function LifeAtWAEPage() {
 
   const nextSlide = () => {
     if (scrollRef.current) {
-      // Scroll by one image width + gap
-      scrollRef.current.scrollBy({ left: 483, behavior: 'smooth' });
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      const maxScroll = scrollWidth - clientWidth;
+      
+      // If the next scroll step leaves a tiny gap, just snap all the way to the end
+      if (maxScroll - (scrollLeft + 483) < 250) {
+        scrollRef.current.scrollTo({ left: maxScroll, behavior: 'smooth' });
+      } else {
+        scrollRef.current.scrollBy({ left: 483, behavior: 'smooth' });
+      }
     }
   };
 
   const prevSlide = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -483, behavior: 'smooth' });
+      const { scrollLeft } = scrollRef.current;
+      
+      // If the previous scroll step leaves a tiny gap, just snap all the way to the start
+      if (scrollLeft - 483 < 250) {
+        scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollRef.current.scrollBy({ left: -483, behavior: 'smooth' });
+      }
     }
   };
 
@@ -142,9 +156,11 @@ export default function LifeAtWAEPage() {
             <div 
               ref={scrollRef}
               onScroll={handleScroll}
-              className="flex overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+              className="flex overflow-x-auto [&::-webkit-scrollbar]:hidden"
               style={{
                 scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+                scrollBehavior: 'smooth',
               }}
             >
               {/* Left spacer matches standard container margin */}
@@ -156,7 +172,7 @@ export default function LifeAtWAEPage() {
               {carouselImages.map((src, i) => (
                 <div 
                   key={i} 
-                  className={`w-[80vw] sm:w-[432px] aspect-[432/412] relative flex-shrink-0 snap-start ${
+                  className={`w-[80vw] sm:w-[432px] aspect-[432/412] relative flex-shrink-0 ${
                     i !== carouselImages.length - 1 ? 'mr-[51px]' : ''
                   }`}
                 >
