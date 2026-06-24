@@ -19,7 +19,7 @@ export default function LifeAtWAEPage() {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const nextSlide = () => {
-    setSlideIndex((prev) => Math.min(prev + 1, carouselImages.length - 3));
+    setSlideIndex((prev) => Math.min(prev + 1, carouselImages.length - 1));
   };
   const prevSlide = () => {
     setSlideIndex((prev) => Math.max(prev - 1, 0));
@@ -32,16 +32,16 @@ export default function LifeAtWAEPage() {
       {/* Hero Section */}
       <section className="pt-[180px] lg:pt-[220px] relative z-10 pb-[90px]">
         <div className={containerClass}>
-          <h1 className="font-['Inter_Tight'] font-normal text-[48px] lg:text-[60px] leading-[1.1] text-white mb-[40px]">
+          <h1 className="font-['Inter_Tight'] font-normal text-[60px] leading-[1.1] text-white mb-[52px]">
             Life @ WAE
           </h1>
-          
-          <div className="w-full aspect-[1225/444] relative mb-[40px]">
+
+          <div className="w-full aspect-[1225/444] relative mb-[53px]">
             <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/35d5d6fe-e947-418a-bd85-744314771100/public" alt="Life at WAE" fill className="object-cover" />
           </div>
 
           <div className="flex justify-end">
-            <div className="w-full lg:w-[48%] font-['Manrope'] font-normal text-[14px] leading-[1.4] text-[#AEAEAE]">
+            <div className="w-full max-w-[509px] font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE]">
               <p>
                 Life here is built around people, purpose, and possibility. It is a place where ambitious ideas find room to grow, where collaboration feels natural, and where every contribution creates a visible impact. We celebrate wins together, learn from challenges, and encourage curiosity at every step. Beyond projects and deadlines, it is the energy of passionate minds, meaningful connections, and a shared commitment to making a difference that makes every day rewarding.
               </p>
@@ -53,7 +53,7 @@ export default function LifeAtWAEPage() {
       {/* Background Gradient for Where Talent Begins */}
       <div className="relative">
         <div
-          className="absolute top-0 left-0 w-full h-full pointer-events-none"
+          className="absolute top-0 left-0 w-full h-[80%] pointer-events-none"
           style={{
             background: 'linear-gradient(160deg, #004063 0%, #0F0F0F 60%)',
             opacity: 0.8
@@ -63,38 +63,38 @@ export default function LifeAtWAEPage() {
         {/* Where Talent Begins */}
         <section className="relative z-10 py-[90px]">
           <div className={containerClass}>
-            <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white mb-[60px]">
+            <h2 className="font-['Inter_Tight'] font-normal text-[40px] leading-[1.1] text-white mb-[50px]">
               Where Talent Begins
             </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-[40px] lg:gap-[80px]">
+            <div className="flex flex-col lg:flex-row justify-between items-start gap-[40px]">
               {/* Left Image */}
-              <div className="lg:col-span-6 relative w-full aspect-[602/338] self-start">
+              <div className="relative w-full lg:w-[606px] aspect-[606/349] flex-shrink-0">
                 <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1fd9ea94-0f8b-4009-ea7c-9ba8a32fd400/public" alt="Where Talent Begins" fill className="object-cover" />
               </div>
 
               {/* Right Content */}
-              <div className="lg:col-span-6 flex flex-col gap-[60px]">
+              <div className="w-full max-w-[545px] flex flex-col gap-[60px]">
                 <div>
-                  <div className="font-['Inter_Tight'] text-[24px] text-[#AEAEAE] mb-[10px]">01</div>
-                  <h3 className="font-['Inter_Tight'] text-[28px] text-white mb-[20px]">Internship</h3>
-                  <p className="font-['Manrope'] text-[14px] text-[#AEAEAE] leading-[1.4]">
+                  <div className="font-['Inter_Tight'] font-normal text-[40px] leading-[1.1] text-[#AEAEAE] mb-[38px]">01</div>
+                  <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white uppercase mb-[24px]">Internship</h3>
+                  <p className="font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE]">
                     Every expert was once a beginner. Our internship program is designed for curious minds eager to learn beyond textbooks and classrooms. Here, interns contribute to real projects, work alongside experienced professionals, and see their ideas come to life. It is a journey of discovery, growth, and confidence-building, where learning happens through doing and every experience becomes a stepping stone toward a meaningful career.
                   </p>
                 </div>
                 
                 <div>
-                  <div className="font-['Inter_Tight'] text-[24px] text-[#AEAEAE] mb-[10px]">02</div>
-                  <h3 className="font-['Inter_Tight'] text-[28px] text-white mb-[20px]">Campus hiring</h3>
-                  <p className="font-['Manrope'] text-[14px] text-[#AEAEAE] leading-[1.4]">
+                  <div className="font-['Inter_Tight'] font-normal text-[40px] leading-[1.1] text-[#AEAEAE] mb-[38px]">02</div>
+                  <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white uppercase mb-[24px]">Campus hiring</h3>
+                  <p className="font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE]">
                     The next big idea often comes from a fresh perspective. Through campus hiring, we welcome bright young talent ready to question, create, and contribute. We look beyond resumes to find individuals with passion, curiosity, and the courage to think differently. From day one, they become part of a culture that encourages learning, ownership, and the freedom to make an impact.
                   </p>
                 </div>
 
                 <div>
-                  <div className="font-['Inter_Tight'] text-[24px] text-[#AEAEAE] mb-[10px]">03</div>
-                  <h3 className="font-['Inter_Tight'] text-[28px] text-white mb-[20px]">Internal referral</h3>
-                  <p className="font-['Manrope'] text-[14px] text-[#AEAEAE] leading-[1.4]">
+                  <div className="font-['Inter_Tight'] font-normal text-[40px] leading-[1.1] text-[#AEAEAE] mb-[38px]">03</div>
+                  <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white uppercase mb-[24px]">Internal referral</h3>
+                  <p className="font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE]">
                     Some of the best additions to a team come through the people who know us best. Our referral program is built on trust, connection, and shared values. When employees recommend someone from their network, they are introducing more than a candidate—they are bringing in potential, passion, and a cultural fit that helps strengthen our community and shape the future of WAE.
                   </p>
                 </div>
@@ -111,20 +111,22 @@ export default function LifeAtWAEPage() {
       {/* Our Happy Faces */}
       <section className="relative z-10 py-[40px]">
         <div className={containerClass}>
-          <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white mb-[60px]">
+          <h2 className="font-['Inter_Tight'] font-normal text-[40px] leading-[1.1] text-white mb-[72px]">
             Our happy faces
           </h2>
 
-          <div className="relative overflow-hidden w-full mb-[40px]">
-            <div 
-              className="flex gap-[20px] transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${slideIndex * (100 / 3)}%)` }}
-            >
-              {carouselImages.map((src, i) => (
-                <div key={i} className="min-w-[calc(33.333%-14px)] aspect-square relative flex-shrink-0">
-                  <Image src={src} alt={`Happy face ${i+1}`} fill className="object-cover" />
-                </div>
-              ))}
+          <div className="relative w-[100vw] ml-[calc(-50vw+50%)] overflow-hidden mb-[40px]">
+            <div className="max-w-[1440px] mx-auto px-[7.5vw]">
+              <div 
+                className="flex gap-[51px] transition-transform duration-500 ease-in-out w-max"
+                style={{ transform: `translateX(calc(-${slideIndex} * (max(280px, 432px) + 51px)))` }}
+              >
+                {carouselImages.map((src, i) => (
+                  <div key={i} className="w-[80vw] sm:w-[432px] aspect-[432/412] relative flex-shrink-0">
+                    <Image src={src} alt={`Happy face ${i + 1}`} fill className="object-cover" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -140,8 +142,8 @@ export default function LifeAtWAEPage() {
             </button>
             <button 
               onClick={nextSlide}
-              disabled={slideIndex >= carouselImages.length - 3}
-              className={`w-[40px] h-[40px] border border-[#333] flex items-center justify-center transition-colors hover:bg-white hover:text-black ${slideIndex >= carouselImages.length - 3 ? 'opacity-50 cursor-not-allowed hover:bg-transparent hover:text-white' : ''}`}
+              disabled={slideIndex >= carouselImages.length - 2}
+              className={`w-[40px] h-[40px] border border-[#333] flex items-center justify-center transition-colors hover:bg-white hover:text-black ${slideIndex >= carouselImages.length - 2 ? 'opacity-50 cursor-not-allowed hover:bg-transparent hover:text-white' : ''}`}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                 <polyline points="9 18 15 12 9 6" />
