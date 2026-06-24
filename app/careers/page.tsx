@@ -9,15 +9,16 @@ const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
+  className?: string;
 }
 
-const HoverButton: FC<HoverButtonProps> = ({ children }) => {
+const HoverButton: FC<HoverButtonProps> = ({ children, className = "" }) => {
   const [hovered, setHovered] = useState<boolean>(false);
   return (
     <button
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="w-fit px-5 py-3 transition-all duration-300 ease flex items-center gap-2 border border-[#333] text-white text-[11px] uppercase font-medium mt-auto"
+      className={`transition-all duration-300 ease flex items-center justify-center gap-2 border border-[#333] text-white text-[11px] uppercase font-medium ${className}`}
       style={{
         backgroundColor: hovered ? "#fff" : "transparent",
         color: hovered ? "#000" : "#fff",
@@ -42,21 +43,21 @@ export default function CareersPage() {
       
       <Header />
 
-      <section className="pt-[220px] pb-[100px] relative z-10">
+      <section className="pt-[170px] relative z-10">
         <div className={containerClass}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-[#888] mb-4 text-[18px] font-medium" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Join WAE</h3>
-              <h1 className="text-white text-[48px] md:text-[56px] leading-[1.1] font-medium tracking-tight pr-10" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+              <h3 className="font-['Inter_Tight'] font-normal text-[24px] leading-none text-[#AEAEAE] mb-[15px]">Join WAE</h3>
+              <h1 className="font-['Inter_Tight'] font-normal text-[60px] leading-[1.1] text-white">
                 Ready to challenge the<br />status quo?
               </h1>
             </div>
-            <div className="text-[#aaa] text-[15px] leading-relaxed pr-[10%]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+            <div className="w-[30.27vw] font-['Manrope'] font-normal text-[14px] text-[#AEAEAE]">
               <p className="mb-6">
                 We don't hire people to fit into a culture. We build a culture around people who dare to think differently. Here, engineers collaborate with storytellers, designers learn from scientists, and every perspective adds a new dimension to innovation. We celebrate individuality, nurture curiosity, and lead with empathy because the best solutions are born when diverse minds feel empowered to contribute.
               </p>
               <p>
-                Mistakes become lessons, ideas become movements, and work becomes purpose. If you're looking for a place where your voice matters, your growth is intentional, and your work leaves a lasting impact on people and the planet, you'll feel at home at WAE.
+                Mistakes become lessons, ideas become movements, and work becomes purpose. If you're looking for a place where your voice matters, your growth is intentional, and your work leaves a lasting impact on people and the planet, you'll feel at home at WAE. 
               </p>
             </div>
           </div>
@@ -64,18 +65,17 @@ export default function CareersPage() {
       </section>
 
       <div className={containerClass}>
-        <div className="w-full h-px bg-[#222] my-[60px]" />
+        <div className="w-full h-px bg-[#333] mt-[90px]" />
       </div>
 
       {/* Why WAE Section */}
       <div className={containerClass}>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-0 items-stretch">
-          <div className="md:col-span-4 flex flex-col justify-between py-2 pr-8 mb-8 md:mb-0">
-            <div>
-              <h2 className="text-white text-[28px] font-medium mb-2" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Why WAE</h2>
-              <p className="text-[#888] text-[13px]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Think Different</p>
-            </div>
-            <HoverButton>
+        <div className="grid grid-cols-12 gap-0 pt-[66px]">
+          <div className="col-span-4 flex flex-col items-start pr-8">
+            <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Why WAE</h2>
+            <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Think Different</p>
+            
+            <HoverButton className="mt-[68px] w-[99px] h-[35px]">
               {(hovered) => (
                 <>
                   Know More
@@ -94,36 +94,36 @@ export default function CareersPage() {
             </HoverButton>
           </div>
           
-          <div className="md:col-span-8 md:border-l border-[#222] md:pl-[5vw] py-2">
-            <h2 className="text-white text-[30px] md:text-[34px] font-medium leading-[1.2] mb-12" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
-              Why spend your career following change<br className="hidden md:block" />when you can create it?
+          <div className="col-span-8 border-l border-[#333] pl-[3.47vw]">
+            <h2 className="font-['Inter_Tight'] font-normal text-[38px] leading-[1.05] text-white mb-[62px]">
+              Why spend your career following change<br />when you can create it?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#aaa] text-[14px] leading-relaxed mb-12 md:pr-[10%]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
-              <p>
+            <div className="flex justify-between gap-[3.47vw] font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE] mb-[60px]">
+              <p className="flex-1">
                 At WAE, we believe the best work happens when people care deeply about what they do and who they do it with. You'll work alongside passionate minds from different backgrounds, united by a shared desire to solve meaningful challenges and create solutions that make a real difference.
               </p>
-              <p>
+              <p className="flex-1">
                 What makes WAE special isn't just the work, it's the people. We celebrate individuality, encourage fresh thinking, and lead with empathy. Here, you'll find the freedom to explore ideas, the support to grow, and a culture that values collaboration over hierarchy, making every contribution count.
               </p>
             </div>
-            <div className="w-full relative h-[300px] md:h-[450px]">
+            <div className="w-full aspect-[714/323] relative">
               <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2a452293-dc8e-4666-c735-79acdcb92300/public" alt="Why WAE" fill className="object-cover" />
             </div>
+            <div className="h-[68px]" />
           </div>
         </div>
         
-        <div className="w-full h-px bg-[#222] my-[80px]" />
+        <div className="w-full h-px bg-[#333]" />
       </div>
 
       {/* Life @ WAE Section */}
       <div className={containerClass}>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-0 items-stretch">
-          <div className="md:col-span-4 flex flex-col justify-between py-2 pr-8 mb-8 md:mb-0">
-            <div>
-              <h2 className="text-white text-[28px] font-medium mb-2" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Life @ WAE</h2>
-              <p className="text-[#888] text-[13px]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>People first</p>
-            </div>
-            <HoverButton>
+        <div className="grid grid-cols-12 gap-0 pt-[66px]">
+          <div className="col-span-4 flex flex-col items-start pr-8">
+            <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Life @ WAE</h2>
+            <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">People first</p>
+            
+            <HoverButton className="mt-[68px] w-[99px] h-[35px]">
               {(hovered) => (
                 <>
                   Know More
@@ -142,36 +142,36 @@ export default function CareersPage() {
             </HoverButton>
           </div>
           
-          <div className="md:col-span-8 md:border-l border-[#222] md:pl-[5vw] py-2">
-            <h2 className="text-white text-[30px] md:text-[34px] font-medium leading-[1.2] mb-12" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
-              Life at WAE is where meaningful work<br className="hidden md:block" />meets people, purpose, and joy.
+          <div className="col-span-8 border-l border-[#333] pl-[3.47vw]">
+            <h2 className="font-['Inter_Tight'] font-normal text-[38px] leading-[1.05] text-white mb-[62px]">
+              Life at WAE is where meaningful work<br />meets people, purpose, and joy.
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#aaa] text-[14px] leading-relaxed mb-12 md:pr-[10%]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
-              <p>
+            <div className="flex justify-between gap-[3.47vw] font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE] mb-[60px]">
+              <p className="flex-1">
                 The best part of any workplace is the people, and that's what makes life here special. A diverse community of thinkers, creators, engineers, dreamers, and doers come together with different stories, experiences, and perspectives. Every day brings fresh ideas, shared laughter, continuous learning, and the opportunity to build something meaningful together.
               </p>
-              <p>
+              <p className="flex-1">
                 Life here extends beyond meetings, projects, and deadlines. It lives in celebrations, team outings, festive gatherings, coffee conversations, and moments that turn colleagues into friends. We celebrate individuality, encourage authenticity, and create an environment where people feel valued, supported, and inspired to grow both personally and professionally.
               </p>
             </div>
-            <div className="w-full relative h-[300px] md:h-[450px]">
+            <div className="w-full aspect-[714/323] relative">
               <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee795b42-a4d9-467f-22db-4bfbfedcc600/public" alt="Life @ WAE" fill className="object-cover object-top" />
             </div>
+            <div className="h-[68px]" />
           </div>
         </div>
         
-        <div className="w-full h-px bg-[#222] my-[80px]" />
+        <div className="w-full h-px bg-[#333]" />
       </div>
 
       {/* Join WAE Section */}
       <div className={containerClass}>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-0 items-stretch">
-          <div className="md:col-span-4 flex flex-col justify-between py-2 pr-8 mb-8 md:mb-0">
-            <div>
-              <h2 className="text-white text-[28px] font-medium mb-2" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Join WAE</h2>
-              <p className="text-[#888] text-[13px]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Explore current job openings</p>
-            </div>
-            <HoverButton>
+        <div className="grid grid-cols-12 gap-0 pt-[66px]">
+          <div className="col-span-4 flex flex-col items-start pr-8">
+            <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Join WAE</h2>
+            <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Explore current job openings</p>
+            
+            <HoverButton className="mt-[68px] w-[99px] h-[35px]">
               {(hovered) => (
                 <>
                   Know More
@@ -190,41 +190,40 @@ export default function CareersPage() {
             </HoverButton>
           </div>
           
-          <div className="md:col-span-8 md:border-l border-[#222] md:pl-[5vw] py-2">
-            <h2 className="text-white text-[30px] md:text-[34px] font-medium leading-[1.2] mb-12" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
-              Some careers fill your time.<br className="hidden md:block" />The right one can shape your life.
+          <div className="col-span-8 border-l border-[#333] pl-[3.47vw]">
+            <h2 className="font-['Inter_Tight'] font-normal text-[38px] leading-[1.05] text-white mb-[62px]">
+              Some careers fill your time.<br />The right one can shape your life.
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#aaa] text-[14px] leading-relaxed mb-12 md:pr-[10%]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
-              <p>
+            <div className="flex justify-between gap-[3.47vw] font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE] mb-[60px]">
+              <p className="flex-1">
                 The people you work with often matter more than the work itself. They challenge you when you need courage, support you when you need strength, and celebrate you when you succeed. Here, you'll find a community of passionate individuals who believe that great things are built together.
               </p>
-              <p>
+              <p className="flex-1">
                 Every person brings a different story, perspective, and dream. That's what makes the journey meaningful. You'll be surrounded by people who inspire growth, spark new ideas, and genuinely care about one another. If you're looking for purpose, belonging, and friendships that last beyond the workplace, this is where your next chapter begins.
               </p>
             </div>
-            <div className="w-full relative h-[300px] md:h-[450px]">
+            <div className="w-full aspect-[714/323] relative">
               <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bbdfa982-ca17-42af-5d71-29d91614b100/public" alt="Join WAE" fill className="object-cover" />
             </div>
+            <div className="h-[68px]" />
           </div>
         </div>
         
-        <div className="w-full h-px bg-[#222] my-[80px]" />
+        <div className="w-full h-px bg-[#333]" />
       </div>
 
       {/* Great Place to Work Section */}
       <div className={containerClass}>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-[140px]">
-          <div className="md:col-span-4 mb-8 md:mb-0">
-            <h2 className="text-white text-[48px] md:text-[56px] leading-[1.1] font-medium tracking-tight" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
-              Great Place<br className="hidden md:block" />to Work
-            </h2>
-          </div>
-          <div className="md:col-span-8 md:pl-[5vw] pt-2">
-            <p className="text-[#aaa] text-[14px] leading-relaxed mb-10 w-full md:w-[70%]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+        <div className="flex justify-between items-start pt-[66px] pb-[100px]">
+          <h2 className="font-['Inter_Tight'] font-normal text-[64px] leading-[1.1] text-white">
+            Great Place<br />to Work
+          </h2>
+          <div className="w-[23.54vw]">
+            <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE]">
               More than a certification, it's a reflection of our people. Built on respect, inclusivity, and shared success, our workplace continues to be recognized among the best.
             </p>
-            <div className="w-full relative h-[100px] md:h-[140px] max-w-[400px]">
-              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dbd80a00-9a7f-4fdc-e4ef-8aa766ad7100/public" alt="Great Place to Work Badges" fill className="object-contain object-left" />
+            <div className="w-full relative mt-[41px] aspect-[339/100]">
+              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dbd80a00-9a7f-4fdc-e4ef-8aa766ad7100/public" alt="Great Place to Work Badges" fill className="object-contain" />
             </div>
           </div>
         </div>
