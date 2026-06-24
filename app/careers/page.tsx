@@ -36,7 +36,7 @@ export default function CareersPage() {
       <div 
         className="absolute top-0 left-0 w-full pointer-events-none" 
         style={{ 
-          background: 'linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%, #0F0F0F 100%)',
+          background: 'linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 100%)',
           height: 'clamp(500px, 80vh, 875px)'
         }} 
       />
@@ -64,12 +64,12 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <div className={containerClass}>
+      <div className={`${containerClass} relative z-10`}>
         <div className="w-full h-px bg-[#333] mt-[90px]" />
       </div>
 
       {/* Why WAE Section */}
-      <div className={containerClass}>
+      <div className={`${containerClass} relative z-10`}>
         <div className="grid grid-cols-12 gap-0 pt-[66px] pb-[68px]">
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Why WAE</h2>
@@ -116,7 +116,7 @@ export default function CareersPage() {
       </div>
 
       {/* Life @ WAE Section */}
-      <div className={containerClass}>
+      <div className={`${containerClass} relative z-10`}>
         <div className="grid grid-cols-12 gap-0 pt-[66px] pb-[68px]">
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Life @ WAE</h2>
@@ -163,7 +163,7 @@ export default function CareersPage() {
       </div>
 
       {/* Join WAE Section */}
-      <div className={containerClass}>
+      <div className={`${containerClass} relative z-10`}>
         <div className="grid grid-cols-12 gap-0 pt-[66px] pb-[68px]">
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Join WAE</h2>
@@ -210,7 +210,7 @@ export default function CareersPage() {
       </div>
 
       {/* Great Place to Work Section */}
-      <div className={containerClass}>
+      <div className={`${containerClass} relative z-10`}>
         <div className="flex justify-between items-start pt-[66px] pb-[100px]">
           <h2 className="font-['Inter_Tight'] font-normal text-[64px] leading-[1.1] text-white">
             Great Place<br />to Work
