@@ -68,10 +68,9 @@ export default function CookieConsent() {
       <div
         style={{
           position: "relative",
-          width: "100%",
-          maxWidth: "520px",
+          width: "700px", // calculated: 287px (Btn1) + 287px (Btn2) + 24px (gap) + 102px (padding left + right) = 700px
           backgroundColor: "#003c58",
-          padding: "48px",
+          padding: "71px 51px", // py-71px px-51px
           borderRadius: "0px",
           boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
           display: "flex",
@@ -79,6 +78,7 @@ export default function CookieConsent() {
           animation: "scaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards",
           fontFamily: "'Inter Tight', sans-serif",
           color: "#FFFFFF",
+          boxSizing: "border-box",
         }}
       >
         {/* Close Button */}
@@ -107,27 +107,29 @@ export default function CookieConsent() {
           </svg>
         </button>
 
-        {/* Header Title */}
+        {/* Title */}
         <h3
           style={{
-            margin: "0 0 24px 0",
-            fontSize: "32px",
+            margin: "0 0 33px 0", // 33px gap below title
+            fontFamily: "'Inter Tight', sans-serif",
             fontWeight: 500,
-            lineHeight: "1.2",
-            letterSpacing: "-0.02em",
+            fontSize: "40px",
+            lineHeight: "105%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
           }}
         >
           We Use cookies!
         </h3>
 
-        {/* Description Paragraph */}
+        {/* Description */}
         <p
           style={{
-            margin: "0 0 40px 0",
-            fontSize: "14px",
+            margin: "0 0 78px 0", // 78px gap below description
+            fontFamily: "'Inter Tight', sans-serif",
+            fontSize: "15px",
             lineHeight: "1.6",
             color: "rgba(255, 255, 255, 0.9)",
-            fontFamily: "'Inter Tight', sans-serif",
           }}
         >
           Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent.{" "}
@@ -150,45 +152,58 @@ export default function CookieConsent() {
         </p>
 
         {/* Buttons Row */}
-        <div style={{ display: "flex", gap: "16px", marginBottom: "32px" }}>
+        <div style={{ display: "flex", gap: "24px", marginBottom: "33px" }}>
+          {/* Accept All Button */}
           <button
             onClick={handleAccept}
             onMouseEnter={() => setAcceptHovered(true)}
             onMouseLeave={() => setAcceptHovered(false)}
             type="button"
             style={{
-              flex: 1,
+              width: "287px",
               background: acceptHovered ? "transparent" : "#FFF",
               border: "1.5px solid #FFF",
               borderRadius: "0px",
               color: acceptHovered ? "#FFF" : "#003c58",
-              padding: "14px 0",
-              fontSize: "14px",
+              padding: "18px 0",
+              fontFamily: "'Manrope', sans-serif",
               fontWeight: 500,
+              fontSize: "22px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+              textAlign: "center",
+              verticalAlign: "middle",
               cursor: "pointer",
               transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-              textAlign: "center",
+              boxSizing: "border-box",
             }}
           >
             Accept All
           </button>
+
+          {/* Accept Necessary Button */}
           <button
             onClick={handleDecline}
             onMouseEnter={() => setNecessaryHovered(true)}
             onMouseLeave={() => setNecessaryHovered(false)}
             type="button"
             style={{
-              flex: 1,
+              width: "287px",
               background: necessaryHovered ? "#FFF" : "transparent",
               border: "1.5px solid #FFF",
               borderRadius: "0px",
               color: necessaryHovered ? "#003c58" : "#FFF",
-              padding: "14px 0",
-              fontSize: "14px",
+              padding: "18px 0",
+              fontFamily: "'Manrope', sans-serif",
               fontWeight: 500,
+              fontSize: "22px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+              textAlign: "center",
+              verticalAlign: "middle",
               cursor: "pointer",
               transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-              textAlign: "center",
+              boxSizing: "border-box",
             }}
           >
             Accept Necessary
@@ -202,7 +217,12 @@ export default function CookieConsent() {
             onMouseEnter={() => setPrivacyHovered(true)}
             onMouseLeave={() => setPrivacyHovered(false)}
             style={{
-              fontSize: "12px",
+              fontFamily: "'Manrope', sans-serif",
+              fontWeight: 400,
+              fontSize: "20px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+              verticalAlign: "middle",
               color: "rgba(255, 255, 255, 0.9)",
               textDecoration: "underline",
               opacity: privacyHovered ? 1 : 0.85,
