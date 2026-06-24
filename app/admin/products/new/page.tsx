@@ -51,6 +51,7 @@ export default function NewProductPage() {
 
   // Up to 4 images
   const [images, setImages] = useState<string[]>(["", "", "", ""])
+  const [displayImageIndex, setDisplayImageIndex] = useState<number>(0)
 
   // Features List
   const [featuresList, setFeaturesList] = useState<FeatureItem[]>([
@@ -113,6 +114,16 @@ export default function NewProductPage() {
     }
     fetchCategories()
   }, [])
+
+  // Automatically select the first non-empty image if the currently selected one gets cleared
+  useEffect(() => {
+    if (images[displayImageIndex] === "") {
+      const firstNonEmptyIndex = images.findIndex((img) => img.trim() !== "");
+      if (firstNonEmptyIndex !== -1) {
+        setDisplayImageIndex(firstNonEmptyIndex);
+      }
+    }
+  }, [images, displayImageIndex]);
 
   const handleFieldChange = (setter: any, value: any) => {
     setter(value)
@@ -219,47 +230,65 @@ export default function NewProductPage() {
     setSaving(true)
 
     // Filter out blank images & empty features/specs rows
-    const activeImages = images.filter((img) => img.trim() !== "")
-    const activeFeatures = featuresList.filter((f) => f.title.trim() !== "" || f.description.trim() !== "")
-    const activeStorage = storageCapacity.filter((s) => s.variant.trim() !== "")
-    const activeDimensions = dimensions.filter((d) => d.variant.trim() !== "")
+    const activeImages = images.map((img) => img.trim()).filter((img) => img !== "")
+    const activeFeatures = featuresList.map((f) => ({ title: f.title.trim(), description: f.description.trim() })).filter((f) => f.title !== "" || f.description !== "")
+    const activeStorage = storageCapacity.map((s) => ({
+      variant: s.variant.trim(),
+      hot: s.hot.trim(),
+      cold: s.cold.trim(),
+      ambient: s.ambient.trim()
+    })).filter((s) => s.variant !== "")
+    const activeDimensions = dimensions.map((d) => ({
+      variant: d.variant.trim(),
+      weight: d.weight.trim(),
+      height: d.height.trim(),
+      width: d.width.trim(),
+      depth: d.depth.trim()
+    })).filter((d) => d.variant !== "")
+
+    const selectedImageUrl = images[displayImageIndex] ? images[displayImageIndex].trim() : "";
+    let finalDisplayImageIndex = activeImages.indexOf(selectedImageUrl);
+    if (finalDisplayImageIndex === -1) {
+      finalDisplayImageIndex = 0;
+    }
 
     const payload = {
       action: "create",
       categoryId: selectedCategory,
       subCategory: subCategory,
       productData: {
-        id: customId,
-        name,
-        categoryName,
-        heroSubtitle,
+        id: customId.trim(),
+        name: name.trim(),
+        categoryName: categoryName.trim(),
+        heroSubtitle: heroSubtitle.trim(),
         images: activeImages,
+        displayImageIndex: finalDisplayImageIndex,
         featuresList: activeFeatures,
         specifications: {
           storageCapacity: activeStorage,
           waterTemp: {
-            cold: coldTemp,
-            hot: hotTemp
+            cold: coldTemp.trim(),
+            hot: hotTemp.trim()
           },
-          greenCertification: greenCert,
-          dripTray,
-          refrigerant,
+          greenCertification: greenCert.trim(),
+          dripTray: dripTray.trim(),
+          refrigerant: refrigerant.trim(),
           dimensions: activeDimensions,
-          powerRequirement: powerReq,
-          purificationSystem: purificationSys,
-          pointOfUseSterilization: pouSterilization
+          powerRequirement: powerReq.trim(),
+          purificationSystem: purificationSys.trim(),
+          pointOfUseSterilization: pouSterilization.trim()
         },
         status,
-        description,
-        heroImage,
-        heroTagline,
-        heroSubtext,
-        heroCtaText,
-        heroCtaLink,
-        showcaseCtaText,
-        showcaseCtaLink,
-        brochurePdf,
-        datasheetPdf,
+        description: description?.trim() || "",
+        heroImage: heroImage?.trim() || "",
+        heroTagline: heroTagline?.trim() || "",
+        heroSubtext: heroSubtext?.trim() || "",
+        heroCtaText: heroCtaText?.trim() || "",
+        heroCtaLink: heroCtaLink?.trim() || "",
+        showcaseCtaText: showcaseCtaText?.trim() || "",
+        showcaseCtaLink: showcaseCtaLink?.trim() || "",
+        brochurePdf: brochurePdf?.trim() || "",
+        datasheetPdf: datasheetPdf?.trim() || "",
         variants: {
           hot: hasHot,
           cold: hasCold,
@@ -626,6 +655,16 @@ export default function NewProductPage() {
                             e.currentTarget.src = "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
                           }}
                         />
+                        <label className="absolute top-2 left-2 bg-black/80 px-2 py-1 flex items-center gap-1.5 cursor-pointer text-[10px] text-white">
+                          <input
+                            type="radio"
+                            name="displayImage"
+                            checked={displayImageIndex === idx}
+                            onChange={() => handleFieldChange(setDisplayImageIndex, idx)}
+                            className="w-3 h-3 text-[#0081C9] focus:ring-0 cursor-pointer"
+                          />
+                          <span>Show on Listing</span>
+                        </label>
                         <button
                           type="button"
                           onClick={() => handleImageChange(idx, "")}

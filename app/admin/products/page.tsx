@@ -54,10 +54,11 @@ interface ProductDetails {
   brochurePdf?: string
   datasheetPdf?: string
   variants?: {
-    hot: boolean
-    cold: boolean
-    ambient: boolean
-  }
+    hot: boolean;
+    cold: boolean;
+    ambient: boolean;
+  };
+  displayImageIndex?: number;
 }
 
 interface Category {
@@ -249,9 +250,9 @@ export default function ProductsPage() {
                       <td className="py-5 px-6">
                         <div className="flex items-center gap-4">
                           <div className="relative w-12 h-12 bg-[#051424] border border-white/5 flex items-center justify-center overflow-hidden flex-shrink-0">
-                            {p.images && p.images[0] ? (
+                            {p.images && (p.images[p.displayImageIndex !== undefined ? p.displayImageIndex : 0] || p.images[0]) ? (
                               <Image
-                                src={p.images[0]}
+                                src={p.images[p.displayImageIndex !== undefined ? p.displayImageIndex : 0] || p.images[0]}
                                 alt={p.name}
                                 fill
                                 className="object-contain p-1"

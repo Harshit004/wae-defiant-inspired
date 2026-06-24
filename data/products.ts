@@ -73,7 +73,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
   "bluwae": {
     "id": "bluwae",
     "title": "Drinking water station - BLUWAE",
-    "description": " A sophisticated drinking water solution engineered with advanced purification technologies to provide reliable hydration, enhanced hygiene, and long-term sustainability.",
+    "description": "A sophisticated drinking water solution engineered with advanced purification technologies to provide reliable hydration, enhanced hygiene, and long-term sustainability.",
     "paragraphs": [
       "BLUWAE™ Series is a next-generation Drinking Water Station designed to deliver safe, accessible, and sustainable hydration across workplaces and public environments. Combining advanced Reverse Osmosis (RO) purification with intelligent dispensing technology, it provides Purified Drinking Water directly at the point of consumption, reducing dependence on packaged bottled water.",
       "Ideal for offices, educational institutions, healthcare facilities, manufacturing units, and public spaces, BLUWAE™ functions as a reliable Commercial Hydration Solution. Available as a standalone unit or as part of Centralized Water Infrastructure, it supports ambient, chilled, and hot water dispensing, touch-free operation, and Bottle-Filling Capabilities.",
@@ -132,27 +132,27 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "id": "var-series",
         "name": "VAR Series",
         "category": "free-standing",
-        "image": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
       },
       {
         "id": "enki",
         "name": "ENKI",
         "category": "free-standing",
-        "image": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
       },
       {
         "id": "pos",
         "name": "POS",
         "category": "free-standing",
-        "image": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
       }
     ],
-    "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
+    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
   },
   "trublu": {
     "id": "trublu",
     "title": "Water dispenser & cooler - TRUBLU",
-    "description": " Crafted for contemporary environments, TRUBLU combines touchless convenience, stainless steel aesthetics, and purified hot, cold, and ambient hydration.",
+    "description": "Crafted for contemporary environments, TRUBLU combines touchless convenience, stainless steel aesthetics, and purified hot, cold, and ambient hydration.",
     "paragraphs": [
       "TRUBLU™ Series offers advanced and reliable Point-of-Use water dispensers designed to meet the highest standards of safety, quality, and style. Ideal for active corporate and commercial environments.",
       "Engineered with WAE's premium components, including medical-grade filtration and high-performance cooling/heating capacities to serve high-volume demand smoothly.",
@@ -208,13 +208,13 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "counter-top"
       }
     ],
-    "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
+    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
   },
   "zvr": {
     "id": "zvr",
     "title": "Drinking water fountain - ZVR",
-    "description": " Engineered for modern public spaces, ZVR combines touchless convenience, inclusive ADA-compliant design, and refined wall-mounted drinking water solutions.",
-    "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/74579c8e-a7e1-4b0a-a14b-f83ab6e5d800/public",
+    "description": "Engineered for modern public spaces, ZVR combines touchless convenience, inclusive ADA-compliant design, and refined wall-mounted drinking water solutions.",
+    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/74579c8e-a7e1-4b0a-a14b-f83ab6e5d800/public",
     "paragraphs": [
       "Surface-mounted drinking water fountains with integrated bottle filling stations offer a sustainable and hygienic solution for modern hydration needs.",
       "Designed for high-traffic environments like offices, schools, and public facilities, these units encourage refill culture by supporting reusable bottles, helping reduce plastic waste."
@@ -309,7 +309,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
     "id": "glass-bottling",
     "title": "Glass bottling plant",
     "description": "Compact glass bottling plants enabling sustainable, premium in-house water bottling for hotels, hospitality brands, and luxury environments.",
-    "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/23411290-087c-4c6c-77c6-9226946aae00/public",
+    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/23411290-087c-4c6c-77c6-9226946aae00/public",
     "paragraphs": [
       "Compact modular glass bottling plants enabling sustainable premium in-house bottled water production for hospitality, corporate, and luxury environments."
     ],
@@ -331,9 +331,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public",
-      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7d1aa69a-f330-42cb-02ea-1e8fdf93a600/public",
-      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e574b038-c765-4fb0-7e75-0d4b94c81d00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7d1aa69a-f330-42cb-02ea-1e8fdf93a600/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e574b038-c765-4fb0-7e75-0d4b94c81d00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6a645ebd-b768-47e1-e7ea-eb9ba395f700/public"
     ],
     "featuresList": [
@@ -365,38 +365,38 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 150 ",
+          "variant": "FS VAR 150",
           "hot": "3",
-          "cold": " 130",
-          "ambient": " 20"
+          "cold": "130",
+          "ambient": "20"
         },
         {
-          "variant": "FS VAR  100",
+          "variant": "FS VAR 100",
           "hot": "3",
           "cold": "85",
           "ambient": "10"
         },
         {
-          "variant": "FS VAR 50 ",
+          "variant": "FS VAR 50",
           "hot": "3",
           "cold": "30",
           "ambient": "15"
         }
       ],
       "waterTemp": {
-        "cold": " Cold: 5°C - 20° C (default 8°C)",
-        "hot": " Hot: 30°C - 65°C (default 55°C)"
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": " 1300 ml",
-      "refrigerant": " R-134a",
+      "dripTray": "1300 ml",
+      "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 150 ",
+          "variant": "FS VAR 150",
           "weight": "150",
-          "height": " 1640",
-          "width": " 615",
-          "depth": " 790"
+          "height": "1640",
+          "width": "615",
+          "depth": "790"
         },
         {
           "variant": "FS VAR 100",
@@ -413,8 +413,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
           "depth": "647"
         }
       ],
-      "powerRequirement": " Hertz 50/Volts 230-240",
-      "purificationSystem": " Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
     },
     "status": "Live",
@@ -426,8 +426,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "heroCtaLink": "#product-showcase",
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
-    "brochurePdf": " file:///C:/Users/WAE/Downloads/VAR.pdf",
-    "datasheetPdf": " file:///C:/Users/WAE/Downloads/VAR.pdf",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/VAR.pdf",
+    "datasheetPdf": "file:///C:/Users/WAE/Downloads/VAR.pdf",
     "variants": {
       "hot": true,
       "cold": true,
@@ -440,21 +440,21 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public",
-      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4994f73a-a0d9-40d5-5224-b058dbcca400/public",
-      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b7c46f4-29e5-482a-f6fd-dae1d944c700/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4994f73a-a0d9-40d5-5224-b058dbcca400/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b7c46f4-29e5-482a-f6fd-dae1d944c700/public"
     ],
     "featuresList": [
       {
-        "title": " Water Options",
-        "description": " Hot, Cold"
+        "title": "Water Options",
+        "description": "Hot, Cold"
       },
       {
-        "title": " Touch-Free Operation",
-        "description": " Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless."
+        "title": "Touch-Free Operation",
+        "description": "Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless."
       },
       {
-        "title": " Powerful LED UV-C Intank Sterilization",
+        "title": "Powerful LED UV-C Intank Sterilization",
         "description": " Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
       },
       {
@@ -469,30 +469,30 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "specifications": {
       "storageCapacity": [
         {
-          "variant": " ENKI 25/50 FS",
-          "hot": " 4",
-          "cold": " 5",
-          "ambient": " -"
+          "variant": "ENKI 25/50 FS",
+          "hot": "4",
+          "cold": "5",
+          "ambient": "-"
         }
       ],
       "waterTemp": {
-        "cold": " Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": " Hot: 50°C - 80°C (default 55°C)"
+        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
+        "hot": "Hot: 50°C - 80°C (default 55°C)"
       },
       "greenCertification": " Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": " 500 ml",
-      "refrigerant": " R-134a",
+      "dripTray": "500 ml",
+      "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "  ENKI 25/50 FS",
-          "weight": " 62",
-          "height": " 1338",
-          "width": " 370",
-          "depth": " 503"
+          "variant": "ENKI 25/50 FS",
+          "weight": "62",
+          "height": "1338",
+          "width": "370",
+          "depth": "503"
         }
       ],
-      "powerRequirement": " Hertz 50/Volts 230-240",
-      "purificationSystem": " Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
     },
     "status": "Live",
@@ -518,23 +518,23 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public",
-      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7fb71cd5-561b-4185-722f-57a910512d00/public",
-      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/77bfbe22-5122-407c-5b71-8415a1ca3500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7fb71cd5-561b-4185-722f-57a910512d00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/77bfbe22-5122-407c-5b71-8415a1ca3500/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f56d1bb2-8196-4815-7449-5a9481526600/public"
     ],
     "featuresList": [
       {
-        "title": " Water Options",
-        "description": " Hot, Cold, Ambient"
+        "title": "Water Options",
+        "description": "Hot, Cold, Ambient"
       },
       {
-        "title": " Touch-Free Dispensing",
-        "description": " Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless."
+        "title": "Touch-Free Dispensing",
+        "description": "Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless."
       },
       {
-        "title": " Smooth, Splash-Free Flow",
-        "description": " Designed for a clean, laminar water flow that minimizes spillage, paired with an efficient drainage system."
+        "title": "Smooth, Splash-Free Flow",
+        "description": "Designed for a clean, laminar water flow that minimizes spillage, paired with an efficient drainage system."
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
@@ -552,9 +552,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "specifications": {
       "storageCapacity": [
         {
-          "variant": " POS 100",
+          "variant": "POS 100",
           "hot": "3",
-          "cold": " 35",
+          "cold": "35",
           "ambient": "15"
         },
         {
@@ -565,30 +565,30 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         }
       ],
       "waterTemp": {
-        "cold": " Cold: 5°C - 20° C (default 8°C)",
-        "hot": " Hot: 30°C - 65°C (default 55°C)"
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
       "greenCertification": " Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": " 1300 ml",
-      "refrigerant": " R-134a",
+      "dripTray": "1300 ml",
+      "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "  POS 100",
-          "weight": " 131",
-          "height": " 1392",
-          "width": " 480",
-          "depth": " 647"
+          "variant": "POS 100",
+          "weight": "131",
+          "height": "1392",
+          "width": "480",
+          "depth": "647"
         },
         {
           "variant": "POS 50",
           "weight": "120",
-          "height": " 1392",
-          "width": " 480",
-          "depth": " 647"
+          "height": "1392",
+          "width": "480",
+          "depth": "647"
         }
       ],
-      "powerRequirement": " Hertz 50/Volts 230-240",
-      "purificationSystem": " Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
     },
     "status": "Live",

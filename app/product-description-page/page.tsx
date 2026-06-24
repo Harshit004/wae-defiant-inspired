@@ -1162,7 +1162,7 @@ function ProductDescriptionPageContent() {
                                 <div className="relative w-full overflow-hidden flex items-center justify-center rounded-none" style={{ aspectRatio: "381 / 322", marginBottom: "50px" }}>
                                     <div className="relative w-full h-full transition-transform duration-700 group-hover:scale-105">
                                         <Image
-                                            src={item.images[0]}
+                                            src={item.images[item.displayImageIndex !== undefined ? item.displayImageIndex : 0] || item.images[0]}
                                             alt={item.name}
                                             fill
                                             className="object-cover"

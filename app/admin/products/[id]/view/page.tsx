@@ -63,6 +63,7 @@ interface ProductDetails {
     cold: boolean
     ambient: boolean
   }
+  displayImageIndex?: number
 }
 
 interface ViewProductProps {

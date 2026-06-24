@@ -122,6 +122,7 @@ export interface ProductDetails {
     cold: boolean;
     ambient: boolean;
   };
+  displayImageIndex?: number;
 }
 
 export const CATEGORIES: Record<string, CategoryData> = ${JSON.stringify(state.categories, null, 2)};

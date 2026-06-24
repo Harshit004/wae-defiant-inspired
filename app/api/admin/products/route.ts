@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     const dbState = readDB();
 
     if (action === 'create') {
-      const { id: inputId, name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants } = productData;
+      const { id: inputId, name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants, displayImageIndex } = productData;
       
       const generatedId = inputId
         ? inputId.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -73,17 +73,21 @@ export async function POST(request: Request) {
         showcaseCtaLink: showcaseCtaLink || '',
         brochurePdf: brochurePdf || '',
         datasheetPdf: datasheetPdf || '',
-        variants: variants || { hot: true, cold: true, ambient: true }
+        variants: variants || { hot: true, cold: true, ambient: true },
+        displayImageIndex: displayImageIndex !== undefined ? displayImageIndex : 0
       };
 
       dbState.products[generatedId] = newProductDetails;
 
       // Add to parent category's product list
+      const chosenIndex = displayImageIndex !== undefined ? displayImageIndex : 0;
+      const displayImageUrl = images && images[chosenIndex] ? images[chosenIndex] : (images && images[0] ? images[0] : '');
+
       const categoryProduct: Product = {
         id: generatedId,
         name,
         category: subCategory || 'free-standing',
-        image: images && images[0] ? images[0] : ''
+        image: displayImageUrl
       };
       parentCategory.products.push(categoryProduct);
 
@@ -96,7 +100,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: false, message: 'Product not found.' }, { status: 404 });
       }
 
-      const { name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants } = productData;
+      const { name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants, displayImageIndex } = productData;
       const existing = dbState.products[id];
 
       const parentCategory = dbState.categories[categoryId];
@@ -127,7 +131,8 @@ export async function POST(request: Request) {
         showcaseCtaLink: showcaseCtaLink !== undefined ? showcaseCtaLink : existing.showcaseCtaLink,
         brochurePdf: brochurePdf !== undefined ? brochurePdf : existing.brochurePdf,
         datasheetPdf: datasheetPdf !== undefined ? datasheetPdf : existing.datasheetPdf,
-        variants: variants || existing.variants || { hot: true, cold: true, ambient: true }
+        variants: variants || existing.variants || { hot: true, cold: true, ambient: true },
+        displayImageIndex: displayImageIndex !== undefined ? displayImageIndex : (existing.displayImageIndex !== undefined ? existing.displayImageIndex : 0)
       };
 
       // Update/Move category placement
@@ -139,11 +144,15 @@ export async function POST(request: Request) {
       });
 
       // Add it to the target category
+      const chosenIndex = displayImageIndex !== undefined ? displayImageIndex : (existing.displayImageIndex !== undefined ? existing.displayImageIndex : 0);
+      const activeImages = images || existing.images || [];
+      const displayImageUrl = activeImages[chosenIndex] ? activeImages[chosenIndex] : (activeImages[0] || '');
+
       const categoryProduct: Product = {
         id,
         name: name || existing.name,
         category: subCategory || 'free-standing',
-        image: images && images[0] ? images[0] : (existing.images && existing.images[0] ? existing.images[0] : '')
+        image: displayImageUrl
       };
       parentCategory.products.push(categoryProduct);
 
