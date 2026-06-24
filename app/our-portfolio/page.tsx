@@ -9,6 +9,7 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
+import { CATEGORIES } from "@/data/products"
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
@@ -164,45 +165,45 @@ export default function Home() {
   const portfolioProducts = [
     {
       id: "bluwae",
-      title: "Drinking water station - BLUWAE",
+      title: CATEGORIES.bluwae?.title || "Drinking water station - BLUWAE",
       subtitle: "Experience on-demand",
-      description: "Point-of-Use drinking water stations with in-built 5-stage RO purification, LED UVC protection, and optional Germ Guardian™ hygiene technology.",
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public",
+      description: CATEGORIES.bluwae?.description || "Point-of-Use drinking water stations with in-built 5-stage RO purification, LED UVC protection, and optional Germ Guardian™ hygiene technology.",
+      imageUrl: CATEGORIES.bluwae?.imageUrl || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2906d7ca-fcf2-48a0-99d8-7f584fce1600/public",
       href: "/product-listing?category=bluwae"
     },
     {
       id: "trublu",
-      title: "Water dispenser & cooler - TRUBLU",
-      description: "Plumbed-in water dispensers with in-tank LED-UVC protection, optional bottom-loading configuration, and advanced Germ Guardian™ hygiene technology.",
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
+      title: CATEGORIES.trublu?.title || "Water dispenser & cooler - TRUBLU",
+      description: CATEGORIES.trublu?.description || "Plumbed-in water dispensers with in-tank LED-UVC protection, optional bottom-loading configuration, and advanced Germ Guardian™ hygiene technology.",
+      imageUrl: CATEGORIES.trublu?.imageUrl || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
       href: "/product-listing?category=trublu"
     },
     {
       id: "zvr",
-      title: "Drinking water fountain - ZVR",
-      description: "Direct-drinking stations with bubbler taps, featuring repository installed purification, chilling, and heating systems concealed seamlessly behind the wall.",
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
+      title: CATEGORIES.zvr?.title || "Drinking water fountain - ZVR",
+      description: CATEGORIES.zvr?.description || "Direct-drinking stations with bubbler taps, featuring repository installed purification, chilling, and heating systems concealed seamlessly behind the wall.",
+      imageUrl: CATEGORIES.zvr?.imageUrl || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
       href: "/product-listing?category=zvr"
     },
     {
       id: "watermatic",
-      title: "Drinking water faucets - WATERMATIC",
-      description: "Drinking water taps featuring sensor touch or push operation for hygienic dispensing, effortless usability, and seamless modern hydration experiences.",
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
+      title: CATEGORIES.watermatic?.title || "Drinking water faucets - WATERMATIC",
+      description: CATEGORIES.watermatic?.description || "Drinking water taps featuring sensor touch or push operation for hygienic dispensing, effortless usability, and seamless modern hydration experiences.",
+      imageUrl: CATEGORIES.watermatic?.imageUrl || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
       href: "/product-listing?category=watermatic"
     },
     {
       id: "pus",
-      title: "Compact purification units - WAEAU",
-      description: "Robust, research-backed water systems engineered for public infrastructure—ensuring continuous access to safe, purified drinking water in all conditions.",
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
+      title: CATEGORIES.pus?.title || "Compact purification units - WAEAU",
+      description: CATEGORIES.pus?.description || "Robust, research-backed water systems engineered for public infrastructure—ensuring continuous access to safe, purified drinking water in all conditions.",
+      imageUrl: CATEGORIES.pus?.imageUrl || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
       href: "/product-listing?category=pus"
     },
     {
       id: "glass-bottling",
-      title: "Glass bottling plant",
-      description: "Compact modular glass bottling plants enabling sustainable premium in-house bottled water production for hospitality, corporate, and luxury environments.",
-      imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public",
+      title: CATEGORIES["glass-bottling"]?.title || "Glass bottling plant",
+      description: CATEGORIES["glass-bottling"]?.description || "Compact modular glass bottling plants enabling sustainable premium in-house bottled water production for hospitality, corporate, and luxury environments.",
+      imageUrl: CATEGORIES["glass-bottling"]?.imageUrl || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public",
       href: "/product-listing?category=glass-bottling"
     }
   ];
