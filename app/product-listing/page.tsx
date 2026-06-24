@@ -228,7 +228,7 @@ function ProductListingContent() {
     const productsItems = [
         { text: "This is Us", href: "/this-is-us" },
         { text: "Our Portfolio", href: "/our-portfolio" },
-        { text: "Reimagine Work", href: "/careers3" },
+        { text: "Reimagine Work", href: "/careers" },
     ]
     const blueprintItems = [
         { text: "Sustainability", href: "/sustainability" },

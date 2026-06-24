@@ -1,107 +1,26 @@
 "use client";
 
-import { FC, useEffect, useState, useRef, ReactNode } from "react";
+import { FC, useState } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-// Removed: import { useInView } from "react-intersection-observer";
-// Removed: import gsap from "gsap";
+import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Link from "next/link";
 
-// --- NEW MOBILE HEADER COMPONENT ---
-interface MobileHeaderProps {
-  productsItems: { text: string; href: string }[];
-  blueprintItems: { text: string; href: string }[];
-}
-
-const MobileHeader: React.FC<MobileHeaderProps> = ({ productsItems, blueprintItems }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isMobileMenuOpen]);
-
-  return (
-    <>
-      <div className="fixed top-0 left-0 w-screen z-50 pt-[20px] pb-[10px] px-4 flex justify-between items-center bg-black/10 md:hidden">
-        <Link href="/">
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce113ad4-0a6b-43dd-066c-26769520d000/public"
-            alt="WAE Logo Mobile"
-            width={40}
-            height={40}
-          />
-        </Link>
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="flex flex-col justify-around w-6 h-5 relative z-50 focus:outline-none"
-          aria-label="Toggle mobile menu"
-        >
-          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? 'rotate-45 translate-x-1.5 translate-y-1.5' : ''}`}></span>
-          <span className={`block h-0.5 w-full bg-white transition-all duration-300 transform ${isMobileMenuOpen ? '-rotate-45 translate-x-1.5 -translate-y-1.5' : ''}`}></span>
-        </button>
-      </div>
-      <div
-        className={`fixed inset-0 bg-black z-40 flex flex-col items-start pt-[80px] pb-5 px-4 md:hidden transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-      >
-        <div className="flex flex-row flex-wrap justify-start items-center gap-x-6 gap-y-4 w-full mb-8">
-          {[...productsItems, ...blueprintItems].map((item, i) => (
-            <Link
-              key={i}
-              href={item.href}
-              className="text-white text-sm font-medium hover:underline"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {item.text}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </>
-  );
-};
-// --- END NEW MOBILE HEADER COMPONENT ---
-
-const containerClass = "mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-[140px]";
-
+const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
 }
 
-/**
- * Reusable hover button component.
- */
 const HoverButton: FC<HoverButtonProps> = ({ children }) => {
   const [hovered, setHovered] = useState<boolean>(false);
-
   return (
     <button
-      type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="w-fit px-4 py-3 transition-all duration-650 ease"
+      className="w-fit px-5 py-3 transition-all duration-300 ease flex items-center gap-2 border border-[#333] text-white text-[11px] uppercase font-medium mt-auto"
       style={{
-        pointerEvents: "auto",
-        display: "inline-flex",
-        alignItems: "center",
-        gap: "8px",
-        fontFamily: "'Inter Tight', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
-        lineHeight: "100%",
-        textTransform: "uppercase",
-        backgroundColor: hovered ? "#000" : "#f2f2f2",
-        border: "1px solid #000",
-        cursor: "pointer",
-        color: hovered ? "#fff" : "#000",
+        backgroundColor: hovered ? "#fff" : "transparent",
+        color: hovered ? "#000" : "#fff",
       }}
     >
       {children(hovered)}
@@ -109,632 +28,203 @@ const HoverButton: FC<HoverButtonProps> = ({ children }) => {
   );
 };
 
-// Data for the additional sections
-const extraSections = [
-  { number: '01', title: 'Apprenticeship', description: 'Kickstart your career with hands-on learning at WAE. Our apprenticeship programs offer real-world experience, mentorship from industry leaders, and the chance to contribute to sustainable innovation. Join us to build skills that shape a better future for you and the planet.' },
-  { number: '02', title: 'Full-Time Positions', description: 'We’re looking for passionate professionals ready to innovate, collaborate, and make a meaningful impact. Join our team full-time to shape sustainable solutions and contribute to a future where technology and responsibility go hand in hand.' },
-  { number: '03', title: 'Internships', description: 'Gain real-world experience and make a difference with an internship at WAE. Work alongside industry experts, contribute to sustainable projects, and grow your skills in an environment that values curiosity, innovation, and impact.' },
-  { number: '04', title: 'Short Term Projects', description: 'Collaborate on high-impact, short-term projects at WAE. Whether you are a student, freelancer, or specialist, bring your expertise to meaningful assignments that drive sustainability and innovation.' }
-];
-
-const Home: FC = () => {
-  // State and refs - Removed unused and section-related ones
-  const [currentTime, setCurrentTime] = useState<string>("");
-  const [headerHeight, setHeaderHeight] = useState<number>(0);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const [taglineVisible, setTaglineVisible] = useState<boolean>(true); // State is calculated but not used in UI
-  const headerHeroRef = useRef<HTMLDivElement>(null); // Still used in an unused effect
-  const prevScrollY = useRef<number>(0);
-  const [scrollingDown, setScrollingDown] = useState<boolean>(false); // Still calculated, but not used for logo movement anymore
-
-  // Effect to force scroll position to the top on component mount
-  useEffect(() => {
-    // Ensure the scroll position is at the very top when the component mounts
-    // Use 'instant' behavior to prevent a visible scroll animation if one was happening
-    window.scroll({ top: 0, left: 0, behavior: 'instant' });
-  }, []); // Empty dependency array means this effect runs only once after the initial render
-
-
-  // Update tagline visibility and track scroll direction on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setTaglineVisible(currentScrollY < prevScrollY.current); // taglineVisible state is unused
-      setScrollingDown(currentScrollY > prevScrollY.current); // Determine if scrolling down - not used for logo anymore
-      prevScrollY.current = currentScrollY;
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Update current time (India Time) every minute - Still unused state
-  useEffect(() => {
-    const updateIndiaTime = () => {
-      const options: Intl.DateTimeFormatOptions = {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-        timeZone: "Asia/Kolkata",
-      };
-      setCurrentTime(new Date().toLocaleTimeString("en-US", options));
-    };
-
-    updateIndiaTime();
-    const interval = setInterval(updateIndiaTime, 60000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Measure header height to offset hero section - Still needed
-  useEffect(() => {
-    if (headerRef.current) setHeaderHeight(headerRef.current.clientHeight);
-  }, [headerRef]);
-
-  // Scroll-driven header/hero scaling effect - Still unused state/effect, but kept ref for now
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!headerHeroRef.current) return;
-      const scrollPosition = window.scrollY;
-      const viewportHeight = window.innerHeight;
-      const maxScroll = viewportHeight * 0.8;
-      const minScale = 0;
-
-      if (scrollPosition <= 100) {
-        // setHeaderHeroScale(1); // Unused state
-      } else if (scrollPosition >= maxScroll) {
-        // setHeaderHeroScale(minScale); // Unused state
-      } else {
-        const scrollRange = maxScroll - 100;
-        const scrollProgress = (scrollPosition - 100) / scrollRange;
-        // setHeaderHeroScale(1 - scrollProgress); // Unused state
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Framer Motion scroll-driven animations - Keep for logo opacity if desired
-  const { scrollYProgress } = useScroll();
-  // Opacity for the sticky logo based on scroll (still using Framer Motion for this)
-  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]); // Currently maps to constant 1
-  // Other Framer Motion transforms appear unused in the current JSX - Still unused
-  const purposeY = useTransform(scrollYProgress, [0.05, 0.25], ["100%", "0%"]); // Unused
-  const purposeOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1]); // Unused
-  const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]); // Unused
-  const finalPurposeOpacity = useTransform( // Unused
-    [purposeOpacity, purposeVanish],
-    ([pO, pV]) => pO * pV
-  );
-  const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"]); // Unused
-  const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]); // Unused
-  const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0]); // Unused
-  const finalIndiaOpacity = useTransform( // Unused
-    [indiaOpacity, indiaVanish],
-    ([iO, iV]) => iO * iV
-  );
-
-  // Arrays for menu items - Keep
-  const productsItems = [
-    { text: "This is Us", href: "/this-is-us" },
-    { text: "Our Portfolio", href: "/our-portfolio" },
-    { text: "Reimagine Work", href: "/careers3" },
-  ];
-  const blueprintItems = [
-    { text: "Sustainability", href: "/sustainability" },
-    { text: "The Activist Co.", href: "/the-activist-co" },
-    { text: "Blog", href: "/blogs" },
-  ];
-  // lineCount is calculated but not used - Still unused
-  const lineCount = Math.min(productsItems.length, blueprintItems.length);
-
-  // Tagline words split for animation - Still unused for animation
-  const taglineLine1 = "To lead the way in sustainability";
-  const taglineLine2 = "ahead of the rest";
-  const taglineWords1 = taglineLine1.split(" "); // Unused for animation
-  const taglineWords2 = taglineLine2.split(" "); // Unused for animation
-
-   // Framer Motion animation variants - Still unused
-  const containerVariants = { // Unused
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.05, ease: "easeInOut" },
-    },
-  };
-  const childVariants = { // Unused
-    hidden: { opacity: 0, x: -10 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { ease: "easeInOut", duration: 1 },
-    },
-  };
-
-
+export default function CareersPage() {
   return (
-    <main className="relative">
-      {/* MOBILE HEADER */}
-      <MobileHeader productsItems={productsItems} blueprintItems={blueprintItems} />
-      {/* DESKTOP HEADER */}
-      <header ref={headerRef} className={`w-full relative z-10 hidden md:block pb-[20px] bg-white`}>
+    <main className="bg-[#0f1115] min-h-screen text-white font-sans selection:bg-white selection:text-black relative overflow-x-hidden">
+      {/* Dark background gradient to emulate the image */}
+      <div className="absolute top-0 left-0 w-full h-[800px] bg-gradient-to-br from-[#102436] via-[#0f1115] to-[#0f1115] opacity-60 pointer-events-none" />
+      
+      <Header />
+
+      <section className="pt-[220px] pb-[100px] relative z-10">
         <div className={containerClass}>
-          {/* Top Row: Navigation */}
-          <div
-            className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
-            style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "12px",
-              lineHeight: "100%",
-              letterSpacing: "0px",
-            }}
-          >
-            <div>IDENTITY</div>
-            <div>ORIGIN</div>
-            <div>OBJECTIVE</div>
-            <div>INSIDE WAE</div>
-            <div>ETCETERA</div>
-          </div>
-          {/* Divider */}
-          <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
-          {/* Bottom Row: Logo, Tagline and Menu Items */}
-          <div className="grid grid-cols-5 items-start">
-            {/* Logo */}
-            <div className="flex flex-col justify-center">
-              <Link href="/">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                  alt="WAE Logo"
-                  width={78}
-                  height={82}
-                />
-              </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div>
+              <h3 className="text-[#888] mb-4 text-[18px] font-medium" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Join WAE</h3>
+              <h1 className="text-white text-[48px] md:text-[56px] leading-[1.1] font-medium tracking-tight pr-10" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+                Ready to challenge the<br />status quo?
+              </h1>
             </div>
-            {/* Coordinates */}
-            <div
-              className="flex flex-col justify-center inline-block mr-1"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "11px",
-                lineHeight: "100%",
-                color: "#00000066",
-              }}
-            >
-              20.5937° N
-              <br />
-              78.9629° E
-            </div>
-            {/* Tagline */}
-            <div
-              className="flex flex-col justify-center inline-block mr-1"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "11px",
-                lineHeight: "100%",
-                color: "#00000066",
-              }}
-            >
-              To lead the way in<br />sustainability ahead of the<br />rest
-            </div>
-            {/* Inside WAE Menu Items */}
-            <div className="flex flex-col justify-center space-y-2">
-              {productsItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "11px",
-                    lineHeight: "110%",
-                  }}
-                >
-                  <Link href={item.href} className="contents">
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item.text}</span>
-                        <span className="block">{item.text}</span>
-                      </div>
-                      <span className="menu-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
-            {/* ETCETERA Menu Items */}
-            <div className="flex flex-col justify-center space-y-2">
-              {blueprintItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="pb-2 border-b border-[#D9D9DC] last:border-0"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "11px",
-                    lineHeight: "110%",
-                  }}
-                >
-                  <Link href={item.href} className="contents">
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item.text}</span>
-                        <span className="block">{item.text}</span>
-                      </div>
-                      <span className="menu-arrow blueprint-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
-                  </Link>
-                </div>
-              ))}
+            <div className="text-[#aaa] text-[15px] leading-relaxed pr-[10%]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+              <p className="mb-6">
+                We don't hire people to fit into a culture. We build a culture around people who dare to think differently. Here, engineers collaborate with storytellers, designers learn from scientists, and every perspective adds a new dimension to innovation. We celebrate individuality, nurture curiosity, and lead with empathy because the best solutions are born when diverse minds feel empowered to contribute.
+              </p>
+              <p>
+                Mistakes become lessons, ideas become movements, and work becomes purpose. If you're looking for a place where your voice matters, your growth is intentional, and your work leaves a lasting impact on people and the planet, you'll feel at home at WAE.
+              </p>
             </div>
           </div>
         </div>
-      </header>
-      {/* HERO SECTION */}
-      <section
-        id="hero"
-        className="relative w-full overflow-hidden h-screen pt-[70px] md:pt-[160px] mb-[140px]"
-      >
-        {/* Desktop: Background video (cover, aspect ratio maintained) */}
-        <video
-          className="hidden md:block absolute inset-0 w-screen object-contain z-0"
-          style={{objectFit: 'contain' }}
-          src="/Career_Page_update (1).mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
       </section>
 
-      {/* SCROLL-DRIVEN CONTAINER */}
-       {/* Added initial/animate opacity to address the pop-up */}
-       {/* Increased delay on the transition - Note: The scroll-to-top effect might make this less noticeable/necessary */}
-      <motion.div
-        className="relative bg-[#F2F2F2]"
-        style={{ marginTop: "10vh" }}
-         initial={{ opacity: 0 }}
-         animate={{ opacity: 1 }}
-         transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        {/* Sticky Logo Overlay */}
-         <motion.div
-          // KEEP flex justify-center class here
-          className="sticky-logo pointer-events-none flex justify-center pt-[180px]"
-          style={{
-            position: "sticky", // Keep sticky
-            top: "5%", // Keep sticky top
-            zIndex: 1100, // Keep z-index
-            opacity: logoOpacity, // Keep Framer Motion opacity
-            // Removed transform and transition based on logoOnLeft as that logic is removed
-          }}
-        >
-          {/* Inner div (flex item, centered by parent) */}
-          <div
-             className="max-w-[19.375rem] max-h-[19.375rem]"
-          >
-            <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9626af87-4cf5-4192-397c-3f4284787400/public"
-              alt="Center Logo"
-              width={250}
-              height={250}
-              className="opacity-80"
-            />
-          </div>
-        </motion.div>
+      <div className={containerClass}>
+        <div className="w-full h-px bg-[#222] my-[60px]" />
+      </div>
 
-        {/* Why WAE Section */}
-        <div>
-          <section className="h-screen/2 flex items-end justify-center relative mb-[320px]">
-            {/* whileInView will still work on this motion.div using its own internal observer */}
-            <motion.div
-              initial={{ y: "100%", opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="w-full max-w-screen-xl mx-8 lg:mx-36 mb-20"
-            >
-              <div className="flex flex-row lg:flex-row items-start justify-between">
-                <h2 style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontSize: '40px',
-                    lineHeight: '110%',
-                    letterSpacing: 0,
-                    verticalAlign: 'middle',
-                    color: '#000',
-                    marginBottom: '30px',
-                  }}
-                >
-                  Why WAE
-                </h2>
-                <div className="flex flex-col gap-5 w-64">
-                  <p style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                    letterSpacing: 0,
-                    verticalAlign: 'middle',
-                    color: '#00000099',
-                    marginBottom: '20px',
-                  }}>
-                  Life at WAE is vibrant and inspiring. Our culture is a tapestry of collaboration, inclusivity, and continuous learning. Here, your professional growth is as important as your personal well-being. Enjoy a work environment that fosters creativity, supports balance, and celebrates every success. At WAE, your journey is our story.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </section>
-        </div>
-
-        {/* Current Openings Section */}
-        <section className="h-screen/2 flex items-end justify-center relative mb-[320px]">
-           {/* whileInView will still work on this motion.div using its own internal observer */}
-          <motion.div
-            initial={{ y: "100%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="w-full max-w-screen-xl mx-8 lg:mx-36"
-          >
-            <div className="flex flex-row lg:flex-row items-start justify-between">
-              <h2 style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontSize: '40px',
-                    lineHeight: '110%',
-                    letterSpacing: 0,
-                    verticalAlign: 'middle',
-                    color: '#000',
-                    marginBottom: '30px',
-                  }}
-                >
-                Current
-                <br />
-                Openings
-              </h2>
-              <div className="flex flex-col gap-5 w-64">
-                <p style={{
-                    fontFamily: 'Inter Tight',
-                    fontWeight: 500,
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                    letterSpacing: 0,
-                    verticalAlign: 'middle',
-                    color: '#00000099',
-                    marginBottom: '20px',
-                  }}
-                >
-                Discover career opportunities where innovation meets impact. At WAE, we're building a sustainable future powered by technology and driven by purpose. Explore our current openings and become part of a team that values creativity, collaboration, and real-world change.
-                </p>
-                <HoverButton>
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4">
-                        <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
-                          width={16}
-                          height={16}
-                        />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
-                            width={16}
-                            height={16}
-                          />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
-              </div>
+      {/* Why WAE Section */}
+      <div className={containerClass}>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-0 items-stretch">
+          <div className="md:col-span-4 flex flex-col justify-between py-2 pr-8 mb-8 md:mb-0">
+            <div>
+              <h2 className="text-white text-[28px] font-medium mb-2" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Why WAE</h2>
+              <p className="text-[#888] text-[13px]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Think Different</p>
             </div>
-          </motion.div>
-        </section>
-
-        {/* New Items-Right Sections */}
-<div className="flex flex-col justify-between px-[9.72%] gap-[320px]">
-  {extraSections.map((sec, idx) => (
-    // Each section will now be a flex container with items in a row
-    <section key={idx} className="flex flex-row lg:flex-row items-start justify-between">
-
-      {/* Left Column: Number, HR, and Title */}
-      <div className="flex flex-col mr-4 "> {/* Added flex-col and margin-right for spacing */}
-        <div
-          style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: '21px',
-            lineHeight: '110%',
-            letterSpacing: '0%',
-            verticalAlign: 'middle',
-            color: '#00000066'
-          }}
-        >
-          {sec.number}
+            <HoverButton>
+              {(hovered) => (
+                <>
+                  Know More
+                  <div className="relative inline-block w-3 h-3 ml-1 overflow-hidden">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`transition-transform duration-300 ${hovered ? 'translate-x-full -translate-y-full' : 'translate-x-0 translate-y-0'}`}>
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="12 5 19 5 19 12" />
+                    </svg>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`absolute top-0 left-0 transition-transform duration-300 ${hovered ? 'translate-x-0 translate-y-0' : '-translate-x-full translate-y-full'}`}>
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="12 5 19 5 19 12" />
+                    </svg>
+                  </div>
+                </>
+              )}
+            </HoverButton>
+          </div>
+          
+          <div className="md:col-span-8 md:border-l border-[#222] md:pl-[5vw] py-2">
+            <h2 className="text-white text-[30px] md:text-[34px] font-medium leading-[1.2] mb-12" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+              Why spend your career following change<br className="hidden md:block" />when you can create it?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#aaa] text-[14px] leading-relaxed mb-12 md:pr-[10%]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+              <p>
+                At WAE, we believe the best work happens when people care deeply about what they do and who they do it with. You'll work alongside passionate minds from different backgrounds, united by a shared desire to solve meaningful challenges and create solutions that make a real difference.
+              </p>
+              <p>
+                What makes WAE special isn't just the work, it's the people. We celebrate individuality, encourage fresh thinking, and lead with empathy. Here, you'll find the freedom to explore ideas, the support to grow, and a culture that values collaboration over hierarchy, making every contribution count.
+              </p>
+            </div>
+            <div className="w-full relative h-[300px] md:h-[450px]">
+              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2a452293-dc8e-4666-c735-79acdcb92300/public" alt="Why WAE" fill className="object-cover" />
+            </div>
+          </div>
         </div>
-        <div style={{ height: '18px' }} />
-        <hr style={{ border: '0.5px solid #D9D9DC' }} />
-        <div style={{ height: '18px' }} />
-        <div
-          style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: '21px',
-            lineHeight: '110%',
-            letterSpacing: '0%',
-            verticalAlign: 'middle'
-          }}
-        >
-          {sec.title}
+        
+        <div className="w-full h-px bg-[#222] my-[80px]" />
+      </div>
+
+      {/* Life @ WAE Section */}
+      <div className={containerClass}>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-0 items-stretch">
+          <div className="md:col-span-4 flex flex-col justify-between py-2 pr-8 mb-8 md:mb-0">
+            <div>
+              <h2 className="text-white text-[28px] font-medium mb-2" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Life @ WAE</h2>
+              <p className="text-[#888] text-[13px]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>People first</p>
+            </div>
+            <HoverButton>
+              {(hovered) => (
+                <>
+                  Know More
+                  <div className="relative inline-block w-3 h-3 ml-1 overflow-hidden">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`transition-transform duration-300 ${hovered ? 'translate-x-full -translate-y-full' : 'translate-x-0 translate-y-0'}`}>
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="12 5 19 5 19 12" />
+                    </svg>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`absolute top-0 left-0 transition-transform duration-300 ${hovered ? 'translate-x-0 translate-y-0' : '-translate-x-full translate-y-full'}`}>
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="12 5 19 5 19 12" />
+                    </svg>
+                  </div>
+                </>
+              )}
+            </HoverButton>
+          </div>
+          
+          <div className="md:col-span-8 md:border-l border-[#222] md:pl-[5vw] py-2">
+            <h2 className="text-white text-[30px] md:text-[34px] font-medium leading-[1.2] mb-12" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+              Life at WAE is where meaningful work<br className="hidden md:block" />meets people, purpose, and joy.
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#aaa] text-[14px] leading-relaxed mb-12 md:pr-[10%]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+              <p>
+                The best part of any workplace is the people, and that's what makes life here special. A diverse community of thinkers, creators, engineers, dreamers, and doers come together with different stories, experiences, and perspectives. Every day brings fresh ideas, shared laughter, continuous learning, and the opportunity to build something meaningful together.
+              </p>
+              <p>
+                Life here extends beyond meetings, projects, and deadlines. It lives in celebrations, team outings, festive gatherings, coffee conversations, and moments that turn colleagues into friends. We celebrate individuality, encourage authenticity, and create an environment where people feel valued, supported, and inspired to grow both personally and professionally.
+              </p>
+            </div>
+            <div className="w-full relative h-[300px] md:h-[450px]">
+              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee795b42-a4d9-467f-22db-4bfbfedcc600/public" alt="Life @ WAE" fill className="object-cover object-top" />
+            </div>
+          </div>
+        </div>
+        
+        <div className="w-full h-px bg-[#222] my-[80px]" />
+      </div>
+
+      {/* Join WAE Section */}
+      <div className={containerClass}>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-0 items-stretch">
+          <div className="md:col-span-4 flex flex-col justify-between py-2 pr-8 mb-8 md:mb-0">
+            <div>
+              <h2 className="text-white text-[28px] font-medium mb-2" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Join WAE</h2>
+              <p className="text-[#888] text-[13px]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Explore current job openings</p>
+            </div>
+            <HoverButton>
+              {(hovered) => (
+                <>
+                  Know More
+                  <div className="relative inline-block w-3 h-3 ml-1 overflow-hidden">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`transition-transform duration-300 ${hovered ? 'translate-x-full -translate-y-full' : 'translate-x-0 translate-y-0'}`}>
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="12 5 19 5 19 12" />
+                    </svg>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`absolute top-0 left-0 transition-transform duration-300 ${hovered ? 'translate-x-0 translate-y-0' : '-translate-x-full translate-y-full'}`}>
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="12 5 19 5 19 12" />
+                    </svg>
+                  </div>
+                </>
+              )}
+            </HoverButton>
+          </div>
+          
+          <div className="md:col-span-8 md:border-l border-[#222] md:pl-[5vw] py-2">
+            <h2 className="text-white text-[30px] md:text-[34px] font-medium leading-[1.2] mb-12" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+              Some careers fill your time.<br className="hidden md:block" />The right one can shape your life.
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#aaa] text-[14px] leading-relaxed mb-12 md:pr-[10%]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+              <p>
+                The people you work with often matter more than the work itself. They challenge you when you need courage, support you when you need strength, and celebrate you when you succeed. Here, you'll find a community of passionate individuals who believe that great things are built together.
+              </p>
+              <p>
+                Every person brings a different story, perspective, and dream. That's what makes the journey meaningful. You'll be surrounded by people who inspire growth, spark new ideas, and genuinely care about one another. If you're looking for purpose, belonging, and friendships that last beyond the workplace, this is where your next chapter begins.
+              </p>
+            </div>
+            <div className="w-full relative h-[300px] md:h-[450px]">
+              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bbdfa982-ca17-42af-5d71-29d91614b100/public" alt="Join WAE" fill className="object-cover" />
+            </div>
+          </div>
+        </div>
+        
+        <div className="w-full h-px bg-[#222] my-[80px]" />
+      </div>
+
+      {/* Great Place to Work Section */}
+      <div className={containerClass}>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-[140px]">
+          <div className="md:col-span-4 mb-8 md:mb-0">
+            <h2 className="text-white text-[48px] md:text-[56px] leading-[1.1] font-medium tracking-tight" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+              Great Place<br className="hidden md:block" />to Work
+            </h2>
+          </div>
+          <div className="md:col-span-8 md:pl-[5vw] pt-2">
+            <p className="text-[#aaa] text-[14px] leading-relaxed mb-10 w-full md:w-[70%]" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+              More than a certification, it's a reflection of our people. Built on respect, inclusivity, and shared success, our workplace continues to be recognized among the best.
+            </p>
+            <div className="w-full relative h-[100px] md:h-[140px] max-w-[400px]">
+              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dbd80a00-9a7f-4fdc-e4ef-8aa766ad7100/public" alt="Great Place to Work Badges" fill className="object-contain object-left" />
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Right Column: Description and Button */}
-      <div className="flex flex-col items-start w-[290px]"> {/* Added flex-col, items-end, and text-right */}
-        <div style={{
-          fontFamily: 'Inter Tight',
-          fontWeight: 500,
-          fontSize: '12px',
-          lineHeight: '100%',
-          letterSpacing: 0,
-          verticalAlign: 'middle',
-          color: '#00000099',
-          marginBottom: '20px',
-        }}>
-          {sec.description}
-        </div>
-        <div style={{ height: '20px' }} />
-        <HoverButton>
-            {(hovered) => (
-              <>
-                Apply Now
-                <div className="relative inline-block w-4 h-4 ml-2"> {/* Added ml-2 for spacing */}
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                    alt="icon default"
-                    width={16}
-                    height={16}
-                  />
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: hovered ? 1 : 0 }}
-                    transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                    className="absolute top-0 left-0"
-                  >
-                    <Image
-                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                      alt="icon hover"
-                      width={16}
-                      height={16}
-                    />
-                  </motion.div>
-                </div>
-              </>
-            )}
-          </HoverButton>
-      </div>
-    </section>
-  ))}
-</div>
-
-        {/* FOOTER SECTION */}
-        <div style={{ position: "relative", zIndex: 1200 }}>
-          <Footer />
-        </div>
-      </motion.div>
-
-      {/* INLINE STYLES */}
-      <style jsx>{`
-        .product-grid { /* Appears unused in the current JSX */
-          width: 1160px;
-          height: 928px;
-          border-collapse: collapse;
-        }
-        .product-title { /* Appears unused in the current JSX */
-          font-family: "Inter Tight", sans-serif;
-          font-weight: 500;
-          font-size: 48px;
-          line-height: 110%;
-          letter-spacing: 0px;
-          vertical-align: middle;
-          text-align: center;
-          width: calc(232px * 2);
-          height: 232px;
-          box-sizing: border-box;
-        }
-        .product-cell { /* Appears unused in the current JSX */
-          font-family: "Inter Tight", sans-serif;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 100%;
-          letter-spacing: 0px;
-          text-align: center;
-          vertical-align: middle;
-          text-transform: uppercase;
-          color: #1e1e1e;
-          background-color: #f2f2f2;
-          width: 232px;
-          height: 232px;
-          padding: 0px;
-          box-sizing: border-box;
-        }
-        .placeholder-img { /* Appears unused in the current JSX */
-          object-fit: cover;
-        }
-        /* Styles for the custom menu hover effect */
-        .c--anim-btn {
-          display: flex;
-          align-items: center;
-          gap: 4px;
-          /* Add transition for smoothness if needed, but text-container handles main anim */
-        }
-        .text-container {
-          height: 12px; /* Must match line-height of the spans */
-          overflow: hidden; /* Hides the second span initially */
-        }
-        .c-anim-btn {
-          display: block;
-          transition: margin-top 0.5s; /* Smooth slide animation */
-        }
-        .c--anim-btn:hover .c-anim-btn {
-          margin-top: -12px; /* Moves the first span up, showing the second */
-        }
-        .menu-arrow {
-          display: inline-block;
-          opacity: 0;
-          transform: translateX(-10px); /* Start off-screen */
-          transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth animation */
-        }
-        .c--anim-btn:hover .menu-arrow {
-          transform: translateX(0); /* Slide in */
-          opacity: 1; /* Fade in */
-        }
-        .blueprint-arrow { /* Specific style for Blueprint arrow */
-          transform: rotate(-45deg) translateX(-10px); /* Start rotated and off-screen */
-        }
-        .c--anim-btn:hover .blueprint-arrow {
-          transform: rotate(-45deg) translateX(0); /* Slide in and maintain rotation */
-          opacity: 1;
-        }
-      `}</style>
+      <Footer />
     </main>
   );
-};
-
-export default Home;
-
+}

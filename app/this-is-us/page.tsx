@@ -463,7 +463,7 @@ export default function Home() {
     const productsItems = [
         { text: "This is Us", href: "/this-is-us" },
         { text: "Our Portfolio", href: "/our-portfolio" },
-        { text: "Reimagine Work", href: "/careers3" },
+        { text: "Reimagine Work", href: "/careers" },
     ]
     const blueprintItems = [
         { text: "Sustainability", href: "/sustainability" },
@@ -1159,7 +1159,7 @@ export default function Home() {
                         <p className="text-[14px] font-normal leading-[130%] text-white">
                             Ready for what's next? We're proud to support our employees with opportunities to grow and thrive. We're looking for talented people like you from all across the globe.
                         </p>
-                        <DarkSectionButton href="/careers3" />
+                        <DarkSectionButton href="/careers" />
                     </div>
 
                 </div>

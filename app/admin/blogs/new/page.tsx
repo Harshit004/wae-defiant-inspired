@@ -183,22 +183,22 @@ export default function NewBlogPage() {
     const payload = {
       action: "create",
       blogData: {
-        title,
-        category,
-        description,
-        heroImage,
-        writerId,
-        readTime,
+        title: title.trim(),
+        category: category.trim(),
+        description: description.trim(),
+        heroImage: heroImage.trim(),
+        writerId: writerId.trim(),
+        readTime: readTime.trim(),
         status,
         contentColumns: [cleanCol(col1), cleanCol(col2), cleanCol(col3)]
       },
       writerData: {
-        id: writerId,
-        name: writerName,
-        role: writerRole,
-        bio: writerBio,
-        image: writerImage,
-        link: writerLink
+        id: writerId.trim(),
+        name: writerName.trim(),
+        role: writerRole.trim(),
+        bio: writerBio.trim(),
+        image: writerImage.trim(),
+        link: writerLink.trim()
       }
     }
 
@@ -384,6 +384,16 @@ export default function NewBlogPage() {
                         value={writerBio}
                         onChange={(e) => handleFieldChange(setWriterBio, e.target.value)}
                         className="w-full bg-[#030d17] border border-white/10 text-white px-3 py-2 text-xs outline-none focus:border-white/20 rounded-none resize-y"
+                      />
+                    </div>
+                    <div className="md:col-span-2">
+                      <label className="block text-[10px] font-semibold text-gray-400 mb-1 uppercase">LinkedIn / Profile URL</label>
+                      <input
+                        type="url"
+                        value={writerLink}
+                        onChange={(e) => handleFieldChange(setWriterLink, e.target.value)}
+                        className="w-full bg-[#030d17] border border-white/10 text-white px-3 py-2 text-xs outline-none focus:border-white/20 rounded-none"
+                        placeholder="https://www.linkedin.com/in/..."
                       />
                     </div>
                   </div>

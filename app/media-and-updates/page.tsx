@@ -211,7 +211,7 @@ const Home: FC = () => {
   const productsItems = [
     { text: "This Is Us", href: "/this-is-us" },
     { text: "Our Portfolio", href: "/our-portfolio" },
-    { text: "Reimagine Work", href: "/careers3" },
+    { text: "Reimagine Work", href: "/careers" },
   ];
 
   // ETCETERA section
