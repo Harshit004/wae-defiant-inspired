@@ -142,18 +142,33 @@ export default function LifeAtWAEPage() {
             <div 
               ref={scrollRef}
               onScroll={handleScroll}
-              className="flex gap-[51px] overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+              className="flex overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
               style={{
                 scrollbarWidth: 'none',
-                paddingLeft: 'max(7.5vw, calc((100vw - 1440px) / 2 + 7.5vw))',
-                paddingRight: 'max(7.5vw, calc((100vw - 1440px) / 2 + 7.5vw))',
               }}
             >
+              {/* Left spacer matches standard container margin */}
+              <div 
+                className="flex-shrink-0"
+                style={{ width: 'max(7.5vw, calc((100vw - 1440px) / 2 + 7.5vw))' }} 
+              />
+
               {carouselImages.map((src, i) => (
-                <div key={i} className="w-[80vw] sm:w-[432px] aspect-[432/412] relative flex-shrink-0 snap-start">
+                <div 
+                  key={i} 
+                  className={`w-[80vw] sm:w-[432px] aspect-[432/412] relative flex-shrink-0 snap-start ${
+                    i !== carouselImages.length - 1 ? 'mr-[51px]' : ''
+                  }`}
+                >
                   <Image src={src} alt={`Happy face ${i + 1}`} fill className="object-cover" />
                 </div>
               ))}
+
+              {/* Right spacer ensures last image aligns properly */}
+              <div 
+                className="flex-shrink-0"
+                style={{ width: 'max(7.5vw, calc((100vw - 1440px) / 2 + 7.5vw))' }} 
+              />
             </div>
           </div>
 
