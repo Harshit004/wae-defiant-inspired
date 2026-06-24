@@ -127,8 +127,8 @@ export default function CookieConsent() {
           style={{
             margin: "0 0 78px 0", // 78px gap below description
             fontFamily: "'Inter Tight', sans-serif",
-            fontSize: "15px",
-            lineHeight: "1.6",
+            fontSize: "20px",
+            lineHeight: "1.5",
             color: "rgba(255, 255, 255, 0.9)",
           }}
         >
