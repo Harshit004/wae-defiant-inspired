@@ -36,7 +36,7 @@ export default function CareersPage() {
       <div
         className="absolute top-0 left-0 w-full pointer-events-none"
         style={{
-          background: 'linear-gradient(160deg, #004063 4.52%, #0F0F0F 40%)',
+          background: 'linear-gradient(160deg, #004063 4.52%, #0F0F0F 40%)', height: 'clamp(500px, 80vh, 875px)'
         }}
       />
 
