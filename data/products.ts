@@ -106,12 +106,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "counter-top"
       },
       {
-        "id": "assistflow",
-        "name": "ASSISTFLOW",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public"
-      },
-      {
         "id": "var-series",
         "name": "VAR Series",
         "category": "free-standing",
@@ -146,6 +140,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "GSP",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
+      },
+      {
+        "id": "assistflow",
+        "name": "ASSISTFLOW",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/78cde953-1b2b-48db-0aaa-eaf393a09d00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -880,7 +880,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "heroSubtitle": "Powerful LED sterilization",
     "status": "Live",
     "description": "Information regarding WAE series drinking water dispensers and advanced purification modules.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c69c6e9-f765-4d92-a80d-ef0688cd6600/public",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/78cde953-1b2b-48db-0aaa-eaf393a09d00/public",
     "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
     "heroSubtext": "Experience on-demand",
     "heroCtaText": "Contact Us",
@@ -895,10 +895,10 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "ambient": true
     },
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6cbe11d1-d684-43fd-b674-e948d745eb00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/875719ac-2f9e-456b-662f-d437c10dca00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61bed0a3-d40d-46ec-2edd-a3fb53abe400/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/78cde953-1b2b-48db-0aaa-eaf393a09d00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c549c9bc-8af7-41f6-03d5-8c0078e9dd00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ec016b83-3713-4d25-f896-de54df537900/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/64fe0354-6750-4828-ed39-78cca03f1b00/public"
     ],
     "featuresList": [
       {
@@ -959,14 +959,14 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "dimensions": [
         {
           "variant": "Assistflow 100",
-          "weight": "85",
+          "weight": "150.0",
           "height": "1631",
           "width": "535",
           "depth": "654"
         },
         {
           "variant": "Assistflow 50",
-          "weight": "45",
+          "weight": "120.0",
           "height": "1631",
           "width": "535",
           "depth": "654"
@@ -975,7 +975,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "powerRequirement": "Hertz 50/Volts 230-240",
       "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
-    }
+    },
+    "displayImageIndex": 0
   },
   "venus": {
     "id": "venus",
