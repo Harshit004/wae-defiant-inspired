@@ -10,6 +10,7 @@ import {
   ChevronDown,
   ChevronUp,
   FileText,
+  Briefcase,
   PlaySquare,
   Settings,
   LogOut
@@ -113,6 +114,19 @@ export default function Sidebar() {
           >
             <FileText size={18} />
             <span>Blogs</span>
+          </Link>
+
+          {/* Jobs */}
+          <Link
+            href="/admin/jobs"
+            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+              pathname.startsWith("/admin/jobs")
+                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3"
+                : "text-[#AEAEAE]"
+            }`}
+          >
+            <Briefcase size={18} />
+            <span>Jobs</span>
           </Link>
 
           {/* News & Events */}

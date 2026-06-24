@@ -3,8 +3,10 @@
 import React, { FC, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { JOBS } from "@/data/jobs";
 
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]";
 
@@ -42,6 +44,18 @@ const HoverButton: FC<HoverButtonProps> = ({ children, className = "", href }) =
 };
 
 export default function JobDescriptionPage() {
+  const params = useParams();
+  const id = params.id as string;
+  const job = JOBS[id];
+
+  if (!job || job.status !== 'Live') {
+    return (
+      <main className="bg-[#0F0F0F] min-h-screen text-white flex items-center justify-center">
+        <h1 className="text-2xl font-['Inter_Tight']">Job Not Found</h1>
+      </main>
+    );
+  }
+
   return (
     <main className="bg-[#0F0F0F] min-h-screen text-white font-sans selection:bg-white selection:text-black relative overflow-x-hidden">
       {/* Dark background gradient */}
@@ -59,9 +73,9 @@ export default function JobDescriptionPage() {
           {/* Header section of JD */}
           <div className="flex justify-between items-start mb-[28px]">
             <h1 className="font-['Inter_Tight'] font-normal text-[46px] leading-[1.1] text-white">
-              Product Designer
+              {job.title}
             </h1>
-            <HoverButton className="w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
+            <HoverButton href={`mailto:careers@wae.com?subject=Application for ${job.title}`} className="w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
               {(hovered) => (
                 <div className="flex items-center justify-center gap-[8px]">
                   <span className="font-['Manrope'] font-medium text-[10px] leading-none uppercase">Apply Now</span>
@@ -81,12 +95,12 @@ export default function JobDescriptionPage() {
           </div>
 
           <p className="font-['Manrope'] font-normal text-[16px] leading-normal text-[#AEAEAE] mb-[20px]">
-            We're looking for mid-level, 5+ years of experience product designer to join our team.
+            {job.shortDescription}
           </p>
 
           <div className="flex gap-[42px] font-['Inter_Tight'] font-normal text-[24px] leading-normal text-white mb-[62px]">
-            <span>On-site</span>
-            <span>Full time</span>
+            <span>{job.type}</span>
+            <span>{job.time}</span>
           </div>
 
           <div className="w-full border-b border-[#FFFFFF4D] mb-[62px]" />
@@ -97,12 +111,9 @@ export default function JobDescriptionPage() {
               Job Summary
             </h2>
             <div className="font-['Manrope'] font-normal text-[14px] leading-normal text-[#AEAEAE] mb-[50px] space-y-4">
-              <p>
-                We're on the lookout for a Product Designer who can own complex design projects end-to-end, from research & strategy to final delivery, for some of the most ambitious brands across the globe.
-              </p>
-              <p>
-                In this role, you'll bridge business goals & user needs, lead a team of designers, & deliver experiences that are as thoughtful as they are impactful. If you're ready to lead with craft & strategy, apply now.
-              </p>
+              {job.summaryParagraphs.map((para, idx) => (
+                <p key={idx}>{para}</p>
+              ))}
             </div>
 
             {/* What you'll do */}
@@ -110,13 +121,9 @@ export default function JobDescriptionPage() {
               What you'll do
             </h3>
             <ul className="list-disc pl-5 font-['Manrope'] font-normal text-[14px] leading-[1.8] text-[#AEAEAE] mb-[50px]">
-              <li>Own & deliver complex UX projects for clients across industries, ensuring high-quality outcomes at every stage</li>
-              <li>Lead the end-to-end design process across research, ideation, wireframing, prototyping & testing</li>
-              <li>Drive UX strategy & translate business goals into intuitive, user-centered digital experiences</li>
-              <li>Bring a sharp aesthetic eye to every project, ensuring design craft & visual quality are never compromised</li>
-              <li>Collaborate with cross-functional teams, including product managers, developers & stakeholders</li>
-              <li>Lead & manage a team of designers, distributing work effectively & maintaining delivery standards</li>
-              <li>Mentor junior designers & contribute to a high-performance design culture</li>
+              {job.whatYouWillDo.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
 
             {/* What you'll own */}
@@ -124,12 +131,9 @@ export default function JobDescriptionPage() {
               What you'll own
             </h3>
             <ul className="list-disc pl-5 font-['Manrope'] font-normal text-[14px] leading-[1.8] text-[#AEAEAE] mb-[50px]">
-              <li>End-to-end delivery of complex design projects for clients, delivered on time & at the highest quality bar</li>
-              <li>User research initiatives that produce data-driven UX solutions enhancing satisfaction & engagement</li>
-              <li>High-fidelity wireframes, prototypes & robust design systems that scale across products, platforms & client engagements</li>
-              <li>User personas, journey maps & information architecture for structured, intuitive experiences</li>
-              <li>UX documentation standards ensuring clarity & consistency across all projects</li>
-              <li>Project timelines & deliverables, keeping execution sharp across multiple engagements</li>
+              {job.whatYouWillOwn.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
 
             {/* Who are we looking for */}
@@ -137,15 +141,9 @@ export default function JobDescriptionPage() {
               Who are we looking for
             </h3>
             <ul className="list-disc pl-5 font-['Manrope'] font-normal text-[14px] leading-[1.8] text-[#AEAEAE] mb-[62px]">
-              <li>5+ years of UX design experience, with at least 1 year leading projects or a team</li>
-              <li>Proven ability to deliver complex design projects independently, ideally in a design agency or UX studio setup</li>
-              <li>Strong expertise in UX research, wireframing, prototyping & interaction design for web & mobile</li>
-              <li>Hands-on experience building & maintaining scalable design systems that ensure consistency across products & platforms</li>
-              <li>A strong aesthetic sensibility with an eye for craft, someone who sweats the details & raises the visual bar on every project</li>
-              <li>Deep understanding of information architecture, accessibility & usability practices</li>
-              <li>Proficiency in Figma & other design & prototyping tools</li>
-              <li>Excellent storytelling & presentation skills to articulate design decisions to clients & stakeholders</li>
-              <li>Experience managing & mentoring designers in a collaborative studio environment</li>
+              {job.whoWeAreLookingFor.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
           </div>
 

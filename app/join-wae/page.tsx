@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { JOBS, JOB_CATEGORIES } from "@/data/jobs";
 
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]";
 
@@ -70,26 +71,14 @@ const HoverButton: FC<HoverButtonProps> = ({ children, className = "", href }) =
 };
 
 export default function JoinWaePage() {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
-  const categories = [
-    "VIEW ALL",
-    "DEVELOPMENT",
-    "DESIGN",
-    "MARKETING",
-    "CUSTOMER SERVICE",
-    "OPERATION",
-    "FINANCE",
-    "MANAGEMENT"
-  ];
+  const selectedCategory = JOB_CATEGORIES[selectedIndex];
 
-  const jobs = [1, 2, 3, 4, 5, 6].map((i) => ({
-    title: "Product Designer",
-    description: "We're looking for mid-level product designer to join our team.",
-    type: "On-site",
-    time: "Full time",
-    id: i
-  }));
+  const jobs = Object.values(JOBS).filter((job) => 
+    job.status === 'Live' &&
+    (selectedCategory === 'VIEW ALL' || job.category === selectedCategory)
+  );
 
   return (
     <main className="bg-[#0F0F0F] min-h-screen text-white font-sans selection:bg-white selection:text-black relative overflow-x-hidden">
@@ -107,7 +96,7 @@ export default function JoinWaePage() {
             </p>
 
             <div className="flex w-full justify-between gap-[16px] mb-[96px]">
-              {categories.map((cat, idx) => (
+              {JOB_CATEGORIES.map((cat, idx) => (
                 <SelectButton
                   key={cat}
                   selected={selectedIndex === idx}
@@ -130,7 +119,7 @@ export default function JoinWaePage() {
                   <div className="flex flex-col">
                     <h2 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white mb-[18px]">{job.title}</h2>
                     <p className="font-['Manrope'] font-normal text-[16px] leading-none text-[#AEAEAE] mb-[14px]">
-                      {job.description}
+                      {job.shortDescription}
                     </p>
                     <div className="flex gap-[42px] font-['Inter_Tight'] font-normal text-[14px] leading-none text-white">
                       <span>{job.type}</span>
@@ -138,7 +127,7 @@ export default function JoinWaePage() {
                     </div>
                   </div>
 
-                  <HoverButton className="w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
+                  <HoverButton href={`/join-wae/${job.id}`} className="w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
                     {(hovered) => (
                       <div className="flex items-center justify-center gap-[8px]">
                         <span className="font-['Manrope'] font-medium text-[10px] leading-none">Know More</span>
