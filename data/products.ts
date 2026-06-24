@@ -82,12 +82,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "gsp",
-        "name": "BLUWAE GSP",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
-        "category": "free-standing"
-      },
-      {
         "id": "venus",
         "name": "BLUWAE VENUS",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
@@ -146,6 +140,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "REVA",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/978c8961-cf7f-4570-2b9b-e6e5838ed100/public"
+      },
+      {
+        "id": "gsp",
+        "name": "GSP",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -796,53 +796,82 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4eb27063-2310-4888-4f1c-9f4b02493d00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c96d8adb-e99f-4181-f45f-1bbd40918c00/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/94110d2a-1b49-4225-cd63-a1bb1bcfc300/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a190aa38-9d3a-4133-40d1-5cac6865f900/public"
     ],
     "featuresList": [
       {
-        "title": "Powerful LED Powerful LED Sterilization",
+        "title": "Water Options",
+        "description": "Chilled Hot"
+      },
+      {
+        "title": "Touch-Free Dispensing",
+        "description": "Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless."
+      },
+      {
+        "title": "Smooth, Splash-Free Flow",
+        "description": "Designed for a clean, laminar water flow that minimizes spillage, paired with an efficient drainage system."
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "title": "Versatile Integration",
+        "description": "Effortlessly integrates with carbonated beverage dispensers and coffee/tea vending machines, providing a flexible, all-in-one hydration solution."
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "title": "Water Enrichments (Optional)",
+        "description": "Mineralization Alkaline"
       }
     ],
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
+          "variant": "GSP HC",
+          "hot": "1",
+          "cold": "16",
+          "ambient": "-"
         }
       ],
       "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000ml",
+      "dripTray": "1300 ml",
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
+          "variant": "GSP HC",
+          "weight": "131.0",
+          "height": "1155",
+          "width": "300",
+          "depth": "410"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
-    }
+    },
+    "status": "Live",
+    "description": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ad026cb7-dac1-4188-a839-a2062c712d00/public",
+    "heroTagline": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
+    "heroSubtext": "Sustainability at Core",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "/contactus",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "/enqyiry",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/Grand%20Slam%20Pro.pdf",
+    "datasheetPdf": "file:///C:/Users/WAE/Downloads/Grand%20Slam%20Pro.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": false
+    },
+    "displayImageIndex": 0
   },
   "assistflow": {
     "id": "assistflow",
