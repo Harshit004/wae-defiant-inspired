@@ -237,8 +237,8 @@ export const CATEGORIES: Record<string, CategoryData> = {
   "watermatic": {
     "id": "watermatic",
     "title": "Drinking water faucets - WATERMATIC",
-    "description": "Drinking water taps featuring sensor touch or push operation for hygienic dispensing, effortless usability, and seamless modern hydration experiences.",
-    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
+    "description": "Advanced stainless steel drinking water faucets and RO taps, engineered for hygienic dispensing and seamless hydration across modern commercial environments.",
+    "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e807d00-5660-49ad-3599-cf71b99c6b00/public",
     "paragraphs": [
       "Drinking water taps featuring sensor touch or push operation for hygienic dispensing, effortless usability, and seamless modern hydration experiences.",
       "The Watermatic Drinking Water Faucet is a next-gen hydration solution designed for modern workspaces, hotels, and high-end dining spaces."
