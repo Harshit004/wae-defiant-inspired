@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -16,13 +16,36 @@ const carouselImages = [
 ];
 
 export default function LifeAtWAEPage() {
-  const [slideIndex, setSlideIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isAtStart, setIsAtStart] = useState(true);
+  const [isAtEnd, setIsAtEnd] = useState(false);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setIsAtStart(scrollLeft <= 0);
+      // Use a 2px buffer for subpixel rendering rounding errors
+      setIsAtEnd(scrollLeft + clientWidth >= scrollWidth - 2);
+    }
+  };
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener('resize', handleScroll);
+    return () => window.removeEventListener('resize', handleScroll);
+  }, []);
 
   const nextSlide = () => {
-    setSlideIndex((prev) => Math.min(prev + 1, carouselImages.length - 1));
+    if (scrollRef.current) {
+      // Scroll by one image width + gap
+      scrollRef.current.scrollBy({ left: 483, behavior: 'smooth' });
+    }
   };
+
   const prevSlide = () => {
-    setSlideIndex((prev) => Math.max(prev - 1, 0));
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -483, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -115,26 +138,30 @@ export default function LifeAtWAEPage() {
             Our happy faces
           </h2>
 
-          <div className="relative w-[100vw] ml-[calc(-50vw+50%)] overflow-hidden mb-[40px]">
-            <div className="max-w-[1440px] mx-auto px-[7.5vw]">
-              <div 
-                className="flex gap-[51px] transition-transform duration-500 ease-in-out w-max"
-                style={{ transform: `translateX(calc(-${slideIndex} * (max(280px, 432px) + 51px)))` }}
-              >
-                {carouselImages.map((src, i) => (
-                  <div key={i} className="w-[80vw] sm:w-[432px] aspect-[432/412] relative flex-shrink-0">
-                    <Image src={src} alt={`Happy face ${i + 1}`} fill className="object-cover" />
-                  </div>
-                ))}
-              </div>
+          <div className="relative w-[100vw] ml-[calc(-50vw+50%)] mb-[40px]">
+            <div 
+              ref={scrollRef}
+              onScroll={handleScroll}
+              className="flex gap-[51px] overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+              style={{
+                scrollbarWidth: 'none',
+                paddingLeft: 'max(7.5vw, calc((100vw - 1440px) / 2 + 7.5vw))',
+                paddingRight: 'max(7.5vw, calc((100vw - 1440px) / 2 + 7.5vw))',
+              }}
+            >
+              {carouselImages.map((src, i) => (
+                <div key={i} className="w-[80vw] sm:w-[432px] aspect-[432/412] relative flex-shrink-0 snap-start">
+                  <Image src={src} alt={`Happy face ${i + 1}`} fill className="object-cover" />
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="flex justify-end gap-[15px]">
             <button 
               onClick={prevSlide}
-              disabled={slideIndex === 0}
-              className={`w-[40px] h-[40px] border border-[#333] flex items-center justify-center transition-colors hover:bg-white hover:text-black ${slideIndex === 0 ? 'opacity-50 cursor-not-allowed hover:bg-transparent hover:text-white' : ''}`}
+              disabled={isAtStart}
+              className={`w-[40px] h-[40px] border border-[#333] flex items-center justify-center transition-colors hover:bg-white hover:text-black ${isAtStart ? 'opacity-50 cursor-not-allowed hover:bg-transparent hover:text-white' : ''}`}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                 <polyline points="15 18 9 12 15 6" />
@@ -142,8 +169,8 @@ export default function LifeAtWAEPage() {
             </button>
             <button 
               onClick={nextSlide}
-              disabled={slideIndex >= carouselImages.length - 2}
-              className={`w-[40px] h-[40px] border border-[#333] flex items-center justify-center transition-colors hover:bg-white hover:text-black ${slideIndex >= carouselImages.length - 2 ? 'opacity-50 cursor-not-allowed hover:bg-transparent hover:text-white' : ''}`}
+              disabled={isAtEnd}
+              className={`w-[40px] h-[40px] border border-[#333] flex items-center justify-center transition-colors hover:bg-white hover:text-black ${isAtEnd ? 'opacity-50 cursor-not-allowed hover:bg-transparent hover:text-white' : ''}`}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                 <polyline points="9 18 15 12 9 6" />
