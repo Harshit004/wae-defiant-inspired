@@ -18,9 +18,8 @@ const SelectButton: FC<SelectButtonProps> = ({ children, selected, onClick }) =>
   <button
     type="button"
     onClick={onClick}
-    className="transition-all duration-300 ease-in-out border hover:bg-white/10"
+    className="transition-all duration-300 ease-in-out border hover:bg-white/10 flex-1 h-[40px] flex items-center justify-center whitespace-nowrap"
     style={{
-      padding: '14px 20px',
       borderColor: selected ? '#ffffff' : '#ffffff33',
       backgroundColor: selected ? '#ffffff' : 'transparent',
       color: selected ? '#000000' : '#ffffff',
@@ -96,22 +95,22 @@ export default function JoinWaePage() {
     <main className="bg-[#0F0F0F] min-h-screen text-white font-sans selection:bg-white selection:text-black relative overflow-x-hidden">
       <Header />
 
-      <section className="pt-[235px] relative z-10 pb-[100px]">
+      <section className="pt-[235px] relative z-10">
         <div className={containerClass}>
           <div className="flex flex-col items-start">
-            <h3 className="font-['Inter_Tight'] font-normal text-[24px] leading-none text-[#AEAEAE] mb-[15px]">We are hiring</h3>
-            <h1 className="font-['Inter_Tight'] font-normal text-[60px] leading-[1.1] text-white mb-[24px]">
+            <h3 className="font-['Inter_Tight'] font-normal text-[24px] leading-none text-[#AEAEAE] mb-[21px]">We are hiring</h3>
+            <h1 className="font-['Inter_Tight'] font-normal text-[60px] leading-[1.1] text-white mb-[21px]">
               Be part of our mission
             </h1>
-            <p className="w-[30.27vw] font-['Manrope'] font-normal text-[14px] text-[#AEAEAE] mb-[60px]">
+            <p className="w-[507px] font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE] mb-[88px]">
               We're looking for passionate people to join us on our mission. We value flat hierarchies, clear communication, and full ownership and responsibility.
             </p>
 
-            <div className="flex flex-wrap gap-4 w-full">
+            <div className="flex w-full justify-between gap-[16px] mb-[96px]">
               {categories.map((cat, idx) => (
-                <SelectButton 
-                  key={cat} 
-                  selected={selectedIndex === idx} 
+                <SelectButton
+                  key={cat}
+                  selected={selectedIndex === idx}
                   onClick={() => setSelectedIndex(idx)}
                 >
                   {cat}
@@ -122,20 +121,18 @@ export default function JoinWaePage() {
         </div>
       </section>
 
-      <section className="relative z-10 pb-[100px]">
+      <section className="relative z-10 pb-[32px]">
         <div className={containerClass}>
-          <div className="w-full h-px bg-[#333] mb-[60px]" />
-          
-          <div className="flex flex-col gap-[60px]">
-            {jobs.map((job, idx) => (
-              <div key={job.id}>
-                <div className="flex justify-between items-center mb-[60px]">
+          <div className="flex flex-col">
+            {jobs.map((job) => (
+              <div key={job.id} className="flex flex-col">
+                <div className="flex justify-between items-center">
                   <div className="flex flex-col">
-                    <h2 className="font-['Inter_Tight'] font-normal text-[36px] text-white mb-[16px]">{job.title}</h2>
-                    <p className="font-['Manrope'] font-normal text-[14px] text-[#AEAEAE] mb-[20px]">
+                    <h2 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white mb-[18px]">{job.title}</h2>
+                    <p className="font-['Manrope'] font-normal text-[16px] leading-none text-[#AEAEAE] mb-[14px]">
                       {job.description}
                     </p>
-                    <div className="flex gap-[40px] font-['Manrope'] font-normal text-[14px] text-white">
+                    <div className="flex gap-[42px] font-['Inter_Tight'] font-normal text-[14px] leading-none text-white">
                       <span>{job.type}</span>
                       <span>{job.time}</span>
                     </div>
@@ -159,7 +156,7 @@ export default function JoinWaePage() {
                     )}
                   </HoverButton>
                 </div>
-                {idx !== jobs.length - 1 && <div className="w-full h-px bg-[#333]" />}
+                <div className="w-full h-[1px] bg-[#FFFFFF33] mt-[68px] mb-[68px]" />
               </div>
             ))}
           </div>
