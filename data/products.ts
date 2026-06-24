@@ -365,43 +365,69 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
+          "variant": "FS VAR 150 ",
           "hot": "3",
-          "cold": "40",
+          "cold": " 130",
+          "ambient": " 20"
+        },
+        {
+          "variant": "FS VAR  100",
+          "hot": "3",
+          "cold": "85",
+          "ambient": "10"
+        },
+        {
+          "variant": "FS VAR 50 ",
+          "hot": "3",
+          "cold": "30",
           "ambient": "15"
         }
       ],
       "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+        "cold": " Cold: 5°C - 20° C (default 8°C)",
+        "hot": " Hot: 30°C - 65°C (default 55°C)"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000ml",
-      "refrigerant": "R-134a",
+      "dripTray": " 1300 ml",
+      "refrigerant": " R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "weight": "-",
-          "height": "1631",
+          "variant": "FS VAR 150 ",
+          "weight": "150",
+          "height": " 1640",
+          "width": " 615",
+          "depth": " 790"
+        },
+        {
+          "variant": "FS VAR 100",
+          "weight": "120",
+          "height": "1560",
           "width": "535",
-          "depth": "654"
+          "depth": "710"
+        },
+        {
+          "variant": "FS VAR 50",
+          "weight": "70",
+          "height": "1420",
+          "width": "400",
+          "depth": "647"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "powerRequirement": " Hertz 50/Volts 230-240",
+      "purificationSystem": " Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
     },
     "status": "Live",
-    "description": "",
+    "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1721fb80-1e3a-4d46-604d-681f72314600/public",
     "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "#product-showcase",
-    "showcaseCtaText": "",
+    "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
-    "brochurePdf": "",
-    "datasheetPdf": "",
+    "brochurePdf": " file:///C:/Users/WAE/Downloads/VAR.pdf",
+    "datasheetPdf": " file:///C:/Users/WAE/Downloads/VAR.pdf",
     "variants": {
       "hot": true,
       "cold": true,
