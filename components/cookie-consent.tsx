@@ -68,7 +68,7 @@ export default function CookieConsent() {
       <div
         style={{
           position: "relative",
-          width: "700px", // calculated: 287px (Btn1) + 287px (Btn2) + 24px (gap) + 102px (padding left + right) = 700px
+          width: "692px", // 287px (Btn1) + 287px (Btn2) + 16px (gap) + 102px (padding left + right) = 692px
           backgroundColor: "#003c58",
           padding: "71px 51px", // py-71px px-51px
           borderRadius: "0px",
@@ -152,7 +152,7 @@ export default function CookieConsent() {
         </p>
 
         {/* Buttons Row */}
-        <div style={{ display: "flex", gap: "24px", marginBottom: "33px" }}>
+        <div style={{ display: "flex", gap: "16px", marginBottom: "33px" }}>
           {/* Accept All Button */}
           <button
             onClick={handleAccept}
