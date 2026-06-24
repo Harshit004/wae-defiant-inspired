@@ -135,16 +135,16 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public"
       },
       {
-        "id": "enki",
-        "name": "ENKI",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public"
-      },
-      {
         "id": "var-series",
         "name": "VAR Series",
         "category": "free-standing",
         "image": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
+      },
+      {
+        "id": "enki",
+        "name": "ENKI",
+        "category": "free-standing",
+        "image": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
       }
     ],
     "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -440,68 +440,76 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1f9571c7-362c-4490-95d3-f9072bbe5500/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/db728b19-a0dd-45a4-812b-e7594a1b6900/public"
+      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public",
+      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4994f73a-a0d9-40d5-5224-b058dbcca400/public",
+      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b7c46f4-29e5-482a-f6fd-dae1d944c700/public"
     ],
     "featuresList": [
       {
-        "title": "Powerful LED Powerful LED Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "title": " Water Options",
+        "description": " Hot, Cold"
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "title": " Touch-Free Operation",
+        "description": " Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless."
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "title": " Powerful LED UV-C Intank Sterilization",
+        "description": " Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+      },
+      {
+        "title": "Clean Flow, Minimal Splash",
+        "description": "Engineered for a smooth, laminar flow that minimizes spillage, complemented by an efficient drainage system."
+      },
+      {
+        "title": "Effortless Integration",
+        "description": "Easily connects with carbonated beverage dispensers and coffee/tea vending machines, offering a versatile hydration solution."
       }
     ],
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
+          "variant": " ENKI 25/50 FS",
+          "hot": " 4",
+          "cold": " 5",
+          "ambient": " -"
         }
       ],
       "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+        "cold": " Cold: 5°C- 24°C (default Default 8°C)",
+        "hot": " Hot: 50°C - 80°C (default 55°C)"
       },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000ml",
-      "refrigerant": "R-134a",
+      "greenCertification": " Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": " 500 ml",
+      "refrigerant": " R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
+          "variant": "  ENKI 25/50 FS",
+          "weight": " 62",
+          "height": " 1338",
+          "width": " 370",
+          "depth": " 503"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "powerRequirement": " Hertz 50/Volts 230-240",
+      "purificationSystem": " Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
     },
     "status": "Live",
-    "description": "",
-    "heroImage": "",
-    "heroTagline": "",
-    "heroSubtext": "",
-    "heroCtaText": "",
-    "heroCtaLink": "",
-    "showcaseCtaText": "",
-    "showcaseCtaLink": "",
-    "brochurePdf": "",
-    "datasheetPdf": "",
+    "description": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f548679e-2ba4-4968-e281-2fde42242800/public",
+    "heroTagline": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
+    "heroSubtext": "Sustainability at Core",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "/Contactus",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "/enquiry",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
+    "datasheetPdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
     "variants": {
       "hot": true,
       "cold": true,
-      "ambient": true
+      "ambient": false
     }
   },
   "pos": {
