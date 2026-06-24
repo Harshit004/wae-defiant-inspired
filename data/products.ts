@@ -67,6 +67,7 @@ export interface ProductDetails {
     cold: boolean;
     ambient: boolean;
   };
+  displayImageIndex?: number;
 }
 
 export const CATEGORIES: Record<string, CategoryData> = {
@@ -80,12 +81,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
       "Designed to improve Workplace Hydration, reduce plastic waste, and lower operational costs, BLUWAE™ combines Advanced Filtration, Smart Dispensing, and premium design. More than a water access point, it is a future-ready Hydration System supporting responsible consumption and long-term sustainability goals."
     ],
     "products": [
-      {
-        "id": "rom-grande",
-        "name": "BLUWAE ROM Grande",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
-        "category": "free-standing"
-      },
       {
         "id": "reva",
         "name": "BLUWAE REVA",
@@ -145,6 +140,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "POS",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
+      },
+      {
+        "id": "rom-grande",
+        "name": "ROM Grande",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -614,53 +615,92 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/833cb87f-1ba5-45f8-6f61-fa5cf48a7200/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/79ef281c-75c0-416b-1928-023fa3f58300/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e6c61b0f-8960-4358-8648-2cd4d0a96600/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/51f60770-5595-4de7-151a-2dcac9d1f500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/faeed699-00e6-425b-91bb-84e4b7c85c00/public"
     ],
     "featuresList": [
       {
-        "title": "Powerful LED Powerful LED Sterilization",
+        "title": "Water options",
+        "description": "Chilled,  Hot,  Ambient"
+      },
+      {
+        "title": "Sensor-Based Operation:",
+        "description": "Touchless and hygienic dispensing ensures a seamless and safe user experience."
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "title": "Efficient Drainage",
+        "description": "Equipped with a generous drip tray to efficiently collect accidental spillage, maintaining cleanliness."
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "title": "Water Enrichments (Optional)",
+        "description": "Mineralization Alkaline"
       }
     ],
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
+          "variant": "ROM GRANDE 100",
           "hot": "3",
-          "cold": "40",
+          "cold": "45",
+          "ambient": "15"
+        },
+        {
+          "variant": "ROM GRANDE  50 FS",
+          "hot": "3",
+          "cold": "45",
           "ambient": "15"
         }
       ],
       "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+        "cold": "Cold: 5°C - 24° C (default 8°C)",
+        "hot": "Hot: 50°C - 80°C (default 55°C)"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000ml",
+      "dripTray": "1000 ml",
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
+          "variant": "ROM GRANDE 100",
+          "weight": "108.0",
+          "height": "1466",
+          "width": "440",
+          "depth": "644"
+        },
+        {
+          "variant": "ROM GRANDE  50 FS",
+          "weight": "86.0",
+          "height": "1466",
+          "width": "440",
+          "depth": "644"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
-    }
+    },
+    "status": "Live",
+    "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/71fc0976-fdbe-4c80-1984-a6bd612b0500/public",
+    "heroTagline": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "heroSubtext": "Sustainability at Core",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "/contactus",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "/enquiry",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
+    "datasheetPdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
   },
   "reva": {
     "id": "reva",
