@@ -43,7 +43,7 @@ export default function CareersPage() {
       
       <Header />
 
-      <section className="pt-[170px] relative z-10">
+      <section className="pt-[235px] relative z-10">
         <div className={containerClass}>
           <div className="flex justify-between items-start">
             <div>
@@ -219,9 +219,9 @@ export default function CareersPage() {
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE]">
               More than a certification, it's a reflection of our people. Built on respect, inclusivity, and shared success, our workplace continues to be recognized among the best.
             </p>
-            <div className="w-full mt-[41px] flex justify-between items-center gap-[5%]">
+            <div className="w-full mt-[41px] flex justify-between items-center">
               {[1, 2, 3].map((_, idx) => (
-                <div key={idx} className="relative w-[30%] aspect-[80/120]">
+                <div key={idx} className="relative w-[5.9vw] aspect-[85/154]">
                   <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dbd80a00-9a7f-4fdc-e4ef-8aa766ad7100/public" alt="Great Place to Work Badge" fill className="object-contain" />
                 </div>
               ))}
