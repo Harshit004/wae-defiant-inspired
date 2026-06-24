@@ -152,7 +152,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
   "trublu": {
     "id": "trublu",
     "title": "Water dispenser & cooler - TRUBLU",
-    "description": "Plumbed-in water dispensers with in-tank LED-UVC protection, optional bottom-loading configuration, and advanced Germ Guardian™ hygiene technology.",
+    "description": " Crafted for contemporary environments, TRUBLU combines touchless convenience, stainless steel aesthetics, and purified hot, cold, and ambient hydration.",
     "paragraphs": [
       "TRUBLU™ Series offers advanced and reliable Point-of-Use water dispensers designed to meet the highest standards of safety, quality, and style. Ideal for active corporate and commercial environments.",
       "Engineered with WAE's premium components, including medical-grade filtration and high-performance cooling/heating capacities to serve high-volume demand smoothly.",
@@ -208,7 +208,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "counter-top"
       }
     ],
-    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public"
+    "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
   },
   "zvr": {
     "id": "zvr",
