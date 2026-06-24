@@ -82,12 +82,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "reva",
-        "name": "BLUWAE REVA",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
-        "category": "free-standing"
-      },
-      {
         "id": "gsp",
         "name": "BLUWAE GSP",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
@@ -146,6 +140,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ROM Grande",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
+      },
+      {
+        "id": "reva",
+        "name": "REVA",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/978c8961-cf7f-4570-2b9b-e6e5838ed100/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -708,53 +708,87 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a8f5a00e-0285-460b-f009-fa5a3a4d8c00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/07be5d57-d7fd-444f-52f5-6062969b5200/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/978c8961-cf7f-4570-2b9b-e6e5838ed100/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c642f7b0-c3a5-4ff6-84ca-4c6da2805a00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbbd3628-de41-48ea-6ab9-329d11aa9d00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d6c1acd-771b-412e-25c8-64a908da5100/public"
     ],
     "featuresList": [
       {
-        "title": "Powerful LED Powerful LED Sterilization",
+        "title": "Water Options",
+        "description": "Chilled Hot Ambient"
+      },
+      {
+        "title": "Robust & Durable Build",
+        "description": "Constructed with premium Stainless Steel (SS-304) and corrosion-resistant GI, ensuring food-grade safety and long-lasting durability."
+      },
+      {
+        "title": "Touchless Dispensing",
+        "description": "Experience the convenience of sensor-based technology for hygienic, hands-free water dispensing."
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "title": "Real-Time Monitoring",
+        "description": "Stay informed with an intuitive IoT display powered by CIRCLE OF BLUE, showcasing key data and performance metrics in real-time."
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "title": "Effortless Integration",
+        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution."
+      },
+      {
+        "title": "Water Enrichments (Optional)",
+        "description": "Mineralization Alkaline"
       }
     ],
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
+          "variant": "REVA 100/50",
           "hot": "3",
-          "cold": "40",
+          "cold": "35",
           "ambient": "15"
         }
       ],
       "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000ml",
+      "dripTray": "800 ml",
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "weight": "-",
-          "height": "1631",
+          "variant": "REVA 100/50",
+          "weight": "150.0",
+          "height": "150.0",
           "width": "535",
-          "depth": "654"
+          "depth": "690"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
-    }
+    },
+    "status": "Live",
+    "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/506794c8-ff87-4b3d-d775-a3c50d753000/public",
+    "heroTagline": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "heroSubtext": "Sustainability at Core",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "/contactus",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "/enquiry",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/REVA.pdf",
+    "datasheetPdf": "file:///C:/Users/WAE/Downloads/REVA.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
   },
   "gsp": {
     "id": "gsp",
