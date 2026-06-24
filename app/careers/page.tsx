@@ -30,7 +30,7 @@ const HoverButton: FC<HoverButtonProps> = ({ children }) => {
 
 export default function CareersPage() {
   return (
-    <main className="bg-[#0f1115] min-h-screen text-white font-sans selection:bg-white selection:text-black relative overflow-x-hidden">
+    <main className="bg-[#0F0F0F] min-h-screen text-white font-sans selection:bg-white selection:text-black relative overflow-x-hidden">
       {/* Dark background gradient */}
       <div 
         className="absolute top-0 left-0 w-full pointer-events-none" 
