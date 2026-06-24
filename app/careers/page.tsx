@@ -36,7 +36,7 @@ export default function CareersPage() {
       <div 
         className="absolute top-0 left-0 w-full pointer-events-none" 
         style={{ 
-          background: 'linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)',
+          background: 'linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%, #0F0F0F 100%)',
           height: 'clamp(500px, 80vh, 875px)'
         }} 
       />
@@ -70,7 +70,7 @@ export default function CareersPage() {
 
       {/* Why WAE Section */}
       <div className={containerClass}>
-        <div className="grid grid-cols-12 gap-0 pt-[66px]">
+        <div className="grid grid-cols-12 gap-0 pt-[66px] pb-[68px]">
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Why WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Think Different</p>
@@ -109,7 +109,6 @@ export default function CareersPage() {
             <div className="w-full aspect-[714/323] relative">
               <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2a452293-dc8e-4666-c735-79acdcb92300/public" alt="Why WAE" fill className="object-cover" />
             </div>
-            <div className="h-[68px]" />
           </div>
         </div>
         
@@ -118,7 +117,7 @@ export default function CareersPage() {
 
       {/* Life @ WAE Section */}
       <div className={containerClass}>
-        <div className="grid grid-cols-12 gap-0 pt-[66px]">
+        <div className="grid grid-cols-12 gap-0 pt-[66px] pb-[68px]">
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Life @ WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">People first</p>
@@ -157,7 +156,6 @@ export default function CareersPage() {
             <div className="w-full aspect-[714/323] relative">
               <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee795b42-a4d9-467f-22db-4bfbfedcc600/public" alt="Life @ WAE" fill className="object-cover object-top" />
             </div>
-            <div className="h-[68px]" />
           </div>
         </div>
         
@@ -166,7 +164,7 @@ export default function CareersPage() {
 
       {/* Join WAE Section */}
       <div className={containerClass}>
-        <div className="grid grid-cols-12 gap-0 pt-[66px]">
+        <div className="grid grid-cols-12 gap-0 pt-[66px] pb-[68px]">
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Join WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Explore current job openings</p>
@@ -205,7 +203,6 @@ export default function CareersPage() {
             <div className="w-full aspect-[714/323] relative">
               <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bbdfa982-ca17-42af-5d71-29d91614b100/public" alt="Join WAE" fill className="object-cover" />
             </div>
-            <div className="h-[68px]" />
           </div>
         </div>
         
@@ -222,8 +219,12 @@ export default function CareersPage() {
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE]">
               More than a certification, it's a reflection of our people. Built on respect, inclusivity, and shared success, our workplace continues to be recognized among the best.
             </p>
-            <div className="w-full relative mt-[41px] aspect-[339/100]">
-              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dbd80a00-9a7f-4fdc-e4ef-8aa766ad7100/public" alt="Great Place to Work Badges" fill className="object-contain" />
+            <div className="w-full mt-[41px] flex justify-between items-center gap-[5%]">
+              {[1, 2, 3].map((_, idx) => (
+                <div key={idx} className="relative w-[30%] aspect-[80/120]">
+                  <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dbd80a00-9a7f-4fdc-e4ef-8aa766ad7100/public" alt="Great Place to Work Badge" fill className="object-contain" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
