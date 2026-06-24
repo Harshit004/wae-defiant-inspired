@@ -2,7 +2,7 @@ import type React from "react"
 import "./globals.css"
 import { Inter, Manrope, Inter_Tight } from "next/font/google"
 import type { Metadata } from "next"
-import Link from "next/link"
+import CookieConsent from "@/components/cookie-consent"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" })
@@ -23,11 +23,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="https://github.com/wae-corp/WAE-F-B/blob/main/public/favicon-32x32.png?raw=true" sizes="32x32" />
       </head>
-      <body className={interTight.className}>{children}</body>
+      <body className={interTight.className}>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   )
 }
-
-
-
-import './globals.css'
