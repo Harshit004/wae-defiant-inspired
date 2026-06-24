@@ -81,12 +81,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "var-series",
-        "name": "VAR Series",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b2619dfc-30cf-4b2b-c95b-e3f4acbc8d00/public"
-      },
-      {
         "id": "pos",
         "name": "BLUWAE POS",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
@@ -145,6 +139,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ENKI",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public"
+      },
+      {
+        "id": "var-series",
+        "name": "VAR Series",
+        "category": "free-standing",
+        "image": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
       }
     ],
     "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -331,13 +331,14 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b2619dfc-30cf-4b2b-c95b-e3f4acbc8d00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0b375ab3-4888-4377-a0e9-e16c5eb27d00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b359fae2-8c4b-475f-f63e-c60c1fee7e00/public"
+      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public",
+      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7d1aa69a-f330-42cb-02ea-1e8fdf93a600/public",
+      " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e574b038-c765-4fb0-7e75-0d4b94c81d00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6a645ebd-b768-47e1-e7ea-eb9ba395f700/public"
     ],
     "featuresList": [
       {
-        "title": "Powerful LED Powerful LED Sterilization",
+        "title": "Powerful LED UV-C Intank Sterilization",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
       },
       {
@@ -345,8 +346,20 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "title": "Touch-Free Dispensing",
+        "description": "Enjoy effortless, hygienic water access with sensor-based, touchless technology."
+      },
+      {
+        "title": "No Mess, No Stress",
+        "description": "An efficient drip tray with generous capacity catches spills, keeping the space clean and orderly."
+      },
+      {
+        "title": "Effortless Integration",
+        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution."
+      },
+      {
+        "title": "Water Enrichments (Optional)",
+        "description": "Mineralization Alkaline"
       }
     ],
     "specifications": {
@@ -380,11 +393,11 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "status": "Live",
     "description": "",
-    "heroImage": "",
-    "heroTagline": "",
-    "heroSubtext": "",
-    "heroCtaText": "",
-    "heroCtaLink": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1721fb80-1e3a-4d46-604d-681f72314600/public",
+    "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
+    "heroSubtext": "Sustainability at Core",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
     "showcaseCtaText": "",
     "showcaseCtaLink": "",
     "brochurePdf": "",
