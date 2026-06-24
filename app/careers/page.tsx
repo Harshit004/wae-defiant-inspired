@@ -31,8 +31,14 @@ const HoverButton: FC<HoverButtonProps> = ({ children }) => {
 export default function CareersPage() {
   return (
     <main className="bg-[#0f1115] min-h-screen text-white font-sans selection:bg-white selection:text-black relative overflow-x-hidden">
-      {/* Dark background gradient to emulate the image */}
-      <div className="absolute top-0 left-0 w-full h-[800px] bg-gradient-to-br from-[#102436] via-[#0f1115] to-[#0f1115] opacity-60 pointer-events-none" />
+      {/* Dark background gradient */}
+      <div 
+        className="absolute top-0 left-0 w-full pointer-events-none" 
+        style={{ 
+          background: 'linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)',
+          height: 'clamp(500px, 80vh, 875px)'
+        }} 
+      />
       
       <Header />
 
