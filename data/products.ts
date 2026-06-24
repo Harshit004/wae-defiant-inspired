@@ -237,8 +237,8 @@ export const CATEGORIES: Record<string, CategoryData> = {
   "watermatic": {
     "id": "watermatic",
     "title": "Drinking water faucets - WATERMATIC",
-    "description": "Advanced stainless steel drinking water faucets and RO taps, engineered for hygienic dispensing and seamless hydration across modern commercial environments.",
-    "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e807d00-5660-49ad-3599-cf71b99c6b00/public",
+    "description": "Drinking water taps featuring sensor touch or push operation for hygienic dispensing, effortless usability, and seamless modern hydration experiences.",
+    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
     "paragraphs": [
       "Drinking water taps featuring sensor touch or push operation for hygienic dispensing, effortless usability, and seamless modern hydration experiences.",
       "The Watermatic Drinking Water Faucet is a next-gen hydration solution designed for modern workspaces, hotels, and high-end dining spaces."
@@ -308,8 +308,8 @@ export const CATEGORIES: Record<string, CategoryData> = {
   "glass-bottling": {
     "id": "glass-bottling",
     "title": "Glass bottling plant",
-    "description": "Compact modular glass bottling plants enabling sustainable premium in-house bottled water production for hospitality, corporate, and luxury environments.",
-    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public",
+    "description": "Compact glass bottling plants enabling sustainable, premium in-house water bottling for hotels, hospitality brands, and luxury environments.",
+    "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/23411290-087c-4c6c-77c6-9226946aae00/public",
     "paragraphs": [
       "Compact modular glass bottling plants enabling sustainable premium in-house bottled water production for hospitality, corporate, and luxury environments."
     ],
