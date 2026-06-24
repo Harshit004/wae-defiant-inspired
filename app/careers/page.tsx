@@ -33,14 +33,14 @@ export default function CareersPage() {
   return (
     <main className="bg-[#0F0F0F] min-h-screen text-white font-sans selection:bg-white selection:text-black relative overflow-x-hidden">
       {/* Dark background gradient */}
-      <div 
-        className="absolute top-0 left-0 w-full pointer-events-none" 
-        style={{ 
-          background: 'linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)',
+      <div
+        className="absolute top-0 left-0 w-full pointer-events-none"
+        style={{
+          background: 'linear-gradient(146.59deg, #0F0F0F 0%, #004063 4.52%, #0F0F0F 49.04%)',
           height: 'clamp(500px, 80vh, 875px)'
-        }} 
+        }}
       />
-      
+
       <Header />
 
       <section className="pt-[235px] relative z-10">
@@ -57,7 +57,7 @@ export default function CareersPage() {
                 We don't hire people to fit into a culture. We build a culture around people who dare to think differently. Here, engineers collaborate with storytellers, designers learn from scientists, and every perspective adds a new dimension to innovation. We celebrate individuality, nurture curiosity, and lead with empathy because the best solutions are born when diverse minds feel empowered to contribute.
               </p>
               <p>
-                Mistakes become lessons, ideas become movements, and work becomes purpose. If you're looking for a place where your voice matters, your growth is intentional, and your work leaves a lasting impact on people and the planet, you'll feel at home at WAE. 
+                Mistakes become lessons, ideas become movements, and work becomes purpose. If you're looking for a place where your voice matters, your growth is intentional, and your work leaves a lasting impact on people and the planet, you'll feel at home at WAE.
               </p>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function CareersPage() {
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Why WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Think Different</p>
-            
+
             <HoverButton className="mt-[68px] w-[99px] h-[35px]">
               {(hovered) => (
                 <>
@@ -93,7 +93,7 @@ export default function CareersPage() {
               )}
             </HoverButton>
           </div>
-          
+
           <div className="col-span-8 border-l border-[#333] pl-[3.47vw]">
             <h2 className="font-['Inter_Tight'] font-normal text-[38px] leading-[1.05] text-white mb-[62px]">
               Why spend your career following change<br />when you can create it?
@@ -111,7 +111,7 @@ export default function CareersPage() {
             </div>
           </div>
         </div>
-        
+
         <div className="w-full h-px bg-[#333]" />
       </div>
 
@@ -121,7 +121,7 @@ export default function CareersPage() {
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Life @ WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">People first</p>
-            
+
             <HoverButton className="mt-[68px] w-[99px] h-[35px]">
               {(hovered) => (
                 <>
@@ -140,7 +140,7 @@ export default function CareersPage() {
               )}
             </HoverButton>
           </div>
-          
+
           <div className="col-span-8 border-l border-[#333] pl-[3.47vw]">
             <h2 className="font-['Inter_Tight'] font-normal text-[38px] leading-[1.05] text-white mb-[62px]">
               Life at WAE is where meaningful work<br />meets people, purpose, and joy.
@@ -158,7 +158,7 @@ export default function CareersPage() {
             </div>
           </div>
         </div>
-        
+
         <div className="w-full h-px bg-[#333]" />
       </div>
 
@@ -168,7 +168,7 @@ export default function CareersPage() {
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Join WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Explore current job openings</p>
-            
+
             <HoverButton className="mt-[68px] w-[99px] h-[35px]">
               {(hovered) => (
                 <>
@@ -187,7 +187,7 @@ export default function CareersPage() {
               )}
             </HoverButton>
           </div>
-          
+
           <div className="col-span-8 border-l border-[#333] pl-[3.47vw]">
             <h2 className="font-['Inter_Tight'] font-normal text-[38px] leading-[1.05] text-white mb-[62px]">
               Some careers fill your time.<br />The right one can shape your life.
@@ -205,7 +205,7 @@ export default function CareersPage() {
             </div>
           </div>
         </div>
-        
+
         <div className="w-full h-px bg-[#333]" />
       </div>
 
