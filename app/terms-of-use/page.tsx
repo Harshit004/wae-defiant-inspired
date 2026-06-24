@@ -9,9 +9,6 @@ const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]";
 export default function TermsOfUse() {
   return (
     <main className="relative min-h-screen bg-[#0F0F0F] text-white selection:bg-white selection:text-black overflow-x-hidden font-sans">
-      {/* Background Radial Glow */}
-      <div className="absolute top-0 left-0 w-[80vw] h-[80vw] max-w-[1000px] max-h-[1000px] bg-[radial-gradient(circle_at_0%_0%,rgba(0,64,99,0.4)_0%,rgba(15,15,15,0)_60%)] pointer-events-none"></div>
-
       <Header />
 
       <div className={`${containerClass} relative z-10 pt-[180px] lg:pt-[220px] pb-[120px]`}>
@@ -34,57 +31,54 @@ export default function TermsOfUse() {
         </div>
 
         {/* Two Column Layout */}
-        <div className="flex flex-col lg:flex-row gap-[60px] xl:gap-[120px]">
+        <div className="flex flex-col lg:flex-row w-full">
           {/* Left Sidebar (Sticky) */}
-          <div className="lg:w-[30%] flex-shrink-0 hidden lg:block">
-            <div className="sticky top-[120px] flex flex-col space-y-8 font-['Inter_Tight'] text-[14px] leading-[150%]">
+          <div 
+            className="hidden lg:block border-r border-white/20 flex-shrink-0"
+            style={{ 
+              width: '30%',
+              paddingRight: '6.59vw' // Responsive 95px gap at 1440px
+            }}
+          >
+            <div className="sticky top-[120px] flex flex-col font-['Inter_Tight'] text-[14px] leading-[150%]">
               
-              <div className="flex flex-col space-y-3">
-                <a href="#acceptance" className="text-white font-medium hover:opacity-80 transition-opacity">1. Acceptance of Terms</a>
-                <a href="#amendments" className="text-[#AEAEAE] ml-4 hover:text-white transition-colors">Amendments & Updates</a>
-              </div>
-
-              <div className="flex flex-col space-y-3">
-                <a href="#permitted" className="text-white font-medium hover:opacity-80 transition-opacity">2. Permitted Use of This Website</a>
-                <a href="#authorised" className="text-[#AEAEAE] ml-4 hover:text-white transition-colors">Authorised Access</a>
-                <a href="#prohibited" className="text-[#AEAEAE] ml-4 hover:text-white transition-colors">Prohibited Conduct</a>
-              </div>
-
-              <div className="flex flex-col space-y-3">
-                <a href="#intellectual" className="text-white font-medium hover:opacity-80 transition-opacity">3. Intellectual Property Rights</a>
-                <a href="#wae-content" className="text-[#AEAEAE] ml-4 hover:text-white transition-colors">WAE Content & Trademarks</a>
-                <a href="#licence" className="text-[#AEAEAE] ml-4 hover:text-white transition-colors">Licence Restrictions</a>
-              </div>
-
-              <div className="flex flex-col space-y-3">
-                <a href="#product" className="text-white font-medium hover:opacity-80 transition-opacity">4. Product Information & Disclaimers</a>
-                <a href="#specification" className="text-[#AEAEAE] ml-4 hover:text-white transition-colors">Specification Accuracy</a>
-                <a href="#pricing" className="text-[#AEAEAE] ml-4 hover:text-white transition-colors">Pricing & Availability</a>
-              </div>
-
-              <div className="flex flex-col space-y-3">
-                <a href="#third-party" className="text-white font-medium hover:opacity-80 transition-opacity">5. Third-Party Links & Content</a>
-              </div>
-
-              <div className="flex flex-col space-y-3">
-                <a href="#limitation" className="text-white font-medium hover:opacity-80 transition-opacity">6. Limitation of Liability</a>
-                <a href="#exclusion" className="text-[#AEAEAE] ml-4 hover:text-white transition-colors">Exclusion of Warranties</a>
-                <a href="#cap" className="text-[#AEAEAE] ml-4 hover:text-white transition-colors">Cap on Liability</a>
-              </div>
-
-              <div className="flex flex-col space-y-3">
-                <a href="#governing" className="text-white font-medium hover:opacity-80 transition-opacity">7. Governing Law & Jurisdiction</a>
-              </div>
-
-              <div className="flex flex-col space-y-3">
-                <a href="#contact" className="text-white font-medium hover:opacity-80 transition-opacity">8. Contact for Legal Enquiries</a>
-              </div>
+              {[
+                { id: "acceptance", heading: "1. Acceptance of Terms", subheadings: [{ id: "amendments", title: "Amendments & Updates" }] },
+                { id: "permitted", heading: "2. Permitted Use of This Website", subheadings: [{ id: "authorised", title: "Authorised Access" }, { id: "prohibited", title: "Prohibited Conduct" }] },
+                { id: "intellectual", heading: "3. Intellectual Property Rights", subheadings: [{ id: "wae-content", title: "WAE Content & Trademarks" }, { id: "licence", title: "Licence Restrictions" }] },
+                { id: "product", heading: "4. Product Information & Disclaimers", subheadings: [{ id: "specification", title: "Specification Accuracy" }, { id: "pricing", title: "Pricing & Availability" }] },
+                { id: "third-party", heading: "5. Third-Party Links & Content", subheadings: [] },
+                { id: "limitation", heading: "6. Limitation of Liability", subheadings: [{ id: "exclusion", title: "Exclusion of Warranties" }, { id: "cap", title: "Cap on Liability" }] },
+                { id: "governing", heading: "7. Governing Law & Jurisdiction", subheadings: [] },
+                { id: "contact", heading: "8. Contact for Legal Enquiries", subheadings: [] }
+              ].map((section, idx, arr) => (
+                <div key={section.id} style={{ marginBottom: idx === arr.length - 1 ? 0 : '40px' }}>
+                  <a href={`#${section.id}`} className="text-white font-medium hover:opacity-80 transition-opacity block">
+                    {section.heading}
+                  </a>
+                  {section.subheadings.length > 0 && (
+                    <div style={{ marginTop: '24px' }} className="flex flex-col gap-[12px]">
+                      {section.subheadings.map(sub => (
+                        <a key={sub.id} href={`#${sub.id}`} className="text-[#AEAEAE] hover:text-white transition-colors block">
+                          {sub.title}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
 
             </div>
           </div>
 
           {/* Right Content Area */}
-          <div className="lg:w-[70%] flex flex-col font-['Manrope'] text-[14px] text-[#AEAEAE] leading-[160%]">
+          <div 
+            className="flex-shrink-0 flex flex-col font-['Manrope'] text-[14px] text-[#AEAEAE] leading-[160%]"
+            style={{ 
+              width: '70%',
+              paddingLeft: '3.33vw' // Responsive 48px gap at 1440px
+            }}
+          >
             
             {/* Section 1 */}
             <div id="acceptance" className="pb-[60px] border-b border-white/20 mb-[60px]">
