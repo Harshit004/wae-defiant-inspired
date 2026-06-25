@@ -87,12 +87,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
       },
       {
-        "id": "venus",
-        "name": "VENUS",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/92e20429-ff63-410f-9494-62ebbb2e0b00/public"
-      },
-      {
         "id": "rom-grande",
         "name": "ROM Grande",
         "category": "free-standing",
@@ -103,6 +97,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ENKI",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
+      },
+      {
+        "id": "gsp",
+        "name": "GSP",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
       },
       {
         "id": "eno-ct",
@@ -129,22 +129,22 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c549c9bc-8af7-41f6-03d5-8c0078e9dd00/public"
       },
       {
-        "id": "var-series",
-        "name": "VAR",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
-      },
-      {
         "id": "reva",
         "name": "REVA",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d6c1acd-771b-412e-25c8-64a908da5100/public"
       },
       {
-        "id": "gsp",
-        "name": "GSP",
+        "id": "var-series",
+        "name": "VAR",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
+      },
+      {
+        "id": "venus",
+        "name": "VENUS",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/92e20429-ff63-410f-9494-62ebbb2e0b00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -864,7 +864,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "status": "Live",
     "description": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61c42426-6a67-4edf-2bf9-e45a4b8cad00/public",
+    "heroImage": "",
     "heroTagline": "Plastic in passe, Landfilling is Zero.\nSustainability is the Future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
@@ -1059,7 +1059,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "status": "Live",
     "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
-    "heroImage": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61c42426-6a67-4edf-2bf9-e45a4b8cad00/public",
     "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
