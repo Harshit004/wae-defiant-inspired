@@ -94,12 +94,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
       },
       {
-        "id": "rom-grande",
-        "name": "ROM Grande",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
-      },
-      {
         "id": "gsp",
         "name": "GSP",
         "category": "free-standing",
@@ -146,6 +140,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "POS",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
+      },
+      {
+        "id": "rom-grande",
+        "name": "ROM Grande",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -619,10 +619,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     ],
     "featuresList": [
       {
-        "title": "Water options",
-        "description": "Chilled,  Hot,  Ambient"
-      },
-      {
         "title": "Sensor-Based Operation:",
         "description": "Touchless and hygienic dispensing ensures a seamless and safe user experience."
       },
@@ -691,7 +687,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
+    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
