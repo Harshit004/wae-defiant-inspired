@@ -82,12 +82,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "enki",
-        "name": "ENKI",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
-      },
-      {
         "id": "pos",
         "name": "POS",
         "category": "free-standing",
@@ -146,6 +140,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "VAR Series",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
+      },
+      {
+        "id": "enki",
+        "name": "ENKI",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -448,16 +448,12 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     ],
     "featuresList": [
       {
-        "title": "Water Options",
-        "description": "Hot, Cold"
-      },
-      {
         "title": "Touch-Free Operation",
         "description": "Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless."
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": " Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
       },
       {
         "title": "Clean Flow, Minimal Splash",
@@ -481,7 +477,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "cold": "Cold: 5°C- 24°C (default Default 8°C)",
         "hot": "Hot: 50°C - 80°C (default 55°C)"
       },
-      "greenCertification": " Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "500 ml",
       "refrigerant": "R-134a",
       "dimensions": [
@@ -507,12 +503,13 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
+    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
       "ambient": false
-    }
+    },
+    "displayImageIndex": 0
   },
   "pos": {
     "id": "pos",
