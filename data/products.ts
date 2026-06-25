@@ -81,12 +81,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "rom-grande",
-        "name": "ROM Grande",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
-      },
-      {
         "id": "eno-ct",
         "name": "ENKI.CT",
         "category": "counter-top",
@@ -145,6 +139,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "VENUS",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/92e20429-ff63-410f-9494-62ebbb2e0b00/public"
+      },
+      {
+        "id": "rom-grande",
+        "name": "ROM Grande",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -619,7 +619,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "rom-grande",
     "name": "ROM Grande",
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e6c61b0f-8960-4358-8648-2cd4d0a96600/public",
@@ -627,11 +627,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/faeed699-00e6-425b-91bb-84e4b7c85c00/public"
     ],
     "featuresList": [
-      {
-        "title": "Water options",
-        "description": "Chilled,  Hot,  Ambient",
-        "isDisplayed": true
-      },
       {
         "title": "Sensor-Based Operation:",
         "description": "Touchless and hygienic dispensing ensures a seamless and safe user experience.",
@@ -645,7 +640,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       {
         "title": "Efficient Drainage",
         "description": "Equipped with a generous drip tray to efficiently collect accidental spillage, maintaining cleanliness.",
-        "isDisplayed": false
+        "isDisplayed": true
       },
       {
         "title": "Water Enrichments (Optional)",
@@ -697,13 +692,13 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "status": "Live",
     "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/71fc0976-fdbe-4c80-1984-a6bd612b0500/public",
-    "heroTagline": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "heroImage": "",
+    "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
-    "heroCtaLink": "/contactus",
+    "heroCtaLink": "",
     "showcaseCtaText": "Enquire Now",
-    "showcaseCtaLink": "/enquiry",
+    "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
     "variants": {
       "hot": true,
