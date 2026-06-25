@@ -81,12 +81,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "eno-ct",
-        "name": "ENKI.CT",
-        "category": "counter-top",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
-      },
-      {
         "id": "var-ct",
         "name": "VAR.CT",
         "category": "counter-top",
@@ -145,6 +139,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "GSP",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
+      },
+      {
+        "id": "eno-ct",
+        "name": "ENKI.CT",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -1077,7 +1077,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "eno-ct",
     "name": "ENKI.CT",
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/836e8089-a92c-4171-9060-f61c95591700/public",
@@ -1149,13 +1149,13 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "status": "Live",
     "description": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9165c682-a912-4247-c5f9-ce3ffaed8700/public",
-    "heroTagline": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
+    "heroImage": "",
+    "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
-    "heroCtaLink": "/contactus",
+    "heroCtaLink": "",
     "showcaseCtaText": "Enquire Now",
-    "showcaseCtaLink": "/enquiry",
+    "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
     "variants": {
       "hot": true,
