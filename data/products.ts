@@ -112,16 +112,16 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
       },
       {
-        "id": "venus",
-        "name": "VENUS",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/92e20429-ff63-410f-9494-62ebbb2e0b00/public"
-      },
-      {
         "id": "eno-ct",
         "name": "ENKI.CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
+      },
+      {
+        "id": "assistflow",
+        "name": "ASSISTFLOW",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c549c9bc-8af7-41f6-03d5-8c0078e9dd00/public"
       },
       {
         "id": "reva",
@@ -142,10 +142,10 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
       },
       {
-        "id": "assistflow",
-        "name": "ASSISTFLOW",
+        "id": "venus",
+        "name": "VENUS",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c549c9bc-8af7-41f6-03d5-8c0078e9dd00/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/92e20429-ff63-410f-9494-62ebbb2e0b00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -971,10 +971,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     ],
     "featuresList": [
       {
-        "title": "Water Options",
-        "description": "Chilled , Hot , Ambient"
-      },
-      {
         "title": "Robust & Durable Build",
         "description": "Constructed with premium Stainless Steel (SS-304) and corrosion-resistant GI, ensuring food-grade safety and long-lasting durability."
       },
@@ -1031,14 +1027,14 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "status": "Live",
     "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/da3ee01b-9749-4587-03b0-491d3b236100/public",
-    "heroTagline": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "heroTagline": "Plastic in passe, Landfilling is Zero.\nSustainability is the Future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "/cobtactus",
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/VENUS.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/VENUS.pdf",
+    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
