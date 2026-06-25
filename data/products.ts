@@ -82,16 +82,16 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "var-series",
-        "name": "VAR Series",
+        "id": "pos",
+        "name": "POS",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
       },
       {
-        "id": "enki",
-        "name": "ENKI",
+        "id": "rom-grande",
+        "name": "ROM Grande",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
       },
       {
         "id": "gsp",
@@ -130,22 +130,22 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/067b3edc-d892-48f5-1e63-5e567c0a6d00/public"
       },
       {
+        "id": "var-series",
+        "name": "VAR Series",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
+      },
+      {
+        "id": "enki",
+        "name": "ENKI",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
+      },
+      {
         "id": "reva",
         "name": "REVA",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/978c8961-cf7f-4570-2b9b-e6e5838ed100/public"
-      },
-      {
-        "id": "pos",
-        "name": "POS",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
-      },
-      {
-        "id": "rom-grande",
-        "name": "ROM Grande",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -428,12 +428,13 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/VAR.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/VAR.pdf",
+    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
       "ambient": true
-    }
+    },
+    "displayImageIndex": 0
   },
   "enki": {
     "id": "enki",
@@ -447,16 +448,12 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     ],
     "featuresList": [
       {
-        "title": "Water Options",
-        "description": "Hot, Cold"
-      },
-      {
         "title": "Touch-Free Operation",
         "description": "Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless."
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": " Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
       },
       {
         "title": "Clean Flow, Minimal Splash",
@@ -480,7 +477,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "cold": "Cold: 5°C- 24°C (default Default 8°C)",
         "hot": "Hot: 50°C - 80°C (default 55°C)"
       },
-      "greenCertification": " Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "500 ml",
       "refrigerant": "R-134a",
       "dimensions": [
@@ -506,12 +503,13 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
+    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
       "ambient": false
-    }
+    },
+    "displayImageIndex": 0
   },
   "pos": {
     "id": "pos",
@@ -525,6 +523,10 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f56d1bb2-8196-4815-7449-5a9481526600/public"
     ],
     "featuresList": [
+      {
+        "title": "Water Options",
+        "description": "Hot, Cold, Ambient"
+      },
       {
         "title": "Touch-Free Dispensing",
         "description": "Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless."
@@ -565,7 +567,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "cold": "Cold: 5°C - 20° C (default 8°C)",
         "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "greenCertification": " Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "1300 ml",
       "refrigerant": "R-134a",
       "dimensions": [
@@ -598,13 +600,12 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/POS.pdf",
-    "datasheetPdf": "",
+    "datasheetPdf": "file:///C:/Users/WAE/Downloads/POS.pdf",
     "variants": {
       "hot": true,
       "cold": true,
       "ambient": true
-    },
-    "displayImageIndex": 0
+    }
   },
   "rom-grande": {
     "id": "rom-grande",
@@ -618,6 +619,10 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/faeed699-00e6-425b-91bb-84e4b7c85c00/public"
     ],
     "featuresList": [
+      {
+        "title": "Water options",
+        "description": "Chilled,  Hot,  Ambient"
+      },
       {
         "title": "Sensor-Based Operation:",
         "description": "Touchless and hygienic dispensing ensures a seamless and safe user experience."
@@ -687,7 +692,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
-    "datasheetPdf": "",
+    "datasheetPdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
     "variants": {
       "hot": true,
       "cold": true,
