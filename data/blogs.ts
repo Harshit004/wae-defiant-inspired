@@ -642,7 +642,7 @@ export const BLOGS: Record<string, BlogPost> = {
         },
         {
           "type": "paragraph",
-          "text": "The conditions that created this catastrophe had been years in the making. Post-war Britain ran on coal, the cheaper the better. In thousands of homes, families shovelled sulphur-rich “nutty slack” into their hearths to fend off the cold. Power stations ringed the city, belching smoke, while the once-clean electric tram system had been replaced with diesel buses. All of this was routine   until weather conspired against them."
+          "text": "A City Choked by Its Own Progress\nThe conditions that created this catastrophe had been years in the making. Post-war Britain ran on coal, the cheaper the better. In thousands of homes, families shovelled sulphur-rich “nutty slack” into their hearths to fend off the cold. Power stations ringed the city, belching smoke, while the once-clean electric tram system had been replaced with diesel buses. All of this was routine   until weather conspired against them."
         },
         {
           "type": "paragraph",
