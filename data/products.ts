@@ -81,12 +81,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "pos",
-        "name": "POS",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
-      },
-      {
         "id": "rom-grande",
         "name": "ROM Grande",
         "category": "free-standing",
@@ -145,6 +139,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "VAR",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
+      },
+      {
+        "id": "pos",
+        "name": "POS",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -522,7 +522,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "pos",
     "name": "POS",
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7fb71cd5-561b-4185-722f-57a910512d00/public",
@@ -530,11 +530,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f56d1bb2-8196-4815-7449-5a9481526600/public"
     ],
     "featuresList": [
-      {
-        "title": "Water Options",
-        "description": "Hot, Cold, Ambient",
-        "isDisplayed": true
-      },
       {
         "title": "Touch-Free Dispensing",
         "description": "Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless.",
@@ -553,11 +548,11 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       {
         "title": "Versatile Integration",
         "description": "Effortlessly integrates with carbonated beverage dispensers and coffee/tea vending machines, providing a flexible, all-in-one hydration solution.",
-        "isDisplayed": false
+        "isDisplayed": true
       },
       {
         "title": "Water Enrichments (Optional)",
-        "description": "Water Enrichments\n(Optional)",
+        "description": "Mineralization/Alkaline",
         "isDisplayed": false
       }
     ],
@@ -580,7 +575,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "cold": "Cold: 5°C - 20° C (default 8°C)",
         "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
-      "greenCertification": " Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "1300 ml",
       "refrigerant": "R-134a",
       "dimensions": [
@@ -605,8 +600,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "status": "Live",
     "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/84acd2dc-5215-4649-f50f-27c75c576600/public",
-    "heroTagline": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "heroImage": "",
+    "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "/Comtactus",
@@ -617,7 +612,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "hot": true,
       "cold": true,
       "ambient": true
-    }
+    },
+    "displayImageIndex": 0
   },
   "rom-grande": {
     "id": "rom-grande",
