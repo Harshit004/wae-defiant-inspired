@@ -412,41 +412,6 @@ export const BLOGS: Record<string, BlogPost> = {
       ]
     ]
   },
-  "the-great-water-trade": {
-    "id": "the-great-water-trade",
-    "title": "The Great Water Trade: How the Plastic Bottle Industry Exploits India's Groundwater",
-    "category": "Water conservation",
-    "description": "India's hydrological landscape has always been shaped by the monsoon...",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
-    "writerId": "rehnuma-ansari",
-    "readTime": "4 min read",
-    "status": "Live",
-    "createdAt": "2026-06-19T00:00:00.000Z",
-    "contentColumns": [
-      [
-        {
-          "type": "paragraph",
-          "text": "India's hydrological landscape has always been shaped by the monsoon, but under the surface lies an invisible crisis. The rapid extraction of groundwater by commercial entities, particularly the bottled water industry, is pushing rural communities to the brink of severe water scarcity."
-        },
-        {
-          "type": "paragraph",
-          "text": "Groundwater is the lifeline for over 80% of India's rural population, serving as their primary source of drinking water and agricultural irrigation. However, commercial bottling plants often set up operations in areas with weak regulatory oversight, pumping out millions of liters of water daily, bottling it, and exporting it to urban centers."
-        }
-      ],
-      [
-        {
-          "type": "paragraph",
-          "text": "This commercial extraction has severe repercussions. Local wells dry up, forcing villagers, mostly women, to walk miles daily to secure basic drinking water. Farmers find their borewells failing, leading to crop failures and escalating financial debt. The ecological impact is equally alarming, as declining water tables lead to soil degradation and the drying up of local streams and wetlands."
-        }
-      ],
-      [
-        {
-          "type": "paragraph",
-          "text": "To combat this exploitation, India needs a comprehensive regulatory overhaul. This includes establishing strict extraction limits, mandating groundwater recharge projects for commercial facilities, and empowering local communities to manage and protect their shared water resources. Water must be treated as a fundamental human right, not a commodity for corporate profit."
-        }
-      ]
-    ]
-  },
   "the-north-star-of-progress": {
     "id": "the-north-star-of-progress",
     "title": "The North Star of Progress: A Historical Lens on Climate Change and India's Sustainable Future",
