@@ -94,12 +94,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
       },
       {
-        "id": "gsp",
-        "name": "GSP",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
-      },
-      {
         "id": "assistflow",
         "name": "ASSISTFLOW",
         "category": "free-standing",
@@ -146,6 +140,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "REVA",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/978c8961-cf7f-4570-2b9b-e6e5838ed100/public"
+      },
+      {
+        "id": "gsp",
+        "name": "GSP",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -796,10 +796,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     ],
     "featuresList": [
       {
-        "title": "Water Options",
-        "description": "Chilled Hot"
-      },
-      {
         "title": "Touch-Free Dispensing",
         "description": "Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless."
       },
@@ -859,7 +855,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enqyiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/Grand%20Slam%20Pro.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/Grand%20Slam%20Pro.pdf",
+    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
