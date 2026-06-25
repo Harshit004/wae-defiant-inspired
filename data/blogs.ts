@@ -340,17 +340,21 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "The consequences of this reaction were staggering. Molina and Rowland showed that each chlorine atom had the potential to destroy up to 100,000 ozone molecules before being neutralized. In essence, every spray can, refrigerator, and industrial coolant was contributing to a slow and invisible unravelling of the atmospheric barrier that made life possible. At first, their findings were met with scepticism, as the threat seemed abstract and distant. The world had grown accustomed to equating progress with chemical innovation, and the idea that seemingly harmless household products could destabilize a planetary system felt implausible. But scepticism would not last long."
-        }
-      ],
-      [
+        },
         {
           "type": "heading",
           "text": "The Shock of the Ozone Hole"
         },
         {
           "type": "paragraph",
-          "text": "In 1985, the warnings of Molina and Rowland were confirmed in the starkest possible way. Scientists from the British Antarctic Survey, led by Joseph Farman, reported a dramatic thinning of the ozone layer above Antarctica, a phenomenon that came to be known as the “ozone hole.” Satellite data corroborated their findings: during Antarctic spring, ozone concentrations had plummeted by more than 60%, leaving a gaping hole larger than the North American continent.\nThe implications were sobering and immediate. A weakened ozone shield meant an influx of ultraviolet radiation reaching the Earth’s surface. Scientists projected that a sustained 10% reduction in stratospheric ozone could result in an additional 300,000 cases of skin cancer and 1.6 million cases of cataracts each year worldwide. Agricultural studies indicated that key crops, such as soybeans, wheat, and maize—already vulnerable to climate variability—could suffer yield declines under heightened UV exposure. Equally alarming was the impact on oceans: phytoplankton, microscopic organisms at the base of the marine food chain, were shown to be highly sensitive to UV-B. Their decline threatened fisheries and marine biodiversity across the globe.\n"
+          "text": "In 1985, the warnings of Molina and Rowland were confirmed in the starkest possible way. Scientists from the British Antarctic Survey, led by Joseph Farman, reported a dramatic thinning of the ozone layer above Antarctica, a phenomenon that came to be known as the “ozone hole.” Satellite data corroborated their findings: during Antarctic spring, ozone concentrations had plummeted by more than 60%, leaving a gaping hole larger than the North American continent."
         },
+        {
+          "type": "paragraph",
+          "text": "The implications were sobering and immediate. A weakened ozone shield meant an influx of ultraviolet radiation reaching the Earth’s surface. Scientists projected that a sustained 10% reduction in stratospheric ozone could result in an additional 300,000 cases of skin cancer and 1.6 million cases of cataracts each year worldwide. Agricultural studies indicated that key crops, such as soybeans, wheat, and maize—already vulnerable to climate variability—could suffer yield declines under heightened UV exposure. Equally alarming was the impact on oceans: phytoplankton, microscopic organisms at the base of the marine food chain, were shown to be highly sensitive to UV-B. Their decline threatened fisheries and marine biodiversity across the globe."
+        }
+      ],
+      [
         {
           "type": "paragraph",
           "text": "What had once seemed like a remote scientific concern had become a planetary emergency. The ozone hole served as both a visual and statistical wake-up call, providing irrefutable evidence that human activity was destabilizing a vital atmospheric system."
