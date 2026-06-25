@@ -275,7 +275,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective",
     "category": "Climate Change & Water",
     "description": "The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/03fa49f8-0626-4a84-1107-d0b8486bf100/public",
     "writerId": "aditi-sharma",
     "readTime": "3 min read",
     "status": "Live",
@@ -284,31 +284,39 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "paragraph",
-          "text": "The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century. As temperatures rise and weather patterns grow increasingly unpredictable, millions of lives and livelihoods are hung in the balance."
+          "text": "The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century. From the early 1900s to the present day, this transformation has shifted from being shaped primarily by natural variability to one increasingly dominated by human-induced warming. While the region has always experienced monsoon variability and occasional extremes, the last few decades have seen a rapid intensification of climate-related phenomena, underlining the growing urgency of mitigation and adaptation."
         },
         {
           "type": "paragraph",
-          "text": "Historically, the region has been defined by its monsoonal cycle—a vital heartbeat that sustains agriculture, replenishes water reserves, and drives the economy. However, scientific observations show that this pattern is shifting. The intensity of extreme rain events is increasing while the overall number of rainy days is decreasing, leading to a dangerous cycle of intense floods and prolonged droughts."
+          "text": "Between 1901 and 2018, India’s average surface temperature rose by approximately 0.6 to 0.7 °C, a statistically significant shift in climatology that has already begun to disrupt weather patterns, ecosystems, and livelihoods. Notably, daytime temperatures have risen more sharply than nighttime temperatures, a sign that heatwaves and extremely hot days are becoming more frequent and dangerous. This warming trend has been especially pronounced since the 1970s, affecting interior and southern parts of the country more intensely. Urban centres, burdened with infrastructure density and pollution, have evolved into heat islands that trap heat overnight, amplifying thermal discomfort and escalating public health risks. The long-term trajectory of India’s temperature pattern also reveals how different decades have experienced varied phases — with cooler trends from 1901 to 1930, a relatively warm period until 1960, followed by another cooler phase till 1990, and then a sharp and consistent rise in temperatures from the 1990s onwards. The scientific community continues to emphasize the importance of keeping global temperature rise below 2 °C, the threshold set by the Paris Agreement, as exceeding this limit could trigger irreversible damage to ecosystems, coastal zones, and global food systems with India expected to face these challenges even earlier due to its geographical vulnerability."
+        },
+        {
+          "type": "paragraph",
+          "text": "This rising temperature trend has been paralleled by significant changes in rainfall and monsoon patterns, especially the Southwest Monsoon that sustains agriculture and freshwater reserves. The monsoon record, when viewed over a century, shows alternating wet and dry spells with the early 20th century (1901–1930) and mid-century decades (1961–1990) being relatively drier, and the intervening (1931–1960) and more recent decades (1991–2020) marked by stronger monsoonal activity. Despite the absence of a clear national-level trend in overall rainfall volume, region-specific changes reveal that nearly 55% of Indian tehsils have experienced increased monsoon rainfall over the past four decades. This increase is particularly noticeable in the historically dry regions of Rajasthan, Maharashtra, Gujarat, and Tamil Nadu. "
         }
       ],
       [
         {
           "type": "paragraph",
-          "text": "The scientific evidence is clear. Average temperatures across India have risen by approximately 0.7°C over the past century, a change that has directly accelerated glacial melt in the Himalayas. The glaciers, often referred to as the \"Third Pole,\" are retreating at rates that threaten the perennial flow of major river systems like the Indus, Ganges, and Brahmaputra, which provide fresh water to more than 700 million people."
+          "text": "Conversely, parts of the Indo-Gangetic plain, the Himalayan foothills, and the Northeast have witnessed declining rainfall during critical early monsoon months. Compounding the situation is the increasing frequency of extreme rain events, with more districts reporting heavier rainfall days in the 2010s rains. Unfortunately, heavier rainfall has not translated into stability urban areas have been overwhelmed by flash floods and infrastructure failures, as witnessed in events like the 2018 Kerala floods and repeated deluges in Bihar, Assam, and Chennai."
         },
         {
           "type": "paragraph",
-          "text": "In addition to freshwater challenges, the region is highly vulnerable to sea-level rise and rising sea surface temperatures, which fuel more frequent and intense cyclones in the Bay of Bengal and the Arabian Sea."
+          "text": "As warming and precipitation patterns shift, one of the most visible impacts has been the retreat of glaciers in the Hindu Kush–Himalayan region, which serves as the lifeline for major rivers such as the Ganga, Yamuna, and Brahmaputra. Almost 99% of observed glaciers in this region are shrinking, with some, like the Kokthang Glacier in Sikkim, showing dramatic expansion in glacial lake size since the 1990s. The pace of glacial melt has accelerated significantly post-2010, now occurring 65% faster than in the previous decade. If warming remains in the 1.5–2 °C range, the region could lose 30–50% of its glacial volume by the end of the century a figure that may rise to 75% in the Eastern Himalayas under a 3 °C scenario. These shifts are critical not only for long-term water security but also for disaster preparedness, as glacial melt leads to unstable lakes that can trigger devastating outburst floods. Millions living downstream are increasingly exposed to seasonal water stress and flash flood events stemming from glacial instability."
+        },
+        {
+          "type": "paragraph",
+          "text": "Simultaneously, India’s vast coastal belt is grappling with rising sea levels. Over the past five decades, the mean sea level has risen by about 8.5 cm, but satellite data from recent years suggest an accelerated rise in the North Indian Ocean as high as 6.1 mm per year between 2003 and 2013. Eastern coastal states such as Odisha and West Bengal are at heightened risk due to the rapid warming of the Bay of Bengal. Coastal megacities like Mumbai, Chennai, and Kolkata are already experiencing saltwater intrusion, land erosion, and chronic flooding during high tides and storms. Projections from the IPCC suggest a global sea level rise of 0.5 to 1.0 meters by 2100 under moderate emissions, which could inundate the Sundarbans, destroy critical infrastructure, and displace vulnerable coastal populations. These threats are amplified by more powerful cyclones and storm surges, which are becoming increasingly intense due to warmer sea temperatures and higher baseline sea levels. "
         }
       ],
       [
         {
           "type": "paragraph",
-          "text": "Addressing these challenges requires a concerted effort to shift from reactive disaster response to proactive resilience building. This involves implementing sustainable agricultural practices, investing in rainwater harvesting and water management infrastructure, and restoring natural buffers like wetlands and mangrove ecosystems."
+          "text": "India’s vulnerability to climate extremes has become strikingly evident in the increasing frequency and severity of extreme weather events. Heatwaves have become a regular feature of Indian summers, with temperatures soaring above 45–49 °C in many cities. Delhi, for instance, reached a record 49.1 °C in May 2024. Studies attribute this rise not merely to seasonal variation but to human-induced climate change   current heatwaves are estimated to be 1.5 °C hotter than similar events in the 20th century. Droughts have also intensified, especially across India’s arid and semi-arid zones, as higher evaporation rates deplete already scarce water supplies. The 2015–2016 drought remains one of the worst in decades, both in terms of geographic spread and social impact. Flooding events, on the other hand, have become increasingly destructive due to extreme rainfall and urban planning deficiencies. In addition, both the Arabian Sea and Bay of Bengal have shown an uptick in cyclone formation, producing stronger and more unpredictable storms such as Amphan, Tokutake, and Mocha all of which caused widespread devastation across the Indian coastline."
         },
         {
           "type": "paragraph",
-          "text": "The journey toward climate resilience in the Indian subcontinent is complex and demanding. However, by combining scientific knowledge, policy innovation, and community-driven action, the region can navigate this climate crisis and secure a sustainable future for its populations."
+          "text": "These developments paint a clear picture: the Indian subcontinent is in the throes of a complex and accelerated climate shift that is no longer theoretical or distant. From glacial retreat to urban flooding, from failing crops to record-breaking heat, every part of the region is feeling the impact. What began as a slow and natural fluctuation in climate over the early 20th century has transformed into a fast-moving, human-driven crisis by 2025. Addressing this multifaceted challenge requires placing climate resilience and adaptation at the centre of national development strategies not only through infrastructure and policy, but also through a shift in public consciousness that recognizes the urgency and interconnectivity of environmental issues."
         }
       ]
     ]
