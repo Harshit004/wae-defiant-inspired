@@ -13,7 +13,8 @@ import {
   Briefcase,
   PlaySquare,
   Settings,
-  LogOut
+  LogOut,
+  Users
 } from "lucide-react"
 
 export default function Sidebar() {
@@ -136,6 +137,19 @@ export default function Sidebar() {
           >
             <PlaySquare size={18} />
             <span>News & Events</span>
+          </Link>
+
+          {/* Subscribers */}
+          <Link
+            href="/admin/subscribers"
+            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+              pathname.startsWith("/admin/subscribers")
+                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3"
+                : "text-[#AEAEAE]"
+            }`}
+          >
+            <Users size={18} />
+            <span>Subscribers</span>
           </Link>
 
           {/* Settings */}

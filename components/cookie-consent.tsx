@@ -68,9 +68,9 @@ export default function CookieConsent() {
       <div
         style={{
           position: "relative",
-          width: "692px", // 287px (Btn1) + 287px (Btn2) + 16px (gap) + 102px (padding left + right) = 692px
+          width: "484px", // 201px (Btn1) + 201px (Btn2) + 10px (gap) + 72px (padding left + right) = 484px
           backgroundColor: "#003c58",
-          padding: "71px 51px", // py-71px px-51px
+          padding: "50px 36px", // py-50px px-36px
           borderRadius: "0px",
           boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
           display: "flex",
@@ -89,8 +89,8 @@ export default function CookieConsent() {
           type="button"
           style={{
             position: "absolute",
-            top: "30px",
-            right: "30px",
+            top: "21px",
+            right: "21px",
             background: "none",
             border: "none",
             color: "#FFF",
@@ -110,10 +110,10 @@ export default function CookieConsent() {
         {/* Title */}
         <h3
           style={{
-            margin: "0 0 33px 0", // 33px gap below title
+            margin: "0 0 23px 0", // 23px gap below title
             fontFamily: "'Inter Tight', sans-serif",
             fontWeight: 500,
-            fontSize: "40px",
+            fontSize: "28px",
             lineHeight: "105%",
             letterSpacing: "0%",
             verticalAlign: "middle",
@@ -125,9 +125,9 @@ export default function CookieConsent() {
         {/* Description */}
         <p
           style={{
-            margin: "0 0 78px 0", // 78px gap below description
+            margin: "0 0 55px 0", // 55px gap below description
             fontFamily: "'Inter Tight', sans-serif",
-            fontSize: "20px",
+            fontSize: "14px",
             lineHeight: "1.5",
             color: "rgba(255, 255, 255, 0.9)",
           }}
@@ -152,7 +152,7 @@ export default function CookieConsent() {
         </p>
 
         {/* Buttons Row */}
-        <div style={{ display: "flex", gap: "16px", marginBottom: "33px" }}>
+        <div style={{ display: "flex", gap: "10px", marginBottom: "23px" }}>
           {/* Accept All Button */}
           <button
             onClick={handleAccept}
@@ -160,15 +160,15 @@ export default function CookieConsent() {
             onMouseLeave={() => setAcceptHovered(false)}
             type="button"
             style={{
-              width: "287px",
+              width: "201px",
               background: acceptHovered ? "transparent" : "#FFF",
               border: "1.5px solid #FFF",
               borderRadius: "0px",
               color: acceptHovered ? "#FFF" : "#003c58",
-              padding: "18px 0",
+              padding: "13px 0",
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 500,
-              fontSize: "22px",
+              fontSize: "15px",
               lineHeight: "100%",
               letterSpacing: "0%",
               textAlign: "center",
@@ -188,15 +188,15 @@ export default function CookieConsent() {
             onMouseLeave={() => setNecessaryHovered(false)}
             type="button"
             style={{
-              width: "287px",
+              width: "201px",
               background: necessaryHovered ? "#FFF" : "transparent",
               border: "1.5px solid #FFF",
               borderRadius: "0px",
               color: necessaryHovered ? "#003c58" : "#FFF",
-              padding: "18px 0",
+              padding: "13px 0",
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 500,
-              fontSize: "22px",
+              fontSize: "15px",
               lineHeight: "100%",
               letterSpacing: "0%",
               textAlign: "center",
@@ -219,7 +219,7 @@ export default function CookieConsent() {
             style={{
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 400,
-              fontSize: "20px",
+              fontSize: "14px",
               lineHeight: "100%",
               letterSpacing: "0%",
               verticalAlign: "middle",

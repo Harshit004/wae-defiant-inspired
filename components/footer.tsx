@@ -1,7 +1,42 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
+import { usePathname } from "next/navigation"
+import { toast } from "sonner"
 
 export default function Footer() {
+  const [email, setEmail] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const pathname = usePathname()
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+
+    setIsSubmitting(true)
+    try {
+      const response = await fetch("/api/subscribers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, pageLink: pathname }),
+      })
+
+      const data = await response.json()
+      if (response.ok) {
+        toast.success("Successfully subscribed to the newsletter!")
+        setEmail("")
+      } else {
+        toast.error(data.message || "Failed to subscribe.")
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <footer className="bg-[#004063] text-white w-full m-0 p-0" style={{ marginBottom: 0 }}>
 
@@ -103,11 +138,15 @@ export default function Footer() {
 
             {/* Newsletter form — full width so right edge aligns with "Get in Touch" button */}
             <form
+              onSubmit={handleSubscribe}
               className="flex flex-row w-full mb-12"
               style={{ height: "54px" }}
             >
               <input
                 type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter email address to sign up for newsletter."
                 className="flex-1 h-full outline-none bg-transparent"
                 style={{
@@ -121,6 +160,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
+                disabled={isSubmitting}
                 style={{
                   height: "100%",
                   fontFamily: "Helvetica Neue",
@@ -131,20 +171,23 @@ export default function Footer() {
                   border: "1px solid #FFFFFF",
                   borderLeft: "none",
                   padding: "0 40px",
-                  cursor: "pointer",
+                  cursor: isSubmitting ? "not-allowed" : "pointer",
                   whiteSpace: "nowrap",
                   transition: "background-color 0.3s, color 0.3s",
+                  opacity: isSubmitting ? 0.7 : 1,
                 }}
                 onMouseEnter={e => {
+                  if (isSubmitting) return;
                   (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
                   (e.currentTarget as HTMLButtonElement).style.color = "#FFFFFF";
                 }}
                 onMouseLeave={e => {
+                  if (isSubmitting) return;
                   (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#FFFFFF";
                   (e.currentTarget as HTMLButtonElement).style.color = "#000000";
                 }}
               >
-                JOIN
+                {isSubmitting ? "..." : "JOIN"}
               </button>
             </form>
 

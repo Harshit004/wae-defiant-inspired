@@ -3,6 +3,7 @@ import "./globals.css"
 import { Inter, Manrope, Inter_Tight } from "next/font/google"
 import type { Metadata } from "next"
 import CookieConsent from "@/components/cookie-consent"
+import { Toaster } from "sonner"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" })
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={interTight.className}>
         {children}
         <CookieConsent />
+        <Toaster />
       </body>
     </html>
   )
