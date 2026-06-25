@@ -1246,5 +1246,72 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "from-flowing-rivers-to-drying-wells-how-india-s-water-story-changed-in-just-70-years": {
+    "id": "from-flowing-rivers-to-drying-wells-how-india-s-water-story-changed-in-just-70-years",
+    "title": "From Flowing Rivers to Drying Wells: How India's Water Story Changed in Just 70 Years.",
+    "category": "Water conservation",
+    "description": "In 70 years, India's per capita freshwater availability fell by nearly 70%. This article traces how post-independence optimism gave way to overextracted aquifers, how Chennai ran dry, and what communities, cities, and governments are doing to secure India's water future.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/86d24922-3451-47ed-f31b-22f044f01100/public",
+    "writerId": "rehnuma-ansari",
+    "readTime": "2 min read",
+    "status": "Live",
+    "createdAt": "2026-06-25T11:45:01.330Z",
+    "contentColumns": [
+      [
+        {
+          "type": "heading",
+          "text": "Seventy Years of Shrinking Water and Rising Stress"
+        },
+        {
+          "type": "paragraph",
+          "text": "There was a time when water in India felt limitless. Rivers sustained civilizations, ponds brought communities together, and wells were the lifelines that kept villages alive. For decades, people assumed water would always be there, free, abundant, and eternal. Yet, without us realizing it, this invisible foundation of our lives has been shrinking. Every glass of water we drink today carries within it a history of overuse, mismanagement, and neglect. The decline hasn't come overnight; it crept in slowly, almost unnoticed, until the day cities like Chennai ran out of water in 2019, and millions woke up to a truth we can no longer ignore. This is the lived reality of water scarcity in India.\n\nIn 1951, every Indian had access to over 5,177 cubic metres of freshwater annually; today, that number has fallen by nearly 70%. With 600 million citizens already under high to extreme stress, India has moved from water abundance to one of the most water-stressed nations. If we don't act now, the water we take for granted may not be there when we need it most."
+        },
+        {
+          "type": "paragraph",
+          "text": "The transition began subtly. Post-independence optimism led to large irrigation and hydropower projects such as the Bhakra-Nangal dam, meant to harness the monsoon. With a population of 361 million in 1951, water seemed plentiful. Yet by the 1960s and 70s, the Green Revolution transformed agriculture, increasing crop yields but also dramatically raising groundwater use. By 1971, per capita availability had already declined to ~3,400 m³ as the population reached 548 million. While canals and reservoirs expanded, the country struggled to capture and store rainfall effectively, allowing much of it to escape as runoff, an early sign of groundwater depletion."
+        },
+        {
+          "type": "paragraph",
+          "text": "Through the 1980s and 90s, the crisis sharpened. By 1991, water availability per person had fallen to ~2,200 m³, close to the \"water stress\" benchmark. Aquifers were being pumped at unsustainable rates, rivers like the Yamuna shrank in dry seasons, and traditional village wells dried up. India's first National Water Policy (1987) formally acknowledged the problem, but implementation lagged. By 2001, when India's population crossed 1 billion, availability had dropped further to ~1,820 m³, signalling a structural crisis in water management.\n\nThe 2000s made the challenge undeniable. Severe droughts in 2002 and 2009 exposed the dependence on erratic monsoons. A national survey found that aquifer units in many states were being extracted faster than they could recharge. The Central Water Commission estimated that less than two-thirds of rainfall runoff was actually usable because of infrastructure and storage limitations, underscoring the urgency for sustainable water resources.\n"
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Crises Mount as Farms, Homes, and Economies Suffer"
+        },
+        {
+          "type": "paragraph",
+          "text": "By the 2010s, India had entered its water crisis era. In 2018, the Composite Water Management Index showed 600 million Indians under high to extreme water stress, with groundwater declining at 0.3 metres per year. In 2019, Chennai, home to 7 million people, famously ran out of water. Reports warned that by 2030, national demand could be twice the available supply, potentially cutting GDP by 6%. The Chennai crisis became a global reminder of urban water stress.\n\nLooking ahead to 2050, India's population is expected to exceed 1.6 billion, with water availability falling to ~1,140 m³ per person, dangerously close to \"absolute scarcity\". The warning is clear: without urgent reforms, India's future water crisis could redefine its growth story."
+        },
+        {
+          "type": "paragraph",
+          "text": "The present impacts are visible everywhere. Agriculture remains the heaviest user of freshwater, accounting for the overwhelming majority of withdrawals. Reliance on groundwater has expanded irrigation, but at the cost of shrinking aquifers. Efficiency is still poor; large volumes of water are lost through evaporation, runoff, or seepage before reaching crops. For many farmers, this means higher pumping costs and greater risk of crop failures in drought-prone regions, demanding urgent promotion of micro-irrigation."
+        },
+        {
+          "type": "paragraph",
+          "text": "For households, the challenge is stark. Over 160 million Indians lack safe drinking water, and 200,000 people die annually from water-related causes. Urban slums queue at tanker trucks, while rural women spend hours fetching water. Quality compounds scarcity: 70% of India's water is contaminated, endangering millions, even where quantity exists. These conditions highlight the importance of the Jal Jeevan Mission, which seeks to bring piped water to every household.\n\nIndustries and the economy are no less vulnerable. Water shortages have forced shutdowns of power plants and factories, disrupting electricity and production. The World Bank projects that without intervention, water scarcity could cut India's GDP by 6% by 2050. Inter-state disputes, like those over the Cauvery or Krishna, reflect rising competition, while migration from drought-hit regions adds social stress. Experts argue that large-scale rainwater harvesting systems can help buffer cities and industries against shocks."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Ecosystems Erode as Communities Seek a Way Forward"
+        },
+        {
+          "type": "paragraph",
+          "text": "The ecological costs are equally severe. India is the largest groundwater extractor in the world, using more than China and the US combined. Rivers are drying before reaching the sea, wetlands are vanishing, and biodiversity is eroding. Despite receiving ~4,000 BCM of rainfall annually, India captures only a small fraction, with most of it lost to floods and runoff. Climate change is making this imbalance worse, with alternating floods and droughts, confirming the need for greater water security.\n\nYet solutions are emerging. National missions are promoting reforms. AMRUT 2.0 is securing urban water through expanded supply and wastewater recycling. In agriculture, crop diversification through the Sahi Fasal campaign is encouraging farmers to shift away from water-thirsty crops.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Traditional practices are being revived. Localised storage, such as rooftop catchments, percolation tanks, and recharge wells, is expanding across regions. Community-led models, such as Dr. Rajendra Singh's johad revival in Rajasthan, show that local stewardship can even bring back rivers once thought lost, echoing the philosophy behind the Catch the Rain campaign.\n\nTechnology is scaling these efforts further. Farmers now access real-time soil moisture data via smartphone apps; cities like Indore and Bengaluru are testing smart metres and leak-detection systems. Desalination plants in Chennai and Gujarat add new supply, while wastewater reuse is expanding in industry. Inspired by Israel's example of recycling 94% of wastewater, India is increasingly adopting wastewater reuse technologies.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ultimately, water security depends not just on governments but on citizens. Fixing household leaks, reusing greywater, and planting trees all add up. Schools are teaching water sustainability, shaping future generations into water-conscious citizens.\n\nIndia's journey from 5,177 m³ per person in 1951 to a projected ~1,140 m³ by 2050 is a stark warning. It shows how abundance can collapse into scarcity within decades, but also how determined action can reverse decline. If policies, technology, and communities align, rivers can flow again, aquifers can recharge, and every household can have access to clean water. The urgency is real, but so is the possibility: the chance to secure India's water future before it is too late."
+        }
+      ]
+    ]
   }
 };
