@@ -160,12 +160,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "aenon",
-        "name": "TRUBLU AENON",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
-        "category": "free-standing"
-      },
-      {
         "id": "alfa-100",
         "name": "TRUBLU ALFA 100",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
@@ -206,6 +200,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "TRUBLU LAGOON",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
         "category": "counter-top"
+      },
+      {
+        "id": "aenon",
+        "name": "AENON",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8ea2eecd-b9d8-4a38-399b-12ce2375a200/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -1330,21 +1330,22 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "aenon",
     "name": "AENON",
     "categoryName": "WATER DISPENSER - TRUBLU Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9a539ab1-e7f5-48ea-dff3-0c8071dcf300/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/25531713-c7e1-40c9-eb1b-44c3c9127400/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a814e21b-b816-4241-14e5-2fb4e5bf4f00/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8ea2eecd-b9d8-4a38-399b-12ce2375a200/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0fc37015-dbe5-4045-c4da-521c32afa500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/26c9962b-a275-4020-e529-fd045ee6c100/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d2a8c834-89a8-4c73-69dc-fdd420f94d00/public"
     ],
     "featuresList": [
       {
-        "title": "Plumbed-In/ Top Loading (Optional)",
-        "description": "Plumbed-in to Purified Water Supply. Direct Jar Fill: Direct Tank Fill Optional",
+        "title": "Plumbed-In",
+        "description": "Plumbed-in to Purified Water Supply.",
         "isDisplayed": true
       },
       {
         "title": "Built to Last",
-        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability and long term value. Full SS 304 version available.",
+        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability and long term value.\nFull SS 304 version available.",
         "isDisplayed": true
       },
       {
@@ -1361,6 +1362,11 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "title": "Green Specs",
         "description": "Certified Green 2 LPM-water flow",
         "isDisplayed": false
+      },
+      {
+        "title": "LED Display (Optional)",
+        "description": "Secondary Parameters Consumption analysis Temperature Purification status IOT enabled",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1368,13 +1374,13 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         {
           "variant": "FS AENON 36, 45,75",
           "hot": "3",
-          "cold": "40",
-          "ambient": "15"
+          "cold": "20/40",
+          "ambient": "20/30"
         }
       ],
       "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "1000ml",
@@ -1382,16 +1388,32 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "dimensions": [
         {
           "variant": "FS AENON 36, 45,75",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
+          "weight": "100/120",
+          "height": "1445/1472",
+          "width": "466/535",
+          "depth": "580/643"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a 1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "CTO I UF | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
-    }
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public",
+    "heroTagline": "Design for Strength, Purity, Hygiene & Sustainability",
+    "heroSubtext": "Sustainable Future Together",
+    "heroCtaText": "Contact  Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/AENON.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
   },
   "alfa-100": {
     "id": "alfa-100",
