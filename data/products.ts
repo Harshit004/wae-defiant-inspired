@@ -106,12 +106,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/067b3edc-d892-48f5-1e63-5e567c0a6d00/public"
       },
       {
-        "id": "gsp",
-        "name": "GSP",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
-      },
-      {
         "id": "venus",
         "name": "VENUS",
         "category": "free-standing",
@@ -130,6 +124,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c549c9bc-8af7-41f6-03d5-8c0078e9dd00/public"
       },
       {
+        "id": "reva",
+        "name": "REVA",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d6c1acd-771b-412e-25c8-64a908da5100/public"
+      },
+      {
         "id": "var-series",
         "name": "VAR",
         "category": "free-standing",
@@ -142,10 +142,10 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
       },
       {
-        "id": "reva",
-        "name": "REVA",
+        "id": "gsp",
+        "name": "GSP",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d6c1acd-771b-412e-25c8-64a908da5100/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -769,7 +769,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "status": "Live",
     "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/506794c8-ff87-4b3d-d775-a3c50d753000/public",
-    "heroTagline": "Plastic in passe, Landfilling is Zero.\nSustainability is the Future.",
+    "heroTagline": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "/contactus",
@@ -848,7 +848,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "status": "Live",
     "description": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ad026cb7-dac1-4188-a839-a2062c712d00/public",
-    "heroTagline": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
+    "heroTagline": "Plastic in passe, Landfilling is Zero.\nSustainability is the Future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "/contactus",
