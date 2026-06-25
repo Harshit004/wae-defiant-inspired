@@ -81,12 +81,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "var-ct",
-        "name": "VAR.CT",
-        "category": "counter-top",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/eb19ce92-40b9-42d4-cb63-f3cc053edc00/public"
-      },
-      {
         "id": "rom-ct",
         "name": "ROM.CT",
         "category": "counter-top",
@@ -145,6 +139,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ENKI.CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
+      },
+      {
+        "id": "var-ct",
+        "name": "VAR.CT",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/eb19ce92-40b9-42d4-cb63-f3cc053edc00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -1168,7 +1168,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "var-ct",
     "name": "VAR.CT",
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/eb19ce92-40b9-42d4-cb63-f3cc053edc00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d2c031df-53ff-4428-dcd8-7d42382d4c00/public",
@@ -1204,7 +1204,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 50/25",
+          "variant": "FS VAR 25/50",
           "hot": "3",
           "cold": "20",
           "ambient": "15"
@@ -1219,7 +1219,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 50/25",
+          "variant": "FS VAR 25/50",
           "weight": "70",
           "height": "805",
           "width": "470",
@@ -1232,13 +1232,13 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "status": "Live",
     "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0e4b7bf2-c341-4b7e-bd2a-0610d4571100/public",
+    "heroImage": "",
     "heroTagline": "Plastic in passe, Landfilling is Zero.\nSustainability is the Future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
-    "heroCtaLink": "/contactus",
+    "heroCtaLink": "",
     "showcaseCtaText": "Enquire Now",
-    "showcaseCtaLink": "/enquiry",
+    "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/VAR.pdf",
     "variants": {
       "hot": true,
