@@ -143,7 +143,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
       },
       {
         "id": "var-series",
-        "name": "BLUWAE VAR",
+        "name": "VAR",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
       }
@@ -328,7 +328,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
 export const PRODUCTS: Record<string, ProductDetails> = {
   "var-series": {
     "id": "var-series",
-    "name": "BLUWAE VAR",
+    "name": "VAR",
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
