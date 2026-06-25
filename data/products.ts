@@ -82,6 +82,18 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
+        "id": "var-series",
+        "name": "VAR Series",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
+      },
+      {
+        "id": "enki",
+        "name": "ENKI",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
+      },
+      {
         "id": "rom-grande",
         "name": "ROM Grande",
         "category": "free-standing",
@@ -128,18 +140,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "REVA",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/978c8961-cf7f-4570-2b9b-e6e5838ed100/public"
-      },
-      {
-        "id": "var-series",
-        "name": "VAR Series",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
-      },
-      {
-        "id": "enki",
-        "name": "ENKI",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
       },
       {
         "id": "pos",
@@ -428,13 +428,12 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/VAR.pdf",
-    "datasheetPdf": "",
+    "datasheetPdf": "file:///C:/Users/WAE/Downloads/VAR.pdf",
     "variants": {
       "hot": true,
       "cold": true,
       "ambient": true
-    },
-    "displayImageIndex": 0
+    }
   },
   "enki": {
     "id": "enki",
@@ -448,12 +447,16 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     ],
     "featuresList": [
       {
+        "title": "Water Options",
+        "description": "Hot, Cold"
+      },
+      {
         "title": "Touch-Free Operation",
         "description": "Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless."
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": " Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
       },
       {
         "title": "Clean Flow, Minimal Splash",
@@ -477,7 +480,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "cold": "Cold: 5°C- 24°C (default Default 8°C)",
         "hot": "Hot: 50°C - 80°C (default 55°C)"
       },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "greenCertification": " Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "500 ml",
       "refrigerant": "R-134a",
       "dimensions": [
@@ -503,13 +506,12 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
-    "datasheetPdf": "",
+    "datasheetPdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
     "variants": {
       "hot": true,
       "cold": true,
       "ambient": false
-    },
-    "displayImageIndex": 0
+    }
   },
   "pos": {
     "id": "pos",
