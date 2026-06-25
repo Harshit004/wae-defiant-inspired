@@ -30,10 +30,10 @@ export const WRITERS: Record<string, Writer> = {
   "aditi-sharma": {
     "id": "aditi-sharma",
     "name": "Aditi Sharma",
-    "role": "Executive - Marketing, WAE",
+    "role": "Marketing",
     "bio": "Aditi Sharma explores sustainability and climate change with a focus on climate action and environmental responsibility. With over two years of professional experience, her work connects research, corporate sustainability practices, and strategic communication.",
     "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/471bde63-5514-44fd-67a7-d06a24417100/public",
-    "link": "/aditi-sharma"
+    "link": "https://www.linkedin.com/in/aditi-sharma-056713291/"
   },
   "rehnuma-ansari": {
     "id": "rehnuma-ansari",
@@ -552,7 +552,7 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "paragraph",
-          "text": "The story begins in the smoky heart of 18th-century England. Coal dust filled the air as the first every corner of the globe. What started as the Industrial Revolution an era of machines and mechanization quickly became something far more consequential: the dawn of the Carbon Age.\nIn the early 1700s, the world relied on wood, water wheels, and manual labour. But by the mid-18th century, coal became the fuel of progress. In Britain alone, coal production rose from 3 million tons in 1750 to over 290 million tons by 1913. It powered factories, locomotives, steamships, and cities. By 1800, James Watt’s steam engine had revolutionized industry, allowing humans to extract and burn fossil fuels on an unprecedented scale.\n"
+          "text": "The story begins in the smoky heart of 18th-century England. Coal dust filled the air as the first every corner of the globe. What started as the Industrial Revolution an era of machines and mechanization quickly became something far more consequential: the dawn of the Carbon Age.\n\nIn the early 1700s, the world relied on wood, water wheels, and manual labour. But by the mid-18th century, coal became the fuel of progress. In Britain alone, coal production rose from 3 million tons in 1750 to over 290 million tons by 1913. It powered factories, locomotives, steamships, and cities. By 1800, James Watt’s steam engine had revolutionized industry, allowing humans to extract and burn fossil fuels on an unprecedented scale.\n"
         }
       ],
       [
