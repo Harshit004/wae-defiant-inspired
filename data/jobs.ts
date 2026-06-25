@@ -27,44 +27,42 @@ export const JOB_CATEGORIES = [
 export const JOBS: Record<string, JobPost> = {
   "product-designer": {
     "id": "product-designer",
-    "title": "Product Designer",
-    "category": "DESIGN",
+    "title": "Sr. UI/UX Designer",
+    "category": "MARKETING",
     "type": "On-site",
     "time": "Full time",
-    "shortDescription": "We're looking for mid-level product designer to join our team.",
+    "shortDescription": "This role is best suited for someone who enjoys solving problems, pays attention to detail, and takes pride in creating intuitive and meaningful user experiences.\n",
     "status": "Live",
     "createdAt": "2024-01-01T00:00:00Z",
     "summaryParagraphs": [
-      "We're on the lookout for a Product Designer who can own complex design projects end-to-end, from research & strategy to final delivery, for some of the most ambitious brands across the globe.",
-      "In this role, you'll bridge business goals & user needs, lead a team of designers, & deliver experiences that are as thoughtful as they are impactful. If you're ready to lead with craft & strategy, apply now."
+      "At WAE, we are building products and digital platforms that are transforming the way organizations manage drinking water, sustainability, manufacturing, and service operations. From IoT-enabled systems and customer portals to ERP platforms and websites, design plays a critical role in everything we create.\n",
+      "We are looking for a UI/UX Designer who can take complete ownership of projects and contribute beyond just visual design. The ideal candidate should be comfortable understanding business requirements, mapping user journeys, creating wireframes and prototypes, and working closely with developers to ensure seamless execution."
     ],
     "whatYouWillDo": [
-      "Own & deliver complex UX projects for clients across industries, ensuring high-quality outcomes at every stage",
-      "Lead the end-to-end design process across research, ideation, wireframing, prototyping & testing",
-      "Drive UX strategy & translate business goals into intuitive, user-centered digital experiences",
-      "Bring a sharp aesthetic eye to every project, ensuring design craft & visual quality are never compromised",
-      "Collaborate with cross-functional teams, including product managers, developers & stakeholders",
-      "Lead & manage a team of designers, distributing work effectively & maintaining delivery standards",
-      "Mentor junior designers & contribute to a high-performance design culture"
+      "Take complete ownership of UI/UX projects from requirement gathering to final deployment.",
+      "Understand user needs, business goals, and operational workflows to create effective design solutions.",
+      "Design websites, web applications, ERP platforms, customer portals, dashboards, and mobile-responsive interfaces.",
+      "Create user flows, wireframes, mockups, and high-fidelity prototypes.",
+      "Develop interactive prototypes to validate ideas and user journeys before development.",
+      "Build and maintain design systems, component libraries, and UI guidelines.\n",
+      "Conduct research, competitor benchmarking, and usability analysis to improve product experiences.",
+      "Work closely with developers to ensure designs are implemented accurately.\n",
+      "Participate in product discussions and contribute ideas that improve functionality and usability.\n",
+      "Continuously improve existing products based on user feedback and business requirements"
     ],
     "whatYouWillOwn": [
-      "End-to-end delivery of complex design projects for clients, delivered on time & at the highest quality bar",
-      "User research initiatives that produce data-driven UX solutions enhancing satisfaction & engagement",
-      "High-fidelity wireframes, prototypes & robust design systems that scale across products, platforms & client engagements",
-      "User personas, journey maps & information architecture for structured, intuitive experiences",
-      "UX documentation standards ensuring clarity & consistency across all projects",
-      "Project timelines & deliverables, keeping execution sharp across multiple engagements"
+      "The complete brand domain and related subdomains"
     ],
     "whoWeAreLookingFor": [
-      "5+ years of UX design experience, with at least 1 year leading projects or a team",
-      "Proven ability to deliver complex design projects independently, ideally in a design agency or UX studio setup",
-      "Strong expertise in UX research, wireframing, prototyping & interaction design for web & mobile",
-      "Hands-on experience building & maintaining scalable design systems that ensure consistency across products & platforms",
-      "A strong aesthetic sensibility with an eye for craft, someone who sweats the details & raises the visual bar on every project",
-      "Deep understanding of information architecture, accessibility & usability practices",
-      "Proficiency in Figma & other design & prototyping tools",
-      "Excellent storytelling & presentation skills to articulate design decisions to clients & stakeholders",
-      "Experience managing & mentoring designers in a collaborative studio environment"
+      "4–8 years of experience in UI/UX Design.\n",
+      "Strong proficiency in Figma and modern design tools.\n",
+      "Excellent wireframing, prototyping, and interaction design skills.\n",
+      "Strong understanding of information architecture and user-centered design principles.\n",
+      "Experience creating responsive designs for desktop, tablet, and mobile platforms.\n",
+      "Ability to create clean, intuitive, and scalable design systems.\n",
+      "Understanding of front-end development concepts, including HTML, CSS, and responsive frameworks.\n",
+      "Strong communication and presentation skills.\n",
+      "Ability to manage multiple projects and timelines simultaneously.\n"
     ]
   }
 };
