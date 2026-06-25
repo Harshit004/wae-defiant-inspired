@@ -129,12 +129,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/067b3edc-d892-48f5-1e63-5e567c0a6d00/public"
       },
       {
-        "id": "reva",
-        "name": "REVA",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d6c1acd-771b-412e-25c8-64a908da5100/public"
-      },
-      {
         "id": "var-series",
         "name": "VAR",
         "category": "free-standing",
@@ -145,6 +139,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "POS",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
+      },
+      {
+        "id": "reva",
+        "name": "REVA",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d6c1acd-771b-412e-25c8-64a908da5100/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -716,7 +716,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "reva",
     "name": "REVA",
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/978c8961-cf7f-4570-2b9b-e6e5838ed100/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c642f7b0-c3a5-4ff6-84ca-4c6da2805a00/public",
@@ -732,7 +732,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       {
         "title": "Touchless Dispensing",
         "description": "Experience the convenience of sensor-based technology for hygienic, hands-free water dispensing.",
-        "isDisplayed": true
+        "isDisplayed": false
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
@@ -742,7 +742,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       {
         "title": "Real-Time Monitoring",
         "description": "Stay informed with an intuitive IoT display powered by CIRCLE OF BLUE, showcasing key data and performance metrics in real-time.",
-        "isDisplayed": false
+        "isDisplayed": true
       },
       {
         "title": "Effortless Integration",
@@ -786,7 +786,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "status": "Live",
     "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/506794c8-ff87-4b3d-d775-a3c50d753000/public",
+    "heroImage": "",
     "heroTagline": "Plastic in passe, Landfilling is Zero.\nSustainability is the Future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
