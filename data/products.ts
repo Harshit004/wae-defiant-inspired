@@ -94,12 +94,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
       },
       {
-        "id": "assistflow",
-        "name": "ASSISTFLOW",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/78cde953-1b2b-48db-0aaa-eaf393a09d00/public"
-      },
-      {
         "id": "var-ct",
         "name": "VAR.CT",
         "category": "counter-top",
@@ -146,6 +140,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ENKI.CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
+      },
+      {
+        "id": "assistflow",
+        "name": "ASSISTFLOW",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c549c9bc-8af7-41f6-03d5-8c0078e9dd00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -878,23 +878,18 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "#",
     "brochurePdf": "/brochure-download.pdf",
-    "datasheetPdf": "/datasheet-download.pdf",
+    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
       "ambient": true
     },
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/78cde953-1b2b-48db-0aaa-eaf393a09d00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c549c9bc-8af7-41f6-03d5-8c0078e9dd00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ec016b83-3713-4d25-f896-de54df537900/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/64fe0354-6750-4828-ed39-78cca03f1b00/public"
     ],
     "featuresList": [
-      {
-        "title": "Water Options",
-        "description": ""
-      },
       {
         "title": "Powerful led uv-c intank sterilization",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
