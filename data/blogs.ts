@@ -67,7 +67,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future",
     "category": "Climate Change & Water",
     "description": "In the quiet halls of Kyoto in 1997, something monumental began: a collective awakening of the world's conscience towards the mounting crisis of climate change.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/132ed412-5319-4808-6e91-bf0edc345000/public",
     "writerId": "aditi-sharma",
     "readTime": "2 min read",
     "status": "Live",
