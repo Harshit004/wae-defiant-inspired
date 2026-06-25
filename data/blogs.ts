@@ -54,7 +54,7 @@ export const WRITERS: Record<string, Writer> = {
   "shambhavi": {
     "id": "shambhavi",
     "name": "Shambhavi",
-    "role": "Executive - Marketing, WAE",
+    "role": "Marketing",
     "bio": "Ms. Shambhavi Yadav explores sustainability, policy, and governance through a research-led lens. A seasoned professional with over 7 years of experience, she is NET qualified, a graduate from LSR, DU, and is a 3-time KPMG scholar.",
     "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public",
     "link": "https://in.linkedin.com/in/shambhavi-yadav-61b937276"
@@ -1081,6 +1081,113 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "Ultimately, water security depends not just on governments but on citizens. Fixing household leaks, reusing greywater, and planting trees all add up. Schools are teaching water sustainability, shaping future generations into water-conscious citizens.\n\nIndia's journey from 5,177 m³ per person in 1951 to a projected ~1,140 m³ by 2050 is a stark warning. It shows how abundance can collapse into scarcity within decades, but also how determined action can reverse decline. If policies, technology, and communities align, rivers can flow again, aquifers can recharge, and every household can have access to clean water. The urgency is real, but so is the possibility: the chance to secure India's water future before it is too late."
+        }
+      ]
+    ]
+  },
+  "the-north-star-of-progress-a-historical-lens-on-climate-change-and-india-s-sustainable-future": {
+    "id": "the-north-star-of-progress-a-historical-lens-on-climate-change-and-india-s-sustainable-future",
+    "title": "The North Star of Progress: A Historical Lens on Climate Change and India's Sustainable Future",
+    "category": "Policy",
+    "description": "From the 1949 UN Scientific Conference to the 2015 Paris Agreement, this article traces the milestones that gave birth to the SDGs — and explores how India, guided by this global compass, is building a sustainable future through bold missions like Jal Jeevan.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b7f2797-da41-48be-79ec-6078ffc78d00/public",
+    "writerId": "shambhavi",
+    "readTime": "2 min read",
+    "status": "Live",
+    "createdAt": "2026-06-25T10:44:07.416Z",
+    "contentColumns": [
+      [
+        {
+          "type": "heading",
+          "text": "There is no Plan B because there is no Planet B\nBan Ki-moon"
+        },
+        {
+          "type": "paragraph",
+          "text": "In an era defined by climate volatility, rising inequalities, and fractured global priorities, sustainability as popularized by the United Nations Sustainable Development Goals (SDGs) stands as the most ambitious, unifying roadmap humanity has ever conceived. Launched in 2015, these 17 interconnected goals are not mere aspirations; they are a collective call to action through history that reimagines what progress means in the 21st century.\n\nThe SDG-aligned innovation, from the first UN Scientific Conference to the SDGs in 2015, offers a compass, a shared North Star, that helps us align our decisions with the long-term viability of our planet and people.\n\nMuch like ancient mariners navigating uncharted oceans with the North Star as their celestial constant, the SDGs illuminate a collective path forward—a visionary trajectory through uncertainty toward resilience, equity, and sustainability."
+        },
+        {
+          "type": "heading",
+          "text": "Chronicles of Climate Change: The History Before The Birth Of SDGs\n\n1949–1972: From Lake Success to Stockholm (The Genesis of Global Environmentalism)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The modern climate movement began in 1949 at the UN Scientific Conference on the Conservation and Utilization of Resources in* Lake Success, New York* — the first UN body to formally examine resource depletion. By **29 May, the Economic and Social Council introduced these concerns into its formal agenda, paving the way for what would become the first global environmental summit. Held in Stockholm, Sweden (5–16 June 1972), the United Nations Conference on the Human Environment (now known as the First Earth Summit), **produced a declaration that outlined principles for environmental protection and a robust international action plan."
+        },
+        {
+          "type": "heading",
+          "text": "1979–1985: From Earth Watch to Vienna (The Rise of Atmospheric Diplomacy)"
+        },
+        {
+          "type": "paragraph",
+          "text": "In 1979, under the** Earth Watch programme, the UNEP Governing Council** tasked its Executive Director with monitoring long-range transboundary air pollution. This initiative resulted in the Convention on Long-Range Transboundary Air Pollution, a milestone in global climate governance. By 1980, alarm over ozone depletion led UNEP to advocate limits on CFCs (F-11 and F-12), prompting the adoption of the Vienna Convention for the Protection of the Ozone Layer in 1985. That same year, a protocol under the 1979 Convention committed nations to reducing sulphur emissions by 30%."
+        },
+        {
+          "type": "heading",
+          "text": "1987–1989: From the IPCC to Montreal (Laying the Foundations of Climate Governance)"
+        },
+        {
+          "type": "paragraph",
+          "text": "In 1987, the UN General Assembly adopted the Environmental Perspective to the Year 2000 and Beyond, a comprehensive framework for global environmental cooperation. Later that year, the Intergovernmental Panel on Climate Change (IPCC) was formed to assess scientific data on climate risks. The* General Assembly formally recognised climate change as an urgent issue* and tasked WMO and** UNEP** to conduct a full-scale review and recommend mitigation strategies.\n\n1989 marked a watershed: via Resolution 44/207, the General Assembly endorsed negotiations for a framework convention on climate change. That year, the Malé Declaration on Global Warming and Sea Level Rise was submitted by the Maldives; the Helsinki Declaration on ozone protection was also adopted. Crucially, the Montreal Protocol which limited ozone-depleting substances, entered into force, becoming one of the most effective environmental treaties in history."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "1990–1992: Rio Earth Summit and the Birth of the UNFCCC (A Blueprint for Planetary Stewardship)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Second World Climate Conference (Geneva, 1990) reinforced the necessity of a unified response to climate change. This momentum culminated in the 1992 Earth Summit in Rio de Janeiro, formally known as the United Nations Conference on Environment and Development (UNCED). It produced the historic Rio Declaration and Agenda 21, linking sustainable development to atmospheric protection through its pivotal Chapter 9. The summit also witnessed the opening for signature of the United Nations Framework Convention on Climate Change (UNFCCC), a legally binding accord to stabilise greenhouse gas levels. By the end of 1992, 158 states had signed, signalling a global commitment to climate action."
+        },
+        {
+          "type": "heading",
+          "text": "1994–2005: From Berlin Mandate to the Kyoto Protocol (Institutionalising the Climate Compact)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The UNFCCC entered into force in 1994, laying the legal foundation for collective climate action. At COP1 in** Berlin (1995), parties adopted the Berlin Mandate**, calling for stronger and legally binding commitments. This gave rise to the landmark Kyoto Protocol, adopted in December 1997 in Kyoto, Japan. The** protocol obligated industrialised nations to reduce their greenhouse gas emissions by at least 5% below 1990 levels during the 2008–2012 commitment period. It opened for signature in 1998 and entered into force on 16 February 2005, after ratification by over 160 countries**, solidifying the first legally binding emission reduction regime in human history."
+        },
+        {
+          "type": "heading",
+          "text": "An Odyssey of Origins: SDGs & An Evolving Framework of Hope"
+        },
+        {
+          "type": "paragraph",
+          "text": "The SDGs are rooted in decades of multilateral vision. Their genesis can be traced to the 1992 Earth Summit in Rio de Janeiro, where over *178 countries adopted *Agenda 21, a bold action plan to foster global cooperation for sustainable development.\n\nIn **2000, the Millennium Declaration **gave rise to eight Millennium Development Goals (MDGs), which guided global development until 2015. The MDGs were instrumental in reducing extreme poverty, improving access to primary education, and advancing healthcare. This was followed by the Millennium Summit in 2000, thus resulting in eight Millennium Development Goals (MDGs) aimed at reducing extreme poverty by 2015.\n\nIn 2002, the World Summit on Sustainable Development in *Johannesburg *reaffirmed these global commitments and placed a stronger emphasis on multilateral partnerships. At Rio+20, member states adopted The Future We Want, calling for the formulation of a broader, more holistic agenda: the Sustainable Development Goals.\n"
+        },
+        {
+          "type": "heading",
+          "text": "2015: A Pivotal Year for Global Action"
+        },
+        {
+          "type": "paragraph",
+          "text": "By 2015, amid growing climate urgency and socioeconomic volatility, the UN General Assembly adopted the 2030 Agenda for Sustainable Development—anchored by 17 interlinked SDGs, designed to be universal, inclusive, and transformative.\n\nThe year 2015 was unprecedented in multilateral cooperation that involved events such as Sendai Framework for Disaster Risk Reduction (March 2015), Addis Ababa Action Agenda on Financing for Development (July 2015), 2030 Agenda for Sustainable Development (September 2015), and** Paris Agreement on Climate Change** (December 2015).\n\nThese milestones signified a collective awakening—a realisation that isolated action was no longer viable. Sustainable development would henceforth require systemic change, integrative policies, climate-resilient infrastructure, and collaborative accountability."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Vision 2030: The Present Imperative and India's Role"
+        },
+        {
+          "type": "paragraph",
+          "text": "The 2030 Agenda is not just about where we want to go; it's about how we get there—through inclusive collaboration, scientific innovation, and systems thinking. Today, the* Division for Sustainable Development Goals (DSDG)* under the UN Department of Economic and Social Affairs (UNDESA*) *plays a pivotal role in supporting SDG implementation across thematic issues such as water, energy, climate, science, and urban development.\n\nYet, the reality is sobering. According to the** 2023 UN SDG Progress Report**, only 15% of the targets are on track. The COVID-19 pandemic, geopolitical instability, and climate-related disasters have set back progress, especially in the Global South.\n\nIndia, however, has undertaken bold steps such as the Jal Jeevan Mission, which aims to provide ***safe and adequate drinking water through individual household tap connections by 2024. As of July 2025, the mission has reached over 143 million rural households, ***significantly advancing SDG 6 on clean water and sanitation. (Jal Jeevan Mission, GOI)"
+        },
+        {
+          "type": "heading",
+          "text": "Sustainability: WAE's North Star"
+        },
+        {
+          "type": "paragraph",
+          "text": "The SDGs focusing on sustainability are not a checklist. They are the ethical scaffolding of a better world, the shared compass that orients us towards a future of dignity, equity, and planetary balance. WAE believes that the SDGs are more than just goals. They are values made visible, and commitments made actionable."
+        },
+        {
+          "type": "heading",
+          "text": "Much like the North Star, sustainability does not dictate the journey—it illuminates the destination."
+        },
+        {
+          "type": "paragraph",
+          "text": "As we reimagine the future of water, workspaces, and well-being, we do so in solidarity with this global blueprint.\n\nWAE is proud to navigate by that star, building solutions that convert intention into impact and aligning innovation with planetary stewardship.\n\n\"Dhruvam jyotiḥ nakṣatrāṇām\"- Among the stars, the light of the Pole Star is fixed.\n\n- Paraphrased from Vishnu Purana, Book 2, Chapter 8\n"
         }
       ]
     ]
