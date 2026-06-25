@@ -196,16 +196,16 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "free-standing"
       },
       {
-        "id": "lagoon",
-        "name": "TRUBLU LAGOON",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
-        "category": "counter-top"
-      },
-      {
         "id": "aenon",
         "name": "AENON",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8ea2eecd-b9d8-4a38-399b-12ce2375a200/public"
+      },
+      {
+        "id": "lagoon",
+        "name": "LAGOON",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8150df9-f454-4a9c-b016-16beb5b67400/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -1806,11 +1806,12 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "lagoon",
     "name": "LAGOON",
     "categoryName": "WATER DISPENSER - TRUBLU Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/70fa9ba1-f0e8-490b-fe4a-4ca531a63700/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/89fe9111-df3e-44fd-146b-913905054100/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f6efba25-b43c-449d-d14d-a785f6e61b00/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8150df9-f454-4a9c-b016-16beb5b67400/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c8dbe4b-227d-4721-4c75-4bf726a42f00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/36c4943b-b435-4274-1470-a6c2b2521900/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/10cd053e-9886-4481-d631-b1b873810100/public"
     ],
     "featuresList": [
       {
@@ -1838,14 +1839,14 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "storageCapacity": [
         {
           "variant": "FS LAGOON",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
+          "hot": "1",
+          "cold": "5",
+          "ambient": "10"
         }
       ],
       "waterTemp": {
         "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+        "hot": "Hot: 50°C- 80°C (default Default 55°C)"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "750ml",
@@ -1853,16 +1854,32 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "dimensions": [
         {
           "variant": "FS LAGOON",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
+          "weight": "110",
+          "height": "1200",
+          "width": "450",
+          "depth": "450"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a 1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "CTO I UF | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
-    }
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public",
+    "heroTagline": "Design for Strength, Purity, Hygiene & Sustainability",
+    "heroSubtext": "Sustainable Future Together",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/Lagoon.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
   },
   "yami": {
     "id": "yami",
