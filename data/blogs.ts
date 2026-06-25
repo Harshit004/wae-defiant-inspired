@@ -446,7 +446,7 @@ export const BLOGS: Record<string, BlogPost> = {
   "shifting-monsoons": {
     "id": "shifting-monsoons",
     "title": "Shifting Monsoons: Transforming India's Climatic and Hydrological Systems",
-    "category": "Climate Change & Water",
+    "category": "Policy",
     "description": "For centuries, the monsoon has been more than just a season in India...",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
     "writerId": "shambhavi",
