@@ -520,7 +520,7 @@ export default function EditProductPage({ params }: EditProductProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                    Hero Background Image Link
+                    Hero Banner (Link)
                   </label>
                   <input
                     type="url"
