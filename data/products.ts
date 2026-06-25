@@ -100,12 +100,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/78cde953-1b2b-48db-0aaa-eaf393a09d00/public"
       },
       {
-        "id": "eno-ct",
-        "name": "ENO.CT",
-        "category": "counter-top",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
-      },
-      {
         "id": "var-ct",
         "name": "VAR.CT",
         "category": "counter-top",
@@ -146,6 +140,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "VENUS",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/92e20429-ff63-410f-9494-62ebbb2e0b00/public"
+      },
+      {
+        "id": "eno-ct",
+        "name": "ENKI.CT",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -1057,7 +1057,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   },
   "eno-ct": {
     "id": "eno-ct",
-    "name": "ENO.CT",
+    "name": "ENKI.CT",
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
@@ -1066,10 +1066,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2078a46d-8819-4840-a853-96abb0409400/public"
     ],
     "featuresList": [
-      {
-        "title": "Water Options",
-        "description": "Chilled,  Hot"
-      },
       {
         "title": "Touch-Free Operation",
         "description": "Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless."
@@ -1099,7 +1095,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
           "variant": "ENKI 25 CT",
           "hot": "1",
           "cold": "9",
-          "ambient": ""
+          "ambient": "-"
         }
       ],
       "waterTemp": {
@@ -1139,7 +1135,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
+    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
