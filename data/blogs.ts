@@ -324,7 +324,7 @@ export const BLOGS: Record<string, BlogPost> = {
   "the-ozone-crisis": {
     "id": "the-ozone-crisis",
     "title": "The Ozone Crisis: A Success Story in Environmental Cooperation",
-    "category": "Policy",
+    "category": "Climate Change & Water",
     "description": "It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fde382b6-dde0-4d2e-aa97-6fe9f0630700/public",
     "writerId": "aditi-sharma",
