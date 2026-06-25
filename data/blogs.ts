@@ -509,6 +509,10 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "The Second Industrial Revolution of the late 19th and early 20th centuries accelerated this trend. Oil and natural gas entered the scene. In 1900, global CO₂ emissions from fossil fuels were around 2 billion metric tons. By the 1950s, this had tripled. And then came the “Great Acceleration.” Between 1950 and 2020, humanity emitted more carbon than in all previous history combined"
+        },
+        {
+          "type": "paragraph",
+          "text": "The smoke that once symbolized prosperity was, in reality, writing a new chapter in Earth's history one measured not in inventions, but in rising carbon levels.\nBy the time scientists began tracking the atmosphere, the fingerprints of the Carbon Age were already impossible to ignore."
         }
       ],
       [
