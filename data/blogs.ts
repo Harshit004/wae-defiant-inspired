@@ -863,7 +863,7 @@ export const BLOGS: Record<string, BlogPost> = {
           "text": "Corporate Strategy: BP’s Marketing Masterstroke"
         },
         {
-          "type": "heading",
+          "type": "paragraph",
           "text": "The turn of the millennium brought a seismic shift. In 2000, British Petroleum (BP) launched its ambitious “Beyond Petroleum” campaign, positioning itself as a forward-thinking, environmentally conscious energy giant. A central pillar of this rebranding was the introduction of a personal carbon footprint calculator in 2004, a tool that allowed individuals to measure their own greenhouse gas emissions."
         }
       ],
