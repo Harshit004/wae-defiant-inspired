@@ -216,7 +216,7 @@ export default function CookieConsent() {
         {/* Privacy Policy Link */}
         <div style={{ textAlign: "left" }}>
           <Link
-            href="/privacy-policy"
+            href="/cookie-policy"
             onMouseEnter={() => setPrivacyHovered(true)}
             onMouseLeave={() => setPrivacyHovered(false)}
             style={{

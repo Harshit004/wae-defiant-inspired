@@ -235,7 +235,7 @@ export default function Footer() {
                 {/* POLICY */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
                   <li><Link href="/terms-of-use" className="hover:opacity-80 transition-opacity">Terms of Use</Link></li>
-                  <li><Link href="/privacy-policy" className="hover:opacity-80 transition-opacity">Privacy Policy</Link></li>
+                  <li><Link href="/cookie-policy" className="hover:opacity-80 transition-opacity">Cookie Policy</Link></li>
                   <li><Link href="/data-privacy-policy" className="hover:opacity-80 transition-opacity">Data Privacy Policy</Link></li>
                 </ul>
               </div>
