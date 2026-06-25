@@ -39,7 +39,7 @@ export default function LifeAtWAEPage() {
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
       const maxScroll = scrollWidth - clientWidth;
-      
+
       // If the next scroll step leaves a tiny gap, just snap all the way to the end
       if (maxScroll - (scrollLeft + 483) < 250) {
         scrollRef.current.scrollTo({ left: maxScroll, behavior: 'smooth' });
@@ -52,7 +52,7 @@ export default function LifeAtWAEPage() {
   const prevSlide = () => {
     if (scrollRef.current) {
       const { scrollLeft } = scrollRef.current;
-      
+
       // If the previous scroll step leaves a tiny gap, just snap all the way to the start
       if (scrollLeft - 483 < 250) {
         scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
@@ -114,15 +114,15 @@ export default function LifeAtWAEPage() {
               <div className="w-full max-w-[545px] flex flex-col gap-[60px]">
                 <div>
                   <div className="font-['Inter_Tight'] font-normal text-[40px] leading-[1.1] text-[#AEAEAE] mb-[38px]">01</div>
-                  <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white uppercase mb-[24px]">Internship</h3>
+                  <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white mb-[24px]">Internship</h3>
                   <p className="font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE]">
                     Every expert was once a beginner. Our internship program is designed for curious minds eager to learn beyond textbooks and classrooms. Here, interns contribute to real projects, work alongside experienced professionals, and see their ideas come to life. It is a journey of discovery, growth, and confidence-building, where learning happens through doing and every experience becomes a stepping stone toward a meaningful career.
                   </p>
                 </div>
-                
+
                 <div>
                   <div className="font-['Inter_Tight'] font-normal text-[40px] leading-[1.1] text-[#AEAEAE] mb-[38px]">02</div>
-                  <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white uppercase mb-[24px]">Campus hiring</h3>
+                  <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white mb-[24px]">Campus hiring</h3>
                   <p className="font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE]">
                     The next big idea often comes from a fresh perspective. Through campus hiring, we welcome bright young talent ready to question, create, and contribute. We look beyond resumes to find individuals with passion, curiosity, and the courage to think differently. From day one, they become part of a culture that encourages learning, ownership, and the freedom to make an impact.
                   </p>
@@ -130,7 +130,7 @@ export default function LifeAtWAEPage() {
 
                 <div>
                   <div className="font-['Inter_Tight'] font-normal text-[40px] leading-[1.1] text-[#AEAEAE] mb-[38px]">03</div>
-                  <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white uppercase mb-[24px]">Internal referral</h3>
+                  <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white mb-[24px]">Internal referral</h3>
                   <p className="font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE]">
                     Some of the best additions to a team come through the people who know us best. Our referral program is built on trust, connection, and shared values. When employees recommend someone from their network, they are introducing more than a candidate—they are bringing in potential, passion, and a cultural fit that helps strengthen our community and shape the future of WAE.
                   </p>
@@ -153,7 +153,7 @@ export default function LifeAtWAEPage() {
           </h2>
 
           <div className="relative w-[100vw] ml-[calc(-50vw+50%)] mb-[40px]">
-            <div 
+            <div
               ref={scrollRef}
               onScroll={handleScroll}
               className="flex overflow-x-auto [&::-webkit-scrollbar]:hidden"
@@ -164,32 +164,31 @@ export default function LifeAtWAEPage() {
               }}
             >
               {/* Left spacer matches standard container margin */}
-              <div 
+              <div
                 className="flex-shrink-0"
-                style={{ width: 'max(7.5vw, calc((100vw - 1440px) / 2 + 7.5vw))' }} 
+                style={{ width: 'max(7.5vw, calc((100vw - 1440px) / 2 + 7.5vw))' }}
               />
 
               {carouselImages.map((src, i) => (
-                <div 
-                  key={i} 
-                  className={`w-[80vw] sm:w-[432px] aspect-[432/412] relative flex-shrink-0 ${
-                    i !== carouselImages.length - 1 ? 'mr-[51px]' : ''
-                  }`}
+                <div
+                  key={i}
+                  className={`w-[80vw] sm:w-[432px] aspect-[432/412] relative flex-shrink-0 ${i !== carouselImages.length - 1 ? 'mr-[51px]' : ''
+                    }`}
                 >
                   <Image src={src} alt={`Happy face ${i + 1}`} fill className="object-cover" />
                 </div>
               ))}
 
               {/* Right spacer ensures last image aligns properly */}
-              <div 
+              <div
                 className="flex-shrink-0"
-                style={{ width: 'max(7.5vw, calc((100vw - 1440px) / 2 + 7.5vw))' }} 
+                style={{ width: 'max(7.5vw, calc((100vw - 1440px) / 2 + 7.5vw))' }}
               />
             </div>
           </div>
 
           <div className="flex justify-end gap-[15px]">
-            <button 
+            <button
               onClick={prevSlide}
               disabled={isAtStart}
               className={`w-[40px] h-[40px] border border-[#333] flex items-center justify-center transition-colors hover:bg-white hover:text-black ${isAtStart ? 'opacity-50 cursor-not-allowed hover:bg-transparent hover:text-white' : ''}`}
@@ -198,7 +197,7 @@ export default function LifeAtWAEPage() {
                 <polyline points="15 18 9 12 15 6" />
               </svg>
             </button>
-            <button 
+            <button
               onClick={nextSlide}
               disabled={isAtEnd}
               className={`w-[40px] h-[40px] border border-[#333] flex items-center justify-center transition-colors hover:bg-white hover:text-black ${isAtEnd ? 'opacity-50 cursor-not-allowed hover:bg-transparent hover:text-white' : ''}`}
@@ -222,7 +221,7 @@ export default function LifeAtWAEPage() {
             Great Place<br />to Work
           </h2>
           <div className="w-[23.54vw]">
-            <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE]">
+            <p className="font-['Inter_Tight'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE]">
               More than a certification, it's a reflection of our people. Built on respect, inclusivity, and shared success, our workplace continues to be recognized among the best.
             </p>
             <div className="w-full mt-[41px] flex justify-between items-center">

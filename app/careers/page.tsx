@@ -227,7 +227,7 @@ export default function CareersPage() {
             Great Place<br />to Work
           </h2>
           <div className="w-[23.54vw]">
-            <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE]">
+            <p className="font-['Inter_Tight'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE]">
               More than a certification, it's a reflection of our people. Built on respect, inclusivity, and shared success, our workplace continues to be recognized among the best.
             </p>
             <div className="w-full mt-[41px] flex justify-between items-center">

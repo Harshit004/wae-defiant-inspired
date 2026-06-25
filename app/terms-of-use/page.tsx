@@ -18,7 +18,7 @@ export default function TermsOfUse() {
       />
       <Header />
 
-      <div className={`${containerClass} relative z-10 pt-[180px] pb-[120px]`}>
+      <div className={`${containerClass} relative z-10 pt-[230px] pb-[120px]`}>
         {/* Title & Subtitle */}
         <h1 className="font-['Inter_Tight'] font-normal text-[40px] leading-[105%] text-white mb-[19px]">
           Terms of Use
@@ -40,15 +40,15 @@ export default function TermsOfUse() {
         {/* Two Column Layout */}
         <div className="flex flex-col lg:flex-row w-full">
           {/* Left Sidebar (Sticky) */}
-          <div 
+          <div
             className="hidden lg:block border-r border-white/20 flex-shrink-0"
-            style={{ 
+            style={{
               width: '30%',
               paddingRight: '6.59vw' // Responsive 95px gap at 1440px
             }}
           >
             <div className="sticky top-[120px] flex flex-col font-['Inter_Tight'] text-[14px] leading-[150%]">
-              
+
               {[
                 { id: "acceptance", heading: "1. Acceptance of Terms", subheadings: [{ id: "amendments", title: "Amendments & Updates" }] },
                 { id: "permitted", heading: "2. Permitted Use of This Website", subheadings: [{ id: "authorised", title: "Authorised Access" }, { id: "prohibited", title: "Prohibited Conduct" }] },
@@ -79,32 +79,32 @@ export default function TermsOfUse() {
           </div>
 
           {/* Right Content Area */}
-          <div 
+          <div
             className="flex-shrink-0 flex flex-col font-['Manrope'] text-[14px] text-[#AEAEAE] leading-[160%]"
-            style={{ 
+            style={{
               width: '70%',
               paddingLeft: '3.33vw' // Responsive 48px gap at 1440px
             }}
           >
-            
+
             {/* Section 1 */}
             <div id="acceptance" className="mb-[40px]">
               <h2 className="font-['Manrope'] font-normal text-[20px] leading-none text-white mb-[24px]">1. Acceptance of Terms</h2>
               <p className="font-['Manrope'] font-normal text-[14px] leading-normal text-justify text-[#AEAEAE] mb-[40px]">
                 By accessing, browsing, or otherwise using the WAE website (www.waecorp.com) and any associated digital platforms, portals, or resources (collectively, the "Website"), you confirm that you have read, understood, and agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, please discontinue use of the Website immediately. These Terms apply to all visitors, users, and any other person or organisation who accesses or uses the Website, including architects, engineers, procurement officers, contractors, distributors, and members of the public.
               </p>
-              
+
               <h3 id="amendments" className="font-['Inter_Tight'] font-normal text-[14px] leading-[105%] text-white mb-[24px]">Amendments & Updates</h3>
               <p className="font-['Manrope'] font-normal text-[14px] leading-normal text-justify text-[#AEAEAE] mb-[40px]">
                 WAE reserves the right to amend these Terms at any time. Updated Terms will be posted on this page with the revised effective date. Your continued use of the Website after any amendment constitutes your acceptance of the revised Terms. We recommend reviewing these Terms periodically.
               </p>
-              <hr className="border-t border-[#FFFFFF33] mb-[40px]" />
+              <hr className="border-t border-[#FFFFFF33]" />
             </div>
 
             {/* Section 2 */}
             <div id="permitted" className="mb-[40px]">
               <h2 className="font-['Manrope'] font-normal text-[20px] leading-none text-white mb-[24px]">2. Permitted Use of This Website</h2>
-              
+
               <h3 id="authorised" className="font-['Inter_Tight'] font-normal text-[14px] leading-[105%] text-white mb-[24px]">Authorised Access</h3>
               <p className="font-['Manrope'] font-normal text-[14px] leading-normal text-justify text-[#AEAEAE] mb-[40px]">
                 The Website is provided for lawful purposes related to: researching WAE products and solutions; submitting product enquiries or service requests; accessing technical documentation and resources; exploring WAE's sustainability and governance commitments; and engaging with WAE for legitimate business purposes. You may access and download content for your own personal or professional reference, provided you comply with these Terms.
@@ -123,13 +123,13 @@ export default function TermsOfUse() {
                   <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-[#AEAEAE]">Post, upload, or transmit any content that is defamatory, obscene, discriminatory, or in breach of any third-party rights.</li>
                 </ul>
               </div>
-              <hr className="border-t border-[#FFFFFF33] mb-[40px]" />
+              <hr className="border-t border-[#FFFFFF33]" />
             </div>
 
             {/* Section 3 */}
             <div id="intellectual" className="mb-[40px]">
               <h2 className="font-['Manrope'] font-normal text-[20px] leading-none text-white mb-[24px]">3. Intellectual Property Rights</h2>
-              
+
               <h3 id="wae-content" className="font-['Inter_Tight'] font-normal text-[14px] leading-[105%] text-white mb-[24px]">WAE Content & Trademarks</h3>
               <p className="font-['Manrope'] font-normal text-[14px] leading-normal text-justify text-[#AEAEAE] mb-[40px]">
                 All content on this Website - including but not limited to text, graphics, photographs, videos, product specifications, technical drawings, brochures, case studies, logos, and the WAE trademark and "Our Green is Blue" brand identity - is the exclusive intellectual property of WAE and is protected by applicable intellectual property laws. Unauthorised reproduction, distribution, modification, or commercial use of any WAE content is strictly prohibited.
@@ -139,13 +139,13 @@ export default function TermsOfUse() {
               <p className="font-['Manrope'] font-normal text-[14px] leading-normal text-justify text-[#AEAEAE] mb-[40px]">
                 WAE grants you a limited, non-exclusive, non-transferable, revocable licence to access and use the Website for lawful purposes in accordance with these Terms. This licence does not include: the right to reproduce or distribute WAE content commercially; the right to create derivative works based on WAE content; or the right to use WAE trademarks, logos, or brand elements without prior written consent.
               </p>
-              <hr className="border-t border-[#FFFFFF33] mb-[40px]" />
+              <hr className="border-t border-[#FFFFFF33]" />
             </div>
 
             {/* Section 4 */}
             <div id="product" className="mb-[40px]">
               <h2 className="font-['Manrope'] font-normal text-[20px] leading-none text-white mb-[24px]">4. Product Information & Disclaimers</h2>
-              
+
               <h3 id="specification" className="font-['Inter_Tight'] font-normal text-[14px] leading-[105%] text-white mb-[24px]">Specification Accuracy</h3>
               <p className="font-['Manrope'] font-normal text-[14px] leading-normal text-justify text-[#AEAEAE] mb-[40px]">
                 WAE endeavours to ensure that product information, specifications, and technical data published on this Website are accurate and current. However, product specifications may change without notice as part of our continual improvement programme. Product images are for illustrative purposes only. We recommend contacting our sales team to confirm current specifications before making procurement decisions.
@@ -155,7 +155,7 @@ export default function TermsOfUse() {
               <p className="font-['Manrope'] font-normal text-[14px] leading-normal text-justify text-[#AEAEAE] mb-[40px]">
                 Prices, delivery timelines, and product availability are not published on this Website and are subject to formal quotation. Nothing on this Website constitutes an offer to contract or a binding price commitment. All orders are subject to WAE's standard terms and conditions of sale, which will be provided at the time of quotation.
               </p>
-              <hr className="border-t border-[#FFFFFF33] mb-[40px]" />
+              <hr className="border-t border-[#FFFFFF33]" />
             </div>
 
             {/* Section 5 */}
@@ -164,13 +164,13 @@ export default function TermsOfUse() {
               <p className="font-['Manrope'] font-normal text-[14px] leading-normal text-justify text-[#AEAEAE] mb-[40px]">
                 The Website may contain links to third-party websites, platforms, or resources for your convenience. WAE does not endorse, control, or accept responsibility for the content, privacy practices, or policies of any third-party website. Access to third-party sites is at your own risk, and we encourage you to review the applicable third-party terms and privacy policies.
               </p>
-              <hr className="border-t border-[#FFFFFF33] mb-[40px]" />
+              <hr className="border-t border-[#FFFFFF33]" />
             </div>
 
             {/* Section 6 */}
             <div id="limitation" className="mb-[40px]">
               <h2 className="font-['Manrope'] font-normal text-[20px] leading-none text-white mb-[24px]">6. Limitation of Liability</h2>
-              
+
               <h3 id="exclusion" className="font-['Inter_Tight'] font-normal text-[14px] leading-[105%] text-white mb-[24px]">Exclusion of Warranties</h3>
               <p className="font-['Manrope'] font-normal text-[14px] leading-normal text-justify text-[#AEAEAE] mb-[40px]">
                 The Website and all content therein are provided on an "as is" and "as available" basis without warranties of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, non-infringement, or uninterrupted access. WAE does not warrant that the Website will be free of errors, interruptions, or security vulnerabilities.
@@ -180,7 +180,7 @@ export default function TermsOfUse() {
               <p className="font-['Manrope'] font-normal text-[14px] leading-normal text-justify text-[#AEAEAE] mb-[40px]">
                 To the fullest extent permitted by applicable law, WAE and its directors, officers, employees, agents, and suppliers shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the Website, even if advised of the possibility of such damages. WAE's total aggregate liability arising from or related to these Terms shall not exceed the greater of INR 10,000 or the amount paid by you to WAE in the preceding 12 months.
               </p>
-              <hr className="border-t border-[#FFFFFF33] mb-[40px]" />
+              <hr className="border-t border-[#FFFFFF33]" />
             </div>
 
             {/* Section 7 */}
@@ -189,7 +189,7 @@ export default function TermsOfUse() {
               <p className="font-['Manrope'] font-normal text-[14px] leading-normal text-justify text-[#AEAEAE] mb-[40px]">
                 These Terms shall be governed by and construed in accordance with the laws of India. Any dispute arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of [New Delhi / registered office jurisdiction], India.
               </p>
-              <hr className="border-t border-[#FFFFFF33] mb-[40px]" />
+              <hr className="border-t border-[#FFFFFF33]" />
             </div>
 
             {/* Section 8 */}
@@ -203,7 +203,7 @@ export default function TermsOfUse() {
           </div>
         </div>
       </div>
-      
+
       <Footer />
     </main>
   );
