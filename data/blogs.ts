@@ -509,37 +509,6 @@ export const BLOGS: Record<string, BlogPost> = {
       ]
     ]
   },
-  "melting-glacier-rising-risk": {
-    "id": "melting-glacier-rising-risk",
-    "title": "Melting Glacier - Rising Risk: Climate change and fresh water supplies",
-    "category": "Water conservation",
-    "description": "How rapid glacial retreat in major mountain ranges is redefining fresh water security for millions of downstream communities.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
-    "writerId": "rashi-tarika",
-    "readTime": "3 min read",
-    "status": "Live",
-    "createdAt": "2026-06-16T00:00:00.000Z",
-    "contentColumns": [
-      [
-        {
-          "type": "paragraph",
-          "text": "How rapid glacial retreat in major mountain ranges is redefining fresh water security for millions of downstream communities. Glaciers store a significant portion of the world's freshwater and serve as natural regulators of river flow."
-        }
-      ],
-      [
-        {
-          "type": "paragraph",
-          "text": "The acceleration of glacial melt, driven by rising global temperatures, initially increases the risk of glacial lake outburst floods, followed by long-term reductions in river flow as the glacial volume shrinks."
-        }
-      ],
-      [
-        {
-          "type": "paragraph",
-          "text": "Securing downstream water supplies requires regional cooperation, investing in storage reservoirs, and enhancing water-use efficiency in agriculture and urban areas."
-        }
-      ]
-    ]
-  },
   "shifting-monsoons": {
     "id": "shifting-monsoons",
     "title": "Shifting Monsoons: Transforming India's Climatic and Hydrological Systems",
@@ -633,6 +602,73 @@ export const BLOGS: Record<string, BlogPost> = {
       ]
     ]
   },
+  "why-rapid-expansion-has-turned-monsoons-into-flood-and-drought-threats": {
+    "id": "why-rapid-expansion-has-turned-monsoons-into-flood-and-drought-threats",
+    "title": "Why Rapid Expansion Has Turned Monsoons into Flood and Drought Threats",
+    "category": "Water conservation",
+    "description": "From retreating Himalayan glaciers to encroached rivers and rising seas, India's monsoon has transformed from a dependable lifeline into a force of extremes. This article traces seven decades of compounding environmental and urban change driving India's intensifying flood and drought cycle.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/509cf476-424a-4d69-4a02-9386d8358700/public",
+    "writerId": "rehnuma-ansari",
+    "readTime": "2 min read",
+    "status": "Live",
+    "createdAt": "2026-06-25T06:46:58.754Z",
+    "contentColumns": [
+      [
+        {
+          "type": "heading",
+          "text": "Glaciers, Cities, and a Monsoon Turned Unpredictable"
+        },
+        {
+          "type": "paragraph",
+          "text": "India's flood and drought challenges have not appeared overnight. The unpredictable behaviour of the monsoon is the result of decades of gradual yet significant geographical and climatic changes. From the retreat of Himalayan glaciers to the choking of rivers, from shifting rainfall patterns to warming oceans and rising seas, every part of the water cycle has been reshaped since the mid-twentieth century. These shifts have turned the monsoon from a dependable seasonal lifeline into a force that alternates between destructive floods and severe water shortages."
+        },
+        {
+          "type": "paragraph",
+          "text": "High in the Himalaya, often described as the \"Third Pole\", glaciers have been warming faster than the global average and retreating rapidly. The Gangotri Glacier, one of the Ganges' main sources, shrank by over 850 metres in 25 years, including 76 metres between 1996 and 1999. Almost all monitored glaciers in India, Nepal, and Bhutan now show a negative mass balance, losing more ice each year than they gain from snowfall. This retreat has also created unstable meltwater lakes, raising the risk of glacial lake outburst floods (GLOFs). In the short term, melting has increased river flows, supporting irrigation and hydropower. Yet this \"melt bonus\" is only temporary. As glaciers continue to shrink, rivers such as the Indus, Ganges, and Brahmaputra will begin to lose their summer flows. By mid-century, more than 200 million people in South Asia could face water shortages as these natural reservoirs disappear."
+        },
+        {
+          "type": "paragraph",
+          "text": "As the ice has retreated, cities have grown. Delhi still lists 1,040 water bodies, but many have been encroached upon or polluted. Chennai has lost more than 70% of its wetlands since 1980, while Bengaluru's centuries-old tank-and-lake system has been dismantled. Natural drainage channels have been narrowed or covered, and floodplains consumed by housing and infrastructure. When Mumbai received 944 millimetres of rain in a single day in 2005, the Mithi River, narrowed by encroachment, could not carry the excess. The flood killed 900 people and caused damages worth $2 billion. These were not purely natural disasters; they were intensified by human neglect of hydrology."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Shifting Rains, Warmer Oceans, and Rising Coastlines"
+        },
+        {
+          "type": "paragraph",
+          "text": "Rainfall itself has shifted significantly. Between 1950 and 2015, central India recorded a ~75% increase in extreme rainfall events of 150 millimetres or more in a day. At the same time, monsoon circulation weakened, partly because of aerosol pollution reducing solar heating over land. With a warmer atmosphere capable of holding more moisture, cloudbursts have become both frequent and intense. This change has created repeated cycles of flood and drought. India endured major droughts in 1965–66, 1972, 1987, 2002, 2009, and 2015, each interspersed with devastating floods. The monsoon, once a relatively predictable rhythm, now delivers excessive rainfall within a few days followed by extended dry periods."
+        },
+        {
+          "type": "paragraph",
+          "text": "The surrounding oceans have added more pressure. The Indian Ocean has warmed faster than the global average since the 1950s. Warmer waters supply greater moisture to the monsoon, increasing rainfall intensity, and they also fuel stronger cyclones. The Arabian Sea, once calmer, has seen a sharp rise in severe cyclones since 1998, while the Bay of Bengal continues to generate destructive storms such as Cyclone Amphan in 2020. Warmer seas have also triggered widespread coral bleaching, with mass events in 1998, 2010, and 2016, weakening natural coastal defences. Mangroves, already under stress from urban encroachment, have declined, further exposing coastlines."
+        },
+        {
+          "type": "paragraph",
+          "text": "Rising seas have reshaped coastlines. During the twentieth century, global sea level rose by about 1.4 millimetres a year. In recent decades, this rate has accelerated to 3.6 millimetres a year, with the North Indian Ocean rising faster than the global mean. At Kolkata (Diamond Harbour), sea level has been climbing by about 5.7 millimetres annually, worsened by delta subsidence. Since 1950, India's coastlines have risen by about 20 centimetres, with more than half of it in the past three decades. Today, 33% of India's coastline is eroding, especially in West Bengal, Odisha, Kerala, and Tamil Nadu. In the Sundarbans, salt-water intrusion is damaging farmland and mangroves, while coastal aquifers in cities such as Chennai and Mumbai are becoming increasingly brackish. Higher seas mean storm surges now travel further inland. Floods that once occurred once in a century could happen annually by the end of this century if current emissions continue."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Urban Flood Damages and the Case for Restoration"
+        },
+        {
+          "type": "paragraph",
+          "text": "At the same time, India's cities have expanded at extraordinary speed. In 1950, only 17% of the population lived in urban areas; by 2025, the figure has doubled to 35%, and growth continues. Wetlands, floodplains, and recharge zones have been paved over, while drainage systems have not kept up with the sprawl. The consequences are evident. The 2015 Chennai floods, worsened by wetland loss, killed 300 people and caused $3 billion in damage. Just four years later, the same city endured its \"Day Zero\" drought, when reservoirs dried up. In 2023, Delhi experienced its worst Yamuna flood in 45 years, with damages estimated at ₹10,000 crore. The scientific \"7% per degree rule\" explains why: for every degree of warming, the atmosphere can hold 7% more moisture, making cloudbursts even more intense."
+        },
+        {
+          "type": "paragraph",
+          "text": "The evidence is clear: India now faces the dual extremes of flooding and drought. This is not coincidence but the result of seven decades of compounded change. Glaciers are retreating, rivers are being choked, rainfall patterns have become erratic, oceans are warming, seas are rising, and cities are sprawling into fragile landscapes. Together, these forces have dismantled the natural buffers that once kept floods and droughts in balance."
+        },
+        {
+          "type": "paragraph",
+          "text": "If stability is to be restored, India must protect wetlands, restore aquifers, and design cities that respect water as a living system. Without such measures, the monsoon, once a symbol of renewal, will remain a season of uncertainty, marked by rising risks and difficult choices."
+        }
+      ]
+    ]
+  },
   "the-great-smog-of-london-and-the-birth-of-environmental-policy": {
     "id": "the-great-smog-of-london-and-the-birth-of-environmental-policy",
     "title": "The Great Smog of London and the Birth of Environmental Policy",
@@ -680,6 +716,81 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "Seventy years later, the Great Smog of London still speaks. It reminds us that air pollution is not an abstract concern but a tangible threat   one that can bring cities to their knees in days. The World Health Organization estimates that seven million people die every year from air pollution worldwide, many in regions where coal and biomass remain the fuels of survival. The chemistry has changed, the cities have changed, but the stakes remain the same.\nThe Great Smog was a tragedy, but it was also a turning point   the moment when the world first realized that protecting the air we breathe is not a luxury, but a matter of life and death.\n"
+        }
+      ]
+    ]
+  },
+  "when-cities-block-rivers-how-urbanisation-turns-monsoons-into-disasters": {
+    "id": "when-cities-block-rivers-how-urbanisation-turns-monsoons-into-disasters",
+    "title": "When Cities Block Rivers: How Urbanisation Turns Monsoons into Disasters",
+    "category": "Water conservation",
+    "description": "India's rapid urban expansion is burying rivers, draining wetlands, and depleting aquifers, turning the monsoon from a seasonal blessing into a recurring disaster. This article explores how encroachment fuels floods, which cities have paid the price, and how water-sensitive design can reverse the damage.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/69f6b2be-571d-4633-7a41-f536924cea00/public",
+    "writerId": "rehnuma-ansari",
+    "readTime": "2 min read",
+    "status": "Live",
+    "createdAt": "2026-06-25T10:11:23.993Z",
+    "contentColumns": [
+      [
+        {
+          "type": "heading",
+          "text": "Rivers Buried, Floods Return to Claim Their Space"
+        },
+        {
+          "type": "paragraph",
+          "text": "India's cities are expanding at a breathtaking pace, but this rapid urbanisation has come at a dangerous cost: our relationship with rivers. Across the country, natural water channels, urban wetlands in India, and river floodplains are steadily being buried under concrete. Housing colonies, highways, and commercial hubs now occupy spaces where water once flowed freely. Yet rivers have long memories. When the monsoon rains in India arrive, they do not ask permission. They reclaim their historic pathways, flooding the very land that encroached upon them."
+        },
+        {
+          "type": "paragraph",
+          "text": "Delhi floods 2023 witnessed this starkly, when the Yamuna river levels rose to heights not seen in decades. Entire neighbourhoods were submerged, and the city suffered damages estimated at ₹10,000 crore. In Uttarkashi cloudburst 2025, sudden rains unleashed flash floods in Uttarakhand that wiped out hotels and markets built directly on the riverbed. Within moments, the land was buried under 60 feet of mud, silt, and boulders-a violent reminder that water always finds its way back."
+        },
+        {
+          "type": "paragraph",
+          "text": "Earlier generations understood this far better than we do today. In the Himalaya flood-prone regions, homes were constructed on stable slopes, away from the reach of streams. Communities respected the raw power of rivers and kept their distance. Modern expansion, however, has abandoned this wisdom. Nearly 7% of Delhi sits on the Yamuna floodplain encroachment. Chennai wetland loss exceeds 70% since 1980. Bengaluru lake system decline, once a model of water-sensitive urban design in India, has dismantled a centuries-old natural safeguard. As a result, rainwater that once recharged aquifers now rushes unchecked across impermeable urban surfaces, overwhelming city drainage systems and multiplying flood peaks in cities many times over."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Depleted Aquifers, Urban Disasters, and Real Fixes"
+        },
+        {
+          "type": "paragraph",
+          "text": "Beneath the surface, the story is no different. Groundwater aquifer depletion in India, nature's underground storage system, is accelerating at alarming rates, much of it driven by industries such as the bottled water trade in India. Without these reservoirs, the land loses its ability to absorb seasonal rainfall. Water that should have seeped underground now contributes to surface water flooding. Aquifer depletion and urban floods together form a vicious cycle, making Indian cities vulnerable to drought and deluge."
+        },
+        {
+          "type": "paragraph",
+          "text": "The urban flood disasters in India are too many to ignore. In 2005, Mumbai flood one metre rainfall in a single day killed 900 people and caused $2 billion in damage, worsened by the choking of the Mithi River encroachment. In 2015, Chennai floods wetland loss amplified destruction that killed 300 and cost $3 billion. Delhi Yamuna flood 2023 was the city's worst in 45 years, while Uttarakhand flash floods 2025 buried entire markets. Today, 12% of India's land is flood-prone-over 40 million hectares-with 8 million hectares affected annually. These are not \"natural disasters.\" They are man-made urban catastrophes born from ignoring hydrology and flood risk."
+        },
+        {
+          "type": "paragraph",
+          "text": "Yet solutions exist. Around the world, cities adopting a sponge city model show how designs can allow rainwater absorption instead of runoff. Permeable pavements India, rain gardens in cities, bioswales for drainage, restored wetlands in India, and revived mangroves as flood protection can turn disasters into manageable events. India already has success stories: the East Kolkata Wetlands sewage treatment naturally processes waste while acting as flood buffers, and both Mumbai mangrove restoration and Chennai mangrove protection are underway."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Planning Cities With Water Beats Fighting Monsoons"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Indian monsoon and climate change is not the enemy-it has sustained the subcontinent for millennia. The true danger lies in our refusal to plan urbanisation with water in mind. If we continue paving over river channels, draining wetlands, and mining aquifers, the monsoon flood risk will turn into a season of fear instead of renewal. But if we restore wetlands India, recharge aquifers naturally, and design cities with rivers, the seasonal rains can once again be a blessing.\n\nIn the end, urban flood survival in India is a matter of choice. The rivers are speaking, sometimes softly, sometimes violently. The question is: will we listen?\n\n\"Respect the river, or the river will demand respect.\""
+        },
+        {
+          "type": "list",
+          "items": [
+            "https://en.wikipedia.org/wiki/2023_North_India_floods",
+            "https://india.mongabay.com/2025/08/another-flash-flood-in-the-himalayas-reignites-debate-on-development/",
+            "https://ifc.delhi.gov.in/sites/default/files/ifc/generic_multiple_files/module_vii.pdf",
+            "https://timesofindia.indiatimes.com/city/chennai/80-of-chennai-was-wetland-in-1980s-now-15/articleshow/54010947.cms",
+            "https://theprint.in/science/iisc-study-finds-93-of-bengaluru-lost-lake-forest-cover-since-1970s-how-city-can-change-its-course/2006826/",
+            "https://ndma.gov.in/sites/default/files/PDF/Guidelines/management_urban_flooding.pdf",
+            "https://ndma.gov.in/sites/default/files/PDF/Guidelines/flood.pdf",
+            "https://floodlist.com/asia/cost-tamil-nadu-floods-347-lives-3-billion-dollars",
+            "https://www.researchgate.net/publication/383677894_Sewage_Treatment_by_Kolkata%27s_Natural_Wetland_System",
+            "https://timesofindia.indiatimes.com/green-activist-call-for-removal-of-debris-revival-of-mangroves-in-vashi/articleshow/119072452.cms",
+            "https://india.mongabay.com/2023/07/behind-delhis-floods-is-a-history-of-encroachment-and-diminishing-wetlands/"
+          ]
         }
       ]
     ]
