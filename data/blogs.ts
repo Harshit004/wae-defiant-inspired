@@ -920,5 +920,104 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "the-climate-protest-before-greta-how-yesterday-s-campaigns-built-today-s-movement": {
+    "id": "the-climate-protest-before-greta-how-yesterday-s-campaigns-built-today-s-movement",
+    "title": "The Climate Protest Before Greta: How Yesterday’s Campaigns Built Today’s Movement",
+    "category": "Climate Change & Water",
+    "description": "Explore the climate protests before Greta Thunberg and how historic environmental movements shaped today's global fight for climate justice and action.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/aa3aa872-a273-4360-949a-4f2502479500/public",
+    "writerId": "aditi-sharma",
+    "readTime": "3 min read",
+    "status": "Live",
+    "createdAt": "2026-06-25T10:50:05.390Z",
+    "contentColumns": [
+      [
+        {
+          "type": "paragraph",
+          "text": "On a chilly September morning in 2018, a 15-year-old Greta Thunberg sat alone outside Sweden’s Parliament, her simple sign declaring a “School Strike for Climate.” That solitary act ignited a global movement, but it was far from the beginning of environmental protest. Decades before Greta’s name was known, waves of environmental activism had already reshaped politics, policies, and public consciousness. To understand today’s climate movement, we must journey back through the history of those who stood, marched, hugged trees, and raised their voices for a planet in peril."
+        },
+        {
+          "type": "heading",
+          "text": "Silent Spring and the Awakening of Environmental Consciousness (1962)"
+        },
+        {
+          "type": "paragraph",
+          "text": "In 1962, marine biologist Rachel Carson published Silent Spring, a book that shook the conscience of the world. Her meticulous research and evocative prose revealed the hidden dangers of pesticides like DDT, showing how chemicals seeped into rivers, food chains, and even human bodies. Carson’s work was not just science it was a moral indictment of human negligence. Silent Spring inspired grassroots outrage, prompted congressional hearings, and is often credited with helping to establish the U.S. Environmental Protection Agency in 1970. More than a book, it was a battle cry that awakened an entire generation to the urgency of protecting the natural world."
+        },
+        {
+          "type": "heading",
+          "text": "Earth Day and the Birth of Mass Environmentalism (1970)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The 1970s witnessed the first Earth Day, a civic experiment that transformed into a global statement. Conceived by U.S. Senator Gaylord Nelson, it mobilized 20 million Americans in rallies, teach-ins, and community events. Earth Day marked the moment when environmentalism entered the mainstream political agenda. Its success catalysed landmark legislation such as the Clean Air Act, Clean Water Act, and Endangered Species Act. By 1990, Earth Day had gone global, inspiring millions across continents and proving that the environment was not just a local concern but a planetary one."
+        },
+        {
+          "type": "heading",
+          "text": "Greenpeace and the Power of Spectacle (1971)"
+        },
+        {
+          "type": "paragraph",
+          "text": "In 1971, a small group of activists set sail from Vancouver to protest nuclear testing in Alaska. Their ship carried not only supplies but also a vision: to confront ecological destruction with courage and creativity. That voyage birthed Greenpeace, an organization that mastered the art of direct action and media spectacle. "
+        }
+      ],
+      [
+        {
+          "type": "paragraph",
+          "text": "From blocking whaling ships to confronting oil rigs, Greenpeace pioneered the strategy of using dramatic visuals to captivate public attention. Their activism proved that protest could be both moral resistance and a media event, shaping global discourse on environmental responsibility."
+        },
+        {
+          "type": "heading",
+          "text": "Chipko Movement: Hugging Trees to Save Forests (1973)"
+        },
+        {
+          "type": "paragraph",
+          "text": "While Greenpeace grabbed headlines in the West, India witnessed the rise of a quiet yet powerful grassroots uprising. In the Himalayan foothills, villagers led largely by women embraced trees to stop logging. Known as the Chipko Movement (literally, “to hug”), it became an emblem of nonviolent resistance. The Chipko protestors were not professional activists but ordinary people defending their livelihoods, soil, and water. Their actions underscored a profound truth: environmental struggles are inseparable from human survival and social justice. Chipko influenced India’s forest policies and remains one of the most iconic examples of ecofeminism and grassroots activism in history."
+        },
+        {
+          "type": "heading",
+          "text": "The Green Belt Movement: Planting Trees, Planting Hope (1977)"
+        },
+        {
+          "type": "paragraph",
+          "text": "In Kenya, Wangari Maathai founded the Green Belt Movement in 1977, blending reforestation with women’s empowerment and political defiance. At a time when authoritarian regimes suppressed dissent, Maathai mobilized communities to plant millions of trees, restore degraded landscapes, and reclaim civic agency. Her work was not merely about ecology it was about dignity, democracy, and justice. Awarded the Nobel Peace Prize in 2004, Maathai embodied how environmental protest in the Global South was often intertwined with human rights and development struggles."
+        },
+        {
+          "type": "heading",
+          "text": "Anti-Nuclear and Anti-Dam Movements (1980s–1990s)"
+        },
+        {
+          "type": "paragraph",
+          "text": "As the 20th century advanced, environmental activism broadened its scope. In Europe and North America, anti-nuclear campaigns surged, fuelled by fears of radiation and catastrophic accidents like Chernobyl in 1986. Protesters mobilized hundreds of thousands in rallies, demanding safer energy pathways. In India, the Narmada Bachao Andolan rose in the 1980s to oppose massive dam projects on the Narmada River, highlighting displacement, ecological devastation, and inequity. These movements shifted environmentalism from a narrow focus on conservation to a larger interrogation of development, technology, and justice. They also revealed how environmental battles were increasingly linked to questions of power, equity, and human rights."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Threads of Continuity: From Past to Greta"
+        },
+        {
+          "type": "paragraph",
+          "text": "Each of these earlier movements contributed vital threads to the tapestry of today’s climate protests. Carson gave the movement the authority of science. Earth Day offered the power of mass mobilization. Greenpeace showed the value of spectacle and confrontation. Chipko and the Green Belt Movement reminded the world that the environment is not abstract, it is daily bread, water, and dignity. Anti-dam and anti-nuclear protests taught us that environmentalism must grapple with questions of justice, displacement, and democracy."
+        },
+        {
+          "type": "paragraph",
+          "text": "When Greta Thunberg sat outside Parliament in 2018, her protest may have seemed novel in form, but it carried the echoes of generations of defiance. Her demand for climate justice built upon the legacy of those who had confronted pesticides, pollution, deforestation, dams, and nuclear reactors. The moral urgency, grassroots passion, and global vision of earlier movements paved the way for her voice to be heard."
+        },
+        {
+          "type": "heading",
+          "text": " The Legacy We Inherit"
+        },
+        {
+          "type": "paragraph",
+          "text": "Climate protests did not begin with Greta, nor will they end with her. They are part of an enduring struggle that stretches across continents and decades, carried forward by scientists, villagers, students, women, farmers, and countless ordinary people who refused to remain silent. Today’s climate movement is stronger because it stands on the shoulders of those who came before those who hugged trees in the Himalayas, planted seedlings in Kenyan soil, marched against nuclear reactors, and filled city squares on Earth Day. Their legacy is a reminder that the fight for the planet has always been both local and global, both personal and political."
+        },
+        {
+          "type": "paragraph",
+          "text": "As we confront the climate crises of the 21st century, remembering these earlier movements is not just an act of history it is an act of hope. Their victories, sacrifices, and strategies illuminate the path forward, reminding us that change is possible, and that the story of climate protest is still being written by all of us."
+        }
+      ]
+    ]
   }
 };
