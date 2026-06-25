@@ -443,37 +443,6 @@ export const BLOGS: Record<string, BlogPost> = {
       ]
     ]
   },
-  "shifting-monsoons": {
-    "id": "shifting-monsoons",
-    "title": "Shifting Monsoons: Transforming India's Climatic and Hydrological Systems",
-    "category": "Policy",
-    "description": "For centuries, the monsoon has been more than just a season in India...",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
-    "writerId": "shambhavi",
-    "readTime": "2 min read",
-    "status": "Live",
-    "createdAt": "2026-06-15T00:00:00.000Z",
-    "contentColumns": [
-      [
-        {
-          "type": "paragraph",
-          "text": "For centuries, the monsoon has been more than just a season in India; it is the lifeblood of its agricultural and hydrological systems. However, climate change is introducing significant volatility into this system."
-        }
-      ],
-      [
-        {
-          "type": "paragraph",
-          "text": "Changes in atmospheric circulation and rising sea surface temperatures are shifting monsoonal paths and intensities, causing extreme rain events in some regions while leaving others parched."
-        }
-      ],
-      [
-        {
-          "type": "paragraph",
-          "text": "Adapting to shifting monsoons demands flexible water storage strategies, weather-indexed crop planning, and improved disaster preparedness frameworks."
-        }
-      ]
-    ]
-  },
   "envisioning-sustainability": {
     "id": "envisioning-sustainability",
     "title": "Envisioning Sustainability: Why the SDGs Are the World's Shared Compass",
