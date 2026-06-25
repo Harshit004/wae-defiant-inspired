@@ -574,7 +574,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "Why Rapid Expansion Has Turned Monsoons into Flood and Drought Threats",
     "category": "Water conservation",
     "description": "India's monsoon has shifted from a seasonal lifeline to a cycle of floods and droughts. This article explores how glacier retreat, urban sprawl, erratic rainfall, warming oceans, and rising seas have compounded over seven decades to destabilize the country's water systems.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3f63160e-6e97-465a-39a8-6966b96c6e00/public",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/509cf476-424a-4d69-4a02-9386d8358700/public",
     "writerId": "rehnuma-ansari",
     "readTime": "2 min read",
     "status": "Live",
