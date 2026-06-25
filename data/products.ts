@@ -82,10 +82,10 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "rom-grande",
-        "name": "ROM Grande",
+        "id": "pos",
+        "name": "POS",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
       },
       {
         "id": "var-ct",
@@ -142,10 +142,10 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
       },
       {
-        "id": "pos",
-        "name": "POS",
+        "id": "rom-grande",
+        "name": "ROM Grande",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -524,6 +524,10 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     ],
     "featuresList": [
       {
+        "title": "Water Options",
+        "description": "Hot, Cold, Ambient"
+      },
+      {
         "title": "Touch-Free Dispensing",
         "description": "Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless."
       },
@@ -563,7 +567,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "cold": "Cold: 5°C - 20° C (default 8°C)",
         "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "greenCertification": " Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "1300 ml",
       "refrigerant": "R-134a",
       "dimensions": [
@@ -589,20 +593,19 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "status": "Live",
     "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/84acd2dc-5215-4649-f50f-27c75c576600/public",
-    "heroTagline": "Plastic in passe, Landfilling is Zero.\nSustainability is the Future.",
+    "heroTagline": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "/Comtactus",
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/POS.pdf",
-    "datasheetPdf": "",
+    "datasheetPdf": "file:///C:/Users/WAE/Downloads/POS.pdf",
     "variants": {
       "hot": true,
       "cold": true,
       "ambient": true
-    },
-    "displayImageIndex": 0
+    }
   },
   "rom-grande": {
     "id": "rom-grande",
@@ -616,10 +619,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/faeed699-00e6-425b-91bb-84e4b7c85c00/public"
     ],
     "featuresList": [
-      {
-        "title": "Water options",
-        "description": "Chilled,  Hot,  Ambient"
-      },
       {
         "title": "Sensor-Based Operation:",
         "description": "Touchless and hygienic dispensing ensures a seamless and safe user experience."
@@ -682,14 +681,14 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "status": "Live",
     "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/71fc0976-fdbe-4c80-1984-a6bd612b0500/public",
-    "heroTagline": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "heroTagline": "Plastic in passe, Landfilling is Zero.\nSustainability is the Future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "/contactus",
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
+    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
