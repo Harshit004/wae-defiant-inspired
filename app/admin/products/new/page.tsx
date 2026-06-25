@@ -783,19 +783,7 @@ export default function NewProductPage() {
                 </div>
               </div>
 
-              {/* Technical Datasheet section removed */}              <div className="md:col-span-2">
-                <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Product Description (CMS only)
-                </label>
-                <textarea
-                  rows={3}
-                  placeholder="Enter product description here..."
-                  value={description}
-                  onChange={(e) => handleFieldChange(setDescription, e.target.value)}
-                  className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none resize-y"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                />
-              </div>
+              {/* Technical Datasheet & Description sections removed */}
             </div>
 
             {/* Specifications Subsections */}
