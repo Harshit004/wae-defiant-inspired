@@ -478,37 +478,6 @@ export const BLOGS: Record<string, BlogPost> = {
       ]
     ]
   },
-  "the-link-between-climate-change-and-water-scarcity": {
-    "id": "the-link-between-climate-change-and-water-scarcity",
-    "title": "The link between climate change and water scarcity",
-    "category": "Water conservation",
-    "description": "Exploring the fragile link between rising temperatures, shifts in weather patterns, and the direct impact on global freshwater resources.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
-    "writerId": "rehnuma-ansari",
-    "readTime": "2 min read",
-    "status": "Live",
-    "createdAt": "2026-06-17T00:00:00.000Z",
-    "contentColumns": [
-      [
-        {
-          "type": "paragraph",
-          "text": "Exploring the fragile link between rising temperatures, shifts in weather patterns, and the direct impact on global freshwater resources. As temperatures rise globally, the water cycle accelerates, leading to more intense evaporation and drying up of freshwater reserves."
-        }
-      ],
-      [
-        {
-          "type": "paragraph",
-          "text": "Climate change is altering the timing and availability of water, meaning that regions already facing water stress are seeing the crisis deepen. From dried-out reservoirs to depleted groundwater aquifers, the indicators of scarcity are expanding."
-        }
-      ],
-      [
-        {
-          "type": "paragraph",
-          "text": "Mitigating this crisis requires active water conservation practices, restoring degraded catchments, and adopting smart water technologies to ensure efficient distribution and minimize wastage."
-        }
-      ]
-    ]
-  },
   "shifting-monsoons": {
     "id": "shifting-monsoons",
     "title": "Shifting Monsoons: Transforming India's Climatic and Hydrological Systems",
