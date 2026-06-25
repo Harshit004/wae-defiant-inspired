@@ -202,7 +202,7 @@ export default function Footer() {
                   ETCETERA
                 </h3>
                 <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider">
-                  POLICY
+                  POLICIES
                 </h3>
               </div>
 

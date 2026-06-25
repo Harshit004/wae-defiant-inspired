@@ -75,7 +75,7 @@ export default function JobDescriptionPage() {
             <h1 className="font-['Inter_Tight'] font-normal text-[46px] leading-[1.1] text-white">
               {job.title}
             </h1>
-            <HoverButton href={`mailto:careers@wae.com?subject=Application for ${job.title}`} className="w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
+            <HoverButton href={`mailto:hr2@waecorp.com?subject=Application - ${job.title}`} className="w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
               {(hovered) => (
                 <div className="flex items-center justify-center gap-[8px]">
                   <span className="font-['Manrope'] font-medium text-[10px] leading-none uppercase">Apply Now</span>
