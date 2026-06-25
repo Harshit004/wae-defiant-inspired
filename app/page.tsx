@@ -1168,7 +1168,7 @@ export default function Home() {
                     fontWeight: 400,
                     fontSize: '18px',
                     lineHeight: '100%',
-                    color: '#FFFFFF',
+                    color: '#AEAEAE',
                     // textTransform: 'uppercase'
                   }}
                 >
@@ -1189,7 +1189,7 @@ export default function Home() {
                     fontWeight: 400,
                     fontSize: '18px',
                     lineHeight: '100%',
-                    color: '#FFFFFF',
+                    color: '#AEAEAE',
                     // textTransform: 'uppercase'
                   }}
                 >
@@ -1206,7 +1206,7 @@ export default function Home() {
                     fontWeight: 400,
                     fontSize: '18px',
                     lineHeight: '100%',
-                    color: '#FFFFFF',
+                    color: '#AEAEAE',
                     // textTransform: 'uppercase'
                   }}
                 >

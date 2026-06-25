@@ -59,10 +59,10 @@ export default function Footer() {
             <div className="flex-shrink-0">
               <Link href="/" passHref>
                 <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/96af99a6-327c-4bd1-2407-662d05acc500/public"
                   alt="WAE Logo"
-                  width={77}
-                  height={82}
+                  width={180}
+                  height={65}
                 />
               </Link>
             </div>
