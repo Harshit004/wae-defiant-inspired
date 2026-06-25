@@ -112,12 +112,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
       },
       {
-        "id": "eno-ct",
-        "name": "ENKI.CT",
-        "category": "counter-top",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
-      },
-      {
         "id": "assistflow",
         "name": "ASSISTFLOW",
         "category": "free-standing",
@@ -146,6 +140,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "VENUS",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/92e20429-ff63-410f-9494-62ebbb2e0b00/public"
+      },
+      {
+        "id": "eno-ct",
+        "name": "ENKI.CT",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -1115,7 +1115,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "status": "Live",
     "description": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9165c682-a912-4247-c5f9-ce3ffaed8700/public",
-    "heroTagline": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
+    "heroTagline": "Plastic in passe, Landfilling is Zero.\nSustainability is the Future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "/contactus",
