@@ -40,7 +40,7 @@ export const WRITERS: Record<string, Writer> = {
     "name": "Rehnuma Ansari",
     "role": "Marketing",
     "bio": "Ms. Rehnuma explores water conservation with a focus on groundwater, agriculture, and sustainability in India. With over 1.5 years of experience, her work connects research, policy context, and on-ground realities to frame water management.",
-    "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9f13e92f-a500-4052-dd61-2bd0951c1900/public",
+    "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/509cf476-424a-4d69-4a02-9386d8358700/public",
     "link": "https://www.linkedin.com/in/rehnumashakir/"
   },
   "rashi-tarika": {
