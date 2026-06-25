@@ -82,12 +82,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "pos",
-        "name": "POS",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
-      },
-      {
         "id": "rom-grande",
         "name": "ROM Grande",
         "category": "free-standing",
@@ -104,6 +98,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ROM.CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/067b3edc-d892-48f5-1e63-5e567c0a6d00/public"
+      },
+      {
+        "id": "enki",
+        "name": "ENKI",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
       },
       {
         "id": "gsp",
@@ -142,10 +142,10 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
       },
       {
-        "id": "enki",
-        "name": "ENKI",
+        "id": "pos",
+        "name": "POS",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -496,7 +496,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "status": "Live",
     "description": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f548679e-2ba4-4968-e281-2fde42242800/public",
-    "heroTagline": "Plastic in passe, Landfilling is Zero.\nSustainability is the Future.",
+    "heroTagline": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "/Contactus",
@@ -523,10 +523,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f56d1bb2-8196-4815-7449-5a9481526600/public"
     ],
     "featuresList": [
-      {
-        "title": "Water Options",
-        "description": "Hot, Cold, Ambient"
-      },
       {
         "title": "Touch-Free Dispensing",
         "description": "Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless."
@@ -567,7 +563,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "cold": "Cold: 5°C - 20° C (default 8°C)",
         "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
-      "greenCertification": " Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "1300 ml",
       "refrigerant": "R-134a",
       "dimensions": [
@@ -593,19 +589,20 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "status": "Live",
     "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/84acd2dc-5215-4649-f50f-27c75c576600/public",
-    "heroTagline": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "heroTagline": "Plastic in passe, Landfilling is Zero.\nSustainability is the Future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "/Comtactus",
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/POS.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/POS.pdf",
+    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
       "ambient": true
-    }
+    },
+    "displayImageIndex": 0
   },
   "rom-grande": {
     "id": "rom-grande",
