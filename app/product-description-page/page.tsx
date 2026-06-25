@@ -59,9 +59,7 @@ function ProductDescriptionPageContent() {
     const showcaseCtaText = currentProduct.showcaseCtaText || "Enquire Now"
     const showcaseCtaLink = currentProduct.showcaseCtaLink || "#"
     const brochureLink = currentProduct.brochurePdf || "#"
-    const datasheetLink = currentProduct.datasheetPdf || "#"
     const isBrochureDead = brochureLink === "#"
-    const isDatasheetDead = datasheetLink === "#"
 
     const showHot = currentProduct.variants ? currentProduct.variants.hot : true
     const showCold = currentProduct.variants ? currentProduct.variants.cold : true
@@ -334,8 +332,7 @@ function ProductDescriptionPageContent() {
                         {/* Structured Features Listing */}
                         <div className="space-y-[1.5rem] mb-0">
                             {currentProduct.featuresList
-                                .filter(feat => feat.title.toLowerCase() !== "water options")
-                                .slice(0, 3)
+                                .filter(feat => feat.title.toLowerCase() !== "water options" && feat.isDisplayed)
                                 .map((feat, fIdx) => (
                                     <div key={fIdx}>
                                         <h3 
@@ -1094,38 +1091,7 @@ function ProductDescriptionPageContent() {
                                     <DownloadIcon />
                                 </span>
                             </a>
-                            <a
-                                href={datasheetLink}
-                                target={isDatasheetDead ? undefined : "_blank"}
-                                rel="noopener noreferrer"
-                                onClick={(e) => {
-                                    if (isDatasheetDead) {
-                                        e.preventDefault()
-                                    }
-                                }}
-                                className={`group border border-white bg-transparent text-center text-white transition-all duration-300 flex items-center justify-center gap-[0.5rem] ${
-                                    isDatasheetDead ? "opacity-40 cursor-not-allowed" : "hover:bg-white hover:text-black cursor-pointer"
-                                }`}
-                                style={{
-                                    fontFamily: "'Inter Tight', sans-serif",
-                                    width: "16.042vw",
-                                    height: "3.403vw",
-                                    minWidth: "231px",
-                                    minHeight: "49px"
-                                }}
-                            >
-                                <span style={{
-                                    fontFamily: "'Inter Tight', sans-serif",
-                                    fontWeight: 500,
-                                    fontSize: "14px",
-                                    lineHeight: "100%",
-                                    letterSpacing: "0%",
-                                    verticalAlign: "middle"
-                                }}>Technical data sheet</span>
-                                <span className="w-[1.1rem] h-[1.1rem] flex items-center justify-center">
-                                    <DownloadIcon />
-                                </span>
-                            </a>
+
                         </div>
 
                     </div>

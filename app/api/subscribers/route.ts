@@ -18,8 +18,29 @@ export async function POST(request: Request) {
     }
 
     const now = new Date();
-    const date = now.toISOString().split('T')[0];
-    const time = now.toLocaleTimeString('en-US', { hour12: false });
+    
+    // Format date in YYYY-MM-DD in Asia/Kolkata timezone (IST)
+    const dateFormatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Kolkata',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+    const dateParts = dateFormatter.formatToParts(now);
+    const year = dateParts.find(p => p.type === 'year')?.value;
+    const month = dateParts.find(p => p.type === 'month')?.value;
+    const day = dateParts.find(p => p.type === 'day')?.value;
+    const date = `${year}-${month}-${day}`;
+
+    // Format time in HH:MM:SS in Asia/Kolkata timezone (IST)
+    const timeFormatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Kolkata',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+    const time = timeFormatter.format(now);
 
     const newSubscriber = {
       id: crypto.randomUUID(),

@@ -90,7 +90,7 @@ export interface ProductDetails {
   categoryName: string;
   heroSubtitle: string;
   images: string[];
-  featuresList: Array<{ title: string; description: string }>;
+  featuresList: Array<{ title: string; description: string; isDisplayed?: boolean }>;
   specifications: {
     storageCapacity: SpecRow[];
     waterTemp: {
@@ -116,7 +116,6 @@ export interface ProductDetails {
   showcaseCtaText?: string;
   showcaseCtaLink?: string;
   brochurePdf?: string;
-  datasheetPdf?: string;
   variants?: {
     hot: boolean;
     cold: boolean;

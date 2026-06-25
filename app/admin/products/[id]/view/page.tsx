@@ -57,7 +57,6 @@ interface ProductDetails {
   showcaseCtaText?: string
   showcaseCtaLink?: string
   brochurePdf?: string
-  datasheetPdf?: string
   variants?: {
     hot: boolean
     cold: boolean

@@ -35,7 +35,7 @@ export interface ProductDetails {
   categoryName: string;
   heroSubtitle: string;
   images: string[];
-  featuresList: Array<{ title: string; description: string }>;
+  featuresList: Array<{ title: string; description: string; isDisplayed?: boolean }>;
   specifications: {
     storageCapacity: SpecRow[];
     waterTemp: {
@@ -61,7 +61,6 @@ export interface ProductDetails {
   showcaseCtaText?: string;
   showcaseCtaLink?: string;
   brochurePdf?: string;
-  datasheetPdf?: string;
   variants?: {
     hot: boolean;
     cold: boolean;
@@ -340,27 +339,33 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
+        "isDisplayed": true
       },
       {
         "title": "Touch-Free Dispensing",
-        "description": "Enjoy effortless, hygienic water access with sensor-based, touchless technology."
+        "description": "Enjoy effortless, hygienic water access with sensor-based, touchless technology.",
+        "isDisplayed": true
       },
       {
         "title": "No Mess, No Stress",
-        "description": "An efficient drip tray with generous capacity catches spills, keeping the space clean and orderly."
+        "description": "An efficient drip tray with generous capacity catches spills, keeping the space clean and orderly.",
+        "isDisplayed": false
       },
       {
         "title": "Effortless Integration",
-        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution."
+        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution.",
+        "isDisplayed": false
       },
       {
         "title": "Water Enrichments (Optional)",
-        "description": "Mineralization Alkaline"
+        "description": "Mineralization Alkaline",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -428,7 +433,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/VAR.pdf",
-    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
@@ -449,19 +453,23 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Touch-Free Operation",
-        "description": "Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless."
+        "description": "Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Clean Flow, Minimal Splash",
-        "description": "Engineered for a smooth, laminar flow that minimizes spillage, complemented by an efficient drainage system."
+        "description": "Engineered for a smooth, laminar flow that minimizes spillage, complemented by an efficient drainage system.",
+        "isDisplayed": true
       },
       {
         "title": "Effortless Integration",
-        "description": "Easily connects with carbonated beverage dispensers and coffee/tea vending machines, offering a versatile hydration solution."
+        "description": "Easily connects with carbonated beverage dispensers and coffee/tea vending machines, offering a versatile hydration solution.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -503,7 +511,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
-    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
@@ -525,27 +532,33 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Water Options",
-        "description": "Hot, Cold, Ambient"
+        "description": "Hot, Cold, Ambient",
+        "isDisplayed": true
       },
       {
         "title": "Touch-Free Dispensing",
-        "description": "Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless."
+        "description": "Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless.",
+        "isDisplayed": true
       },
       {
         "title": "Smooth, Splash-Free Flow",
-        "description": "Designed for a clean, laminar water flow that minimizes spillage, paired with an efficient drainage system."
+        "description": "Designed for a clean, laminar water flow that minimizes spillage, paired with an efficient drainage system.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": false
       },
       {
         "title": "Versatile Integration",
-        "description": "Effortlessly integrates with carbonated beverage dispensers and coffee/tea vending machines, providing a flexible, all-in-one hydration solution."
+        "description": "Effortlessly integrates with carbonated beverage dispensers and coffee/tea vending machines, providing a flexible, all-in-one hydration solution.",
+        "isDisplayed": false
       },
       {
         "title": "Water Enrichments (Optional)",
-        "description": "Water Enrichments\n(Optional)"
+        "description": "Water Enrichments\n(Optional)",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -600,7 +613,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/POS.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/POS.pdf",
     "variants": {
       "hot": true,
       "cold": true,
@@ -621,23 +633,28 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Water options",
-        "description": "Chilled,  Hot,  Ambient"
+        "description": "Chilled,  Hot,  Ambient",
+        "isDisplayed": true
       },
       {
         "title": "Sensor-Based Operation:",
-        "description": "Touchless and hygienic dispensing ensures a seamless and safe user experience."
+        "description": "Touchless and hygienic dispensing ensures a seamless and safe user experience.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Efficient Drainage",
-        "description": "Equipped with a generous drip tray to efficiently collect accidental spillage, maintaining cleanliness."
+        "description": "Equipped with a generous drip tray to efficiently collect accidental spillage, maintaining cleanliness.",
+        "isDisplayed": false
       },
       {
         "title": "Water Enrichments (Optional)",
-        "description": "Mineralization Alkaline"
+        "description": "Mineralization Alkaline",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -692,7 +709,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
     "variants": {
       "hot": true,
       "cold": true,
@@ -714,27 +730,33 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Robust & Durable Build",
-        "description": "Constructed with premium Stainless Steel (SS-304) and corrosion-resistant GI, ensuring food-grade safety and long-lasting durability."
+        "description": "Constructed with premium Stainless Steel (SS-304) and corrosion-resistant GI, ensuring food-grade safety and long-lasting durability.",
+        "isDisplayed": true
       },
       {
         "title": "Touchless Dispensing",
-        "description": "Experience the convenience of sensor-based technology for hygienic, hands-free water dispensing."
+        "description": "Experience the convenience of sensor-based technology for hygienic, hands-free water dispensing.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Real-Time Monitoring",
-        "description": "Stay informed with an intuitive IoT display powered by CIRCLE OF BLUE, showcasing key data and performance metrics in real-time."
+        "description": "Stay informed with an intuitive IoT display powered by CIRCLE OF BLUE, showcasing key data and performance metrics in real-time.",
+        "isDisplayed": false
       },
       {
         "title": "Effortless Integration",
-        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution."
+        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution.",
+        "isDisplayed": false
       },
       {
         "title": "Water Enrichments (Optional)",
-        "description": "Mineralization Alkaline"
+        "description": "Mineralization Alkaline",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -776,7 +798,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "Enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/REVA.pdf",
-    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
@@ -797,23 +818,28 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Touch-Free Dispensing",
-        "description": "Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless."
+        "description": "Experience seamless, sensor-based water dispensing that’s hygienic and completely touchless.",
+        "isDisplayed": true
       },
       {
         "title": "Smooth, Splash-Free Flow",
-        "description": "Designed for a clean, laminar water flow that minimizes spillage, paired with an efficient drainage system."
+        "description": "Designed for a clean, laminar water flow that minimizes spillage, paired with an efficient drainage system.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Versatile Integration",
-        "description": "Effortlessly integrates with carbonated beverage dispensers and coffee/tea vending machines, providing a flexible, all-in-one hydration solution."
+        "description": "Effortlessly integrates with carbonated beverage dispensers and coffee/tea vending machines, providing a flexible, all-in-one hydration solution.",
+        "isDisplayed": false
       },
       {
         "title": "Water Enrichments (Optional)",
-        "description": "Mineralization Alkaline"
+        "description": "Mineralization Alkaline",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -855,7 +881,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enqyiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/Grand%20Slam%20Pro.pdf",
-    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
@@ -878,7 +903,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "#",
     "brochurePdf": "/brochure-download.pdf",
-    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
@@ -892,31 +916,38 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Powerful led uv-c intank sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Built to last",
-        "description": "Crafted with premium Stainless Steel (SS-304) and corrosion-resistant Galvanized\nIron (GI), ensuring durability and safety with food-grade materials."
+        "description": "Crafted with premium Stainless Steel (SS-304) and corrosion-resistant Galvanized\nIron (GI), ensuring durability and safety with food-grade materials.",
+        "isDisplayed": true
       },
       {
         "title": "Effortless integration",
-        "description": "Seamlessly connects with carbonated beverage dispensers\nand coffee/tea vending machines for a versatile, all-in-one solution."
+        "description": "Seamlessly connects with carbonated beverage dispensers\nand coffee/tea vending machines for a versatile, all-in-one solution.",
+        "isDisplayed": true
       },
       {
         "title": "Touch-free convenience",
-        "description": "Experience the ease of sensor-based dispensing, delivering clean and safe water without the need for touch."
+        "description": "Experience the ease of sensor-based dispensing, delivering clean and safe water without the need for touch.",
+        "isDisplayed": false
       },
       {
         "title": "American disabilities act",
-        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities."
+        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.",
+        "isDisplayed": false
       },
       {
         "title": "Designed for everyone",
-        "description": "Thoughtfully engineered to be accessible for seniors, kids, and\nthose with special needs, making hydration easy for all."
+        "description": "Thoughtfully engineered to be accessible for seniors, kids, and\nthose with special needs, making hydration easy for all.",
+        "isDisplayed": false
       },
       {
         "title": "Water enrichments (optional)",
-        "description": "Mineralization Alkaline"
+        "description": "Mineralization Alkaline",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -976,31 +1007,38 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Water Options",
-        "description": "Chilled , Hot , Ambient"
+        "description": "Chilled , Hot , Ambient",
+        "isDisplayed": true
       },
       {
         "title": "Robust & Durable Build",
-        "description": "Constructed with premium Stainless Steel (SS-304) and corrosion-resistant GI, ensuring food-grade safety and long-lasting durability."
+        "description": "Constructed with premium Stainless Steel (SS-304) and corrosion-resistant GI, ensuring food-grade safety and long-lasting durability.",
+        "isDisplayed": true
       },
       {
         "title": "Instant Hydration",
-        "description": "Experience pure, safe water — delivered instantly at the push of a button or from a bubbler."
+        "description": "Experience pure, safe water — delivered instantly at the push of a button or from a bubbler.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": false
       },
       {
         "title": "Real-Time Monitoring",
-        "description": "Stay informed with an intuitive IoT display powered by CIRCLE OF BLUE, showcasing key data and performance metrics in real-time."
+        "description": "Stay informed with an intuitive IoT display powered by CIRCLE OF BLUE, showcasing key data and performance metrics in real-time.",
+        "isDisplayed": false
       },
       {
         "title": "Effortless Integration",
-        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution."
+        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution.",
+        "isDisplayed": false
       },
       {
         "title": "Water Enrichments (Optional)",
-        "description": "Mineralization Alkaline"
+        "description": "Mineralization Alkaline",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1042,7 +1080,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/VENUS.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/VENUS.pdf",
     "variants": {
       "hot": true,
       "cold": true,
@@ -1063,19 +1100,23 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Touch-Free Operation",
-        "description": "Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless."
+        "description": "Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Clean Flow, Minimal Splash",
-        "description": "Engineered for a smooth, laminar flow that minimizes spillage, complemented by an efficient drainage system."
+        "description": "Engineered for a smooth, laminar flow that minimizes spillage, complemented by an efficient drainage system.",
+        "isDisplayed": true
       },
       {
         "title": "Effortless Integration",
-        "description": "Easily connects with carbonated beverage dispensers and coffee/tea\nmachines, offering a versatile hydration solution."
+        "description": "Easily connects with carbonated beverage dispensers and coffee/tea\nmachines, offering a versatile hydration solution.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1130,7 +1171,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
-    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
@@ -1151,23 +1191,28 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion -resistant GI, this unit is food-grade approved and built for enduring performance."
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion -resistant GI, this unit is food-grade approved and built for enduring performance.",
+        "isDisplayed": true
       },
       {
         "title": "Touch-Free Dispensing",
-        "description": "Enjoy effortless, hygienic water access with sensor-based, touchless technology."
+        "description": "Enjoy effortless, hygienic water access with sensor-based, touchless technology.",
+        "isDisplayed": true
       },
       {
         "title": "No Mess, No Stress",
-        "description": "An efficient drip tray with generous capacity catches spills, keeping the space clean and orderly."
+        "description": "An efficient drip tray with generous capacity catches spills, keeping the space clean and orderly.",
+        "isDisplayed": false
       },
       {
         "title": "Effortless Integration",
-        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution."
+        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1209,7 +1254,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/VAR.pdf",
-    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
@@ -1230,19 +1274,23 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Sensor-Based Operation:",
-        "description": "Touchless and hygienic dispensing ensures a seamless and safe user experience."
+        "description": "Touchless and hygienic dispensing ensures a seamless and safe user experience.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Efficient Drainage",
-        "description": "Equipped with a generous drip tray to efficiently collect accidental spillage, maintaining cleanliness."
+        "description": "Equipped with a generous drip tray to efficiently collect accidental spillage, maintaining cleanliness.",
+        "isDisplayed": true
       },
       {
         "title": "Water Enrichments (Optional)",
-        "description": "Mineralization Alkaline"
+        "description": "Mineralization Alkaline",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1284,7 +1332,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "/enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ROM.pdf",
-    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
@@ -1305,23 +1352,28 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Plumbed-In/ Top Loading (Optional)",
-        "description": "Plumbed-in to Purified Water Supply. Direct Jar Fill: Direct Tank Fill Optional"
+        "description": "Plumbed-in to Purified Water Supply. Direct Jar Fill: Direct Tank Fill Optional",
+        "isDisplayed": true
       },
       {
         "title": "Built to Last",
-        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability and long term value. Full SS 304 version available."
+        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability and long term value. Full SS 304 version available.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Hypergienic Hydration",
-        "description": "IR Sensor based touch free dispensing."
+        "description": "IR Sensor based touch free dispensing.",
+        "isDisplayed": false
       },
       {
         "title": "Green Specs",
-        "description": "Certified Green 2 LPM-water flow"
+        "description": "Certified Green 2 LPM-water flow",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1367,19 +1419,23 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Plumbed-In",
-        "description": "Can be directly connected to the input water supply (purified)"
+        "description": "Can be directly connected to the input water supply (purified)",
+        "isDisplayed": true
       },
       {
         "title": "Built to Last",
-        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability and long term value."
+        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability and long term value.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Hypergienic Hydration",
-        "description": "IR Sensor based touch free dispensing."
+        "description": "IR Sensor based touch free dispensing.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1425,19 +1481,23 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Bottom-Load Ease",
-        "description": "Place jars or bottles below for easy water collection and reduced lifting."
+        "description": "Place jars or bottles below for easy water collection and reduced lifting.",
+        "isDisplayed": true
       },
       {
         "title": "Hypergienic Hydration",
-        "description": "IR Sensor based touch free dispensing."
+        "description": "IR Sensor based touch free dispensing.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Touch-Free Dispense",
-        "description": "Enjoy hassle-free, hygienic dispensing with a simple touch."
+        "description": "Enjoy hassle-free, hygienic dispensing with a simple touch.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1483,19 +1543,23 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Counter-Top Friendly",
-        "description": "Compact design fits perfectly on counters and in tight spaces."
+        "description": "Compact design fits perfectly on counters and in tight spaces.",
+        "isDisplayed": true
       },
       {
         "title": "Top-Load Flexibility",
-        "description": "Easily place a jar or bole on top for effortless water collection."
+        "description": "Easily place a jar or bole on top for effortless water collection.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED  UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Hypergienic Hydration",
-        "description": "IR Sensor based touch free dispensing."
+        "description": "IR Sensor based touch free dispensing.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1541,19 +1605,23 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Top-Load Ready",
-        "description": "Place a jar or bole on top to easily collect water."
+        "description": "Place a jar or bole on top to easily collect water.",
+        "isDisplayed": true
       },
       {
         "title": "Hypergienic Hydration",
-        "description": "IR Sensor based touch free dispensing."
+        "description": "IR Sensor based touch free dispensing.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Sleek Design",
-        "description": "Modern, space-saving design that ts perfectly in any seing."
+        "description": "Modern, space-saving design that ts perfectly in any seing.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1599,27 +1667,33 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Pure Water flow",
-        "description": "Lead-free, bacteria-resistant tubings for safe, clean water."
+        "description": "Lead-free, bacteria-resistant tubings for safe, clean water.",
+        "isDisplayed": true
       },
       {
         "title": "Energy Efficient",
-        "description": "Uses 25% less power, saving on energy costs."
+        "description": "Uses 25% less power, saving on energy costs.",
+        "isDisplayed": true
       },
       {
         "title": "fast TOUCHLESS DISPENSING",
-        "description": "Delivers ice-cold and hot water twice as fast."
+        "description": "Delivers ice-cold and hot water twice as fast.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration",
+        "isDisplayed": false
       },
       {
         "title": "Seamless Integration",
-        "description": "Connects easily with coffee, tea, and beverage machines."
+        "description": "Connects easily with coffee, tea, and beverage machines.",
+        "isDisplayed": false
       },
       {
         "title": "Easy Maintenance",
-        "description": "Spill-resistant, dishwasher-safe drip tray for hassle-free upkeep."
+        "description": "Spill-resistant, dishwasher-safe drip tray for hassle-free upkeep.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1665,23 +1739,28 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Clean and Safe Water",
-        "description": "Lead-free, bacteria-resistant tubing ensures pure and contaminant-free hydration."
+        "description": "Lead-free, bacteria-resistant tubing ensures pure and contaminant-free hydration.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Rapid Touchless Dispensing",
-        "description": "Provides ice-cold and hot water at twice the speed of standard models."
+        "description": "Provides ice-cold and hot water at twice the speed of standard models.",
+        "isDisplayed": true
       },
       {
         "title": "Build to Use Made to Last",
-        "description": "Tripple Coated GI with FRP Colour Customized Front"
+        "description": "Tripple Coated GI with FRP Colour Customized Front",
+        "isDisplayed": false
       },
       {
         "title": "Green Specs",
-        "description": "Griha Green Certified"
+        "description": "Griha Green Certified",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1727,19 +1806,23 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Top-Load Ready",
-        "description": "Place a jar or bottle on top to easily collect water."
+        "description": "Place a jar or bottle on top to easily collect water.",
+        "isDisplayed": true
       },
       {
         "title": "SS Storage Tank",
-        "description": "High-quality Stainless Steel (SS-304) for corrosion resistance and no bad odors or microbial growth."
+        "description": "High-quality Stainless Steel (SS-304) for corrosion resistance and no bad odors or microbial growth.",
+        "isDisplayed": true
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Manual Operation",
-        "description": "Manually operated taps for easy and controlled water dispensing"
+        "description": "Manually operated taps for easy and controlled water dispensing",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1785,27 +1868,33 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Sleek Bubbler Head At a glance",
-        "description": "Chrome-plated brass head with a polished nish for a rened look and smooth water flow."
+        "description": "Chrome-plated brass head with a polished nish for a rened look and smooth water flow.",
+        "isDisplayed": true
       },
       {
         "title": "Hygienic Tubing",
-        "description": "100% lead-free, anti-bacterial tubes eliminate cross-contamination risks, ensuring pure, safe water."
+        "description": "100% lead-free, anti-bacterial tubes eliminate cross-contamination risks, ensuring pure, safe water.",
+        "isDisplayed": true
       },
       {
         "title": "Splash-Free Experience",
-        "description": "Engineered for a clean, controlled ow that minimizes spillage and water waste."
+        "description": "Engineered for a clean, controlled ow that minimizes spillage and water waste.",
+        "isDisplayed": true
       },
       {
         "title": "Smart Drainage System",
-        "description": "Ecient drainage eliminates standing water, keeping the area clean and dry."
+        "description": "Ecient drainage eliminates standing water, keeping the area clean and dry.",
+        "isDisplayed": false
       },
       {
         "title": "Fully Accessible",
-        "description": "ADA-compliant design ensures effortless use for everyone."
+        "description": "ADA-compliant design ensures effortless use for everyone.",
+        "isDisplayed": false
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1852,23 +1941,28 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Heavy-Duty Build",
-        "description": "High-quality SS-304 stainless steel with a vandal-resistant boom plate for superior durability."
+        "description": "High-quality SS-304 stainless steel with a vandal-resistant boom plate for superior durability.",
+        "isDisplayed": true
       },
       {
         "title": "Optional Purification",
-        "description": "Customizable back-end purification available."
+        "description": "Customizable back-end purification available.",
+        "isDisplayed": true
       },
       {
         "title": "Efficient Drainage",
-        "description": "Designed with a proper drainage system to eliminate standing water."
+        "description": "Designed with a proper drainage system to eliminate standing water.",
+        "isDisplayed": true
       },
       {
         "title": "Easy Installation",
-        "description": "Quick wall-hanging or wall-mount setup."
+        "description": "Quick wall-hanging or wall-mount setup.",
+        "isDisplayed": false
       },
       {
         "title": "Bubbler Heads",
-        "description": "Polished single or dual bubble heads with a convenient basin."
+        "description": "Polished single or dual bubble heads with a convenient basin.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -1915,15 +2009,18 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Powerful LED Powerful LED Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "description": "Lorem Ipsum dolor",
+        "isDisplayed": true
       }
     ],
     "specifications": {
@@ -1970,15 +2067,18 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Powerful LED Powerful LED Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "description": "Lorem Ipsum dolor",
+        "isDisplayed": true
       }
     ],
     "specifications": {
@@ -2025,15 +2125,18 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Powerful LED Powerful LED Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "description": "Lorem Ipsum dolor",
+        "isDisplayed": true
       }
     ],
     "specifications": {
@@ -2080,15 +2183,18 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Powerful LED Powerful LED Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "description": "Lorem Ipsum dolor",
+        "isDisplayed": true
       }
     ],
     "specifications": {
@@ -2135,15 +2241,18 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Powerful LED Powerful LED Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "description": "Lorem Ipsum dolor",
+        "isDisplayed": true
       }
     ],
     "specifications": {
@@ -2190,15 +2299,18 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Powerful LED Powerful LED Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration"
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance."
+        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
+        "isDisplayed": true
       },
       {
         "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor"
+        "description": "Lorem Ipsum dolor",
+        "isDisplayed": true
       }
     ],
     "specifications": {
@@ -2245,23 +2357,28 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Built to Endure",
-        "description": "Triple-coated galvanized iron with a protective powder finish."
+        "description": "Triple-coated galvanized iron with a protective powder finish.",
+        "isDisplayed": true
       },
       {
         "title": "Pure & Safe Storage",
-        "description": "Stainless steel tank guarantees 99.99% pure, contaminant-free water."
+        "description": "Stainless steel tank guarantees 99.99% pure, contaminant-free water.",
+        "isDisplayed": true
       },
       {
         "title": "Extended Durability",
-        "description": "Optional anti-rust treatment and stainless steel 304 overhead protection."
+        "description": "Optional anti-rust treatment and stainless steel 304 overhead protection.",
+        "isDisplayed": true
       },
       {
         "title": "Longer Lifespan",
-        "description": "Customizable design, easy maintenance, and energy-efficient operation."
+        "description": "Customizable design, easy maintenance, and energy-efficient operation.",
+        "isDisplayed": false
       },
       {
         "title": "High Capacity",
-        "description": "Designed to handle heavy water demand in busy environments."
+        "description": "Designed to handle heavy water demand in busy environments.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -2308,23 +2425,28 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Installation",
-        "description": "Wall-mounted drinking water dispenser and fountain."
+        "description": "Wall-mounted drinking water dispenser and fountain.",
+        "isDisplayed": true
       },
       {
         "title": "Optional Upgrades",
-        "description": "Swap the washer and dustbin for a built-in RO unit, ensuring purified water on demand"
+        "description": "Swap the washer and dustbin for a built-in RO unit, ensuring purified water on demand",
+        "isDisplayed": true
       },
       {
         "title": "Material & Construction",
-        "description": "Durable stainless steel 304 with galvanized iron for long-lasting performance."
+        "description": "Durable stainless steel 304 with galvanized iron for long-lasting performance.",
+        "isDisplayed": true
       },
       {
         "title": "Customization",
-        "description": "The backend unit is fully customizable to any space or design requirements."
+        "description": "The backend unit is fully customizable to any space or design requirements.",
+        "isDisplayed": false
       },
       {
         "title": "Operation",
-        "description": "Convenient push-tap system for direct drinking (optional swan-neck taps available)."
+        "description": "Convenient push-tap system for direct drinking (optional swan-neck taps available).",
+        "isDisplayed": false
       }
     ],
     "specifications": {
@@ -2371,23 +2493,28 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "featuresList": [
       {
         "title": "Robust construct",
-        "description": "Heavy duty RO system designed for industrial applications"
+        "description": "Heavy duty RO system designed for industrial applications",
+        "isDisplayed": true
       },
       {
         "title": "Anti-bacterial",
-        "description": "Provides protection against bacteria, mould & fungi"
+        "description": "Provides protection against bacteria, mould & fungi",
+        "isDisplayed": true
       },
       {
         "title": "Pre-engineered & Pre-assembled",
-        "description": "A pre-assembled factory tested units to reduce installation & set up time"
+        "description": "A pre-assembled factory tested units to reduce installation & set up time",
+        "isDisplayed": true
       },
       {
         "title": "Application",
-        "description": "Commercial kitchens, pantries, washing units & hospitality sector"
+        "description": "Commercial kitchens, pantries, washing units & hospitality sector",
+        "isDisplayed": false
       },
       {
         "title": "5 - stage purification",
-        "description": "Ensures pure water from any raw water source"
+        "description": "Ensures pure water from any raw water source",
+        "isDisplayed": false
       }
     ],
     "specifications": {

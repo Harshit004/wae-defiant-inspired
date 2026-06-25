@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     const dbState = readDB();
 
     if (action === 'create') {
-      const { id: inputId, name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants, displayImageIndex } = productData;
+      const { id: inputId, name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, variants, displayImageIndex } = productData;
       
       const generatedId = inputId
         ? inputId.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -72,7 +72,6 @@ export async function POST(request: Request) {
         showcaseCtaText: showcaseCtaText || '',
         showcaseCtaLink: showcaseCtaLink || '',
         brochurePdf: brochurePdf || '',
-        datasheetPdf: datasheetPdf || '',
         variants: variants || { hot: true, cold: true, ambient: true },
         displayImageIndex: displayImageIndex !== undefined ? displayImageIndex : 0
       };
@@ -100,7 +99,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: false, message: 'Product not found.' }, { status: 404 });
       }
 
-      const { name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants, displayImageIndex } = productData;
+      const { name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, variants, displayImageIndex } = productData;
       const existing = dbState.products[id];
 
       const parentCategory = dbState.categories[categoryId];
@@ -130,7 +129,6 @@ export async function POST(request: Request) {
         showcaseCtaText: showcaseCtaText !== undefined ? showcaseCtaText : existing.showcaseCtaText,
         showcaseCtaLink: showcaseCtaLink !== undefined ? showcaseCtaLink : existing.showcaseCtaLink,
         brochurePdf: brochurePdf !== undefined ? brochurePdf : existing.brochurePdf,
-        datasheetPdf: datasheetPdf !== undefined ? datasheetPdf : existing.datasheetPdf,
         variants: variants || existing.variants || { hot: true, cold: true, ambient: true },
         displayImageIndex: displayImageIndex !== undefined ? displayImageIndex : (existing.displayImageIndex !== undefined ? existing.displayImageIndex : 0)
       };

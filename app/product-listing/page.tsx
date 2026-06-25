@@ -366,7 +366,7 @@ function ProductListingContent() {
                                     }}>
                                         {group.map((product, index) => {
                                             const globalIndex = globalStart + index;
-                                            const isFeatured = globalIndex === 0;
+                                            const isFeatured = globalIndex === 0 && filteredProducts.length >= 5;
 
                                             return (
                                                 <Link
