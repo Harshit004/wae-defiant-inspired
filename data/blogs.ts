@@ -1051,5 +1051,188 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "envisioning-sustainability-why-the-sdgs-are-the-world-s-shared-compass": {
+    "id": "envisioning-sustainability-why-the-sdgs-are-the-world-s-shared-compass",
+    "title": "Envisioning Sustainability: Why the SDGs Are the World's Shared Compass",
+    "category": "Policy",
+    "description": "This article unpacks all 17 Sustainable Development Goals — from eradicating poverty to protecting life below water — and explains why SDG 6 on clean water holds special urgency for India, where 600 million people face extreme water stress.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7ac31ca5-48be-4ebf-55f6-e1904becf700/public",
+    "writerId": "shambhavi",
+    "readTime": "2 min read",
+    "status": "Live",
+    "createdAt": "2026-06-25T11:06:17.164Z",
+    "contentColumns": [
+      [
+        {
+          "type": "heading",
+          "text": "\"The Sustainable Development Goals are humanity's to-do list for a livable planet.\"\n\n— Inger Andersen\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "In 2015, the United Nations adopted the 2030 Agenda for Sustainable Development, anchored by 17 Sustainable Development Goals (SDGs) that serve as a shared global blueprint to end poverty, protect the planet, and ensure prosperity for all. These goals are interdependent, interconnected, and universal—urging governments, businesses, and communities to collaborate in advancing equitable, inclusive, and sustainable progress.\n\nEach SDG offers a specific lens through which humanity can transform ambition into action, and collectively chart a course toward a just and resilient future.\n\nThe 17 SDGs: A Global Blueprint for Action\n\nEach of the 17 SDGs encapsulates a fundamental dimension of sustainable development and inclusive green growth."
+        },
+        {
+          "type": "heading",
+          "text": "SDG 1: No Poverty\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "This goal commits to eradicating poverty in all its manifestations. With over 700 million people still living on less than $2.15 a day (World Bank), SDG 1 remains the moral foundation of the 2030 Agenda.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 2: Zero Hunger\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "With **over 735 million people undernourished globally (FAO, UN), SDG 2 calls for resilient food production that nourishes both people and ecosystems.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 3: Good Health and Well-being\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "According to WHO, 5 million children under five died in 2021 from preventable causes. SDG 3 seeks universal health coverage.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 4: Quality Education\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "As per** UNESCO**, 244 million children globally are out of school. SDG 4 strives for inclusive, equitable, and lifelong learning opportunities.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 5: Gender Equality\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 5 strongly advocates for women's empowerment, eliminating gender-based violence, securing reproductive rights, and ensuring equal participation in political and economic life.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 6: Clean Water and Sanitation\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Over 2.2 billion people still lack access to safely managed drinking water (UNICEF & WHO). SDG 6 envisions integrated sustainable water management, universal sanitation, and climate-resilient infrastructure.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 7: Affordable and Clean Energy\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 7 promotes universal access to modern energy services, increased energy efficiency, and a substantial rise in renewable energy transition.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 8: Decent Work and Economic Growth\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "This goal promotes sustained economic growth, full and productive employment, entrepreneurship, and safe working conditions.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 9: Industry, Innovation and Infrastructure\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 9 champions equitable access to technology, innovation ecosystems, inclusive value chains, and climate-smart infrastructure. In fact, investment in sustainable infrastructure could add $4 trillion to global GDP by 2030. (World Economic Forum)\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 10: Reduced Inequalities\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 10 addresses both within-country and cross-border disparities. It tackles discrimination, promotes equitable migration policies, enhances representation in global institutions.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 11: Sustainable Cities and Communities\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 11 envisions inclusive, safe, and resilient urban spaces with affordable housing, efficient public transport, accessible green areas, and disaster risk reduction.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 12: Responsible Consumption and Production\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "UNEP reported that,** if global consumption continues at the current pace, we will need the resources of three Earths by 2050. SDG 12 calls for circular economies, sustainable procurement, responsible resource consumption** and production.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 13: Climate Action\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 13 demands urgent mitigation, adaptation, and resilience-building. It reinforces the Paris Agreement's aims and elevates climate responsiveness including **carbon footprint reduction **across policies, budgets, and institutions.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 14: Life Below Water\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 14 promotes sustainable marine resource management, marine protected areas, and pollution control.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 15: Life on Land\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "This goal focuses on halting biodiversity loss, reversing deforestation, combatting desertification, and restoring degraded land.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 16: Peace, Justice and Strong Institutions\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 16 upholds inclusive governance, rule of law, access to justice, anti-corruption measures, and participatory decision-making at all levels.\n\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 17: Partnerships for the Goals\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 17 mobilises financial resources, fosters North-South and South-South cooperation, supports data capacity, and promotes policy coherence. It anchors the implementation architecture of the entire Agenda.\n"
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Water at the Heart of Sustainability: SDG 6 and WAE's Commitment\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Among all the SDGs, SDG 6: Clean Water and Sanitation holds unique significance. Access to clean water is not merely a human right; it is a determinant of life expectancy, economic productivity, and social stability.\n\nYet, India—home to 18% of the world's population—holds only 4% of its freshwater, and nearly 600 million Indians face extreme water stress. (NITI Aayog)\n\nThis is where organisations like WAE demonstrate how visionary business practices can catalyse transformational change. For over a decade, WAE has pioneered sustainable hydration solutions—from *zero-landfill *stainless steel water stations to closed-loop water purification systems, empowering institutions to move away from wasteful bottled water culture and adopt circular economy solutions.\n"
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Charting The Decisive Path: Towards 2030\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "As we move into the decisive years leading up to 2030, the SDGs offer more than just targets, they represent a global contract to safeguard our collective future. Businesses like WAE are playing a critical role in aligning operations with these goals, especially SDG 6, by embedding sustainability into core practices.\n\nThe journey toward a sustainable world requires collaborative action, technological innovation, and unwavering commitment. In embracing the SDGs, we are not only addressing today's challenges, we are investing in tomorrow's possibilities.\n"
+        },
+        {
+          "type": "heading",
+          "text": "\"There is no sustainable development without water security.\"\n\n— Irina Bokova\n"
+        }
+      ]
+    ]
   }
 };
