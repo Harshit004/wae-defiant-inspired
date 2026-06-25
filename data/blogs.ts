@@ -950,5 +950,72 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "catch-the-rain-india-s-mission-to-secure-water-for-the-future": {
+    "id": "catch-the-rain-india-s-mission-to-secure-water-for-the-future",
+    "title": "\"Catch the Rain\" – India's Mission to Secure Water for the Future",
+    "category": "Water conservation",
+    "description": "From rooftop harvesting to lake revival, India's Catch the Rain campaign is building a national movement to reclaim rainfall before it is lost. This article traces how the mission grew from a water crisis response into a community-driven, science-backed push for long-term water security.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a5dfce54-1cb5-463e-19ca-82221705c600/public",
+    "writerId": "rehnuma-ansari",
+    "readTime": "2 min read",
+    "status": "Live",
+    "createdAt": "2026-06-25T10:37:22.742Z",
+    "contentColumns": [
+      [
+        {
+          "type": "heading",
+          "text": "A Worsening Crisis Prompts a National Water Mission"
+        },
+        {
+          "type": "paragraph",
+          "text": "India's freshwater availability is under severe stress due to overdependence on groundwater, rapid urban expansion, inefficient irrigation, and the worsening effects of climate change. Agriculture alone consumes nearly 78% of India's water, placing an immense burden on the country's limited resources. Recognising this growing crisis, the Government of India launched a mission-mode campaign, \"Catch the Rain\", under the larger umbrella of the Jal Shakti Abhiyan, to build a national movement for water conservation and sustainable water management."
+        },
+        {
+          "type": "paragraph",
+          "text": "The genesis of the campaign lies in the grim reality of India's water crisis. The country receives about 3,880 billion cubic metres (bcm) of rainfall annually, yet only 18% (699 bcm) is effectively used; the rest is lost to runoff and evaporation. Per capita water availability has plummeted from 5,000 m³ in 1951 to 1,500 m³ in 2011 and is projected to decline further to 1,140 m³ by 2050, approaching the internationally defined scarcity threshold. The 2019 NITI Aayog report painted a dire picture: over 75% of Indian households lacked access to drinking water on their premises, and India ranked 120th out of 122 countries in water quality."
+        },
+        {
+          "type": "paragraph",
+          "text": "Groundwater over-extraction had become rampant, particularly in northern states, and traditional water sources were disappearing at alarming rates. In response, the Ministry of Jal Shakti was formed in 2019 by merging the erstwhile water-related ministries. On July 1, 2019, the Jal Shakti Abhiyan was launched, targeting 256 water-stressed districts and 1,592 blocks categorised as over-exploited, critical, or semi-critical. The programme was envisioned as a Jan Andolan (people's movement), with strong community engagement supported by scientific planning and central oversight. Central teams collaborated with gram sabhas, youth clubs, local institutions, and panchayats to implement groundwater recharge through localised action plans using available water data."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Evolving Themes and Five Core Campaign Interventions"
+        },
+        {
+          "type": "paragraph",
+          "text": "Over the years, the campaign evolved with annual themes, expanding its scope and approach. The 2020 edition, under the impact of the COVID-19 pandemic, pivoted towards digital awareness campaigns and focused efforts in institutional settings like schools and defence establishments. In 2021, the campaign was officially rebranded as \"Jal Shakti Abhiyan: Catch the Rain\", launched by the Prime Minister on World Water Day (March 22). It was scaled nationwide, covering both rural and urban regions. Key components included the creation of rainwater harvesting structures, geo-tagging of water bodies, establishment of Jal Shakti Kendras, intensive afforestation, and community outreach, positioning it as a robust rainwater harvesting campaign aligned with the 2025 vision."
+        },
+        {
+          "type": "paragraph",
+          "text": "The campaign continued with refined themes in subsequent years. In 2023, the focus shifted to \"Source Sustainability for Drinking Water\", targeting 150 vulnerable districts under the Jal Jeevan Mission. In 2024, the theme \"Nari Shakti se Jal Shakti\" emphasised the vital role of women-led water management. Women's self-help groups and gram sabhas were empowered to lead water conservation efforts, especially in regions with critical groundwater levels. Most recently, in 2025, the campaign adopted the theme \"Jal Sanchay Jan Bhagidari: Jan Jagrukta Ki Or\", launched in Haryana on World Water Day. It promoted a more integrated ecological approach, \"Jal, Jangal, Jan\", linking sustainable water management with forest preservation and community empowerment across 148 critical districts."
+        },
+        {
+          "type": "paragraph",
+          "text": "The backbone of the campaign lies in its five key interventions:\n\n(1) Rainwater harvesting, involving the construction of check dams, rooftop systems, and recharge pits.\n\n(2) Water Body Rejuvenation, focusing on desilting and restoring over 25,400 traditional water bodies.\n\n(3) Borewell Recharge, with more than 71,100 structures built to lift groundwater recharge levels.\n\n(4) Watershed Development, implemented through 1.41 lakh+ projects to control runoff and soil erosion.\n\n(5) Afforestation, with over 89,400 nursery plantations to enhance water catchment infiltration.\n"
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Impact, Challenges, and the Path to Water Security"
+        },
+        {
+          "type": "paragraph",
+          "text": "Impact assessments from the Central Ground Water Board (2024) show significant improvements. Annual groundwater recharge increased to 446.90 BCM, while extraction dropped to 245.64 BCM. The proportion of aquifer blocks labelled \"safe\" rose from 62.6% to 73.4%, and the share of \"over-exploited\" blocks declined to 11.1%. Meanwhile, the campaign's digital component made strides with over 24.24 lakh water bodies geotagged and 671 Jal Shakti Kendras established for technical support and public engagement. Community involvement surged, with participation from 31,150 villages across 623 districts, backed by institutions like Nehru Yuva Kendra clubs and SHGs, highlighting scalable community solutions."
+        },
+        {
+          "type": "paragraph",
+          "text": "Further downstream effects of the campaign include infrastructure upgrades, with over 3 lakh recharge structures installed in public buildings. Cities and rural bodies began adopting rainwater harvesting-friendly bylaws, and the rainwater harvesting market itself is projected to grow from $90 million in 2024 to $184.46 million by 2033. Notably, the campaign also received a boost in transparency through real-time monitoring tools and remote sensing, a move that aligns with holistic sustainable water management principles."
+        },
+        {
+          "type": "paragraph",
+          "text": "Despite its success, the campaign has faced challenges. The COVID-19 pandemic interrupted on-ground mobilisation. In some regions, the lack of technical expertise and funding hampered implementation. Sustaining behavioural change remains a challenge; initial interest often wanes without ongoing Information, Education, and Communication (IEC) efforts. Coordinating across ministries and departments also presented logistical complexities, which are now being managed with digital dashboards and regular inter-agency reviews, ensuring targets stay on track.\n\nIn conclusion, \"Catch the Rain\" is more than a slogan; it represents a national shift towards water consciousness. It has transformed water management into a participatory, community-driven process rooted in science and tradition. As the campaign matures, it must now focus on deepening behavioural shifts, leveraging emerging technologies, and empowering local institutions, especially women-led groups, to ensure long-term water security. With collective commitment, India can truly transform rainfall into a sustainable resource for future generations, addressing the water crisis one district at a time.\n"
+        }
+      ]
+    ]
   }
 };
