@@ -81,12 +81,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "var-series",
-        "name": "VAR",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
-      },
-      {
         "id": "pos",
         "name": "POS",
         "category": "free-standing",
@@ -145,6 +139,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "REVA",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d6c1acd-771b-412e-25c8-64a908da5100/public"
+      },
+      {
+        "id": "var-series",
+        "name": "VAR",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -425,7 +425,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "status": "Live",
     "description": "TESTING 2",
-    "heroImage": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61c42426-6a67-4edf-2bf9-e45a4b8cad00/public",
     "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
     "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
