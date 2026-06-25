@@ -106,12 +106,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public"
       },
       {
-        "id": "reva",
-        "name": "REVA",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/978c8961-cf7f-4570-2b9b-e6e5838ed100/public"
-      },
-      {
         "id": "gsp",
         "name": "GSP",
         "category": "free-standing",
@@ -146,6 +140,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ROM.CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/067b3edc-d892-48f5-1e63-5e567c0a6d00/public"
+      },
+      {
+        "id": "reva",
+        "name": "REVA",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/978c8961-cf7f-4570-2b9b-e6e5838ed100/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -715,10 +715,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     ],
     "featuresList": [
       {
-        "title": "Water Options",
-        "description": "Chilled Hot Ambient"
-      },
-      {
         "title": "Robust & Durable Build",
         "description": "Constructed with premium Stainless Steel (SS-304) and corrosion-resistant GI, ensuring food-grade safety and long-lasting durability."
       },
@@ -780,9 +776,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "heroCtaText": "Contact Us",
     "heroCtaLink": "/contactus",
     "showcaseCtaText": "Enquire Now",
-    "showcaseCtaLink": "/enquiry",
+    "showcaseCtaLink": "Enquiry",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/REVA.pdf",
-    "datasheetPdf": "file:///C:/Users/WAE/Downloads/REVA.pdf",
+    "datasheetPdf": "",
     "variants": {
       "hot": true,
       "cold": true,
