@@ -39,8 +39,8 @@ export const WRITERS: Record<string, Writer> = {
     "id": "rehnuma-ansari",
     "name": "Rehnuma Ansari",
     "role": "Marketing",
-    "bio": "Ms. Rehnuma explores water conservation with a focus on groundwater, agriculture, and sustainability in India. With over 1.5 years of experience, her work connects research, policy context, and on-ground realities to frame water management.",
-    "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/509cf476-424a-4d69-4a02-9386d8358700/public",
+    "bio": "Ms. Rehnuma explores water conservation with a focus on groundwater, agriculture, and sustainability in India. With over 2 years of experience, her work connects research, policy context, and on-ground realities to frame water management.",
+    "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c461e8ff-aa17-445e-9531-3796a390e100/public",
     "link": "https://www.linkedin.com/in/rehnumashakir/"
   },
   "rashi-tarika": {
@@ -637,7 +637,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "id": "why-rapid-expansion-has-turned-monsoons-into-flood-and-drought-threats",
     "title": "Why Rapid Expansion Has Turned Monsoons into Flood and Drought Threats",
     "category": "Water conservation",
-    "description": "India's monsoon has shifted from a seasonal lifeline to a cycle of floods and droughts. This article explores how glacier retreat, urban sprawl, erratic rainfall, warming oceans, and rising seas have compounded over seven decades to destabilize the country's water systems.",
+    "description": "From retreating Himalayan glaciers to encroached rivers and rising seas, India's monsoon has transformed from a dependable lifeline into a force of extremes. This article traces seven decades of compounding environmental and urban change driving India's intensifying flood and drought cycle.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/509cf476-424a-4d69-4a02-9386d8358700/public",
     "writerId": "rehnuma-ansari",
     "readTime": "2 min read",
@@ -645,6 +645,10 @@ export const BLOGS: Record<string, BlogPost> = {
     "createdAt": "2026-06-25T06:46:58.754Z",
     "contentColumns": [
       [
+        {
+          "type": "heading",
+          "text": "Glaciers, Cities, and a Monsoon Turned Unpredictable"
+        },
         {
           "type": "paragraph",
           "text": "India's flood and drought challenges have not appeared overnight. The unpredictable behaviour of the monsoon is the result of decades of gradual yet significant geographical and climatic changes. From the retreat of Himalayan glaciers to the choking of rivers, from shifting rainfall patterns to warming oceans and rising seas, every part of the water cycle has been reshaped since the mid-twentieth century. These shifts have turned the monsoon from a dependable seasonal lifeline into a force that alternates between destructive floods and severe water shortages."
@@ -660,6 +664,10 @@ export const BLOGS: Record<string, BlogPost> = {
       ],
       [
         {
+          "type": "heading",
+          "text": "Shifting Rains, Warmer Oceans, and Rising Coastlines"
+        },
+        {
           "type": "paragraph",
           "text": "Rainfall itself has shifted significantly. Between 1950 and 2015, central India recorded a ~75% increase in extreme rainfall events of 150 millimetres or more in a day. At the same time, monsoon circulation weakened, partly because of aerosol pollution reducing solar heating over land. With a warmer atmosphere capable of holding more moisture, cloudbursts have become both frequent and intense. This change has created repeated cycles of flood and drought. India endured major droughts in 1965–66, 1972, 1987, 2002, 2009, and 2015, each interspersed with devastating floods. The monsoon, once a relatively predictable rhythm, now delivers excessive rainfall within a few days followed by extended dry periods."
         },
@@ -674,12 +682,20 @@ export const BLOGS: Record<string, BlogPost> = {
       ],
       [
         {
+          "type": "heading",
+          "text": "Urban Flood Damages and the Case for Restoration"
+        },
+        {
           "type": "paragraph",
           "text": "At the same time, India's cities have expanded at extraordinary speed. In 1950, only 17% of the population lived in urban areas; by 2025, the figure has doubled to 35%, and growth continues. Wetlands, floodplains, and recharge zones have been paved over, while drainage systems have not kept up with the sprawl. The consequences are evident. The 2015 Chennai floods, worsened by wetland loss, killed 300 people and caused $3 billion in damage. Just four years later, the same city endured its \"Day Zero\" drought, when reservoirs dried up. In 2023, Delhi experienced its worst Yamuna flood in 45 years, with damages estimated at ₹10,000 crore. The scientific \"7% per degree rule\" explains why: for every degree of warming, the atmosphere can hold 7% more moisture, making cloudbursts even more intense."
         },
         {
           "type": "paragraph",
-          "text": "The evidence is clear: India now faces the dual extremes of flooding and drought. This is not coincidence but the result of seven decades of compounded change. Glaciers are retreating, rivers are being choked, rainfall patterns have become erratic, oceans are warming, seas are rising, and cities are sprawling into fragile landscapes. Together, these forces have dismantled the natural buffers that once kept floods and droughts in balance.\nIf stability is to be restored, India must protect wetlands, restore aquifers, and design cities that respect water as a living system. Without such measures, the monsoon—once a symbol of renewal—will remain a season of uncertainty, marked by rising risks and difficult choices."
+          "text": "The evidence is clear: India now faces the dual extremes of flooding and drought. This is not coincidence but the result of seven decades of compounded change. Glaciers are retreating, rivers are being choked, rainfall patterns have become erratic, oceans are warming, seas are rising, and cities are sprawling into fragile landscapes. Together, these forces have dismantled the natural buffers that once kept floods and droughts in balance."
+        },
+        {
+          "type": "paragraph",
+          "text": "If stability is to be restored, India must protect wetlands, restore aquifers, and design cities that respect water as a living system. Without such measures, the monsoon, once a symbol of renewal, will remain a season of uncertainty, marked by rising risks and difficult choices."
         }
       ]
     ]
