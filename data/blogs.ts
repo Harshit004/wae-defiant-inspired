@@ -318,7 +318,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "The Ozone Crisis: A Success Story in Environmental Cooperation",
     "category": "Policy",
     "description": "It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fde382b6-dde0-4d2e-aa97-6fe9f0630700/public",
     "writerId": "aditi-sharma",
     "readTime": "2 min read",
     "status": "Live",
@@ -327,23 +327,83 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "paragraph",
-          "text": "It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth. In the late 20th century, scientists discovered that human-made chemicals, primarily chlorofluorocarbons (CFCs), were rapidly destroying this shield, creating a massive \"hole\" in the ozone layer over Antarctica."
+          "text": " It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth. This protective shield—the ozone layer—sits between 10 to 50 kilometres above the surface and has for millions of years absorbed nearly 97–99% of the Sun’s harmful ultraviolet-B (UV-B) radiation. Without it, the Earth’s ecosystems as we know them could not exist; plants would wither, animals would suffer, and human societies would be confronted with an unlivable environment. For centuries, the ozone layer carried out this essential role without fail, unobserved and often taken for granted. Yet, in the latter half of the 20th century, humanity unknowingly placed this silent guardian in unprecedented danger. What unfolded was not only an environmental crisis of global proportions but also one of the most compelling stories of scientific discovery, political will, and international cooperation in modern history."
+        },
+        {
+          "type": "heading",
+          "text": "A Silent Threat Uncovered"
         },
         {
           "type": "paragraph",
-          "text": "This revelation triggered global alarm. Without the ozone layer, harmful ultraviolet radiation would reach the surface, leading to a surge in skin cancers, cataracts, and catastrophic damage to marine and terrestrial ecosystems."
+          "text": "The crisis can be traced back to the mid-20th century, when industries embraced chlorofluorocarbons (CFCs)—compounds hailed as technological marvels. Non-toxic, non-flammable, and highly versatile, CFCs found their way into refrigerators, aerosol sprays, foam insulation, and countless consumer goods. For decades, they were marketed as the safest and most reliable chemicals ever developed. To the average consumer, there seemed to be no downside. Yet, in 1974, two atmospheric scientists, Mario Molina and Sherwood Rowland, presented a groundbreaking study that revealed an unsettling truth: once released, CFCs were not destroyed in the lower atmosphere but instead drifted upwards to the stratosphere. There, under the intense energy of solar ultraviolet radiation, they broke apart and released chlorine atoms."
+        },
+        {
+          "type": "paragraph",
+          "text": "The consequences of this reaction were staggering. Molina and Rowland showed that each chlorine atom had the potential to destroy up to 100,000 ozone molecules before being neutralized. In essence, every spray can, refrigerator, and industrial coolant was contributing to a slow and invisible unravelling of the atmospheric barrier that made life possible. At first, their findings were met with scepticism, as the threat seemed abstract and distant. The world had grown accustomed to equating progress with chemical innovation, and the idea that seemingly harmless household products could destabilize a planetary system felt implausible. But scepticism would not last long."
         }
       ],
       [
         {
+          "type": "heading",
+          "text": "The Shock of the Ozone Hole"
+        },
+        {
           "type": "paragraph",
-          "text": "What followed is widely regarded as the most successful environmental mobilization in human history. In 1987, the international community came together to sign the Montreal Protocol, a landmark agreement to phase out the production and consumption of ozone-depleting substances. The treaty was designed with flexibility, allowing it to be adjusted as scientific understanding evolved, and it provided financial assistance to help developing nations transition to safer alternatives."
+          "text": "In 1985, the warnings of Molina and Rowland were confirmed in the starkest possible way. Scientists from the British Antarctic Survey, led by Joseph Farman, reported a dramatic thinning of the ozone layer above Antarctica, a phenomenon that came to be known as the “ozone hole.” Satellite data corroborated their findings: during Antarctic spring, ozone concentrations had plummeted by more than 60%, leaving a gaping hole larger than the North American continent.\nThe implications were sobering and immediate. A weakened ozone shield meant an influx of ultraviolet radiation reaching the Earth’s surface. Scientists projected that a sustained 10% reduction in stratospheric ozone could result in an additional 300,000 cases of skin cancer and 1.6 million cases of cataracts each year worldwide. Agricultural studies indicated that key crops, such as soybeans, wheat, and maize—already vulnerable to climate variability—could suffer yield declines under heightened UV exposure. Equally alarming was the impact on oceans: phytoplankton, microscopic organisms at the base of the marine food chain, were shown to be highly sensitive to UV-B. Their decline threatened fisheries and marine biodiversity across the globe.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "What had once seemed like a remote scientific concern had become a planetary emergency. The ozone hole served as both a visual and statistical wake-up call, providing irrefutable evidence that human activity was destabilizing a vital atmospheric system."
+        },
+        {
+          "type": "heading",
+          "text": "The World Unites: The Montreal Protocol"
+        },
+        {
+          "type": "paragraph",
+          "text": "The response to the ozone crisis became a milestone in environmental diplomacy. In 1987, just two years after the ozone hole was discovered, nations of the world gathered to adopt the Montreal Protocol on Substances that Deplete the Ozone Layer. This landmark treaty called for the gradual phase-out of CFCs, halons, and other ozone-depleting substances. Unlike many international agreements that struggle to balance economic growth with environmental protection, the Montreal Protocol stood out for its clarity, enforceability, and universal participation."
+        },
+        {
+          "type": "paragraph",
+          "text": "Within just a few years, its achievements were unparalleled. The treaty became the only international environmental agreement to be ratified by every single one of the 198 UN member states. By 2010, nearly 100 of the most damaging chemicals had been phased out globally. The health benefits were extraordinary: the UN estimates that the Protocol has already prevented about 2 million cases of skin cancer every year and countless incidences of cataracts and immune system disorders. The economic savings, in terms of avoided healthcare costs and preserved agricultural productivity, are valued at trillions of dollars."
+        },
+        {
+          "type": "paragraph",
+          "text": "The treaty also demonstrated remarkable adaptability. Recognizing that the substitutes for CFCs—hydrofluorocarbons (HFCs)—though not ozone-depleting, were powerful greenhouse gases, world leaders adopted the Kigali Amendment in 2016. This linked ozone protection with climate change mitigation, showing how lessons from the ozone crisis could be leveraged to tackle broader planetary threats."
         }
       ],
       [
         {
+          "type": "heading",
+          "text": "Signs of Healing in the Sky"
+        },
+        {
           "type": "paragraph",
-          "text": "Today, the Montreal Protocol stands as a testament to what global cooperation can achieve. The ozone layer is steadily healing, with scientists predicting it could fully recover by the mid-21st century. This success story offers crucial lessons and a glimmer of hope as the world confronts the even larger challenge of global climate change."
+          "text": "Three decades after the signing of the Montreal Protocol, the results are measurable and optimistic. According to the 2022 Scientific Assessment of Ozone Depletion by the UN Environment Programme and the World Meteorological Organization, the ozone layer is on a path to recovery. If current policies are maintained:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "•\tThe Antarctic ozone hole is expected to close by around 2066.",
+            "•\tThe Arctic ozone layer should recover by 2045.",
+            "•\tMid-latitude regions, where the majority of humanity lives, are projected to recover by 2040."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Without the Montreal Protocol, UV radiation at the Earth’s surface could have risen by an estimated 20% by 2050. The resulting damage—to human health, agriculture, and ecosystems—would have been catastrophic. Instead, what we see now is the remarkable reversal of damage, a slow but steady healing of the sky that once seemed permanently scarred."
+        },
+        {
+          "type": "heading",
+          "text": "A Rare Victory in Environmental History"
+        },
+        {
+          "type": "paragraph",
+          "text": "The story of the ozone crisis is more than a narrative of scientific discovery and policy response—it is a testament to the potential of global cooperation in the face of existential threats. Human innovation created the problem, but human resolve provided the solution. From the pioneering work of Molina and Rowland to the stark revelations of the ozone hole, to the unprecedented unity of the Montreal Protocol, this story reveals the extraordinary power of science, diplomacy, and collective action when driven by urgency and shared purpose."
+        },
+        {
+          "type": "paragraph",
+          "text": "In an age where climate change, biodiversity loss, and pollution dominate the environmental agenda, the recovery of the ozone layer stands as a beacon of hope. It demonstrates that even the most complex environmental challenges can be met when nations act together with vision and determination. High above us, the slow healing of the ozone layer whispers a rare but profound truth: cooperation is not only possible—it is powerful enough to alter the course of planetary destiny."
         }
       ]
     ]
