@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export default function CookieConsent() {
+  const pathname = usePathname()
   const [isVisible, setIsVisible] = useState(false)
   const [acceptHovered, setAcceptHovered] = useState(false)
   const [necessaryHovered, setNecessaryHovered] = useState(false)
@@ -32,6 +34,7 @@ export default function CookieConsent() {
     setIsVisible(false)
   }
 
+  if (pathname?.startsWith("/admin") || pathname?.startsWith("/secret-cms-login")) return null
   if (!isVisible) return null
 
   return (
