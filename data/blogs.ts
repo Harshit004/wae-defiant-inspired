@@ -486,8 +486,8 @@ export const BLOGS: Record<string, BlogPost> = {
     "id": "industrial-revolution-to-the-carbon-age-how-we-got-there",
     "title": "Industrial Revolution to the carbon age, how we got there?",
     "category": "Climate Change & Water",
-    "description": "Test",
-    "heroImage": "https://ibb.co/b5Qv4HKW",
+    "description": "Explore how the Industrial Revolution created the Carbon Age, fueling climate change and shaping today's global shift toward renewable energy and sustainability.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d28f580b-c8fa-4f10-eddd-0801df6bf100/public",
     "writerId": "aditi-sharma",
     "readTime": "2 min read",
     "status": "Live",
@@ -496,19 +496,82 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "paragraph",
-          "text": "The story begins in the smoky heart of 18th-century England. Coal dust filled the air as the first every corner of the globe. What started as the Industrial Revolution an era of machines and mechanization quickly became something far more consequential: the dawn of the Carbon Age.\n\nIn the early 1700s, the world relied on wood, water wheels, and manual labour. But by the mid-18th century, coal became the fuel of progress. In Britain alone, coal production rose from 3 million tons in 1750 to over 290 million tons by 1913. It powered factories, locomotives, steamships, and cities. By 1800, James Watt’s steam engine had revolutionized industry, allowing humans to extract and burn fossil fuels on an unprecedented scale.\n"
+          "text": "The story begins in the smoky heart of 18th-century England. Coal dust filled the air as the first every corner of the globe. What started as the Industrial Revolution an era of machines and mechanization quickly became something far more consequential: the dawn of the Carbon Age."
+        },
+        {
+          "type": "paragraph",
+          "text": "In the early 1700s, the world relied on wood, water wheels, and manual labour. But by the mid-18th century, coal became the fuel of progress. In Britain alone, coal production rose from 3 million tons in 1750 to over 290 million tons by 1913. It powered factories, locomotives, steamships, and cities. By 1800, James Watt’s steam engine had revolutionized industry, allowing humans to extract and burn fossil fuels on an unprecedented scale.\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Yet, this technological leap came with an invisible cost one we wouldn’t fully grasp for nearly two centuries. Carbon dioxide (CO₂), a natural component of Earth’s atmosphere, began to accumulate. At the time, it was imperceptible. There were no satellites, no climate models, no atmospheric measurements. But the chemistry of coal combustion ensured that every ton burned was releasing CO₂ into the sky a silent alchemy with planetary consequences."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Second Industrial Revolution of the late 19th and early 20th centuries accelerated this trend. Oil and natural gas entered the scene. In 1900, global CO₂ emissions from fossil fuels were around 2 billion metric tons. By the 1950s, this had tripled. And then came the “Great Acceleration.” Between 1950 and 2020, humanity emitted more carbon than in all previous history combined"
         }
       ],
       [
         {
           "type": "paragraph",
-          "text": "Yet, this technological leap came with an invisible cost one we wouldn’t fully grasp for nearly two centuries. Carbon dioxide (CO₂), a natural component of Earth’s atmosphere, began to accumulate. At the time, it was imperceptible. There were no satellites, no climate models, no atmospheric measurements. But the chemistry of coal combustion ensured that every ton burned was releasing CO₂ into the sky a silent alchemy with planetary consequences.\nThe Second Industrial Revolution of the late 19th and early 20th centuries accelerated this trend. Oil and natural gas entered the scene. In 1900, global CO₂ emissions from fossil fuels were around 2 billion metric tons. By the 1950s, this had tripled. And then came the “Great Acceleration.” Between 1950 and 2020, humanity emitted more carbon than in all previous history combined. In 2022 alone, fossil fuel emissions reached an all-time high of 36.6 billion metric tons, according to the Global Carbon Project.\nAs energy systems globalized, so too did their impacts. The Keeling Curve—a simple graph of atmospheric CO₂ concentrations started in 1958 offered the first clear warning. From 315 parts per million (ppm) then, we now stand at 423 ppm in 2024, a level not seen in at least 800,000 years, confirmed through Antarctic ice core data. These numbers are not just abstract science. They translate into rising global temperatures, sea level rise, and ecological shifts.\nThe Earth, once in equilibrium, is now in flux.\n"
+          "text": "In 2022 alone, fossil fuel emissions reached an all-time high of 36.6 billion metric tons, according to the Global Carbon Project."
+        },
+        {
+          "type": "heading",
+          "text": "As energy systems globalized, so too did their impacts. "
+        },
+        {
+          "type": "paragraph",
+          "text": "The Keeling Curve—a simple graph of atmospheric CO₂ concentrations started in 1958 offered the first clear warning. From 315 parts per million (ppm) then, we now stand at 423 ppm in 2024, a level not seen in at least 800,000 years, confirmed through Antarctic ice core data. These numbers are not just abstract science. They translate into rising global temperatures, sea level rise, and ecological shifts."
+        },
+        {
+          "type": "heading",
+          "text": "The Earth, once in equilibrium, is now in flux."
+        },
+        {
+          "type": "paragraph",
+          "text": "Global average surface temperatures have increased by 1.2°C since pre-industrial levels, and if current emission trends continue, we are on track for 2.4–2.8°C of warming by 2100, well beyond the Paris Agreement's target of 1.5°C. Sea levels have risen by 23 cm since 1880, and satellite data show a current rate of about 3.3 mm per year, with acceleration expected as polar ice continues to melt."
+        },
+        {
+          "type": "paragraph",
+          "text": "The consequences are visible across continents. The Arctic is warming four times faster than the rest of the world. Greenland alone is losing 270 billion tons of ice annually, contributing significantly to sea level rise. Glaciers are retreating from the Alps to the Andes. Wildfires have intensified: 2023 saw Canada experience its worst wildfire season on record, burning more than 18.5 million hectares. Meanwhile, floods in Pakistan in 2022 displaced over 33 million people, "
         }
       ],
       [
         {
           "type": "paragraph",
-          "text": "Global average surface temperatures have increased by 1.2°C since pre-industrial levels, and if current emission trends continue, we are on track for 2.4–2.8°C of warming by 2100, well beyond the Paris Agreement's target of 1.5°C. Sea levels have risen by 23 cm since 1880, and satellite data show a current rate of about 3.3 mm per year, with acceleration expected as polar ice continues to melt.\nThe consequences are visible across continents. The Arctic is warming four times faster than the rest of the world. Greenland alone is losing 270 billion tons of ice annually, contributing significantly to sea level rise. Glaciers are retreating from the Alps to the Andes. Wildfires have intensified: 2023 saw Canada experience its worst wildfire season on record, burning more than 18.5 million hectares. Meanwhile, floods in Pakistan in 2022 displaced over 33 million people, illustrating how climate events are growing in both frequency and ferocity.\nClimate is no longer a future concern it is a lived reality.\nBut history doesn’t end in despair. Humanity is beginning to respond.\nRenewable energy is scaling faster than ever before. Solar PV and wind together accounted for 12% of global electricity generation in 2023, with solar capacity alone growing by over 24% year-on-year. According to the International Energy Agency (IEA), renewables could supply almost 50% of global electricity by 2030 if current momentum continues. Electric vehicles (EVs) crossed the milestone of over 14 million global sales in 2023, nearly 20% of total car sales.\nPolicies are shifting too. Over 90 countries have net-zero commitments. The EU’s Green Deal, India’s push for solar under the International Solar Alliance, and China’s carbon neutrality target by 2060 all signal a geopolitical reorientation toward sustainability.\nThis era is a reckoning but also an opportunity.\nThe same industrial engine that powered human progress now demands a reimagination. From grey infrastructure to green resilience, from extractive growth to circular economies, from fossil dependence to regenerative design this is the pivot point.\nWe arrived here over centuries, powered by coal, oil, and ambition. But now, in this decisive decade, the path forward will depend on collective will, technological innovation, and ecological consciousness. Because while the Carbon Age has shaped the past 250 years, the next chapter will be written not in emissions but in solutions.\nAnd that story is just beginning.\n"
+          "text": "illustrating how climate events are growing in both frequency and ferocity."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Climate is no longer a future concern it is a lived reality.",
+            "But history doesn’t end in despair. Humanity is beginning to respond."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Renewable energy is scaling faster than ever before. Solar PV and wind together accounted for 12% of global electricity generation in 2023, with solar capacity alone growing by over 24% year-on-year. According to the International Energy Agency (IEA), renewables could supply almost 50% of global electricity by 2030 if current momentum continues. Electric vehicles (EVs) crossed the milestone of over 14 million global sales in 2023, nearly 20% of total car sales."
+        },
+        {
+          "type": "paragraph",
+          "text": "Policies are shifting too. Over 90 countries have net-zero commitments. The EU’s Green Deal, India’s push for solar under the International Solar Alliance, and China’s carbon neutrality target by 2060 all signal a geopolitical reorientation toward sustainability."
+        },
+        {
+          "type": "heading",
+          "text": "This era is a reckoning but also an opportunity."
+        },
+        {
+          "type": "paragraph",
+          "text": "The same industrial engine that powered human progress now demands a reimagination. From grey infrastructure to green resilience, from extractive growth to circular economies, from fossil dependence to regenerative design this is the pivot point."
+        },
+        {
+          "type": "paragraph",
+          "text": "We arrived here over centuries, powered by coal, oil, and ambition. But now, in this decisive decade, the path forward will depend on collective will, technological innovation, and ecological consciousness. Because while the Carbon Age has shaped the past 250 years, the next chapter will be written not in emissions but in solutions."
+        },
+        {
+          "type": "paragraph",
+          "text": "And that story is just beginning."
         }
       ]
     ]
