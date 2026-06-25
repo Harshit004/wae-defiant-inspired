@@ -1076,7 +1076,7 @@ export default function Home() {
         {/* Background Image (Buildings) */}
         <div className="absolute top-0 right-0 h-full w-auto opacity-80 pointer-events-none select-none z-0">
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/084ce471-4fdc-42c1-261a-44e4abcc7a00/publichttps://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/084ce471-4fdc-42c1-261a-44e4abcc7a00/public"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9ec5b38-f695-4ed8-3ef9-ce1a6da6e600/public"
             alt="Impact Background"
             width={1000}
             height={1000}
