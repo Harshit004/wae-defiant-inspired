@@ -99,12 +99,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
       },
       {
-        "id": "assistflow",
-        "name": "ASSISTFLOW",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c549c9bc-8af7-41f6-03d5-8c0078e9dd00/public"
-      },
-      {
         "id": "enki",
         "name": "ENKI",
         "category": "free-standing",
@@ -145,6 +139,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "REVA",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d6c1acd-771b-412e-25c8-64a908da5100/public"
+      },
+      {
+        "id": "assistflow",
+        "name": "ASSISTFLOW",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c549c9bc-8af7-41f6-03d5-8c0078e9dd00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -887,18 +887,18 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   "assistflow": {
     "id": "assistflow",
     "name": "ASSISTFLOW",
-    "categoryName": "Drinking water station - BLUWAE",
-    "heroSubtitle": "Powerful LED sterilization",
+    "categoryName": "Drinking Water Station - BLUWAE",
+    "heroSubtitle": "",
     "status": "Live",
     "description": "Information regarding WAE series drinking water dispensers and advanced purification modules.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/78cde953-1b2b-48db-0aaa-eaf393a09d00/public",
+    "heroImage": "",
     "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
-    "heroSubtext": "Experience on-demand",
+    "heroSubtext": "Sustainability at Core",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "#product-showcase",
     "showcaseCtaText": "Enquire Now",
-    "showcaseCtaLink": "#",
-    "brochurePdf": "/brochure-download.pdf",
+    "showcaseCtaLink": "",
+    "brochurePdf": "",
     "variants": {
       "hot": true,
       "cold": true,
@@ -923,7 +923,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       {
         "title": "Effortless integration",
         "description": "Seamlessly connects with carbonated beverage dispensers\nand coffee/tea vending machines for a versatile, all-in-one solution.",
-        "isDisplayed": true
+        "isDisplayed": false
       },
       {
         "title": "Touch-free convenience",
@@ -933,7 +933,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       {
         "title": "American disabilities act",
         "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.",
-        "isDisplayed": false
+        "isDisplayed": true
       },
       {
         "title": "Designed for everyone",
