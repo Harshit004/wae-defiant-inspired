@@ -330,7 +330,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "var-series",
     "name": "VAR",
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "TESTING1",
     "images": [
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7d1aa69a-f330-42cb-02ea-1e8fdf93a600/public",
@@ -419,7 +419,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "pointOfUseSterilization": "Germ Guardian™"
     },
     "status": "Live",
-    "description": "For instance, a 100 LPH machine operating continuously for 8 hours will produce 800 liters of\nwater daily, amounting to 17,600 liters over a month.",
+    "description": "TESTING 2",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1721fb80-1e3a-4d46-604d-681f72314600/public",
     "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
     "heroSubtext": "Sustainability at Core",
