@@ -239,12 +239,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "piper",
-        "name": "Piper",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f1d3b640-01ba-420a-bf17-b3145d223d00/public",
-        "category": "counter-top"
-      },
-      {
         "id": "trx.tl",
         "name": "TRX.TL",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e84e2022-b6ea-4f34-bb4d-3deb20d69700/public",
@@ -267,6 +261,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "INDUS",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a435208b-076d-4a5d-6c93-9c3286214800/public"
+      },
+      {
+        "id": "piper",
+        "name": "PIPER",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9e29753-4917-4d6c-17ce-21f1ae145500/public"
       }
     ]
   },
@@ -1782,61 +1782,86 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   },
   "piper": {
     "id": "piper",
-    "name": "Piper",
+    "name": "PIPER",
     "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e4aee070-6aa9-430d-5009-f51a13b48800/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/55199965-30ce-4ef8-abf9-78a654bd3b00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/576c6473-9649-4eee-e31c-0e4ee5cc0d00/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9e29753-4917-4d6c-17ce-21f1ae145500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/468bfac5-bcc4-4510-8520-a512a5348500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/339bfbc9-12b2-439f-4946-6b3415666500/public"
     ],
     "featuresList": [
       {
-        "title": "Powerful LED Powerful LED Sterilization",
+        "title": "Push-Button Operation",
+        "description": "Enjoy 24*7 pure water with just a button, providing an exceptional hydration experience.",
+        "isDisplayed": true
+      },
+      {
+        "title": "American Disabilities Act",
+        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
         "isDisplayed": true
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
-        "isDisplayed": true
+        "title": "Braille & Color Blind Friendly",
+        "description": "Features Braille and high-\ncontrast colors for easy, inclusive use.",
+        "isDisplayed": false
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor",
-        "isDisplayed": true
+        "title": "Built to Last",
+        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability, long term value and zero to landfill.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
+          "variant": "PIPER",
+          "hot": "7",
+          "cold": "7",
+          "ambient": "7"
         }
       ],
       "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "greenCertification": "Conrms to green product certication, low discharge faucets : 1.5 LPM",
       "dripTray": "1000ml",
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
+          "variant": "PIPER",
           "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
+          "height": "300mm",
+          "width": "-",
+          "depth": "-"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "powerRequirement": "Hertz 50/Volts 230-240",
       "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
-      "pointOfUseSterilization": "Germ Guardian™"
+      "pointOfUseSterilization": "-"
     },
-    "status": "Live"
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d79071da-5dea-4d76-dd36-4d27a0e51e00/public",
+    "heroTagline": "Amalgamation of Hydration & Sustainability",
+    "heroSubtext": "The Next Generation of Hydration Systems",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/PIPER.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
   },
   "moses": {
     "id": "moses",
