@@ -263,12 +263,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "counter-top"
       },
       {
-        "id": "moses",
-        "name": "Moses",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e1ab0b09-5a47-41c8-eca8-f74bb2ab8b00/public",
-        "category": "counter-top"
-      },
-      {
         "id": "trx.tl",
         "name": "TRX.TL",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e84e2022-b6ea-4f34-bb4d-3deb20d69700/public",
@@ -279,6 +273,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "HKN",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5bc0586-0b79-4993-379a-53eb5a494700/public"
+      },
+      {
+        "id": "moses",
+        "name": "Moses",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/386b4db5-361c-473a-78b8-51358994ad00/public"
       }
     ]
   },
@@ -1970,59 +1970,84 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "moses",
     "name": "Moses",
     "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8440a366-f65d-40b0-7b2c-582ad7f8cc00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47b3d27b-b65b-4e94-26d1-ac8bb35afd00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a6c1075-ac97-4c46-d1b9-42d3b6d82900/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/386b4db5-361c-473a-78b8-51358994ad00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/17d98d5a-8865-49ad-ef19-b98391dd0d00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e8c2102-be97-48af-0e9a-e6910fe03e00/public"
     ],
     "featuresList": [
       {
-        "title": "Powerful LED Powerful LED Sterilization",
+        "title": "Push-Button Operation",
+        "description": "Enjoy 24*7 pure water with just a button, providing an exceptional hydration experience.",
+        "isDisplayed": true
+      },
+      {
+        "title": "American Disabilities Act",
+        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
         "isDisplayed": true
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
-        "isDisplayed": true
+        "title": "Braille & Color Blind Friendly",
+        "description": "Features Braille and high- contrast colors for easy, inclusive use.",
+        "isDisplayed": false
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor",
-        "isDisplayed": true
+        "title": "Built to Last",
+        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability, long term value and zero to landfill.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
+          "variant": "MOSES",
+          "hot": "7",
+          "cold": "7",
+          "ambient": "7"
         }
       ],
       "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "1000ml",
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
+          "variant": "MOSES",
           "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
+          "height": "300mm",
+          "width": "-",
+          "depth": "-"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "powerRequirement": "Hertz 50/Volts 230-240",
       "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
-      "pointOfUseSterilization": "Germ Guardian™"
+      "pointOfUseSterilization": "-"
     },
-    "status": "Live"
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d79071da-5dea-4d76-dd36-4d27a0e51e00/public",
+    "heroTagline": "Amalgamation of Hydration & Sustainability",
+    "heroSubtext": "The Next Generation of Hydration Systems",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/MOSES.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
   },
   "trx.tl": {
     "id": "trx.tl",
