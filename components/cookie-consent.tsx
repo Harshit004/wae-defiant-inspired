@@ -137,7 +137,7 @@ export default function CookieConsent() {
             fontFamily: "'Manrope', sans-serif",
             fontWeight: 400,
             fontSize: "16px",
-            lineHeight: "100%",
+            lineHeight: "130%",
             letterSpacing: "0%",
             verticalAlign: "middle",
             color: "#AEAEAE",

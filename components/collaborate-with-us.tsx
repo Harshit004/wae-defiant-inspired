@@ -16,9 +16,9 @@ const CollaborateWithUs: React.FC<CollaborateWithUsProps> = ({ introText }) => {
     formData.append('pageUrl', pageUrl);
 
     const urlSearchParams = new URLSearchParams();
-    for (const [key, value] of formData.entries()) {
+    formData.forEach((value, key) => {
       urlSearchParams.append(key, value as string);
-    }
+    });
 
     const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxb3RywLHPRbyFITG58mPfv4nTsrRwKCx-9f131o9oaEcGt5dIDzaq-6EwQ00XTnif3Ig/exec';
 

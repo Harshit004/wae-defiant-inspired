@@ -60,6 +60,7 @@ export default function EditProductPage({ params }: EditProductProps) {
   // Up to 4 images
   const [images, setImages] = useState<string[]>(["", "", "", ""])
   const [displayImageIndex, setDisplayImageIndex] = useState<number>(0)
+  const [hoverImageIndex, setHoverImageIndex] = useState<number | null>(null)
 
   // Features List
   const [featuresList, setFeaturesList] = useState<FeatureItem[]>([])
@@ -89,6 +90,7 @@ export default function EditProductPage({ params }: EditProductProps) {
   const [showcaseCtaText, setShowcaseCtaText] = useState("")
   const [showcaseCtaLink, setShowcaseCtaLink] = useState("")
   const [brochurePdf, setBrochurePdf] = useState("")
+  const [datasheetPdf, setDatasheetPdf] = useState("")
   const [hasHot, setHasHot] = useState(true)
   const [hasCold, setHasCold] = useState(true)
   const [hasAmbient, setHasAmbient] = useState(true)
@@ -129,9 +131,12 @@ export default function EditProductPage({ params }: EditProductProps) {
             }
             setImages(paddedImages.slice(0, 4))
 
-            // Set display image index
+            // Set display and hover image index
             const savedDisplayIndex = prod.displayImageIndex !== undefined ? prod.displayImageIndex : 0
             setDisplayImageIndex(savedDisplayIndex)
+            
+            const savedHoverIndex = prod.hoverImageIndex !== undefined ? prod.hoverImageIndex : null
+            setHoverImageIndex(savedHoverIndex)
 
             // Features List
             setFeaturesList(prod.featuresList || [])
@@ -162,6 +167,7 @@ export default function EditProductPage({ params }: EditProductProps) {
             setShowcaseCtaText(prod.showcaseCtaText || "")
             setShowcaseCtaLink(prod.showcaseCtaLink || "")
             setBrochurePdf(prod.brochurePdf || "")
+            setDatasheetPdf(prod.datasheetPdf || "")
             
             const variants = prod.variants || { hot: true, cold: true, ambient: true }
             setHasHot(variants.hot !== false)
@@ -210,9 +216,9 @@ export default function EditProductPage({ params }: EditProductProps) {
     setIsDirty(true)
   }
 
-  const handleFeatureChange = (index: number, field: "title" | "description", val: string) => {
+  const handleFeatureChange = (index: number, field: "title" | "description" | "isDisplayed", val: string | boolean) => {
     const updated = [...featuresList]
-    updated[index][field] = val
+    updated[index] = { ...updated[index], [field]: val }
     setFeaturesList(updated)
     setIsDirty(true)
   }
@@ -356,6 +362,7 @@ export default function EditProductPage({ params }: EditProductProps) {
         heroSubtitle: heroSubtitle.trim(),
         images: activeImages,
         displayImageIndex: finalDisplayImageIndex,
+        hoverImageIndex,
         featuresList: activeFeatures,
         specifications: {
           storageCapacity: activeStorage,
@@ -381,6 +388,7 @@ export default function EditProductPage({ params }: EditProductProps) {
         showcaseCtaText: showcaseCtaText?.trim() || "",
         showcaseCtaLink: showcaseCtaLink?.trim() || "",
         brochurePdf: brochurePdf?.trim() || "",
+        datasheetPdf: datasheetPdf?.trim() || "",
         variants: {
           hot: hasHot,
           cold: hasCold,
@@ -773,6 +781,45 @@ export default function EditProductPage({ params }: EditProductProps) {
                       No images loaded. Enter Cloudflare image CDN links above to preview.
                     </div>
                   )}
+                </div>
+              </div>
+              
+              {/* Select Hover Image */}
+              <div className="mt-6 border-t border-white/5 pt-6">
+                <label className="block text-sm text-gray-400 mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                  Select Hover Image <span className="text-xs text-gray-500 ml-2">(Image to display on mouse hover)</span>
+                </label>
+                <div className="flex flex-wrap gap-4">
+                  <label className="flex items-center gap-2 cursor-pointer group">
+                    <div className="relative flex items-center justify-center">
+                      <input
+                        type="radio"
+                        name="hoverImageIndex"
+                        checked={hoverImageIndex === null}
+                        onChange={() => { setHoverImageIndex(null); setIsDirty(true); }}
+                        className="peer sr-only"
+                      />
+                      <div className="w-4 h-4 rounded-full border border-white/20 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-colors"></div>
+                    </div>
+                    <span className="text-sm text-gray-400 group-hover:text-white transition-colors">None</span>
+                  </label>
+
+                  {images.map((img, idx) => (
+                    <label key={idx} className={`flex items-center gap-2 cursor-pointer group ${!img && "opacity-50 pointer-events-none"}`}>
+                      <div className="relative flex items-center justify-center">
+                        <input
+                          type="radio"
+                          name="hoverImageIndex"
+                          checked={hoverImageIndex === idx}
+                          onChange={() => { setHoverImageIndex(idx); setIsDirty(true); }}
+                          disabled={!img}
+                          className="peer sr-only"
+                        />
+                        <div className="w-4 h-4 rounded-full border border-white/20 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-colors"></div>
+                      </div>
+                      <span className="text-sm text-gray-400 group-hover:text-white transition-colors">Image {idx + 1}</span>
+                    </label>
+                  ))}
                 </div>
               </div>
 

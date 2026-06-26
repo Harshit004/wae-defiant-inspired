@@ -3,6 +3,8 @@ export interface Product {
   name: string;
   category: string;
   image: string;
+  hoverImage?: string | null;
+  displayOrder?: number;
 }
 
 export interface CategoryData {
@@ -67,6 +69,8 @@ export interface ProductDetails {
     ambient: boolean;
   };
   displayImageIndex?: number;
+  hoverImageIndex?: number | null;
+  displayOrder?: number;
 }
 
 export const CATEGORIES: Record<string, CategoryData> = {

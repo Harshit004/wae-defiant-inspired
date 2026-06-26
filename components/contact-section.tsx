@@ -41,9 +41,9 @@ const ContactSection = () => {
     // Convert FormData to a plain object or URLSearchParams for sending
     // URLSearchParams is often easier for simple key-value pairs in POST requests
     const urlSearchParams = new URLSearchParams();
-    for (const [key, value] of formData.entries()) {
-        urlSearchParams.append(key, value as string); // Ensure value is string
-    }
+    formData.forEach((value, key) => {
+        urlSearchParams.append(key, value as string);
+    });
 
     // Replace with your deployed Google Apps Script Web app URL
     const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxb3RywLHPRbyFITG58mPfv4nTsrRwKCx-9f131o9oaEcGt5dIDzaq-6EwQ00XTnif3Ig/exec';

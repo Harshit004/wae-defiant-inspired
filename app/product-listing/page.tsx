@@ -145,12 +145,11 @@ function ProductListingContent() {
         setActiveFilter("all")
     }, [categoryId])
 
-    // Filter products by category and search
     const filteredProducts = currentCategory.products.filter(p => {
         const matchesCategory = activeFilter === "all" || p.category === activeFilter;
         const matchesSearch = !productSearchQuery || p.name.toLowerCase().includes(productSearchQuery.toLowerCase());
         return matchesCategory && matchesSearch;
-    });
+    }).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
 
     // Get unique mounting types for tabs
     const uniqueMountingTypes = Array.from(new Set(currentCategory.products.map(p => p.category)));
@@ -393,8 +392,16 @@ function ProductListingContent() {
                                                             src={product.image}
                                                             alt={product.name}
                                                             fill
-                                                            className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                                                            className={`object-cover transition-all duration-700 ease-in-out ${product.hoverImage ? 'group-hover:opacity-0' : 'group-hover:scale-110'}`}
                                                         />
+                                                        {product.hoverImage && (
+                                                            <Image
+                                                                src={product.hoverImage}
+                                                                alt={`${product.name} hover`}
+                                                                fill
+                                                                className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
+                                                            />
+                                                        )}
                                                     </div>
                                                     <p style={{
                                                         fontFamily: "'Inter Tight', sans-serif",

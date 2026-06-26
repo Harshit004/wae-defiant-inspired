@@ -58,6 +58,8 @@ export async function writeDB(state: DBState): Promise<void> {
   name: string;
   category: string;
   image: string;
+  hoverImage?: string | null;
+  displayOrder?: number;
 }
 
 export interface CategoryData {
@@ -122,6 +124,8 @@ export interface ProductDetails {
     ambient: boolean;
   };
   displayImageIndex?: number;
+  hoverImageIndex?: number | null;
+  displayOrder?: number;
 }
 
 export const CATEGORIES: Record<string, CategoryData> = ${JSON.stringify(state.categories, null, 2)};

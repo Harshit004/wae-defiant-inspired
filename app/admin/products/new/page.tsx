@@ -53,6 +53,7 @@ export default function NewProductPage() {
   // Up to 4 images
   const [images, setImages] = useState<string[]>(["", "", "", ""])
   const [displayImageIndex, setDisplayImageIndex] = useState<number>(0)
+  const [hoverImageIndex, setHoverImageIndex] = useState<number | null>(null)
 
   // Features List
   const [featuresList, setFeaturesList] = useState<FeatureItem[]>([
@@ -88,6 +89,7 @@ export default function NewProductPage() {
   const [showcaseCtaText, setShowcaseCtaText] = useState("")
   const [showcaseCtaLink, setShowcaseCtaLink] = useState("")
   const [brochurePdf, setBrochurePdf] = useState("")
+  const [datasheetPdf, setDatasheetPdf] = useState("")
   const [hasHot, setHasHot] = useState(true)
   const [hasCold, setHasCold] = useState(true)
   const [hasAmbient, setHasAmbient] = useState(true)
@@ -147,9 +149,9 @@ export default function NewProductPage() {
     setIsDirty(true)
   }
 
-  const handleFeatureChange = (index: number, field: "title" | "description", val: string) => {
+  const handleFeatureChange = (index: number, field: "title" | "description" | "isDisplayed", val: string | boolean) => {
     const updated = [...featuresList]
-    updated[index][field] = val
+    updated[index] = { ...updated[index], [field]: val }
     setFeaturesList(updated)
     setIsDirty(true)
   }
@@ -263,6 +265,7 @@ export default function NewProductPage() {
         heroSubtitle: heroSubtitle.trim(),
         images: activeImages,
         displayImageIndex: finalDisplayImageIndex,
+        hoverImageIndex,
         featuresList: activeFeatures,
         specifications: {
           storageCapacity: activeStorage,
@@ -1150,6 +1153,45 @@ export default function NewProductPage() {
                   >
                     Confirm
                   </button>
+                </div>
+              </div>
+              
+              {/* Select Hover Image */}
+              <div className="mt-6 border-t border-white/5 pt-6">
+                <label className="block text-sm text-gray-400 mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                  Select Hover Image <span className="text-xs text-gray-500 ml-2">(Image to display on mouse hover)</span>
+                </label>
+                <div className="flex flex-wrap gap-4">
+                  <label className="flex items-center gap-2 cursor-pointer group">
+                    <div className="relative flex items-center justify-center">
+                      <input
+                        type="radio"
+                        name="hoverImageIndex"
+                        checked={hoverImageIndex === null}
+                        onChange={() => setHoverImageIndex(null)}
+                        className="peer sr-only"
+                      />
+                      <div className="w-4 h-4 rounded-full border border-white/20 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-colors"></div>
+                    </div>
+                    <span className="text-sm text-gray-400 group-hover:text-white transition-colors">None</span>
+                  </label>
+
+                  {images.map((img, idx) => (
+                    <label key={idx} className={`flex items-center gap-2 cursor-pointer group ${!img && "opacity-50 pointer-events-none"}`}>
+                      <div className="relative flex items-center justify-center">
+                        <input
+                          type="radio"
+                          name="hoverImageIndex"
+                          checked={hoverImageIndex === idx}
+                          onChange={() => setHoverImageIndex(idx)}
+                          disabled={!img}
+                          className="peer sr-only"
+                        />
+                        <div className="w-4 h-4 rounded-full border border-white/20 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-colors"></div>
+                      </div>
+                      <span className="text-sm text-gray-400 group-hover:text-white transition-colors">Image {idx + 1}</span>
+                    </label>
+                  ))}
                 </div>
               </div>
             </div>

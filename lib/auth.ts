@@ -52,7 +52,7 @@ export async function createSessionToken(email: string, role: string): Promise<s
 
   const key = await getCryptoKey();
   const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(data));
-  const signatureB64 = btoa(String.fromCharCode(...new Uint8Array(signature)))
+  const signatureB64 = btoa(Array.from(new Uint8Array(signature)).map(b => String.fromCharCode(b)).join(''))
     .replace(/\+/g, '-')
     .replace(/\//g, '_')
     .replace(/=/g, '');

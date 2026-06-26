@@ -145,14 +145,14 @@ const Home: FC = () => {
   const purposeVanish = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]);
   const finalPurposeOpacity = useTransform(
     [purposeOpacity, purposeVanish],
-    ([pO, pV]) => pO * pV
+    ([pO, pV]: any[]) => (pO as number) * (pV as number)
   );
   const indiaY = useTransform(scrollYProgress, [0.35, 0.55], ["100%", "0%"]);
   const indiaOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
   const indiaVanish = useTransform(scrollYProgress, [0.55, 0.65], [1, 0]);
   const finalIndiaOpacity = useTransform(
     [indiaOpacity, indiaVanish],
-    ([iO, iV]) => iO * iV
+    ([iO, iV]: any[]) => (iO as number) * (iV as number)
   );
 
   // Menu items arrays and tagline words (for animation if needed)
