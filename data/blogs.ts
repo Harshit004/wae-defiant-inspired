@@ -2558,111 +2558,35 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "heading",
-          "text": "The Imperative of Metrics: Why Numbers Drive Change\n"
+          "text": "\"Jalam Eva Jivanasya Mulam- Water is the root of life.\"\n- Classical Sanskrit Thought"
         },
         {
           "type": "paragraph",
-          "text": "Water, in its essence, is life. It carves valleys, nourishes crops, and sustains every living being. Yet, in the dance of progress, it often becomes an afterthought — polluted, overextracted, or wasted.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "The United Nations' Sustainable Development Goals serve as a beacon, guiding humanity towards a harmonious existence with nature. Among these, SDG 6, Clean Water and Sanitation, stands as a critical pillar — offering a roadmap for corporations to align their operations with global sustainability aspirations.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "In the realm of sustainability, metrics are the compass by which progress is measured. They transform abstract goals into tangible outcomes, providing a clear framework for action. Without robust data, strategies remain speculative, and accountability becomes elusive.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "These metrics are not mere numbers; they are the language through which businesses communicate their commitment to a sustainable future. The SDGs, with their specific targets, offer a structured approach for corporates to assess their environmental impact, identify areas for improvement, and demonstrate transparency to stakeholders.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "SDG 6 aims to ensure the availability and sustainable management of water and sanitation for all by 2030. As of 2022, approximately 74% of the global population had access to safely managed drinking water services, and 57% had access to safely managed sanitation services.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Target 6.2: By 2030, achieve access to adequate and equitable sanitation and hygiene for all and end open defecation. In urban India, 70% of wastewater is released untreated into the environment, posing significant public health risks.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Target 6.3: By 2030, improve water quality by reducing pollution, eliminating dumping, and minimising release of hazardous chemicals. As 785 million people still lacked even basic drinking water services in 2017, this remains a pressing concern.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Target 6.4: By 2030, substantially increase water-use efficiency across all sectors. Between 2000 and 2017, the proportion of the global population using safely managed drinking water increased from 61 per cent to 71 per cent — a sign of progress, though much remains to be done.\n"
+          "text": "Water, in its essence, is life. It carves valleys, nourishes crops, and sustains every living being. Yet, in the dance of progress, it often becomes an afterthought, polluted, overextracted, or wasted.\n\nThe United Nations' Sustainable Development Goals (SDGs) serve as a beacon, guiding humanity towards a harmonious existence with nature.\n\nAmong these, SDG 6, Clean Water and Sanitation stands as a critical pillar. It not only highlights the challenges but also offers a roadmap for corporations to align their operations with global sustainability aspirations.\n\nThe Imperative of Metrics: From Measurement to Meaning\nIn the realm of sustainability, metrics are the compass by which progress is measured. They transform abstract goals into tangible outcomes, providing a clear framework for action. Without robust data, strategies remain speculative, and accountability becomes elusive. The SDGs, with their specific targets, offer a structured approach for corporates to assess their environmental impact, identify areas for improvement, and demonstrate transparency to stakeholders.\n\nThese metrics are not mere numbers; they are the language through which businesses communicate their commitment to a sustainable future.\n\nSDG 6 Targets & Figures: When Numbers Nurture Change\nSDG 6 aims to ensure the availability and sustainable management of water and sanitation for all by 2030. This goal encompasses various targets that corporates can leverage to assess and enhance their water-related practices.\n\nTarget 6.1: Safe and Affordable Drinking Water\nBy 2030, achieve universal and equitable access to safe and affordable drinking water for all. As of 2022, approximately 74% of the global population had access to safely managed drinking water services, and 57% had access to safely managed sanitation services. (WHO, UNICEF)\n\nTarget 6.2: Access to Sanitation and Hygiene\nBy 2030, achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations. In urban India,*** 70% of wastewater is released untreated into the environment, posing significant public health risks***. (Business Standard)\n\nTarget 6.3: Improve Water Quality\nBy 2030, improve water quality by reducing pollution, eliminating dumping, and minimizing release of hazardous chemicals and materials. Halve the proportion of untreated wastewater and substantially increase recycling and safe reuse globally. As 785 million people still lacked even basic drinking water services in 2017, this is a pressing concern. (UN Stats)\n\nTarget 6.4: Increase Water-Use Efficiency\nBy 2030, substantially increase water-use efficiency across all sectors and ensure sustainable withdrawals and supply of freshwater to address water scarcity and substantially reduce the number of people suffering from water scarcity. Between 2000 and 2017, the proportion of the global population using safely managed drinking water, the highest level of service, increased from 61 per cent to 71 per cent. (UN Stats)\n\nTarget 6.5: Implement Integrated Water Resources Management\nBy 2030, implement integrated water resources management at all levels, including through transboundary cooperation as appropriate. The extent of surface water bodies, including lakes, rivers, and reservoirs, is rapidly changing across the entire planet, with one in five river basins experiencing high fluctuations in surface water during the last 5 years.\n\nTarget 6.6: Protect and Restore Water-Related Ecosystems\nBy 2030, protect and restore water-related ecosystems, including mountains, forests, wetlands, rivers, aquifers, and lakes. The global extent of water-related ecosystems is declining, with significant impacts on biodiversity and ecosystem services.\n\nTarget 6.a: Expand International Cooperation\nBy 2030, expand international cooperation and capacity-building support to developing countries in water- and sanitation-related activities and programmes, including water harvesting, desalination, water efficiency, wastewater treatment, recycling, and reuse technologies. Disbursements of official development assistance (ODA) by donor countries to the water sector increased for several years, reaching nearly $9.1 billion in 2016. However, from 2016 to 2017, ODA disbursements fell by 2 per cent. (UN Stats)\n\nTarget 6.b: Support Local Engagement\nBy 2030, support and strengthen the participation of local communities in improving water and sanitation management. Data on the proportion of local administrative units with established and operational policies and procedures for participation of local communities in water and sanitation management is limited."
         }
       ],
       [
         {
           "type": "heading",
-          "text": "SDG 6 Targets Continued: Ecosystems, Cooperation & Community Engagement\n"
+          "text": "The Corporate Compass: Water Stewardship as Strategy and Soul\n\"Every company now is a sustainability company. The question is: how fast can you get there?\"\n- Satya Nadella"
         },
         {
           "type": "paragraph",
-          "text": "Target 6.5: By 2030, implement integrated water resources management at all levels, including through transboundary cooperation. The extent of surface water bodies — lakes, rivers, and reservoirs — is rapidly changing across the planet, with one in five river basins experiencing high fluctuations in surface water during the last 5 years.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Target 6.6: By 2030, protect and restore water-related ecosystems, including mountains, forests, wetlands, rivers, aquifers, and lakes. The global extent of water-related ecosystems is declining, with significant impacts on biodiversity and ecosystem services.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Target 6.a: By 2030, expand international cooperation and capacity-building support to developing countries in water- and sanitation-related activities. ODA disbursements to the water sector reached nearly $9.1 billion in 2016; however, from 2016 to 2017, disbursements fell by 2 per cent, underlining the fragility of global financing commitments.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Target 6.b: By 2030, support and strengthen the participation of local communities in improving water and sanitation management. Data on the proportion of local administrative units with established policies for community participation in water management remains limited.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "For corporates, aligning operations with SDG 6 and embedding water stewardship into ESG practices is no longer a symbolic exercise — it is a defining marker of responsibility and vision. Corporates are uniquely positioned to act as custodians, transforming how water is used, conserved, and valued.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Water stewardship is strategic, not aspirational. It entails rigorous measurement, stakeholder engagement, and the integration of sustainability into every operational and supply chain decision. Organisations that embrace this approach reduce risk, enhance reputation, and cultivate resilience in an era of climate uncertainty.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "True stewardship sees water not as a cost, but as a shared asset — and ESG compliance not as reporting, but as a tangible expression of values in action. Every initiative to optimise water use, eliminate waste, or support local water security sends a clear message: sustainability is non-negotiable.\n"
+          "text": "For corporates, aligning operations with SDG 6 and embedding water stewardship into ESG practices is no longer a symbolic exercise, it is a defining marker of responsibility and vision. Corporates are uniquely positioned to act as custodians, transforming how water is used, conserved, and valued. Every initiative to optimise water use, eliminate waste, or support local water security sends a message: sustainability is non-negotiable, and responsibility extends beyond profit margins.\n\nWater stewardship is strategic, not aspirational. It entails rigorous measurement, stakeholder engagement, and the integration of sustainability into every operational and supply chain decision. Organizations that embrace this approach reduce risk, enhance reputation, and cultivate resilience in an era of climate uncertainty.\n\nTrue stewardship sees water not as a cost, but as a shared asset, and ESG compliance not as reporting, but as a tangible expression of values in action.\n\nWAE's Commitment: Leading Sustainable Hydration\nAt WAE, sustainable hydration is a philosophy manifested in action. Every sustainable water solution is designed to minimise water waste, eliminate single-use plastic, and promote safe, accessible hydration across institutional and commercial spaces. WAE enables businesses to translate ambition into measurable impact, making sustainability visible in everyday operations.\n\nThe integration of WAE's solutions does more than reduce environmental footprint, it embeds water stewardship into the corporate DNA. Efficient water use, zero-plastic initiatives, and employee engagement coalesce to create workplaces that are not only healthier but demonstrably responsible. Each hydration point becomes a microcosm of broader sustainability, turning a simple act, refilling a bottle, into a commitment that echoes through communities, supply chains, and ecosystems."
         }
       ],
       [
         {
           "type": "heading",
-          "text": "WAE's Commitment: Where Metrics Become Movements\n"
+          "text": "The Journey Ahead: Where Metrics Become Movements\n"
         },
         {
           "type": "paragraph",
-          "text": "At WAE, sustainable hydration is a philosophy manifested in action. Every water solution is designed to minimise water waste, eliminate single-use plastic, and promote safe, accessible hydration across institutional and commercial spaces.\n"
+          "text": "The challenges of water scarcity, pollution, and unsustainable consumption demand immediate and decisive action. Metrics and targets are tools, not endpoints, they guide choices, illuminate gaps, and measure the impact of every initiative. Progress on SDG 6 and SDG 12 is not abstract; it is forged in the policies implemented, the waste prevented, and the water conserved.\n\nA sustainable future is attainable, but only through bold, measurable, and uncompromising action. The opportunity is unmistakable: transform responsibility into leadership, strategy into impact, and commitment into a lasting imprint on the planet.\n\nThe question is not whether change can happen, it is whether the moment is seized, with courage, clarity, and conviction.\n\nWater is finite, yet the potential for transformation is infinite. Every decision counts and every action matters."
         },
         {
-          "type": "paragraph",
-          "text": "WAE enables businesses to translate ambition into measurable impact, making sustainability visible in everyday operations. The integration of WAE's solutions does more than reduce environmental footprint — it embeds water stewardship into the corporate DNA.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Efficient water use, zero-plastic initiatives, and employee engagement coalesce to create workplaces that are not only healthier but demonstrably responsible. Each hydration point becomes a microcosm of broader sustainability, turning a simple act — refilling a bottle — into a commitment that echoes through communities, supply chains, and ecosystems.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "The challenges of water scarcity, pollution, and unsustainable consumption demand immediate and decisive action. Metrics and targets are tools, not endpoints — they guide choices, illuminate gaps, and measure the impact of every initiative.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Progress on SDG 6 is not abstract; it is forged in the policies implemented, the waste prevented, and the water conserved. A sustainable future is attainable, but only through bold, measurable, and uncompromising action.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "The opportunity is unmistakable: transform responsibility into leadership, strategy into impact, and commitment into a lasting imprint on the planet. The question is not whether change can happen — it is whether the moment is seized, with courage, clarity, and conviction.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Water is finite, yet the potential for transformation is infinite. Every decision counts and every action matters.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "\"In nature, nothing exists alone. Every drop of water is a carrier of connection.\" — Rachel Carson\n"
+          "type": "heading",
+          "text": "\"In nature, nothing exists alone. Every drop of water is a carrier of connection.\"\n-Rachel Carson"
         }
       ]
     ]
@@ -2681,35 +2605,111 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "heading",
-          "text": "\"In one drop of water are found all the secrets of all the oceans.\"\n— Kahlil Gibran"
+          "text": "The Crisis at Hand: Water, Plastic & the Corporate Imperative\n"
         },
         {
           "type": "paragraph",
-          "text": "Water, the most unassuming element, has always been the planet's quiet architect, shaping continents, cultures, and the cadence of civilisation. Yet today, it mirrors the fragility of our modern pursuit of progress. Beneath the glint of skylines and the rhythm of global commerce runs an invisible equation, one that measures not growth, but consequence.\n\nWAE's Vision 2030 is born from this awareness: a declaration that water sustainability is no longer peripheral to business, it is central to its survival, its ethics, and its future.\n\nThrough circular innovation, sustainable hydration, and SDG-aligned strategies, WAE envisions a world where the corporate estate becomes an instrument of regeneration. A world where every refill replaces waste, every drop embodies responsibility, and every enterprise becomes a force for planetary repair.\n\nThe Stark Arithmetic of the Present\nThe world's water crisis is deepening, and its numbers have become both revelation and reckoning. According to a study published in Science, 4.4 billion people in low- and middle-income countries lack access to safe household drinking water, a figure that is more than double earlier global estimates. This is not a data correction; it is a moral summons to reimagine how societies and businesses value water.\n\nMeanwhile, the twin crisis of plastic pollution has reached planetary scale. Global plastic production now exceeds 450 million tonnes annually*, yet only *9.5% of plastics manufactured in 2022 were made from recycled material, underscoring the failure of linear economies. (The Guardian)\n\nThese two crises, unsafe water and unsustainable plastic, intersect most visibly in one symbol: the bottled water industry. Convenient yet catastrophic, it illustrates how short-term necessity can erode long-term sustainability.\n\nCorporates as Custodians of Change\nThe private sector consumes water at scale, and thus wields power at scale. Institutional and commercial spaces, offices, campuses, hotels, hospitals, are epicentres of daily water demand. Every decision made by corporate procurement and ESG departments has the potential to shift national consumption patterns.\n\nA recent report by the **World Resources Institute **notes that companies engaging in active water stewardship programmes not only mitigate environmental risk but unlock reputational, operational, and financial resilience.\n\nWAE recognises this pivotal role. The company partners with forward-looking organisations to replace single-use bottled water systems with touchless, stainless-steel water stations, refill programmes, and on-site glass bottling units, innovations that embody hygiene, durability, and circularity. These solutions help corporates advance SDG 6 (Clean Water and Sanitation) and SDG 12 (Responsible Consumption and Production) while aligning with global ESG reporting frameworks.\n"
+          "text": "Water, the most unassuming element, has always been the planet's quiet architect, shaping continents, cultures, and the cadence of civilisation. Yet today, it mirrors the fragility of our modern pursuit of progress.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "WAE's Vision 2030 is born from this awareness: a declaration that water sustainability is no longer peripheral to business — it is central to its survival, its ethics, and its future. Through circular innovation, sustainable hydration, and SDG-aligned strategies, WAE envisions a world where the corporate estate becomes an instrument of regeneration.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The world's water crisis is deepening. According to a study published in Science, 4.4 billion people in low- and middle-income countries lack access to safe household drinking water — a figure more than double earlier global estimates. This is not a data correction; it is a moral summons.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Meanwhile, the crisis of plastic pollution has reached planetary scale. Global plastic production now exceeds 450 million tonnes annually, yet only 9.5% of plastics manufactured in 2022 were made from recycled material, underscoring the failure of linear economies.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "These two crises — unsafe water and unsustainable plastic — intersect most visibly in one symbol: the bottled water industry. Convenient yet catastrophic, it illustrates how short-term necessity can erode long-term sustainability.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The private sector consumes water at scale, and thus wields power at scale. Institutional and commercial spaces — offices, campuses, hotels, hospitals — are epicentres of daily water demand. Every decision made by corporate procurement and ESG departments has the potential to shift national consumption patterns.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "A recent report by the World Resources Institute notes that companies engaging in active water stewardship programmes not only mitigate environmental risk but unlock reputational, operational, and financial resilience.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "WAE recognises this pivotal role. The company partners with forward-looking organisations to replace single-use bottled water systems with touchless, stainless-steel water stations, refill programmes, and on-site glass bottling units — innovations that embody hygiene, durability, and circularity.\n"
         }
       ],
       [
         {
           "type": "heading",
-          "text": "WAE's Ethos: Engineering as Activism\n"
+          "text": "WAE's Ethos, Policy Alignment & the Vision 2030 Roadmap\n"
         },
         {
           "type": "paragraph",
-          "text": "WAE's work is activism encoded in product, service and partnership. The company's ethos rests on three interlocking propositions.\n\nFirst, material integrity, WAE specifies long-life stainless-steel systems (SS-304 and higher grades), engineered for longevity, hygiene and repairability so the unit-economics favour reuse over disposable replacements.\n\nSecond, circular operations, dispensing hardware is paired with refill-first programmes, on-site glass bottling where appropriate, and reverse-logistics or recycling partnerships to close material loops and minimise landfill streams.\n\nThird, enterprise integration, WAE does not sell equipment alone; it provides tailored roadmaps: procurement audits, behavioural interventions, governance mechanisms and verifiable KPI reporting mapped directly to SDG indicators and corporate ESG dashboards.\n\nThis is not cosmetic sustainability. It is an engineered pathway from procurement to verified impact.\n\nSolidarity with National and Global Policy\nWAE's vision is deeply interwoven with India's national sustainability fabric. It views itself as a bridge between policy intent and enterprise implementation, translating public ambition into private-sector execution. The company's approach harmonises with several flagship national initiatives that collectively reimagine the future of water, waste, and resource management.\n\nThrough its work, WAE advances the objectives of the Jal Jeevan Mission, which aims to provide functional tap connections to every rural household, reinforcing the spirit of **SDG 6 **— Clean Water and Sanitation. Its commitment aligns with the Swachh Bharat Mission (Grameen & Urban), which has transformed sanitation and waste practices across India, reducing open defecation and advancing solid waste management. Similarly, the Atal Mission for Rejuvenation and Urban Transformation (AMRUT) echoes in WAE's focus on urban water efficiency, improving the infrastructure of 500 cities nationwide.\n\nThe company also upholds the tenets of the National Water Policy (2012, under revision), which emphasises conservation, reuse, and efficiency in water management, and operates in compliance with the Plastic Waste Management Rules (2016, amended 2022), particularly the strengthening of Extended Producer Responsibility (EPR) and the phased elimination of single-use plastics.\n\n**WAE **stands in solidarity with these frameworks, embodying policy in practice. Its enterprise partnerships carry the momentum of government initiatives into the corporate corridors of India's industries, campuses, and institutions. In doing so, WAE ensures that sustainability is not merely a national aspiration but a daily operational reality, where every refill, every audit, and every decision contributes to a cleaner, more responsible India.\n\nWAE's Vision 2030 Roadmap\nWAE's Vision 2030 prescribes a sequenced programme for multi-site organisations:\n\nBaseline & transparency: deploy audit frameworks that establish water-service quality, bottled-water spend and plastic mass by site, benchmarked against SDG-relevant indicators.\n\nInfrastructure shift: install touchless, stainless-steel refill stations and optional glass bottling lines in hospitality or premium settings; retrofit canteens to prioritise refills.\n\nCircular operations: institute closed-loop procurement rules, reverse-logistics for reusable bottles and partnerships for residual waste processing.\n\nPeople & policy: roll out staff engagement, signage and procurement policy changes so infrastructure becomes habit and governance.\n\nMeasure & verify: quarterly KPIs reporting reductions in the elimination of bottled-water, followed by the elimination and reduction of plastic in other spaces (kg plastics avoided), scope-1/2 emissions saved through logistics reductions, and progress towards zero-waste-to-landfill commitments.\n\nEach element is engineered for measurability: reductions can be translated into weight of plastics avoided, procurement savings, waste-diversion percentages and SDG-aligned progress narratives."
+          "text": "WAE's work is activism encoded in product, service, and partnership. Its ethos rests on three interlocking propositions. First, material integrity — WAE specifies long-life stainless-steel systems (SS-304 and higher grades), engineered for longevity, hygiene, and repairability so the unit-economics favour reuse over disposable replacements.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Second, circular operations — dispensing hardware is paired with refill-first programmes, on-site glass bottling where appropriate, and reverse-logistics or recycling partnerships to close material loops and minimise landfill streams.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Third, enterprise integration — WAE does not sell equipment alone; it provides tailored roadmaps: procurement audits, behavioural interventions, governance mechanisms, and verifiable KPI reporting mapped directly to SDG indicators and corporate ESG dashboards. This is not cosmetic sustainability — it is an engineered pathway from procurement to verified impact.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "WAE's vision is deeply interwoven with India's national sustainability fabric. Through its work, WAE advances the objectives of the Jal Jeevan Mission, aligns with the Swachh Bharat Mission, and echoes the Atal Mission for Rejuvenation and Urban Transformation (AMRUT) in its focus on urban water efficiency across 500 cities nationwide.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The company also upholds the tenets of the National Water Policy and operates in compliance with the Plastic Waste Management Rules (2016, amended 2022), particularly the strengthening of Extended Producer Responsibility (EPR) and the phased elimination of single-use plastics.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "WAE's Vision 2030 prescribes a sequenced programme for multi-site organisations. It begins with baseline and transparency — deploying audit frameworks to establish water-service quality, bottled-water spend, and plastic mass by site. This is followed by an infrastructure shift: installing touchless, stainless-steel refill stations and optional glass bottling lines, and retrofitting canteens to prioritise refills.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The roadmap then moves to circular operations — closed-loop procurement rules, reverse-logistics for reusable bottles, and partnerships for residual waste processing. Finally, people and policy: rolling out staff engagement, signage, and procurement policy changes so infrastructure becomes habit and governance. Quarterly KPIs track kg of plastics avoided, scope-1/2 emissions saved, and progress towards zero-waste-to-landfill commitments.\n"
         }
       ],
       [
         {
           "type": "heading",
-          "text": "India's Corporate Imperative\n"
+          "text": "India's Corporate Imperative & the Courage to Refill the Future\n"
         },
         {
           "type": "paragraph",
-          "text": "India's bottled water market was valued at over USD 24 billion in 2024 and continues to expand at a rapid** CAGR**, driven by urbanisation and the quest for perceived purity. [Grand View Research]\n\nImagine if even a fraction of this demand shifted toward refill-first solutions: the nation could save millions of plastic bottles daily, cut carbon emissions across logistics chains, and advance its SDG 12 commitments exponentially.\n\nWAE's interventions already echo across institutional campuses and industrial facilities — spaces that have replaced disposability with durability, convenience with conscience, and compliance with leadership.\n\nA Partnership Model for the Planet\nSustainability is not achieved in isolation; it thrives on collaboration. WAE works alongside architects, ESG officers, facility managers, and policymakers to co-create hydration ecosystems that are both operationally sound and environmentally restorative.\n\nThis integrative model, engineering, education, engagement, is what sets WAE apart. It allows every corporate partner to transform its water infrastructure into a living laboratory of sustainability, inspiring behavioural change that transcends the workplace and enters the cultural fabric of responsibility.\n\nConclusion: The Courage to Refill the Future\nThere are moments in human progress when incremental change no longer suffices, when the pace of crisis demands a revolution of intent. The decade to 2030 is one such moment.\n\nWater scarcity, plastic pollution, and planetary warming are not abstract metrics; they are lived realities affecting economies, ecosystems, and futures. But within this challenge lies an extraordinary possibility, the power of purposeful design, collective action, and circular thought.\n\nWAE's Vision 2030 is not simply a roadmap; it is an invitation to lead, to transform the mundane act of drinking water into a declaration of integrity. Each refill, each stainless-steel station, each corporate commitment becomes part of a larger human story: one that trades waste for wisdom and consumption for continuity.\n\nThe world does not need passive corporates; it needs custodians, institutions that understand their legacy will be measured not by what they build, but by what they restore.\n\nAt WAE, that restoration begins with water — pure, responsible, and infinite in purpose.\nBecause to choose sustainability is to choose survival."
+          "text": "India's bottled water market was valued at over USD 24 billion in 2024 and continues to expand at a rapid CAGR, driven by urbanisation and the quest for perceived purity. Imagine if even a fraction of this demand shifted toward refill-first solutions — the nation could save millions of plastic bottles daily, cut carbon emissions across logistics chains, and advance its SDG 12 commitments exponentially.\n"
         },
         {
-          "type": "heading",
-          "text": "\"The quality of our water is a reflection of the quality of our society.\"\n— Marlo Morgan"
+          "type": "paragraph",
+          "text": "WAE's interventions already echo across institutional campuses and industrial facilities — spaces that have replaced disposability with durability, convenience with conscience, and compliance with leadership.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Sustainability is not achieved in isolation; it thrives on collaboration. WAE works alongside architects, ESG officers, facility managers, and policymakers to co-create hydration ecosystems that are both operationally sound and environmentally restorative.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "This integrative model — engineering, education, engagement — is what sets WAE apart. It allows every corporate partner to transform its water infrastructure into a living laboratory of sustainability, inspiring behavioural change that transcends the workplace and enters the cultural fabric of responsibility.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "There are moments in human progress when incremental change no longer suffices, when the pace of crisis demands a revolution of intent. The decade to 2030 is one such moment. Water scarcity, plastic pollution, and planetary warming are not abstract metrics — they are lived realities affecting economies, ecosystems, and futures.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "WAE's Vision 2030 is not simply a roadmap; it is an invitation to lead — to transform the mundane act of drinking water into a declaration of integrity. Each refill, each stainless-steel station, each corporate commitment becomes part of a larger human story: one that trades waste for wisdom and consumption for continuity.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The world does not need passive corporates; it needs custodians — institutions that understand their legacy will be measured not by what they build, but by what they restore. At WAE, that restoration begins with water — pure, responsible, and infinite in purpose.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"The quality of our water is a reflection of the quality of our society.\" — Marlo Morgan"
         }
       ]
     ]
