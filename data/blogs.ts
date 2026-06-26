@@ -2312,35 +2312,107 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "heading",
-          "text": "\"Vasudhaiva Kutumbakam\" – \"The world is one family.\"\n– Mahopanishad, 1.4.6"
+          "text": "A Nation Rising: India's Philosophy and Governance Model for SDGs\n"
         },
         {
           "type": "paragraph",
-          "text": "In the theatre of global sustainability, few stories have evolved as compellingly as India's. A civilisation that has always viewed the Earth not as a resource but as Prithvi Maa, a living, breathing entity, India's journey towards sustainable development is both ancient in philosophy and modern in execution.\n\nAs the world edges closer to 2030, a year that symbolises collective accountability under the United Nations' 2030 Agenda,*** India has entered the top 100 in the Global Sustainable Development Goals (SDG) Index for the first time*** (The Hindu), a defining moment in its policy evolution and developmental conscience.\n\nThis progress is neither accidental nor episodic; it is the outcome of a governance model that blends spiritual sustainability with pragmatic execution.\n\n\"Vasudhaiva Kutumbakam\": Addressing The World As A Family\n\nAt the United Nations Sustainable Development Summit in 2015, the world heard:\n\n\"Sustainable development of one-sixth of humanity will be of great consequence to the world and our beautiful planet. It will be a world of fewer challenges and greater hope; and, more confident of its success.\"\n\n- Shri Narendra Modi, Honourable Prime Minister Of India\n\nThose words have since evolved into a national mission. Guided by the ancient Indian ethos of Vasudhaiva Kutumbakam \"The World Is One Family\" and its global advocacy for the Global South, India's development narrative stands as a blueprint of inclusion, climate responsibility, and global cooperation.\n\nAs the G20 Presidency demonstrated, India is not merely participating in the sustainability dialogue; it is shaping it.\n\nIndia and the 2030 Agenda: A Nation Rising to the Call of 2030\nThe 2030 Agenda for Sustainable Development, adopted by 193 Member States at the United Nations General Assembly in 2015, is built upon **17 interlinked goals and 169 targets **that aim to eradicate poverty, protect the planet, \nand ensure prosperity for all.\n\nIndia's approach to the Agenda is rooted in the principle of universality. The NITI Aayog, the Government of India's premier think tank, has been entrusted with coordinating SDG implementation, mapping schemes, and identifying lead ministries for each target. Parallelly, the Ministry of Statistics and Programme Implementation (MoSPI) has been instrumental in developing national indicators for SDG monitoring and localisation. Together, these institutions have created a robust policy ecosystem that synchronises national ambitions with global benchmarks.\n\nThrough frameworks like the SDG India Index and Dashboard, the Multidimensional Poverty Index (MPI), and the North-Eastern Region (NER) SDG Index, India ensures that sustainability is both measurable and actionable across every state and union territory (Diplomatist)."
+          "text": "In the theatre of global sustainability, few stories have evolved as compellingly as India's. A civilisation that has always viewed the Earth not as a resource but as Prithvi Maa — a living, breathing entity — India's journey towards sustainable development is both ancient in philosophy and modern in execution.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "As the world edges closer to 2030, India has entered the top 100 in the Global SDG Index for the first time, a defining moment in its policy evolution and developmental conscience. This progress is neither accidental nor episodic; it is the outcome of a governance model that blends spiritual sustainability with pragmatic execution.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "At the United Nations Sustainable Development Summit in 2015, Prime Minister Narendra Modi declared: \"Sustainable development of one-sixth of humanity will be of great consequence to the world and our beautiful planet. It will be a world of fewer challenges and greater hope.\" Those words have since evolved into a national mission.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Guided by the ancient Indian ethos of Vasudhaiva Kutumbakam — \"The World Is One Family\" — and its global advocacy for the Global South, India's development narrative stands as a blueprint of inclusion, climate responsibility, and global cooperation. As the G20 Presidency demonstrated, India is not merely participating in the sustainability dialogue; it is shaping it.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The 2030 Agenda for Sustainable Development, adopted by 193 Member States at the United Nations General Assembly in 2015, is built upon 17 interlinked goals and 169 targets that aim to eradicate poverty, protect the planet, and ensure prosperity for all.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "India's approach is rooted in the principle of universality. NITI Aayog has been entrusted with coordinating SDG implementation, while the Ministry of Statistics and Programme Implementation (MoSPI) has been instrumental in developing national indicators for SDG monitoring and localisation. Together, they have created a robust policy ecosystem that synchronises national ambitions with global benchmarks.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Through frameworks like the SDG India Index and Dashboard, the Multidimensional Poverty Index (MPI), and the North-Eastern Region (NER) SDG Index, India ensures that sustainability is both measurable and actionable across every state and union territory.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "According to the SDG India Index 2023–24, India achieved a composite score of 71 out of 100, rising from 66 in the previous edition. The Index measures progress across 16 SDGs and 113 indicators, with significant gains registered in SDG 1, SDG 3, SDG 6, SDG 7, SDG 9, SDG 11, and SDG 13.\n"
         }
       ],
       [
         {
           "type": "heading",
-          "text": "Mapping India's Progress Through Data\n"
+          "text": "Mapping India's Progress: Data, Schemes & Milestones\n"
         },
         {
           "type": "paragraph",
-          "text": "According to the SDG India Index 2023–24, India achieved a*** composite score of 71 out of 100, rising from 66 in the previous edition*** (NITI Aayog). Launched in 2018 with technical support from the United Nations in India, the Index measures progress across 16 SDGs and 113 indicators.\n\nSignificant gains have been registered in SDG 1 (No Poverty), SDG 3 (Good Health and Well-being), SDG 6 (Clean Water and Sanitation), SDG 7 (Affordable and Clean Energy), SDG 9 (Industry, Innovation and Infrastructure), SDG 11 (Sustainable Cities and Communities), and SDG 13 (Climate Action). Notably, SDG 7 achieved a score of 96, and SDG 13 saw a sharp rise from 54 in 2020–21 to 67 in 2023–24, underscoring India's decisive progress on renewable energy and climate action.\n\nThe impact of government schemes is evident across multiple sectors. The Saubhagya Scheme has achieved universal household electrification, while the Pradhan Mantri Ujjwala Yojana has supplied over*** 103 million LPG connections***, reducing dependence on traditional fuels and improving health outcomes. India's thrust on clean energy is exemplified by a remarkable increase in solar power capacity, which surged from 2.82 GW to 73.32 GW, reflecting the country's commitment to** SDG 7** and climate action.\n\nFinancial inclusion and employment opportunities have expanded through the Pradhan Mantri Jan Dhan Yojana, MGNREGA, and the Digital India Mission, accelerating access to banking, social security, and digital infrastructure.\n\nEfforts to improve sanitation and water access have also been significant. In food and health security, the National Food Security Act (NFSA) now covers 800 million people, and Ayushman Bharat–Pradhan Mantri Jan Arogya Yojana (PMJAY) provides*** health insurance to over 520 million individuals***, making it the largest government-funded health insurance programme globally. Education has been strengthened through the Right to Education (RTE) Act, ensuring free and compulsory schooling for children up to the age of 14. Climate action remains a priority, with India ranking among the top performers globally on the Climate Change Performance Index (CCPI) and*** targeting 500 GW of renewable energy capacity by 2030***.\n\nYet, India's challenge mirrors the world's own. Globally,*** only 17% of SDGs are on track, according to the UN's 2023 report.*** The State of Food Security and Nutrition 2023 estimates 735 million people still suffer from hunger, an enduring reminder that development without inclusion is an incomplete victory.\n\nState-wise, Kerala, Tamil Nadu, and Uttarakhand lead the index, while Bihar, Jharkhand, and Nagaland continue to improve their developmental baselines.\n\n\"In the midst of global challenges, India's approach to sustainable development shines brightly. Programmes such as the National Food Security Act, Poshan Abhiyan, Ayushman Bharat, Swachh Bharat Abhiyan, and Pradhan Mantri Jan Dhan Yojana indicate the Government's commitment to ensuring food and nutrition security, affordable healthcare, financial inclusion, gender parity, and access to sanitation facilities.\"\n\n- Dr Yogesh Suri, Senior Advisor (SDG), NITI Aayog\nGovernment Schemes Related To SDG 6: From Policy to People\n\nIndia's policy innovation has been its defining strength. The country's major schemes have not functioned as silos but as interlocking instruments of social and economic reform.\n\nThe Jal Jeevan Mission (JJM) has provided 149 million rural households with tap water connections, directly aligning with SDG 6: Clean Water and Sanitation. Complementing this, the Swachh Bharat Mission transformed national sanitation, constructing over 110 million toilets to achieve near-universal sanitation coverage.\n\nThe Atal Bhujal Yojana and Jal Shakti Abhiyan: Catch the Rain focus on groundwater recharge and water conservation, while Mission Amrit Sarovar revives local water bodies, collectively nurturing water resilience at the community level.\n\nUrban renewal under the AMRUT 2.0 Scheme ensures equitable access to clean water, sewage management, and green infrastructure in growing cities. Meanwhile, the Namami Gange Programme has restored stretches of the Ganga to their cleanest levels in decades, integrating ecology with spirituality.\n\nAgriculture, too, has been transformed through the Pradhan Mantri Krishi Sinchayee Yojana (PMKSY) and the National River Conservation Programme (NRCP), which optimise water use and improve irrigation efficiency across millions of hectares.\n\nAligned with these, the* Panchamrit Framework unveiled by India under the UNFCCC represents a defining moment in its climate policy. The five-fold commitment includes achieving 500 GW of non-fossil energy capacity by 2030, fulfilling 50% of energy requirements from renewables, and achieving *net zero by 2070. Together, these ambitions integrate India's Nationally Determined Contributions (NDCs) with its domestic development goals.\n`X`\nThis data-driven governance is reinforced through the National Indicator Framework and district-level monitoring tools. For instance, the* NER District SDG Index guided targeted investments worth $825 million through the PM-DevINE Scheme, while *over 250,000 Gram Panchayats have begun integrating SDG priorities into their local development plans (Diplomatist)."
+          "text": "SDG 7 achieved a score of 96, and SDG 13 saw a sharp rise from 54 in 2020–21 to 67 in 2023–24, underscoring India's decisive progress on renewable energy and climate action. Solar power capacity surged from 2.82 GW to 73.32 GW, reflecting the country's commitment to clean energy.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Saubhagya Scheme has achieved universal household electrification, while the Pradhan Mantri Ujjwala Yojana has supplied over 103 million LPG connections, reducing dependence on traditional fuels and improving health outcomes. Financial inclusion has expanded through the Pradhan Mantri Jan Dhan Yojana, MGNREGA, and the Digital India Mission.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The National Food Security Act (NFSA) now covers 800 million people, and Ayushman Bharat–PMJAY provides health insurance to over 520 million individuals, making it the largest government-funded health insurance programme globally. Education has been strengthened through the Right to Education (RTE) Act, ensuring free and compulsory schooling for children up to the age of 14.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Yet India's challenge mirrors the world's own. Globally, only 17% of SDGs are on track according to the UN's 2023 report. The State of Food Security and Nutrition 2023 estimates 735 million people still suffer from hunger — a reminder that development without inclusion is an incomplete victory. State-wise, Kerala, Tamil Nadu, and Uttarakhand lead the index, while Bihar, Jharkhand, and Nagaland continue to improve.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Jal Jeevan Mission has provided 149 million rural households with tap water connections, directly aligning with SDG 6. The Swachh Bharat Mission transformed national sanitation, constructing over 110 million toilets to achieve near-universal sanitation coverage.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Atal Bhujal Yojana and Jal Shakti Abhiyan focus on groundwater recharge and water conservation, while Mission Amrit Sarovar revives local water bodies. Urban renewal under AMRUT 2.0 ensures equitable access to clean water and green infrastructure in growing cities, while the Namami Gange Programme has restored the Ganga to its cleanest levels in decades.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Panchamrit Framework unveiled by India under the UNFCCC represents a defining moment in climate policy — committing to 500 GW of non-fossil energy capacity by 2030, 50% energy from renewables, and net zero by 2070. The NER District SDG Index guided targeted investments worth $825 million through the PM-DevINE Scheme, while over 250,000 Gram Panchayats have begun integrating SDG priorities into their local development plans.\n"
         }
       ],
       [
         {
           "type": "heading",
-          "text": "Corporate Catalysts: Driving India's SDG Ambitions Through Strategic Sustainability\n"
+          "text": "Corporate Catalysts: Sustainable Hydration & the Road to 2030\n"
         },
         {
           "type": "paragraph",
-          "text": "While public policy provides the framework, the private sector carries the momentum. In India's SDG journey, corporates are not just participants, they are catalysts. The integration of Environmental, Social and Governance (ESG) principles into corporate operations directly accelerates SDG progress, particularly in SDG 6 (Clean Water and Sanitation), SDG 12 (Responsible Consumption and Production), SDG 13 (Climate Action), SDG 11 (Sustainable Cities and Communities), and SDG 3 (Good Health and Well-being).\n\nFor businesses, water sustainability is now central to operational and reputational value. From reducing plastic dependency to adopting zero-waste-to-landfill practices, corporates are increasingly aligning their infrastructure and procurement policies with national sustainability frameworks.\n\nSustainable Hydration: A Strategic and Ethical Differentiator\nThis is where sustainable hydration emerges as a strategic and ethical differentiator. In large workplaces, institutions, and hospitality environments, eliminating single-use plastic bottles and integrating stainless-steel-based water dispensing systems fosters both environmental responsibility and long-term cost efficiency.\n\nAt WAE, this philosophy has been consistently championed through solutions that enable sustainable drinking water practices, support corporate ESG mandates, and reinforce India's collective journey towards the 2030 Agenda. WAE's commitment to advancing clean water access, promoting reuse-based hydration systems, and reducing plastic waste directly aligns with the spirit of SDG 6, ensuring availability and sustainable management of water and sanitation for all.\n\nTowards 2030: Aligning Vision, Policy, and Purpose\nIndia's ascent in the SDG Index is more than a metric; it is a testament to visionary governance, inclusive policy, and collective will. From Panchayats integrating SDGs into local development plans to nationwide renewable energy targets, sustainable development is both actionable and scalable.\n\nFor organisations like WAE, this national momentum aligns seamlessly with corporate responsibility. By embedding sustainable water solutions into commercial and institutional environments, WAE helps operationalise SDGs on the ground, catalysing measurable environmental impact while advancing workplace health and ESG credibility.\n\nIndia's path to 2030 is a reminder that sustainability is not a distant ideal; it is a lived responsibility.\n\nTogether, government, corporates, and communities can craft a future where every policy, every innovation, and every drop of water contributes to a planet that truly reflects Vasudhaiva Kutumbakam."
+          "text": "While public policy provides the framework, the private sector carries the momentum. In India's SDG journey, corporates are not just participants — they are catalysts. The integration of ESG principles into corporate operations directly accelerates SDG progress in clean water, responsible consumption, climate action, sustainable cities, and health.\n"
         },
         {
-          "type": "heading",
-          "text": "\"And we will endeavour to reach the furthest behind first.\"\n— The Preamble, UN SDG Declaration/Charter"
+          "type": "paragraph",
+          "text": "For businesses, water sustainability is now central to operational and reputational value. From reducing plastic dependency to adopting zero-waste-to-landfill practices, corporates are increasingly aligning their infrastructure and procurement policies with national sustainability frameworks.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "In large workplaces, institutions, and hospitality environments, eliminating single-use plastic bottles and integrating stainless-steel-based water dispensing systems fosters both environmental responsibility and long-term cost efficiency.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "At WAE, this philosophy has been consistently championed through solutions that enable sustainable drinking water practices, support corporate ESG mandates, and reinforce India's collective journey towards the 2030 Agenda. WAE's commitment to advancing clean water access, promoting reuse-based hydration systems, and reducing plastic waste directly aligns with the spirit of SDG 6.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "India's ascent in the SDG Index is more than a metric; it is a testament to visionary governance, inclusive policy, and collective will. For organisations like WAE, this national momentum aligns seamlessly with corporate responsibility — embedding sustainable water solutions into commercial and institutional environments to catalyse measurable environmental impact.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "India's path to 2030 is a reminder that sustainability is not a distant ideal; it is a lived responsibility. Together, government, corporates, and communities can craft a future where every policy, every innovation, and every drop of water contributes to a planet that truly reflects Vasudhaiva Kutumbakam.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"And we will endeavour to reach the furthest behind first.\" — The Preamble, UN SDG Declaration/Charter"
         }
       ]
     ]
