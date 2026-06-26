@@ -71,9 +71,9 @@ export default function CookieConsent() {
       <div
         style={{
           position: "relative",
-          width: "484px", // 201px (Btn1) + 201px (Btn2) + 10px (gap) + 72px (padding left + right) = 484px
+          width: "598px", // 201px (Btn1) + 201px (Btn2) + 10px (gap) + 186px (padding left + right) = 598px
           backgroundColor: "#003c58",
-          padding: "50px 36px", // py-50px px-36px
+          padding: "71px 93px", // py-71px px-93px
           borderRadius: "0px",
           boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
           display: "flex",
@@ -92,19 +92,24 @@ export default function CookieConsent() {
           type="button"
           style={{
             position: "absolute",
-            top: "21px",
-            right: "21px",
+            top: "26px", // mt-26
+            right: "26px", // mr-26
+            width: "34px",
+            height: "34px",
             background: "none",
             border: "none",
             color: "#FFF",
             opacity: closeHovered ? 1 : 0.7,
             cursor: "pointer",
             transition: "opacity 0.2s ease",
-            padding: "4px",
+            padding: "0",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
           aria-label="Close cookie consent"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
@@ -113,10 +118,10 @@ export default function CookieConsent() {
         {/* Title */}
         <h3
           style={{
-            margin: "0 0 23px 0", // 23px gap below title
+            margin: "0 0 26px 0", // 26px gap below title
             fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: "28px",
+            fontWeight: 400,
+            fontSize: "32px",
             lineHeight: "105%",
             letterSpacing: "0%",
             verticalAlign: "middle",
@@ -128,34 +133,21 @@ export default function CookieConsent() {
         {/* Description */}
         <p
           style={{
-            margin: "0 0 55px 0", // 55px gap below description
-            fontFamily: "'Inter Tight', sans-serif",
-            fontSize: "14px",
-            lineHeight: "1.5",
-            color: "rgba(255, 255, 255, 0.9)",
+            margin: "0 0 77px 0", // 77px gap below description
+            fontFamily: "'Manrope', sans-serif",
+            fontWeight: 400,
+            fontSize: "16px",
+            lineHeight: "100%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+            color: "#AEAEAE",
           }}
         >
-          Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent.{" "}
-          <button
-            type="button"
-            style={{
-              background: "none",
-              border: "none",
-              padding: 0,
-              color: "#FFF",
-              textDecoration: "underline",
-              fontFamily: "inherit",
-              fontSize: "inherit",
-              cursor: "pointer",
-              display: "inline",
-            }}
-          >
-            Let me choose
-          </button>
+          A better browsing experience starts here. We use cookies to personalize content, understand how you interact with our website, and continuously improve every visit. By continuing, you agree to our Cookie Policy.
         </p>
 
         {/* Buttons Row */}
-        <div style={{ display: "flex", gap: "10px", marginBottom: "23px" }}>
+        <div style={{ display: "flex", gap: "10px", marginBottom: "24px" }}>
           {/* Accept All Button */}
           <button
             onClick={handleAccept}
@@ -213,7 +205,7 @@ export default function CookieConsent() {
           </button>
         </div>
 
-        {/* Privacy Policy Link */}
+        {/* Cookie Policy Link */}
         <div style={{ textAlign: "left" }}>
           <Link
             href="/cookie-policy"
@@ -222,17 +214,17 @@ export default function CookieConsent() {
             style={{
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 400,
-              fontSize: "14px",
+              fontSize: "16px",
               lineHeight: "100%",
               letterSpacing: "0%",
               verticalAlign: "middle",
-              color: "rgba(255, 255, 255, 0.9)",
+              color: "#FFF",
               textDecoration: "underline",
               opacity: privacyHovered ? 1 : 0.85,
               transition: "opacity 0.2s ease",
             }}
           >
-            Privacy policy
+            Cookie Policy
           </Link>
         </div>
       </div>
