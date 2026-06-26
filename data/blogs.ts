@@ -425,7 +425,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "The North Star of Progress: A Historical Lens on Climate Change and India's Sustainable Future",
     "category": "Policy",
     "description": "In an era defined by climate volatility, rising inequalities, and fractured global priorities...",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/75104b88-7b75-4411-8640-43363ad62c00/public",
     "writerId": "shambhavi",
     "readTime": "3 min read",
     "status": "Live",
