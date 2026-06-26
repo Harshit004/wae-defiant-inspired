@@ -277,8 +277,8 @@ export const CATEGORIES: Record<string, CategoryData> = {
       {
         "id": "hkn",
         "name": "HKN",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/528c39ab-e15a-4b6e-8f1e-a9f7f09ef100/public",
-        "category": "counter-top"
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5bc0586-0b79-4993-379a-53eb5a494700/public"
       }
     ]
   },
@@ -2086,59 +2086,79 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "hkn",
     "name": "HKN",
     "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e897fea-6219-4096-1989-ac1855719800/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76de532d-a762-4789-d348-ffa6ddab9700/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e897fea-6219-4096-1989-ac1855719800/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5bc0586-0b79-4993-379a-53eb5a494700/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b6beb7f1-39a8-4e89-c744-55972f9f1900/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/507bd5b2-141e-4c7d-0825-7819dd2aa500/public"
     ],
     "featuresList": [
       {
-        "title": "Powerful LED Powerful LED Sterilization",
+        "title": "Push/Lever Button Activated",
+        "description": "With a simple lever push, water flows — clean, effortless, and precise.",
+        "isDisplayed": true
+      },
+      {
+        "title": "American Disabilities Act",
+        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
         "isDisplayed": true
       },
       {
-        "title": "Built Tough, Made to Last",
-        "description": "Crafted from premium Stainless Steel (SS-304) and corrosion-resistant GI, this unit is food-grade approved and built for enduring performance.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Built Tough, Made to Last",
-        "description": "Lorem Ipsum dolor",
-        "isDisplayed": true
+        "title": "Built to Last",
+        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability, long term value and zero to landfill.",
+        "isDisplayed": false
       }
     ],
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
+          "variant": "HKN",
+          "hot": "7",
+          "cold": "7",
+          "ambient": "7"
         }
       ],
       "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "greenCertification": "Conrms to green product certication, low discharge faucets : 1.5 LPM",
       "dripTray": "1000ml",
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "FS VAR 150/ 100/ 50",
+          "variant": "HKN",
           "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
+          "height": "302mm",
+          "width": "-",
+          "depth": "-"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "powerRequirement": "Hertz 50/Volts 230-240",
       "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
       "pointOfUseSterilization": "Germ Guardian™"
     },
-    "status": "Live"
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d79071da-5dea-4d76-dd36-4d27a0e51e00/public",
+    "heroTagline": "Amalgamation of Hydration & Sustainability",
+    "heroSubtext": "The Next Generation of Hydration Systems",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/HKN.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
   },
   "aqua": {
     "id": "aqua",
