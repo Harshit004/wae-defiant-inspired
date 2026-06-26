@@ -2197,35 +2197,103 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "heading",
-          "text": "\"Public policy is the most powerful tool to shape sustainable futures.\"\n– Paul Polman"
+          "text": "From Global Goals to Local Action: India's SDG Framework\n"
         },
         {
           "type": "paragraph",
-          "text": "Sustainability is not merely an administrative imperative; it is a moral compass, an acknowledgment that humanity's prosperity is inseparable from the vitality of our environment. Policy, when envisioned as purpose-driven architecture, transforms aspiration into measurable impact. Within this continuum, the United Nations Sustainable Development Goals (SDGs) emerge not only as global benchmarks but as a lens through which nations can translate ambition into action.\n\nFor India, whose trajectory toward developed nation status by 2047 is both bold and complex, embedding SDG alignment within policy is not optional, it is foundational to the nation's developmental ethos.\n\nBridging Global Aspirations with Local Realities\nIndia's sheer scale and diversity render uniform implementation of global goals impossible without localisation.\n\nAs Shri Suman Bery, Vice Chairperson of NITI Aayog, emphasises, \"Given its scale, complexity and diversity, India decided early on that 'localisation' would be the only way to embed the SDG agenda within the nation's own development goals across every State and district.\"\n\nLocalisation is more than administrative convenience; it is a recognition that multidimensional goals demand collective action, the government alone cannot achieve them. Civil society, academia, and the private sector must be active partners in this journey.\n\nCentral to this localisation is NITI Aayog, India's nodal agency for monitoring SDG progress. Through the SDG India Index, NITI Aayog has institutionalised a culture of data-driven governance, ranking all states and union territories on their advancement across 17 SDGs. Since its launch in 2018, the Index has evolved into a pivotal tool for policy insights, competitive federalism, and sub-national collaboration. Indicators at state, district, and block levels, developed with active state involvement, foster mutual learning, evidence-based policymaking, and continuous refinement of strategies.\n\n\"Sabka Saath, Sabka Vikas\": Inclusive Stakeholder Engagement\n\nIndia's SDG strategy exemplifies a whole-of-society approach, operationalised through policy frameworks that engage all stakeholders. Beyond government agencies, corporates, civil society organisations, academia, and citizens are embedded into the fabric of development. Over 250,000 village councils now integrate SDG priorities into local development plans via the Panchayat Advancement Index, while Voluntary National Reviews (2017, 2020, 2025) actively included over a thousand CSOs in consultations each year (UNDP India). This inclusivity reflects the principle of \"Sabka Saath, Sabka Vikas,\" ensuring no actor, region, or community is left behind.\n\nDedicated SDG Coordination and Acceleration Centres in more than a dozen states institutionalise these goals, bridging local realities with national ambitions. The Aspirational Districts Programme and Aspirational Blocks Programme leverage competitive yet cooperative federalism, translating policy into measurable outcomes, particularly in underdeveloped regions. Through these mechanisms, SDGs evolve from abstract targets into tangible actions, supported by robust monitoring, evaluation, and iterative learning."
+          "text": "Sustainability is not merely an administrative imperative; it is a moral compass, an acknowledgment that humanity's prosperity is inseparable from the vitality of our environment. Policy, when envisioned as purpose-driven architecture, transforms aspiration into measurable impact.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Within this continuum, the United Nations Sustainable Development Goals (SDGs) emerge not only as global benchmarks but as a lens through which nations can translate ambition into action. For India, whose trajectory toward developed nation status by 2047 is both bold and complex, embedding SDG alignment within policy is not optional — it is foundational to the nation's developmental ethos.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "India's sheer scale and diversity render uniform implementation of global goals impossible without localisation. As Shri Suman Bery, Vice Chairperson of NITI Aayog, emphasises: \"Given its scale, complexity and diversity, India decided early on that 'localisation' would be the only way to embed the SDG agenda within the nation's own development goals across every State and district.\"\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Localisation is more than administrative convenience; it is a recognition that multidimensional goals demand collective action. Civil society, academia, and the private sector must be active partners in this journey. Central to this is NITI Aayog, India's nodal agency for monitoring SDG progress, which has institutionalised data-driven governance through the SDG India Index since its launch in 2018.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "India's SDG strategy exemplifies a whole-of-society approach. Over 250,000 village councils now integrate SDG priorities into local development plans via the Panchayat Advancement Index, while Voluntary National Reviews (2017, 2020, 2025) actively included over a thousand CSOs in consultations each year. This inclusivity reflects the principle of \"Sabka Saath, Sabka Vikas,\" ensuring no actor, region, or community is left behind.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dedicated SDG Coordination and Acceleration Centres in more than a dozen states institutionalise these goals, bridging local realities with national ambitions. The Aspirational Districts Programme and Aspirational Blocks Programme leverage competitive yet cooperative federalism, translating policy into measurable outcomes, particularly in underdeveloped regions.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The backbone of India's SDG momentum is data-informed governance. The National Indicator Framework, continuously refined by states, ensures that policy interventions resonate with local contexts. The results are tangible: over 135 million people have exited multidimensional poverty; non-fossil fuels now constitute 45% of India's energy capacity; and the PM-DevINE scheme has directed $825 million into targeted development initiatives in the Northeast.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Yet, global metrics caution restraint: the Global SDG Progress Report 2024 shows only 17% of targets on track, 50% weak, and 30% stalled. This duality underscores both the promise and the urgency of strategic action.\n"
         }
       ],
       [
         {
           "type": "heading",
-          "text": "Data-Driven Federalism & National Indicator Framework: The Pulse of Progress\n"
+          "text": "Corporates, Water & the Nexus of Policy and Practice\n"
         },
         {
           "type": "paragraph",
-          "text": "The backbone of India's SDG momentum is data-informed governance. The National Indicator Framework, continuously refined by states, ensures that policy interventions resonate with local contexts. By offering granular insights at district and block levels, it enables precise resource allocation and accelerates outcomes. The** SDG India Index** 2023-24 reflects measurable progress across sectors, echoing the Hon'ble Prime Minister's vision of inclusive development.\n\nThe results are tangible: over ***135 million people have exited multidimensional poverty ***(UNDP India); non-fossil fuels now constitute 45% of India's energy capacity, with a target of 500 GW by 2030 (EY); and the PM-DevINE scheme has directed $825 million into targeted development initiatives in the Northeast.\n\nYet, global metrics caution restraint: the Global SDG Progress Report 2024 shows only 17% of targets on track, 50% weak, and 30% stalled (NITI Aayog SDG India Index). This duality underscores both the promise and the urgency of strategic action.\n\nCorporates as Integral Stakeholders: Turning Responsibility into Purpose\n\nPolicy alone cannot catalyse transformation; the private sector is essential to operationalising SDGs in institutional and commercial contexts. By adopting sustainable drinking water solutions, organisations can advance SDG 6 (Clean Water and Sanitation), **SDG 11 **(Sustainable Cities), SDG 12 (Responsible Consumption), SDG 13 (Climate Action), and **SDG 3 *(Health and Well-being). Eliminating single-use plastics, implementing zero-waste-to-landfill *initiatives, and fostering resource-efficient operations translate corporate responsibility into measurable, sustainable impact.\n\nThe narrative is clear: corporates are no longer peripheral observers, they are partners in national progress, embedded into India's policy framework for sustainable development. By aligning operational strategy with SDGs, organisations reinforce the principle of \"Sabka Saath, Sabka Vikas,\" embedding sustainability into their DNA while contributing to a collective national mission.\n\nWater as the Nexus of Policy and Practice\nWater occupies a unique position at the intersection of SDG policy and corporate action. It is both a fundamental human right and a strategic resource shaping health, urban infrastructure, industrial efficiency, and climate resilience. SDG 6's emphasis on clean water and sanitation has ripple effects across SDG 3, 11, 12, and 13. Implementing sustainable water solutions, whether through advanced filtration, safe distribution, or elimination of plastic bottles, represents tangible policy alignment and corporate responsibility.\n\nWAE exemplifies this integration. Its stainless steel hydration stations eliminate single-use plastics, reduce environmental footprint, and foster workplace well-being. Beyond products, WAE operationalises policy-aligned SDG action, translating national sustainability objectives into measurable impact in institutional and commercial spaces.\n\nIn doing so, WAE embodies a philosophy where every drop of water reflects broader commitments to health, equity, and environmental stewardship."
+          "text": "Policy alone cannot catalyse transformation; the private sector is essential to operationalising SDGs in institutional and commercial contexts. By adopting sustainable drinking water solutions, organisations can advance SDG 6 (Clean Water and Sanitation), SDG 11 (Sustainable Cities), SDG 12 (Responsible Consumption), SDG 13 (Climate Action), and SDG 3 (Health and Well-being).\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Eliminating single-use plastics, implementing zero-waste-to-landfill initiatives, and fostering resource-efficient operations translate corporate responsibility into measurable, sustainable impact. Corporates are no longer peripheral observers — they are partners in national progress, embedded into India's policy framework for sustainable development.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Water occupies a unique position at the intersection of SDG policy and corporate action. It is both a fundamental human right and a strategic resource shaping health, urban infrastructure, industrial efficiency, and climate resilience. Implementing sustainable water solutions — through advanced filtration, safe distribution, or elimination of plastic bottles — represents tangible policy alignment and corporate responsibility.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "WAE exemplifies this integration. Its stainless steel hydration stations eliminate single-use plastics, reduce environmental footprint, and foster workplace well-being. Beyond products, WAE operationalises policy-aligned SDG action, translating national sustainability objectives into measurable impact in institutional and commercial spaces.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Shri B.V.R. Subrahmanyam, CEO of NITI Aayog, encapsulates the vision: \"By working together, we can transform our collective vision of a sustainable and equitable India into reality. The vision of Viksit Bharat @2047 propels us to strive harder for a prosperous and sustainable future for all.\"\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Practical steps for businesses include adopting sustainable hydration infrastructure, eliminating single-use plastics, promoting zero-waste initiatives, and integrating SDG metrics into reporting frameworks. By embracing these measures, corporates do not merely comply — they lead.\n"
         }
       ],
       [
         {
           "type": "heading",
-          "text": "Towards \"Viksit Bharat\": Translating Policy into Purpose\n\nShri B.V.R. Subrahmanyam, CEO of NITI Aayog, encapsulates the vision: \"By working together, we can transform our collective vision of a sustainable and equitable India into reality. The vision of ****Viksit Bharat @2047 ****propels us to strive harder for a prosperous and sustainable future for all.\""
+          "text": "From Strategy to Impact: A Future That Cannot Wait\n"
         },
         {
           "type": "paragraph",
-          "text": "For businesses, this is a clarion call to embed SDG alignment in every operational and strategic decision. Sustainability is no longer a peripheral commitment; it is a strategic imperative, creating resilience, equity, and long-term value.\n\nPractical steps include adopting sustainable hydration infrastructure, eliminating single-use plastics, promoting zero-waste initiatives, and integrating SDG metrics into reporting frameworks. By embracing these measures, corporates do not merely comply, they lead, aligning organisational purpose with national development, environmental preservation, and societal well-being.\n\nFrom Strategy to Impact: A Future That Cannot Wait\nSDG alignment must be the cornerstone of every sustainability strategy. India's journey, from NITI Aayog's data-driven monitoring and SDG India Index to inclusive stakeholder engagement and competitive federalism, demonstrates that policy can transform aspiration into actionable, measurable outcomes. Corporates, particularly in institutional and commercial settings, have the opportunity to reinforce this momentum, turning responsibility into impact.\n\nWAE's ethos crystallises this convergence of policy, purpose, and practice. Sustainable hydration solutions are not merely products; they are instruments of environmental stewardship, workplace health, and strategic ESG alignment. The imperative is clear: align strategy with SDGs, embed policy into practice, and ensure that every action contributes to a sustainable, equitable future. The moment to act is now. Every organisation, every policy, every drop counts."
+          "text": "SDG alignment must be the cornerstone of every sustainability strategy. India's journey — from NITI Aayog's data-driven monitoring to inclusive stakeholder engagement and competitive federalism — demonstrates that policy can transform aspiration into actionable, measurable outcomes.\n"
         },
         {
-          "type": "heading",
-          "text": "\"Sustainability must be embedded in the DNA of governance, not as an afterthought.\"\n– Christiana Figueres"
+          "type": "paragraph",
+          "text": "Corporates, particularly in institutional and commercial settings, have the opportunity to reinforce this momentum, turning responsibility into impact. WAE's ethos crystallises this convergence of policy, purpose, and practice. Sustainable hydration solutions are not merely products; they are instruments of environmental stewardship, workplace health, and strategic ESG alignment.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The imperative is clear: align strategy with SDGs, embed policy into practice, and ensure that every action contributes to a sustainable, equitable future. The moment to act is now — every organisation, every policy, every drop counts.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Every drop of water, in this framework, reflects broader commitments to health, equity, and environmental stewardship. When businesses treat water not as a cost but as a responsibility, they do not merely meet compliance benchmarks — they become architects of a better India.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "India's path is proof that sustainability is not a distant ideal; it is a lived responsibility. Together, government, corporates, and communities can ensure that every innovation and every decision contributes to a planet that reflects our shared values.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "WAE's commitment to advancing clean water access, promoting reuse-based hydration systems, and reducing plastic waste stands as a direct enactment of these values — converting intention into impact, and policy into practice, one refill at a time.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Sustainability must be embedded in the DNA of governance, not as an afterthought.\" — Christiana Figueres\n"
         }
       ]
     ]
