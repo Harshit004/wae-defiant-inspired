@@ -433,8 +433,16 @@ export const BLOGS: Record<string, BlogPost> = {
     "contentColumns": [
       [
         {
+          "type": "heading",
+          "text": "From 1949 to Kyoto: How Climate Governance Took Shape\n\n-Shambhavi Yadav\n\n\"There is no Plan B because there is no Planet B.\"\n\n— Ban Ki-moon\n"
+        },
+        {
           "type": "paragraph",
-          "text": "\"𝗧𝗵𝗲𝗿𝗲 𝗶𝘀 𝗻𝗼 𝗣𝗹𝗮𝗻 𝗕 𝗯𝗲𝗰𝗮𝘂𝘀𝗲 𝘁𝗵𝗲𝗿𝗲 𝗶𝘀 𝗻𝗼 𝗣𝗹𝗮𝗻𝗲𝘁 𝗕.\"\n— 𝗕𝗮𝗻 𝗞𝗶-𝗺𝗼𝗼𝗻"
+          "text": "In an era defined by climate volatility, rising inequalities, and fractured global priorities, sustainability as popularized by the United Nations Sustainable Development Goals (SDGs) stands as the most ambitious, unifying roadmap humanity has ever conceived. Launched in 2015, these 17 interconnected goals are not mere aspirations; they are a collective call to action through history that reimagines what progress means in the 21st century.\n\nThe SDG-aligned innovation, from the first UN Scientific Conference to the SDGs in 2015, offers a compass, a shared North Star, that helps us align our decisions with the long-term viability of our planet and people.\n\nMuch like ancient mariners navigating uncharted oceans with the North Star as their celestial constant, the SDGs illuminate a collective path forward, a visionary trajectory through uncertainty toward resilience, equity, and sustainability.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Chronicles of Climate Change: The History Before The Birth Of SDGs\n\n1949–1972: From Lake Success to Stockholm (The Genesis of Global Environmentalism)\n\nThe modern climate movement began in 1949 at the UN Scientific Conference on the Conservation and Utilization of Resources in Lake Success, New York — the first UN body to formally examine resource depletion. By 29 May, the Economic and Social Council introduced these concerns into its formal agenda, paving the way for what would become the first global environmental summit. Held in Stockholm, Sweden (5–16 June 1972), the United Nations Conference on the Human Environment (now known as the First Earth Summit), produced a declaration that outlined principles for environmental protection and a robust international action plan.\n\n1979–1985: From Earth Watch to Vienna (The Rise of Atmospheric Diplomacy)\n\nIn 1979, under the Earth Watch programme, the UNEP Governing Council tasked its Executive Director with monitoring long-range transboundary air pollution. This initiative resulted in the Convention on Long-Range Transboundary Air Pollution, a milestone in global climate governance. By 1980, alarm over ozone depletion led UNEP to advocate limits on CFCs (F-11 and F-12), prompting the adoption of the Vienna Convention for the Protection of the Ozone Layer in 1985. That same year, a protocol under the 1979 Convention committed nations to reducing sulphur emissions by 30%.\n"
         }
       ],
       [
