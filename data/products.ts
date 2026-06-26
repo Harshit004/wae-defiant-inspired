@@ -160,12 +160,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "alfa-100",
-        "name": "TRUBLU ALFA 100",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
-        "category": "free-standing"
-      },
-      {
         "id": "alfa-ct",
         "name": "TRUBLU ALFA CT",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
@@ -194,6 +188,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "Epsilon",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a374fc3-9953-42c2-6b8a-07dfc01f3400/public"
+      },
+      {
+        "id": "alfa-100",
+        "name": "ALFA 100",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/800b2aca-19da-4043-42e8-8d5ad223fb00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -1407,16 +1407,17 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "alfa-100",
     "name": "ALFA 100",
     "categoryName": "WATER DISPENSER - TRUBLU Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/beff5c3b-301a-466d-8b0f-e9fe77bcd200/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a850b11e-b4e6-4413-1035-e76da3736100/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c9e2f1ea-74ff-48fc-c0d7-cb5f23c1ea00/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/800b2aca-19da-4043-42e8-8d5ad223fb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2bcaa386-2856-46cd-601a-3bf07b932c00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c15db0f5-c9db-4671-b624-63f94e571500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/91519e41-b732-4eba-ed50-bb8c0205a700/public"
     ],
     "featuresList": [
       {
         "title": "Plumbed-In",
-        "description": "Can be directly connected to the input water supply (purified)",
+        "description": "Can be directly connected to the input water supply (Purified).\n\nDesigned with bottom-loaded convenience as per the need.",
         "isDisplayed": true
       },
       {
@@ -1433,14 +1434,19 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "title": "Hypergienic Hydration",
         "description": "IR Sensor based touch free dispensing.",
         "isDisplayed": false
+      },
+      {
+        "title": "Colour (Customizable)",
+        "description": "Black, White, Colour of Your Choice",
+        "isDisplayed": false
       }
     ],
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS ALFA 65",
+          "variant": "ALFA.100",
           "hot": "3",
-          "cold": "40",
+          "cold": "80",
           "ambient": "15"
         }
       ],
@@ -1453,17 +1459,33 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "FS ALFA 65",
-          "weight": "-",
-          "height": "1631",
+          "variant": "ALFA.100",
+          "weight": "110.0",
+          "height": "1577",
           "width": "535",
-          "depth": "654"
+          "depth": "700"
         }
       ],
       "powerRequirement": "220V/50 HZ",
       "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
       "pointOfUseSterilization": "Germ Guardian™"
-    }
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public",
+    "heroTagline": "Design for Strength, Purity, Hygiene & Sustainability",
+    "heroSubtext": "Sustainable Future Together",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/ALFA.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
   },
   "alfa-ct": {
     "id": "alfa-ct",
