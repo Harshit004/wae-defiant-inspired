@@ -194,6 +194,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "Aurella",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public"
+      },
+      {
+        "id": "epsilon",
+        "name": "Epsilon",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a374fc3-9953-42c2-6b8a-07dfc01f3400/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -2443,6 +2449,101 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/Aurella.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
+  },
+  "epsilon": {
+    "id": "epsilon",
+    "name": "Epsilon",
+    "categoryName": "Water Dispenser & Cooler-TRUBLU",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a374fc3-9953-42c2-6b8a-07dfc01f3400/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1343b415-b7e2-4283-c443-119fc00c2800/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fd4e696a-1e6d-4402-dfa4-ec9bc37a4f00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dc8e8bce-6a27-4a52-5070-d18c54deb800/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Plumbed-In",
+        "description": "Plumbed-in to Purified Water Supply. RO purification available on demand",
+        "isDisplayed": true
+      },
+      {
+        "title": "Built to Last",
+        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability and long term value.\nFull SS 304 version available./ SS316 Contect Parts",
+        "isDisplayed": true
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
+      },
+      {
+        "title": "Hypergienic Hydration",
+        "description": "IR Sensor based touch free dispensing.\nManual operation (optional)",
+        "isDisplayed": false
+      },
+      {
+        "title": "Green Specs",
+        "description": "Certified Green 2 LPM-water flow",
+        "isDisplayed": false
+      },
+      {
+        "title": "LED Display (Optional)",
+        "description": "Secondary Parameters Consumption analysis Temperature Purification status IOT enabled",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "EPSILON 80",
+          "hot": "03",
+          "cold": "62",
+          "ambient": "15"
+        },
+        {
+          "variant": "EPSILON 120",
+          "hot": "-",
+          "cold": "80",
+          "ambient": "40"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C - 24° C (default 8°C)",
+        "hot": "Hot: 50°C - 80°C (default 55°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 - 2 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "EPSILON 80",
+          "weight": "85",
+          "height": "1700",
+          "width": "650",
+          "depth": "700"
+        }
+      ],
+      "powerRequirement": "Hertz 50/Volts 230-240 1270W, 100W",
+      "purificationSystem": "RO I UV | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
+      "pointOfUseSterilization": "Germ GuardianTM"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public",
+    "heroTagline": "Design for Strength, Purity, Hygiene & Sustainability",
+    "heroSubtext": "Sustainable Future Together",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/Epsilon.pd",
     "variants": {
       "hot": true,
       "cold": true,
