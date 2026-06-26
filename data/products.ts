@@ -81,6 +81,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
+        "id": "var-series",
+        "name": "VAR",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
+      },
+      {
         "id": "venus",
         "name": "VENUS",
         "category": "free-standing",
@@ -139,12 +145,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ROM.CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/067b3edc-d892-48f5-1e63-5e567c0a6d00/public"
-      },
-      {
-        "id": "var-series",
-        "name": "VAR",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -191,7 +191,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
       },
       {
         "id": "aurela",
-        "name": "Aurela",
+        "name": "Aurella",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public"
       }
@@ -2363,7 +2363,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   },
   "aurela": {
     "id": "aurela",
-    "name": "Aurela",
+    "name": "Aurella",
     "categoryName": "Water Dispenser & Cooler-TRUBLU",
     "heroSubtitle": "",
     "images": [
@@ -2417,7 +2417,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "cold": "Cold: 5°C - 24° C (default 8°C)",
         "hot": "Hot: 50°C - 80°C (default 55°C)"
       },
-      "greenCertification": "",
+      "greenCertification": "nfirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "1000ml",
       "refrigerant": "RZ 134a1/8 HP",
       "dimensions": [
@@ -2431,7 +2431,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       ],
       "powerRequirement": "220 V/50 Hz",
       "purificationSystem": "CTO",
-      "pointOfUseSterilization": "-"
+      "pointOfUseSterilization": "Germ Guardian™"
     },
     "status": "Live",
     "description": "",
