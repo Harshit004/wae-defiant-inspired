@@ -172,12 +172,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "counter-top"
       },
       {
-        "id": "yami",
-        "name": "YAMI",
-        "category": "fountains",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ffc77af9-3916-4e22-5133-db9d53a5dd00/public"
-      },
-      {
         "id": "aurela",
         "name": "AURELLA",
         "category": "free-standing",
@@ -206,6 +200,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "LAGOON",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8150df9-f454-4a9c-b016-16beb5b67400/public"
+      },
+      {
+        "id": "yami",
+        "name": "YAMI",
+        "category": "fountains",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ffc77af9-3916-4e22-5133-db9d53a5dd00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -1642,8 +1642,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "images": [
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ffc77af9-3916-4e22-5133-db9d53a5dd00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c4dec1e-5a23-4fc8-89e6-26f4c4dc9900/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ff2b0042-c346-4d95-60d2-87ed5e093300/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7d390ac7-be81-492e-d76c-31c6a7800000/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2a2e08c9-55ae-4107-6730-4d0a14fe2600/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/53a3fb29-bba0-448d-5040-589291be3000/public"
     ],
     "featuresList": [
       {
@@ -1675,10 +1675,10 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "YAMI",
-          "hot": "2",
-          "cold": "2",
-          "ambient": "2"
+          "variant": "YAMI/YAMI DUO",
+          "hot": "2/2",
+          "cold": "2/2",
+          "ambient": "2/2"
         }
       ],
       "waterTemp": {
@@ -1690,11 +1690,11 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "YAMI",
-          "weight": "110.0",
-          "height": "1104",
-          "width": "475",
-          "depth": "359"
+          "variant": "YAMI/YAM IDUO",
+          "weight": "110.0/130.0",
+          "height": "1104/1536",
+          "width": "475/475",
+          "depth": "359/452"
         }
       ],
       "powerRequirement": "Hertz 50/Volts 230-240",
