@@ -456,7 +456,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "Envisioning Sustainability: Why the SDGs Are the World's Shared Compass",
     "category": "Policy",
     "description": "In 2015, the United Nations adopted the 2030 Agenda for Sustainable Development...",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4e625f4b-a383-4df4-8af3-76b0da718000/public",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d7d97613-dc37-4530-a2d4-fe4eadedd900/public",
     "writerId": "shambhavi",
     "readTime": "3 min read",
     "status": "Live",
