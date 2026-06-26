@@ -261,6 +261,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "PIPER",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9e29753-4917-4d6c-17ce-21f1ae145500/public"
+      },
+      {
+        "id": "touch",
+        "name": "TOUCH",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cb10bd85-a816-46df-920e-1def61c6d200/public"
       }
     ]
   },
@@ -2570,6 +2576,89 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/INDUS.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
+  },
+  "touch": {
+    "id": "touch",
+    "name": "TOUCH",
+    "categoryName": "Drinking Water Faucets-WATERMATIC",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cb10bd85-a816-46df-920e-1def61c6d200/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34e1d987-c265-445d-cfc9-c9cfd2bb4300/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5e18de7-1b07-47e2-86e3-1491a51a2b00/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Touch-Based Operation",
+        "description": "Enjoy 24*7 pure water with just a touch, providing an exceptional hydration experience.",
+        "isDisplayed": true
+      },
+      {
+        "title": "American Disabilities Act",
+        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
+      },
+      {
+        "title": "Braille & Color Blind Friendly",
+        "description": "Features Braille and high- contrast colors for easy,\n inclusive use.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Built to Last",
+        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability, long term value and zero to landfill.",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "TOUCH",
+          "hot": "7",
+          "cold": "7",
+          "ambient": "7"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "TOUCH",
+          "weight": "-",
+          "height": "310/213",
+          "width": "-",
+          "depth": "-"
+        }
+      ],
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "-",
+      "pointOfUseSterilization": "-"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d79071da-5dea-4d76-dd36-4d27a0e51e00/public",
+    "heroTagline": "Amalgamation of Hydration & Sustainability",
+    "heroSubtext": "The Next Generation of Hydration Systems",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/TOUCH.pdf",
     "variants": {
       "hot": true,
       "cold": true,
