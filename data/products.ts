@@ -172,12 +172,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "counter-top"
       },
       {
-        "id": "aenon",
-        "name": "AENON",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8ea2eecd-b9d8-4a38-399b-12ce2375a200/public"
-      },
-      {
         "id": "lagoon",
         "name": "LAGOON",
         "category": "free-standing",
@@ -212,6 +206,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "AURELLA",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public"
+      },
+      {
+        "id": "aenon",
+        "name": "AENON",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8ea2eecd-b9d8-4a38-399b-12ce2375a200/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -1398,7 +1398,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "heroTagline": "Design for Strength, Purity, Hygiene & Sustainability",
     "heroSubtext": "Sustainable Future Together",
     "heroCtaText": "Contact  Us",
-    "heroCtaLink": "#product-showcase",
+    "heroCtaLink": "",
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/AENON.pdf",
