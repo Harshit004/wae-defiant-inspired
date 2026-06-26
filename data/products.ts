@@ -184,12 +184,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8150df9-f454-4a9c-b016-16beb5b67400/public"
       },
       {
-        "id": "aurela",
-        "name": "Aurella",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public"
-      },
-      {
         "id": "epsilon",
         "name": "Epsilon",
         "category": "free-standing",
@@ -212,6 +206,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "YAMI DUO",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0650b8d5-1bb3-4ac5-eece-e9245a242200/public"
+      },
+      {
+        "id": "aurela",
+        "name": "AURELLA",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -2346,7 +2346,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   },
   "aurela": {
     "id": "aurela",
-    "name": "Aurella",
+    "name": "AURELLA",
     "categoryName": "Water Dispenser & Cooler-TRUBLU",
     "heroSubtitle": "",
     "images": [
@@ -2422,7 +2422,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "heroTagline": "Design for Strength, Purity, Hygiene & Sustainability",
     "heroSubtext": "Sustainable Future Together",
     "heroCtaText": "Contact Us",
-    "heroCtaLink": "#product-showcase",
+    "heroCtaLink": "",
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/Aurella.pdf",
