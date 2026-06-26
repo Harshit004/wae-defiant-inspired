@@ -166,12 +166,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "free-standing"
       },
       {
-        "id": "alfa-bl",
-        "name": "TRUBLU ALFA BL",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
-        "category": "free-standing"
-      },
-      {
         "id": "alfa-ct",
         "name": "TRUBLU ALFA CT",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
@@ -1460,68 +1454,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "dimensions": [
         {
           "variant": "FS ALFA 65",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
-        }
-      ],
-      "powerRequirement": "220V/50 HZ",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
-      "pointOfUseSterilization": "Germ Guardian™"
-    }
-  },
-  "alfa-bl": {
-    "id": "alfa-bl",
-    "name": "ALFA BL",
-    "categoryName": "WATER DISPENSER - TRUBLU Series",
-    "heroSubtitle": "Powerful LED sterilization",
-    "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7dee6e9b-96e0-4236-49ee-b9e36ffedf00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b9b68bc5-70be-4303-fb96-b90fbbf77c00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f56ccc0-e0b5-4fa1-467d-db93eb6b3b00/public"
-    ],
-    "featuresList": [
-      {
-        "title": "Bottom-Load Ease",
-        "description": "Place jars or bottles below for easy water collection and reduced lifting.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Hypergienic Hydration",
-        "description": "IR Sensor based touch free dispensing.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
-        "isDisplayed": true
-      },
-      {
-        "title": "Touch-Free Dispense",
-        "description": "Enjoy hassle-free, hygienic dispensing with a simple touch.",
-        "isDisplayed": false
-      }
-    ],
-    "specifications": {
-      "storageCapacity": [
-        {
-          "variant": "CT ALFA BL",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
-        }
-      ],
-      "waterTemp": {
-        "cold": "Cold: 5°C - 24° C",
-        "hot": "Hot: 30°C - 80° C"
-      },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000 ml",
-      "refrigerant": "R-134a",
-      "dimensions": [
-        {
-          "variant": "CT ALFA BL",
           "weight": "-",
           "height": "1631",
           "width": "535",
