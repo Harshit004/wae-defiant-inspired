@@ -267,6 +267,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "TOUCH",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cb10bd85-a816-46df-920e-1def61c6d200/public"
+      },
+      {
+        "id": "led-uv-c",
+        "name": "LED UV-C",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/80109262-4e0f-4ce4-6295-5c53a9eeff00/public"
       }
     ]
   },
@@ -2662,6 +2668,84 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "variants": {
       "hot": true,
       "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
+  },
+  "led-uv-c": {
+    "id": "led-uv-c",
+    "name": "LED UV-C",
+    "categoryName": "Drinking Water Faucets-WATERMATIC",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/80109262-4e0f-4ce4-6295-5c53a9eeff00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/77f76b7e-5c0b-4d34-2961-ee630bfe1500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6cae9f53-9ad9-429b-2fd3-4e8a3ab72200/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Lever-Based Dispensing",
+        "description": "Dispense pure drinking water effortlessly with a smooth and reliable lever operation.",
+        "isDisplayed": true
+      },
+      {
+        "title": "American Disabilities Act",
+        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
+        "description": "Bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
+      },
+      {
+        "title": "Built to Last",
+        "description": "Premium 100% metal SS 304 construct with long term value and zero to landfill.",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "LED UV-C",
+          "hot": "-",
+          "cold": "-",
+          "ambient": "-"
+        }
+      ],
+      "waterTemp": {
+        "cold": "-",
+        "hot": "-"
+      },
+      "greenCertification": "-",
+      "dripTray": "-",
+      "refrigerant": "-",
+      "dimensions": [
+        {
+          "variant": "LED UV-C",
+          "weight": "-",
+          "height": "339",
+          "width": "210",
+          "depth": "320"
+        }
+      ],
+      "powerRequirement": "-",
+      "purificationSystem": "-",
+      "pointOfUseSterilization": "-"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d79071da-5dea-4d76-dd36-4d27a0e51e00/public",
+    "heroTagline": "Amalgamation of Hydration & Sustainability",
+    "heroSubtext": "The Next Generation of Hydration Systems",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/LED_UVC%20(2).pdf",
+    "variants": {
+      "hot": false,
+      "cold": false,
       "ambient": true
     },
     "displayImageIndex": 0
