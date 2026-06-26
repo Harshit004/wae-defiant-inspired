@@ -178,12 +178,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "counter-top"
       },
       {
-        "id": "alfa-tl",
-        "name": "TRUBLU ALFA TL",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
-        "category": "counter-top"
-      },
-      {
         "id": "delta",
         "name": "TRUBLU DELTA",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
@@ -1590,68 +1584,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "dimensions": [
         {
           "variant": "CT ALFA",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
-        }
-      ],
-      "powerRequirement": "220V/50 HZ",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
-      "pointOfUseSterilization": "Germ Guardian™"
-    }
-  },
-  "alfa-tl": {
-    "id": "alfa-tl",
-    "name": "ALFA TL",
-    "categoryName": "WATER DISPENSER - TRUBLU Series",
-    "heroSubtitle": "Powerful LED sterilization",
-    "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b80e936-57ba-457d-a11b-85833225c200/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8a7824d7-7f82-49fd-10cf-aaae8610e100/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2a3cb85-9bb6-42ce-54c5-35f6bd266000/public"
-    ],
-    "featuresList": [
-      {
-        "title": "Top-Load Ready",
-        "description": "Place a jar or bole on top to easily collect water.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Hypergienic Hydration",
-        "description": "IR Sensor based touch free dispensing.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
-        "isDisplayed": true
-      },
-      {
-        "title": "Sleek Design",
-        "description": "Modern, space-saving design that ts perfectly in any seing.",
-        "isDisplayed": false
-      }
-    ],
-    "specifications": {
-      "storageCapacity": [
-        {
-          "variant": "TL ALFA",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
-        }
-      ],
-      "waterTemp": {
-        "cold": "Cold: 5°C - 24° C",
-        "hot": "Hot: 30°C - 80° C"
-      },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000 ml",
-      "refrigerant": "R-134a",
-      "dimensions": [
-        {
-          "variant": "TL ALFA",
           "weight": "-",
           "height": "1631",
           "width": "535",
