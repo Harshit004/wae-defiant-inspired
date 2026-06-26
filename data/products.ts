@@ -158,7 +158,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
   "trublu": {
     "id": "trublu",
     "title": "Water dispenser & cooler - TRUBLU",
-    "description": "Crafted for contemporary environments, TRUBLU combines touchless convenience, stainless steel aesthetics, and purified hot, cold, and ambient hydration.",
+    "description": "Crafted for contemporary environments, bottleless dispensers combines touchless convenience, stainless steel aesthetics, and purified hot, cold, and ambient hydration.",
     "paragraphs": [
       "TRUBLU™ Series offers advanced and reliable Point-of-Use water dispensers designed to meet the highest standards of safety, quality, and style. Ideal for active corporate and commercial environments.",
       "Engineered with WAE's premium components, including medical-grade filtration and high-performance cooling/heating capacities to serve high-volume demand smoothly.",
