@@ -2431,7 +2431,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       ],
       "powerRequirement": "220 V/50 Hz",
       "purificationSystem": "CTO",
-      "pointOfUseSterilization": "-"
+      "pointOfUseSterilization": "Germ Guardian"
     },
     "status": "Live",
     "description": "",
