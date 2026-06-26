@@ -194,6 +194,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ALFA 100",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/800b2aca-19da-4043-42e8-8d5ad223fb00/public"
+      },
+      {
+        "id": "yami",
+        "name": "YAMI",
+        "category": "fountains",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ffc77af9-3916-4e22-5133-db9d53a5dd00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -208,12 +214,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
       "Designed for high-traffic environments like offices, schools, and public facilities, these units encourage refill culture by supporting reusable bottles, helping reduce plastic waste."
     ],
     "products": [
-      {
-        "id": "yami",
-        "name": "YAMI",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4617ef86-d822-4f26-a0e8-d81be539da00/public",
-        "category": "fountains"
-      },
       {
         "id": "plusultra",
         "name": "PLUSULTRA",
@@ -1631,75 +1631,86 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   "yami": {
     "id": "yami",
     "name": "YAMI",
-    "categoryName": "WATER COOLER & FOUNTAINS - ZVR Series",
+    "categoryName": "Water Dispenser & Cooler-TRUBLU",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4617ef86-d822-4f26-a0e8-d81be539da00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/85bdf8ae-9a9c-4e51-262c-3086fce40d00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/916a4dbf-24a7-4130-00bf-c35c5693ce00/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ffc77af9-3916-4e22-5133-db9d53a5dd00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c4dec1e-5a23-4fc8-89e6-26f4c4dc9900/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ff2b0042-c346-4d95-60d2-87ed5e093300/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7d390ac7-be81-492e-d76c-31c6a7800000/public"
     ],
     "featuresList": [
       {
-        "title": "Sleek Bubbler Head At a glance",
-        "description": "Chrome-plated brass head with a polished nish for a rened look and smooth water flow.",
+        "title": "Robust & Durable Build",
+        "description": "Constructed with premium Stainless Steel (SS-304) and corrosion-resistant GI, ensuring food-grade safety and long-lasting durability.",
         "isDisplayed": true
       },
       {
-        "title": "Hygienic Tubing",
-        "description": "100% lead-free, anti-bacterial tubes eliminate cross-contamination risks, ensuring pure, safe water.",
+        "title": "Instant Hydration",
+        "description": "Experience pure, safe water — delivered instantly at the push of a button or from a bubbler.",
         "isDisplayed": true
-      },
-      {
-        "title": "Splash-Free Experience",
-        "description": "Engineered for a clean, controlled ow that minimizes spillage and water waste.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Smart Drainage System",
-        "description": "Ecient drainage eliminates standing water, keeping the area clean and dry.",
-        "isDisplayed": false
-      },
-      {
-        "title": "Fully Accessible",
-        "description": "ADA-compliant design ensures effortless use for everyone.",
-        "isDisplayed": false
       },
       {
         "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
+      },
+      {
+        "title": "Effortless Integration",
+        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Water Enrichments (Optional)",
+        "description": "Mineralization Alkaline",
         "isDisplayed": false
       }
     ],
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "1000ml Hydropac Classic TL",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
+          "variant": "YAMI",
+          "hot": "2",
+          "cold": "2",
+          "ambient": "2"
         }
       ],
       "waterTemp": {
-        "cold": "Cold: 5°C - 24° C",
-        "hot": "Hot: 30°C - 80° C"
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000 ml",
+      "dripTray": "800 ml",
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "1000ml Hydropac Classic TL",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
+          "variant": "YAMI",
+          "weight": "110.0",
+          "height": "1104",
+          "width": "475",
+          "depth": "359"
         }
       ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
       "pointOfUseSterilization": "Germ Guardian™"
     },
-    "status": "Live"
+    "status": "Live",
+    "description": "",
+    "heroImage": "",
+    "heroTagline": "",
+    "heroSubtext": "",
+    "heroCtaText": "",
+    "heroCtaLink": "",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/YAMI.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
   },
   "plusultra": {
     "id": "plusultra",
