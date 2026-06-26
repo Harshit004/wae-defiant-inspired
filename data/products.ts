@@ -145,6 +145,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ROM.CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/067b3edc-d892-48f5-1e63-5e567c0a6d00/public"
+      },
+      {
+        "id": "yami-duo",
+        "name": "YAMI DUO",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0650b8d5-1bb3-4ac5-eece-e9245a242200/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -2509,6 +2515,90 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/Epsilon.pd",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
+  },
+  "yami-duo": {
+    "id": "yami-duo",
+    "name": "YAMI DUO",
+    "categoryName": "Water Dispenser & Cooler-TRUBLU",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0650b8d5-1bb3-4ac5-eece-e9245a242200/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ddead506-10e5-438b-86d3-1df1a9556300/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c06be19c-515d-4870-4c1b-9383ab696d00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f6d4be70-85d5-43be-6298-1c59a8299a00/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Robust & Durable Build",
+        "description": "Constructed with premium Stainless Steel (SS-304) and corrosion-resistant GI, ensuring food-grade safety and long-lasting durability.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Instant Hydration",
+        "description": "Experience pure, safe water — delivered instantly at the push of a button or from a bubbler.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
+      },
+      {
+        "title": "Effortless Integration",
+        "description": "Seamlessly connects with carbonated beverage dispensers and coffee/tea vending machines for a versatile, all-in-one solution.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Water Enrichments (Optional)",
+        "description": "Mineralization Alkaline",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "YAMI DUO",
+          "hot": "2",
+          "cold": "2",
+          "ambient": "2"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "800 ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "YAMI DUO",
+          "weight": "130.0",
+          "height": "1536",
+          "width": "475",
+          "depth": "452"
+        }
+      ],
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
+      "pointOfUseSterilization": "Germ GuardianTM"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public",
+    "heroTagline": "Design for Strength, Purity, Hygiene & Sustainability",
+    "heroSubtext": "Sustainable Future Together",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/YAMI.pdf",
     "variants": {
       "hot": true,
       "cold": true,
