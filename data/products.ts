@@ -1676,9 +1676,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "storageCapacity": [
         {
           "variant": "YAMI/YAMI DUO",
-          "hot": "2/2",
-          "cold": "2/2",
-          "ambient": "2/2"
+          "hot": "2",
+          "cold": "2",
+          "ambient": "2"
         }
       ],
       "waterTemp": {
@@ -1690,11 +1690,18 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "YAMI/YAM IDUO",
-          "weight": "110.0/130.0",
-          "height": "1104/1536",
-          "width": "475/475",
-          "depth": "359/452"
+          "variant": "YAMI",
+          "weight": "110.0",
+          "height": "1104",
+          "width": "475",
+          "depth": "359"
+        },
+        {
+          "variant": "YAM IDUO",
+          "weight": "130.0",
+          "height": "1536",
+          "width": "475",
+          "depth": "452"
         }
       ],
       "powerRequirement": "Hertz 50/Volts 230-240",
