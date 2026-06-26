@@ -178,12 +178,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "counter-top"
       },
       {
-        "id": "delta",
-        "name": "TRUBLU DELTA",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
-        "category": "free-standing"
-      },
-      {
         "id": "aenon",
         "name": "AENON",
         "category": "free-standing",
@@ -1578,78 +1572,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "dimensions": [
         {
           "variant": "CT ALFA",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
-        }
-      ],
-      "powerRequirement": "220V/50 HZ",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
-      "pointOfUseSterilization": "Germ Guardian™"
-    }
-  },
-  "delta": {
-    "id": "delta",
-    "name": "DELTA",
-    "categoryName": "WATER DISPENSER - TRUBLU Series",
-    "heroSubtitle": "Powerful LED sterilization",
-    "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/267d6f4b-afd7-42d1-c948-02c0cc588b00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/30dcf033-c808-4aba-1f0c-fa72e4022300/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/774bf3ad-1dc7-4ad2-5779-ab2d15f20700/public"
-    ],
-    "featuresList": [
-      {
-        "title": "Pure Water flow",
-        "description": "Lead-free, bacteria-resistant tubings for safe, clean water.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Energy Efficient",
-        "description": "Uses 25% less power, saving on energy costs.",
-        "isDisplayed": true
-      },
-      {
-        "title": "fast TOUCHLESS DISPENSING",
-        "description": "Delivers ice-cold and hot water twice as fast.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is puried upto 99.99% for sterilized hydration",
-        "isDisplayed": false
-      },
-      {
-        "title": "Seamless Integration",
-        "description": "Connects easily with coffee, tea, and beverage machines.",
-        "isDisplayed": false
-      },
-      {
-        "title": "Easy Maintenance",
-        "description": "Spill-resistant, dishwasher-safe drip tray for hassle-free upkeep.",
-        "isDisplayed": false
-      }
-    ],
-    "specifications": {
-      "storageCapacity": [
-        {
-          "variant": "FS DELTA",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
-        }
-      ],
-      "waterTemp": {
-        "cold": "Cold: 5°C - 24° C",
-        "hot": "Hot: 30°C - 80° C"
-      },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000 ml",
-      "refrigerant": "R-134a",
-      "dimensions": [
-        {
-          "variant": "FS DELTA",
           "weight": "-",
           "height": "1631",
           "width": "535",
