@@ -2019,111 +2019,35 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "heading",
-          "text": "The Urgency of Climate Action: Numbers That Cannot Be Ignored\n"
+          "text": "- Shambhavi Yadav\n\"If Climate Change is a Shark, then Water is its Teeth.\"\n— James P. Bruce"
         },
         {
           "type": "paragraph",
-          "text": "Civilisation has always been tethered to the rhythms of nature — rivers that nourished our ancestors, rains that determined harvests, and oceans that connected distant lands. Yet, in the relentless pursuit of growth, humanity has altered the very equilibrium that sustained life for millennia. Climate change is not merely an environmental concern; it is an existential reckoning.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Today, the Earth is already 1.2°C warmer than in the late 1800s. The World Meteorological Organization confirmed that 2024 was the hottest year on record, approximately 1.55°C above pre-industrial levels. The window to preserve a habitable planet is narrowing, and the call of SDG 13 resonates with a gravity that transcends politics or geography.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "The UN Environment Programme's Emissions Gap Report 2024 revealed that global greenhouse gas emissions surged to a record 57.1 gigatons of CO₂ equivalent in 2023, an increase of 1.3% from 2022. Emissions have now risen more than 50% above 1990 levels.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "The IPCC warns that to hold global warming to no more than 1.5°C, emissions must be cut almost in half by 2030 compared to 2019. Without urgent and coordinated action, more than 3 billion people and entire ecosystems will be imperilled.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "The cost of inaction is staggering. By 2050, annual adaptation costs could soar to US$565 billion, 90% of coastal cities could be affected by sea level rise, and up to 70 million people in Sub-Saharan Africa may be forced to migrate due to climate stress. Over the past two decades, disasters linked to extreme weather have already resulted in 475,000 deaths and US$2.6 trillion in damages.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "The Paris Agreement, which entered into force on 4 November 2016, is a legally binding treaty uniting 195 Parties in the collective mission of climate action. It enshrines three pillars of progress: reducing greenhouse gas emissions, adapting to the inevitable impacts of climate change, and financing the adjustments necessary for a sustainable future.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Every five years, nations must submit updated Nationally Determined Contributions (NDCs) — evidence of commitment and a measure of ambition. Implementation of the Paris Agreement is foundational to achieving the Sustainable Development Goals.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "At COP29 (2024), global leaders strengthened this architecture by setting a New Collective Quantified Goal on climate finance: mobilising at least US$300 billion annually by 2035, and scaling finance for developing countries to US$1.3 trillion annually by the same year.\n"
+          "text": "Civilisation has always been tethered to the rhythms of nature, rivers that nourished our ancestors, rains that determined harvests, and oceans that connected distant lands. Yet, in the relentless pursuit of growth, humanity has altered the very equilibrium that sustained life for millennia. Climate change is not merely an environmental concern; it is an existential reckoning, demanding that we reconsider how we consume, how we govern, and how we imagine the future.\n\nToday, the Earth is already* 1.2°C warmer than in the late 1800s, a seemingly modest figure with devastating consequences. The World Meteorological Organization (WMO) confirmed that *2024 was the hottest year on record, approximately 1.55°C above pre-industrial levels. The window to preserve a habitable planet is narrowing, and the call of SDG 13, Climate Action, resonates with a gravity that transcends politics or geography.\n\nFrom Words to Will: Numbers That Demand Action\n\nThe trajectory of emissions underscores the urgency. The **United Nations Environment Programme's Emissions Gap Report 2024 *revealed that global greenhouse gas emissions surged to a record 57.1 gigatons of CO₂ equivalent in 2023, an increase of 1.3% from 2022. This is not an aberration but the continuation of a troubling pattern: emissions have risen more than 50% above 1990 levels.\n\nThe** Intergovernmental Panel on Climate Change (IPCC)** warns that to hold global warming to no more than 1.5°C, emissions must be cut almost in half by 2030 compared to 2019. Without urgent and coordinated action, more than 3 billion people and entire ecosystems will be imperilled.\n\nThe cost of inaction is staggering. By 2050, annual adaptation costs could soar to US$565 billion*, 90% of coastal cities could be affected by sea level rise, and u**p to 70 million people in Sub-Saharan Africa**** may be forced to migrate due to climate stress. Coral reefs, the lungs of our oceans, could virtually disappear. Over the past two decades alone, disasters linked to extreme weather have already resulted in *475,000 deaths and US$2.6 trillion in damages.\n\nThe Paris Agreement: A Treaty Written for Tomorrow\n\nIn the face of this crisis, the world is not without direction. The Paris Agreement, which entered into force on 4 November 2016, is a legally binding treaty uniting 195 Parties in the collective mission of climate action. It enshrines three pillars of progress: Reducing greenhouse gas emissions, Adapting to the inevitable impacts of climate change, and Financing the adjustments necessary for a sustainable future.\n\nEvery five years, nations must submit updated Nationally Determined Contributions (NDCs), evidence of commitment and a measure of ambition. Implementation of the Paris Agreement is not optional; it is foundational to achieving the Sustainable Development Goals.\n\nAt COP29 (2024), global leaders strengthened this architecture by setting a New Collective Quantified Goal on climate finance: mobilising* *at least US$300 billion annually by 2035, and scaling finance for developing countries to US$1.3 trillion annually by the same year. This represents an acknowledgement that while bold climate action demands investment, the cost of inaction is profoundly greater."
         }
       ],
       [
         {
           "type": "heading",
-          "text": "SDG 13 Targets & Indicators: A Framework for Climate Accountability\n"
+          "text": "The Targets and Indicators of SDG 13\n"
         },
         {
           "type": "paragraph",
-          "text": "Target 13.1: Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries. Indicator 13.1.1: Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population. Indicator 13.1.2: Number of countries adopting national disaster risk reduction strategies in line with the Sendai Framework. Indicator 13.1.3: Proportion of local governments implementing local disaster risk reduction strategies.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Target 13.2: Integrate climate change measures into national policies, strategies, and planning. Indicator 13.2.1: Number of countries with NDCs, long-term strategies, and adaptation plans. Indicator 13.2.2: Total greenhouse gas emissions per year.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Target 13.3: Improve education and institutional capacity on mitigation, adaptation, impact reduction, and early warning. Indicator 13.3.1: Extent to which climate education and sustainable development are mainstreamed into policies, curricula, and teacher education.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Target 13.a: Implement developed-country commitments to mobilise US$100 billion annually by 2020 and fully operationalise the Green Climate Fund. Indicator 13.a.1: Annual amounts provided and mobilised relative to this commitment.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Target 13.b: Promote mechanisms for climate planning in least developed countries and small island developing States, focusing on women, youth, and marginalised communities. Indicator 13.b.1: Number of countries submitting NDCs, long-term strategies, and adaptation plans.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Among all natural systems, water is the most direct mirror of climate stress. Altered rainfall patterns, prolonged droughts, intensifying floods, and sea level rise demonstrate how profoundly climate change manifests in water cycles. Today, nearly half the world's population lives in the climate \"danger zone\", where people are 15 times more likely to die from climate-related impacts.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "Water is also inseparable from energy. The global water sector consumes around 4% of electricity, with distribution, treatment, and pumping creating a significant carbon footprint. Transitioning to efficient, decentralised water systems simultaneously reduces emissions and strengthens adaptation.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "The plastic economy adds yet another dimension. The proliferation of single-use plastic bottles imposes an unnecessary carbon and waste burden. A circular approach, built on reuse and durability, aligns hydration solutions with both climate and resource stewardship.\n"
+          "text": "SDG 13 crystallises the global vision for climate action into measurable outcomes:\nTarget 13.1\n\nStrengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries.\n\nIndicator: 13.1.1: Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population.\n\nIndicator: 13.1.2: Number of countries adopting national disaster risk reduction strategies in line with the Sendai Framework.\n\nIndicator: 13.1.3: Proportion of local governments implementing local disaster risk reduction strategies.\n\nTarget 13.2\nIntegrate climate change measures into national policies, strategies, and planning.\n\nIndicator: 13.2.1: Number of countries with NDCs, long-term strategies, and adaptation plans.\n\nIndicator: 13.2.2: Total greenhouse gas emissions per year.\n\nTarget 13.3\nImprove education and institutional capacity on mitigation, adaptation, impact reduction, and early warning.\n\nIndicator: 13.3.1: Extent to which climate education and sustainable development are mainstreamed into policies, curricula, and teacher education.\n\nTarget 13.a\nImplement developed-country commitments to mobilise US$100 billion annually by 2020 and fully operationalise the Green Climate Fund.\n\nIndicator: 13.a.1: Annual amounts provided and mobilised relative to this commitment.\n\nTarget 13.b\nPromote mechanisms for climate planning in least developed countries and small island developing States, focusing on women, youth, and marginalised communities.\n\nIndicator: 13.b.1: Number of countries submitting NDCs, long-term strategies, and adaptation plans.\n\nRivers, Rain, and Rising Seas: The Centrality of Water in Climate Action\n\nAmong all natural systems, water is the most direct mirror of climate stress. Altered rainfall patterns, prolonged droughts, intensifying floods, and sea level rise demonstrate how profoundly climate change manifests in water cycles. Today, nearly half the world's population lives in the climate \"danger zone\", where people are 15 times more likely to die from climate-related impacts.\n\nWater is also inseparable from energy. The global water sector consumes around 4% of electricity, with distribution, treatment, and pumping creating a significant carbon footprint. Transitioning to efficient, decentralised water systems simultaneously reduces emissions and strengthens adaptation.\n\nThe plastic economy adds yet another dimension. The proliferation of single-use plastic bottles imposes an unnecessary carbon and waste burden. A circular approach, built on reuse and durability, aligns hydration solutions with both climate and resource stewardship."
         }
       ],
       [
         {
           "type": "heading",
-          "text": "Water, Stewardship & WAE: From Reckoning to Renewal\n"
+          "text": "WAE's Commitment: Water Solutions for Climate-Resilient Cities\n"
         },
         {
           "type": "paragraph",
-          "text": "For businesses, governments, and communities, effective climate strategies must begin with water stewardship. WAE exemplifies this principle, framing water not merely as a resource but as a cornerstone of resilience and adaptation. Its vision emphasises decentralisation, circularity, and localised reliability.\n"
+          "text": "For businesses, governments, and communities, effective climate strategies must begin with water stewardship. WAE exemplifies this principle, framing water not merely as a resource but as a cornerstone of resilience and adaptation. Its vision emphasises decentralisation, circularity, and localised reliability, recognising that sustainable hydration infrastructure is integral to thriving urban ecosystems in the face of climate volatility.\n\nThrough this approach, WAE transforms water management into a paradigm of foresight and responsibility. By embedding environmental consciousness into the very design of urban water systems, it models how cities and institutions can align with SDG 13 — reducing emissions, mitigating risks, and building resilient, future-ready communities. Water becomes more than a necessity; it becomes a strategy for climate action and a symbol of collective stewardship.\n\nFrom Reckoning to Renewal\n\nThe challenge of our century is clear: without decisive intervention, global warming will breach thresholds that destabilise societies and economies. But the response need not be framed only in fear. The United Nations Development Programme notes that bold climate action could unlock US$26 trillion in economic benefits by 2030. This is not simply a crisis; it is a crossroads.\n\nWater, the ancient symbol of life, is also the bridge to climate resilience. Managing it responsibly, efficiently, and sustainably is no longer optional but imperative. For businesses, governments, and cities, SDG 13 is both a warning and a map, a call to replace extraction with stewardship, to replace short-term expediency with intergenerational responsibility.\n\nAt WAE, we believe that every sip of water can be a statement of sustainability. By integrating climate-conscious hydration into workplaces, hospitality, and smart cities, we embody the philosophy that climate action begins not in distant treaties, but in daily choices.\n\nThe time for action is not tomorrow, but today. The future we bequeath to the next generation depends on the urgency and wisdom with which we act now."
         },
         {
-          "type": "paragraph",
-          "text": "Through this approach, WAE transforms water management into a paradigm of foresight and responsibility. By embedding environmental consciousness into the very design of urban water systems, it models how cities and institutions can align with SDG 13 — reducing emissions, mitigating risks, and building resilient, future-ready communities.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "The United Nations Development Programme notes that bold climate action could unlock US$26 trillion in economic benefits by 2030. This is not simply a crisis; it is a crossroads. Water, the ancient symbol of life, is also the bridge to climate resilience.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "For businesses, governments, and cities, SDG 13 is both a warning and a map — a call to replace extraction with stewardship, and short-term expediency with intergenerational responsibility.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "At WAE, we believe that every sip of water can be a statement of sustainability. By integrating climate-conscious hydration into workplaces, hospitality, and smart cities, we embody the philosophy that climate action begins not in distant treaties, but in daily choices.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "The time for action is not tomorrow, but today. The future we bequeath to the next generation depends on the urgency and wisdom with which we act now.\n"
-        },
-        {
-          "type": "paragraph",
-          "text": "\"Satatam Karma Kurvanti Lokasangrahameva Cha\" — Perform action constantly for the welfare of the world. — Bhagavad Gita, 3.20"
+          "type": "heading",
+          "text": "\"Satatam Karma Kurvanti Lokasangrahameva Cha\"- Perform action constantly for the welfare of the world.\n-Bhagavad Gita, 3.20"
         }
       ]
     ]
@@ -2142,11 +2066,43 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "heading",
-          "text": "- Shambhavi Yadav\n\"Apo Vai Prana\"- Water is truly the breath of life.\n- Chandogya Upanishad"
+          "text": "Health as Humanity's Compass: The Promise of SDG 3"
         },
         {
           "type": "paragraph",
-          "text": "Across civilisations and centuries, health has been revered as the cornerstone of human existence. The Greek physician Hippocrates declared it the \"greatest of human blessings.\" In India, the Vedic scriptures equated health with wholeness, an integration of body, mind, and environment. To speak of prosperity without health is hollow; to envision sustainability without well-being is incomplete.\n\nThis eternal truth finds its contemporary resonance in the** United Nations Sustainable Development Goal 3** (SDG 3): to ensure healthy lives and promote well-being for all, at all ages.\n\nYet health does not flourish in hospitals alone. It is cultivated daily through the invisible rhythms of nutrition, clean air, safe water, and social equity.\n\nIn institutional and workplace settings, where adults spend the majority of their day, access to pure, safe water emerges as a critical but often overlooked pillar of preventive health. Hydration is not merely a physical necessity, it is an instrument of resilience, productivity, and sustainability.\n\nDefining SDG 3: Health as Humanity's Compass\nSDG 3 recognises that well-being spans the entire human lifespan. From reducing maternal mortality to addressing non-communicable diseases (NCDs), mental health, and communicable illnesses, its ambition is comprehensive. Health equity is central: every individual, regardless of geography or socioeconomic status, has the right to access care and preventive infrastructure that sustains life and vitality.\n\nThe Promise of SDG 3 Targets: Beyond Survival, Toward Flourishing\n\n3.1 By 2030, reduce the global maternal mortality ratio to less than 70 per 100,000 live births.\n\n3.2 By 2030, end preventable deaths of newborns and children under 5 years of age, with all countries aiming to reduce neonatal mortality to at least as low as 12 per 1,000 live births and under-5 mortality to at least as low as 25 per 1,000 live births.\n\n3.3 By 2030, end the epidemics of AIDS, tuberculosis, malaria and neglected tropical diseases and combat hepatitis, water-borne diseases and other communicable diseases.\n\n3.4 By 2030, reduce by one third premature mortality from non-communicable diseases through prevention and treatment and promote mental health and well-being.\n\n3.5 Strengthen the prevention and treatment of substance abuse, including narcotic drug abuse and harmful use of alcohol.\n\n3.6 By 2020, halve the number of global deaths and injuries from road traffic accidents.\n\n3.7 By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education, and the integration of reproductive health into national strategies and programmes.\n\n3.8 Achieve universal health coverage, including financial risk protection, access to quality essential health-care services and access to safe, effective, quality and affordable essential medicines and vaccines for all.\n\n3.9 By 2030, substantially reduce the number of deaths and illnesses from hazardous chemicals and air, water and soil pollution and contamination.\n\n3.A Strengthen the implementation of the World Health Organization Framework Convention on Tobacco Control in all countries, as appropriate.\n\n3.B Support the research and development of vaccines and medicines for the communicable and noncommunicable diseases that primarily affect developing countries, provide access to affordable essential medicines and vaccines, in accordance with the Doha Declaration on the TRIPS Agreement and Public Health, which affirms the right of developing countries to use to the full the provisions in the Agreement on Trade Related Aspects of Intellectual Property Rights regarding flexibilities to protect public health, and, in particular, provide access to medicines for all.\n\n3.C Substantially increase health financing and the recruitment, development, training and retention of the health workforce in developing countries, especially in least developed countries and small island developing States.\n\n3.D Strengthen the capacity of all countries, in particular developing countries, for early warning, risk reduction and management of national and global health risks."
+          "text": "Across civilisations and centuries, health has been revered as the cornerstone of human existence. The Greek physician Hippocrates declared it the \"greatest of human blessings.\" In India, the Vedic scriptures equated health with wholeness — an integration of body, mind, and environment. To speak of prosperity without health is hollow; to envision sustainability without well-being is incomplete."
+        },
+        {
+          "type": "paragraph",
+          "text": "This eternal truth finds its contemporary resonance in the United Nations Sustainable Development Goal 3 (SDG 3): to ensure healthy lives and promote well-being for all, at all ages. Yet health does not flourish in hospitals alone. It is cultivated daily through the invisible rhythms of nutrition, clean air, safe water, and social equity."
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 3 recognises that well-being spans the entire human lifespan. From reducing maternal mortality to addressing non-communicable diseases, mental health, and communicable illnesses, its ambition is comprehensive. Health equity is central: every individual, regardless of geography or socioeconomic status, has the right to access care and preventive infrastructure that sustains life and vitality."
+        },
+        {
+          "type": "paragraph",
+          "text": "Target 3.1: By 2030, reduce the global maternal mortality ratio to less than 70 per 100,000 live births. Target 3.2: By 2030, end preventable deaths of newborns and children under 5 years of age, with all countries aiming to reduce neonatal mortality to at least as low as 12 per 1,000 live births and under-5 mortality to at least as low as 25 per 1,000 live births."
+        },
+        {
+          "type": "paragraph",
+          "text": "Target 3.3: By 2030, end the epidemics of AIDS, tuberculosis, malaria and neglected tropical diseases and combat hepatitis, water-borne diseases and other communicable diseases. Target 3.4: By 2030, reduce by one third premature mortality from non-communicable diseases through prevention and treatment and promote mental health and well-being."
+        },
+        {
+          "type": "paragraph",
+          "text": "Target 3.5: Strengthen the prevention and treatment of substance abuse, including narcotic drug abuse and harmful use of alcohol. Target 3.6: By 2020, halve the number of global deaths and injuries from road traffic accidents. Target 3.7: By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education."
+        },
+        {
+          "type": "paragraph",
+          "text": "Target 3.8: Achieve universal health coverage, including financial risk protection, access to quality essential health-care services and access to safe, effective, quality and affordable essential medicines and vaccines for all. Target 3.9: By 2030, substantially reduce the number of deaths and illnesses from hazardous chemicals and air, water and soil pollution and contamination."
+        },
+        {
+          "type": "paragraph",
+          "text": "Target 3.A: Strengthen the implementation of the WHO Framework Convention on Tobacco Control in all countries. Target 3.B: Support the research and development of vaccines and medicines for communicable and noncommunicable diseases that primarily affect developing countries, and provide access to affordable essential medicines for all."
+        },
+        {
+          "type": "paragraph",
+          "text": "Target 3.C: Substantially increase health financing and the recruitment, development, training and retention of the health workforce in developing countries. Target 3.D: Strengthen the capacity of all countries, in particular developing countries, for early warning, risk reduction and management of national and global health risks.\n"
         }
       ],
       [
@@ -2156,21 +2112,73 @@ export const BLOGS: Record<string, BlogPost> = {
         },
         {
           "type": "paragraph",
-          "text": "The world stands at a precarious juncture. While remarkable advances in medicine and technology have been made, millions remain excluded from even the most basic care. Around 400 million people still lack access to basic health services, a staggering figure that underscores systemic inequities [UNDP].\n\nMaternal health, a cornerstone of intergenerational well-being, is under severe strain: 260,000 women died during pregnancy and childbirth in 2023 [UN]. Child mortality, too, remains alarmingly high, despite targeted interventions in neonatal and under-five care.\n\nThe burden of communicable diseases continues to challenge global health systems. Malaria cases are rising, tuberculosis re-emerged in 2023 as the world's leading infectious killer, and water-borne illnesses remain prevalent in regions with compromised sanitation [UN].\n\nSimultaneously, non-communicable diseases (NCDs) silently erode human potential: every 2 seconds, someone aged 30–70 dies prematurely from an NCD, and in 2021, 18 million people under 70 succumbed to such conditions, highlighting the urgent need for preventive strategies. [UN]\n\nEnvironmental hazards amplify the crisis.* *7 million deaths annually are linked to fine particulate air pollution, while unsafe water, chemical contaminants, and poor sanitation continue to undermine human health [UNDP]. The trajectory is clear: achieving SDG 3 by 2030 will require systemic, integrated interventions beyond hospitals and clinics.\n\nHydration: The Overlooked Cornerstone of Preventive Health\nHealth is often discussed in the language of medicine, vaccines, treatments, or financing models. Yet prevention often begins with the simplest acts. Among them, hydration is paramount.\n\nThe human body, composed of approximately 60% water, depends on hydration for cellular function, thermoregulation, nutrient transport, and cognitive clarity. Even mild dehydration can reduce concentration, impair physical performance, and weaken immunity. (WebMD)\n\nChronic dehydration is linked with kidney disease, urinary tract infections, and heightened risk of metabolic disorders. (ResearchGate)\nAccess to pure, safe water directly intersects with multiple SDG 3 targets. It mitigates water-borne diseases (Target 3.3), reduces exposure to environmental toxins (Target 3.9), and supports cognitive and mental well-being in workplaces (Target 3.4).\n\nWHO has specific drinking water quality guidelines that emphasize the link between drinking water and human health. Hydration is not merely a lifestyle consideration, it is a preventive public health imperative.\n"
+          "text": "The world stands at a precarious juncture. While remarkable advances in medicine and technology have been made, millions remain excluded from even the most basic care. Around 400 million people still lack access to basic health services, a staggering figure that underscores systemic inequities.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Maternal health is under severe strain: 260,000 women died during pregnancy and childbirth in 2023. Child mortality, too, remains alarmingly high, despite targeted interventions in neonatal and under-five care.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The burden of communicable diseases continues to challenge global health systems. Malaria cases are rising, tuberculosis re-emerged in 2023 as the world's leading infectious killer, and water-borne illnesses remain prevalent in regions with compromised sanitation.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Non-communicable diseases silently erode human potential: every 2 seconds, someone aged 30–70 dies prematurely from an NCD, and in 2021, 18 million people under 70 succumbed to such conditions, highlighting the urgent need for preventive strategies.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Environmental hazards amplify the crisis. 7 million deaths annually are linked to fine particulate air pollution, while unsafe water, chemical contaminants, and poor sanitation continue to undermine human health. Achieving SDG 3 by 2030 will require systemic, integrated interventions beyond hospitals and clinics.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Health is often discussed in the language of medicine, vaccines, and financing models. Yet prevention often begins with the simplest acts — and among them, hydration is paramount. The human body, composed of approximately 60% water, depends on hydration for cellular function, thermoregulation, nutrient transport, and cognitive clarity. Even mild dehydration can reduce concentration, impair physical performance, and weaken immunity.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Chronic dehydration is linked with kidney disease, urinary tract infections, and heightened risk of metabolic disorders. Access to pure, safe water directly intersects with multiple SDG 3 targets — it mitigates water-borne diseases (Target 3.3), reduces exposure to environmental toxins (Target 3.9), and supports cognitive and mental well-being in workplaces (Target 3.4).\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "WHO has specific drinking water quality guidelines that emphasize the link between drinking water and human health. Hydration is not merely a lifestyle consideration — it is a preventive public health imperative.\n"
         }
       ],
       [
         {
           "type": "heading",
-          "text": "Institutions and Workplaces: The Frontlines of Preventive Action\n"
+          "text": "Workplaces, WAE & the Covenant of Health Toward 2030\n"
         },
         {
           "type": "paragraph",
-          "text": "Modern workplaces are microcosms of society where health behaviours are cultivated daily. Employees spend eight to ten hours in offices, factories, or institutional environments, making access to safe drinking water a decisive determinant of their well-being. Poor hydration infrastructure, contaminated taps, reliance on single-use plastic bottles, or limited availability, directly undermines employee health, productivity, and organisational ESG performance.\n\nConversely, workplaces that prioritise sustainable hydration systems offer a multitude of benefits. Employee health improves, cognitive performance rises, and chronic absenteeism declines. Organisations reduce plastic waste, enhance environmental stewardship, and align operational practices with SDGs 3, 6, and 13. In this sense, hydration infrastructure is not ancillary, it is a strategic tool for preventive healthcare, environmental responsibility, and corporate excellence.\n\nWAE's Ethos: Hydration as Corporate Responsibility\nAt WAE, this philosophy is not abstract but operational. WAE's stainless steel, zero-waste, customisable drinking water stations embody the integration of sustainability, health, and ESG goals.\n\nBy eradicating dependency on plastic bottles, WAE eliminates microplastic-related health risks while reducing environmental degradation. Through advanced purification technologies, its dispensers ensure water free from contaminants, aligning with SDG 3's emphasis on combating water-borne diseases.\n\nIn institutional and commercial spaces, where health and productivity converge, WAE solutions offer more than infrastructure. They serve as a preventive public health strategy, ensuring that hydration becomes a source of resilience rather than risk.\n\nToward 2030: A Covenant of Health and Responsibility\nSDG 3 reminds us that health is not a privilege but an inalienable right, not the domain of a few but the inheritance of all. Its achievement requires an integrated approach where prevention, environment, and innovation intersect.\n\nHydration, often invisible in global debates, is an overlooked frontier. To secure universal well-being, we must recognise water as not only a resource but a lifeline of health. By investing in safe and sustainable hydration systems, institutions can directly shape healthier, more resilient societies.\n\nThe choice is ours. Health can no longer be understood as episodic care after illness, it must be envisioned as continuous, preventive, and holistic. WAE's journey demonstrates how businesses can pioneer this future, uniting sustainability with human well-being.\n\nAs we look toward 2030, the question is not whether we can afford to act, but whether we can afford not to.\n\nThe time has come to view hydration not as a utility, but as a universal covenant for life, longevity, and legacy."
+          "text": "Modern workplaces are microcosms of society where health behaviours are cultivated daily. Employees spend eight to ten hours in offices, factories, or institutional environments, making access to safe drinking water a decisive determinant of their well-being.\n"
         },
         {
-          "type": "heading",
-          "text": "\"The first wealth is health, and water is its purest currency.\"\n- Ralph Waldo Emerson"
+          "type": "paragraph",
+          "text": "Poor hydration infrastructure — contaminated taps, reliance on single-use plastic bottles, or limited availability — directly undermines employee health, productivity, and organisational ESG performance. Conversely, workplaces that prioritise sustainable hydration systems see employee health improve, cognitive performance rise, and chronic absenteeism decline.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "At WAE, this philosophy is not abstract but operational. WAE's stainless steel, zero-waste, customisable drinking water stations embody the integration of sustainability, health, and ESG goals. By eradicating dependency on plastic bottles, WAE eliminates microplastic-related health risks while reducing environmental degradation.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Through advanced purification technologies, its dispensers ensure water free from contaminants, aligning with SDG 3's emphasis on combating water-borne diseases. In institutional and commercial spaces, where health and productivity converge, WAE solutions serve as a preventive public health strategy.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 3 reminds us that health is not a privilege but an inalienable right. Its achievement requires an integrated approach where prevention, environment, and innovation intersect. Hydration, often invisible in global debates, is an overlooked frontier.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "To secure universal well-being, we must recognise water as not only a resource but a lifeline of health. By investing in safe and sustainable hydration systems, institutions can directly shape healthier, more resilient societies.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Health can no longer be understood as episodic care after illness — it must be envisioned as continuous, preventive, and holistic. The time has come to view hydration not as a utility, but as a universal covenant for life, longevity, and legacy.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"The first wealth is health, and water is its purest currency.\" — Ralph Waldo Emerson\n"
         }
       ]
     ]
