@@ -424,7 +424,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "id": "the-north-star-of-progress",
     "title": "The North Star of Progress: A Historical Lens on Climate Change and India's Sustainable Future",
     "category": "Policy",
-    "description": "In an era defined by climate volatility, rising inequalities, and fractured global priorities...",
+    "description": "From the 1949 UN Scientific Conference to the 2015 Paris Agreement, this article traces the milestones that gave birth to the SDGs — and explores how India, guided by this global compass, is building a sustainable future through bold missions like Jal Jeevan.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/75104b88-7b75-4411-8640-43363ad62c00/public",
     "writerId": "shambhavi",
     "readTime": "3 min read",
@@ -434,7 +434,7 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "paragraph",
-          "text": "In an era defined by climate volatility, rising inequalities, and fractured global priorities, sustainable development has emerged as the definitive North Star of progress. For a rapidly growing nation like India, balancing developmental aspirations with ecological preservation is the defining challenge of the 21st century."
+          "text": "\"𝗧𝗵𝗲𝗿𝗲 𝗶𝘀 𝗻𝗼 𝗣𝗹𝗮𝗻 𝗕 𝗯𝗲𝗰𝗮𝘂𝘀𝗲 𝘁𝗵𝗲𝗿𝗲 𝗶𝘀 𝗻𝗼 𝗣𝗹𝗮𝗻𝗲𝘁 𝗕.\"\n— 𝗕𝗮𝗻 𝗞𝗶-𝗺𝗼𝗼𝗻"
         }
       ],
       [
