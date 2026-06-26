@@ -172,12 +172,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "counter-top"
       },
       {
-        "id": "lagoon",
-        "name": "LAGOON",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8150df9-f454-4a9c-b016-16beb5b67400/public"
-      },
-      {
         "id": "yami",
         "name": "YAMI",
         "category": "fountains",
@@ -206,6 +200,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "EPSILON",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a374fc3-9953-42c2-6b8a-07dfc01f3400/public"
+      },
+      {
+        "id": "lagoon",
+        "name": "LAGOON",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8150df9-f454-4a9c-b016-16beb5b67400/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -1585,7 +1585,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "FS LAGOON",
+          "variant": "LAGOON",
           "hot": "1",
           "cold": "5",
           "ambient": "10"
@@ -1600,7 +1600,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "FS LAGOON",
+          "variant": "LAGOON",
           "weight": "110",
           "height": "1200",
           "width": "450",
@@ -1617,7 +1617,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "heroTagline": "Design for Strength, Purity, Hygiene & Sustainability",
     "heroSubtext": "Sustainable Future Together",
     "heroCtaText": "Contact Us",
-    "heroCtaLink": "#product-showcase",
+    "heroCtaLink": "",
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/Lagoon.pdf",
