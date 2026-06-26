@@ -184,12 +184,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/800b2aca-19da-4043-42e8-8d5ad223fb00/public"
       },
       {
-        "id": "yami",
-        "name": "YAMI",
-        "category": "fountains",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ffc77af9-3916-4e22-5133-db9d53a5dd00/public"
-      },
-      {
         "id": "yami-duo",
         "name": "YAMI DUO",
         "category": "free-standing",
@@ -212,6 +206,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "LAGOON",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8150df9-f454-4a9c-b016-16beb5b67400/public"
+      },
+      {
+        "id": "yami",
+        "name": "YAMI",
+        "category": "fountains",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ffc77af9-3916-4e22-5133-db9d53a5dd00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
