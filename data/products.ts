@@ -267,6 +267,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "Moses",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/386b4db5-361c-473a-78b8-51358994ad00/public"
+      },
+      {
+        "id": "indus",
+        "name": "INDUS",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a435208b-076d-4a5d-6c93-9c3286214800/public"
       }
     ]
   },
@@ -2605,6 +2611,94 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/ALFA.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
+  },
+  "indus": {
+    "id": "indus",
+    "name": "INDUS",
+    "categoryName": "Drinking Water Faucets-WATERMATIC",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a435208b-076d-4a5d-6c93-9c3286214800/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7516291c-c413-4b60-c985-61475fcc2c00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1a555b1a-09b3-4045-cd43-9d2922a0cc00/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Touchless & Touch-Based Operation",
+        "description": "Advance IR sensors and touch panels for a superior and flexible hydration experience.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Real-Time OLED Display",
+        "description": "Sharp display for precise option selection and temperature view.",
+        "isDisplayed": true
+      },
+      {
+        "title": "American Disabilities Act",
+        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": false
+      },
+      {
+        "title": "Braille & Color Blind Friendly",
+        "description": "Features Braille and high- contrast colors for easy, inclusive use.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Built to Last",
+        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability, long term value and zero to landfill.",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "INDUS",
+          "hot": "10",
+          "cold": "10",
+          "ambient": "10"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "INDUS",
+          "weight": "-",
+          "height": "300mm",
+          "width": "-",
+          "depth": "-"
+        }
+      ],
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "-",
+      "pointOfUseSterilization": "-"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d79071da-5dea-4d76-dd36-4d27a0e51e00/public",
+    "heroTagline": "Amalgamation of Hydration & Sustainability",
+    "heroSubtext": "The Next Generation of Hydration Systems",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/INDUS.pdf",
     "variants": {
       "hot": true,
       "cold": true,
