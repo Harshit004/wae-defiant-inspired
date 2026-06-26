@@ -81,12 +81,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "var-series",
-        "name": "VAR",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
-      },
-      {
         "id": "venus",
         "name": "VENUS",
         "category": "free-standing",
@@ -145,6 +139,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ROM.CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/067b3edc-d892-48f5-1e63-5e567c0a6d00/public"
+      },
+      {
+        "id": "var-series",
+        "name": "VAR",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -2431,7 +2431,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       ],
       "powerRequirement": "220 V/50 Hz",
       "purificationSystem": "CTO",
-      "pointOfUseSterilization": "Germ Guardian"
+      "pointOfUseSterilization": "-"
     },
     "status": "Live",
     "description": "",
