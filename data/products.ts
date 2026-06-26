@@ -178,12 +178,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8ea2eecd-b9d8-4a38-399b-12ce2375a200/public"
       },
       {
-        "id": "alfa-100",
-        "name": "ALFA",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/800b2aca-19da-4043-42e8-8d5ad223fb00/public"
-      },
-      {
         "id": "epsilon",
         "name": "EPSILON",
         "category": "free-standing",
@@ -206,6 +200,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ALFA CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47099ceb-1f3f-403e-cd1c-34beef9f6f00/public"
+      },
+      {
+        "id": "alfa-100",
+        "name": "ALFA",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/800b2aca-19da-4043-42e8-8d5ad223fb00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -1417,8 +1417,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "images": [
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/800b2aca-19da-4043-42e8-8d5ad223fb00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2bcaa386-2856-46cd-601a-3bf07b932c00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c15db0f5-c9db-4671-b624-63f94e571500/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/91519e41-b732-4eba-ed50-bb8c0205a700/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/692cc4f3-a161-48dc-f60d-9131dd90e900/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fc90dc26-886c-406f-14d6-24462a974500/public"
     ],
     "featuresList": [
       {
@@ -1451,9 +1451,15 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "storageCapacity": [
         {
           "variant": "ALFA.100",
-          "hot": "3",
+          "hot": "03",
           "cold": "80",
           "ambient": "15"
+        },
+        {
+          "variant": "ALFA 65",
+          "hot": "03",
+          "cold": "45",
+          "ambient": "25"
         }
       ],
       "waterTemp": {
@@ -1470,6 +1476,13 @@ export const PRODUCTS: Record<string, ProductDetails> = {
           "height": "1577",
           "width": "535",
           "depth": "700"
+        },
+        {
+          "variant": "ALFA 65",
+          "weight": "70",
+          "height": "1508",
+          "width": "465",
+          "depth": "630"
         }
       ],
       "powerRequirement": "220V/50 HZ",
