@@ -188,6 +188,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "LAGOON",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8150df9-f454-4a9c-b016-16beb5b67400/public"
+      },
+      {
+        "id": "aurela",
+        "name": "Aurela",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -2354,5 +2360,94 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "pointOfUseSterilization": "Germ Guardian™"
     },
     "status": "Live"
+  },
+  "aurela": {
+    "id": "aurela",
+    "name": "Aurela",
+    "categoryName": "Water Dispenser & Cooler-TRUBLU",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d6b83a2f-b8ac-42eb-50a1-31c0e95dba00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8d6b35d7-cbaa-4a79-461a-3c29cbeded00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/af42a92a-f07f-4fdb-6c46-0e3c6d690d00/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Real-Time Monitoring",
+        "description": "Stay informed with an intuitive IoT display powered by CIRCLE OF BLUE, showcasing key data and performance metrics in real-time.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Robust & Durable Build",
+        "description": "Constructed with premium Stainless Steel (SS-304) and corrosion-resistant GI, ensuring food-grade safety and long-lasting durability.",
+        "isDisplayed": true
+      },
+      {
+        "title": "LED UV-C",
+        "description": "In tank LED UV-C 24X7 sterilized water",
+        "isDisplayed": true
+      },
+      {
+        "title": "Splash-Free Experience",
+        "description": "Engineered for a clean, controlled flow that minimizes spillage and water waste.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Smart Drainage System",
+        "description": "Efficient drainage eliminates standing water, keeping the area clean and dry",
+        "isDisplayed": false
+      },
+      {
+        "title": "Compliance",
+        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "Aurella",
+          "hot": "4",
+          "cold": "3",
+          "ambient": "3.5"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C - 24° C (default 8°C)",
+        "hot": "Hot: 50°C - 80°C (default 55°C)"
+      },
+      "greenCertification": "",
+      "dripTray": "1000ml",
+      "refrigerant": "RZ 134a1/8 HP",
+      "dimensions": [
+        {
+          "variant": "Aurella",
+          "weight": "-",
+          "height": "1477",
+          "width": "516",
+          "depth": "392"
+        }
+      ],
+      "powerRequirement": "220 V/50 Hz",
+      "purificationSystem": "CTO",
+      "pointOfUseSterilization": "-"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public",
+    "heroTagline": "Design for Strength, Purity, Hygiene & Sustainability",
+    "heroSubtext": "Sustainable Future Together",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/Aurella.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
   }
 };
