@@ -166,12 +166,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "alfa-ct",
-        "name": "TRUBLU ALFA CT",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
-        "category": "counter-top"
-      },
-      {
         "id": "aurela",
         "name": "AURELLA",
         "category": "free-standing",
@@ -206,6 +200,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "YAMI",
         "category": "fountains",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ffc77af9-3916-4e22-5133-db9d53a5dd00/public"
+      },
+      {
+        "id": "alfa-ct",
+        "name": "ALFA CT",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47099ceb-1f3f-403e-cd1c-34beef9f6f00/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -1497,25 +1497,25 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "id": "alfa-ct",
     "name": "ALFA CT",
     "categoryName": "WATER DISPENSER - TRUBLU Series",
-    "heroSubtitle": "Powerful LED sterilization",
+    "heroSubtitle": "",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d64a8674-1e83-4cdf-b733-9881bb65da00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6e759543-fba1-46e0-1171-9ca6f9d6d200/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/21128a4c-a5ff-4368-3a5b-12bd72c06b00/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47099ceb-1f3f-403e-cd1c-34beef9f6f00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0e418651-1b75-4ac3-29d5-c043868f3e00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d4a98c52-a8b9-47db-5fe2-a13c907ba600/public"
     ],
     "featuresList": [
+      {
+        "title": "Plumbed-In",
+        "description": "Can be directly connected to the input water supply\n(Purified).",
+        "isDisplayed": true
+      },
       {
         "title": "Counter-Top Friendly",
         "description": "Compact design fits perfectly on counters and in tight spaces.",
         "isDisplayed": true
       },
       {
-        "title": "Top-Load Flexibility",
-        "description": "Easily place a jar or bole on top for effortless water collection.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Powerful LED  UV-C Intank Sterilization",
+        "title": "Powerful LED UV-C Intank Sterilization",
         "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
         "isDisplayed": true
       },
@@ -1523,15 +1523,20 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         "title": "Hypergienic Hydration",
         "description": "IR Sensor based touch free dispensing.",
         "isDisplayed": false
+      },
+      {
+        "title": "Colour (Customizable)",
+        "description": "Black, White, Colour of Your Choice",
+        "isDisplayed": false
       }
     ],
     "specifications": {
       "storageCapacity": [
         {
           "variant": "CT ALFA",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
+          "hot": "1",
+          "cold": "6",
+          "ambient": "-"
         }
       ],
       "waterTemp": {
@@ -1544,16 +1549,32 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "dimensions": [
         {
           "variant": "CT ALFA",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
+          "weight": "31.0",
+          "height": "577",
+          "width": "370",
+          "depth": "440"
         }
       ],
       "powerRequirement": "220V/50 HZ",
       "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
       "pointOfUseSterilization": "Germ Guardian™"
-    }
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public",
+    "heroTagline": "Design for Strength, Purity, Hygiene & Sustainability",
+    "heroSubtext": "Sustainable Future Together",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcas",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/ALFA.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0
   },
   "lagoon": {
     "id": "lagoon",
