@@ -145,12 +145,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ROM.CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/067b3edc-d892-48f5-1e63-5e567c0a6d00/public"
-      },
-      {
-        "id": "yami-duo",
-        "name": "YAMI DUO",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0650b8d5-1bb3-4ac5-eece-e9245a242200/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -206,6 +200,12 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "YAMI",
         "category": "fountains",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ffc77af9-3916-4e22-5133-db9d53a5dd00/public"
+      },
+      {
+        "id": "yami-duo",
+        "name": "YAMI DUO",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0650b8d5-1bb3-4ac5-eece-e9245a242200/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
