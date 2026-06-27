@@ -243,12 +243,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5bc0586-0b79-4993-379a-53eb5a494700/public"
       },
       {
-        "id": "moses",
-        "name": "Moses",
-        "category": "counter-top",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/386b4db5-361c-473a-78b8-51358994ad00/public"
-      },
-      {
         "id": "indus",
         "name": "INDUS",
         "category": "free-standing",
@@ -271,6 +265,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "LED UV-C",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/80109262-4e0f-4ce4-6295-5c53a9eeff00/public"
+      },
+      {
+        "id": "moses",
+        "name": "MOSES",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/386b4db5-361c-473a-78b8-51358994ad00/public",
+        "hoverImage": null,
+        "displayOrder": 6
       }
     ]
   },
@@ -1910,7 +1912,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   },
   "moses": {
     "id": "moses",
-    "name": "Moses",
+    "name": "MOSES",
     "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
     "heroSubtitle": "",
     "images": [
@@ -1980,7 +1982,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "heroTagline": "Amalgamation of Hydration & Sustainability",
     "heroSubtext": "The Next Generation of Hydration Systems",
     "heroCtaText": "Contact Us",
-    "heroCtaLink": "#product-showcase",
+    "heroCtaLink": "",
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/MOSES.pdf",
@@ -1989,7 +1991,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 6
   },
   "hkn": {
     "id": "hkn",
