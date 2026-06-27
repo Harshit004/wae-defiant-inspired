@@ -149,12 +149,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ENKI.CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
-      },
-      {
-        "id": "alfa-65",
-        "name": "ALFA 65",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/88dff65b-42f2-4ce4-a37e-8586a6120700/public"
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -2456,89 +2450,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/Epsilon.pd",
-    "variants": {
-      "hot": true,
-      "cold": true,
-      "ambient": true
-    },
-    "displayImageIndex": 0
-  },
-  "alfa-65": {
-    "id": "alfa-65",
-    "name": "ALFA 65",
-    "categoryName": "Water Dispenser & Cooler-TRUBLU",
-    "heroSubtitle": "",
-    "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/88dff65b-42f2-4ce4-a37e-8586a6120700/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b8ac90d-9c4a-453d-4079-4af0392d8200/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8cf33dc4-bde9-4904-a53b-e64455ee4a00/public"
-    ],
-    "featuresList": [
-      {
-        "title": "Plumbed-In",
-        "description": "Can be directly connected to the input water supply (Purified).\nDesigned with bottom-loaded convenience as per the need.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Built to Last",
-        "description": "Premium 100% metal construct with SS-304 stainless steel tank combining sustainability and long term value.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Powerful LED UV-C Intank Sterilization",
-        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
-        "isDisplayed": true
-      },
-      {
-        "title": "Hypergienic Hydration",
-        "description": "IR Sensor based touch free dispensing.",
-        "isDisplayed": false
-      },
-      {
-        "title": "Colour (Customizable)",
-        "description": "Black, White, Colour of Your Choice",
-        "isDisplayed": false
-      }
-    ],
-    "specifications": {
-      "storageCapacity": [
-        {
-          "variant": "ALFA 65",
-          "hot": "03",
-          "cold": "45",
-          "ambient": "15"
-        }
-      ],
-      "waterTemp": {
-        "cold": "Cold: 5°C - 24° C (default 8°C)",
-        "hot": "Hot: 50°C - 80°C (default 55°C)"
-      },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000ml",
-      "refrigerant": "R-134a",
-      "dimensions": [
-        {
-          "variant": "ALFA 65",
-          "weight": "70.0",
-          "height": "1508",
-          "width": "465",
-          "depth": "630"
-        }
-      ],
-      "powerRequirement": "Hertz 50/Volts 230-240",
-      "purificationSystem": "CTO I UF | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
-      "pointOfUseSterilization": "Germ GuardianTM"
-    },
-    "status": "Live",
-    "description": "",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public",
-    "heroTagline": "Design for Strength, Purity, Hygiene & Sustainability",
-    "heroSubtext": "Sustainable Future Together",
-    "heroCtaText": "Contact Us",
-    "heroCtaLink": "#product-showcase",
-    "showcaseCtaText": "Enquire Now",
-    "showcaseCtaLink": "",
-    "brochurePdf": "file:///C:/Users/WAE/Downloads/ALFA.pdf",
     "variants": {
       "hot": true,
       "cold": true,
