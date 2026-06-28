@@ -328,16 +328,20 @@ export default function Home() {
         <div style={{ height: "60px" }} />
 
         {/* Hero Video inserted into the layout */}
+        {/* Hero Video inserted into the layout */}
         <div className="w-full flex justify-center pb-[80px]" style={{ width: "100%" }}>
              <video
-                src="/11977161_1920_1080_30fps.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-[400px] object-cover"
+                preload="auto"
+                className="w-full h-[400px] object-cover bg-gray-900 border border-white/10"
                 style={{ width: "95vw" }}
-                />
+             >
+                 <source src="/11977161_1920_1080_30fps.mp4" type="video/mp4" />
+                 Your browser does not support the video tag.
+             </video>
         </div>
       </section>
 
