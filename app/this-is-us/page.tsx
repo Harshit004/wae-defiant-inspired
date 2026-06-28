@@ -58,10 +58,10 @@ const LinkedInButton = ({ href }: { href: string }) => {
         <a href={href} target="_blank" rel="noopener noreferrer"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="relative inline-block w-[24px] h-[24px] opacity-70 hover:opacity-100 transition-opacity">
+            className="relative inline-block w-[32px] h-[32px] opacity-70 hover:opacity-100 transition-opacity">
             <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/042c1bc2-c4d9-4047-a3a8-d4ccf1a59900/public"
-                alt="LinkedIn" width={24} height={24}
+                alt="LinkedIn" width={32} height={32}
                 className="absolute to left-0 transition-opacity duration-300 filter invert"
             />
         </a>
@@ -430,109 +430,143 @@ const ThisIsUs: FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-[70%] pl-[5.56vw] flex flex-col gap-12">
+                        <div className="w-[70%] pl-[5.56vw] flex flex-col gap-[4.86vw]">
                             {/* Founder CEO */}
-                            <div className="flex flex-col w-full pb-12 border-b border-white/20">
-                                <div className="w-full h-[600px] relative mb-8">
-                                    <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/33375025-0570-4253-56a7-580216923b00/public" alt="A. Vikram Joshe" fill className="object-cover" />
+                            <div className="flex w-full gap-[3.75vw]">
+                                <div className="w-[28.47vw] h-[35.9vw] relative shrink-0">
+                                    <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/945f5796-0664-44a9-b951-7759f4d39400/public" alt="A. Vikram Joshe" fill className="object-cover" />
                                 </div>
-                                <div className="flex justify-between items-start">
-                                    <div>
-                                        <h3 className="text-2xl font-['Inter_Tight'] mb-1">A. Vikram Joshe</h3>
-                                        <p className="text-[11px] text-white/60 uppercase tracking-widest font-['Inter_Tight'] mb-8">Founder & CEO</p>
-                                        <p className="text-[15px] leading-[1.4] max-w-[80%] font-['Inter_Tight'] mb-6">"Water is one of the world's most visible expressions of care, and the future of care must include care for the planet."</p>
-                                        <p className="text-[12px] leading-[1.6] text-white/70 max-w-[80%] font-['Inter_Tight']">A sustainability entrepreneur with three decades of cross-sector experience, building a water-secure future by making sustainable water technologies accessible and mainstream through responsible, long-term solutions.</p>
+                                <div className="flex flex-col justify-between w-full py-1">
+                                    <div className="flex flex-col relative w-full">
+                                        <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '2.22vw', lineHeight: '110%' }}>A. Vikram Joshe</h3>
+                                        <div className="absolute right-0 top-0">
+                                            <LinkedInButton href="#" />
+                                        </div>
+                                        <div className="mb-[1.38vw]"></div>
+                                        <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '1.25vw', lineHeight: '110%', color: '#AEAEAE' }}>Founder & CEO</p>
                                     </div>
-                                    <LinkedInButton href="#" />
+                                    <div className="flex flex-col">
+                                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '100%' }}>
+                                            "Water is one of the world’s most visible expressions of care, and the future of care must include care for the planet."
+                                        </p>
+                                        <div className="mb-[3.125vw]"></div>
+                                        <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '0.97vw', lineHeight: '100%', color: '#AEAEAE' }}>
+                                            A sustainability entrepreneur with three decades of cross-sector experience, building a water-secure future by making sustainable water technologies accessible and mainstream through responsible, long-term solutions.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
                             {/* Row 2 */}
-                            <div className="flex gap-10 pb-12 border-b border-white/20">
-                                <div className="w-1/2 flex flex-col">
-                                    <div className="w-full aspect-[4/3] relative mb-6">
+                            <div className="flex justify-between w-full">
+                                                                <div className="flex flex-col w-[28.47vw]">
+                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6bc35551-9c5a-4161-328f-da4114280600/public" alt="Deepak Panwar" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
-                                    <div className="flex justify-between items-start">
-                                        <div>
-                                            <h3 className="text-lg font-['Inter_Tight'] mb-1">Deepak Panwar</h3>
-                                            <p className="text-[10px] text-white/60 uppercase tracking-widest font-['Inter_Tight'] mb-4">CEO - Food & Beverage Division</p>
-                                            <p className="text-[11px] leading-[1.6] text-white/70 font-['Inter_Tight'] pr-4">Leads WAE's Food & Beverage division, bringing senior leadership experience to drive strategic growth and expand the organisation's commercial footprint across food and hospitality sectors.</p>
+                                    <div className="flex flex-col relative w-full">
+                                        <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Deepak Panwar</h3>
+                                        <div className="absolute right-0 top-0">
+                                            <LinkedInButton href="#" />
                                         </div>
-                                        <LinkedInButton href="#" />
+                                        <div className="mb-[0.83vw]"></div>
+                                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>CEO - Food & Beverage Division</p>
+                                        <div className="mb-[2.22vw]"></div>
+                                        <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '0.97vw', lineHeight: '130%', color: '#AEAEAE' }}>
+                                            Leads WAE's Food & Beverage division, bringing senior leadership experience to drive strategic growth and expand the organisation's commercial footprint across food and hospitality sectors.
+                                        </p>
                                     </div>
                                 </div>
-                                <div className="w-1/2 flex flex-col">
-                                    <div className="w-full aspect-[4/3] relative mb-6">
+                                                                <div className="flex flex-col w-[28.47vw]">
+                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4cedda8e-3f37-422a-920c-7c8241256400/public" alt="Nayna Swati Dewesar" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
-                                    <div className="flex justify-between items-start">
-                                        <div>
-                                            <h3 className="text-lg font-['Inter_Tight'] mb-1">Nayna Swati Dewesar</h3>
-                                            <p className="text-[10px] text-white/60 uppercase tracking-widest font-['Inter_Tight'] mb-4">Corporate Finance & Commercial</p>
-                                            <p className="text-[11px] leading-[1.6] text-white/70 font-['Inter_Tight'] pr-4">A founding member of WAE, she leads corporate finance, procurement, and commercial projects, strengthening financial discipline, operational efficiency, and strategic execution across the wider organisation.</p>
+                                    <div className="flex flex-col relative w-full">
+                                        <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Nayna Swati Dewesar</h3>
+                                        <div className="absolute right-0 top-0">
+                                            <LinkedInButton href="#" />
                                         </div>
-                                        <LinkedInButton href="#" />
+                                        <div className="mb-[0.83vw]"></div>
+                                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>Corporate Finance & Commercial</p>
+                                        <div className="mb-[2.22vw]"></div>
+                                        <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '0.97vw', lineHeight: '130%', color: '#AEAEAE' }}>
+                                            A founding member of WAE, she leads corporate finance, procurement, and commercial projects, strengthening financial discipline, operational efficiency, and strategic execution across the wider organisation.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Row 3 */}
-                            <div className="flex gap-10 pb-12 border-b border-white/20">
-                                <div className="w-1/2 flex flex-col">
-                                    <div className="w-full aspect-[4/3] relative mb-6">
+                            <div className="flex justify-between w-full">
+                                                                <div className="flex flex-col w-[28.47vw]">
+                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b50e712a-a5aa-4ce7-31ae-9d624ef5f100/public" alt="Satinder Kaur" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
-                                    <div className="flex justify-between items-start">
-                                        <div>
-                                            <h3 className="text-lg font-['Inter_Tight'] mb-1">Satinder Kaur</h3>
-                                            <p className="text-[10px] text-white/60 uppercase tracking-widest font-['Inter_Tight'] mb-4">Chief Revenue Officer</p>
-                                            <p className="text-[11px] leading-[1.6] text-white/70 font-['Inter_Tight'] pr-4">Leads WAE's revenue strategy and overall commercial growth, overseeing sales operations, key account management, and strategic partnership development to drive consistent, scalable, long-term institutional revenue.</p>
+                                    <div className="flex flex-col relative w-full">
+                                        <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Satinder Kaur</h3>
+                                        <div className="absolute right-0 top-0">
+                                            <LinkedInButton href="#" />
                                         </div>
-                                        <LinkedInButton href="#" />
+                                        <div className="mb-[0.83vw]"></div>
+                                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>Chief Revenue Officer</p>
+                                        <div className="mb-[2.22vw]"></div>
+                                        <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '0.97vw', lineHeight: '130%', color: '#AEAEAE' }}>
+                                            Leads WAE's revenue strategy and overall commercial growth, overseeing sales operations, key account management, and strategic partnership development to drive consistent, scalable, long-term institutional revenue.
+                                        </p>
                                     </div>
                                 </div>
-                                <div className="w-1/2 flex flex-col">
-                                    <div className="w-full aspect-[4/3] relative mb-6">
+                                                                <div className="flex flex-col w-[28.47vw]">
+                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/469bb1e6-1c45-4f16-f7ea-6532aa9f5300/public" alt="Avnesh Sharma" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
-                                    <div className="flex justify-between items-start">
-                                        <div>
-                                            <h3 className="text-lg font-['Inter_Tight'] mb-1">Avnesh Sharma</h3>
-                                            <p className="text-[10px] text-white/60 uppercase tracking-widest font-['Inter_Tight'] mb-4">Director - Customer Value Management</p>
-                                            <p className="text-[11px] leading-[1.6] text-white/70 font-['Inter_Tight'] pr-4">Drives customer value delivery and long-term retention across WAE's institutional client base, managing relationships and ensuring clients achieve measurable outcomes from their water infrastructure investments.</p>
+                                    <div className="flex flex-col relative w-full">
+                                        <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Avnesh Sharma</h3>
+                                        <div className="absolute right-0 top-0">
+                                            <LinkedInButton href="#" />
                                         </div>
-                                        <LinkedInButton href="#" />
+                                        <div className="mb-[0.83vw]"></div>
+                                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>Director - Customer Value Management</p>
+                                        <div className="mb-[2.22vw]"></div>
+                                        <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '0.97vw', lineHeight: '130%', color: '#AEAEAE' }}>
+                                            Drives customer value delivery and long-term retention across WAE's institutional client base, managing relationships and ensuring clients achieve measurable outcomes from their water infrastructure investments.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Row 4 */}
-                            <div className="flex gap-10">
-                                <div className="w-1/2 flex flex-col">
-                                    <div className="w-full aspect-[4/3] relative mb-6">
+                            <div className="flex justify-between w-full">
+                                                                <div className="flex flex-col w-[28.47vw]">
+                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f88d5da-23ab-4e62-c172-f2d9b8581900/public" alt="Meenakshi Bora" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
-                                    <div className="flex justify-between items-start">
-                                        <div>
-                                            <h3 className="text-lg font-['Inter_Tight'] mb-1">Meenakshi Bora</h3>
-                                            <p className="text-[10px] text-white/60 uppercase tracking-widest font-['Inter_Tight'] mb-4">VP - Client Relations & Operations</p>
-                                            <p className="text-[11px] leading-[1.6] text-white/70 font-['Inter_Tight'] pr-4">Aligns client relations and operations at WAE, enabling efficient, responsive service delivery and consistent client satisfaction through strong coordination, cross-functional execution, and operational excellence throughout.</p>
+                                    <div className="flex flex-col relative w-full">
+                                        <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Meenakshi Bora</h3>
+                                        <div className="absolute right-0 top-0">
+                                            <LinkedInButton href="#" />
                                         </div>
-                                        <LinkedInButton href="#" />
+                                        <div className="mb-[0.83vw]"></div>
+                                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>VP - Client Relations & Operations</p>
+                                        <div className="mb-[2.22vw]"></div>
+                                        <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '0.97vw', lineHeight: '130%', color: '#AEAEAE' }}>
+                                            Aligns client relations and operations at WAE, enabling efficient, responsive service delivery and consistent client satisfaction through strong coordination, cross-functional execution, and operational excellence throughout.
+                                        </p>
                                     </div>
                                 </div>
-                                <div className="w-1/2 flex flex-col">
-                                    <div className="w-full aspect-[4/3] relative mb-6">
+                                                                <div className="flex flex-col w-[28.47vw]">
+                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/00e1155b-84f2-4db0-591e-6a99630fdf00/public" alt="Rashmi Bhatia" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
-                                    <div className="flex justify-between items-start">
-                                        <div>
-                                            <h3 className="text-lg font-['Inter_Tight'] mb-1">Rashmi Bhatia</h3>
-                                            <p className="text-[10px] text-white/60 uppercase tracking-widest font-['Inter_Tight'] mb-4">Director - Finance & Accounts</p>
-                                            <p className="text-[11px] leading-[1.6] text-white/70 font-['Inter_Tight'] pr-4">Brings over 14 years in corporate finance. Leads WAE's finance and accounts function, ensuring financial governance, accuracy, compliance, and sustainable fiscal management across the organisation.</p>
+                                    <div className="flex flex-col relative w-full">
+                                        <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Rashmi Bhatia</h3>
+                                        <div className="absolute right-0 top-0">
+                                            <LinkedInButton href="#" />
                                         </div>
-                                        <LinkedInButton href="#" />
+                                        <div className="mb-[0.83vw]"></div>
+                                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>Director - Finance & Accounts</p>
+                                        <div className="mb-[2.22vw]"></div>
+                                        <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '0.97vw', lineHeight: '130%', color: '#AEAEAE' }}>
+                                            Brings over 14 years in corporate finance. Leads WAE's finance and accounts function, ensuring financial governance, accuracy, compliance, and sustainable fiscal management across the organisation.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
