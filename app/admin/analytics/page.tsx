@@ -41,7 +41,8 @@ export default function AnalyticsDashboard() {
     try {
       const res = await fetch("/api/analytics");
       if (!res.ok) {
-        throw new Error("Failed to fetch analytics");
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(errorData.error || "Failed to fetch analytics");
       }
       const data = await res.json();
       setSessions(data);
