@@ -5,7 +5,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
-import { Rocket, Lightbulb, Droplets, Settings, GlassWater } from "lucide-react"
+import { Rocket, Lightbulb, Droplets, Settings, GlassWater, ChevronLeft, ChevronRight } from "lucide-react"
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
@@ -66,6 +66,148 @@ const LinkedInButton = ({ href }: { href: string }) => {
                 className="absolute top-0 left-0 transition-opacity duration-300 filter invert"
             />
         </a>
+    );
+};
+
+const timelineData = [
+  {
+    yearLabel: "2010-12",
+    title: "2010 - 2012",
+    items: [
+      "WAE incorporated, a company from water intake to water reuse"
+    ],
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+  },
+  {
+    yearLabel: "2013-14",
+    title: "2013-2014",
+    items: [
+      "Emergence of an activism: \"say no to bottled water\"",
+      "Point-of-use water purification stations launched",
+      "WAE Drinking Water Fountain range launched",
+      "Installed at Indira Gandhi International Airport & Airport Metro",
+      "Projects Business Unit started in Water & Wastewater management"
+    ],
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+  },
+  {
+    yearLabel: "2015-17",
+    title: "2015- 2017",
+    items: [
+      "Completed installation of over 10 Sewage Treatment Plants in India",
+      "First ETP of 500 KLD installed at Seemag Steel Plant, Orissa",
+      "Installed 1 MLD Biological & MBR Hybrid Sewage Treatment Plant at Gangotri, Uttarakhand",
+      "Signed master license agreement with HAWS Corporation, USA for hydration products"
+    ],
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+  },
+  {
+    yearLabel: "2018-19",
+    title: "2018- 2019",
+    items: [
+      "Research and Development team incubated"
+    ],
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+  },
+  {
+    yearLabel: "2020-21",
+    title: "2020- 2021",
+    items: [
+      "Embarked on a transformative digital journey",
+      "Completed a successful and innovative decade of Integrated Water Resource Management",
+      "Launched touchless dispensing with LED UV protection"
+    ],
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+  },
+  {
+    yearLabel: "2022-23",
+    title: "2022-2023",
+    items: [
+      "Revolutionizing hygiene with electronically operated drinking water taps",
+      "Innovative solutions tailored for the HoReCa segment"
+    ],
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+  }
+];
+
+const TimelineSection = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const handlePrev = () => {
+        if (activeIndex > 0) setActiveIndex(activeIndex - 1);
+    };
+
+    const handleNext = () => {
+        if (activeIndex < timelineData.length - 1) setActiveIndex(activeIndex + 1);
+    };
+
+    const activeData = timelineData[activeIndex];
+
+    return (
+        <section className="w-full pt-[82px] pb-[82px]">
+            <div className={containerClass}>
+                <div className="w-full border-t border-white/20 mb-[82px]"></div>
+                <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '20px' }}>WAE Chronicle</h2>
+                <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '16px', lineHeight: '110%', color: '#AEAEAE', marginBottom: '86px' }}>From Intent to Impact</p>
+
+                <div className="w-full relative mb-[120px]">
+                    <div className="w-full h-[1px] bg-white/20 relative">
+                        {timelineData.map((item, i) => {
+                            const isActive = i <= activeIndex;
+                            const isCurrent = i === activeIndex;
+                            return (
+                                <div 
+                                    key={i} 
+                                    className="absolute top-1/2 flex flex-col items-center" 
+                                    style={{ left: `${(i / (timelineData.length - 1)) * 100}%`, transform: 'translate(-50%, -50%)' }}
+                                >
+                                    <div className={`w-[8px] h-[8px] rounded-full transition-colors duration-300 ${isActive ? 'bg-white' : 'bg-[#AEAEAE99]'}`}></div>
+                                    <span className={`absolute top-[20px] text-[12px] font-['Manrope'] whitespace-nowrap transition-colors duration-300 ${isCurrent ? 'text-white' : 'text-[#AEAEAE99]'}`}>
+                                        {item.yearLabel}
+                                    </span>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                <div className="flex gap-[4vw] items-start">
+                    <div className="w-[60%] relative aspect-[16/9]">
+                        <Image src={activeData.image} alt={activeData.title} fill className="object-cover transition-opacity duration-500" />
+                    </div>
+                    <div className="w-[40%] flex flex-col justify-between h-auto min-h-[300px]">
+                        <div>
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '24px' }}>{activeData.title}</h3>
+                            <div className="flex flex-col gap-2">
+                                {activeData.items.map((text, idx) => (
+                                    <p key={idx} style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE' }} className="flex gap-2">
+                                        <span>•</span>
+                                        <span>{text}</span>
+                                    </p>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="flex gap-4 mt-12 justify-end">
+                            <button 
+                                onClick={handlePrev}
+                                disabled={activeIndex === 0}
+                                className="w-10 h-10 border border-white/20 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10"
+                            >
+                                <ChevronLeft className="w-5 h-5 text-white/50" strokeWidth={1} />
+                            </button>
+                            <button 
+                                onClick={handleNext}
+                                disabled={activeIndex === timelineData.length - 1}
+                                className="w-10 h-10 border border-white/20 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10"
+                            >
+                                <ChevronRight className="w-5 h-5 text-white/50" strokeWidth={1} />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     );
 };
 
@@ -260,58 +402,7 @@ const ThisIsUs: FC = () => {
             </section>
 
             {/* WAE CHRONICLE */}
-            <section className="w-full pt-[82px] pb-[82px]">
-                <div className={containerClass}>
-                    <div className="w-full border-t border-white/20 mb-[82px]"></div>
-                    <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '20px' }}>WAE Chronicle</h2>
-                    <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '16px', lineHeight: '110%', color: '#AEAEAE', marginBottom: '86px' }}>From Intent to Impact</p>
-
-                    <div className="w-full relative">
-                        <div className="w-full h-[1px] bg-white/20 relative mb-[16px] flex justify-between items-center px-[4vw]">
-                            {[
-                                "2010-12", "2013-14", "2015-17", "2018-19", "2020-21", "2022-23"
-                            ].map((year, i) => (
-                                <div key={i} className="flex flex-col items-center absolute" style={{ left: `${(i / 5) * 100}%`, transform: 'translateX(-50%)' }}>
-                                    <div className={`w-[8px] h-[8px] rounded-full mt-[-4px] ${i === 0 ? 'bg-white' : 'bg-white/20'}`}></div>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="w-full relative mb-[60px] h-[40px]">
-                            {[
-                                "2010-12", "2013-14", "2015-17", "2018-19", "2020-21", "2022-23"
-                            ].map((year, i) => (
-                                <div key={i} className="absolute" style={{ left: `${(i / 5) * 100}%`, transform: 'translateX(-50%)' }}>
-                                    <span className={`text-[12px] font-['Manrope'] ${i === 0 ? 'text-white' : 'text-white/40'}`}>{year}</span>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="flex gap-[4vw] items-start">
-                            <div className="w-[60%] relative aspect-[16/9]">
-                                <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public" alt="2010-2012" fill className="object-cover" />
-                            </div>
-                            <div className="w-[40%] flex flex-col justify-between h-[300px] pt-4">
-                                <div>
-                                    <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '24px' }}>2010 - 2012</h3>
-                                    <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE' }} className="flex gap-2">
-                                        <span>•</span>
-                                        WAE incorporated, a company from water intake to water reuse
-                                    </p>
-                                </div>
-
-                                <div className="flex gap-4 mt-auto justify-end">
-                                    <button className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
-                                        <span className="text-white/50">{'<'}</span>
-                                    </button>
-                                    <button className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
-                                        <span className="text-white/50">{'>'}</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <TimelineSection />
 
             {/* THE TEAM */}
             <section className="w-full pt-[82px] pb-[82px]">
