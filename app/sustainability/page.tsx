@@ -152,6 +152,13 @@ export default function Home() {
 
   return (
     <main className="relative bg-[#0A0A0A] text-white">
+      {/* Dark background gradient */}
+      <div
+        className="absolute top-0 left-0 w-full pointer-events-none"
+        style={{
+          background: 'linear-gradient(160deg, #004063 4.52%, #0F0F0F 40%)', height: 'clamp(500px, 80vh, 875px)'
+        }}
+      />
       {/* HEADER */}
       <div> 
         <header ref={headerRef} className={`w-full bg-transparent text-white relative z-10 pb-5`}>
@@ -280,7 +287,6 @@ export default function Home() {
       <section
         id="hero"
         className="w-full relative flex flex-col items-center pb-[100px]"
-        style={{ background: "radial-gradient(circle at left, #012D4C 0%, #0A0A0A 50%)" }}
       >
         {/* Adjusted spacing to accommodate the transparent header */}
         <div className={`${containerClass} -mt-[80px] pt-[80px]`}>
