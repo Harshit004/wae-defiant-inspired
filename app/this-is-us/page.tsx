@@ -76,7 +76,7 @@ const timelineData = [
         items: [
             "WAE incorporated, a company from water intake to water reuse"
         ],
-        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0e555203-dfe1-4a2a-d603-1cf72a9cf700/public"
     },
     {
         yearLabel: "2013-14",
@@ -88,7 +88,7 @@ const timelineData = [
             "Installed at Indira Gandhi International Airport & Airport Metro",
             "Projects Business Unit started in Water & Wastewater management"
         ],
-        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/206a4c0f-a6fd-4802-3c4c-bb1ea555dd00/public"
     },
     {
         yearLabel: "2015-17",
@@ -99,7 +99,7 @@ const timelineData = [
             "Installed 1 MLD Biological & MBR Hybrid Sewage Treatment Plant at Gangotri, Uttarakhand",
             "Signed master license agreement with HAWS Corporation, USA for hydration products"
         ],
-        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b602b016-735d-418a-ea65-b3deae43d400/public"
     },
     {
         yearLabel: "2018-19",
@@ -107,26 +107,29 @@ const timelineData = [
         items: [
             "Research and Development team incubated"
         ],
-        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c40eb086-3649-41fb-46c1-de8608ec2100/public"
     },
     {
         yearLabel: "2020-21",
         title: "2020- 2021",
         items: [
-            "Embarked on a transformative digital journey",
-            "Completed a successful and innovative decade of Integrated Water Resource Management",
-            "Launched touchless dispensing with LED UV protection"
+            "Introduced IoT integrated smart sustainable hydration products",
+            "Launched WAE Purge range of air purification products",
+            "Added Solid Waste Management stream",
+            "Certified to ISO 14001, 9001 and 45001"
         ],
-        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f15af2e0-f109-477a-d786-20641f7ba200/public"
     },
     {
         yearLabel: "2022-23",
         title: "2022-2023",
         items: [
-            "Revolutionizing hygiene with electronically operated drinking water taps",
-            "Innovative solutions tailored for the HoReCa segment"
+            "Initiated WAE Hydration for HoReCa (Hotels, Restaurants & Catering)",
+            "Patents awarded for touchless dispensing with LED UV protection",
+            "Patents awarded for electronically operated drinking water taps",
+            "Incorporation of CSR arm: WAE Foundation"
         ],
-        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b7820598-dcd3-4078-2bc2-9b125f617700/public"
     }
 ];
 
@@ -326,16 +329,12 @@ const ThisIsUs: FC = () => {
                         marginBottom: '78px'
                     }}>Our Business Model</h2>
 
-                    <div className="flex">
-                        <div className="w-1/3 pl-[3vw] pr-[4vw] border-l border-white/20 flex flex-col">
+                    <div className="flex justify-between gap-[4.23vw]">
+                        <div className="w-[25.55vw] pl-[3vw] border-l border-white/20 flex flex-col">
                             <div className="mb-[32px]">
-                                {/* Custom SVG for bottles with arrow to resemble the design closely */}
-                                <svg width="57" height="57" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M6 10h4m-4 4h4m-4 4h4m-2-12V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2m-6 0h6m-6 0a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m4 12v-6m0 0-2 2m2-2 2 2" />
-                                    <path d="M12 4h4a1 1 0 0 1 1 1v2m-6 0h6" />
-                                </svg>
+                                <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4b160f1a-eedc-4e04-0a1f-58eee7f8ab00/public" className="w-[57px] h-[57px] object-contain" alt="Icon" />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">Single-use plastic is an<br/>institutional problem</h3>
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">Single-use plastic is an<br />institutional problem</h3>
                             <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '150%', color: '#AEAEAE' }}>
                                 <p className="mb-6">
                                     Most organisations have made sustainability commitments, but their water infrastructure contradicts them. Bottled water creates ongoing plastic waste, carbon cost from logistics, and reputational risk.
@@ -348,14 +347,11 @@ const ThisIsUs: FC = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="w-1/3 pl-[3vw] pr-[4vw] border-l border-white/20 flex flex-col">
+                        <div className="w-[25.55vw] pl-[3vw] border-l border-white/20 flex flex-col">
                             <div className="mb-[32px]">
-                                <svg width="57" height="57" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
-                                    <path d="M9 15.5a4 4 0 0 0 4 4" />
-                                </svg>
+                                <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b5de6636-9ffb-43dd-adab-dae732151200/public" className="w-[57px] h-[57px] object-contain" alt="Icon" />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">The bottled gets replaced with<br/>infrastructure</h3>
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">The bottled gets replaced with<br />infrastructure</h3>
                             <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '150%', color: '#AEAEAE' }}>
                                 <p className="mb-6">
                                     WAE designs and deploys steel-first, point-of-use water systems for public institutions, corporate campuses, hospitality, and healthcare environments. Our systems connect directly to the water supply, eliminating plastic at the source, not the policy level.
@@ -369,13 +365,11 @@ const ThisIsUs: FC = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="w-1/3 pl-[3vw] pr-[4vw] border-l border-white/20 flex flex-col">
+                        <div className="w-[25.55vw] pl-[3vw] border-l border-white/20 flex flex-col">
                             <div className="mb-[32px]">
-                                <svg width="57" height="57" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                                </svg>
+                                <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/38c6f634-25c1-46cf-4e3f-703d0c08de00/public" className="w-[57px] h-[57px] object-contain" alt="Icon" />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">How the model works in<br/>practice</h3>
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">How the model works in<br />practice</h3>
                             <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '150%', color: '#AEAEAE' }}>
                                 <p className="mb-6">
                                     Site assessment: WAE audits the client's existing water usage, plastic footprint, and infrastructure
