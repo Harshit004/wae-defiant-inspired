@@ -224,7 +224,7 @@ const ThisIsUs: FC = () => {
             <Header />
 
             {/* HERO SECTION */}
-            <section className="w-full pt-[70px] pb-[68px]">
+            <section className="w-full pt-[235px] pb-[68px]">
                 <div className={containerClass}>
                     <p style={{
                         fontFamily: "'Inter Tight', sans-serif",
