@@ -146,7 +146,7 @@ const TimelineSection = () => {
     const activeData = timelineData[activeIndex];
 
     return (
-        <section className="w-full pt-[82px] pb-[82px]">
+        <section className="w-full pt-[82px] pb-0">
             <div className={containerClass}>
                 <div className="w-full border-t border-white/20 mb-[82px]"></div>
                 <h2 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '20px' }}>WAE Chronicle</h2>
@@ -317,7 +317,7 @@ const ThisIsUs: FC = () => {
             </section>
 
             {/* OUR BUSINESS MODEL */}
-            <section className="w-full pt-[82px] pb-[100px]">
+            <section className="w-full pt-[82px] pb-0">
                 <div className={containerClass}>
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
                     <h2 style={{
@@ -389,7 +389,7 @@ const ThisIsUs: FC = () => {
             </section>
 
             {/* ACTIVIST QUOTE */}
-            <section className="w-full pt-[82px] pb-[82px]">
+            <section className="w-full pt-[82px] pb-0">
                 <div className={containerClass}>
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
                     <div className="w-full h-[600px] relative mb-[62px]">
@@ -418,7 +418,7 @@ const ThisIsUs: FC = () => {
             <TimelineSection />
 
             {/* THE TEAM */}
-            <section className="w-full pt-[82px] pb-[82px]">
+            <section className="w-full pt-[82px] pb-0">
                 <div className={containerClass}>
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
                     <div className="flex">
@@ -576,7 +576,7 @@ const ThisIsUs: FC = () => {
             </section>
 
             {/* SERVING WITH PURPOSE */}
-            <section className="w-full pt-[82px] pb-[82px]">
+            <section className="w-full pt-[82px] pb-0">
                 <div className={containerClass}>
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
                     <div className="flex">
