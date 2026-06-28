@@ -471,7 +471,7 @@ const ThisIsUs: FC = () => {
                                 <div className="w-full aspect-[347/350] relative mb-[35px] max-w-[347px]">
                                     <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5d38e4f6-adbf-48f6-66b3-cb2dcfff2700/public" alt="Awards Certificate" fill className="object-contain" />
                                 </div>
-                                <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '24px', lineHeight: '100%', color: '#fff' }} className="pr-4 max-w-[80%]">
+                                <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '24px', lineHeight: '130%', color: '#fff' }} className="pr-4">
                                     The competition has never been fiercer. ET MSME Awards 2025 nominee!
                                 </p>
                             </div>
