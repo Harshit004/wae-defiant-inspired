@@ -1113,7 +1113,7 @@ function ProductDescriptionPageContent() {
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-[2.5vw]">
-                        {Object.values(PRODUCTS).filter(p => p.id !== currentProduct.id).slice(0, 3).map((item, index) => (
+                        {Object.values(PRODUCTS).filter(p => p.id !== currentProduct.id && p.categoryName === currentProduct.categoryName).slice(0, 3).map((item, index) => (
                             <Link
                                 href={`/product-description-page?product=${item.id}`}
                                 key={index}
