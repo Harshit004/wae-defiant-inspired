@@ -422,7 +422,7 @@ const ThisIsUs: FC = () => {
                 <div className={containerClass}>
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
                     <div className="flex">
-                        <div className="w-[30%] pr-[5.56vw] border-r border-white/20 relative">
+                        <div className="w-[25%] pr-[5.56vw] border-r border-white/20 relative">
                             <div className="sticky top-40">
                                 <h2 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '100%', marginBottom: '60px' }}>The team<br />behind WAE</h2>
                                 <div className="mt-[-28px]">
@@ -430,10 +430,10 @@ const ThisIsUs: FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-[70%] pl-[5.56vw] flex flex-col gap-[4.86vw]">
+                        <div className="w-[75%] pl-[5.56vw] flex flex-col gap-[4.86vw]">
                             {/* Founder CEO */}
                             <div className="flex w-full gap-[3.75vw]">
-                                <div className="w-[28.47vw] h-[35.9vw] relative shrink-0">
+                                <div className="w-[48%] aspect-[410/517] relative shrink-0">
                                     <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/945f5796-0664-44a9-b951-7759f4d39400/public" alt="A. Vikram Joshe" fill className="object-cover" />
                                 </div>
                                 <div className="flex flex-col justify-between w-full py-1">
@@ -459,8 +459,8 @@ const ThisIsUs: FC = () => {
 
                             {/* Row 2 */}
                             <div className="flex gap-[3.75vw] w-full">
-                                                                <div className="flex flex-col w-[28.47vw]">
-                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
+                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                    <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6bc35551-9c5a-4161-328f-da4114280600/public" alt="Deepak Panwar" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
                                     <div className="flex flex-col relative w-full">
@@ -476,8 +476,8 @@ const ThisIsUs: FC = () => {
                                         </p>
                                     </div>
                                 </div>
-                                                                <div className="flex flex-col w-[28.47vw]">
-                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
+                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                    <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4cedda8e-3f37-422a-920c-7c8241256400/public" alt="Nayna Swati Dewesar" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
                                     <div className="flex flex-col relative w-full">
@@ -497,8 +497,8 @@ const ThisIsUs: FC = () => {
 
                             {/* Row 3 */}
                             <div className="flex gap-[3.75vw] w-full">
-                                                                <div className="flex flex-col w-[28.47vw]">
-                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
+                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                    <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b50e712a-a5aa-4ce7-31ae-9d624ef5f100/public" alt="Satinder Kaur" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
                                     <div className="flex flex-col relative w-full">
@@ -514,8 +514,8 @@ const ThisIsUs: FC = () => {
                                         </p>
                                     </div>
                                 </div>
-                                                                <div className="flex flex-col w-[28.47vw]">
-                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
+                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                    <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/469bb1e6-1c45-4f16-f7ea-6532aa9f5300/public" alt="Avnesh Sharma" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
                                     <div className="flex flex-col relative w-full">
@@ -535,8 +535,8 @@ const ThisIsUs: FC = () => {
 
                             {/* Row 4 */}
                             <div className="flex gap-[3.75vw] w-full">
-                                                                <div className="flex flex-col w-[28.47vw]">
-                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
+                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                    <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f88d5da-23ab-4e62-c172-f2d9b8581900/public" alt="Meenakshi Bora" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
                                     <div className="flex flex-col relative w-full">
@@ -552,8 +552,8 @@ const ThisIsUs: FC = () => {
                                         </p>
                                     </div>
                                 </div>
-                                                                <div className="flex flex-col w-[28.47vw]">
-                                    <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
+                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                    <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/00e1155b-84f2-4db0-591e-6a99630fdf00/public" alt="Rashmi Bhatia" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
                                     <div className="flex flex-col relative w-full">
