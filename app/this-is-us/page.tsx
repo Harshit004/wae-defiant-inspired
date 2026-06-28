@@ -152,6 +152,10 @@ const TimelineSection = () => {
 
                 <div className="w-full relative mb-[120px]">
                     <div className="w-full h-[1px] bg-white/20 relative">
+                        <div 
+                            className="absolute top-0 left-0 h-full bg-white transition-all duration-300" 
+                            style={{ width: `${(activeIndex / (timelineData.length - 1)) * 100}%` }}
+                        ></div>
                         {timelineData.map((item, i) => {
                             const isActive = i <= activeIndex;
                             const isCurrent = i === activeIndex;
