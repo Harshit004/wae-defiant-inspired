@@ -9,6 +9,7 @@ export default function AdminEnquiriesPage() {
   const [enquiries, setEnquiries] = useState<Enquiry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'product' | 'general'>('product');
+  const [selectedMessage, setSelectedMessage] = useState<string | null>(null);
 
   useEffect(() => {
     fetchEnquiries();
@@ -104,8 +105,11 @@ export default function AdminEnquiriesPage() {
                       </a>
                     </td>
                     {activeTab === 'general' && (
-                      <td className="px-4 py-3 text-white/70 max-w-xs truncate" title={enq.message}>
-                        {enq.message || "-"}
+                      <td className="px-4 py-3 text-white/70 max-w-xs">
+                        <div className="truncate mb-1" title={enq.message}>{enq.message || "-"}</div>
+                        {enq.message && enq.message.length > 30 && (
+                          <button onClick={() => setSelectedMessage(enq.message!)} className="text-blue-400 text-xs hover:underline">Read more</button>
+                        )}
                       </td>
                     )}
                     <td className="px-4 py-3 text-right">
@@ -124,6 +128,16 @@ export default function AdminEnquiriesPage() {
           </div>
         )}
       </div>
+
+      {selectedMessage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
+           <div className="bg-[#0a1929] border border-white/10 p-6 rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+              <h3 className="text-xl font-bold mb-4 text-white">Full Message</h3>
+              <p className="whitespace-pre-wrap text-white/80">{selectedMessage}</p>
+              <button onClick={() => setSelectedMessage(null)} className="mt-6 px-4 py-2 bg-white text-black rounded-md font-medium hover:bg-gray-200 transition-colors">Close</button>
+           </div>
+        </div>
+      )}
     </div>
   );
 }

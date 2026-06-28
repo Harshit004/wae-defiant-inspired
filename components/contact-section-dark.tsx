@@ -39,13 +39,16 @@ const ContactSectionDark = () => {
                 body: JSON.stringify(payload),
             });
             
-            if (!res.ok) throw new Error('Failed to submit enquiry');
+            if (!res.ok) {
+                const errorData = await res.json().catch(() => null);
+                throw new Error(errorData?.message || 'Failed to submit enquiry');
+            }
             
             alert('Thank you for contacting us! Your message has been sent.');
             form.reset();
-        } catch (error) {
+        } catch (error: any) {
             console.error('Error submitting form:', error);
-            alert('There was an error submitting the form. Please try again.');
+            alert(error.message || 'There was an error submitting the form. Please try again.');
         }
     };
 
@@ -148,6 +151,7 @@ const ContactSectionDark = () => {
                         <textarea
                             name="message"
                             placeholder="Message"
+                            maxLength={2000}
                             className="w-full bg-transparent border-b border-white py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm resize-none h-32"
                         />
                     </div>
