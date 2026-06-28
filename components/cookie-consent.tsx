@@ -27,11 +27,13 @@ export default function CookieConsent() {
   const handleAccept = () => {
     localStorage.setItem("wae_cookie_consent", "accepted")
     setIsVisible(false)
+    window.dispatchEvent(new Event("wae_cookie_consent_updated"))
   }
 
   const handleDecline = () => {
     localStorage.setItem("wae_cookie_consent", "declined")
     setIsVisible(false)
+    window.dispatchEvent(new Event("wae_cookie_consent_updated"))
   }
 
   if (pathname?.startsWith("/admin") || pathname?.startsWith("/secret-cms-login")) return null

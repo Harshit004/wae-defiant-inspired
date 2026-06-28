@@ -85,6 +85,17 @@ export default function AnalyticsTracker() {
     if (!sessionIdRef.current) {
       initAnalytics();
     }
+
+    const handleConsentUpdate = () => {
+      if (!sessionIdRef.current) {
+        initAnalytics();
+      }
+    };
+
+    window.addEventListener("wae_cookie_consent_updated", handleConsentUpdate);
+    return () => {
+      window.removeEventListener("wae_cookie_consent_updated", handleConsentUpdate);
+    };
   }, [pathname, searchParams]);
 
   // Track page views and time spent
