@@ -117,6 +117,19 @@ export default function Sidebar() {
             <span>Blogs</span>
           </Link>
 
+          {/* Enquiries */}
+          <Link
+            href="/admin/enquiries"
+            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+              pathname.startsWith("/admin/enquiries")
+                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3"
+                : "text-[#AEAEAE]"
+            }`}
+          >
+            <FileText size={18} />
+            <span>Enquiries</span>
+          </Link>
+
           {/* Jobs */}
           <Link
             href="/admin/jobs"

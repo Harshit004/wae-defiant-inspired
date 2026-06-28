@@ -9,6 +9,7 @@ import Footer from "@/components/footer"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { PRODUCTS } from "@/data/products"
+import EnquireNowPopup from "@/components/EnquireNowPopup"
 
 // Shared container class for consistent margins and max-width using relative dimensions
 const containerClass = "mx-auto w-[85%] max-w-[1440px] px-[2vw]"
@@ -87,6 +88,7 @@ function ProductDescriptionPageContent() {
 
     // Quick inquiry form state
     const [isInquired, setIsInquired] = useState(false)
+    const [isEnquirePopupOpen, setIsEnquirePopupOpen] = useState(false)
 
     const handleHeroCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         if (heroCtaLink.startsWith("#")) {
@@ -412,10 +414,7 @@ function ProductDescriptionPageContent() {
                             </Link>
                         ) : (
                             <button
-                                onClick={() => {
-                                    setIsInquired(true)
-                                    setTimeout(() => setIsInquired(false), 3000)
-                                }}
+                                onClick={() => setIsEnquirePopupOpen(true)}
                                 className="w-full border border-white/40 bg-transparent py-[1rem] text-white hover:bg-white hover:text-black transition-all duration-500 cursor-pointer flex items-center justify-center"
                                 style={{ 
                                     fontFamily: "'Inter Tight', sans-serif",
@@ -427,11 +426,7 @@ function ProductDescriptionPageContent() {
                                     textTransform: "none"
                                 }}
                             >
-                                {isInquired ? (
-                                    <>Inquiry Sent <span style={{ marginLeft: "10px" }}>✓</span></>
-                                ) : (
-                                    <>{showcaseCtaText} <span style={{ marginLeft: "10px" }}>↗</span></>
-                                )}
+                                {showcaseCtaText} <span style={{ marginLeft: "10px" }}>↗</span>
                             </button>
                         )}
                     </div>
@@ -1169,6 +1164,13 @@ function ProductDescriptionPageContent() {
 
             {/* FOOTER */}
             <Footer />
+
+            {/* ENQUIRE NOW POPUP */}
+            <EnquireNowPopup 
+                isOpen={isEnquirePopupOpen} 
+                onClose={() => setIsEnquirePopupOpen(false)} 
+                pageLink={typeof window !== 'undefined' ? window.location.href : ''}
+            />
 
             {/* FULLSCREEN LIGHTBOX OVERLAY */}
             <AnimatePresence>
