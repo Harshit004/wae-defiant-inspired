@@ -265,7 +265,8 @@ const ThisIsUs: FC = () => {
                                 fontWeight: 400,
                                 fontSize: '58px',
                                 lineHeight: '105%',
-                                marginBottom: '60px'
+                                marginBottom: '60px',
+                                maxWidth: '41.8vw'
                             }}>
                                 Supporting SDG 6 through carbon-neutral water infrastructure solutions.
                             </h2>
