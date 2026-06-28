@@ -26,6 +26,12 @@ type Session = {
     pagesViewed: string[];
     timeSpentSeconds: number;
     clicks: number;
+    clicksList?: Array<{
+      page: string;
+      label: string;
+      action: string;
+      timestamp: string;
+    }>;
     downloads: number;
   };
 };
@@ -151,23 +157,49 @@ export default function AnalyticsDashboard() {
                     </p>
                   </div>
 
-                  {/* Behavior */}
-                  <div>
-                    <h3 className="text-xs text-white/50 uppercase tracking-wider mb-2">Behavior</h3>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-white/50" />
-                        <span>{session.behavior?.timeSpentSeconds || 0}s</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <MousePointer className="w-4 h-4 text-white/50" />
-                        <span>{session.behavior?.clicks || 0} clicks</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <FileDown className="w-4 h-4 text-white/50" />
-                        <span>{session.behavior?.downloads || 0} dl</span>
+                  {/* Behavior & Clicks List */}
+                  <div className="flex flex-col gap-3">
+                    <div>
+                      <h3 className="text-xs text-white/50 uppercase tracking-wider mb-2">Behavior</h3>
+                      <div className="flex gap-4 text-sm">
+                        <div className="flex items-center gap-1.5" title="Time Spent">
+                          <Clock className="w-4 h-4 text-white/50" />
+                          <span>{session.behavior?.timeSpentSeconds || 0}s</span>
+                        </div>
+                        <div className="flex items-center gap-1.5" title="Total Clicks">
+                          <MousePointer className="w-4 h-4 text-white/50" />
+                          <span>{session.behavior?.clicks || 0} clicks</span>
+                        </div>
+                        <div className="flex items-center gap-1.5" title="Downloads">
+                          <FileDown className="w-4 h-4 text-white/50" />
+                          <span>{session.behavior?.downloads || 0} dl</span>
+                        </div>
                       </div>
                     </div>
+
+                    {session.behavior?.clicksList && session.behavior.clicksList.length > 0 && (
+                      <div>
+                        <h4 className="text-[10px] text-white/40 uppercase tracking-wider mb-1.5">Click History</h4>
+                        <div className="max-h-[120px] overflow-y-auto pr-1 space-y-1.5 scrollbar-thin scrollbar-thumb-white/10">
+                          {session.behavior.clicksList.map((click, cIdx) => (
+                            <div key={cIdx} className="text-xs bg-white/5 p-2 rounded border border-white/5 flex flex-col gap-0.5">
+                              <div className="flex justify-between items-center text-[10px] text-white/40">
+                                <span className="truncate max-w-[120px]">{click.page}</span>
+                                <span>{new Date(click.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</span>
+                              </div>
+                              <div className="font-semibold text-white/90 truncate">{click.label}</div>
+                              <div className={`text-[10px] truncate ${
+                                click.action.startsWith('Navigate') ? 'text-blue-400' :
+                                click.action.startsWith('Download') ? 'text-purple-400' :
+                                click.action.startsWith('Submit') ? 'text-green-400' : 'text-white/60'
+                              }`}>
+                                {click.action}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Pages Viewed */}

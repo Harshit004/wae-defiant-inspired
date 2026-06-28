@@ -71,6 +71,7 @@ export default function AnalyticsTracker() {
             pagesViewed: [pathname],
             timeSpentSeconds: 0,
             clicks: 0,
+            clicksList: [],
             downloads: 0,
           }
         };
@@ -122,7 +123,7 @@ export default function AnalyticsTracker() {
     updatePage();
   }, [pathname]);
 
-  // Track clicks globally
+  // Track clicks globally with details (label, action page, action type, timestamp)
   useEffect(() => {
     const handleClick = async (e: MouseEvent) => {
       if (!sessionIdRef.current) return;
@@ -130,29 +131,78 @@ export default function AnalyticsTracker() {
       if (consent !== "accepted") return;
 
       const target = e.target as HTMLElement;
-      // Track clicks on important elements like links and buttons
-      if (target.tagName === 'A' || target.tagName === 'BUTTON' || target.closest('a') || target.closest('button')) {
-         try {
-           await updateDoc(doc(db, "analytics_sessions", sessionIdRef.current!), {
-             "behavior.clicks": increment(1)
-           });
-           
-           // If it's a download link, track it
-           const link = (target.tagName === 'A' ? target : target.closest('a')) as HTMLAnchorElement;
-           if (link && link.hasAttribute('download')) {
-              await updateDoc(doc(db, "analytics_sessions", sessionIdRef.current!), {
-                "behavior.downloads": increment(1)
-              });
-           }
-         } catch (e) {
-           console.error("Failed to update click", e);
-         }
+      const link = (target.tagName === 'A' ? target : target.closest('a')) as HTMLAnchorElement | null;
+      const button = (target.tagName === 'BUTTON' ? target : target.closest('button')) as HTMLButtonElement | null;
+
+      if (link || button) {
+        const element = link || button;
+        let label = element.textContent?.replace(/\s+/g, ' ').trim() || element.getAttribute('aria-label')?.trim() || "";
+        
+        // Handle images inside links/buttons
+        if (!label) {
+          const img = element.querySelector('img');
+          if (img) {
+            label = img.getAttribute('alt')?.trim() || "Image Link";
+          }
+        }
+        
+        if (!label) {
+          label = "Interactive element";
+        }
+
+        if (label.length > 50) {
+          label = label.substring(0, 47) + "...";
+        }
+
+        let action = "Button Click";
+        let isDownload = false;
+
+        if (link) {
+          const downloadAttr = link.getAttribute('download');
+          if (downloadAttr !== null) {
+            isDownload = true;
+            action = `Download: ${downloadAttr || link.href.split('/').pop() || 'file'}`;
+          } else {
+            action = `Navigate to: ${link.getAttribute('href') || link.href}`;
+          }
+        } else if (button) {
+          if (button.type === 'submit') {
+            action = "Submit Form";
+          } else {
+            const form = button.closest('form');
+            if (form) {
+              action = `Action in Form (${form.id || 'unnamed'})`;
+            }
+          }
+        }
+
+        const clickEvent = {
+          page: pathname,
+          label,
+          action,
+          timestamp: new Date().toISOString()
+        };
+
+        try {
+          const updateFields: Record<string, any> = {
+            "behavior.clicks": increment(1),
+            "behavior.clicksList": arrayUnion(clickEvent)
+          };
+
+          if (isDownload) {
+            updateFields["behavior.downloads"] = increment(1);
+          }
+
+          await updateDoc(doc(db, "analytics_sessions", sessionIdRef.current!), updateFields);
+        } catch (e) {
+          console.error("Failed to update click event", e);
+        }
       }
     };
 
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
-  }, []);
+  }, [pathname]);
 
   return null;
 }
