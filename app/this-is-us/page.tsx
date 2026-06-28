@@ -94,13 +94,13 @@ const ThisIsUs: FC = () => {
                     }} className="max-w-[80%]">
                         Designing the future of plastic-free hydration infrastructure.
                     </h1>
-                    
+
                     <div className="w-full h-[500px] relative">
-                        <video 
-                            autoPlay 
-                            loop 
-                            muted 
-                            playsInline 
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
                             className="w-full h-full object-cover"
                         >
                             <source src="/Big Bang Theory_C.mp4" type="video/mp4" />
@@ -178,7 +178,7 @@ const ThisIsUs: FC = () => {
                         lineHeight: '110%',
                         marginBottom: '78px'
                     }}>Our Business Model</h2>
-                    
+
                     <div className="flex">
                         <div className="w-1/3 pr-[4.23vw] border-r border-white/20">
                             <div className="mb-[38px]"><GlassWater style={{ width: '57px', height: '57px' }} strokeWidth={1} /></div>
@@ -238,11 +238,11 @@ const ThisIsUs: FC = () => {
                 <div className={containerClass}>
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
                     <div className="w-full h-[600px] relative mb-[62px]">
-                        <video 
-                            autoPlay 
-                            loop 
-                            muted 
-                            playsInline 
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
                             className="w-full h-full object-cover"
                         >
                             <source src="/Production_Video.mp4" type="video/mp4" />
@@ -253,7 +253,7 @@ const ThisIsUs: FC = () => {
                             "WAE was built as an activist <span className="text-white">organisation</span>, not a product company. That origin shapes everything: material choices, partnerships, pricing philosophy, and where we deploy.
                         </p>
                         <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: '40px', lineHeight: '120%', textAlign: 'right', color: '#AEAEAE' }}>
-                            It is not <span className="text-white">positioning</span>.<br/>It is <span className="text-white">structure</span>."
+                            It is not <span className="text-white">positioning</span>.<br />It is <span className="text-white">structure</span>."
                         </p>
                     </div>
                 </div>
@@ -265,7 +265,7 @@ const ThisIsUs: FC = () => {
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
                     <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '20px' }}>WAE Chronicle</h2>
                     <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '16px', lineHeight: '110%', color: '#AEAEAE', marginBottom: '86px' }}>From Intent to Impact</p>
-                    
+
                     <div className="w-full relative">
                         <div className="w-full h-[1px] bg-white/20 relative mb-[16px] flex justify-between items-center px-[4vw]">
                             {[
@@ -298,7 +298,7 @@ const ThisIsUs: FC = () => {
                                         WAE incorporated, a company from water intake to water reuse
                                     </p>
                                 </div>
-                                
+
                                 <div className="flex gap-4 mt-auto justify-end">
                                     <button className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
                                         <span className="text-white/50">{'<'}</span>
@@ -320,7 +320,7 @@ const ThisIsUs: FC = () => {
                     <div className="flex">
                         <div className="w-[30%] pr-[5.56vw] border-r border-white/20 relative">
                             <div className="sticky top-40">
-                                <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '100%', marginBottom: '60px' }}>The team<br/>behind WAE</h2>
+                                <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '100%', marginBottom: '60px' }}>The team<br />behind WAE</h2>
                                 <div className="mt-[-28px]">
                                     <DarkSectionButton href="/careers">Join Team</DarkSectionButton>
                                 </div>
@@ -443,7 +443,7 @@ const ThisIsUs: FC = () => {
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
                     <div className="flex">
                         <div className="w-[42%] pr-[4.72vw]">
-                            <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '78px' }}>Serving<br/>with Purpose</h2>
+                            <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '78px' }}>Serving<br />with Purpose</h2>
                             <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '100%', color: '#AEAEAE', marginBottom: '40px' }}>
                                 All CSR activities undertaken through the WAE Foundation follow structured processes and are supported by proper documentation. Each initiative is planned, executed, and recorded with clear accountability. Transparency and traceability are central to how we operate, ensuring that every contribution is meaningful, measurable, and aligned with responsible long-term growth.
                             </p>
@@ -471,7 +471,7 @@ const ThisIsUs: FC = () => {
                                 <div className="w-full aspect-[347/350] relative mb-[35px] max-w-[347px]">
                                     <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5d38e4f6-adbf-48f6-66b3-cb2dcfff2700/public" alt="Awards Certificate" fill className="object-contain" />
                                 </div>
-                                <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '24px', lineHeight: '100%', color: '#AEAEAE' }} className="pr-4 max-w-[80%]">
+                                <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '24px', lineHeight: '100%', color: '#fff' }} className="pr-4 max-w-[80%]">
                                     The competition has never been fiercer. ET MSME Awards 2025 nominee!
                                 </p>
                             </div>
