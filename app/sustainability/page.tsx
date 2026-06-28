@@ -279,8 +279,8 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-screen relative overflow-hidden flex items-center justify-between"
-        style={{ height: `calc(100vh - ${headerHeight}px)`, minHeight: "600px", background: "radial-gradient(circle at left, #012D4C 0%, #0A0A0A 60%)" }}
+        className="w-screen relative overflow-hidden flex flex-col items-center"
+        style={{ background: "radial-gradient(circle at left, #012D4C 0%, #0A0A0A 60%)", minHeight: "100vh" }}
       >
         <div className={containerClass}>
             <div className="flex justify-between items-start pt-[60px]">
@@ -324,8 +324,11 @@ export default function Home() {
             </div>
         </div>
 
+        {/* Spacer before video */}
+        <div style={{ height: "60px" }} />
+
         {/* Hero Video inserted into the layout */}
-        <div className="w-full absolute bottom-0 flex justify-center pb-[80px]" style={{ left: "50%", transform: "translateX(-50%)", width: "95vw" }}>
+        <div className="w-full flex justify-center pb-[80px]" style={{ width: "100%" }}>
              <video
                 src="/11977161_1920_1080_30fps.mp4"
                 autoPlay
@@ -333,6 +336,7 @@ export default function Home() {
                 muted
                 playsInline
                 className="w-full h-[400px] object-cover"
+                style={{ width: "95vw" }}
                 />
         </div>
       </section>
@@ -775,6 +779,9 @@ export default function Home() {
             </div>
         </div>
       </section>
+
+      {/* FOOTER */}
+      <Footer />
 
       {/* INLINE CSS for animations */}
       <style jsx>{`
