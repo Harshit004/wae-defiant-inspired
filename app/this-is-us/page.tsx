@@ -433,7 +433,7 @@ const ThisIsUs: FC = () => {
                         <div className="w-[75%] pl-[5.56vw] flex flex-col gap-[4.86vw]">
                             {/* Founder CEO */}
                             <div className="flex w-full gap-[3.75vw]">
-                                <div className="w-[48%] aspect-[410/517] relative shrink-0">
+                                <div className="w-[calc(50%-1.875vw)] aspect-[410/517] relative shrink-0">
                                     <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/945f5796-0664-44a9-b951-7759f4d39400/public" alt="A. Vikram Joshe" fill className="object-cover" />
                                 </div>
                                 <div className="flex flex-col justify-between w-full py-1">
