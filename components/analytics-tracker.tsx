@@ -86,6 +86,9 @@ export default function AnalyticsTracker() {
       initAnalytics();
     }
 
+    // Listen for the custom event dispatched by the CookieConsent component (cookie-consent.tsx).
+    // This allows the analytics tracker to initialize immediately upon consent confirmation,
+    // avoiding tracking loss on the initial landing page view.
     const handleConsentUpdate = () => {
       if (!sessionIdRef.current) {
         initAnalytics();
