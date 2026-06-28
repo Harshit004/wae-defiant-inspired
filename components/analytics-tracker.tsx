@@ -134,8 +134,8 @@ export default function AnalyticsTracker() {
       const link = (target.tagName === 'A' ? target : target.closest('a')) as HTMLAnchorElement | null;
       const button = (target.tagName === 'BUTTON' ? target : target.closest('button')) as HTMLButtonElement | null;
 
-      if (link || button) {
-        const element = link || button;
+      const element = link || button;
+      if (element) {
         let label = element.textContent?.replace(/\s+/g, ' ').trim() || element.getAttribute('aria-label')?.trim() || "";
         
         // Handle images inside links/buttons
