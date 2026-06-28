@@ -4,7 +4,7 @@ import { readEnquiriesDB, writeEnquiriesDB } from '@/lib/enquiriesDb';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { fullName, companyName, email, phone, pageLink } = body;
+    const { fullName, companyName, email, phone, pageLink, message, type } = body;
 
     if (!fullName || !email || !phone) {
       return NextResponse.json({ success: false, message: 'Missing required fields' }, { status: 400 });
@@ -19,6 +19,8 @@ export async function POST(request: Request) {
       email,
       phone,
       pageLink: pageLink || '',
+      message: message || undefined,
+      type: type || 'product',
       createdAt: new Date().toISOString()
     };
 

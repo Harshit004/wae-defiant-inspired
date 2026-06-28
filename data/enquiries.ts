@@ -6,6 +6,8 @@ export interface Enquiry {
   phone: string;
   pageLink: string;
   createdAt: string;
+  message?: string;
+  type?: 'product' | 'general';
 }
 
 export const ENQUIRIES: Record<string, Enquiry> = {

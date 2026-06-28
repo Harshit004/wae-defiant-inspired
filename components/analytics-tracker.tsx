@@ -17,8 +17,8 @@ export default function AnalyticsTracker() {
   useEffect(() => {
     const initAnalytics = async () => {
       try {
-        const consent = localStorage.getItem("cookie-consent");
-        if (consent !== "true") return;
+        const consent = localStorage.getItem("wae_cookie_consent");
+        if (consent !== "accepted") return;
 
         let visitorId = localStorage.getItem("visitor-id");
         if (!visitorId) {
@@ -90,8 +90,8 @@ export default function AnalyticsTracker() {
   // Track page views and time spent
   useEffect(() => {
     if (!sessionIdRef.current) return;
-    const consent = localStorage.getItem("cookie-consent");
-    if (consent !== "true") return;
+    const consent = localStorage.getItem("wae_cookie_consent");
+    if (consent !== "accepted") return;
 
     const updatePage = async () => {
       try {
@@ -112,8 +112,8 @@ export default function AnalyticsTracker() {
   useEffect(() => {
     const handleClick = async (e: MouseEvent) => {
       if (!sessionIdRef.current) return;
-      const consent = localStorage.getItem("cookie-consent");
-      if (consent !== "true") return;
+      const consent = localStorage.getItem("wae_cookie_consent");
+      if (consent !== "accepted") return;
 
       const target = e.target as HTMLElement;
       // Track clicks on important elements like links and buttons

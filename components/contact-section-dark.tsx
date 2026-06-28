@@ -19,24 +19,28 @@ const ContactSectionDark = () => {
         const form = event.target as HTMLFormElement;
         const formData = new FormData(form);
         const pageUrl = window.location.href;
-        formData.append('pageUrl', pageUrl);
 
-        const urlSearchParams = new URLSearchParams();
-        formData.forEach((value, key) => {
-            urlSearchParams.append(key, value as string);
-        });
-
-        const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxb3RywLHPRbyFITG58mPfv4nTsrRwKCx-9f131o9oaEcGt5dIDzaq-6EwQ00XTnif3Ig/exec';
+        const payload = {
+            fullName: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('contact'),
+            companyName: formData.get('companyName'),
+            message: formData.get('message'),
+            pageLink: pageUrl,
+            type: 'general'
+        };
 
         try {
-            await fetch(appsScriptUrl, {
+            const res = await fetch('/api/enquiries', {
                 method: 'POST',
-                mode: 'no-cors',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Content-Type': 'application/json',
                 },
-                body: urlSearchParams.toString(),
+                body: JSON.stringify(payload),
             });
+            
+            if (!res.ok) throw new Error('Failed to submit enquiry');
+            
             alert('Thank you for contacting us! Your message has been sent.');
             form.reset();
         } catch (error) {

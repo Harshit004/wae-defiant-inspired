@@ -54,6 +54,8 @@ export async function writeEnquiriesDB(state: EnquiriesDBState): Promise<void> {
   phone: string;
   pageLink: string;
   createdAt: string;
+  message?: string;
+  type?: 'product' | 'general';
 }
 
 export const ENQUIRIES: Record<string, Enquiry> = ${JSON.stringify(state.enquiries, null, 2)};

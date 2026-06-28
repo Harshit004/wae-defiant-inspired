@@ -8,6 +8,7 @@ import { Enquiry } from "@/data/enquiries";
 export default function AdminEnquiriesPage() {
   const [enquiries, setEnquiries] = useState<Enquiry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState<'product' | 'general'>('product');
 
   useEffect(() => {
     fetchEnquiries();
@@ -43,18 +44,34 @@ export default function AdminEnquiriesPage() {
     }
   };
 
+  const filteredEnquiries = enquiries.filter(e => (e.type || 'product') === activeTab);
+
   return (
     <div className="flex flex-col flex-1 h-full">
       <Header searchQuery="" onSearchChange={() => {}} />
       <div className="flex-1 bg-black p-10 text-white flex flex-col justify-start">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-white">Enquiries</h1>
+          <div className="flex bg-[#0a1929] border border-white/10 rounded-lg p-1">
+            <button 
+              onClick={() => setActiveTab('product')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'product' ? 'bg-white text-black' : 'text-white/70 hover:text-white hover:bg-white/5'}`}
+            >
+              Product Enquiries
+            </button>
+            <button 
+              onClick={() => setActiveTab('general')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'general' ? 'bg-white text-black' : 'text-white/70 hover:text-white hover:bg-white/5'}`}
+            >
+              General Enquiries
+            </button>
+          </div>
         </div>
 
         {isLoading ? (
           <div className="text-white/50">Loading enquiries...</div>
-        ) : enquiries.length === 0 ? (
-          <div className="text-white/50">No enquiries found.</div>
+        ) : filteredEnquiries.length === 0 ? (
+          <div className="text-white/50">No enquiries found for this category.</div>
         ) : (
           <div className="bg-[#0a1929] border border-white/10 rounded-lg overflow-hidden">
             <table className="w-full text-left text-sm text-white">
@@ -65,11 +82,12 @@ export default function AdminEnquiriesPage() {
                   <th className="px-4 py-3 font-medium">Company</th>
                   <th className="px-4 py-3 font-medium">Contact</th>
                   <th className="px-4 py-3 font-medium">Page Link</th>
+                  {activeTab === 'general' && <th className="px-4 py-3 font-medium">Message</th>}
                   <th className="px-4 py-3 font-medium text-right">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
-                {enquiries.map((enq) => (
+                {filteredEnquiries.map((enq) => (
                   <tr key={enq.id} className="hover:bg-white/5 transition-colors">
                     <td className="px-4 py-3 whitespace-nowrap text-white/70">
                       {new Date(enq.createdAt).toLocaleDateString()}
@@ -85,6 +103,11 @@ export default function AdminEnquiriesPage() {
                         {enq.pageLink.split('/').slice(3).join('/') || "Link"}
                       </a>
                     </td>
+                    {activeTab === 'general' && (
+                      <td className="px-4 py-3 text-white/70 max-w-xs truncate" title={enq.message}>
+                        {enq.message || "-"}
+                      </td>
+                    )}
                     <td className="px-4 py-3 text-right">
                       <button
                         onClick={() => deleteEnquiry(enq.id)}
