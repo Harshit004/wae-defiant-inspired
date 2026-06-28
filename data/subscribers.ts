@@ -20,5 +20,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-06-25",
     "time": "16:57:27",
     "pageLink": "/"
+  },
+  {
+    "id": "9a7bd838-249a-4cc4-b967-ff1a6d0e7d88",
+    "email": "abcdefg@hijklmnopqrst.com",
+    "date": "2026-06-29",
+    "time": "03:22:47",
+    "pageLink": "/product-description-page"
   }
 ];
