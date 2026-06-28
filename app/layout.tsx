@@ -3,6 +3,8 @@ import "./globals.css"
 import { Inter, Manrope, Inter_Tight } from "next/font/google"
 import type { Metadata } from "next"
 import CookieConsent from "@/components/cookie-consent"
+import AnalyticsTracker from "@/components/analytics-tracker"
+import { Suspense } from "react"
 import { Toaster } from "sonner"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -27,6 +29,9 @@ export default function RootLayout({
       <body className={interTight.className}>
         {children}
         <CookieConsent />
+        <Suspense fallback={null}>
+          <AnalyticsTracker />
+        </Suspense>
         <Toaster />
       </body>
     </html>

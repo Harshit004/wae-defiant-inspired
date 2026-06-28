@@ -152,6 +152,19 @@ export default function Sidebar() {
             <span>News & Events</span>
           </Link>
 
+          {/* Analytics */}
+          <Link
+            href="/admin/analytics"
+            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+              pathname.startsWith("/admin/analytics")
+                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3"
+                : "text-[#AEAEAE]"
+            }`}
+          >
+            <PlaySquare size={18} />
+            <span>Analytics</span>
+          </Link>
+
           {/* Subscribers */}
           <Link
             href="/admin/subscribers"
