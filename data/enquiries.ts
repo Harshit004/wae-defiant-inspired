@@ -41,5 +41,15 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hi, i want to write up a bigger chunk of text and test out how the data is being stored in the CMS. It is an attempt to test its visual entry",
     "type": "general",
     "createdAt": "2026-06-28T19:37:51.592Z"
+  },
+  "82db0382-606a-4af5-9717-3fa32b2ea700": {
+    "id": "82db0382-606a-4af5-9717-3fa32b2ea700",
+    "fullName": "Test user",
+    "companyName": "Test company",
+    "email": "testenquiry@testmail.com",
+    "phone": "12345 67890",
+    "pageLink": "https://wae-ltd.vercel.app/product-description-page?product=plusultra",
+    "type": "product",
+    "createdAt": "2026-06-28T21:52:12.970Z"
   }
 };
