@@ -70,64 +70,64 @@ const LinkedInButton = ({ href }: { href: string }) => {
 };
 
 const timelineData = [
-  {
-    yearLabel: "2010-12",
-    title: "2010 - 2012",
-    items: [
-      "WAE incorporated, a company from water intake to water reuse"
-    ],
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
-  },
-  {
-    yearLabel: "2013-14",
-    title: "2013-2014",
-    items: [
-      "Emergence of an activism: \"say no to bottled water\"",
-      "Point-of-use water purification stations launched",
-      "WAE Drinking Water Fountain range launched",
-      "Installed at Indira Gandhi International Airport & Airport Metro",
-      "Projects Business Unit started in Water & Wastewater management"
-    ],
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
-  },
-  {
-    yearLabel: "2015-17",
-    title: "2015- 2017",
-    items: [
-      "Completed installation of over 10 Sewage Treatment Plants in India",
-      "First ETP of 500 KLD installed at Seemag Steel Plant, Orissa",
-      "Installed 1 MLD Biological & MBR Hybrid Sewage Treatment Plant at Gangotri, Uttarakhand",
-      "Signed master license agreement with HAWS Corporation, USA for hydration products"
-    ],
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
-  },
-  {
-    yearLabel: "2018-19",
-    title: "2018- 2019",
-    items: [
-      "Research and Development team incubated"
-    ],
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
-  },
-  {
-    yearLabel: "2020-21",
-    title: "2020- 2021",
-    items: [
-      "Embarked on a transformative digital journey",
-      "Completed a successful and innovative decade of Integrated Water Resource Management",
-      "Launched touchless dispensing with LED UV protection"
-    ],
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
-  },
-  {
-    yearLabel: "2022-23",
-    title: "2022-2023",
-    items: [
-      "Revolutionizing hygiene with electronically operated drinking water taps",
-      "Innovative solutions tailored for the HoReCa segment"
-    ],
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
-  }
+    {
+        yearLabel: "2010-12",
+        title: "2010 - 2012",
+        items: [
+            "WAE incorporated, a company from water intake to water reuse"
+        ],
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+    },
+    {
+        yearLabel: "2013-14",
+        title: "2013-2014",
+        items: [
+            "Emergence of an activism: \"say no to bottled water\"",
+            "Point-of-use water purification stations launched",
+            "WAE Drinking Water Fountain range launched",
+            "Installed at Indira Gandhi International Airport & Airport Metro",
+            "Projects Business Unit started in Water & Wastewater management"
+        ],
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+    },
+    {
+        yearLabel: "2015-17",
+        title: "2015- 2017",
+        items: [
+            "Completed installation of over 10 Sewage Treatment Plants in India",
+            "First ETP of 500 KLD installed at Seemag Steel Plant, Orissa",
+            "Installed 1 MLD Biological & MBR Hybrid Sewage Treatment Plant at Gangotri, Uttarakhand",
+            "Signed master license agreement with HAWS Corporation, USA for hydration products"
+        ],
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+    },
+    {
+        yearLabel: "2018-19",
+        title: "2018- 2019",
+        items: [
+            "Research and Development team incubated"
+        ],
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+    },
+    {
+        yearLabel: "2020-21",
+        title: "2020- 2021",
+        items: [
+            "Embarked on a transformative digital journey",
+            "Completed a successful and innovative decade of Integrated Water Resource Management",
+            "Launched touchless dispensing with LED UV protection"
+        ],
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+    },
+    {
+        yearLabel: "2022-23",
+        title: "2022-2023",
+        items: [
+            "Revolutionizing hygiene with electronically operated drinking water taps",
+            "Innovative solutions tailored for the HoReCa segment"
+        ],
+        image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
+    }
 ];
 
 const TimelineSection = () => {
@@ -152,17 +152,17 @@ const TimelineSection = () => {
 
                 <div className="w-full relative mb-[120px]">
                     <div className="w-full h-[1px] bg-white/20 relative">
-                        <div 
-                            className="absolute top-0 left-0 h-full bg-white transition-all duration-300" 
+                        <div
+                            className="absolute top-0 left-0 h-full bg-white transition-all duration-300"
                             style={{ width: `${(activeIndex / (timelineData.length - 1)) * 100}%` }}
                         ></div>
                         {timelineData.map((item, i) => {
                             const isActive = i <= activeIndex;
                             const isCurrent = i === activeIndex;
                             return (
-                                <div 
-                                    key={i} 
-                                    className="absolute top-1/2 flex flex-col items-center" 
+                                <div
+                                    key={i}
+                                    className="absolute top-1/2 flex flex-col items-center"
                                     style={{ left: `${(i / (timelineData.length - 1)) * 100}%`, transform: 'translate(-50%, -50%)' }}
                                 >
                                     <div className={`w-[8px] h-[8px] rounded-full transition-colors duration-300 ${isActive ? 'bg-white' : 'bg-[#AEAEAE99]'}`}></div>
@@ -193,14 +193,14 @@ const TimelineSection = () => {
                         </div>
 
                         <div className="flex gap-4 mt-12 justify-end">
-                            <button 
+                            <button
                                 onClick={handlePrev}
                                 disabled={activeIndex === 0}
                                 className="w-10 h-10 border border-white/20 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10"
                             >
                                 <ChevronLeft className="w-5 h-5 text-white/50" strokeWidth={1} />
                             </button>
-                            <button 
+                            <button
                                 onClick={handleNext}
                                 disabled={activeIndex === timelineData.length - 1}
                                 className="w-10 h-10 border border-white/20 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10"
@@ -327,14 +327,20 @@ const ThisIsUs: FC = () => {
                     }}>Our Business Model</h2>
 
                     <div className="flex">
-                        <div className="w-1/3 pr-[4.23vw] border-r border-white/20">
-                            <div className="mb-[38px]"><GlassWater style={{ width: '57px', height: '57px' }} strokeWidth={1} /></div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '24px', lineHeight: '100%' }} className="mb-[32px] w-3/4">Single-use plastic is an institutional problem</h3>
-                            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '130%', color: '#AEAEAE' }}>
-                                <p className="mb-4">
+                        <div className="w-1/3 pl-[3vw] pr-[4vw] border-l border-white/20 flex flex-col">
+                            <div className="mb-[32px]">
+                                {/* Custom SVG for bottles with arrow to resemble the design closely */}
+                                <svg width="57" height="57" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M6 10h4m-4 4h4m-4 4h4m-2-12V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2m-6 0h6m-6 0a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m4 12v-6m0 0-2 2m2-2 2 2" />
+                                    <path d="M12 4h4a1 1 0 0 1 1 1v2m-6 0h6" />
+                                </svg>
+                            </div>
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">Single-use plastic is an<br/>institutional problem</h3>
+                            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '150%', color: '#AEAEAE' }}>
+                                <p className="mb-6">
                                     Most organisations have made sustainability commitments, but their water infrastructure contradicts them. Bottled water creates ongoing plastic waste, carbon cost from logistics, and reputational risk.
                                 </p>
-                                <p className="mb-4">
+                                <p className="mb-6">
                                     The market has no shortage of hydration products. It has a shortage of credible, scalable alternatives designed for institutional environments, with material integrity and ESG traceability built in.
                                 </p>
                                 <p>
@@ -342,34 +348,43 @@ const ThisIsUs: FC = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="w-1/3 px-[4.23vw] border-r border-white/20">
-                            <div className="mb-[38px]"><Droplets style={{ width: '57px', height: '57px' }} strokeWidth={1} /></div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '24px', lineHeight: '100%' }} className="mb-[32px] w-3/4">The bottled gets replaced with infrastructure</h3>
-                            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '130%', color: '#AEAEAE' }}>
+                        <div className="w-1/3 pl-[3vw] pr-[4vw] border-l border-white/20 flex flex-col">
+                            <div className="mb-[32px]">
+                                <svg width="57" height="57" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
+                                    <path d="M9 15.5a4 4 0 0 0 4 4" />
+                                </svg>
+                            </div>
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">The bottled gets replaced with<br/>infrastructure</h3>
+                            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '150%', color: '#AEAEAE' }}>
                                 <p className="mb-6">
                                     WAE designs and deploys steel-first, point-of-use water systems for public institutions, corporate campuses, hospitality, and healthcare environments. Our systems connect directly to the water supply, eliminating plastic at the source, not the policy level.
                                 </p>
                                 <p className="mb-4">Key differentiators:</p>
                                 <ul className="list-disc pl-4 space-y-2">
-                                    <li>Steel-first material philosophy: no plastic contact with water.</li>
-                                    <li>Designed for institutional scale, not consumer markets.</li>
-                                    <li>ESG-traceable: aligned with UN SDG-6 (clean water and sanitation) and circular economy principles.</li>
-                                    <li>End-to-end service model covering installation, maintenance, and impact reporting.</li>
+                                    <li>Steel-first material philosophy: no plastic contact with water</li>
+                                    <li>Designed for institutional scale, not consumer markets</li>
+                                    <li>ESG-traceable: aligned with UN SDG 6 (clean water and sanitation) and circular economy principles</li>
+                                    <li>End-to-end service model covering installation, maintenance, and impact reporting</li>
                                 </ul>
                             </div>
                         </div>
-                        <div className="w-1/3 pl-[4.23vw]">
-                            <div className="mb-[38px]"><Settings style={{ width: '57px', height: '57px' }} strokeWidth={1} /></div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '24px', lineHeight: '100%' }} className="mb-[32px] w-3/4">How the model works in practice</h3>
-                            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '130%', color: '#AEAEAE' }}>
+                        <div className="w-1/3 pl-[3vw] pr-[4vw] border-l border-white/20 flex flex-col">
+                            <div className="mb-[32px]">
+                                <svg width="57" height="57" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                </svg>
+                            </div>
+                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">How the model works in<br/>practice</h3>
+                            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '150%', color: '#AEAEAE' }}>
                                 <p className="mb-6">
-                                    Site assessment: WAE audits the client's existing water usage, plastic footprint, and infrastructure.
+                                    Site assessment: WAE audits the client's existing water usage, plastic footprint, and infrastructure
                                 </p>
                                 <ul className="space-y-4 mb-6">
-                                    <li><strong>1. System design:</strong> Custom-configured point-of-use units specified for the environment.</li>
-                                    <li><strong>2. Installation:</strong> Steel-first systems installed directly into the water supply, zero plastic in the water path.</li>
-                                    <li><strong>3. Service & reporting:</strong> Ongoing maintenance with measurable plastic elimination data for ESG reporting.</li>
-                                    <li><strong>4. Scale:</strong> Systems are modular and replicable across sites, campuses, and geographies.</li>
+                                    <li><strong>1. System design:</strong> Custom-configured point-of-use units specified for the environment</li>
+                                    <li><strong>2. Installation:</strong> Steel-first systems installed directly into the water supply, zero plastic in the water path</li>
+                                    <li><strong>3. Service & reporting:</strong> Ongoing maintenance with measurable plastic elimination data for ESG reporting</li>
+                                    <li><strong>4. Scale:</strong> Systems are modular and replicable across sites, campuses, and geographies</li>
                                 </ul>
                                 <p>
                                     From assessment to scale, WAE delivers a seamless transition to sustainable hydration infrastructure.
@@ -540,7 +555,7 @@ const ThisIsUs: FC = () => {
                     <div className="flex">
                         <div className="w-[42%] pr-[4.72vw]">
                             <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '78px' }}>Serving<br />with Purpose</h2>
-                            <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '100%', color: '#AEAEAE', marginBottom: '40px' }}>
+                            <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE', marginBottom: '40px' }}>
                                 All CSR activities undertaken through the WAE Foundation follow structured processes and are supported by proper documentation. Each initiative is planned, executed, and recorded with clear accountability. Transparency and traceability are central to how we operate, ensuring that every contribution is meaningful, measurable, and aligned with responsible long-term growth.
                             </p>
                             <div className="mt-[-28px]">
