@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 
 // Shared container class for consistent margins and max-width
-const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
+const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
 
 /**
  * Reusable hover button component.
