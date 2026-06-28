@@ -458,7 +458,7 @@ const ThisIsUs: FC = () => {
                             </div>
 
                             {/* Row 2 */}
-                            <div className="flex justify-between w-full">
+                            <div className="flex gap-[3.75vw] w-full">
                                                                 <div className="flex flex-col w-[28.47vw]">
                                     <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6bc35551-9c5a-4161-328f-da4114280600/public" alt="Deepak Panwar" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
@@ -496,7 +496,7 @@ const ThisIsUs: FC = () => {
                             </div>
 
                             {/* Row 3 */}
-                            <div className="flex justify-between w-full">
+                            <div className="flex gap-[3.75vw] w-full">
                                                                 <div className="flex flex-col w-[28.47vw]">
                                     <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b50e712a-a5aa-4ce7-31ae-9d624ef5f100/public" alt="Satinder Kaur" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
@@ -534,7 +534,7 @@ const ThisIsUs: FC = () => {
                             </div>
 
                             {/* Row 4 */}
-                            <div className="flex justify-between w-full">
+                            <div className="flex gap-[3.75vw] w-full">
                                                                 <div className="flex flex-col w-[28.47vw]">
                                     <div className="w-[28.47vw] h-[22.98vw] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f88d5da-23ab-4e62-c172-f2d9b8581900/public" alt="Meenakshi Bora" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
