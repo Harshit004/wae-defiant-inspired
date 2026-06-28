@@ -44,7 +44,7 @@ export default function AdminEnquiriesPage() {
   };
 
   return (
-    <>
+    <div className="flex flex-col flex-1 h-full">
       <Header searchQuery="" onSearchChange={() => {}} />
       <div className="flex-1 bg-black p-10 text-white flex flex-col justify-start">
         <div className="flex justify-between items-center mb-6">
@@ -82,7 +82,7 @@ export default function AdminEnquiriesPage() {
                     </td>
                     <td className="px-4 py-3 text-blue-400 hover:underline">
                       <a href={enq.pageLink} target="_blank" rel="noopener noreferrer">
-                        {enq.pageLink.replace(/https?:\\/\\/[^\\/]+/, '') || "Link"}
+                        {enq.pageLink.split('/').slice(3).join('/') || "Link"}
                       </a>
                     </td>
                     <td className="px-4 py-3 text-right">
@@ -101,6 +101,6 @@ export default function AdminEnquiriesPage() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
