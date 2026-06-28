@@ -72,15 +72,15 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
       type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="w-fit px-4 py-3"
+      className="w-fit "
       style={{
         transition: 'background-color 0.65s ease, color 0.65s ease, border-color 0.65s ease',
         pointerEvents: "auto",
         display: "inline-flex",
         alignItems: "center",
-        gap: "8px",
-        fontFamily: "'Inter Tight', sans-serif",
-        fontWeight: 500, // This fontWeight is for the button text itself (like "Know More")
+        gap: "0.55vw", padding: "0.69vw 1.11vw",
+        fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
         fontSize: "10px",
         lineHeight: "100%",
         textTransform: "none",
@@ -324,9 +324,9 @@ export default function Home() {
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "12px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}
@@ -359,9 +359,9 @@ export default function Home() {
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
+                  fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                   lineHeight: "100%",
                   color: "#ffffff",
                 }}
@@ -375,9 +375,9 @@ export default function Home() {
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
+                  fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                   lineHeight: "100%",
                   color: "#ffffff",
                   position: "relative",
@@ -394,9 +394,9 @@ export default function Home() {
                     key={i}
                     className="pb-2 border-b border-white last:border-0"
                     style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
+                      fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
@@ -433,9 +433,9 @@ export default function Home() {
                     key={i}
                     className="pb-2 border-b border-white last:border-0"
                     style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
+                      fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
@@ -587,9 +587,9 @@ export default function Home() {
                 // maxWidth: "57.4305vw",
                 width: "100%",
                 textAlign: "right",
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "36px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "105%",
                 letterSpacing: "0%",
                 color: "#FFFFFF66",
@@ -609,7 +609,9 @@ export default function Home() {
         <section style={{ background: "transparent", color: "#FFF", paddingBottom: "120px", position: "relative", zIndex: 1 }} className="w-full px-[7.5vw] mb-[1px]">
           {/* Section Header */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: "30px", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
-            <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "24px", letterSpacing: "0%", margin: 0 }}>
+            <h2 style={{ fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px", letterSpacing: "0%", margin: 0 }}>
               Our product category
             </h2>
             {/* Search Bar */}

@@ -74,16 +74,16 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
             type="button"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="w-fit px-4 py-3"
+            className="w-fit "
             style={{
                 transition: 'background-color 0.65s ease, color 0.65s ease, border-color 0.65s ease',
                 pointerEvents: "auto",
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "8px",
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500, // This fontWeight is for the button text itself (like "Know More")
-                fontSize: "10px",
+                gap: "0.55vw", padding: "0.69vw 1.11vw",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "100%",
                 textTransform: "none",
                 backgroundColor:

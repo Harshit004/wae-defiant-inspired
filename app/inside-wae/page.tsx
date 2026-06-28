@@ -21,13 +21,13 @@ const HoverButton: FC<HoverButtonProps> = ({ children }) => {
       type="button"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="w-fit px-4 py-3 transition-all duration-650 ease"
+      className="w-fit  transition-all duration-650 ease"
       style={{
         pointerEvents: "auto",
         display: "inline-flex",
         alignItems: "center",
-        gap: "8px",
-        fontFamily: "'Inter Tight', sans-serif",
+        gap: "0.55vw", padding: "0.69vw 1.11vw",
+        fontFamily: "\'Manrope\', sans-serif",
         fontWeight: 500,
         fontSize: "10px",
         lineHeight: "100%",
@@ -285,9 +285,9 @@ useEffect(() => {
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "12px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}
@@ -342,9 +342,9 @@ useEffect(() => {
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
+                  fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                   lineHeight: "100%",
                   color: "#00000066",
                 }}
@@ -358,9 +358,9 @@ useEffect(() => {
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
+                  fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                   lineHeight: "100%",
                   color: "#00000066",
                 }}
@@ -375,9 +375,9 @@ useEffect(() => {
                     key={i}
                     className="pb-2 border-b border-[#D9D9DC] last:border-0"
                     style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
+                      fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
@@ -414,9 +414,9 @@ useEffect(() => {
                     key={i}
                     className="pb-2 border-b border-[#D9D9DC] last:border-0"
                     style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
+                      fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >

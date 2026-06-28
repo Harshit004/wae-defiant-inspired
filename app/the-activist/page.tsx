@@ -28,15 +28,15 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href }) => {
             type="button"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="w-fit px-4 py-3 transition-all duration-650 ease"
+            className="w-fit  transition-all duration-650 ease"
             style={{
                 pointerEvents: "auto",
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "8px",
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500, // This fontWeight is for the button text itself (like "Know More")
-                fontSize: "10px",
+                gap: "0.55vw", padding: "0.69vw 1.11vw",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "100%",
                 textTransform: "uppercase",
                 backgroundColor: hovered ? "#000" : "#fff",
@@ -226,9 +226,9 @@ export default function Home() {
                         <div
                             className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
                             style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 500,
-                                fontSize: "12px",
+                                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                                 lineHeight: "100%",
                                 letterSpacing: "0px",
                             }}
@@ -261,9 +261,9 @@ export default function Home() {
                             <div
                                 className="flex flex-col justify-center inline-block mr-1"
                                 style={{
-                                    fontFamily: "'Inter Tight', sans-serif",
-                                    fontWeight: 500,
-                                    fontSize: "11px",
+                                    fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                                     lineHeight: "100%",
                                     color: "#00000066",
                                 }}
@@ -277,9 +277,9 @@ export default function Home() {
                             <div
                                 className="flex flex-col justify-center inline-block mr-1"
                                 style={{
-                                    fontFamily: "'Inter Tight', sans-serif",
-                                    fontWeight: 500,
-                                    fontSize: "11px",
+                                    fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                                     lineHeight: "100%",
                                     color: "#00000066",
                                 }}
@@ -294,9 +294,9 @@ export default function Home() {
                                         key={i}
                                         className="pb-2 border-b border-[#D9D9DC] last:border-0"
                                         style={{
-                                            fontFamily: "'Inter Tight', sans-serif",
-                                            fontWeight: 500,
-                                            fontSize: "11px",
+                                            fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                                             lineHeight: "110%",
                                         }}
                                     >
@@ -333,9 +333,9 @@ export default function Home() {
                                         key={i}
                                         className="pb-2 border-b border-[#D9D9DC] last:border-0"
                                         style={{
-                                            fontFamily: "'Inter Tight', sans-serif",
-                                            fontWeight: 500,
-                                            fontSize: "11px",
+                                            fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                                             lineHeight: "110%",
                                         }}
                                     >
@@ -392,9 +392,9 @@ export default function Home() {
                 >
                     {/* Headline */}
                     <p style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 500,
-                        fontSize: "47px",
+                        fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                         lineHeight: "110%",
                         letterSpacing: "0%",
                         color: "#FFFFFF",
@@ -449,9 +449,9 @@ export default function Home() {
                     {/* Heading */}
                     <h2
                         style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            fontWeight: 500,
-                            fontSize: "36px",
+                            fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                             lineHeight: "110%",
                             letterSpacing: "0%",
                             color: "#000000",
@@ -487,7 +487,9 @@ export default function Home() {
                             <div style={{ height: "49px", display: "flex", alignItems: "flex-end", marginBottom: "32px" }}>
                                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b2262a67-0658-41c8-b5e9-fc7671450500/public" alt="Action icon" width={33} height={33} style={{ display: "block" }} />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Action</h3>
+                            <h3 style={{ fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Action</h3>
                             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "105%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 Talk is cheap. Plastic is cheaper. Action is everything.
                             </p>
@@ -502,7 +504,9 @@ export default function Home() {
                             <div style={{ height: "49px", display: "flex", alignItems: "flex-end", marginBottom: "32px" }}>
                                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/950014d5-b09b-43f2-9ef0-75cd3e02bc00/public" alt="Activism icon" width={49} height={49} style={{ display: "block" }} />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Activism</h3>
+                            <h3 style={{ fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Activism</h3>
                             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "105%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 Every bottle you throw away outlives you.
                             </p>
@@ -517,7 +521,9 @@ export default function Home() {
                             <div style={{ height: "49px", display: "flex", alignItems: "flex-end", marginBottom: "32px" }}>
                                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2c3dbfdd-cfa0-4967-1ef4-6270bcf0ca00/public" alt="Alignment icon" width={25} height={21} style={{ display: "block" }} />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Alignment</h3>
+                            <h3 style={{ fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Alignment</h3>
                             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "105%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 Here's the uncomfortable truth: the planet doesn't need us. We need it.
                             </p>
@@ -535,7 +541,9 @@ export default function Home() {
                             <div style={{ height: "49px", display: "flex", alignItems: "flex-end", marginBottom: "32px" }}>
                                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8fbd3c5c-cb6f-4b16-3b12-bf1d6ea96400/public" alt="Ideas icon" width={37} height={37} style={{ display: "block" }} />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Ideas</h3>
+                            <h3 style={{ fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Ideas</h3>
                             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "105%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 The best ideas don't add to the problem — they dissolve it.
                             </p>
@@ -550,7 +558,9 @@ export default function Home() {
                             <div style={{ height: "49px", display: "flex", alignItems: "flex-end", marginBottom: "32px" }}>
                                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ebbf8084-97a2-4d28-4a1c-b57d66240200/public" alt="Impact icon" width={33} height={33} style={{ display: "block" }} />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Impact</h3>
+                            <h3 style={{ fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Impact</h3>
                             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "105%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 The most powerful impact is invisible.
                             </p>
@@ -565,7 +575,9 @@ export default function Home() {
                             <div style={{ height: "49px", display: "flex", alignItems: "flex-end", marginBottom: "32px" }}>
                                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5f584bfb-a14a-4213-328d-e63560b70100/public" alt="Innovation icon" width={36} height={36} style={{ display: "block" }} />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "26px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Innovation</h3>
+                            <h3 style={{ fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", margin: 0, marginBottom: "24px" }}>Innovation</h3>
                             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "105%", letterSpacing: "0%", color: "#00000099", margin: 0, marginBottom: "20px" }}>
                                 Here's the uncomfortable truth: the planet doesn't need us. We need it.
                             </p>
@@ -584,10 +596,14 @@ export default function Home() {
 
                     {/* Left: 01 and Title */}
                     <div className="flex flex-row items-center gap-6 lg:gap-[40px] w-full lg:w-[45%]">
-                        <div style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "200px", lineHeight: "110%", letterSpacing: "0%", color: "#000000" }}>
+                        <div style={{ fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px", lineHeight: "110%", letterSpacing: "0%", color: "#000000" }}>
                             01
                         </div>
-                        <div style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "40px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", display: "flex", flexDirection: "column" }}>
+                        <div style={{ fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px", lineHeight: "110%", letterSpacing: "0%", color: "#000000", display: "flex", flexDirection: "column" }}>
                             <span>Per Cent</span>
                             <span>Principle</span>
                             <span>Planet</span>

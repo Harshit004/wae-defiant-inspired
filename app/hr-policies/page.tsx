@@ -88,9 +88,9 @@ export default function Home() {
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "12px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}
@@ -135,9 +135,9 @@ export default function Home() {
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
+                  fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                   lineHeight: "100%",
                   color: "#00000066",
                 }}
@@ -199,9 +199,9 @@ export default function Home() {
               <div
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
+                  fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                   lineHeight: "100%",
                   color: "#00000066",
                 }}
@@ -216,9 +216,9 @@ export default function Home() {
                     key={i}
                     className="pb-2 border-b border-[#D9D9DC] last:border-0"
                     style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
+                      fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
@@ -253,9 +253,9 @@ export default function Home() {
                     key={i}
                     className="pb-2 border-b border-[#D9D9DC] last:border-0"
                     style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "11px",
+                      fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
@@ -291,9 +291,9 @@ export default function Home() {
       <div className={containerClass}>
         <h2
           style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: "48px",
+            fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
             letterSpacing: "0%",
             verticalAlign: "middle",
             marginBottom: "40px",
@@ -303,9 +303,9 @@ export default function Home() {
         </h2>
         <p
           style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontWeight: 500,
-            fontSize: "12px",
+            fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
             letterSpacing: "0%",
             lineHeight: "150%",
             verticalAlign: "middle",
@@ -326,9 +326,9 @@ export default function Home() {
             <h3
               style={{
                 width: "55%",
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
@@ -397,9 +397,9 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
@@ -468,9 +468,9 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
@@ -539,9 +539,9 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
@@ -610,9 +610,9 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
@@ -681,9 +681,9 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
@@ -752,9 +752,9 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
@@ -823,9 +823,9 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
@@ -894,9 +894,9 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
@@ -965,9 +965,9 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
@@ -1036,9 +1036,9 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",
@@ -1107,9 +1107,9 @@ export default function Home() {
             {/* Left Column: Subheading */}
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "32px",
+                fontFamily: "\'Manrope\', sans-serif",
+        fontWeight: 500,
+        fontSize: "10px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
                 verticalAlign: "middle",

@@ -17,13 +17,12 @@ const DarkSectionButton = ({ href, children }: { href: string, children: React.R
             href={href}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="transition-all duration-500 ease inline-flex items-center justify-center p-0 mt-8"
+            className="transition-all duration-500 ease inline-flex items-center justify-center  mt-8"
             style={{
-                width: '135px',
-                height: '35px',
+                padding: '0.69vw 1.11vw',
                 pointerEvents: "auto",
-                gap: "6px",
-                fontFamily: "'Inter Tight', sans-serif",
+                gap: "0.55vw",
+                fontFamily: "\'Manrope\', sans-serif",
                 fontWeight: 500,
                 fontSize: "10px",
                 lineHeight: "100%",
@@ -39,13 +38,13 @@ const DarkSectionButton = ({ href, children }: { href: string, children: React.R
                 <img
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                     alt="icon default"
-                    className="w-full h-full object-contain absolute top-0 left-0 pt-[1px]"
+                    className="w-full h-full object-contain absolute to left-0 pt-[1px]"
                     style={{ opacity: hovered ? 0 : 1, transition: 'opacity 0.5s', filter: 'invert(1)' }}
                 />
                 <img
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
                     alt="icon hover"
-                    className="w-full h-full object-contain absolute top-0 left-0 pt-[1px]"
+                    className="w-full h-full object-contain absolute to left-0 pt-[1px]"
                     style={{ opacity: hovered ? 1 : 0, transition: 'opacity 0.5s', filter: 'invert(1)' }}
                 />
             </div>
@@ -63,7 +62,7 @@ const LinkedInButton = ({ href }: { href: string }) => {
             <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/042c1bc2-c4d9-4047-a3a8-d4ccf1a59900/public"
                 alt="LinkedIn" width={24} height={24}
-                className="absolute top-0 left-0 transition-opacity duration-300 filter invert"
+                className="absolute to left-0 transition-opacity duration-300 filter invert"
             />
         </a>
     );
@@ -150,13 +149,13 @@ const TimelineSection = () => {
         <section className="w-full pt-[82px] pb-[82px]">
             <div className={containerClass}>
                 <div className="w-full border-t border-white/20 mb-[82px]"></div>
-                <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '20px' }}>WAE Chronicle</h2>
+                <h2 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '20px' }}>WAE Chronicle</h2>
                 <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '16px', lineHeight: '110%', color: '#AEAEAE', marginBottom: '86px' }}>From Intent to Impact</p>
 
                 <div className="w-full relative mb-[120px]">
                     <div className="w-full h-[1px] bg-white/20 relative">
                         <div
-                            className="absolute top-0 left-0 h-full bg-white transition-all duration-300"
+                            className="absolute to left-0 h-full bg-white transition-all duration-300"
                             style={{ width: `${(activeIndex / (timelineData.length - 1)) * 100}%` }}
                         ></div>
                         {timelineData.map((item, i) => {
@@ -184,7 +183,7 @@ const TimelineSection = () => {
                     </div>
                     <div className="w-[40%] flex flex-col justify-between h-auto min-h-[300px]">
                         <div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '24px' }}>{activeData.title}</h3>
+                            <h3 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '24px' }}>{activeData.title}</h3>
                             <div className="flex flex-col gap-2">
                                 {activeData.items.map((text, idx) => (
                                     <p key={idx} style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE' }} className="flex gap-2">
@@ -227,7 +226,7 @@ const ThisIsUs: FC = () => {
             <section className="w-full pt-[235px] pb-[68px]">
                 <div className={containerClass}>
                     <p style={{
-                        fontFamily: "'Inter Tight', sans-serif",
+                        fontFamily: "\'Manrope\', sans-serif",
                         fontWeight: 500,
                         fontSize: '20px',
                         lineHeight: '110%',
@@ -235,7 +234,7 @@ const ThisIsUs: FC = () => {
                         marginBottom: '1em'
                     }}>WAE</p>
                     <h1 style={{
-                        fontFamily: "'Inter Tight', sans-serif",
+                        fontFamily: "\'Manrope\', sans-serif",
                         fontWeight: 400,
                         fontSize: '60px',
                         lineHeight: '110%',
@@ -264,7 +263,7 @@ const ThisIsUs: FC = () => {
                     <div className="flex">
                         <div className="w-[50%] pr-[4.65vw] border-r border-white/20 flex flex-col items-start justify-start">
                             <h2 style={{
-                                fontFamily: "'Inter Tight', sans-serif",
+                                fontFamily: "\'Manrope\', sans-serif",
                                 fontWeight: 400,
                                 fontSize: '58px',
                                 lineHeight: '105%',
@@ -286,10 +285,10 @@ const ThisIsUs: FC = () => {
                                     </div>
                                     <div>
                                         <h3 style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: '32px', lineHeight: '110%' }} className="mb-4">Mission</h3>
-                                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE' }} className="mb-4">
+                                        <p style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE' }} className="mb-4">
                                             WAE exists to make a meaningful, lasting contribution, protecting the environment and improving the quality of human life without compromising future generations. Our idea of leadership is not defined by scale, but by excellence in green technologies, consumer value, customer service, and employee capability.
                                         </p>
-                                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE' }}>
+                                        <p style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE' }}>
                                             We seek to reconcile social progress, professional fulfilment, quality-driven service, and economic development. Long-term value creation must remain balanced, responsible, and sustainable. Growth, for us, is not a number on a chart. It is the outcome of doing right by people, planet, and the communities we are built to serve.
                                         </p>
                                     </div>
@@ -303,10 +302,10 @@ const ThisIsUs: FC = () => {
                                     </div>
                                     <div>
                                         <h3 style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: '32px', lineHeight: '110%' }} className="mb-4">Vision</h3>
-                                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE' }} className="mb-4">
+                                        <p style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE' }} className="mb-4">
                                             WAE translates values into action through research-driven products and solutions that serve both the environment and human well-being. We operate as a technology-led organisation, guided by knowledge, science, and long-term thinking, not short-term market pressures. Accountability to employees, customers, partners, and societies is not optional.
                                         </p>
-                                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE' }}>
+                                        <p style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE' }}>
                                             It is how we operate. We hold ourselves to the highest standards across products, services, relationships, and commitments. Profit is a strategic necessity, not the goal. It follows meaningful contribution, shared progress, and participative growth. That distinction shapes every decision we make, from the materials we choose to the partnerships we build.
                                         </p>
                                     </div>
@@ -322,7 +321,7 @@ const ThisIsUs: FC = () => {
                 <div className={containerClass}>
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
                     <h2 style={{
-                        fontFamily: "'Inter Tight', sans-serif",
+                        fontFamily: "\'Manrope\', sans-serif",
                         fontWeight: 400,
                         fontSize: '40px',
                         lineHeight: '110%',
@@ -334,7 +333,7 @@ const ThisIsUs: FC = () => {
                             <div className="mb-[32px]">
                                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4b160f1a-eedc-4e04-0a1f-58eee7f8ab00/public" className="w-[57px] h-[57px] object-contain" alt="Icon" />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">Single-use plastic is an<br />institutional problem</h3>
+                            <h3 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">Single-use plastic is an<br />institutional problem</h3>
                             <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '150%', color: '#AEAEAE' }}>
                                 <p className="mb-6">
                                     Most organisations have made sustainability commitments, but their water infrastructure contradicts them. Bottled water creates ongoing plastic waste, carbon cost from logistics, and reputational risk.
@@ -351,7 +350,7 @@ const ThisIsUs: FC = () => {
                             <div className="mb-[32px]">
                                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b5de6636-9ffb-43dd-adab-dae732151200/public" className="w-[57px] h-[57px] object-contain" alt="Icon" />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">The bottled gets replaced with<br />infrastructure</h3>
+                            <h3 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">The bottled gets replaced with<br />infrastructure</h3>
                             <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '150%', color: '#AEAEAE' }}>
                                 <p className="mb-6">
                                     WAE designs and deploys steel-first, point-of-use water systems for public institutions, corporate campuses, hospitality, and healthcare environments. Our systems connect directly to the water supply, eliminating plastic at the source, not the policy level.
@@ -369,7 +368,7 @@ const ThisIsUs: FC = () => {
                             <div className="mb-[32px]">
                                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/38c6f634-25c1-46cf-4e3f-703d0c08de00/public" className="w-[57px] h-[57px] object-contain" alt="Icon" />
                             </div>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">How the model works in<br />practice</h3>
+                            <h3 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '28px', lineHeight: '110%' }} className="mb-[24px]">How the model works in<br />practice</h3>
                             <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '12px', lineHeight: '150%', color: '#AEAEAE' }}>
                                 <p className="mb-6">
                                     Site assessment: WAE audits the client's existing water usage, plastic footprint, and infrastructure
@@ -405,10 +404,10 @@ const ThisIsUs: FC = () => {
                         </video>
                     </div>
                     <div className="flex flex-col items-end w-full ml-auto">
-                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: '40px', lineHeight: '120%', textAlign: 'right', color: '#AEAEAE' }} className="mb-8">
+                        <p style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 500, fontSize: '40px', lineHeight: '120%', textAlign: 'right', color: '#AEAEAE' }} className="mb-8">
                             "WAE was built as an activist <span className="text-white">organisation</span>, not a product company. That origin shapes everything: material choices, partnerships, pricing philosophy, and where we deploy.
                         </p>
-                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: '40px', lineHeight: '120%', textAlign: 'right', color: '#AEAEAE' }}>
+                        <p style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 500, fontSize: '40px', lineHeight: '120%', textAlign: 'right', color: '#AEAEAE' }}>
                             It is not <span className="text-white">positioning</span>.<br />It is <span className="text-white">structure</span>."
                         </p>
                     </div>
@@ -425,7 +424,7 @@ const ThisIsUs: FC = () => {
                     <div className="flex">
                         <div className="w-[30%] pr-[5.56vw] border-r border-white/20 relative">
                             <div className="sticky top-40">
-                                <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '100%', marginBottom: '60px' }}>The team<br />behind WAE</h2>
+                                <h2 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '100%', marginBottom: '60px' }}>The team<br />behind WAE</h2>
                                 <div className="mt-[-28px]">
                                     <DarkSectionButton href="/careers">Join Team</DarkSectionButton>
                                 </div>
@@ -548,7 +547,7 @@ const ThisIsUs: FC = () => {
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
                     <div className="flex">
                         <div className="w-[42%] pr-[4.72vw]">
-                            <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '78px' }}>Serving<br />with Purpose</h2>
+                            <h2 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '78px' }}>Serving<br />with Purpose</h2>
                             <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '14px', lineHeight: '130%', color: '#AEAEAE', marginBottom: '40px' }}>
                                 All CSR activities undertaken through the WAE Foundation follow structured processes and are supported by proper documentation. Each initiative is planned, executed, and recorded with clear accountability. Transparency and traceability are central to how we operate, ensuring that every contribution is meaningful, measurable, and aligned with responsible long-term growth.
                             </p>
@@ -569,7 +568,7 @@ const ThisIsUs: FC = () => {
             <section className="w-full pt-[82px] pb-[124px]">
                 <div className={containerClass}>
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
-                    <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '78px' }}>Awards & Recognition</h2>
+                    <h2 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '78px' }}>Awards & Recognition</h2>
                     <div className="grid grid-cols-3">
                         {[1, 2, 3].map((item, index) => (
                             <div key={item} className="flex flex-col border-l border-white/20 pl-[2.01vw]">
