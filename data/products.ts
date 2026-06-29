@@ -233,6 +233,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47aae745-afd9-4564-a658-fb4fa35db800/public",
         "hoverImage": null,
         "displayOrder": 1
+      },
+      {
+        "id": "plusultra",
+        "name": "PLUS ULTRA",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d7a9d8ba-fd3f-4567-216d-2fed8628b900/public",
+        "hoverImage": null,
+        "displayOrder": 2
       }
     ]
   },
@@ -2854,5 +2862,109 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayImageIndex": 0,
     "hoverImageIndex": null,
     "displayOrder": 1
+  },
+  "plusultra": {
+    "id": "plusultra",
+    "name": "PLUS ULTRA",
+    "categoryName": "Drinking Water Fountain-ZVR",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d7a9d8ba-fd3f-4567-216d-2fed8628b900/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ecc8e3d5-0320-4f5b-4832-d1d353ad8400/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76d371bb-e1cb-42a6-74f8-b8a6f67b1a00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/75c17fa6-ff36-4f83-3504-46cbee186500/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Heavy-Duty Build",
+        "description": "High-quality SS-304 stainless steel with a vandal-resistant features for superior durability.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Splash-Free Experience",
+        "description": "Laminar water flow with minimal spillage.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Compliance",
+        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Bubbler Heads",
+        "description": "SS-304 heads with a convenient basin.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Special Features",
+        "description": "Antimicrobial Tubings Energy Savings Green Product Certified LCD Display (Optional)",
+        "isDisplayed": false
+      },
+      {
+        "title": "Easy Installation",
+        "description": "Quick wall-hanging or wall-mount setup.",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "ULTRA",
+          "hot": "-",
+          "cold": "-",
+          "ambient": "YES"
+        },
+        {
+          "variant": "PLUS ULTRA",
+          "hot": "-",
+          "cold": "YES",
+          "ambient": "YES"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold : 300W",
+        "hot": "Hot : 2400W"
+      },
+      "greenCertification": "Certified Green 2 LPM-water flow",
+      "dripTray": "Chiller- 30LPH",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "ULTRA",
+          "weight": "-",
+          "height": "565",
+          "width": "440",
+          "depth": "470"
+        },
+        {
+          "variant": "PLUS ULTRA",
+          "weight": "-",
+          "height": "986",
+          "width": "440",
+          "depth": "470"
+        }
+      ],
+      "powerRequirement": "Hertz 50 Volts 230-240",
+      "purificationSystem": "-",
+      "pointOfUseSterilization": ""
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a5e5ce87-162f-46d6-6341-8dee4adaee00/public",
+    "heroTagline": "Refill Here, Reduce Everywhere",
+    "heroSubtext": "Where Hydration Meets Sustainable Design",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/PLUS%20ULTRA.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": false
+    },
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 2
   }
 };
