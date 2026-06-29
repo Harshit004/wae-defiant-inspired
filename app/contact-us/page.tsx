@@ -340,7 +340,7 @@ export default function ContactUsPage() {
                   <input className="cu-input" type="tel" name="contact" placeholder="*Contact No." required />
                   <input className="cu-input" type="email" name="email" placeholder="*Official Email" required />
                   <input className="cu-input" type="text" name="city" placeholder="*City" />
-                  <textarea className="cu-textarea" name="message" placeholder="Your Message" />
+                  <textarea className="cu-textarea" name="message" placeholder="Your Message" maxLength={2000} />
 
                   {/* 62px gap */}
                   <div style={{ height: "62px" }} />
