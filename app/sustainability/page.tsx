@@ -385,7 +385,7 @@ export default function Home() {
       </section>
 
       {/* RESPONSIBILITY SECTION */}
-      <section className="w-full pt-[6.38vw] pb-[6.38vw] border-b border-white/20">
+      <section className="w-full pt-[6.38vw] pb-[6.38vw]">
         <div className={containerClass}>
           <div className="flex justify-between items-start">
             <div className="w-[38.68vw]">
@@ -428,9 +428,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="mx-[7.5vw] border-b border-white/20"></div>
 
       {/* WHY IT MATTERS SECTION */}
-      <section className="w-full pt-[6.38vw] pb-[6.38vw] border-b border-white/20">
+      <section className="w-full pt-[6.38vw] pb-[6.38vw]">
         <div className={containerClass}>
           <div className="mb-[5.13vw]">
             <h2 style={{
@@ -573,9 +574,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="mx-[7.5vw] border-b border-white/20"></div>
 
             {/* OUR RESPONSIBILITY SOLUTIONS */}
-      <section className="w-full pt-[6.38vw] pb-[6.38vw] border-b border-white/20 flex flex-col items-end">
+      <section className="w-full pt-[6.38vw] pb-[6.38vw] flex flex-col items-end">
         <div className={containerClass}>
           <div className="flex flex-col items-end w-full">
             <p style={{
@@ -606,9 +608,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="mx-[7.5vw] border-b border-white/20"></div>
 
       {/* WE ARE HELPING CLIENTS */}
-      <section className="w-full pt-[6.38vw] pb-[6.38vw] border-b border-white/20">
+      <section className="w-full pt-[6.38vw] pb-[6.38vw]">
         <div className={containerClass}>
           <h2 style={{
             fontFamily: "'Inter Tight', sans-serif",
@@ -692,9 +695,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="mx-[7.5vw] border-b border-white/20"></div>
 
       {/* TRANSFORMATIONS SECTION */}
-      <section className="w-full pt-[6.38vw] pb-[6.38vw] border-b border-white/20">
+      <section className="w-full pt-[6.38vw] pb-[6.38vw]">
         <div className={containerClass}>
           <div className="flex items-stretch">
             {/* Left Column */}
@@ -763,6 +767,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="mx-[7.5vw] border-b border-white/20"></div>
 
       {/* EARTH SECTION */}
       <section className="w-full pt-[6.38vw] pb-[6.38vw]">
