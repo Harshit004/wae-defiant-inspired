@@ -217,7 +217,16 @@ export const CATEGORIES: Record<string, CategoryData> = {
       "Surface-mounted drinking water fountains with integrated bottle filling stations offer a sustainable and hygienic solution for modern hydration needs.",
       "Designed for high-traffic environments like offices, schools, and public facilities, these units encourage refill culture by supporting reusable bottles, helping reduce plastic waste."
     ],
-    "products": []
+    "products": [
+      {
+        "id": "nt01",
+        "name": "NT01",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/38c9fced-8646-4593-4809-11cd8c068000/public",
+        "hoverImage": null,
+        "displayOrder": 0
+      }
+    ]
   },
   "watermatic": {
     "id": "watermatic",
@@ -2634,5 +2643,113 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "ambient": true
     },
     "displayImageIndex": 0
+  },
+  "nt01": {
+    "id": "nt01",
+    "name": "NT01",
+    "categoryName": "Drinking Water Fountain-ZVR",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/38c9fced-8646-4593-4809-11cd8c068000/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9c57322a-1f73-45d0-4e9f-330d1a389f00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2bc77259-9a3e-411b-a89d-531014e0a700/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Construct",
+        "description": "Sensor Based/push button bottle filler for clean & hygienic operation.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Heavy-Duty Build",
+        "description": "High-quality SS-304 stainless steel with a vandal-resistant features for superior durability.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Splash-Free Experience",
+        "description": "Laminar water flow with minimal spillage.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Compliance",
+        "description": "Designed to comply with ADA accessability guidelines. Ideal for schools & public utilities.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Bubbler Heads",
+        "description": "SS-304 heads with a convenient basin.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Easy Installation",
+        "description": "Quick wall-hanging or wall-mount setup.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Remote Chiller",
+        "description": "30 | 60 LPH serve upto 2 remote out lets Energy Saving",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "NT01 ZALE",
+          "hot": "-",
+          "cold": "30LPH",
+          "ambient": "-"
+        },
+        {
+          "variant": "NT01 CNTR",
+          "hot": "-",
+          "cold": "60LPH",
+          "ambient": "-"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 300W",
+        "hot": "Hot : 2400W"
+      },
+      "greenCertification": "Certified Green 2 LPM-water flow",
+      "dripTray": "-",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "NT01 ZALE",
+          "weight": "-",
+          "height": "1510",
+          "width": "1043",
+          "depth": "-"
+        },
+        {
+          "variant": "NT01 CNTR",
+          "weight": "-",
+          "height": "1507",
+          "width": "1040",
+          "depth": "-"
+        }
+      ],
+      "powerRequirement": "Hertz 50 Volts 230-240",
+      "purificationSystem": "-",
+      "pointOfUseSterilization": "-"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a5e5ce87-162f-46d6-6341-8dee4adaee00/public",
+    "heroTagline": "Refill Here, Reduce Everywhere",
+    "heroSubtext": "Where Hydration Meets Sustainable Design",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/NT01%20.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 0
   }
 };
