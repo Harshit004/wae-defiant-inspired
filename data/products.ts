@@ -217,14 +217,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
       "Surface-mounted drinking water fountains with integrated bottle filling stations offer a sustainable and hygienic solution for modern hydration needs.",
       "Designed for high-traffic environments like offices, schools, and public facilities, these units encourage refill culture by supporting reusable bottles, helping reduce plastic waste."
     ],
-    "products": [
-      {
-        "id": "plusultra",
-        "name": "PLUSULTRA",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0aced016-3f7d-4d41-7cf5-41b6930eac00/public",
-        "category": "fountains"
-      }
-    ]
+    "products": []
   },
   "watermatic": {
     "id": "watermatic",
@@ -1758,74 +1751,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "ambient": true
     },
     "displayImageIndex": 0
-  },
-  "plusultra": {
-    "id": "plusultra",
-    "name": "PLUSULTRA",
-    "categoryName": "WATER COOLER & FOUNTAINS - ZVR Series",
-    "heroSubtitle": "Powerful LED sterilization",
-    "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9db14c02-30db-4131-3b6d-7c5b2fa3fb00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5fcb76d0-46a1-4f0e-37f0-a1b53c6b3600/public"
-    ],
-    "featuresList": [
-      {
-        "title": "Heavy-Duty Build",
-        "description": "High-quality SS-304 stainless steel with a vandal-resistant boom plate for superior durability.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Optional Purification",
-        "description": "Customizable back-end purification available.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Efficient Drainage",
-        "description": "Designed with a proper drainage system to eliminate standing water.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Easy Installation",
-        "description": "Quick wall-hanging or wall-mount setup.",
-        "isDisplayed": false
-      },
-      {
-        "title": "Bubbler Heads",
-        "description": "Polished single or dual bubble heads with a convenient basin.",
-        "isDisplayed": false
-      }
-    ],
-    "specifications": {
-      "storageCapacity": [
-        {
-          "variant": "1000ml Hydropac Classic TL",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
-        }
-      ],
-      "waterTemp": {
-        "cold": "Cold: 5°C - 24° C",
-        "hot": "Hot: 30°C - 80° C"
-      },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000 ml",
-      "refrigerant": "R-134a",
-      "dimensions": [
-        {
-          "variant": "1000ml Hydropac Classic TL",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
-        }
-      ],
-      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
-      "pointOfUseSterilization": "Germ Guardian™"
-    },
-    "status": "Live"
   },
   "piper": {
     "id": "piper",
