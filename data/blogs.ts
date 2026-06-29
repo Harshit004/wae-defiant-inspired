@@ -30,7 +30,7 @@ export const WRITERS: Record<string, Writer> = {
   "aditi-sharma": {
     "id": "aditi-sharma",
     "name": "Aditi Sharma",
-    "role": "Marketing",
+    "role": "Marketing-Executive",
     "bio": "Aditi Sharma explores sustainability and climate change with a focus on climate action and environmental responsibility. With over two years of professional experience, her work connects research, corporate sustainability practices, and strategic communication.",
     "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7ec90729-c663-4834-f4e9-89739b300300/public",
     "link": "https://www.linkedin.com/in/aditi-sharma-056713291/"
@@ -626,39 +626,71 @@ export const BLOGS: Record<string, BlogPost> = {
       [
         {
           "type": "paragraph",
-          "text": " London, December 1952. The city stirred on a Friday morning to what seemed an ordinary fog. Londoners were used to it   the kind of damp haze that curled through alleyways, softened the glow of gas lamps, and had long been immortalized in paintings and novels. But as the hours passed, something felt different. The fog grew thicker, darker, heavier. By midday, buses crept along at walking pace, drivers peering inches ahead. By evening, even walking became treacherous; pedestrians clung to walls, unable to see their own feet."
+          "text": "London, December 1952. The city stirred on a Friday morning to what seemed an ordinary fog. Londoners were used to it   the kind of damp haze that curled through alleyways, softened the glow of gas lamps, and had long been immortalized in paintings and novels. But as the hours passed, something felt different. The fog grew thicker, darker, heavier. By midday, buses crept along at walking pace, drivers peering inches ahead. By evening, even walking became treacherous; pedestrians clung to walls, unable to see their own feet."
         },
         {
           "type": "paragraph",
           "text": "What blanketed London was not fog at all, but a suffocating cloud of smoke, soot, and sulphur. For five days, from December 5 to 9, the capital of Britain became a city under siege by its own air."
         },
         {
-          "type": "paragraph",
-          "text": "A City Choked by Its Own Progress\nThe conditions that created this catastrophe had been years in the making. Post-war Britain ran on coal, the cheaper the better. In thousands of homes, families shovelled sulphur-rich “nutty slack” into their hearths to fend off the cold. Power stations ringed the city, belching smoke, while the once-clean electric tram system had been replaced with diesel buses. All of this was routine   until weather conspired against them."
+          "type": "heading",
+          "text": "A City Choked by Its Own Progress"
         },
         {
           "type": "paragraph",
-          "text": "That December, a high-pressure system stalled over southern England, creating a temperature inversion. Instead of rising and dispersing, smoke and sulphur dioxide were trapped close to the ground, pressed down over London like a lid. The city had, in effect, built itself a gas chamber.\nModern reconstructions show just how toxic the air became. Black smoke concentrations surged to over 4,000 micrograms per cubic meter, more than 200 times today’s recommended safe limit. Sulphur dioxide levels, normally 0.1 parts per million, climbed more than tenfold. In the damp fog, chemical reactions converted sulphur dioxide into droplets of sulphuric acid, which clung to soot particles and entered lungs with every breath.\n"
+          "text": "The conditions that created this catastrophe had been years in the making. Post-war Britain ran on coal, the cheaper the better. In thousands of homes, families shovelled sulphur-rich “nutty slack” into their hearths to fend off the cold. Power stations ringed the city, belching smoke, while the once-clean electric tram system had been replaced with diesel buses. All of this was routine   until weather conspired against them."
         }
       ],
       [
         {
           "type": "paragraph",
-          "text": "At first, Londoners tried to carry on. People wrapped scarves around their faces, stumbled to work, and lit lamps in the daytime. But by the second day, the toll became undeniable. Hospitals filled with wheezing patients, gasping for air. Children coughed through the nights, their chests tightening. Doctors described wards overflowing with cases of acute bronchitis, pneumonia, and asthma attacks. Ambulances were useless in the smog, forced to crawl slower than walking speed. Many patients never made it in time.\nBy the time the haze lifted on December 9, the damage was staggering. The government’s early count suggested 4,000 dead. But as statisticians studied the data, a darker truth emerged: the real toll was far higher. In the weeks that followed, mortality remained elevated, bringing the death toll closer to 12,000 lives lost. Another 100,000 people suffered serious illness.\nThe victims were not numbers on a page. They were elderly pensioners warming themselves with cheap coal, infants whose lungs could not withstand the acidic air, workers who had survived the Blitz only to be felled by smoke in peacetime. In five days, the smog had killed more Londoners than the worst weeks of wartime bombing.\n"
+          "text": "That December, a high-pressure system stalled over southern England, creating a temperature inversion. Instead of rising and dispersing, smoke and sulphur dioxide were trapped close to the ground, pressed down over London like a lid. The city had, in effect, built itself a gas chamber."
         },
         {
           "type": "paragraph",
-          "text": "From Tragedy to Transformation\nThe tragedy jolted Britain awake. For generations, smoke-filled skies had been seen as the cost of progress   even a badge of industrial pride. London’s fog was romanticized in art and literature; foreigners expected to find it, as much a part of the city as Big Ben. But the Great Smog shattered that illusion. Smoke was no longer quaint; it was deadly.\nScientists, too, were galvanized. Analysts like E. T. Wilkins tracked mortality curves that rose and fell in lockstep with pollution levels, offering hard proof of what many doctors already suspected: the air itself was a killer. The event marked the birth of modern environmental epidemiology, establishing, for the first time on such a scale, the causal link between air pollution and premature death.\nOut of grief and anger came political momentum. Parliament debated the causes, the evidence, and the moral responsibility of the state. In 1956, the government passed the Clean Air Act, a landmark in public health history. The Act banned the burning of smoky fuels in “smoke control areas,” offered grants for households to convert from coal to cleaner fuels, and pushed industries to relocate or adopt pollution controls.\n"
+          "text": "Modern reconstructions show just how toxic the air became. Black smoke concentrations surged to over 4,000 micrograms per cubic meter, more than 200 times today’s recommended safe limit. Sulphur dioxide levels, normally 0.1 parts per million, climbed more than tenfold. In the damp fog, chemical reactions converted sulphur dioxide into droplets of sulphuric acid, which clung to soot particles and entered lungs with every breath."
+        },
+        {
+          "type": "paragraph",
+          "text": "At first, Londoners tried to carry on. People wrapped scarves around their faces, stumbled to work, and lit lamps in the daytime. But by the second day, the toll became undeniable. Hospitals filled with wheezing patients, gasping for air. Children coughed through the nights, their chests tightening. Doctors described wards overflowing with cases of acute bronchitis, pneumonia, and asthma attacks. Ambulances were useless in the smog, forced to crawl slower than walking speed. Many patients never made it in time."
+        },
+        {
+          "type": "paragraph",
+          "text": "By the time the haze lifted on December 9, the damage was staggering. The government’s early count suggested 4,000 dead. But as statisticians studied the data, a darker truth emerged: the real toll was far higher. In the weeks that followed, mortality remained elevated, bringing the death toll closer to 12,000 lives lost. Another 100,000 people suffered serious illness."
+        },
+        {
+          "type": "paragraph",
+          "text": "The victims were not numbers on a page. They were elderly pensioners warming themselves with cheap coal, infants whose lungs could not withstand the acidic air, workers who had survived the Blitz only to be felled by smoke in peacetime. In five days, the smog had killed more Londoners than the worst weeks of wartime bombing."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "From Tragedy to Transformation"
+        },
+        {
+          "type": "paragraph",
+          "text": "The tragedy jolted Britain awake. For generations, smoke-filled skies had been seen as the cost of progress   even a badge of industrial pride. London’s fog was romanticized in art and literature; foreigners expected to find it, as much a part of the city as Big Ben. But the Great Smog shattered that illusion. Smoke was no longer quaint; it was deadly."
+        },
+        {
+          "type": "paragraph",
+          "text": "Scientists, too, were galvanized. Analysts like E. T. Wilkins tracked mortality curves that rose and fell in lockstep with pollution levels, offering hard proof of what many doctors already suspected: the air itself was a killer. The event marked the birth of modern environmental epidemiology, establishing, for the first time on such a scale, the causal link between air pollution and premature death."
+        },
+        {
+          "type": "paragraph",
+          "text": "Out of grief and anger came political momentum. Parliament debated the causes, the evidence, and the moral responsibility of the state. In 1956, the government passed the Clean Air Act, a landmark in public health history. The Act banned the burning of smoky fuels in “smoke control areas,” offered grants for households to convert from coal to cleaner fuels, and pushed industries to relocate or adopt pollution controls."
         },
         {
           "type": "paragraph",
           "text": "The law worked. Within a decade, the dense “peasoupers” that had defined London for centuries all but disappeared. The air grew clearer, and life expectancy rose. Other nations took note. The United States, facing its own smog crises in Los Angeles, introduced the Clean Air Act of 1963, drawing inspiration from the British experience. In time, the lessons of 1952 echoed as far as Asia, where today’s megacities wrestle with air quality not unlike London’s of the past."
-        }
-      ],
-      [
+        },
         {
           "type": "paragraph",
-          "text": "Seventy years later, the Great Smog of London still speaks. It reminds us that air pollution is not an abstract concern but a tangible threat   one that can bring cities to their knees in days. The World Health Organization estimates that seven million people die every year from air pollution worldwide, many in regions where coal and biomass remain the fuels of survival. The chemistry has changed, the cities have changed, but the stakes remain the same.\nThe Great Smog was a tragedy, but it was also a turning point   the moment when the world first realized that protecting the air we breathe is not a luxury, but a matter of life and death.\n"
+          "text": "Seventy years later, the Great Smog of London still speaks. It reminds us that air pollution is not an abstract concern but a tangible threat   one that can bring cities to their knees in days. The World Health Organization estimates that seven million people die every year from air pollution worldwide, many in regions where coal and biomass remain the fuels of survival. The chemistry has changed, the cities have changed, but the stakes remain the same."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Great Smog was a tragedy, but it was also a turning point   the moment when the world first realized that protecting the air we breathe is not a luxury, but a matter of life and death."
         }
       ]
     ]
