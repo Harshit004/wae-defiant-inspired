@@ -300,14 +300,13 @@ export default function Home() {
                         letterSpacing: "0%",
                         color: "#FFFFFF",
                         margin: 0,
-                        textTransform: "uppercase",
                         verticalAlign: "middle"
                     }}>
-                        OUR PLANET,<br />
-                        OUR RESPONSIBILITY
+                        Our planet,<br />
+                        Our responsibility
                     </h1>
                 </div>
-                <div className="w-[45%] flex flex-col justify-end pt-[100px]">
+                <div className="w-[45%] flex flex-col justify-start pt-[1.5vw]">
                     <p style={{
                         fontFamily: "'Manrope', sans-serif",
                         fontWeight: 400,
@@ -335,7 +334,7 @@ export default function Home() {
             </div>
 
             {/* Hero Video inserted into the layout */}
-            <div className="w-full flex justify-center pb-[2.08vw]">
+            <div className="w-full flex justify-center pb-[4.72vw]">
                 <video
                     autoPlay
                     loop
@@ -350,12 +349,9 @@ export default function Home() {
                 </video>
             </div>
 
-            {/* Horizontal Divider */}
-            <div className="w-full h-[1px] bg-white/20 mb-[4.72vw]"></div>
-
             {/* CLIENTS STRIP WITH MARQUEE */}
-            <div className="flex items-center w-full">
-                <div className="shrink-0 flex items-center pr-[4.09vw] border-r border-white/20 py-2">
+            <div className="flex items-center w-full border-t border-b border-white/20 py-[2.08vw]">
+                <div className="shrink-0 flex items-center pr-[4.09vw] border-r border-white/20">
                     <span style={{
                         fontFamily: "'Inter Tight', sans-serif",
                         fontWeight: 400,
@@ -386,29 +382,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RESPONSIBILITY SECTION (Right Aligned) */}
-      <section className="w-full pt-[120px] pb-[120px] border-b border-white/20 flex justify-end">
-        <div className={containerClass} style={{ display: "flex", justifyContent: "flex-end" }}>
-            <div className="w-[80%] text-right">
-                <p style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "32px",
-                    lineHeight: "140%",
-                    color: "#FFFFFF80",
-                    marginBottom: "40px"
-                }}>
-                    Our <span className="text-white font-medium">responsibility</span> is to create <span className="text-white font-medium">solutions</span> that protect natural resources while improving the quality of everyday life. That means rethinking wasteful systems, reducing dependence on extractive supply chains, and enabling <span className="text-white font-medium">organizations</span> to act with greater accountability.
-                </p>
-                <p style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "32px",
-                    lineHeight: "140%",
-                    color: "#FFFFFF80"
-                }}>
-                    Responsibility at <span className="text-white font-medium">WAE</span> is not a statement. It is built into the way we <span className="text-white font-medium">design</span>, <span className="text-white font-medium">deliver</span>, and <span className="text-white font-medium">scale solutions</span>.
-                </p>
+      {/* RESPONSIBILITY SECTION */}
+      <section className="w-full pt-[6.94vw] pb-[6.94vw] border-b border-white/20">
+        <div className={containerClass}>
+            <div className="flex justify-between items-start">
+                <div className="w-[45%]">
+                    <h2 style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 400,
+                        fontSize: "2.77vw",
+                        lineHeight: "110%",
+                        color: "#FFFFFF"
+                    }}>
+                        Responsibility begins<br />
+                        with what we choose to change.
+                    </h2>
+                </div>
+                <div className="w-[40%] flex flex-col pt-2">
+                    <p style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        fontSize: "0.97vw",
+                        lineHeight: "130%",
+                        color: "#AEAEAE",
+                        marginBottom: "1.38vw"
+                    }}>
+                        The world is not running low on water. It is running out of patience for those who waste it.
+                    </p>
+                    <p style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        fontSize: "0.97vw",
+                        lineHeight: "130%",
+                        color: "#AEAEAE"
+                    }}>
+                        Every bottle procured through a supply chain contributes to aquifer depletion, plastic waste, transport emissions, and growing business risk. What was once seen as convenience is now an environmental, operational, and reputational liability. WAE exists to replace that model with one that is cleaner, smarter, and built for the future.
+                    </p>
+                </div>
             </div>
         </div>
       </section>
