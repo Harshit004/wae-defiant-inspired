@@ -2523,5 +2523,136 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "sdg-6-clean-water-and-sanitation-the-bedrock-of-human-and-planetary-health": {
+    "id": "sdg-6-clean-water-and-sanitation-the-bedrock-of-human-and-planetary-health",
+    "title": "SDG 6: Clean Water and Sanitation – The Bedrock of Human and Planetary Health",
+    "category": "Policy",
+    "description": "SDG 6 is more than a development target; it is the bedrock of survival. This article traces the goal's origins, unpacks its twelve targets and indicators, and explores the corporate and civic responsibility to deliver clean water and sanitation for all.\n\nWater's Rise from Resource to Recognised Human Right",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4b16390b-dbd3-4254-e7c6-f2d53afa1a00/public",
+    "writerId": "shambhavi",
+    "readTime": "2 min read",
+    "status": "Live",
+    "createdAt": "2026-06-29T04:38:36.898Z",
+    "contentColumns": [
+      [
+        {
+          "type": "heading",
+          "text": "\"Sarvan Dananam Jaladanam Shreshtham\"- Among all gifts, the gift of water is supreme.\n\n– Bhagavata Purana, 8.16\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Water is both a metaphor and a mandate. It shapes cultures, sustains economies, and anchors every civilisation, past and present. In today's fractured ecological and geopolitical climate, water is not merely a natural resource but a barometer of equity, dignity, and survival. Within the framework of the United Nations' 2030 Agenda for Sustainable Development, Sustainable Development Goal 6 (SDG 6) stands as a moral compass and practical blueprint to ensure the availability and sustainable management of water and sanitation for all.\n\nFor India, where rivers are both sacred and strained, the stakes are uniquely high. With nearly 18% of the world's population but only 4% of its freshwater resources (Jal Jeevan Mission, Government Of India), India epitomises the global paradox of scarcity amid abundance. SDG 6 thus emerges not only as a global responsibility but also as an urgent national imperative, a call to reconcile growth with stewardship, and tradition with transformation.\n"
+        },
+        {
+          "type": "heading",
+          "text": "The Origins of SDG 6: From Recognition to Rights"
+        },
+        {
+          "type": "paragraph",
+          "text": "The journey to SDG 6 was not forged overnight. It was preceded by decades of advocacy, negotiation, and collective awakening. In 1977, the Mar del Plata Conference in Argentina established the first global Action Plan on \"Community Water Supply,\" recognising water as a fundamental right. The 1980s declared an International Drinking Water Supply and Sanitation Decade, amplifying awareness at scale. By 1992, water had secured prominence in Agenda 21 at the Rio Earth Summit, and the Dublin Principles underscored its role as both an economic good and a human necessity."
+        },
+        {
+          "type": "heading",
+          "text": "A Historical Trajectory of Water Governance"
+        },
+        {
+          "type": "paragraph",
+          "text": "Landmark global recognitions followed. In 1993, the UN designated 22 March as World Water Day, and in 2010, the General Assembly explicitly declared water and sanitation as human rights through Resolution 64/292. The adoption of the Millennium Development Goals (MDGs) in 2000 tasked nations with halving by 2015 the share of people without access to safe drinking water or sanitation. India made significant progress in drinking water access under the MDGs, though sanitation lagged behind.\n\nThe baton passed in 2015 with the adoption of the 2030 Agenda for Sustainable Development, where SDG 6 formalised a comprehensive approach, not only to water supply but also to sanitation, efficiency, governance, and ecosystem resilience. In 2020, the UN system launched the SDG 6 Global Acceleration Framework to close the widening gap between ambition and action, calling on governments, businesses, and civil society to unite under a single rallying cry: accelerate.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Urgency of SDG 6 in Today's Context\n\nDespite progress, the scale of the challenge is sobering. 2.2 billion people worldwide lack access to safely managed drinking water, while 3.5 billion lack safely managed sanitation services (UN Water). Projections suggest that 1.6 billion people will still be deprived of safe water by 2030 if current trajectories continue (UNICEF/WHO).\n\nIndia illustrates both the potential and the challenge. The Jal Jeevan Mission by Government Of India has expanded rural tap water access from just 17% of households in 2019 to over 70% by 2023. The implications for businesses operating in such contexts are profound.\n"
+        },
+        {
+          "type": "heading",
+          "text": "SDG 6 Targets: The Framework Behind Every Drop Saved\n\nThe Architecture of SDG 6: Targets, Indicators, and Custodians\n\nThe brilliance of SDG 6 lies in its granularity. Each target represents a building block of resilience, monitored by specific custodians who bring scientific authority and accountability."
+        }
+      ],
+      [
+        {
+          "type": "paragraph",
+          "text": "6.1.1 Drinking Water\n\nThis is determined by the indicator: \"Proportion of population using safely managed drinking water services\", with WHO and UNICEF as its custodians. This target acknowledges that access to clean water is the very foundation of dignity and health. Yet, as of 2022, nearly 703 million people still lacked basic drinking water services. (UNICEF/WHO).\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "6.2.1 Sanitation and Hygiene\n\nNext, this sub-goal is determined by the indicator: \"Proportion of population using safely managed sanitation services and hand-washing facilities with soap and water\", with WHO and UNICEF as its custodians. Safe sanitation remains a linchpin for public health. Alarmingly, 1.5 billion people worldwide still practised open defecation as recently as 2020, perpetuating cycles of disease and poverty (UNICEF/WHO)."
+        },
+        {
+          "type": "paragraph",
+          "text": "6.3.1 Wastewater\n\nThe third sub-goal is characterized by the indicator: \"Proportion of domestic and industrial wastewater flow safely treated\", with WHO, UN-Habitat, UNSD as its custodians.\n\nGlobally, 80% of wastewater is released into ecosystems untreated, poisoning rivers and groundwater. (UNEP-1)\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "6.3.2 Water Quality\n\nThis is determined by the indicator: \"Proportion of bodies of water with good ambient water quality\", with UNEP as its custodian. Rising contamination, from heavy metals to nitrates, threatens the resilience of freshwater ecosystems, with over one-third of rivers in developing countries already severely polluted. (UNEP-2).\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "6.4.1 Water Use Efficiency\n\nThis is determined by the indicator: \"Change in water use efficiency over time\", with FAO as its custodian. Agriculture consumes nearly 70% & the Industry consumes up to 20% of global freshwater withdrawals (FAO). Enhancing water-use efficiency in food production is pivotal to sustaining a growing population.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "6.4.2 Water Stress\n\nThis is determined by the indicator: \"Level of water stress: freshwater withdrawal as a proportion of available freshwater resources\", with FAO as its custodian.\n\nBy 2050, 52% of the world's population is projected to live under water-stressed conditions (Nature).\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "6.5.1 Water Management\n\nThis is determined by the indicator: \"Degree of integrated water resources management\" (0–100), with UNEP as its custodian. True water security depends on holistic governance, coordinating between agriculture, industry, and ecosystems. Yet many countries score below 50, reflecting fragmented management.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "6.5.2 Transboundary Cooperation\n\nThis is determined by the indicator: \"Proportion of transboundary basin area with operational arrangements for water cooperation\", with UNECE, UNESCO, as its custodians. With 153 countries sharing rivers and lakes, peace and cooperation over transboundary water bodies remain non-negotiable for security.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "6.6.1 Ecosystems\n\nThis is determined by the indicator: \"Change in extent of water-related ecosystems over time\", with UNEP as its custodian. Wetlands, the earth's kidneys, are disappearing 3 times faster than forests, eroding natural resilience to floods and droughts (UNEP-3).\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "6.a.1 International Cooperation\n\nThis is determined by the indicator: \"Amount of water- and sanitation-related official development assistance part of a government-coordinated spending plan\", with WHO & OECD as its custodians. Financing remains the weakest link. Current global investments fall short by hundreds of billions annually, with developing countries bearing the brunt.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "6.b.1 Stakeholder Participation\n\nThis is determined by the indicator: \"Proportion of local administrative units with policies for participation of local communities in water and sanitation management\", with WHO & OECD, as its custodians. Water governance is most sustainable when communities are at the table. Yet participation is still sporadic, especially in rural and marginalised contexts.\n"
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Corporate Responsibility Meets the Call of SDG 6"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 6 and the Corporate Imperative\n\nFor the corporate sector, SDG 6 is not merely a humanitarian aspiration but an existential priority. The World Economic Forum's Global Risks Report 2023 lists water crises among the 5 most severe global risks.\n\nWater scarcity directly disrupts operations, destabilises supply chains, and inflates costs. Conversely, sustainable water stewardship strengthens corporate resilience, enhances employee well-being, and consolidates brand equity in markets where sustainability is becoming a non-negotiable expectation. For commercial spaces, ensuring safe, accessible hydration is not an optional amenity but a responsibility embedded within ESG performance.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "WAE: An Ethos of Activist Alignment\n\nIn this broader narrative, organisations like WAE do not position themselves as activist allies in a global movement. WAE's philosophy resonates with the ideological spirit of SDG 6: sustainability not as a compliance checkbox, but as a lived activism.\n\nBy advocating for water stewardship, resource responsibility, and waste reduction, WAE aligns itself with the deeper consciousness of SDG 6, where businesses become custodians of the future, not mere participants in the present.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "This is not about profit; it is about principle.\n\nIt is the quiet but firm insistence that corporate responsibility must be indistinguishable from planetary responsibility.\n\nFrom Scarcity to Stewardship: Reimagining Our Collective Destiny\n\nSDG 6 is more than a development target; it is the bedrock of human survival, ecological balance, and corporate resilience. Its historical evolution underscores that water is a universal right, while its targets and indicators provide a pragmatic framework for global accountability. Yet, in today's context of climate stress, population growth, and industrial expansion, SDG 6 emerges as a moral and strategic imperative for businesses.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Corporates that align with SDG 6 do more than mitigate risk, they establish themselves as leaders of a sustainable future. In this landscape, WAE exemplifies thought leadership, embedding the principles of clean water and sanitation into innovation, design, and corporate partnerships.\n\n\"The future of humanity is inseparable from the future of the planet.\"\n\n— Ban Ki-Moon\n"
+        },
+        {
+          "type": "list",
+          "items": [
+            "UN Water – https://sdgs.un.org/topics/water-and-sanitation",
+            "SDG 6 Data Portal – https://www.sdg6data.org/en/node/1",
+            "Jal Jeevan Mission (Government of India) – https://jaljeevanmission.gov.in/",
+            "World Economic Forum (Global Risks Report 2023) – https://www.weforum.org/reports/global-risks-report-2023",
+            "UNICEF / WHO- https://washdata.org/sites/default/files/2022-03/unicef-2021-regional-snapshot-East-Asia-Pacific.pdf",
+            "UNICEF (1) – https://data.unicef.org/topic/water-and-sanitation/sanitation/",
+            "UNEP (1) – https://www.unep.org/news-and-stories/press-release/un-report-calls-wastewater-focus-post-2015-agenda-80-worlds",
+            "UNEP (2) – https://www.unep.org/news-and-stories/story/rivers-lakes-under-mounting-pressure",
+            "FAO – https://www.unesco.org/reports/wwdr/en/2024/s",
+            "Nature– https://www.nature.com/articles/s41545-019-0039-9",
+            "UNEP (3) – https://www.unep.org/news-and-stories/story/wetlands-unsung-heroes-planet"
+          ]
+        }
+      ]
+    ]
   }
 };
