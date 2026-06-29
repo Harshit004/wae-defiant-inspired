@@ -111,8 +111,12 @@ function NewsCard({ imageUrl, title, description, date, link, isLarge = false }:
   return CardContent
 }
 
-export default function NewsGrid() {
-  const allCards = [
+interface NewsGridProps {
+  cards?: NewsCardProps[]
+}
+
+export default function NewsGrid({ cards }: NewsGridProps) {
+  const allCards = cards || [
     {
       imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b0b96d5-689b-44ec-0cd5-52c3ddc4f200/public",
       title: "2026 Outlook: ESG, sustainability and the next phase of India’s water infrastructure",
