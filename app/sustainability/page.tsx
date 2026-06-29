@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { animate, useInView } from "framer-motion"
 import Footer from "@/components/footer"
+import Header from "@/components/header"
 import Link from "next/link"
 
 // Shared container class for consistent margins and max-width
@@ -160,128 +161,7 @@ export default function Home() {
         }}
       />
       {/* HEADER */}
-      <div>
-        <header ref={headerRef} className={`w-full bg-transparent text-white relative z-10 pb-5`}>
-          <div className={containerClass}>
-            {/* Top Row: Navigation */}
-            <div
-              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
-              style={{
-                fontFamily: "\'Manrope\', sans-serif",
-                fontWeight: 500,
-                fontSize: "10px",
-                lineHeight: "100%",
-                letterSpacing: "0px",
-              }}
-            >
-              <div>IDENTITY</div>
-              <div>ORIGIN</div>
-              <div>VISION</div>
-              <div>INSIDE WAE</div>
-              <div>ETCETERA</div>
-            </div>
-
-            {/* Divider */}
-            <div className="w-full h-px bg-white/20 mb-[10px]" />
-
-            {/* Bottom Row: Logo, Tagline and Menu Items */}
-            <div className="grid grid-cols-5 items-start">
-              {/* Logo */}
-              <div className="flex flex-col justify-center">
-                <Link href="/">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/34074342-7005-4a25-9763-86933d6e7700/public"
-                    alt="WAE Logo"
-                    width={78}
-                    height={82}
-                    className="invert"
-                  />
-                </Link>
-              </div>
-
-              {/* Coordinates */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "\'Manrope\', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "10px",
-                  lineHeight: "100%",
-                  color: "#FFFFFF99",
-                }}
-              >
-                20.5937° N
-                <br />
-                78.9629° E
-              </div>
-
-              {/* Tagline */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "\'Manrope\', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "10px",
-                  lineHeight: "100%",
-                  color: "#FFFFFF99",
-                }}
-              >
-                To lead the way in<br />sustainability ahead of the<br />next
-              </div>
-
-              {/* Inside WAE Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {productsItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-white/20 last:border-0"
-                    style={{
-                      fontFamily: "\'Manrope\', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "10px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents text-white">
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
-
-              {/* ETCETERA Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
-                {blueprintItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-white/20 last:border-0"
-                    style={{
-                      fontFamily: "\'Manrope\', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "10px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents text-white">
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </header>
-      </div>
+      <Header />
 
       {/* HERO SECTION */}
       <section
