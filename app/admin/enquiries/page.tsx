@@ -8,7 +8,7 @@ import { Enquiry } from "@/data/enquiries";
 export default function AdminEnquiriesPage() {
   const [enquiries, setEnquiries] = useState<Enquiry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<'product' | 'general'>('product');
+  const [activeTab, setActiveTab] = useState<'product' | 'general' | 'contact-us'>('product');
   const [selectedMessage, setSelectedMessage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -66,6 +66,12 @@ export default function AdminEnquiriesPage() {
             >
               General Enquiries
             </button>
+            <button 
+              onClick={() => setActiveTab('contact-us')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'contact-us' ? 'bg-white text-black' : 'text-white/70 hover:text-white hover:bg-white/5'}`}
+            >
+              Contact Us
+            </button>
           </div>
         </div>
 
@@ -83,7 +89,7 @@ export default function AdminEnquiriesPage() {
                   <th className="px-4 py-3 font-medium">Company</th>
                   <th className="px-4 py-3 font-medium">Contact</th>
                   <th className="px-4 py-3 font-medium">Page Link</th>
-                  {activeTab === 'general' && <th className="px-4 py-3 font-medium">Message</th>}
+                  {(activeTab === 'general' || activeTab === 'contact-us') && <th className="px-4 py-3 font-medium">Message</th>}
                   <th className="px-4 py-3 font-medium text-right">Actions</th>
                 </tr>
               </thead>
@@ -104,7 +110,7 @@ export default function AdminEnquiriesPage() {
                         {enq.pageLink.split('/').slice(3).join('/') || "Link"}
                       </a>
                     </td>
-                    {activeTab === 'general' && (
+                    {(activeTab === 'general' || activeTab === 'contact-us') && (
                       <td className="px-4 py-3 text-white/70 max-w-xs">
                         <div className="truncate mb-1" title={enq.message}>{enq.message || "-"}</div>
                         {enq.message && enq.message.length > 30 && (
