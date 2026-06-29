@@ -203,6 +203,26 @@ export default function NewsGrid() {
                   <NewsCard {...card} isLarge={isLarge} />
                 </div>
               ))}
+              
+              {/* Fill empty spaces to maintain justify-between layout */}
+              {isLarge && row.length < 2 && Array.from({ length: 2 - row.length }).map((_, i) => (
+                <div 
+                  key={`empty-large-${i}`} 
+                  style={{ 
+                    width: "clamp(300px, 41.9vw, 604px)",
+                    flexShrink: 0 
+                  }}
+                />
+              ))}
+              {!isLarge && row.length < 3 && Array.from({ length: 3 - row.length }).map((_, i) => (
+                <div 
+                  key={`empty-small-${i}`} 
+                  style={{ 
+                    width: "clamp(200px, 26.5vw, 382px)",
+                    flexShrink: 0 
+                  }}
+                />
+              ))}
             </div>
 
             {/* Divider between rows */}
