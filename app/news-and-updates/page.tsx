@@ -25,7 +25,7 @@ export default function NewsAndUpdatesPage() {
       </div>
 
       {/* Main Content Area */}
-      <section className="relative z-10 w-full px-[7.5vw]" style={{ paddingTop: "clamp(120px, 10vw, 150px)", paddingBottom: "100px" }}>
+      <section className="relative z-10 w-full px-[7.5vw]" style={{ paddingTop: "clamp(180px, 16.3vw, 235px)", paddingBottom: "100px" }}>
         
         {/* Toggle Buttons */}
         <div className="flex gap-4 mb-20">
