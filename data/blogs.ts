@@ -1126,7 +1126,8 @@ export const BLOGS: Record<string, BlogPost> = {
           "text": "Finally, awareness must be raised about the ecological value of groundwater. Beyond human consumption, aquifers support rivers, wetlands, and agriculture. Protecting them is not only about preventing scarcity but also about preserving the geographic and ecological systems that sustain life.\n\nIndia's groundwater depletion is not a distant threat; it is unfolding now, silently and invisibly beneath our feet. The bottled water industry, with its ever-expanding footprint, is at the centre of this unsustainable trajectory. Without decisive intervention, the invisible crisis risks becoming a national catastrophe. The challenge is immense, but so is the opportunity: to rethink our relationship with water, to move from exploitation towards stewardship, and to ensure that future generations inherit not a barren aquifer, but a resilient and sustainable groundwater recharge system.\n\nThe question is no longer about abundance or scarcity but about choices: whether we allow water to remain a shared lifeline or let it slip away into bottles, beyond the reach of those who need it most."
         }
       ]
-    ]
+    ],
+    "featuredOnHomepage": true
   },
   "when-cities-block-rivers-how-urbanisation-turns-monsoons-into-disasters": {
     "id": "when-cities-block-rivers-how-urbanisation-turns-monsoons-into-disasters",
