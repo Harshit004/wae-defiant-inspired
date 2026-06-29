@@ -86,8 +86,9 @@ export default function ContactUsPage() {
         }}
       />
 
-      <Header />
-
+      <div>
+        <Header />
+      </div>
       {/* ── HERO + FORM SECTION ── */}
       {/* 77px gap after header */}
       <section className="relative z-10 w-full" style={{ paddingTop: "77px", paddingBottom: "0" }}>
