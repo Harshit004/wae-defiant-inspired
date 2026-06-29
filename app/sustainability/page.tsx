@@ -480,7 +480,7 @@ export default function Home() {
                     fontWeight: 500,
                     fontSize: "1.25vw",
                     color: "#FFFFFF",
-                    marginBottom: "0.55vw"
+                    marginBottom: "0.69vw"
                   }}>Water use</h4>
                   <p style={{
                     fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.04vw",
@@ -507,7 +507,7 @@ export default function Home() {
                     fontWeight: 500,
                     fontSize: "1.25vw",
                     color: "#FFFFFF",
-                    marginBottom: "0.55vw"
+                    marginBottom: "0.69vw"
                   }}>Financial exposure</h4>
                   <p style={{
                     fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.04vw",
@@ -534,7 +534,7 @@ export default function Home() {
                     fontWeight: 500,
                     fontSize: "1.25vw",
                     color: "#FFFFFF",
-                    marginBottom: "0.55vw"
+                    marginBottom: "0.69vw"
                   }}>Revenue at risk</h4>
                   <p style={{
                     fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.04vw",
@@ -560,7 +560,7 @@ export default function Home() {
                     fontWeight: 500,
                     fontSize: "1.25vw",
                     color: "#FFFFFF",
-                    marginBottom: "0.55vw"
+                    marginBottom: "0.69vw"
                   }}>Global stress</h4>
                   <p style={{
                     fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.04vw",
