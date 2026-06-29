@@ -11,7 +11,7 @@ import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 
 // Shared container class for consistent margins and max-width
-const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
+const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
 
 /**
  * Animated counter component
@@ -141,7 +141,7 @@ export default function Home() {
       .then((data) => {
         if (data.success) setHomepageBlogs(data.blogs)
       })
-      .catch(() => {})
+      .catch(() => { })
       .finally(() => setBlogsLoading(false))
   }, [])
 
