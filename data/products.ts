@@ -225,6 +225,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/38c9fced-8646-4593-4809-11cd8c068000/public",
         "hoverImage": null,
         "displayOrder": 0
+      },
+      {
+        "id": "aquallence",
+        "name": "AQUALLENCE",
+        "category": "on-wall",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47aae745-afd9-4564-a658-fb4fa35db800/public",
+        "hoverImage": null,
+        "displayOrder": 1
       }
     ]
   },
@@ -2751,5 +2759,100 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayImageIndex": 0,
     "hoverImageIndex": null,
     "displayOrder": 0
+  },
+  "aquallence": {
+    "id": "aquallence",
+    "name": "AQUALLENCE",
+    "categoryName": "Drinking Water Fountain-ZVR",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/47aae745-afd9-4564-a658-fb4fa35db800/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/73824efd-73c8-46c9-8a2b-7d15c82a4500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d607d14-7cc7-4647-bf62-84a3be893400/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Wall-Mount Option",
+        "description": "Easily mounts to any wall, making it ideal for indoor commercial settings.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
+      },
+      {
+        "title": "Touch or Push Button Dispensing",
+        "description": "Easily dispense water with user-friendly touch or push-button controls.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Real-Time Monitoring (AQUALLENCE Touch)",
+        "description": "Stay informed with an intuitive IoT display powered by CIRCLE OF BLUE, showcasing key data and performance metrics in real-time.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Minimal Splashing",
+        "description": "Designed for a smooth, laminar flow to minimize spillage and water waste.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Durable Construction",
+        "description": "Built with high-quality materials to ensure long-lasting performance and reliability.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Cup Holder (Optional)",
+        "description": "Available for added user convenience.",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "AQUALLLENCE",
+          "hot": "7",
+          "cold": "7",
+          "ambient": "-"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "Hot: 30°C - 65°C (default 55°C)"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "1000ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "AQUALLENCE",
+          "weight": "30.00",
+          "height": "900",
+          "width": "270",
+          "depth": "120"
+        }
+      ],
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
+      "pointOfUseSterilization": "Germ GuardianTM"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a5e5ce87-162f-46d6-6341-8dee4adaee00/public",
+    "heroTagline": "Refill Here, Reduce Everywhere",
+    "heroSubtext": "Where Hydration Meets Sustainable Design",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/AQUALLENCE.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 1
   }
 };
