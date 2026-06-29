@@ -28,6 +28,7 @@ export default function Sidebar() {
   const handleLogout = async () => {
     try {
       await fetch("/api/auth/logout", { method: "POST" })
+      localStorage.removeItem("wae_cms_token")
       window.location.href = "/secret-cms-login"
     } catch (err) {
       alert("Failed to log out.")
@@ -54,7 +55,7 @@ export default function Sidebar() {
         <nav className="mt-8 px-4 space-y-2">
           {/* Dashboard */}
           <Link
-            href="/admin/categories"
+            href="/admin/dashboard"
             className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
               pathname === "/admin/dashboard" 
                 ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3" 

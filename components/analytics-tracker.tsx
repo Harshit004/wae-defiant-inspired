@@ -15,6 +15,9 @@ export default function AnalyticsTracker() {
   const startTimeRef = useRef<number>(Date.now());
   
   useEffect(() => {
+    if (!pathname || pathname.startsWith("/admin") || pathname === "/secret-cms-login") {
+      return;
+    }
     const initAnalytics = async () => {
       try {
         const consent = localStorage.getItem("wae_cookie_consent");
@@ -104,6 +107,9 @@ export default function AnalyticsTracker() {
 
   // Track page views and time spent
   useEffect(() => {
+    if (!pathname || pathname.startsWith("/admin") || pathname === "/secret-cms-login") {
+      return;
+    }
     if (!sessionIdRef.current) return;
     const consent = localStorage.getItem("wae_cookie_consent");
     if (consent !== "accepted") return;
@@ -125,6 +131,9 @@ export default function AnalyticsTracker() {
 
   // Track clicks globally with details (label, action page, action type, timestamp)
   useEffect(() => {
+    if (!pathname || pathname.startsWith("/admin") || pathname === "/secret-cms-login") {
+      return;
+    }
     const handleClick = async (e: MouseEvent) => {
       if (!sessionIdRef.current) return;
       const consent = localStorage.getItem("wae_cookie_consent");

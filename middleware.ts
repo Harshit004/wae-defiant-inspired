@@ -5,18 +5,27 @@ import { verifySessionToken } from './lib/auth';
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Only run protection on /admin dashboard routes and /api/admin write APIs
-  if (pathname.startsWith('/admin') || pathname.startsWith('/api/admin')) {
-    const token = request.cookies.get('wae_cms_session')?.value;
+  const isApiAdmin = pathname.startsWith('/api/admin');
+  const isApiAnalytics = pathname === '/api/analytics' || pathname.startsWith('/api/analytics/');
+  const isApiSubscribersGet = (pathname === '/api/subscribers' || pathname.startsWith('/api/subscribers/')) && request.method === 'GET';
+
+  if (isApiAdmin || isApiAnalytics || isApiSubscribersGet) {
+    const authHeader = request.headers.get('Authorization');
+    const token = authHeader?.startsWith('Bearer ') ? authHeader.substring(7) : null;
 
     if (!token) {
-      // Rewrite to Next.js 404 page so it appears non-existent to crawler / public
-      return NextResponse.rewrite(new URL('/404', request.url));
+      return new NextResponse(
+        JSON.stringify({ success: false, message: 'Unauthorized' }),
+        { status: 401, headers: { 'content-type': 'application/json' } }
+      );
     }
 
     const session = await verifySessionToken(token);
     if (!session) {
-      return NextResponse.rewrite(new URL('/404', request.url));
+      return new NextResponse(
+        JSON.stringify({ success: false, message: 'Unauthorized' }),
+        { status: 401, headers: { 'content-type': 'application/json' } }
+      );
     }
   }
 
@@ -24,5 +33,10 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*', '/api/admin/:path*'],
+  matcher: [
+    '/api/admin/:path*',
+    '/api/analytics',
+    '/api/subscribers',
+  ],
 };
+

@@ -25,6 +25,8 @@ export default function LoginPage() {
       const data = await response.json()
 
       if (response.ok && data.success) {
+        // Store session token in localStorage to keep CMS free of cookies
+        localStorage.setItem("wae_cms_token", data.token)
         // Redirect to Categories page inside CMS
         window.location.href = "/admin/categories"
       } else {
