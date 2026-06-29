@@ -31,16 +31,28 @@ export default function AwardsAndRecognitionsPage() {
         <div className="flex gap-4" style={{ marginBottom: '75px' }}>
           <Link href="/news-and-updates">
             <button 
-              className={`px-6 border transition-colors text-[14px] font-medium flex items-center justify-center ${pathname === '/news-and-updates' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
-              style={{ height: '41px' }}
+              className={`px-6 border transition-colors flex items-center justify-center ${pathname === '/news-and-updates' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
+              style={{ 
+                height: '41px',
+                fontFamily: 'Manrope',
+                fontWeight: 500,
+                fontSize: '14px',
+                lineHeight: '100%'
+              }}
             >
               News & Media
             </button>
           </Link>
           <Link href="/awards-and-recognitions">
             <button 
-              className={`px-6 border transition-colors text-[14px] font-medium flex items-center justify-center ${pathname === '/awards-and-recognitions' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
-              style={{ height: '41px' }}
+              className={`px-6 border transition-colors flex items-center justify-center ${pathname === '/awards-and-recognitions' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
+              style={{ 
+                height: '41px',
+                fontFamily: 'Manrope',
+                fontWeight: 500,
+                fontSize: '14px',
+                lineHeight: '100%'
+              }}
             >
               Awards & Recognitions
             </button>
