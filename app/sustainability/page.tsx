@@ -432,55 +432,58 @@ export default function Home() {
       {/* WHY IT MATTERS SECTION */}
       <section className="w-full pt-[6.38vw] pb-[6.38vw] border-b border-white/20">
         <div className={containerClass}>
-          <div className="mb-[60px]">
+          <div className="mb-[5.13vw]">
             <h2 style={{
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 400,
-              fontSize: "32px",
-              lineHeight: "110%",
+              fontSize: "2.77vw",
+              lineHeight: "100%",
               color: "#FFFFFF",
-              marginBottom: "12px"
+              marginBottom: "1.18vw",
+              verticalAlign: "middle"
             }}>Why It Matters</h2>
             <p style={{
-              fontFamily: "'Inter Tight', sans-serif",
+              fontFamily: "'Manrope', sans-serif",
               fontWeight: 400,
-              fontSize: "12px",
-              color: "#FFFFFF80"
+              fontSize: "0.97vw",
+              lineHeight: "100%",
+              color: "#AEAEAE",
+              verticalAlign: "middle"
             }}>The challenge is no longer invisible.</p>
           </div>
 
-          <div className="flex justify-between items-stretch gap-[40px]">
+          <div className="flex items-stretch">
             {/* Left side image */}
-            <div className="w-1/2">
-              <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/697673e1-ba24-4763-4a6f-f2f4fadbda00/public" alt="Why it matters" className="w-full h-full object-cover" />
+            <div className="w-[34.02vw] shrink-0">
+              <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/697673e1-ba24-4763-4a6f-f2f4fadbda00/public" alt="Why it matters" className="w-full h-auto aspect-[490/545] object-cover" />
             </div>
 
-            <div className="w-[1px] bg-white/20 mx-[20px]"></div>
+            <div className="w-[4.58vw] shrink-0"></div>
+            <div className="w-[1px] shrink-0 bg-white/20"></div>
+            <div className="w-[4.58vw] shrink-0"></div>
 
             {/* Right side stats */}
-            <div className="w-[45%] flex flex-col justify-between">
+            <div className="w-[41.52vw] flex flex-col justify-between">
               {/* Stat 1 */}
               <div className="flex items-center border-b border-white/20 pb-[30px] pt-[10px]">
-                <div className="w-[200px]">
+                <div className="flex-1">
                   <span style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
-                    fontSize: "64px",
+                    fontSize: "4.86vw",
                     color: "#FFFFFF"
                   }}><CountUp value="50" />%</span>
                 </div>
-                <div className="flex-1 pl-[20px]">
+                <div className="w-[20vw] shrink-0 pl-[1.38vw]">
                   <h4 style={{
                     fontFamily: "\'Manrope\', sans-serif",
                     fontWeight: 500,
-                    fontSize: "10px",
+                    fontSize: "1.25vw",
                     color: "#FFFFFF",
-                    marginBottom: "8px"
+                    marginBottom: "0.55vw"
                   }}>Water use</h4>
                   <p style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "14px",
+                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
                     color: "#FFFFFF80",
                     lineHeight: "130%"
                   }}>50% rise in corporate water<br />withdrawals globally</p>
@@ -489,27 +492,25 @@ export default function Home() {
 
               {/* Stat 2 */}
               <div className="flex items-center border-b border-white/20 pb-[30px] pt-[30px]">
-                <div className="w-[200px]">
+                <div className="flex-1">
                   <span style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
-                    fontSize: "64px",
+                    fontSize: "4.86vw",
                     color: "#FFFFFF",
                     whiteSpace: "nowrap"
                   }}>₹<CountUp value="36" />L cr +</span>
                 </div>
-                <div className="flex-1 pl-[20px]">
+                <div className="w-[20vw] shrink-0 pl-[1.38vw]">
                   <h4 style={{
                     fontFamily: "\'Manrope\', sans-serif",
                     fontWeight: 500,
-                    fontSize: "10px",
+                    fontSize: "1.25vw",
                     color: "#FFFFFF",
-                    marginBottom: "8px"
+                    marginBottom: "0.55vw"
                   }}>Financial exposure</h4>
                   <p style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "14px",
+                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
                     color: "#FFFFFF80",
                     lineHeight: "130%"
                   }}>More than Rs 36 lakh crore in<br />water-related financial risk reported<br />by companies worldwide</p>
@@ -518,27 +519,25 @@ export default function Home() {
 
               {/* Stat 3 */}
               <div className="flex items-center border-b border-white/20 pb-[30px] pt-[30px]">
-                <div className="w-[200px]">
+                <div className="flex-1">
                   <span style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
-                    fontSize: "64px",
+                    fontSize: "4.86vw",
                     color: "#FFFFFF",
                     whiteSpace: "nowrap"
                   }}>₹<CountUp value="8.5" />L cr</span>
                 </div>
-                <div className="flex-1 pl-[20px]">
+                <div className="w-[20vw] shrink-0 pl-[1.38vw]">
                   <h4 style={{
                     fontFamily: "\'Manrope\', sans-serif",
                     fontWeight: 500,
-                    fontSize: "10px",
+                    fontSize: "1.25vw",
                     color: "#FFFFFF",
-                    marginBottom: "8px"
+                    marginBottom: "0.55vw"
                   }}>Revenue at risk</h4>
                   <p style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "14px",
+                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
                     color: "#FFFFFF80",
                     lineHeight: "130%"
                   }}>Nearly Rs 8.5 lakh crore in business<br />revenue currently at risk from water-<br />related disruption</p>
@@ -547,32 +546,63 @@ export default function Home() {
 
               {/* Stat 4 */}
               <div className="flex items-center pt-[30px] pb-[10px]">
-                <div className="w-[200px]">
+                <div className="flex-1">
                   <span style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
-                    fontSize: "64px",
+                    fontSize: "4.86vw",
                     color: "#FFFFFF"
                   }}><CountUp value="67" />%</span>
                 </div>
-                <div className="flex-1 pl-[20px]">
+                <div className="w-[20vw] shrink-0 pl-[1.38vw]">
                   <h4 style={{
                     fontFamily: "\'Manrope\', sans-serif",
                     fontWeight: 500,
-                    fontSize: "10px",
+                    fontSize: "1.25vw",
                     color: "#FFFFFF",
-                    marginBottom: "8px"
+                    marginBottom: "0.55vw"
                   }}>Global stress</h4>
                   <p style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "14px",
+                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
                     color: "#FFFFFF80",
                     lineHeight: "130%"
                   }}>50% rise in corporate water<br />withdrawals globally</p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+            {/* OUR RESPONSIBILITY SOLUTIONS */}
+      <section className="w-full pt-[6.38vw] pb-[6.38vw] border-b border-white/20 flex flex-col items-end">
+        <div className={containerClass}>
+          <div className="flex flex-col items-end w-full">
+            <p style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "2.77vw",
+              lineHeight: "130%",
+              color: "#FFFFFF80",
+              textAlign: "right",
+              verticalAlign: "middle",
+              marginBottom: "1.5vw",
+              width: "100%"
+            }}>
+              Our <span className="text-white">responsibility</span> is to create <span className="text-white">solutions</span> that protect natural resources while improving the quality of everyday life. That means rethinking wasteful systems, reducing dependence on extractive supply chains, and enabling <span className="text-white">organizations</span> to act with greater accountability.
+            </p>
+            <p style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "2.77vw",
+              lineHeight: "130%",
+              color: "#FFFFFF80",
+              textAlign: "right",
+              verticalAlign: "middle",
+              width: "100%"
+            }}>
+              Responsibility at <span className="text-white">WAE</span> is not a statement. It is built into the way we <span className="text-white">design</span>, <span className="text-white">deliver</span>, and <span className="text-white">scale solutions</span>.
+            </p>
           </div>
         </div>
       </section>
