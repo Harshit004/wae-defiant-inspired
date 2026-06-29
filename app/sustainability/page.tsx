@@ -697,72 +697,82 @@ export default function Home() {
       </section>
       <div className="mx-[7.5vw] border-b border-white/20"></div>
 
-      {/* TRANSFORMATIONS SECTION */}
+            {/* TRANSFORMATIONS SECTION */}
       <section className="w-full pt-[6.38vw] pb-[6.38vw]">
         <div className={containerClass}>
           <div className="flex items-stretch">
             {/* Left Column */}
-            <div className="w-[30%] border-r border-white/20 pr-[40px]">
+            <div className="w-[30%] border-r border-white/20 pr-[5.97vw]">
               <h2 style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: "32px",
+                fontSize: "2.77vw",
                 color: "#FFFFFF",
-                marginBottom: "16px"
+                lineHeight: "110%",
+                verticalAlign: "middle",
+                marginBottom: "1.94vw"
               }}>Transformations</h2>
               <p style={{
-                fontFamily: "'Inter Tight', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
-                fontSize: "14px",
-                color: "#FFFFFF80",
-                lineHeight: "140%"
-              }}>The success stories that changed what<br />sustainable hydration looks like.</p>
+                fontSize: "0.97vw",
+                color: "#AEAEAE",
+                lineHeight: "100%",
+                verticalAlign: "middle"
+              }}>The success stories that changed what sustainable hydration looks like.</p>
             </div>
 
             {/* Right Column Grid */}
-            <div className="w-[70%] flex flex-col pl-[40px]">
-
-              {/* Top Row: Volume 1 and Image */}
-              <div className="flex border-b border-white/20 pb-[40px] mb-[40px]">
-                <div className="w-1/2 pr-[40px]">
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", marginBottom: "16px", display: "block" }}>Volume : 1</span>
-                  <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "20px", color: "#FFFFFF", marginBottom: "16px" }}>Greener banking, better<br />workplaces</h3>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "16px" }}>How BFSI organizations ditched plastic water jars for a cleaner, safer alternative</p>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "24px" }}>Banking offices run 12/6, and so did their plastic water jar problem-spills, hygiene concerns, and hundreds of jars piling up every month. By switching to stainless steel alternatives, BFSI offices cut plastic waste significantly, reduced water contamination risks, and gave employees a cleaner, more professional workspace.</p>
-                  <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
-                    Download full story
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+            <div className="w-[70%] pl-[3.47vw]">
+              <div className="grid grid-cols-2 gap-x-[6.38vw] gap-y-[4.51vw]">
+                {/* Volume 1 */}
+                <div className="flex flex-col">
+                  <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", marginBottom: "0.86vw", display: "block", lineHeight: "110%", verticalAlign: "middle" }}>Volume : 1</span>
+                  <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "1.66vw", color: "#FFFFFF", marginBottom: "0.97vw", lineHeight: "normal", textTransform: "uppercase", verticalAlign: "middle" }}>Greener banking, better workplaces</h3>
+                  <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>How BFSI organizations ditched plastic water jars for a cleaner, safer alternative</p>
+                  <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>Banking offices run 12/6, and so did their plastic water jar problem-spills, hygiene concerns, and hundreds of jars piling up every month. By switching to stainless steel alternatives, BFSI offices cut plastic waste significantly, reduced water contamination risks, and gave employees a cleaner, more professional workspace.</p>
+                  <button className="text-white w-max text-[0.97vw] flex items-center gap-2 hover:opacity-80 transition-opacity" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                    Download report
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 11L11 1M11 1H2M11 1V10" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
                   </button>
                 </div>
-                <div className="w-1/2 pl-[40px]">
+
+                {/* Image */}
+                <div className="w-full aspect-[362/391]">
                   <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ed81f80c-aa41-49b4-922a-4899bc32d300/public" alt="Transformations" className="w-full h-full object-cover" />
                 </div>
-              </div>
 
-              {/* Bottom Row: Volume 2 and Volume 3 */}
-              <div className="flex">
-                <div className="w-1/2 border-r border-white/20 pr-[40px]">
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", marginBottom: "16px", display: "block" }}>Volume : 2</span>
-                  <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "20px", color: "#FFFFFF", marginBottom: "16px" }}>Clean hydration for high<br />performance it teams</h3>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "16px" }}>How IT campuses moved away from plastic jars and never looked back.</p>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "24px" }}>Large IT campuses consume enormous volumes of water daily. Plastic jars meant constant logistics, leakage, and avoidable plastic waste. Switching to in-situ dispensers simplified operations, eliminated single-use plastic from common areas, and gave teams access to hygienic, temperature consistent water throughout the day.</p>
-                  <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
-                    Download full story
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                {/* Volume 2 */}
+                <div className="flex flex-col">
+                  <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", marginBottom: "0.86vw", display: "block", lineHeight: "110%", verticalAlign: "middle" }}>Volume : 2</span>
+                  <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "1.66vw", color: "#FFFFFF", marginBottom: "0.97vw", lineHeight: "normal", textTransform: "uppercase", verticalAlign: "middle" }}>Clean hydration for high performance it teams</h3>
+                  <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>How IT campuses moved away from plastic jars and never looked back.</p>
+                  <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>Large IT campuses consume enormous volumes of water daily. Plastic jars meant constant logistics, leakage, and avoidable plastic waste. Switching to in-situ dispensers simplified operations, eliminated single-use plastic from common areas, and gave teams access to hygienic, temperature consistent water throughout the day.</p>
+                  <button className="text-white w-max text-[0.97vw] flex items-center gap-2 hover:opacity-80 transition-opacity" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                    Download report
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 11L11 1M11 1H2M11 1V10" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
                   </button>
                 </div>
-                <div className="w-1/2 pl-[40px]">
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", marginBottom: "16px", display: "block" }}>Volume : 3</span>
-                  <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "20px", color: "#FFFFFF", marginBottom: "16px" }}>A Greener Stay for Every<br />Guest</h3>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "16px" }}>How hospitality brands elevated their sustainability commitment, one dispenser at a time</p>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "24px" }}>In hospitality, every detail shapes the guest experience. Replacing plastic water bottles with sleek and clean branded glass bottled helped hotels reduce plastic footprint, cut recurring supply costs, and signal a genuine commitment to sustainability. Guests noticed, Staff appreciated the ease. And the numbers backed it up with lower operational costs and stronger sustainability ratings while enhancing brand perception across every guest interaction.</p>
-                  <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
-                    Download full story
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+
+                {/* Volume 3 */}
+                <div className="flex flex-col">
+                  <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", marginBottom: "0.86vw", display: "block", lineHeight: "110%", verticalAlign: "middle" }}>Volume : 3</span>
+                  <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "1.66vw", color: "#FFFFFF", marginBottom: "0.97vw", lineHeight: "normal", textTransform: "uppercase", verticalAlign: "middle" }}>A Greener Stay for Every Guest</h3>
+                  <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>How hospitality brands elevated their sustainability commitment, one dispenser at a time</p>
+                  <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>In hospitality, every detail shapes the guest experience. Replacing plastic water bottles with sleek and clean branded glass bottled helped hotels reduce plastic footprint, cut recurring supply costs, and signal a genuine commitment to sustainability. Guests noticed, Staff appreciated the ease. And the numbers backed it up with lower operational costs and stronger sustainability ratings while enhancing brand perception across every guest interaction.</p>
+                  <button className="text-white w-max text-[0.97vw] flex items-center gap-2 hover:opacity-80 transition-opacity" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                    Download report
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 11L11 1M11 1H2M11 1V10" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
                   </button>
                 </div>
-              </div>
 
+              </div>
             </div>
           </div>
         </div>
@@ -772,7 +782,7 @@ export default function Home() {
       {/* EARTH SECTION */}
       <section className="w-full pt-[6.38vw] pb-[6.38vw]">
         <div className={containerClass}>
-          <div className="w-full h-[500px] mb-[60px]">
+          <div className="w-full h-[500px] mb-[5vw]">
             <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/048c10f8-fc18-43ed-c62c-8658de2acf00/public" alt="Earth, Our Only Shareholder" className="w-full h-full object-cover" />
           </div>
 
@@ -781,43 +791,49 @@ export default function Home() {
               <h2 style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: "40px",
-                lineHeight: "110%",
+                fontSize: "2.77vw",
+                lineHeight: "100%",
+                verticalAlign: "middle",
                 color: "#FFFFFF"
               }}>
                 Earth, Our<br />Only Shareholder
               </h2>
             </div>
-            <div className="w-[35%] flex flex-col items-start gap-[24px]">
+            <div className="w-[35%] flex flex-col items-start">
               <p style={{
-                fontFamily: "'Inter Tight', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
-                fontSize: "14px",
-                lineHeight: "140%",
+                fontSize: "0.97vw",
+                lineHeight: "130%",
+                verticalAlign: "middle",
                 color: "#FFFFFF80"
               }}>
                 We're excited to share the progress we have made, reflecting our commitment to sustainability.
               </p>
+              <br />
               <p style={{
-                fontFamily: "'Inter Tight', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
-                fontSize: "14px",
-                lineHeight: "140%",
+                fontSize: "0.97vw",
+                lineHeight: "130%",
+                verticalAlign: "middle",
                 color: "#FFFFFF80",
-                marginBottom: "16px"
+                marginBottom: "4.3vw"
               }}>
                 Explore them to see how we're making a positive impact on the environment, society & governance.
               </p>
-              <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
+              <button className="text-white w-max text-[0.97vw] flex items-center gap-2 hover:opacity-80 transition-opacity" style={{ fontFamily: "'Manrope', sans-serif" }}>
                 Download report
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 11L11 1M11 1H2M11 1V10" stroke="currentColor" strokeWidth="1.5"/>
+                </svg>
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
+{/* FOOTER */}
       <Footer />
 
       {/* INLINE CSS for animations */}
