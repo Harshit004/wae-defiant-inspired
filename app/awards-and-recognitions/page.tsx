@@ -25,45 +25,57 @@ export default function AwardsAndRecognitionsPage() {
       </div>
 
       {/* Main Content Area */}
-      <section className="relative z-10 w-full px-[7.5vw]" style={{ paddingTop: "clamp(180px, 16.3vw, 235px)", paddingBottom: "100px" }}>
+      <section className="relative z-10 w-full px-[7.5vw]" style={{ paddingTop: "clamp(180px, 17.7vw, 255px)", paddingBottom: "100px" }}>
         
         {/* Toggle Buttons */}
-        <div className="flex gap-4 mb-20">
+        <div className="flex gap-4" style={{ marginBottom: '75px' }}>
           <Link href="/news-and-updates">
-            <button className={`px-6 py-2 border transition-colors text-sm font-medium ${pathname === '/news-and-updates' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}>
+            <button 
+              className={`px-6 border transition-colors text-[14px] font-medium flex items-center justify-center ${pathname === '/news-and-updates' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
+              style={{ height: '41px' }}
+            >
               News & Media
             </button>
           </Link>
           <Link href="/awards-and-recognitions">
-            <button className={`px-6 py-2 border transition-colors text-sm font-medium ${pathname === '/awards-and-recognitions' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}>
+            <button 
+              className={`px-6 border transition-colors text-[14px] font-medium flex items-center justify-center ${pathname === '/awards-and-recognitions' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
+              style={{ height: '41px' }}
+            >
               Awards & Recognitions
             </button>
           </Link>
         </div>
 
+        {/* Horizontal Divider */}
+        <div className="w-full h-px bg-white/20" style={{ marginBottom: '56px' }} />
+
         {/* Hero Text */}
-        <div className="flex flex-row justify-between items-start mb-20 gap-10">
-          <h1 style={{
-            fontFamily: 'Inter Tight',
-            fontWeight: 400,
-            fontSize: 'clamp(40px, 5vw, 60px)',
-            lineHeight: '110%',
-            flexShrink: 0,
-            maxWidth: '45%'
-          }}>
-            Awards &<br/>Recognitions
-          </h1>
-          <p style={{
-            fontFamily: 'Inter Tight',
-            fontWeight: 400,
-            fontSize: '14px',
-            lineHeight: '160%',
-            color: '#FFFFFF99',
-            maxWidth: '400px',
-            marginTop: '10px'
-          }}>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
-          </p>
+        <div className="flex flex-row justify-between items-start" style={{ marginBottom: '96px' }}>
+          <div style={{ width: "clamp(260px, 28.2vw, 407px)", flexShrink: 0 }}>
+            <h1 style={{
+              fontFamily: 'Inter Tight',
+              fontWeight: 400,
+              fontSize: 'clamp(40px, 4.16vw, 60px)',
+              lineHeight: '100%',
+              letterSpacing: '0px',
+            }}>
+              Awards &<br/>Recognitions
+            </h1>
+          </div>
+          
+          <div style={{ width: "clamp(260px, 28vw, 403px)", flexShrink: 0 }}>
+            <p style={{
+              fontFamily: 'Manrope',
+              fontWeight: 400,
+              fontSize: 'clamp(14px, 1.11vw, 16px)',
+              lineHeight: '100%',
+              color: '#FFFFFF',
+              letterSpacing: '0px',
+            }}>
+              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
+            </p>
+          </div>
         </div>
 
         {/* Awards Showcase */}

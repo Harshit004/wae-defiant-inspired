@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 
 interface NewsCardProps {
   imageUrl: string
@@ -9,12 +8,20 @@ interface NewsCardProps {
   description?: string
   date?: string
   link?: string
+  isLarge?: boolean
 }
 
-function NewsCard({ imageUrl, title, description, date, link }: NewsCardProps) {
+function NewsCard({ imageUrl, title, description, date, link, isLarge = false }: NewsCardProps) {
   const CardContent = (
-    <div className="flex flex-col h-full group">
-      <div className="relative w-full aspect-[16/10] overflow-hidden mb-6">
+    <div className="flex flex-col h-full group" style={{ width: '100%' }}>
+      {/* Image Container */}
+      <div 
+        className="relative w-full overflow-hidden" 
+        style={{ 
+          aspectRatio: isLarge ? '604/319' : '382/215',
+          marginBottom: isLarge ? '40px' : '31px'
+        }}
+      >
         <Image
           src={imageUrl || "/placeholder.svg"}
           alt={title || "News image"}
@@ -22,65 +29,71 @@ function NewsCard({ imageUrl, title, description, date, link }: NewsCardProps) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
+      
+      {/* Text Content */}
       {(title || date) && (
         <div className="flex flex-col flex-1">
           {title && (
             <h3
-              className="group-hover:text-gray-300 transition-colors duration-300 mb-4"
+              className="group-hover:text-gray-300 transition-colors duration-300"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "18px",
-                lineHeight: "120%",
+                fontWeight: 400,
+                fontSize: "24px",
+                lineHeight: "100%",
                 color: "#FFFFFF",
+                marginBottom: "20px"
               }}
             >
               {title}
             </h3>
           )}
+          
           {description && (
             <p
-              className="mb-6"
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
                 fontSize: "14px",
-                lineHeight: "130%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
-                color: "#FFFFFF99",
+                color: "#AEAEAE",
+                marginBottom: isLarge ? '27px' : '36px'
               }}
             >
               {description}
             </p>
           )}
           
-          <div className="mt-auto flex items-center justify-between pt-2">
+          <div className="mt-auto flex items-center justify-between">
             {date && (
               <p
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
+                  fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
                   fontSize: "14px",
                   lineHeight: "100%",
-                  color: "#FFFFFF99",
+                  color: "#AEAEAE",
                 }}
               >
                 {date}
               </p>
             )}
-            <div
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: "12px",
-                lineHeight: "24px",
-                color: "#FFFFFF",
-                textDecoration: "underline",
-                textDecorationStyle: "solid",
-              }}
-            >
-              Read Release
-            </div>
+            
+            {link && (
+              <div
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "24px",
+                  color: "#FFFFFF",
+                  textDecoration: "underline",
+                }}
+              >
+                Read Release
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -170,30 +183,38 @@ export default function NewsGrid() {
 
   return (
     <div className="w-full max-w-full">
-      {rows.map((row, rowIndex) => (
-        <div key={rowIndex}>
-          {/* Row container */}
-          <div 
-            className={`grid gap-[40px] ${
-              rowIndex === 0 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-3"
-            }`}
-          >
-            {row.map((card, cardIndex) => (
-              <div key={cardIndex}>
-                <NewsCard {...card} />
-              </div>
-            ))}
-          </div>
-
-          {/* Divider between rows */}
-          {rowIndex < rows.length - 1 && (
+      {rows.map((row, rowIndex) => {
+        const isLarge = rowIndex === 0;
+        
+        return (
+          <div key={rowIndex}>
+            {/* Row container: justify-between as per request */}
             <div 
-              className="w-full h-px bg-[#FFFFFF1A]" 
-              style={{ marginTop: '92px', marginBottom: '92px' }} 
-            />
-          )}
-        </div>
-      ))}
+              className={`flex flex-col md:flex-row justify-between gap-[30px] lg:gap-0`}
+            >
+              {row.map((card, cardIndex) => (
+                <div 
+                  key={cardIndex} 
+                  style={{ 
+                    width: isLarge ? "clamp(300px, 41.9vw, 604px)" : "clamp(200px, 26.5vw, 382px)",
+                    flexShrink: 0 
+                  }}
+                >
+                  <NewsCard {...card} isLarge={isLarge} />
+                </div>
+              ))}
+            </div>
+
+            {/* Divider between rows */}
+            {rowIndex < rows.length - 1 && (
+              <div 
+                className="w-full h-px bg-[#FFFFFF1A]" 
+                style={{ marginTop: '92px', marginBottom: '92px' }} 
+              />
+            )}
+          </div>
+        )
+      })}
     </div>
   )
 }
