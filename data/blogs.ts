@@ -31,7 +31,7 @@ export const WRITERS: Record<string, Writer> = {
     "id": "aditi-sharma",
     "name": "Aditi Sharma",
     "role": "Marketing-Executive",
-    "bio": "Aditi Sharma explores sustainability and climate change with a focus on climate action and environmental responsibility. With over two years of professional experience, her work connects research, corporate sustainability practices, and strategic communication.",
+    "bio": "Ms. Aditi Sharma is a marketer and sustainability storyteller exploring the intersection of water, technology, and climate change. With over two years of professional experience, her work combines research, corporate sustainability practices, and strategic communication to translate complex environmental challenges into compelling narratives that inspire climate action and responsible stewardship.",
     "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7ec90729-c663-4834-f4e9-89739b300300/public",
     "link": "https://www.linkedin.com/in/aditi-sharma-056713291/"
   },
