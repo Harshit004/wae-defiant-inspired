@@ -8,6 +8,36 @@ import Footer from "@/components/footer"
 
 const containerClass = "mx-auto w-full px-[7.5vw]"
 
+const officeLocations = [
+  {
+    city: "Mumbai",
+    address: "91 Springboard Business Hub Godrej & Boyce, Gate No. 2 LBS Marg, Vikhroli Mumbai – 400079",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/530b8e1f-895b-4928-ae59-c9884c830600/public",
+  },
+  {
+    city: "Bengaluru",
+    address: "91 Springboard George Thangaiah Complex 13, 80 Feet Road, Near Sir CV Raman Hospital Indiranagar, Bengaluru – 560038",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4fb81bcc-05e1-43f5-2677-6e53b3a53800/public",
+  },
+  {
+    city: "Hyderabad",
+    address: "91 Springboard Business Hub Pvt. Ltd. Mytri Square, 2-41/11/6/2 Gachibowli-Miyapur Road, Kondapur, Hyderabad – 500084",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/68b4ade9-6f6a-45c2-da10-de1e09d74500/public",
+  },
+  {
+    city: "Pune",
+    address: "91 Springboard Business Hub Pvt. Ltd. 9th–12th Floor, Sadanand Business Centre NH-48 Service Road, Baner Pune, Maharashtra – 411045",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9526b433-9620-4448-4506-6a4d69532800/public",
+  },
+]
+
+const supportItems = [
+  { title: "Commercial Support", desc: "Product enquiries, quotations, and post-sales assistance." },
+  { title: "Logistics Support", desc: "Order processing, delivery status, and product availability." },
+  { title: "Technical Support", desc: "Product selection, technical guidance, and application support." },
+  { title: "Service Support", desc: "Installation, maintenance, and service intervention requests." },
+]
+
 export default function ContactUsPage() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [formMessage, setFormMessage] = useState("")
@@ -45,175 +75,143 @@ export default function ContactUsPage() {
     }
   }
 
-  const officeLocations = [
-    {
-      city: "Mumbai",
-      address: "31 Springboard Business Hub Godrej & Boyce, Gate No. 2,LBS Marg, Vikhroli Mumbai – 400079",
-      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fac96cd3-ad63-42ff-23df-0d795cc52000/public",
-    },
-    {
-      city: "Bengaluru",
-      address: "31 Springboard George Thangaiah Complex 13, 80 Feet Road, Near Sir CV Raman Hospital Indiranagar, Bengaluru – 560038",
-      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/31701d9e-a471-46ff-4bb7-dac1ec8aac00/public",
-    },
-    {
-      city: "Hyderabad",
-      address: "31 Springboard Business Hub Pvt. Ltd. Mytri Square, 3-4/1 HYTD Gachiowali – Miyapur Road, Kondapur, Hyderabad – 500084",
-      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/50e6b6b0-4629-4ab6-0710-9ecc16700e00/public",
-    },
-    {
-      city: "Pune",
-      address: "We are right here located at Unit 1, 2! 8th–10th Floor, Saideenesh Business Centre Nr. 43 Garware Road, Baner Pune, Maharashtra – 411045",
-      image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/371f4ccb-4672-4c8e-2fba-a3a7ffe05900/public",
-    },
-  ]
-
-  const supportTypes = [
-    {
-      title: "Commercial Support",
-      desc: "Product enquiries, quotations, and post-sales assistance.",
-    },
-    {
-      title: "Logistics Support",
-      desc: "Order processing, delivery status, and product availability.",
-    },
-    {
-      title: "Technical Support",
-      desc: "Product selection, technical guidance, and application support.",
-    },
-    {
-      title: "Service Support",
-      desc: "Installation, maintenance, and service intervention requests.",
-    },
-  ]
-
   return (
-    <main className="bg-black text-white min-h-screen">
+    <main className="relative min-h-screen bg-[#0F0F0F] text-white overflow-x-hidden">
+      {/* ── Top gradient (same as data-privacy-policy) ── */}
+      <div
+        className="absolute top-0 left-0 w-full pointer-events-none z-0"
+        style={{
+          background: "linear-gradient(160deg, #004063 4.52%, #0F0F0F 40%)",
+          height: "clamp(500px, 80vh, 875px)",
+        }}
+      />
+
       <Header />
 
       {/* ── HERO + FORM SECTION ── */}
-      <section
-        className="w-full bg-black"
-        style={{ paddingTop: "160px", paddingBottom: "120px" }}
-      >
+      {/* 77px gap after header */}
+      <section className="relative z-10 w-full" style={{ paddingTop: "77px", paddingBottom: "0" }}>
         <div className={containerClass}>
-          <div className="flex flex-col md:flex-row gap-16 md:gap-0 justify-between items-start w-full">
+          {/* 2-col justify-between */}
+          <div className="flex flex-row justify-between items-start">
 
-            {/* Left: Contact Info */}
-            <div className="w-full md:w-[42%] flex flex-col">
-              {/* Questions label */}
+            {/* LEFT: 393px → ~27.3vw, clamped */}
+            <div style={{ width: "clamp(260px, 27.3vw, 393px)", flexShrink: 0 }}>
+              {/* Questions or Ideas? */}
               <p
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "14px",
                   lineHeight: "100%",
-                  letterSpacing: "0.1em",
-                  color: "#AEAEAE",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
                   textTransform: "uppercase",
-                  marginBottom: "20px",
+                  marginBottom: "12px",
                 }}
               >
-                Questions or Ease?
+                Questions or Ideas?
               </p>
 
-              {/* Heading */}
+              {/* Let's Connect. */}
               <h1
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(52px, 6vw, 88px)",
-                  lineHeight: "105%",
+                  fontSize: "clamp(40px, 4.17vw, 60px)",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
                   color: "#FFFFFF",
-                  marginBottom: "60px",
+                  marginBottom: "62px",
                 }}
               >
-                Let's Connect.
+                Let&apos;s Connect.
               </h1>
 
               {/* Corporate Office */}
-              <div style={{ marginBottom: "32px" }}>
-                <p
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "11px",
-                    color: "#FFFFFF",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    marginBottom: "8px",
-                  }}
-                >
-                  Corporate Office
-                </p>
-                <p
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "13px",
-                    lineHeight: "160%",
-                    color: "#AEAEAE",
-                  }}
-                >
-                  H-18, H Block, Sector 63, Noida, Uttar Pradesh – 201301
-                </p>
-              </div>
+              <p
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "200%",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
+                }}
+              >
+                Corporate Office
+              </p>
+              <div style={{ height: "28px" }} />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "200%",
+                  letterSpacing: "0%",
+                  color: "#AEAEAE",
+                }}
+              >
+                H-18, H Block, Sector 63, Noida, Uttar Pradesh – 201301
+              </p>
+
+              <div style={{ height: "19px" }} />
 
               {/* Innovation Centre */}
-              <div style={{ marginBottom: "32px" }}>
-                <p
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "11px",
-                    color: "#FFFFFF",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    marginBottom: "8px",
-                  }}
-                >
-                  Innovation Centre
-                </p>
-                <p
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "13px",
-                    lineHeight: "160%",
-                    color: "#AEAEAE",
-                  }}
-                >
-                  C-24/12, D Block, Sector 63,<br />
-                  Noida, Uttar Pradesh – 201301
-                </p>
-              </div>
+              <p
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
+                }}
+              >
+                Innovation Centre
+              </p>
+              <div style={{ height: "8px" }} />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  color: "#AEAEAE",
+                }}
+              >
+                D 247/2, D Block, Sector 63,<br />Noida, Uttar Pradesh – 201301
+              </p>
+
+              <div style={{ height: "19px" }} />
 
               {/* Email */}
+              <p
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
+                }}
+              >
+                Email
+              </p>
+              <div style={{ height: "8px" }} />
               <div>
-                <p
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "11px",
-                    color: "#FFFFFF",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    marginBottom: "8px",
-                  }}
-                >
-                  Email
-                </p>
                 <a
                   href="mailto:marketing@waecorp.com"
                   style={{
                     fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "13px",
-                    lineHeight: "180%",
+                    fontWeight: 500,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
                     color: "#AEAEAE",
                     display: "block",
-                    textDecoration: "underline",
-                    textUnderlineOffset: "3px",
+                    textDecoration: "none",
                   }}
                 >
                   marketing@waecorp.com
@@ -222,13 +220,14 @@ export default function ContactUsPage() {
                   href="mailto:info@waecorp.com"
                   style={{
                     fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "13px",
-                    lineHeight: "180%",
+                    fontWeight: 500,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
                     color: "#AEAEAE",
                     display: "block",
-                    textDecoration: "underline",
-                    textUnderlineOffset: "3px",
+                    textDecoration: "none",
+                    marginTop: "4px",
                   }}
                 >
                   info@waecorp.com
@@ -236,13 +235,10 @@ export default function ContactUsPage() {
               </div>
             </div>
 
-            {/* Right: Contact Form */}
-            <div className="w-full md:w-[52%]">
+            {/* RIGHT: 581px → ~40.3vw, clamped */}
+            <div style={{ width: "clamp(300px, 40.3vw, 581px)", flexShrink: 0 }}>
               {formStatus === "success" ? (
-                <div
-                  className="flex flex-col items-start justify-center"
-                  style={{ minHeight: "400px" }}
-                >
+                <div style={{ paddingTop: "0" }}>
                   <p
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
@@ -267,81 +263,86 @@ export default function ContactUsPage() {
                   </p>
                   <button
                     onClick={() => setFormStatus("idle")}
-                    className="mt-8 underline underline-offset-4 text-white/60 hover:text-white transition-colors"
-                    style={{ fontFamily: "'Manrope', sans-serif", fontSize: "13px" }}
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontSize: "13px",
+                      color: "rgba(255,255,255,0.6)",
+                      background: "none",
+                      border: "none",
+                      cursor: "pointer",
+                      textDecoration: "underline",
+                      textUnderlineOffset: "4px",
+                      marginTop: "32px",
+                      padding: 0,
+                    }}
                   >
                     Send another message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-0">
-                  {/* Field styles via inline CSS since styled-jsx not available here */}
+                <form onSubmit={handleSubmit}>
                   <style>{`
-                    .contact-input {
+                    .cu-input {
+                      display: block;
                       width: 100%;
+                      height: 43px;
                       background: transparent;
                       border: none;
-                      border-bottom: 1px solid rgba(255,255,255,0.25);
-                      padding: 18px 0;
+                      border-bottom: 1px solid rgba(255,255,255,0.2);
                       color: #FFFFFF;
                       font-family: 'Manrope', sans-serif;
-                      font-size: 13px;
+                      font-weight: 400;
+                      font-size: 14px;
+                      line-height: 100%;
+                      letter-spacing: 0%;
                       outline: none;
-                      transition: border-color 0.3s;
+                      padding: 0;
+                      transition: border-color 0.25s;
+                      box-sizing: border-box;
+                      margin-bottom: 24px;
                     }
-                    .contact-input::placeholder {
-                      color: rgba(255,255,255,0.45);
+                    .cu-input::placeholder {
+                      color: #AEAEAE;
                     }
-                    .contact-input:focus {
-                      border-bottom-color: rgba(255,255,255,0.8);
+                    .cu-input:focus {
+                      border-bottom-color: rgba(255,255,255,0.7);
+                    }
+                    .cu-textarea {
+                      display: block;
+                      width: 100%;
+                      height: 99px;
+                      background: transparent;
+                      border: none;
+                      border-bottom: 1px solid rgba(255,255,255,0.2);
+                      color: #FFFFFF;
+                      font-family: 'Manrope', sans-serif;
+                      font-weight: 400;
+                      font-size: 14px;
+                      line-height: 100%;
+                      letter-spacing: 0%;
+                      outline: none;
+                      padding: 0;
+                      resize: none;
+                      transition: border-color 0.25s;
+                      box-sizing: border-box;
+                    }
+                    .cu-textarea::placeholder {
+                      color: #AEAEAE;
+                    }
+                    .cu-textarea:focus {
+                      border-bottom-color: rgba(255,255,255,0.7);
                     }
                   `}</style>
 
-                  <input className="contact-input" type="text" name="name" placeholder="Name*" required />
-                  <input className="contact-input" type="text" name="companyName" placeholder="Company Name*" required />
-                  <input className="contact-input" type="tel" name="contact" placeholder="Contact No.*" required />
-                  <input className="contact-input" type="email" name="email" placeholder="Official Email*" required />
-                  <input className="contact-input" type="text" name="city" placeholder="City*" />
-                  <textarea
-                    className="contact-input"
-                    name="message"
-                    placeholder="Your Message"
-                    rows={3}
-                    style={{ resize: "none" }}
-                  />
+                  <input className="cu-input" type="text" name="name" placeholder="*Name" required />
+                  <input className="cu-input" type="text" name="companyName" placeholder="*Company Name" required />
+                  <input className="cu-input" type="tel" name="contact" placeholder="*Contact No." required />
+                  <input className="cu-input" type="email" name="email" placeholder="*Official Email" required />
+                  <input className="cu-input" type="text" name="city" placeholder="*City" />
+                  <textarea className="cu-textarea" name="message" placeholder="Your Message" />
 
-                  {/* reCAPTCHA placeholder */}
-                  <div
-                    style={{
-                      marginTop: "24px",
-                      marginBottom: "24px",
-                      padding: "12px 16px",
-                      border: "1px solid rgba(255,255,255,0.15)",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "12px",
-                      width: "fit-content",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "20px",
-                        height: "20px",
-                        border: "1.5px solid rgba(255,255,255,0.4)",
-                        borderRadius: "3px",
-                        flexShrink: 0,
-                      }}
-                    />
-                    <span
-                      style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontSize: "12px",
-                        color: "#AEAEAE",
-                      }}
-                    >
-                      I&apos;m not a robot
-                    </span>
-                  </div>
+                  {/* 62px gap */}
+                  <div style={{ height: "62px" }} />
 
                   {formStatus === "error" && (
                     <p
@@ -349,57 +350,69 @@ export default function ContactUsPage() {
                         fontFamily: "'Manrope', sans-serif",
                         fontSize: "12px",
                         color: "#ef4444",
-                        marginBottom: "16px",
+                        marginBottom: "12px",
                       }}
                     >
                       {formMessage}
                     </p>
                   )}
 
+                  {/* Submit button — 49px high, no arrow */}
                   <button
                     type="submit"
                     disabled={formStatus === "submitting"}
-                    className="w-full flex items-center justify-center gap-4 bg-white text-black hover:bg-white/90 transition-all duration-300 disabled:opacity-60"
                     style={{
-                      height: "72px",
+                      width: "100%",
+                      height: "49px",
+                      background: "#FFFFFF",
+                      color: "#000000",
+                      border: "none",
+                      cursor: formStatus === "submitting" ? "not-allowed" : "pointer",
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 400,
-                      fontSize: "16px",
+                      fontSize: "14px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      opacity: formStatus === "submitting" ? 0.6 : 1,
+                      transition: "opacity 0.2s, background 0.2s, color 0.2s",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (formStatus !== "submitting") {
+                        (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.88)"
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLButtonElement).style.background = "#FFFFFF"
                     }}
                   >
-                    {formStatus === "submitting" ? "Submitting..." : "Submit"}
-                    {formStatus !== "submitting" && (
-                      <svg width="40" height="20" viewBox="0 0 40 24" fill="none">
-                        <path d="M2 12H38M38 12L28 2M38 12L28 22" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    )}
+                    {formStatus === "submitting" ? "Submitting…" : "Submit"}
                   </button>
                 </form>
               )}
             </div>
           </div>
         </div>
-      </section>
 
-      {/* ── DIVIDER ── */}
-      <div className="w-full h-px bg-white/15" />
-
-      {/* ── SUPPORT SECTION ── */}
-      <section
-        className="w-full bg-black"
-        style={{ paddingTop: "100px", paddingBottom: "100px" }}
-      >
+        {/* 92px gap + divider + 92px gap */}
+        <div style={{ height: "92px" }} />
         <div className={containerClass}>
-          <div className="flex flex-col md:flex-row gap-16 md:gap-0 justify-between items-start">
+          <div style={{ height: "1px", background: "rgba(255,255,255,0.2)", width: "100%" }} />
+        </div>
+        <div style={{ height: "92px" }} />
 
-            {/* Left */}
-            <div className="w-full md:w-[38%] flex flex-col">
+        {/* ── SUPPORT SECTION ── */}
+        <div className={containerClass}>
+          <div className="flex flex-row justify-between items-start">
+
+            {/* LEFT support column */}
+            <div style={{ width: "clamp(240px, 27.3vw, 393px)", flexShrink: 0 }}>
               <h2
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
+                  fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(36px, 4vw, 56px)",
-                  lineHeight: "110%",
+                  fontSize: "clamp(28px, 2.78vw, 40px)",
+                  lineHeight: "50px",
+                  letterSpacing: "0%",
                   color: "#FFFFFF",
                   marginBottom: "24px",
                 }}
@@ -409,113 +422,145 @@ export default function ContactUsPage() {
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "13px",
-                  lineHeight: "160%",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
                   color: "#AEAEAE",
-                  maxWidth: "340px",
-                  marginBottom: "40px",
+                  marginBottom: "62px",
                 }}
               >
-                Need assistance? Our Customer Care team is available to ensure you receive timely support wherever you need it.
+                Need assistance? Our Customer Care team is available to ensure you receive timely support whenever you need it.
               </p>
-              <div style={{ marginTop: "auto" }}>
-                <p
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "11px",
-                    color: "#FFFFFF",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    marginBottom: "6px",
-                  }}
-                >
-                  24×7 Customer Care
-                </p>
-                <a
-                  href="tel:+911204086800"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "22px",
-                    color: "#FFFFFF",
-                    textDecoration: "none",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  +91-120-408-6800
-                </a>
-              </div>
+
+              <p
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "11px",
+                  lineHeight: "100%",
+                  color: "#FFFFFF",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  marginBottom: "12px",
+                }}
+              >
+                24×7 Customer Care
+              </p>
+              <a
+                href="tel:+911204069800"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "16px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
+                  textDecoration: "none",
+                }}
+              >
+                +91-120-406-9800
+              </a>
             </div>
 
-            {/* Right: Support types */}
-            <div className="w-full md:w-[52%] flex flex-col divide-y divide-white/15">
-              <div style={{ paddingBottom: "32px" }}>
+            {/* RIGHT support column: vertical divider + content */}
+            <div
+              style={{
+                width: "clamp(300px, 50vw, 720px)",
+                flexShrink: 0,
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              {/* Vertical divider */}
+              <div
+                style={{
+                  width: "1px",
+                  background: "rgba(255,255,255,0.2)",
+                  flexShrink: 0,
+                  alignSelf: "stretch",
+                }}
+              />
+
+              {/* Gap after divider */}
+              <div style={{ width: "50px", flexShrink: 0 }} />
+
+              {/* Content */}
+              <div style={{ flex: 1 }}>
                 <p
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
-                    fontSize: "13px",
-                    lineHeight: "160%",
+                    fontSize: "14px",
+                    lineHeight: "130%",
+                    letterSpacing: "0%",
                     color: "#AEAEAE",
-                    maxWidth: "480px",
+                    marginBottom: "48px",
                   }}
                 >
                   From technical guidance to service requests, we&apos;re committed to providing responsive and reliable assistance throughout your journey with WAE.
                 </p>
-              </div>
-              {supportTypes.map((s) => (
-                <div key={s.title} style={{ paddingTop: "28px", paddingBottom: "28px" }}>
-                  <p
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 600,
-                      fontSize: "13px",
-                      color: "#FFFFFF",
-                      marginBottom: "6px",
-                    }}
-                  >
-                    {s.title}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 400,
-                      fontSize: "13px",
-                      lineHeight: "160%",
-                      color: "#AEAEAE",
-                    }}
-                  >
-                    {s.desc}
-                  </p>
+
+                {/* Support items */}
+                <div className="flex flex-col">
+                  {supportItems.map((item, i) => (
+                    <div key={item.title}>
+                      <p
+                        style={{
+                          fontFamily: "'Manrope', sans-serif",
+                          fontWeight: 500,
+                          fontSize: "14px",
+                          lineHeight: "100%",
+                          letterSpacing: "0%",
+                          color: "#FFFFFF",
+                          marginBottom: "14px",
+                        }}
+                      >
+                        {item.title}
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: "'Manrope', sans-serif",
+                          fontWeight: 500,
+                          fontSize: "14px",
+                          lineHeight: "100%",
+                          letterSpacing: "0%",
+                          color: "#AEAEAE",
+                          marginBottom: i < supportItems.length - 1 ? "14px" : 0,
+                        }}
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* ── DIVIDER ── */}
-      <div className="w-full h-px bg-white/15" />
-
-      {/* ── OUR PRESENCE SECTION ── */}
-      <section
-        className="w-full bg-black"
-        style={{ paddingTop: "100px", paddingBottom: "120px" }}
-      >
+        {/* 92px gap + divider + 92px gap */}
+        <div style={{ height: "92px" }} />
         <div className={containerClass}>
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start mb-12">
-            <div>
+          <div style={{ height: "1px", background: "rgba(255,255,255,0.2)", width: "100%" }} />
+        </div>
+        <div style={{ height: "92px" }} />
+
+        {/* ── OUR PRESENCE SECTION ── */}
+        <div className={containerClass} style={{ paddingBottom: "120px" }}>
+          <div className="flex flex-row justify-between items-start">
+
+            {/* LEFT: 310px → ~21.5vw */}
+            <div style={{ width: "clamp(200px, 21.5vw, 310px)", flexShrink: 0 }}>
               <h2
                 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
+                  fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(36px, 4vw, 56px)",
-                  lineHeight: "110%",
+                  fontSize: "clamp(28px, 2.78vw, 40px)",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
                   color: "#FFFFFF",
-                  marginBottom: "16px",
+                  marginBottom: "24px",
                 }}
               >
                 Our Presence
@@ -523,66 +568,118 @@ export default function ContactUsPage() {
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "13px",
-                  lineHeight: "160%",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  letterSpacing: "0%",
                   color: "#AEAEAE",
-                  maxWidth: "320px",
                 }}
               >
                 With offices across India, our teams are always within reach to support customers, partners, and projects nationwide.
               </p>
             </div>
-          </div>
 
-          {/* City Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {officeLocations.map((loc) => (
-              <div key={loc.city} className="flex flex-col group">
-                {/* Image */}
-                <div
-                  className="relative w-full overflow-hidden"
-                  style={{ aspectRatio: "16/9" }}
-                >
-                  <Image
-                    src={loc.image}
-                    alt={loc.city}
-                    fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                  />
-                </div>
-                {/* Info */}
-                <div style={{ paddingTop: "16px" }}>
-                  <p
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "15px",
-                      color: "#FFFFFF",
-                      marginBottom: "6px",
-                    }}
-                  >
-                    {loc.city}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 400,
-                      fontSize: "12px",
-                      lineHeight: "160%",
-                      color: "#AEAEAE",
-                    }}
-                  >
-                    {loc.address}
-                  </p>
+            {/* RIGHT: 2×2 grid of city cards with vertical dividers */}
+            <div
+              style={{
+                flex: 1,
+                marginLeft: "clamp(32px, 4vw, 80px)",
+                display: "flex",
+                flexDirection: "row",
+                gap: "0",
+              }}
+            >
+              {/* Column 1: Mumbai + Hyderabad */}
+              <div style={{ display: "flex", flexDirection: "row", flex: 1 }}>
+                {/* Vertical divider */}
+                <div style={{ width: "1px", background: "rgba(255,255,255,0.2)", flexShrink: 0, alignSelf: "stretch" }} />
+                <div style={{ width: "50px", flexShrink: 0 }} />
+
+                <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                  {/* Mumbai */}
+                  <CityCard city={officeLocations[0]} />
+                  {/* 59px gap between rows */}
+                  <div style={{ height: "59px" }} />
+                  {/* Hyderabad */}
+                  <CityCard city={officeLocations[2]} />
                 </div>
               </div>
-            ))}
+
+              {/* 62px gap between columns */}
+              <div style={{ width: "62px", flexShrink: 0 }} />
+
+              {/* Column 2: Bengaluru + Pune */}
+              <div style={{ display: "flex", flexDirection: "row", flex: 1 }}>
+                {/* Vertical divider */}
+                <div style={{ width: "1px", background: "rgba(255,255,255,0.2)", flexShrink: 0, alignSelf: "stretch" }} />
+                <div style={{ width: "50px", flexShrink: 0 }} />
+
+                <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                  {/* Bengaluru */}
+                  <CityCard city={officeLocations[1]} />
+                  {/* 59px gap */}
+                  <div style={{ height: "59px" }} />
+                  {/* Pune */}
+                  <CityCard city={officeLocations[3]} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <Footer />
     </main>
+  )
+}
+
+function CityCard({ city }: { city: typeof officeLocations[0] }) {
+  return (
+    <div className="group">
+      {/* 315×230 image → responsive via aspect-ratio */}
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ aspectRatio: "315 / 230" }}
+      >
+        <Image
+          src={city.image}
+          alt={city.city}
+          fill
+          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+        />
+      </div>
+
+      {/* 35px gap */}
+      <div style={{ height: "35px" }} />
+
+      {/* City title */}
+      <p
+        style={{
+          fontFamily: "'Manrope', sans-serif",
+          fontWeight: 700,
+          fontSize: "14px",
+          lineHeight: "100%",
+          letterSpacing: "0%",
+          color: "#FFFFFF",
+          marginBottom: "14px",
+        }}
+      >
+        {city.city}
+      </p>
+
+      {/* Address */}
+      <p
+        style={{
+          fontFamily: "'Manrope', sans-serif",
+          fontWeight: 400,
+          fontSize: "14px",
+          lineHeight: "100%",
+          letterSpacing: "0%",
+          color: "#AEAEAE",
+        }}
+      >
+        {city.address}
+      </p>
+    </div>
   )
 }

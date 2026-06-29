@@ -24,7 +24,6 @@ interface DimensionRow {
 interface FeatureItem {
   title: string
   description: string
-  isDisplayed?: boolean
 }
 
 interface Category {
@@ -60,7 +59,6 @@ export default function EditProductPage({ params }: EditProductProps) {
   // Up to 4 images
   const [images, setImages] = useState<string[]>(["", "", "", ""])
   const [displayImageIndex, setDisplayImageIndex] = useState<number>(0)
-  const [hoverImageIndex, setHoverImageIndex] = useState<number | null>(null)
 
   // Features List
   const [featuresList, setFeaturesList] = useState<FeatureItem[]>([])
@@ -131,12 +129,9 @@ export default function EditProductPage({ params }: EditProductProps) {
             }
             setImages(paddedImages.slice(0, 4))
 
-            // Set display and hover image index
+            // Set display image index
             const savedDisplayIndex = prod.displayImageIndex !== undefined ? prod.displayImageIndex : 0
             setDisplayImageIndex(savedDisplayIndex)
-            
-            const savedHoverIndex = prod.hoverImageIndex !== undefined ? prod.hoverImageIndex : null
-            setHoverImageIndex(savedHoverIndex)
 
             // Features List
             setFeaturesList(prod.featuresList || [])
@@ -207,7 +202,7 @@ export default function EditProductPage({ params }: EditProductProps) {
   }
 
   const handleAddFeature = () => {
-    setFeaturesList([...featuresList, { title: "", description: "", isDisplayed: false }])
+    setFeaturesList([...featuresList, { title: "", description: "" }])
     setIsDirty(true)
   }
 
@@ -216,9 +211,9 @@ export default function EditProductPage({ params }: EditProductProps) {
     setIsDirty(true)
   }
 
-  const handleFeatureChange = (index: number, field: "title" | "description" | "isDisplayed", val: string | boolean) => {
+  const handleFeatureChange = (index: number, field: "title" | "description", val: string) => {
     const updated = [...featuresList]
-    updated[index] = { ...updated[index], [field]: val }
+    updated[index][field] = val
     setFeaturesList(updated)
     setIsDirty(true)
   }
@@ -330,7 +325,7 @@ export default function EditProductPage({ params }: EditProductProps) {
     setSaving(true)
 
     const activeImages = images.map((img) => img.trim()).filter((img) => img !== "")
-    const activeFeatures = featuresList.map((f) => ({ title: f.title.trim(), description: f.description.trim(), isDisplayed: !!f.isDisplayed })).filter((f) => f.title !== "" || f.description !== "")
+    const activeFeatures = featuresList.map((f) => ({ title: f.title.trim(), description: f.description.trim() })).filter((f) => f.title !== "" || f.description !== "")
     const activeStorage = storageCapacity.map((s) => ({
       variant: s.variant.trim(),
       hot: s.hot.trim(),
@@ -362,7 +357,6 @@ export default function EditProductPage({ params }: EditProductProps) {
         heroSubtitle: heroSubtitle.trim(),
         images: activeImages,
         displayImageIndex: finalDisplayImageIndex,
-        hoverImageIndex,
         featuresList: activeFeatures,
         specifications: {
           storageCapacity: activeStorage,
@@ -514,9 +508,6 @@ export default function EditProductPage({ params }: EditProductProps) {
                   >
                     <option value="free-standing">Free Standing</option>
                     <option value="counter-top">Counter Top</option>
-                    <option value="in-wall">In wall</option>
-                    <option value="on-wall">On Wall</option>
-                    <option value="fountains">Fountains</option>
                   </select>
                 </div>
               </div>
@@ -531,7 +522,7 @@ export default function EditProductPage({ params }: EditProductProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                    Hero Banner (Link)
+                    Hero Background Image Link
                   </label>
                   <input
                     type="url"
@@ -786,45 +777,6 @@ export default function EditProductPage({ params }: EditProductProps) {
                   )}
                 </div>
               </div>
-              
-              {/* Select Hover Image */}
-              <div className="mt-6 border-t border-white/5 pt-6">
-                <label className="block text-sm text-gray-400 mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Select Hover Image <span className="text-xs text-gray-500 ml-2">(Image to display on mouse hover)</span>
-                </label>
-                <div className="flex flex-wrap gap-4">
-                  <label className="flex items-center gap-2 cursor-pointer group">
-                    <div className="relative flex items-center justify-center">
-                      <input
-                        type="radio"
-                        name="hoverImageIndex"
-                        checked={hoverImageIndex === null}
-                        onChange={() => { setHoverImageIndex(null); setIsDirty(true); }}
-                        className="peer sr-only"
-                      />
-                      <div className="w-4 h-4 rounded-full border border-white/20 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-colors"></div>
-                    </div>
-                    <span className="text-sm text-gray-400 group-hover:text-white transition-colors">None</span>
-                  </label>
-
-                  {images.map((img, idx) => (
-                    <label key={idx} className={`flex items-center gap-2 cursor-pointer group ${!img && "opacity-50 pointer-events-none"}`}>
-                      <div className="relative flex items-center justify-center">
-                        <input
-                          type="radio"
-                          name="hoverImageIndex"
-                          checked={hoverImageIndex === idx}
-                          onChange={() => { setHoverImageIndex(idx); setIsDirty(true); }}
-                          disabled={!img}
-                          className="peer sr-only"
-                        />
-                        <div className="w-4 h-4 rounded-full border border-white/20 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-colors"></div>
-                      </div>
-                      <span className="text-sm text-gray-400 group-hover:text-white transition-colors">Image {idx + 1}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
 
               {/* Features List Section */}
               <div className="mb-8">
@@ -885,18 +837,9 @@ export default function EditProductPage({ params }: EditProductProps) {
                             placeholder="Feature Description"
                             value={f.description}
                             onChange={(e) => handleFeatureChange(idx, "description", e.target.value)}
-                            className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-2 outline-none focus:border-white/20 transition-all text-xs rounded-none resize-none mb-2"
+                            className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-2 outline-none focus:border-white/20 transition-all text-xs rounded-none resize-none"
                             style={{ fontFamily: "'Manrope', sans-serif", cursor: "text" }}
                           />
-                          <label className="flex items-center gap-2 text-xs text-gray-400 cursor-pointer">
-                            <input
-                              type="checkbox"
-                              checked={!!f.isDisplayed}
-                              onChange={(e) => handleFeatureChange(idx, "isDisplayed", e.target.checked)}
-                              className="bg-[#051424] border border-white/10 accent-[#0081C9]"
-                            />
-                            Display this feature on product page
-                          </label>
                         </div>
                       </div>
                       <button
@@ -945,7 +888,44 @@ export default function EditProductPage({ params }: EditProductProps) {
                   </div>
                 </div>
 
-              {/* Technical Datasheet & Description sections removed */}
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Technical Datasheet PDF URL
+                  </label>
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      placeholder="e.g. /datasheet-download.pdf or https://..."
+                      value={datasheetPdf}
+                      onChange={(e) => handleFieldChange(setDatasheetPdf, e.target.value)}
+                      className="flex-1 bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
+                      style={{ fontFamily: "'Manrope', sans-serif" }}
+                    />
+                    <label className="bg-[#104e7a]/40 hover:bg-[#104e7a]/60 text-white px-4 py-3 text-xs font-semibold cursor-pointer transition-all flex items-center justify-center min-w-[100px] select-none">
+                      {uploadingDatasheet ? "Uploading..." : "Upload File"}
+                      <input
+                        type="file"
+                        accept="application/pdf"
+                        onChange={(e) => handleFileUpload(e, "datasheet")}
+                        className="hidden"
+                      />
+                    </label>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    Product Description (CMS only)
+                  </label>
+                  <textarea
+                    rows={3}
+                    placeholder="Enter product description here..."
+                    value={description}
+                    onChange={(e) => handleFieldChange(setDescription, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none resize-y"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  />
+                </div>
               </div>
 
               {/* Specifications Subsections */}

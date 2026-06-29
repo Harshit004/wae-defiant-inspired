@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     const dbState = readDB();
 
     if (action === 'create') {
-      const { id: inputId, name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants, displayImageIndex, hoverImageIndex, displayOrder } = productData;
+      const { id: inputId, name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants, displayImageIndex } = productData;
       
       const generatedId = inputId
         ? inputId.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -72,10 +72,9 @@ export async function POST(request: Request) {
         showcaseCtaText: showcaseCtaText || '',
         showcaseCtaLink: showcaseCtaLink || '',
         brochurePdf: brochurePdf || '',
+        datasheetPdf: datasheetPdf || '',
         variants: variants || { hot: true, cold: true, ambient: true },
-        displayImageIndex: displayImageIndex !== undefined ? displayImageIndex : 0,
-        hoverImageIndex: hoverImageIndex !== undefined ? hoverImageIndex : null,
-        displayOrder: displayOrder !== undefined ? displayOrder : parentCategory.products.length
+        displayImageIndex: displayImageIndex !== undefined ? displayImageIndex : 0
       };
 
       dbState.products[generatedId] = newProductDetails;
@@ -88,9 +87,7 @@ export async function POST(request: Request) {
         id: generatedId,
         name,
         category: subCategory || 'free-standing',
-        image: displayImageUrl,
-        hoverImage: hoverImageIndex !== null && hoverImageIndex !== undefined && images && images[hoverImageIndex] ? images[hoverImageIndex] : null,
-        displayOrder: newProductDetails.displayOrder
+        image: displayImageUrl
       };
       parentCategory.products.push(categoryProduct);
 
@@ -103,7 +100,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: false, message: 'Product not found.' }, { status: 404 });
       }
 
-      const { name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants, displayImageIndex, hoverImageIndex, displayOrder } = productData;
+      const { name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants, displayImageIndex } = productData;
       const existing = dbState.products[id];
 
       const parentCategory = dbState.categories[categoryId];
@@ -133,10 +130,9 @@ export async function POST(request: Request) {
         showcaseCtaText: showcaseCtaText !== undefined ? showcaseCtaText : existing.showcaseCtaText,
         showcaseCtaLink: showcaseCtaLink !== undefined ? showcaseCtaLink : existing.showcaseCtaLink,
         brochurePdf: brochurePdf !== undefined ? brochurePdf : existing.brochurePdf,
+        datasheetPdf: datasheetPdf !== undefined ? datasheetPdf : existing.datasheetPdf,
         variants: variants || existing.variants || { hot: true, cold: true, ambient: true },
-        displayImageIndex: displayImageIndex !== undefined ? displayImageIndex : (existing.displayImageIndex !== undefined ? existing.displayImageIndex : 0),
-        hoverImageIndex: hoverImageIndex !== undefined ? hoverImageIndex : (existing.hoverImageIndex !== undefined ? existing.hoverImageIndex : null),
-        displayOrder: displayOrder !== undefined ? displayOrder : (existing.displayOrder !== undefined ? existing.displayOrder : parentCategory.products.length)
+        displayImageIndex: displayImageIndex !== undefined ? displayImageIndex : (existing.displayImageIndex !== undefined ? existing.displayImageIndex : 0)
       };
 
       // Update/Move category placement
@@ -150,25 +146,15 @@ export async function POST(request: Request) {
       // Add it to the target category
       const chosenIndex = displayImageIndex !== undefined ? displayImageIndex : (existing.displayImageIndex !== undefined ? existing.displayImageIndex : 0);
       const activeImages = images || existing.images || [];
-      const newDisplayImageUrl = activeImages[chosenIndex] ? activeImages[chosenIndex] : (activeImages[0] || '');
-      const newHoverIndex = dbState.products[id].hoverImageIndex;
-      const newHoverImageUrl = newHoverIndex !== null && newHoverIndex !== undefined && activeImages && activeImages[newHoverIndex] ? activeImages[newHoverIndex] : null;
+      const displayImageUrl = activeImages[chosenIndex] ? activeImages[chosenIndex] : (activeImages[0] || '');
 
       const categoryProduct: Product = {
         id,
         name: name || existing.name,
         category: subCategory || 'free-standing',
-        image: newDisplayImageUrl,
-        hoverImage: newHoverImageUrl,
-        displayOrder: dbState.products[id].displayOrder
+        image: displayImageUrl
       };
-      
-      const existingIdx = parentCategory.products.findIndex(p => p.id === id);
-      if (existingIdx >= 0) {
-        parentCategory.products[existingIdx] = categoryProduct;
-      } else {
-        parentCategory.products.push(categoryProduct);
-      }
+      parentCategory.products.push(categoryProduct);
 
       await writeDB(dbState);
       return NextResponse.json({ success: true, product: dbState.products[id] });
@@ -191,36 +177,6 @@ export async function POST(request: Request) {
 
       await writeDB(dbState);
       return NextResponse.json({ success: true, message: 'Product deleted successfully.' });
-    }
-
-    if (action === 'reorder') {
-      const { reorderedProducts } = body;
-      if (!Array.isArray(reorderedProducts)) {
-        return NextResponse.json({ success: false, message: 'Invalid reorder data.' }, { status: 400 });
-      }
-
-      // reorderedProducts is an array of { id: string, displayOrder: number }
-      // Update both PRODUCTS and the CATEGORIES products list
-      reorderedProducts.forEach((rp) => {
-        if (dbState.products[rp.id]) {
-          dbState.products[rp.id].displayOrder = rp.displayOrder;
-        }
-
-        Object.keys(dbState.categories).forEach((catKey) => {
-          const pIdx = dbState.categories[catKey].products.findIndex((p) => p.id === rp.id);
-          if (pIdx >= 0) {
-            dbState.categories[catKey].products[pIdx].displayOrder = rp.displayOrder;
-          }
-        });
-      });
-
-      // Sort category product arrays explicitly
-      Object.keys(dbState.categories).forEach((catKey) => {
-        dbState.categories[catKey].products.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
-      });
-
-      await writeDB(dbState);
-      return NextResponse.json({ success: true, message: 'Products reordered successfully.' });
     }
 
     return NextResponse.json({ success: false, message: 'Invalid action.' }, { status: 400 });
