@@ -613,69 +613,80 @@ export default function Home() {
           <h2 style={{
             fontFamily: "'Inter Tight', sans-serif",
             fontWeight: 400,
-            fontSize: "32px",
+            fontSize: "2.77vw",
+            lineHeight: "120%",
             color: "#FFFFFF",
-            marginBottom: "60px"
+            verticalAlign: "middle",
+            marginBottom: "5vw"
           }}>We are helping clients</h2>
 
-          <div className="grid grid-cols-3">
-            <div className="flex flex-col border-r border-white/20 pr-[40px]">
-              <div className="w-full h-[240px] mb-[24px]">
+          <div className="grid grid-cols-3 gap-[2.29vw]">
+            <div className="flex flex-col border-l border-white/20 pl-[1.52vw]">
+              <div className="w-full aspect-[360/224] mb-[1.38vw]">
                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/21779bba-89da-415d-af81-d015add0cc00/public" alt="Reduce Scope 3" className="w-full h-full object-cover" />
               </div>
               <h3 style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: "20px",
+                fontSize: "1.66vw",
+                lineHeight: "100%",
                 color: "#FFFFFF",
-                marginBottom: "16px"
+                verticalAlign: "middle",
+                marginBottom: "0.83vw"
               }}>Reduce Scope 3 Emissions</h3>
               <p style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: "14px",
-                lineHeight: "140%",
-                color: "#FFFFFF80"
+                fontSize: "0.97vw",
+                lineHeight: "130%",
+                color: "#AEAEAE",
+                verticalAlign: "middle"
               }}>The greatest emissions are often the ones hidden in everyday operations. Rethink how water is sourced, transported, and consumed to reduce indirect emissions where they matter most and turn sustainability into measurable business impact.</p>
             </div>
 
-            <div className="flex flex-col border-r border-white/20 px-[40px]">
-              <div className="w-full h-[240px] mb-[24px]">
+            <div className="flex flex-col border-l border-white/20 pl-[1.52vw]">
+              <div className="w-full aspect-[360/224] mb-[1.38vw]">
                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce4e4b96-60aa-4973-1d75-80165114a800/public" alt="Enable Plastic-Free Hydration" className="w-full h-full object-cover" />
               </div>
               <h3 style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: "20px",
+                fontSize: "1.66vw",
+                lineHeight: "100%",
                 color: "#FFFFFF",
-                marginBottom: "16px"
+                verticalAlign: "middle",
+                marginBottom: "0.83vw"
               }}>Enable Plastic-Free Hydration</h3>
               <p style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: "14px",
-                lineHeight: "140%",
-                color: "#FFFFFF80"
+                fontSize: "0.97vw",
+                lineHeight: "130%",
+                color: "#AEAEAE",
+                verticalAlign: "middle"
               }}>Every refill is a choice against single-use plastic. Replace a disposable habit with a lasting solution that protects natural resources, keeps plastic out of the waste stream, and redefines the way people experience drinking water.</p>
             </div>
 
-            <div className="flex flex-col pl-[40px]">
-              <div className="w-full h-[240px] mb-[24px]">
+            <div className="flex flex-col border-l border-white/20 pl-[1.52vw]">
+              <div className="w-full aspect-[360/224] mb-[1.38vw]">
                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f886425-f3b6-4b5a-de68-f75fd3459500/public" alt="Advance the Net-Zero Transition" className="w-full h-full object-cover" />
               </div>
               <h3 style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: "20px",
+                fontSize: "1.66vw",
+                lineHeight: "100%",
                 color: "#FFFFFF",
-                marginBottom: "16px"
+                verticalAlign: "middle",
+                marginBottom: "0.83vw"
               }}>Advance the Net-Zero Transition</h3>
               <p style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: "14px",
-                lineHeight: "140%",
-                color: "#FFFFFF80"
+                fontSize: "0.97vw",
+                lineHeight: "130%",
+                color: "#AEAEAE",
+                verticalAlign: "middle"
               }}>Net-zero isn't achieved through a single initiative but through thousands of smarter decisions. Transform water infrastructure into a climate-positive asset that reduces environmental impact while supporting long-term sustainability and ESG ambitions.</p>
             </div>
           </div>
