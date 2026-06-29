@@ -483,7 +483,7 @@ export default function Home() {
                     marginBottom: "0.55vw"
                   }}>Water use</h4>
                   <p style={{
-                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
+                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.04vw",
                     color: "#FFFFFF80",
                     lineHeight: "normal"
                   }}>50% rise in corporate water withdrawals globally</p>
@@ -510,7 +510,7 @@ export default function Home() {
                     marginBottom: "0.55vw"
                   }}>Financial exposure</h4>
                   <p style={{
-                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
+                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.04vw",
                     color: "#FFFFFF80",
                     lineHeight: "normal"
                   }}>More than Rs 36 lakh crore in water-related financial risk reported by companies worldwide</p>
@@ -537,7 +537,7 @@ export default function Home() {
                     marginBottom: "0.55vw"
                   }}>Revenue at risk</h4>
                   <p style={{
-                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
+                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.04vw",
                     color: "#FFFFFF80",
                     lineHeight: "normal"
                   }}>Nearly Rs 8.5 lakh crore in business revenue currently at risk from water- related disruption</p>
@@ -563,7 +563,7 @@ export default function Home() {
                     marginBottom: "0.55vw"
                   }}>Global stress</h4>
                   <p style={{
-                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
+                    fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.04vw",
                     color: "#FFFFFF80",
                     lineHeight: "normal"
                   }}>50% rise in corporate water withdrawals globally</p>
