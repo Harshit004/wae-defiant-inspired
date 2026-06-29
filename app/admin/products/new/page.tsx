@@ -415,6 +415,7 @@ export default function NewProductPage() {
                   onChange={(e) => handleFieldChange(setSubCategory, e.target.value)}
                   className="w-full bg-[#051424] border border-white/10 text-white px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none cursor-pointer"
                   style={{ fontFamily: "'Manrope', sans-serif" }}
+                >
                   <option value="free-standing">Free Standing</option>
                   <option value="counter-top">Counter Top</option>
                   <option value="in-wall">In wall</option>
