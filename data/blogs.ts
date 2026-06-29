@@ -2428,7 +2428,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "id": "envisioning-sustainability-why-the-sdgs-are-the-world-s-shared-compass",
     "title": "Envisioning Sustainability: Why the SDGs Are the World's Shared Compass",
     "category": "Policy",
-    "description": "A Shared Blueprint: From No Poverty to Clean Water\n\nIn 2015, the United Nations adopted the 2030 Agenda for Sustainable Development, anchored by 17 Sustainable Development Goals (SDGs) that serve as a shared global blueprint to end poverty, protect the planet, and ensure prosperity for all. These goals are interdependent, interconnected, and universal, urging governments, businesses, and communities to collaborate in advancing equitable, inclusive, and sustainable progress.\n\nEach SDG offers a specific lens through which humanity can transform ambition into action, and collectively chart a course toward a just and resilient future.",
+    "description": "In 2015, the United Nations introduced the 2030 Agenda for Sustainable Development, built around 17 Sustainable Development Goals (SDGs). These interconnected goals provide a global framework to end poverty, protect the planet, and promote inclusive, sustainable prosperity through collective action by governments, businesses, and communities.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7f58fab7-beac-4b3b-952f-7c7db405d600/public",
     "writerId": "shambhavi",
     "readTime": "2 min read",
