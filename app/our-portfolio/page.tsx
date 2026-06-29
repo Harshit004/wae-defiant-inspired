@@ -12,7 +12,7 @@ import ContactSectionDark from "@/components/contact-section-dark"
 import { CATEGORIES } from "@/data/products"
 
 // Shared container class for consistent margins and max-width
-const containerClass = "mx-auto w-full max-w-[1440px] px-[140px]"
+const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
 
 /**
  * Animated counter component
@@ -325,8 +325,8 @@ export default function Home() {
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
                 fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                fontWeight: 500,
+                fontSize: "10px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}
@@ -360,8 +360,8 @@ export default function Home() {
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
                   fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                  fontWeight: 500,
+                  fontSize: "10px",
                   lineHeight: "100%",
                   color: "#ffffff",
                 }}
@@ -376,8 +376,8 @@ export default function Home() {
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
                   fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                  fontWeight: 500,
+                  fontSize: "10px",
                   lineHeight: "100%",
                   color: "#ffffff",
                   position: "relative",
@@ -395,8 +395,8 @@ export default function Home() {
                     className="pb-2 border-b border-white last:border-0"
                     style={{
                       fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                      fontWeight: 500,
+                      fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
@@ -434,8 +434,8 @@ export default function Home() {
                     className="pb-2 border-b border-white last:border-0"
                     style={{
                       fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                      fontWeight: 500,
+                      fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
@@ -588,8 +588,8 @@ export default function Home() {
                 width: "100%",
                 textAlign: "right",
                 fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                fontWeight: 500,
+                fontSize: "10px",
                 lineHeight: "105%",
                 letterSpacing: "0%",
                 color: "#FFFFFF66",
@@ -609,9 +609,11 @@ export default function Home() {
         <section style={{ background: "transparent", color: "#FFF", paddingBottom: "120px", position: "relative", zIndex: 1 }} className="w-full px-[7.5vw] mb-[1px]">
           {/* Section Header */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: "30px", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
-            <h2 style={{ fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px", letterSpacing: "0%", margin: 0 }}>
+            <h2 style={{
+              fontFamily: "\'Manrope\', sans-serif",
+              fontWeight: 500,
+              fontSize: "10px", letterSpacing: "0%", margin: 0
+            }}>
               Our product category
             </h2>
             {/* Search Bar */}
