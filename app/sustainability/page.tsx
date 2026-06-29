@@ -286,11 +286,11 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative flex flex-col items-center pb-[60px]"
+        className="w-full relative flex flex-col items-center"
       >
         {/* Adjusted spacing to accommodate the transparent header */}
         <div className={`${containerClass} -mt-[80px] pt-[80px]`}>
-            <div className="flex justify-between items-start pt-[60px] pb-[2.63vw]">
+            <div className="flex flex-col pt-[60px] pb-[2.63vw]">
                 <div className="w-1/2 pr-10">
                     <h1 style={{
                         fontFamily: "'Inter Tight', sans-serif",
@@ -306,30 +306,32 @@ export default function Home() {
                         Our responsibility
                     </h1>
                 </div>
-                <div className="w-[45%] flex flex-col justify-start pt-[1.5vw]">
-                    <p style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "1.11vw",
-                        lineHeight: "100%",
-                        letterSpacing: "0%",
-                        color: "#FFFFFF",
-                        marginBottom: "1.5vw",
-                        verticalAlign: "middle"
-                    }}>
-                        Sustainability is not a choice. It is a responsibility.
-                    </p>
-                    <p style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "1.11vw",
-                        lineHeight: "100%",
-                        letterSpacing: "0%",
-                        color: "#FFFFFF80",
-                        verticalAlign: "middle"
-                    }}>
-                        We help organizations reduce environmental impact, adopt ethical practices, and move towards regenerative business models that are better for business and better for the planet
-                    </p>
+                <div className="w-full flex justify-end">
+                    <div className="w-[39.58vw] flex flex-col justify-start">
+                        <p style={{
+                            fontFamily: "'Manrope', sans-serif",
+                            fontWeight: 400,
+                            fontSize: "1.11vw",
+                            lineHeight: "100%",
+                            letterSpacing: "0%",
+                            color: "#FFFFFF",
+                            marginBottom: "1.5vw",
+                            verticalAlign: "middle"
+                        }}>
+                            Sustainability is not a choice. It is a responsibility.
+                        </p>
+                        <p style={{
+                            fontFamily: "'Manrope', sans-serif",
+                            fontWeight: 400,
+                            fontSize: "1.11vw",
+                            lineHeight: "100%",
+                            letterSpacing: "0%",
+                            color: "#FFFFFF80",
+                            verticalAlign: "middle"
+                        }}>
+                            We help organizations reduce environmental impact, adopt ethical practices, and move towards regenerative business models that are better for business and better for the planet
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -383,7 +385,7 @@ export default function Home() {
       </section>
 
       {/* RESPONSIBILITY SECTION */}
-      <section className="w-full pt-[6.94vw] pb-[6.94vw] border-b border-white/20">
+      <section className="w-full pt-[4.72vw] pb-[4.72vw] border-b border-white/20">
         <div className={containerClass}>
             <div className="flex justify-between items-start">
                 <div className="w-[45%]">
@@ -424,7 +426,7 @@ export default function Home() {
       </section>
 
       {/* WHY IT MATTERS SECTION */}
-      <section className="w-full pt-[100px] pb-[100px] border-b border-white/20">
+      <section className="w-full pt-[4.72vw] pb-[4.72vw] border-b border-white/20">
         <div className={containerClass}>
             <div className="mb-[60px]">
                 <h2 style={{
@@ -572,7 +574,7 @@ export default function Home() {
       </section>
 
       {/* WE ARE HELPING CLIENTS */}
-      <section className="w-full pt-[100px] pb-[100px] border-b border-white/20">
+      <section className="w-full pt-[4.72vw] pb-[4.72vw] border-b border-white/20">
         <div className={containerClass}>
             <h2 style={{
                 fontFamily: "'Inter Tight', sans-serif",
@@ -647,7 +649,7 @@ export default function Home() {
       </section>
 
       {/* TRANSFORMATIONS SECTION */}
-      <section className="w-full pt-[100px] pb-[100px] border-b border-white/20">
+      <section className="w-full pt-[4.72vw] pb-[4.72vw] border-b border-white/20">
         <div className={containerClass}>
             <div className="flex items-stretch">
                 {/* Left Column */}
@@ -718,7 +720,7 @@ export default function Home() {
       </section>
 
       {/* EARTH SECTION */}
-      <section className="w-full pt-[100px] pb-[100px]">
+      <section className="w-full pt-[4.72vw] pb-[4.72vw]">
         <div className={containerClass}>
             <div className="w-full h-[500px] mb-[60px]">
                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/048c10f8-fc18-43ed-c62c-8658de2acf00/public" alt="Earth, Our Only Shareholder" className="w-full h-full object-cover" />
