@@ -137,17 +137,14 @@ export default function Home() {
         }}
       />
       {/* HEADER */}
-      <div className="mb-[70px]">
-        <Header />
-      </div>
+      <Header />
       {/* HERO SECTION */}
       <section
         id="hero"
         className="w-full relative flex flex-col items-center"
       >
-        {/* Adjusted spacing to accommodate the transparent header */}
-        <div className={`${containerClass} -mt-[80px] pt-[80px]`}>
-          <div className="flex flex-col pt-[60px] pb-[2.63vw]">
+        <div className={`${containerClass} pt-[240px]`}>
+          <div className="flex flex-col pb-[2.63vw]">
             <div className="w-1/2 pr-10">
               <h1 style={{
                 fontFamily: "'Inter Tight', sans-serif",
