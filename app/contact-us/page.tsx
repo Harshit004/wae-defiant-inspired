@@ -91,7 +91,7 @@ export default function ContactUsPage() {
       </div>
       {/* ── HERO + FORM SECTION ── */}
       {/* 77px gap after header */}
-      <section className="relative z-10 w-full" style={{ paddingTop: "77px", paddingBottom: "0" }}>
+      <section className="relative z-10 w-full" style={{ paddingTop: "clamp(180px, 16.3vw, 235px)", paddingBottom: "0" }}>
         <div className={containerClass}>
           {/* 2-col justify-between */}
           <div className="flex flex-row justify-between items-start">
