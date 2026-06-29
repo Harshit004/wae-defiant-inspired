@@ -187,7 +187,7 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ],
-    "featuredOnHomepage": false
+    "featuredOnHomepage": true
   },
   "industrial-revolution-to-the-carbon-age": {
     "id": "industrial-revolution-to-the-carbon-age",
