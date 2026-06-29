@@ -424,7 +424,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "id": "the-north-star-of-progress",
     "title": "The North Star of Progress: A Historical Lens on Climate Change and India's Sustainable Future",
     "category": "Policy",
-    "description": "In an era defined by climate volatility, rising inequalities, and fractured global priorities, sustainability as popularized by the United Nations Sustainable Development Goals (SDGs) stands as the most ambitious, unifying roadmap humanity has ever conceived. Launched in 2015, these 17 interconnected goals are not mere aspirations; they are a collective call to action through history that reimagines what progress means in the 21st century.\n\nThe SDG-aligned innovation, from the first UN Scientific Conference to the SDGs in 2015, offers a compass, a shared North Star, that helps us align our decisions with the long-term viability of our planet and people.\n\nMuch like ancient mariners navigating uncharted oceans with the North Star as their celestial constant, the SDGs illuminate a collective path forward, a visionary trajectory through uncertainty toward resilience, equity, and sustainability.",
+    "description": "In an era of climate change, social inequality, and global uncertainty, the United Nations Sustainable Development Goals (SDGs) provide a shared roadmap for a more sustainable future. Introduced in 2015, the 17 interconnected goals inspire governments, businesses, and communities to drive innovation, resilience, and inclusive growth while balancing environmental, social, and economic progress for generations to come.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/75104b88-7b75-4411-8640-43363ad62c00/public",
     "writerId": "shambhavi",
     "readTime": "3 min read",
