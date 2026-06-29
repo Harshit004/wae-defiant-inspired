@@ -114,30 +114,6 @@ const CountUp: FC<{ value: string; duration?: number }> = ({ value, duration = 2
 };
 
 export default function Home() {
-  const [headerHeight, setHeaderHeight] = useState(0)
-  const headerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const updateHeaderHeight = () => {
-      if (headerRef.current) {
-        setHeaderHeight(headerRef.current.clientHeight);
-      }
-    };
-    updateHeaderHeight();
-    window.addEventListener("resize", updateHeaderHeight);
-    return () => window.removeEventListener("resize", updateHeaderHeight);
-  }, []);
-
-  const productsItems = [
-    { text: "This is Us", href: "/this-is-us" },
-    { text: "Our Portfolio", href: "/our-portfolio" },
-    { text: "Reimagine Work", href: "/careers" },
-  ]
-  const blueprintItems = [
-    { text: "The Activist Co.", href: "/the-activist-co" },
-    { text: "Resources", href: "/resources" },
-    { text: "Blog", href: "/blogs" },
-  ]
 
   const brandLogos = [
     "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3f2f7aee-3341-40f0-83b0-9929fed77700/public",
