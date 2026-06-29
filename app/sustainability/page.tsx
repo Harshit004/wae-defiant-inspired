@@ -137,8 +137,9 @@ export default function Home() {
         }}
       />
       {/* HEADER */}
-      <Header />
-
+      <div className="mb-[70px]">
+        <Header />
+      </div>
       {/* HERO SECTION */}
       <section
         id="hero"
@@ -432,7 +433,7 @@ export default function Home() {
       </section>
       <div className="mx-[7.5vw] border-b border-white/20"></div>
 
-            {/* OUR RESPONSIBILITY SOLUTIONS */}
+      {/* OUR RESPONSIBILITY SOLUTIONS */}
       <section className="w-full pt-[6.38vw] pb-[6.38vw] flex flex-col items-end">
         <div className={containerClass}>
           <div className="flex flex-col items-end w-full">
@@ -553,7 +554,7 @@ export default function Home() {
       </section>
       <div className="mx-[7.5vw] border-b border-white/20"></div>
 
-            {/* TRANSFORMATIONS SECTION */}
+      {/* TRANSFORMATIONS SECTION */}
       <section className="w-full pt-[6.38vw] pb-[6.38vw]">
         <div className={containerClass}>
           <div className="flex items-stretch">
@@ -582,17 +583,33 @@ export default function Home() {
             <div className="w-[70%] pl-[3.47vw]">
               <div className="grid grid-cols-2 gap-x-[6.38vw] gap-y-[4.51vw]">
                 {/* Volume 1 */}
-                <div className="flex flex-col">
+                <div className="flex flex-col justify-between aspect-[362/391] w-full">  <div>
                   <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", marginBottom: "0.86vw", display: "block", lineHeight: "110%", verticalAlign: "middle" }}>Volume : 1</span>
                   <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "1.66vw", color: "#FFFFFF", marginBottom: "0.97vw", lineHeight: "normal", textTransform: "uppercase", verticalAlign: "middle" }}>Greener banking, better workplaces</h3>
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>How BFSI organizations ditched plastic water jars for a cleaner, safer alternative</p>
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>Banking offices run 12/6, and so did their plastic water jar problem-spills, hygiene concerns, and hundreds of jars piling up every month. By switching to stainless steel alternatives, BFSI offices cut plastic waste significantly, reduced water contamination risks, and gave employees a cleaner, more professional workspace.</p>
-                  <button className="text-white w-max text-[0.97vw] flex items-center gap-2 hover:opacity-80 transition-opacity" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                    Download report
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 11L11 1M11 1H2M11 1V10" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                  </button>
+                </div>
+                  <HoverButton variant="inverted">
+                    {(hovered) => (
+                      <>
+                        Download report
+                        <div className="relative inline-block w-[12px] h-[12px] ml-1">
+                          <img
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            className="w-full h-full object-contain absolute to left-0 pt-[1px]"
+                            style={{ opacity: hovered ? 0 : 1, transition: 'opacity 0.5s', filter: 'invert(1)' }}
+                          />
+                          <img
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
+                            className="w-full h-full object-contain absolute to left-0 pt-[1px]"
+                            style={{ opacity: hovered ? 1 : 0, transition: 'opacity 0.5s', filter: 'invert(1)' }}
+                          />
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
                 </div>
 
                 {/* Image */}
@@ -601,31 +618,63 @@ export default function Home() {
                 </div>
 
                 {/* Volume 2 */}
-                <div className="flex flex-col">
+                <div className="flex flex-col justify-between aspect-[362/391] w-full">  <div>
                   <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", marginBottom: "0.86vw", display: "block", lineHeight: "110%", verticalAlign: "middle" }}>Volume : 2</span>
                   <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "1.66vw", color: "#FFFFFF", marginBottom: "0.97vw", lineHeight: "normal", textTransform: "uppercase", verticalAlign: "middle" }}>Clean hydration for high performance it teams</h3>
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>How IT campuses moved away from plastic jars and never looked back.</p>
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>Large IT campuses consume enormous volumes of water daily. Plastic jars meant constant logistics, leakage, and avoidable plastic waste. Switching to in-situ dispensers simplified operations, eliminated single-use plastic from common areas, and gave teams access to hygienic, temperature consistent water throughout the day.</p>
-                  <button className="text-white w-max text-[0.97vw] flex items-center gap-2 hover:opacity-80 transition-opacity" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                    Download report
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 11L11 1M11 1H2M11 1V10" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                  </button>
+                </div>
+                  <HoverButton variant="inverted">
+                    {(hovered) => (
+                      <>
+                        Download report
+                        <div className="relative inline-block w-[12px] h-[12px] ml-1">
+                          <img
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            className="w-full h-full object-contain absolute to left-0 pt-[1px]"
+                            style={{ opacity: hovered ? 0 : 1, transition: 'opacity 0.5s', filter: 'invert(1)' }}
+                          />
+                          <img
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
+                            className="w-full h-full object-contain absolute to left-0 pt-[1px]"
+                            style={{ opacity: hovered ? 1 : 0, transition: 'opacity 0.5s', filter: 'invert(1)' }}
+                          />
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
                 </div>
 
                 {/* Volume 3 */}
-                <div className="flex flex-col">
+                <div className="flex flex-col justify-between aspect-[362/391] w-full">  <div>
                   <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", marginBottom: "0.86vw", display: "block", lineHeight: "110%", verticalAlign: "middle" }}>Volume : 3</span>
                   <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "1.66vw", color: "#FFFFFF", marginBottom: "0.97vw", lineHeight: "normal", textTransform: "uppercase", verticalAlign: "middle" }}>A Greener Stay for Every Guest</h3>
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>How hospitality brands elevated their sustainability commitment, one dispenser at a time</p>
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>In hospitality, every detail shapes the guest experience. Replacing plastic water bottles with sleek and clean branded glass bottled helped hotels reduce plastic footprint, cut recurring supply costs, and signal a genuine commitment to sustainability. Guests noticed, Staff appreciated the ease. And the numbers backed it up with lower operational costs and stronger sustainability ratings while enhancing brand perception across every guest interaction.</p>
-                  <button className="text-white w-max text-[0.97vw] flex items-center gap-2 hover:opacity-80 transition-opacity" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                    Download report
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 11L11 1M11 1H2M11 1V10" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                  </button>
+                </div>
+                  <HoverButton variant="inverted">
+                    {(hovered) => (
+                      <>
+                        Download report
+                        <div className="relative inline-block w-[12px] h-[12px] ml-1">
+                          <img
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            className="w-full h-full object-contain absolute to left-0 pt-[1px]"
+                            style={{ opacity: hovered ? 0 : 1, transition: 'opacity 0.5s', filter: 'invert(1)' }}
+                          />
+                          <img
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
+                            className="w-full h-full object-contain absolute to left-0 pt-[1px]"
+                            style={{ opacity: hovered ? 1 : 0, transition: 'opacity 0.5s', filter: 'invert(1)' }}
+                          />
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
                 </div>
 
               </div>
@@ -678,18 +727,33 @@ export default function Home() {
               }}>
                 Explore them to see how we're making a positive impact on the environment, society & governance.
               </p>
-              <button className="text-white w-max text-[0.97vw] flex items-center gap-2 hover:opacity-80 transition-opacity" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                Download report
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 11L11 1M11 1H2M11 1V10" stroke="currentColor" strokeWidth="1.5"/>
-                </svg>
-              </button>
+              <HoverButton variant="inverted">
+                {(hovered) => (
+                  <>
+                    Download report
+                    <div className="relative inline-block w-[12px] h-[12px] ml-1">
+                      <img
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                        alt="icon default"
+                        className="w-full h-full object-contain absolute to left-0 pt-[1px]"
+                        style={{ opacity: hovered ? 0 : 1, transition: 'opacity 0.5s', filter: 'invert(1)' }}
+                      />
+                      <img
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                        alt="icon hover"
+                        className="w-full h-full object-contain absolute to left-0 pt-[1px]"
+                        style={{ opacity: hovered ? 1 : 0, transition: 'opacity 0.5s', filter: 'invert(1)' }}
+                      />
+                    </div>
+                  </>
+                )}
+              </HoverButton>
             </div>
           </div>
         </div>
       </section>
 
-{/* FOOTER */}
+      {/* FOOTER */}
       <Footer />
 
       {/* INLINE CSS for animations */}
