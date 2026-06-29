@@ -35,7 +35,7 @@ function NewsCard({ imageUrl, title, description, description2, date, imageHeigh
                 fontWeight: 500,
                 fontSize: "18px",
                 lineHeight: "120%",
-                color: "#000000",
+                color: "#FFFFFF",
               }}
             >
               {title}
@@ -50,7 +50,7 @@ function NewsCard({ imageUrl, title, description, description2, date, imageHeigh
                 fontSize: "14px",
                 lineHeight: "130%",
                 letterSpacing: "0%",
-                color: "#000000",
+                color: "#FFFFFF",
               }}
             >
               {description}
@@ -64,7 +64,7 @@ function NewsCard({ imageUrl, title, description, description2, date, imageHeigh
                   fontWeight: 400,
                   fontSize: "14px",
                   lineHeight: "100%",
-                  color: "#00000099",
+                  color: "#FFFFFF99",
                 }}
               >
                 {date}
@@ -75,7 +75,7 @@ function NewsCard({ imageUrl, title, description, description2, date, imageHeigh
                   fontWeight: 500,
                   fontSize: "14px",
                   lineHeight: "24px",
-                  color: "#000000",
+                  color: "#FFFFFF",
                   textDecoration: "underline",
                   textDecorationStyle: "solid",
                 }}

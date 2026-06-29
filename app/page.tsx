@@ -1423,7 +1423,7 @@ export default function Home() {
               Stay informed with our latest media coverage and announcements
             </h2>
             <div className="flex-shrink-0">
-              <HoverButton href="/media-and-updates" theme="transparent-white-black-hover">
+              <HoverButton href="/news-and-updates" theme="transparent-white-black-hover">
                 {(hovered) => (
                   <>
                     Know More
