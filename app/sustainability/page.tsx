@@ -286,83 +286,89 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative flex flex-col items-center pb-[100px]"
+        className="w-full relative flex flex-col items-center pb-[60px]"
       >
         {/* Adjusted spacing to accommodate the transparent header */}
         <div className={`${containerClass} -mt-[80px] pt-[80px]`}>
-            <div className="flex justify-between items-start pt-[60px] pb-[80px]">
+            <div className="flex justify-between items-start pt-[60px] pb-[2.63vw]">
                 <div className="w-1/2 pr-10">
                     <h1 style={{
                         fontFamily: "'Inter Tight', sans-serif",
                         fontWeight: 400,
-                        fontSize: "64px",
-                        lineHeight: "110%",
-                        letterSpacing: "-0.02em",
+                        fontSize: "4.16vw",
+                        lineHeight: "130%",
+                        letterSpacing: "0%",
                         color: "#FFFFFF",
                         margin: 0,
+                        textTransform: "uppercase",
+                        verticalAlign: "middle"
                     }}>
-                        Our planet,<br />
-                        Our responsibility
+                        OUR PLANET,<br />
+                        OUR RESPONSIBILITY
                     </h1>
                 </div>
                 <div className="w-[45%] flex flex-col justify-end pt-[100px]">
                     <p style={{
-                        fontFamily: "'Inter Tight', sans-serif",
+                        fontFamily: "'Manrope', sans-serif",
                         fontWeight: 400,
-                        fontSize: "16px",
-                        lineHeight: "140%",
+                        fontSize: "1.11vw",
+                        lineHeight: "100%",
                         letterSpacing: "0%",
                         color: "#FFFFFF",
-                        marginBottom: "32px",
+                        marginBottom: "1.5vw",
+                        verticalAlign: "middle"
                     }}>
                         Sustainability is not a choice. It is a responsibility.
                     </p>
                     <p style={{
-                        fontFamily: "'Inter Tight', sans-serif",
+                        fontFamily: "'Manrope', sans-serif",
                         fontWeight: 400,
-                        fontSize: "16px",
-                        lineHeight: "140%",
+                        fontSize: "1.11vw",
+                        lineHeight: "100%",
                         letterSpacing: "0%",
                         color: "#FFFFFF80",
+                        verticalAlign: "middle"
                     }}>
                         We help organizations reduce environmental impact, adopt ethical practices, and move towards regenerative business models that are better for business and better for the planet
                     </p>
                 </div>
             </div>
-        </div>
 
-        {/* Hero Video inserted into the layout */}
-        <div className="w-full flex justify-center" style={{ padding: "0 40px" }}>
-             <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                className="w-full h-auto object-cover bg-gray-900"
-                style={{ aspectRatio: "16/9", maxHeight: "80vh" }}
-             >
-                 <source src="/11977161_1920_1080_30fps.mp4" type="video/mp4" />
-                 Your browser does not support the video tag.
-             </video>
-        </div>
-      </section>
+            {/* Hero Video inserted into the layout */}
+            <div className="w-full flex justify-center pb-[2.08vw]">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="w-full h-auto object-cover bg-gray-900"
+                    style={{ aspectRatio: "16/9", maxHeight: "80vh" }}
+                >
+                    <source src="/11977161_1920_1080_30fps.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
 
-      {/* CLIENTS STRIP WITH MARQUEE */}
-      <section className="w-full border-b border-white/20 pt-[60px] pb-[60px]">
-        <div className={containerClass}>
-            <div className="flex items-center">
-                <div className="w-[200px] shrink-0 border-r border-white/20">
+            {/* Horizontal Divider */}
+            <div className="w-full h-[1px] bg-white/20 mb-[4.72vw]"></div>
+
+            {/* CLIENTS STRIP WITH MARQUEE */}
+            <div className="flex items-center w-full">
+                <div className="shrink-0 flex items-center pr-[4.09vw] border-r border-white/20 py-2">
                     <span style={{
                         fontFamily: "'Inter Tight', sans-serif",
                         fontWeight: 400,
-                        fontSize: "16px",
-                        color: "#FFFFFF"
+                        fontSize: "1.25vw",
+                        lineHeight: "100%",
+                        letterSpacing: "0%",
+                        color: "#FFFFFF",
+                        verticalAlign: "middle"
                     }}>Our Clients</span>
                 </div>
-                {/* Marquee constrained within this flex item. Gap adjusted to fit ~5 logos in the remaining width */}
-                <div className="marquee-container relative flex-1 overflow-hidden ml-[60px]">
-                    <div className="marquee-content flex items-center" style={{ gap: "80px" }}>
+                {/* Marquee constrained within this flex item */}
+                <div className="marquee-container relative flex-1 overflow-hidden pl-[4.16vw]">
+                    <div className="marquee-content flex items-center" style={{ gap: "5.55vw" }}>
                         {[...brandLogos, ...brandLogos, ...brandLogos].map((logo, index) => (
                         <div key={index} className="flex-shrink-0 flex items-center justify-center w-[120px]">
                             <Image
