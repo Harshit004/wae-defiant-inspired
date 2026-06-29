@@ -4,10 +4,11 @@ export interface Enquiry {
   companyName: string;
   email: string;
   phone: string;
+  city?: string;
   pageLink: string;
   createdAt: string;
   message?: string;
-  type?: 'product' | 'general';
+  type?: 'product' | 'general' | 'contact-us';
 }
 
 export const ENQUIRIES: Record<string, Enquiry> = {
@@ -51,5 +52,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://wae-ltd.vercel.app/product-description-page?product=plusultra",
     "type": "product",
     "createdAt": "2026-06-28T21:52:12.970Z"
+  },
+  "4214c77a-0267-4a33-918d-423bf5010874": {
+    "id": "4214c77a-0267-4a33-918d-423bf5010874",
+    "fullName": "Test",
+    "companyName": "Test company",
+    "email": "test@mail.com",
+    "phone": "9999999990",
+    "city": "MX-CY",
+    "pageLink": "https://wae-ltd.vercel.app/contact-us",
+    "message": "Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS. Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS. Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS. Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS. Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS. Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS.",
+    "type": "contact-us",
+    "createdAt": "2026-06-29T23:01:50.742Z"
   }
 };
