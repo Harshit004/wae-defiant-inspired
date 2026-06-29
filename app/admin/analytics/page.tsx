@@ -84,7 +84,7 @@ export default function AnalyticsDashboard() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="flex items-center gap-4">
-            <Link href="/admin" className="p-2.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all duration-300 group">
+            <Link href="/admin/dashboard" className="p-2.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all duration-300 group">
               <ArrowLeft className="w-5 h-5 text-white/70 group-hover:text-white transition-colors" />
             </Link>
             <div>
