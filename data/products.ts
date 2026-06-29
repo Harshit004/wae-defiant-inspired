@@ -190,7 +190,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
       {
         "id": "yami",
         "name": "YAMI",
-        "category": "fountains",
+        "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ffc77af9-3916-4e22-5133-db9d53a5dd00/public"
       },
       {

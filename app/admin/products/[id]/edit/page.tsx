@@ -514,6 +514,9 @@ export default function EditProductPage({ params }: EditProductProps) {
                   >
                     <option value="free-standing">Free Standing</option>
                     <option value="counter-top">Counter Top</option>
+                    <option value="in-wall">In wall</option>
+                    <option value="on-wall">On Wall</option>
+                    <option value="fountains">Fountains</option>
                   </select>
                 </div>
               </div>
