@@ -463,9 +463,9 @@ export default function Home() {
             <div className="w-[4.58vw] shrink-0"></div>
 
             {/* Right side stats */}
-            <div className="w-[41.52vw] flex flex-col justify-between">
+            <div className="w-[41.52vw] flex flex-col">
               {/* Stat 1 */}
-              <div className="flex items-center border-b border-white/20 pb-[30px] pt-[10px]">
+              <div className="flex-1 flex items-center border-b border-white/20">
                 <div className="flex-1">
                   <span style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -474,7 +474,7 @@ export default function Home() {
                     color: "#FFFFFF"
                   }}><CountUp value="50" />%</span>
                 </div>
-                <div className="w-[20vw] shrink-0 pl-[1.38vw]">
+                <div className="w-[19.44vw] shrink-0 pl-[1.38vw]">
                   <h4 style={{
                     fontFamily: "\'Manrope\', sans-serif",
                     fontWeight: 500,
@@ -485,13 +485,13 @@ export default function Home() {
                   <p style={{
                     fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
                     color: "#FFFFFF80",
-                    lineHeight: "130%"
-                  }}>50% rise in corporate water<br />withdrawals globally</p>
+                    lineHeight: "normal"
+                  }}>50% rise in corporate water withdrawals globally</p>
                 </div>
               </div>
 
               {/* Stat 2 */}
-              <div className="flex items-center border-b border-white/20 pb-[30px] pt-[30px]">
+              <div className="flex-1 flex items-center border-b border-white/20">
                 <div className="flex-1">
                   <span style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -501,7 +501,7 @@ export default function Home() {
                     whiteSpace: "nowrap"
                   }}>₹<CountUp value="36" />L cr +</span>
                 </div>
-                <div className="w-[20vw] shrink-0 pl-[1.38vw]">
+                <div className="w-[19.44vw] shrink-0 pl-[1.38vw]">
                   <h4 style={{
                     fontFamily: "\'Manrope\', sans-serif",
                     fontWeight: 500,
@@ -512,13 +512,13 @@ export default function Home() {
                   <p style={{
                     fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
                     color: "#FFFFFF80",
-                    lineHeight: "130%"
-                  }}>More than Rs 36 lakh crore in<br />water-related financial risk reported<br />by companies worldwide</p>
+                    lineHeight: "normal"
+                  }}>More than Rs 36 lakh crore in water-related financial risk reported by companies worldwide</p>
                 </div>
               </div>
 
               {/* Stat 3 */}
-              <div className="flex items-center border-b border-white/20 pb-[30px] pt-[30px]">
+              <div className="flex-1 flex items-center border-b border-white/20">
                 <div className="flex-1">
                   <span style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -528,7 +528,7 @@ export default function Home() {
                     whiteSpace: "nowrap"
                   }}>₹<CountUp value="8.5" />L cr</span>
                 </div>
-                <div className="w-[20vw] shrink-0 pl-[1.38vw]">
+                <div className="w-[19.44vw] shrink-0 pl-[1.38vw]">
                   <h4 style={{
                     fontFamily: "\'Manrope\', sans-serif",
                     fontWeight: 500,
@@ -539,13 +539,13 @@ export default function Home() {
                   <p style={{
                     fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
                     color: "#FFFFFF80",
-                    lineHeight: "130%"
-                  }}>Nearly Rs 8.5 lakh crore in business<br />revenue currently at risk from water-<br />related disruption</p>
+                    lineHeight: "normal"
+                  }}>Nearly Rs 8.5 lakh crore in business revenue currently at risk from water- related disruption</p>
                 </div>
               </div>
 
               {/* Stat 4 */}
-              <div className="flex items-center pt-[30px] pb-[10px]">
+              <div className="flex-1 flex items-center">
                 <div className="flex-1">
                   <span style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -554,7 +554,7 @@ export default function Home() {
                     color: "#FFFFFF"
                   }}><CountUp value="67" />%</span>
                 </div>
-                <div className="w-[20vw] shrink-0 pl-[1.38vw]">
+                <div className="w-[19.44vw] shrink-0 pl-[1.38vw]">
                   <h4 style={{
                     fontFamily: "\'Manrope\', sans-serif",
                     fontWeight: 500,
@@ -565,8 +565,8 @@ export default function Home() {
                   <p style={{
                     fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: "1.25vw",
                     color: "#FFFFFF80",
-                    lineHeight: "130%"
-                  }}>50% rise in corporate water<br />withdrawals globally</p>
+                    lineHeight: "normal"
+                  }}>50% rise in corporate water withdrawals globally</p>
                 </div>
               </div>
             </div>
