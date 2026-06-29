@@ -614,7 +614,7 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ],
-    "featuredOnHomepage": true
+    "featuredOnHomepage": false
   },
   "the-great-smog-of-london-and-the-birth-of-environmental-policy": {
     "id": "the-great-smog-of-london-and-the-birth-of-environmental-policy",
