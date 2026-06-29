@@ -186,7 +186,8 @@ export const BLOGS: Record<string, BlogPost> = {
           "text": "As the world now looks towards COP29 and beyond, the story is still being written. The question is: will it be one of redemption, or regret?"
         }
       ]
-    ]
+    ],
+    "featuredOnHomepage": true
   },
   "industrial-revolution-to-the-carbon-age": {
     "id": "industrial-revolution-to-the-carbon-age",
