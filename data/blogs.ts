@@ -612,7 +612,8 @@ export const BLOGS: Record<string, BlogPost> = {
           "text": "And that story is just beginning."
         }
       ]
-    ]
+    ],
+    "featuredOnHomepage": true
   },
   "the-great-smog-of-london-and-the-birth-of-environmental-policy": {
     "id": "the-great-smog-of-london-and-the-birth-of-environmental-policy",
