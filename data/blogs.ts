@@ -639,16 +639,20 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "The conditions that created this catastrophe had been years in the making. Post-war Britain ran on coal, the cheaper the better. In thousands of homes, families shovelled sulphur-rich “nutty slack” into their hearths to fend off the cold. Power stations ringed the city, belching smoke, while the once-clean electric tram system had been replaced with diesel buses. All of this was routine   until weather conspired against them."
-        }
-      ],
-      [
+        },
         {
           "type": "paragraph",
           "text": "That December, a high-pressure system stalled over southern England, creating a temperature inversion. Instead of rising and dispersing, smoke and sulphur dioxide were trapped close to the ground, pressed down over London like a lid. The city had, in effect, built itself a gas chamber."
         },
         {
           "type": "paragraph",
-          "text": "Modern reconstructions show just how toxic the air became. Black smoke concentrations surged to over 4,000 micrograms per cubic meter, more than 200 times today’s recommended safe limit. Sulphur dioxide levels, normally 0.1 parts per million, climbed more than tenfold. In the damp fog, chemical reactions converted sulphur dioxide into droplets of sulphuric acid, which clung to soot particles and entered lungs with every breath."
+          "text": "Modern reconstructions show just how toxic the air became. Black smoke concentrations surged to over 4,000 micrograms per cubic meter, more than 200 times today’s recommended safe limit. Sulphur dioxide levels, normally 0.1 parts per million"
+        }
+      ],
+      [
+        {
+          "type": "paragraph",
+          "text": "climbed more than tenfold. In the damp fog, chemical reactions converted sulphur dioxide into droplets of sulphuric acid, which clung to soot particles and entered lungs with every breath."
         },
         {
           "type": "paragraph",
@@ -661,16 +665,20 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "The victims were not numbers on a page. They were elderly pensioners warming themselves with cheap coal, infants whose lungs could not withstand the acidic air, workers who had survived the Blitz only to be felled by smoke in peacetime. In five days, the smog had killed more Londoners than the worst weeks of wartime bombing."
-        }
-      ],
-      [
+        },
         {
           "type": "heading",
           "text": "From Tragedy to Transformation"
         },
         {
           "type": "paragraph",
-          "text": "The tragedy jolted Britain awake. For generations, smoke-filled skies had been seen as the cost of progress   even a badge of industrial pride. London’s fog was romanticized in art and literature; foreigners expected to find it, as much a part of the city as Big Ben. But the Great Smog shattered that illusion. Smoke was no longer quaint; it was deadly."
+          "text": "The tragedy jolted Britain awake. For generations, smoke-filled skies had been seen as the cost of progress   even a badge of industrial pride. London’s fog was romanticized in art and literature; foreigners expected to find it, as much a part of the city as Big Ben"
+        }
+      ],
+      [
+        {
+          "type": "paragraph",
+          "text": "But the Great Smog shattered that illusion. Smoke was no longer quaint; it was deadly."
         },
         {
           "type": "paragraph",
