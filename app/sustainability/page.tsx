@@ -57,9 +57,9 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, variant = "default"
   );
 
   return href ? (
-    href.startsWith('#') ? ( 
+    href.startsWith('#') ? (
       <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }}>{buttonContent}</a>
-    ) : ( 
+    ) : (
       <Link href={href} className="contents">{buttonContent}</Link>
     )
   ) : buttonContent;
@@ -160,16 +160,16 @@ export default function Home() {
         }}
       />
       {/* HEADER */}
-      <div> 
+      <div>
         <header ref={headerRef} className={`w-full bg-transparent text-white relative z-10 pb-5`}>
-          <div className={containerClass}> 
+          <div className={containerClass}>
             {/* Top Row: Navigation */}
             <div
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
                 fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                fontWeight: 500,
+                fontSize: "10px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}
@@ -204,8 +204,8 @@ export default function Home() {
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
                   fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                  fontWeight: 500,
+                  fontSize: "10px",
                   lineHeight: "100%",
                   color: "#FFFFFF99",
                 }}
@@ -220,8 +220,8 @@ export default function Home() {
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
                   fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                  fontWeight: 500,
+                  fontSize: "10px",
                   lineHeight: "100%",
                   color: "#FFFFFF99",
                 }}
@@ -237,12 +237,12 @@ export default function Home() {
                     className="pb-2 border-b border-white/20 last:border-0"
                     style={{
                       fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                      fontWeight: 500,
+                      fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
-                    <Link href={item.href} className="contents text-white"> 
+                    <Link href={item.href} className="contents text-white">
                       <div className="c--anim-btn">
                         <div className="text-container">
                           <span className="c-anim-btn">{item.text}</span>
@@ -262,8 +262,8 @@ export default function Home() {
                     className="pb-2 border-b border-white/20 last:border-0"
                     style={{
                       fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                      fontWeight: 500,
+                      fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
@@ -290,480 +290,484 @@ export default function Home() {
       >
         {/* Adjusted spacing to accommodate the transparent header */}
         <div className={`${containerClass} -mt-[80px] pt-[80px]`}>
-            <div className="flex flex-col pt-[60px] pb-[2.63vw]">
-                <div className="w-1/2 pr-10">
-                    <h1 style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "4.16vw",
-                        lineHeight: "130%",
-                        letterSpacing: "0%",
-                        color: "#FFFFFF",
-                        margin: 0,
-                        verticalAlign: "middle"
-                    }}>
-                        Our planet,<br />
-                        Our responsibility
-                    </h1>
-                </div>
-                <div className="w-full flex justify-end">
-                    <div className="w-[39.58vw] flex flex-col justify-start">
-                        <p style={{
-                            fontFamily: "'Manrope', sans-serif",
-                            fontWeight: 400,
-                            fontSize: "1.11vw",
-                            lineHeight: "100%",
-                            letterSpacing: "0%",
-                            color: "#FFFFFF",
-                            marginBottom: "1.5vw",
-                            verticalAlign: "middle"
-                        }}>
-                            Sustainability is not a choice. It is a responsibility.
-                        </p>
-                        <p style={{
-                            fontFamily: "'Manrope', sans-serif",
-                            fontWeight: 400,
-                            fontSize: "1.11vw",
-                            lineHeight: "100%",
-                            letterSpacing: "0%",
-                            color: "#FFFFFF80",
-                            verticalAlign: "middle"
-                        }}>
-                            We help organizations reduce environmental impact, adopt ethical practices, and move towards regenerative business models that are better for business and better for the planet
-                        </p>
-                    </div>
-                </div>
+          <div className="flex flex-col pt-[60px] pb-[2.63vw]">
+            <div className="w-1/2 pr-10">
+              <h1 style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "4.16vw",
+                lineHeight: "130%",
+                letterSpacing: "0%",
+                color: "#FFFFFF",
+                margin: 0,
+                verticalAlign: "middle"
+              }}>
+                Our planet,<br />
+                Our responsibility
+              </h1>
             </div>
+            <div className="w-full flex justify-end">
+              <div className="w-[39.58vw] flex flex-col justify-start">
+                <p style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "1.11vw",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
+                  marginBottom: "1.5vw",
+                  verticalAlign: "middle"
+                }}>
+                  Sustainability is not a choice. It is a responsibility.
+                </p>
+                <p style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "1.11vw",
+                  lineHeight: "130%",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
+                  verticalAlign: "middle"
+                }}>
+                  We help organizations reduce environmental impact, adopt ethical practices, and move towards regenerative business models that are better for business and better for the planet
+                </p>
+              </div>
+            </div>
+          </div>
 
-            {/* Hero Video inserted into the layout */}
-            <div className="w-full flex justify-center pb-[4.72vw]">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    className="w-full h-auto object-cover bg-gray-900"
-                    style={{ aspectRatio: "16/9", maxHeight: "80vh" }}
-                >
-                    <source src="/11977161_1920_1080_30fps.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+          {/* Hero Video inserted into the layout */}
+          <div className="w-full flex justify-center pb-[4.72vw]">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="w-full h-auto object-cover bg-gray-900"
+              style={{ aspectRatio: "16/9", maxHeight: "80vh" }}
+            >
+              <source src="/11977161_1920_1080_30fps.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
 
-            {/* CLIENTS STRIP WITH MARQUEE */}
-            <div className="flex items-center w-full border-t border-b border-white/20 py-[2.08vw]">
-                <div className="shrink-0 flex items-center pr-[4.09vw] border-r border-white/20">
-                    <span style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "1.25vw",
-                        lineHeight: "100%",
-                        letterSpacing: "0%",
-                        color: "#FFFFFF",
-                        verticalAlign: "middle"
-                    }}>Our Clients</span>
-                </div>
-                {/* Marquee constrained within this flex item */}
-                <div className="marquee-container relative flex-1 overflow-hidden pl-[4.16vw]">
-                    <div className="marquee-content flex items-center" style={{ gap: "5.55vw" }}>
-                        {[...brandLogos, ...brandLogos, ...brandLogos].map((logo, index) => (
-                        <div key={index} className="flex-shrink-0 flex items-center justify-center w-[120px]">
-                            <Image
-                            src={logo}
-                            alt={`Brand Logo`}
-                            height={45}
-                            width={120} 
-                            className="max-h-[45px] w-auto max-w-full grayscale brightness-0 invert object-contain"
-                            />
-                        </div>
-                        ))}
-                    </div>
-                </div>
+          {/* CLIENTS STRIP WITH MARQUEE */}
+          <div className="flex items-center w-full border-t border-b border-white/20 py-[2.08vw]">
+            <div className="shrink-0 flex items-center pr-[4.09vw] border-r border-white/20">
+              <span style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "1.25vw",
+                lineHeight: "100%",
+                letterSpacing: "0%",
+                color: "#FFFFFF",
+                verticalAlign: "middle"
+              }}>Our Clients</span>
             </div>
+            {/* Marquee constrained within this flex item */}
+            <div className="marquee-container relative flex-1 overflow-hidden pl-[4.16vw]">
+              <div className="marquee-content flex items-center" style={{ gap: "5.55vw" }}>
+                {[...brandLogos, ...brandLogos, ...brandLogos].map((logo, index) => (
+                  <div key={index} className="flex-shrink-0 flex items-center justify-center w-[120px]">
+                    <Image
+                      src={logo}
+                      alt={`Brand Logo`}
+                      height={45}
+                      width={120}
+                      className="max-h-[45px] w-auto max-w-full grayscale brightness-0 invert object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* RESPONSIBILITY SECTION */}
-      <section className="w-full pt-[4.72vw] pb-[4.72vw] border-b border-white/20">
+      <section className="w-full pt-[6.38vw] pb-[6.38vw] border-b border-white/20">
         <div className={containerClass}>
-            <div className="flex justify-between items-start">
-                <div className="w-[45%]">
-                    <h2 style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "2.77vw",
-                        lineHeight: "110%",
-                        color: "#FFFFFF"
-                    }}>
-                        Responsibility begins<br />
-                        with what we choose to change.
-                    </h2>
-                </div>
-                <div className="w-[40%] flex flex-col pt-2">
-                    <p style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "0.97vw",
-                        lineHeight: "130%",
-                        color: "#AEAEAE",
-                        marginBottom: "1.38vw"
-                    }}>
-                        The world is not running low on water. It is running out of patience for those who waste it.
-                    </p>
-                    <p style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "0.97vw",
-                        lineHeight: "130%",
-                        color: "#AEAEAE"
-                    }}>
-                        Every bottle procured through a supply chain contributes to aquifer depletion, plastic waste, transport emissions, and growing business risk. What was once seen as convenience is now an environmental, operational, and reputational liability. WAE exists to replace that model with one that is cleaner, smarter, and built for the future.
-                    </p>
-                </div>
+          <div className="flex justify-between items-start">
+            <div className="w-[38.68vw]">
+              <h2 style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "2.77vw",
+                lineHeight: "120%",
+                color: "#FFFFFF",
+                verticalAlign: "middle",
+                margin: 0
+              }}>
+                Responsibility begins<br />
+                with what we choose to change.
+              </h2>
             </div>
+            <div className="w-[27.77vw] flex flex-col pt-[0.5vw]">
+              <p style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: "0.97vw",
+                lineHeight: "130%",
+                color: "#AEAEAE",
+                marginBottom: "1.38vw",
+                verticalAlign: "middle"
+              }}>
+                The world is not running low on water. It is running out of patience for those who waste it.
+              </p>
+              <p style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: "0.97vw",
+                lineHeight: "130%",
+                color: "#AEAEAE",
+                verticalAlign: "middle"
+              }}>
+                Every bottle procured through a supply chain contributes to aquifer depletion, plastic waste, transport emissions, and growing business risk. What was once seen as convenience is now an environmental, operational, and reputational liability. WAE exists to replace that model with one that is cleaner, smarter, and built for the future.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* WHY IT MATTERS SECTION */}
-      <section className="w-full pt-[4.72vw] pb-[4.72vw] border-b border-white/20">
+      <section className="w-full pt-[6.38vw] pb-[6.38vw] border-b border-white/20">
         <div className={containerClass}>
-            <div className="mb-[60px]">
-                <h2 style={{
+          <div className="mb-[60px]">
+            <h2 style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "32px",
+              lineHeight: "110%",
+              color: "#FFFFFF",
+              marginBottom: "12px"
+            }}>Why It Matters</h2>
+            <p style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "12px",
+              color: "#FFFFFF80"
+            }}>The challenge is no longer invisible.</p>
+          </div>
+
+          <div className="flex justify-between items-stretch gap-[40px]">
+            {/* Left side image */}
+            <div className="w-1/2">
+              <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/697673e1-ba24-4763-4a6f-f2f4fadbda00/public" alt="Why it matters" className="w-full h-full object-cover" />
+            </div>
+
+            <div className="w-[1px] bg-white/20 mx-[20px]"></div>
+
+            {/* Right side stats */}
+            <div className="w-[45%] flex flex-col justify-between">
+              {/* Stat 1 */}
+              <div className="flex items-center border-b border-white/20 pb-[30px] pt-[10px]">
+                <div className="w-[200px]">
+                  <span style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
-                    fontSize: "32px",
-                    lineHeight: "110%",
+                    fontSize: "64px",
+                    color: "#FFFFFF"
+                  }}><CountUp value="50" />%</span>
+                </div>
+                <div className="flex-1 pl-[20px]">
+                  <h4 style={{
+                    fontFamily: "\'Manrope\', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "10px",
                     color: "#FFFFFF",
-                    marginBottom: "12px"
-                }}>Why It Matters</h2>
-                <p style={{
+                    marginBottom: "8px"
+                  }}>Water use</h4>
+                  <p style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
-                    fontSize: "12px",
-                    color: "#FFFFFF80"
-                }}>The challenge is no longer invisible.</p>
-            </div>
-            
-            <div className="flex justify-between items-stretch gap-[40px]">
-                {/* Left side image */}
-                <div className="w-1/2">
-                    <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/697673e1-ba24-4763-4a6f-f2f4fadbda00/public" alt="Why it matters" className="w-full h-full object-cover" />
+                    fontSize: "14px",
+                    color: "#FFFFFF80",
+                    lineHeight: "130%"
+                  }}>50% rise in corporate water<br />withdrawals globally</p>
                 </div>
-                
-                <div className="w-[1px] bg-white/20 mx-[20px]"></div>
+              </div>
 
-                {/* Right side stats */}
-                <div className="w-[45%] flex flex-col justify-between">
-                    {/* Stat 1 */}
-                    <div className="flex items-center border-b border-white/20 pb-[30px] pt-[10px]">
-                        <div className="w-[200px]">
-                            <span style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: "64px",
-                                color: "#FFFFFF"
-                            }}><CountUp value="50"/>%</span>
-                        </div>
-                        <div className="flex-1 pl-[20px]">
-                            <h4 style={{
-                                fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
-                                color: "#FFFFFF",
-                                marginBottom: "8px"
-                            }}>Water use</h4>
-                            <p style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: "14px",
-                                color: "#FFFFFF80",
-                                lineHeight: "130%"
-                            }}>50% rise in corporate water<br/>withdrawals globally</p>
-                        </div>
-                    </div>
-
-                    {/* Stat 2 */}
-                    <div className="flex items-center border-b border-white/20 pb-[30px] pt-[30px]">
-                        <div className="w-[200px]">
-                            <span style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: "64px",
-                                color: "#FFFFFF",
-                                whiteSpace: "nowrap"
-                            }}>₹<CountUp value="36"/>L cr +</span>
-                        </div>
-                        <div className="flex-1 pl-[20px]">
-                            <h4 style={{
-                                fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
-                                color: "#FFFFFF",
-                                marginBottom: "8px"
-                            }}>Financial exposure</h4>
-                            <p style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: "14px",
-                                color: "#FFFFFF80",
-                                lineHeight: "130%"
-                            }}>More than Rs 36 lakh crore in<br/>water-related financial risk reported<br/>by companies worldwide</p>
-                        </div>
-                    </div>
-
-                    {/* Stat 3 */}
-                    <div className="flex items-center border-b border-white/20 pb-[30px] pt-[30px]">
-                        <div className="w-[200px]">
-                            <span style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: "64px",
-                                color: "#FFFFFF",
-                                whiteSpace: "nowrap"
-                            }}>₹<CountUp value="8.5"/>L cr</span>
-                        </div>
-                        <div className="flex-1 pl-[20px]">
-                            <h4 style={{
-                                fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
-                                color: "#FFFFFF",
-                                marginBottom: "8px"
-                            }}>Revenue at risk</h4>
-                            <p style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: "14px",
-                                color: "#FFFFFF80",
-                                lineHeight: "130%"
-                            }}>Nearly Rs 8.5 lakh crore in business<br/>revenue currently at risk from water-<br/>related disruption</p>
-                        </div>
-                    </div>
-
-                    {/* Stat 4 */}
-                    <div className="flex items-center pt-[30px] pb-[10px]">
-                        <div className="w-[200px]">
-                            <span style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: "64px",
-                                color: "#FFFFFF"
-                            }}><CountUp value="67"/>%</span>
-                        </div>
-                        <div className="flex-1 pl-[20px]">
-                            <h4 style={{
-                                fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
-                                color: "#FFFFFF",
-                                marginBottom: "8px"
-                            }}>Global stress</h4>
-                            <p style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: "14px",
-                                color: "#FFFFFF80",
-                                lineHeight: "130%"
-                            }}>50% rise in corporate water<br/>withdrawals globally</p>
-                        </div>
-                    </div>
+              {/* Stat 2 */}
+              <div className="flex items-center border-b border-white/20 pb-[30px] pt-[30px]">
+                <div className="w-[200px]">
+                  <span style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "64px",
+                    color: "#FFFFFF",
+                    whiteSpace: "nowrap"
+                  }}>₹<CountUp value="36" />L cr +</span>
                 </div>
+                <div className="flex-1 pl-[20px]">
+                  <h4 style={{
+                    fontFamily: "\'Manrope\', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "10px",
+                    color: "#FFFFFF",
+                    marginBottom: "8px"
+                  }}>Financial exposure</h4>
+                  <p style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    color: "#FFFFFF80",
+                    lineHeight: "130%"
+                  }}>More than Rs 36 lakh crore in<br />water-related financial risk reported<br />by companies worldwide</p>
+                </div>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="flex items-center border-b border-white/20 pb-[30px] pt-[30px]">
+                <div className="w-[200px]">
+                  <span style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "64px",
+                    color: "#FFFFFF",
+                    whiteSpace: "nowrap"
+                  }}>₹<CountUp value="8.5" />L cr</span>
+                </div>
+                <div className="flex-1 pl-[20px]">
+                  <h4 style={{
+                    fontFamily: "\'Manrope\', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "10px",
+                    color: "#FFFFFF",
+                    marginBottom: "8px"
+                  }}>Revenue at risk</h4>
+                  <p style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    color: "#FFFFFF80",
+                    lineHeight: "130%"
+                  }}>Nearly Rs 8.5 lakh crore in business<br />revenue currently at risk from water-<br />related disruption</p>
+                </div>
+              </div>
+
+              {/* Stat 4 */}
+              <div className="flex items-center pt-[30px] pb-[10px]">
+                <div className="w-[200px]">
+                  <span style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "64px",
+                    color: "#FFFFFF"
+                  }}><CountUp value="67" />%</span>
+                </div>
+                <div className="flex-1 pl-[20px]">
+                  <h4 style={{
+                    fontFamily: "\'Manrope\', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "10px",
+                    color: "#FFFFFF",
+                    marginBottom: "8px"
+                  }}>Global stress</h4>
+                  <p style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    color: "#FFFFFF80",
+                    lineHeight: "130%"
+                  }}>50% rise in corporate water<br />withdrawals globally</p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
       </section>
 
       {/* WE ARE HELPING CLIENTS */}
-      <section className="w-full pt-[4.72vw] pb-[4.72vw] border-b border-white/20">
+      <section className="w-full pt-[6.38vw] pb-[6.38vw] border-b border-white/20">
         <div className={containerClass}>
-            <h2 style={{
+          <h2 style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontWeight: 400,
+            fontSize: "32px",
+            color: "#FFFFFF",
+            marginBottom: "60px"
+          }}>We are helping clients</h2>
+
+          <div className="grid grid-cols-3">
+            <div className="flex flex-col border-r border-white/20 pr-[40px]">
+              <div className="w-full h-[240px] mb-[24px]">
+                <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/21779bba-89da-415d-af81-d015add0cc00/public" alt="Reduce Scope 3" className="w-full h-full object-cover" />
+              </div>
+              <h3 style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: "32px",
+                fontSize: "20px",
                 color: "#FFFFFF",
-                marginBottom: "60px"
-            }}>We are helping clients</h2>
-
-            <div className="grid grid-cols-3">
-                <div className="flex flex-col border-r border-white/20 pr-[40px]">
-                    <div className="w-full h-[240px] mb-[24px]">
-                        <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/21779bba-89da-415d-af81-d015add0cc00/public" alt="Reduce Scope 3" className="w-full h-full object-cover" />
-                    </div>
-                    <h3 style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "20px",
-                        color: "#FFFFFF",
-                        marginBottom: "16px"
-                    }}>Reduce Scope 3 Emissions</h3>
-                    <p style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "14px",
-                        lineHeight: "140%",
-                        color: "#FFFFFF80"
-                    }}>The greatest emissions are often the ones hidden in everyday operations. Rethink how water is sourced, transported, and consumed to reduce indirect emissions where they matter most and turn sustainability into measurable business impact.</p>
-                </div>
-                
-                <div className="flex flex-col border-r border-white/20 px-[40px]">
-                    <div className="w-full h-[240px] mb-[24px]">
-                        <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce4e4b96-60aa-4973-1d75-80165114a800/public" alt="Enable Plastic-Free Hydration" className="w-full h-full object-cover" />
-                    </div>
-                    <h3 style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "20px",
-                        color: "#FFFFFF",
-                        marginBottom: "16px"
-                    }}>Enable Plastic-Free Hydration</h3>
-                    <p style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "14px",
-                        lineHeight: "140%",
-                        color: "#FFFFFF80"
-                    }}>Every refill is a choice against single-use plastic. Replace a disposable habit with a lasting solution that protects natural resources, keeps plastic out of the waste stream, and redefines the way people experience drinking water.</p>
-                </div>
-                
-                <div className="flex flex-col pl-[40px]">
-                    <div className="w-full h-[240px] mb-[24px]">
-                        <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f886425-f3b6-4b5a-de68-f75fd3459500/public" alt="Advance the Net-Zero Transition" className="w-full h-full object-cover" />
-                    </div>
-                    <h3 style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "20px",
-                        color: "#FFFFFF",
-                        marginBottom: "16px"
-                    }}>Advance the Net-Zero Transition</h3>
-                    <p style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "14px",
-                        lineHeight: "140%",
-                        color: "#FFFFFF80"
-                    }}>Net-zero isn't achieved through a single initiative but through thousands of smarter decisions. Transform water infrastructure into a climate-positive asset that reduces environmental impact while supporting long-term sustainability and ESG ambitions.</p>
-                </div>
+                marginBottom: "16px"
+              }}>Reduce Scope 3 Emissions</h3>
+              <p style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#FFFFFF80"
+              }}>The greatest emissions are often the ones hidden in everyday operations. Rethink how water is sourced, transported, and consumed to reduce indirect emissions where they matter most and turn sustainability into measurable business impact.</p>
             </div>
+
+            <div className="flex flex-col border-r border-white/20 px-[40px]">
+              <div className="w-full h-[240px] mb-[24px]">
+                <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce4e4b96-60aa-4973-1d75-80165114a800/public" alt="Enable Plastic-Free Hydration" className="w-full h-full object-cover" />
+              </div>
+              <h3 style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "20px",
+                color: "#FFFFFF",
+                marginBottom: "16px"
+              }}>Enable Plastic-Free Hydration</h3>
+              <p style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#FFFFFF80"
+              }}>Every refill is a choice against single-use plastic. Replace a disposable habit with a lasting solution that protects natural resources, keeps plastic out of the waste stream, and redefines the way people experience drinking water.</p>
+            </div>
+
+            <div className="flex flex-col pl-[40px]">
+              <div className="w-full h-[240px] mb-[24px]">
+                <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f886425-f3b6-4b5a-de68-f75fd3459500/public" alt="Advance the Net-Zero Transition" className="w-full h-full object-cover" />
+              </div>
+              <h3 style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "20px",
+                color: "#FFFFFF",
+                marginBottom: "16px"
+              }}>Advance the Net-Zero Transition</h3>
+              <p style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#FFFFFF80"
+              }}>Net-zero isn't achieved through a single initiative but through thousands of smarter decisions. Transform water infrastructure into a climate-positive asset that reduces environmental impact while supporting long-term sustainability and ESG ambitions.</p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* TRANSFORMATIONS SECTION */}
-      <section className="w-full pt-[4.72vw] pb-[4.72vw] border-b border-white/20">
+      <section className="w-full pt-[6.38vw] pb-[6.38vw] border-b border-white/20">
         <div className={containerClass}>
-            <div className="flex items-stretch">
-                {/* Left Column */}
-                <div className="w-[30%] border-r border-white/20 pr-[40px]">
-                    <h2 style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "32px",
-                        color: "#FFFFFF",
-                        marginBottom: "16px"
-                    }}>Transformations</h2>
-                    <p style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "14px",
-                        color: "#FFFFFF80",
-                        lineHeight: "140%"
-                    }}>The success stories that changed what<br/>sustainable hydration looks like.</p>
-                </div>
-                
-                {/* Right Column Grid */}
-                <div className="w-[70%] flex flex-col pl-[40px]">
-                    
-                    {/* Top Row: Volume 1 and Image */}
-                    <div className="flex border-b border-white/20 pb-[40px] mb-[40px]">
-                        <div className="w-1/2 pr-[40px]">
-                            <span style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", marginBottom: "16px", display: "block" }}>Volume : 1</span>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "20px", color: "#FFFFFF", marginBottom: "16px" }}>Greener banking, better<br/>workplaces</h3>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "16px" }}>How BFSI organizations ditched plastic water jars for a cleaner, safer alternative</p>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "24px" }}>Banking offices run 12/6, and so did their plastic water jar problem-spills, hygiene concerns, and hundreds of jars piling up every month. By switching to stainless steel alternatives, BFSI offices cut plastic waste significantly, reduced water contamination risks, and gave employees a cleaner, more professional workspace.</p>
-                            <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
-                                Download full story
-                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </button>
-                        </div>
-                        <div className="w-1/2 pl-[40px]">
-                            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ed81f80c-aa41-49b4-922a-4899bc32d300/public" alt="Transformations" className="w-full h-full object-cover" />
-                        </div>
-                    </div>
-
-                    {/* Bottom Row: Volume 2 and Volume 3 */}
-                    <div className="flex">
-                        <div className="w-1/2 border-r border-white/20 pr-[40px]">
-                            <span style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", marginBottom: "16px", display: "block" }}>Volume : 2</span>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "20px", color: "#FFFFFF", marginBottom: "16px" }}>Clean hydration for high<br/>performance it teams</h3>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "16px" }}>How IT campuses moved away from plastic jars and never looked back.</p>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "24px" }}>Large IT campuses consume enormous volumes of water daily. Plastic jars meant constant logistics, leakage, and avoidable plastic waste. Switching to in-situ dispensers simplified operations, eliminated single-use plastic from common areas, and gave teams access to hygienic, temperature consistent water throughout the day.</p>
-                            <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
-                                Download full story
-                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </button>
-                        </div>
-                        <div className="w-1/2 pl-[40px]">
-                            <span style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", marginBottom: "16px", display: "block" }}>Volume : 3</span>
-                            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "20px", color: "#FFFFFF", marginBottom: "16px" }}>A Greener Stay for Every<br/>Guest</h3>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "16px" }}>How hospitality brands elevated their sustainability commitment, one dispenser at a time</p>
-                            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "24px" }}>In hospitality, every detail shapes the guest experience. Replacing plastic water bottles with sleek and clean branded glass bottled helped hotels reduce plastic footprint, cut recurring supply costs, and signal a genuine commitment to sustainability. Guests noticed, Staff appreciated the ease. And the numbers backed it up with lower operational costs and stronger sustainability ratings while enhancing brand perception across every guest interaction.</p>
-                            <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
-                                Download full story
-                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
+          <div className="flex items-stretch">
+            {/* Left Column */}
+            <div className="w-[30%] border-r border-white/20 pr-[40px]">
+              <h2 style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "32px",
+                color: "#FFFFFF",
+                marginBottom: "16px"
+              }}>Transformations</h2>
+              <p style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "14px",
+                color: "#FFFFFF80",
+                lineHeight: "140%"
+              }}>The success stories that changed what<br />sustainable hydration looks like.</p>
             </div>
+
+            {/* Right Column Grid */}
+            <div className="w-[70%] flex flex-col pl-[40px]">
+
+              {/* Top Row: Volume 1 and Image */}
+              <div className="flex border-b border-white/20 pb-[40px] mb-[40px]">
+                <div className="w-1/2 pr-[40px]">
+                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", marginBottom: "16px", display: "block" }}>Volume : 1</span>
+                  <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "20px", color: "#FFFFFF", marginBottom: "16px" }}>Greener banking, better<br />workplaces</h3>
+                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "16px" }}>How BFSI organizations ditched plastic water jars for a cleaner, safer alternative</p>
+                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "24px" }}>Banking offices run 12/6, and so did their plastic water jar problem-spills, hygiene concerns, and hundreds of jars piling up every month. By switching to stainless steel alternatives, BFSI offices cut plastic waste significantly, reduced water contamination risks, and gave employees a cleaner, more professional workspace.</p>
+                  <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
+                    Download full story
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                  </button>
+                </div>
+                <div className="w-1/2 pl-[40px]">
+                  <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ed81f80c-aa41-49b4-922a-4899bc32d300/public" alt="Transformations" className="w-full h-full object-cover" />
+                </div>
+              </div>
+
+              {/* Bottom Row: Volume 2 and Volume 3 */}
+              <div className="flex">
+                <div className="w-1/2 border-r border-white/20 pr-[40px]">
+                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", marginBottom: "16px", display: "block" }}>Volume : 2</span>
+                  <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "20px", color: "#FFFFFF", marginBottom: "16px" }}>Clean hydration for high<br />performance it teams</h3>
+                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "16px" }}>How IT campuses moved away from plastic jars and never looked back.</p>
+                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "24px" }}>Large IT campuses consume enormous volumes of water daily. Plastic jars meant constant logistics, leakage, and avoidable plastic waste. Switching to in-situ dispensers simplified operations, eliminated single-use plastic from common areas, and gave teams access to hygienic, temperature consistent water throughout the day.</p>
+                  <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
+                    Download full story
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                  </button>
+                </div>
+                <div className="w-1/2 pl-[40px]">
+                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", marginBottom: "16px", display: "block" }}>Volume : 3</span>
+                  <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "20px", color: "#FFFFFF", marginBottom: "16px" }}>A Greener Stay for Every<br />Guest</h3>
+                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "16px" }}>How hospitality brands elevated their sustainability commitment, one dispenser at a time</p>
+                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "12px", color: "#FFFFFF80", lineHeight: "140%", marginBottom: "24px" }}>In hospitality, every detail shapes the guest experience. Replacing plastic water bottles with sleek and clean branded glass bottled helped hotels reduce plastic footprint, cut recurring supply costs, and signal a genuine commitment to sustainability. Guests noticed, Staff appreciated the ease. And the numbers backed it up with lower operational costs and stronger sustainability ratings while enhancing brand perception across every guest interaction.</p>
+                  <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
+                    Download full story
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </section>
 
       {/* EARTH SECTION */}
-      <section className="w-full pt-[4.72vw] pb-[4.72vw]">
+      <section className="w-full pt-[6.38vw] pb-[6.38vw]">
         <div className={containerClass}>
-            <div className="w-full h-[500px] mb-[60px]">
-                <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/048c10f8-fc18-43ed-c62c-8658de2acf00/public" alt="Earth, Our Only Shareholder" className="w-full h-full object-cover" />
+          <div className="w-full h-[500px] mb-[60px]">
+            <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/048c10f8-fc18-43ed-c62c-8658de2acf00/public" alt="Earth, Our Only Shareholder" className="w-full h-full object-cover" />
+          </div>
+
+          <div className="flex justify-between items-start">
+            <div className="w-1/2">
+              <h2 style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "40px",
+                lineHeight: "110%",
+                color: "#FFFFFF"
+              }}>
+                Earth, Our<br />Only Shareholder
+              </h2>
             </div>
-            
-            <div className="flex justify-between items-start">
-                <div className="w-1/2">
-                    <h2 style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "40px",
-                        lineHeight: "110%",
-                        color: "#FFFFFF"
-                    }}>
-                        Earth, Our<br/>Only Shareholder
-                    </h2>
-                </div>
-                <div className="w-[35%] flex flex-col items-start gap-[24px]">
-                    <p style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "14px",
-                        lineHeight: "140%",
-                        color: "#FFFFFF80"
-                    }}>
-                        We're excited to share the progress we have made, reflecting our commitment to sustainability.
-                    </p>
-                    <p style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "14px",
-                        lineHeight: "140%",
-                        color: "#FFFFFF80",
-                        marginBottom: "16px"
-                    }}>
-                        Explore them to see how we're making a positive impact on the environment, society & governance.
-                    </p>
-                    <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
-                        Download report
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
-                </div>
+            <div className="w-[35%] flex flex-col items-start gap-[24px]">
+              <p style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#FFFFFF80"
+              }}>
+                We're excited to share the progress we have made, reflecting our commitment to sustainability.
+              </p>
+              <p style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "14px",
+                lineHeight: "140%",
+                color: "#FFFFFF80",
+                marginBottom: "16px"
+              }}>
+                Explore them to see how we're making a positive impact on the environment, society & governance.
+              </p>
+              <button className="text-white border border-white/20 w-max px-4 py-2 text-[12px] flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
+                Download report
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              </button>
             </div>
+          </div>
         </div>
       </section>
 
