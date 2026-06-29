@@ -107,6 +107,36 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true, message: 'Blog deleted successfully.' });
     }
 
+    if (action === 'feature') {
+      if (!id || !dbState.blogs[id]) {
+        return NextResponse.json({ success: false, message: 'Blog not found.' }, { status: 404 });
+      }
+
+      const { featured } = body;
+
+      if (featured === true) {
+        // Count currently featured blogs (excluding the one being updated)
+        const featuredCount = Object.values(dbState.blogs).filter(
+          (b) => b.featuredOnHomepage === true && b.id !== id
+        ).length;
+
+        if (featuredCount >= 3) {
+          return NextResponse.json(
+            { success: false, message: 'You can only feature up to 3 blogs on the homepage. Please unfeature one first.' },
+            { status: 400 }
+          );
+        }
+      }
+
+      dbState.blogs[id] = {
+        ...dbState.blogs[id],
+        featuredOnHomepage: featured === true,
+      };
+
+      await writeBlogDB(dbState);
+      return NextResponse.json({ success: true, blog: dbState.blogs[id] });
+    }
+
     return NextResponse.json({ success: false, message: 'Invalid action.' }, { status: 400 });
   } catch (error: any) {
     console.error('Error in Blog API:', error);

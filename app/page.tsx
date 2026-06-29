@@ -123,6 +123,28 @@ export default function Home() {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.5 })
 
+  // Homepage featured blogs (CMS-controlled)
+  interface HomepageBlog {
+    id: string;
+    title: string;
+    description: string;
+    heroImage: string;
+    category: string;
+    readTime: string;
+  }
+  const [homepageBlogs, setHomepageBlogs] = useState<HomepageBlog[]>([])
+  const [blogsLoading, setBlogsLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('/api/homepage-blogs')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) setHomepageBlogs(data.blogs)
+      })
+      .catch(() => {})
+      .finally(() => setBlogsLoading(false))
+  }, [])
+
   // State for controlling tagline visibility on scroll
   const [taglineVisible, setTaglineVisible] = useState(true)
   const prevScrollY = useRef(0)
@@ -215,8 +237,8 @@ export default function Home() {
               className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
               style={{
                 fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                fontWeight: 500,
+                fontSize: "10px",
                 lineHeight: "100%",
                 letterSpacing: "0px",
               }}
@@ -250,8 +272,8 @@ export default function Home() {
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
                   fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                  fontWeight: 500,
+                  fontSize: "10px",
                   lineHeight: "100%",
                   color: "#ffffff",
                 }}
@@ -266,8 +288,8 @@ export default function Home() {
                 className="flex flex-col justify-center inline-block mr-1"
                 style={{
                   fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                  fontWeight: 500,
+                  fontSize: "10px",
                   lineHeight: "100%",
                   color: "#ffffff",
                   position: "relative",
@@ -285,8 +307,8 @@ export default function Home() {
                     className="pb-2 border-b border-white last:border-0"
                     style={{
                       fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                      fontWeight: 500,
+                      fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
@@ -324,8 +346,8 @@ export default function Home() {
                     className="pb-2 border-b border-white last:border-0"
                     style={{
                       fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                      fontWeight: 500,
+                      fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
@@ -722,9 +744,9 @@ export default function Home() {
         <div className="w-full">
           <h2
             style={{
-              fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 500,
+              fontSize: "60px",
               lineHeight: '105%',
               letterSpacing: '0%',
               color: '#FFFFFF',
@@ -1290,143 +1312,88 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-3 gap-x-0">
-            {/* Card 1 */}
-            <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
-              <div className="relative w-full aspect-square overflow-hidden mb-6">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0d11c81d-cb15-4d1a-b552-895a9f264600/public"
-                  alt="From Kyoto to COP28"
-                  fill
-                  className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
-                />
-              </div>
-              <div style={{ minHeight: '80px', marginBottom: '16px' }}>
-                <h3 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '18px',
-                  lineHeight: '120%',
-                  color: '#FFFFFF'
+            {blogsLoading ? (
+              // Skeleton placeholders
+              [0, 1, 2].map((i) => (
+                <div key={i} className="border-l border-white/20 pl-8 pr-12">
+                  <div className="relative w-full aspect-square overflow-hidden mb-6 bg-white/5 animate-pulse" />
+                  <div className="h-5 bg-white/5 animate-pulse mb-2 w-3/4" />
+                  <div className="h-4 bg-white/5 animate-pulse mb-1 w-full" />
+                  <div className="h-4 bg-white/5 animate-pulse mb-6 w-2/3" />
+                  <div className="h-3 bg-white/5 animate-pulse w-24" />
+                </div>
+              ))
+            ) : homepageBlogs.length > 0 ? (
+              homepageBlogs.map((blog) => {
+                const categorySlug = blog.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+                const blogUrl = `/blogs/${categorySlug}/${blog.id}`
+                return (
+                  <Link key={blog.id} href={blogUrl} className="contents">
+                    <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
+                      <div className="relative w-full aspect-square overflow-hidden mb-6">
+                        {blog.heroImage ? (
+                          <Image
+                            src={blog.heroImage}
+                            alt={blog.title}
+                            fill
+                            className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                            <span style={{ color: '#AEAEAE', fontSize: '11px' }}>No Image</span>
+                          </div>
+                        )}
+                      </div>
+                      <div style={{ minHeight: '80px', marginBottom: '16px' }}>
+                        <h3 style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 400,
+                          fontSize: '18px',
+                          lineHeight: '120%',
+                          color: '#FFFFFF'
+                        }}>
+                          {blog.title}
+                        </h3>
+                      </div>
+                      <p style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '12px',
+                        lineHeight: '140%',
+                        color: '#AEAEAE',
+                        marginBottom: '32px'
+                      }}>
+                        {blog.description}
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <span style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 400,
+                          fontSize: '12px',
+                          color: '#FFFFFF',
+                          textDecoration: 'underline',
+                          textUnderlineOffset: '4px'
+                        }}>Read Article</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </Link>
+                )
+              })
+            ) : (
+              // No featured blogs yet — subtle empty state
+              <div className="col-span-3 py-16 text-center border-l border-white/20 pl-8">
+                <p style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: '13px',
+                  color: '#AEAEAE'
                 }}>
-                  From Kyoto to COP28, The Epic Journey of Global Climate Agreements and the Fight for Our Planet's Future
-                </h3>
+                  No blogs featured yet. Select up to 3 in the CMS to display them here.
+                </p>
               </div>
-              <p style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontWeight: 400,
-                fontSize: '12px',
-                lineHeight: '140%',
-                color: '#AEAEAE',
-                marginBottom: '32px'
-              }}>
-                In the quiet halls of Kyoto in 1997, something monumental began a collective awakening of the world's conscience towards the mounting crisis of climate change.
-              </p>
-              <div className="flex items-center gap-2">
-                <span style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  color: '#FFFFFF',
-                  textDecoration: 'underline',
-                  textUnderlineOffset: '4px'
-                }}>Read Article</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
-              <div className="relative w-full aspect-square overflow-hidden mb-6">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/50e6b6b0-4629-4ab6-0710-9ecc16700e00/public"
-                  alt="Climate Change in the Indian Subcontinent"
-                  fill
-                  className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
-                />
-              </div>
-              <div style={{ minHeight: '80px', marginBottom: '16px' }}>
-                <h3 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '18px',
-                  lineHeight: '120%',
-                  color: '#FFFFFF'
-                }}>
-                  Climate Change in the Indian Subcontinent: A Historical and Scientific Perspective
-                </h3>
-              </div>
-              <p style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontWeight: 400,
-                fontSize: '12px',
-                lineHeight: '140%',
-                color: '#AEAEAE',
-                marginBottom: '32px'
-              }}>
-                The Indian subcontinent, a region of remarkable ecological diversity and cultural heritage, has been undergoing a profound transformation in its climate over the past century.
-              </p>
-              <div className="flex items-center gap-2">
-                <span style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  color: '#FFFFFF',
-                  textDecoration: 'underline',
-                  textUnderlineOffset: '4px'
-                }}>Read Article</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
-              <div className="relative w-full aspect-square overflow-hidden mb-6">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/371f4ccb-4672-4c8e-2fba-a3a7ffe05900/public"
-                  alt="The Ozone Crisis"
-                  fill
-                  className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
-                />
-              </div>
-              <div style={{ minHeight: '80px', marginBottom: '16px' }}>
-                <h3 style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '18px',
-                  lineHeight: '120%',
-                  color: '#FFFFFF'
-                }}>
-                  The Ozone Crisis: A Success Story in Environmental Cooperation
-                </h3>
-              </div>
-              <p style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontWeight: 400,
-                fontSize: '12px',
-                lineHeight: '140%',
-                color: '#AEAEAE',
-                marginBottom: '32px'
-              }}>
-                It began almost invisibly, high above our heads, in the delicate veil of atmosphere that quietly shields every form of life on Earth.
-              </p>
-              <div className="flex items-center gap-2">
-                <span style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  color: '#FFFFFF',
-                  textDecoration: 'underline',
-                  textUnderlineOffset: '4px'
-                }}>Read Article</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

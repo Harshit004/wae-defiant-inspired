@@ -23,6 +23,7 @@ export interface BlogPost {
   readTime: string;
   status: 'Live' | 'Draft';
   createdAt: string;
+  featuredOnHomepage?: boolean;
   contentColumns: [ContentBlock[], ContentBlock[], ContentBlock[]];
 }
 

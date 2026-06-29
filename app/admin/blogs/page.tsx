@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import Header from "@/components/admin/header"
-import { Edit3, Trash2, Plus, AlertTriangle, Eye, Filter } from "lucide-react"
+import { Edit3, Trash2, Plus, AlertTriangle, Eye, Filter, Star } from "lucide-react"
 
 interface ContentBlock {
   type: 'paragraph' | 'heading' | 'list';
@@ -24,6 +24,7 @@ interface BlogPost {
   readTime: string;
   status: 'Live' | 'Draft';
   createdAt: string;
+  featuredOnHomepage?: boolean;
   contentColumns: [ContentBlock[], ContentBlock[], ContentBlock[]];
 }
 
@@ -48,6 +49,10 @@ export default function BlogsPage() {
   // Delete modal state
   const [deleteTarget, setDeleteTarget] = useState<BlogPost | null>(null)
   const [deleting, setDeleting] = useState(false)
+
+  // Feature-on-homepage state
+  const [featureLoading, setFeatureLoading] = useState<string | null>(null)
+  const [featureError, setFeatureError] = useState<string | null>(null)
 
   const fetchData = async () => {
     try {
@@ -98,6 +103,31 @@ export default function BlogsPage() {
     return writer ? writer.name : writerId;
   }
 
+  const featuredCount = blogs.filter(b => b.featuredOnHomepage).length
+
+  const handleFeatureToggle = async (blog: BlogPost) => {
+    const newFeatured = !blog.featuredOnHomepage
+    setFeatureError(null)
+    setFeatureLoading(blog.id)
+    try {
+      const response = await fetch("/api/admin/blogs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "feature", id: blog.id, featured: newFeatured }),
+      })
+      const data = await response.json()
+      if (data.success) {
+        setBlogs(blogs.map(b => b.id === blog.id ? { ...b, featuredOnHomepage: newFeatured } : b))
+      } else {
+        setFeatureError(data.message || "Failed to update homepage feature.")
+      }
+    } catch (err) {
+      setFeatureError("Error updating homepage feature.")
+    } finally {
+      setFeatureLoading(null)
+    }
+  }
+
   const categories = Array.from(new Set(blogs.map(b => b.category)))
 
   const filteredBlogs = blogs.filter((b) => {
@@ -140,6 +170,26 @@ export default function BlogsPage() {
             <p className="text-[11px] text-gray-500 mt-1" style={{ fontFamily: "'Manrope', sans-serif" }}>
               Manage, preview, and update all blog content and articles.
             </p>
+            {/* Homepage Feature Count Badge */}
+            <div className="flex items-center gap-2 mt-2">
+              <Star size={11} className={featuredCount > 0 ? "text-amber-400" : "text-gray-600"} />
+              <span
+                className={`text-[11px] font-medium ${
+                  featuredCount >= 3 ? "text-amber-400" : featuredCount > 0 ? "text-amber-300/80" : "text-gray-600"
+                }`}
+                style={{ fontFamily: "'Manrope', sans-serif" }}
+              >
+                {featuredCount} / 3 blogs featured on homepage
+              </span>
+            </div>
+            {/* Feature Error Message */}
+            {featureError && (
+              <div className="mt-2 flex items-center gap-2 text-[11px] text-red-400 bg-red-500/10 border border-red-500/20 px-3 py-2 max-w-sm" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                <AlertTriangle size={11} className="shrink-0" />
+                {featureError}
+                <button onClick={() => setFeatureError(null)} className="ml-auto text-red-400 hover:text-red-300">✕</button>
+              </div>
+            )}
           </div>
           <div className="flex items-center gap-4 flex-wrap">
             {/* Category Filter */}
@@ -213,10 +263,16 @@ export default function BlogsPage() {
             <table className="w-full text-left border-collapse text-sm">
               <thead>
                 <tr className="border-b border-white/10 text-gray-400 text-[11px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  <th className="py-4 px-6 font-medium w-[45%] text-left">Blog Image and Title</th>
-                  <th className="py-4 px-6 font-medium w-[20%] text-left">Category</th>
-                  <th className="py-4 px-6 font-medium w-[15%] text-left">Writer</th>
+                  <th className="py-4 px-6 font-medium w-[38%] text-left">Blog Image and Title</th>
+                  <th className="py-4 px-6 font-medium w-[18%] text-left">Category</th>
+                  <th className="py-4 px-6 font-medium w-[13%] text-left">Writer</th>
                   <th className="py-4 px-6 font-medium w-[10%] text-center">Status</th>
+                  <th className="py-4 px-6 font-medium w-[11%] text-center">
+                    <span className="flex items-center justify-center gap-1">
+                      <Star size={10} className="text-amber-400" />
+                      Homepage
+                    </span>
+                  </th>
                   <th className="py-4 px-6 font-medium w-[10%] text-center">Action</th>
                 </tr>
               </thead>
@@ -275,6 +331,26 @@ export default function BlogsPage() {
                         }`}>
                           {b.status}
                         </span>
+                      </td>
+
+                      {/* Homepage Feature Toggle */}
+                      <td className="py-5 px-6 text-center align-middle">
+                        <button
+                          onClick={() => handleFeatureToggle(b)}
+                          disabled={featureLoading === b.id}
+                          title={b.featuredOnHomepage ? "Remove from homepage" : "Feature on homepage"}
+                          className={`relative inline-flex items-center justify-center w-9 h-5 rounded-full transition-all duration-300 focus:outline-none cursor-pointer disabled:opacity-40 ${
+                            b.featuredOnHomepage
+                              ? "bg-amber-500/80 hover:bg-amber-500"
+                              : "bg-white/10 hover:bg-white/20"
+                          }`}
+                        >
+                          <span
+                            className={`inline-block w-3.5 h-3.5 rounded-full bg-white shadow transition-all duration-300 ${
+                              b.featuredOnHomepage ? "translate-x-2" : "-translate-x-2"
+                            }`}
+                          />
+                        </button>
                       </td>
 
                       {/* Actions */}
