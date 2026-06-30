@@ -143,7 +143,7 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          setHomepageBlogs(data.data)
+          setHomepageBlogs(data.blogs || [])
         }
       })
       .catch(console.error)

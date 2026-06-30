@@ -13,16 +13,21 @@ export default function AnalyticsTracker() {
   const searchParams = useSearchParams();
   const sessionIdRef = useRef<string | null>(null);
   const startTimeRef = useRef<number>(Date.now());
+  const initPromiseRef = useRef<Promise<string> | null>(null);
+  const isFirstRender = useRef(true);
   
   useEffect(() => {
     if (!pathname || pathname.startsWith("/admin") || pathname === "/secret-cms-login") {
       return;
     }
-    const initAnalytics = async () => {
-      try {
-        const consent = localStorage.getItem("wae_cookie_consent");
-        if (consent !== "accepted") return;
+    
+    const initAnalytics = () => {
+      if (initPromiseRef.current) return initPromiseRef.current;
 
+      const consent = localStorage.getItem("wae_cookie_consent");
+      if (consent !== "accepted") return null;
+
+      initPromiseRef.current = (async () => {
         let visitorId = localStorage.getItem("visitor-id");
         if (!visitorId) {
           visitorId = uuidv4();
@@ -80,13 +85,13 @@ export default function AnalyticsTracker() {
         };
 
         await setDoc(doc(db, "analytics_sessions", sessionId), sessionData);
+        return sessionId;
+      })();
 
-      } catch (error) {
-        console.error("Analytics initialization error:", error);
-      }
+      return initPromiseRef.current;
     };
 
-    if (!sessionIdRef.current) {
+    if (!initPromiseRef.current) {
       initAnalytics();
     }
 
@@ -94,7 +99,7 @@ export default function AnalyticsTracker() {
     // This allows the analytics tracker to initialize immediately upon consent confirmation,
     // avoiding tracking loss on the initial landing page view.
     const handleConsentUpdate = () => {
-      if (!sessionIdRef.current) {
+      if (!initPromiseRef.current) {
         initAnalytics();
       }
     };
@@ -110,14 +115,22 @@ export default function AnalyticsTracker() {
     if (!pathname || pathname.startsWith("/admin") || pathname === "/secret-cms-login") {
       return;
     }
-    if (!sessionIdRef.current) return;
+    
+    // Skip the very first render since initAnalytics already records the landing page view
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
     const consent = localStorage.getItem("wae_cookie_consent");
     if (consent !== "accepted") return;
 
     const updatePage = async () => {
       try {
+        if (!initPromiseRef.current) return;
+        const sessionId = await initPromiseRef.current;
         const timeSpent = Math.floor((Date.now() - startTimeRef.current) / 1000);
-        await updateDoc(doc(db, "analytics_sessions", sessionIdRef.current!), {
+        await updateDoc(doc(db, "analytics_sessions", sessionId), {
           "behavior.pagesViewed": arrayUnion(pathname),
           "behavior.timeSpentSeconds": timeSpent
         });
@@ -135,9 +148,9 @@ export default function AnalyticsTracker() {
       return;
     }
     const handleClick = async (e: MouseEvent) => {
-      if (!sessionIdRef.current) return;
       const consent = localStorage.getItem("wae_cookie_consent");
       if (consent !== "accepted") return;
+      if (!initPromiseRef.current) return;
 
       const target = e.target as HTMLElement;
       const link = (target.tagName === 'A' ? target : target.closest('a')) as HTMLAnchorElement | null;
@@ -202,7 +215,8 @@ export default function AnalyticsTracker() {
             updateFields["behavior.downloads"] = increment(1);
           }
 
-          await updateDoc(doc(db, "analytics_sessions", sessionIdRef.current!), updateFields);
+          const sessionId = await initPromiseRef.current;
+          await updateDoc(doc(db, "analytics_sessions", sessionId), updateFields);
         } catch (e) {
           console.error("Failed to update click event", e);
         }
