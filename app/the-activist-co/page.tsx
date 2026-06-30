@@ -26,13 +26,13 @@ export default function TheActivistCoPage() {
       {/* Main Content Area */}
       {/* paddingTop: 212px -> clamp(120px, 14.7vw, 212px) */}
       <div className="relative z-10 w-full" style={{ paddingTop: "clamp(120px, 14.7vw, 212px)" }}>
-        
+
         {/* HERO SECTION */}
         <section className={containerClass}>
           <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-0">
             {/* Left Text */}
-            <div className="flex flex-col pt-0 w-full lg:w-[35%]">
-              <h1 
+            <div className="flex flex-col pt-0 w-full lg:w-[28.19vw] lg:max-w-[406px]">
+              <h1
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
@@ -45,7 +45,7 @@ export default function TheActivistCoPage() {
                 WAELCHEMY
               </h1>
               <div style={{ height: "clamp(30px, 4.16vw, 60px)" }} />
-              <h2 
+              <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
@@ -75,9 +75,9 @@ export default function TheActivistCoPage() {
 
             {/* Right Video - Cropped to 707x541 relative */}
             <div className="w-full lg:w-[55%] max-w-[707px]">
-              <div 
-                className="w-full relative overflow-hidden" 
-                style={{ 
+              <div
+                className="w-full relative overflow-hidden"
+                style={{
                   aspectRatio: "707 / 541",
                 }}
               >
@@ -104,7 +104,7 @@ export default function TheActivistCoPage() {
         {/* SECTION 2: We begin there. */}
         <section className={containerClass}>
           <div className="flex flex-col lg:flex-row items-start lg:items-stretch overflow-x-hidden pb-8 lg:pb-0">
-            <h2 
+            <h2
               className="shrink-0 mb-8 lg:mb-0"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
@@ -158,7 +158,7 @@ export default function TheActivistCoPage() {
         {/* SECTION 3: The Discipline of Refusal */}
         <section className={containerClass}>
           <div className="flex flex-col lg:flex-row items-start lg:items-stretch">
-            <h2 
+            <h2
               className="w-full shrink-0 mb-8 lg:mb-0 lg:w-[19.65vw] lg:max-w-[283px]"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
@@ -233,7 +233,7 @@ export default function TheActivistCoPage() {
         {/* SECTION 4: Carbon Neutral Water */}
         <section className={containerClass}>
           <div className="flex flex-col lg:flex-row items-start lg:items-stretch">
-            <h2 
+            <h2
               className="w-full shrink-0 mb-8 lg:mb-0 lg:w-[19.65vw] lg:max-w-[283px]"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
@@ -266,9 +266,12 @@ export default function TheActivistCoPage() {
                   lineHeight: "130%",
                 }}
               >
-                <div>. A refusal to accept plastic waste as an inevitable norm.</div>
-                <div>. A refusal to reduce a life-giving resource to a disposable transaction.</div>
-                <div>. A refusal to build modern convenience on the back of ecological decline.</div>
+                <ul>
+                  <li>A refusal to accept plastic waste as an inevitable norm.</li>
+                  <li>A refusal to reduce a life-giving resource to a disposable transaction.</li>
+                  <li>A refusal to build modern convenience on the back of ecological decline.</li>
+                </ul>
+
               </div>
               <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
               <p
@@ -310,7 +313,7 @@ export default function TheActivistCoPage() {
           <div className="flex flex-col lg:flex-row items-start lg:items-stretch">
             <div className="w-full flex flex-col shrink-0 mb-12 lg:mb-0 lg:pr-[3.12vw] lg:w-[31.94vw] lg:max-w-[460px]">
               <div className="flex justify-between items-start">
-                <h2 
+                <h2
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
@@ -318,7 +321,7 @@ export default function TheActivistCoPage() {
                     lineHeight: "110%",
                   }}
                 >
-                  The Three Pillars of<br/>Blue Innovation
+                  The Three Pillars of<br />Blue Innovation
                 </h2>
                 <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/48b42c14-6d59-40b5-b839-2689e3f4a900/public" alt="Arrow" width={30} height={30} className="mt-2" />
               </div>
@@ -336,10 +339,10 @@ export default function TheActivistCoPage() {
                 Activism must be structured, principled, and engineered to endure. These three pillars define how philosophy is translated into daily practice:
               </p>
             </div>
-            
+
             <div className="hidden lg:block w-px bg-white/20 shrink-0" />
             <div className="hidden lg:block shrink-0" style={{ width: "clamp(30px, 4.16vw, 60px)" }} />
-            
+
             <div className="flex-1 flex flex-col w-full">
               {/* Pillar 1 */}
               <div>
@@ -392,9 +395,9 @@ export default function TheActivistCoPage() {
 
         {/* SECTION 6: Our Green Is Blue */}
         <section className={containerClass}>
-          <div className="flex flex-col lg:flex-row items-start">
-            <h2 
-              className="w-full shrink-0 mb-8 lg:mb-0 lg:w-[20.83vw] lg:max-w-[300px]"
+          <div className="flex flex-col items-start">
+            <h2
+              className="w-full shrink-0"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
@@ -404,7 +407,7 @@ export default function TheActivistCoPage() {
             >
               Our Green Is Blue
             </h2>
-            <div className="hidden lg:block shrink-0" style={{ width: "clamp(20px, 4.3vw, 62px)" }} />
+            <div style={{ height: "clamp(30px, 4.3vw, 62px)" }} />
             
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 lg:w-[40.97vw] lg:max-w-[590px]">
               <div className="flex flex-col">
@@ -418,7 +421,7 @@ export default function TheActivistCoPage() {
               </div>
               <div className="flex flex-col">
                 <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(12px, 0.97vw, 14px)", lineHeight: "130%", color: "#AEAEAE" }}>
-                  That is why the planet cannot be treated as a mere stakeholder in business. Instead, business must be treated as a <span style={{ color: "#FFF", lineHeight: "100%" }}>proud steward of the planet.</span>
+                  That is why the planet cannot be treated as a mere stakeholder in business. Instead, business must be treated as a <span style={{ fontWeight: 700, color: "#FFF", lineHeight: "100%" }}>proud steward of the planet.</span>
                 </p>
                 <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
                 <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(12px, 0.97vw, 14px)", lineHeight: "130%", color: "#AEAEAE" }}>
@@ -448,7 +451,7 @@ export default function TheActivistCoPage() {
         {/* SECTION 7: Rethinking the Circular Economy */}
         <section className={containerClass}>
           <div className="flex flex-col lg:flex-row items-start">
-            <h2 
+            <h2
               className="flex-1 mb-8 lg:mb-0"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
@@ -457,7 +460,7 @@ export default function TheActivistCoPage() {
                 lineHeight: "130%",
               }}
             >
-              Rethinking the<br className="hidden lg:block"/>
+              Rethinking the<br className="hidden lg:block" />
               Circular Economy
             </h2>
             <div className="w-full flex flex-col shrink-0 lg:w-[36.45vw] lg:max-w-[525px]">
