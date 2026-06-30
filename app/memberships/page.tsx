@@ -21,22 +21,22 @@ export default function MembershipsPage() {
         {
             title: "Great Place To Work® – Certified (2025–26)",
             description: "WAE is recognized as a Great Place To Work® certified organization, reflecting a culture built on trust, transparency, and employee empowerment. This certification reinforces our commitment to talent excellence, ethical practices, and fostering an environment where innovation thrives. It signals a workplace dedicated to continuous improvement and people-first values.",
-            image: "/placeholder-logo.png"
+            image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/30e04c80-a35b-4898-bae8-c067d0d34400/public"
         },
         {
             title: "India Water Quality Association (IWQA)",
             description: "As a member of IWQA, WAE aligns with India's leading water treatment standards and industry benchmarks. This membership ensures our products consistently uphold high-quality purification, safety, and performance norms. It strengthens our capability to deliver reliable and nationally compliant drinking water solutions.",
-            image: "/placeholder-logo.png"
+            image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/642b8ce4-eaac-4bc7-c73e-071de0595700/public"
         },
         {
             title: "The International Water Association (IWA)",
             description: "Membership with IWA connects WAE to a global network of water experts, innovators, and sustainable technology leaders. It enables us to adopt international best practices in water treatment, circular systems, and resource-efficient solutions, ensuring our technologies remain globally competitive.",
-            image: "/placeholder-logo.png"
+            image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5c2c9f26-1e04-446a-7e8d-6065d386c300/public"
         },
         {
             title: "Indian Green Building Council (IGBC) – Member",
             description: "As an IGBC member, WAE supports India's green building movement by promoting sustainable water infrastructure within commercial and institutional environments. This reinforces our commitment to eco-friendly engineering, reduced environmental footprint, and enabling organizations to achieve higher green building rating compliance.",
-            image: "/placeholder-logo.png"
+            image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/efbe5ee0-e398-428a-7042-3256c56f2000/public"
         }
     ]
 
