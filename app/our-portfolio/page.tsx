@@ -589,7 +589,7 @@ export default function Home() {
                 textAlign: "right",
                 fontFamily: "\'Manrope\', sans-serif",
                 fontWeight: 500,
-                fontSize: "10px",
+                fontSize: "clamp(18px, 2vw, 32px)",
                 lineHeight: "105%",
                 letterSpacing: "0%",
                 color: "#FFFFFF66",
