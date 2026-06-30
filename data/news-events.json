@@ -43,7 +43,7 @@
       "date": "Date-26/06/26",
       "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public",
       "link": "https://indiacsr.in/strategic-csr-creating-lasting-community-impact/",
-      "displayOnHomepage": true,
+      "displayOnHomepage": false,
       "rank": 4
     },
     {
@@ -109,8 +109,8 @@
       "date": "Date - 26/06/2026",
       "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/97bae575-faf2-4522-ed06-48c53cd6d400/public",
       "link": "https://www.manufacturingtodayindia.com/waes-path-to-zed-gold",
-      "displayOnHomepage": false,
-      "rank": 10
+      "displayOnHomepage": true,
+      "rank": 4
     },
     {
       "id": "award-4",
