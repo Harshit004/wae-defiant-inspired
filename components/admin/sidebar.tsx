@@ -14,12 +14,15 @@ import {
   PlaySquare,
   Settings,
   LogOut,
-  Users
+  Users,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react"
 
 export default function Sidebar() {
   const pathname = usePathname()
   const [productsOpen, setProductsOpen] = useState(true)
+  const [isCollapsed, setIsCollapsed] = useState(false)
 
   const isCategoriesActive = pathname.startsWith("/admin/categories")
   const isProductsActive = pathname.startsWith("/admin/products")
@@ -36,58 +39,72 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="w-[260px] bg-[#04111d] border-r border-white/5 flex flex-col justify-between h-screen sticky top-0 text-[#AEAEAE]">
-      <div>
+    <aside className={`${isCollapsed ? 'w-[80px]' : 'w-[260px]'} transition-all duration-300 bg-[#04111d] border-r border-white/5 flex flex-col justify-between h-screen sticky top-0 text-[#AEAEAE]`}>
+      <div className="overflow-x-hidden">
         {/* Brand logo section */}
-        <div className="px-6 py-[24px] border-b border-white/5 flex items-center justify-start">
+        <div className={`h-[87px] border-b border-white/5 flex items-center ${isCollapsed ? 'justify-center' : 'px-6 justify-start'}`}>
           <Link href="/admin/categories" className="flex items-center">
-            <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/66b9c744-127a-427d-bc84-3a0c3f3e5700/public"
-              alt="WAE Logo"
-              width={102}
-              height={39}
-              priority
-            />
+            {isCollapsed ? (
+              <div className="w-10 h-10 bg-white/10 rounded flex items-center justify-center text-white font-bold text-xl" style={{ fontFamily: "'Inter Tight', sans-serif" }}>W</div>
+            ) : (
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/66b9c744-127a-427d-bc84-3a0c3f3e5700/public"
+                alt="WAE Logo"
+                width={102}
+                height={39}
+                priority
+              />
+            )}
           </Link>
         </div>
 
         {/* Navigation items */}
-        <nav className="mt-8 px-4 space-y-2">
+        <nav className={`mt-8 space-y-2 ${isCollapsed ? 'px-2' : 'px-4'}`}>
           {/* Dashboard */}
           <Link
             href="/admin/dashboard"
-            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3 px-4'} py-3 text-sm font-medium transition-all hover:text-white ${
               pathname === "/admin/dashboard" 
-                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3" 
+                ? `text-white bg-white/5 border-[#0081C9] ${isCollapsed ? 'border-l-4 rounded-r-md' : 'border-l-4 pl-3'}` 
                 : "text-[#AEAEAE]"
             }`}
+            title="Dashboard"
           >
-            <Home size={18} />
-            <span>Dashboard</span>
+            <Home size={18} className="flex-shrink-0" />
+            {!isCollapsed && <span className="truncate">Dashboard</span>}
           </Link>
 
           {/* Products Dropdown */}
-          <div>
+          <div title="Products">
             <button
-              onClick={() => setProductsOpen(!productsOpen)}
-              className={`w-full flex items-center justify-between px-4 py-3 text-sm font-medium transition-all hover:text-white text-left focus:outline-none ${
+              onClick={() => {
+                if (isCollapsed) {
+                  setIsCollapsed(false);
+                  setProductsOpen(true);
+                } else {
+                  setProductsOpen(!productsOpen);
+                }
+              }}
+              className={`w-full flex items-center ${isCollapsed ? 'justify-center' : 'justify-between px-4'} py-3 text-sm font-medium transition-all hover:text-white text-left focus:outline-none ${
                 isParentProductsActive
-                  ? "bg-[#082a45]/40 text-white border-l-4 border-[#0081C9] pl-3"
+                  ? `bg-[#082a45]/40 text-white border-[#0081C9] ${isCollapsed ? 'border-l-4 rounded-r-md' : 'border-l-4 pl-3'}`
                   : "text-[#AEAEAE]"
               }`}
             >
               <div className="flex items-center gap-3">
-                <Package size={18} />
-                <span>Products</span>
+                <Package size={18} className="flex-shrink-0" />
+                {!isCollapsed && <span className="truncate">Products</span>}
               </div>
-              {productsOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+              {!isCollapsed && (
+                productsOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />
+              )}
             </button>
 
-            {productsOpen && (
-              <div className="mt-1 ml-[26px] pl-4 border-l border-white/10 space-y-1">
+            {productsOpen && !isCollapsed && (
+              <div className="mt-1 ml-[26px] pl-4 border-l border-white/10 space-y-1 overflow-hidden">
                 <Link
                   href="/admin/categories"
-                  className={`block py-2 px-2 text-xs font-medium transition-all hover:text-white ${
+                  className={`block py-2 px-2 text-xs font-medium transition-all hover:text-white truncate ${
                     isCategoriesActive ? "text-[#0081C9] font-semibold" : "text-[#AEAEAE]"
                   }`}
                 >
@@ -95,7 +112,7 @@ export default function Sidebar() {
                 </Link>
                 <Link
                   href="/admin/products"
-                  className={`block py-2 px-2 text-xs font-medium transition-all hover:text-white ${
+                  className={`block py-2 px-2 text-xs font-medium transition-all hover:text-white truncate ${
                     isProductsActive ? "text-[#0081C9] font-semibold" : "text-[#AEAEAE]"
                   }`}
                 >
@@ -108,101 +125,119 @@ export default function Sidebar() {
           {/* Blogs */}
           <Link
             href="/admin/blogs"
-            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3 px-4'} py-3 text-sm font-medium transition-all hover:text-white ${
               pathname.startsWith("/admin/blogs")
-                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3"
+                ? `text-white bg-white/5 border-[#0081C9] ${isCollapsed ? 'border-l-4 rounded-r-md' : 'border-l-4 pl-3'}` 
                 : "text-[#AEAEAE]"
             }`}
+            title="Blogs"
           >
-            <FileText size={18} />
-            <span>Blogs</span>
+            <FileText size={18} className="flex-shrink-0" />
+            {!isCollapsed && <span className="truncate">Blogs</span>}
           </Link>
 
           {/* Enquiries */}
           <Link
             href="/admin/enquiries"
-            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3 px-4'} py-3 text-sm font-medium transition-all hover:text-white ${
               pathname.startsWith("/admin/enquiries")
-                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3"
+                ? `text-white bg-white/5 border-[#0081C9] ${isCollapsed ? 'border-l-4 rounded-r-md' : 'border-l-4 pl-3'}` 
                 : "text-[#AEAEAE]"
             }`}
+            title="Enquiries"
           >
-            <FileText size={18} />
-            <span>Enquiries</span>
+            <FileText size={18} className="flex-shrink-0" />
+            {!isCollapsed && <span className="truncate">Enquiries</span>}
           </Link>
 
           {/* Jobs */}
           <Link
             href="/admin/jobs"
-            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3 px-4'} py-3 text-sm font-medium transition-all hover:text-white ${
               pathname.startsWith("/admin/jobs")
-                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3"
+                ? `text-white bg-white/5 border-[#0081C9] ${isCollapsed ? 'border-l-4 rounded-r-md' : 'border-l-4 pl-3'}` 
                 : "text-[#AEAEAE]"
             }`}
+            title="Jobs"
           >
-            <Briefcase size={18} />
-            <span>Jobs</span>
+            <Briefcase size={18} className="flex-shrink-0" />
+            {!isCollapsed && <span className="truncate">Jobs</span>}
           </Link>
 
           {/* News & Events */}
           <Link
             href="/admin/news-events"
-            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3 px-4'} py-3 text-sm font-medium transition-all hover:text-white ${
               pathname.startsWith("/admin/news-events")
-                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3"
+                ? `text-white bg-white/5 border-[#0081C9] ${isCollapsed ? 'border-l-4 rounded-r-md' : 'border-l-4 pl-3'}` 
                 : "text-[#AEAEAE]"
             }`}
+            title="News & Events"
           >
-            <PlaySquare size={18} />
-            <span>News & Events</span>
+            <PlaySquare size={18} className="flex-shrink-0" />
+            {!isCollapsed && <span className="truncate">News & Events</span>}
           </Link>
 
           {/* Analytics */}
           <Link
             href="/admin/analytics"
-            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3 px-4'} py-3 text-sm font-medium transition-all hover:text-white ${
               pathname.startsWith("/admin/analytics")
-                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3"
+                ? `text-white bg-white/5 border-[#0081C9] ${isCollapsed ? 'border-l-4 rounded-r-md' : 'border-l-4 pl-3'}` 
                 : "text-[#AEAEAE]"
             }`}
+            title="Analytics"
           >
-            <PlaySquare size={18} />
-            <span>Analytics</span>
+            <PlaySquare size={18} className="flex-shrink-0" />
+            {!isCollapsed && <span className="truncate">Analytics</span>}
           </Link>
 
           {/* Subscribers */}
           <Link
             href="/admin/subscribers"
-            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3 px-4'} py-3 text-sm font-medium transition-all hover:text-white ${
               pathname.startsWith("/admin/subscribers")
-                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3"
+                ? `text-white bg-white/5 border-[#0081C9] ${isCollapsed ? 'border-l-4 rounded-r-md' : 'border-l-4 pl-3'}` 
                 : "text-[#AEAEAE]"
             }`}
+            title="Subscribers"
           >
-            <Users size={18} />
-            <span>Subscribers</span>
+            <Users size={18} className="flex-shrink-0" />
+            {!isCollapsed && <span className="truncate">Subscribers</span>}
           </Link>
 
           {/* Settings */}
           <Link
             href="/admin/categories"
-            className="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white"
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3 px-4'} py-3 text-sm font-medium transition-all hover:text-white`}
+            title="Settings"
           >
-            <Settings size={18} />
-            <span>Settings</span>
+            <Settings size={18} className="flex-shrink-0" />
+            {!isCollapsed && <span className="truncate">Settings</span>}
           </Link>
         </nav>
       </div>
 
-      {/* Logout button */}
-      <div className="p-4 border-t border-white/5">
+      {/* Footer section with toggle and logout */}
+      <div className="flex flex-col border-t border-white/5">
         <button
-          onClick={handleLogout}
-          className="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white text-left cursor-pointer focus:outline-none"
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          className={`w-full flex items-center ${isCollapsed ? 'justify-center' : 'justify-between px-4'} py-4 text-sm font-medium transition-all hover:text-white text-[#AEAEAE]`}
+          title={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
         >
-          <LogOut size={18} />
-          <span>Logout</span>
+          {!isCollapsed && <span>Collapse Sidebar</span>}
+          {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
         </button>
+        <div className="p-4 border-t border-white/5">
+          <button
+            onClick={handleLogout}
+            className={`w-full flex items-center ${isCollapsed ? 'justify-center px-0' : 'gap-3 px-4'} py-3 text-sm font-medium transition-all hover:text-white text-left cursor-pointer focus:outline-none`}
+            title="Logout"
+          >
+            <LogOut size={18} className="flex-shrink-0 text-red-400" />
+            {!isCollapsed && <span className="text-red-400">Logout</span>}
+          </button>
+        </div>
       </div>
     </aside>
   )
