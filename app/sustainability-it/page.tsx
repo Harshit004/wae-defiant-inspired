@@ -376,7 +376,7 @@ const etceteraItems = [
                     key={i}
                     className="pb-2 border-b border-[#D9D9DC] "
                     style={{
-                      fontFamily: "\",
+                      fontFamily: "'Manrope', sans-serif",
                       fontWeight: 500,
                       fontSize: "10px",
                       lineHeight: "110%",
@@ -415,7 +415,7 @@ const etceteraItems = [
                     key={i}
                     className="pb-2 border-b border-[#D9D9DC] "
                     style={{
-                      fontFamily: "\",
+                      fontFamily: "'Manrope', sans-serif",
                       fontWeight: 500,
                       fontSize: "10px",
                       lineHeight: "110%",

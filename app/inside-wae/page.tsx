@@ -165,7 +165,8 @@ const Home: FC = () => {
     { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs" },
-  ]const etceteraItems = [
+  ];
+  const etceteraItems = [
     { text: "Contact", href: "/contact" },
     { text: "Compliance", href: "/compliance" },
     { text: "Mentioned", href: "/mentioned" },

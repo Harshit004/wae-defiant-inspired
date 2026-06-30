@@ -71,11 +71,15 @@ export default function Home() {
 
   // Arrays for menu items
   const productsItems = [
-    "This is Us",
-    "Our Portfolio",
-    "Reimagine Work",
+    { text: "This is Us", href: "/this-is-us" },
+    { text: "Our Portfolio", href: "/our-portfolio" },
+    { text: "Reimagine Work", href: "/careers" },
   ]
-  const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"]
+  const blueprintItems = [
+    { text: "Sustainability", href: "/sustainability" },
+    { text: "The Activist Co.", href: "/the-activist-co" },
+    { text: "Blog", href: "/blogs" },
+  ]
 const etceteraItems = [
     { text: "Contact", href: "/contact" },
     { text: "Compliance", href: "/compliance" },
@@ -228,26 +232,28 @@ const etceteraItems = [
                       lineHeight: "110%",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span className="block">{item}</span>
+                    <Link href={item.href} className="contents">
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -259,7 +265,7 @@ const etceteraItems = [
                     key={i}
                     className="pb-2 border-b border-[#D9D9DC] "
                     style={{
-                      fontFamily: "\",
+                      fontFamily: "'Manrope', sans-serif",
                       fontWeight: 500,
                       fontSize: "10px",
                       lineHeight: "110%",
@@ -298,7 +304,7 @@ const etceteraItems = [
                     key={i}
                     className="pb-2 border-b border-[#D9D9DC] "
                     style={{
-                      fontFamily: "\",
+                      fontFamily: "'Manrope', sans-serif",
                       fontWeight: 500,
                       fontSize: "10px",
                       lineHeight: "110%",
