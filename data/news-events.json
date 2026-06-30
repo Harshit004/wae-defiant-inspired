@@ -1,0 +1,127 @@
+{
+  "heroTextNews": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters",
+  "heroTextAwards": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters",
+  "items": [
+    {
+      "id": "news-1",
+      "type": "news",
+      "title": "How Industrial Equipment Is Being Designed to Deliver Measurable Carbon Reductions",
+      "description": "For over a century, industrial machinery has been engineered to convert energy into output which is faster, cheaper, and at scale. Carbon, if acknowledged at all, was incidental. That era has ended.",
+      "date": "Date-26/06/26",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fac96cd3-ad63-42ff-23df-0d795cc52000/public",
+      "link": "/2026-outlook",
+      "displayOnHomepage": true,
+      "rank": 1
+    },
+    {
+      "id": "news-2",
+      "type": "news",
+      "title": "Safari India Exclusive: Binita Singh of WAE F&B on Redefining Sustainable Water Solutions in..",
+      "description": "In an exclusive conversation with Priyal Dutta, Senior Correspondent, Safari India, Ms. Binita Singh, Head – Brand Advocacy at WAE F&B, shares her perspective on the evolving sustainability landscape in the...",
+      "date": "December 06, 2025",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/31701d9e-a471-46ff-4bb7-dac1ec8aac00/public",
+      "link": "https://yourstory.com/socialstory/2025/12/from-activism-to-infrastructure-how-wae-is-attempting-to-cut-indias-plastic-bottle-use",
+      "displayOnHomepage": true,
+      "rank": 2
+    },
+    {
+      "id": "news-3",
+      "type": "news",
+      "title": "WAE shines with ZED Gold certification",
+      "description": "The ZED Gold Certification places WAE among enterprises that mainatin high levels of product quality while...",
+      "date": "Date-26/06/26",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public",
+      "link": "https://travtalkindia.com/hotels-advance-sustainability-with-glass-bottling/",
+      "displayOnHomepage": true,
+      "rank": 3
+    },
+    {
+      "id": "news-4",
+      "type": "news",
+      "title": "WAE shines with ZED Gold certification",
+      "description": "The ZED Gold Certification places WAE among enterprises that mainatin high levels of product quality while...",
+      "date": "Date-26/06/26",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public",
+      "link": "https://indiacsr.in/strategic-csr-creating-lasting-community-impact/",
+      "displayOnHomepage": true,
+      "rank": 4
+    },
+    {
+      "id": "news-5",
+      "type": "news",
+      "title": "WAE shines with ZED Gold certification",
+      "description": "The ZED Gold Certification places WAE among enterprises that mainatin high levels of product quality while...",
+      "date": "Date-26/06/26",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public",
+      "link": "https://www.hospitalitynet.org/opinion/4129692.html",
+      "displayOnHomepage": true,
+      "rank": 5
+    },
+    {
+      "id": "news-6",
+      "type": "news",
+      "title": "2026 Outlook: ESG, sustainability and the next phase of India’s water infrastructure",
+      "description": "As India accelerates toward its developmental inflection point in the mid-2020s, water infrastructure and sustainability frameworks stand at the nexus of economic resilience, climate adaptation, and corporate governance imperatives.",
+      "date": "Date-26/06/26",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0e668674-668e-4e85-c6ba-5f0bc48af400/public",
+      "link": "https://hospibuz.com/opinion/luxury-meets-sustainability-an-interview-with-wae-fb-10567581",
+      "displayOnHomepage": false,
+      "rank": 6
+    },
+    {
+      "id": "news-7",
+      "type": "news",
+      "title": "From activism to infrastructure: How WAE is attempting to cut India’s plastic bottle use",
+      "description": "Most people would rarely consider how a disposable plastic bottle of mineral water comes into being and what its long-term consequences are. It was against this context that Anupam Joshi founded WAE Water (WAE) as \"an activist venture\" almost 15 years ago.",
+      "date": "December 06, 2025",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5e4885c1-f514-4c6e-b409-56b7363e8300/public",
+      "link": "https://indiacsr.in/wae-foundation-safe-drinking-water-units-28-police-stations-noida/",
+      "displayOnHomepage": false,
+      "rank": 7
+    },
+    {
+      "id": "award-1",
+      "type": "award",
+      "title": "WAE Drinking Water Coolers Certified by BIS Under IS 1475:2024",
+      "description": "WAE, an Indian manufacturer of drinking water and water management systems for institutional and commercial use...",
+      "date": "",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/304b56a7-9d7b-41e8-31f4-0ee7f7168800/public",
+      "link": "https://themachinemaker.com/news/wae-drinking-water-coolers-certified-by-bis-under-is-14752024/",
+      "displayOnHomepage": false,
+      "rank": 8
+    },
+    {
+      "id": "award-2",
+      "type": "award",
+      "title": "WAE Felicitated with 15th CII Design Excellence...",
+      "description": "WAE, India’s leading water solutions provider, has been conferred...",
+      "date": "",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6fe3159e-1abc-45bc-2d8e-bdfd03a3fb00/public",
+      "link": "https://www.passionateinmarketing.com/wae-felicitated-with-15th-cii-design-excellence-award-2025-for-communication-design/",
+      "displayOnHomepage": false,
+      "rank": 9
+    },
+    {
+      "id": "award-3",
+      "type": "award",
+      "title": "Anupam Vikram Joshe on WAE’s path to ZED Gold",
+      "description": "In today’s rapidly evolving sustainability landscape, organisations...",
+      "date": "",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/97bae575-faf2-4522-ed06-48c53cd6d400/public",
+      "link": "https://www.manufacturingtodayindia.com/waes-path-to-zed-gold",
+      "displayOnHomepage": false,
+      "rank": 10
+    },
+    {
+      "id": "award-4",
+      "type": "award",
+      "title": "WAE receives ZED gold certification for sustainable manufacturing",
+      "description": "The ZED Gold Certification places WAE among enterprises that mainatin high levels of product quality while...",
+      "date": "",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee45de6e-2169-4590-0684-201b1d3d6200/public",
+      "link": "https://manufacturing.economictimes.indiatimes.com/news/industry/wae-receives-zed-gold-certification-for-sustainable-manufacturing/125057437",
+      "displayOnHomepage": false,
+      "rank": 11
+    }
+  ]
+}

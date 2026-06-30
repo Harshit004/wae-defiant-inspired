@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
@@ -8,6 +9,16 @@ import { usePathname } from "next/navigation"
 
 export default function NewsAndUpdatesPage() {
   const pathname = usePathname()
+  const [data, setData] = useState<{ heroTextNews: string, items: any[] } | null>(null)
+
+  useEffect(() => {
+    fetch("/api/news-events")
+      .then(res => res.json())
+      .then(json => {
+        if (json.success) setData(json.data)
+      })
+      .catch(console.error)
+  }, [])
 
   return (
     <main className="relative min-h-screen bg-[#0F0F0F] text-white overflow-x-hidden">
@@ -85,14 +96,14 @@ export default function NewsAndUpdatesPage() {
               color: '#FFFFFF',
               letterSpacing: '0px',
             }}>
-              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
+              {data ? data.heroTextNews : "Loading..."}
             </p>
           </div>
         </div>
 
         {/* News Grid Component */}
         <div>
-          <NewsGrid />
+          {data ? <NewsGrid cards={data.items.filter(i => i.type === 'news')} /> : null}
         </div>
 
       </section>

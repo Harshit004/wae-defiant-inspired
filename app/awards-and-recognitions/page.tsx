@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
@@ -9,6 +10,16 @@ import NewsGrid from "@/components/news-grid"
 
 export default function AwardsAndRecognitionsPage() {
   const pathname = usePathname()
+  const [data, setData] = useState<{ heroTextAwards: string, items: any[] } | null>(null)
+
+  useEffect(() => {
+    fetch("/api/news-events")
+      .then(res => res.json())
+      .then(json => {
+        if (json.success) setData(json.data)
+      })
+      .catch(console.error)
+  }, [])
 
   return (
     <main className="relative min-h-screen bg-[#0F0F0F] text-white overflow-x-hidden">
@@ -86,39 +97,14 @@ export default function AwardsAndRecognitionsPage() {
               color: '#FFFFFF',
               letterSpacing: '0px',
             }}>
-              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
+              {data ? data.heroTextAwards : "Loading..."}
             </p>
           </div>
         </div>
 
         {/* Awards Grid Component */}
         <div>
-          <NewsGrid cards={[
-            {
-              imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/304b56a7-9d7b-41e8-31f4-0ee7f7168800/public",
-              title: "WAE Drinking Water Coolers Certified by BIS Under IS 1475:2024",
-              description: "WAE, an Indian manufacturer of drinking water and water management systems for institutional and commercial use...",
-              link: "https://themachinemaker.com/news/wae-drinking-water-coolers-certified-by-bis-under-is-14752024/",
-            },
-            {
-              imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6fe3159e-1abc-45bc-2d8e-bdfd03a3fb00/public",
-              title: "WAE Felicitated with 15th CII Design Excellence...",
-              description: "WAE, India’s leading water solutions provider, has been conferred...",
-              link: "https://www.passionateinmarketing.com/wae-felicitated-with-15th-cii-design-excellence-award-2025-for-communication-design/",
-            },
-            {
-              imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/97bae575-faf2-4522-ed06-48c53cd6d400/public",
-              title: "Anupam Vikram Joshe on WAE’s path to ZED Gold",
-              description: "In today’s rapidly evolving sustainability landscape, organisations...",
-              link: "https://www.manufacturingtodayindia.com/waes-path-to-zed-gold",
-            },
-            {
-              imageUrl: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee45de6e-2169-4590-0684-201b1d3d6200/public",
-              title: "WAE receives ZED gold certification for sustainable manufacturing",
-              description: "The ZED Gold Certification places WAE among enterprises that mainatin high levels of product quality while...",
-              link: "https://manufacturing.economictimes.indiatimes.com/news/industry/wae-receives-zed-gold-certification-for-sustainable-manufacturing/125057437",
-            }
-          ]} />
+          {data ? <NewsGrid cards={data.items.filter(i => i.type === 'award')} /> : null}
         </div>
 
       </section>

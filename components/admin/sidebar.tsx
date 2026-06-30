@@ -146,8 +146,12 @@ export default function Sidebar() {
 
           {/* News & Events */}
           <Link
-            href="/admin/categories"
-            className="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white"
+            href="/admin/news-events"
+            className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all hover:text-white ${
+              pathname.startsWith("/admin/news-events")
+                ? "text-white bg-white/5 border-l-4 border-[#0081C9] pl-3"
+                : "text-[#AEAEAE]"
+            }`}
           >
             <PlaySquare size={18} />
             <span>News & Events</span>

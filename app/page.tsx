@@ -135,14 +135,29 @@ export default function Home() {
   const [homepageBlogs, setHomepageBlogs] = useState<HomepageBlog[]>([])
   const [blogsLoading, setBlogsLoading] = useState(true)
 
+  // Homepage news/events
+  const [homepageNews, setHomepageNews] = useState<any[]>([])
+
   useEffect(() => {
     fetch('/api/homepage-blogs')
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) setHomepageBlogs(data.blogs)
+        if (data.success) {
+          setHomepageBlogs(data.data)
+        }
       })
-      .catch(() => { })
+      .catch(console.error)
       .finally(() => setBlogsLoading(false))
+
+    fetch('/api/news-events')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          const featured = data.data.items.filter((i: any) => i.displayOnHomepage).sort((a: any, b: any) => a.rank - b.rank);
+          setHomepageNews(featured)
+        }
+      })
+      .catch(console.error)
   }, [])
 
   // State for controlling tagline visibility on scroll
@@ -1459,76 +1474,88 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-8">
             {/* Main News Column */}
             <div className="col-span-4 group cursor-pointer">
-              <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fac96cd3-ad63-42ff-23df-0d795cc52000/public"
-                  alt="How Industrial Equipment Is Being Designed to Deliver Measurable Carbon Reductions "
-                  fill
-                  className="object-cover grayscale group-hover:grayscale-0"
-                />
-              </div>
-              <h3 style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: '18px',
-                lineHeight: '100%',
-                color: '#FFFFFF',
-                marginBottom: '18px'
-              }}>
-                How Industrial Equipment Is Being Designed to Deliver Measurable Carbon Reductions
-              </h3>
-              <p style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '100%',
-                color: '#AEAEAE'
-              }}>
-                For over a century, industrial machinery has been engineered to convert energy into output which is faster, cheaper, and at scale. Carbon, if acknowledged at all, was incidental. That era has ended.
-              </p>
+              {homepageNews[0] ? (
+                <Link href={homepageNews[0].link} className="block">
+                  <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
+                    <Image
+                      src={homepageNews[0].imageUrl}
+                      alt={homepageNews[0].title}
+                      fill
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                  <h3 style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '18px',
+                    lineHeight: '100%',
+                    color: '#FFFFFF',
+                    marginBottom: '18px'
+                  }}>
+                    {homepageNews[0].title}
+                  </h3>
+                  <p style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '14px',
+                    lineHeight: '130%',
+                    color: '#AEAEAE'
+                  }}>
+                    {homepageNews[0].description}
+                  </p>
+                </Link>
+              ) : (
+                <div className="w-full aspect-[1.8/1] bg-white/5 animate-pulse rounded"></div>
+              )}
             </div>
 
             {/* Middle News Column */}
             <div className="col-span-4 group cursor-pointer">
-              <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/31701d9e-a471-46ff-4bb7-dac1ec8aac00/public"
-                  alt="Manufacturing"
-                  fill
-                  className="object-cover grayscale group-hover:grayscale-0"
-                />
-              </div>
-              <h3 style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: '18px',
-                lineHeight: '100%',
-                color: '#FFFFFF',
-                marginBottom: '18px'
-              }}>
-                Safari India Exclusive: Binita Singh of WAE F&B on Redefining Sustainable Water Solutions in..
-              </h3>
-              <p style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '100%',
-                color: '#AEAEAE'
-              }}>
-                In an exclusive conversation with Priyal Dutta, Senior Correspondent, Safari India, Ms. Binita Singh, Head – Brand Advocacy at WAE F&B, shares her perspective on the evolving sustainability landscape in the...
-              </p>
+              {homepageNews[1] ? (
+                <Link href={homepageNews[1].link} className="block">
+                  <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
+                    <Image
+                      src={homepageNews[1].imageUrl}
+                      alt={homepageNews[1].title}
+                      fill
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                  <h3 style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '18px',
+                    lineHeight: '100%',
+                    color: '#FFFFFF',
+                    marginBottom: '18px'
+                  }}>
+                    {homepageNews[1].title}
+                  </h3>
+                  <p style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '14px',
+                    lineHeight: '130%',
+                    color: '#AEAEAE'
+                  }}>
+                    {homepageNews[1].description}
+                  </p>
+                </Link>
+              ) : (
+                <div className="w-full aspect-[1.8/1] bg-white/5 animate-pulse rounded"></div>
+              )}
             </div>
 
             {/* Sidebar News Column */}
-            <div className="col-span-4 flex flex-col justify-between">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="flex gap-6 items-start group cursor-pointer">
+            <div className="col-span-4 flex flex-col gap-6 justify-between">
+              {homepageNews.slice(2, 5).map((item, i) => (
+                <Link href={item.link} key={item.id} className="flex gap-6 items-start group cursor-pointer">
                   <div className="relative w-[140px] aspect-[1.4/1] flex-shrink-0">
                     <Image
-                      src={i === 2 ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f2da7d0f-dbed-45a9-1641-8cee5fc4fe00/public" : i === 1 ? "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public" : "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public"}
-                      alt="Small news item"
+                      src={item.imageUrl}
+                      alt={item.title}
                       fill
-                      className="object-cover grayscale group-hover:grayscale-0"
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
@@ -1539,7 +1566,7 @@ export default function Home() {
                       lineHeight: '120%',
                       color: '#FFFFFF'
                     }}>
-                      WAE shines with ZED Gold certification
+                      {item.title}
                     </h4>
                     <p style={{
                       fontFamily: "'Manrope', sans-serif",
@@ -1547,12 +1574,15 @@ export default function Home() {
                       fontSize: '12px',
                       lineHeight: '140%',
                       color: '#AEAEAE'
-                    }}>
-                      Lorem ipsum dolor sit amet,
+                    }} className="line-clamp-3">
+                      {item.description}
                     </p>
                   </div>
-                </div>
+                </Link>
               ))}
+              {homepageNews.slice(2, 5).length === 0 && (
+                <div className="w-full h-full bg-white/5 animate-pulse rounded"></div>
+              )}
             </div>
           </div>
         </div>
