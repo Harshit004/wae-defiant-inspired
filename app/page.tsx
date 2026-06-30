@@ -239,9 +239,9 @@ export default function Home() {
     { text: "Blog", href: "/blogs" },
   ]
 const etceteraItems = [
-    { text: "Contact", href: "/contact" },
-    { text: "Compliance", href: "/compliance" },
-    { text: "Mentioned", href: "/mentioned" },
+    { text: "Contact", href: "/contact-us" },
+    { text: "Compliance", href: "#" },
+    { text: "Mentioned", href: "/news-and-updates" },
 ]
   const lineCount = Math.min(productsItems.length, blueprintItems.length) // Note: lineCount is calculated but not used
 

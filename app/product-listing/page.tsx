@@ -235,9 +235,9 @@ function ProductListingContent() {
         { text: "Blog", href: "/blogs" },
     ]
 const etceteraItems = [
-    { text: "Contact", href: "/contact" },
-    { text: "Compliance", href: "/compliance" },
-    { text: "Mentioned", href: "/mentioned" },
+    { text: "Contact", href: "/contact-us" },
+    { text: "Compliance", href: "#" },
+    { text: "Mentioned", href: "/news-and-updates" },
 ]
 
     return (

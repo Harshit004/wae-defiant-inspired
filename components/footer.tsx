@@ -237,9 +237,9 @@ export default function Footer() {
 
                 {/* ETCETERA */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/contact" className="hover:opacity-80 transition-opacity">Contact</Link></li>
+                  <li><Link href="/contact-us" className="hover:opacity-80 transition-opacity">Contact</Link></li>
                   <li><Link href="/compliance" className="hover:opacity-80 transition-opacity">Compliance</Link></li>
-                  <li><Link href="/mentioned" className="hover:opacity-80 transition-opacity">Mentioned</Link></li>
+                  <li><Link href="/news-and-updates" className="hover:opacity-80 transition-opacity">Mentioned</Link></li>
                 </ul>
 
                 {/* POLICIES */}
