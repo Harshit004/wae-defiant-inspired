@@ -2840,7 +2840,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "How AI Is Helping Us Forecast Water Demand in High-Use Environments",
     "category": "Technology",
     "description": "AI is transforming water demand forecasting in high-use environments like factories, data centers, and farms — predicting shortages with 90%+ accuracy and cutting consumption by up to 40% through smart, real-time data integration.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/847e06c9-b983-4334-c5b6-6e3594b67300/public",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a1f0caaf-e209-4658-ef50-95b8aee06600/public",
     "writerId": "rashi-tarika",
     "readTime": "2 min read",
     "status": "Live",
