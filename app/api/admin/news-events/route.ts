@@ -20,7 +20,7 @@ export async function POST(request: Request) {
       if (heroTextNews !== undefined) dbState.heroTextNews = heroTextNews;
       if (heroTextAwards !== undefined) dbState.heroTextAwards = heroTextAwards;
       
-      const success = writeNewsEventsDB(dbState);
+      const success = await writeNewsEventsDB(dbState);
       return NextResponse.json({ success });
     }
 
@@ -57,7 +57,7 @@ export async function POST(request: Request) {
         }
       }
 
-      const success = writeNewsEventsDB(dbState);
+      const success = await writeNewsEventsDB(dbState);
       return NextResponse.json({ success, item: data });
     }
 
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: false, message: 'Item ID is required for deletion.' }, { status: 400 });
       }
       dbState.items = dbState.items.filter(i => i.id !== itemId);
-      const success = writeNewsEventsDB(dbState);
+      const success = await writeNewsEventsDB(dbState);
       return NextResponse.json({ success });
     }
 
