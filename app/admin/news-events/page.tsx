@@ -348,7 +348,7 @@ export default function NewsEventsPage() {
                     type="text"
                     value={formData.date}
                     onChange={e => setFormData({...formData, date: e.target.value})}
-                    placeholder="e.g. December 06, 2025"
+                    placeholder="Date - dd/mm/yyyy"
                     className="w-full bg-black border border-white/10 rounded p-2.5 text-white outline-none focus:border-[#0081C9]"
                   />
                 </div>
