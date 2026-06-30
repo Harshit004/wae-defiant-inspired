@@ -8,6 +8,15 @@ import { usePathname } from "next/navigation"
 export default function CompliancePage() {
     const pathname = usePathname()
 
+    // Helper to chunk array into rows
+    const chunkArray = (arr: any[], size: number) => {
+        const result = [];
+        for (let i = 0; i < arr.length; i += size) {
+            result.push(arr.slice(i, i + size));
+        }
+        return result;
+    };
+
     const compliances = [
         {
             title: "ZED GOLD – MSME (Zero Defect Zero Effect)",
@@ -40,6 +49,8 @@ export default function CompliancePage() {
             image: "/placeholder-logo.png"
         }
     ]
+
+    const complianceRows = chunkArray(compliances, 3);
 
     return (
         <main className="relative min-h-screen bg-[#0F0F0F] text-white overflow-x-hidden">
@@ -91,8 +102,11 @@ export default function CompliancePage() {
                     </Link>
                 </div>
 
+                {/* Horizontal Divider */}
+                <div className="w-full h-px bg-white/20" style={{ marginBottom: '56px' }} />
+
                 {/* Hero Text */}
-                <div className="flex flex-row justify-between items-start" style={{ marginBottom: '96px' }}>
+                <div className="flex flex-row justify-between items-start" style={{ marginBottom: '92px' }}>
                     <div style={{ width: "clamp(260px, 28.2vw, 407px)", flexShrink: 0 }}>
                         <h1 style={{
                             fontFamily: 'Inter Tight',
@@ -109,10 +123,12 @@ export default function CompliancePage() {
                         <p style={{
                             fontFamily: 'Manrope',
                             fontWeight: 400,
-                            fontSize: 'clamp(14px, 1.11vw, 16px)',
+                            fontStyle: 'normal',
+                            fontSize: '16px',
                             lineHeight: '130%',
-                            color: '#FFFFFF',
+                            color: '#AEAEAE',
                             letterSpacing: '0px',
+                            verticalAlign: 'middle'
                         }}>
                             Explore the latest stories from WAE. From product innovations and sustainability initiatives to industry insights, partnerships, and company milestones, browse through the updates below to discover what's shaping our journey and the future of water
                         </p>
@@ -120,46 +136,61 @@ export default function CompliancePage() {
                 </div>
 
                 {/* Compliances Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px] gap-y-[80px]">
-                    {compliances.map((item, index) => (
-                        <div key={index} className="flex flex-col border-l border-white/20 pl-6 h-full">
-                            <div className="h-[120px] flex items-center justify-start mb-6">
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="max-h-full max-w-[150px] object-contain object-left"
-                                />
+                <div className="flex flex-col">
+                    {complianceRows.map((row, rowIndex) => (
+                        <div key={rowIndex} className="flex flex-col">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px]">
+                                {row.map((item, colIndex) => (
+                                    <div key={colIndex} className="flex flex-col border-l border-white/20 pl-6 h-full">
+                                        <div className="flex items-center justify-start" style={{ height: '154px', marginBottom: '38px' }}>
+                                            <img
+                                                src={item.image}
+                                                alt={item.title}
+                                                className="max-h-full max-w-[150px] object-contain object-left"
+                                            />
+                                        </div>
+                                        <h3
+                                            style={{
+                                                fontFamily: 'Manrope',
+                                                fontWeight: 400,
+                                                fontStyle: 'normal',
+                                                fontSize: '24px',
+                                                lineHeight: '130%',
+                                                letterSpacing: '0px',
+                                                verticalAlign: 'middle',
+                                                marginBottom: '32px'
+                                            }}
+                                        >
+                                            {item.title}
+                                        </h3>
+                                        <p
+                                            style={{
+                                                fontFamily: 'Manrope',
+                                                fontWeight: 400,
+                                                fontStyle: 'normal',
+                                                fontSize: '12px',
+                                                lineHeight: '130%',
+                                                color: '#AEAEAE',
+                                                letterSpacing: '0px',
+                                                verticalAlign: 'middle',
+                                            }}
+                                        >
+                                            {item.title.startsWith("ISO 9001") || item.title.startsWith("ISO 45001") || item.title.startsWith("ISO 14001") ? (
+                                                <>
+                                                    {item.description}
+                                                </>
+                                            ) : (
+                                                item.description
+                                            )}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
-                            <h3
-                                className="mb-4"
-                                style={{
-                                    fontFamily: 'Inter Tight',
-                                    fontWeight: 400,
-                                    fontSize: '24px',
-                                    lineHeight: '120%',
-                                    letterSpacing: '0px',
-                                }}
-                            >
-                                {item.title}
-                            </h3>
-                            <p
-                                style={{
-                                    fontFamily: 'Manrope',
-                                    fontWeight: 400,
-                                    fontSize: '12px',
-                                    lineHeight: '150%',
-                                    color: '#B3B3B3',
-                                    letterSpacing: '0px',
-                                }}
-                            >
-                                {item.title.startsWith("ISO 9001") || item.title.startsWith("ISO 45001") || item.title.startsWith("ISO 14001") ? (
-                                    <>
-                                        {item.description}
-                                    </>
-                                ) : (
-                                    item.description
-                                )}
-                            </p>
+                            
+                            {/* Horizontal divider after every row */}
+                            {rowIndex < complianceRows.length - 1 && (
+                                <div style={{ marginTop: '92px', marginBottom: '92px', width: '100%', height: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }} />
+                            )}
                         </div>
                     ))}
                 </div>

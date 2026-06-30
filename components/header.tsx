@@ -21,7 +21,7 @@ const blueprintItems = [
 ]
 const etceteraItems = [
     { text: "Contact", href: "/contact-us" },
-    { text: "Compliance", href: "#" },
+    { text: "Compliance", href: "/compliance" },
     { text: "Mentioned", href: "/news-and-updates" },
 ]
 

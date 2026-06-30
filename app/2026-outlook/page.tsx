@@ -209,7 +209,7 @@ export default function Home() {
     ]
 const etceteraItems = [
     { text: "Contact", href: "/contact-us" },
-    { text: "Compliance", href: "#" },
+    { text: "Compliance", href: "/compliance" },
     { text: "Mentioned", href: "/news-and-updates" },
 ]
     const lineCount = Math.min(productsItems.length, blueprintItems.length)
