@@ -19,6 +19,7 @@ import {
   AlertCircle,
   CheckCircle2,
   Loader2,
+  Newspaper,
 } from "lucide-react"
 
 interface DashboardData {
@@ -28,6 +29,7 @@ interface DashboardData {
   enquiries: { total: number; product: number; general: number }
   subscribers: { total: number }
   analytics: { totalSessions: number; uniqueVisitors: number; totalPageViews: number; avgTimeSpent: number }
+  newsEvents: { total: number; newsCount: number; awardCount: number; homepageFeatured: number }
 }
 
 function formatTime(seconds: number) {
@@ -103,7 +105,7 @@ export default function DashboardPage() {
   useEffect(() => {
     async function fetchAll() {
       try {
-        const [productsRes, blogsRes, jobsRes, enquiriesRes, subscribersRes, analyticsRes] =
+        const [productsRes, blogsRes, jobsRes, enquiriesRes, subscribersRes, analyticsRes, newsEventsRes] =
           await Promise.allSettled([
             fetch("/api/admin/products").then((r) => r.json()),
             fetch("/api/admin/blogs").then((r) => r.json()),
@@ -111,6 +113,7 @@ export default function DashboardPage() {
             fetch("/api/admin/enquiries").then((r) => r.json()),
             fetch("/api/subscribers").then((r) => r.json()),
             fetch("/api/analytics").then((r) => r.json()),
+            fetch("/api/admin/news-events").then((r) => r.json()),
           ])
 
         const products = productsRes.status === "fulfilled" ? productsRes.value : null
@@ -119,6 +122,7 @@ export default function DashboardPage() {
         const enquiries = enquiriesRes.status === "fulfilled" ? enquiriesRes.value : null
         const subscribers = subscribersRes.status === "fulfilled" ? subscribersRes.value : null
         const analytics = analyticsRes.status === "fulfilled" ? analyticsRes.value : null
+        const newsEvents = newsEventsRes.status === "fulfilled" ? newsEventsRes.value : null
 
         const productList = products?.products || []
         const blogList = blogs?.blogs || []
@@ -126,6 +130,7 @@ export default function DashboardPage() {
         const enquiryList = enquiries?.enquiries || []
         const subscriberList = subscribers?.subscribers || []
         const sessionList = Array.isArray(analytics) ? analytics : []
+        const newsEventList = newsEvents?.data?.items || []
 
         const totalSessions = sessionList.length
         const uniqueVisitors = new Set(sessionList.map((s: any) => s.visitorId)).size
@@ -158,6 +163,12 @@ export default function DashboardPage() {
           },
           subscribers: { total: subscriberList.length },
           analytics: { totalSessions, uniqueVisitors, totalPageViews, avgTimeSpent },
+          newsEvents: {
+            total: newsEventList.length,
+            newsCount: newsEventList.filter((i: any) => i.type === 'news').length,
+            awardCount: newsEventList.filter((i: any) => i.type === 'award').length,
+            homepageFeatured: newsEventList.filter((i: any) => i.displayOnHomepage).length,
+          }
         })
       } catch (err) {
         console.error("Dashboard fetch error:", err)
@@ -198,10 +209,11 @@ export default function DashboardPage() {
         </div>
 
         {/* Top KPI strip */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
           <StatCard icon={Package} label="Products" value={d.products.total} sub={`${d.products.live} live · ${d.products.draft} draft`} color="#0081C9" href="/admin/products" />
           <StatCard icon={LayoutGrid} label="Categories" value={d.products.categories} sub="Product families" color="#7c3aed" href="/admin/categories" />
           <StatCard icon={FileText} label="Blog Posts" value={d.blogs.total} sub={`${d.blogs.live} live · ${d.blogs.draft} draft`} color="#d97706" href="/admin/blogs" />
+          <StatCard icon={Newspaper} label="News & Events" value={d.newsEvents.total} sub={`${d.newsEvents.newsCount} news · ${d.newsEvents.awardCount} awards`} color="#eab308" href="/admin/news-events" />
           <StatCard icon={Briefcase} label="Job Openings" value={d.jobs.total} sub={`${d.jobs.live} live · ${d.jobs.draft} draft`} color="#10b981" href="/admin/jobs" />
           <StatCard icon={Mail} label="Enquiries" value={d.enquiries.total} sub={`${d.enquiries.product} product · ${d.enquiries.general} general`} color="#f43f5e" href="/admin/enquiries" />
           <StatCard icon={Users} label="Subscribers" value={d.subscribers.total} sub="Newsletter signups" color="#06b6d4" href="/admin/subscribers" />
@@ -262,6 +274,29 @@ export default function DashboardPage() {
                 <div className="flex items-center gap-1.5 text-xs text-white/30" style={{ fontFamily: "'Manrope', sans-serif" }}><AlertCircle size={13} /><span>{d.blogs.draft} Draft</span></div>
               </div>
               <Link href="/admin/blogs/new" className="block w-full text-center py-2 text-xs font-medium bg-[#d97706]/10 hover:bg-[#d97706]/20 text-[#d97706] rounded-lg transition-colors" style={{ fontFamily: "'Manrope', sans-serif" }}>+ Write New Post</Link>
+            </div>
+          </SectionPanel>
+
+          <SectionPanel title="News & Events" icon={Newspaper} color="#eab308" href="/admin/news-events">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-white/60" style={{ fontFamily: "'Manrope', sans-serif" }}>Total Items</span>
+                <span className="text-2xl font-medium text-white" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{d.newsEvents.total}</span>
+              </div>
+              <div className="space-y-2 pt-2 border-t border-white/5">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-white/40 flex items-center gap-1.5">News</span>
+                  <span className="text-white font-medium">{d.newsEvents.newsCount}</span>
+                </div>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-white/40 flex items-center gap-1.5">Awards</span>
+                  <span className="text-white font-medium">{d.newsEvents.awardCount}</span>
+                </div>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-white/40 flex items-center gap-1.5">Homepage Featured</span>
+                  <span className="text-white font-medium">{d.newsEvents.homepageFeatured}</span>
+                </div>
+              </div>
             </div>
           </SectionPanel>
 
