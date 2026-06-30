@@ -4,7 +4,6 @@ import type { FC } from "react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Image from "next/image"
-import Link from "next/link"
 
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
 
@@ -25,58 +24,61 @@ export default function TheActivistCoPage() {
       </div>
 
       {/* Main Content Area */}
-      <div className="relative z-10 w-full" style={{ paddingTop: "clamp(120px, 15vw, 180px)" }}>
+      {/* 212px top padding roughly equates to 135px header + 77px gap between header and hero */}
+      <div className="relative z-10 w-full" style={{ paddingTop: "212px" }}>
         
         {/* HERO SECTION */}
         <section className={containerClass}>
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-20">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-0">
             {/* Left Text */}
-            <div className="w-full lg:w-[45%] flex flex-col pt-8">
+            <div className="flex flex-col pt-0">
               <h1 
-                className="uppercase mb-12"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(48px, 6vw, 84px)",
+                  fontSize: "60px",
                   lineHeight: "100%",
-                  letterSpacing: "-0.02em"
+                  textTransform: "capitalize",
+                  margin: 0,
                 }}
               >
                 WAELCHEMY
               </h1>
+              <div className="h-[60px]" />
               <h2 
-                className="mb-8"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(24px, 2.5vw, 36px)",
-                  lineHeight: "120%",
+                  fontSize: "36px",
+                  lineHeight: "100%",
+                  margin: 0,
                 }}
               >
-                The purity of water.<br />
-                The discipline of activism.
+                The Purity of Water.<br />
+                The Discipline of Activism.
               </h2>
+              <div className="h-[24px]" />
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.8)",
-                  maxWidth: "480px"
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  color: "#AEAEAE",
+                  maxWidth: "480px",
+                  margin: 0,
                 }}
               >
-                Water is our absolute truth, our primary obligation. In an era where corporate action is often a compromise, we hold a different standard. We believe that true sustainability requires rigor, not rhetoric. We engineer solutions that strip away inefficiency, leaving only the essential: clean water, preserved ecosystems, and a better future.
+                Water has always carried meanings far greater than mere utility. Across philosophy, science, and spiritual thought, it stands as the ultimate symbol of origin, transformation, renewal, and life itself. Civilizations have revered it not simply because it sustains our physical bodies, but because it reveals the exact conditions under which life can endure.
               </p>
             </div>
 
             {/* Right Video - Cropped to 707x541 relative */}
-            <div className="w-full lg:w-[55%] flex justify-end">
+            <div className="w-full max-w-[707px]">
               <div 
                 className="w-full relative overflow-hidden" 
                 style={{ 
                   aspectRatio: "707 / 541",
-                  maxWidth: "707px"
                 }}
               >
                 <video
@@ -92,70 +94,86 @@ export default function TheActivistCoPage() {
           </div>
         </section>
 
+        {/* Divider 1 */}
+        <div className={containerClass}>
+          <div className="h-[92px]" />
+          <div className="w-full h-px bg-white/20" />
+          <div className="h-[92px]" />
+        </div>
+
         {/* SECTION 2: We begin there. */}
-        <section className={`${containerClass} mt-[120px] lg:mt-[200px]`}>
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
-            <div className="w-full lg:w-[35%]">
-              <h2 
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(32px, 3.33vw, 48px)",
-                  lineHeight: "110%",
-                }}
-              >
-                We begin there.
-              </h2>
-            </div>
-            <div className="w-full lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.8)",
-                }}
-              >
-                When we see water, we see nature's great equalizer. No form of industrial sustainability is valid if it excludes water. It is the foundation of ecosystems, the driver of economies, and the ultimate measure of our relationship with the planet. To engineer solutions for water is to engineer for life. That is our responsibility, our starting point, our promise.
-              </p>
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.8)",
-                }}
-              >
-                Water reflects the conscience of an institution. For 15 years, our work has been driven by one single, unyielding principle: the absolute refusal to accept anything less than the highest standard. We don't just build systems; we build trust, we build resilience, and we build a legacy.
-              </p>
-            </div>
+        <section className={containerClass}>
+          <div className="flex flex-col lg:flex-row items-start lg:items-stretch overflow-x-auto lg:overflow-x-visible pb-8 lg:pb-0">
+            <h2 
+              className="shrink-0 mb-8 lg:mb-0"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "40px",
+                lineHeight: "120%",
+              }}
+            >
+              We begin there.
+            </h2>
+            <div className="hidden lg:block w-[159px] shrink-0" />
+            <div className="hidden lg:block w-px bg-white/20 shrink-0" />
+            <div className="hidden lg:block w-[50px] shrink-0" />
+            <p
+              className="w-full lg:w-[342px] shrink-0 mb-8 lg:mb-0"
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: "14px",
+                lineHeight: "130%",
+                color: "#AEAEAE",
+              }}
+            >
+              We choose to see water not as a commodity to be packaged and consumed without thought, but as a foundational principle. A principle of balance. Of continuity. Of interdependence. Water teaches us that nothing truly exists in isolation—every drop is connected to a source, every source to a system, every system to a community, and every community to a shared future.
+            </p>
+            <div className="hidden lg:block w-[40px] shrink-0" />
+            <div className="hidden lg:block w-px bg-white/20 shrink-0" />
+            <div className="hidden lg:block w-[51px] shrink-0" />
+            <p
+              className="flex-1 min-w-[300px]"
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: "14px",
+                lineHeight: "100%",
+                color: "#AEAEAE",
+              }}
+            >
+              WAELCHEMY is the expression of that belief. It is the precise point where reverence becomes responsibility. Where purity is understood not as a marketing aesthetic, but as uncompromised integrity—of source, of system, and of intention. This is where true activism begins.
+            </p>
           </div>
         </section>
 
+        {/* Divider 2 */}
         <div className={containerClass}>
-          <div className="w-full h-px bg-white/20 mt-[120px] lg:mt-[160px]" />
+          <div className="h-[92px]" />
+          <div className="w-full h-px bg-white/20" />
+          <div className="h-[92px]" />
         </div>
 
         {/* SECTION 3: The Discipline of Refusal */}
-        <section className={`${containerClass} mt-[100px] lg:mt-[140px]`}>
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-20">
-            <div className="w-full lg:w-[35%]">
-              <h2 
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(32px, 3.33vw, 48px)",
-                  lineHeight: "110%",
-                  maxWidth: "300px"
-                }}
-              >
-                The Discipline of Refusal
-              </h2>
-            </div>
-            <div className="w-full lg:w-[65%] flex flex-col">
-              <div className="w-full mb-10 relative overflow-hidden" style={{ aspectRatio: "2.14 / 1" }}>
+        <section className={containerClass}>
+          <div className="flex flex-col lg:flex-row items-start lg:items-stretch">
+            <h2 
+              className="w-full lg:w-[283px] shrink-0 mb-8 lg:mb-0"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "36px",
+                lineHeight: "110.00000000000001%",
+              }}
+            >
+              The Discipline of Refusal
+            </h2>
+            <div className="hidden lg:block w-[45px] shrink-0" />
+            <div className="hidden lg:block w-px bg-white/20 shrink-0" />
+            <div className="hidden lg:block w-[50px] shrink-0" />
+            <div className="flex-1 flex flex-col w-full">
+              <div className="w-full max-w-[846px] relative overflow-hidden" style={{ aspectRatio: "846 / 410" }}>
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5dd07625-6ab3-4be6-1401-93e241a6aa00/public"
                   alt="The Discipline of Refusal"
@@ -163,59 +181,74 @@ export default function TheActivistCoPage() {
                   className="object-cover"
                 />
               </div>
-              <ul className="list-disc pl-5 mb-8 space-y-2" style={{
+              <div className="h-[35px]" />
+              <div
+                className="flex flex-col gap-1"
+                style={{
                   fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.9)",
-              }}>
-                <li>We refuse to accept plastic when glass and metal exist.</li>
-                <li>We refuse to accept dirty energy when solar integration is possible.</li>
-                <li>We refuse to build machines that end up in landfills. Our devices are built to endure.</li>
-              </ul>
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                }}
+              >
+                <div>. A refusal to accept plastic waste as an inevitable norm.</div>
+                <div>. A refusal to reduce a life-giving resource to a disposable transaction.</div>
+                <div>. A refusal to build modern convenience on the back of ecological decline.</div>
+              </div>
+              <div className="h-[15.5px]" />
               <p
-                className="mb-8"
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.6)",
-                  maxWidth: "600px"
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  color: "#aeaeae",
                 }}
               >
-                Refusal requires intense calculation, rigorous engineering and an uncompromising commitment to longevity. We do not manufacture products; we engineer lifecycles. We do not adapt to the standards; we define them. Our refusal is our strength, our innovation, and our defining characteristic.
+                To honor water is to defend it from the systems that diminish it. The mission is to protect what is essential by radically redesigning what is excessive. The historical search for alchemy ends with water because water already contains the ultimate lesson: life is sustained not by extraction, but by balance; not by possession, but by stewardship.
               </p>
-              <Link href="#" className="uppercase tracking-widest text-white/50 hover:text-white transition-colors text-[10px] font-medium" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                Read the full principle: The WAE Manifesto
-              </Link>
+              <div className="h-[15.5px]" />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  color: "#aeaeae",
+                }}
+              >
+                <span style={{ color: "#AEAEAE" }}>WAELCHEMY</span> is that principle, made operational.
+              </p>
             </div>
           </div>
         </section>
 
+        {/* Divider 3 */}
         <div className={containerClass}>
-          <div className="w-full h-px bg-white/20 mt-[100px] lg:mt-[140px]" />
+          <div className="h-[92px]" />
+          <div className="w-full h-px bg-white/20" />
+          <div className="h-[92px]" />
         </div>
 
         {/* SECTION 4: Carbon Neutral Water */}
-        <section className={`${containerClass} mt-[100px] lg:mt-[140px]`}>
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-20">
-            <div className="w-full lg:w-[35%]">
-              <h2 
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(32px, 3.33vw, 48px)",
-                  lineHeight: "110%",
-                  maxWidth: "350px"
-                }}
-              >
-                Carbon Neutral Water : Hydration, Redesigned
-              </h2>
-            </div>
-            <div className="w-full lg:w-[65%] flex flex-col">
-              <div className="w-full mb-10 relative overflow-hidden" style={{ aspectRatio: "2.14 / 1" }}>
+        <section className={containerClass}>
+          <div className="flex flex-col lg:flex-row items-start lg:items-stretch">
+            <h2 
+              className="w-full lg:w-[283px] shrink-0 mb-8 lg:mb-0"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "36px",
+                lineHeight: "110.00000000000001%",
+              }}
+            >
+              Carbon Neutral Water : Hydration, Redesigned
+            </h2>
+            <div className="hidden lg:block w-[45px] shrink-0" />
+            <div className="hidden lg:block w-px bg-white/20 shrink-0" />
+            <div className="hidden lg:block w-[50px] shrink-0" />
+            <div className="flex-1 flex flex-col w-full">
+              <div className="w-full max-w-[846px] relative overflow-hidden" style={{ aspectRatio: "846 / 410" }}>
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5dd07625-6ab3-4be6-1401-93e241a6aa00/public"
                   alt="Carbon Neutral Water"
@@ -223,222 +256,252 @@ export default function TheActivistCoPage() {
                   className="object-cover"
                 />
               </div>
-              <ul className="list-disc pl-5 mb-8 space-y-2" style={{
+              <div className="h-[35px]" />
+              <div
+                className="flex flex-col gap-1"
+                style={{
                   fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.9)",
-              }}>
-                <li>We refuse to accept plastic when glass and metal exist.</li>
-                <li>We refuse to accept dirty energy when solar integration is possible.</li>
-                <li>We refuse to build machines that end up in landfills. Our devices are built to endure.</li>
-              </ul>
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                }}
+              >
+                <div>. A refusal to accept plastic waste as an inevitable norm.</div>
+                <div>. A refusal to reduce a life-giving resource to a disposable transaction.</div>
+                <div>. A refusal to build modern convenience on the back of ecological decline.</div>
+              </div>
+              <div className="h-[15.5px]" />
               <p
-                className="mb-8"
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.6)",
-                  maxWidth: "600px"
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  color: "#aeaeae",
                 }}
               >
-                Refusal requires intense calculation, rigorous engineering and an uncompromising commitment to longevity. We do not manufacture products; we engineer lifecycles. We do not adapt to the standards; we define them. Our refusal is our strength, our innovation, and our defining characteristic.
+                To honor water is to defend it from the systems that diminish it. The mission is to protect what is essential by radically redesigning what is excessive. The historical search for alchemy ends with water because water already contains the ultimate lesson: life is sustained not by extraction, but by balance; not by possession, but by stewardship.
               </p>
-              <Link href="#" className="uppercase tracking-widest text-white/50 hover:text-white transition-colors text-[10px] font-medium" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                Read the full principle: The WAE Manifesto
-              </Link>
+              <div className="h-[15.5px]" />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  color: "#aeaeae",
+                }}
+              >
+                <span style={{ color: "#AEAEAE" }}>WAELCHEMY</span> is that principle, made operational.
+              </p>
             </div>
           </div>
         </section>
 
+        {/* Divider 4 */}
         <div className={containerClass}>
-          <div className="w-full h-px bg-white/20 mt-[100px] lg:mt-[140px]" />
+          <div className="h-[92px]" />
+          <div className="w-full h-px bg-white/20" />
+          <div className="h-[92px]" />
         </div>
 
         {/* SECTION 5: The Three Pillars */}
-        <section className={`${containerClass} mt-[100px] lg:mt-[140px]`}>
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-20">
-            <div className="w-full lg:w-[45%] flex flex-col">
-              <h2 
-                className="mb-8"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(32px, 3.33vw, 48px)",
-                  lineHeight: "110%",
-                  maxWidth: "400px"
-                }}
-              >
-                The Three Pillars of Blue Innovation
-              </h2>
+        <section className={containerClass}>
+          <div className="flex flex-col lg:flex-row items-start lg:items-stretch">
+            <div className="w-full lg:w-[460px] flex flex-col shrink-0 mb-12 lg:mb-0 lg:pr-12">
+              <div className="flex justify-between items-start">
+                <h2 
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "36px",
+                    lineHeight: "110%",
+                  }}
+                >
+                  The Three Pillars of<br/>Blue Innovation
+                </h2>
+                <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/48b42c14-6d59-40b5-b839-2689e3f4a900/public" alt="Arrow" width={30} height={30} className="mt-2" />
+              </div>
+              <div className="h-[60px]" />
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(12px, 0.97vw, 14px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.6)",
-                  maxWidth: "400px"
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  color: "#AEAEAE",
+                  maxWidth: "350px",
                 }}
               >
-                Innovation is not just a buzzword; it is our foundation. It is the relentless pursuit of solving the unsolvable. In the context of water, this means rethinking every drop, every cycle, every system.
+                Activism must be structured, principled, and engineered to endure. These three pillars define how philosophy is translated into daily practice:
               </p>
             </div>
-            <div className="w-full lg:w-[45%] flex flex-col gap-16 relative">
-              {/* Connector line graphic from mockup (optional but adds detail) */}
-              <div className="absolute left-[-40px] lg:left-[-100px] top-4 w-[20px] lg:w-[40px] h-[40px] border-t border-r border-white/20 hidden md:block"></div>
-              
+            
+            <div className="hidden lg:block w-px bg-white/20 shrink-0" />
+            <div className="hidden lg:block w-[60px] shrink-0" />
+            
+            <div className="flex-1 flex flex-col w-full">
+              {/* Pillar 1 */}
               <div>
-                <h3 className="mb-4" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(20px, 1.66vw, 24px)" }}>
+                <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "24px", lineHeight: "110%", color: "#FFFFFF" }}>
                   Climate & Resource Efficiency
                 </h3>
-                <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(14px, 1.11vw, 16px)", color: "rgba(255, 255, 255, 0.7)", lineHeight: "150%" }}>
-                  Climate action does not start in a boardroom; it starts in the boiler room. We measure our impact in millions of liters saved, in kilowatt-hours reduced, in plastic bottles displaced. Our systems are engineered to perform, to last, and to protect the resources they utilize.
+                <div className="h-[20px]" />
+                <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "150%", color: "#AEAEAE" }}>
+                  Climate leadership must be operational, not aspirational. Lifecycle emissions are reduced by replacing disposable plastics with durable stainless steel systems built for long-term utility. Energy efficiency, material longevity, and logistical discipline form the core architecture of responsible design. To use less and waste less is a strategic act of environmental intelligence.
                 </p>
               </div>
-              
+              <div className="h-[40px]" />
+              <div className="w-full h-px bg-white/20" />
+              <div className="h-[40px]" />
+
+              {/* Pillar 2 */}
               <div>
-                <h3 className="mb-4" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(20px, 1.66vw, 24px)" }}>
+                <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "24px", lineHeight: "110%", color: "#FFFFFF" }}>
                   Stewardship & Conservation
                 </h3>
-                <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(14px, 1.11vw, 16px)", color: "rgba(255, 255, 255, 0.7)", lineHeight: "150%" }}>
-                  Water is a shared resource, not an infinite commodity. We engineer systems that respect the natural water cycle. Conservation is not a feature; it is the core function of our technology. We build to preserve, to protect, and to sustain.
+                <div className="h-[20px]" />
+                <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "150%", color: "#AEAEAE" }}>
+                  Water is a finite, shared resource held in trust for future generations. Dedicated purification and refill models are engineered to completely eliminate plastic leakage and drastically lower environmental burdens. By changing the delivery system, responsibility evolves from a ceremonial gesture into an effortless, everyday habit.
                 </p>
               </div>
-              
+              <div className="h-[40px]" />
+              <div className="w-full h-px bg-white/20" />
+              <div className="h-[40px]" />
+
+              {/* Pillar 3 */}
               <div>
-                <h3 className="mb-4" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(20px, 1.66vw, 24px)" }}>
+                <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "24px", lineHeight: "110%", color: "#FFFFFF" }}>
                   Blue Innovation & Governance
                 </h3>
-                <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(14px, 1.11vw, 16px)", color: "rgba(255, 255, 255, 0.7)", lineHeight: "150%" }}>
-                  We operate with absolute transparency. Our metrics are verified, our supply chains are audited, and our governance structures are built on ethical discipline. Innovation without governance is just an experiment; we build solutions that scale.
+                <div className="h-[20px]" />
+                <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "150%", color: "#AEAEAE" }}>
+                  Innovation without governance risks becoming performative. Governance without innovation risks total inertia. Progress demands both. Elegant industrial design must be paired with rigorous, measurable accountability—creating systems that are disciplined in their impact and transparent in their intent.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Divider 5 */}
         <div className={containerClass}>
-          <div className="w-full h-px bg-white/20 mt-[100px] lg:mt-[140px]" />
+          <div className="h-[92px]" />
+          <div className="w-full h-px bg-white/20" />
+          <div className="h-[92px]" />
         </div>
 
         {/* SECTION 6: Our Green Is Blue */}
-        <section className="mt-[100px] lg:mt-[140px] w-full">
-          <div className={`${containerClass} flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-20 mb-[60px]`}>
-            <div className="w-full lg:w-[35%]">
-              <h2 
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(32px, 3.33vw, 48px)",
-                  lineHeight: "110%",
-                }}
-              >
-                Our Green Is Blue
-              </h2>
-            </div>
-            <div className="w-full lg:w-[65%] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.8)",
-                }}
-              >
-                The word ‘green’ has been commoditized, hollowed out by corporate convenience. We don’t do ‘green’. We do Blue.
-              </p>
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.8)",
-                }}
-              >
-                Our focus is entirely, unapologetically, obsessively on water. Water is the metric by which we measure our success.
-              </p>
+        <section className={containerClass}>
+          <div className="flex flex-col lg:flex-row items-start">
+            <h2 
+              className="w-full lg:w-[300px] shrink-0 mb-8 lg:mb-0"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "40px",
+                lineHeight: "100%",
+              }}
+            >
+              Our Green Is Blue
+            </h2>
+            <div className="hidden lg:block w-[62px] shrink-0" />
+            
+            <div className="w-full lg:w-[590px] grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="flex flex-col">
+                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#AEAEAE" }}>
+                  <span style={{ fontWeight: 700, color: "#FFF" }}>"Our Green Is Blue"</span> is more than a statement of belief; it is the foundation of an entire worldview.
+                </p>
+                <div className="h-[15px]" />
+                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#AEAEAE" }}>
+                  The baseline ecological truth is absolute: without water, there is no life. Forests fail, food systems fracture, and human futures fade. Water shapes our climate, our communities, our commerce, and our civilizations. It determines the resilience of landscapes and the continuity of global economies.
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#AEAEAE" }}>
+                  That is why the planet cannot be treated as a mere stakeholder in business. Instead, business must be treated as a <span style={{ color: "#FFF", lineHeight: "100%" }}>proud steward of the planet.</span>
+                </p>
+                <div className="h-[15px]" />
+                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#AEAEAE" }}>
+                  Welcome to WAELCHEMY. Where we honor water, design with discipline, and create systems where progress serves the earth—not the other way around.
+                </p>
+              </div>
             </div>
           </div>
-          {/* Full width image spanning the container width */}
-          <div className={containerClass}>
-            <div className="w-full relative overflow-hidden" style={{ aspectRatio: "2.7 / 1" }}>
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/006890d0-cec2-4d1e-4c70-ec21dfc8b700/public"
-                alt="Our Green Is Blue"
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="h-[52px]" />
+          <div className="w-full max-w-[1224px] relative overflow-hidden" style={{ aspectRatio: "1224 / 502" }}>
+            <Image
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/006890d0-cec2-4d1e-4c70-ec21dfc8b700/public"
+              alt="Our Green Is Blue"
+              fill
+              className="object-cover"
+            />
           </div>
         </section>
 
+        {/* Divider 6 */}
         <div className={containerClass}>
-          <div className="w-full h-px bg-white/20 mt-[100px] lg:mt-[140px]" />
+          <div className="h-[92px]" />
+          <div className="w-full h-px bg-white/20" />
+          <div className="h-[92px]" />
         </div>
 
-        {/* SECTION 7: Rethinking the circular economy */}
-        <section className={`${containerClass} mt-[100px] lg:mt-[140px] pb-[120px] lg:pb-[180px]`}>
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-20">
-            <div className="w-full lg:w-[35%]">
-              <h2 
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(32px, 3.33vw, 48px)",
-                  lineHeight: "110%",
-                  maxWidth: "350px"
-                }}
-              >
-                Rethinking the circular economy
-              </h2>
-            </div>
-            <div className="w-full lg:w-[65%] flex flex-col gap-8 md:gap-10">
+        {/* SECTION 7: Rethinking the Circular Economy */}
+        <section className={containerClass}>
+          <div className="flex flex-col lg:flex-row items-start">
+            <h2 
+              className="flex-1 mb-8 lg:mb-0"
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: "40px",
+                lineHeight: "130%",
+              }}
+            >
+              Rethinking the<br className="hidden lg:block"/>
+              Circular Economy
+            </h2>
+            <div className="w-full lg:w-[525px] shrink-0 flex flex-col">
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.8)",
-                  maxWidth: "700px"
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  color: "#AEAEAE",
                 }}
               >
-                The linear model of take-make-dispose is an archaic, environmentally destructive paradigm. We are actively dismantling it.
+                The circular economy is, at its core, an ethical correction. It asks a demanding question: Why are we still designing waste into systems we know must endure?
               </p>
+              <div className="h-[15px]" />
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.8)",
-                  maxWidth: "700px"
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  color: "#AEAEAE",
                 }}
               >
-                Our approach to manufacturing is circular by design. We build for repair, for longevity, and for ultimate recyclability. We reject planned obsolescence.
+                The answer is to design differently. We reject the linear logic of "extract, make, waste," and choose to treat materials as permanent assets, infrastructure as a long-term investment, and waste as a fundamental failure of design.
               </p>
+              <div className="h-[15px]" />
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "150%",
-                  color: "rgba(255, 255, 255, 0.8)",
-                  maxWidth: "700px"
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  color: "#AEAEAE",
                 }}
               >
-                At WAE, sustainability is not an afterthought; it is the core of our business strategy. By embracing the circular economy, we ensure that our products leave a positive legacy, not a permanent footprint.
+                Water stewardship, responsible consumption, climate action, and institutional accountability are not parallel, separate concerns. They are deeply interdependent. A circular water system advances them all simultaneously. This activism does not stop at critique it builds the functional alternative.
               </p>
             </div>
           </div>
         </section>
 
+        {/* 124px Gap Before Footer */}
+        <div className="h-[124px]" />
       </div>
 
       <Footer />
