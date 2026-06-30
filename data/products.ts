@@ -88,57 +88,57 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "id": "reva",
         "name": "REVA",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d6c1acd-771b-412e-25c8-64a908da5100/public"
-      },
-      {
-        "id": "enki",
-        "name": "ENKI",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public"
-      },
-      {
-        "id": "pos",
-        "name": "POS",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public"
-      },
-      {
-        "id": "rom-ct",
-        "name": "ROM.CT",
-        "category": "counter-top",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/067b3edc-d892-48f5-1e63-5e567c0a6d00/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d6c1acd-771b-412e-25c8-64a908da5100/public",
+        "displayOrder": 0
       },
       {
         "id": "var-series",
         "name": "VAR",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public",
+        "displayOrder": 1
+      },
+      {
+        "id": "enki",
+        "name": "ENKI",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/969cf7aa-9a0c-4e02-c897-8ec75b1b5a00/public",
+        "displayOrder": 2
+      },
+      {
+        "id": "pos",
+        "name": "POS",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public",
+        "displayOrder": 3
       },
       {
         "id": "gsp",
         "name": "GSP",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public"
-      },
-      {
-        "id": "var-ct",
-        "name": "VAR.CT",
-        "category": "counter-top",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/eb19ce92-40b9-42d4-cb63-f3cc053edc00/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/062c00fb-5b0a-4167-2d2b-120af5406e00/public",
+        "displayOrder": 4
       },
       {
         "id": "eno-ct",
         "name": "ENKI.CT",
         "category": "counter-top",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public",
+        "displayOrder": 5
       },
       {
-        "id": "assistflow",
-        "name": "ASSISTFLOW",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c549c9bc-8af7-41f6-03d5-8c0078e9dd00/public",
-        "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/64fe0354-6750-4828-ed39-78cca03f1b00/public",
-        "displayOrder": 11
+        "id": "var-ct",
+        "name": "VAR.CT",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/eb19ce92-40b9-42d4-cb63-f3cc053edc00/public",
+        "displayOrder": 6
+      },
+      {
+        "id": "rom-ct",
+        "name": "ROM.CT",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/067b3edc-d892-48f5-1e63-5e567c0a6d00/public",
+        "displayOrder": 7
       },
       {
         "id": "rom-grande",
@@ -146,7 +146,15 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c81f0436-e3cf-4bb3-ed3f-12d71c529e00/public",
         "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/faeed699-00e6-425b-91bb-84e4b7c85c00/public",
-        "displayOrder": 11
+        "displayOrder": 8
+      },
+      {
+        "id": "assistflow",
+        "name": "ASSISTFLOW",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c549c9bc-8af7-41f6-03d5-8c0078e9dd00/public",
+        "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/64fe0354-6750-4828-ed39-78cca03f1b00/public",
+        "displayOrder": 9
       },
       {
         "id": "venus",
@@ -154,7 +162,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/92e20429-ff63-410f-9494-62ebbb2e0b00/public",
         "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/eb143bac-b20b-46ce-ff64-3dfd59dde000/public",
-        "displayOrder": 11
+        "displayOrder": 10
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -456,7 +464,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "displayOrder": 1
   },
   "enki": {
     "id": "enki",
@@ -534,7 +543,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": false
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "displayOrder": 2
   },
   "pos": {
     "id": "pos",
@@ -631,7 +641,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "displayOrder": 3
   },
   "rom-grande": {
     "id": "rom-grande",
@@ -725,7 +736,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "displayImageIndex": 0,
     "hoverImageIndex": 3,
-    "displayOrder": 11
+    "displayOrder": 8
   },
   "reva": {
     "id": "reva",
@@ -814,7 +825,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 3
+    "displayImageIndex": 3,
+    "displayOrder": 0
   },
   "gsp": {
     "id": "gsp",
@@ -897,7 +909,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": false
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "displayOrder": 4
   },
   "assistflow": {
     "id": "assistflow",
@@ -1006,7 +1019,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "displayImageIndex": 0,
     "hoverImageIndex": 2,
-    "displayOrder": 11
+    "displayOrder": 9
   },
   "venus": {
     "id": "venus",
@@ -1096,7 +1109,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     },
     "displayImageIndex": 0,
     "hoverImageIndex": 2,
-    "displayOrder": 11
+    "displayOrder": 10
   },
   "eno-ct": {
     "id": "eno-ct",
@@ -1187,7 +1200,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": false
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "displayOrder": 5
   },
   "var-ct": {
     "id": "var-ct",
@@ -1270,7 +1284,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "displayOrder": 6
   },
   "rom-ct": {
     "id": "rom-ct",
@@ -1348,7 +1363,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "displayOrder": 7
   },
   "aenon": {
     "id": "aenon",
