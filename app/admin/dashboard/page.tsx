@@ -377,6 +377,7 @@ export default function DashboardPage() {
               { label: "All Products", href: "/admin/products", icon: Package },
               { label: "All Categories", href: "/admin/categories", icon: LayoutGrid },
               { label: "All Blogs", href: "/admin/blogs", icon: FileText },
+              { label: "News & Events", href: "/admin/news-events", icon: Newspaper },
               { label: "All Jobs", href: "/admin/jobs", icon: Briefcase },
               { label: "Enquiries", href: "/admin/enquiries", icon: Mail },
               { label: "Subscribers", href: "/admin/subscribers", icon: Users },

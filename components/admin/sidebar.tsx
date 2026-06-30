@@ -43,9 +43,15 @@ export default function Sidebar() {
       <div className="overflow-x-hidden">
         {/* Brand logo section */}
         <div className={`h-[87px] border-b border-white/5 flex items-center ${isCollapsed ? 'justify-center' : 'px-6 justify-start'}`}>
-          <Link href="/admin/categories" className="flex items-center">
+          <Link href="/admin/dashboard" className="flex items-center">
             {isCollapsed ? (
-              <div className="w-10 h-10 bg-white/10 rounded flex items-center justify-center text-white font-bold text-xl" style={{ fontFamily: "'Inter Tight', sans-serif" }}>W</div>
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
+                alt="WAE Header Logo"
+                width={40}
+                height={42}
+                priority
+              />
             ) : (
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/66b9c744-127a-427d-bc84-3a0c3f3e5700/public"
