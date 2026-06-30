@@ -19,7 +19,7 @@ export default function TheActivistCoPage() {
         }}
       />
 
-      <div className="relative z-10">
+      <div className="relative z-50">
         <Header />
       </div>
 
