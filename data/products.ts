@@ -3,6 +3,8 @@ export interface Product {
   name: string;
   category: string;
   image: string;
+  hoverImage?: string | null;
+  displayOrder?: number;
 }
 
 export interface CategoryData {
@@ -35,7 +37,7 @@ export interface ProductDetails {
   categoryName: string;
   heroSubtitle: string;
   images: string[];
-  featuresList: Array<{ title: string; description: string }>;
+  featuresList: Array<{ title: string; description: string; isDisplayed?: boolean }>;
   specifications: {
     storageCapacity: SpecRow[];
     waterTemp: {
@@ -84,56 +86,56 @@ export const CATEGORIES: Record<string, CategoryData> = {
       {
         "id": "pos",
         "name": "BLUWAE POS",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
         "category": "counter-top"
       },
       {
         "id": "rom-grande",
         "name": "BLUWAE ROM Grande",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
         "category": "free-standing"
       },
       {
         "id": "reva",
         "name": "BLUWAE REVA",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
         "category": "free-standing"
       },
       {
         "id": "gsp",
         "name": "BLUWAE GSP",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/42d01f61-a806-4ec1-9fe4-98b693036f00/public",
         "category": "free-standing"
       },
       {
         "id": "venus",
         "name": "BLUWAE VENUS",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/793725fe-6912-4073-982d-dcb813491f00/public",
         "category": "counter-top"
       },
       {
         "id": "eno-ct",
         "name": "BLUWAE ENO.CT",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c274a381-1fe3-48ce-37e1-296ff4719900/public",
         "category": "counter-top"
       },
       {
         "id": "var-ct",
         "name": "BLUWAE VAR.CT",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b501f50-e174-490b-1ea4-526449d56800/public",
         "category": "counter-top"
       },
       {
         "id": "rom-ct",
         "name": "BLUWAE ROM.CT",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
         "category": "counter-top"
       },
       {
         "id": "assistflow",
         "name": "ASSISTFLOW",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c729a1c1-b2a7-44fa-8f25-9b77e8bd0d00/public"
       },
       {
         "id": "var-series",
@@ -519,7 +521,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2e1a6e7f-0b55-4344-4ff9-8dba915a3300/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6b2da797-9d52-40d1-3323-c86ddd384c00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8fab5f68-c2e5-4ec8-f700-cfcea83f7600/public"
     ],
@@ -573,7 +575,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bdfd78c7-de80-4e95-20be-ffea6b5c5c00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/833cb87f-1ba5-45f8-6f61-fa5cf48a7200/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/79ef281c-75c0-416b-1928-023fa3f58300/public"
     ],
@@ -627,7 +629,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/afee7058-847e-4a58-55d9-ede5da5c6800/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a8f5a00e-0285-460b-f009-fa5a3a4d8c00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/07be5d57-d7fd-444f-52f5-6062969b5200/public"
     ],
@@ -681,7 +683,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/79ce8da9-daaa-4bad-c80a-5a5f47af3c00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4eb27063-2310-4888-4f1c-9f4b02493d00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c96d8adb-e99f-4181-f45f-1bbd40918c00/public"
     ],
@@ -751,7 +753,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "ambient": true
     },
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c729a1c1-b2a7-44fa-8f25-9b77e8bd0d00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6cbe11d1-d684-43fd-b674-e948d745eb00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/875719ac-2f9e-456b-662f-d437c10dca00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61bed0a3-d40d-46ec-2edd-a3fb53abe400/public"
@@ -839,7 +841,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public"
     ],
@@ -893,7 +895,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public"
     ],
@@ -947,7 +949,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public"
     ],
@@ -1001,7 +1003,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "Powerful LED sterilization",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1482fd3b-f090-4e25-676a-5e2b57edfb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f18f17d-9a94-494d-c816-0832fd9d2000/public"
     ],
