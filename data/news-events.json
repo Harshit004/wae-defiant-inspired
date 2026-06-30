@@ -32,7 +32,7 @@
       "date": "Date-26/06/26",
       "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public",
       "link": "https://travtalkindia.com/hotels-advance-sustainability-with-glass-bottling/",
-      "displayOnHomepage": true,
+      "displayOnHomepage": false,
       "rank": 3
     },
     {
@@ -98,8 +98,8 @@
       "date": "Date - 26/06/2026",
       "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6fe3159e-1abc-45bc-2d8e-bdfd03a3fb00/public",
       "link": "https://www.passionateinmarketing.com/wae-felicitated-with-15th-cii-design-excellence-award-2025-for-communication-design/",
-      "displayOnHomepage": false,
-      "rank": 9
+      "displayOnHomepage": true,
+      "rank": 3
     },
     {
       "id": "award-3",
