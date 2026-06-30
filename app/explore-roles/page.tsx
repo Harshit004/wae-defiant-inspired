@@ -76,6 +76,11 @@ export default function Home() {
     "Reimagine Work",
   ]
   const blueprintItems = ["Sustainability", "The Activist Co.", "Blog"]
+const etceteraItems = [
+    { text: "Contact", href: "/contact" },
+    { text: "Compliance", href: "/compliance" },
+    { text: "Mentioned", href: "/mentioned" },
+]
   const lineCount = Math.min(productsItems.length, blueprintItems.length)
 
   return (
@@ -86,7 +91,7 @@ export default function Home() {
           <div className="mx-auto w-full max-w-[1440px] px-[140px]">
             {/* Top Row: Navigation */}
             <div
-              className="grid grid-cols-5 items-center pt-[30px] pb-[10px] uppercase"
+              className="grid grid-cols-6 gap-4 items-center pt-[30px] pb-[10px] uppercase"
               style={{
                 fontFamily: "\'Manrope\', sans-serif",
         fontWeight: 500,
@@ -99,6 +104,7 @@ export default function Home() {
               <div>ORIGIN</div>
               <div>OBJECTIVE</div>
               <div>INSIDE WAE</div>
+              <div>RESPONSIBILITY</div>
               <div>ETCETERA</div>
             </div>
 
@@ -106,7 +112,7 @@ export default function Home() {
             <div className="w-full h-px bg-[#D9D9DC] mb-[10px]" />
 
             {/* Bottom Row: Logo, Tagline and Menu Items */}
-            <div className="grid grid-cols-5 items-start">
+            <div className="grid grid-cols-6 gap-4 items-start">
               {/* Logo */}
 
 <div className="flex flex-col justify-center">
@@ -210,11 +216,11 @@ export default function Home() {
               </div>
 
               {/* Inside WAE Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
+              <div className="flex flex-col justify-center space-y-2 pr-4">
                 {productsItems.map((item, i) => (
                   <div
                     key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                    className="pb-2 border-b border-[#D9D9DC] "
                     style={{
                       fontFamily: "\'Manrope\', sans-serif",
         fontWeight: 500,
@@ -246,39 +252,80 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* ETCETERA Menu Items */}
-              <div className="flex flex-col justify-center space-y-2">
+              {/* RESPONSIBILITY Menu Items */}
+              <div className="flex flex-col justify-center space-y-2 pr-4">
                 {blueprintItems.map((item, i) => (
                   <div
                     key={i}
-                    className="pb-2 border-b border-[#D9D9DC] last:border-0"
+                    className="pb-2 border-b border-[#D9D9DC] "
                     style={{
-                      fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                      fontFamily: "\",
+                      fontWeight: 500,
+                      fontSize: "10px",
                       lineHeight: "110%",
                     }}
                   >
-                    <div className="c--anim-btn">
-                      <div className="text-container">
-                        <span className="c-anim-btn">{item}</span>
-                        <span className="block">{item}</span>
+                    <Link href={item.href} className="contents">
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow blueprint-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
                       </div>
-                      <span className="menu-arrow blueprint-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </span>
-                    </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+
+              {/* ETCETERA Menu Items */}
+              <div className="flex flex-col justify-center space-y-2 pr-4">
+                {etceteraItems.map((item, i) => (
+                  <div
+                    key={i}
+                    className="pb-2 border-b border-[#D9D9DC] "
+                    style={{
+                      fontFamily: "\",
+                      fontWeight: 500,
+                      fontSize: "10px",
+                      lineHeight: "110%",
+                    }}
+                  >
+                    <Link href={item.href} className="contents">
+                      <div className="c--anim-btn">
+                        <div className="text-container">
+                          <span className="c-anim-btn">{item.text}</span>
+                          <span className="block">{item.text}</span>
+                        </div>
+                        <span className="menu-arrow blueprint-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </span>
+                      </div>
+                    </Link>
                   </div>
                 ))}
               </div>

@@ -165,7 +165,12 @@ const Home: FC = () => {
     { text: "Sustainability", href: "/sustainability" },
     { text: "The Activist Co.", href: "/the-activist-co" },
     { text: "Blog", href: "/blogs" },
-  ];
+  ]const etceteraItems = [
+    { text: "Contact", href: "/contact" },
+    { text: "Compliance", href: "/compliance" },
+    { text: "Mentioned", href: "/mentioned" },
+]
+;
   const taglineLine1 = "To lead the way in sustainability";
   const taglineLine2 = "ahead of the rest";
   const taglineWords1 = taglineLine1.split(" ");
