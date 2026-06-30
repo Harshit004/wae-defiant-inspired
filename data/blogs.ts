@@ -2951,7 +2951,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "Zero Liquid Discharge: A Game-Changer in Sustainable Water Management",
     "category": "Technology",
     "description": "Industries discharge nearly 80% of wastewater untreated into rivers and lakes. This article explores Zero Liquid Discharge (ZLD) technology — a closed-loop system that recovers 95% of industrial wastewater, turning waste into a resource.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a1f0caaf-e209-4658-ef50-95b8aee06600/public",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6fcac8ae-93b2-4511-0698-9ea34858b600/public",
     "writerId": "rashi-tarika",
     "readTime": "2 min read",
     "status": "Live",
