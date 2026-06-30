@@ -58,6 +58,8 @@ export async function writeDB(state: DBState): Promise<void> {
   name: string;
   category: string;
   image: string;
+  hoverImage?: string | null;
+  displayOrder?: number;
 }
 
 export interface CategoryData {
@@ -90,7 +92,7 @@ export interface ProductDetails {
   categoryName: string;
   heroSubtitle: string;
   images: string[];
-  featuresList: Array<{ title: string; description: string }>;
+  featuresList: Array<{ title: string; description: string; isDisplayed?: boolean }>;
   specifications: {
     storageCapacity: SpecRow[];
     waterTemp: {
@@ -116,13 +118,14 @@ export interface ProductDetails {
   showcaseCtaText?: string;
   showcaseCtaLink?: string;
   brochurePdf?: string;
-  datasheetPdf?: string;
   variants?: {
     hot: boolean;
     cold: boolean;
     ambient: boolean;
   };
   displayImageIndex?: number;
+  hoverImageIndex?: number | null;
+  displayOrder?: number;
 }
 
 export const CATEGORIES: Record<string, CategoryData> = ${JSON.stringify(state.categories, null, 2)};

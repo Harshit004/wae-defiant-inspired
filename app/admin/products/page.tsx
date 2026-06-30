@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import Header from "@/components/admin/header"
-import { Edit3, Trash2, Plus, AlertTriangle, Eye, Filter } from "lucide-react"
+import { Edit3, Trash2, Plus, AlertTriangle, Eye, Filter, ArrowUp, ArrowDown, Save, X } from "lucide-react"
 
 interface SpecRow {
   variant: string
@@ -59,6 +59,8 @@ interface ProductDetails {
     ambient: boolean;
   };
   displayImageIndex?: number;
+  hoverImageIndex?: number | null;
+  displayOrder?: number;
 }
 
 interface Category {
@@ -75,6 +77,10 @@ export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState("all")
   const [selectedStatusFilter, setSelectedStatusFilter] = useState("all")
+
+  // Reorder state
+  const [isReordering, setIsReordering] = useState(false)
+  const [reorderSaving, setReorderSaving] = useState(false)
 
   // Delete modal state
   const [deleteTarget, setDeleteTarget] = useState<ProductDetails | null>(null)
@@ -150,6 +156,83 @@ export default function ProductsPage() {
 
     return matchesSearch && matchesCategory && matchesStatus
   })
+  
+  // Sort products by displayOrder (default to 0 if undefined)
+  filteredProducts.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0))
+
+  const handleEnableReorder = () => {
+    // Assign explicit sequential displayOrder to the current filtered list
+    // so that swapping logic works deterministically
+    const newProducts = [...products];
+    filteredProducts.forEach((fp, i) => {
+      const p = newProducts.find(x => x.id === fp.id);
+      if (p) p.displayOrder = i;
+    });
+    setProducts(newProducts);
+    setIsReordering(true);
+  }
+
+  const handleCancelReorder = () => {
+    setIsReordering(false);
+    fetchData(); // reload to original state
+  }
+
+  const handleSaveOrder = async () => {
+    setReorderSaving(true);
+    try {
+      const reorderedProducts = filteredProducts.map(p => ({
+        id: p.id,
+        displayOrder: p.displayOrder
+      }));
+      const response = await fetch("/api/admin/products", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "reorder", reorderedProducts }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setIsReordering(false);
+      } else {
+        alert(data.message || "Failed to save order");
+      }
+    } catch (err) {
+      alert("Error saving order");
+    } finally {
+      setReorderSaving(false);
+    }
+  }
+
+  const handleMoveUp = (index: number) => {
+    if (index === 0) return;
+    const newProducts = [...products];
+    const itemToMove = filteredProducts[index];
+    const itemAbove = filteredProducts[index - 1];
+    
+    const p1 = newProducts.find(p => p.id === itemToMove.id);
+    const p2 = newProducts.find(p => p.id === itemAbove.id);
+    if (p1 && p2) {
+      const temp = p1.displayOrder || 0;
+      p1.displayOrder = p2.displayOrder || 0;
+      p2.displayOrder = temp;
+      setProducts(newProducts);
+    }
+  }
+
+  const handleMoveDown = (index: number) => {
+    if (index === filteredProducts.length - 1) return;
+    const newProducts = [...products];
+    const itemToMove = filteredProducts[index];
+    const itemBelow = filteredProducts[index + 1];
+    
+    const p1 = newProducts.find(p => p.id === itemToMove.id);
+    const p2 = newProducts.find(p => p.id === itemBelow.id);
+    if (p1 && p2) {
+      const temp = p1.displayOrder || 0;
+      p1.displayOrder = p2.displayOrder || 0;
+      p2.displayOrder = temp;
+      setProducts(newProducts);
+    }
+  }
 
   // Helper to get category title and placement type for the product
   const getProductCategoryInfo = (prodId: string) => {
@@ -211,6 +294,42 @@ export default function ProductsPage() {
               </select>
             </div>
 
+            {/* Reorder Buttons */}
+            {isReordering ? (
+              <>
+                <button
+                  onClick={handleCancelReorder}
+                  disabled={reorderSaving}
+                  className="bg-[#04111d] border border-white/10 hover:bg-white/5 px-4 py-2 text-xs font-semibold text-gray-300 flex items-center gap-2 transition-all rounded-none cursor-pointer disabled:opacity-50"
+                  style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                >
+                  <X size={14} />
+                  <span>Cancel Reorder</span>
+                </button>
+                <button
+                  onClick={handleSaveOrder}
+                  disabled={reorderSaving}
+                  className="bg-green-600 hover:bg-green-500 px-4 py-2 text-xs font-semibold text-white flex items-center gap-2 transition-all rounded-none cursor-pointer disabled:opacity-50"
+                  style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                >
+                  <Save size={14} />
+                  <span>{reorderSaving ? "Saving..." : "Save Order"}</span>
+                </button>
+              </>
+            ) : (
+              selectedCategoryFilter !== "all" && searchQuery === "" && selectedStatusFilter === "all" && (
+                <button
+                  onClick={handleEnableReorder}
+                  className="bg-[#04111d] border border-white/10 hover:bg-white/5 px-4 py-2 text-xs font-semibold text-white flex items-center gap-2 transition-all rounded-none cursor-pointer"
+                  style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                >
+                  <ArrowUp size={14} />
+                  <ArrowDown size={14} className="-ml-2" />
+                  <span>Reorder Products</span>
+                </button>
+              )
+            )}
+
             {/* Add Product button */}
             <Link
               href="/admin/products/new"
@@ -241,7 +360,7 @@ export default function ProductsPage() {
                 </tr>
               </thead>
               <tbody style={{ fontFamily: "'Manrope', sans-serif" }}>
-                {filteredProducts.map((p) => {
+                {filteredProducts.map((p, index) => {
                   const { categoryTitle, placement } = getProductCategoryInfo(p.id)
                   const isLive = (p.status || "Live") === "Live"
                   return (
@@ -297,27 +416,50 @@ export default function ProductsPage() {
                       {/* Actions */}
                       <td className="py-5 px-6 text-center align-middle">
                         <div className="inline-flex gap-4 justify-center">
-                          <Link
-                            href={`/admin/products/${p.id}/view`}
-                            className="text-gray-400 hover:text-white transition-all"
-                            title="Preview product details"
-                          >
-                            <Eye size={16} />
-                          </Link>
-                          <Link
-                            href={`/admin/products/${p.id}/edit`}
-                            className="text-gray-400 hover:text-white transition-all"
-                            title="Edit product"
-                          >
-                            <Edit3 size={16} />
-                          </Link>
-                          <button
-                            onClick={() => setDeleteTarget(p)}
-                            className="text-red-500/80 hover:text-red-400 transition-all focus:outline-none cursor-pointer"
-                            title="Delete product"
-                          >
-                            <Trash2 size={16} />
-                          </button>
+                          {isReordering ? (
+                            <>
+                              <button
+                                onClick={() => handleMoveUp(index)}
+                                disabled={index === 0}
+                                className="text-gray-400 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                                title="Move Up"
+                              >
+                                <ArrowUp size={16} />
+                              </button>
+                              <button
+                                onClick={() => handleMoveDown(index)}
+                                disabled={index === filteredProducts.length - 1}
+                                className="text-gray-400 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                                title="Move Down"
+                              >
+                                <ArrowDown size={16} />
+                              </button>
+                            </>
+                          ) : (
+                            <>
+                              <Link
+                                href={`/admin/products/${p.id}/view`}
+                                className="text-gray-400 hover:text-white transition-all"
+                                title="Preview product details"
+                              >
+                                <Eye size={16} />
+                              </Link>
+                              <Link
+                                href={`/admin/products/${p.id}/edit`}
+                                className="text-gray-400 hover:text-white transition-all"
+                                title="Edit product"
+                              >
+                                <Edit3 size={16} />
+                              </Link>
+                              <button
+                                onClick={() => setDeleteTarget(p)}
+                                className="text-red-500/80 hover:text-red-400 transition-all focus:outline-none cursor-pointer"
+                                title="Delete product"
+                              >
+                                <Trash2 size={16} />
+                              </button>
+                            </>
+                          )}
                         </div>
                       </td>
                     </tr>
