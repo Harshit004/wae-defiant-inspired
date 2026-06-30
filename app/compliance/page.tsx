@@ -21,32 +21,32 @@ export default function CompliancePage() {
         {
             title: "ZED GOLD – MSME (Zero Defect Zero Effect)",
             description: "WAE holds the prestigious ZED GOLD certification, signifying zero defect manufacturing, minimum environmental impact conscious production processes. This compliance reflects our commitment to resource efficiency, sustainable manufacturing, and high-quality output, making our standard safe for ecological responsibilities.",
-            image: "/placeholder-logo.png"
+            image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f72be33-0072-4771-16f2-1568c1bae700/public"
         },
         {
             title: "CE Certification",
             description: "The CE marking ensures WAE products comply with essential European health, safety and environmental protection standards. This certification demonstrates that our systems are rigorously tested for safety, performance, and reliability, meeting strict EU compliance norms.",
-            image: "/placeholder-logo.png"
+            image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/af34d413-57eb-40f9-1c3b-a06d1c557800/public"
         },
         {
             title: "GRIHA – Certified Green Products",
             description: "WAE products are recognised under GRIHA (Green Product Rating), validating our environmental performance, energy efficiency, and reduced resource consumption. This assures customers that our solutions contribute to sustainable building practices and national green goals.",
-            image: "/placeholder-logo.png"
+            image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f4782005-d0c3-4b85-9b95-7d774c93e500/public"
         },
         {
             title: "ISO 9001:2015 – Quality Management System",
-            description: "WAE's ISO 9001:2015 certification ensures adherence to globally accepted quality management frameworks. It guarantees consistency in performance, customer satisfaction, process control, and continuous improvement across all operations.",
-            image: "/placeholder-logo.png"
+            description: "WAE follows a robust Quality Management System ensuring consistent delivery of superior products and services. Our adherence to ISO 9001:2015 guarantees systematic processes, continuous improvement, and the highest level of customer satisfaction in every solution we provide.",
+            image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/89c52456-58ba-412d-1a07-d94220acde00/public"
         },
         {
-            title: "ISO 45001:2018 – Occupational Health & Safety (OHS)",
-            description: "This certification demonstrates WAE's commitment to maintaining a safe work environment minimizing occupational risks. It ensures our people, processes, and production systems follow stringent global safety standards.",
-            image: "/placeholder-logo.png"
+            title: "ISO 45001:2018 – Occupational Health & Safety",
+            description: "We prioritise a safe and healthy work environment. By complying with ISO 45001:2018, WAE proactively manages workplace risks, prevents occupational injuries, and promotes the well-being of our workforce, fostering a secure culture across all operations.",
+            image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b0ee382d-6ac6-4ba7-3f52-776bfb6bc200/public"
         },
         {
             title: "ISO 14001:2015 – Environmental Management System",
             description: "WAE upholds globally recognized environmental management protocols. This certifies institutional commitment to pollution prevention, resource optimization and eco-conscious operational practices that reduce ecological impacts.",
-            image: "/placeholder-logo.png"
+            image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3503a558-d34c-40da-e2bf-41e75da2f100/public"
         }
     ]
 
