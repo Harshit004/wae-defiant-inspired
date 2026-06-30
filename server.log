@@ -1,0 +1,18 @@
+
+> my-v0-project@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.1.9
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.43:3000
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · webpackBuildWorker
+
+ ✓ Starting...
+ ✓ Ready in 4.8s
+ ○ Compiling /middleware ...
+ ✓ Compiled /middleware in 951ms (142 modules)
+ ✓ Compiled in 479ms (142 modules)
+ ✓ Compiled in 372ms (142 modules)
+ ✓ Compiled in 218ms (142 modules)

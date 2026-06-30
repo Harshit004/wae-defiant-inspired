@@ -393,122 +393,117 @@ const etceteraItems = [
                 To lead the way in<br />sustainability ahead of the<br />rest
               </div>
 
-              {/* Inside WAE Menu Items */}
-              <div className="flex flex-col justify-center space-y-2 pr-4">
-                {productsItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-white "
-                    style={{
-                      fontFamily: "\'Manrope\', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "10px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents"> {/* Use 'contents' to allow styling of the parent */}
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+              {/* Menu Items spanning 3 columns */}
+                            <div className="col-span-3 flex flex-col space-y-2">
+                                {[0, 1, 2].map((i) => (
+                                    <div key={i} className="grid grid-cols-3 gap-4 pb-2 border-b border-white">
+                                        {/* Inside WAE Item */}
+                                        <div
+                                            style={{
+                                                fontFamily: "\'Manrope\', sans-serif",
+                                                fontWeight: 500,
+                                                fontSize: "10px",
+                                                lineHeight: "110%",
+                                            }}
+                                        >
+                                            {productsItems[i] ? (
+                                            <Link href={productsItems[i].href || "#"} className="contents">
+                                                <div className="c--anim-btn">
+                                                    <div className="text-container">
+                                                        <span className="c-anim-btn">{productsItems[i].text}</span>
+                                                        <span className="block">{productsItems[i].text}</span>
+                                                    </div>
+                                                    <span className="menu-arrow">
+                                                        <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="12"
+                                                        height="12"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        strokeWidth="2"
+                                                    >
+                                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                                        <polyline points="12 5 19 12 12 19" />
+                                                    </svg>
+                                                    </span>
+                                                </div>
+                                            </Link>
+                                            ) : null}
+                                        </div>
 
-              {/* RESPONSIBILITY Menu Items */}
-              <div className="flex flex-col justify-center space-y-2 pr-4">
-                {blueprintItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-white "
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "10px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents">
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow blueprint-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                                        {/* RESPONSIBILITY Item */}
+                                        <div
+                                            style={{
+                                                fontFamily: "\'Manrope\', sans-serif",
+                                                fontWeight: 500,
+                                                fontSize: "10px",
+                                                lineHeight: "110%",
+                                            }}
+                                        >
+                                            {blueprintItems[i] ? (
+                                            <Link href={blueprintItems[i].href || "#"} className="contents">
+                                                <div className="c--anim-btn">
+                                                    <div className="text-container">
+                                                        <span className="c-anim-btn">{blueprintItems[i].text}</span>
+                                                        <span className="block">{blueprintItems[i].text}</span>
+                                                    </div>
+                                                    <span className="menu-arrow blueprint-arrow">
+                                                        <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="12"
+                                                        height="12"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        strokeWidth="2"
+                                                    >
+                                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                                        <polyline points="12 5 19 12 12 19" />
+                                                    </svg>
+                                                    </span>
+                                                </div>
+                                            </Link>
+                                            ) : null}
+                                        </div>
 
-              {/* ETCETERA Menu Items */}
-              <div className="flex flex-col justify-center space-y-2 pr-4">
-                {etceteraItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="pb-2 border-b border-white "
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "10px",
-                      lineHeight: "110%",
-                    }}
-                  >
-                    <Link href={item.href} className="contents">
-                      <div className="c--anim-btn">
-                        <div className="text-container">
-                          <span className="c-anim-btn">{item.text}</span>
-                          <span className="block">{item.text}</span>
-                        </div>
-                        <span className="menu-arrow blueprint-arrow">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </span>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                                        {/* ETCETERA Item */}
+                                        <div
+                                            style={{
+                                                fontFamily: "\'Manrope\', sans-serif",
+                                                fontWeight: 500,
+                                                fontSize: "10px",
+                                                lineHeight: "110%",
+                                            }}
+                                        >
+                                            {etceteraItems[i] ? (
+                                            <Link href={etceteraItems[i].href || "#"} className="contents">
+                                                <div className="c--anim-btn">
+                                                    <div className="text-container">
+                                                        <span className="c-anim-btn">{etceteraItems[i].text}</span>
+                                                        <span className="block">{etceteraItems[i].text}</span>
+                                                    </div>
+                                                    <span className="menu-arrow blueprint-arrow">
+                                                        <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="12"
+                                                        height="12"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        strokeWidth="2"
+                                                    >
+                                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                                        <polyline points="12 5 19 12 12 19" />
+                                                    </svg>
+                                                    </span>
+                                                </div>
+                                            </Link>
+                                            ) : null}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
             </div>
           </div>
         </header>
