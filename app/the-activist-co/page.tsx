@@ -191,9 +191,11 @@ export default function TheActivistCoPage() {
                   lineHeight: "130%",
                 }}
               >
-                <div>. A refusal to accept plastic waste as an inevitable norm.</div>
-                <div>. A refusal to reduce a life-giving resource to a disposable transaction.</div>
-                <div>. A refusal to build modern convenience on the back of ecological decline.</div>
+                <ul className="list-disc pl-5">
+                  <li>A refusal to accept plastic waste as an inevitable norm.</li>
+                  <li>A refusal to reduce a life-giving resource to a disposable transaction.</li>
+                  <li>A refusal to build modern convenience on the back of ecological decline.</li>
+                </ul>
               </div>
               <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
               <p
@@ -266,7 +268,7 @@ export default function TheActivistCoPage() {
                   lineHeight: "130%",
                 }}
               >
-                <ul>
+                <ul className="list-disc pl-5">
                   <li>A refusal to accept plastic waste as an inevitable norm.</li>
                   <li>A refusal to reduce a life-giving resource to a disposable transaction.</li>
                   <li>A refusal to build modern convenience on the back of ecological decline.</li>
@@ -408,13 +410,13 @@ export default function TheActivistCoPage() {
               Our Green Is Blue
             </h2>
             <div style={{ height: "clamp(30px, 4.3vw, 62px)" }} />
-            
+
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 lg:w-[40.97vw] lg:max-w-[590px]">
               <div className="flex flex-col">
                 <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(12px, 0.97vw, 14px)", lineHeight: "130%", color: "#AEAEAE" }}>
                   <span style={{ fontWeight: 700, color: "#FFF" }}>"Our Green Is Blue"</span> is more than a statement of belief; it is the foundation of an entire worldview.
                 </p>
-                <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
+                <div style={{ height: "clamp(24px, 3.4vw, 49px)" }} />
                 <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(12px, 0.97vw, 14px)", lineHeight: "130%", color: "#AEAEAE" }}>
                   The baseline ecological truth is absolute: without water, there is no life. Forests fail, food systems fracture, and human futures fade. Water shapes our climate, our communities, our commerce, and our civilizations. It determines the resilience of landscapes and the continuity of global economies.
                 </p>
@@ -423,7 +425,7 @@ export default function TheActivistCoPage() {
                 <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(12px, 0.97vw, 14px)", lineHeight: "130%", color: "#AEAEAE" }}>
                   That is why the planet cannot be treated as a mere stakeholder in business. Instead, business must be treated as a <span style={{ fontWeight: 700, color: "#FFF", lineHeight: "100%" }}>proud steward of the planet.</span>
                 </p>
-                <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
+                <div style={{ height: "clamp(24px, 3.4vw, 49px)" }} />
                 <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(12px, 0.97vw, 14px)", lineHeight: "130%", color: "#AEAEAE" }}>
                   Welcome to WAELCHEMY. Where we honor water, design with discipline, and create systems where progress serves the earth—not the other way around.
                 </p>
