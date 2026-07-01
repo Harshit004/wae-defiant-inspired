@@ -150,7 +150,7 @@ export default function CookieConsent() {
         </p>
 
         {/* Buttons Row */}
-        <div style={{ display: "flex", gap: "16px", marginBottom: "24px" }}>
+        <div style={{ display: "flex", gap: "15px", marginBottom: "24px", width: "100%" }}>
           {/* Accept All Button */}
           <button
             onClick={handleAccept}
@@ -158,7 +158,7 @@ export default function CookieConsent() {
             onMouseLeave={() => setAcceptHovered(false)}
             type="button"
             style={{
-              width: "201px",
+              flex: 1,
               background: acceptHovered ? "transparent" : "#FFF",
               border: "1.5px solid #FFF",
               borderRadius: "0px",
@@ -186,7 +186,7 @@ export default function CookieConsent() {
             onMouseLeave={() => setNecessaryHovered(false)}
             type="button"
             style={{
-              width: "201px",
+              flex: 1,
               background: necessaryHovered ? "#FFF" : "transparent",
               border: "1.5px solid #FFF",
               borderRadius: "0px",
