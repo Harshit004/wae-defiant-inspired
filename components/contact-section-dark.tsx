@@ -117,7 +117,7 @@ const ContactSectionDark = () => {
                             type="text"
                             name="name"
                             placeholder="*Name"
-                            className="w-full bg-transparent border-b border-white py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
                         />
                     </div>
@@ -126,7 +126,7 @@ const ContactSectionDark = () => {
                             type="email"
                             name="email"
                             placeholder="*Your Email"
-                            className="w-full bg-transparent border-b border-white py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
                         />
                     </div>
@@ -135,7 +135,7 @@ const ContactSectionDark = () => {
                             type="tel"
                             name="contact"
                             placeholder="*Contact No."
-                            className="w-full bg-transparent border-b border-white py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
                         />
                     </div>
@@ -144,7 +144,7 @@ const ContactSectionDark = () => {
                             type="text"
                             name="companyName"
                             placeholder="*ABC Company"
-                            className="w-full bg-transparent border-b border-white py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                         />
                     </div>
                     <div className="relative group">
@@ -152,14 +152,14 @@ const ContactSectionDark = () => {
                             name="message"
                             placeholder="Message"
                             maxLength={2000}
-                            className="w-full bg-transparent border-b border-white py-4 focus:outline-none focus:border-white transition-colors font-manrope text-sm resize-none h-32"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm resize-none h-32"
                         />
                     </div>
 
                     <div className="mt-8">
                         <button
                             type="submit"
-                            className="w-full h-20 bg-white text-black flex items-center justify-center gap-4 group transition-colors hover:bg-white/90"
+                            className="w-full h-[54px] bg-white text-black flex items-center justify-center gap-4 group transition-colors hover:bg-white/90"
                         >
                             <span style={{
                                 fontFamily: "'Inter Tight', sans-serif",
