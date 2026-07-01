@@ -118,9 +118,7 @@ export default function Home() {
   // State variables
   const [activeSection, setActiveSection] = useState(0)
   const [currentTime, setCurrentTime] = useState("")
-  const [headerHeight, setHeaderHeight] = useState(0)
   const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
-  const headerRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.5 })
 
@@ -209,24 +207,9 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
-  // Measure header height
-  useEffect(() => {
-    const updateHeaderHeight = () => {
-      if (headerRef.current) {
-        setHeaderHeight(headerRef.current.clientHeight);
-      }
-    };
-    // Need a small timeout to let the external Header component mount and render
-    setTimeout(updateHeaderHeight, 50);
-    window.addEventListener("resize", updateHeaderHeight);
-    return () => window.removeEventListener("resize", updateHeaderHeight);
-  }, []);
-
   return (
     <main className="relative">
-      <div ref={headerRef}>
-        <Header />
-      </div>
+      <Header />
 
       {/* HERO SECTION */}
       <section
@@ -269,11 +252,10 @@ export default function Home() {
         </div>
 
         {/* 4. Hero Content Text (Topmost) */}
-        <div className="absolute top-0 left-0 w-full h-full z-[3] pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full z-[3] pointer-events-none flex items-center">
           <div className={`${containerClass} pointer-events-auto`}>
             <div
               style={{
-                marginTop: `${headerHeight + 105}px`,
                 width: "clamp(280px, 34.79vw, 600px)",
                 color: "#FFFFFF",
                 fontFamily: "'Inter Tight', sans-serif",

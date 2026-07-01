@@ -33,40 +33,28 @@ const Header: FC = () => {
             <div>
                 <header ref={headerRef} className="w-full absolute top-0 left-0 z-50 pb-5 bg-transparent text-white">
                     <div className={containerClass}>
-                        {/* Top Row: Navigation */}
-                        <div
-                            className="grid grid-cols-[auto_10.17vw_auto_10.21vw_auto_10.21vw_auto_9.03vw_auto_8.13vw_1fr] items-center pt-[30px] pb-[10px] uppercase"
-                            style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 500,
-                                fontSize: "12px",
-                                lineHeight: "100%",
-                                letterSpacing: "0px",
-                            }}
-                        >
-                            <div>IDENTITY</div>
+                        <div className="grid grid-cols-[auto_10.17vw_auto_10.21vw_auto_10.21vw_auto_9.03vw_auto_8.13vw_1fr] items-start pt-[30px]">
+                            {/* Headings */}
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>IDENTITY</div>
                             <div></div>
-                            <div>ORIGIN</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>ORIGIN</div>
                             <div></div>
-                            <div style={{ position: "relative", left: "-20px" }}>OBJECTIVE</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ position: "relative", left: "-20px", fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>OBJECTIVE</div>
                             <div></div>
-                            <div>INSIDE WAE</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>INSIDE WAE</div>
                             <div></div>
-                            <div>RESPONSIBILITY</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>RESPONSIBILITY</div>
                             <div></div>
-                            <div>ETCETERA</div>
-                        </div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>ETCETERA</div>
 
-                        {/* Divider */}
-                        <div className="w-full h-px bg-white mb-[10px]" />
+                            {/* Divider */}
+                            <div className="col-span-11 w-full h-px bg-white mb-[10px]" />
 
-                        {/* Bottom Row: Logo, Tagline and Menu Items */}
-                        <div className="grid grid-cols-[auto_10.17vw_auto_10.21vw_auto_10.21vw_auto_9.03vw_auto_8.13vw_1fr] items-start">
                             {/* Logo */}
                             <div className="row-span-6 flex flex-col justify-start pt-1 w-[77px]">
                                 <Link href="/">
                                     <Image
-                                        src="/wae-logo.svg"
+                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
                                         alt="WAE Logo"
                                         width={77}
                                         height={82}
