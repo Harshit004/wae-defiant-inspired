@@ -51,9 +51,9 @@ export default function Home() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
   const buttonLabels = [
-    "Water conservation",
-    "Policy",
     "Climate Change & Water",
+    "Policy",
+    "Water conservation",
     "Industry Impact and Solutions",
     "Technology",
   ]
@@ -118,7 +118,7 @@ export default function Home() {
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 700,
                       fontSize: "12px",
-                      lineHeight: "130%",
+                      lineHeight: "100%",
                       letterSpacing: "0%",
                       color: "#ffffff",
                       display: "inline-block"
@@ -354,7 +354,7 @@ export default function Home() {
                     className="hover:opacity-80 transition-opacity m-0"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 700,
+                      fontWeight: 500,
                       fontSize: "18px",
                       lineHeight: "140%",
                       letterSpacing: "0%",
@@ -411,7 +411,7 @@ export default function Home() {
                   className="inline-flex items-center hover:opacity-80 transition-opacity mt-auto"
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
+                    fontWeight: 300,
                     fontSize: "16px",
                     lineHeight: "120%",
                     letterSpacing: "0%",
