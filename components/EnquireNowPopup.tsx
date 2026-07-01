@@ -8,9 +8,10 @@ interface EnquireNowPopupProps {
   isOpen: boolean;
   onClose: () => void;
   pageLink: string;
+  downloadUrl?: string;
 }
 
-export default function EnquireNowPopup({ isOpen, onClose, pageLink }: EnquireNowPopupProps) {
+export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl }: EnquireNowPopupProps) {
   const [formData, setFormData] = useState({
     fullName: "",
     companyName: "",
@@ -44,6 +45,14 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink }: EnquireNo
       const data = await res.json();
       if (data.success) {
         setIsSuccess(true);
+        if (downloadUrl) {
+          const a = document.createElement("a");
+          a.href = downloadUrl;
+          a.download = downloadUrl.split("/").pop() || "download";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        }
         setTimeout(() => {
           setIsSuccess(false);
           setFormData({ fullName: "", companyName: "", email: "", phone: "" });

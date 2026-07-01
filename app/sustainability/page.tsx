@@ -8,6 +8,7 @@ import { animate, useInView } from "framer-motion"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
 import Link from "next/link"
+import EnquireNowPopup from "@/components/EnquireNowPopup"
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
@@ -20,9 +21,10 @@ interface HoverButtonProps {
   href?: string;
   variant?: "default" | "inverted";
   download?: boolean;
+  onClick?: () => void;
 }
 
-const HoverButton: FC<HoverButtonProps> = ({ children, href, variant = "default", download }) => {
+const HoverButton: FC<HoverButtonProps> = ({ children, href, variant = "default", download, onClick }) => {
   const [hovered, setHovered] = useState<boolean>(false);
 
   const isDefault = variant === "default";
@@ -30,6 +32,7 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, variant = "default"
   const buttonContent = (
     <button
       type="button"
+      onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="w-fit  transition-all duration-650 ease"
@@ -115,6 +118,7 @@ const CountUp: FC<{ value: string; duration?: number }> = ({ value, duration = 2
 };
 
 export default function Home() {
+  const [isEnquirePopupOpen, setIsEnquirePopupOpen] = useState(false);
 
   const brandLogos = [
     "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3f2f7aee-3341-40f0-83b0-9929fed77700/public",
@@ -725,7 +729,7 @@ export default function Home() {
               }}>
                 Explore them to see how we're making a positive impact on the environment, society & governance.
               </p>
-              <HoverButton variant="inverted">
+              <HoverButton variant="inverted" onClick={() => setIsEnquirePopupOpen(true)}>
                 {(hovered) => (
                   <>
                     Download report
@@ -753,6 +757,13 @@ export default function Home() {
 
       {/* FOOTER */}
       <Footer />
+
+      <EnquireNowPopup 
+        isOpen={isEnquirePopupOpen} 
+        onClose={() => setIsEnquirePopupOpen(false)} 
+        pageLink="/sustainability" 
+        downloadUrl="/Work in Progress Report 2026 1.pdf" 
+      />
 
       {/* INLINE CSS for animations */}
       <style jsx>{`
