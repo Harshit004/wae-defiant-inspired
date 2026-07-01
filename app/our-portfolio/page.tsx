@@ -7,6 +7,7 @@ import Image from "next/image"
 import { motion, animate, useInView } from "framer-motion"
 import Footer from "@/components/footer"
 import Link from "next/link"
+import Header from "@/components/header"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import { CATEGORIES } from "@/data/products"
@@ -118,11 +119,9 @@ export default function Home() {
   // State variables
   const [activeSection, setActiveSection] = useState(0)
   const [currentTime, setCurrentTime] = useState("")
-  const [headerHeight, setHeaderHeight] = useState(0)
   const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
   const [searchQuery, setSearchQuery] = useState("")
   const [isMuted, setIsMuted] = useState(true)
-  const headerRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.5 })
 
@@ -281,233 +280,15 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
-  // Measure header height (Note: This height is calculated but not used in the current JSX)
-  useEffect(() => {
-    const updateHeaderHeight = () => {
-      if (headerRef.current) {
-        setHeaderHeight(headerRef.current.clientHeight);
-      }
-    };
-    updateHeaderHeight();
-    window.addEventListener("resize", updateHeaderHeight);
-    return () => window.removeEventListener("resize", updateHeaderHeight);
-  }, []); // Dependency array is empty, runs once on mount and cleanup
-
-
   // Tagline lines (split into words)
   const taglineLine1 = "To lead the way in sustainability"
   const taglineLine2 = "ahead of the rest."
   const taglineWords1 = taglineLine1.split(" ")
   const taglineWords2 = taglineLine2.split(" ")
 
-  // Arrays for menu items with hrefs
-  const productsItems = [
-    { text: "This is Us", href: "/this-is-us" },
-    { text: "Our Portfolio", href: "/our-portfolio" },
-    { text: "Reimagine Work", href: "/careers" },
-  ]
-  const blueprintItems = [
-    { text: "Sustainability", href: "/sustainability" },
-    { text: "The Activist Co.", href: "/the-activist-co" },
-    { text: "Blog", href: "/blogs" },
-  ]
-const etceteraItems = [
-    { text: "Contact", href: "/contact-us" },
-    { text: "Compliance", href: "/compliance" },
-    { text: "Mentioned", href: "/news-and-updates" },
-]
-  const lineCount = Math.min(productsItems.length, blueprintItems.length) // Note: lineCount is calculated but not used
-
   return (
     <main className="relative">
-      {/* HEADER (Not Fixed in this version) */}
-      {/* The div with inline styles here seems unnecessary if not fixed */}
-      <div> {/* Consider removing this outer div or making it relative/static */}
-        <header ref={headerRef} className="w-full absolute top-0 left-0 z-50 pb-5 bg-transparent text-white"> {/* Apply containerClass inside header content div */}
-          <div className={containerClass}> {/* Use containerClass for consistent padding */}
-            {/* Top Row: Navigation */}
-            <div
-              className="grid grid-cols-6 gap-4 items-center pt-[30px] pb-[10px] uppercase"
-              style={{
-                fontFamily: "\'Manrope\', sans-serif",
-                fontWeight: 500,
-                fontSize: "10px",
-                lineHeight: "100%",
-                letterSpacing: "0px",
-              }}
-            >
-              <div>IDENTITY</div>
-              <div>ORIGIN</div>
-              <div style={{ position: "relative", left: "-20px" }}>OBJECTIVE</div>
-              <div>INSIDE WAE</div>
-              <div>RESPONSIBILITY</div>
-              <div>ETCETERA</div>
-            </div>
-
-            {/* Divider */}
-            <div className="w-full h-px bg-white mb-[10px]" />
-
-            {/* Bottom Row: Logo, Tagline and Menu Items */}
-            <div className="grid grid-cols-6 gap-4 items-start">
-              {/* Logo */}
-              <div className="flex flex-col justify-center w-[77px] h-[82px]">
-                <Link href="/">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
-                    alt="WAE Logo"
-                    width={77}
-                    height={82}
-                  />
-                </Link>
-              </div>
-
-              {/* Coordinates */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "\'Manrope\', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "10px",
-                  lineHeight: "100%",
-                  color: "#ffffff",
-                }}
-              >
-                20.5937° N
-                <br />
-                78.9629° E
-              </div>
-
-              {/* Tagline */}
-              <div
-                className="flex flex-col justify-center inline-block mr-1"
-                style={{
-                  fontFamily: "\'Manrope\', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "10px",
-                  lineHeight: "100%",
-                  color: "#ffffff",
-                  position: "relative",
-                  left: "-20px",
-                }}
-              >
-                To lead the way in<br />sustainability ahead of the<br />rest
-              </div>
-
-              {/* Menu Items spanning 3 columns */}
-                            <div className="col-span-3 flex flex-col space-y-2">
-                                {[0, 1, 2].map((i) => (
-                                    <div key={i} className="grid grid-cols-3 gap-4 pb-2 border-b border-white">
-                                        {/* Inside WAE Item */}
-                                        <div
-                                            style={{
-                                                fontFamily: "\'Manrope\', sans-serif",
-                                                fontWeight: 500,
-                                                fontSize: "10px",
-                                                lineHeight: "110%",
-                                            }}
-                                        >
-                                            {productsItems[i] ? (
-                                            <Link href={productsItems[i].href || "#"} className="contents">
-                                                <div className="c--anim-btn">
-                                                    <div className="text-container">
-                                                        <span className="c-anim-btn">{productsItems[i].text}</span>
-                                                        <span className="block">{productsItems[i].text}</span>
-                                                    </div>
-                                                    <span className="menu-arrow">
-                                                        <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="12"
-                                                        height="12"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        stroke="currentColor"
-                                                        strokeWidth="2"
-                                                    >
-                                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                                        <polyline points="12 5 19 12 12 19" />
-                                                    </svg>
-                                                    </span>
-                                                </div>
-                                            </Link>
-                                            ) : null}
-                                        </div>
-
-                                        {/* RESPONSIBILITY Item */}
-                                        <div
-                                            style={{
-                                                fontFamily: "\'Manrope\', sans-serif",
-                                                fontWeight: 500,
-                                                fontSize: "10px",
-                                                lineHeight: "110%",
-                                            }}
-                                        >
-                                            {blueprintItems[i] ? (
-                                            <Link href={blueprintItems[i].href || "#"} className="contents">
-                                                <div className="c--anim-btn">
-                                                    <div className="text-container">
-                                                        <span className="c-anim-btn">{blueprintItems[i].text}</span>
-                                                        <span className="block">{blueprintItems[i].text}</span>
-                                                    </div>
-                                                    <span className="menu-arrow blueprint-arrow">
-                                                        <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="12"
-                                                        height="12"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        stroke="currentColor"
-                                                        strokeWidth="2"
-                                                    >
-                                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                                        <polyline points="12 5 19 12 12 19" />
-                                                    </svg>
-                                                    </span>
-                                                </div>
-                                            </Link>
-                                            ) : null}
-                                        </div>
-
-                                        {/* ETCETERA Item */}
-                                        <div
-                                            style={{
-                                                fontFamily: "\'Manrope\', sans-serif",
-                                                fontWeight: 500,
-                                                fontSize: "10px",
-                                                lineHeight: "110%",
-                                            }}
-                                        >
-                                            {etceteraItems[i] ? (
-                                            <Link href={etceteraItems[i].href || "#"} className="contents">
-                                                <div className="c--anim-btn">
-                                                    <div className="text-container">
-                                                        <span className="c-anim-btn">{etceteraItems[i].text}</span>
-                                                        <span className="block">{etceteraItems[i].text}</span>
-                                                    </div>
-                                                    <span className="menu-arrow blueprint-arrow">
-                                                        <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="12"
-                                                        height="12"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        stroke="currentColor"
-                                                        strokeWidth="2"
-                                                    >
-                                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                                        <polyline points="12 5 19 12 12 19" />
-                                                    </svg>
-                                                    </span>
-                                                </div>
-                                            </Link>
-                                            ) : null}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-            </div>
-          </div>
-        </header>
-      </div>
+      <Header />
 
       {/* HERO SECTION */}
       <section
