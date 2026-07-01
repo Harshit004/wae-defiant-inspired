@@ -73,9 +73,10 @@ export default function CookieConsent() {
       <div
         style={{
           position: "relative",
-          width: "598px", // 201px (Btn1) + 201px (Btn2) + 10px (gap) + 186px (padding left + right) = 598px
+          width: "50.97vw", // 734px at 1440px
+          height: "31.11vw", // 448px at 1440px
           backgroundColor: "#003c58",
-          padding: "71px 93px", // py-71px px-93px
+          padding: "4.93vw 6.45vw", // py-71px px-93px relative to 1440px
           borderRadius: "0px",
           boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
           display: "flex",

@@ -192,7 +192,7 @@ export default function Footer() {
             </form>
 
             {/* Navigation link columns */}
-            <div className="w-full relative pr-[80px]">
+            <div className="w-full relative">
               {/* Column headings */}
               <div className="grid grid-cols-4 gap-4">
                 <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider">
@@ -252,7 +252,7 @@ export default function Footer() {
               
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="absolute right-0 top-1/2 -translate-y-1/2 hover:opacity-80 transition-opacity"
+                className="absolute -right-[74px] top-1/2 -translate-y-1/2 hover:opacity-80 transition-opacity"
                 style={{ width: "54px", height: "54px" }}
               >
                 <Image
