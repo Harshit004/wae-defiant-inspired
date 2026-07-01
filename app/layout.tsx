@@ -6,6 +6,7 @@ import CookieConsent from "@/components/cookie-consent"
 import AnalyticsTracker from "@/components/analytics-tracker"
 import { Suspense } from "react"
 import { Toaster } from "sonner"
+import ScrollToTop from "@/components/scroll-to-top"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" })
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <AnalyticsTracker />
         </Suspense>
+        <ScrollToTop />
         <Toaster />
       </body>
     </html>

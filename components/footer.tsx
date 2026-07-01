@@ -193,34 +193,25 @@ export default function Footer() {
 
             {/* Navigation link columns */}
             <div className="w-full relative">
-              {/* Column headings */}
-              <div className="grid grid-cols-4 gap-4">
-                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider">
+              <div className="grid grid-cols-[auto_auto_auto_auto] justify-between w-full">
+                {/* Column headings */}
+                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
                   INSIDE WAE
                 </h3>
-                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider">
+                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
                   RESPONSIBILITY
                 </h3>
-                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider">
+                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
                   ETCETERA
                 </h3>
-                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider">
+                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
                   POLICIES
                 </h3>
-              </div>
 
-              {/* Single continuous horizontal rule */}
-              <hr
-                style={{
-                  border: "none",
-                  borderTop: "0.67px solid #FFFFFF",
-                  width: "100%",
-                  margin: "12px 0",
-                }}
-              />
+                {/* Single continuous horizontal rule */}
+                <div className="col-span-4 w-full h-[0.67px] bg-white mb-3" />
 
-              {/* Link lists */}
-              <div className="grid grid-cols-4 gap-4">
+                {/* Link lists */}
                 {/* INSIDE WAE */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
                   <li><Link href="/this-is-us" className="hover:opacity-80 transition-opacity">This is Us</Link></li>
@@ -249,19 +240,6 @@ export default function Footer() {
                   <li><Link href="/data-privacy-policy" className="hover:opacity-80 transition-opacity">Data Privacy Policy</Link></li>
                 </ul>
               </div>
-              
-              <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="absolute -right-[74px] top-1/2 -translate-y-1/2 hover:opacity-80 transition-opacity"
-                style={{ width: "54px", height: "54px" }}
-              >
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4a558429-0490-4c44-df30-94e4625a4600/public"
-                  alt="Scroll to top"
-                  width={54}
-                  height={54}
-                />
-              </button>
             </div>
 
           </div>
