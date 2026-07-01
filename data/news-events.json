@@ -3,17 +3,6 @@
   "heroTextAwards": " Every recognition tells a story of innovation, purpose, and progress. Explore the awards and honours that celebrate our commitment to engineering excellence, sustainable impact, thoughtful design, and redefining the future of water through meaningful innovation.",
   "items": [
     {
-      "id": "news-1",
-      "type": "news",
-      "title": "How Industrial Equipment Is Being Designed to Deliver Measurable Carbon Reductions",
-      "description": "For over a century, industrial machinery has been engineered to convert energy into output which is faster, cheaper, and at scale. Carbon, if acknowledged at all, was incidental. That era has ended.",
-      "date": "Date-26/06/26",
-      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fac96cd3-ad63-42ff-23df-0d795cc52000/public",
-      "link": "/2026-outlook",
-      "displayOnHomepage": false,
-      "rank": 1
-    },
-    {
       "id": "news-2",
       "type": "news",
       "title": "Safari India Exclusive: Binita Singh of WAE F&B on Redefining Sustainable Water Solutions in..",
