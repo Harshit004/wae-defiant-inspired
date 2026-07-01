@@ -20,7 +20,7 @@
       "date": "December-03/2025",
       "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/75d15a37-34aa-4cfe-bf76-ee1b94cdf900/public",
       "link": "https://businessnewschronicle.com/business/wae-achieves-prestigious-zed-gold-certification-for-manufacturing-excellence-and-sustainability-leadership",
-      "displayOnHomepage": true,
+      "displayOnHomepage": false,
       "rank": 2,
       "id": "item-1782884821239-376"
     },
@@ -56,6 +56,17 @@
       "displayOnHomepage": true,
       "rank": 1,
       "id": "item-1782885606879-866"
+    },
+    {
+      "type": "news",
+      "title": "Safari India Exclusive: Binita Singh of WAE F&B on Redefining Sustainable Water Solutions in Hospitality",
+      "description": "She discusses the growing shift towards circular water systems, the challenges associated with single-use plastics, and how technology-driven solutions are helping hotels reduce costs, carbon footprint, and operational inefficiencies while enhancing the overall guest experience.",
+      "date": "May-19/2026",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/463eb4cd-804b-405a-cc4d-0c07e74e8b00/public",
+      "link": "https://safariindia.com/binita-singh-wae-fb-sustainable-water-solutions/",
+      "displayOnHomepage": true,
+      "rank": 2,
+      "id": "item-1782885723368-966"
     }
   ]
 }
