@@ -174,7 +174,7 @@ export default function Home() {
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 500,
                     fontSize: "12px",
-                    lineHeight: "130%",
+                    lineHeight: "100%",
                     letterSpacing: "0%",
                     color: "#ffffff",
                     borderBottom: "1px solid #808080",
