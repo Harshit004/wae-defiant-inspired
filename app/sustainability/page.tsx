@@ -19,9 +19,10 @@ interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
   href?: string;
   variant?: "default" | "inverted";
+  download?: boolean;
 }
 
-const HoverButton: FC<HoverButtonProps> = ({ children, href, variant = "default" }) => {
+const HoverButton: FC<HoverButtonProps> = ({ children, href, variant = "default", download }) => {
   const [hovered, setHovered] = useState<boolean>(false);
 
   const isDefault = variant === "default";
@@ -58,8 +59,8 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, variant = "default"
   );
 
   return href ? (
-    href.startsWith('#') ? (
-      <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }}>{buttonContent}</a>
+    href.startsWith('#') || download ? (
+      <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }} download={download ? true : undefined}>{buttonContent}</a>
     ) : (
       <Link href={href} className="contents">{buttonContent}</Link>
     )
@@ -586,10 +587,10 @@ export default function Home() {
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>How BFSI organizations ditched plastic water jars for a cleaner, safer alternative</p>
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>Banking offices run 12/6, and so did their plastic water jar problem-spills, hygiene concerns, and hundreds of jars piling up every month. By switching to stainless steel alternatives, BFSI offices cut plastic waste significantly, reduced water contamination risks, and gave employees a cleaner, more professional workspace.</p>
                 </div>
-                  <HoverButton variant="inverted">
+                  <HoverButton variant="inverted" href="/WAE_Success_Stories_Vol_I.pdf" download>
                     {(hovered) => (
                       <>
-                        Download report
+                        Download full story
                         <div className="relative inline-block w-[12px] h-[12px] ml-1">
                           <img
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
@@ -621,10 +622,10 @@ export default function Home() {
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>How IT campuses moved away from plastic jars and never looked back.</p>
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>Large IT campuses consume enormous volumes of water daily. Plastic jars meant constant logistics, leakage, and avoidable plastic waste. Switching to in-situ dispensers simplified operations, eliminated single-use plastic from common areas, and gave teams access to hygienic, temperature consistent water throughout the day.</p>
                 </div>
-                  <HoverButton variant="inverted">
+                  <HoverButton variant="inverted" href="/WAE_Success_Stories_Vol_II.pdf" download>
                     {(hovered) => (
                       <>
-                        Download report
+                        Download full story
                         <div className="relative inline-block w-[12px] h-[12px] ml-1">
                           <img
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
@@ -651,10 +652,10 @@ export default function Home() {
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>How hospitality brands elevated their sustainability commitment, one dispenser at a time</p>
                   <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "0.97vw", color: "#AEAEAE", lineHeight: "100%", marginBottom: "1.94vw", verticalAlign: "middle" }}>In hospitality, every detail shapes the guest experience. Replacing plastic water bottles with sleek and clean branded glass bottled helped hotels reduce plastic footprint, cut recurring supply costs, and signal a genuine commitment to sustainability. Guests noticed, Staff appreciated the ease. And the numbers backed it up with lower operational costs and stronger sustainability ratings while enhancing brand perception across every guest interaction.</p>
                 </div>
-                  <HoverButton variant="inverted">
+                  <HoverButton variant="inverted" href="/WAE_Success_Stories_Vol_III.pdf" download>
                     {(hovered) => (
                       <>
-                        Download report
+                        Download full story
                         <div className="relative inline-block w-[12px] h-[12px] ml-1">
                           <img
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
