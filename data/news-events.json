@@ -31,7 +31,7 @@
       "date": "February-26/2026",
       "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4560d384-a297-4a14-b4be-c5740ebec700/public",
       "link": "https://thewire.in/ptiprnews/wae-earns-ecovadis-committed-badge-launching-a-structured-journey-towards-platinum-sustainability-certification",
-      "displayOnHomepage": true,
+      "displayOnHomepage": false,
       "rank": 3,
       "id": "item-1782884917018-197"
     },
@@ -67,6 +67,17 @@
       "displayOnHomepage": true,
       "rank": 2,
       "id": "item-1782885723368-966"
+    },
+    {
+      "type": "news",
+      "title": "Alignment with SDG 6: How Companies Can Make a Measurable Difference in Water Security",
+      "description": "Water is rapidly emerging as a critical concern that affects economies, communities, and businesses alike. Growing demand, declining quality, and climate pressures are putting immense strain on available water resources. For companies, this challenge goes beyond environmental responsibility and directly impacts operations, supply chains, and long-term growth.",
+      "date": "May-04/2026",
+      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9c36fa12-7905-42ac-816a-ac92eb7c9d00/public",
+      "link": "https://thecsruniverse.com/articles/alignment-with-sdg-6-how-companies-can-make-a-measurable-difference-in-water-security",
+      "displayOnHomepage": true,
+      "rank": 3,
+      "id": "item-1782885903056-880"
     }
   ]
 }
