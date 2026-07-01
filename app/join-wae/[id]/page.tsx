@@ -110,7 +110,7 @@ export default function JobDescriptionPage() {
             <h2 className="font-['Inter_Tight'] font-normal text-[24px] leading-[1.1] text-white mb-[38px]">
               Job Summary
             </h2>
-            <div className="font-['Manrope'] font-normal text-[14px] leading-normal text-[#AEAEAE] mb-[50px] space-y-4">
+            <div className="font-['Manrope'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE] mb-[50px] space-y-4">
               {job.summaryParagraphs.map((para, idx) => (
                 <p key={idx}>{para}</p>
               ))}

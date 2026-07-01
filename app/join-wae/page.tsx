@@ -91,7 +91,7 @@ export default function JoinWaePage() {
             <h1 className="font-['Inter_Tight'] font-normal text-[60px] leading-[1.1] text-white mb-[21px]">
               Be part of our mission
             </h1>
-            <p className="w-[507px] font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE] mb-[88px]">
+            <p className="w-[507px] font-['Manrope'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE] mb-[88px]">
               We're looking for passionate people to join us on our mission. We value flat hierarchies, clear communication, and full ownership and responsibility.
             </p>
 
