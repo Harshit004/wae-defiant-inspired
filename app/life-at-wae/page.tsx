@@ -78,7 +78,7 @@ export default function LifeAtWAEPage() {
           </div>
 
           <div className="flex justify-end">
-            <div className="w-full max-w-[509px] font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE]">
+            <div className="w-full max-w-[509px] font-['Manrope'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE]">
               <p>
                 Life here is built around people, purpose, and possibility. It is a place where ambitious ideas find room to grow, where collaboration feels natural, and where every contribution creates a visible impact. We celebrate wins together, learn from challenges, and encourage curiosity at every step. Beyond projects and deadlines, it is the energy of passionate minds, meaningful connections, and a shared commitment to making a difference that makes every day rewarding.
               </p>
@@ -115,7 +115,7 @@ export default function LifeAtWAEPage() {
                 <div>
                   <div className="font-['Inter_Tight'] font-normal text-[40px] leading-[1.1] text-[#AEAEAE] mb-[38px]">01</div>
                   <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white mb-[24px]">Internship</h3>
-                  <p className="font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE]">
+                  <p className="font-['Manrope'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE]">
                     Every expert was once a beginner. Our internship program is designed for curious minds eager to learn beyond textbooks and classrooms. Here, interns contribute to real projects, work alongside experienced professionals, and see their ideas come to life. It is a journey of discovery, growth, and confidence-building, where learning happens through doing and every experience becomes a stepping stone toward a meaningful career.
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export default function LifeAtWAEPage() {
                 <div>
                   <div className="font-['Inter_Tight'] font-normal text-[40px] leading-[1.1] text-[#AEAEAE] mb-[38px]">02</div>
                   <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white mb-[24px]">Campus hiring</h3>
-                  <p className="font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE]">
+                  <p className="font-['Manrope'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE]">
                     The next big idea often comes from a fresh perspective. Through campus hiring, we welcome bright young talent ready to question, create, and contribute. We look beyond resumes to find individuals with passion, curiosity, and the courage to think differently. From day one, they become part of a culture that encourages learning, ownership, and the freedom to make an impact.
                   </p>
                 </div>
@@ -131,7 +131,7 @@ export default function LifeAtWAEPage() {
                 <div>
                   <div className="font-['Inter_Tight'] font-normal text-[40px] leading-[1.1] text-[#AEAEAE] mb-[38px]">03</div>
                   <h3 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white mb-[24px]">Internal referral</h3>
-                  <p className="font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE]">
+                  <p className="font-['Manrope'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE]">
                     Some of the best additions to a team come through the people who know us best. Our referral program is built on trust, connection, and shared values. When employees recommend someone from their network, they are introducing more than a candidate—they are bringing in potential, passion, and a cultural fit that helps strengthen our community and shape the future of WAE.
                   </p>
                 </div>
