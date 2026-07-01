@@ -1069,7 +1069,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "id": "the-great-water-trade-how-the-plastic-bottle-industry-exploits-india-s-groundwater",
     "title": "The Great Water Trade: How the Plastic Bottle Industry Exploits India's Groundwater",
     "category": "Water conservation",
-    "description": "Despite holding vast aquifers, India faces a deepening water crisis. This article examines how the bottled water industry's unchecked extraction drains groundwater, displaces communities, and what regulatory and behavioural changes are needed to reverse course.",
+    "description": "India's water crisis is driven by unsustainable groundwater extraction and rising demand. Discover why responsible water management is essential to protecting future water security.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fc8b785d-45a5-46b0-fc71-8437547c9b00/public",
     "writerId": "rehnuma-ansari",
     "readTime": "2 min read",
