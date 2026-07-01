@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -22,6 +24,10 @@ export default function ScrollToTop() {
 
     return () => window.removeEventListener("scroll", toggleVisibility)
   }, [])
+
+  if (pathname?.startsWith("/admin")) {
+    return null
+  }
 
   if (!isVisible) {
     return null

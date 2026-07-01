@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -121,15 +120,15 @@ const sitemapData = [
   {
     title: "12. Footer",
     links: [
-      { text: "- About WAE", href: "/this-is-us" },
-      { text: "- Portfolio", href: "/our-portfolio" },
-      { text: "- Reimagine Work", href: "/careers" },
-      { text: "- Sustainability", href: "/sustainability" },
-      { text: "- The Activist Co.", href: "/the-activist-co" },
-      { text: "- Contact", href: "/contact-us" },
-      { text: "- Legal", href: "/data-privacy-policy" },
-      { text: "- Social Media", href: "#" },
-      { text: "- Newsletter Subscription", href: "#" },
+      { text: "About WAE", href: "/this-is-us" },
+      { text: "Portfolio", href: "/our-portfolio" },
+      { text: "Reimagine Work", href: "/careers" },
+      { text: "Sustainability", href: "/sustainability" },
+      { text: "The Activist Co.", href: "/the-activist-co" },
+      { text: "Contact", href: "/contact-us" },
+      { text: "Legal", href: "/data-privacy-policy" },
+      { text: "Social Media", href: "#" },
+      { text: "Newsletter Subscription", href: "#" },
     ]
   },
 ];
@@ -158,7 +157,7 @@ export default function SitemapPage() {
         <div className={containerClass}>
           {/* Header Gap (from top/header spacing if needed) */}
           <div style={{ height: "clamp(40px, 6.94vw, 100px)" }} />
-          
+
           <h1
             style={{
               fontFamily: "'Inter Tight', sans-serif",
@@ -197,16 +196,16 @@ export default function SitemapPage() {
           <div style={{ height: "clamp(40px, 6.38vw, 92px)" }} />
 
           {/* Grid Rows */}
-          <div className="mb-[clamp(60px, 8.54vw, 123px)]">
+          <div className="mb-[clamp(60px,8.61vw,124px)]">
             {rows.map((row, rowIndex) => (
               <div key={rowIndex}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-y-0">
                   {row.map((section, idx) => (
-                    <div 
+                    <div
                       key={idx}
-                      style={{ 
+                      style={{
                         borderLeft: '1px solid #333',
-                        paddingLeft: 'clamp(20px, 3.47vw, 50px)' 
+                        paddingLeft: 'clamp(20px, 3.47vw, 50px)'
                       }}
                     >
                       <h2
@@ -223,20 +222,23 @@ export default function SitemapPage() {
                       >
                         {section.title}
                       </h2>
-                      
+
                       <div style={{ height: "clamp(16px, 1.66vw, 24px)" }} />
-                      
+
                       <ul className="space-y-3">
                         {section.links.map((link, linkIdx) => (
-                          <li key={linkIdx}>
-                            <Link 
+                          <li key={linkIdx} className={section.title === "12. Footer" ? "flex items-center" : ""}>
+                            {section.title === "12. Footer" && (
+                              <div className="w-[2px] h-[2px] rounded-full bg-[#AEAEAE] mr-4 flex-shrink-0" />
+                            )}
+                            <Link
                               href={link.href}
                               className="hover:text-white transition-colors duration-300"
                               style={{
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 400,
                                 fontSize: "clamp(12px, 0.97vw, 14px)",
-                                lineHeight: "140%",
+                                lineHeight: "100%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
                                 color: "#AEAEAE",
@@ -250,7 +252,7 @@ export default function SitemapPage() {
                     </div>
                   ))}
                 </div>
-                
+
                 {rowIndex < rows.length - 1 && (
                   <>
                     <div style={{ height: "clamp(40px, 6.38vw, 92px)" }} />
