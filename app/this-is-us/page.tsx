@@ -604,13 +604,30 @@ const ThisIsUs: FC = () => {
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
                     <h2 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '78px' }}>Awards & Recognition</h2>
                     <div className="grid grid-cols-3">
-                        {[1, 2, 3].map((item, index) => (
-                            <div key={item} className="flex flex-col border-l border-white/20 pl-[2.01vw]">
+                        {[
+                            {
+                                title: "Brand Disruption Award",
+                                year: "2026",
+                                image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/27c5ee91-c5fb-4218-da79-ca72831f8300/public"
+                            },
+                            {
+                                title: "Design & Creativity",
+                                year: "2026",
+                                image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ef384b0c-e715-4d9b-1e40-32c79b5d9600/public"
+                            },
+                            {
+                                title: "Design Excellence Award",
+                                year: "2025",
+                                image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c22cf192-4c90-4f5c-68f9-12db08666e00/public"
+                            }
+                        ].map((award, index) => (
+                            <div key={index} className="flex flex-col border-l border-white/20 pl-[2.01vw]">
                                 <div className="w-full aspect-[347/350] relative mb-[35px] max-w-[347px]">
-                                    <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5d38e4f6-adbf-48f6-66b3-cb2dcfff2700/public" alt="Awards Certificate" fill className="object-contain" />
+                                    <Image src={award.image} alt={award.title} fill className="object-cover" />
                                 </div>
                                 <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '24px', lineHeight: '130%', color: '#fff' }} className="pr-4">
-                                    The competition has never been fiercer. ET MSME Awards 2025 nominee!
+                                    {award.title}<br />
+                                    {award.year}
                                 </p>
                             </div>
                         ))}
