@@ -426,7 +426,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "id": "the-north-star-of-progress",
     "title": "The North Star of Progress: A Historical Lens on Climate Change and India's Sustainable Future",
     "category": "Policy",
-    "description": "In an era of climate change, social inequality, and global uncertainty, the United Nations Sustainable Development Goals (SDGs) provide a shared roadmap for a more sustainable future. Introduced in 2015, the 17 interconnected goals inspire governments, businesses, and communities to drive innovation, resilience, and inclusive growth while balancing environmental, social, and economic progress for generations to come.",
+    "description": "The Sustainable Development Goals (SDGs) unite governments, businesses, and communities to create a more resilient, inclusive, and sustainable future through collective action and responsible development.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/75104b88-7b75-4411-8640-43363ad62c00/public",
     "writerId": "shambhavi",
     "readTime": "3 min read",
