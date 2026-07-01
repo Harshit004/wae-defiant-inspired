@@ -64,5 +64,25 @@ export const JOBS: Record<string, JobPost> = {
       "Strong communication and presentation skills.\n",
       "Ability to manage multiple projects and timelines simultaneously.\n"
     ]
+  },
+  "purchase-manager": {
+    "id": "purchase-manager",
+    "title": "Purchase Manager",
+    "category": "OPERATION",
+    "type": "On-site",
+    "time": "Full time",
+    "shortDescription": "We are committed to delivering cutting-edge solutions in water purification and\nsustainable technologies. We’re looking for a Purchase Manager who can drive our procurement\nfunction with agility, smart negotiation, and a sharp eye for quality and cost optimization. If you have  a passion for sourcing the best materials, building strong supplier relationships, and ensuring smooth manufacturing operations, this could be the perfect opportunity for you.\n",
+    "status": "Live",
+    "createdAt": "2026-07-01T05:53:44.692Z",
+    "summaryParagraphs": [
+      "We are committed to delivering cutting-edge solutions in water purification and\nsustainable technologies. We’re looking for a Purchase Manager who can drive our procurement\nfunction with agility, smart negotiation, and a sharp eye for quality and cost optimization. If you have  a passion for sourcing the best materials, building strong supplier relationships, and ensuring smooth manufacturing operations, this could be the perfect opportunity for you."
+    ],
+    "whatYouWillDo": [
+      "Lead strategic sourcing and procurement for manufacturing, projects, and engineering operations.\nIdentify, evaluate, negotiate, and onboard reliable domestic and international suppliers.\nManage end-to-end procurement, including purchase orders, vendor coordination, and import purchases.\nCollaborate with Production, PPC, Projects, Quality, Stores, Design, and Finance to ensure timely material availability.\nDrive cost optimization through strategic sourcing, alternate vendor development, and value engineering.\nMonitor supplier performance, delivery schedules, quality, and commercial commitments.\nCoordinate import logistics, customs documentation, freight forwarders, and regulatory compliance.\nEnsure procurement activities comply with company policies, statutory regulations, and documentation standards.\nPrepare procurement MIS, vendor performance reports, cost analyses, and leadership dashboards."
+    ],
+    "whatYouWillOwn": [
+      "Procurement planning and sourcing across multiple product categories.\nVendor development, commercial negotiations, and supplier relationships.\nMaterial availability aligned with production and project schedules.\nEnd-to-end domestic and international procurement operations.\nCost-saving initiatives and procurement process improvements.\nProcurement documentation, ERP transactions, and statutory compliance.\nInventory planning support in collaboration with Stores and PPC.\nBuilding a reliable, efficient, and scalable procurement ecosystem."
+    ],
+    "whoWeAreLookingFor": []
   }
 };
