@@ -264,7 +264,7 @@ export default function Footer() {
         }}
         className="flex justify-between items-center font-[Manrope] text-[10px] text-white"
       >
-        <span>&copy; 2026 WAE. All Rights Reserved. &nbsp;|&nbsp; Sitemap &nbsp;|&nbsp; FAQ</span>
+        <span>&copy; 2026 WAE. All Rights Reserved. &nbsp;|&nbsp; <Link href="/sitemap" className="hover:opacity-80 transition-opacity">Sitemap</Link> &nbsp;|&nbsp; FAQ</span>
       </div>
     </footer>
   );
