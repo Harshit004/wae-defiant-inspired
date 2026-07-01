@@ -50,7 +50,7 @@ export default function TheActivistCoPage() {
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
                   fontSize: "clamp(24px, 2.5vw, 36px)",
-                  lineHeight: "100%",
+                  lineHeight: "130%",
                   margin: 0,
                 }}
               >
@@ -139,7 +139,7 @@ export default function TheActivistCoPage() {
                 fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
                 fontSize: "clamp(12px, 0.97vw, 14px)",
-                lineHeight: "100%",
+                lineHeight: "130%",
                 color: "#AEAEAE",
               }}
             >
@@ -259,23 +259,6 @@ export default function TheActivistCoPage() {
                 />
               </div>
               <div style={{ height: "clamp(20px, 2.43vw, 35px)" }} />
-              <div
-                className="flex flex-col gap-1"
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "clamp(12px, 0.97vw, 14px)",
-                  lineHeight: "130%",
-                }}
-              >
-                <ul className="list-disc pl-5">
-                  <li>A refusal to accept plastic waste as an inevitable norm.</li>
-                  <li>A refusal to reduce a life-giving resource to a disposable transaction.</li>
-                  <li>A refusal to build modern convenience on the back of ecological decline.</li>
-                </ul>
-
-              </div>
-              <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
@@ -285,7 +268,7 @@ export default function TheActivistCoPage() {
                   color: "#aeaeae",
                 }}
               >
-                To honor water is to defend it from the systems that diminish it. The mission is to protect what is essential by radically redesigning what is excessive. The historical search for alchemy ends with water because water already contains the ultimate lesson: life is sustained not by extraction, but by balance; not by possession, but by stewardship.
+                A bottle is never just a bottle. It represents a heavy linear chain of extraction, packaging, long-haul transport, short-term use, and permanent waste. What appears convenient at the point of consumption carries an unsustainable ecological cost across its lifecycle.
               </p>
               <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
               <p
@@ -297,7 +280,19 @@ export default function TheActivistCoPage() {
                   color: "#aeaeae",
                 }}
               >
-                <span style={{ color: "#AEAEAE" }}>WAELCHEMY</span> is that principle, made operational.
+                <span style={{ color: "#fff" }}>Carbon Neutral Water </span>is not a tagline. It is a strict design imperative.
+              </p>
+              <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "clamp(12px, 0.97vw, 14px)",
+                  lineHeight: "130%",
+                  color: "#aeaeae",
+                }}
+              >
+                The approach requires actively replacing carbon-intensive, disposable habits with permanent refill infrastructure, highly efficient purification systems, and durable materials engineered for longevity. To lead responsibly, we must move beyond the bottle and consciously build the infrastructure that comes after it.
               </p>
             </div>
           </div>
@@ -422,7 +417,7 @@ export default function TheActivistCoPage() {
             </h2>
             <div className="flex flex-col shrink-0" style={{ width: "100%", maxWidth: "467px" }}>
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#AEAEAE", marginBottom: "16px" }}>
-                <span style={{ fontWeight: 700, color: "#AEAEAE" }}>"Our Green Is Blue"</span> is more than a statement of belief; it is the foundation of an entire worldview.
+                <span style={{ fontWeight: 700, color: "#fff" }}>"Our Green Is Blue"</span> is more than a statement of belief; it is the foundation of an entire worldview.
               </p>
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#AEAEAE", marginBottom: "16px" }}>
                 The baseline ecological truth is absolute: without water, there is no life. Forests fail, food systems fracture, and human futures fade. Water shapes our climate, our communities, our commerce, and our civilizations. It determines the resilience of landscapes and the continuity of global economies.
