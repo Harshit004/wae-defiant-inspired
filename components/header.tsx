@@ -106,7 +106,7 @@ const Header: FC = () => {
                                     left: "-20px",
                                 }}
                             >
-                                To lead the way in<br />sustainability ahead of the<br />rest
+                                To lead the way in<br />sustainability ahead of the<br />next
                             </div>
                             <div className="row-span-6"></div>
 
