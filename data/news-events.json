@@ -3,17 +3,6 @@
   "heroTextAwards": " Every recognition tells a story of innovation, purpose, and progress. Explore the awards and honours that celebrate our commitment to engineering excellence, sustainable impact, thoughtful design, and redefining the future of water through meaningful innovation.",
   "items": [
     {
-      "id": "news-3",
-      "type": "news",
-      "title": "WAE shines with ZED Gold certification",
-      "description": "The ZED Gold Certification places WAE among enterprises that mainatin high levels of product quality while...",
-      "date": "Date-26/06/26",
-      "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2b2089e4-37cf-450d-c869-2248d7209700/public",
-      "link": "https://travtalkindia.com/hotels-advance-sustainability-with-glass-bottling/",
-      "displayOnHomepage": false,
-      "rank": 3
-    },
-    {
       "id": "news-4",
       "type": "news",
       "title": "WAE shines with ZED Gold certification",
