@@ -150,7 +150,7 @@ export default function CookieConsent() {
         </p>
 
         {/* Buttons Row */}
-        <div style={{ display: "flex", gap: "10px", marginBottom: "24px" }}>
+        <div style={{ display: "flex", gap: "16px", marginBottom: "24px" }}>
           {/* Accept All Button */}
           <button
             onClick={handleAccept}
@@ -165,7 +165,7 @@ export default function CookieConsent() {
               color: acceptHovered ? "#FFF" : "#003c58",
               padding: "13px 0",
               fontFamily: "'Manrope', sans-serif",
-              fontWeight: 500,
+              fontWeight: 600,
               fontSize: "15px",
               lineHeight: "100%",
               letterSpacing: "0%",
@@ -193,7 +193,7 @@ export default function CookieConsent() {
               color: necessaryHovered ? "#003c58" : "#FFF",
               padding: "13px 0",
               fontFamily: "'Manrope', sans-serif",
-              fontWeight: 500,
+              fontWeight: 400,
               fontSize: "15px",
               lineHeight: "100%",
               letterSpacing: "0%",
