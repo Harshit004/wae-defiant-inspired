@@ -82,7 +82,7 @@ export default function TheActivistCoPage() {
                 }}
               >
                 <video
-                  src="/the-activist-co-hero.mp4"
+                  src="/web wae waelchimy.mp4"
                   autoPlay
                   loop
                   muted
@@ -175,7 +175,7 @@ export default function TheActivistCoPage() {
             <div className="flex-1 flex flex-col w-full">
               <div className="w-full max-w-[846px] relative overflow-hidden" style={{ aspectRatio: "846 / 410" }}>
                 <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5dd07625-6ab3-4be6-1401-93e241a6aa00/public"
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fea6035e-276e-4a09-d07a-4ebeeb1eaf00/public"
                   alt="The Discipline of Refusal"
                   fill
                   className="object-cover"
@@ -252,7 +252,7 @@ export default function TheActivistCoPage() {
             <div className="flex-1 flex flex-col w-full">
               <div className="w-full max-w-[846px] relative overflow-hidden" style={{ aspectRatio: "846 / 410" }}>
                 <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5dd07625-6ab3-4be6-1401-93e241a6aa00/public"
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e2487f07-4628-47db-51cf-5f2fed632900/public"
                   alt="Carbon Neutral Water"
                   fill
                   className="object-cover"
@@ -397,43 +397,8 @@ export default function TheActivistCoPage() {
 
         {/* SECTION 6: Our Green Is Blue */}
         <section className={containerClass}>
-          <div className="flex flex-col items-start">
-            <h2
-              className="w-full shrink-0"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "clamp(28px, 2.77vw, 40px)",
-                lineHeight: "100%",
-              }}
-            >
-              Our Green Is Blue
-            </h2>
-            <div style={{ height: "clamp(30px, 4.3vw, 62px)" }} />
-
-            <div className="w-full grid grid-cols-1 md:grid-cols-2" style={{ gap: "clamp(24px, 3.4vw, 49px)" }}>
-              <div className="flex flex-col">
-                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(12px, 0.97vw, 14px)", lineHeight: "130%", color: "#AEAEAE" }}>
-                  <span style={{ fontWeight: 700, color: "#FFF" }}>"Our Green Is Blue"</span> is more than a statement of belief; it is the foundation of an entire worldview.
-                </p>
-                <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
-                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(12px, 0.97vw, 14px)", lineHeight: "130%", color: "#AEAEAE" }}>
-                  The baseline ecological truth is absolute: without water, there is no life. Forests fail, food systems fracture, and human futures fade. Water shapes our climate, our communities, our commerce, and our civilizations. It determines the resilience of landscapes and the continuity of global economies.
-                </p>
-              </div>
-              <div className="flex flex-col">
-                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(12px, 0.97vw, 14px)", lineHeight: "130%", color: "#AEAEAE" }}>
-                  That is why the planet cannot be treated as a mere stakeholder in business. Instead, business must be treated as a <span style={{ fontWeight: 700, color: "#FFF", lineHeight: "100%" }}>proud steward of the planet.</span>
-                </p>
-                <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
-                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "clamp(12px, 0.97vw, 14px)", lineHeight: "130%", color: "#AEAEAE" }}>
-                  Welcome to WAELCHEMY. Where we honor water, design with discipline, and create systems where progress serves the earth—not the other way around.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div style={{ height: "clamp(30px, 3.61vw, 52px)" }} />
-          <div className="w-full max-w-[1224px] relative overflow-hidden" style={{ aspectRatio: "1224 / 502" }}>
+          {/* Top Image */}
+          <div className="w-full relative overflow-hidden" style={{ aspectRatio: "1224 / 502", marginBottom: "72px" }}>
             <Image
               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/006890d0-cec2-4d1e-4c70-ec21dfc8b700/public"
               alt="Our Green Is Blue"
@@ -441,65 +406,32 @@ export default function TheActivistCoPage() {
               className="object-cover"
             />
           </div>
-        </section>
 
-        {/* Divider 6 */}
-        <div className={containerClass}>
-          <div style={{ height: "clamp(40px, 6.38vw, 92px)" }} />
-          <div className="w-full h-px bg-white/20" />
-          <div style={{ height: "clamp(40px, 6.38vw, 92px)" }} />
-        </div>
-
-        {/* SECTION 7: Rethinking the Circular Economy */}
-        <section className={containerClass}>
-          <div className="flex flex-col lg:flex-row items-start">
+          <div className="flex flex-col lg:flex-row items-start justify-between">
             <h2
-              className="flex-1 mb-8 lg:mb-0"
+              className="mb-8 lg:mb-0"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
-                fontSize: "clamp(28px, 2.77vw, 40px)",
-                lineHeight: "130%",
+                fontSize: "40px",
+                lineHeight: "100%",
+                color: "#FFF"
               }}
             >
-              Rethinking the<br className="hidden lg:block" />
-              Circular Economy
+              Our Green Is Blue
             </h2>
-            <div className="w-full flex flex-col shrink-0 lg:w-[36.45vw] lg:max-w-[525px]">
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(12px, 0.97vw, 14px)",
-                  lineHeight: "130%",
-                  color: "#AEAEAE",
-                }}
-              >
-                The circular economy is, at its core, an ethical correction. It asks a demanding question: Why are we still designing waste into systems we know must endure?
+            <div className="flex flex-col shrink-0" style={{ width: "100%", maxWidth: "467px" }}>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#AEAEAE", marginBottom: "16px" }}>
+                <span style={{ fontWeight: 700, color: "#AEAEAE" }}>"Our Green Is Blue"</span> is more than a statement of belief; it is the foundation of an entire worldview.
               </p>
-              <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(12px, 0.97vw, 14px)",
-                  lineHeight: "130%",
-                  color: "#AEAEAE",
-                }}
-              >
-                The answer is to design differently. We reject the linear logic of "extract, make, waste," and choose to treat materials as permanent assets, infrastructure as a long-term investment, and waste as a fundamental failure of design.
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#AEAEAE", marginBottom: "16px" }}>
+                The baseline ecological truth is absolute: without water, there is no life. Forests fail, food systems fracture, and human futures fade. Water shapes our climate, our communities, our commerce, and our civilizations. It determines the resilience of landscapes and the continuity of global economies.
               </p>
-              <div style={{ height: "clamp(10px, 1.04vw, 15px)" }} />
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(12px, 0.97vw, 14px)",
-                  lineHeight: "130%",
-                  color: "#AEAEAE",
-                }}
-              >
-                Water stewardship, responsible consumption, climate action, and institutional accountability are not parallel, separate concerns. They are deeply interdependent. A circular water system advances them all simultaneously. This activism does not stop at critique it builds the functional alternative.
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#AEAEAE", marginBottom: "16px" }}>
+                That is why the planet cannot be treated as a mere stakeholder in business. Instead, <span style={{ fontWeight: 700, color: "#AEAEAE" }}>business must be treated as a proud steward of the planet.</span>
+              </p>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "130%", color: "#AEAEAE" }}>
+                Welcome to WAELCHEMY. Where we honor water, design with discipline, and create systems where progress serves the earth—not the other way around.
               </p>
             </div>
           </div>
