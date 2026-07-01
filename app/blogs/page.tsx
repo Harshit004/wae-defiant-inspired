@@ -46,8 +46,8 @@ const SelectButton: FC<SelectButtonProps> = ({ children, selected, onClick }) =>
 )
 
 export default function Home() {
-  // Categories row state. Start with index 2 ("Climate Change & Water") to match mockup's default visual.
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(2)
+  // Categories row state. Start with index 0 (the first filter) to match the default selection.
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(0)
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
   const buttonLabels = [
