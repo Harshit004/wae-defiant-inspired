@@ -9,7 +9,7 @@
       "date": "December-03/2025",
       "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d0b0314b-4797-4082-fbe0-ece0c46bb000/public",
       "link": "https://sugermint.com/wae-felicitated-with-15th-cii-design-excellence-award-2025/",
-      "displayOnHomepage": true,
+      "displayOnHomepage": false,
       "rank": 1,
       "id": "item-1782884727081-757"
     },
@@ -45,6 +45,17 @@
       "displayOnHomepage": true,
       "rank": 4,
       "id": "item-1782885002428-799"
+    },
+    {
+      "type": "news",
+      "title": "How Industrial Equipment Is Being Designed to Deliver Measurable Carbon Reductions ",
+      "description": "For over a century, industrial machinery has been engineered to convert energy into output which is faster, cheaper, and at scale. Carbon, if acknowledged at all, was incidental. That era has ended. Today, carbon is a design variable. It is quantified, audited, and increasingly regulated. Industrial equipment is no longer evaluated purely on throughput or reliability, but on carbon productivity, output per unit of emissions. ",
+      "date": "May-12/2026",
+      "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fd0082a7-4a9e-46f7-215e-a2dab3a55900/public",
+      "link": "https://themachinemaker.com/how-industrial-equipment-is-being-designed-to-deliver-measurable-carbon-reductions/",
+      "displayOnHomepage": true,
+      "rank": 1,
+      "id": "item-1782885606879-866"
     }
   ]
 }
