@@ -86,7 +86,7 @@ export default function CareersPage() {
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Why WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Think Different</p>
 
-            <HoverButton className="mt-[68px] w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
+            <HoverButton href="/this-is-us" className="mt-[68px] w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
               {(hovered) => (
                 <div className="flex items-center justify-center gap-[8px]">
                   <span className="font-['Manrope'] font-medium text-[10px] leading-none">Know More</span>
@@ -109,7 +109,7 @@ export default function CareersPage() {
             <h2 className="font-['Inter_Tight'] font-normal text-[38px] leading-[1.05] text-white mb-[62px]">
               Why spend your career following change<br />when you can create it?
             </h2>
-            <div className="flex justify-between gap-[3.47vw] font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE] mb-[60px]">
+            <div className="flex justify-between gap-[3.47vw] font-['Manrope'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE] mb-[60px]">
               <p className="flex-1">
                 At WAE, we believe the best work happens when people care deeply about what they do and who they do it with. You'll work alongside passionate minds from different backgrounds, united by a shared desire to solve meaningful challenges and create solutions that make a real difference.
               </p>
@@ -156,7 +156,7 @@ export default function CareersPage() {
             <h2 className="font-['Inter_Tight'] font-normal text-[38px] leading-[1.05] text-white mb-[62px]">
               Life at WAE is where meaningful work<br />meets people, purpose, and joy.
             </h2>
-            <div className="flex justify-between gap-[3.47vw] font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE] mb-[60px]">
+            <div className="flex justify-between gap-[3.47vw] font-['Manrope'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE] mb-[60px]">
               <p className="flex-1">
                 The best part of any workplace is the people, and that's what makes life here special. A diverse community of thinkers, creators, engineers, dreamers, and doers come together with different stories, experiences, and perspectives. Every day brings fresh ideas, shared laughter, continuous learning, and the opportunity to build something meaningful together.
               </p>
@@ -203,7 +203,7 @@ export default function CareersPage() {
             <h2 className="font-['Inter_Tight'] font-normal text-[38px] leading-[1.05] text-white mb-[62px]">
               Some careers fill your time.<br />The right one can shape your life.
             </h2>
-            <div className="flex justify-between gap-[3.47vw] font-['Manrope'] font-normal text-[14px] leading-none text-[#AEAEAE] mb-[60px]">
+            <div className="flex justify-between gap-[3.47vw] font-['Manrope'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE] mb-[60px]">
               <p className="flex-1">
                 The people you work with often matter more than the work itself. They challenge you when you need courage, support you when you need strength, and celebrate you when you succeed. Here, you'll find a community of passionate individuals who believe that great things are built together.
               </p>

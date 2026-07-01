@@ -575,7 +575,7 @@ export default function Home() {
                 fontWeight: 400,
                 fontSize: "0.97vw",
                 color: "#AEAEAE",
-                lineHeight: "130%",
+                lineHeight: "1.3",
                 verticalAlign: "middle"
               }}>The success stories that changed what sustainable hydration looks like.</p>
             </div>
