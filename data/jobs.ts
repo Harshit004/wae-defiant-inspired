@@ -71,18 +71,42 @@ export const JOBS: Record<string, JobPost> = {
     "category": "OPERATION",
     "type": "On-site",
     "time": "Full time",
-    "shortDescription": "We are committed to delivering cutting-edge solutions in water purification and\nsustainable technologies. We’re looking for a Purchase Manager who can drive our procurement\nfunction with agility, smart negotiation, and a sharp eye for quality and cost optimization. If you have  a passion for sourcing the best materials, building strong supplier relationships, and ensuring smooth manufacturing operations, this could be the perfect opportunity for you.\n",
+    "shortDescription": "We're looking for a strategic procurement professional to drive sourcing, vendor partnerships, and cost optimization across manufacturing and project operations. This role requires strong commercial acumen, ownership, and the ability to build an efficient, resilient, and future-ready supply chain.",
     "status": "Live",
     "createdAt": "2026-07-01T05:53:44.692Z",
     "summaryParagraphs": [
-      "We are committed to delivering cutting-edge solutions in water purification and\nsustainable technologies. We’re looking for a Purchase Manager who can drive our procurement\nfunction with agility, smart negotiation, and a sharp eye for quality and cost optimization. If you have  a passion for sourcing the best materials, building strong supplier relationships, and ensuring smooth manufacturing operations, this could be the perfect opportunity for you."
+      "We are committed to delivering cutting-edge solutions in water purification and\nsustainable technologies. We’re looking for a Purchase Manager who can drive our procurement function with agility, smart negotiation, and a sharp eye for quality and cost optimization. If you have  a passion for sourcing the best materials, building strong supplier relationships, and ensuring smooth manufacturing operations, this could be the perfect opportunity for you."
     ],
     "whatYouWillDo": [
-      "Lead strategic sourcing and procurement for manufacturing, projects, and engineering operations.\nIdentify, evaluate, negotiate, and onboard reliable domestic and international suppliers.\nManage end-to-end procurement, including purchase orders, vendor coordination, and import purchases.\nCollaborate with Production, PPC, Projects, Quality, Stores, Design, and Finance to ensure timely material availability.\nDrive cost optimization through strategic sourcing, alternate vendor development, and value engineering.\nMonitor supplier performance, delivery schedules, quality, and commercial commitments.\nCoordinate import logistics, customs documentation, freight forwarders, and regulatory compliance.\nEnsure procurement activities comply with company policies, statutory regulations, and documentation standards.\nPrepare procurement MIS, vendor performance reports, cost analyses, and leadership dashboards."
+      "Lead strategic sourcing and procurement for manufacturing, projects, and engineering operations.",
+      "Identify, evaluate, negotiate, and onboard reliable domestic and international suppliers.",
+      "Manage end-to-end procurement, including purchase orders, vendor coordination, and import purchases.",
+      "Collaborate with Production, PPC, Projects, Quality, Stores, Design, and Finance to ensure timely material availability.",
+      "Drive cost optimization through strategic sourcing, alternate vendor development, and value engineering.",
+      "Monitor supplier performance, delivery schedules, quality, and commercial commitments.",
+      "Coordinate import logistics, customs documentation, freight forwarders, and regulatory compliance.",
+      "Ensure procurement activities comply with company policies, statutory regulations, and documentation standards.",
+      "Prepare procurement MIS, vendor performance reports, cost analyses, and leadership dashboards."
     ],
     "whatYouWillOwn": [
-      "Procurement planning and sourcing across multiple product categories.\nVendor development, commercial negotiations, and supplier relationships.\nMaterial availability aligned with production and project schedules.\nEnd-to-end domestic and international procurement operations.\nCost-saving initiatives and procurement process improvements.\nProcurement documentation, ERP transactions, and statutory compliance.\nInventory planning support in collaboration with Stores and PPC.\nBuilding a reliable, efficient, and scalable procurement ecosystem."
+      "Procurement planning and sourcing across multiple product categories.",
+      "Vendor development, commercial negotiations, and supplier relationships.",
+      "Material availability aligned with production and project schedules.",
+      "End-to-end domestic and international procurement operations.",
+      "Cost-saving initiatives and procurement process improvements.",
+      "Procurement documentation, ERP transactions, and statutory compliance.",
+      "Inventory planning support in collaboration with Stores and PPC.",
+      "Building a reliable, efficient, and scalable procurement ecosystem."
     ],
-    "whoWeAreLookingFor": []
+    "whoWeAreLookingFor": [
+      "Bachelor's degree in Engineering, Supply Chain, Operations, or a related field.",
+      "MBA/PGDM in Supply Chain, Operations, or Materials Management preferred.",
+      "5–8 years of experience in procurement within manufacturing, engineering, industrial equipment, or water treatment industries.",
+      "Strong understanding of sourcing mechanical, electrical, fabrication, filtration, and industrial components.",
+      "Hands-on experience with ERP systems such as SAP or equivalent.",
+      "Knowledge of import procurement, customs processes, DGFT, GST, and commercial documentation.",
+      "Excellent negotiation, analytical, communication, and stakeholder management skills.",
+      "A proactive, detail-oriented professional who takes ownership and thrives in a fast-paced manufacturing environment."
+    ]
   }
 };
