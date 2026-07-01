@@ -265,7 +265,7 @@ const ThisIsUs: FC = () => {
                             <h2 style={{
                                 fontFamily: "\'Manrope\', sans-serif",
                                 fontWeight: 400,
-                                fontSize: '58px',
+                                fontSize: '55px',
                                 lineHeight: '105%',
                                 marginBottom: '60px',
                                 maxWidth: '41.8vw'
@@ -392,7 +392,7 @@ const ThisIsUs: FC = () => {
             <section className="w-full pt-[82px] pb-0">
                 <div className={containerClass}>
                     <div className="w-full border-t border-white/20 mb-[82px]"></div>
-                    <div className="w-full h-[600px] relative mb-[62px]">
+                    <div className="w-full aspect-[1227/548] relative mb-[62px]">
                         <video
                             autoPlay
                             loop
@@ -459,7 +459,7 @@ const ThisIsUs: FC = () => {
 
                             {/* Row 2 */}
                             <div className="flex gap-[3.75vw] w-full">
-                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
                                     <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6bc35551-9c5a-4161-328f-da4114280600/public" alt="Deepak Panwar" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
@@ -476,7 +476,7 @@ const ThisIsUs: FC = () => {
                                         </p>
                                     </div>
                                 </div>
-                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
                                     <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4cedda8e-3f37-422a-920c-7c8241256400/public" alt="Nayna Swati Dewesar" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
@@ -497,7 +497,7 @@ const ThisIsUs: FC = () => {
 
                             {/* Row 3 */}
                             <div className="flex gap-[3.75vw] w-full">
-                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
                                     <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b50e712a-a5aa-4ce7-31ae-9d624ef5f100/public" alt="Satinder Kaur" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
@@ -514,7 +514,7 @@ const ThisIsUs: FC = () => {
                                         </p>
                                     </div>
                                 </div>
-                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
                                     <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/469bb1e6-1c45-4f16-f7ea-6532aa9f5300/public" alt="Avnesh Sharma" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
@@ -535,7 +535,7 @@ const ThisIsUs: FC = () => {
 
                             {/* Row 4 */}
                             <div className="flex gap-[3.75vw] w-full">
-                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
                                     <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4f88d5da-23ab-4e62-c172-f2d9b8581900/public" alt="Meenakshi Bora" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
@@ -552,7 +552,7 @@ const ThisIsUs: FC = () => {
                                         </p>
                                     </div>
                                 </div>
-                                                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
+                                <div className="flex flex-col w-[calc(50%-1.875vw)]">
                                     <div className="w-full aspect-[410/331] relative mb-[2.22vw]">
                                         <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/00e1155b-84f2-4db0-591e-6a99630fdf00/public" alt="Rashmi Bhatia" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                                     </div>
