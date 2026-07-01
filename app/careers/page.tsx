@@ -118,7 +118,7 @@ export default function CareersPage() {
               </p>
             </div>
             <div className="w-full aspect-[714/323] relative">
-              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2a452293-dc8e-4666-c735-79acdcb92300/public" alt="Why WAE" fill className="object-cover" />
+              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/506b5538-f8a1-4939-283f-d4247ef42700/public" alt="Why WAE" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function CareersPage() {
               </p>
             </div>
             <div className="w-full aspect-[714/323] relative">
-              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee795b42-a4d9-467f-22db-4bfbfedcc600/public" alt="Life @ WAE" fill className="object-cover object-top" />
+              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2046008a-784e-4094-1836-67664786db00/public" alt="Life @ WAE" fill className="object-cover object-top" />
             </div>
           </div>
         </div>
@@ -212,7 +212,7 @@ export default function CareersPage() {
               </p>
             </div>
             <div className="w-full aspect-[714/323] relative">
-              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bbdfa982-ca17-42af-5d71-29d91614b100/public" alt="Join WAE" fill className="object-cover" />
+              <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b801b465-2033-4b22-9c44-c9504923f500/public" alt="Join WAE" fill className="object-cover" />
             </div>
           </div>
         </div>
