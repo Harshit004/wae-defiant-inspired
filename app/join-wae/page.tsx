@@ -118,7 +118,7 @@ export default function JoinWaePage() {
                 <div className="flex justify-between items-center">
                   <div className="flex flex-col">
                     <h2 className="font-['Inter_Tight'] font-normal text-[32px] leading-[1.1] text-white mb-[18px]">{job.title}</h2>
-                    <p className="font-['Manrope'] font-normal text-[16px] leading-none text-[#AEAEAE] mb-[14px]">
+                    <p className="font-['Manrope'] font-normal text-[16px] leading-[1.3] text-[#AEAEAE] mb-[14px]">
                       {job.shortDescription}
                     </p>
                     <div className="flex gap-[42px] font-['Inter_Tight'] font-normal text-[14px] leading-none text-white">
