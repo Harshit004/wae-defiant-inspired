@@ -35,7 +35,7 @@ const Header: FC = () => {
                     <div className={containerClass}>
                         {/* Top Row: Navigation */}
                         <div
-                            className="grid grid-cols-[1fr_1fr_1fr_6vw_1fr_1fr_1fr_2vw] gap-4 items-center pt-[30px] pb-[10px] uppercase"
+                            className="grid grid-cols-[1fr_1fr_1fr_10vw_1fr_1fr_1fr] gap-4 items-center pt-[30px] pb-[10px] uppercase"
                             style={{
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 500,
@@ -51,14 +51,13 @@ const Header: FC = () => {
                             <div>INSIDE WAE</div>
                             <div>RESPONSIBILITY</div>
                             <div>ETCETERA</div>
-                            <div></div> {/* Right Spacer */}
                         </div>
 
                         {/* Divider */}
                         <div className="w-full h-px bg-white mb-[10px]" />
 
                         {/* Bottom Row: Logo, Tagline and Menu Items */}
-                        <div className="grid grid-cols-[1fr_1fr_1fr_6vw_1fr_1fr_1fr_2vw] gap-4 items-start">
+                        <div className="grid grid-cols-[1fr_1fr_1fr_10vw_1fr_1fr_1fr] gap-4 items-start">
                             {/* Logo */}
                             <div className="flex flex-col justify-center w-[77px] h-[82px]">
                                 <Link href="/">
@@ -217,9 +216,6 @@ const Header: FC = () => {
                                     </div>
                                 ))}
                             </div>
-                            
-                            {/* Right Spacer */}
-                            <div></div>
                         </div>
                     </div>
                 </header>
