@@ -67,7 +67,7 @@ export const JOBS: Record<string, JobPost> = {
   },
   "purchase-manager": {
     "id": "purchase-manager",
-    "title": "Purchase Manager",
+    "title": "Manager - Purchase",
     "category": "OPERATION",
     "type": "On-site",
     "time": "Full time",
