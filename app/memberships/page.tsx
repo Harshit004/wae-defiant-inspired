@@ -159,7 +159,7 @@ export default function MembershipsPage() {
                                                 fontFamily: 'Manrope',
                                                 fontWeight: 400,
                                                 fontStyle: 'normal',
-                                                fontSize: '12px',
+                                                fontSize: '14px',
                                                 lineHeight: '130%',
                                                 color: '#AEAEAE',
                                                 letterSpacing: '0px',
@@ -177,7 +177,7 @@ export default function MembershipsPage() {
                                     </div>
                                 ))}
                             </div>
-                            
+
                             {/* Horizontal divider after every row */}
                             {rowIndex < membershipRows.length - 1 && (
                                 <div style={{ marginTop: '92px', marginBottom: '92px', width: '100%', height: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }} />
