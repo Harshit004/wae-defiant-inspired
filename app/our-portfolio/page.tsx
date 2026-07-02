@@ -410,7 +410,7 @@ export default function Home() {
                 textAlign: "right",
                 fontFamily: "\'Manrope\', sans-serif",
                 fontWeight: 500,
-                fontSize: "clamp(18px, 2vw, 32px)",
+                fontSize: "36px",
                 lineHeight: "105%",
                 letterSpacing: "0%",
                 color: "#FFFFFF66",
