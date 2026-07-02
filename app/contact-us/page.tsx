@@ -123,6 +123,7 @@ export default function ContactUsPage() {
                   lineHeight: "100%",
                   letterSpacing: "0%",
                   color: "#FFFFFF",
+                  marginBottom: "62px",
                 }}
               >
                 Let&apos;s Connect.
@@ -141,7 +142,6 @@ export default function ContactUsPage() {
               >
                 Corporate Office
               </p>
-              <div style={{ height: "28px" }} />
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
