@@ -117,7 +117,7 @@ const Header: FC = () => {
                                                     <span className="c-anim-btn">{productsItems[i].text}</span>
                                                     <span className="block">{productsItems[i].text}</span>
                                                 </div>
-                                                <span className="menu-arrow">
+                                                <span className="menu-arrow blueprint-arrow">
                                                     <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     width="12"
