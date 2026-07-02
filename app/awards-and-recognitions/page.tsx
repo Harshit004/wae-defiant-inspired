@@ -66,7 +66,7 @@ export default function AwardsAndRecognitionsPage() {
                 lineHeight: '100%'
               }}
             >
-              Awards & Recognitions
+              Awards & Honours
             </button>
           </Link>
         </div>
@@ -83,8 +83,9 @@ export default function AwardsAndRecognitionsPage() {
               fontSize: 'clamp(40px, 4.16vw, 60px)',
               lineHeight: '100%',
               letterSpacing: '0px',
+              whiteSpace: 'nowrap'
             }}>
-              Awards &<br />Recognitions
+              Awards & Honours
             </h1>
           </div>
 

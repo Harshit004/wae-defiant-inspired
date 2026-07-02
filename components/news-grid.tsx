@@ -15,9 +15,9 @@ function NewsCard({ imageUrl, title, description, date, link, isLarge = false }:
   const CardContent = (
     <div className="flex flex-col h-full group" style={{ width: '100%' }}>
       {/* Image Container */}
-      <div 
-        className="relative w-full overflow-hidden" 
-        style={{ 
+      <div
+        className="relative w-full overflow-hidden"
+        style={{
           aspectRatio: isLarge ? '604/319' : '382/215',
           marginBottom: isLarge ? '40px' : '31px'
         }}
@@ -29,7 +29,7 @@ function NewsCard({ imageUrl, title, description, date, link, isLarge = false }:
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      
+
       {/* Text Content */}
       {(title || date) && (
         <div className="flex flex-col flex-1">
@@ -40,7 +40,7 @@ function NewsCard({ imageUrl, title, description, date, link, isLarge = false }:
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "24px",
-                lineHeight: "100%",
+                lineHeight: "130%",
                 color: "#FFFFFF",
                 marginBottom: "20px"
               }}
@@ -48,7 +48,7 @@ function NewsCard({ imageUrl, title, description, date, link, isLarge = false }:
               {title}
             </h3>
           )}
-          
+
           {description && (
             <p
               style={{
@@ -64,7 +64,7 @@ function NewsCard({ imageUrl, title, description, date, link, isLarge = false }:
               {description}
             </p>
           )}
-          
+
           <div className="mt-auto flex items-center justify-between">
             {date && (
               <p
@@ -79,7 +79,7 @@ function NewsCard({ imageUrl, title, description, date, link, isLarge = false }:
                 {date}
               </p>
             )}
-            
+
             {link && (
               <div
                 style={{
@@ -189,41 +189,41 @@ export default function NewsGrid({ cards }: NewsGridProps) {
     <div className="w-full max-w-full">
       {rows.map((row, rowIndex) => {
         const isLarge = rowIndex === 0;
-        
+
         return (
           <div key={rowIndex}>
             {/* Row container: justify-between as per request */}
-            <div 
+            <div
               className={`flex flex-col md:flex-row justify-between gap-[30px] lg:gap-0`}
             >
               {row.map((card, cardIndex) => (
-                <div 
-                  key={cardIndex} 
-                  style={{ 
+                <div
+                  key={cardIndex}
+                  style={{
                     width: isLarge ? "clamp(300px, 41.9vw, 604px)" : "clamp(200px, 26.5vw, 382px)",
-                    flexShrink: 0 
+                    flexShrink: 0
                   }}
                 >
                   <NewsCard {...card} isLarge={isLarge} />
                 </div>
               ))}
-              
+
               {/* Fill empty spaces to maintain justify-between layout */}
               {isLarge && row.length < 2 && Array.from({ length: 2 - row.length }).map((_, i) => (
-                <div 
-                  key={`empty-large-${i}`} 
-                  style={{ 
+                <div
+                  key={`empty-large-${i}`}
+                  style={{
                     width: "clamp(300px, 41.9vw, 604px)",
-                    flexShrink: 0 
+                    flexShrink: 0
                   }}
                 />
               ))}
               {!isLarge && row.length < 3 && Array.from({ length: 3 - row.length }).map((_, i) => (
-                <div 
-                  key={`empty-small-${i}`} 
-                  style={{ 
+                <div
+                  key={`empty-small-${i}`}
+                  style={{
                     width: "clamp(200px, 26.5vw, 382px)",
-                    flexShrink: 0 
+                    flexShrink: 0
                   }}
                 />
               ))}
@@ -231,9 +231,9 @@ export default function NewsGrid({ cards }: NewsGridProps) {
 
             {/* Divider between rows */}
             {rowIndex < rows.length - 1 && (
-              <div 
-                className="w-full h-px bg-[#FFFFFF1A]" 
-                style={{ marginTop: '92px', marginBottom: '92px' }} 
+              <div
+                className="w-full h-px bg-[#FFFFFF1A]"
+                style={{ marginTop: '92px', marginBottom: '92px' }}
               />
             )}
           </div>

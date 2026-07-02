@@ -83,7 +83,7 @@ export default function NewsAndUpdatesPage() {
               lineHeight: '100%',
               letterSpacing: '0px',
             }}>
-              News &<br />Press Release
+              Press Release
             </h1>
           </div>
 
