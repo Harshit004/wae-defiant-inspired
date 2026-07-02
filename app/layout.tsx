@@ -7,6 +7,7 @@ import AnalyticsTracker from "@/components/analytics-tracker"
 import { Suspense } from "react"
 import { Toaster } from "sonner"
 import ScrollToTop from "@/components/scroll-to-top"
+import MobileBlocker from "@/components/mobile-blocker"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" })
@@ -28,6 +29,7 @@ export default function RootLayout({
         <link rel="icon" href="https://github.com/wae-corp/WAE-F-B/blob/main/public/favicon-32x32.png?raw=true" sizes="32x32" />
       </head>
       <body className={interTight.className}>
+        <MobileBlocker />
         {children}
         <CookieConsent />
         <Suspense fallback={null}>

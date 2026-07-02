@@ -55,6 +55,13 @@ padding-bottom: 20px;
   .mobile-purpose-zindex {
     z-index: 1100; /* Match the sticky logo's z-index */
   }
+  
+  body.mobile-blocked {
+    overflow: hidden !important;
+    height: 100vh !important;
+    width: 100% !important;
+    position: fixed !important;
+  }
 }
 
 /* Animation for navigation links */
