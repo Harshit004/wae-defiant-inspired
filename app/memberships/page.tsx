@@ -62,20 +62,6 @@ export default function MembershipsPage() {
 
                 {/* Toggle Buttons */}
                 <div className="flex gap-4" style={{ marginBottom: '75px' }}>
-                    <Link href="/memberships">
-                        <button
-                            className="px-6 border transition-colors flex items-center justify-center border-white text-black bg-white"
-                            style={{
-                                height: '41px',
-                                fontFamily: 'Manrope',
-                                fontWeight: 500,
-                                fontSize: '14px',
-                                lineHeight: '100%'
-                            }}
-                        >
-                            Memberships
-                        </button>
-                    </Link>
                     <Link href="/compliance">
                         <button
                             className="px-6 border transition-colors flex items-center justify-center border-white/30 text-white hover:border-white bg-transparent"
@@ -88,6 +74,20 @@ export default function MembershipsPage() {
                             }}
                         >
                             Compliances
+                        </button>
+                    </Link>
+                    <Link href="/memberships">
+                        <button
+                            className="px-6 border transition-colors flex items-center justify-center border-white text-black bg-white"
+                            style={{
+                                height: '41px',
+                                fontFamily: 'Manrope',
+                                fontWeight: 500,
+                                fontSize: '14px',
+                                lineHeight: '100%'
+                            }}
+                        >
+                            Memberships
                         </button>
                     </Link>
                 </div>
@@ -148,7 +148,8 @@ export default function MembershipsPage() {
                                                 lineHeight: '130%',
                                                 letterSpacing: '0px',
                                                 verticalAlign: 'middle',
-                                                marginBottom: '32px'
+                                                marginBottom: '32px',
+                                                flexGrow: 1
                                             }}
                                         >
                                             {item.title}
