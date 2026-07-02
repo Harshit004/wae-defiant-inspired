@@ -147,7 +147,7 @@ export default function ContactUsPage() {
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 500,
                   fontSize: "14px",
-                  lineHeight: "200%",
+                  lineHeight: "130%",
                   letterSpacing: "0%",
                   color: "#AEAEAE",
                 }}
@@ -176,7 +176,7 @@ export default function ContactUsPage() {
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
                   fontSize: "14px",
-                  lineHeight: "200%",
+                  lineHeight: "130%",
                   letterSpacing: "0%",
                   color: "#AEAEAE",
                 }}
