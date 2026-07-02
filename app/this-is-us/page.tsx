@@ -146,9 +146,9 @@ const TimelineSection = () => {
     const activeData = timelineData[activeIndex];
 
     return (
-        <section className="w-full pt-[82px] pb-0">
+        <section className="w-full pt-[92px] pb-0">
             <div className={containerClass}>
-                <div className="w-full border-t border-white/20 mb-[82px]"></div>
+                <div className="w-full border-t border-white/20 mb-[92px]"></div>
                 <h2 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '20px' }}>WAE Chronicle</h2>
                 <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '16px', lineHeight: '110%', color: '#AEAEAE', marginBottom: '86px' }}>From Intent to Impact</p>
 
@@ -317,9 +317,9 @@ const ThisIsUs: FC = () => {
             </section>
 
             {/* OUR BUSINESS MODEL */}
-            <section className="w-full pt-[82px] pb-0">
+            <section className="w-full pt-[92px] pb-0">
                 <div className={containerClass}>
-                    <div className="w-full border-t border-white/20 mb-[82px]"></div>
+                    <div className="w-full border-t border-white/20 mb-[92px]"></div>
                     <h2 style={{
                         fontFamily: "\'Manrope\', sans-serif",
                         fontWeight: 400,
@@ -389,9 +389,9 @@ const ThisIsUs: FC = () => {
             </section>
 
             {/* ACTIVIST QUOTE */}
-            <section className="w-full pt-[82px] pb-0">
+            <section className="w-full pt-[92px] pb-0">
                 <div className={containerClass}>
-                    <div className="w-full border-t border-white/20 mb-[82px]"></div>
+                    <div className="w-full border-t border-white/20 mb-[92px]"></div>
                     <div className="w-full aspect-[1227/548] relative mb-[62px]">
                         <video
                             autoPlay
@@ -418,9 +418,9 @@ const ThisIsUs: FC = () => {
             <TimelineSection />
 
             {/* THE TEAM */}
-            <section className="w-full pt-[82px] pb-0">
+            <section className="w-full pt-[92px] pb-0">
                 <div className={containerClass}>
-                    <div className="w-full border-t border-white/20 mb-[82px]"></div>
+                    <div className="w-full border-t border-white/20 mb-[92px]"></div>
                     <div className="flex">
                         <div className="w-[25%] pr-[5.56vw] border-r border-white/20 relative">
                             <div className="sticky top-40">
@@ -576,9 +576,9 @@ const ThisIsUs: FC = () => {
             </section>
 
             {/* SERVING WITH PURPOSE */}
-            <section className="w-full pt-[82px] pb-0">
+            <section className="w-full pt-[92px] pb-0">
                 <div className={containerClass}>
-                    <div className="w-full border-t border-white/20 mb-[82px]"></div>
+                    <div className="w-full border-t border-white/20 mb-[92px]"></div>
                     <div className="flex">
                         <div className="w-[42%] pr-[4.72vw]">
                             <h2 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '78px' }}>Serving<br />with Purpose</h2>
@@ -599,9 +599,9 @@ const ThisIsUs: FC = () => {
             </section>
 
             {/* AWARDS & RECOGNITION */}
-            <section className="w-full pt-[82px] pb-[124px]">
+            <section className="w-full pt-[92px] pb-[124px]">
                 <div className={containerClass}>
-                    <div className="w-full border-t border-white/20 mb-[82px]"></div>
+                    <div className="w-full border-t border-white/20 mb-[92px]"></div>
                     <h2 style={{ fontFamily: "\'Manrope\', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '110%', marginBottom: '78px' }}>Awards & Recognition</h2>
                     <div className="grid grid-cols-3">
                         {[
