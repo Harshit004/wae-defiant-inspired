@@ -151,7 +151,7 @@ function ProductDescriptionPageContent() {
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 500,
                                 fontSize: "44px",
-                                lineHeight: "100%",
+                                lineHeight: "130%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
                                 color: "#FFFFFF"
@@ -1148,7 +1148,7 @@ function ProductDescriptionPageContent() {
                                     fontFamily: "'Inter Tight', sans-serif",
                                     fontWeight: 400,
                                     fontSize: "14px",
-                                    lineHeight: "110%",
+                                    lineHeight: "130%",
                                     letterSpacing: "0%",
                                     verticalAlign: "middle",
                                     color: "#808080",
