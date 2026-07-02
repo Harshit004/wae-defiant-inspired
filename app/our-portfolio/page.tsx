@@ -433,7 +433,7 @@ export default function Home() {
             <h2 style={{
               fontFamily: "\'Manrope\', sans-serif",
               fontWeight: 500,
-              fontSize: "10px", letterSpacing: "0%", margin: 0
+              fontSize: "24px", letterSpacing: "0%", margin: 0
             }}>
               Our product category
             </h2>
@@ -488,7 +488,7 @@ export default function Home() {
                   />
                 </div>
                 {/* Content */}
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", height: "450px", alignItems: "flex-start" }}>
+                <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", height: "100%", alignItems: "flex-start" }}>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
                     <span style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", color: "#AEAEAE", lineHeight: "100%", letterSpacing: "0%", verticalAlign: "middle", textTransform: "none", marginBottom: "48px" }}>
                       {portfolioProducts[0].subtitle}
