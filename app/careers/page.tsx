@@ -76,12 +76,12 @@ export default function CareersPage() {
       </section>
 
       <div className={`${containerClass} relative z-10`}>
-        <div className="w-full h-px bg-[#333] mt-[90px]" />
+        <div className="w-full h-px bg-[#333] mt-[92px]" />
       </div>
 
       {/* Why WAE Section */}
       <div className={`${containerClass} relative z-10`}>
-        <div className="grid grid-cols-12 gap-0 pt-[66px] pb-[68px]">
+        <div className="grid grid-cols-12 gap-0 pt-[92px] pb-[92px]">
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Why WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Think Different</p>
@@ -128,7 +128,7 @@ export default function CareersPage() {
 
       {/* Life @ WAE Section */}
       <div className={`${containerClass} relative z-10`}>
-        <div className="grid grid-cols-12 gap-0 pt-[66px] pb-[68px]">
+        <div className="grid grid-cols-12 gap-0 pt-[92px] pb-[92px]">
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Life @ WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">People first</p>
@@ -175,7 +175,7 @@ export default function CareersPage() {
 
       {/* Join WAE Section */}
       <div className={`${containerClass} relative z-10`}>
-        <div className="grid grid-cols-12 gap-0 pt-[66px] pb-[68px]">
+        <div className="grid grid-cols-12 gap-0 pt-[92px] pb-[92px]">
           <div className="col-span-4 flex flex-col items-start pr-8">
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Join WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Explore current job openings</p>
@@ -222,7 +222,7 @@ export default function CareersPage() {
 
       {/* Great Place to Work Section */}
       <div className={`${containerClass} relative z-10`}>
-        <div className="flex justify-between items-start pt-[66px] pb-[100px]">
+        <div className="flex justify-between items-start pt-[92px] pb-[100px]">
           <h2 className="font-['Inter_Tight'] font-normal text-[64px] leading-[1.1] text-white">
             Great Place<br />to Work
           </h2>
