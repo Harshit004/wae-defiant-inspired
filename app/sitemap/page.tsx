@@ -156,7 +156,7 @@ export default function SitemapPage() {
       <section className="relative z-10 pt-[220px]">
         <div className={containerClass}>
           {/* Header Gap (from top/header spacing if needed) */}
-          <div style={{ height: "clamp(40px, 6.94vw, 77px)" }} />
+          {/* <div style={{ height: "clamp(40px, 6.94vw, 77px)" }} /> */}
           <h1
             style={{
               fontFamily: "'Inter Tight', sans-serif",
@@ -234,7 +234,7 @@ export default function SitemapPage() {
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 400,
                                 fontSize: "clamp(12px, 0.97vw, 14px)",
-                                lineHeight: "130%",
+                                lineHeight: "200%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
                                 color: "#AEAEAE",
