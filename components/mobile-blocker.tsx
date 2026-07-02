@@ -10,18 +10,15 @@ const MobileBlocker: FC = () => {
 
   useEffect(() => {
     setMounted(true)
-    const isDismissed = sessionStorage.getItem("wae-mobile-blocker-dismissed") === "true"
-    setDismissed(isDismissed)
 
     const checkMobile = () => window.innerWidth < 1024
 
-    if (!isDismissed && checkMobile()) {
+    if (!dismissed && checkMobile()) {
       document.body.classList.add("mobile-blocked")
     }
 
     const handleResize = () => {
-      const dismissedState = sessionStorage.getItem("wae-mobile-blocker-dismissed") === "true"
-      if (!dismissedState && checkMobile()) {
+      if (!dismissed && checkMobile()) {
         document.body.classList.add("mobile-blocked")
       } else {
         document.body.classList.remove("mobile-blocked")
@@ -36,7 +33,6 @@ const MobileBlocker: FC = () => {
   }, [dismissed])
 
   const handleDismiss = () => {
-    sessionStorage.setItem("wae-mobile-blocker-dismissed", "true")
     document.body.classList.remove("mobile-blocked")
     setDismissed(true)
   }
