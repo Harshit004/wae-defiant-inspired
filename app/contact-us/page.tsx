@@ -12,22 +12,22 @@ const officeLocations = [
   {
     city: "Mumbai",
     address: "91 Springboard Business Hub Godrej & Boyce, Gate No. 2 LBS Marg, Vikhroli Mumbai – 400079",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/530b8e1f-895b-4928-ae59-c9884c830600/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/276d7855-303e-4c7e-83ee-ed42b2e70c00/public",
   },
   {
     city: "Bengaluru",
     address: "91 Springboard George Thangaiah Complex 13, 80 Feet Road, Near Sir CV Raman Hospital Indiranagar, Bengaluru – 560038",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4fb81bcc-05e1-43f5-2677-6e53b3a53800/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/65f6c99a-b24b-4aec-b68a-435663b14800/public",
   },
   {
     city: "Hyderabad",
     address: "91 Springboard Business Hub Pvt. Ltd. Mytri Square, 2-41/11/6/2 Gachibowli-Miyapur Road, Kondapur, Hyderabad – 500084",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/68b4ade9-6f6a-45c2-da10-de1e09d74500/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7b27b04d-7e33-48ed-6b0b-bb1f2e85af00/public",
   },
   {
     city: "Pune",
     address: "91 Springboard Business Hub Pvt. Ltd. 9th–12th Floor, Sadanand Business Centre NH-48 Service Road, Baner Pune, Maharashtra – 411045",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9526b433-9620-4448-4506-6a4d69532800/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ffc4c3b1-125a-4fcd-3b60-6a4632cf0000/public",
   },
 ]
 
@@ -123,7 +123,6 @@ export default function ContactUsPage() {
                   lineHeight: "100%",
                   letterSpacing: "0%",
                   color: "#FFFFFF",
-                  marginBottom: "62px",
                 }}
               >
                 Let&apos;s Connect.
@@ -177,7 +176,7 @@ export default function ContactUsPage() {
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
                   fontSize: "14px",
-                  lineHeight: "100%",
+                  lineHeight: "200%",
                   letterSpacing: "0%",
                   color: "#AEAEAE",
                 }}
@@ -208,7 +207,7 @@ export default function ContactUsPage() {
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 500,
                     fontSize: "14px",
-                    lineHeight: "100%",
+                    lineHeight: "130%",
                     letterSpacing: "0%",
                     color: "#AEAEAE",
                     display: "block",
@@ -223,7 +222,7 @@ export default function ContactUsPage() {
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 500,
                     fontSize: "14px",
-                    lineHeight: "100%",
+                    lineHeight: "130%",
                     letterSpacing: "0%",
                     color: "#AEAEAE",
                     display: "block",
@@ -636,8 +635,17 @@ export default function ContactUsPage() {
 
 function CityCard({ city }: { city: typeof officeLocations[0] }) {
   return (
-    <div className="group">
+    <div className="group cursor-pointer">
       {/* 315×230 image → responsive via aspect-ratio */}
+      <style>{`
+        .city-img-${city.city.replace(/\s+/g, '-')} {
+          filter: grayscale(100%);
+          transition: filter 0.7s ease;
+        }
+        .group:hover .city-img-${city.city.replace(/\s+/g, '-')} {
+          filter: grayscale(0%);
+        }
+      `}</style>
       <div
         className="relative w-full overflow-hidden"
         style={{ aspectRatio: "315 / 230" }}
@@ -646,7 +654,7 @@ function CityCard({ city }: { city: typeof officeLocations[0] }) {
           src={city.image}
           alt={city.city}
           fill
-          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+          className={`object-cover city-img-${city.city.replace(/\s+/g, '-')}`}
         />
       </div>
 
