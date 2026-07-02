@@ -57,7 +57,7 @@ export const WRITERS: Record<string, Writer> = {
     "name": "Shambhavi Yadav",
     "role": "Marketing",
     "bio": "Ms. Shambhavi Yadav,  a national award recipient at Rashtrapati Bhavan, explores sustainability & policy. With over 8 years of experience, she is NET qualified, a graduate of LSR, DU, and a KPMG Scholar.",
-    "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/756f0c58-33ea-496a-5c76-f485ccb09800/public",
+    "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1e1ad843-5273-45b9-f95b-7e3265805a00/public",
     "link": "https://in.linkedin.com/in/shambhavi-yadav-61b937276"
   }
 };
