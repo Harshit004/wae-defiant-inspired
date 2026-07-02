@@ -424,7 +424,7 @@ export default function ContactUsPage() {
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 500,
                   fontSize: "14px",
-                  lineHeight: "100%",
+                  lineHeight: "130%",
                   letterSpacing: "0%",
                   color: "#AEAEAE",
                   marginBottom: "62px",
