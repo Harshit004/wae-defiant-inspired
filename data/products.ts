@@ -340,14 +340,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
     "paragraphs": [
       "Compact modular glass bottling plants enabling sustainable premium in-house bottled water production for hospitality, corporate, and luxury environments."
     ],
-    "products": [
-      {
-        "id": "watermaker",
-        "name": "WATERMAKER",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fa2654df-e6ca-4b14-34d8-d52f1d4c5800/public",
-        "category": "free-standing"
-      }
-    ]
+    "products": []
   }
 };
 
@@ -2177,74 +2170,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "dimensions": [
         {
           "variant": "FS AQUA",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
-        }
-      ],
-      "powerRequirement": "220V/50 HZ RZ 134a 1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
-      "pointOfUseSterilization": "Germ Guardian™"
-    },
-    "status": "Live"
-  },
-  "watermaker": {
-    "id": "watermaker",
-    "name": "WATERMAKER",
-    "categoryName": "COMMERCIAL/INDUSTRIAL PLANTS",
-    "heroSubtitle": "Powerful LED sterilization",
-    "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13d0a907-1c95-4c88-fccc-fbc499c75100/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fc19edb8-3d0e-475f-7a9c-fad84faa3a00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5a12692-239e-45be-fff0-42d2ba8d5100/public"
-    ],
-    "featuresList": [
-      {
-        "title": "Robust construct",
-        "description": "Heavy duty RO system designed for industrial applications",
-        "isDisplayed": true
-      },
-      {
-        "title": "Anti-bacterial",
-        "description": "Provides protection against bacteria, mould & fungi",
-        "isDisplayed": true
-      },
-      {
-        "title": "Pre-engineered & Pre-assembled",
-        "description": "A pre-assembled factory tested units to reduce installation & set up time",
-        "isDisplayed": true
-      },
-      {
-        "title": "Application",
-        "description": "Commercial kitchens, pantries, washing units & hospitality sector",
-        "isDisplayed": false
-      },
-      {
-        "title": "5 - stage purification",
-        "description": "Ensures pure water from any raw water source",
-        "isDisplayed": false
-      }
-    ],
-    "specifications": {
-      "storageCapacity": [
-        {
-          "variant": "FS WATERMAKER",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
-        }
-      ],
-      "waterTemp": {
-        "cold": "Cold: 5°C - 24° C",
-        "hot": "Hot: 30°C - 80° C"
-      },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000 ml",
-      "refrigerant": "R-134a",
-      "dimensions": [
-        {
-          "variant": "FS WATERMAKER",
           "weight": "-",
           "height": "1631",
           "width": "535",
