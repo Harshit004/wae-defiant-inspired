@@ -33,9 +33,9 @@ export default function DynamicBlogPost() {
         // Find up to 3 related posts of the same category (excluding the current one)
         const sameCategoryRelated = Object.values(BLOGS)
           .filter(b => b.id !== post.id && b.category === post.category && b.status === "Live")
-        
+
         let related = sameCategoryRelated.slice(0, 3)
-        
+
         // If we don't have 3, fill with other categories
         if (related.length < 3) {
           const otherRelated = Object.values(BLOGS)
@@ -356,7 +356,7 @@ export default function DynamicBlogPost() {
                   <div>
                     <h3 className="text-white" style={{
                       fontFamily: "var(--font-inter-tight), sans-serif",
-                      fontWeight: 700,
+                      fontWeight: 500,
                       fontSize: '24px',
                       lineHeight: '140%',
                       letterSpacing: '0%',
@@ -383,8 +383,8 @@ export default function DynamicBlogPost() {
                     <p style={{
                       fontFamily: "var(--font-manrope), sans-serif",
                       fontWeight: 400,
-                      fontSize: '18px',
-                      lineHeight: '1.4',
+                      fontSize: '16px',
+                      lineHeight: '1.3',
                       letterSpacing: '0%',
                       verticalAlign: 'middle',
                       color: '#AEAEAE',
@@ -504,7 +504,7 @@ export default function DynamicBlogPost() {
                             fontFamily: "var(--font-manrope), sans-serif",
                             fontWeight: 400,
                             fontSize: "14px",
-                            lineHeight: "100%",
+                            lineHeight: "130%",
                             letterSpacing: "0%",
                             color: "#AEAEAE",
                             verticalAlign: "middle"
