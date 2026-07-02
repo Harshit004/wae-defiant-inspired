@@ -41,6 +41,7 @@ export default function CookieConsent() {
 
   return (
     <div
+      className="cookie-consent-overlay"
       style={{
         position: "fixed",
         inset: 0,
@@ -67,6 +68,9 @@ export default function CookieConsent() {
             transform: scale(1);
             opacity: 1;
           }
+        }
+        body.mobile-blocked .cookie-consent-overlay {
+          display: none !important;
         }
       `}</style>
 
