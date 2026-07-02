@@ -149,7 +149,7 @@ export default function MembershipsPage() {
                                                 letterSpacing: '0px',
                                                 verticalAlign: 'middle',
                                                 marginBottom: '32px',
-                                                flexGrow: 1
+                                                minHeight: '70px'
                                             }}
                                         >
                                             {item.title}
