@@ -29,10 +29,10 @@ export default function TermsOfUse() {
 
         {/* Intro Text */}
         <div className="font-['Manrope'] font-normal text-[14px] text-[#AEAEAE] text-justify space-y-[24px] mb-[63px]">
-          <p className="leading-none">
+          <p className="leading-[1.3]">
             By accessing the WAE website (www.waecorp.com) or any associated digital portals, users confirm that they have read and agree to these Terms. The Terms apply to all visitors — architects, engineers, procurement officers, contractors, distributors, and members of the public alike. WAE reserves the right to amend them at any time; continued use of the site after posting of changes constitutes acceptance.
           </p>
-          <p className="leading-none">
+          <p className="leading-[1.3]">
             The website may be used for lawful purposes such as researching products, submitting enquiries, downloading technical documentation, and engaging WAE for legitimate business needs. Prohibited conduct includes fraud, data harvesting without consent, introducing malware, scraping with automated tools, impersonation, unauthorised access attempts, and posting defamatory or discriminatory content. All website content — text, images, videos, product specifications, logos, and the "Our Green is Blue" brand identity — is the exclusive intellectual property of WAE. Users are granted a limited, non-exclusive, revocable licence for personal or professional reference only; commercial reproduction or derivative works require prior written consent.
           </p>
         </div>

@@ -62,13 +62,17 @@ export default function DataPrivacyPolicy() {
                 { id: "contact", heading: "10. Contact Our Data Protection Team", subheadings: [] }
               ].map((section, idx, arr) => (
                 <div key={section.id} style={{ marginBottom: idx === arr.length - 1 ? 0 : '40px' }}>
-                  <a href={`#${section.id}`} className="font-['Manrope'] font-semibold text-[14px] leading-none text-white hover:opacity-80 transition-opacity block">
+                  <a href={`#${section.id}`} className={`font-['Manrope'] font-semibold text-[14px] leading-none text-white hover:opacity-80 transition-opacity block ${section.id === "intro" ? "whitespace-nowrap" : ""}`}>
                     {section.heading}
                   </a>
                   {section.subheadings.length > 0 && (
                     <div style={{ marginTop: '24px' }} className="flex flex-col gap-[12px]">
                       {section.subheadings.map(sub => (
-                        <a key={sub.id} href={`#${sub.id}`} className="font-['Inter_Tight'] font-normal text-[14px] leading-[105%] text-[#AEAEAE] hover:text-white transition-colors block">
+                        <a 
+                          key={sub.id} 
+                          href={`#${sub.id}`} 
+                          className={`font-['Inter_Tight'] font-normal text-[14px] text-[#AEAEAE] hover:text-white transition-colors block ${sub.title === "Technical & Organisational Security Measures" ? "leading-[130%]" : "leading-[105%]"}`}
+                        >
                           {sub.title}
                         </a>
                       ))}
