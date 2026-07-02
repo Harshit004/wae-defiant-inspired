@@ -224,20 +224,17 @@ export default function SitemapPage() {
 
                       <div style={{ height: "clamp(16px, 1.66vw, 24px)" }} />
 
-                      <ul className="space-y-3">
+                      <ul>
                         {section.links.map((link, linkIdx) => (
-                          <li key={linkIdx} className={section.title === "12. Footer" ? "flex items-center" : ""}>
-                            {section.title === "12. Footer" && (
-                              <div className="w-[2px] h-[2px] rounded-full bg-[#AEAEAE] mr-4 flex-shrink-0" />
-                            )}
+                          <li key={linkIdx}>
                             <Link
                               href={link.href}
-                              className="hover:text-white transition-colors duration-300"
+                              className="hover:text-white transition-colors duration-300 block"
                               style={{
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 400,
                                 fontSize: "clamp(12px, 0.97vw, 14px)",
-                                lineHeight: "100%",
+                                lineHeight: "130%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
                                 color: "#AEAEAE",
