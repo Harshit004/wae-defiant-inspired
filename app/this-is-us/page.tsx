@@ -622,7 +622,7 @@ const ThisIsUs: FC = () => {
                             }
                         ].map((award, index) => (
                             <div key={index} className="flex flex-col border-l border-white/20 pl-[2.01vw]">
-                                <div className="w-full aspect-[347/350] relative mb-[35px] max-w-[347px]">
+                                <div className="w-full aspect-[340/407] relative mb-[35px] max-w-[340px]">
                                     <Image src={award.image} alt={award.title} fill className="object-cover" />
                                 </div>
                                 <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '24px', lineHeight: '130%', color: '#fff' }} className="pr-4">
