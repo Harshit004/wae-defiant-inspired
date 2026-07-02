@@ -812,7 +812,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "heroCtaText": "Contact Us",
     "heroCtaLink": "/contact-us",
     "showcaseCtaText": "Enquire Now",
-    "showcaseCtaLink": "Enquiry",
+    "showcaseCtaLink": "#",
     "brochurePdf": "file:///C:/Users/WAE/Downloads/REVA.pdf",
     "variants": {
       "hot": true,
