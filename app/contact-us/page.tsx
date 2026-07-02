@@ -682,7 +682,7 @@ function CityCard({ city }: { city: typeof officeLocations[0] }) {
           fontFamily: "'Manrope', sans-serif",
           fontWeight: 400,
           fontSize: "14px",
-          lineHeight: "100%",
+          lineHeight: "130%",
           letterSpacing: "0%",
           color: "#AEAEAE",
         }}
