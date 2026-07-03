@@ -340,7 +340,16 @@ export const CATEGORIES: Record<string, CategoryData> = {
     "paragraphs": [
       "Compact modular glass bottling plants enabling sustainable premium in-house bottled water production for hospitality, corporate, and luxury environments."
     ],
-    "products": []
+    "products": [
+      {
+        "id": "aquarius-series",
+        "name": "Aquarius Series",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9bf3de4-35c9-4eaf-d1da-309816543400/public",
+        "hoverImage": null,
+        "displayOrder": 0
+      }
+    ]
   }
 };
 
@@ -2921,5 +2930,115 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayImageIndex": 0,
     "hoverImageIndex": null,
     "displayOrder": 2
+  },
+  "aquarius-series": {
+    "id": "aquarius-series",
+    "name": "Aquarius Series",
+    "categoryName": "Glass Bottling Plant",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9bf3de4-35c9-4eaf-d1da-309816543400/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/33688281-5358-4800-7387-f548f9783800/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c9dbc88-62ae-405f-e0bf-4a482d0ab300/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b23236fe-96f7-4bcd-a01b-f33289555200/public"
+    ],
+    "featuresList": [
+      {
+        "title": "AQUARIUS PRO",
+        "description": "Built for large hotels, resorts, and hospitality chains\n\nLinear mechanism for filling, capping & printing",
+        "isDisplayed": true
+      },
+      {
+        "title": "AQUARIUS STD.",
+        "description": "Designed for mid-sized hospitality\n\nRotary filling and capping mechanism\n\nOnline printing",
+        "isDisplayed": true
+      },
+      {
+        "title": "AQUARIUS MINI",
+        "description": "Perfect for small scale hotels and restaurants\n\nAvailable with RO(150/250 LPH)and without RO\n\nOffline printing",
+        "isDisplayed": true
+      },
+      {
+        "title": "Washing Uncompromising hygiene, every cycle",
+        "description": "Every bottle enters the line clean. High-pres-\nsure washing eliminates contaminants before\n\na single drop is filled, meeting the rigorous\nfood safety standards that luxury hospitality\ndemands and that FSSAI mandates.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Filling Consistent to the last drop",
+        "description": "Controlled-flow filling delivers accurate\nvolumes and flawless presentation across\nevery batch. Whether it's still water or\nsparkling water, it is filled to the same\nstandard every time.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Capping Guest-ready finish, guaranteed",
+        "description": "Uniform torque capping seals every bottle\nwith precision. Tamper-evident, presenta-\ntion-perfect, and held to the same standard \nyour guests hold you to.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Printing Compliance built into every bottle",
+        "description": "Batch codes, expiry dates printed directly onto\neach sealed bottle. Every bottle that leaves the\nplant is fully traceable, fully labelled, and fully\ncompliant by design, not afterthought.",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "-",
+          "hot": "-",
+          "cold": "-",
+          "ambient": "-"
+        }
+      ],
+      "waterTemp": {
+        "cold": "-",
+        "hot": "-"
+      },
+      "greenCertification": "-",
+      "dripTray": "-",
+      "refrigerant": "=",
+      "dimensions": [
+        {
+          "variant": "AQUARIUS PRO",
+          "weight": "-",
+          "height": "1844",
+          "width": "4451",
+          "depth": "854"
+        },
+        {
+          "variant": "AQUARIUS STD.",
+          "weight": "-",
+          "height": "1854",
+          "width": "3195",
+          "depth": "1147"
+        },
+        {
+          "variant": "AQUARIUS MINI",
+          "weight": "-",
+          "height": "822",
+          "width": "4185",
+          "depth": "1171"
+        }
+      ],
+      "powerRequirement": "11.5/10/4-5",
+      "purificationSystem": "-",
+      "pointOfUseSterilization": "--"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3513098a-4028-492c-dd4e-cc43c95d6500/public",
+    "heroTagline": "Operate Sustainably, Maintain Seamlessly",
+    "heroSubtext": "Turnkey Operations and Maintenance for Glass Bottling Plants of All Makes",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/AQUARIUS.pdf",
+    "variants": {
+      "hot": false,
+      "cold": false,
+      "ambient": true
+    },
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 0
   }
 };
