@@ -450,7 +450,7 @@ const ThisIsUs: FC = () => {
                                             "Water is one of the world’s most visible expressions of care, and the future of care must include care for the planet."
                                         </p>
                                         <div className="mb-[3.125vw]"></div>
-                                        <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '0.97vw', lineHeight: '100%', color: '#AEAEAE' }}>
+                                        <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '0.97vw', lineHeight: '130%', color: '#AEAEAE' }}>
                                             A sustainability entrepreneur with three decades of cross-sector experience, building a water-secure future by making sustainable water technologies accessible and mainstream through responsible, long-term solutions.
                                         </p>
                                     </div>

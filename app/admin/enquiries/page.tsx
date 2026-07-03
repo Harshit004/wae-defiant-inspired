@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Header from "@/components/admin/header";
-import { Trash2 } from "lucide-react";
+import { Trash2, Download } from "lucide-react";
 import { Enquiry } from "@/data/enquiries";
 
 export default function AdminEnquiriesPage() {
@@ -10,6 +10,9 @@ export default function AdminEnquiriesPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'product' | 'general' | 'contact-us'>('product');
   const [selectedMessage, setSelectedMessage] = useState<string | null>(null);
+  
+  const [startDate, setStartDate] = useState<string>("");
+  const [endDate, setEndDate] = useState<string>("");
 
   useEffect(() => {
     fetchEnquiries();
@@ -45,7 +48,43 @@ export default function AdminEnquiriesPage() {
     }
   };
 
-  const filteredEnquiries = enquiries.filter(e => (e.type || 'product') === activeTab);
+  const filteredEnquiries = enquiries.filter(e => {
+    if ((e.type || 'product') !== activeTab) return false;
+    
+    const date = new Date(e.createdAt);
+    if (startDate && new Date(startDate) > date) return false;
+    if (endDate) {
+      const end = new Date(endDate);
+      end.setHours(23, 59, 59, 999);
+      if (end < date) return false;
+    }
+    return true;
+  });
+
+  const downloadEnquiries = () => {
+    const headers = ["Date", "Name", "Company", "Email", "Phone", "Page Link", "Message", "Type"];
+    const csvData = filteredEnquiries.map(e => [
+      new Date(e.createdAt).toLocaleDateString(),
+      `"${(e.fullName || '').replace(/"/g, '""')}"`,
+      `"${(e.companyName || '').replace(/"/g, '""')}"`,
+      `"${(e.email || '').replace(/"/g, '""')}"`,
+      `"${(e.phone || '').replace(/"/g, '""')}"`,
+      `"${(e.pageLink || '').replace(/"/g, '""')}"`,
+      `"${(e.message || '').replace(/"/g, '""')}"`,
+      e.type || 'product'
+    ]);
+    
+    const csvContent = [headers.join(","), ...csvData.map(row => row.join(","))].join("\n");
+    
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", `enquiries_${startDate || 'all'}_to_${endDate || 'all'}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="flex flex-col flex-1 h-full">
@@ -53,32 +92,55 @@ export default function AdminEnquiriesPage() {
       <div className="flex-1 bg-black p-10 text-white flex flex-col justify-start">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-white">Enquiries</h1>
-          <div className="flex bg-[#0a1929] border border-white/10 rounded-lg p-1">
-            <button 
-              onClick={() => setActiveTab('product')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'product' ? 'bg-white text-black' : 'text-white/70 hover:text-white hover:bg-white/5'}`}
-            >
-              Product Enquiries
-            </button>
-            <button 
-              onClick={() => setActiveTab('general')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'general' ? 'bg-white text-black' : 'text-white/70 hover:text-white hover:bg-white/5'}`}
-            >
-              General Enquiries
-            </button>
-            <button 
-              onClick={() => setActiveTab('contact-us')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'contact-us' ? 'bg-white text-black' : 'text-white/70 hover:text-white hover:bg-white/5'}`}
-            >
-              Contact Us
-            </button>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <input 
+                type="date" 
+                value={startDate} 
+                onChange={(e) => setStartDate(e.target.value)} 
+                className="bg-[#0a1929] border border-white/10 rounded-md px-3 py-1.5 text-sm text-white focus:outline-none"
+              />
+              <span className="text-white/50">to</span>
+              <input 
+                type="date" 
+                value={endDate} 
+                onChange={(e) => setEndDate(e.target.value)} 
+                className="bg-[#0a1929] border border-white/10 rounded-md px-3 py-1.5 text-sm text-white focus:outline-none"
+              />
+              <button 
+                onClick={downloadEnquiries} 
+                className="px-4 py-2 bg-white text-black hover:bg-gray-200 rounded-md text-sm font-medium transition-colors ml-2 flex items-center gap-2"
+              >
+                <Download size={16} /> Download
+              </button>
+            </div>
+            <div className="flex bg-[#0a1929] border border-white/10 rounded-lg p-1">
+              <button 
+                onClick={() => setActiveTab('product')}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'product' ? 'bg-white text-black' : 'text-white/70 hover:text-white hover:bg-white/5'}`}
+              >
+                Product Enquiries
+              </button>
+              <button 
+                onClick={() => setActiveTab('general')}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'general' ? 'bg-white text-black' : 'text-white/70 hover:text-white hover:bg-white/5'}`}
+              >
+                General Enquiries
+              </button>
+              <button 
+                onClick={() => setActiveTab('contact-us')}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'contact-us' ? 'bg-white text-black' : 'text-white/70 hover:text-white hover:bg-white/5'}`}
+              >
+                Contact Us
+              </button>
+            </div>
           </div>
         </div>
 
         {isLoading ? (
           <div className="text-white/50">Loading enquiries...</div>
         ) : filteredEnquiries.length === 0 ? (
-          <div className="text-white/50">No enquiries found for this category.</div>
+          <div className="text-white/50">No enquiries found for this category and date range.</div>
         ) : (
           <div className="bg-[#0a1929] border border-white/10 rounded-lg overflow-hidden">
             <table className="w-full text-left text-sm text-white">

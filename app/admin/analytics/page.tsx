@@ -47,6 +47,8 @@ export default function AnalyticsDashboard() {
   const [sessions, setSessions] = useState<Session[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [startDate, setStartDate] = useState<string>("");
+  const [endDate, setEndDate] = useState<string>("");
 
   const fetchAnalytics = async () => {
     setLoading(true);
@@ -70,12 +72,23 @@ export default function AnalyticsDashboard() {
     fetchAnalytics();
   }, []);
 
-  const totalSessions = sessions.length;
-  const uniqueVisitors = new Set(sessions.map((s) => s.visitorId)).size;
+  const filteredSessions = sessions.filter(session => {
+    const date = new Date(session.timestamp);
+    if (startDate && new Date(startDate) > date) return false;
+    if (endDate) {
+      const end = new Date(endDate);
+      end.setHours(23, 59, 59, 999);
+      if (end < date) return false;
+    }
+    return true;
+  });
+
+  const totalSessions = filteredSessions.length;
+  const uniqueVisitors = new Set(filteredSessions.map((s) => s.visitorId)).size;
   const avgTimeSpent = totalSessions > 0 
-    ? sessions.reduce((acc, curr) => acc + (curr.behavior?.timeSpentSeconds || 0), 0) / totalSessions 
+    ? filteredSessions.reduce((acc, curr) => acc + (curr.behavior?.timeSpentSeconds || 0), 0) / totalSessions 
     : 0;
-  const totalPageViews = sessions.reduce((acc, curr) => acc + (curr.behavior?.pagesViewed?.length || 0), 0);
+  const totalPageViews = filteredSessions.reduce((acc, curr) => acc + (curr.behavior?.pagesViewed?.length || 0), 0);
 
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white p-4 md:p-8 font-sans">
@@ -92,15 +105,32 @@ export default function AnalyticsDashboard() {
               <p className="text-sm text-white/50 mt-1" style={{ fontFamily: 'Manrope, sans-serif' }}>Real-time user behavior and engagement metrics</p>
             </div>
           </div>
-          <button 
-            onClick={fetchAnalytics}
-            disabled={loading}
-            className="flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all duration-300 disabled:opacity-50 text-sm font-medium"
-            style={{ fontFamily: 'Manrope, sans-serif' }}
-          >
-            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
-            {loading ? 'Refreshing...' : 'Refresh Data'}
-          </button>
+          <div className="flex items-center gap-4 flex-wrap">
+            <div className="flex items-center gap-2">
+              <input 
+                type="date" 
+                value={startDate} 
+                onChange={(e) => setStartDate(e.target.value)} 
+                className="bg-white/5 border border-white/10 rounded-md px-3 py-1.5 text-sm text-white focus:outline-none"
+              />
+              <span className="text-white/50 text-sm">to</span>
+              <input 
+                type="date" 
+                value={endDate} 
+                onChange={(e) => setEndDate(e.target.value)} 
+                className="bg-white/5 border border-white/10 rounded-md px-3 py-1.5 text-sm text-white focus:outline-none"
+              />
+            </div>
+            <button 
+              onClick={fetchAnalytics}
+              disabled={loading}
+              className="flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all duration-300 disabled:opacity-50 text-sm font-medium"
+              style={{ fontFamily: 'Manrope, sans-serif' }}
+            >
+              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
+              {loading ? 'Refreshing...' : 'Refresh'}
+            </button>
+          </div>
         </div>
 
         {error && (
@@ -130,7 +160,15 @@ export default function AnalyticsDashboard() {
           </div>
         )}
 
-        {!loading && !error && sessions.length > 0 && (
+        {!loading && !error && sessions.length > 0 && filteredSessions.length === 0 && (
+          <div className="flex flex-col items-center justify-center py-32 text-white/40 border border-white/5 rounded-3xl bg-white/[0.02]">
+            <Globe className="w-12 h-12 mb-4 text-white/20 opacity-50" />
+            <p className="font-medium text-lg" style={{ fontFamily: 'Inter Tight, sans-serif' }}>No sessions found</p>
+            <p className="text-sm mt-2 max-w-sm text-center" style={{ fontFamily: 'Manrope, sans-serif' }}>Try adjusting your date filters to see more results.</p>
+          </div>
+        )}
+
+        {!loading && !error && filteredSessions.length > 0 && (
           <div className="space-y-8">
             
             {/* Bento Grid Metrics */}
@@ -192,11 +230,11 @@ export default function AnalyticsDashboard() {
             <div className="space-y-6">
               <div className="flex items-center justify-between px-2">
                 <h2 className="text-xl font-medium tracking-tight" style={{ fontFamily: 'Inter Tight, sans-serif' }}>Recent Activity log</h2>
-                <span className="text-xs font-medium text-white/40 px-3 py-1 bg-white/5 rounded-full uppercase tracking-widest">{sessions.length} Records</span>
+                <span className="text-xs font-medium text-white/40 px-3 py-1 bg-white/5 rounded-full uppercase tracking-widest">{filteredSessions.length} Records</span>
               </div>
               
               <div className="grid grid-cols-1 gap-4">
-                {sessions.map((session) => (
+                {filteredSessions.map((session) => (
                   <div key={session.id} className="group flex flex-col lg:flex-row gap-0 bg-white/[0.02] hover:bg-white/[0.04] border border-white/5 rounded-3xl overflow-hidden transition-colors">
                     
                     {/* Left Column: Context & Metrics */}
