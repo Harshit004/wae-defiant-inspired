@@ -38,12 +38,12 @@ const ContactSectionDark = () => {
                 },
                 body: JSON.stringify(payload),
             });
-            
+
             if (!res.ok) {
                 const errorData = await res.json().catch(() => null);
                 throw new Error(errorData?.message || 'Failed to submit enquiry');
             }
-            
+
             alert('Thank you for contacting us! Your message has been sent.');
             form.reset();
         } catch (error: any) {
@@ -108,7 +108,7 @@ const ContactSectionDark = () => {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-10">
                     <style jsx>{`
                         input::placeholder, textarea::placeholder {
-                            color: #FFFFFF !important;
+                            color: #FFFFFF4D !important;
                             opacity: 1;
                         }
                     `}</style>
@@ -116,7 +116,7 @@ const ContactSectionDark = () => {
                         <input
                             type="text"
                             name="name"
-                            placeholder="*Name"
+                            placeholder="Name*"
                             className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
                         />
@@ -125,7 +125,7 @@ const ContactSectionDark = () => {
                         <input
                             type="email"
                             name="email"
-                            placeholder="*Your Email"
+                            placeholder="Your Email*"
                             className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
                         />
@@ -134,7 +134,7 @@ const ContactSectionDark = () => {
                         <input
                             type="tel"
                             name="contact"
-                            placeholder="*Contact No."
+                            placeholder="Contact No.*"
                             className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
                         />
@@ -143,7 +143,7 @@ const ContactSectionDark = () => {
                         <input
                             type="text"
                             name="companyName"
-                            placeholder="*ABC Company"
+                            placeholder="ABC Company*"
                             className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                         />
                     </div>
