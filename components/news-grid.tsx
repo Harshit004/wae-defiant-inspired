@@ -192,40 +192,14 @@ export default function NewsGrid({ cards }: NewsGridProps) {
 
         return (
           <div key={rowIndex}>
-            {/* Row container: justify-between as per request */}
+            {/* Row container */}
             <div
-              className={`flex flex-col md:flex-row justify-between gap-[30px] lg:gap-0`}
+              className={`grid grid-cols-1 md:grid-cols-2 ${!isLarge ? 'lg:grid-cols-3' : ''} gap-[30px] lg:gap-[39px] w-full`}
             >
               {row.map((card, cardIndex) => (
-                <div
-                  key={cardIndex}
-                  style={{
-                    width: isLarge ? "clamp(300px, 41.9vw, 604px)" : "clamp(200px, 26.5vw, 382px)",
-                    flexShrink: 0
-                  }}
-                >
+                <div key={cardIndex} className="w-full">
                   <NewsCard {...card} isLarge={isLarge} />
                 </div>
-              ))}
-
-              {/* Fill empty spaces to maintain justify-between layout */}
-              {isLarge && row.length < 2 && Array.from({ length: 2 - row.length }).map((_, i) => (
-                <div
-                  key={`empty-large-${i}`}
-                  style={{
-                    width: "clamp(300px, 41.9vw, 604px)",
-                    flexShrink: 0
-                  }}
-                />
-              ))}
-              {!isLarge && row.length < 3 && Array.from({ length: 3 - row.length }).map((_, i) => (
-                <div
-                  key={`empty-small-${i}`}
-                  style={{
-                    width: "clamp(200px, 26.5vw, 382px)",
-                    flexShrink: 0
-                  }}
-                />
               ))}
             </div>
 
