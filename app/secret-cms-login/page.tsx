@@ -41,10 +41,6 @@ export default function LoginPage() {
 
   return (
     <>
-      <head>
-        <title>Sign In - WAE CMS</title>
-        <meta name="robots" content="noindex, nofollow" />
-      </head>
       <main className="min-h-screen bg-black flex items-center justify-center font-sans">
         <div className="w-full max-w-[440px] px-6">
           <div className="bg-[#04111d] border border-white/5 rounded-none px-10 py-12 text-white">

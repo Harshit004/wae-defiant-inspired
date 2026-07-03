@@ -92,6 +92,7 @@ const Header: FC = () => {
                                     color: "#ffffff",
                                     position: "relative",
                                     left: "-20px",
+                                    whiteSpace: "nowrap",
                                 }}
                             >
                                 To lead the way in<br />sustainability ahead of the<br />next
@@ -111,28 +112,28 @@ const Header: FC = () => {
                                         }}
                                     >
                                         {productsItems[i] ? (
-                                        <Link href={productsItems[i].href || "#"} className="contents">
-                                            <div className="c--anim-btn pb-2">
-                                                <div className="text-container">
-                                                    <span className="c-anim-btn">{productsItems[i].text}</span>
-                                                    <span className="block">{productsItems[i].text}</span>
+                                            <Link href={productsItems[i].href || "#"} className="contents">
+                                                <div className="c--anim-btn pb-2">
+                                                    <div className="text-container">
+                                                        <span className="c-anim-btn">{productsItems[i].text}</span>
+                                                        <span className="block">{productsItems[i].text}</span>
+                                                    </div>
+                                                    <span className="menu-arrow blueprint-arrow">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="12"
+                                                            height="12"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            strokeWidth="2"
+                                                        >
+                                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                                            <polyline points="12 5 19 12 12 19" />
+                                                        </svg>
+                                                    </span>
                                                 </div>
-                                                <span className="menu-arrow blueprint-arrow">
-                                                    <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="12"
-                                                    height="12"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    strokeWidth="2"
-                                                >
-                                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                                    <polyline points="12 5 19 12 12 19" />
-                                                </svg>
-                                                </span>
-                                            </div>
-                                        </Link>
+                                            </Link>
                                         ) : null}
                                     </div>
                                     <div></div>
@@ -147,28 +148,28 @@ const Header: FC = () => {
                                         }}
                                     >
                                         {blueprintItems[i] ? (
-                                        <Link href={blueprintItems[i].href || "#"} className="contents">
-                                            <div className="c--anim-btn pb-2">
-                                                <div className="text-container">
-                                                    <span className="c-anim-btn">{blueprintItems[i].text}</span>
-                                                    <span className="block">{blueprintItems[i].text}</span>
+                                            <Link href={blueprintItems[i].href || "#"} className="contents">
+                                                <div className="c--anim-btn pb-2">
+                                                    <div className="text-container">
+                                                        <span className="c-anim-btn">{blueprintItems[i].text}</span>
+                                                        <span className="block">{blueprintItems[i].text}</span>
+                                                    </div>
+                                                    <span className="menu-arrow blueprint-arrow">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="12"
+                                                            height="12"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            strokeWidth="2"
+                                                        >
+                                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                                            <polyline points="12 5 19 12 12 19" />
+                                                        </svg>
+                                                    </span>
                                                 </div>
-                                                <span className="menu-arrow blueprint-arrow">
-                                                    <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="12"
-                                                    height="12"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    strokeWidth="2"
-                                                >
-                                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                                    <polyline points="12 5 19 12 12 19" />
-                                                </svg>
-                                                </span>
-                                            </div>
-                                        </Link>
+                                            </Link>
                                         ) : null}
                                     </div>
                                     <div></div>
@@ -183,31 +184,31 @@ const Header: FC = () => {
                                         }}
                                     >
                                         {etceteraItems[i] ? (
-                                        <Link href={etceteraItems[i].href || "#"} className="contents">
-                                            <div className="c--anim-btn pb-2">
-                                                <div className="text-container">
-                                                    <span className="c-anim-btn">{etceteraItems[i].text}</span>
-                                                    <span className="block">{etceteraItems[i].text}</span>
+                                            <Link href={etceteraItems[i].href || "#"} className="contents">
+                                                <div className="c--anim-btn pb-2">
+                                                    <div className="text-container">
+                                                        <span className="c-anim-btn">{etceteraItems[i].text}</span>
+                                                        <span className="block">{etceteraItems[i].text}</span>
+                                                    </div>
+                                                    <span className="menu-arrow blueprint-arrow">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="12"
+                                                            height="12"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            strokeWidth="2"
+                                                        >
+                                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                                            <polyline points="12 5 19 12 12 19" />
+                                                        </svg>
+                                                    </span>
                                                 </div>
-                                                <span className="menu-arrow blueprint-arrow">
-                                                    <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="12"
-                                                    height="12"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    strokeWidth="2"
-                                                >
-                                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                                    <polyline points="12 5 19 12 12 19" />
-                                                </svg>
-                                                </span>
-                                            </div>
-                                        </Link>
+                                            </Link>
                                         ) : null}
                                     </div>
-                                    
+
                                     {/* Spanning border */}
                                     <div className="col-span-5 border-b border-white mb-2"></div>
                                 </Fragment>
