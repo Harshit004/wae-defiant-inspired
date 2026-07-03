@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    const snapshot = await adminDb.collection('analytics_sessions').orderBy('timestamp', 'desc').limit(100).get();
+    const snapshot = await adminDb.collection('analytics_sessions').orderBy('timestamp', 'desc').get();
     const sessions = snapshot.docs.map(doc => ({
       id: doc.id,
       ...doc.data()
