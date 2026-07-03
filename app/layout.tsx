@@ -14,8 +14,9 @@ const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" })
 const interTight = Inter_Tight({ subsets: ["latin"], variable: "--font-inter-tight" })
 
 export const metadata: Metadata = {
-  title: "WAE - Disrupting the Status Quo",
-  description: "Modern, innovative solutions for a better world",
+  title: "WAE | Activist-Led Sustainable Hydration Solutions",
+  description: "Redefining water through sustainable hydration solutions, WAE is an activist company committed to innovation and lasting impact.",
+  keywords: "Sustainable Hydration Solutions",
 }
 
 export default function RootLayout({
