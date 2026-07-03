@@ -152,7 +152,7 @@ export default function Footer() {
                 style={{
                   border: "1px solid #FFFFFF",
                   padding: "0 24px",
-                  fontFamily: "Helvetica Neue",
+                  fontFamily: "Manrope",
                   fontWeight: 400,
                   fontSize: "14px",
                   color: "#FFFFFF",
@@ -163,7 +163,7 @@ export default function Footer() {
                 disabled={isSubmitting}
                 style={{
                   height: "100%",
-                  fontFamily: "Helvetica Neue",
+                  fontFamily: "Manrope",
                   fontWeight: 400,
                   fontSize: "14px",
                   color: "#000000",
