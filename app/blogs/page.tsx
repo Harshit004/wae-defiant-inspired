@@ -23,9 +23,8 @@ const SelectButton: FC<SelectButtonProps> = ({ children, selected, onClick }) =>
   <button
     type="button"
     onClick={onClick}
-    className="transition-all duration-300 ease-in-out border border-white/20 hover:bg-white/10 w-full md:w-[15.764vw]"
+    className="transition-all duration-300 ease-in-out border border-white/20 hover:bg-white/10 w-full md:w-auto flex-1"
     style={{
-      maxWidth: "227px",
       padding: '14px 8px',
       backgroundColor: selected ? '#ffffff' : 'transparent',
       color: selected ? '#000000' : '#ffffff',
@@ -193,7 +192,7 @@ export default function Home() {
       {/* ================= CATEGORY FILTER TABS ROW ================= */}
       <section style={{ marginBottom: "62px" }}>
         <div className={containerClass}>
-          <div className="flex flex-wrap gap-3 md:gap-0 justify-between w-full">
+          <div className="flex flex-wrap gap-3 md:gap-[1.5vw] justify-between w-full">
             {buttonLabels.map((label, index) => (
               <SelectButton
                 key={label}
