@@ -168,7 +168,7 @@ const ContactSectionDark = () => {
                             }}>
                                 Get in Touch
                             </span>
-                            <svg width="40" height="24" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform group-hover:translate-x-2">
+                            <svg width="29" height="14" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform group-hover:translate-x-2">
                                 <path d="M2 12H38M38 12L28 2M38 12L28 22" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
