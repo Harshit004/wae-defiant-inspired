@@ -440,7 +440,7 @@ const ThisIsUs: FC = () => {
                                     <div className="flex flex-col relative w-full">
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '2.22vw', lineHeight: '110%' }}>A. Vikram Joshe</h3>
                                         <div className="absolute right-0 top-0">
-                                            <LinkedInButton href="#" />
+                                            <LinkedInButton href="https://www.linkedin.com/in/avikramjoshie/" />
                                         </div>
                                         <div className="mb-[1.38vw]"></div>
                                         <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '1.25vw', lineHeight: '110%', color: '#AEAEAE' }}>Founder & CEO</p>
@@ -466,7 +466,7 @@ const ThisIsUs: FC = () => {
                                     <div className="flex flex-col relative w-full">
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Deepak Panwar</h3>
                                         <div className="absolute right-0 top-0">
-                                            <LinkedInButton href="#" />
+                                            <LinkedInButton href="https://www.linkedin.com/in/deepak-panwar-a546561aa" />
                                         </div>
                                         <div className="mb-[0.83vw]"></div>
                                         <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>CEO - Food & Beverage Division</p>
@@ -483,7 +483,7 @@ const ThisIsUs: FC = () => {
                                     <div className="flex flex-col relative w-full">
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Nayna Swati Dewesar</h3>
                                         <div className="absolute right-0 top-0">
-                                            <LinkedInButton href="#" />
+                                            <LinkedInButton href="https://www.linkedin.com/in/nayna-swati-dewesar-62414a35" />
                                         </div>
                                         <div className="mb-[0.83vw]"></div>
                                         <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>Corporate Finance & Commercial</p>
@@ -504,7 +504,7 @@ const ThisIsUs: FC = () => {
                                     <div className="flex flex-col relative w-full">
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Satinder Kaur</h3>
                                         <div className="absolute right-0 top-0">
-                                            <LinkedInButton href="#" />
+                                            <LinkedInButton href="https://www.linkedin.com/in/ksatinder" />
                                         </div>
                                         <div className="mb-[0.83vw]"></div>
                                         <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>Chief Revenue Officer</p>
@@ -521,7 +521,7 @@ const ThisIsUs: FC = () => {
                                     <div className="flex flex-col relative w-full">
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Avnesh Sharma</h3>
                                         <div className="absolute right-0 top-0">
-                                            <LinkedInButton href="#" />
+                                            <LinkedInButton href="https://www.linkedin.com/in/avneshsharma" />
                                         </div>
                                         <div className="mb-[0.83vw]"></div>
                                         <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>Director - Customer Value Management</p>
@@ -542,7 +542,7 @@ const ThisIsUs: FC = () => {
                                     <div className="flex flex-col relative w-full">
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Meenakshi Bora</h3>
                                         <div className="absolute right-0 top-0">
-                                            <LinkedInButton href="#" />
+                                            <LinkedInButton href="https://www.linkedin.com/in/meenakshi-bora-005909aa/" />
                                         </div>
                                         <div className="mb-[0.83vw]"></div>
                                         <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>VP - Client Relations & Operations</p>
@@ -559,7 +559,7 @@ const ThisIsUs: FC = () => {
                                     <div className="flex flex-col relative w-full">
                                         <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.66vw', lineHeight: '110%' }}>Rashmi Bhatia</h3>
                                         <div className="absolute right-0 top-0">
-                                            <LinkedInButton href="#" />
+                                            <LinkedInButton href="https://www.linkedin.com/in/rashmi-bhatia-6987695a/" />
                                         </div>
                                         <div className="mb-[0.83vw]"></div>
                                         <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '1.11vw', lineHeight: '110%' }}>Director - Finance & Accounts</p>
