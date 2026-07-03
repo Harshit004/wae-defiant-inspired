@@ -348,6 +348,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9bf3de4-35c9-4eaf-d1da-309816543400/public",
         "hoverImage": null,
         "displayOrder": 0
+      },
+      {
+        "id": "primus",
+        "name": "Primus",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5b6c39c8-92f2-4aaa-bca1-01fb465c8400/public",
+        "hoverImage": null,
+        "displayOrder": 1
       }
     ]
   }
@@ -3040,5 +3048,85 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayImageIndex": 0,
     "hoverImageIndex": null,
     "displayOrder": 0
+  },
+  "primus": {
+    "id": "primus",
+    "name": "Primus",
+    "categoryName": "Glass Bottling Plant",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5b6c39c8-92f2-4aaa-bca1-01fb465c8400/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/41ea5c57-68b4-41cf-4dbc-18bca886fb00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/337d6081-ac7d-45c0-cc93-975cfb888800/public"
+    ],
+    "featuresList": [
+      {
+        "title": "PRIMUS 500",
+        "description": "Designed for large convention hotels, integrated resort complexes, and multi-outlet properties —\n\nPRIMUS 500 runs two parallel tracks simultaneously to deliver up to 500 bottles per hour, bringing flagship-scale output to properties where both guest experience and volume are non-negotiable.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Ideal For",
+        "description": "Large convention and business hotels | Integrated resort complexes | Airport hospitality properties | Multi-F&B-outlet hotels | Properties with banqueting and large-scale event operations.",
+        "isDisplayed": true
+      },
+      {
+        "title": "PRIMUS 250",
+        "description": "Built for luxury hotels, premium resorts, and high-end F&B operations — PRIMUS 250 delivers up\n\nto 250 bottles per hour on a single linear track, combining the precision of full automation with the elegant restraint of a system sized exactly right for where quality leads volume.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Ideal For",
+        "description": "Premium standalone resorts | High-end restaurants and F&B   outlets | Spa and wellness properties | Corporate headquar- ters with premium hospitality standards",
+        "isDisplayed": true
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "-",
+          "hot": "-",
+          "cold": "-",
+          "ambient": "-"
+        }
+      ],
+      "waterTemp": {
+        "cold": "-",
+        "hot": "-"
+      },
+      "greenCertification": "-",
+      "dripTray": "-",
+      "refrigerant": "-",
+      "dimensions": [
+        {
+          "variant": "Primus 250/500",
+          "weight": "-",
+          "height": "1740",
+          "width": "5390",
+          "depth": "850"
+        }
+      ],
+      "powerRequirement": "3 Phase / 12 KW",
+      "purificationSystem": "-",
+      "pointOfUseSterilization": "-"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3513098a-4028-492c-dd4e-cc43c95d6500/public",
+    "heroTagline": "Operate Sustainably, Maintain Seamlessly",
+    "heroSubtext": "Turnkey Operations and Maintenance for Glass Bottling Plants of All Makes",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/PRIMUS.pdf",
+    "variants": {
+      "hot": false,
+      "cold": false,
+      "ambient": true
+    },
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 1
   }
 };
