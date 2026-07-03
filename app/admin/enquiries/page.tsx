@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Header from "@/components/admin/header";
 import { Trash2, Download } from "lucide-react";
 import { Enquiry } from "@/data/enquiries";
+import * as XLSX from 'xlsx';
 
 export default function AdminEnquiriesPage() {
   const [enquiries, setEnquiries] = useState<Enquiry[]>([]);
@@ -62,28 +63,40 @@ export default function AdminEnquiriesPage() {
   });
 
   const downloadEnquiries = () => {
-    const headers = ["Date", "Name", "Company", "Email", "Phone", "Page Link", "Message", "Type"];
-    const csvData = filteredEnquiries.map(e => [
-      new Date(e.createdAt).toLocaleDateString(),
-      `"${(e.fullName || '').replace(/"/g, '""')}"`,
-      `"${(e.companyName || '').replace(/"/g, '""')}"`,
-      `"${(e.email || '').replace(/"/g, '""')}"`,
-      `"${(e.phone || '').replace(/"/g, '""')}"`,
-      `"${(e.pageLink || '').replace(/"/g, '""')}"`,
-      `"${(e.message || '').replace(/"/g, '""')}"`,
-      e.type || 'product'
-    ]);
+    // Filter all enquiries by date range (ignoring activeTab)
+    const filteredByDate = enquiries.filter(e => {
+      const date = new Date(e.createdAt);
+      if (startDate && new Date(startDate) > date) return false;
+      if (endDate) {
+        const end = new Date(endDate);
+        end.setHours(23, 59, 59, 999);
+        if (end < date) return false;
+      }
+      return true;
+    });
+
+    const createSheetData = (typeFilter: string) => {
+      const typeFiltered = filteredByDate.filter(e => (e.type || 'product') === typeFilter);
+      const headers = ["Date", "Name", "Company", "Email", "Phone", "Page Link", "Message"];
+      const data = typeFiltered.map(e => [
+        new Date(e.createdAt).toLocaleDateString(),
+        e.fullName || '',
+        e.companyName || '',
+        e.email || '',
+        e.phone || '',
+        e.pageLink || '',
+        e.message || ''
+      ]);
+      return [headers, ...data];
+    };
+
+    const wb = XLSX.utils.book_new();
     
-    const csvContent = [headers.join(","), ...csvData.map(row => row.join(","))].join("\n");
-    
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.setAttribute("download", `enquiries_${startDate || 'all'}_to_${endDate || 'all'}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(createSheetData('product')), "Product Enquiries");
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(createSheetData('general')), "General Enquiries");
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(createSheetData('contact-us')), "Contact Us");
+
+    XLSX.writeFile(wb, `enquiries_${startDate || 'all'}_to_${endDate || 'all'}.xlsx`);
   };
 
   return (
