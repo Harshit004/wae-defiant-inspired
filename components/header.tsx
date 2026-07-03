@@ -228,6 +228,7 @@ const Header: FC = () => {
                 .text-container {
                     height: 12px;
                     overflow: hidden;
+                    white-space: nowrap;
                 }
                 .c-anim-btn {
                     display: block;
