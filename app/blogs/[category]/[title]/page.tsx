@@ -61,7 +61,7 @@ export default function DynamicBlogPost() {
 
   if (!blogData) {
     return (
-      <main className="relative bg-[#0c0c0c] text-white min-h-screen">
+      <main className="relative bg-[#0F0F0F] text-white min-h-screen">
         <Header />
         <div className="h-[220px]" />
         <section className={containerClass}>
@@ -101,7 +101,7 @@ export default function DynamicBlogPost() {
   }
 
   return (
-    <main className="relative bg-[#0c0c0c] text-white min-h-screen">
+    <main className="relative bg-[#0F0F0F] text-white min-h-screen">
       <Header />
 
       {/* Hero section */}
@@ -117,7 +117,7 @@ export default function DynamicBlogPost() {
               className="w-full h-auto z-0"
             />
           ) : (
-            <div className="w-full aspect-[16/9] bg-gradient-to-b from-[#00223d] to-[#0c0c0c]" />
+            <div className="w-full aspect-[16/9] bg-gradient-to-b from-[#004063] to-[#0F0F0F]" />
           )}
           {/* Top Gradient */}
           <div
@@ -139,14 +139,14 @@ export default function DynamicBlogPost() {
       </section>
 
       {/* Background Gradient Wrapper */}
-      <div className="relative w-full bg-[#0c0c0c]">
+      <div className="relative w-full bg-[#0F0F0F]">
         {/* Gradient background with max height of 875px */}
         <div
           className="absolute top-0 left-0 right-0 pointer-events-none z-0"
           style={{
             height: '875px',
             maxHeight: '875px',
-            background: 'linear-gradient(180deg, #00223d 0px, #0c0c0c 100%) no-repeat',
+            background: 'linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)',
           }}
         />
 
