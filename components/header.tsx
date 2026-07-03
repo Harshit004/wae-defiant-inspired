@@ -33,7 +33,7 @@ const Header: FC = () => {
             <div>
                 <header ref={headerRef} className="w-full absolute top-0 left-0 z-50 pb-5 bg-transparent text-white">
                     <div className={containerClass}>
-                        <div className="grid grid-cols-[auto_10.17vw_auto_10.21vw_auto_10.21vw_auto_9.03vw_auto_8.13vw_1fr] items-start pt-[30px]">
+                        <div className="grid grid-cols-[auto_minmax(0,10.17vw)_auto_minmax(0,10.21vw)_auto_minmax(0,10.21vw)_auto_minmax(0,9.03vw)_auto_minmax(0,8.13vw)_1fr] items-start pt-[30px]">
                             {/* Headings */}
                             <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>IDENTITY</div>
                             <div></div>
