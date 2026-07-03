@@ -73,6 +73,7 @@ const Header: FC = () => {
                                     fontSize: "11px",
                                     lineHeight: "130%",
                                     color: "#ffffff",
+                                    whiteSpace: "nowrap",
                                 }}
                             >
                                 20.5937° N
