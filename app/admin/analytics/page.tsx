@@ -54,7 +54,7 @@ export default function AnalyticsDashboard() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/analytics");
+      const res = await fetch(`/api/analytics?t=${Date.now()}`, { cache: "no-store" });
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}));
         throw new Error(errorData.error || "Failed to fetch analytics");

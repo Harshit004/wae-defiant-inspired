@@ -107,13 +107,13 @@ export default function DashboardPage() {
       try {
         const [productsRes, blogsRes, jobsRes, enquiriesRes, subscribersRes, analyticsRes, newsEventsRes] =
           await Promise.allSettled([
-            fetch("/api/admin/products").then((r) => r.json()),
-            fetch("/api/admin/blogs").then((r) => r.json()),
-            fetch("/api/admin/jobs").then((r) => r.json()),
-            fetch("/api/admin/enquiries").then((r) => r.json()),
-            fetch("/api/subscribers").then((r) => r.json()),
-            fetch("/api/analytics").then((r) => r.json()),
-            fetch("/api/admin/news-events").then((r) => r.json()),
+            fetch(`/api/admin/products?t=${Date.now()}`, { cache: "no-store" }).then((r) => r.json()),
+            fetch(`/api/admin/blogs?t=${Date.now()}`, { cache: "no-store" }).then((r) => r.json()),
+            fetch(`/api/admin/jobs?t=${Date.now()}`, { cache: "no-store" }).then((r) => r.json()),
+            fetch(`/api/admin/enquiries?t=${Date.now()}`, { cache: "no-store" }).then((r) => r.json()),
+            fetch(`/api/subscribers?t=${Date.now()}`, { cache: "no-store" }).then((r) => r.json()),
+            fetch(`/api/analytics?t=${Date.now()}`, { cache: "no-store" }).then((r) => r.json()),
+            fetch(`/api/admin/news-events?t=${Date.now()}`, { cache: "no-store" }).then((r) => r.json()),
           ])
 
         const products = productsRes.status === "fulfilled" ? productsRes.value : null

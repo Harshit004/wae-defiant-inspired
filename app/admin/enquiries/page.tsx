@@ -20,7 +20,7 @@ export default function AdminEnquiriesPage() {
 
   const fetchEnquiries = async () => {
     try {
-      const res = await fetch("/api/admin/enquiries");
+      const res = await fetch(`/api/admin/enquiries?t=${Date.now()}`, { cache: "no-store" });
       const data = await res.json();
       if (data.success) {
         setEnquiries(data.enquiries);
