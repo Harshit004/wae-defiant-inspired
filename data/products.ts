@@ -364,6 +364,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5b6c39c8-92f2-4aaa-bca1-01fb465c8400/public",
         "hoverImage": null,
         "displayOrder": 1
+      },
+      {
+        "id": "quantm",
+        "name": "QUANTM",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9e8d53c-7720-494e-f2b6-bbb8de553000/public",
+        "hoverImage": null,
+        "displayOrder": 2
       }
     ]
   }
@@ -3145,5 +3153,90 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayImageIndex": 0,
     "hoverImageIndex": null,
     "displayOrder": 1
+  },
+  "quantm": {
+    "id": "quantm",
+    "name": "QUANTM",
+    "categoryName": "Glass Bottling Plant",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9e8d53c-7720-494e-f2b6-bbb8de553000/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/00fe1535-5fda-4ba4-7a78-e60ec4b63200/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/41190e22-5478-44ff-c7b7-f2717637ba00/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Elevating Hospitality with Premium In-House Glass Bottling",
+        "description": "High-waste, carbon-intensive hydration practices are no longer viable.\nHotels today face rising operational costs, evolving guest expectations, and increasing pressure to reduce single-use\nplastics.",
+        "isDisplayed": true
+      },
+      {
+        "title": "WHY CHOOSE QUANTM ?",
+        "description": "Compact, Cloud Kitchen-Friendly Design\nPlastic-Free Glass Bottling\nRinsing, Filling & Capping\nIn-Tank LED UV Disinfection",
+        "isDisplayed": true
+      },
+      {
+        "title": "Rinsing (Optional)",
+        "description": "Glass bottles are placed at the rinsing station and cleaned using potable water to remove dust and surface residues. The operator controls the process to ensure hygiene while minimising water usage, preparing bottles for safe filling.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Filling",
+        "description": "Rinsed bottles are positioned under the filling point, where purified water is dispensed under operator control. Fill levels are monitored to ensure consisten- cy, reduce spillage, and maintain product quality in small-batch operations.",
+        "isDisplayed": false
+      },
+      {
+        "title": "Capping",
+        "description": "Filled bottles are capped using a secure capping mechanism. Proper alignment and sealing are ensured to prevent leakage and contamination, completing the bottling process for immediate use or distribution.",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "-",
+          "hot": "-",
+          "cold": "-",
+          "ambient": "-"
+        }
+      ],
+      "waterTemp": {
+        "cold": "-",
+        "hot": "-"
+      },
+      "greenCertification": "-",
+      "dripTray": "-",
+      "refrigerant": "-",
+      "dimensions": [
+        {
+          "variant": "QUANTM",
+          "weight": "-",
+          "height": "1700",
+          "width": "2380",
+          "depth": "761"
+        }
+      ],
+      "powerRequirement": "1 Phase / 2 KW",
+      "purificationSystem": "-",
+      "pointOfUseSterilization": "-"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3513098a-4028-492c-dd4e-cc43c95d6500/public",
+    "heroTagline": "Operate Sustainably, Maintain Seamlessly",
+    "heroSubtext": "Turnkey Operations and Maintenance for Glass Bottling Plants of All Makes",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/QuantM.pdf",
+    "variants": {
+      "hot": false,
+      "cold": false,
+      "ambient": true
+    },
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 2
   }
 };
