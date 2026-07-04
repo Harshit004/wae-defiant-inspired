@@ -354,7 +354,7 @@ export default function ProductsPage() {
                 <tr className="border-b border-white/10 text-gray-400 text-[11px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   <th className="py-4 px-6 font-medium w-[32%] text-left">Product Image and Name</th>
                   <th className="py-4 px-6 font-medium w-[23%] text-left">Category / Placement</th>
-                  <th className="py-4 px-6 font-medium w-[25%] text-left">Hero Subtitle</th>
+                  <th className="py-4 px-6 font-medium w-[25%] text-left">Short summary for related products</th>
                   <th className="py-4 px-6 font-medium w-[10%] text-center">Status</th>
                   <th className="py-4 px-6 font-medium w-[10%] text-center">Action</th>
                 </tr>

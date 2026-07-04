@@ -601,7 +601,7 @@ export default function EditProductPage({ params }: EditProductProps) {
 
                 <div className="md:col-span-2">
                   <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                    Hero Subtitle (Used in Cards/Lists)
+                    Short summary for related products
                   </label>
                   <input
                     type="text"

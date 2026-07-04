@@ -222,7 +222,7 @@ export default function ViewProductPage({ params }: ViewProductProps) {
             {/* Hero Subtitle Card */}
             <div className="bg-[#04111d]/20 border border-white/5 p-6 text-left">
               <h3 className="text-xs font-semibold text-white uppercase tracking-wider border-b border-white/5 pb-2 mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                Hero Subtitle copy
+                Short summary for related products
               </h3>
               <p className="text-sm text-gray-300 italic">
                 &ldquo;{product.heroSubtitle || "No subtitle copy added"}&rdquo;
