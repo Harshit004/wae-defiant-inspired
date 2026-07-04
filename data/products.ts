@@ -386,6 +386,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e2481985-44dd-44a4-d7fe-fe9d994a9000/public",
         "hoverImage": null,
         "displayOrder": 3
+      },
+      {
+        "id": "s-wasser-mini",
+        "name": "SÜẞWASSER MINI",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0fa74b2d-742f-41d4-7fd6-387da6344000/public",
+        "hoverImage": null,
+        "displayOrder": 4
       }
     ]
   }
@@ -3338,5 +3346,102 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayImageIndex": 0,
     "hoverImageIndex": null,
     "displayOrder": 3
+  },
+  "s-wasser-mini": {
+    "id": "s-wasser-mini",
+    "name": "SÜẞWASSER MINI",
+    "categoryName": "Glass Bottling Plant",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0fa74b2d-742f-41d4-7fd6-387da6344000/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bb462fd0-161f-4ad9-95e3-d3ee69b25500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5deeaa64-b262-46bb-2739-21ac63e07300/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Salience",
+        "description": "Floor-standing. Built to own the space it occupies.",
+        "isDisplayed": true
+      },
+      {
+        "title": "",
+        "description": "In-tank LED UVC disinfection. Continuous microbial protection",
+        "isDisplayed": true
+      },
+      {
+        "title": "",
+        "description": "Point-of-dispense. 99.99% pure, every pour.",
+        "isDisplayed": true
+      },
+      {
+        "title": "",
+        "description": "Dual taps. Two outputs. Simultaneous service.",
+        "isDisplayed": true
+      },
+      {
+        "title": "",
+        "description": "Two water options: cold and ambient (or cold and sparkling)",
+        "isDisplayed": true
+      },
+      {
+        "title": "",
+        "description": "Ambient LED side lighting. Signature aesthetic.",
+        "isDisplayed": true
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "SÜẞWASSER MINI",
+          "hot": "-",
+          "cold": "70",
+          "ambient": "70"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C - 20° C (default 8°C)",
+        "hot": "-"
+      },
+      "greenCertification": "Confirms to green product certification, flow rate: 2 LPM",
+      "dripTray": "-",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "SÜẞWASSER MINI",
+          "weight": "200.0 (packed)",
+          "height": "2218",
+          "width": "771",
+          "depth": "974"
+        },
+        {
+          "variant": "Accessories",
+          "weight": "200.0 (packed)",
+          "height": "1802",
+          "width": "771",
+          "depth": "715"
+        }
+      ],
+      "powerRequirement": "Hertz 50/Volts 230-240",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
+      "pointOfUseSterilization": "Germ GuardianTM"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3513098a-4028-492c-dd4e-cc43c95d6500/public",
+    "heroTagline": "Operate Sustainably, Maintain Seamlessly",
+    "heroSubtext": "Turnkey Operations and Maintenance for Glass Bottling Plants of All Makes",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/SUSWASSER%20MINI.pdf",
+    "variants": {
+      "hot": false,
+      "cold": true,
+      "ambient": true
+    },
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 4
   }
 };
