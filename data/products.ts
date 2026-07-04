@@ -179,16 +179,16 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "aurela",
-        "name": "AURELLA",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public"
-      },
-      {
         "id": "epsilon",
         "name": "EPSILON",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a374fc3-9953-42c2-6b8a-07dfc01f3400/public"
+      },
+      {
+        "id": "lagoon",
+        "name": "LAGOON",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8150df9-f454-4a9c-b016-16beb5b67400/public"
       },
       {
         "id": "yami",
@@ -217,11 +217,11 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "displayOrder": 7
       },
       {
-        "id": "lagoon",
-        "name": "LAGOON",
+        "id": "aurela",
+        "name": "AURELLA",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b8150df9-f454-4a9c-b016-16beb5b67400/public",
-        "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/10cd053e-9886-4481-d631-b1b873810100/public",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public",
+        "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/af42a92a-f07f-4fdb-6c46-0e3c6d690d00/public",
         "displayOrder": 7
       }
     ],
@@ -1746,9 +1746,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0,
-    "hoverImageIndex": 3,
-    "displayOrder": 7
+    "displayImageIndex": 0
   },
   "yami": {
     "id": "yami",
@@ -2315,7 +2313,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "hoverImageIndex": 3,
+    "displayOrder": 7
   },
   "epsilon": {
     "id": "epsilon",
