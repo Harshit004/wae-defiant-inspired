@@ -92,13 +92,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "displayOrder": 2
       },
       {
-        "id": "pos",
-        "name": "POS",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public",
-        "displayOrder": 3
-      },
-      {
         "id": "gsp",
         "name": "GSP",
         "category": "free-standing",
@@ -165,6 +158,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public",
         "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6a645ebd-b768-47e1-e7ea-eb9ba395f700/public",
         "displayOrder": 1
+      },
+      {
+        "id": "pos",
+        "name": "POS",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d750f7b0-5ed6-442f-d370-6c66f6b79700/public",
+        "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f56d1bb2-8196-4815-7449-5a9481526600/public",
+        "displayOrder": 3
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -675,7 +676,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "ambient": true
     },
     "displayImageIndex": 0,
-    "displayOrder": 3
+    "displayOrder": 3,
+    "hoverImageIndex": 3
   },
   "rom-grande": {
     "id": "rom-grande",
