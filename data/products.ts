@@ -270,12 +270,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "hkn",
-        "name": "HKN",
-        "category": "counter-top",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5bc0586-0b79-4993-379a-53eb5a494700/public"
-      },
-      {
         "id": "indus",
         "name": "INDUS",
         "category": "free-standing",
@@ -306,6 +300,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "PIPER",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/339bfbc9-12b2-439f-4946-6b3415666500/public",
+        "hoverImage": null,
+        "displayOrder": 6
+      },
+      {
+        "id": "hkn",
+        "name": "HKN",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/507bd5b2-141e-4c7d-0825-7819dd2aa500/public",
         "hoverImage": null,
         "displayOrder": 6
       }
@@ -1996,7 +1998,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
     "heroSubtitle": "",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5bc0586-0b79-4993-379a-53eb5a494700/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/507bd5b2-141e-4c7d-0825-7819dd2aa500/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b6beb7f1-39a8-4e89-c744-55972f9f1900/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/507bd5b2-141e-4c7d-0825-7819dd2aa500/public"
     ],
@@ -2066,7 +2068,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 6
   },
   "aqua": {
     "id": "aqua",
