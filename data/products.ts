@@ -378,6 +378,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9e8d53c-7720-494e-f2b6-bbb8de553000/public",
         "hoverImage": null,
         "displayOrder": 2
+      },
+      {
+        "id": "spiulmeister",
+        "name": "Spiulmeister",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e2481985-44dd-44a4-d7fe-fe9d994a9000/public",
+        "hoverImage": null,
+        "displayOrder": 3
       }
     ]
   }
@@ -3250,5 +3258,85 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayImageIndex": 0,
     "hoverImageIndex": null,
     "displayOrder": 2
+  },
+  "spiulmeister": {
+    "id": "spiulmeister",
+    "name": "Spiulmeister",
+    "categoryName": "Glass Bottling Plant",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e2481985-44dd-44a4-d7fe-fe9d994a9000/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/717d0fab-1546-4de2-d4da-b16d08256500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2c8e5599-f909-4b78-6d5a-f51f42900900/public"
+    ],
+    "featuresList": [
+      {
+        "title": "How it works::-Pre-rinse station",
+        "description": "Bottles pass through the manual pre-wash unit. Focused water pressure targets and removes lipstick marks and stubborn residues before they reach the automatic cycle.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Crate loading",
+        "description": "Clean bottles are organized into crates for batch processing — reducing handling time and improving workflow consistency.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Automatic hood wash",
+        "description": "The hood-type washing chamber closes over the crate. A high-pressure, multi-directional spray system delivers uniform cleaning to every bottle simultaneously.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Unload and serve",
+        "description": "Cleaned bottles move to the dedicated unloading table — ready for refill, service, or storage.",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "-",
+          "hot": "-",
+          "cold": "-",
+          "ambient": "-"
+        }
+      ],
+      "waterTemp": {
+        "cold": "-",
+        "hot": "-"
+      },
+      "greenCertification": "-",
+      "dripTray": "-",
+      "refrigerant": "-",
+      "dimensions": [
+        {
+          "variant": "Spiulmeister",
+          "weight": "150 kg",
+          "height": "1500",
+          "width": "766",
+          "depth": "912"
+        }
+      ],
+      "powerRequirement": "3 Phase + Neutral + Earthing",
+      "purificationSystem": "-",
+      "pointOfUseSterilization": "-"
+    },
+    "status": "Live",
+    "description": "",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3513098a-4028-492c-dd4e-cc43c95d6500/public",
+    "heroTagline": "Operate Sustainably, Maintain Seamlessly",
+    "heroSubtext": "Turnkey Operations and Maintenance for Glass Bottling Plants of All Makes",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "#product-showcase",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/Sp%C3%BClMeister.pdf",
+    "variants": {
+      "hot": false,
+      "cold": false,
+      "ambient": true
+    },
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 3
   }
 };
