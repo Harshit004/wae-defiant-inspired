@@ -282,12 +282,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a435208b-076d-4a5d-6c93-9c3286214800/public"
       },
       {
-        "id": "piper",
-        "name": "PIPER",
-        "category": "counter-top",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9e29753-4917-4d6c-17ce-21f1ae145500/public"
-      },
-      {
         "id": "touch",
         "name": "TOUCH",
         "category": "counter-top",
@@ -304,6 +298,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "MOSES",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/386b4db5-361c-473a-78b8-51358994ad00/public",
+        "hoverImage": null,
+        "displayOrder": 6
+      },
+      {
+        "id": "piper",
+        "name": "PIPER",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/339bfbc9-12b2-439f-4946-6b3415666500/public",
         "hoverImage": null,
         "displayOrder": 6
       }
@@ -1823,8 +1825,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "DRINKING WATER FAUCETS - WATERMATIC Series",
     "heroSubtitle": "",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9e29753-4917-4d6c-17ce-21f1ae145500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/339bfbc9-12b2-439f-4946-6b3415666500/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/468bfac5-bcc4-4510-8520-a512a5348500/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9e29753-4917-4d6c-17ce-21f1ae145500/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/339bfbc9-12b2-439f-4946-6b3415666500/public"
     ],
     "featuresList": [
@@ -1898,7 +1901,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 6
   },
   "moses": {
     "id": "moses",
