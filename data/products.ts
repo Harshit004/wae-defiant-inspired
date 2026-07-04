@@ -270,12 +270,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "indus",
-        "name": "INDUS",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a435208b-076d-4a5d-6c93-9c3286214800/public"
-      },
-      {
         "id": "touch",
         "name": "TOUCH",
         "category": "counter-top",
@@ -308,6 +302,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "HKN",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/507bd5b2-141e-4c7d-0825-7819dd2aa500/public",
+        "hoverImage": null,
+        "displayOrder": 6
+      },
+      {
+        "id": "indus",
+        "name": "INDUS",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1a555b1a-09b3-4045-cd43-9d2922a0cc00/public",
         "hoverImage": null,
         "displayOrder": 6
       }
@@ -2398,9 +2400,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "Drinking Water Faucets-WATERMATIC",
     "heroSubtitle": "",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a435208b-076d-4a5d-6c93-9c3286214800/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1a555b1a-09b3-4045-cd43-9d2922a0cc00/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7516291c-c413-4b60-c985-61475fcc2c00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1a555b1a-09b3-4045-cd43-9d2922a0cc00/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a435208b-076d-4a5d-6c93-9c3286214800/public"
     ],
     "featuresList": [
       {
@@ -2478,7 +2480,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 6
   },
   "touch": {
     "id": "touch",
