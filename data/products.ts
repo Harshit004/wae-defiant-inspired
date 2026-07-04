@@ -270,12 +270,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "led-uv-c",
-        "name": "LED UV-C",
-        "category": "counter-top",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/80109262-4e0f-4ce4-6295-5c53a9eeff00/public"
-      },
-      {
         "id": "moses",
         "name": "MOSES",
         "category": "counter-top",
@@ -312,6 +306,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "TOUCH",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5e18de7-1b07-47e2-86e3-1491a51a2b00/public",
+        "hoverImage": null,
+        "displayOrder": 6
+      },
+      {
+        "id": "led-uv-c",
+        "name": "LED UV-C",
+        "category": "counter-top",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6cae9f53-9ad9-429b-2fd3-4e8a3ab72200/public",
         "hoverImage": null,
         "displayOrder": 6
       }
@@ -2577,9 +2579,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "categoryName": "Drinking Water Faucets-WATERMATIC",
     "heroSubtitle": "",
     "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/80109262-4e0f-4ce4-6295-5c53a9eeff00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6cae9f53-9ad9-429b-2fd3-4e8a3ab72200/public",
       "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/77f76b7e-5c0b-4d34-2961-ee630bfe1500/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6cae9f53-9ad9-429b-2fd3-4e8a3ab72200/public"
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/80109262-4e0f-4ce4-6295-5c53a9eeff00/public"
     ],
     "featuresList": [
       {
@@ -2647,7 +2649,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": false,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "hoverImageIndex": null,
+    "displayOrder": 6
   },
   "nt01": {
     "id": "nt01",
