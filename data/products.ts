@@ -185,12 +185,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public"
       },
       {
-        "id": "aenon",
-        "name": "AENON",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8ea2eecd-b9d8-4a38-399b-12ce2375a200/public"
-      },
-      {
         "id": "epsilon",
         "name": "EPSILON",
         "category": "free-standing",
@@ -219,6 +213,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "name": "ALFA",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/800b2aca-19da-4043-42e8-8d5ad223fb00/public"
+      },
+      {
+        "id": "aenon",
+        "name": "AENON",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8ea2eecd-b9d8-4a38-399b-12ce2375a200/public",
+        "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d2a8c834-89a8-4c73-69dc-fdd420f94d00/public",
+        "displayOrder": 7
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3b41a398-ca3b-4c5e-a03d-3178d72a2a00/public"
@@ -1481,7 +1483,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "hoverImageIndex": 3,
+    "displayOrder": 7
   },
   "alfa-100": {
     "id": "alfa-100",
