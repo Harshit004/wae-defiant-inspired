@@ -179,10 +179,10 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "epsilon",
-        "name": "EPSILON",
+        "id": "aurela",
+        "name": "AURELLA",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a374fc3-9953-42c2-6b8a-07dfc01f3400/public"
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public"
       },
       {
         "id": "lagoon",
@@ -217,11 +217,11 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "displayOrder": 7
       },
       {
-        "id": "aurela",
-        "name": "AURELLA",
+        "id": "epsilon",
+        "name": "EPSILON",
         "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c50c87e-618b-413b-06b5-afc197db2d00/public",
-        "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/af42a92a-f07f-4fdb-6c46-0e3c6d690d00/public",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0a374fc3-9953-42c2-6b8a-07dfc01f3400/public",
+        "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/dc8e8bce-6a27-4a52-5070-d18c54deb800/public",
         "displayOrder": 7
       }
     ],
@@ -2313,9 +2313,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0,
-    "hoverImageIndex": 3,
-    "displayOrder": 7
+    "displayImageIndex": 0
   },
   "epsilon": {
     "id": "epsilon",
@@ -2410,7 +2408,9 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "cold": true,
       "ambient": true
     },
-    "displayImageIndex": 0
+    "displayImageIndex": 0,
+    "hoverImageIndex": 3,
+    "displayOrder": 7
   },
   "indus": {
     "id": "indus",
