@@ -64,5 +64,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS. Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS. Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS. Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS. Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS. Hi, this is a test message. I will keep repeating this text to test its visual feasibility in the CMS.",
     "type": "contact-us",
     "createdAt": "2026-06-29T23:01:50.742Z"
+  },
+  "83dd4fa0-c816-4c5c-98b1-cc951e6b4b5f": {
+    "id": "83dd4fa0-c816-4c5c-98b1-cc951e6b4b5f",
+    "fullName": "Siddheshwar Jokare",
+    "companyName": "Jayraj Construction",
+    "email": "jairajflora@yahoo.in",
+    "phone": "09325654835",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/product-description-page?product=s-wasser-mini",
+    "type": "product",
+    "createdAt": "2026-07-05T04:25:00.674Z"
   }
 };
