@@ -2977,7 +2977,7 @@ export const BLOGS: Record<string, BlogPost> = {
   "how-ai-is-helping-us-forecast-water-demand-in-high-use-environments-tst": {
     "id": "how-ai-is-helping-us-forecast-water-demand-in-high-use-environments-tst",
     "title": "How AI Is Helping Us Forecast Water Demand in High-Use Environments Tst",
-    "category": "Climate Change & Water",
+    "category": "Technology",
     "description": "With a 40% global water demand-supply gap projected by 2030, this article explores how AI, SCADA systems, IoT sensors, and smart water grids are revolutionizing water management — cutting losses and securing a sustainable future.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c6dda5a-3260-4b77-1037-993fe8035100/public",
     "writerId": "aditi-sharma",
