@@ -75,5 +75,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/product-description-page?product=s-wasser-mini",
     "type": "product",
     "createdAt": "2026-07-05T04:25:00.674Z"
+  },
+  "67146115-41ff-4b46-8327-76fb8a36d09e": {
+    "id": "67146115-41ff-4b46-8327-76fb8a36d09e",
+    "fullName": "manan lamba",
+    "companyName": "aes",
+    "email": "arcticprojects2@gmail.com",
+    "phone": "7011227677",
+    "city": "delhi",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "need prices for 150 lph 100 lph and 500 lph ro system",
+    "type": "contact-us",
+    "createdAt": "2026-07-06T12:08:47.039Z"
   }
 };
