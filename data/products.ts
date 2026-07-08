@@ -323,16 +323,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
       }
     ]
   },
-  "pus": {
-    "id": "pus",
-    "title": "PUBLIC UTILITY SYSTEM-PUS Series",
-    "description": "Robust, research-backed water systems engineered for public infrastructure—ensuring continuous access to safe, purified drinking water in all conditions.",
-    "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ba89e9ca-9003-4c4b-2775-d4a5a11e9600/public",
-    "paragraphs": [
-      "Robust, research-backed water systems engineered for public infrastructure—ensuring continuous access to safe, purified drinking water in all conditions."
-    ],
-    "products": []
-  },
   "glass-bottling": {
     "id": "glass-bottling",
     "title": "Glass bottling plant",
