@@ -87,5 +87,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "need prices for 150 lph 100 lph and 500 lph ro system",
     "type": "contact-us",
     "createdAt": "2026-07-06T12:08:47.039Z"
+  },
+  "8ffb8d1a-c033-46b4-b617-1add712d35c7": {
+    "id": "8ffb8d1a-c033-46b4-b617-1add712d35c7",
+    "fullName": "Manish",
+    "companyName": "ION Trading India Private Limited",
+    "email": "manish.yadav@iongroup.com",
+    "phone": "9311203328",
+    "city": "Hyderabad",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Issue with the services",
+    "type": "contact-us",
+    "createdAt": "2026-07-08T05:47:54.045Z"
   }
 };
