@@ -96,7 +96,7 @@ const Header: FC = () => {
                                     whiteSpace: "nowrap",
                                 }}
                             >
-                                To lead the way in<br />sustainability ahead of the<br />next
+                                To lead the way in<br />sustainability ahead of the<br />rest
                             </div>
                             <div className="row-span-6"></div>
 

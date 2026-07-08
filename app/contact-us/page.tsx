@@ -108,7 +108,7 @@ export default function ContactUsPage() {
                   letterSpacing: "0%",
                   color: "#FFFFFF",
                   textTransform: "uppercase",
-                  marginBottom: "12px",
+                  marginBottom: "18px",
                 }}
               >
                 Questions or Ideas?
