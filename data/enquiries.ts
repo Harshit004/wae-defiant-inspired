@@ -99,5 +99,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Issue with the services",
     "type": "contact-us",
     "createdAt": "2026-07-08T05:47:54.045Z"
+  },
+  "4cfbbb91-d6a5-440d-bd07-6edba6e3f7c2": {
+    "id": "4cfbbb91-d6a5-440d-bd07-6edba6e3f7c2",
+    "fullName": "Rahul Ambekar",
+    "companyName": "ISS Facility ",
+    "email": "rahul.ambekar@in.issworld.com",
+    "phone": "8623006306",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Requirement: RO Water Dispenser – Direct Connection Type. (Hot + Cold + Normal water required)\n please share contact details.  ",
+    "type": "contact-us",
+    "createdAt": "2026-07-08T06:57:28.939Z"
   }
 };
