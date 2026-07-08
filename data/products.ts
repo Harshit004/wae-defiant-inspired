@@ -331,14 +331,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
     "paragraphs": [
       "Robust, research-backed water systems engineered for public infrastructure—ensuring continuous access to safe, purified drinking water in all conditions."
     ],
-    "products": [
-      {
-        "id": "hydrobankseries",
-        "name": "HYDROBANKSERIES",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/822535eb-d4c2-472f-254f-8b4685410400/public",
-        "category": "free-standing"
-      }
-    ]
+    "products": []
   },
   "glass-bottling": {
     "id": "glass-bottling",
@@ -2105,74 +2098,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayImageIndex": 0,
     "hoverImageIndex": null,
     "displayOrder": 6
-  },
-  "hydrobankseries": {
-    "id": "hydrobankseries",
-    "name": "HYDROBANKSERIES",
-    "categoryName": "PUBLIC UTILITY SYSTEMS - PUS Series",
-    "heroSubtitle": "Powerful LED sterilization",
-    "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/13d0a907-1c95-4c88-fccc-fbc499c75100/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fc19edb8-3d0e-475f-7a9c-fad84faa3a00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e5a12692-239e-45be-fff0-42d2ba8d5100/public"
-    ],
-    "featuresList": [
-      {
-        "title": "Installation",
-        "description": "Wall-mounted drinking water dispenser and fountain.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Optional Upgrades",
-        "description": "Swap the washer and dustbin for a built-in RO unit, ensuring purified water on demand",
-        "isDisplayed": true
-      },
-      {
-        "title": "Material & Construction",
-        "description": "Durable stainless steel 304 with galvanized iron for long-lasting performance.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Customization",
-        "description": "The backend unit is fully customizable to any space or design requirements.",
-        "isDisplayed": false
-      },
-      {
-        "title": "Operation",
-        "description": "Convenient push-tap system for direct drinking (optional swan-neck taps available).",
-        "isDisplayed": false
-      }
-    ],
-    "specifications": {
-      "storageCapacity": [
-        {
-          "variant": "FS AQUA",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
-        }
-      ],
-      "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
-      },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000ml",
-      "refrigerant": "R-134a",
-      "dimensions": [
-        {
-          "variant": "FS AQUA",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
-        }
-      ],
-      "powerRequirement": "220V/50 HZ RZ 134a 1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
-      "pointOfUseSterilization": "Germ Guardian™"
-    },
-    "status": "Live"
   },
   "aurela": {
     "id": "aurela",
