@@ -333,12 +333,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "aqua",
-        "name": "AQUA",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/20abb608-f632-4157-ce38-12646a5c8a00/public",
-        "category": "free-standing"
-      },
-      {
         "id": "hydrobankseries",
         "name": "HYDROBANKSERIES",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/822535eb-d4c2-472f-254f-8b4685410400/public",
@@ -2111,74 +2105,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayImageIndex": 0,
     "hoverImageIndex": null,
     "displayOrder": 6
-  },
-  "aqua": {
-    "id": "aqua",
-    "name": "AQUA",
-    "categoryName": "PUBLIC UTILITY SYSTEMS - PUS Series",
-    "heroSubtitle": "Powerful LED sterilization",
-    "images": [
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/972917c4-f986-4a07-11e3-4f5ad123cb00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/41448980-c47f-4212-9bca-68bfd7c3db00/public",
-      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/11983264-8f58-4311-ec84-225eacf9c000/public"
-    ],
-    "featuresList": [
-      {
-        "title": "Built to Endure",
-        "description": "Triple-coated galvanized iron with a protective powder finish.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Pure & Safe Storage",
-        "description": "Stainless steel tank guarantees 99.99% pure, contaminant-free water.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Extended Durability",
-        "description": "Optional anti-rust treatment and stainless steel 304 overhead protection.",
-        "isDisplayed": true
-      },
-      {
-        "title": "Longer Lifespan",
-        "description": "Customizable design, easy maintenance, and energy-efficient operation.",
-        "isDisplayed": false
-      },
-      {
-        "title": "High Capacity",
-        "description": "Designed to handle heavy water demand in busy environments.",
-        "isDisplayed": false
-      }
-    ],
-    "specifications": {
-      "storageCapacity": [
-        {
-          "variant": "FS AQUA",
-          "hot": "3",
-          "cold": "40",
-          "ambient": "15"
-        }
-      ],
-      "waterTemp": {
-        "cold": "Cold: 5°C- 24°C (default Default 8°C)",
-        "hot": "Hot: 30°C- 80°C (default Default 50°C)"
-      },
-      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
-      "dripTray": "1000ml",
-      "refrigerant": "R-134a",
-      "dimensions": [
-        {
-          "variant": "FS AQUA",
-          "weight": "-",
-          "height": "1631",
-          "width": "535",
-          "depth": "654"
-        }
-      ],
-      "powerRequirement": "220V/50 HZ RZ 134a 1/8 HP",
-      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization",
-      "pointOfUseSterilization": "Germ Guardian™"
-    },
-    "status": "Live"
   },
   "hydrobankseries": {
     "id": "hydrobankseries",
