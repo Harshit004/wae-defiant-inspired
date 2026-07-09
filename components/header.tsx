@@ -17,12 +17,12 @@ const productsItems = [
 const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
     { text: "Activism", href: "/activism" },
-    { text: "Perspectives", href: "/perspectives" },
+    { text: "Compliances", href: "/compliance" },
 ]
 const etceteraItems = [
-    { text: "Contact", href: "/contact-us" },
-    { text: "Compliance", href: "/compliance" },
+    { text: "Perspectives", href: "/perspectives" },
     { text: "Mentioned", href: "/news-and-updates" },
+    { text: "Contact", href: "/contact-us" },
 ]
 
 const Header: FC = () => {
