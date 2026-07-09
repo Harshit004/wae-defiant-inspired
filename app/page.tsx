@@ -294,11 +294,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Brand, Purpose & People Section */}
+      {/* Purpose, Philisophy & Principle Section */}
       <section className="relative bg-black text-white w-full">
         <div className="w-full h-[576px]">
           <div className="grid grid-cols-3 h-full border-b border-white">
-            {/* Column 1: Brand */}
+            {/* Column 1: Purpose */}
             <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
               <div className="flex flex-col w-full max-w-[320px]">
                 <h2
@@ -310,7 +310,7 @@ export default function Home() {
                     letterSpacing: '0%',
                   }}
                 >
-                  Brand
+                  Purpose
                 </h2>
                 <div style={{ height: '32px' }} />
                 <h3
@@ -384,7 +384,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Column 2: Purpose */}
+            {/* Column 2: Philisophy */}
             <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
               <div className="flex flex-col w-full max-w-[320px]">
                 <h2
@@ -396,7 +396,7 @@ export default function Home() {
                     letterSpacing: '0%',
                   }}
                 >
-                  Purpose
+                  Philosphy
                 </h2>
                 <div style={{ height: '32px' }} />
                 <h3
@@ -470,7 +470,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Column 3: People */}
+            {/* Column 3: Principle */}
             <div className="flex flex-col h-full items-center justify-center px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
               <div className="flex flex-col w-full max-w-[320px]">
                 <h2
@@ -482,7 +482,7 @@ export default function Home() {
                     letterSpacing: '0%',
                   }}
                 >
-                  People
+                  Principle
                 </h2>
                 <div style={{ height: '32px' }} />
                 <h3
