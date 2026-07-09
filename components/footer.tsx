@@ -38,7 +38,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-[#004063] text-white w-full m-0 p-0" style={{ marginBottom: 0 }}>
+    <footer className="text-white w-full m-0 p-0" style={{ marginBottom: 0, background: 'linear-gradient(146.25deg, #002C43 10.53%, #000000 50.39%)' }}>
 
       {/* ── Main content ── */}
       <div
@@ -193,7 +193,7 @@ export default function Footer() {
 
             {/* Navigation link columns */}
             <div className="w-full relative">
-              <div className="grid grid-cols-[auto_auto_auto_auto] justify-between w-full">
+              <div className="grid grid-cols-3 justify-between w-full">
                 {/* Column headings */}
                 <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
                   INSIDE WAE
@@ -204,40 +204,30 @@ export default function Footer() {
                 <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
                   ETCETERA
                 </h3>
-                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
-                  POLICIES
-                </h3>
 
                 {/* Single continuous horizontal rule */}
-                <div className="col-span-4 w-full h-[0.67px] bg-white mb-3" />
+                <div className="col-span-3 w-full h-[0.67px] bg-white mb-3" />
 
                 {/* Link lists */}
                 {/* INSIDE WAE */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/this-is-us" className="hover:opacity-80 transition-opacity">This is Us</Link></li>
-                  <li><Link href="/our-portfolio" className="hover:opacity-80 transition-opacity">Our Portfolio</Link></li>
+                  <li><Link href="/this-is-us" className="hover:opacity-80 transition-opacity">Profile</Link></li>
+                  <li><Link href="/our-portfolio" className="hover:opacity-80 transition-opacity">Portfolio</Link></li>
                   <li><Link href="/careers" className="hover:opacity-80 transition-opacity">Reimagine Work</Link></li>
                 </ul>
 
                 {/* RESPONSIBILITY */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
                   <li><Link href="/sustainability" className="hover:opacity-80 transition-opacity">Sustainability</Link></li>
-                  <li><Link href="/the-activist-co" className="hover:opacity-80 transition-opacity">The Activist Co.</Link></li>
-                  <li><Link href="/blogs" className="hover:opacity-80 transition-opacity">Blog</Link></li>
+                  <li><Link href="/the-activist-co" className="hover:opacity-80 transition-opacity">Activism</Link></li>
+                  <li><Link href="/compliance" className="hover:opacity-80 transition-opacity">Compliances</Link></li>
                 </ul>
 
                 {/* ETCETERA */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/contact-us" className="hover:opacity-80 transition-opacity">Contact</Link></li>
-                  <li><Link href="/compliance" className="hover:opacity-80 transition-opacity">Compliance</Link></li>
+                  <li><Link href="/blogs" className="hover:opacity-80 transition-opacity">Perspectives</Link></li>
                   <li><Link href="/news-and-updates" className="hover:opacity-80 transition-opacity">Mentioned</Link></li>
-                </ul>
-
-                {/* POLICIES */}
-                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/terms-of-use" className="hover:opacity-80 transition-opacity">Terms of Use</Link></li>
-                  <li><Link href="/cookie-policy" className="hover:opacity-80 transition-opacity">Cookie Policy</Link></li>
-                  <li><Link href="/data-privacy-policy" className="hover:opacity-80 transition-opacity">Data Privacy Policy</Link></li>
+                  <li><Link href="/contact-us" className="hover:opacity-80 transition-opacity">Contact</Link></li>
                 </ul>
               </div>
             </div>

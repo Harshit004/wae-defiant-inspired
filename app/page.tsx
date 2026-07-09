@@ -585,20 +585,22 @@ export default function Home() {
             Every product is designed to replace plastic and reduce operational carbon footprint.
           </h2>
 
-          <div style={{ height: '124px' }} />
+          <div style={{ height: '113px' }} />
 
           <div className="flex justify-between items-start">
             <h3
               style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontWeight: 700,
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontStyle: 'normal',
                 fontSize: '24px',
-                lineHeight: '110%',
-                letterSpacing: '0px',
+                lineHeight: '115%',
+                letterSpacing: '0%',
+                verticalAlign: 'middle',
                 color: '#FFFFFF'
               }}
             >
-              Our Products
+              Product Portfolio
             </h3>
             <p
               className="leading-normal"
@@ -616,7 +618,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div style={{ height: '18px' }} />
+          <div style={{ height: '26px' }} />
 
           <div className="grid grid-cols-4 w-full" style={{ height: '506px' }}>
             {/* Aurela */}
@@ -726,12 +728,29 @@ export default function Home() {
       <section
         className="bg-black text-white border-b border-white"
         style={{
-          paddingTop: '123px',
           paddingBottom: '123px',
           paddingLeft: '7.5vw',
           paddingRight: '7.5vw'
         }}
       >
+        <div className="w-full">
+          <div style={{ height: '123px' }} />
+          <h3
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontStyle: 'normal',
+              fontSize: '24px',
+              lineHeight: '110%',
+              letterSpacing: '0px',
+              verticalAlign: 'middle',
+              color: '#FFFFFF'
+            }}
+          >
+            Sustainability
+          </h3>
+          <div style={{ height: '26px' }} />
+        </div>
         <div className="flex justify-between items-stretch w-full">
 
           {/* Left Column */}
@@ -945,7 +964,7 @@ export default function Home() {
                 color: '#FFFFFF'
               }}
             >
-              Real numbers. Real results.
+              Impact
             </p>
             <div style={{ height: '10px' }} />
             <h2
@@ -957,7 +976,7 @@ export default function Home() {
                 color: '#FFFFFF'
               }}
             >
-              Our sustainability impact
+              Real numbers. Real results.
             </h2>
             <div style={{ height: '32px' }} />
             <p
@@ -1091,7 +1110,7 @@ export default function Home() {
                 color: '#FFFFFF',
                 marginBottom: '20px'
               }}>
-                From our blog
+                Perspectives
               </h2>
               <p style={{
                 fontFamily: "'Manrope', sans-serif",
@@ -1230,7 +1249,6 @@ export default function Home() {
       <section
         className="bg-black text-white"
         style={{
-          paddingTop: '123px',
           paddingBottom: '123px',
           paddingLeft: '7.5vw',
           paddingRight: '7.5vw',
@@ -1238,6 +1256,22 @@ export default function Home() {
         }}
       >
         <div className="w-full">
+          <div style={{ height: '123px' }} />
+          <h3
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontStyle: 'normal',
+              fontSize: '24px',
+              lineHeight: '110%',
+              letterSpacing: '0px',
+              verticalAlign: 'middle',
+              color: '#FFFFFF'
+            }}
+          >
+            Mentioned
+          </h3>
+          <div style={{ height: '26px' }} />
           <div className="flex justify-between items-start w-full" style={{ paddingRight: '48px' }}>
             <h2 style={{
               fontFamily: "'Inter Tight', sans-serif",
