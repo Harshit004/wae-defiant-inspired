@@ -111,5 +111,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Requirement: RO Water Dispenser – Direct Connection Type. (Hot + Cold + Normal water required)\n please share contact details.  ",
     "type": "contact-us",
     "createdAt": "2026-07-08T06:57:28.939Z"
+  },
+  "3dbfde07-e2a8-44ad-b35d-602984c6ab40": {
+    "id": "3dbfde07-e2a8-44ad-b35d-602984c6ab40",
+    "fullName": "Tarun George",
+    "companyName": "Studio Chintala",
+    "email": "tarun@studiochintala.com",
+    "phone": "9400862460",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/product-description-page?product=nt01",
+    "type": "product",
+    "createdAt": "2026-07-09T04:57:45.140Z"
   }
 };
