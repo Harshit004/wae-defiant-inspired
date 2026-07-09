@@ -97,7 +97,7 @@ const Header: FC = () => {
                                     78.9629° E
                                 </div>
                                 <div className="absolute top-1 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                                    <img src="/image 571.png" alt="India Flag" width="32" height="21" className="object-cover rounded-sm" />
+                                    <Image src="/image-571.png" alt="India Flag" width={32} height={21} className="object-cover rounded-sm" />
                                 </div>
                             </div>
                             <div className="row-span-6"></div>
