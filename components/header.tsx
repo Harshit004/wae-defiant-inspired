@@ -51,13 +51,13 @@ const Header: FC = () => {
                             <div className="col-span-11 w-full h-px bg-white mb-[10px]" />
 
                             {/* Logo */}
-                            <div className="row-span-6 flex flex-col justify-start pt-1 w-[77px]">
+                            <div className="row-span-6 flex flex-col justify-start pt-1 w-[64px]">
                                 <Link href="/">
                                     <Image
                                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
                                         alt="WAE Logo"
-                                        width={77}
-                                        height={82}
+                                        width={64}
+                                        height={67}
                                         priority
                                     />
                                 </Link>
