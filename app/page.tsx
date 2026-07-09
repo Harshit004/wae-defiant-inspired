@@ -276,8 +276,10 @@ export default function Home() {
               <div style={{ height: "clamp(12px, 1.5vw, 22px)" }} />
               <p
                 style={{
+                  fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(14px, 1.67vw, 24px)",
+                  fontStyle: "normal",
+                  fontSize: "30px",
                   lineHeight: "115%",
                   letterSpacing: "0%",
                   verticalAlign: "middle",
@@ -285,9 +287,7 @@ export default function Home() {
                   margin: 0,
                 }}
               >
-                A good water company
-                <br />
-                from water intake to water reuse
+                Our Green is Blue
               </p>
             </div>
           </div>
