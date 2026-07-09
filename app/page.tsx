@@ -10,6 +10,9 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
+import dynamic from "next/dynamic"
+
+const WaterWave = dynamic(() => import('react-water-wave'), { ssr: false })
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
@@ -220,13 +223,13 @@ export default function Home() {
         {/* Background Image (Placed below the header visually) */}
         <div className="absolute inset-0 w-full h-full flex items-center justify-center z-0 pt-[140px]">
           <div className="relative w-full h-full">
-            <Image
-              src="/image 572.png"
-              alt="Hero Background"
-              fill
-              className="object-contain"
-              priority
-            />
+            <WaterWave
+              imageUrl="/image 572.png"
+              className="w-full h-full"
+              style={{ backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
+            >
+              {() => <div className="w-full h-full" />}
+            </WaterWave>
           </div>
         </div>
 
