@@ -10,14 +10,14 @@ const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
 
 // Menu data
 const productsItems = [
-    { text: "This is Us", href: "/this-is-us" },
-    { text: "Our Portfolio", href: "/our-portfolio" },
+    { text: "Profile", href: "/profile" },
+    { text: "Portfolio", href: "/portfolio" },
     { text: "Reimagine Work", href: "/careers" },
 ]
 const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
-    { text: "The Activist Co.", href: "/the-activist-co" },
-    { text: "Blog", href: "/blogs" },
+    { text: "Activism", href: "/activism" },
+    { text: "Perspectives", href: "/perspectives" },
 ]
 const etceteraItems = [
     { text: "Contact", href: "/contact-us" },
@@ -35,7 +35,7 @@ const Header: FC = () => {
                     <div className={containerClass}>
                         <div className="grid grid-cols-[auto_minmax(0,10.17vw)_auto_minmax(0,10.21vw)_auto_minmax(0,10.21vw)_auto_minmax(0,9.03vw)_auto_minmax(0,8.13vw)_1fr] items-start pt-[30px]">
                             {/* Headings */}
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>IDENTITY</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>PERSONA</div>
                             <div></div>
                             <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>ORIGIN</div>
                             <div></div>
@@ -51,7 +51,7 @@ const Header: FC = () => {
                             <div className="col-span-11 w-full h-px bg-white mb-[10px]" />
 
                             {/* Logo */}
-                            <div className="row-span-6 flex flex-col justify-start pt-1 w-[64px]">
+                            <div className="row-span-6 flex flex-col justify-start pt-1 w-[64px] relative group z-20">
                                 <Link href="/">
                                     <Image
                                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
@@ -61,12 +61,27 @@ const Header: FC = () => {
                                         priority
                                     />
                                 </Link>
+                                <div className="absolute left-[74px] top-[9px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center h-[50px] pointer-events-none w-[240px]">
+                                    <div className="w-[1px] bg-[#666666] h-[45px]"></div>
+                                    <div className="ml-[10px] w-[201px]" style={{
+                                        fontFamily: "'Manrope', sans-serif",
+                                        fontWeight: 500,
+                                        fontSize: "10px",
+                                        lineHeight: "100%",
+                                        letterSpacing: "0px",
+                                        color: "white"
+                                    }}>
+                                        Six. The perfect number.<br/>
+                                        Wholeness in form. Freedom in motion.<br/>
+                                        Balance by design.
+                                    </div>
+                                </div>
                             </div>
                             <div className="row-span-6"></div>
 
                             {/* Coordinates */}
                             <div
-                                className="row-span-6 mr-1 pt-1"
+                                className="row-span-6 mr-1 pt-1 relative group w-max"
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     fontWeight: 500,
@@ -76,9 +91,14 @@ const Header: FC = () => {
                                     whiteSpace: "nowrap",
                                 }}
                             >
-                                20.5937° N
-                                <br />
-                                78.9629° E
+                                <div className="group-hover:opacity-0 transition-opacity duration-300">
+                                    20.5937° N
+                                    <br />
+                                    78.9629° E
+                                </div>
+                                <div className="absolute top-1 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                    <img src="/image 571.png" alt="India Flag" width="32" height="21" className="object-cover rounded-sm" />
+                                </div>
                             </div>
                             <div className="row-span-6"></div>
 
