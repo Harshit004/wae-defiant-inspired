@@ -563,13 +563,29 @@ export default function Home() {
       <section
         className="bg-black text-white border-b border-white"
         style={{
-          paddingTop: '124px',
           paddingBottom: '124px',
           paddingLeft: '2.5vw',
           paddingRight: '2.5vw'
         }}
       >
         <div className="w-full">
+          <div style={{ height: '123px' }} />
+          <h3
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontStyle: 'normal',
+              fontSize: '24px',
+              lineHeight: '115%',
+              letterSpacing: '0%',
+              verticalAlign: 'middle',
+              color: '#FFFFFF',
+              marginLeft: '5vw'
+            }}
+          >
+            Product Portfolio
+          </h3>
+          <div style={{ height: '26px' }} />
           <h2
             style={{
               fontFamily: "'Inter Tight', sans-serif",
@@ -585,22 +601,20 @@ export default function Home() {
             Every product is designed to replace plastic and reduce operational carbon footprint.
           </h2>
 
-          <div style={{ height: '113px' }} />
+          <div style={{ height: '124px' }} />
 
           <div className="flex justify-between items-start">
             <h3
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontStyle: 'normal',
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 700,
                 fontSize: '24px',
-                lineHeight: '115%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
+                lineHeight: '110%',
+                letterSpacing: '0px',
                 color: '#FFFFFF'
               }}
             >
-              Product Portfolio
+              Our Products
             </h3>
             <p
               className="leading-normal"
@@ -618,7 +632,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div style={{ height: '26px' }} />
+          <div style={{ height: '18px' }} />
 
           <div className="grid grid-cols-4 w-full" style={{ height: '506px' }}>
             {/* Aurela */}
@@ -955,18 +969,6 @@ export default function Home() {
 
         <div className="relative z-10 flex flex-col justify-between h-full">
           <div className="max-w-[600px]">
-            <p
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: '20px',
-                lineHeight: '110%',
-                color: '#FFFFFF'
-              }}
-            >
-              Impact
-            </p>
-            <div style={{ height: '10px' }} />
             <h2
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
@@ -976,8 +978,20 @@ export default function Home() {
                 color: '#FFFFFF'
               }}
             >
-              Real numbers. Real results.
+              Impact
             </h2>
+            <div style={{ height: '10px' }} />
+            <p
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: '20px',
+                lineHeight: '110%',
+                color: '#FFFFFF'
+              }}
+            >
+              Real numbers. Real results.
+            </p>
             <div style={{ height: '32px' }} />
             <p
               style={{

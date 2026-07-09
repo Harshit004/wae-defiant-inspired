@@ -193,7 +193,7 @@ export default function Footer() {
 
             {/* Navigation link columns */}
             <div className="w-full relative">
-              <div className="grid grid-cols-3 justify-between w-full">
+              <div className="grid grid-cols-[auto_auto_auto_auto] justify-between w-full">
                 {/* Column headings */}
                 <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
                   INSIDE WAE
@@ -204,9 +204,12 @@ export default function Footer() {
                 <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
                   ETCETERA
                 </h3>
+                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
+                  POLICIES
+                </h3>
 
                 {/* Single continuous horizontal rule */}
-                <div className="col-span-3 w-full h-[0.67px] bg-white mb-3" />
+                <div className="col-span-4 w-full h-[0.67px] bg-white mb-3" />
 
                 {/* Link lists */}
                 {/* INSIDE WAE */}
@@ -228,6 +231,13 @@ export default function Footer() {
                   <li><Link href="/blogs" className="hover:opacity-80 transition-opacity">Perspectives</Link></li>
                   <li><Link href="/news-and-updates" className="hover:opacity-80 transition-opacity">Mentioned</Link></li>
                   <li><Link href="/contact-us" className="hover:opacity-80 transition-opacity">Contact</Link></li>
+                </ul>
+
+                {/* POLICIES */}
+                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
+                  <li><Link href="/terms-of-use" className="hover:opacity-80 transition-opacity">Terms of Use</Link></li>
+                  <li><Link href="/cookie-policy" className="hover:opacity-80 transition-opacity">Cookie Policy</Link></li>
+                  <li><Link href="/data-privacy-policy" className="hover:opacity-80 transition-opacity">Data Privacy Policy</Link></li>
                 </ul>
               </div>
             </div>
