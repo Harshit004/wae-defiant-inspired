@@ -31,7 +31,7 @@ const Header: FC = () => {
     return (
         <>
             <div>
-                <header ref={headerRef} className="w-full absolute top-0 left-0 z-50 pb-5 bg-transparent text-white">
+                <header ref={headerRef} className="w-full absolute top-0 left-0 z-50 pb-5 text-white" style={{ backgroundColor: '#0D0D0D' }}>
                     <div className={containerClass}>
                         <div className="grid grid-cols-[auto_minmax(0,10.17vw)_auto_minmax(0,10.21vw)_auto_minmax(0,10.21vw)_auto_minmax(0,9.03vw)_auto_minmax(0,8.13vw)_1fr] items-start pt-[30px]">
                             {/* Headings */}
@@ -61,13 +61,13 @@ const Header: FC = () => {
                                         priority
                                     />
                                 </Link>
-                                <div className="absolute left-[74px] top-[9px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center h-[50px] pointer-events-none w-[240px]">
+                                <div className="absolute left-0 top-[85px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center h-[50px] pointer-events-none w-[240px]">
                                     <div className="w-[1px] bg-[#666666] h-[45px]"></div>
                                     <div className="ml-[10px] w-[201px]" style={{
                                         fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 500,
                                         fontSize: "10px",
-                                        lineHeight: "100%",
+                                        lineHeight: "130%",
                                         letterSpacing: "0px",
                                         color: "white"
                                     }}>
@@ -97,7 +97,7 @@ const Header: FC = () => {
                                     78.9629° E
                                 </div>
                                 <div className="absolute top-1 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                                    <Image src="/image-571.png" alt="India Flag" width={32} height={21} className="object-cover rounded-sm" />
+                                    <Image src="/image-571.png" alt="India Flag" width={38} height={25} className="object-cover rounded-sm" />
                                 </div>
                             </div>
                             <div className="row-span-6"></div>

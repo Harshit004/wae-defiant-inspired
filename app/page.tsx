@@ -214,41 +214,20 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full h-screen relative flex items-center justify-center bg-black overflow-hidden"
+        className="w-full h-screen relative flex items-center justify-center bg-[#0D0D0D] overflow-hidden"
         style={{ height: "100vh" }}
       >
-        {/* 1. Video (Bottommost) */}
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center z-0">
-          <video
-            src="/home2-hero.mp4"
-            autoPlay
-            muted
-            playsInline
-            loop
-            className="w-full h-full object-cover rounded-none"
-          />
-        </div>
-
-        {/* 2. Black Overlay (Above Video) */}
-        <div className="absolute inset-0 w-full h-full z-[1]">
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/08bdc7d2-46d9-4096-5660-2e4400b2fa00/public"
-            alt="Black Overlay"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-
-        {/* 3. Left Half Image Overlay (Above Black Overlay) */}
-        <div className="opacity-85 absolute top-0 left-0 w-1/2 h-full z-[2]">
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a64aad7f-4108-491d-9bf8-d1266178ab00/public"
-            alt="Hero Overlay"
-            fill
-            className="object-cover"
-            priority
-          />
+        {/* Background Image (Placed below the header visually) */}
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center z-0 pt-[140px]">
+          <div className="relative w-full h-full">
+            <Image
+              src="/image 572.png"
+              alt="Hero Background"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
 
         {/* 4. Hero Content Text (Topmost) */}
@@ -603,19 +582,7 @@ export default function Home() {
 
           <div style={{ height: '124px' }} />
 
-          <div className="flex justify-between items-start">
-            <h3
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontWeight: 700,
-                fontSize: '24px',
-                lineHeight: '110%',
-                letterSpacing: '0px',
-                color: '#FFFFFF'
-              }}
-            >
-              Our Products
-            </h3>
+          <div className="flex justify-end items-start">
             <p
               className="leading-normal"
               style={{
