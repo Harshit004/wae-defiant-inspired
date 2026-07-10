@@ -122,5 +122,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/product-description-page?product=nt01",
     "type": "product",
     "createdAt": "2026-07-09T04:57:45.140Z"
+  },
+  "86d52290-cb6d-4c5b-a956-271277e76bfa": {
+    "id": "86d52290-cb6d-4c5b-a956-271277e76bfa",
+    "fullName": "asads",
+    "companyName": "asdasda",
+    "email": "asdasd@dasdasd.com",
+    "phone": "asdsadsa",
+    "city": "asdsad",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "asdsadsa",
+    "type": "contact-us",
+    "createdAt": "2026-07-10T11:16:20.755Z"
   }
 };
