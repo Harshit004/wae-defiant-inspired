@@ -290,5 +290,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-07-10T11:57:30.284Z"
+  },
+  "c130ed5a-5143-41bc-8e15-8c6384c88bec": {
+    "id": "c130ed5a-5143-41bc-8e15-8c6384c88bec",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-07-10T11:57:32.468Z"
   }
 };
