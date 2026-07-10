@@ -146,5 +146,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "dasdasdasd",
     "type": "contact-us",
     "createdAt": "2026-07-10T11:16:39.894Z"
+  },
+  "146b0ea4-b41d-4c84-8452-74f642dc0cbe": {
+    "id": "146b0ea4-b41d-4c84-8452-74f642dc0cbe",
+    "fullName": "sdsad",
+    "companyName": "asdasd",
+    "email": "asdasd@asdsad",
+    "phone": "asdasd",
+    "city": "asdas",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "asdsad",
+    "type": "contact-us",
+    "createdAt": "2026-07-10T11:16:58.628Z"
   }
 };
