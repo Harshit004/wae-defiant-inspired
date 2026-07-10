@@ -182,5 +182,29 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-07-10T11:21:20.154Z"
+  },
+  "b062c7f5-28a4-4b7f-b158-d553b2f9c3ad": {
+    "id": "b062c7f5-28a4-4b7f-b158-d553b2f9c3ad",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-07-10T11:21:21.201Z"
+  },
+  "4234cc98-9274-4c7b-b946-97acdf2b5c71": {
+    "id": "4234cc98-9274-4c7b-b946-97acdf2b5c71",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-07-10T11:21:22.838Z"
   }
 };
