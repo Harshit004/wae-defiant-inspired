@@ -279,8 +279,8 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "type": "aaaaaaa",
     "createdAt": "2026-07-10T11:57:27.510Z"
   },
-  "038fe831-76ed-41ed-b9e5-ad527667ac7d": {
-    "id": "038fe831-76ed-41ed-b9e5-ad527667ac7d",
+  "f9cf8039-e838-4583-9f4c-2b8e737fc3a3": {
+    "id": "f9cf8039-e838-4583-9f4c-2b8e737fc3a3",
     "fullName": "aaaaaaa",
     "companyName": "aaaaaa",
     "email": "aaa",
@@ -289,42 +289,6 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "aaaaa",
     "message": "aaa",
     "type": "aaaaaaa",
-    "createdAt": "2026-07-10T11:57:30.284Z"
-  },
-  "c130ed5a-5143-41bc-8e15-8c6384c88bec": {
-    "id": "c130ed5a-5143-41bc-8e15-8c6384c88bec",
-    "fullName": "aaaaaaa",
-    "companyName": "aaaaaa",
-    "email": "aaa",
-    "phone": "aaaaa",
-    "city": "aaaa",
-    "pageLink": "aaaaa",
-    "message": "aaa",
-    "type": "aaaaaaa",
-    "createdAt": "2026-07-10T11:57:32.468Z"
-  },
-  "e663ea27-526f-42b7-8463-0578df5379f4": {
-    "id": "e663ea27-526f-42b7-8463-0578df5379f4",
-    "fullName": "aaaaaaa",
-    "companyName": "aaaaaa",
-    "email": "aaa",
-    "phone": "aaaaa",
-    "city": "aaaa",
-    "pageLink": "aaaaa",
-    "message": "aaa",
-    "type": "aaaaaaa",
-    "createdAt": "2026-07-10T11:57:34.394Z"
-  },
-  "a2e36c7b-188b-4dec-b530-33a9496e2c7f": {
-    "id": "a2e36c7b-188b-4dec-b530-33a9496e2c7f",
-    "fullName": "aaaaaaa",
-    "companyName": "aaaaaa",
-    "email": "aaa",
-    "phone": "aaaaa",
-    "city": "aaaa",
-    "pageLink": "aaaaa",
-    "message": "aaa",
-    "type": "aaaaaaa",
-    "createdAt": "2026-07-10T11:57:36.165Z"
+    "createdAt": "2026-07-10T11:59:39.703Z"
   }
 };
