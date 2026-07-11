@@ -386,5 +386,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-07-10T13:33:57.841Z"
+  },
+  "1db1c8a2-b6bd-470b-b2e4-7430a1f898c4": {
+    "id": "1db1c8a2-b6bd-470b-b2e4-7430a1f898c4",
+    "fullName": "Ravi Mahor",
+    "companyName": "Manish Electricals",
+    "email": "manishelectricals21@gmail.com",
+    "phone": "7974364170",
+    "city": "Gwalior",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "This is to request servicing of the sensor-operated water fountain installed at Bhuj Airport. Kindly depute your service engineer to inspect and rectify the issue at the earliest.\n\nand send the qoutation of our Mail ID manishelectricals21@gmail.com",
+    "type": "contact-us",
+    "createdAt": "2026-07-11T12:28:38.771Z"
   }
 };
