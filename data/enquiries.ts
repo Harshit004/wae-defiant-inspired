@@ -398,5 +398,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "This is to request servicing of the sensor-operated water fountain installed at Bhuj Airport. Kindly depute your service engineer to inspect and rectify the issue at the earliest.\n\nand send the qoutation of our Mail ID manishelectricals21@gmail.com",
     "type": "contact-us",
     "createdAt": "2026-07-11T12:28:38.771Z"
+  },
+  "f4a7abde-57b3-496a-9542-2edc1700941e": {
+    "id": "f4a7abde-57b3-496a-9542-2edc1700941e",
+    "fullName": "Abel Write",
+    "companyName": "write consultant sarl",
+    "email": "writeabel@yahoo.com",
+    "phone": "0022896331995",
+    "city": "lome",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Goodday,\nWe are interested in purchasing a  inquire  Drinking Water Filter in large quantity needed  Regards Abel write",
+    "type": "contact-us",
+    "createdAt": "2026-07-12T18:31:55.167Z"
   }
 };
