@@ -16,7 +16,7 @@ export default function DataPrivacyPolicy() {
           background: 'linear-gradient(160deg, #004063 4.52%, #0F0F0F 40%)', height: 'clamp(500px, 80vh, 875px)'
         }}
       />
-      <Header />
+      <Header transparentBg />
 
       <div className={`${containerClass} relative z-10 pt-[230px] pb-[120px]`}>
         {/* Title & Subtitle */}

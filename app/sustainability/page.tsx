@@ -142,7 +142,7 @@ export default function Home() {
         }}
       />
       {/* HEADER */}
-      <Header />
+      <Header transparentBg />
       {/* HERO SECTION */}
       <section
         id="hero"

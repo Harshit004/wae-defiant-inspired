@@ -243,7 +243,7 @@ const etceteraItems = [
     return (
         <main className="relative">
             {/* HEADER */}
-            <Header />
+            <Header transparentBg />
 
             {/* MAIN CONTENT */}
             <div style={{

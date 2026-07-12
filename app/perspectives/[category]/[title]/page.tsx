@@ -62,7 +62,7 @@ export default function DynamicBlogPost() {
   if (!blogData) {
     return (
       <main className="relative bg-[#0F0F0F] text-white min-h-screen">
-        <Header />
+        <Header transparentBg />
         <div className="h-[220px]" />
         <section className={containerClass}>
           <div className="text-center py-20">
@@ -102,7 +102,7 @@ export default function DynamicBlogPost() {
 
   return (
     <main className="relative bg-[#0F0F0F] text-white min-h-screen">
-      <Header />
+      <Header transparentBg />
 
       {/* Hero section */}
       <section id="hero" className="relative w-full overflow-hidden pt-0">

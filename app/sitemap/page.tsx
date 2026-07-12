@@ -151,7 +151,7 @@ export default function SitemapPage() {
         }}
       />
 
-      <Header />
+      <Header transparentBg />
 
       <section className="relative z-10 pt-[220px]">
         <div className={containerClass}>

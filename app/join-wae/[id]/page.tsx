@@ -66,7 +66,7 @@ export default function JobDescriptionPage() {
         }}
       />
 
-      <Header />
+      <Header transparentBg />
 
       <section className="pt-[254px] relative z-10">
         <div className={containerClass}>

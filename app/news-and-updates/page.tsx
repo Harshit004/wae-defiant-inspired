@@ -32,7 +32,7 @@ export default function NewsAndUpdatesPage() {
       />
 
       <div>
-        <Header />
+        <Header transparentBg />
       </div>
 
       {/* Main Content Area */}
@@ -65,7 +65,7 @@ export default function NewsAndUpdatesPage() {
                 lineHeight: '100%'
               }}
             >
-              Awards & Recognitions
+              Awards & Honours
             </button>
           </Link>
         </div>

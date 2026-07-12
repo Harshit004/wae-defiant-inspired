@@ -33,7 +33,7 @@ export default function AwardsAndRecognitionsPage() {
       />
 
       <div>
-        <Header />
+        <Header transparentBg />
       </div>
 
       {/* Main Content Area */}

@@ -87,7 +87,7 @@ export default function ContactUsPage() {
       />
 
       <div>
-        <Header />
+        <Header transparentBg />
       </div>
       {/* ── HERO + FORM SECTION ── */}
       {/* 77px gap after header */}

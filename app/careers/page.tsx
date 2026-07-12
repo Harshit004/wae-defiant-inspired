@@ -52,7 +52,7 @@ export default function CareersPage() {
         }}
       />
 
-      <Header />
+      <Header transparentBg />
 
       <section className="pt-[235px] relative z-10">
         <div className={containerClass}>

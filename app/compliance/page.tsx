@@ -64,7 +64,7 @@ export default function CompliancePage() {
             />
 
             <div>
-                <Header />
+                <Header transparentBg />
             </div>
 
             {/* Main Content Area */}

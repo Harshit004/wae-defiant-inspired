@@ -25,13 +25,13 @@ const etceteraItems = [
     { text: "Contact", href: "/contact-us" },
 ]
 
-const Header: FC = () => {
+const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
     const headerRef = useRef<HTMLDivElement>(null)
 
     return (
         <>
             <div>
-                <header ref={headerRef} className="w-full absolute top-0 left-0 z-50 pb-5 text-white" style={{ backgroundColor: '#0D0D0D' }}>
+                <header ref={headerRef} className="w-full absolute top-0 left-0 z-50 pb-5 text-white" style={{ backgroundColor: transparentBg ? 'transparent' : '#0D0D0D' }}>
                     <div className={containerClass}>
                         <div className="grid grid-cols-[auto_minmax(0,10.17vw)_auto_minmax(0,10.21vw)_auto_minmax(0,10.21vw)_auto_minmax(0,9.03vw)_auto_minmax(0,8.13vw)_1fr] items-start pt-[30px]">
                             {/* Headings */}

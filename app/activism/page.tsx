@@ -20,7 +20,7 @@ export default function TheActivistCoPage() {
       />
 
       <div className="relative z-50">
-        <Header />
+        <Header transparentBg />
       </div>
 
       {/* Main Content Area */}

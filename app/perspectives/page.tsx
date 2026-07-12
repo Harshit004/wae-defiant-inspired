@@ -87,7 +87,7 @@ export default function Home() {
         }}
       >
         {/* HEADER */}
-        <Header />
+        <Header transparentBg />
 
         {/* spacer to prevent overlay under absolute header */}
         <div className="h-[180px] lg:h-[220px]" />

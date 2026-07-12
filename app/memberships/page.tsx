@@ -54,7 +54,7 @@ export default function MembershipsPage() {
             />
 
             <div>
-                <Header />
+                <Header transparentBg />
             </div>
 
             {/* Main Content Area */}
