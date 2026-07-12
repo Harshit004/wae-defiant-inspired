@@ -288,7 +288,7 @@ export default function Home() {
 
   return (
     <main className="relative">
-      <Header />
+      <Header transparentBg />
 
       {/* HERO SECTION */}
       <section

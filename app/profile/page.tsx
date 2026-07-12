@@ -220,7 +220,7 @@ const TimelineSection = () => {
 const ThisIsUs: FC = () => {
     return (
         <main className="min-h-screen bg-[#0A0A0A] text-white selection:bg-white/30 selection:text-white">
-            <Header />
+            <Header transparentBg />
 
             {/* HERO SECTION */}
             <section className="w-full pt-[235px] pb-[68px]">

@@ -937,6 +937,28 @@ export default function Home() {
           />
         </div>
 
+        {/* Animated Overlay Image */}
+        <motion.div
+          className="absolute top-0 right-0 h-full w-auto pointer-events-none select-none z-0"
+          animate={{
+            opacity: [0, 1, 0, 0]
+          }}
+          transition={{
+            duration: 4.0,
+            times: [0, 0.0375, 0.075, 1], // Flash occurs over 0.3s, then 3.7s delay before next cycle
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <Image
+            src="/image 570 (1).png"
+            alt="Impact Overlay"
+            width={1000}
+            height={1000}
+            className="h-full w-auto object-cover object-right"
+          />
+        </motion.div>
+
         <div className="relative z-10 flex flex-col justify-between h-full">
           <div className="max-w-[600px]">
             <h2

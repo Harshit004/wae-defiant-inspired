@@ -8,6 +8,7 @@ import { Suspense } from "react"
 import { Toaster } from "sonner"
 import ScrollToTop from "@/components/scroll-to-top"
 import MobileBlocker from "@/components/mobile-blocker"
+import WhatsAppWidget from "@/components/whatsapp-widget"
 import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -39,12 +40,7 @@ export default function RootLayout({
         </Suspense>
         <ScrollToTop />
         <Toaster />
-        <Script
-          type="text/javascript"
-          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
-          id="aisensy-wa-widget"
-          widget-id="aab32h"
-        />
+        <WhatsAppWidget />
       </body>
     </html>
   )
