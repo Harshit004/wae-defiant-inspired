@@ -279,7 +279,7 @@ export default function Home() {
       {/* Purpose, Philisophy & Principle Section */}
       <section className="relative bg-black text-white w-full">
         <div className="w-full h-[576px]">
-          <div className="grid grid-cols-3 h-full border-b border-white">
+          <div className="grid grid-cols-3 h-full border-b border-[#FFFFFF4D]">
             {/* Column 1: Purpose */}
             <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
               <div className="flex flex-col w-full max-w-[320px]">
@@ -543,7 +543,7 @@ export default function Home() {
 
       {/* Our Products Section */}
       <section
-        className="bg-black text-white border-b border-white"
+        className="bg-black text-white border-b border-[#FFFFFF4D]"
         style={{
           paddingBottom: '124px',
           paddingLeft: '2.5vw',
@@ -710,7 +710,7 @@ export default function Home() {
 
       {/* Carbon Neutral Section */}
       <section
-        className="bg-black text-white border-b border-white"
+        className="bg-black text-white border-b border-[#FFFFFF4D]"
         style={{
           paddingBottom: '123px',
           paddingLeft: '7.5vw',
@@ -1093,7 +1093,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="w-full h-px bg-white" />
+      <div className="w-full h-px bg-[#FFFFFF4D]" />
 
       {/* BLOGS SECTION */}
       <section
