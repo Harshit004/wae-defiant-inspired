@@ -55,11 +55,38 @@ export default function WhatsAppWidget() {
   }
 
   return (
-    <Script
-      type="text/javascript"
-      src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
-      id="aisensy-wa-widget"
-      widget-id="aab3lf"
-    />
+    <>
+      <Script
+        type="text/javascript"
+        src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+        id="aisensy-wa-widget"
+        widget-id="aab3lf"
+      />
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .df-btn-text svg.df-svg-icon {
+            display: none !important;
+          }
+          .df-btn.df-closed {
+            background: transparent !important;
+            box-shadow: none !important;
+          }
+          .df-btn-text {
+            background: transparent !important;
+            padding: 0 !important;
+          }
+          .df-btn-text::before {
+            content: "";
+            display: inline-block;
+            width: 54px;
+            height: 54px;
+            background-image: url('https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/948bd474-7dce-4e82-edf0-be31f6620e00/public');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        `
+      }} />
+    </>
   );
 }
