@@ -15,10 +15,9 @@ export default function WhatsAppWidget() {
         
         const tooltip = document.createElement("div");
         tooltip.innerText = "Chat With Us";
-        tooltip.style.position = "absolute";
-        tooltip.style.right = "100%";
-        tooltip.style.top = "50%";
-        tooltip.style.marginRight = "16px";
+        tooltip.style.position = "fixed";
+        tooltip.style.bottom = "36px"; /* Centered vertically relative to the 54px widget at bottom: 24px */
+        tooltip.style.right = "94px"; /* 24px (widget right) + 54px (widget width) + 16px (gap) = 94px */
         tooltip.style.backgroundColor = "#ffffff";
         tooltip.style.color = "#000000";
         tooltip.style.fontFamily = "'Manrope', sans-serif";
@@ -30,19 +29,19 @@ export default function WhatsAppWidget() {
         tooltip.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
         tooltip.style.pointerEvents = "none";
         tooltip.style.opacity = "0";
-        tooltip.style.transform = "translateY(-50%) translateX(5px)";
+        tooltip.style.transform = "translateY(5px)";
         tooltip.style.transition = "opacity 0.3s ease, transform 0.3s ease";
         tooltip.style.zIndex = "10000";
         
-        container.appendChild(tooltip);
+        document.body.appendChild(tooltip);
         
         container.addEventListener("mouseenter", () => {
           tooltip.style.opacity = "1";
-          tooltip.style.transform = "translateY(-50%) translateX(0)";
+          tooltip.style.transform = "translateY(0)";
         });
         container.addEventListener("mouseleave", () => {
           tooltip.style.opacity = "0";
-          tooltip.style.transform = "translateY(-50%) translateX(5px)";
+          tooltip.style.transform = "translateY(5px)";
         });
         
         clearInterval(interval);
@@ -67,6 +66,8 @@ export default function WhatsAppWidget() {
       <style dangerouslySetInnerHTML={{
         __html: `
           #df-btn-cont {
+            position: fixed !important;
+            z-index: 9999 !important;
             width: 54px !important;
             height: 54px !important;
             min-width: 54px !important;
