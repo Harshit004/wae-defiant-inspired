@@ -40,9 +40,7 @@ function Scene({ imgUrl }: { imgUrl: string }) {
     
     // Pass the current screen size and texture size
     materialRef.current.uResolution.set(size.width, size.height);
-    if (texture.image) {
-      materialRef.current.uTextureSize.set(texture.image.width, texture.image.height);
-    }
+    materialRef.current.uTextureSize.set(1440, 691);
     
     // Increment progress time variable to keep the liquid waves undulating
     materialRef.current.uProgress += 0.05;
