@@ -35,17 +35,17 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                     <div className={containerClass}>
                         <div className="grid grid-cols-[auto_minmax(0,10.17vw)_auto_minmax(0,10.21vw)_auto_minmax(0,10.21vw)_auto_minmax(0,9.03vw)_auto_minmax(0,8.13vw)_1fr] items-start pt-[30px]">
                             {/* Headings */}
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%", letterSpacing: "0.1em" }}>PERSONA</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>PERSONA</div>
                             <div></div>
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%", letterSpacing: "0.1em" }}>ORIGIN</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>ORIGIN</div>
                             <div></div>
-                            <div className="uppercase pb-[10px] flex items-center" style={{ position: "relative", left: "-20px", fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%", letterSpacing: "0.1em" }}>OBJECTIVE</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ position: "relative", left: "-20px", fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>OBJECTIVE</div>
                             <div></div>
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%", letterSpacing: "0.1em" }}>INSIDE WAE</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>INSIDE WAE</div>
                             <div></div>
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%", letterSpacing: "0.1em" }}>RESPONSIBILITY</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>RESPONSIBILITY</div>
                             <div></div>
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%", letterSpacing: "0.1em" }}>ETCETERA</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>ETCETERA</div>
 
                             {/* Divider */}
                             <div className="col-span-11 w-full h-px bg-white mb-[10px]" />
@@ -68,7 +68,6 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                         fontWeight: 500,
                                         fontSize: "10px",
                                         lineHeight: "130%",
-                                        letterSpacing: "0px",
                                         color: "white"
                                     }}>
                                         Six. The perfect number.<br/>
@@ -87,7 +86,6 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                     fontWeight: 500,
                                     fontSize: "11px",
                                     lineHeight: "130%",
-                                    letterSpacing: "0.1em",
                                     color: "#ffffff",
                                     whiteSpace: "nowrap",
                                 }}
@@ -111,7 +109,6 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                     fontWeight: 500,
                                     fontSize: "11px",
                                     lineHeight: "130%",
-                                    letterSpacing: "0.1em",
                                     color: "#ffffff",
                                     position: "relative",
                                     left: "-20px",
@@ -132,7 +129,6 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                             fontWeight: 500,
                                             fontSize: "11px",
                                             lineHeight: "110%",
-                                            letterSpacing: "0.1em",
                                         }}
                                     >
                                         {productsItems[i] ? (
@@ -169,7 +165,6 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                             fontWeight: 500,
                                             fontSize: "11px",
                                             lineHeight: "110%",
-                                            letterSpacing: "0.1em",
                                         }}
                                     >
                                         {blueprintItems[i] ? (
@@ -206,7 +201,6 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                             fontWeight: 500,
                                             fontSize: "11px",
                                             lineHeight: "110%",
-                                            letterSpacing: "0.1em",
                                         }}
                                     >
                                         {etceteraItems[i] ? (

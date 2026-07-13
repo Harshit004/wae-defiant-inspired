@@ -9,6 +9,13 @@ import { WaterDistortionMaterial } from './WaterDistortionMaterial';
 extend({ WaterDistortionMaterial });
 
 declare global {
+  namespace React {
+    namespace JSX {
+      interface IntrinsicElements {
+        waterDistortionMaterial: any;
+      }
+    }
+  }
   namespace JSX {
     interface IntrinsicElements {
       waterDistortionMaterial: any;

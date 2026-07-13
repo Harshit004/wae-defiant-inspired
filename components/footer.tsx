@@ -38,7 +38,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="text-white w-full m-0 p-0" style={{ marginBottom: 0, background: 'linear-gradient(146.25deg, #002C43 10.53%, #000000 50.39%)' }}>
+    <footer className="text-white w-full m-0 p-0 border-t border-[#FFFFFF4D]" style={{ marginBottom: 0, background: 'linear-gradient(146.25deg, #002C43 10.53%, #000000 50.39%)' }}>
 
       {/* ── Main content ── */}
       <div
@@ -209,7 +209,7 @@ export default function Footer() {
                 </h3>
 
                 {/* Single continuous horizontal rule */}
-                <div className="col-span-4 w-full h-[0.67px] bg-white mb-3" />
+                <div className="col-span-4 w-full h-[0.67px] bg-[#FFFFFF4D] mb-3" />
 
                 {/* Link lists */}
                 {/* INSIDE WAE */}

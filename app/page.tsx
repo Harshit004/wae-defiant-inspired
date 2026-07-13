@@ -297,7 +297,7 @@ export default function Home() {
         <div className="w-full h-[576px]">
           <div className="grid grid-cols-3 h-full border-b border-[#FFFFFF4D]">
             {/* Column 1: Purpose */}
-            <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
+            <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
               <div className="flex flex-col w-full max-w-[320px]">
                 <h2
                   style={{
@@ -383,7 +383,7 @@ export default function Home() {
             </div>
 
             {/* Column 2: Philisophy */}
-            <div className="flex flex-col h-full items-center justify-center border-r border-white px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
+            <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
               <div className="flex flex-col w-full max-w-[320px]">
                 <h2
                   style={{
