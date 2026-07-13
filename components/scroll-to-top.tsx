@@ -36,7 +36,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-20 right-8 z-[9999] hover:opacity-80 transition-opacity animate-in fade-in duration-300"
+      className="fixed bottom-6 right-[100px] z-[9999] hover:opacity-80 transition-opacity animate-in fade-in duration-300"
       style={{ width: "54px", height: "54px" }}
       aria-label="Scroll to top"
     >
