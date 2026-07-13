@@ -48,7 +48,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                             <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%", letterSpacing: "0.1em" }}>ETCETERA</div>
 
                             {/* Divider */}
-                            <div className="col-span-11 w-full h-px bg-[#FFFFFF4D] mb-[10px]" />
+                            <div className="col-span-11 w-full h-px bg-white mb-[10px]" />
 
                             {/* Logo */}
                             <div className="row-span-6 flex flex-col justify-start pt-1 w-[64px] relative group z-20">
