@@ -422,5 +422,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "QUOTE FOR 40 L WATER DISPENSERS",
     "type": "contact-us",
     "createdAt": "2026-07-13T04:38:10.398Z"
+  },
+  "daea95e8-c003-4eca-8504-cb462de51dfd": {
+    "id": "daea95e8-c003-4eca-8504-cb462de51dfd",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-07-13T07:23:59.556Z"
   }
 };
