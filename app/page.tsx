@@ -223,7 +223,7 @@ export default function Home() {
         {/* Background Image (Placed below the header visually) */}
         <div className="absolute inset-0 w-full h-full flex items-center justify-center z-0 pt-[140px]">
           <div className="relative w-full h-full">
-            <WaterCanvas imgUrl="/image 572.png" />
+            <WaterCanvas imgUrl="/image%20572.png" />
           </div>
         </div>
 
@@ -1087,7 +1087,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="w-full h-px bg-white/20" />
+      <div className="w-full bg-black">
+        <div className="w-full h-px bg-white/20" />
+      </div>
 
       {/* BLOGS SECTION */}
       <section
