@@ -957,17 +957,16 @@ export default function Home() {
         <motion.div
           className="absolute top-0 right-0 h-full w-auto pointer-events-none select-none z-0"
           animate={{
-            opacity: [0, 1, 0, 0]
+            opacity: [0, 1, 0]
           }}
           transition={{
-            duration: 4.0,
-            times: [0, 0.0625, 0.125, 1], // Flash occurs over 0.5s, then 3.5s delay before next cycle
+            duration: 0.25,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         >
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e1092824-565b-4b9b-ebce-678ae7c10900/public"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0216ce3e-2076-4530-8ebc-53e884515d00/public"
             alt="Impact Overlay"
             width={1000}
             height={1000}
