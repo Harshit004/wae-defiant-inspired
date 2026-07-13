@@ -65,19 +65,6 @@ export default function WhatsAppWidget() {
       />
       <style dangerouslySetInnerHTML={{
         __html: `
-          #df-btn-cont {
-            position: fixed !important;
-            z-index: 9999 !important;
-            width: 54px !important;
-            height: 54px !important;
-            min-width: 54px !important;
-            min-height: 54px !important;
-            right: 24px !important;
-            bottom: 24px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-          }
           .df-btn-text svg.df-svg-icon {
             display: none !important;
           }
