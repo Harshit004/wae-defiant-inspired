@@ -900,7 +900,7 @@ export default function Home() {
                 WAE eliminates the emission chain of single-use plastic water. From production and transport to refrigeration and disposal. Each active system removes an estimated 20,000–30,000 bottles per year. It supports verified Scope 3 reductions aligned with SBTi and net zero goals.
               </p>
               <div style={{ height: '22px' }} />
-              <div className="w-full h-px bg-[#FFFFFF4D]" />
+              <div className="w-full h-px bg-white/20" />
             </div>
 
           </div>
@@ -1087,7 +1087,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="w-full h-px bg-[#FFFFFF4D]" />
+      <div className="w-full h-px bg-white/20" />
 
       {/* BLOGS SECTION */}
       <section
