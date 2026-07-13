@@ -237,9 +237,9 @@ export default function Home() {
         style={{ height: "100vh" }}
       >
         {/* Background Image (Placed below the header visually) */}
-        <div
-          className="absolute inset-0 w-full h-full flex items-start justify-center z-0 opacity-60 overflow-hidden"
-          style={{ paddingTop: `calc(${headerHeight}px)` }}
+        <div 
+          className="absolute inset-0 w-full h-full flex items-start justify-center z-0 opacity-30 overflow-hidden"
+          style={{ paddingTop: `calc(${headerHeight}px + 4vw)` }}
         >
           <div
             className="relative w-full min-w-[800px]"
