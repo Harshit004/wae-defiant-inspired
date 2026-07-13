@@ -250,7 +250,7 @@ export default function Footer() {
       <hr
         style={{
           border: "none",
-          borderTop: "1px solid #FFFFFF",
+          borderTop: "1px solid #FFFFFF4D",
           width: "100%",
           margin: 0,
         }}

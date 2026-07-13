@@ -1258,7 +1258,7 @@ export default function Home() {
           paddingBottom: '123px',
           paddingLeft: '7.5vw',
           paddingRight: '7.5vw',
-          borderTop: '1px solid rgba(255, 255, 255, 1)'
+          borderTop: '1px solid #FFFFFF4D'
         }}
       >
         <div className="w-full">
@@ -1449,7 +1449,7 @@ export default function Home() {
           paddingBottom: '123px',
           paddingLeft: '7.5vw',
           paddingRight: '7.5vw',
-          borderTop: '1px solid rgba(255, 255, 255, 1)'
+          borderTop: '1px solid #FFFFFF4D'
         }}
       >
         <ContactSectionDark />
