@@ -247,14 +247,7 @@ export default function Footer() {
       </div>
 
       {/* ── Full-screen-width copyright rule + text ── */}
-      <hr
-        style={{
-          border: "none",
-          borderTop: "1px solid #FFFFFF4D",
-          width: "100%",
-          margin: 0,
-        }}
-      />
+
       <div
         style={{
           paddingLeft: "7.5vw",

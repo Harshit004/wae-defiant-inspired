@@ -14,7 +14,7 @@ export default function WhatsAppWidget() {
         container.setAttribute("data-tooltip-added", "true");
         
         const tooltip = document.createElement("div");
-        tooltip.innerText = "Click to chat with an Expert";
+        tooltip.innerText = "Chat With Us";
         tooltip.style.position = "fixed";
         tooltip.style.bottom = "36px";
         tooltip.style.right = "90px";
