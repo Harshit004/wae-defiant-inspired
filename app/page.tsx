@@ -945,7 +945,7 @@ export default function Home() {
         {/* Background Image (Buildings) */}
         <div className="absolute top-0 right-0 h-full w-auto opacity-80 pointer-events-none select-none z-0">
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9ec5b38-f695-4ed8-3ef9-ce1a6da6e600/public"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/374f4710-d942-4059-e39c-b5fc24283700/public"
             alt="Impact Background"
             width={1000}
             height={1000}
@@ -961,13 +961,13 @@ export default function Home() {
           }}
           transition={{
             duration: 4.0,
-            times: [0, 0.0375, 0.075, 1], // Flash occurs over 0.3s, then 3.7s delay before next cycle
+            times: [0, 0.0625, 0.125, 1], // Flash occurs over 0.5s, then 3.5s delay before next cycle
             repeat: Infinity,
             ease: "easeInOut"
           }}
         >
           <Image
-            src="/image 570 (1).png"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e1092824-565b-4b9b-ebce-678ae7c10900/public"
             alt="Impact Overlay"
             width={1000}
             height={1000}
