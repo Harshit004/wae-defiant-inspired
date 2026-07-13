@@ -230,7 +230,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                     </div>
 
                                     {/* Spanning border */}
-                                    <div className="col-span-5 border-b border-white mb-2"></div>
+                                    <div className="col-span-5 border-b border-[#FFFFFF4D] mb-2"></div>
                                 </Fragment>
                             ))}
                         </div>

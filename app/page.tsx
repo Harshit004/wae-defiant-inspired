@@ -249,7 +249,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 4. Hero Content Text (Topmost) */}
+        {/* Hero Content Text (Topmost) */}
         <div className="absolute top-0 left-0 w-full h-full z-[3] pointer-events-none flex items-center pt-[65px]">
           <div className={`${containerClass} pointer-events-auto`}>
             <div
