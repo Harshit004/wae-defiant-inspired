@@ -75,7 +75,7 @@ export default function WhatsAppWidget() {
             background: transparent !important;
             padding: 0 !important;
           }
-          .df-btn .df-btn-text::before {
+          #df-btn-cont .df-btn-text::before {
             content: "";
             display: inline-block;
             width: 54px;
