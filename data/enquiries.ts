@@ -410,5 +410,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Goodday,\nWe are interested in purchasing a  inquire  Drinking Water Filter in large quantity needed  Regards Abel write",
     "type": "contact-us",
     "createdAt": "2026-07-12T18:31:55.167Z"
+  },
+  "6ce845f9-b294-47b4-bcc4-c3a1f6faa976": {
+    "id": "6ce845f9-b294-47b4-bcc4-c3a1f6faa976",
+    "fullName": "ANNIE GEORGE",
+    "companyName": "H2O CARE",
+    "email": "annie.h2ocare@gmail.com",
+    "phone": "9495972857",
+    "city": "Kottayam",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "QUOTE FOR 40 L WATER DISPENSERS",
+    "type": "contact-us",
+    "createdAt": "2026-07-13T04:38:10.398Z"
   }
 };
