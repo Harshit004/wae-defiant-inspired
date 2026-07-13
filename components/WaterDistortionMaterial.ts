@@ -30,10 +30,10 @@ export const WaterDistortionMaterial = shaderMaterial(
       float distortion = distance(uv, mouse);
       
       // Create a wave ripple falloff effect based on distance
-      if (distortion < 0.45) {
-        float wave = sin(distortion * 80.0 - uProgress * 5.0) * 0.015;
+      if (distortion < 0.33) {
+        float wave = sin(distortion * 160.0 - uProgress * 5.0) * 0.005;
         // Displace the UV coordinate directions mapping the image
-        uv += (uv - mouse) * wave * (1.0 - distortion / 0.45);
+        uv += (uv - mouse) * wave * (1.0 - distortion / 0.33);
       }
       
       gl_FragColor = texture2D(uTexture, uv);
