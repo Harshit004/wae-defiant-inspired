@@ -20,16 +20,35 @@ function Scene({ imgUrl }: { imgUrl: string }) {
   const materialRef = useRef<any>(null);
   const texture = useLoader(THREE.TextureLoader, imgUrl);
   const mouse = useRef({ x: 0.5, y: 0.5 });
-  const { viewport, size } = useThree();
+  const { viewport } = useThree();
+
+  // Target aspect ratio of the image (1440x691)
+  const targetAspect = 1440 / 691;
+  const viewportAspect = viewport.width / viewport.height;
+
+  let scaleW = viewport.width;
+  let scaleH = viewport.height;
+
+  if (viewportAspect > targetAspect) {
+    // Viewport is wider than target aspect ratio: cover width, crop top/bottom
+    scaleH = viewport.width / targetAspect;
+  } else {
+    // Viewport is taller than target aspect ratio: cover height, crop sides
+    scaleW = viewport.height * targetAspect;
+  }
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      mouse.current.x = e.clientX / window.innerWidth;
-      mouse.current.y = 1.0 - e.clientY / window.innerHeight; // Invert Y axis for WebGL
+      const nsX = e.clientX / window.innerWidth;
+      const nsY = 1.0 - e.clientY / window.innerHeight; // Invert Y axis for WebGL
+      
+      // Map normalized screen coordinates to scaled/cropped mesh coordinates
+      mouse.current.x = (nsX - 0.5) * (viewport.width / scaleW) + 0.5;
+      mouse.current.y = (nsY - 0.5) * (viewport.height / scaleH) + 0.5;
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [viewport.width, viewport.height, scaleW, scaleH]);
 
   useFrame(() => {
     if (!materialRef.current) return;
@@ -38,16 +57,12 @@ function Scene({ imgUrl }: { imgUrl: string }) {
     materialRef.current.uMouse.x = THREE.MathUtils.lerp(materialRef.current.uMouse.x, mouse.current.x, 0.1);
     materialRef.current.uMouse.y = THREE.MathUtils.lerp(materialRef.current.uMouse.y, mouse.current.y, 0.1);
     
-    // Pass the current screen size and texture size
-    materialRef.current.uResolution.set(size.width, size.height);
-    materialRef.current.uTextureSize.set(1440, 691);
-    
     // Increment progress time variable to keep the liquid waves undulating
     materialRef.current.uProgress += 0.05;
   });
 
   return (
-    <mesh scale={[viewport.width, viewport.height, 1]}>
+    <mesh scale={[scaleW, scaleH, 1]}>
       <planeGeometry args={[1, 1]} />
       <waterDistortionMaterial ref={materialRef} uTexture={texture} />
     </mesh>

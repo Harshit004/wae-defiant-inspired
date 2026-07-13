@@ -6,8 +6,6 @@ export const WaterDistortionMaterial = shaderMaterial(
     uTexture: new THREE.Texture(),
     uMouse: new THREE.Vector2(0.5, 0.5),
     uProgress: 0.0,
-    uResolution: new THREE.Vector2(1, 1),
-    uTextureSize: new THREE.Vector2(1, 1),
   },
   // Vertex Shader
   `
@@ -22,32 +20,11 @@ export const WaterDistortionMaterial = shaderMaterial(
     uniform sampler2D uTexture;
     uniform vec2 uMouse;
     uniform float uProgress;
-    uniform vec2 uResolution;
-    uniform vec2 uTextureSize;
     varying vec2 vUv;
 
     void main() {
-      float screenRatio = uResolution.x / uResolution.y;
-      float texRatio = uTextureSize.x / uTextureSize.y;
-      
-      vec2 uv = vUv - 0.5;
-      if (screenRatio > texRatio) {
-        // screen is wider than texture - scale Y to crop top/bottom
-        uv.y *= texRatio / screenRatio;
-      } else {
-        // screen is taller than texture - scale X to crop sides
-        uv.x *= screenRatio / texRatio;
-      }
-      uv += 0.5;
-
-      // Displaced mouse coordinate needs to be scaled identically
-      vec2 mouse = uMouse - 0.5;
-      if (screenRatio > texRatio) {
-        mouse.y *= texRatio / screenRatio;
-      } else {
-        mouse.x *= screenRatio / texRatio;
-      }
-      mouse += 0.5;
+      vec2 uv = vUv;
+      vec2 mouse = uMouse;
       
       // Calculate distance from cursor to pixel
       float distortion = distance(uv, mouse);
