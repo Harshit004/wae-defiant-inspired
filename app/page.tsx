@@ -238,12 +238,19 @@ export default function Home() {
       >
         {/* Background Image (Placed below the header visually) */}
         <div 
-          className="absolute inset-0 w-full h-full flex items-center justify-center z-0 opacity-60"
-          style={{ paddingTop: `${headerHeight + 77}px` }}
+          className="absolute inset-0 w-full h-full flex items-end justify-center z-0 opacity-80 overflow-hidden"
         >
-          <div className="relative w-full h-full">
+          <div 
+            className="relative w-full min-w-[800px]"
+            style={{ aspectRatio: '1440 / 691', flexShrink: 0 }}
+          >
             <WaterCanvas imgUrl="/image-572.png" />
           </div>
+          
+          {/* Gradient masking for blending the left and top edges smoothly */}
+          <div className="absolute inset-0 z-[1] pointer-events-none" style={{
+            background: 'linear-gradient(to right, #0D0D0D 0%, transparent 40%), linear-gradient(to bottom, #0D0D0D 0%, transparent 30%)'
+          }}></div>
         </div>
 
         {/* 4. Hero Content Text (Topmost) */}
