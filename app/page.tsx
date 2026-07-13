@@ -221,9 +221,9 @@ export default function Home() {
         style={{ height: "100vh" }}
       >
         {/* Background Image (Placed below the header visually) */}
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center z-0 pt-[140px]">
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center z-0 pt-[85px] opacity-60">
           <div className="relative w-full h-full">
-            <WaterCanvas imgUrl="/image-572.png" />
+            <WaterCanvas imgUrl="/image%20572.png" />
           </div>
         </div>
 
