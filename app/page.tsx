@@ -238,14 +238,14 @@ export default function Home() {
       >
         {/* Background Image (Placed below the header visually) */}
         <div
-          className="absolute inset-0 w-full h-full flex items-start justify-center z-0 opacity-30 overflow-hidden"
+          className="absolute inset-0 w-full h-full flex items-start justify-center z-0 opacity-40 overflow-hidden"
           style={{ paddingTop: `calc(${headerHeight}px)` }}
         >
           <div
             className="relative w-full min-w-[800px]"
             style={{ aspectRatio: '1440 / 691', flexShrink: 0 }}
           >
-            <WaterCanvas imgUrl="/67d43fa901c289cffedaedebb0d286fff70b5c53.png" />
+            <WaterCanvas imgUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4c5ddf2f-bb69-4bee-6f7e-7dbcd56aad00/public" />
           </div>
         </div>
 
