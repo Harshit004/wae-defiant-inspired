@@ -237,11 +237,11 @@ export default function Home() {
         style={{ height: "100vh" }}
       >
         {/* Background Image (Placed below the header visually) */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full flex items-start justify-center z-0 opacity-60 overflow-hidden"
-          style={{ paddingTop: `calc(${headerHeight}px + 4vw)` }}
+          style={{ paddingTop: `calc(${headerHeight}px)` }}
         >
-          <div 
+          <div
             className="relative w-full min-w-[800px]"
             style={{ aspectRatio: '1440 / 691', flexShrink: 0 }}
           >
