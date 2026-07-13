@@ -77,13 +77,14 @@ export default function AdminEnquiriesPage() {
 
     const createSheetData = (typeFilter: string) => {
       const typeFiltered = filteredByDate.filter(e => (e.type || 'product') === typeFilter);
-      const headers = ["Date", "Name", "Company", "Email", "Phone", "Page Link", "Message"];
+      const headers = ["Date", "Name", "Company", "Email", "Phone", "Location", "Page Link", "Message"];
       const data = typeFiltered.map(e => [
         new Date(e.createdAt).toLocaleDateString(),
         e.fullName || '',
         e.companyName || '',
         e.email || '',
         e.phone || '',
+        e.city || '',
         e.pageLink || '',
         e.message || ''
       ]);
@@ -163,6 +164,7 @@ export default function AdminEnquiriesPage() {
                   <th className="px-4 py-3 font-medium">Name</th>
                   <th className="px-4 py-3 font-medium">Company</th>
                   <th className="px-4 py-3 font-medium">Contact</th>
+                  <th className="px-4 py-3 font-medium">Location</th>
                   <th className="px-4 py-3 font-medium">Page Link</th>
                   {(activeTab === 'general' || activeTab === 'contact-us') && <th className="px-4 py-3 font-medium">Message</th>}
                   <th className="px-4 py-3 font-medium text-right">Actions</th>
@@ -180,6 +182,7 @@ export default function AdminEnquiriesPage() {
                       <div>{enq.email}</div>
                       <div className="text-xs">{enq.phone}</div>
                     </td>
+                    <td className="px-4 py-3 text-white/70">{enq.city || "-"}</td>
                     <td className="px-4 py-3 text-blue-400 hover:underline">
                       <a href={enq.pageLink} target="_blank" rel="noopener noreferrer">
                         {enq.pageLink.split('/').slice(3).join('/') || "Link"}

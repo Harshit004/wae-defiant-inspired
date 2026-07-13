@@ -17,6 +17,7 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
     companyName: "",
     email: "",
     phone: "",
+    city: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -29,7 +30,7 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.email || !formData.phone) {
+    if (!formData.fullName || !formData.email || !formData.phone || !formData.city) {
       setError("Please fill in all required fields (*)");
       return;
     }
@@ -55,7 +56,7 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
         }
         setTimeout(() => {
           setIsSuccess(false);
-          setFormData({ fullName: "", companyName: "", email: "", phone: "" });
+          setFormData({ fullName: "", companyName: "", email: "", phone: "", city: "" });
           onClose();
         }, 3000);
       } else {
@@ -77,12 +78,12 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
         transition={{ duration: 0.3 }}
-        className="relative bg-[#092238] overflow-hidden" // Guessed bg color from standard blue theme or we could use the bg from image, but wait, the image background looks like #0c2d48. Let me set it to #09263f approximately based on common WAE themes or let me check the image. The prompt didn't specify the exact bg color of the modal, only the overlay. I'll use a deep blue or black. Let's use #0b263b based on the image (which is a dark blue). Actually, I'll use #0B253A.
+        className="relative bg-[#092238] overflow-hidden"
         style={{
           width: "100%",
           maxWidth: "734px",
-          height: "498px",
-          backgroundColor: "#0F2E45" // closest to image provided
+          height: "540px",
+          backgroundColor: "#0F2E45"
         }}
       >
         <button
@@ -92,7 +93,7 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
           <X size={34} strokeWidth={1} />
         </button>
 
-        <div className="w-full h-full flex flex-col items-center justify-center px-8 py-10 md:px-[162px] md:py-[83px]">
+        <div className="w-full h-full flex flex-col items-center justify-center px-8 py-10 md:px-[162px] md:py-[55px]">
           {isSuccess ? (
             <motion.div
               initial={{ opacity: 0 }}
@@ -201,6 +202,26 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
                   name="phone"
                   placeholder="Phone*"
                   value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  style={{
+                    height: "39px",
+                    border: "1px solid #AEAEAE",
+                    backgroundColor: "transparent",
+                    padding: "0 14px",
+                    color: "white",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "12px",
+                  }}
+                  className="placeholder-[#C5C5C580] focus:outline-none focus:border-white transition-colors text-[10px]"
+                />
+
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="Location*"
+                  value={formData.city}
                   onChange={handleChange}
                   required
                   style={{
