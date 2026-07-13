@@ -68,7 +68,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                         fontWeight: 500,
                                         fontSize: "10px",
                                         lineHeight: "130%",
-                                        letterSpacing: "0.1em",
+                                        letterSpacing: "0px",
                                         color: "white"
                                     }}>
                                         Six. The perfect number.<br/>
