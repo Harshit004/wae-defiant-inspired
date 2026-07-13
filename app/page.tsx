@@ -194,6 +194,22 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [])
 
+  const [headerHeight, setHeaderHeight] = useState(0)
+
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      const headerEl = document.querySelector("header")
+      if (headerEl) {
+        setHeaderHeight(headerEl.getBoundingClientRect().height)
+      }
+    }
+    // Set initial height
+    updateHeaderHeight()
+    // Update height on window resize
+    window.addEventListener("resize", updateHeaderHeight)
+    return () => window.removeEventListener("resize", updateHeaderHeight)
+  }, [])
+
   // Update current time (India Time) every minute
   useEffect(() => {
     const updateIndiaTime = () => {
@@ -221,7 +237,10 @@ export default function Home() {
         style={{ height: "100vh" }}
       >
         {/* Background Image (Placed below the header visually) */}
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center z-0 pt-[85px] opacity-60">
+        <div 
+          className="absolute inset-0 w-full h-full flex items-center justify-center z-0 opacity-60"
+          style={{ paddingTop: `${headerHeight + 77}px` }}
+        >
           <div className="relative w-full h-full">
             <WaterCanvas imgUrl="/image-572.png" />
           </div>
