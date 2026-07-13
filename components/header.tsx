@@ -61,7 +61,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                         priority
                                     />
                                 </Link>
-                                <div className="absolute left-0 top-[85px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center h-[50px] pointer-events-none w-[240px]">
+                                <div className="absolute left-[32px] top-[85px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center h-[50px] pointer-events-none w-[240px]">
                                     <div className="w-[1px] bg-[#666666] h-[45px]"></div>
                                     <div className="ml-[10px] w-[201px]" style={{
                                         fontFamily: "'Manrope', sans-serif",
