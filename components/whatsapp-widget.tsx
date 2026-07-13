@@ -16,8 +16,8 @@ export default function WhatsAppWidget() {
         const tooltip = document.createElement("div");
         tooltip.innerText = "Click to chat with an Expert";
         tooltip.style.position = "fixed";
-        tooltip.style.bottom = "96px";
-        tooltip.style.right = "24px";
+        tooltip.style.bottom = "36px";
+        tooltip.style.right = "90px";
         tooltip.style.backgroundColor = "#ffffff";
         tooltip.style.color = "#000000";
         tooltip.style.fontFamily = "'Manrope', sans-serif";
