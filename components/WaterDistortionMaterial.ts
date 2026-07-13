@@ -32,18 +32,20 @@ export const WaterDistortionMaterial = shaderMaterial(
       
       vec2 uv = vUv - 0.5;
       if (screenRatio > texRatio) {
-        uv.x *= screenRatio / texRatio;
-      } else {
+        // screen is wider than texture - scale Y to crop top/bottom
         uv.y *= texRatio / screenRatio;
+      } else {
+        // screen is taller than texture - scale X to crop sides
+        uv.x *= screenRatio / texRatio;
       }
       uv += 0.5;
 
-      // Displaced mouse coordinate needs to be scaled as well
+      // Displaced mouse coordinate needs to be scaled identically
       vec2 mouse = uMouse - 0.5;
       if (screenRatio > texRatio) {
-        mouse.x *= screenRatio / texRatio;
-      } else {
         mouse.y *= texRatio / screenRatio;
+      } else {
+        mouse.x *= screenRatio / texRatio;
       }
       mouse += 0.5;
       
@@ -57,11 +59,7 @@ export const WaterDistortionMaterial = shaderMaterial(
         uv += (uv - mouse) * wave * (1.0 - distortion * 4.0);
       }
       
-      if (uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0) {
-        gl_FragColor = vec4(0.0);
-      } else {
-        gl_FragColor = texture2D(uTexture, uv);
-      }
+      gl_FragColor = texture2D(uTexture, uv);
     }
   `
 );
