@@ -245,7 +245,7 @@ export default function Home() {
             className="relative w-full min-w-[800px]"
             style={{ aspectRatio: '1440 / 691', flexShrink: 0 }}
           >
-            <WaterCanvas imgUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4c5ddf2f-bb69-4bee-6f7e-7dbcd56aad00/public" />
+            <WaterCanvas imgUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e73e82b2-e9aa-47cf-40cb-90e01304a800/public" />
           </div>
         </div>
 
