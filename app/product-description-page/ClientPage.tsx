@@ -106,7 +106,7 @@ function ProductDescriptionPageContent() {
     return (
         <main className="relative bg-[#000000] text-white min-h-screen overflow-x-hidden selection:bg-[#004063] selection:text-white">
             {/* HEADER */}
-            <Header />
+            <Header transparentBg />
 
             {/* HERO SECTION */}
             <section
