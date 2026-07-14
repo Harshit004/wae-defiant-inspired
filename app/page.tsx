@@ -12,7 +12,7 @@ import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import dynamic from "next/dynamic"
 
-const WaterCanvas = dynamic(() => import('@/components/WaterCanvas'), { ssr: false })
+const WaterRipple2D = dynamic(() => import('@/components/WaterRipple2D'), { ssr: false })
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
@@ -233,24 +233,18 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full h-screen relative flex items-center justify-center bg-[#0D0D0D] overflow-hidden"
-        style={{ height: "100vh" }}
+        className="w-full relative bg-[#0D0D0D] pt-[130px] pb-[30px]"
       >
-        {/* Background Image (Placed below the header visually) */}
+        {/* Background Image determining the height of the section naturally */}
         <div
-          className="absolute inset-0 w-full h-full flex items-start justify-center z-0 opacity-40 overflow-hidden"
-          style={{ paddingTop: `calc(${headerHeight}px)` }}
+          className="relative w-full opacity-40"
+          style={{ aspectRatio: '1440 / 691' }}
         >
-          <div
-            className="relative w-full min-w-[800px]"
-            style={{ aspectRatio: '1440 / 691', flexShrink: 0 }}
-          >
-            <WaterCanvas imgUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
-          </div>
+          <WaterRipple2D imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
         </div>
 
         {/* Hero Content Text (Topmost) */}
-        <div className="absolute top-0 left-0 w-full h-full z-[3] pointer-events-none flex items-center pt-[65px]">
+        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex items-center pt-[30px] pb-[30px]">
           <div className={`${containerClass} pointer-events-auto`}>
             <div
               style={{

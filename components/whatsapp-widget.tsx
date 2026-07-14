@@ -12,7 +12,7 @@ export default function WhatsAppWidget() {
       const container = document.getElementById("df-btn-cont");
       if (container && !container.hasAttribute("data-tooltip-added")) {
         container.setAttribute("data-tooltip-added", "true");
-        
+
         const tooltip = document.createElement("div");
         tooltip.innerText = "Chat With Us";
         tooltip.style.position = "fixed";
@@ -32,9 +32,9 @@ export default function WhatsAppWidget() {
         tooltip.style.transform = "translateY(5px)";
         tooltip.style.transition = "opacity 0.3s ease, transform 0.3s ease";
         tooltip.style.zIndex = "10000";
-        
+
         document.body.appendChild(tooltip);
-        
+
         container.addEventListener("mouseenter", () => {
           tooltip.style.opacity = "1";
           tooltip.style.transform = "translateY(0)";
@@ -43,11 +43,11 @@ export default function WhatsAppWidget() {
           tooltip.style.opacity = "0";
           tooltip.style.transform = "translateY(5px)";
         });
-        
+
         clearInterval(interval);
       }
     }, 1000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
