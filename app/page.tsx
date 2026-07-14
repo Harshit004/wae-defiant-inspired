@@ -11,8 +11,7 @@ import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import dynamic from "next/dynamic"
-
-const WaterRipple2D = dynamic(() => import('@/components/WaterRipple2D'), { ssr: false })
+import LightweightRipple from "@/components/LightweightRipple"
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
@@ -240,12 +239,12 @@ export default function Home() {
           className="relative w-full opacity-40"
           style={{ aspectRatio: '1440 / 691' }}
         >
-          <WaterRipple2D imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
+          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
         </div>
 
         {/* Hero Content Text (Topmost) */}
         <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex items-center pt-[30px] pb-[30px]">
-          <div className={`${containerClass} pointer-events-auto`}>
+          <div className={`${containerClass}`}>
             <div
               style={{
                 width: "clamp(280px, 34.79vw, 600px)",
