@@ -65,51 +65,30 @@ export default function WhatsAppWidget() {
       />
       <style dangerouslySetInnerHTML={{
         __html: `
-          .df-btn-text svg.df-svg-icon {
-            opacity: 0 !important;
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            z-index: 2 !important;
+          /* Hide the original SVG icon only when closed */
+          .df-btn.df-closed .df-btn-text svg.df-svg-icon {
+            display: none !important;
           }
-          .df-btn {
-            width: 54px !important;
-            height: 54px !important;
-            min-width: 54px !important;
-            min-height: 54px !important;
+          /* Remove background and shadow when closed */
+          .df-btn.df-closed {
             background: transparent !important;
             box-shadow: none !important;
-            padding: 0 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            position: relative !important;
           }
-          .df-btn-text {
+          /* Remove text wrapper background when closed */
+          .df-btn.df-closed .df-btn-text {
             background: transparent !important;
             padding: 0 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 100% !important;
-            height: 100% !important;
-            position: relative !important;
           }
-          #df-btn-cont .df-btn-text::before {
+          /* Show custom icon only when closed */
+          .df-btn.df-closed .df-btn-text::before {
             content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
+            display: inline-block;
             width: 54px;
             height: 54px;
             background-image: url('https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/948bd474-7dce-4e82-edf0-be31f6620e00/public') !important;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            z-index: 1;
-            pointer-events: none;
           }
         `
       }} />
