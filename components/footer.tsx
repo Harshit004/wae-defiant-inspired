@@ -247,13 +247,14 @@ export default function Footer() {
       </div>
 
       {/* ── Full-screen-width copyright rule + text ── */}
+      <div className="w-full h-[0.67px] bg-[#FFFFFF4D]" />
 
       <div
         style={{
           paddingLeft: "7.5vw",
           paddingRight: "7.5vw",
           paddingTop: "23px",
-          paddingBottom: "27px",
+          paddingBottom: "55px",
         }}
         className="flex justify-between items-center font-[Manrope] text-[10px] text-white"
       >

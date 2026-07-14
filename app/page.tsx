@@ -1153,11 +1153,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-x-0">
+          <div className="grid grid-cols-3 gap-x-12">
             {blogsLoading ? (
               // Skeleton placeholders
               [0, 1, 2].map((i) => (
-                <div key={i} className="border-l border-white/20 pl-8 pr-12">
+                <div key={i} className="border-l border-white/20 pl-8">
                   <div className="relative w-full aspect-square overflow-hidden mb-6 bg-white/5 animate-pulse" />
                   <div className="h-5 bg-white/5 animate-pulse mb-2 w-3/4" />
                   <div className="h-4 bg-white/5 animate-pulse mb-1 w-full" />
@@ -1171,7 +1171,7 @@ export default function Home() {
                 const blogUrl = `/blogs/${categorySlug}/${blog.id}`
                 return (
                   <Link key={blog.id} href={blogUrl} className="contents">
-                    <div className="group cursor-pointer border-l border-white/20 pl-8 pr-12">
+                    <div className="group cursor-pointer border-l border-white/20 pl-8">
                       <div className="relative w-full aspect-square overflow-hidden mb-6">
                         {blog.heroImage ? (
                           <Image
@@ -1267,7 +1267,7 @@ export default function Home() {
             Mentioned
           </h3>
           <div style={{ height: '26px' }} />
-          <div className="flex justify-between items-start w-full" style={{ paddingRight: '48px' }}>
+          <div className="flex justify-between items-start w-full">
             <h2 style={{
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 400,
