@@ -70,8 +70,8 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                         lineHeight: "130%",
                                         color: "white"
                                     }}>
-                                        Six. The perfect number.<br/>
-                                        Wholeness in form. Freedom in motion.<br/>
+                                        Six. The perfect number.<br />
+                                        Wholeness in form. Freedom in motion.<br />
                                         Balance by design.
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                     <br />
                                     78.9629° E
                                 </div>
-                                <div className="absolute top-1 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                <div className="absolute top-1 left-0 opacity-0 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none">
                                     <Image src="/image-571.png" alt="India Flag" width={38} height={25} className="object-cover rounded-sm" />
                                 </div>
                             </div>

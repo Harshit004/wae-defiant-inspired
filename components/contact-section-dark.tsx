@@ -25,6 +25,7 @@ const ContactSectionDark = () => {
             email: formData.get('email'),
             phone: formData.get('contact'),
             companyName: formData.get('companyName'),
+            city: formData.get('city'),
             message: formData.get('message'),
             pageLink: pageUrl,
             type: 'general'
@@ -145,6 +146,15 @@ const ContactSectionDark = () => {
                             name="companyName"
                             placeholder="ABC Company*"
                             className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                        />
+                    </div>
+                    <div className="relative group">
+                        <input
+                            type="text"
+                            name="city"
+                            placeholder="City*"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                            required
                         />
                     </div>
                     <div className="relative group">

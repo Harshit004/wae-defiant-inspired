@@ -236,7 +236,7 @@ export default function Home() {
       >
         {/* Background Image determining the height of the section naturally */}
         <div
-          className="relative w-full opacity-40"
+          className="relative w-full opacity-80"
           style={{ aspectRatio: '1440 / 691' }}
         >
           <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
@@ -290,7 +290,7 @@ export default function Home() {
         <div className="w-full h-[576px]">
           <div className="grid grid-cols-3 h-full border-b border-[#FFFFFF4D]">
             {/* Column 1: Purpose */}
-            <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
+            <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
               <div className="flex flex-col w-full max-w-[320px]">
                 <h2
                   style={{
@@ -376,7 +376,7 @@ export default function Home() {
             </div>
 
             {/* Column 2: Philisophy */}
-            <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
+            <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
               <div className="flex flex-col w-full max-w-[320px]">
                 <h2
                   style={{
@@ -462,7 +462,7 @@ export default function Home() {
             </div>
 
             {/* Column 3: Principle */}
-            <div className="flex flex-col h-full items-center justify-center px-12 lg:px-24 hover:bg-[#004063] cursor-pointer group">
+            <div className="flex flex-col h-full items-center justify-center px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
               <div className="flex flex-col w-full max-w-[320px]">
                 <h2
                   style={{
@@ -935,13 +935,10 @@ export default function Home() {
           overflow: 'hidden'
         }}
       >
-        {/* Background Video with gradient mask for smooth blending */}
-        <video
-          src="/download.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
+        {/* Background SVG with gradient mask for smooth blending */}
+        <img
+          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/374f4710-d942-4059-e39c-b5fc24283700/public"
+          alt="Impact Background"
           className="absolute top-0 right-0 h-full w-auto opacity-70 object-cover object-right pointer-events-none select-none z-0"
           style={{
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%)',
@@ -1098,7 +1095,7 @@ export default function Home() {
         }}
       >
         <div className="w-full">
-          <div className="flex justify-between items-start w-full" style={{ paddingLeft: '32px', paddingRight: '48px' }}>
+          <div className="flex justify-between items-start w-full">
             <div className="flex-1">
               <h2 style={{
                 fontFamily: "'Inter Tight', sans-serif",
