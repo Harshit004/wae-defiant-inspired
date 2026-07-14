@@ -935,44 +935,19 @@ export default function Home() {
           overflow: 'hidden'
         }}
       >
-        {/* Background Image (Base) */}
-        <div className="absolute top-0 right-0 h-full w-auto opacity-70 pointer-events-none select-none z-0">
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2592e812-5f69-4d58-f4e4-d61b53f94b00/public"
-            alt="Impact Background"
-            width={1000}
-            height={1000}
-            className="h-full w-auto object-cover object-right"
-          />
-        </div>
-
-        {/* Blinking Overlay (Bright Dots) */}
-        <motion.div
-          className="absolute top-0 right-0 h-full w-auto pointer-events-none select-none z-0 mix-blend-screen"
+        {/* Background Video with gradient mask for smooth blending */}
+        <video
+          src="/download.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 right-0 h-full w-auto opacity-70 object-cover object-right pointer-events-none select-none z-0"
           style={{
-            WebkitMaskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
-            WebkitMaskSize: '250px 250px',
-            maskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
-            maskSize: '250px 250px',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%)',
+            maskImage: 'linear-gradient(to right, transparent, black 15%)',
           }}
-          animate={{
-            WebkitMaskPosition: ["0px 0px", "250px 250px"],
-            maskPosition: ["0px 0px", "250px 250px"],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0216ce3e-2076-4530-8ebc-53e884515d00/public"
-            alt="Impact Overlay"
-            width={1000}
-            height={1000}
-            className="h-full w-auto object-cover object-right"
-          />
-        </motion.div>
+        />
 
         <div className="relative z-10 flex flex-col justify-between h-full">
           <div className="max-w-[600px]">
