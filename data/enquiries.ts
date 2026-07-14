@@ -878,5 +878,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-07-14T11:44:55.321Z"
+  },
+  "81e0f672-e4fb-4ef1-a21b-405660203b20": {
+    "id": "81e0f672-e4fb-4ef1-a21b-405660203b20",
+    "fullName": "Panneerselvam Murugesan",
+    "companyName": "Plan and Plot Studio LLP",
+    "email": "panneerselvam.murugesan@planandplot.in",
+    "phone": "9994946251",
+    "city": "chennai",
+    "pageLink": "https://www.waecorp.com/product-description-page?product=reva",
+    "type": "product",
+    "createdAt": "2026-07-14T13:30:29.745Z"
   }
 };
