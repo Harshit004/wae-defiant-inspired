@@ -236,7 +236,7 @@ export default function Home() {
       >
         {/* Background Image determining the height of the section naturally */}
         <div
-          className="relative w-full opacity-80"
+          className="relative w-full opacity-95"
           style={{ aspectRatio: '1440 / 691' }}
         >
           <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
