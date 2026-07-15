@@ -925,8 +925,8 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "type": "general",
     "createdAt": "2026-07-15T09:52:33.443Z"
   },
-  "7a382441-2024-4beb-b934-9caa2b329bf0": {
-    "id": "7a382441-2024-4beb-b934-9caa2b329bf0",
+  "c3e268ce-f8f3-4ba5-8d48-0dc9b8b8db6b": {
+    "id": "c3e268ce-f8f3-4ba5-8d48-0dc9b8b8db6b",
     "fullName": "Abhishek",
     "companyName": "WAE",
     "email": "abhishekrajrusha@gmail.com",
@@ -934,6 +934,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "city": "Noida",
     "pageLink": "https://www.waecorp.com/product-description-page?product=reva",
     "type": "product",
-    "createdAt": "2026-07-15T09:56:13.041Z"
+    "createdAt": "2026-07-15T09:55:41.382Z"
+  },
+  "8fa28354-34e3-47b0-96d9-e6f8ba8482f9": {
+    "id": "8fa28354-34e3-47b0-96d9-e6f8ba8482f9",
+    "fullName": "Abhishek ",
+    "companyName": "WAE",
+    "email": "abhishekrajrusha@gmail.com",
+    "phone": "9304116169",
+    "city": "Noida",
+    "pageLink": "https://www.waecorp.com/",
+    "type": "general",
+    "createdAt": "2026-07-15T09:56:53.139Z"
   }
 };
