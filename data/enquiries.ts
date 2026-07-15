@@ -936,15 +936,15 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "type": "product",
     "createdAt": "2026-07-15T09:55:41.382Z"
   },
-  "8fa28354-34e3-47b0-96d9-e6f8ba8482f9": {
-    "id": "8fa28354-34e3-47b0-96d9-e6f8ba8482f9",
-    "fullName": "Abhishek ",
+  "03f919da-9ce6-46dc-8a42-f5791b441059": {
+    "id": "03f919da-9ce6-46dc-8a42-f5791b441059",
+    "fullName": "Abhishek",
     "companyName": "WAE",
     "email": "abhishekrajrusha@gmail.com",
     "phone": "9304116169",
     "city": "Noida",
-    "pageLink": "https://www.waecorp.com/",
-    "type": "general",
-    "createdAt": "2026-07-15T09:56:53.139Z"
+    "pageLink": "https://www.waecorp.com/product-description-page?product=aurela",
+    "type": "product",
+    "createdAt": "2026-07-15T09:57:45.271Z"
   }
 };
