@@ -912,5 +912,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I would like to enquire about setting up water purification plant",
     "type": "general",
     "createdAt": "2026-07-15T00:30:02.789Z"
+  },
+  "9352998e-4ee1-42f2-82d1-b825fc844c84": {
+    "id": "9352998e-4ee1-42f2-82d1-b825fc844c84",
+    "fullName": "Mudit Mohan Mishra",
+    "companyName": "No",
+    "email": "mishra.mudit79@gmail.com",
+    "phone": "9696969696",
+    "city": "Test",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "Test",
+    "type": "general",
+    "createdAt": "2026-07-15T09:52:33.443Z"
   }
 };
