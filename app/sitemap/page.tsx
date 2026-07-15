@@ -18,7 +18,7 @@ const sitemapData = [
       { text: "Sustainability", href: "/sustainability" },
       { text: "Reimagine Work", href: "/careers" },
       { text: "News & Updates", href: "/news-and-updates" },
-      { text: "Blogs", href: "/blogs" },
+      { text: "Blogs", href: "/perspectives" },
       { text: "Awards & Recognition", href: "/awards-and-recognitions" },
       { text: "Contact Us", href: "/contact-us" },
     ]
@@ -36,7 +36,7 @@ const sitemapData = [
     links: [
       { text: "Sustainability", href: "/sustainability" },
       { text: "The Activist Co.", href: "/the-activist-co" },
-      { text: "Blog", href: "/blogs" },
+      { text: "Blog", href: "/perspectives" },
     ]
   },
   {

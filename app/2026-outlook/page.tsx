@@ -205,7 +205,7 @@ export default function Home() {
     const blueprintItems = [
         { text: "Sustainability", href: "/sustainability" },
         { text: "The Activist Co.", href: "/the-activist-co" },
-        { text: "Blog", href: "/blogs" },
+        { text: "Blog", href: "/perspectives" },
     ]
 const etceteraItems = [
     { text: "Contact", href: "/contact-us" },

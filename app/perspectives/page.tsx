@@ -63,7 +63,7 @@ export default function Home() {
 
   const featuredPost = blogPosts.find(b => b.id === "from-kyoto-to-cop28") || blogPosts[0]
   const featuredCategorySlug = featuredPost?.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-  const featuredLinkUrl = featuredPost ? `/blogs/${featuredCategorySlug}/${featuredPost.id}` : '#'
+  const featuredLinkUrl = featuredPost ? `/perspectives/${featuredCategorySlug}/${featuredPost.id}` : '#'
 
   const getFilteredBlogs = () => {
     if (selectedIndex === null) {
@@ -212,7 +212,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[4.166%] gap-y-[130px]">
             {getFilteredBlogs().map((post, index) => {
               const categorySlug = post.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-              const linkUrl = `/blogs/${categorySlug}/${post.id}`
+              const linkUrl = `/perspectives/${categorySlug}/${post.id}`
 
               return (
                 <div

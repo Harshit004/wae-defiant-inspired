@@ -282,7 +282,7 @@ export default function BlogsPage() {
                   // Convert category and title to slug paths to preview the article
                   const categorySlug = b.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
                   const titleSlug = b.id
-                  const previewUrl = `/blogs/${categorySlug}/${titleSlug}`
+                  const previewUrl = `/perspectives/${categorySlug}/${titleSlug}`
 
                   return (
                     <tr key={b.id} className="hover:bg-white/[0.01] transition-all">

@@ -72,7 +72,7 @@ export default function DynamicBlogPost() {
             <p className="text-gray-500 mt-4" style={{ fontFamily: "'Manrope', sans-serif" }}>
               The article you are looking for does not exist or has been moved.
             </p>
-            <Link href="/blogs" className="text-[#0081C9] hover:underline mt-6 inline-block">
+            <Link href="/perspectives" className="text-[#0081C9] hover:underline mt-6 inline-block">
               Back to all blogs
             </Link>
           </div>
@@ -453,7 +453,7 @@ export default function DynamicBlogPost() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[4.166%] gap-y-[130px]">
                 {relatedPosts.map((post, index) => {
                   const rCatSlug = post.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-                  const linkUrl = `/blogs/${rCatSlug}/${post.id}`
+                  const linkUrl = `/perspectives/${rCatSlug}/${post.id}`
 
                   return (
                     <div

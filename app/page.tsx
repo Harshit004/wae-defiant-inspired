@@ -375,7 +375,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Column 2: Philisophy */}
+            {/* Column 2: Philosophy */}
             <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
               <div className="flex flex-col w-full max-w-[320px]">
                 <h2
@@ -387,7 +387,7 @@ export default function Home() {
                     letterSpacing: '0%',
                   }}
                 >
-                  Philosphy
+                  Philosophy
                 </h2>
                 <div style={{ height: '32px' }} />
                 <h3
@@ -1120,7 +1120,7 @@ export default function Home() {
               </p>
             </div>
             <div className="flex-shrink-0">
-              <HoverButton href="/blogs" theme="transparent-white-black-hover">
+              <HoverButton href="/perspectives" theme="transparent-white-black-hover">
                 {(hovered) => (
                   <>
                     Know More
@@ -1168,7 +1168,7 @@ export default function Home() {
             ) : homepageBlogs.length > 0 ? (
               homepageBlogs.map((blog) => {
                 const categorySlug = blog.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-                const blogUrl = `/blogs/${categorySlug}/${blog.id}`
+                const blogUrl = `/perspectives/${categorySlug}/${blog.id}`
                 return (
                   <Link key={blog.id} href={blogUrl} className="contents">
                     <div className="group cursor-pointer border-l border-white/20 pl-8">
