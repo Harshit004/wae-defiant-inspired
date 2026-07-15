@@ -900,5 +900,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/product-description-page?product=var-series",
     "type": "product",
     "createdAt": "2026-07-14T13:35:59.349Z"
+  },
+  "05c0edc7-2185-40b5-9192-194168a2fa42": {
+    "id": "05c0edc7-2185-40b5-9192-194168a2fa42",
+    "fullName": "Maligi",
+    "companyName": "Bhuvanaa ",
+    "email": "rnmaligi@gmail.com",
+    "phone": "8105079795",
+    "city": "Hampi",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "I would like to enquire about setting up water purification plant",
+    "type": "general",
+    "createdAt": "2026-07-15T00:30:02.789Z"
   }
 };
