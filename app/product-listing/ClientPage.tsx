@@ -225,7 +225,7 @@ function ProductListingContent() {
     const taglineWords2 = taglineLine2.split(" ")
 
     const productsItems = [
-        { text: "This is Us", href: "/this-is-us" },
+        { text: "This is Us", href: "/profile" },
         { text: "Our Portfolio", href: "/our-portfolio" },
         { text: "Reimagine Work", href: "/careers" },
     ]

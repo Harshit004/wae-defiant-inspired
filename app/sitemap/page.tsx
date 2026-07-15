@@ -13,7 +13,7 @@ const sitemapData = [
     links: [
       { text: "Hero", href: "/" },
       { text: "The Activist Co.", href: "/the-activist-co" },
-      { text: "This is Us", href: "/this-is-us" },
+      { text: "This is Us", href: "/profile" },
       { text: "Our Portfolio", href: "/our-portfolio" },
       { text: "Sustainability", href: "/sustainability" },
       { text: "Reimagine Work", href: "/careers" },
@@ -26,7 +26,7 @@ const sitemapData = [
   {
     title: "2. Inside WAE",
     links: [
-      { text: "This is Us", href: "/this-is-us" },
+      { text: "This is Us", href: "/profile" },
       { text: "Our Portfolio", href: "/our-portfolio" },
       { text: "Reimagine work", href: "/careers" },
     ]
@@ -120,7 +120,7 @@ const sitemapData = [
   {
     title: "12. Footer",
     links: [
-      { text: "About WAE", href: "/this-is-us" },
+      { text: "About WAE", href: "/profile" },
       { text: "Portfolio", href: "/our-portfolio" },
       { text: "Reimagine Work", href: "/careers" },
       { text: "Sustainability", href: "/sustainability" },

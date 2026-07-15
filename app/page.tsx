@@ -340,7 +340,7 @@ export default function Home() {
                   WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
                 </p>
                 <div style={{ height: '32px' }} />
-                <Link href="/this-is-us" className="contents">
+                <Link href="/profile" className="contents">
                   <HoverButton theme="transparent-white">
                     {(hovered) => (
                       <>

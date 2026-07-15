@@ -214,7 +214,7 @@ export default function Footer() {
                 {/* Link lists */}
                 {/* INSIDE WAE */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/this-is-us" className="hover:opacity-80 transition-opacity">Profile</Link></li>
+                  <li><Link href="/profile" className="hover:opacity-80 transition-opacity">Profile</Link></li>
                   <li><Link href="/our-portfolio" className="hover:opacity-80 transition-opacity">Portfolio</Link></li>
                   <li><Link href="/careers" className="hover:opacity-80 transition-opacity">Reimagine Work</Link></li>
                 </ul>
