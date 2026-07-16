@@ -959,8 +959,8 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "type": "aaaaaaa",
     "createdAt": "2026-07-16T07:24:17.157Z"
   },
-  "204b8bdb-b8e8-4caa-b6bd-c041ed67d55a": {
-    "id": "204b8bdb-b8e8-4caa-b6bd-c041ed67d55a",
+  "b79cdb5d-f034-4b31-8b6c-6ae1b5cf6528": {
+    "id": "b79cdb5d-f034-4b31-8b6c-6ae1b5cf6528",
     "fullName": "aaaaaaa",
     "companyName": "aaaaaa",
     "email": "aaa",
@@ -969,54 +969,6 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "aaaaa",
     "message": "aaa",
     "type": "aaaaaaa",
-    "createdAt": "2026-07-16T07:25:53.660Z"
-  },
-  "3a0a9cfd-639d-4be8-933b-a75a601ad6c9": {
-    "id": "3a0a9cfd-639d-4be8-933b-a75a601ad6c9",
-    "fullName": "aaaaaaa",
-    "companyName": "aaaaaa",
-    "email": "aaa",
-    "phone": "aaaaa",
-    "city": "aaaa",
-    "pageLink": "aaaaa",
-    "message": "aaa",
-    "type": "aaaaaaa",
-    "createdAt": "2026-07-16T07:25:55.711Z"
-  },
-  "eeff6c3d-273c-4a60-8290-79c757d2c692": {
-    "id": "eeff6c3d-273c-4a60-8290-79c757d2c692",
-    "fullName": "aaaaaaa",
-    "companyName": "aaaaaa",
-    "email": "aaa",
-    "phone": "aaaaa",
-    "city": "aaaa",
-    "pageLink": "aaaaa",
-    "message": "aaa",
-    "type": "aaaaaaa",
-    "createdAt": "2026-07-16T07:25:57.360Z"
-  },
-  "19db48d8-2f1e-4880-a27e-baf42f4eec81": {
-    "id": "19db48d8-2f1e-4880-a27e-baf42f4eec81",
-    "fullName": "aaaaaaa",
-    "companyName": "aaaaaa",
-    "email": "aaa",
-    "phone": "aaaaa",
-    "city": "aaaa",
-    "pageLink": "aaaaa",
-    "message": "aaa",
-    "type": "aaaaaaa",
-    "createdAt": "2026-07-16T07:25:59.243Z"
-  },
-  "0163af0c-afc4-4ff1-9af5-3f3858bcb818": {
-    "id": "0163af0c-afc4-4ff1-9af5-3f3858bcb818",
-    "fullName": "aaaaaaa",
-    "companyName": "aaaaaa",
-    "email": "aaa",
-    "phone": "aaaaa",
-    "city": "aaaa",
-    "pageLink": "aaaaa",
-    "message": "aaa",
-    "type": "aaaaaaa",
-    "createdAt": "2026-07-16T07:26:01.120Z"
+    "createdAt": "2026-07-16T07:26:03.553Z"
   }
 };
