@@ -27,5 +27,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-06-29",
     "time": "03:22:47",
     "pageLink": "/product-description-page"
+  },
+  {
+    "id": "af65c224-9a7b-4293-9d11-9f843f1529c0",
+    "email": "123for@gmail.com",
+    "date": "2026-07-16",
+    "time": "10:16:17",
+    "pageLink": "/"
   }
 ];
