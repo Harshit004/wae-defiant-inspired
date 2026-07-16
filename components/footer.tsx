@@ -215,20 +215,20 @@ export default function Footer() {
                 {/* INSIDE WAE */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
                   <li><Link href="/profile" className="hover:opacity-80 transition-opacity">Profile</Link></li>
-                  <li><Link href="/our-portfolio" className="hover:opacity-80 transition-opacity">Portfolio</Link></li>
+                  <li><Link href="/portfolio" className="hover:opacity-80 transition-opacity">Portfolio</Link></li>
                   <li><Link href="/careers" className="hover:opacity-80 transition-opacity">Reimagine Work</Link></li>
                 </ul>
 
                 {/* RESPONSIBILITY */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
                   <li><Link href="/sustainability" className="hover:opacity-80 transition-opacity">Sustainability</Link></li>
-                  <li><Link href="/the-activist-co" className="hover:opacity-80 transition-opacity">Activism</Link></li>
+                  <li><Link href="/activism" className="hover:opacity-80 transition-opacity">Activism</Link></li>
                   <li><Link href="/compliance" className="hover:opacity-80 transition-opacity">Compliances</Link></li>
                 </ul>
 
                 {/* ETCETERA */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/blogs" className="hover:opacity-80 transition-opacity">Perspectives</Link></li>
+                  <li><Link href="/perspectives" className="hover:opacity-80 transition-opacity">Perspectives</Link></li>
                   <li><Link href="/news-and-updates" className="hover:opacity-80 transition-opacity">Mentioned</Link></li>
                   <li><Link href="/contact-us" className="hover:opacity-80 transition-opacity">Contact</Link></li>
                 </ul>
