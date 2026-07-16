@@ -199,12 +199,12 @@ export default function Home() {
 
     const productsItems = [
         { text: "This is Us", href: "/profile" },
-        { text: "Our Portfolio", href: "/our-portfolio" },
+        { text: "Our Portfolio", href: "/portfolio" },
         { text: "Reimagine Work", href: "/careers" },
     ]
     const blueprintItems = [
         { text: "Sustainability", href: "/sustainability" },
-        { text: "The Activist Co.", href: "/the-activist-co" },
+        { text: "The Activist Co.", href: "/activism" },
         { text: "Blog", href: "/perspectives" },
     ]
 const etceteraItems = [

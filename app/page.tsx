@@ -696,7 +696,7 @@ export default function Home() {
             </Link>
 
             {/* View All */}
-            <Link href="/our-portfolio" className="bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]">
+            <Link href="/portfolio" className="bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]">
               <div
                 className="rounded-full border border-white flex items-center justify-center"
                 style={{

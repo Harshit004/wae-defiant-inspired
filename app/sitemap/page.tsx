@@ -12,9 +12,9 @@ const sitemapData = [
     title: "1. Home",
     links: [
       { text: "Hero", href: "/" },
-      { text: "The Activist Co.", href: "/the-activist-co" },
+      { text: "The Activist Co.", href: "/activism" },
       { text: "This is Us", href: "/profile" },
-      { text: "Our Portfolio", href: "/our-portfolio" },
+      { text: "Our Portfolio", href: "/portfolio" },
       { text: "Sustainability", href: "/sustainability" },
       { text: "Reimagine Work", href: "/careers" },
       { text: "News & Updates", href: "/news-and-updates" },
@@ -27,7 +27,7 @@ const sitemapData = [
     title: "2. Inside WAE",
     links: [
       { text: "This is Us", href: "/profile" },
-      { text: "Our Portfolio", href: "/our-portfolio" },
+      { text: "Our Portfolio", href: "/portfolio" },
       { text: "Reimagine work", href: "/careers" },
     ]
   },
@@ -35,19 +35,19 @@ const sitemapData = [
     title: "3. Responsibility",
     links: [
       { text: "Sustainability", href: "/sustainability" },
-      { text: "The Activist Co.", href: "/the-activist-co" },
+      { text: "The Activist Co.", href: "/activism" },
       { text: "Blog", href: "/perspectives" },
     ]
   },
   {
     title: "4. Portfolio",
     links: [
-      { text: "Bottle Filling Stations", href: "/our-portfolio?category=bottle-filling-stations" },
-      { text: "Drinking Water Fountains", href: "/our-portfolio?category=drinking-water-fountains" },
-      { text: "Drinking Water Dispensers & Coolers", href: "/our-portfolio?category=drinking-water-dispensers" },
-      { text: "Drinking Water Stations", href: "/our-portfolio?category=drinking-water-stations" },
-      { text: "Drinking Water Faucets", href: "/our-portfolio?category=drinking-water-faucets" },
-      { text: "Under The Counter RO", href: "/our-portfolio?category=under-the-counter-ro" },
+      { text: "Bottle Filling Stations", href: "/portfolio?category=bottle-filling-stations" },
+      { text: "Drinking Water Fountains", href: "/portfolio?category=drinking-water-fountains" },
+      { text: "Drinking Water Dispensers & Coolers", href: "/portfolio?category=drinking-water-dispensers" },
+      { text: "Drinking Water Stations", href: "/portfolio?category=drinking-water-stations" },
+      { text: "Drinking Water Faucets", href: "/portfolio?category=drinking-water-faucets" },
+      { text: "Under The Counter RO", href: "/portfolio?category=under-the-counter-ro" },
     ]
   },
   {
@@ -72,12 +72,12 @@ const sitemapData = [
   {
     title: "7. The activist Co.",
     links: [
-      { text: "Climate Change & Water", href: "/the-activist-co" },
-      { text: "1% For Water", href: "/the-activist-co" },
-      { text: "Circular Economy", href: "/the-activist-co" },
-      { text: "Sustainable Development Goals", href: "/the-activist-co" },
-      { text: "Vision 2030", href: "/the-activist-co" },
-      { text: "Water Conservation", href: "/the-activist-co" },
+      { text: "Climate Change & Water", href: "/activism" },
+      { text: "1% For Water", href: "/activism" },
+      { text: "Circular Economy", href: "/activism" },
+      { text: "Sustainable Development Goals", href: "/activism" },
+      { text: "Vision 2030", href: "/activism" },
+      { text: "Water Conservation", href: "/activism" },
     ]
   },
   {
@@ -121,10 +121,10 @@ const sitemapData = [
     title: "12. Footer",
     links: [
       { text: "About WAE", href: "/profile" },
-      { text: "Portfolio", href: "/our-portfolio" },
+      { text: "Portfolio", href: "/portfolio" },
       { text: "Reimagine Work", href: "/careers" },
       { text: "Sustainability", href: "/sustainability" },
-      { text: "The Activist Co.", href: "/the-activist-co" },
+      { text: "The Activist Co.", href: "/activism" },
       { text: "Contact", href: "/contact-us" },
       { text: "Legal", href: "/data-privacy-policy" },
       { text: "Social Media", href: "#" },
