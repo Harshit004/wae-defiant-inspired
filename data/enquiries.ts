@@ -946,5 +946,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/product-description-page?product=aurela",
     "type": "product",
     "createdAt": "2026-07-15T09:57:45.271Z"
+  },
+  "94ef72dc-9f43-4ec4-aff7-e4976e8c2db5": {
+    "id": "94ef72dc-9f43-4ec4-aff7-e4976e8c2db5",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-07-16T07:24:17.157Z"
   }
 };
