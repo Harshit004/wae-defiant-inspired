@@ -1,0 +1,10 @@
+# WAE Corporation - robots.txt
+
+User-agent: *
+Allow: /
+
+# Block CMS Login
+Disallow: /secret-cms-login/
+
+# Sitemap
+Sitemap: https://www.waecorp.com/sitemap.xml
