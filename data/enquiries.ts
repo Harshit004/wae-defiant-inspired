@@ -1078,5 +1078,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-07-16T13:25:59.356Z"
+  },
+  "e6f189a3-1d62-4cf9-993b-86edbc32dff6": {
+    "id": "e6f189a3-1d62-4cf9-993b-86edbc32dff6",
+    "fullName": "Ramesh Patodia",
+    "companyName": "Shree Ranisatiji Mandir",
+    "email": "shreeranisatijimandir@gmail.com",
+    "phone": "9830062022",
+    "city": "Jhunjhunu",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "We are one of the largest temple in the world and we are looking for plastic free water solutions. ",
+    "type": "contact-us",
+    "createdAt": "2026-07-17T02:02:04.870Z"
   }
 };
