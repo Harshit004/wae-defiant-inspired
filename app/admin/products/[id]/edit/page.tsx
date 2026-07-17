@@ -4,7 +4,7 @@ import { useEffect, useState, use, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import Header from "@/components/admin/header"
-import { ChevronLeft, Trash2, Plus, Save, GripVertical } from "lucide-react"
+import { ChevronLeft, Trash2, Plus, Save, GripVertical, ShieldAlert } from "lucide-react"
 
 interface SpecRow {
   variant: string
@@ -48,6 +48,7 @@ export default function EditProductPage({ params }: EditProductProps) {
 
   // Modal states
   const [showUnsavedModal, setShowUnsavedModal] = useState(false)
+  const [showStorageFullModal, setShowStorageFullModal] = useState(false)
   const [pendingRedirectUrl, setPendingRedirectUrl] = useState<string | null>(null)
 
   // Form Fields
@@ -308,10 +309,14 @@ export default function EditProductPage({ params }: EditProductProps) {
       if (data.success) {
         handleFieldChange(setter, data.url)
       } else {
-        alert(data.message || "Failed to upload file")
+        if (data.message?.toLowerCase().includes("store_suspended") || data.message?.toLowerCase().includes("quota") || data.message?.toLowerCase().includes("limit") || data.message?.toLowerCase().includes("storage")) {
+          setShowStorageFullModal(true)
+        } else {
+          alert(data.message || "Failed to upload file")
+        }
       }
     } catch (err) {
-      alert("Error uploading file")
+      setShowStorageFullModal(true)
     } finally {
       setUploading(false)
     }
@@ -1312,6 +1317,43 @@ export default function EditProductPage({ params }: EditProductProps) {
                     style={{ fontFamily: "'Inter Tight', sans-serif" }}
                   >
                     Confirm
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Storage Full Modal */}
+      {showStorageFullModal && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-[#04111d] border border-white/10 w-full max-w-[440px] px-8 py-8 text-white relative">
+            <button
+              onClick={() => setShowStorageFullModal(false)}
+              className="absolute right-6 top-6 text-gray-500 hover:text-gray-300"
+            >
+              ✕
+            </button>
+
+            <div className="flex gap-4 items-start text-left">
+              <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 shrink-0">
+                <ShieldAlert size={20} />
+              </div>
+              <div>
+                <h3 className="text-md font-semibold text-white mb-2" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                  Storage is Full!
+                </h3>
+                <p className="text-xs text-gray-400 leading-relaxed mb-6" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                  Your Vercel storage quota has been reached. Please delete unnecessary documents in order to add more.
+                </p>
+                <div className="flex gap-3 justify-end">
+                  <button
+                    onClick={() => setShowStorageFullModal(false)}
+                    className="bg-[#104e7a] hover:bg-[#155b8e] px-4 py-2 text-xs font-semibold text-white rounded-none cursor-pointer transition-all"
+                    style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                  >
+                    Understood
                   </button>
                 </div>
               </div>
