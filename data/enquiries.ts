@@ -1090,5 +1090,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We are one of the largest temple in the world and we are looking for plastic free water solutions. ",
     "type": "contact-us",
     "createdAt": "2026-07-17T02:02:04.870Z"
+  },
+  "9e1ae12b-c716-48de-83f7-e0659963df95": {
+    "id": "9e1ae12b-c716-48de-83f7-e0659963df95",
+    "fullName": "Yuvaraj V",
+    "companyName": "Wework-PTP Jupiter",
+    "email": "yuvaraj.v@wework.co.in",
+    "phone": "9791518357",
+    "city": "Bangalore ",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "We are facing water leakage and temperature issue in the WAE water dispenser, Kindly assign your team to address  the issue .",
+    "type": "contact-us",
+    "createdAt": "2026-07-18T05:51:34.759Z"
   }
 };
