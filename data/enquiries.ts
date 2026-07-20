@@ -1114,5 +1114,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Need Customer care number",
     "type": "contact-us",
     "createdAt": "2026-07-20T08:30:34.579Z"
+  },
+  "a9ebbaee-99d0-4027-bfc3-21f1b91a6dc5": {
+    "id": "a9ebbaee-99d0-4027-bfc3-21f1b91a6dc5",
+    "fullName": "Sumit Bait",
+    "companyName": "JM Financial Home Loans Ltd",
+    "email": "sumit.bait@jmfl.com",
+    "phone": "9702441135",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Need to discussed regarding water dispensar of Wae corp.",
+    "type": "contact-us",
+    "createdAt": "2026-07-20T09:37:12.831Z"
   }
 };
