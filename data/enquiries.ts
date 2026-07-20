@@ -1102,5 +1102,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We are facing water leakage and temperature issue in the WAE water dispenser, Kindly assign your team to address  the issue .",
     "type": "contact-us",
     "createdAt": "2026-07-18T05:51:34.759Z"
+  },
+  "a6a13fe5-b2d2-44c5-8f41-f20bfba4c406": {
+    "id": "a6a13fe5-b2d2-44c5-8f41-f20bfba4c406",
+    "fullName": "Harsh",
+    "companyName": "Balaji Fitclub",
+    "email": "harsh.vaultgym@gmail.com",
+    "phone": "8384047159",
+    "city": "Delhi",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Need Customer care number",
+    "type": "contact-us",
+    "createdAt": "2026-07-20T08:30:34.579Z"
   }
 };
