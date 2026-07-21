@@ -1186,5 +1186,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-07-21T05:06:21.996Z"
+  },
+  "7cf66905-58b4-4faf-bad5-4ea45ad1417b": {
+    "id": "7cf66905-58b4-4faf-bad5-4ea45ad1417b",
+    "fullName": "sunlit",
+    "companyName": "test---vvvv",
+    "email": "rekapit384@suahi.com",
+    "phone": "1234567890",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "test--vvvv",
+    "type": "contact-us",
+    "createdAt": "2026-07-21T08:08:54.559Z"
   }
 };
