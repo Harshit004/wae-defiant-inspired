@@ -1126,5 +1126,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Need to discussed regarding water dispensar of Wae corp.",
     "type": "contact-us",
     "createdAt": "2026-07-20T09:37:12.831Z"
+  },
+  "b79b0db2-61d0-48f6-ad6e-924f91240190": {
+    "id": "b79b0db2-61d0-48f6-ad6e-924f91240190",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-07-21T05:06:14.868Z"
   }
 };
