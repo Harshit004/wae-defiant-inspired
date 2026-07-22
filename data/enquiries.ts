@@ -1198,5 +1198,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "test--vvvv",
     "type": "contact-us",
     "createdAt": "2026-07-21T08:08:54.559Z"
+  },
+  "91a476ef-427d-43b9-a47e-599ea3795bae": {
+    "id": "91a476ef-427d-43b9-a47e-599ea3795bae",
+    "fullName": "Anjum Aziz",
+    "companyName": "Culinary Consultancy",
+    "email": "cc@anjumaziz.com",
+    "phone": "9845203249",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/product-description-page?product=primus",
+    "type": "product",
+    "createdAt": "2026-07-22T18:32:39.284Z"
   }
 };
