@@ -2331,9 +2331,7 @@ export default function Home() {
                 </div>
               </Link>
               
-              <div style={{ height: '13.23vw' }} />
-              <div className="w-full h-[1px] border-b border-[#FFFFFF4D]" />
-              <div style={{ height: '10.43vw' }} />
+              <div style={{ height: '12vw' }} />
             </div>
           ))}
           
