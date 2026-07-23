@@ -1336,5 +1336,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/",
     "type": "general",
     "createdAt": "2026-07-23T09:35:49.288Z"
+  },
+  "a311cfef-c1a2-4e8f-bccf-eb594662422d": {
+    "id": "a311cfef-c1a2-4e8f-bccf-eb594662422d",
+    "fullName": "test",
+    "companyName": "No",
+    "email": "mishra.mudit79@gmail.com",
+    "phone": "9654467148",
+    "city": "Ghaziabad",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "test",
+    "type": "general",
+    "createdAt": "2026-07-23T10:20:40.857Z"
   }
 };
