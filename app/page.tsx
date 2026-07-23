@@ -2223,14 +2223,7 @@ export default function Home() {
 
       {/* CONTACT SECTION */}
       <section
-        className="bg-black text-white"
-        style={{
-          paddingTop: '123px',
-          paddingBottom: '123px',
-          paddingLeft: '7.5vw',
-          paddingRight: '7.5vw',
-          borderTop: '1px solid #FFFFFF4D'
-        }}
+        className="bg-black text-white px-[6.1vw] pt-[16.53vw] pb-[21.11vw] md:px-[7.5vw] md:py-[123px] border-t border-[#FFFFFF4D]"
       >
         <ContactSectionDark />
       </section>
