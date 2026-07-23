@@ -182,31 +182,17 @@ export default function Footer() {
               <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5e07270e-f6f2-466a-0a14-316b9a397000/public" alt="YouTube" width={18} height={14} className="brightness-0 invert" />
             </Link>
           </div>
-          
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M7 17L17 7M7 7h10v10" />
-            </svg>
-          </button>
         </div>
 
         {/* Divider */}
         <div className="w-full h-[1px] bg-[#FFFFFF4D] mt-8 mb-6" />
 
         {/* Bottom Bar: Copyright & WhatsApp */}
-        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-start items-center w-full">
           <div className="flex items-center gap-2 font-[Manrope] text-[3vw] text-white">
             <span>&copy;</span>
             <span>Copy Right WAE 2026</span>
           </div>
-          <Link href="https://wa.me/911204069800" target="_blank" className="relative w-12 h-12">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full text-white">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path d="M16.5 14.5s-1.5-1.5-1.5-1.5a1.88 1.88 0 0 0-2.6 0l-1.3 1.3a1.88 1.88 0 0 1-2.6-2.6l1.3-1.3a1.88 1.88 0 0 0 0-2.6s-1.5-1.5-1.5-1.5a1.88 1.88 0 0 0-2.6 0 3.32 3.32 0 0 0-.6 2.8c.8 3.5 3.3 6 6.8 6.8a3.32 3.32 0 0 0 2.8-.6 1.88 1.88 0 0 0 0-2.6z"/>
-            </svg>
-          </Link>
         </div>
       </div>
 {/* ── DESKTOP LAYOUT ── */}
