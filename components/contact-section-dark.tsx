@@ -1,4 +1,5 @@
 import React, { FC, useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { animate } from "framer-motion";
 
 const Icons = {
@@ -14,6 +15,8 @@ const Icons = {
 };
 
 const ContactSectionDark = () => {
+    const router = useRouter();
+
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         const form = event.target as HTMLFormElement;
@@ -45,8 +48,7 @@ const ContactSectionDark = () => {
                 throw new Error(errorData?.message || 'Failed to submit enquiry');
             }
 
-            alert('Thank you for contacting us! Your message has been sent.');
-            form.reset();
+            router.push('/thank-you');
         } catch (error: any) {
             console.error('Error submitting form:', error);
             alert(error.message || 'There was an error submitting the form. Please try again.');

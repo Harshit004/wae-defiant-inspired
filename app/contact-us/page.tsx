@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
@@ -39,6 +40,7 @@ const supportItems = [
 ]
 
 export default function ContactUsPage() {
+  const router = useRouter()
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [formMessage, setFormMessage] = useState("")
 
@@ -66,9 +68,7 @@ export default function ContactUsPage() {
         body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error()
-      setFormStatus("success")
-      setFormMessage("Thank you! We'll be in touch shortly.")
-      form.reset()
+      router.push("/thank-you")
     } catch {
       setFormStatus("error")
       setFormMessage("Something went wrong. Please try again.")

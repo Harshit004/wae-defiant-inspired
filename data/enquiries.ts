@@ -1091,6 +1091,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "type": "contact-us",
     "createdAt": "2026-07-17T02:02:04.870Z"
   },
+
   "9e1ae12b-c716-48de-83f7-e0659963df95": {
     "id": "9e1ae12b-c716-48de-83f7-e0659963df95",
     "fullName": "Yuvaraj V",
@@ -1209,5 +1210,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/product-description-page?product=primus",
     "type": "product",
     "createdAt": "2026-07-22T18:32:39.284Z"
+  },
+  "ecfdb97d-96be-4737-9d1f-d0e896ee0fdc": {
+    "id": "ecfdb97d-96be-4737-9d1f-d0e896ee0fdc",
+    "fullName": "TESTER",
+    "companyName": "Test company",
+    "email": "test@mail.com",
+    "phone": "1234567890",
+    "city": "MX-CY",
+    "pageLink": "http://localhost:3000/",
+    "message": "Hi",
+    "type": "general",
+    "createdAt": "2026-07-23T00:46:38.715Z"
   }
 };

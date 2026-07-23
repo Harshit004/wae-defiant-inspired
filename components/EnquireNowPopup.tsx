@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 interface EnquireNowPopupProps {
   isOpen: boolean;
@@ -12,6 +13,7 @@ interface EnquireNowPopupProps {
 }
 
 export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl }: EnquireNowPopupProps) {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     fullName: "",
     companyName: "",
@@ -45,7 +47,6 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
       });
       const data = await res.json();
       if (data.success) {
-        setIsSuccess(true);
         if (downloadUrl) {
           const a = document.createElement("a");
           a.href = downloadUrl;
@@ -54,11 +55,7 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
           a.click();
           document.body.removeChild(a);
         }
-        setTimeout(() => {
-          setIsSuccess(false);
-          setFormData({ fullName: "", companyName: "", email: "", phone: "", city: "" });
-          onClose();
-        }, 3000);
+        router.push("/thank-you");
       } else {
         setError(data.message || "Failed to submit enquiry. Please try again.");
       }
