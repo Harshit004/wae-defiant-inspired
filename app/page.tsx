@@ -1686,7 +1686,7 @@ export default function Home() {
           <div className="grid grid-cols-2 w-full mt-auto">
             {/* Tonnes CO₂ emissions saved */}
             <div className="border-r border-b border-white/20 pb-[5vw] pr-[2vw]">
-              <Counter value={1012120.45} suffix="+" trigger={isInView} style={{ fontSize: '6vw', lineHeight: '100%', marginBottom: '2vw' }} />
+              <Counter value={1012120.45} suffix="+" trigger={isInView} style={{ fontSize: '6vw', lineHeight: '100%', marginBottom: '2vw', fontWeight: 400 }} />
               <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '2.5vw', lineHeight: '110%', color: '#AEAEAE' }}>
                 Tonnes CO₂ emissions saved
               </p>
@@ -1698,7 +1698,7 @@ export default function Home() {
 
             {/* Million gallons of water saved */}
             <div className="border-r border-white/20 pt-[5vw] pr-[2vw]">
-              <Counter value={12185.45} suffix="+" trigger={isInView} style={{ fontSize: '6vw', lineHeight: '100%', marginBottom: '2vw' }} />
+              <Counter value={12185.45} suffix="+" trigger={isInView} style={{ fontSize: '6vw', lineHeight: '100%', marginBottom: '2vw', fontWeight: 400 }} />
               <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '2.5vw', lineHeight: '110%', color: '#AEAEAE' }}>
                 Million Gallons Of Water Saved
               </p>
@@ -1706,7 +1706,7 @@ export default function Home() {
 
             {/* Tonnes plastic removed */}
             <div className="pt-[5vw] pl-[4vw]">
-              <Counter value={22253.65} suffix="+" trigger={isInView} style={{ fontSize: '6vw', lineHeight: '100%', marginBottom: '2vw' }} />
+              <Counter value={22253.65} suffix="+" trigger={isInView} style={{ fontSize: '6vw', lineHeight: '100%', marginBottom: '2vw', fontWeight: 400 }} />
               <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '2.5vw', lineHeight: '110%', color: '#AEAEAE' }}>
                 Tonnes Plastic Removed
               </p>
