@@ -14,6 +14,7 @@ export default function WhatsAppWidget() {
         container.setAttribute("data-tooltip-added", "true");
 
         const tooltip = document.createElement("div");
+        tooltip.id = "wa-widget-tooltip";
         tooltip.innerText = "Chat With Us";
         tooltip.style.position = "fixed";
         tooltip.style.bottom = "36px"; /* Centered vertically relative to the 54px widget at bottom: 24px */
@@ -98,6 +99,9 @@ export default function WhatsAppWidget() {
                 bottom: 20px !important;
                 transform: scale(0.85);
                 transform-origin: bottom right;
+              }
+              #wa-widget-tooltip {
+                display: none !important;
               }
             }
           `
