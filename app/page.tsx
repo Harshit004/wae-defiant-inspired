@@ -1493,7 +1493,7 @@ export default function Home() {
         <img
           src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/374f4710-d942-4059-e39c-b5fc24283700/public"
           alt="Impact Background"
-          className="absolute top-0 right-0 md:h-full h-[104.97vw] w-auto opacity-70 object-cover object-right pointer-events-none select-none z-0"
+          className="absolute md:top-0 top-1/2 right-0 md:translate-y-0 -translate-y-1/2 md:h-full h-[104.97vw] w-auto opacity-70 object-cover object-right pointer-events-none select-none z-0"
           style={{
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%)',
             maskImage: 'linear-gradient(to right, transparent, black 15%)',
