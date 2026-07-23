@@ -11,7 +11,7 @@ export default function ScrollToTop() {
   useEffect(() => {
     const toggleVisibility = () => {
       // Appear after the hero section (approx 100vh)
-      if (window.scrollY > window.innerHeight * 0.8) {
+      if (window.scrollY > 300) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
@@ -36,7 +36,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-[100px] right-6 z-[9999] hover:opacity-80 transition-opacity animate-in fade-in duration-300"
+      className="fixed bottom-[85px] right-5 md:bottom-[100px] md:right-6 z-[9999] hover:opacity-80 transition-opacity flex items-center justify-center"
       style={{ width: "54px", height: "54px" }}
       aria-label="Scroll to top"
     >
