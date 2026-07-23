@@ -82,7 +82,7 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
         pointerEvents: "auto",
         display: "inline-flex",
         alignItems: "center",
-        gap: "0.55vw", padding: "0.69vw 1.11vw",
+        gap: "0.55vw", padding: "10.5px 16px",
         fontFamily: "\'Manrope\', sans-serif",
         fontWeight: 500,
         fontSize: "10px",

@@ -127,7 +127,7 @@ export default function JoinWaePage() {
                     </div>
                   </div>
 
-                  <HoverButton href={`/join-wae/${job.id}`} className="w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
+                  <HoverButton href={`/join-wae/${job.id}`} className="px-[16px] py-[10.5px] w-fit">
                     {(hovered) => (
                       <div className="flex items-center justify-center gap-[8px]">
                         <span className="font-['Manrope'] font-medium text-[10px] leading-none">Know More</span>
