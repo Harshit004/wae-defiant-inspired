@@ -1720,8 +1720,9 @@ export default function Home() {
       </div>
 
       {/* BLOGS SECTION */}
+      {/* DESKTOP LAYOUT */}
       <section
-        className="bg-black text-white"
+        className="bg-black text-white hidden md:block"
         style={{
           paddingTop: '123px',
           paddingBottom: '123px',
@@ -1759,7 +1760,7 @@ export default function Home() {
                 {(hovered) => (
                   <>
                     Know More
-                    <div className="relative inline-block w-4 h-4">
+                    <div className="relative inline-block w-4 h-4 ml-2">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                         alt="icon default"
@@ -1875,6 +1876,161 @@ export default function Home() {
         </div>
       </section>
 
+      {/* MOBILE LAYOUT */}
+      <section className="bg-black text-white md:hidden px-[6.1vw] py-[12.72vw]">
+        <h2 style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 400,
+          fontSize: '7.12vw',
+          lineHeight: '110%',
+          color: '#FFFFFF'
+        }}>
+          Perspectives
+        </h2>
+        
+        <div style={{ height: '4.32vw' }} />
+        
+        <p style={{
+          fontFamily: "'Manrope', sans-serif",
+          fontWeight: 400,
+          fontSize: '3.05vw',
+          lineHeight: '100%',
+          color: '#AEAEAE'
+        }}>
+          WAE publishes perspectives on climate, water, and sustainability — because good water companies think beyond the tap.
+        </p>
+        
+        <div style={{ height: '12.21vw' }} />
+
+        <div className="flex justify-start">
+          <Link href="/perspectives" className="contents">
+            <HoverButton theme="transparent-white">
+              {(hovered) => (
+                <>
+                  Know More
+                  <div className="relative inline-block w-4 h-4 ml-2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                      alt="icon default"
+                      width={16}
+                      height={16}
+                      className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                    />
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: hovered ? 1 : 0 }}
+                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                      className="absolute top-0 left-0"
+                    >
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                        alt="icon hover"
+                        width={16}
+                        height={16}
+                        className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                      />
+                    </motion.div>
+                  </div>
+                </>
+              )}
+            </HoverButton>
+          </Link>
+        </div>
+
+        <div style={{ height: '19.84vw' }} />
+
+        <div className="flex flex-col">
+          {blogsLoading ? (
+            [0, 1, 2].map((i) => (
+              <div key={i} className="mb-10 w-full">
+                <div className="relative w-full aspect-video overflow-hidden mb-6 bg-white/5 animate-pulse" />
+                <div className="h-5 bg-white/5 animate-pulse mb-2 w-3/4" />
+                <div className="h-4 bg-white/5 animate-pulse mb-1 w-full" />
+              </div>
+            ))
+          ) : homepageBlogs.length > 0 ? (
+            homepageBlogs.map((blog, index) => {
+              const categorySlug = blog.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+              const blogUrl = `/perspectives/${categorySlug}/${blog.id}`
+              return (
+                <div key={blog.id} className="w-full flex flex-col">
+                  <Link href={blogUrl} className="contents">
+                    <div className="group cursor-pointer">
+                      <div className="relative w-full h-[68.7vw] overflow-hidden">
+                        {blog.heroImage ? (
+                          <Image
+                            src={blog.heroImage}
+                            alt={blog.title}
+                            fill
+                            className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                            <span style={{ color: '#AEAEAE', fontSize: '11px' }}>No Image</span>
+                          </div>
+                        )}
+                      </div>
+                      
+                      <div style={{ height: '5.08vw' }} />
+                      
+                      <h3 style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '4.07vw',
+                        lineHeight: '100%',
+                        color: '#FFFFFF'
+                      }}>
+                        {blog.title}
+                      </h3>
+                      
+                      <div style={{ height: '3.05vw' }} />
+                      
+                      <p style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '3.05vw',
+                        lineHeight: '100%',
+                        color: '#AEAEAE'
+                      }}>
+                        {blog.description}
+                      </p>
+                      
+                      <div style={{ height: '13.23vw' }} />
+                      
+                      <span style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '3.05vw',
+                        lineHeight: '110%',
+                        color: '#FFFFFF',
+                        textDecoration: 'underline',
+                        textUnderlineOffset: '0%',
+                        textDecorationThickness: '1px',
+                        textDecorationSkipInk: 'auto'
+                      }}>
+                        Read Article
+                      </span>
+                    </div>
+                  </Link>
+
+                  {index !== homepageBlogs.length - 1 && (
+                    <div className="w-full relative mt-[14.5vw] mb-[10.43vw]">
+                      <div className="absolute left-[-6.1vw] right-[-6.1vw] border-b border-[#FFFFFF4D]" />
+                    </div>
+                  )}
+                </div>
+              )
+            })
+          ) : (
+            <div className="py-8 text-center">
+              <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: '3.56vw', color: '#AEAEAE' }}>
+                No blogs featured yet.
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+      
       {/* MEDIA & UPDATES SECTION */}
       <section
         className="bg-black text-white"
