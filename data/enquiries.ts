@@ -1091,7 +1091,6 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "type": "contact-us",
     "createdAt": "2026-07-17T02:02:04.870Z"
   },
-
   "9e1ae12b-c716-48de-83f7-e0659963df95": {
     "id": "9e1ae12b-c716-48de-83f7-e0659963df95",
     "fullName": "Yuvaraj V",
@@ -1222,5 +1221,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hi",
     "type": "general",
     "createdAt": "2026-07-23T00:46:38.715Z"
+  },
+  "ad2d550b-2516-4ddb-8b42-395f5cd545d1": {
+    "id": "ad2d550b-2516-4ddb-8b42-395f5cd545d1",
+    "fullName": "Abhishek ",
+    "companyName": "WAE",
+    "email": "abhishekrajrusha@gmail.com",
+    "phone": "9304116169",
+    "city": "Noida",
+    "pageLink": "https://www.waecorp.com/",
+    "type": "general",
+    "createdAt": "2026-07-23T05:19:52.524Z"
   }
 };
