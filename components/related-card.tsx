@@ -25,7 +25,7 @@ const HoverButton: React.FC<HoverButtonProps> = ({ children, href, invertedColor
       type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`px-4 py-3 transition-all duration-650 ease ${className || 'w-fit'}`}
+      className={`px-[16px] py-[10.5px] transition-all duration-650 ease ${className || 'w-fit'}`}
       style={{
         pointerEvents: "auto",
         display: "inline-flex",

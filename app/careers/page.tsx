@@ -86,7 +86,7 @@ export default function CareersPage() {
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Why WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Think Different</p>
 
-            <HoverButton href="/profile" className="mt-[68px] w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
+            <HoverButton href="/profile" className="mt-[68px] px-[16px] py-[10.5px] w-fit">
               {(hovered) => (
                 <div className="flex items-center justify-center gap-[8px]">
                   <span className="font-['Manrope'] font-medium text-[10px] leading-none">Know More</span>
@@ -133,7 +133,7 @@ export default function CareersPage() {
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Life @ WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">People first</p>
 
-            <HoverButton href="/life-at-wae" className="mt-[68px] w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
+            <HoverButton href="/life-at-wae" className="mt-[68px] px-[16px] py-[10.5px] w-fit">
               {(hovered) => (
                 <div className="flex items-center justify-center gap-[8px]">
                   <span className="font-['Manrope'] font-medium text-[10px] leading-none">Know More</span>
@@ -180,7 +180,7 @@ export default function CareersPage() {
             <h2 className="font-['Inter_Tight'] font-normal text-[36px] leading-[1.1] text-white">Join WAE</h2>
             <p className="font-['Inter_Tight'] font-normal text-[14px] leading-none text-[#AEAEAE] mt-[22px]">Explore current job openings</p>
 
-            <HoverButton href="/join-wae" className="mt-[68px] w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
+            <HoverButton href="/join-wae" className="mt-[68px] px-[16px] py-[10.5px] w-fit">
               {(hovered) => (
                 <div className="flex items-center justify-center gap-[8px]">
                   <span className="font-['Manrope'] font-medium text-[10px] leading-none">Know More</span>
