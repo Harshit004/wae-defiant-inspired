@@ -77,17 +77,25 @@ export default function AdminEnquiriesPage() {
 
     const createSheetData = (typeFilter: string) => {
       const typeFiltered = filteredByDate.filter(e => (e.type || 'product') === typeFilter);
-      const headers = ["Date", "Name", "Company", "Email", "Phone", "Location", "Page Link", "Message"];
-      const data = typeFiltered.map(e => [
-        new Date(e.createdAt).toLocaleDateString(),
-        e.fullName || '',
-        e.companyName || '',
-        e.email || '',
-        e.phone || '',
-        e.city || '',
-        e.pageLink || '',
-        e.message || ''
-      ]);
+      
+      const isProduct = typeFilter === 'product';
+      const headers = ["Date", "Name", "Company", "Email", "Phone", "Location"];
+      if (isProduct) headers.push("Page Link");
+      headers.push("Message");
+      
+      const data = typeFiltered.map(e => {
+        const row = [
+          new Date(e.createdAt).toLocaleDateString(),
+          e.fullName || '',
+          e.companyName || '',
+          e.email || '',
+          e.phone || '',
+          e.city || ''
+        ];
+        if (isProduct) row.push(e.pageLink || '');
+        row.push(e.message || '');
+        return row;
+      });
       return [headers, ...data];
     };
 
@@ -165,7 +173,7 @@ export default function AdminEnquiriesPage() {
                   <th className="px-4 py-3 font-medium">Company</th>
                   <th className="px-4 py-3 font-medium">Contact</th>
                   <th className="px-4 py-3 font-medium">Location</th>
-                  <th className="px-4 py-3 font-medium">Page Link</th>
+                  {activeTab === 'product' && <th className="px-4 py-3 font-medium">Page Link</th>}
                   {(activeTab === 'general' || activeTab === 'contact-us') && <th className="px-4 py-3 font-medium">Message</th>}
                   <th className="px-4 py-3 font-medium text-right">Actions</th>
                 </tr>
@@ -183,11 +191,13 @@ export default function AdminEnquiriesPage() {
                       <div className="text-xs">{enq.phone}</div>
                     </td>
                     <td className="px-4 py-3 text-white/70">{enq.city || "-"}</td>
-                    <td className="px-4 py-3 text-blue-400 hover:underline">
-                      <a href={enq.pageLink} target="_blank" rel="noopener noreferrer">
-                        {enq.pageLink.split('/').slice(3).join('/') || "Link"}
-                      </a>
-                    </td>
+                    {activeTab === 'product' && (
+                      <td className="px-4 py-3 text-blue-400 hover:underline">
+                        <a href={enq.pageLink} target="_blank" rel="noopener noreferrer">
+                          {enq.pageLink.split('/').slice(3).join('/') || "Link"}
+                        </a>
+                      </td>
+                    )}
                     {(activeTab === 'general' || activeTab === 'contact-us') && (
                       <td className="px-4 py-3 text-white/70 max-w-xs">
                         <div className="truncate mb-1" title={enq.message}>{enq.message || "-"}</div>
