@@ -1,9 +1,10 @@
 "use client"
 
 import type { FC } from "react"
-import { useRef, Fragment } from "react"
+import { useRef, Fragment, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { Menu, X } from "lucide-react"
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
@@ -27,13 +28,39 @@ const etceteraItems = [
 
 const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
     const headerRef = useRef<HTMLDivElement>(null)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
         <>
             <div>
                 <header ref={headerRef} className="w-full absolute top-0 left-0 z-50 pb-5 text-white" style={{ backgroundColor: transparentBg ? 'transparent' : '#0D0D0D' }}>
                     <div className={containerClass}>
-                        <div className="grid grid-cols-[auto_minmax(0,10.17vw)_auto_minmax(0,10.21vw)_auto_minmax(0,10.21vw)_auto_minmax(0,9.03vw)_auto_minmax(0,8.13vw)_1fr] items-start pt-[30px]">
+                        {/* Mobile Header */}
+                        <div className="md:hidden flex justify-between items-center pt-[20px] pb-[16px]">
+                            <Link href="/">
+                                <Image
+                                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
+                                    alt="WAE Logo"
+                                    width={37}
+                                    height={40}
+                                    priority
+                                    className="w-[37px] h-[40px]"
+                                />
+                            </Link>
+                            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white p-2">
+                                {mobileMenuOpen ? <X size={24} /> : (
+                                    <svg width="21.5" height="19.5" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1.5H20.5M1 9.5H20.5M1 17.5H20.5" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                                    </svg>
+                                )}
+                            </button>
+                        </div>
+                        
+                        {/* Mobile Header Full-Width Divider */}
+                        <div className="md:hidden absolute top-[76px] left-0 right-0 border-b border-[#FFFFFF4D]" />
+
+                        {/* Desktop Header */}
+                        <div className="hidden md:grid grid-cols-[auto_minmax(0,10.17vw)_auto_minmax(0,10.21vw)_auto_minmax(0,10.21vw)_auto_minmax(0,9.03vw)_auto_minmax(0,8.13vw)_1fr] items-start pt-[30px]">
                             {/* Headings */}
                             <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>PERSONA</div>
                             <div></div>
