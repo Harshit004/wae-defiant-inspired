@@ -1633,19 +1633,19 @@ export default function Home() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="w-full md:hidden flex flex-col relative z-10 py-[20.35vw] px-[6.1vw]">
-          <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '8.14vw', lineHeight: '110%', color: '#FFFFFF' }}>
+        <div className="w-full md:hidden flex flex-col relative z-10 py-[13.74vw] px-[6.1vw]">
+          <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '7.12vw', lineHeight: '110%', color: '#FFFFFF' }}>
             Impact
           </h2>
           <div style={{ height: '2.54vw' }} />
-          <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.58vw', lineHeight: '110%', color: '#FFFFFF' }}>
+          <p style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '3.56vw', lineHeight: '110%', color: '#FFFFFF' }}>
             Real numbers. Real results.
           </p>
-          <div style={{ height: '8.14vw' }} />
-          <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.56vw', lineHeight: '130%', color: '#AEAEAE' }}>
+          <div style={{ height: '6.1vw' }} />
+          <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '100%', color: '#AEAEAE' }}>
             Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
           </p>
-          <div style={{ height: '8.14vw' }} />
+          <div style={{ height: '12.21vw' }} />
           
           <Link href="/sustainability" className="contents">
             <HoverButton theme="transparent-white">
@@ -1680,7 +1680,7 @@ export default function Home() {
             </HoverButton>
           </Link>
 
-          <div style={{ height: '100vw' }} />
+          <div style={{ height: '45.03vw' }} />
 
           {/* Grid of stats */}
           <div className="grid grid-cols-2 w-full mt-auto">
