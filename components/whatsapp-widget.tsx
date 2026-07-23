@@ -66,6 +66,17 @@ export default function WhatsAppWidget() {
       />
       <style dangerouslySetInnerHTML={{
         __html: `
+          /* Enforce exact container dimensions to fix bounding box issues */
+          #df-btn-cont, .df-btn {
+            width: 54px !important;
+            height: 54px !important;
+            min-width: 54px !important;
+            min-height: 54px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+          }
+
           /* Hide the original SVG icon only when closed */
           .df-btn.df-closed .df-btn-text svg.df-svg-icon {
             display: none !important;
@@ -92,13 +103,25 @@ export default function WhatsAppWidget() {
               background-position: center;
             }
             
+            /* Force widget alignment on desktop */
+            @media (min-width: 769px) {
+              #df-btn-cont {
+                position: fixed !important;
+                right: 24px !important;
+                bottom: 24px !important;
+                z-index: 999999 !important;
+              }
+            }
+            
             /* Ensure widget stays on screen on mobile */
             @media (max-width: 768px) {
               #df-btn-cont {
+                position: fixed !important;
                 right: 20px !important;
                 bottom: 20px !important;
                 transform: scale(0.85);
                 transform-origin: bottom right;
+                z-index: 999999 !important;
               }
               #wa-widget-tooltip {
                 display: none !important;
