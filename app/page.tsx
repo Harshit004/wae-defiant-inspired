@@ -1642,7 +1642,7 @@ export default function Home() {
             Real numbers. Real results.
           </p>
           <div style={{ height: '6.1vw' }} />
-          <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '100%', color: '#AEAEAE' }}>
+          <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '100%', color: '#AEAEAE', maxWidth: '59.29vw' }}>
             Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
           </p>
           <div style={{ height: '12.21vw' }} />
