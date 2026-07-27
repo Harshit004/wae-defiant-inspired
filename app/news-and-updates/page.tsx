@@ -39,31 +39,17 @@ export default function NewsAndUpdatesPage() {
       <section className="relative z-10 w-full px-[7.5vw]" style={{ paddingTop: "clamp(180px, 17.7vw, 255px)", paddingBottom: "100px" }}>
 
         {/* Toggle Buttons */}
-        <div className="flex gap-4" style={{ marginBottom: '75px' }}>
-          <Link href="/news-and-updates">
+        <div className="flex flex-row w-full gap-[16px] mb-[40px] md:mb-[75px]">
+          <Link href="/news-and-updates" className="flex-1">
             <button
-              className={`px-6 border transition-colors flex items-center justify-center ${pathname === '/news-and-updates' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
-              style={{
-                height: '41px',
-                fontFamily: 'Manrope',
-                fontWeight: 500,
-                fontSize: '14px',
-                lineHeight: '100%'
-              }}
+              className={`w-full px-[12px] md:px-6 border transition-colors flex items-center justify-center font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] h-[41px] ${pathname === '/news-and-updates' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
             >
               News & Media
             </button>
           </Link>
-          <Link href="/awards-and-recognitions">
+          <Link href="/awards-and-recognitions" className="flex-1">
             <button
-              className={`px-6 border transition-colors flex items-center justify-center ${pathname === '/awards-and-recognitions' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
-              style={{
-                height: '41px',
-                fontFamily: 'Manrope',
-                fontWeight: 500,
-                fontSize: '14px',
-                lineHeight: '100%'
-              }}
+              className={`w-full px-[12px] md:px-6 border transition-colors flex items-center justify-center font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] h-[41px] ${pathname === '/awards-and-recognitions' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
             >
               Awards & Honours
             </button>
@@ -71,31 +57,18 @@ export default function NewsAndUpdatesPage() {
         </div>
 
         {/* Horizontal Divider */}
-        <div className="w-full h-px bg-white/20" style={{ marginBottom: '56px' }} />
+        <div className="w-full h-px bg-white/20 mb-[40px] md:mb-[56px]" />
 
         {/* Hero Text */}
-        <div className="flex flex-row justify-between items-start" style={{ marginBottom: '96px' }}>
-          <div style={{ width: "clamp(260px, 28.2vw, 407px)", flexShrink: 0 }}>
-            <h1 style={{
-              fontFamily: 'Inter Tight',
-              fontWeight: 400,
-              fontSize: 'clamp(40px, 4.16vw, 60px)',
-              lineHeight: '100%',
-              letterSpacing: '0px',
-            }}>
+        <div className="flex flex-col md:flex-row justify-between items-start mb-[48px] md:mb-[96px] gap-[24px] md:gap-[0px]">
+          <div className="w-full md:w-[clamp(260px,28.2vw,407px)] shrink-0">
+            <h1 className="font-inter-tight font-normal text-[32px] md:text-[clamp(40px,4.16vw,60px)] leading-[100%] m-0">
               Press Release
             </h1>
           </div>
 
-          <div style={{ width: "clamp(260px, 28vw, 403px)", flexShrink: 0 }}>
-            <p style={{
-              fontFamily: 'Manrope',
-              fontWeight: 400,
-              fontSize: 'clamp(14px, 1.11vw, 16px)',
-              lineHeight: '130%',
-              color: '#FFFFFF',
-              letterSpacing: '0px',
-            }}>
+          <div className="w-full md:w-[clamp(260px,28vw,403px)] shrink-0">
+            <p className="font-manrope font-normal text-[14px] md:text-[clamp(14px,1.11vw,16px)] leading-[130%] text-[#AEAEAE] m-0">
               {data ? data.heroTextNews : "Loading..."}
             </p>
           </div>
