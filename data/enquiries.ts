@@ -1588,5 +1588,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-07-24T10:42:11.500Z"
+  },
+  "b76541b0-11af-4c5f-a294-f42a8449610b": {
+    "id": "b76541b0-11af-4c5f-a294-f42a8449610b",
+    "fullName": "Test",
+    "companyName": "Test",
+    "email": "marketing@waecorp.com",
+    "phone": "9696969696",
+    "city": "Noida",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Noida",
+    "type": "contact-us",
+    "createdAt": "2026-07-27T10:02:25.866Z"
   }
 };
