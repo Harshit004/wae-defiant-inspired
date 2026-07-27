@@ -16,10 +16,9 @@ function NewsCard({ imageUrl, title, description, date, link, isLarge = false }:
     <div className="flex flex-col h-full group" style={{ width: '100%' }}>
       {/* Image Container */}
       <div
-        className="relative w-full overflow-hidden"
+        className={`relative w-full overflow-hidden mb-[24px] ${isLarge ? 'md:mb-[40px]' : 'md:mb-[31px]'}`}
         style={{
           aspectRatio: isLarge ? '604/319' : '382/215',
-          marginBottom: isLarge ? '40px' : '31px'
         }}
       >
         <Image
@@ -35,15 +34,7 @@ function NewsCard({ imageUrl, title, description, date, link, isLarge = false }:
         <div className="flex flex-col flex-1">
           {title && (
             <h3
-              className="group-hover:text-gray-300 transition-colors duration-300"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: "24px",
-                lineHeight: "130%",
-                color: "#FFFFFF",
-                marginBottom: "20px"
-              }}
+              className="group-hover:text-gray-300 transition-colors duration-300 font-inter-tight font-normal text-[20px] md:text-[24px] leading-[130%] text-white mb-[16px] md:mb-[20px]"
             >
               {title}
             </h3>
@@ -51,46 +42,21 @@ function NewsCard({ imageUrl, title, description, date, link, isLarge = false }:
 
           {description && (
             <p
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontWeight: 400,
-                fontSize: "14px",
-                lineHeight: "120%",
-                letterSpacing: "0%",
-                color: "#AEAEAE",
-                marginBottom: isLarge ? '27px' : '36px'
-              }}
+              className={`font-manrope font-normal text-[14px] leading-[120%] tracking-[0%] text-[#AEAEAE] mb-[24px] ${isLarge ? 'md:mb-[27px]' : 'md:mb-[36px]'}`}
             >
               {description}
             </p>
           )}
 
-          <div className="mt-auto flex items-center justify-between">
+          <div className="mt-auto flex items-center justify-between pt-[4px]">
             {date && (
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  lineHeight: "100%",
-                  color: "#AEAEAE",
-                }}
-              >
+              <p className="font-manrope font-normal text-[14px] leading-[100%] text-[#AEAEAE] m-0">
                 {date}
               </p>
             )}
 
             {link && (
-              <div
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "14px",
-                  lineHeight: "24px",
-                  color: "#FFFFFF",
-                  textDecoration: "underline",
-                }}
-              >
+              <div className="font-inter-tight font-medium text-[14px] leading-[24px] text-white underline">
                 Read Release
               </div>
             )}
@@ -194,19 +160,24 @@ export default function NewsGrid({ cards }: NewsGridProps) {
           <div key={rowIndex}>
             {/* Row container */}
             <div
-              className={`grid grid-cols-1 md:grid-cols-2 ${!isLarge ? 'lg:grid-cols-3' : ''} gap-[30px] lg:gap-[39px] w-full`}
+              className={`grid grid-cols-1 md:grid-cols-2 ${!isLarge ? 'lg:grid-cols-3' : ''} gap-[0px] md:gap-[30px] lg:gap-[39px] w-full`}
             >
               {row.map((card, cardIndex) => (
-                <div key={cardIndex} className="w-full">
+                <div key={cardIndex} className="w-full flex flex-col">
                   <NewsCard {...card} isLarge={isLarge} />
+                  
+                  {/* Mobile divider between cards */}
+                  {(rowIndex < rows.length - 1 || cardIndex < row.length - 1) && (
+                    <div className="w-full h-px bg-[#FFFFFF1A] my-[40px] md:hidden" />
+                  )}
                 </div>
               ))}
             </div>
 
-            {/* Divider between rows */}
+            {/* Divider between rows (Desktop only) */}
             {rowIndex < rows.length - 1 && (
               <div
-                className="w-full h-px bg-[#FFFFFF1A]"
+                className="hidden md:block w-full h-px bg-[#FFFFFF1A]"
                 style={{ marginTop: '92px', marginBottom: '92px' }}
               />
             )}
