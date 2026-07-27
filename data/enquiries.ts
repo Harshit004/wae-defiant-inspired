@@ -1600,5 +1600,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Noida",
     "type": "contact-us",
     "createdAt": "2026-07-27T10:02:25.866Z"
+  },
+  "aebe9945-2fb2-437e-ac24-ac6e17501caa": {
+    "id": "aebe9945-2fb2-437e-ac24-ac6e17501caa",
+    "fullName": "Mudit Mishra",
+    "companyName": "Test",
+    "email": "mishra.mudit79@gmail.com",
+    "phone": "9696969696",
+    "city": "Noida",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Test",
+    "type": "contact-us",
+    "createdAt": "2026-07-27T10:18:26.300Z"
   }
 };
