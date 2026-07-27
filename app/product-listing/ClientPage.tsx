@@ -246,32 +246,20 @@ const etceteraItems = [
             <Header transparentBg />
 
             {/* MAIN CONTENT */}
-            <div style={{
-                width: "100%",
-                backgroundColor: "#0f0f0f",
+            <div className="w-full bg-[#0f0f0f] pt-[118px] md:pt-[230px]" style={{
                 backgroundImage: "linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)",
                 backgroundSize: "100% 60.76vw",
                 backgroundRepeat: "no-repeat",
-                paddingTop: "230px",
             }}>
                 {/* Title + Search Row */}
-                <div className="w-full px-[7.5vw]" style={{ marginTop: "0px", marginBottom: "0px" }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                        <h1 style={{
-                            fontFamily: "'Manrope', sans-serif",
-                            fontWeight: 700,
-                            fontSize: "24px",
-                            lineHeight: "110%",
-                            color: "#FFFFFF",
-                            textTransform: "uppercase",
-                            margin: 0,
-                            verticalAlign: "middle",
-                        }}>
-                            ALL {shortCategoryName} <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "100%", color: "#AEAEAE", verticalAlign: "middle", marginLeft: "8px" }}>({filteredProducts.length})</span>
+                <div className="w-full px-[7.5vw]">
+                    <div className="flex justify-between items-center">
+                        <h1 className="font-manrope font-bold text-[16px] md:text-[24px] leading-[110%] text-white uppercase m-0 align-middle">
+                            ALL {shortCategoryName} <span className="font-manrope font-normal text-[14px] leading-[100%] text-[#AEAEAE] align-middle ml-[8px]">({filteredProducts.length})</span>
                         </h1>
                         {/* Search Bar */}
-                        <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ position: "absolute", left: "16px", color: "rgba(255,255,255,0.4)" }}>
+                        <div className="relative flex items-center h-[30px] md:h-auto">
+                            <svg className="absolute left-[12px] md:left-[16px] text-white/40 w-[14px] h-[14px] md:w-[16px] md:h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <circle cx="11" cy="11" r="8" />
                                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
                             </svg>
@@ -280,27 +268,15 @@ const etceteraItems = [
                                 placeholder="Search your product..."
                                 value={productSearchQuery}
                                 onChange={(e) => setProductSearchQuery(e.target.value)}
-                                style={{
-                                    background: "transparent",
-                                    border: "1px solid rgba(255, 255, 255, 0.2)",
-                                    color: "#FFF",
-                                    fontFamily: "'Inter Tight', sans-serif",
-                                    fontSize: "14px",
-                                    padding: "10.5px 16px",
-                                    outline: "none",
-                                    width: "280px",
-                                    transition: "border-color 0.3s ease",
-                                }}
-                                onFocus={(e) => e.target.style.borderColor = "#FFF"}
-                                onBlur={(e) => e.target.style.borderColor = "rgba(255, 255, 255, 0.2)"}
+                                className="bg-transparent border border-white/20 text-white font-inter-tight text-[12px] md:text-[14px] pl-[34px] md:pl-[40px] pr-[12px] md:pr-[16px] py-[6px] md:py-[10.5px] outline-none w-[140px] sm:w-[200px] md:w-[280px] transition-colors focus:border-white h-[30px] md:h-auto"
                             />
                         </div>
                     </div>
                 </div>
 
                 {/* Filter Tabs */}
-                <div className="w-full px-[7.5vw]" style={{ marginTop: "65px", paddingBottom: "48px" }}>
-                    <div style={{ display: "flex", gap: "32px" }}>
+                <div className="w-full px-[7.5vw] mt-[48px] md:mt-[65px] pb-[26px] md:pb-[48px] overflow-x-auto no-scrollbar">
+                    <div className="flex gap-[24px] md:gap-[32px] w-max">
                         {[
                             { label: `ALL ${shortCategoryName}`, value: "all" },
                             ...uniqueMountingTypes.map(mt => ({
@@ -311,24 +287,7 @@ const etceteraItems = [
                             <button
                                 key={tab.value}
                                 onClick={() => setActiveFilter(tab.value)}
-                                style={{
-                                    background: "none",
-                                    border: "none",
-                                    borderBottom: activeFilter === tab.value ? "2px solid #fff" : "2px solid transparent",
-                                    color: activeFilter === tab.value ? "#fff" : "#ffffff66",
-                                    fontFamily: "'Manrope', sans-serif",
-                                    fontWeight: 400,
-                                    fontSize: "14px",
-                                    lineHeight: "100%",
-                                    verticalAlign: "middle",
-                                    cursor: "pointer",
-                                    paddingBottom: "8px",
-                                    paddingTop: "0",
-                                    paddingLeft: "0",
-                                    paddingRight: "0",
-                                    textTransform: "uppercase",
-                                    transition: "color 0.3s ease, border-color 0.3s ease",
-                                }}
+                                className={`bg-transparent border-0 border-b-[2px] border-solid text-[10px] md:text-[14px] leading-[100%] align-middle cursor-pointer pb-[6px] pt-0 px-0 uppercase transition-colors duration-300 font-manrope ${activeFilter === tab.value ? "border-white text-white font-bold md:font-normal" : "border-transparent text-white/40 font-normal"}`}
                             >
                                 {tab.label}
                             </button>
@@ -337,7 +296,7 @@ const etceteraItems = [
                 </div>
 
                 {/* Product Grid - rendered in row groups with dividers */}
-                <div className="w-full px-[7.5vw]" style={{ paddingBottom: "80px" }}>
+                <div className="w-full px-[7.5vw] pb-[60px] md:pb-[80px]">
                     {(() => {
                         const groups: typeof filteredProducts[] = [];
                         const firstGroupSize = Math.min(5, filteredProducts.length);
@@ -354,20 +313,9 @@ const etceteraItems = [
                             return (
                                 <div key={groupIndex}>
                                     {groupIndex === 1 && (
-                                        <div style={{
-                                            width: "100%",
-                                            height: "1px",
-                                            background: "rgba(255, 255, 255, 0.1)",
-                                            marginTop: "65px",
-                                            marginBottom: "65px",
-                                        }} />
+                                        <div className="w-full h-[1px] bg-white/10 mt-[40px] md:mt-[65px] mb-[40px] md:mb-[65px]" />
                                     )}
-                                    <div style={{
-                                        display: "grid",
-                                        gridTemplateColumns: "repeat(4, 1fr)",
-                                        gap: "1.67vw",
-                                        rowGap: groupIndex === 0 ? "62px" : "65px",
-                                    }}>
+                                    <div className={`grid grid-cols-2 md:grid-cols-4 gap-x-[16px] md:gap-x-[1.67vw] ${groupIndex === 0 ? 'gap-y-[40px] md:gap-y-[62px]' : 'gap-y-[40px] md:gap-y-[65px]'}`}>
                                         {group.map((product, index) => {
                                             const globalIndex = globalStart + index;
                                             const isFeatured = globalIndex === 0 && filteredProducts.length >= 5;
@@ -376,22 +324,10 @@ const etceteraItems = [
                                                 <Link
                                                     href={`/product-description-page?product=${product.id}`}
                                                     key={product.name}
-                                                    style={{
-                                                        gridColumn: isFeatured ? "span 2" : undefined,
-                                                        gridRow: isFeatured ? "span 2" : undefined,
-                                                        display: isFeatured ? "flex" : "block",
-                                                        flexDirection: isFeatured ? "column" : undefined,
-                                                        height: isFeatured ? "100%" : undefined,
-                                                    }}
+                                                    className={`${isFeatured ? 'col-span-2 row-span-2 flex flex-col h-full' : 'col-span-1 block'}`}
                                                 >
                                                     <div
-                                                        className="relative overflow-hidden group"
-                                                        style={{
-                                                            width: "100%",
-                                                            aspectRatio: isFeatured ? undefined : "277 / 234",
-                                                            flex: isFeatured ? 1 : undefined,
-                                                            backgroundColor: "#1a1a1a",
-                                                        }}
+                                                        className={`relative overflow-hidden group w-full bg-[#1a1a1a] ${isFeatured ? 'flex-1 aspect-[345/349] md:aspect-auto' : 'aspect-[277/234]'}`}
                                                     >
                                                         <Image
                                                             src={product.image}
@@ -408,18 +344,7 @@ const etceteraItems = [
                                                             />
                                                         )}
                                                     </div>
-                                                    <p style={{
-                                                        fontFamily: "'Inter Tight', sans-serif",
-                                                        fontWeight: 400,
-                                                        fontSize: "18px",
-                                                        lineHeight: "105%",
-                                                        color: "#FFFFFF",
-                                                        marginTop: "50px",
-                                                        marginBottom: "0",
-                                                        textTransform: "uppercase",
-                                                        letterSpacing: "0%",
-                                                        verticalAlign: "middle",
-                                                    }}>
+                                                    <p className="font-inter-tight font-normal text-[12px] leading-[105%] text-white mt-[26px] md:mt-[50px] mb-0 uppercase tracking-normal align-middle">
                                                         {product.name}
                                                     </p>
                                                 </Link>
@@ -432,37 +357,19 @@ const etceteraItems = [
                     })()}
 
                     {filteredProducts.length > 0 && (
-                        <div style={{
-                            width: "100%",
-                            height: "1px",
-                            background: "rgba(255, 255, 255, 0.1)",
-                            marginTop: "65px",
-                        }} />
+                        <div className="w-full h-[1px] bg-white/10 mt-[40px] md:mt-[65px]" />
                     )}
                 </div>
 
                 {/* Description Section */}
-                <div className="w-full px-[7.5vw]" style={{ paddingBottom: "120px" }}>
-                    <div style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(4, 1fr)",
-                        gap: "1.67vw",
-                        paddingTop: "0px",
-                    }}>
-                        <div style={{ gridColumn: "span 2" }}>
-                            <h2 style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: "40px",
-                                lineHeight: "105%",
-                                color: "#FFFFFF",
-                                margin: 0,
-                                marginBottom: "32px",
-                            }}>
+                <div className="w-full px-[7.5vw] pb-[60px] md:pb-[120px] pt-[58px] md:pt-[0px] -mt-[60px] md:-mt-[0px]">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-[16px] md:gap-[1.67vw]">
+                        <div className="col-span-1 md:col-span-2">
+                            <h2 className="font-inter-tight font-normal text-[20px] md:text-[40px] leading-[105%] text-white m-0 mb-[26px] md:mb-[32px]">
                                 {currentCategory.title}
                             </h2>
                             {currentCategory.paragraphs.map((pText, pIdx) => (
-                                <p key={pIdx} style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "auto", color: "#AEAEAE", marginTop: 0, marginBottom: pIdx === currentCategory.paragraphs.length - 1 ? 0 : "24px" }}>
+                                <p key={pIdx} className={`font-manrope font-normal text-[12px] md:text-[14px] leading-[120%] md:leading-normal text-[#AEAEAE] m-0 ${pIdx === currentCategory.paragraphs.length - 1 ? 'mb-0' : 'mb-[20px] md:mb-[24px]'}`}>
                                     {pText}
                                 </p>
                             ))}
