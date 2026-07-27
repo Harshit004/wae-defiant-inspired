@@ -36,7 +36,7 @@ export default function NewsAndUpdatesPage() {
       </div>
 
       {/* Main Content Area */}
-      <section className="relative z-10 w-full px-[7.5vw]" style={{ paddingTop: "clamp(180px, 17.7vw, 255px)", paddingBottom: "100px" }}>
+      <section className="relative z-10 w-full px-[7.5vw] pt-[116px] md:pt-[clamp(180px,17.7vw,255px)] pb-[100px]">
 
         {/* Toggle Buttons */}
         <div className="flex flex-row w-full gap-[16px] mb-[40px] md:mb-[75px]">
