@@ -1612,5 +1612,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Test",
     "type": "contact-us",
     "createdAt": "2026-07-27T10:18:26.300Z"
+  },
+  "79cd1792-805a-4cc8-b621-9180dfb479dd": {
+    "id": "79cd1792-805a-4cc8-b621-9180dfb479dd",
+    "fullName": "Samuel Chiang",
+    "companyName": "Boulder Zone",
+    "email": "samuel@boulderzone.ae",
+    "phone": "0585921148",
+    "city": "Dubai",
+    "pageLink": "https://www.waecorp.com/product-description-page?product=venus",
+    "type": "product",
+    "createdAt": "2026-07-27T19:24:21.163Z"
   }
 };
