@@ -364,7 +364,7 @@ export default function Home() {
 
         {/* Scroll for more text */}
         <div
-          className="absolute uppercase text-[#ffffff99] z-10"
+          className="hidden md:block absolute uppercase text-[#ffffff99] z-10"
           style={{ // Inline styles for positioning and typography
             bottom: "5%",
             left: "1rem",
