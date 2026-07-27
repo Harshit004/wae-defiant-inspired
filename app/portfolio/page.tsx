@@ -391,54 +391,38 @@ export default function Home() {
       }}>
         {/* Background is now the parent's backgroundColor: #0f0f0f */}
         {/* Next Section: Highlight Quote */}
-        <section
-          style={{
-            background: "transparent",
-            position: "relative",
-            zIndex: 1,
-            paddingTop: "123px",
-            paddingBottom: "110px",
-            paddingLeft: "7.5vw",
-            paddingRight: "7.5vw",
-          }}
-        >
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", width: "100%" }}>
-            <div
-              style={{
-                // maxWidth: "57.4305vw",
-                width: "100%",
-                textAlign: "right",
-                fontFamily: "\'Manrope\', sans-serif",
-                fontWeight: 500,
-                fontSize: "36px",
-                lineHeight: "105%",
-                letterSpacing: "0%",
-                color: "#FFFFFF66",
-              }}
-            >
-              WAE’s hydration system<br />
-              <span style={{ color: "#FFFFFF" }}>deliver plastic-free</span> water dispensing for <span style={{ color: "#FFFFFF" }}>high-footfall</span><br />
-              <span style={{ display: "inline-block", marginRight: "1.2em" }}>
-                <span style={{ color: "#FFFFFF" }}>environments</span> while supporting <span style={{ color: "#FFFFFF" }}>zero-landfill goals</span>.
+        <section className="relative z-[1] bg-transparent pt-[62px] pb-[80px] px-[31px] md:pt-[123px] md:pb-[110px] md:px-[7.5vw]">
+          <div className="flex flex-col items-end w-full">
+            {/* Desktop View */}
+            <div className="hidden md:block w-full text-right font-medium tracking-normal text-[#FFFFFF66] font-manrope text-[36px] leading-[105%]">
+              WAE’s hydration systems <br />
+              <span className="text-white">deliver plastic-free</span> water dispensing for <span className="text-white">high-footfall</span><br />
+              <span className="inline-block mr-[1.2em]">
+                <span className="text-white">environments</span> while supporting <span className="text-white">zero-landfill goals</span>.
               </span>
             </div>
 
+            {/* Mobile View */}
+            <div className="block md:hidden w-full text-right font-medium tracking-normal text-[#FFFFFF66] font-inter text-[28px] leading-[120%]">
+              WAE’s hydration systems <br />
+              <span className="text-white">deliver plastic-free</span> <br />
+              water dispensing for <br />
+              <span className="text-white">high-footfall environments</span> <br />
+              while supporting <br />
+              <span className="text-white">zero-landfill goals.</span>
+            </div>
           </div>
         </section>
 
         {/* PRODUCT CATEGORY SECTION */}
-        <section style={{ background: "transparent", color: "#FFF", paddingBottom: "120px", position: "relative", zIndex: 1 }} className="w-full px-[7.5vw] mb-[1px]">
+        <section className="bg-transparent text-white pb-[88px] md:pb-[120px] relative z-[1] w-full px-[16px] md:px-[7.5vw] mb-[1px]">
           {/* Section Header */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: "30px", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
-            <h2 style={{
-              fontFamily: "\'Manrope\', sans-serif",
-              fontWeight: 500,
-              fontSize: "24px", letterSpacing: "0%", margin: 0
-            }}>
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center pb-0 md:pb-[30px] border-b-0 md:border-b md:border-white/10">
+            <h2 className="font-manrope font-bold md:font-medium text-[16px] leading-[110%] md:text-[24px] md:leading-normal tracking-normal m-0 text-white">
               Our product category
             </h2>
             {/* Search Bar */}
-            <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
+            <div className="relative flex items-center mt-[29px] md:mt-0 w-full md:w-auto">
               <svg
                 width="16"
                 height="16"
@@ -446,7 +430,7 @@ export default function Home() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                style={{ position: "absolute", left: "16px", color: "rgba(255,255,255,0.4)" }}
+                className="absolute left-[16px] text-white/40"
               >
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -456,30 +440,18 @@ export default function Home() {
                 placeholder="Search your product..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                style={{
-                  background: "transparent",
-                  border: "1px solid rgba(255, 255, 255, 0.2)",
-                  color: "#FFF",
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "14px",
-                  padding: "10.5px 16px",
-                  outline: "none",
-                  width: "280px",
-                  transition: "border-color 0.3s ease"
-                }}
-                onFocus={(e) => e.target.style.borderColor = "#FFF"}
-                onBlur={(e) => e.target.style.borderColor = "rgba(255, 255, 255, 0.2)"}
+                className="bg-transparent border border-white/20 text-white font-inter text-[14px] py-[10.5px] px-[16px] pl-[40px] outline-none w-full h-[42px] md:w-[280px] md:h-auto transition-colors duration-300 focus:border-white"
               />
             </div>
           </div>
 
           {/* Product Layout Container */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "80px", paddingTop: "80px" }}>
+          <div className="flex flex-col gap-0 md:gap-[80px] pt-[53px] md:pt-[80px]">
             {/* 1. Featured Row: BLUWAE (Two Columns) */}
             {filterProduct(portfolioProducts[0]) && (
-              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "80px", paddingBottom: "80px", borderBottom: "1px solid rgba(255,255,255,0.1)" }} className="grid-cols-1 md:grid-cols-[1.2fr_1fr]">
+              <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-[40px] md:gap-[80px] pb-[48px] md:pb-[80px] border-b border-white/10 mb-[4px] md:mb-0">
                 {/* Image */}
-                <div className="relative overflow-hidden group" style={{ width: "41.18vw", height: "500px" }}>
+                <div className="relative overflow-hidden group w-full h-[300px] md:w-[41.18vw] md:h-[500px]">
                   <Image
                     src={portfolioProducts[0].imageUrl}
                     alt={portfolioProducts[0].title}
@@ -488,15 +460,15 @@ export default function Home() {
                   />
                 </div>
                 {/* Content */}
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", height: "100%", alignItems: "flex-start" }}>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-                    <span style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", color: "#AEAEAE", lineHeight: "100%", letterSpacing: "0%", verticalAlign: "middle", textTransform: "none", marginBottom: "48px" }}>
+                <div className="flex flex-col justify-end h-full items-start">
+                  <div className="flex flex-col gap-0 w-full">
+                    <span className="font-manrope font-normal text-[14px] text-[#AEAEAE] leading-[100%] align-middle normal-case mb-[20px] md:mb-[48px]">
                       {portfolioProducts[0].subtitle}
                     </span>
-                    <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "40px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
+                    <h3 className="font-inter font-normal text-[28px] md:text-[40px] leading-[105%] align-middle m-0 mb-[24px] md:mb-[26px] text-white">
                       {portfolioProducts[0].title}
                     </h3>
-                    <p ref={bluwaeDescRef} style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px", maxWidth: "480px" }}>
+                    <p ref={bluwaeDescRef} className="font-manrope font-normal text-[12px] md:text-[14px] leading-[120%] md:leading-[1.5] align-middle text-[#AEAEAE] m-0 mb-[58px] md:mb-[62px] max-w-full md:max-w-[480px]">
                       {portfolioProducts[0].description}
                     </p>
                   </div>
@@ -534,11 +506,11 @@ export default function Home() {
 
             {/* 2. Grid Row 1: TRUBLU and ZVR (Two Columns) */}
             {(filterProduct(portfolioProducts[1]) || filterProduct(portfolioProducts[2])) && (
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", paddingBottom: "80px", borderBottom: "1px solid rgba(255,255,255,0.1)" }} className="grid-cols-1 md:grid-cols-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-[80px] md:pb-[80px] md:border-b md:border-white/10">
                 {/* Left Column (TRUBLU) */}
                 {filterProduct(portfolioProducts[1]) ? (
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-                    <div className="relative overflow-hidden group" style={{ width: "41.18vw", height: "500px", marginBottom: "24px" }}>
+                  <div className="flex flex-col gap-0 pb-[48px] mb-[4px] border-b border-white/10 md:pb-0 md:mb-0 md:border-b-0 items-start">
+                    <div className="relative overflow-hidden group w-full h-[300px] md:w-[41.18vw] md:h-[500px] mb-[40px] md:mb-[24px]">
                       <Image
                         src={portfolioProducts[1].imageUrl}
                         alt={portfolioProducts[1].title}
@@ -546,10 +518,10 @@ export default function Home() {
                         className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                       />
                     </div>
-                    <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "18px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
+                    <h3 className="font-inter font-normal text-[28px] md:text-[18px] leading-[105%] align-middle m-0 mb-[24px] md:mb-[26px] text-white">
                       {portfolioProducts[1].title}
                     </h3>
-                    <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
+                    <p className="font-manrope font-normal text-[12px] md:text-[14px] leading-[120%] md:leading-[1.5] align-middle text-[#AEAEAE] m-0 mb-[58px] md:mb-[62px]">
                       {portfolioProducts[1].description}
                     </p>
                     <HoverButton href={portfolioProducts[1].href} theme="transparent-white-black-hover">
@@ -585,8 +557,8 @@ export default function Home() {
 
                 {/* Right Column (ZVR) */}
                 {filterProduct(portfolioProducts[2]) ? (
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-                    <div className="relative overflow-hidden group" style={{ width: "41.18vw", height: "500px", marginBottom: "24px" }}>
+                  <div className="flex flex-col gap-0 pb-[48px] mb-[4px] border-b border-white/10 md:pb-0 md:mb-0 md:border-b-0 items-start">
+                    <div className="relative overflow-hidden group w-full h-[300px] md:w-[41.18vw] md:h-[500px] mb-[40px] md:mb-[24px]">
                       <Image
                         src={portfolioProducts[2].imageUrl}
                         alt={portfolioProducts[2].title}
@@ -594,10 +566,10 @@ export default function Home() {
                         className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                       />
                     </div>
-                    <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "18px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
+                    <h3 className="font-inter font-normal text-[28px] md:text-[18px] leading-[105%] align-middle m-0 mb-[24px] md:mb-[26px] text-white">
                       {portfolioProducts[2].title}
                     </h3>
-                    <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
+                    <p className="font-manrope font-normal text-[12px] md:text-[14px] leading-[120%] md:leading-[1.5] align-middle text-[#AEAEAE] m-0 mb-[58px] md:mb-[62px]">
                       {portfolioProducts[2].description}
                     </p>
                     <HoverButton href={portfolioProducts[2].href} theme="transparent-white-black-hover">
@@ -635,11 +607,11 @@ export default function Home() {
 
             {/* 3. Grid Row 2: WATERMATIC and PUS (Two Columns) */}
             {(filterProduct(portfolioProducts[3]) || filterProduct(portfolioProducts[4])) && (
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", paddingBottom: "80px", borderBottom: "1px solid rgba(255,255,255,0.1)" }} className="grid-cols-1 md:grid-cols-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-[80px] md:pb-[80px] md:border-b md:border-white/10">
                 {/* Left Column (WATERMATIC) */}
                 {filterProduct(portfolioProducts[3]) ? (
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-                    <div className="relative overflow-hidden group" style={{ width: "41.18vw", height: "500px", marginBottom: "24px" }}>
+                  <div className="flex flex-col gap-0 pb-[48px] mb-[4px] border-b border-white/10 md:pb-0 md:mb-0 md:border-b-0 items-start">
+                    <div className="relative overflow-hidden group w-full h-[300px] md:w-[41.18vw] md:h-[500px] mb-[40px] md:mb-[24px]">
                       <Image
                         src={portfolioProducts[3].imageUrl}
                         alt={portfolioProducts[3].title}
@@ -647,10 +619,10 @@ export default function Home() {
                         className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                       />
                     </div>
-                    <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "18px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
+                    <h3 className="font-inter font-normal text-[28px] md:text-[18px] leading-[105%] align-middle m-0 mb-[24px] md:mb-[26px] text-white">
                       {portfolioProducts[3].title}
                     </h3>
-                    <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
+                    <p className="font-manrope font-normal text-[12px] md:text-[14px] leading-[120%] md:leading-[1.5] align-middle text-[#AEAEAE] m-0 mb-[58px] md:mb-[62px]">
                       {portfolioProducts[3].description}
                     </p>
                     <HoverButton href={portfolioProducts[3].href} theme="transparent-white-black-hover">
@@ -686,8 +658,8 @@ export default function Home() {
 
                 {/* Right Column (PUS) */}
                 {filterProduct(portfolioProducts[4]) ? (
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-                    <div className="relative overflow-hidden group" style={{ width: "41.18vw", height: "500px", marginBottom: "24px" }}>
+                  <div className="flex flex-col gap-0 pb-[48px] mb-[4px] border-b border-white/10 md:pb-0 md:mb-0 md:border-b-0 items-start">
+                    <div className="relative overflow-hidden group w-full h-[300px] md:w-[41.18vw] md:h-[500px] mb-[40px] md:mb-[24px]">
                       <Image
                         src={portfolioProducts[4].imageUrl}
                         alt={portfolioProducts[4].title}
@@ -695,10 +667,10 @@ export default function Home() {
                         className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                       />
                     </div>
-                    <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "18px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
+                    <h3 className="font-inter font-normal text-[28px] md:text-[18px] leading-[105%] align-middle m-0 mb-[24px] md:mb-[26px] text-white">
                       {portfolioProducts[4].title}
                     </h3>
-                    <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px" }}>
+                    <p className="font-manrope font-normal text-[12px] md:text-[14px] leading-[120%] md:leading-[1.5] align-middle text-[#AEAEAE] m-0 mb-[58px] md:mb-[62px]">
                       {portfolioProducts[4].description}
                     </p>
                     <HoverButton href={portfolioProducts[4].href} theme="transparent-white-black-hover">
@@ -736,9 +708,9 @@ export default function Home() {
 
             {/* 4. Full Width Row: Glass Bottling Plant */}
             {filterProduct(portfolioProducts[5]) && (
-              <div style={{ display: "flex", flexDirection: "column", gap: "0px", paddingBottom: "40px" }}>
+              <div className="flex flex-col gap-0 pb-[0px] md:pb-[40px] items-start">
                 {/* Image */}
-                <div className="relative overflow-hidden group" style={{ width: "100%", height: "500px", marginBottom: "32px" }}>
+                <div className="relative overflow-hidden group w-full h-[300px] md:h-[500px] mb-[40px] md:mb-[32px]">
                   <Image
                     src={portfolioProducts[5].imageUrl}
                     alt={portfolioProducts[5].title}
@@ -747,11 +719,11 @@ export default function Home() {
                   />
                 </div>
                 {/* Content */}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "0px" }}>
-                  <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "36px", lineHeight: "105%", letterSpacing: "0%", verticalAlign: "middle", margin: 0, marginBottom: "26px", color: "#FFF" }}>
+                <div className="flex flex-col items-start gap-0 w-full">
+                  <h3 className="font-inter font-normal text-[28px] md:text-[36px] leading-[105%] align-middle m-0 mb-[24px] md:mb-[26px] text-white">
                     {portfolioProducts[5].title}
                   </h3>
-                  <p style={{ fontFamily: "Manrope, sans-serif", fontWeight: 400, fontSize: "14px", lineHeight: "1.5", letterSpacing: "0%", verticalAlign: "middle", color: "#AEAEAE", margin: 0, marginBottom: "62px", maxWidth: "600px" }}>
+                  <p className="font-manrope font-normal text-[12px] md:text-[14px] leading-[120%] md:leading-[1.5] align-middle text-[#AEAEAE] m-0 mb-[58px] md:mb-[62px] max-w-full md:max-w-[600px]">
                     {portfolioProducts[5].description}
                   </p>
                   <HoverButton href={portfolioProducts[5].href} theme="transparent-white-black-hover">
