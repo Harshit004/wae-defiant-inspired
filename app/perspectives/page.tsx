@@ -8,7 +8,7 @@ import Link from "next/link"
 import { BLOGS, WRITERS } from "@/data/blogs"
 
 // Center layout container matching standard padding & max-width
-const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
+const containerClass = "mx-auto w-full max-w-[1440px] px-[24px] md:px-[7.5vw]"
 
 interface SelectButtonProps {
   children: React.ReactNode
@@ -23,9 +23,9 @@ const SelectButton: FC<SelectButtonProps> = ({ children, selected, onClick }) =>
   <button
     type="button"
     onClick={onClick}
-    className="transition-all duration-300 ease-in-out border border-white/20 hover:bg-white/10 w-full md:w-auto flex-1"
+    className="transition-all duration-300 ease-in-out border border-white/20 hover:bg-white/10 shrink-0"
     style={{
-      padding: '14px 8px',
+      padding: '14px 16px',
       backgroundColor: selected ? '#ffffff' : 'transparent',
       color: selected ? '#000000' : '#ffffff',
       fontFamily: "'Inter Tight', sans-serif",
@@ -90,11 +90,19 @@ export default function Home() {
         <Header transparentBg />
 
         {/* spacer to prevent overlay under absolute header */}
-        <div className="h-[180px] lg:h-[220px]" />
+        <div className="h-[120px] lg:h-[220px]" />
 
         {/* ================= FEATURED HERO SECTION ================= */}
-        <section className={`${containerClass} pb-20 lg:pb-[112px]`}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-[40px] lg:gap-[80px] items-stretch">
+        <section className={`${containerClass} pb-[40px] lg:pb-[112px]`}>
+          <div className="flex flex-col lg:grid lg:grid-cols-12 gap-[24px] lg:gap-[80px] items-stretch">
+            
+            {/* WAE LTD. Subtitle (Mobile Only - positioned above image) */}
+            <div className="block lg:hidden w-fit border-b border-[#808080] pb-[4px]">
+              <span className="font-inter-tight font-bold text-[12px] leading-[100%] text-white">
+                WAE LTD.
+              </span>
+            </div>
+
             {/* Left Side: Large Photo */}
             <div className="lg:col-span-6 w-full relative aspect-[1.1] overflow-hidden">
               {featuredPost && (
@@ -108,91 +116,59 @@ export default function Home() {
               )}
             </div>
 
-            {/* Right Side: Featured Info (Starts and ends on the same height as the image) */}
+            {/* Right Side: Featured Info */}
             <div className="lg:col-span-6 flex flex-col justify-between h-full text-left">
               <div>
-                {/* WAE LTD. Subtitle */}
-                <div className="w-fit" style={{ borderBottom: "1px solid #808080", paddingBottom: "4px" }}>
-                  <span
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 700,
-                      fontSize: "12px",
-                      lineHeight: "100%",
-                      letterSpacing: "0%",
-                      color: "#ffffff",
-                      display: "inline-block"
-                    }}
-                  >
+                {/* WAE LTD. Subtitle (Desktop Only) */}
+                <div className="hidden lg:block w-fit border-b border-[#808080] pb-[4px]">
+                  <span className="font-inter-tight font-bold text-[12px] leading-[100%] text-white">
                     WAE LTD.
                   </span>
                 </div>
 
-                {/* 40px gap */}
-                <div style={{ height: "40px" }} />
+                <div className="hidden lg:block h-[40px]" />
 
                 {/* Title */}
-                <h1
-                  className="m-0"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "40px",
-                    lineHeight: "110%",
-                    letterSpacing: "0%",
-                    color: "#ffffff"
-                  }}
-                >
+                <h1 className="font-inter-tight font-normal text-[28px] lg:text-[40px] leading-[120%] lg:leading-[110%] text-white mb-[16px] lg:mb-[40px]">
                   {featuredPost?.title}
                 </h1>
 
-                {/* 40px gap */}
-                <div style={{ height: "40px" }} />
-
                 {/* Description */}
-                <p
-                  className="m-0"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "14px",
-                    lineHeight: "1.5",
-                    letterSpacing: "0%",
-                    color: "#AEAEAE"
-                  }}
-                >
+                <p className="font-manrope font-normal text-[12px] lg:text-[14px] leading-[130%] lg:leading-[1.5] text-[#AEAEAE] mb-[24px] lg:mb-0">
                   {featuredPost?.description}
                 </p>
               </div>
 
               {/* Read More Link (at bottom) */}
-              <div className="mt-8 lg:mt-0">
+              <div className="mt-0 lg:mt-8">
                 <Link
                   href={featuredLinkUrl}
-                  className="inline-flex items-center hover:opacity-85 transition-opacity"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "12px",
-                    lineHeight: "100%",
-                    letterSpacing: "0%",
-                    color: "#ffffff",
-                    borderBottom: "1px solid #808080",
-                    paddingBottom: "4px"
-                  }}
+                  className="inline-flex items-center hover:opacity-85 transition-opacity font-inter-tight font-medium text-[12px] leading-[100%] text-white border-b border-[#808080] pb-[4px]"
                 >
                   Read More
                 </Link>
               </div>
             </div>
+            
+            {/* Mobile divider after Read More */}
+            <div className="block lg:hidden w-full h-px bg-white/20 mt-[16px]" />
           </div>
         </section>
       </div>
 
       {/* ================= CATEGORY FILTER TABS ROW ================= */}
-      <section style={{ marginBottom: "62px" }}>
+      <section className="mb-[40px] lg:mb-[62px]">
         <div className={containerClass}>
-          <div className="flex flex-wrap gap-3 md:gap-[1.5vw] justify-between w-full">
+          {/* 
+            Horizontal scroll on mobile, flex-wrap on desktop.
+            Hide scrollbar class for clean mobile view.
+          */}
+          <style>{`
+            .hide-scroll::-webkit-scrollbar { display: none; }
+            .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+          `}</style>
+          
+          <div className="flex flex-nowrap lg:flex-wrap gap-[12px] md:gap-[1.5vw] justify-start lg:justify-between w-full overflow-x-auto hide-scroll pb-[4px]">
             {buttonLabels.map((label, index) => (
               <SelectButton
                 key={label}
@@ -203,97 +179,76 @@ export default function Home() {
               </SelectButton>
             ))}
           </div>
+
+          {/* Pagination dots indicator (Mobile Only matching screenshot) */}
+          <div className="flex lg:hidden justify-center items-center gap-[6px] mt-[30px]">
+            <div className="w-[18px] h-[4px] rounded-full bg-white" />
+            <div className="w-[4px] h-[4px] rounded-full bg-white/50" />
+            <div className="w-[4px] h-[4px] rounded-full bg-white/50" />
+          </div>
         </div>
       </section>
 
       {/* ================= BLOG CARDS GRID SECTION ================= */}
-      <section className="mb-[123px] lg:mb-[123px]">
+      <section className="mb-[40px] lg:mb-[123px]">
         <div className={containerClass}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[4.166%] gap-y-[130px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-[4.166%] lg:gap-y-[130px]">
             {getFilteredBlogs().map((post, index) => {
               const categorySlug = post.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
               const linkUrl = `/perspectives/${categorySlug}/${post.id}`
 
               return (
-                <div
-                  key={index}
-                  className="group flex items-stretch transition-all duration-300"
-                  onMouseEnter={() => setHoveredCard(index)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                >
-                  {/* Vertical divider line before every card */}
-                  <div className="w-px bg-white/20 self-stretch shrink-0" />
-                  {/* Between every line and card, there is 22/1440 vw gap */}
-                  <div style={{ width: "calc(22 / 1440 * 100vw)" }} className="shrink-0" />
+                <div key={index} className="flex flex-col">
+                  <div
+                    className="group flex items-stretch transition-all duration-300"
+                    onMouseEnter={() => setHoveredCard(index)}
+                    onMouseLeave={() => setHoveredCard(null)}
+                  >
+                    {/* Vertical divider line before every card (Desktop only) */}
+                    <div className="hidden lg:block w-px bg-white/20 self-stretch shrink-0" />
+                    {/* Between every line and card, there is 22/1440 vw gap (Desktop only) */}
+                    <div className="hidden lg:block shrink-0" style={{ width: "calc(22 / 1440 * 100vw)" }} />
 
-                  {/* Card Content wrapper */}
-                  <div className="flex flex-col flex-grow text-left">
-                    <Link href={linkUrl} className="block relative aspect-[364/270] w-full overflow-hidden">
-                      <Image
-                        src={post.heroImage}
-                        alt={post.title}
-                        fill
-                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"
-                      />
-                    </Link>
+                    {/* Card Content wrapper */}
+                    <div className="flex flex-col flex-grow text-left">
+                      <Link href={linkUrl} className="block relative aspect-[364/270] w-full overflow-hidden">
+                        <Image
+                          src={post.heroImage}
+                          alt={post.title}
+                          fill
+                          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"
+                        />
+                      </Link>
 
-                    {/* 20px gap */}
-                    <div style={{ height: "20px" }} />
+                      <div className="h-[20px]" />
 
-                    <Link href={linkUrl}>
-                      <h3
-                        className="hover:opacity-80 transition-opacity m-0"
-                        style={{
-                          fontFamily: "'Inter Tight', sans-serif",
-                          fontWeight: 400,
-                          fontSize: "18px",
-                          lineHeight: "130%",
-                          letterSpacing: "0%",
-                          color: "#ffffff",
-                          verticalAlign: "middle"
-                        }}
+                      <Link href={linkUrl}>
+                        <h3 className="hover:opacity-80 transition-opacity m-0 font-inter-tight font-normal text-[18px] leading-[130%] text-white">
+                          {post.title}
+                        </h3>
+                      </Link>
+
+                      <div className="h-[12px]" />
+
+                      <p className="m-0 font-manrope font-normal text-[12px] lg:text-[14px] leading-[130%] lg:leading-[1.5] text-[#AEAEAE]">
+                        {post.description}
+                      </p>
+
+                      <div className="h-[24px] lg:h-[52px]" />
+
+                      <Link
+                        href={linkUrl}
+                        className="inline-flex items-center hover:opacity-80 transition-opacity mt-auto font-manrope font-normal text-[12px] leading-[110%] text-white"
                       >
-                        {post.title}
-                      </h3>
-                    </Link>
-
-                    {/* 12px gap */}
-                    <div style={{ height: "12px" }} />
-
-                    <p
-                      className="m-0"
-                      style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "14px",
-                        lineHeight: "1.5",
-                        letterSpacing: "0%",
-                        color: "#AEAEAE",
-                        verticalAlign: "middle"
-                      }}
-                    >
-                      {post.description}
-                    </p>
-
-                    {/* 52px gap */}
-                    <div style={{ height: "52px" }} />
-
-                    <Link
-                      href={linkUrl}
-                      className="inline-flex items-center hover:opacity-80 transition-opacity mt-auto"
-                      style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "12px",
-                        lineHeight: "110%",
-                        letterSpacing: "0%",
-                        color: "#ffffff",
-                        verticalAlign: "middle",
-                      }}
-                    >
-                      Read Article
-                    </Link>
+                        Read Article
+                      </Link>
+                    </div>
                   </div>
+                  
+                  {/* Horizontal divider after every card on mobile (except the last one) */}
+                  {index !== getFilteredBlogs().length - 1 && (
+                    <div className="block lg:hidden w-full h-px bg-white/20 mt-[32px] mb-[32px]" />
+                  )}
                 </div>
               )
             })}
@@ -302,41 +257,21 @@ export default function Home() {
       </section>
 
       {/* ================= "OUR WRITERS" SECTION ================= */}
-      <section className="mb-[149px] lg:mb-[149px]">
+      <section className="mb-[80px] lg:mb-[149px]">
         <div className={containerClass}>
-          {/* Horizontal rule with solid color and 86px gap */}
-          <hr style={{ border: "none", borderTop: "1px solid #FFFFFF4D", marginBottom: "86px" }} />
+          {/* Horizontal rule with solid color */}
+          <hr className="border-none border-t border-[#FFFFFF4D] mb-[40px] lg:mb-[86px]" />
 
-          <h2
-            className="text-left font-normal"
-            style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 500,
-              fontSize: "40px",
-              lineHeight: "110%",
-              letterSpacing: "0%",
-              color: "#ffffff",
-              verticalAlign: "middle",
-              marginBottom: "76.5px"
-            }}
-          >
+          <h2 className="text-left font-inter-tight font-medium text-[24px] lg:text-[40px] leading-[110%] text-white mb-[32px] lg:mb-[76.5px]">
             Our Writers
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-[40px] gap-y-[60px] justify-between">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-[32px] md:gap-x-[40px] gap-y-[40px] lg:gap-y-[60px] justify-between">
             {writers.map((writer, idx) => (
               <div key={idx} className="flex flex-col text-left h-full">
                 <Link
                   href={writer.link}
-                  className="block relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-[600ms] rounded-full"
-                  style={{
-                    width: "calc(222 / 1440 * 100vw)",
-                    height: "calc(224 / 1440 * 100vw)",
-                    maxWidth: "222px",
-                    maxHeight: "224px",
-                    minWidth: "150px",
-                    minHeight: "151px"
-                  }}
+                  className="block relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-[600ms] rounded-full aspect-square w-full max-w-[222px]"
                 >
                   <Image
                     src={writer.image}
@@ -346,81 +281,34 @@ export default function Home() {
                   />
                 </Link>
 
-                {/* 38px gap */}
-                <div style={{ height: "38px" }} />
+                <div className="h-[16px] lg:h-[38px]" />
 
                 <Link href={writer.link}>
-                  <h3
-                    className="hover:opacity-80 transition-opacity m-0"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "18px",
-                      lineHeight: "140%",
-                      letterSpacing: "0%",
-                      color: "#ffffff",
-                      verticalAlign: "middle",
-                      textTransform: "capitalize"
-                    }}
-                  >
+                  <h3 className="hover:opacity-80 transition-opacity m-0 font-inter-tight font-medium text-[14px] lg:text-[18px] leading-[140%] text-white capitalize">
                     {writer.name}
                   </h3>
                 </Link>
 
-                {/* 8px gap */}
-                <div style={{ height: "8px" }} />
+                <div className="h-[4px] lg:h-[8px]" />
 
-                <span
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "14px",
-                    lineHeight: "120%",
-                    letterSpacing: "0%",
-                    color: "#ffffff",
-                    verticalAlign: "middle",
-                    display: "block"
-                  }}
-                >
+                <span className="font-manrope font-normal text-[10px] lg:text-[14px] leading-[120%] text-white block">
                   {writer.role}
                 </span>
 
-                {/* 16px gap */}
-                <div style={{ height: "16px" }} />
+                <div className="h-[8px] lg:h-[16px]" />
 
-                <p
-                  className="m-0 flex-grow"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "12px",
-                    lineHeight: "120%",
-                    letterSpacing: "0%",
-                    color: "#AEAEAE",
-                    verticalAlign: "middle"
-                  }}
-                >
+                <p className="m-0 flex-grow font-manrope font-normal text-[10px] lg:text-[12px] leading-[120%] text-[#AEAEAE]">
                   {writer.bio}
                 </p>
 
-                {/* 40px gap */}
-                <div style={{ height: "40px" }} />
+                <div className="h-[16px] lg:h-[40px]" />
 
                 <Link
                   href={writer.link}
-                  className="inline-flex items-center hover:opacity-80 transition-opacity mt-auto"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 300,
-                    fontSize: "16px",
-                    lineHeight: "120%",
-                    letterSpacing: "0%",
-                    color: "#ffffff",
-                    verticalAlign: "middle"
-                  }}
+                  className="inline-flex items-center hover:opacity-80 transition-opacity mt-auto font-inter-tight font-medium lg:font-light text-[10px] lg:text-[16px] leading-[120%] text-white"
                 >
                   <span style={{ textDecoration: "underline solid #ffffff" }}>View Profile</span>
-                  <span style={{ marginLeft: "10px" }}>↗</span>
+                  <span className="ml-[6px] lg:ml-[10px]">↗</span>
                 </Link>
               </div>
             ))}
