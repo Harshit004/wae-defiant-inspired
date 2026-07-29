@@ -1803,5 +1803,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-07-29T06:28:17.084Z"
+  },
+  "c0215817-dbae-4e34-92c1-dd96bfe30eee": {
+    "id": "c0215817-dbae-4e34-92c1-dd96bfe30eee",
+    "fullName": "Michael Hays Green",
+    "companyName": "Envirosult",
+    "email": "michaelgreen@envirosult.com",
+    "phone": "337 224 0987",
+    "city": "Lafayette",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "I am Michael Green PG Geologist. CEO of Envirosult in the USA. See link https://envirosult.com/\nI visited your website and would like to know more about a partnering relationship. Our company here in the USA partnering with your company. Envirosult deals in choices for Water Purification Systems here in the USA. Both Residential and Commercial. As a Professional Geologist we educate, train, make aware children, families, communities. Forever chemicals, lead, and other poisons to the human body. We market \"Envirosult is seeking Company and individual financial sponsors. Cancers, children, families and communities. We will have a Company print newsletter and you would be in that Newsletter. My contact email is michaelgreen@envirosult.com and my cell is 337 224 0987 here in the USA. I am on WhatsApp on my cell and Desktop. My time is Central Standard Time in the USA. Can we set up a mutually convenient time to meet and discuss. Zoom, Google, an App of your choice. Use WhatsApp to communicate. or email. or both. Michael Green PG Geosciences.",
+    "type": "contact-us",
+    "createdAt": "2026-07-29T20:30:04.712Z"
   }
 };
