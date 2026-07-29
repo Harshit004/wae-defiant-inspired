@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
-const containerClass = "mx-auto w-full px-[7.5vw]"
+const containerClass = "mx-auto w-full px-[24px] md:px-[7.5vw]"
 
 const officeLocations = [
   {
@@ -90,153 +90,71 @@ export default function ContactUsPage() {
         <Header transparentBg />
       </div>
       {/* ── HERO + FORM SECTION ── */}
-      {/* 77px gap after header */}
-      <section className="relative z-10 w-full" style={{ paddingTop: "clamp(180px, 16.3vw, 235px)", paddingBottom: "0" }}>
+      {/* 38px gap after header on mobile, 77px+ on desktop */}
+      <section className="relative z-10 w-full pt-[110px] md:pt-[clamp(180px,16.3vw,235px)] pb-0">
         <div className={containerClass}>
-          {/* 2-col justify-between */}
-          <div className="flex flex-row justify-between items-start">
+          {/* 2-col justify-between on desktop, 1-col on mobile */}
+          <div className="flex flex-col md:flex-row justify-between items-start">
 
-            {/* LEFT: 393px → ~27.3vw, clamped */}
-            <div style={{ width: "clamp(260px, 27.3vw, 393px)", flexShrink: 0 }}>
+            {/* LEFT */}
+            <div className="w-full md:w-[clamp(260px,27.3vw,393px)] shrink-0">
               {/* Questions or Ideas? */}
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  lineHeight: "100%",
-                  letterSpacing: "0%",
-                  color: "#FFFFFF",
-                  textTransform: "uppercase",
-                  marginBottom: "18px",
-                }}
-              >
+              <p className="font-manrope font-normal text-[12px] md:text-[14px] leading-[100%] uppercase text-white mb-[9px] md:mb-[18px]">
                 Questions or Ideas?
               </p>
 
               {/* Let's Connect. */}
-              <h1
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(40px, 4.17vw, 60px)",
-                  lineHeight: "100%",
-                  letterSpacing: "0%",
-                  color: "#FFFFFF",
-                  marginBottom: "62px",
-                }}
-              >
+              <h1 className="font-manrope md:font-inter-tight font-medium md:font-normal text-[28px] md:text-[clamp(40px,4.17vw,60px)] leading-[120%] md:leading-[100%] text-white mb-[9px] md:mb-[62px]">
                 Let&apos;s Connect.
               </h1>
+              
+              <p className="font-manrope font-normal text-[12px] leading-[120%] text-[#AEAEAE] mb-[41px] md:mb-[62px]">
+                Whether you&apos;re planning a project, exploring our solutions, or simply looking for expert guidance, we&apos;d love to hear from you. Our team is here to help you make informed decisions every step of the way.
+              </p>
 
               {/* Corporate Office */}
-              <p
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "14px",
-                  lineHeight: "200%",
-                  letterSpacing: "0%",
-                  color: "#FFFFFF",
-                }}
-              >
+              <p className="font-manrope md:font-inter-tight font-bold md:font-medium text-[12px] md:text-[14px] leading-[100%] md:leading-[200%] text-white mb-[24px] md:mb-0">
                 Corporate Office
               </p>
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "14px",
-                  lineHeight: "130%",
-                  letterSpacing: "0%",
-                  color: "#AEAEAE",
-                }}
-              >
+              <p className="font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] md:leading-[130%] text-[#AEAEAE] mb-[30px] md:mb-[19px]">
                 H-18, H Block, Sector 63, Noida, Uttar Pradesh – 201301
               </p>
 
-              <div style={{ height: "19px" }} />
-
               {/* Innovation Centre */}
-              <p
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "14px",
-                  lineHeight: "100%",
-                  letterSpacing: "0%",
-                  color: "#FFFFFF",
-                }}
-              >
-                Innovation Centre
+              <p className="font-manrope md:font-inter-tight font-bold md:font-medium text-[12px] md:text-[14px] leading-[100%] text-white mb-[12px] md:mb-[8px]">
+                Noida (Innovation Centre)
               </p>
-              <div style={{ height: "8px" }} />
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  lineHeight: "130%",
-                  letterSpacing: "0%",
-                  color: "#AEAEAE",
-                }}
-              >
-                D 247/2, D Block, Sector 63,<br />Noida, Uttar Pradesh – 201301
+              <p className="font-manrope font-normal text-[12px] md:text-[14px] leading-[100%] md:leading-[130%] text-[#AEAEAE] mb-[30px] md:mb-[19px]">
+                D 247/2 , D Block, Sector 63,<br />Noida, Uttar Pradesh – 201301
               </p>
-
-              <div style={{ height: "19px" }} />
 
               {/* Email */}
-              <p
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "14px",
-                  lineHeight: "100%",
-                  letterSpacing: "0%",
-                  color: "#FFFFFF",
-                }}
-              >
+              <p className="font-manrope md:font-inter-tight font-bold md:font-medium text-[12px] md:text-[14px] leading-[100%] text-white mb-[12px] md:mb-[8px]">
                 Email
               </p>
-              <div style={{ height: "8px" }} />
               <div>
                 <a
                   href="mailto:marketing@waecorp.com"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "14px",
-                    lineHeight: "100%",
-                    letterSpacing: "0%",
-                    color: "#AEAEAE",
-                    display: "block",
-                    textDecoration: "none",
-                  }}
+                  className="font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] text-[#AEAEAE] block no-underline"
                 >
                   marketing@waecorp.com
                 </a>
                 <a
                   href="mailto:info@waecorp.com"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "14px",
-                    lineHeight: "100%",
-                    letterSpacing: "0%",
-                    color: "#AEAEAE",
-                    display: "block",
-                    textDecoration: "none",
-                    marginTop: "4px",
-                  }}
+                  className="font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] text-[#AEAEAE] block no-underline mt-[4px]"
                 >
                   info@waecorp.com
                 </a>
               </div>
             </div>
 
-            {/* RIGHT: 581px → ~40.3vw, clamped */}
-            <div style={{ width: "clamp(300px, 40.3vw, 581px)", flexShrink: 0 }}>
+            {/* Mobile divider between details and form */}
+            <div className="block md:hidden w-full my-[40px]">
+              <div className="h-[1px] bg-white/20 w-full" />
+            </div>
+
+            {/* RIGHT (Form) */}
+            <div className="w-full md:w-[clamp(300px,40.3vw,581px)] shrink-0">
               {formStatus === "success" ? (
                 <div style={{ paddingTop: "0" }}>
                   <p
@@ -334,15 +252,28 @@ export default function ContactUsPage() {
                     }
                   `}</style>
 
-                  <input className="cu-input" type="text" name="name" placeholder="*Name" required />
-                  <input className="cu-input" type="text" name="companyName" placeholder="*Company Name" required />
-                  <input className="cu-input" type="tel" name="contact" placeholder="*Contact No." required />
-                  <input className="cu-input" type="email" name="email" placeholder="*Official Email" required />
-                  <input className="cu-input" type="text" name="city" placeholder="*City" />
+                  <input className="cu-input" type="text" name="name" placeholder="Name*" required />
+                  <input className="cu-input" type="text" name="companyName" placeholder="Company Name*" required />
+                  <input className="cu-input" type="tel" name="contact" placeholder="Contact No.*" required />
+                  <input className="cu-input" type="email" name="email" placeholder="Official Email*" required />
+                  <input className="cu-input" type="text" name="city" placeholder="City*" />
                   <textarea className="cu-textarea" name="message" placeholder="Your Message" maxLength={2000} />
 
-                  {/* 62px gap */}
-                  <div style={{ height: "62px" }} />
+                  <div className="h-[40px] md:h-[62px]" />
+                  
+                  {/* reCAPTCHA placeholder for mobile matching the design */}
+                  <div className="mb-[24px] md:mb-[62px]">
+                    <div className="bg-white rounded w-[200px] h-[50px] flex items-center justify-between px-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 border border-gray-300 rounded-sm bg-white" />
+                        <span className="text-[#555555] font-roboto text-[12px]">I'm not a robot</span>
+                      </div>
+                      <div className="flex flex-col items-center justify-center">
+                        <Image src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" width={24} height={24} />
+                        <span className="text-[8px] text-[#555555] mt-1">reCAPTCHA</span>
+                      </div>
+                    </div>
+                  </div>
 
                   {formStatus === "error" && (
                     <p
@@ -393,142 +324,59 @@ export default function ContactUsPage() {
           </div>
         </div>
 
-        {/* 92px gap + divider + 92px gap */}
-        <div style={{ height: "92px" }} />
+        {/* 92px gap + divider + 92px gap on desktop, 40px on mobile */}
+        <div className="h-[40px] md:h-[92px]" />
         <div className={containerClass}>
-          <div style={{ height: "1px", background: "rgba(255,255,255,0.2)", width: "100%" }} />
+          <div className="h-[1px] bg-white/20 w-full" />
         </div>
-        <div style={{ height: "92px" }} />
+        <div className="h-[40px] md:h-[92px]" />
 
         {/* ── SUPPORT SECTION ── */}
         <div className={containerClass}>
-          <div className="flex flex-row justify-between items-start">
+          <div className="flex flex-col md:flex-row justify-between items-start">
 
             {/* LEFT support column */}
-            <div style={{ width: "clamp(240px, 27.3vw, 393px)", flexShrink: 0 }}>
-              <h2
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(28px, 2.78vw, 40px)",
-                  lineHeight: "50px",
-                  letterSpacing: "0%",
-                  color: "#FFFFFF",
-                  marginBottom: "24px",
-                }}
-              >
-                Support That Stays<br />With You
+            <div className="w-full md:w-[clamp(240px,27.3vw,393px)] shrink-0">
+              <h2 className="font-manrope font-medium md:font-normal text-[20px] md:text-[clamp(28px,2.78vw,40px)] leading-[50px] text-white mb-[15px] md:mb-[24px]">
+                Support That Stays<br className="hidden md:block" /> With You
               </h2>
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "14px",
-                  lineHeight: "130%",
-                  letterSpacing: "0%",
-                  color: "#AEAEAE",
-                  marginBottom: "62px",
-                }}
-              >
+              <p className="font-manrope font-medium text-[12px] md:text-[14px] leading-[120%] md:leading-[130%] text-[#AEAEAE] mb-[40px] md:mb-[62px]">
                 Need assistance? Our Customer Care team is available to ensure you receive timely support whenever you need it.
               </p>
 
-              <p
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  lineHeight: "100%",
-                  color: "#FFFFFF",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  marginBottom: "12px",
-                }}
-              >
-                24×7 Customer Care
+              <p className="font-inter-tight font-medium text-[11px] leading-[100%] text-white uppercase tracking-[0.06em] mb-[12px]">
+                24×7 Customer Support
               </p>
               <a
                 href="tel:+911204069800"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "16px",
-                  lineHeight: "100%",
-                  letterSpacing: "0%",
-                  color: "#FFFFFF",
-                  textDecoration: "none",
-                }}
+                className="font-inter-tight font-normal text-[16px] leading-[100%] text-white no-underline"
               >
                 +91-120-406-9800
               </a>
             </div>
 
             {/* RIGHT support column: vertical divider + content */}
-            <div
-              style={{
-                width: "clamp(300px, 50vw, 720px)",
-                flexShrink: 0,
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              {/* Vertical divider */}
-              <div
-                style={{
-                  width: "1px",
-                  background: "rgba(255,255,255,0.2)",
-                  flexShrink: 0,
-                  alignSelf: "stretch",
-                }}
-              />
+            <div className="w-full md:w-[clamp(300px,50vw,720px)] shrink-0 flex flex-col md:flex-row mt-[40px] md:mt-0">
+              {/* Divider (horizontal on mobile, vertical on desktop) */}
+              <div className="h-[1px] md:h-auto w-full md:w-[1px] bg-white/20 shrink-0 self-stretch mb-[40px] md:mb-0" />
 
-              {/* Gap after divider */}
-              <div style={{ width: "50px", flexShrink: 0 }} />
+              {/* Gap after divider on desktop */}
+              <div className="hidden md:block w-[50px] shrink-0" />
 
               {/* Content */}
-              <div style={{ flex: 1 }}>
-                <p
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "14px",
-                    lineHeight: "130%",
-                    letterSpacing: "0%",
-                    color: "#AEAEAE",
-                    marginBottom: "48px",
-                  }}
-                >
+              <div className="flex-1">
+                <p className="font-manrope font-normal text-[12px] md:text-[14px] leading-[130%] text-[#AEAEAE] mb-[48px]">
                   From technical guidance to service requests, we&apos;re committed to providing responsive and reliable assistance throughout your journey with WAE.
                 </p>
 
                 {/* Support items */}
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-[14px]">
                   {supportItems.map((item, i) => (
                     <div key={item.title}>
-                      <p
-                        style={{
-                          fontFamily: "'Manrope', sans-serif",
-                          fontWeight: 500,
-                          fontSize: "14px",
-                          lineHeight: "100%",
-                          letterSpacing: "0%",
-                          color: "#FFFFFF",
-                          marginBottom: "14px",
-                        }}
-                      >
+                      <p className="font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] text-white mb-[14px]">
                         {item.title}
                       </p>
-                      <p
-                        style={{
-                          fontFamily: "'Manrope', sans-serif",
-                          fontWeight: 500,
-                          fontSize: "14px",
-                          lineHeight: "100%",
-                          letterSpacing: "0%",
-                          color: "#AEAEAE",
-                          marginBottom: i < supportItems.length - 1 ? "14px" : 0,
-                        }}
-                      >
+                      <p className="font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] text-[#AEAEAE]">
                         {item.desc}
                       </p>
                     </div>
@@ -540,86 +388,51 @@ export default function ContactUsPage() {
         </div>
 
         {/* 92px gap + divider + 92px gap */}
-        <div style={{ height: "92px" }} />
+        <div className="h-[40px] md:h-[92px]" />
         <div className={containerClass}>
-          <div style={{ height: "1px", background: "rgba(255,255,255,0.2)", width: "100%" }} />
+          <div className="h-[1px] bg-white/20 w-full" />
         </div>
-        <div style={{ height: "92px" }} />
+        <div className="h-[40px] md:h-[92px]" />
 
         {/* ── OUR PRESENCE SECTION ── */}
         <div className={containerClass} style={{ paddingBottom: "120px" }}>
-          <div className="flex flex-row justify-between items-start">
+          <div className="flex flex-col md:flex-row justify-between items-start">
 
             {/* LEFT: 310px → ~21.5vw */}
-            <div style={{ width: "clamp(200px, 21.5vw, 310px)", flexShrink: 0 }}>
-              <h2
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(28px, 2.78vw, 40px)",
-                  lineHeight: "100%",
-                  letterSpacing: "0%",
-                  color: "#FFFFFF",
-                  marginBottom: "24px",
-                }}
-              >
+            <div className="w-full md:w-[clamp(200px,21.5vw,310px)] shrink-0">
+              <h2 className="font-manrope font-normal text-[28px] md:text-[clamp(28px,2.78vw,40px)] leading-[100%] text-white mb-[24px]">
                 Our Presence
               </h2>
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "14px",
-                  lineHeight: "130%",
-                  letterSpacing: "0%",
-                  color: "#AEAEAE",
-                }}
-              >
+              <p className="font-manrope font-medium text-[12px] md:text-[14px] leading-[130%] text-[#AEAEAE] mb-[40px] md:mb-0">
                 With offices across India, our teams are always within reach to support customers, partners, and projects nationwide.
               </p>
             </div>
 
-            {/* RIGHT: 2×2 grid of city cards with vertical dividers */}
-            <div
-              style={{
-                flex: 1,
-                marginLeft: "clamp(32px, 4vw, 80px)",
-                display: "flex",
-                flexDirection: "row",
-                gap: "0",
-              }}
-            >
-              {/* Column 1: Mumbai + Hyderabad */}
-              <div style={{ display: "flex", flexDirection: "row", flex: 1 }}>
-                {/* Vertical divider */}
-                <div style={{ width: "1px", background: "rgba(255,255,255,0.2)", flexShrink: 0, alignSelf: "stretch" }} />
-                <div style={{ width: "50px", flexShrink: 0 }} />
-
-                <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-                  {/* Mumbai */}
+            {/* RIGHT: 2×2 grid on desktop, 1-col stack on mobile */}
+            <div className="flex-1 ml-0 md:ml-[clamp(32px,4vw,80px)] flex flex-col md:flex-row gap-[40px] md:gap-0 mt-0">
+              {/* Column 1 */}
+              <div className="flex flex-col md:flex-row flex-1 gap-[40px] md:gap-0">
+                {/* Vertical divider (desktop only) */}
+                <div className="hidden md:block w-[1px] bg-white/20 shrink-0 self-stretch" />
+                <div className="hidden md:block w-[50px] shrink-0" />
+                
+                <div className="flex-1 flex flex-col gap-[40px] md:gap-[59px]">
                   <CityCard city={officeLocations[0]} />
-                  {/* 59px gap between rows */}
-                  <div style={{ height: "59px" }} />
-                  {/* Hyderabad */}
                   <CityCard city={officeLocations[2]} />
                 </div>
               </div>
 
-              {/* 62px gap between columns */}
-              <div style={{ width: "62px", flexShrink: 0 }} />
+              {/* gap between columns */}
+              <div className="hidden md:block w-[62px] shrink-0" />
 
-              {/* Column 2: Bengaluru + Pune */}
-              <div style={{ display: "flex", flexDirection: "row", flex: 1 }}>
-                {/* Vertical divider */}
-                <div style={{ width: "1px", background: "rgba(255,255,255,0.2)", flexShrink: 0, alignSelf: "stretch" }} />
-                <div style={{ width: "50px", flexShrink: 0 }} />
-
-                <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-                  {/* Bengaluru */}
+              {/* Column 2 */}
+              <div className="flex flex-col md:flex-row flex-1 gap-[40px] md:gap-0">
+                {/* Vertical divider (desktop only) */}
+                <div className="hidden md:block w-[1px] bg-white/20 shrink-0 self-stretch" />
+                <div className="hidden md:block w-[50px] shrink-0" />
+                
+                <div className="flex-1 flex flex-col gap-[40px] md:gap-[59px]">
                   <CityCard city={officeLocations[1]} />
-                  {/* 59px gap */}
-                  <div style={{ height: "59px" }} />
-                  {/* Pune */}
                   <CityCard city={officeLocations[3]} />
                 </div>
               </div>
@@ -636,7 +449,6 @@ export default function ContactUsPage() {
 function CityCard({ city }: { city: typeof officeLocations[0] }) {
   return (
     <div className="group cursor-pointer">
-      {/* 315×230 image → responsive via aspect-ratio */}
       <style>{`
         .city-img-${city.city.replace(/\s+/g, '-')} {
           filter: grayscale(100%);
@@ -658,35 +470,13 @@ function CityCard({ city }: { city: typeof officeLocations[0] }) {
         />
       </div>
 
-      {/* 35px gap */}
-      <div style={{ height: "35px" }} />
+      <div className="h-[24px] md:h-[35px]" />
 
-      {/* City title */}
-      <p
-        style={{
-          fontFamily: "'Manrope', sans-serif",
-          fontWeight: 700,
-          fontSize: "14px",
-          lineHeight: "100%",
-          letterSpacing: "0%",
-          color: "#FFFFFF",
-          marginBottom: "14px",
-        }}
-      >
+      <p className="font-manrope font-bold text-[14px] leading-[100%] text-white mb-[12px] md:mb-[14px]">
         {city.city}
       </p>
 
-      {/* Address */}
-      <p
-        style={{
-          fontFamily: "'Manrope', sans-serif",
-          fontWeight: 400,
-          fontSize: "14px",
-          lineHeight: "130%",
-          letterSpacing: "0%",
-          color: "#AEAEAE",
-        }}
-      >
+      <p className="font-manrope font-normal text-[12px] md:text-[14px] leading-[130%] text-[#AEAEAE]">
         {city.address}
       </p>
     </div>
