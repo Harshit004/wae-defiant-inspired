@@ -8,7 +8,6 @@ import { Suspense } from "react"
 import { Toaster } from "sonner"
 import ScrollToTop from "@/components/scroll-to-top"
 import MobileBlocker from "@/components/mobile-blocker"
-import WhatsAppWidget from "@/components/whatsapp-widget"
 import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -61,7 +60,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Suspense>
         <ScrollToTop />
         <Toaster />
-        <WhatsAppWidget />
+        <Script 
+          type="text/javascript"
+          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+          id="aisensy-wa-widget"
+          {...{ "widget-id": "aabkhg" }}
+        />
       </body>
     </html>
   )
