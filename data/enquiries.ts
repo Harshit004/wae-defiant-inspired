@@ -1623,5 +1623,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/product-description-page?product=venus",
     "type": "product",
     "createdAt": "2026-07-27T19:24:21.163Z"
+  },
+  "c00285ea-d6fe-4c46-9fce-4d504961d4ee": {
+    "id": "c00285ea-d6fe-4c46-9fce-4d504961d4ee",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-07-29T04:43:39.711Z"
   }
 };
