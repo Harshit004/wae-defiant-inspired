@@ -8,11 +8,10 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { BLOGS, WRITERS, BlogPost, Writer } from "@/data/blogs"
 
-const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
+const containerClass = "mx-auto w-full max-w-[1440px]"
 
 export default function DynamicBlogPost() {
   const params = useParams()
-  const categoryParam = params?.category as string
   const titleParam = params?.title as string
 
   const [copied, setCopied] = useState(false)
@@ -22,7 +21,6 @@ export default function DynamicBlogPost() {
   const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([])
 
   useEffect(() => {
-    // Read the database inside useEffect to capture runtime changes in client development
     if (titleParam) {
       const post = BLOGS[titleParam] || Object.values(BLOGS).find(b => b.id === titleParam)
       if (post) {
@@ -30,13 +28,11 @@ export default function DynamicBlogPost() {
         const writer = WRITERS[post.writerId]
         setWriterData(writer || null)
 
-        // Find up to 3 related posts of the same category (excluding the current one)
         const sameCategoryRelated = Object.values(BLOGS)
           .filter(b => b.id !== post.id && b.category === post.category && b.status === "Live")
 
         let related = sameCategoryRelated.slice(0, 3)
 
-        // If we don't have 3, fill with other categories
         if (related.length < 3) {
           const otherRelated = Object.values(BLOGS)
             .filter(b => b.id !== post.id && b.category !== post.category && b.status === "Live")
@@ -64,12 +60,12 @@ export default function DynamicBlogPost() {
       <main className="relative bg-[#0F0F0F] text-white min-h-screen">
         <Header transparentBg />
         <div className="h-[220px]" />
-        <section className={containerClass}>
+        <section className="px-[24px] md:px-[7.5vw] mx-auto w-full max-w-[1440px]">
           <div className="text-center py-20">
-            <h1 className="text-2xl font-normal" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+            <h1 className="text-2xl font-inter-tight font-normal">
               Article Not Found
             </h1>
-            <p className="text-gray-500 mt-4" style={{ fontFamily: "'Manrope', sans-serif" }}>
+            <p className="text-gray-500 mt-4 font-manrope font-normal">
               The article you are looking for does not exist or has been moved.
             </p>
             <Link href="/perspectives" className="text-[#0081C9] hover:underline mt-6 inline-block">
@@ -80,24 +76,6 @@ export default function DynamicBlogPost() {
         <Footer />
       </main>
     )
-  }
-
-  const paragraphStyle = {
-    fontFamily: "var(--font-manrope), sans-serif",
-    fontWeight: 400,
-    fontSize: '14px',
-    lineHeight: '1.5',
-    letterSpacing: '0%',
-    color: '#AEAEAE',
-  }
-
-  const headingStyle = {
-    fontFamily: "var(--font-inter-tight), sans-serif",
-    fontWeight: 400,
-    fontSize: '18px',
-    lineHeight: '1.3',
-    letterSpacing: '0%',
-    color: '#fff',
   }
 
   return (
@@ -121,17 +99,15 @@ export default function DynamicBlogPost() {
           )}
           {/* Top Gradient */}
           <div
-            className="absolute top-0 left-0 right-0 pointer-events-none z-10"
+            className="absolute top-0 left-0 right-0 pointer-events-none z-10 h-[200px] md:h-[430px]"
             style={{
-              height: '430px',
               background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%)',
             }}
           />
           {/* Bottom Gradient */}
           <div
-            className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
+            className="absolute bottom-0 left-0 right-0 pointer-events-none z-10 h-[100px] md:h-[270px]"
             style={{
-              height: '270px',
               background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%)',
             }}
           />
@@ -152,84 +128,36 @@ export default function DynamicBlogPost() {
 
         {/* Article Section */}
         <section
-          className="relative z-10 w-full"
-          style={{
-            paddingTop: '6.319vw',
-            paddingLeft: '7.5vw',
-            paddingRight: '7.5vw',
-            paddingBottom: '7.43vw'
-          }}
+          className={`relative z-10 w-full pt-[40px] md:pt-[6.319vw] pb-[60px] md:pb-[7.43vw] px-[24px] md:px-[7.5vw] ${containerClass}`}
         >
           <div className="mx-auto">
             {/* Category label */}
-            <div
-              style={{
-                fontFamily: "var(--font-inter-tight), sans-serif",
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '130%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
-                color: '#fff',
-                marginBottom: '31px'
-              }}
-            >
+            <div className="font-inter-tight font-normal text-[12px] md:text-[14px] leading-[130%] text-white mb-[16px] md:mb-[31px]">
               {blogData.category}
             </div>
 
             {/* Title */}
-            <h1
-              style={{
-                fontFamily: "var(--font-inter-tight), sans-serif",
-                fontWeight: 400,
-                fontSize: '40px',
-                lineHeight: '100%',
-                letterSpacing: '0%',
-                verticalAlign: 'middle',
-                color: '#fff',
-                marginBottom: '42px'
-              }}
-            >
+            <h1 className="font-inter-tight font-normal text-[24px] md:text-[40px] leading-[120%] md:leading-[100%] text-white mb-[24px] md:mb-[42px]">
               {blogData.title}
             </h1>
 
             {/* Author and Read Time Metadata Row */}
-            <div className="flex justify-between items-center text-white" style={{ marginBottom: '38px' }}>
+            <div className="flex justify-between items-center text-white mb-[24px] md:mb-[38px]">
               {writerData ? (
                 <Link
                   href={writerData.link || "#"}
-                  style={{
-                    fontFamily: "var(--font-inter-tight), sans-serif",
-                    fontWeight: 700,
-                    fontSize: '14px',
-                    lineHeight: '130%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    textDecoration: 'underline',
-                    textUnderlineOffset: '4px',
-                    color: '#fff'
-                  }}
+                  className="font-inter-tight font-bold text-[12px] md:text-[14px] leading-[130%] text-white underline underline-offset-4"
                 >
                   {writerData.name}
                 </Link>
               ) : (
-                <span style={{ fontFamily: "var(--font-inter-tight), sans-serif", fontSize: '14px' }}>
+                <span className="font-inter-tight text-[12px] md:text-[14px]">
                   WAE Writer
                 </span>
               )}
 
               <div className="flex items-center gap-[12px]">
-                <span
-                  style={{
-                    fontFamily: "var(--font-inter-tight), sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '130%',
-                    letterSpacing: '0%',
-                    verticalAlign: 'middle',
-                    color: '#fff'
-                  }}
-                >
+                <span className="font-inter-tight font-normal text-[12px] leading-[130%] text-white">
                   {blogData.readTime}
                 </span>
 
@@ -243,13 +171,10 @@ export default function DynamicBlogPost() {
                     alt="Share"
                     width={24}
                     height={24}
-                    className="w-6 h-6 object-contain"
+                    className="w-4 h-4 md:w-6 md:h-6 object-contain"
                   />
                   {copied && (
-                    <span
-                      className="absolute bottom-full right-0 mb-2 px-2 py-1 text-[10px] bg-black/95 text-white rounded border border-white/20 whitespace-nowrap backdrop-blur-sm shadow-md"
-                      style={{ fontFamily: "var(--font-inter-tight), sans-serif" }}
-                    >
+                    <span className="absolute bottom-full right-0 mb-2 px-2 py-1 text-[10px] bg-black/95 text-white rounded border border-white/20 whitespace-nowrap backdrop-blur-sm shadow-md font-inter-tight">
                       Link Copied!
                     </span>
                   )}
@@ -258,10 +183,10 @@ export default function DynamicBlogPost() {
             </div>
 
             {/* Horizontal rule */}
-            <div className="relative z-10 w-full" style={{ borderTop: '1px solid #FFFFFF4D' }} />
+            <div className="relative z-10 w-full border-t border-[#FFFFFF4D]" />
 
             {/* Three column layout */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12" style={{ marginTop: '58px' }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] md:gap-[48px] mt-[32px] md:mt-[58px]">
               {[0, 1, 2].map((colIdx) => {
                 const columnBlocks = blogData.contentColumns?.[colIdx] || []
                 return (
@@ -274,10 +199,9 @@ export default function DynamicBlogPost() {
                         return (
                           <p
                             key={blockIdx}
-                            style={{
-                              ...paragraphStyle,
-                              marginTop: isFirst ? '0px' : isAfterHeading ? '20px' : '12px'
-                            }}
+                            className={`font-manrope font-normal text-[14px] leading-[1.5] text-[#AEAEAE] ${
+                              isFirst ? 'mt-0' : isAfterHeading ? 'mt-[16px] md:mt-[20px]' : 'mt-[12px]'
+                            }`}
                           >
                             {block.text}
                           </p>
@@ -288,11 +212,9 @@ export default function DynamicBlogPost() {
                         return (
                           <h2
                             key={blockIdx}
-                            style={{
-                              ...headingStyle,
-                              marginTop: isFirst ? '0px' : '46px',
-                              marginBottom: '20px'
-                            }}
+                            className={`font-inter-tight font-normal text-[18px] leading-[1.3] text-white ${
+                              isFirst ? 'mt-0' : 'mt-[32px] md:mt-[46px]'
+                            } mb-[16px] md:mb-[20px]`}
                           >
                             {block.text}
                           </h2>
@@ -303,18 +225,14 @@ export default function DynamicBlogPost() {
                         return (
                           <ul
                             key={blockIdx}
-                            className="list-disc pl-5"
-                            style={{
-                              ...paragraphStyle,
-                              marginTop: isFirst ? '0px' : isAfterHeading ? '20px' : '12px'
-                            }}
+                            className={`list-disc pl-5 font-manrope font-normal text-[14px] leading-[1.5] text-[#AEAEAE] ${
+                              isFirst ? 'mt-0' : isAfterHeading ? 'mt-[16px] md:mt-[20px]' : 'mt-[12px]'
+                            }`}
                           >
                             {block.items?.map((item, itemIdx) => (
                               <li
                                 key={itemIdx}
-                                style={{
-                                  marginBottom: itemIdx === (block.items?.length || 1) - 1 ? '0px' : '8px'
-                                }}
+                                className={itemIdx === (block.items?.length || 1) - 1 ? 'mb-0' : 'mb-[8px]'}
                               >
                                 {item}
                               </li>
@@ -333,85 +251,50 @@ export default function DynamicBlogPost() {
         </section>
 
         {/* Divider above writer info */}
-        <div className="relative z-10 mx-[7.5vw] h-px" style={{ borderTop: '1px solid #FFFFFF4D', marginBottom: '48px' }} />
+        <div className="relative z-10 mx-[24px] md:mx-[7.5vw] h-px border-t border-[#FFFFFF4D] mb-[40px] md:mb-[48px]" />
 
         {/* Writer Card Section */}
         {writerData && (
-          <section className="relative z-10 w-full mb-[76px] px-[7.5vw]">
+          <section className={`relative z-10 w-full mb-[40px] md:mb-[76px] px-[24px] md:px-[7.5vw] ${containerClass}`}>
             <div className="mx-auto">
-              <div className="flex flex-col md:flex-row items-stretch md:gap-[94px]">
+              {/* Writer Profile row */}
+              <div className="flex flex-row items-start md:items-stretch gap-[16px] md:gap-[94px]">
                 {/* Writer circular image */}
-                <div className="flex-shrink-0 mb-8 md:mb-0">
+                <div className="flex-shrink-0 w-[40%] max-w-[150px] md:max-w-none md:w-[242px]">
                   <Image
                     src={writerData.image}
                     alt={writerData.name}
                     width={242}
                     height={244}
-                    className="rounded-full object-cover grayscale w-[242px] h-[244px]"
+                    className="rounded-full object-cover grayscale aspect-square w-full"
                   />
                 </div>
 
                 {/* Writer bio and details */}
-                <div className="flex flex-col justify-between flex-grow md:py-[2px]" style={{ minHeight: '244px' }}>
+                <div className="flex flex-col justify-between flex-grow md:py-[2px]">
                   <div>
-                    <h3 className="text-white" style={{
-                      fontFamily: "var(--font-inter-tight), sans-serif",
-                      fontWeight: 500,
-                      fontSize: '24px',
-                      lineHeight: '140%',
-                      letterSpacing: '0%',
-                      verticalAlign: 'middle',
-                      textTransform: 'capitalize',
-                      marginBottom: '12px',
-                    }}>
+                    <h3 className="font-inter-tight font-medium text-[16px] md:text-[24px] leading-[140%] text-white capitalize mb-[4px] md:mb-[12px]">
                       {writerData.name}
                     </h3>
 
-                    <p style={{
-                      fontFamily: "var(--font-inter-tight), sans-serif",
-                      fontWeight: 400,
-                      fontSize: '16px',
-                      lineHeight: '120%',
-                      letterSpacing: '0%',
-                      verticalAlign: 'middle',
-                      color: '#ffffff',
-                      marginBottom: '32px',
-                    }}>
+                    <p className="font-inter-tight font-normal text-[10px] md:text-[16px] leading-[120%] text-white mb-[8px] md:mb-[32px]">
                       {writerData.role}
                     </p>
 
-                    <p style={{
-                      fontFamily: "var(--font-manrope), sans-serif",
-                      fontWeight: 400,
-                      fontSize: '16px',
-                      lineHeight: '1.3',
-                      letterSpacing: '0%',
-                      verticalAlign: 'middle',
-                      color: '#AEAEAE',
-                      margin: 0,
-                      maxWidth: '750px'
-                    }}>
+                    <p className="font-manrope font-normal text-[10px] md:text-[16px] leading-[1.3] text-[#AEAEAE] m-0 max-w-[750px]">
                       {writerData.bio}
                     </p>
                   </div>
 
-                  <div className="mt-6 md:mt-0 flex items-end">
+                  <div className="mt-[16px] md:mt-[32px] flex items-end">
                     <Link
                       href={writerData.link || "#"}
-                      className="inline-flex items-center text-white cursor-pointer"
-                      style={{
-                        fontFamily: "var(--font-inter-tight), sans-serif",
-                        fontWeight: 400,
-                        fontSize: '18px',
-                        lineHeight: '120%',
-                        letterSpacing: '0%',
-                        verticalAlign: 'middle',
-                      }}
+                      className="inline-flex items-center text-white cursor-pointer font-inter-tight font-medium md:font-normal text-[10px] md:text-[18px] leading-[120%]"
                     >
-                      <span style={{ textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                      <span className="underline underline-offset-[3px]">
                         View Profile
                       </span>
-                      <span style={{ marginLeft: '10px' }}>↗</span>
+                      <span className="ml-[6px] md:ml-[10px]">↗</span>
                     </Link>
                   </div>
                 </div>
@@ -421,116 +304,74 @@ export default function DynamicBlogPost() {
         )}
 
         {/* Horizontal rule */}
-        <div className="relative z-10 mx-[7.5vw] h-px bg-white/30" style={{ borderTop: '1px solid #FFFFFF4D' }} />
+        <div className="relative z-10 mx-[24px] md:mx-[7.5vw] h-px bg-[#FFFFFF4D]" />
 
         {/* Related Articles Section */}
         {relatedPosts.length > 0 && (
           <section
-            className="relative z-10 w-full"
-            style={{
-              paddingTop: '76px',
-              paddingLeft: '7.5vw',
-              paddingRight: '7.5vw',
-              paddingBottom: '15.347vw'
-            }}
+            className={`relative z-10 w-full pt-[40px] md:pt-[76px] pb-[80px] md:pb-[15.347vw] px-[24px] md:px-[7.5vw] ${containerClass}`}
           >
             <div className="mx-auto">
-              <h2
-                style={{
-                  fontFamily: "var(--font-inter-tight), sans-serif",
-                  fontWeight: 400,
-                  fontSize: '40px',
-                  lineHeight: '110.00000000000001%',
-                  letterSpacing: '0%',
-                  verticalAlign: 'middle',
-                  color: '#fff',
-                  marginBottom: '60px'
-                }}
-              >
+              <h2 className="font-inter-tight font-medium md:font-normal text-[24px] md:text-[40px] leading-[110%] text-white mb-[32px] md:mb-[60px]">
                 Related Articles
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[4.166%] gap-y-[130px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-[4.166%] md:gap-y-[130px]">
                 {relatedPosts.map((post, index) => {
                   const rCatSlug = post.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
                   const linkUrl = `/perspectives/${rCatSlug}/${post.id}`
 
                   return (
-                    <div
-                      key={post.id}
-                      className="group flex items-stretch transition-all duration-300"
-                      onMouseEnter={() => setHoveredRelatedCard(index)}
-                      onMouseLeave={() => setHoveredRelatedCard(null)}
-                    >
-                      {/* Divider line before card */}
-                      <div className="w-px bg-white/20 self-stretch shrink-0" />
-                      <div style={{ width: "calc(22 / 1440 * 100vw)" }} className="shrink-0" />
+                    <div key={post.id} className="flex flex-col">
+                      <div
+                        className="group flex items-stretch transition-all duration-300"
+                        onMouseEnter={() => setHoveredRelatedCard(index)}
+                        onMouseLeave={() => setHoveredRelatedCard(null)}
+                      >
+                        {/* Divider line before card (Desktop only) */}
+                        <div className="hidden md:block w-px bg-white/20 self-stretch shrink-0" />
+                        <div className="hidden md:block shrink-0" style={{ width: "calc(22 / 1440 * 100vw)" }} />
 
-                      {/* Card Content */}
-                      <div className="flex flex-col flex-grow text-left">
-                        <Link href={linkUrl} className="block relative aspect-[364/270] w-full overflow-hidden">
-                          <Image
-                            src={post.heroImage}
-                            alt={post.title}
-                            fill
-                            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"
-                          />
-                        </Link>
+                        {/* Card Content */}
+                        <div className="flex flex-col flex-grow text-left">
+                          <Link href={linkUrl} className="block relative aspect-[364/270] w-full overflow-hidden">
+                            <Image
+                              src={post.heroImage}
+                              alt={post.title}
+                              fill
+                              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"
+                            />
+                          </Link>
 
-                        <div style={{ height: "20px" }} />
+                          <div className="h-[16px] md:h-[20px]" />
 
-                        <Link href={linkUrl}>
-                          <h3
-                            className="hover:opacity-80 transition-opacity m-0"
-                            style={{
-                              fontFamily: "var(--font-inter-tight), sans-serif",
-                              fontWeight: 400,
-                              fontSize: "18px",
-                              lineHeight: "130%",
-                              letterSpacing: "0%",
-                              color: "#ffffff",
-                              verticalAlign: "middle"
-                            }}
+                          <Link href={linkUrl}>
+                            <h3 className="hover:opacity-80 transition-opacity m-0 font-inter-tight font-normal text-[18px] leading-[130%] text-white">
+                              {post.title}
+                            </h3>
+                          </Link>
+
+                          <div className="h-[8px] md:h-[12px]" />
+
+                          <p className="m-0 font-manrope font-normal text-[14px] leading-[130%] text-[#AEAEAE]">
+                            {post.description}
+                          </p>
+
+                          <div className="h-[24px] md:h-[52px]" />
+
+                          <Link
+                            href={linkUrl}
+                            className="inline-flex items-center hover:opacity-80 transition-opacity mt-auto font-manrope font-normal text-[12px] leading-[110%] text-white"
                           >
-                            {post.title}
-                          </h3>
-                        </Link>
-
-                        <div style={{ height: "12px" }} />
-
-                        <p
-                          className="m-0"
-                          style={{
-                            fontFamily: "var(--font-manrope), sans-serif",
-                            fontWeight: 400,
-                            fontSize: "14px",
-                            lineHeight: "130%",
-                            letterSpacing: "0%",
-                            color: "#AEAEAE",
-                            verticalAlign: "middle"
-                          }}
-                        >
-                          {post.description}
-                        </p>
-
-                        <div style={{ height: "52px" }} />
-
-                        <Link
-                          href={linkUrl}
-                          className="inline-flex items-center hover:opacity-80 transition-opacity mt-auto"
-                          style={{
-                            fontFamily: "var(--font-manrope), sans-serif",
-                            fontWeight: 400,
-                            fontSize: "12px",
-                            lineHeight: "110%",
-                            letterSpacing: "0%",
-                            color: "#ffffff",
-                            verticalAlign: "middle",
-                          }}
-                        >
-                          Read Article
-                        </Link>
+                            Read Article
+                          </Link>
+                        </div>
                       </div>
+
+                      {/* Horizontal divider between cards on mobile */}
+                      {index !== relatedPosts.length - 1 && (
+                        <div className="block md:hidden w-full h-px bg-white/20 my-[32px]" />
+                      )}
                     </div>
                   )
                 })}
