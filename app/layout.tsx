@@ -60,12 +60,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Suspense>
         <ScrollToTop />
         <Toaster />
-        <Script 
-          type="text/javascript"
-          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
-          id="aisensy-wa-widget"
-          {...{ "widget-id": "aabkhg" }}
-        />
       </body>
     </html>
   )
