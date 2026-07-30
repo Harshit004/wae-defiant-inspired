@@ -1909,5 +1909,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/product-description-page?product=var-series",
     "type": "product",
     "createdAt": "2026-07-30T10:14:29.083Z"
+  },
+  "34bd30ab-cbe8-42d7-a21d-9ed5cf693d01": {
+    "id": "34bd30ab-cbe8-42d7-a21d-9ed5cf693d01",
+    "fullName": "Aamir Khan",
+    "companyName": "Mars Resorts ",
+    "email": "marketing@marsresorts.in",
+    "phone": "9582846736",
+    "city": "Meerut",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "We are looking to install an on-site water purification and mineralisation plant with a capacity of 100 LPH (litres per hour) that can produce purified, mineralised drinking water and dispense it through branded glass bottles and dispensers across our guest rooms, banquet halls, and common areas. This initiative is part of our sustainability efforts to reduce single-use plastic while maintaining a premium, guest-facing water experience consistent with our resort's brand positioning.\n\nSpecifically, we would appreciate details on the following:\n\n    Recommended plant configuration and technology (RO/mineralization stages) suited for a 100 LPH capacity at hospitality scale\n\n    Options for branded glass bottle filling and/or dispenser units for placement in rooms, banquets, and common areas\n\n    Installation timeline, site requirements, and any civil/electrical prerequisites\n\n    Water quality compliance (BIS/ISI or equivalent certifications) for guest-facing use\n\n    Annual Maintenance Contract (AMC) terms, including service frequency and support coverage\n\n    Warranty details on equipment and components\n\nKindly share your complete commercial proposal, including plant cost, bottling/dispenser unit pricing, installation charges, and AMC costs, so we can evaluate this against our budget and proceed accordingly.\n\nWe would also welcome the possibility of a site visit or a call to discuss our specific requirements in more detail, given the scale of operations across our banquet and accommodation areas.\n\nLooking forward to your prompt response.",
+    "type": "general",
+    "createdAt": "2026-07-30T12:15:04.530Z"
   }
 };
