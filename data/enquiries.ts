@@ -1898,5 +1898,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/product-description-page?product=reva",
     "type": "product",
     "createdAt": "2026-07-30T09:41:53.560Z"
+  },
+  "a4a8f2f1-a750-4c63-a038-2f3f4adfb993": {
+    "id": "a4a8f2f1-a750-4c63-a038-2f3f4adfb993",
+    "fullName": "Praphull Pevekar",
+    "companyName": "ATI  Pvt Ltd",
+    "email": "aarambhtppltd@gmail.com",
+    "phone": "9152761555",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/product-description-page?product=var-series",
+    "type": "product",
+    "createdAt": "2026-07-30T10:14:29.083Z"
   }
 };
