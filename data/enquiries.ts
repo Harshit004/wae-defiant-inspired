@@ -1921,5 +1921,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We are looking to install an on-site water purification and mineralisation plant with a capacity of 100 LPH (litres per hour) that can produce purified, mineralised drinking water and dispense it through branded glass bottles and dispensers across our guest rooms, banquet halls, and common areas. This initiative is part of our sustainability efforts to reduce single-use plastic while maintaining a premium, guest-facing water experience consistent with our resort's brand positioning.\n\nSpecifically, we would appreciate details on the following:\n\n    Recommended plant configuration and technology (RO/mineralization stages) suited for a 100 LPH capacity at hospitality scale\n\n    Options for branded glass bottle filling and/or dispenser units for placement in rooms, banquets, and common areas\n\n    Installation timeline, site requirements, and any civil/electrical prerequisites\n\n    Water quality compliance (BIS/ISI or equivalent certifications) for guest-facing use\n\n    Annual Maintenance Contract (AMC) terms, including service frequency and support coverage\n\n    Warranty details on equipment and components\n\nKindly share your complete commercial proposal, including plant cost, bottling/dispenser unit pricing, installation charges, and AMC costs, so we can evaluate this against our budget and proceed accordingly.\n\nWe would also welcome the possibility of a site visit or a call to discuss our specific requirements in more detail, given the scale of operations across our banquet and accommodation areas.\n\nLooking forward to your prompt response.",
     "type": "general",
     "createdAt": "2026-07-30T12:15:04.530Z"
+  },
+  "c8f4f388-b463-49d3-835e-dba2022324ef": {
+    "id": "c8f4f388-b463-49d3-835e-dba2022324ef",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-07-31T08:14:38.337Z"
   }
 };
