@@ -2041,5 +2041,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-07-31T08:29:16.901Z"
+  },
+  "f786f215-accf-436e-ade2-d4d08a454b23": {
+    "id": "f786f215-accf-436e-ade2-d4d08a454b23",
+    "fullName": "Surya",
+    "companyName": "BeUnicorn Premium Workspaces",
+    "email": "admin@beunicorn.in",
+    "phone": "6360327872",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Surya this side from BeUnicorn Workspaces, Bangalore. Needed 3 pcs of WAE Trublu TL Dispenser. ",
+    "type": "contact-us",
+    "createdAt": "2026-08-02T10:31:40.009Z"
   }
 };
