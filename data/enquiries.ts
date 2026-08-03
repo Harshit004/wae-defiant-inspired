@@ -2053,5 +2053,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Surya this side from BeUnicorn Workspaces, Bangalore. Needed 3 pcs of WAE Trublu TL Dispenser. ",
     "type": "contact-us",
     "createdAt": "2026-08-02T10:31:40.009Z"
+  },
+  "5e85c6e6-4266-4747-9884-6064c5d509bf": {
+    "id": "5e85c6e6-4266-4747-9884-6064c5d509bf",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-08-03T08:45:39.647Z"
   }
 };
