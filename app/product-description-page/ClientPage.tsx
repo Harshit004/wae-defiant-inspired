@@ -1,7 +1,7 @@
 "use client"
 
 import type { FC } from "react"
-import { useState, Suspense } from "react"
+import { useState, useEffect, Suspense } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import Header from "@/components/header"
@@ -12,7 +12,7 @@ import { PRODUCTS } from "@/data/products"
 import EnquireNowPopup from "@/components/EnquireNowPopup"
 
 // Shared container class for consistent margins and max-width using relative dimensions
-const containerClass = "mx-auto w-[85%] max-w-[1440px] px-[2vw]"
+const containerClass = "mx-auto w-full md:w-[85%] max-w-[1440px] px-[24px] md:px-[2vw]"
 
 // High-fidelity images for Hot, Cold, and Ambient options
 const HotIcon = () => (
@@ -47,6 +47,13 @@ const DownloadIcon = () => (
 
 
 function ProductDescriptionPageContent() {
+    const [isMobile, setIsMobile] = useState(false)
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 767)
+        handleResize()
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
     const searchParams = useSearchParams()
     const productId = searchParams.get("product") || "assistflow"
     const currentProduct = PRODUCTS[productId] || PRODUCTS.assistflow
@@ -126,7 +133,7 @@ function ProductDescriptionPageContent() {
 
                 {/* Hero Central Text */}
                 <div className={`${containerClass} z-20 flex-grow flex flex-col justify-end pb-[5vh]`}>
-                    <div className="max-w-[65vw] text-left" style={{ marginBottom: "141px" }}>
+                    <div className="w-full md:max-w-[65vw] text-left" style={{ marginBottom: isMobile ? "125px" : "141px" }}>
                         <p
                             className="mb-0"
                             style={{
@@ -142,22 +149,21 @@ function ProductDescriptionPageContent() {
                             {heroSubtext}
                         </p>
 
-                        {/* 23px relative equivalent (approx 1.4rem) */}
-                        <div style={{ height: "1.438rem" }} />
+                        <div style={{ height: "23px" }} />
 
                         <h1
                             className="mb-0"
                             style={{
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 500,
-                                fontSize: "44px",
-                                lineHeight: "130%",
+                                fontSize: isMobile ? "28px" : "44px",
+                                lineHeight: isMobile ? "120%" : "130%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
                                 color: "#FFFFFF"
                             }}
                         >
-                            {taglineLines.map((line, idx) => (
+                            {isMobile ? heroTagline.replace(/<br\s*\/?>/gi, ' ') : taglineLines.map((line, idx) => (
                                 <span key={idx}>
                                     {line}
                                     {idx < taglineLines.length - 1 && <br />}
@@ -168,20 +174,20 @@ function ProductDescriptionPageContent() {
 
                     {/* Hero Navigation / Subbar */}
                     <div className="w-full h-px bg-white/20 mb-[3vh]" />
-                    <div className="flex justify-between items-center text-[0.625rem] uppercase tracking-[0.15em] text-[#AEAEAE] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    <div className="flex justify-between items-center text-[0.625rem] tracking-[0.15em] text-[#AEAEAE] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                         <div 
                             style={{
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 500,
-                                fontSize: "10px",
+                                fontSize: isMobile ? "12px" : "10px",
                                 lineHeight: "100%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
                                 color: "#FFFFFF99",
-                                textTransform: "none"
+                                textTransform: "uppercase"
                             }}
                         >
-                            Scroll for more ⤵︎
+                            SCROLL FOR MORE ⤵︎
                         </div>
                         <div>
                             <Link
@@ -191,13 +197,13 @@ function ProductDescriptionPageContent() {
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     fontWeight: 500,
-                                    fontSize: "10px",
+                                    fontSize: isMobile ? "12px" : "10px",
                                     lineHeight: "100%",
                                     letterSpacing: "0%",
                                     verticalAlign: "middle"
                                 }}
                             >
-                                {heroCtaText} <span style={{ marginLeft: "10px" }}>↗</span>
+                                {heroCtaText} <span style={{ marginLeft: isMobile ? "10px" : "10px" }}>↗</span>
                             </Link>
                         </div>
                     </div>
@@ -205,32 +211,34 @@ function ProductDescriptionPageContent() {
             </section>
 
             {/* PRODUCT SHOWCASE SECTION */}
-            <section id="product-showcase" className="relative w-full bg-[#090909] pt-[12vh]" style={{ paddingBottom: "138px" }}>
+            <section id="product-showcase" className="relative w-full bg-[#090909]" style={{ paddingTop: isMobile ? "42px" : "12vh", paddingBottom: isMobile ? "55px" : "138px" }}>
                 <div className={`${containerClass} grid grid-cols-1 lg:grid-cols-2 gap-[6vw] items-center`}>
 
                     {/* Left Column: Interactive Product Image Gallery */}
                     <div className="flex flex-col w-full items-start">
                         {/* Carousel Container aligned at 515x646 aspect ratio in responsive vw */}
                         <div
-                            className="relative w-full lg:w-[35.7638vw] lg:h-[44.8611vw] overflow-hidden flex items-center justify-center group"
-                            style={{ minWidth: "320px" }}
+                            className="relative w-full h-[100vw] lg:w-[35.7638vw] lg:h-[44.8611vw] overflow-hidden flex items-center justify-center group"
+                            style={{ minWidth: isMobile ? "160px" : "320px", minHeight: isMobile ? "160px" : "320px" }}
                         >
 
-                            {/* Expand icon in top-right corner using the requested image link */}
-                            <button
-                                onClick={() => setIsFullscreen(true)}
-                                className="absolute top-[4%] right-[4%] z-20 w-[2.5rem] h-[2.5rem] bg-transparent border-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
-                                aria-label="Expand image"
-                            >
-                                <div className="relative w-full h-full">
-                                    <Image
-                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9042ba9b-be65-45f2-7287-06fccd284900/public"
-                                        alt="Expand button"
-                                        fill
-                                        className="object-cover h-full w-auto"
-                                    />
-                                </div>
-                            </button>
+                            {/* Expand icon in top-right corner on desktop only */}
+                            {!isMobile && (
+                                <button
+                                    onClick={() => setIsFullscreen(true)}
+                                    className="absolute top-[4%] right-[4%] z-20 w-[2.5rem] h-[2.5rem] bg-transparent border-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
+                                    aria-label="Expand image"
+                                >
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9042ba9b-be65-45f2-7287-06fccd284900/public"
+                                            alt="Expand button"
+                                            fill
+                                            className="object-cover h-full w-auto"
+                                        />
+                                    </div>
+                                </button>
+                            )}
 
                             <AnimatePresence mode="wait">
                                 <motion.div
@@ -240,13 +248,26 @@ function ProductDescriptionPageContent() {
                                     exit={{ opacity: 0, scale: 1.02 }}
                                     transition={{ duration: 0.45 }}
                                     className="relative w-full h-full"
+                                    drag={isMobile ? "x" : false}
+                                    dragConstraints={{ left: 0, right: 0 }}
+                                    dragElastic={0.2}
+                                    onDragEnd={(e, { offset }) => {
+                                        if (isMobile) {
+                                            const swipe = offset.x;
+                                            if (swipe < -50) {
+                                                nextImage();
+                                            } else if (swipe > 50) {
+                                                prevImage();
+                                            }
+                                        }
+                                    }}
                                 >
                                     <Image
                                         src={productImages[activeImageIndex]}
                                         alt={`${currentProduct.name} dispenser view ${activeImageIndex + 1}`}
                                         fill
                                         sizes="(max-width: 1024px) 100vw, 35vw"
-                                        className="object-contain"
+                                        className="object-contain pointer-events-none"
                                         priority
                                     />
                                 </motion.div>
@@ -254,9 +275,9 @@ function ProductDescriptionPageContent() {
                         </div>
 
                         {/* Slider Controls */}
-                        <div className="flex justify-between items-center w-full lg:w-[35.7638vw] mt-[1.5rem] text-[0.7rem] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", minWidth: "320px" }}>
+                        <div className="flex justify-between items-center w-full lg:w-[35.7638vw] mt-[1.5rem] text-[0.7rem] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", minWidth: isMobile ? "160px" : "320px" }}>
                             {/* Dots / Page indicator */}
-                            <div className="flex items-center gap-[0.75rem]">
+                            <div className="flex items-center" style={{ gap: isMobile ? "32px" : "0.75rem" }}>
                                 {productImages.map((_, index) => {
                                     const isActive = activeImageIndex === index;
                                     return (
@@ -270,32 +291,51 @@ function ProductDescriptionPageContent() {
                                 })}
                             </div>
 
-                            {/* Arrow navigation buttons */}
+                            {/* Arrow navigation buttons / Expand on mobile */}
                             <div className="flex gap-[0.5rem]">
-                                <button
-                                    onClick={prevImage}
-                                    className="w-[2.2rem] h-[2.2rem] border-0 bg-transparent flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"
-                                    aria-label="Previous image"
-                                >
-                                    <Image
-                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/23774ae4-4474-4209-6b7d-7b25ea8db300/public"
-                                        alt="Left Arrow"
-                                        width={35}
-                                        height={35}
-                                    />
-                                </button>
-                                <button
-                                    onClick={nextImage}
-                                    className="w-[2.2rem] h-[2.2rem] border-0 bg-transparent flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"
-                                    aria-label="Next image"
-                                >
-                                    <Image
-                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d99053fd-043e-4c0b-62c4-19e360388000/public"
-                                        alt="Right Arrow"
-                                        width={35}
-                                        height={35}
-                                    />
-                                </button>
+                                {isMobile ? (
+                                    <button
+                                        onClick={() => setIsFullscreen(true)}
+                                        className="w-[2.2rem] h-[2.2rem] bg-transparent border-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
+                                        aria-label="Expand image"
+                                    >
+                                        <div className="relative w-full h-full">
+                                            <Image
+                                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9042ba9b-be65-45f2-7287-06fccd284900/public"
+                                                alt="Expand button"
+                                                fill
+                                                className="object-cover h-full w-auto"
+                                            />
+                                        </div>
+                                    </button>
+                                ) : (
+                                    <>
+                                        <button
+                                            onClick={prevImage}
+                                            className="w-[2.2rem] h-[2.2rem] border-0 bg-transparent flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"
+                                            aria-label="Previous image"
+                                        >
+                                            <Image
+                                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/23774ae4-4474-4209-6b7d-7b25ea8db300/public"
+                                                alt="Left Arrow"
+                                                width={35}
+                                                height={35}
+                                            />
+                                        </button>
+                                        <button
+                                            onClick={nextImage}
+                                            className="w-[2.2rem] h-[2.2rem] border-0 bg-transparent flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"
+                                            aria-label="Next image"
+                                        >
+                                            <Image
+                                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d99053fd-043e-4c0b-62c4-19e360388000/public"
+                                                alt="Right Arrow"
+                                                width={35}
+                                                height={35}
+                                            />
+                                        </button>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -307,12 +347,12 @@ function ProductDescriptionPageContent() {
                             style={{ 
                                 fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
-                                fontSize: "14px",
+                                fontSize: isMobile ? "12px" : "14px",
                                 lineHeight: "normal",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
                                 color: "#FFFFFF",
-                                marginBottom: "26px"
+                                marginBottom: isMobile ? "10px" : "26px"
                             }}
                         >
                             {currentProduct.categoryName}
@@ -322,11 +362,11 @@ function ProductDescriptionPageContent() {
                             style={{ 
                                 fontFamily: "'Inter Tight', sans-serif", 
                                 fontWeight: 400,
-                                fontSize: "32px",
+                                fontSize: isMobile ? "19px" : "32px",
                                 lineHeight: "100%",
                                 letterSpacing: "-2%",
                                 verticalAlign: "middle",
-                                marginBottom: "40px"
+                                marginBottom: isMobile ? "16px" : "40px"
                             }}
                         >
                             {currentProduct.name}
@@ -342,7 +382,7 @@ function ProductDescriptionPageContent() {
                                             style={{ 
                                                 fontFamily: "'Inter Tight', sans-serif",
                                                 fontWeight: 400,
-                                                fontSize: "16px",
+                                                fontSize: isMobile ? "12px" : "16px",
                                                 lineHeight: "normal",
                                                 letterSpacing: "0%",
                                                 verticalAlign: "middle"
@@ -354,8 +394,8 @@ function ProductDescriptionPageContent() {
                                             style={{ 
                                                 fontFamily: "'Manrope', sans-serif",
                                                 fontWeight: 400,
-                                                fontSize: "14px",
-                                                lineHeight: "normal",
+                                                fontSize: isMobile ? "12px" : "14px",
+                                                lineHeight: "120%",
                                                 letterSpacing: "0%",
                                                 verticalAlign: "middle",
                                                 color: "#FFFFFF80"
@@ -368,7 +408,7 @@ function ProductDescriptionPageContent() {
                         </div>
 
                         {/* Temperature Icons Row */}
-                        <div className="flex gap-[2.5rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", marginTop: "42.5px", marginBottom: "60px" }}>
+                        <div className="flex gap-[2.5rem] text-[0.6875rem] uppercase tracking-wider text-white/80 font-medium" style={{ fontFamily: "'Inter Tight', sans-serif", marginTop: isMobile ? "17px" : "42.5px", marginBottom: isMobile ? "24px" : "60px" }}>
                             {showHot && (
                                 <div className="flex flex-col items-center gap-[0.5rem]">
                                     <div className="w-[1.5rem] h-[1.5rem]">
@@ -403,14 +443,14 @@ function ProductDescriptionPageContent() {
                                 style={{ 
                                     fontFamily: "'Inter Tight', sans-serif",
                                     fontWeight: 500,
-                                    fontSize: "10px",
+                                    fontSize: isMobile ? "12px" : "10px",
                                     lineHeight: "100%",
                                     letterSpacing: "0%",
                                     verticalAlign: "middle",
                                     textTransform: "none"
                                 }}
                             >
-                                {showcaseCtaText} <span style={{ marginLeft: "10px" }}>↗</span>
+                                {showcaseCtaText} <span style={{ marginLeft: isMobile ? "10px" : "10px" }}>↗</span>
                             </Link>
                         ) : (
                             <button
@@ -419,14 +459,14 @@ function ProductDescriptionPageContent() {
                                 style={{ 
                                     fontFamily: "'Inter Tight', sans-serif",
                                     fontWeight: 500,
-                                    fontSize: "10px",
+                                    fontSize: isMobile ? "12px" : "10px",
                                     lineHeight: "100%",
                                     letterSpacing: "0%",
                                     verticalAlign: "middle",
                                     textTransform: "none"
                                 }}
                             >
-                                {showcaseCtaText} <span style={{ marginLeft: "10px" }}>↗</span>
+                                {showcaseCtaText} <span style={{ marginLeft: isMobile ? "10px" : "10px" }}>↗</span>
                             </button>
                         )}
                     </div>
@@ -448,7 +488,7 @@ function ProductDescriptionPageContent() {
                                 <span style={{
                                     fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 400,
-                                    fontSize: "16px",
+                                    fontSize: isMobile ? "12px" : "16px",
                                     lineHeight: "100%",
                                     letterSpacing: "0%",
                                     verticalAlign: "middle",
@@ -473,13 +513,13 @@ function ProductDescriptionPageContent() {
                                         transition={{ duration: 0.35, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="pb-[2rem]" style={{ paddingTop: "61px" }}>
+                                        <div className="pb-[2rem]" style={{ paddingTop: isMobile ? "24px" : "61px" }}>
                                             {currentProduct.featuresList.map((feat, fIdx) => (
                                                 <div key={fIdx} style={{ marginBottom: "38px" }}>
                                                     <h4 style={{
                                                         fontFamily: "'Inter Tight', sans-serif",
                                                         fontWeight: 400,
-                                                        fontSize: "16px",
+                                                        fontSize: isMobile ? "12px" : "16px",
                                                         lineHeight: "100%",
                                                         letterSpacing: "0%",
                                                         verticalAlign: "middle",
@@ -489,22 +529,22 @@ function ProductDescriptionPageContent() {
                                                     }}>{feat.title}</h4>
                                                     
                                                     {feat.title.toLowerCase() === "water options" ? (
-                                                        <div className="flex text-[12px] font-normal" style={{ fontFamily: "'Inter Tight', sans-serif", marginTop: "24px", gap: "35px" }}>
+                                                        <div className="flex text-[12px] font-normal" style={{ fontFamily: "'Inter Tight', sans-serif", marginTop: isMobile ? "10px" : "24px", gap: isMobile ? "17px" : "35px" }}>
                                                             {showHot && (
                                                                 <div className="flex flex-col items-center gap-[0.5rem]">
-                                                                    <div style={{ width: "26.83px", height: "26.83px" }}><HotIcon /></div>
+                                                                    <div style={{ width: isMobile ? "13px" : "26.83px", height: isMobile ? "13px" : "26.83px" }}><HotIcon /></div>
                                                                     <span className="text-[#AEAEAE]">Hot</span>
                                                                 </div>
                                                             )}
                                                             {showCold && (
                                                                 <div className="flex flex-col items-center gap-[0.5rem]">
-                                                                    <div style={{ width: "23.34px", height: "26.72px" }}><ColdIcon /></div>
+                                                                    <div style={{ width: isMobile ? "11px" : "23.34px", height: isMobile ? "13px" : "26.72px" }}><ColdIcon /></div>
                                                                     <span className="text-[#AEAEAE]">Cold</span>
                                                                 </div>
                                                             )}
                                                             {showAmbient && (
                                                                 <div className="flex flex-col items-center gap-[0.5rem]">
-                                                                    <div style={{ width: "23.64px", height: "20.61px" }}><AmbientIcon /></div>
+                                                                    <div style={{ width: isMobile ? "11px" : "23.64px", height: isMobile ? "10px" : "20.61px" }}><AmbientIcon /></div>
                                                                     <span className="text-[#AEAEAE]">Ambient</span>
                                                                 </div>
                                                             )}
@@ -513,8 +553,8 @@ function ProductDescriptionPageContent() {
                                                         <p style={{
                                                             fontFamily: "'Inter Tight', sans-serif",
                                                             fontWeight: 400,
-                                                            fontSize: "14px",
-                                                            lineHeight: "normal",
+                                                            fontSize: isMobile ? "12px" : "14px",
+                                                            lineHeight: "120%",
                                                             letterSpacing: "0%",
                                                             verticalAlign: "middle",
                                                             color: "#FFFFFF80",
@@ -540,7 +580,7 @@ function ProductDescriptionPageContent() {
                                 <span style={{
                                     fontFamily: "'Manrope', sans-serif",
                                     fontWeight: 400,
-                                    fontSize: "16px",
+                                    fontSize: isMobile ? "12px" : "16px",
                                     lineHeight: "100%",
                                     letterSpacing: "0%",
                                     verticalAlign: "middle",
@@ -565,7 +605,7 @@ function ProductDescriptionPageContent() {
                                         transition={{ duration: 0.35, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="pb-[2rem]" style={{ paddingTop: "66.5px" }}>
+                                        <div className="pb-[2rem]" style={{ paddingTop: isMobile ? "26px" : "66.5px" }}>
                                             {/* Storage Capacity Variant Table */}
                                             <div style={{ marginBottom: "38px" }}>
                                                 <table className="w-auto text-left border-collapse text-white" style={{ fontFamily: "'Inter Tight', sans-serif", width: "auto" }}>
@@ -574,32 +614,32 @@ function ProductDescriptionPageContent() {
                                                             <th className="pr-8" rowSpan={2} style={{
                                                                 fontFamily: "'Inter Tight', sans-serif",
                                                                 fontWeight: 400,
-                                                                fontSize: "16px",
+                                                                fontSize: isMobile ? "12px" : "16px",
                                                                 lineHeight: "100%",
                                                                 letterSpacing: "0%",
                                                                 verticalAlign: 'middle',
-                                                                width: "160px"
+                                                                width: isMobile ? "80px" : "160px"
                                                             }}>Variant</th>
                                                             <th className="text-center" colSpan={activeVariantsCount || 1} style={{
                                                                 fontFamily: "'Inter Tight', sans-serif",
                                                                 fontWeight: 400,
-                                                                fontSize: "16px",
+                                                                fontSize: isMobile ? "12px" : "16px",
                                                                 lineHeight: "100%",
                                                                 letterSpacing: "0%",
                                                                 verticalAlign: 'middle',
                                                                 width: `${(activeVariantsCount || 1) * 80}px`,
-                                                                paddingBottom: "31px"
+                                                                paddingBottom: isMobile ? "12px" : "31px"
                                                             }}>Storage Capacity (L )</th>
                                                         </tr>
                                                         <tr>
                                                             {showHot && (
-                                                                <th className="font-normal text-center" style={{ width: "80px", paddingBottom: "24px" }}>
+                                                                <th className="font-normal text-center" style={{ width: isMobile ? "40px" : "80px", paddingBottom: isMobile ? "10px" : "24px" }}>
                                                                     <div className="flex flex-col items-center gap-1">
                                                                         <div className="w-[1.25rem] h-[1.25rem]"><HotIcon /></div>
                                                                         <span className="text-[#AEAEAE]" style={{
                                                                             fontFamily: "'Inter Tight', sans-serif",
                                                                             fontWeight: 400,
-                                                                            fontSize: "11px",
+                                                                            fontSize: isMobile ? "12px" : "11px",
                                                                             lineHeight: "100%",
                                                                             letterSpacing: "0%",
                                                                             verticalAlign: "middle"
@@ -608,13 +648,13 @@ function ProductDescriptionPageContent() {
                                                                 </th>
                                                             )}
                                                             {showCold && (
-                                                                <th className="font-normal text-center" style={{ width: "80px", paddingBottom: "24px" }}>
+                                                                <th className="font-normal text-center" style={{ width: isMobile ? "40px" : "80px", paddingBottom: isMobile ? "10px" : "24px" }}>
                                                                     <div className="flex flex-col items-center gap-1">
                                                                         <div className="w-[1.25rem] h-[1.25rem]"><ColdIcon /></div>
                                                                         <span className="text-[#AEAEAE]" style={{
                                                                             fontFamily: "'Inter Tight', sans-serif",
                                                                             fontWeight: 400,
-                                                                            fontSize: "11px",
+                                                                            fontSize: isMobile ? "12px" : "11px",
                                                                             lineHeight: "100%",
                                                                             letterSpacing: "0%",
                                                                             verticalAlign: "middle"
@@ -623,13 +663,13 @@ function ProductDescriptionPageContent() {
                                                                 </th>
                                                             )}
                                                             {showAmbient && (
-                                                                <th className="font-normal text-center" style={{ width: "80px", paddingBottom: "24px" }}>
+                                                                <th className="font-normal text-center" style={{ width: isMobile ? "40px" : "80px", paddingBottom: isMobile ? "10px" : "24px" }}>
                                                                     <div className="flex flex-col items-center gap-1">
                                                                         <div className="w-[1.25rem] h-[1.25rem]"><AmbientIcon /></div>
                                                                         <span className="text-[#AEAEAE]" style={{
                                                                             fontFamily: "'Inter Tight', sans-serif",
                                                                             fontWeight: 400,
-                                                                            fontSize: "11px",
+                                                                            fontSize: isMobile ? "12px" : "11px",
                                                                             lineHeight: "100%",
                                                                             letterSpacing: "0%",
                                                                             verticalAlign: "middle"
@@ -647,7 +687,7 @@ function ProductDescriptionPageContent() {
                                                                     <td style={{
                                                                         fontFamily: "'Inter Tight', sans-serif",
                                                                         fontWeight: 400,
-                                                                        fontSize: "14px",
+                                                                        fontSize: isMobile ? "12px" : "14px",
                                                                         lineHeight: "normal",
                                                                         letterSpacing: "0%",
                                                                         verticalAlign: "middle",
@@ -657,7 +697,7 @@ function ProductDescriptionPageContent() {
                                                                     {showHot && <td style={{
                                                                         fontFamily: "'Inter Tight', sans-serif",
                                                                         fontWeight: 400,
-                                                                        fontSize: "14px",
+                                                                        fontSize: isMobile ? "12px" : "14px",
                                                                         lineHeight: "normal",
                                                                         letterSpacing: "0%",
                                                                         verticalAlign: "middle",
@@ -667,7 +707,7 @@ function ProductDescriptionPageContent() {
                                                                     {showCold && <td style={{
                                                                         fontFamily: "'Inter Tight', sans-serif",
                                                                         fontWeight: 400,
-                                                                        fontSize: "14px",
+                                                                        fontSize: isMobile ? "12px" : "14px",
                                                                         lineHeight: "normal",
                                                                         letterSpacing: "0%",
                                                                         verticalAlign: "middle",
@@ -677,7 +717,7 @@ function ProductDescriptionPageContent() {
                                                                     {showAmbient && <td style={{
                                                                         fontFamily: "'Inter Tight', sans-serif",
                                                                         fontWeight: 400,
-                                                                        fontSize: "14px",
+                                                                        fontSize: isMobile ? "12px" : "14px",
                                                                         lineHeight: "normal",
                                                                         letterSpacing: "0%",
                                                                         verticalAlign: "middle",
@@ -696,19 +736,19 @@ function ProductDescriptionPageContent() {
                                                 <h4 style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "16px",
+                                                    fontSize: isMobile ? "12px" : "16px",
                                                     lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     textTransform: "lowercase",
                                                     color: "#FFFFFF",
-                                                    marginBottom: "38px"
+                                                    marginBottom: "8px"
                                                 }}>water temp.</h4>
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "normal",
+                                                    fontSize: isMobile ? "12px" : "14px",
+                                                    lineHeight: "120%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80",
@@ -717,8 +757,8 @@ function ProductDescriptionPageContent() {
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "normal",
+                                                    fontSize: isMobile ? "12px" : "14px",
+                                                    lineHeight: "120%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80",
@@ -731,7 +771,7 @@ function ProductDescriptionPageContent() {
                                                 <h4 style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "16px",
+                                                    fontSize: isMobile ? "12px" : "16px",
                                                     lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
@@ -742,8 +782,8 @@ function ProductDescriptionPageContent() {
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "100%",
+                                                    fontSize: isMobile ? "12px" : "14px",
+                                                    lineHeight: "120%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80",
@@ -756,7 +796,7 @@ function ProductDescriptionPageContent() {
                                                 <h4 style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "16px",
+                                                    fontSize: isMobile ? "12px" : "16px",
                                                     lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
@@ -767,8 +807,8 @@ function ProductDescriptionPageContent() {
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "100%",
+                                                    fontSize: isMobile ? "12px" : "14px",
+                                                    lineHeight: "120%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80",
@@ -781,7 +821,7 @@ function ProductDescriptionPageContent() {
                                                 <h4 style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "16px",
+                                                    fontSize: isMobile ? "12px" : "16px",
                                                     lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
@@ -792,8 +832,8 @@ function ProductDescriptionPageContent() {
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "100%",
+                                                    fontSize: isMobile ? "12px" : "14px",
+                                                    lineHeight: "120%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80",
@@ -809,77 +849,77 @@ function ProductDescriptionPageContent() {
                                                             <th className="pr-8" rowSpan={2} style={{
                                                                 fontFamily: "'Inter Tight', sans-serif",
                                                                 fontWeight: 400,
-                                                                fontSize: "16px",
+                                                                fontSize: isMobile ? "12px" : "16px",
                                                                 lineHeight: "100%",
                                                                 letterSpacing: "0%",
                                                                 verticalAlign: 'middle',
-                                                                width: "160px"
+                                                                width: isMobile ? "80px" : "160px"
                                                             }}>Variant</th>
                                                             <th className="text-center" style={{
                                                                 fontFamily: "'Inter Tight', sans-serif",
                                                                 fontWeight: 400,
-                                                                fontSize: "16px",
+                                                                fontSize: isMobile ? "12px" : "16px",
                                                                 lineHeight: "100%",
                                                                 letterSpacing: "0%",
                                                                 verticalAlign: 'middle',
-                                                                width: "100px",
-                                                                paddingBottom: "31px"
+                                                                width: isMobile ? "50px" : "100px",
+                                                                paddingBottom: isMobile ? "12px" : "31px"
                                                             }}>Weight</th>
                                                             <th className="text-center" colSpan={3} style={{
                                                                 fontFamily: "'Inter Tight', sans-serif",
                                                                 fontWeight: 400,
-                                                                fontSize: "16px",
+                                                                fontSize: isMobile ? "12px" : "16px",
                                                                 lineHeight: "100%",
                                                                 letterSpacing: "0%",
                                                                 verticalAlign: 'middle',
-                                                                width: "240px",
-                                                                paddingBottom: "31px"
+                                                                width: isMobile ? "120px" : "240px",
+                                                                paddingBottom: isMobile ? "12px" : "31px"
                                                             }}>Dimensions</th>
                                                         </tr>
                                                         <tr>
                                                             <th className="text-center" style={{
                                                                 fontFamily: "'Inter Tight', sans-serif",
                                                                 fontWeight: 400,
-                                                                fontSize: "12px",
+                                                                fontSize: isMobile ? "12px" : "12px",
                                                                 lineHeight: "140%",
                                                                 letterSpacing: "0%",
                                                                 verticalAlign: 'middle',
                                                                 color: "#AEAEAE",
-                                                                width: "100px",
-                                                                paddingBottom: "21px"
+                                                                width: isMobile ? "50px" : "100px",
+                                                                paddingBottom: isMobile ? "10px" : "21px"
                                                             }}>Kg</th>
                                                             <th className="text-center" style={{
                                                                 fontFamily: "'Inter Tight', sans-serif",
                                                                 fontWeight: 400,
-                                                                fontSize: "12px",
+                                                                fontSize: isMobile ? "12px" : "12px",
                                                                 lineHeight: "140%",
                                                                 letterSpacing: "0%",
                                                                 verticalAlign: 'middle',
                                                                 color: "#AEAEAE",
-                                                                width: "80px",
-                                                                paddingBottom: "21px"
+                                                                width: isMobile ? "40px" : "80px",
+                                                                paddingBottom: isMobile ? "10px" : "21px"
                                                             }}>Height (Mm)</th>
                                                             <th className="text-center" style={{
                                                                 fontFamily: "'Inter Tight', sans-serif",
                                                                 fontWeight: 400,
-                                                                fontSize: "12px",
+                                                                fontSize: isMobile ? "12px" : "12px",
                                                                 lineHeight: "140%",
                                                                 letterSpacing: "0%",
                                                                 verticalAlign: 'middle',
                                                                 color: "#AEAEAE",
-                                                                width: "80px",
-                                                                paddingBottom: "21px"
+                                                                width: isMobile ? "40px" : "80px",
+                                                                paddingBottom: isMobile ? "10px" : "21px"
                                                             }}>Width (Mm)</th>
                                                             <th className="text-center" style={{
                                                                 fontFamily: "'Inter Tight', sans-serif",
                                                                 fontWeight: 400,
-                                                                fontSize: "12px",
+                                                                fontSize: isMobile ? "12px" : "12px",
                                                                 lineHeight: "140%",
                                                                 letterSpacing: "0%",
                                                                 verticalAlign: 'middle',
                                                                 color: "#AEAEAE",
-                                                                width: "80px",
-                                                                paddingBottom: "21px"
+                                                                width: isMobile ? "40px" : "80px",
+                                                                paddingBottom: isMobile ? "10px" : "21px"
                                                             }}>Depth (Mm)</th>
                                                         </tr>
                                                     </thead>
@@ -891,7 +931,7 @@ function ProductDescriptionPageContent() {
                                                                     <td style={{
                                                                         fontFamily: "'Inter Tight', sans-serif",
                                                                         fontWeight: 400,
-                                                                        fontSize: "14px",
+                                                                        fontSize: isMobile ? "12px" : "14px",
                                                                         lineHeight: "normal",
                                                                         letterSpacing: "0%",
                                                                         verticalAlign: "middle",
@@ -901,7 +941,7 @@ function ProductDescriptionPageContent() {
                                                                     <td style={{
                                                                         fontFamily: "'Inter Tight', sans-serif",
                                                                         fontWeight: 400,
-                                                                        fontSize: "14px",
+                                                                        fontSize: isMobile ? "12px" : "14px",
                                                                         lineHeight: "normal",
                                                                         letterSpacing: "0%",
                                                                         verticalAlign: "middle",
@@ -911,7 +951,7 @@ function ProductDescriptionPageContent() {
                                                                     <td style={{
                                                                         fontFamily: "'Inter Tight', sans-serif",
                                                                         fontWeight: 400,
-                                                                        fontSize: "14px",
+                                                                        fontSize: isMobile ? "12px" : "14px",
                                                                         lineHeight: "normal",
                                                                         letterSpacing: "0%",
                                                                         verticalAlign: "middle",
@@ -921,7 +961,7 @@ function ProductDescriptionPageContent() {
                                                                     <td style={{
                                                                         fontFamily: "'Inter Tight', sans-serif",
                                                                         fontWeight: 400,
-                                                                        fontSize: "14px",
+                                                                        fontSize: isMobile ? "12px" : "14px",
                                                                         lineHeight: "normal",
                                                                         letterSpacing: "0%",
                                                                         verticalAlign: "middle",
@@ -931,7 +971,7 @@ function ProductDescriptionPageContent() {
                                                                     <td style={{
                                                                         fontFamily: "'Inter Tight', sans-serif",
                                                                         fontWeight: 400,
-                                                                        fontSize: "14px",
+                                                                        fontSize: isMobile ? "12px" : "14px",
                                                                         lineHeight: "normal",
                                                                         letterSpacing: "0%",
                                                                         verticalAlign: "middle",
@@ -950,7 +990,7 @@ function ProductDescriptionPageContent() {
                                                 <h4 style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "16px",
+                                                    fontSize: isMobile ? "12px" : "16px",
                                                     lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
@@ -961,8 +1001,8 @@ function ProductDescriptionPageContent() {
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "100%",
+                                                    fontSize: isMobile ? "12px" : "14px",
+                                                    lineHeight: "120%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80",
@@ -975,7 +1015,7 @@ function ProductDescriptionPageContent() {
                                                 <h4 style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "16px",
+                                                    fontSize: isMobile ? "12px" : "16px",
                                                     lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
@@ -986,8 +1026,8 @@ function ProductDescriptionPageContent() {
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "100%",
+                                                    fontSize: isMobile ? "12px" : "14px",
+                                                    lineHeight: "120%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80",
@@ -1000,7 +1040,7 @@ function ProductDescriptionPageContent() {
                                                 <h4 style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "16px",
+                                                    fontSize: isMobile ? "12px" : "16px",
                                                     lineHeight: "100%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
@@ -1011,8 +1051,8 @@ function ProductDescriptionPageContent() {
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "100%",
+                                                    fontSize: isMobile ? "12px" : "14px",
+                                                    lineHeight: "120%",
                                                     letterSpacing: "0%",
                                                     verticalAlign: "middle",
                                                     color: "#FFFFFF80",
@@ -1025,8 +1065,8 @@ function ProductDescriptionPageContent() {
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "normal",
+                                                    fontSize: isMobile ? "12px" : "14px",
+                                                    lineHeight: "120%",
                                                     letterSpacing: "0%",
                                                     textAlign: "right",
                                                     verticalAlign: "middle",
@@ -1036,8 +1076,8 @@ function ProductDescriptionPageContent() {
                                                 <p style={{
                                                     fontFamily: "'Inter Tight', sans-serif",
                                                     fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    lineHeight: "normal",
+                                                    fontSize: isMobile ? "12px" : "14px",
+                                                    lineHeight: "120%",
                                                     letterSpacing: "0%",
                                                     textAlign: "right",
                                                     verticalAlign: "middle",
@@ -1068,21 +1108,23 @@ function ProductDescriptionPageContent() {
                                 }`}
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
-                                    width: "14.722vw",
-                                    height: "3.403vw",
-                                    minWidth: "212px",
-                                    minHeight: "49px"
+                                    width: isMobile ? "max-content" : "14.722vw",
+                                    padding: isMobile ? "0 16px" : "0",
+                                    height: isMobile ? "auto" : "3.403vw",
+                                    minWidth: isMobile ? "auto" : "212px",
+                                    minHeight: isMobile ? "32px" : "49px"
                                 }}
                             >
                                 <span style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     fontWeight: 500,
-                                    fontSize: "14px",
+                                    fontSize: isMobile ? "12px" : "14px",
                                     lineHeight: "100%",
                                     letterSpacing: "0%",
-                                    verticalAlign: "middle"
+                                    verticalAlign: "middle",
+                                    whiteSpace: isMobile ? "nowrap" : "normal"
                                 }}>Product Brochure</span>
-                                <span className="w-[1.1rem] h-[1.1rem] flex items-center justify-center">
+                                <span className="w-[1.1rem] h-[1.1rem] flex items-center justify-center shrink-0">
                                     <DownloadIcon />
                                 </span>
                             </a>
@@ -1095,32 +1137,33 @@ function ProductDescriptionPageContent() {
 
             {/* DISCOVER MORE RECOMMENDATIONS */}
             <section className="relative w-full py-[12vh] border-t border-white/10" style={{
-                background: "radial-gradient(circle at 10% 20%, rgba(0, 64, 99, 0.4) 0%, rgba(0, 0, 0, 1) 90%)"
+                background: isMobile ? "linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)" : "radial-gradient(circle at 10% 20%, rgba(0, 64, 99, 0.4) 0%, rgba(0, 0, 0, 1) 90%)"
             }}>
                 <div className={containerClass}>
                     <h2
-                        className="text-white mb-[4rem] text-left"
+                        className="text-white text-left"
                         style={{
                             fontFamily: "'Inter Tight', sans-serif",
                             fontWeight: 400,
-                            fontSize: "40px",
-                            lineHeight: "105%",
+                            fontSize: isMobile ? "28px" : "40px",
+                            lineHeight: isMobile ? "100%" : "105%",
                             letterSpacing: "0%",
-                            verticalAlign: "middle"
+                            verticalAlign: "middle",
+                            marginBottom: isMobile ? "44px" : "4rem"
                         }}
                     >
                         What else you might discover?
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-[2.5vw]">
-                        {Object.values(PRODUCTS).filter(p => p.id !== currentProduct.id && p.categoryName === currentProduct.categoryName).slice(0, 3).map((item, index) => (
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-[50px] md:gap-[2.5vw]">
+                        {Object.values(PRODUCTS).filter(p => p.id !== currentProduct.id && p.categoryName?.toLowerCase().replace(" series", "") === currentProduct.categoryName?.toLowerCase().replace(" series", "")).slice(0, 3).map((item, index) => (
                             <Link
                                 href={`/product-description-page?product=${item.id}`}
                                 key={index}
                                 className="group flex flex-col text-left cursor-pointer transition-all duration-500 hover:-translate-y-1"
                             >
                                 {/* Dispenser Image inside recommendation card — 381×322 ratio */}
-                                <div className="relative w-full overflow-hidden flex items-center justify-center rounded-none" style={{ aspectRatio: "381 / 322", marginBottom: "50px" }}>
+                                <div className="relative w-full overflow-hidden flex items-center justify-center rounded-none aspect-[381/322]" style={{ aspectRatio: "381 / 322", marginBottom: isMobile ? "40px" : "50px" }}>
                                     <div className="relative w-full h-full transition-transform duration-700 group-hover:scale-105">
                                         <Image
                                             src={item.images[item.displayImageIndex !== undefined ? item.displayImageIndex : 0] || item.images[0]}
@@ -1132,11 +1175,11 @@ function ProductDescriptionPageContent() {
                                 </div>
 
                                 {/* Product title */}
-                                <div className="flex items-center justify-between text-white" style={{ marginBottom: "20px" }}>
+                                <div className="flex items-center justify-between text-white" style={{ marginBottom: isMobile ? "5px" : "20px" }}>
                                     <span style={{
                                         fontFamily: "'Inter Tight', sans-serif",
                                         fontWeight: 400,
-                                        fontSize: "18px",
+                                        fontSize: isMobile ? "18px" : "18px",
                                         lineHeight: "105%",
                                         letterSpacing: "0%",
                                     }}>{item.name}</span>
@@ -1147,11 +1190,11 @@ function ProductDescriptionPageContent() {
                                 <p style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     fontWeight: 400,
-                                    fontSize: "14px",
-                                    lineHeight: "130%",
+                                    fontSize: isMobile ? "14px" : "14px",
+                                    lineHeight: isMobile ? "120%" : "130%",
                                     letterSpacing: "0%",
                                     verticalAlign: "middle",
-                                    color: "#808080",
+                                    color: isMobile ? "#AEAEAE" : "#808080",
                                     margin: 0
                                 }}>
                                     Information regarding WAE series drinking water dispensers and advanced purification modules.
