@@ -40,17 +40,17 @@ export default function AwardsAndRecognitionsPage() {
       <section className="relative z-10 w-full px-[7.5vw] pt-[116px] md:pt-[clamp(180px,17.7vw,255px)] pb-[100px]">
 
         {/* Toggle Buttons */}
-        <div className="flex flex-row w-full gap-[16px] mb-[40px] md:mb-[75px]">
-          <Link href="/news-and-updates" className="flex-1">
+        <div className="flex flex-row w-full gap-[16px] mb-[40px] md:mb-[75px] md:justify-start">
+          <Link href="/news-and-updates" className="flex-1 md:flex-none">
             <button
-              className={`w-full px-[12px] md:px-6 border transition-colors flex items-center justify-center font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] h-[41px] ${pathname === '/news-and-updates' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
+              className={`w-full md:w-auto px-[12px] md:px-6 border transition-colors flex items-center justify-center font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] h-[41px] ${pathname === '/news-and-updates' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
             >
               News & Media
             </button>
           </Link>
-          <Link href="/awards-and-recognitions" className="flex-1">
+          <Link href="/awards-and-recognitions" className="flex-1 md:flex-none">
             <button
-              className={`w-full px-[12px] md:px-6 border transition-colors flex items-center justify-center font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] h-[41px] ${pathname === '/awards-and-recognitions' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
+              className={`w-full md:w-auto px-[12px] md:px-6 border transition-colors flex items-center justify-center font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] h-[41px] ${pathname === '/awards-and-recognitions' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
             >
               Awards & Honours
             </button>

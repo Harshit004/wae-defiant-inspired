@@ -23,7 +23,7 @@ const SelectButton: FC<SelectButtonProps> = ({ children, selected, onClick }) =>
   <button
     type="button"
     onClick={onClick}
-    className="transition-all duration-300 ease-in-out border border-white/20 hover:bg-white/10 shrink-0"
+    className="transition-all duration-300 ease-in-out border border-white/20 hover:bg-white/10 w-full h-full"
     style={{
       padding: '14px 16px',
       backgroundColor: selected ? '#ffffff' : 'transparent',
@@ -168,7 +168,7 @@ export default function Home() {
             .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
           `}</style>
           
-          <div className="flex flex-nowrap lg:flex-wrap gap-[12px] md:gap-[1.5vw] justify-start lg:justify-between w-full overflow-x-auto hide-scroll pb-[4px]">
+          <div className="grid grid-flow-col auto-cols-[minmax(220px,1fr)] lg:grid-flow-row lg:grid-cols-5 gap-[12px] md:gap-[1.5vw] w-full overflow-x-auto hide-scroll pb-[4px]">
             {buttonLabels.map((label, index) => (
               <SelectButton
                 key={label}
