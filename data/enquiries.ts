@@ -2293,5 +2293,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-08-05T04:55:42.037Z"
+  },
+  "6931b5e9-719b-42e8-9f11-ba732913a8e8": {
+    "id": "6931b5e9-719b-42e8-9f11-ba732913a8e8",
+    "fullName": "Mukesh Sharma",
+    "companyName": "Bosch Limited",
+    "email": "mukesh.sharma2@in.bosch.com",
+    "phone": "8003094982",
+    "city": "Jaipur",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Looking for heavy duty Water cooler dispenser with normal tap, cool tap and hot tap.",
+    "type": "contact-us",
+    "createdAt": "2026-08-05T05:57:42.612Z"
   }
 };
