@@ -2305,5 +2305,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Looking for heavy duty Water cooler dispenser with normal tap, cool tap and hot tap.",
     "type": "contact-us",
     "createdAt": "2026-08-05T05:57:42.612Z"
+  },
+  "e4a632b4-f494-42bb-b955-c48b5fe7cb93": {
+    "id": "e4a632b4-f494-42bb-b955-c48b5fe7cb93",
+    "fullName": "Ramvinay Sharma",
+    "companyName": "Vinay Interiors",
+    "email": "vinayinteriors@yahoo.com",
+    "phone": "9869868677",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "We are looking to expand our offerings by supplying water dispensers to our clients in Mumbai. We request you to kindly share the contact details of your authorized dealers or distributors in Mumbai who can support us with product supply, pricing, and commercial terms for resale..",
+    "type": "contact-us",
+    "createdAt": "2026-08-05T06:48:59.254Z"
   }
 };
