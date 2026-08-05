@@ -2317,5 +2317,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We are looking to expand our offerings by supplying water dispensers to our clients in Mumbai. We request you to kindly share the contact details of your authorized dealers or distributors in Mumbai who can support us with product supply, pricing, and commercial terms for resale..",
     "type": "contact-us",
     "createdAt": "2026-08-05T06:48:59.254Z"
+  },
+  "b93fee54-9884-4376-9425-48a7f6946699": {
+    "id": "b93fee54-9884-4376-9425-48a7f6946699",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-08-05T08:30:06.101Z"
   }
 };
