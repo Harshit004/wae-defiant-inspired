@@ -2437,5 +2437,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-08-05T09:51:03.653Z"
+  },
+  "7e42c54f-3bd2-4199-9b6e-c460a9e99813": {
+    "id": "7e42c54f-3bd2-4199-9b6e-c460a9e99813",
+    "fullName": "brajesh rai",
+    "companyName": "KSW INDIA PVT LTD",
+    "email": "bh@kswindia.com",
+    "phone": "9971358007",
+    "city": "Gnoida",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "business paint shop",
+    "type": "contact-us",
+    "createdAt": "2026-08-06T10:59:21.317Z"
   }
 };
