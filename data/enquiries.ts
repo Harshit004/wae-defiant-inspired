@@ -2449,5 +2449,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "business paint shop",
     "type": "contact-us",
     "createdAt": "2026-08-06T10:59:21.317Z"
+  },
+  "8d93fcfd-bc50-45d5-b1a4-e51588b39942": {
+    "id": "8d93fcfd-bc50-45d5-b1a4-e51588b39942",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-08-07T06:13:15.712Z"
   }
 };
