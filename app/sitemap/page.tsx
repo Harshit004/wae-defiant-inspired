@@ -172,7 +172,7 @@ export default function SitemapPage() {
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 400,
               fontSize: "clamp(10px, 0.83vw, 12px)",
-              lineHeight: "100%",
+              lineHeight: "120%",
               letterSpacing: "0%",
               verticalAlign: "middle",
               color: "#AEAEAE",
