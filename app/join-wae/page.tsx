@@ -127,9 +127,9 @@ export default function JoinWaePage() {
                     </div>
                   </div>
 
-                  <HoverButton href={`/join-wae/${job.id}`} className="px-[16px] py-[10.5px] w-fit">
+                  <HoverButton href={`/join-wae/${job.id}`} className="w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
                     {(hovered) => (
-                      <div className="flex items-center justify-center gap-[8px]">
+                      <div className="flex items-center justify-center gap-[8px] whitespace-nowrap">
                         <span className="font-['Manrope'] font-medium text-[10px] leading-none">Know More</span>
                         <div className="relative inline-block w-3 h-3 overflow-hidden">
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`transition-transform duration-300 ${hovered ? 'translate-x-full -translate-y-full' : 'translate-x-0 translate-y-0'}`}>
