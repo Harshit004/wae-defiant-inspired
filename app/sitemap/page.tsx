@@ -5,8 +5,7 @@ import Link from "next/link";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
-const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]";
-
+const containerClass = "mx-auto w-full max-w-[1440px] px-[24px] md:px-[7.5vw]";
 const sitemapData = [
   {
     title: "1. Home",
@@ -134,11 +133,6 @@ const sitemapData = [
 ];
 
 export default function SitemapPage() {
-  const rows = [];
-  for (let i = 0; i < sitemapData.length; i += 4) {
-    rows.push(sitemapData.slice(i, i + 4));
-  }
-
   return (
     <main className="bg-[#0F0F0F] min-h-screen text-white font-sans selection:bg-white selection:text-black relative overflow-x-hidden">
       {/* Background Gradient */}
@@ -153,10 +147,8 @@ export default function SitemapPage() {
 
       <Header transparentBg />
 
-      <section className="relative z-10 pt-[220px]">
+      <section className="relative z-10 pt-[120px] lg:pt-[220px]">
         <div className={containerClass}>
-          {/* Header Gap (from top/header spacing if needed) */}
-          {/* <div style={{ height: "clamp(40px, 6.94vw, 77px)" }} /> */}
           <h1
             style={{
               fontFamily: "'Inter Tight', sans-serif",
@@ -173,7 +165,7 @@ export default function SitemapPage() {
             Sitemap
           </h1>
 
-          <div style={{ height: "clamp(12px, 1.31vw, 19px)" }} />
+          <div className="h-[4px] lg:h-[clamp(12px,1.31vw,19px)]" />
 
           <p
             style={{
@@ -190,73 +182,67 @@ export default function SitemapPage() {
             Effective Date: 1 January 2026 &nbsp;&nbsp;|&nbsp;&nbsp; Last Updated: April 2026
           </p>
 
-          <div style={{ height: "clamp(40px, 6.38vw, 92px)" }} />
+          <div className="h-[40px] lg:h-[clamp(40px,6.38vw,92px)]" />
           <div className="w-full h-px bg-[#333]" />
-          <div style={{ height: "clamp(40px, 6.38vw, 92px)" }} />
+          <div className="h-[40px] lg:h-[clamp(40px,6.38vw,92px)]" />
 
           {/* Grid Rows */}
-          <div className="mb-[clamp(60px,8.61vw,124px)]">
-            {rows.map((row, rowIndex) => (
-              <div key={rowIndex}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-y-0">
-                  {row.map((section, idx) => (
-                    <div
-                      key={idx}
-                      style={{
-                        borderLeft: '1px solid #333',
-                        paddingLeft: 'clamp(20px, 3.47vw, 50px)'
-                      }}
-                    >
-                      <h2
-                        style={{
-                          fontFamily: "'Manrope', sans-serif",
-                          fontWeight: 400,
-                          fontSize: "clamp(18px, 1.66vw, 24px)",
-                          lineHeight: "100%",
-                          letterSpacing: "0%",
-                          verticalAlign: "middle",
-                          color: "#FFFFFF",
-                          margin: 0
-                        }}
-                      >
-                        {section.title}
-                      </h2>
-
-                      <div style={{ height: "clamp(16px, 1.66vw, 24px)" }} />
-
-                      <ul>
-                        {section.links.map((link, linkIdx) => (
-                          <li key={linkIdx}>
-                            <Link
-                              href={link.href}
-                              className="hover:text-white transition-colors duration-300 block"
-                              style={{
-                                fontFamily: "'Inter Tight', sans-serif",
-                                fontWeight: 400,
-                                fontSize: "clamp(12px, 0.97vw, 14px)",
-                                lineHeight: "200%",
-                                letterSpacing: "0%",
-                                verticalAlign: "middle",
-                                color: "#AEAEAE",
-                              }}
-                            >
-                              {link.text}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-
-                {rowIndex < rows.length - 1 && (
-                  <>
-                    <div style={{ height: "clamp(40px, 6.38vw, 92px)" }} />
+          <div className="mb-[clamp(60px,8.61vw,124px)] grid grid-cols-2 lg:grid-cols-4 gap-y-[40px] lg:gap-y-[clamp(40px,6.38vw,92px)]">
+            {sitemapData.map((section, idx) => (
+              <React.Fragment key={idx}>
+                {/* Divider - show on mobile every 2 items, on desktop every 4 items */}
+                {idx > 0 && idx % 2 === 0 && (
+                  <div className={`col-span-2 lg:col-span-4 ${idx % 4 === 0 ? 'block' : 'block lg:hidden'}`}>
                     <div className="w-full h-px bg-[#333]" />
-                    <div style={{ height: "clamp(40px, 6.38vw, 92px)" }} />
-                  </>
+                  </div>
                 )}
-              </div>
+                
+                <div
+                  className={`
+                    ${idx % 2 === 0 ? 'pl-0 border-none' : 'border-l border-[#333] pl-[clamp(28px,7.77vw,50px)] md:pl-[clamp(28px,3.47vw,50px)]'}
+                    ${idx % 4 === 0 ? 'lg:pl-0 lg:border-none' : 'lg:border-l lg:border-solid lg:border-[#333] lg:pl-[clamp(28px,3.47vw,50px)]'}
+                  `}
+                >
+                  <h2
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "clamp(18px, 1.66vw, 24px)",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                      color: "#FFFFFF",
+                      margin: 0
+                    }}
+                  >
+                    {section.title}
+                  </h2>
+
+                  <div className="h-[14px] lg:h-[clamp(16px,1.66vw,24px)]" />
+
+                  <ul>
+                    {section.links.map((link, linkIdx) => (
+                      <li key={linkIdx}>
+                        <Link
+                          href={link.href}
+                          className="hover:text-white transition-colors duration-300 block"
+                          style={{
+                            fontFamily: "'Manrope', sans-serif",
+                            fontWeight: 400,
+                            fontSize: "clamp(12px, 0.97vw, 14px)",
+                            lineHeight: "150%",
+                            letterSpacing: "0%",
+                            verticalAlign: "middle",
+                            color: "#AEAEAE",
+                          }}
+                        >
+                          {link.text}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </React.Fragment>
             ))}
           </div>
         </div>
