@@ -55,5 +55,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-08-11",
     "time": "12:11:46",
     "pageLink": "/product-description-page"
+  },
+  {
+    "id": "91658da4-1704-4de6-87dc-c6300d422c4a",
+    "email": "factory.incharge@jadecouture.com",
+    "date": "2026-08-11",
+    "time": "15:34:24",
+    "pageLink": "/compliance"
   }
 ];
