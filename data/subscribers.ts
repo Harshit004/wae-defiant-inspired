@@ -41,5 +41,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-07-16",
     "time": "16:28:47",
     "pageLink": "/"
+  },
+  {
+    "id": "3a761297-fcb0-4e88-9444-583c5c2e9c58",
+    "email": "fhgfhghvfjhg@erere.com",
+    "date": "2026-08-11",
+    "time": "12:11:28",
+    "pageLink": "/product-description-page"
   }
 ];
