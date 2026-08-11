@@ -2569,5 +2569,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "we need new water dispenser",
     "type": "contact-us",
     "createdAt": "2026-08-11T10:05:21.448Z"
+  },
+  "13ad36d0-68e1-4787-8475-26bca4764765": {
+    "id": "13ad36d0-68e1-4787-8475-26bca4764765",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-08-11T11:07:09.106Z"
   }
 };
