@@ -2545,5 +2545,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-08-10T10:18:51.281Z"
+  },
+  "eef9869d-e4a5-4a75-b871-61eeff31631d": {
+    "id": "eef9869d-e4a5-4a75-b871-61eeff31631d",
+    "fullName": "Factory Incharge",
+    "companyName": "Jade Lifestyle India",
+    "email": "factory.incharge@jadecouture.com",
+    "phone": "9167151340",
+    "city": "mumbai",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "please send details water dispenser",
+    "type": "contact-us",
+    "createdAt": "2026-08-11T09:43:30.620Z"
   }
 };
