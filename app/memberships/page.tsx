@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
@@ -58,15 +59,14 @@ export default function MembershipsPage() {
             </div>
 
             {/* Main Content Area */}
-            <section className="relative z-10 w-full px-[7.5vw]" style={{ paddingTop: "clamp(180px, 17.7vw, 255px)", paddingBottom: "100px" }}>
+            <section className="relative z-10 w-full px-[24px] lg:px-[7.5vw] pt-[120px] lg:pt-[clamp(180px,17.7vw,255px)] pb-[100px]">
 
                 {/* Toggle Buttons */}
-                <div className="flex gap-4" style={{ marginBottom: '75px' }}>
+                <div className="flex gap-4 mb-[40px] lg:mb-[75px]">
                     <Link href="/compliance">
                         <button
-                            className="px-6 border transition-colors flex items-center justify-center border-white/30 text-white hover:border-white bg-transparent"
+                            className="px-6 border transition-colors flex items-center justify-center border-white/30 text-white hover:border-white w-[161px] lg:w-auto h-[35px] lg:h-[41px]"
                             style={{
-                                height: '41px',
                                 fontFamily: 'Manrope',
                                 fontWeight: 500,
                                 fontSize: '14px',
@@ -78,9 +78,8 @@ export default function MembershipsPage() {
                     </Link>
                     <Link href="/memberships">
                         <button
-                            className="px-6 border transition-colors flex items-center justify-center border-white text-black bg-white"
+                            className="px-6 border transition-colors flex items-center justify-center border-white text-black bg-white w-[161px] lg:w-auto h-[35px] lg:h-[41px]"
                             style={{
-                                height: '41px',
                                 fontFamily: 'Manrope',
                                 fontWeight: 500,
                                 fontSize: '14px',
@@ -93,15 +92,14 @@ export default function MembershipsPage() {
                 </div>
 
                 {/* Horizontal Divider */}
-                <div className="w-full h-px bg-white/20" style={{ marginBottom: '56px' }} />
+                <div className="w-full h-px bg-white/20 mb-[40px] lg:mb-[56px]" />
 
                 {/* Hero Text */}
-                <div className="flex flex-row justify-between items-start" style={{ marginBottom: '92px' }}>
-                    <div style={{ width: "clamp(260px, 28.2vw, 407px)", flexShrink: 0 }}>
-                        <h1 style={{
+                <div className="flex flex-col lg:flex-row justify-between items-start mb-[38px] lg:mb-[92px]">
+                    <div className="w-full lg:w-[clamp(260px,28.2vw,407px)] shrink-0 mb-[27px] lg:mb-0">
+                        <h1 className="text-[28px] lg:text-[clamp(40px,4.16vw,60px)]" style={{
                             fontFamily: 'Inter Tight',
                             fontWeight: 400,
-                            fontSize: 'clamp(40px, 4.16vw, 60px)',
                             lineHeight: '100%',
                             letterSpacing: '0px',
                         }}>
@@ -109,13 +107,11 @@ export default function MembershipsPage() {
                         </h1>
                     </div>
 
-                    <div style={{ width: "clamp(260px, 28vw, 403px)", flexShrink: 0 }}>
-                        <p style={{
+                    <div className="w-full lg:w-[clamp(260px,28vw,403px)] shrink-0">
+                        <p className="text-[12px] lg:text-[16px] leading-[120%] lg:leading-[130%]" style={{
                             fontFamily: 'Manrope',
                             fontWeight: 400,
                             fontStyle: 'normal',
-                            fontSize: '16px',
-                            lineHeight: '130%',
                             color: '#AEAEAE',
                             letterSpacing: '0px',
                             verticalAlign: 'middle'
@@ -129,58 +125,59 @@ export default function MembershipsPage() {
                 <div className="flex flex-col">
                     {membershipRows.map((row, rowIndex) => (
                         <div key={rowIndex} className="flex flex-col">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px]">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px] gap-y-0 lg:gap-y-0">
                                 {row.map((item, colIndex) => (
-                                    <div key={colIndex} className="flex flex-col border-l border-white/20 pl-6 h-full">
-                                        <div className="flex items-center justify-start" style={{ height: '154px', marginBottom: '38px' }}>
-                                            <img
-                                                src={item.image}
-                                                alt={item.title}
-                                                className="max-h-full max-w-[150px] object-contain object-left"
-                                            />
+                                    <React.Fragment key={colIndex}>
+                                        {colIndex > 0 && (
+                                            <div className="col-span-1 block md:hidden my-[40px] w-full h-px bg-white/20" />
+                                        )}
+                                        <div className="flex flex-col border-none pl-0 lg:border-l lg:border-solid lg:border-white/20 lg:pl-6 h-full">
+                                            <div className="flex items-center justify-start mb-[10px] lg:mb-[38px] h-[64px] lg:h-[154px]">
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.title}
+                                                    className="max-h-full max-w-[64px] lg:max-w-[150px] object-contain object-left"
+                                                />
+                                            </div>
+                                            <h3
+                                                className="text-[16px] lg:text-[24px] leading-[120%] lg:leading-[130%] mb-[10px] lg:mb-[32px] min-h-0 lg:min-h-[70px]"
+                                                style={{
+                                                    fontFamily: 'Manrope',
+                                                    fontWeight: 400,
+                                                    fontStyle: 'normal',
+                                                    letterSpacing: '0px',
+                                                    verticalAlign: 'middle',
+                                                }}
+                                            >
+                                                {item.title}
+                                            </h3>
+                                            <p
+                                                className="text-[12px] lg:text-[14px] leading-[120%] lg:leading-[130%]"
+                                                style={{
+                                                    fontFamily: 'Manrope',
+                                                    fontWeight: 400,
+                                                    fontStyle: 'normal',
+                                                    color: '#AEAEAE',
+                                                    letterSpacing: '0px',
+                                                    verticalAlign: 'middle',
+                                                }}
+                                            >
+                                                {item.title.startsWith("ISO 9001") || item.title.startsWith("ISO 45001") || item.title.startsWith("ISO 14001") ? (
+                                                    <>
+                                                        {item.description}
+                                                    </>
+                                                ) : (
+                                                    item.description
+                                                )}
+                                            </p>
                                         </div>
-                                        <h3
-                                            style={{
-                                                fontFamily: 'Manrope',
-                                                fontWeight: 400,
-                                                fontStyle: 'normal',
-                                                fontSize: '24px',
-                                                lineHeight: '130%',
-                                                letterSpacing: '0px',
-                                                verticalAlign: 'middle',
-                                                marginBottom: '32px',
-                                                minHeight: '70px'
-                                            }}
-                                        >
-                                            {item.title}
-                                        </h3>
-                                        <p
-                                            style={{
-                                                fontFamily: 'Manrope',
-                                                fontWeight: 400,
-                                                fontStyle: 'normal',
-                                                fontSize: '14px',
-                                                lineHeight: '130%',
-                                                color: '#AEAEAE',
-                                                letterSpacing: '0px',
-                                                verticalAlign: 'middle',
-                                            }}
-                                        >
-                                            {item.title.startsWith("ISO 9001") || item.title.startsWith("ISO 45001") || item.title.startsWith("ISO 14001") ? (
-                                                <>
-                                                    {item.description}
-                                                </>
-                                            ) : (
-                                                item.description
-                                            )}
-                                        </p>
-                                    </div>
+                                    </React.Fragment>
                                 ))}
                             </div>
 
                             {/* Horizontal divider after every row */}
                             {rowIndex < membershipRows.length - 1 && (
-                                <div style={{ marginTop: '92px', marginBottom: '92px', width: '100%', height: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }} />
+                                <div className="my-[40px] lg:my-[92px] w-full h-px bg-white/20" />
                             )}
                         </div>
                     ))}
