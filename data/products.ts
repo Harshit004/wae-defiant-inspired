@@ -357,20 +357,20 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "displayOrder": 2
       },
       {
-        "id": "spiulmeister",
-        "name": "Spiulmeister",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e2481985-44dd-44a4-d7fe-fe9d994a9000/public",
-        "hoverImage": null,
-        "displayOrder": 3
-      },
-      {
         "id": "s-wasser-mini",
         "name": "SÜẞWASSER MINI",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0fa74b2d-742f-41d4-7fd6-387da6344000/public",
         "hoverImage": null,
         "displayOrder": 4
+      },
+      {
+        "id": "spiulmeister",
+        "name": "SPULMESITER",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e2481985-44dd-44a4-d7fe-fe9d994a9000/public",
+        "hoverImage": null,
+        "displayOrder": 3
       }
     ]
   }
@@ -3110,7 +3110,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   },
   "spiulmeister": {
     "id": "spiulmeister",
-    "name": "Spiulmeister",
+    "name": "SPULMESITER",
     "categoryName": "Glass Bottling Plant",
     "heroSubtitle": "",
     "images": [
