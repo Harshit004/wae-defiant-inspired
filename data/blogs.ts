@@ -3327,11 +3327,9 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "Long before the language of circular economies and resource efficiency emerged, the Harappans had already embraced their principles."
-        }
-      ],
-      [
+        },
         {
-          "type": "heading",
+          "type": "paragraph",
           "text": "The Mauryan Era: The Empire That Governed Water"
         },
         {
@@ -3353,39 +3351,9 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "More than two millennia later, parts of this system remain operational."
-        },
-        {
-          "type": "paragraph",
-          "text": "The Mauryan state also invested in large-scale hydraulic infrastructure, including dams, reservoirs, bunds, and wells. Among the most celebrated examples was Sudarshana Lake in present-day Gujarat, commissioned during the reign of Chandragupta Maurya."
-        },
-        {
-          "type": "paragraph",
-          "text": "Kautilya's Arthashastra reveals the extent to which water management was integrated into governance. Water bodies, canals, and reservoirs were regulated by the state."
-        },
-        {
-          "type": "paragraph",
-          "text": "Farmers drawing water manually contributed approximately 20 per cent of their produce, while those utilising animal-powered systems paid 25 per cent."
-        },
-        {
-          "type": "paragraph",
-          "text": "Users benefiting from state-supported irrigation channels contributed up to one-third of their produce."
-        },
-        {
-          "type": "paragraph",
-          "text": "At the same time***, tax exemptions were offered for constructing or restoring water infrastructure,*** creating incentives for conservation and investment."
-        },
-        {
-          "type": "heading",
-          "text": "“Setubandhanam Navapravartane Pancavarsikah Pariharah”\n\n- Kautilya, Arthashastra, Book II"
-        },
-        {
-          "type": "paragraph",
-          "text": "(Meaning: A remission (tax exemption) of five years shall be granted for the construction of new dams, reservoirs, embankments, and irrigation works.)"
-        },
-        {
-          "type": "paragraph",
-          "text": "The text also references the Variyantra, a revolving water spray system used for cooling air. Greek historian Megasthenes later described its use among affluent households, illustrating how water technologies influenced both productivity and quality of life."
-        },
+        }
+      ],
+      [
         {
           "type": "paragraph",
           "text": "The Mauryans recognised a principle that remains relevant today: water security requires governance, investment, innovation, and collective responsibility."
@@ -3477,11 +3445,9 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "How do we ensure that finite water resources continue to support growing societies without compromising the needs of future generations? Let’s focus on a case study to improve our understanding."
-        }
-      ],
-      [
+        },
         {
-          "type": "heading",
+          "type": "paragraph",
           "text": "A Case Study Of ESG In Effect: When Ancient Engineering Solves Modern Challenges"
         },
         {
@@ -3491,7 +3457,9 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "A powerful example can be found through a case study in Bihar pioneered by ICICI bank’s ESG initiative, where one of India's oldest water conservation systems has experienced a remarkable revival."
-        },
+        }
+      ],
+      [
         {
           "type": "paragraph",
           "text": "The ancient Ahar–Pyne network, first developed during the Mauryan period, was designed to capture floodwaters, store monsoon runoff, and support irrigation in drought-prone regions. Although parts of the system had fallen into disrepair over time, its underlying principles remained as relevant as ever."
