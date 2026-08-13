@@ -357,20 +357,20 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "displayOrder": 3
       },
       {
-        "id": "primus",
-        "name": "PRIMUS",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5b6c39c8-92f2-4aaa-bca1-01fb465c8400/public",
-        "hoverImage": null,
-        "displayOrder": 1
-      },
-      {
         "id": "aquarius-series",
         "name": "AQUARIUS SERIES",
         "category": "free-standing",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9bf3de4-35c9-4eaf-d1da-309816543400/public",
         "hoverImage": null,
         "displayOrder": 0
+      },
+      {
+        "id": "primus",
+        "name": "PRIMUS",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5b6c39c8-92f2-4aaa-bca1-01fb465c8400/public",
+        "hoverImage": null,
+        "displayOrder": 1
       }
     ]
   }
@@ -2993,7 +2993,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "refrigerant": "-",
       "dimensions": [
         {
-          "variant": "Primus 250/500",
+          "variant": "PRIMUS 250/500",
           "weight": "-",
           "height": "1740",
           "width": "5390",
