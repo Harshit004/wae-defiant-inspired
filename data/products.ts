@@ -341,14 +341,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "displayOrder": 2
       },
       {
-        "id": "s-wasser-mini",
-        "name": "SÜẞWASSER MINI",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0fa74b2d-742f-41d4-7fd6-387da6344000/public",
-        "hoverImage": null,
-        "displayOrder": 4
-      },
-      {
         "id": "spiulmeister",
         "name": "SPULMESITER",
         "category": "free-standing",
@@ -371,6 +363,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5b6c39c8-92f2-4aaa-bca1-01fb465c8400/public",
         "hoverImage": null,
         "displayOrder": 1
+      },
+      {
+        "id": "s-wasser-mini",
+        "name": "SÜẞWASSER",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0fa74b2d-742f-41d4-7fd6-387da6344000/public",
+        "hoverImage": null,
+        "displayOrder": 4
       }
     ]
   }
@@ -3190,7 +3190,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   },
   "s-wasser-mini": {
     "id": "s-wasser-mini",
-    "name": "SÜẞWASSER MINI",
+    "name": "SÜẞWASSER",
     "categoryName": "Glass Bottling Plant",
     "heroSubtitle": "",
     "images": [
@@ -3233,7 +3233,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "specifications": {
       "storageCapacity": [
         {
-          "variant": "SÜẞWASSER MINI",
+          "variant": "SÜẞWASSER",
           "hot": "-",
           "cold": "70",
           "ambient": "70"
@@ -3248,7 +3248,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       "refrigerant": "R-134a",
       "dimensions": [
         {
-          "variant": "SÜẞWASSER MINI",
+          "variant": "SÜẞWASSER",
           "weight": "200.0 (packed)",
           "height": "2218",
           "width": "771",
@@ -3256,7 +3256,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
         },
         {
           "variant": "Accessories",
-          "weight": "200.0 (packed)",
+          "weight": "150.0 (packed)",
           "height": "1802",
           "width": "771",
           "depth": "715"
