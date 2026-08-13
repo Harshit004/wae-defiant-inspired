@@ -2857,5 +2857,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-08-12T06:06:38.219Z"
+  },
+  "73fe4d2c-b290-4a61-b994-5999b7371e84": {
+    "id": "73fe4d2c-b290-4a61-b994-5999b7371e84",
+    "fullName": "Arun",
+    "companyName": "Osttra",
+    "email": "arun.kumar12@osttra.com",
+    "phone": "9900026081",
+    "city": "Bengaluru",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Looking for AMC for the machines supplied year before WAE VAR 150 CHA RO TL UVG 5 units",
+    "type": "contact-us",
+    "createdAt": "2026-08-13T09:39:18.483Z"
   }
 };
