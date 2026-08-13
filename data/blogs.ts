@@ -47,7 +47,7 @@ export const WRITERS: Record<string, Writer> = {
   "rashi-tarika": {
     "id": "rashi-tarika",
     "name": "Rashi Tarika",
-    "role": "Executive - Marketing, WAE",
+    "role": "Marketing, WAE",
     "bio": "Rashi Tarika explores climate policy and water management. Her writing focuses on the intersections of environmental governance, public policy, and corporate sustainable development strategies to drive climate action.",
     "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b6642388-9861-4396-d81f-219b1cd51100/public",
     "link": "https://www.linkedin.com/in/rashi-tarika-89727a43/"
