@@ -333,14 +333,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ],
     "products": [
       {
-        "id": "aquarius-series",
-        "name": "Aquarius Series",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9bf3de4-35c9-4eaf-d1da-309816543400/public",
-        "hoverImage": null,
-        "displayOrder": 0
-      },
-      {
         "id": "quantm",
         "name": "QUANTM",
         "category": "free-standing",
@@ -371,6 +363,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5b6c39c8-92f2-4aaa-bca1-01fb465c8400/public",
         "hoverImage": null,
         "displayOrder": 1
+      },
+      {
+        "id": "aquarius-series",
+        "name": "AQUARIUS SERIES",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9bf3de4-35c9-4eaf-d1da-309816543400/public",
+        "hoverImage": null,
+        "displayOrder": 0
       }
     ]
   }
@@ -2835,7 +2835,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   },
   "aquarius-series": {
     "id": "aquarius-series",
-    "name": "Aquarius Series",
+    "name": "AQUARIUS SERIES",
     "categoryName": "Glass Bottling Plant",
     "heroSubtitle": "",
     "images": [
