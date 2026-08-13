@@ -341,14 +341,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "displayOrder": 0
       },
       {
-        "id": "primus",
-        "name": "Primus",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5b6c39c8-92f2-4aaa-bca1-01fb465c8400/public",
-        "hoverImage": null,
-        "displayOrder": 1
-      },
-      {
         "id": "quantm",
         "name": "QUANTM",
         "category": "free-standing",
@@ -371,6 +363,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e2481985-44dd-44a4-d7fe-fe9d994a9000/public",
         "hoverImage": null,
         "displayOrder": 3
+      },
+      {
+        "id": "primus",
+        "name": "PRIMUS",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5b6c39c8-92f2-4aaa-bca1-01fb465c8400/public",
+        "hoverImage": null,
+        "displayOrder": 1
       }
     ]
   }
@@ -2945,7 +2945,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
   },
   "primus": {
     "id": "primus",
-    "name": "Primus",
+    "name": "PRIMUS",
     "categoryName": "Glass Bottling Plant",
     "heroSubtitle": "",
     "images": [
