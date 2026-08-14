@@ -10,7 +10,7 @@ import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import Header from "@/components/header"
-import { useSearchParams } from "next/navigation"
+import { useParams } from "next/navigation"
 import { CATEGORIES } from "@/data/products"
 
 // Shared container class for consistent margins and max-width
@@ -118,8 +118,8 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
 
 function ProductListingContent() {
     // State variables
-    const searchParams = useSearchParams()
-    const categoryId = searchParams.get("category") || "bluwae"
+    const params = useParams()
+    const categoryId = (params.category as string) || "bluwae"
     const currentCategory = CATEGORIES[categoryId] || CATEGORIES.bluwae
 
     const [activeSection, setActiveSection] = useState(0)
@@ -322,7 +322,7 @@ const etceteraItems = [
 
                                             return (
                                                 <Link
-                                                    href={`/product-description-page?product=${product.id}`}
+                                                    href={`/product-description-page/${product.id}`}
                                                     key={product.name}
                                                     className={`${isFeatured ? 'col-span-2 row-span-2 flex flex-col h-full' : 'col-span-1 block'}`}
                                                 >

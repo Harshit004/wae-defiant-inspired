@@ -52,9 +52,9 @@ const sitemapData = [
   {
     title: "5. GBS",
     links: [
-      { text: "PRIMUS", href: "/product-description-page?product=primus" },
-      { text: "AQUARIUS Series", href: "/product-description-page?product=aquarius" },
-      { text: "QUANTIM", href: "/product-description-page?product=quantim" },
+      { text: "PRIMUS", href: "/product-description-page/primus" },
+      { text: "AQUARIUS Series", href: "/product-description-page/aquarius" },
+      { text: "QUANTIM", href: "/product-description-page/quantim" },
     ]
   },
   {

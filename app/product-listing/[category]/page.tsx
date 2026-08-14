@@ -29,9 +29,9 @@ const productSEO = {
     }
 }
 
-export async function generateMetadata({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }): Promise<Metadata> {
-    const params = await searchParams;
-    const category = params.category as string;
+export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
+    const resolvedParams = await params;
+    const category = resolvedParams.category;
     
     if (category && typeof category === 'string' && productSEO[category.toLowerCase() as keyof typeof productSEO]) {
         const seo = productSEO[category.toLowerCase() as keyof typeof productSEO];

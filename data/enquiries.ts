@@ -18,7 +18,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "companyName": "Test company",
     "email": "test@mail.com",
     "phone": "12345 67890",
-    "pageLink": "https://wae-ltd.vercel.app/product-description-page?product=venus",
+    "pageLink": "https://wae-ltd.vercel.app/product-description-page/venus",
     "createdAt": "2026-06-28T14:35:20.948Z"
   },
   "cb6ddd1e-2c6c-49e9-b454-0c88f0fe3848": {
@@ -49,7 +49,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "companyName": "Test company",
     "email": "testenquiry@testmail.com",
     "phone": "12345 67890",
-    "pageLink": "https://wae-ltd.vercel.app/product-description-page?product=plusultra",
+    "pageLink": "https://wae-ltd.vercel.app/product-description-page/plusultra",
     "type": "product",
     "createdAt": "2026-06-28T21:52:12.970Z"
   },
@@ -72,7 +72,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "email": "jairajflora@yahoo.in",
     "phone": "09325654835",
     "city": "",
-    "pageLink": "https://www.waecorp.com/product-description-page?product=s-wasser-mini",
+    "pageLink": "https://www.waecorp.com/product-description-page/s-wasser-mini",
     "type": "product",
     "createdAt": "2026-07-05T04:25:00.674Z"
   },
@@ -119,7 +119,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "email": "tarun@studiochintala.com",
     "phone": "9400862460",
     "city": "",
-    "pageLink": "https://www.waecorp.com/product-description-page?product=nt01",
+    "pageLink": "https://www.waecorp.com/product-description-page/nt01",
     "type": "product",
     "createdAt": "2026-07-09T04:57:45.140Z"
   },
@@ -886,7 +886,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "email": "panneerselvam.murugesan@planandplot.in",
     "phone": "9994946251",
     "city": "chennai",
-    "pageLink": "https://www.waecorp.com/product-description-page?product=reva",
+    "pageLink": "https://www.waecorp.com/product-description-page/reva",
     "type": "product",
     "createdAt": "2026-07-14T13:30:29.745Z"
   },
@@ -897,7 +897,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "email": "panneeraprs@gmail.com",
     "phone": "9994946251",
     "city": "chennai",
-    "pageLink": "https://www.waecorp.com/product-description-page?product=var-series",
+    "pageLink": "https://www.waecorp.com/product-description-page/var-series",
     "type": "product",
     "createdAt": "2026-07-14T13:35:59.349Z"
   },
@@ -932,7 +932,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "email": "abhishekrajrusha@gmail.com",
     "phone": "9304116169",
     "city": "Noida",
-    "pageLink": "https://www.waecorp.com/product-description-page?product=reva",
+    "pageLink": "https://www.waecorp.com/product-description-page/reva",
     "type": "product",
     "createdAt": "2026-07-15T09:55:41.382Z"
   },
@@ -943,7 +943,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "email": "abhishekrajrusha@gmail.com",
     "phone": "9304116169",
     "city": "Noida",
-    "pageLink": "https://www.waecorp.com/product-description-page?product=aurela",
+    "pageLink": "https://www.waecorp.com/product-description-page/aurela",
     "type": "product",
     "createdAt": "2026-07-15T09:57:45.271Z"
   },
@@ -1206,7 +1206,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "email": "cc@anjumaziz.com",
     "phone": "9845203249",
     "city": "Bangalore",
-    "pageLink": "https://www.waecorp.com/product-description-page?product=primus",
+    "pageLink": "https://www.waecorp.com/product-description-page/primus",
     "type": "product",
     "createdAt": "2026-07-22T18:32:39.284Z"
   },
@@ -1620,7 +1620,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "email": "samuel@boulderzone.ae",
     "phone": "0585921148",
     "city": "Dubai",
-    "pageLink": "https://www.waecorp.com/product-description-page?product=venus",
+    "pageLink": "https://www.waecorp.com/product-description-page/venus",
     "type": "product",
     "createdAt": "2026-07-27T19:24:21.163Z"
   },
@@ -1895,7 +1895,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "email": "aarambhtppltd@gmail.com",
     "phone": "9152761555",
     "city": "Mumbai",
-    "pageLink": "https://www.waecorp.com/product-description-page?product=reva",
+    "pageLink": "https://www.waecorp.com/product-description-page/reva",
     "type": "product",
     "createdAt": "2026-07-30T09:41:53.560Z"
   },
@@ -1906,7 +1906,7 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "email": "aarambhtppltd@gmail.com",
     "phone": "9152761555",
     "city": "Mumbai",
-    "pageLink": "https://www.waecorp.com/product-description-page?product=var-series",
+    "pageLink": "https://www.waecorp.com/product-description-page/var-series",
     "type": "product",
     "createdAt": "2026-07-30T10:14:29.083Z"
   },

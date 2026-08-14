@@ -6,7 +6,7 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import { useSearchParams } from "next/navigation"
+import { useParams } from "next/navigation"
 import Link from "next/link"
 import { PRODUCTS } from "@/data/products"
 import EnquireNowPopup from "@/components/EnquireNowPopup"
@@ -54,8 +54,8 @@ function ProductDescriptionPageContent() {
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
     }, [])
-    const searchParams = useSearchParams()
-    const productId = searchParams.get("product") || "assistflow"
+    const params = useParams()
+    const productId = (params.product as string) || "assistflow"
     const currentProduct = PRODUCTS[productId] || PRODUCTS.assistflow
 
     const heroImage = currentProduct.heroImage || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c69c6e9-f765-4d92-a80d-ef0688cd6600/public"
@@ -1158,7 +1158,7 @@ function ProductDescriptionPageContent() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-[50px] md:gap-[2.5vw]">
                         {Object.values(PRODUCTS).filter(p => p.id !== currentProduct.id && p.categoryName?.toLowerCase().replace(" series", "") === currentProduct.categoryName?.toLowerCase().replace(" series", "")).slice(0, 3).map((item, index) => (
                             <Link
-                                href={`/product-description-page?product=${item.id}`}
+                                href={`/product-description-page/${item.id}`}
                                 key={index}
                                 className="group flex flex-col text-left cursor-pointer transition-all duration-500 hover:-translate-y-1"
                             >
