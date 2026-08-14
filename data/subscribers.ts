@@ -62,5 +62,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-08-11",
     "time": "15:34:24",
     "pageLink": "/compliance"
+  },
+  {
+    "id": "00f399ab-04af-4d1c-871e-7531d76af4e4",
+    "email": "bhavanienterpriseskrp@gmail.com",
+    "date": "2026-08-14",
+    "time": "14:33:06",
+    "pageLink": "/"
   }
 ];
