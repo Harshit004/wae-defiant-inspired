@@ -2869,5 +2869,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Looking for AMC for the machines supplied year before WAE VAR 150 CHA RO TL UVG 5 units",
     "type": "contact-us",
     "createdAt": "2026-08-13T09:39:18.483Z"
+  },
+  "61c1ba26-6bad-42d8-b15e-4a9623509bd1": {
+    "id": "61c1ba26-6bad-42d8-b15e-4a9623509bd1",
+    "fullName": "Sahil Garg",
+    "companyName": "HausPlus",
+    "email": "sahil.garg@athaus.in",
+    "phone": "9560266622",
+    "city": "New Delhi",
+    "pageLink": "https://www.waecorp.com/product-description-page?product=alfa-100",
+    "type": "product",
+    "createdAt": "2026-08-14T05:54:22.326Z"
   }
 };
