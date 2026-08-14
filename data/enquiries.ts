@@ -2892,5 +2892,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Required dealership and product details ",
     "type": "general",
     "createdAt": "2026-08-14T09:01:23.627Z"
+  },
+  "5608879d-19fd-47f8-84b3-cc5d7ceaeb7e": {
+    "id": "5608879d-19fd-47f8-84b3-cc5d7ceaeb7e",
+    "fullName": "Prathap D",
+    "companyName": "Bhavani Enterprises ",
+    "email": "bhavanienterpriseskrp@gmail.com",
+    "phone": "9353673756",
+    "city": "Mysuru ",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Required dealership and product details ",
+    "type": "contact-us",
+    "createdAt": "2026-08-14T09:02:26.388Z"
   }
 };
