@@ -2880,5 +2880,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/product-description-page?product=alfa-100",
     "type": "product",
     "createdAt": "2026-08-14T05:54:22.326Z"
+  },
+  "ecfecf39-7e48-4471-b496-1fd6f76cf561": {
+    "id": "ecfecf39-7e48-4471-b496-1fd6f76cf561",
+    "fullName": "Prathap ",
+    "companyName": "Bhavani Enterprises ",
+    "email": "bhavanienterpriseskrp@gmail.com",
+    "phone": "9353673756",
+    "city": "Mysuru",
+    "pageLink": "https://www.waecorp.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAacu1he7mL3LnkCGPCVSj4Y_4y8qxQOY91GqHAnR2Z2YhWRZOVD9NlMpaD5jIg_aem_xu_GZiOGpuv27Z-C6Tm-7w",
+    "message": "Required dealership and product details ",
+    "type": "general",
+    "createdAt": "2026-08-14T09:01:23.627Z"
   }
 };
