@@ -432,14 +432,14 @@ export default function TheActivistCoPage() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "28px",
-                lineHeight: "100%",
+                lineHeight: "120%",
                 letterSpacing: "0%",
               }}
             >
               The Three Pillars of Blue Innovation
             </h2>
 
-            <div className="h-[16px]" />
+            <div className="h-[20px]" />
 
             <p
               className="align-middle m-0"
@@ -457,24 +457,32 @@ export default function TheActivistCoPage() {
 
             <div className="h-[45px]" />
 
-            {/* Pillars with left indicator line */}
-            <div className="flex flex-row items-stretch gap-6">
-              {/* Left indicator: icon box + vertical line */}
-              <div className="flex flex-col items-center shrink-0">
-                <div className="w-[32px] h-[32px] border border-white/40 flex items-center justify-center p-1.5">
+            {/* Pillars with left indicator layout: 27x27 px, 65px gap, vertical rule, 31px gap */}
+            <div className="flex flex-row items-stretch">
+              {/* Left column: 27x27 px icon box */}
+              <div className="shrink-0 flex flex-col items-start">
+                <div className="w-[27px] h-[27px] border border-white/40 flex items-center justify-center p-1">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/48b42c14-6d59-40b5-b839-2689e3f4a900/public"
                     alt="Arrow"
-                    width={18}
-                    height={18}
+                    width={15}
+                    height={15}
                     className="object-contain"
                   />
                 </div>
-                <div className="w-px bg-white/20 flex-1 my-3" />
               </div>
 
-              {/* Right list of pillars */}
-              <div className="flex-1 flex flex-col">
+              {/* 65px gap between 27x27 icon and vertical rule */}
+              <div className="w-[65px] shrink-0" />
+
+              {/* Vertical Rule */}
+              <div className="w-px bg-white/20 shrink-0 self-stretch" />
+
+              {/* 31px gap between vertical rule and right column */}
+              <div className="w-[31px] shrink-0" />
+
+              {/* Right column of pillars */}
+              <div className="flex-1 min-w-0 flex flex-col">
                 {/* Pillar 1 */}
                 <div>
                   <h3
@@ -482,13 +490,14 @@ export default function TheActivistCoPage() {
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 400,
-                      fontSize: "14px",
-                      lineHeight: "110%",
+                      fontSize: "16px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
                     }}
                   >
                     Climate & Resource Efficiency
                   </h3>
-                  <div className="h-[10px]" />
+                  <div className="h-[24px]" />
                   <p
                     className="align-middle m-0"
                     style={{
@@ -496,6 +505,7 @@ export default function TheActivistCoPage() {
                       fontWeight: 400,
                       fontSize: "12px",
                       lineHeight: "120%",
+                      letterSpacing: "0%",
                       color: "#AEAEAE",
                     }}
                   >
@@ -503,9 +513,9 @@ export default function TheActivistCoPage() {
                   </p>
                 </div>
 
-                <div className="h-[20px]" />
+                <div className="h-[26px]" />
                 <div className="w-full h-px bg-white/20" />
-                <div className="h-[20px]" />
+                <div className="h-[26px]" />
 
                 {/* Pillar 2 */}
                 <div>
@@ -514,13 +524,14 @@ export default function TheActivistCoPage() {
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 400,
-                      fontSize: "14px",
-                      lineHeight: "110%",
+                      fontSize: "16px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
                     }}
                   >
                     Stewardship & Conservation
                   </h3>
-                  <div className="h-[10px]" />
+                  <div className="h-[24px]" />
                   <p
                     className="align-middle m-0"
                     style={{
@@ -528,6 +539,7 @@ export default function TheActivistCoPage() {
                       fontWeight: 400,
                       fontSize: "12px",
                       lineHeight: "120%",
+                      letterSpacing: "0%",
                       color: "#AEAEAE",
                     }}
                   >
@@ -535,9 +547,9 @@ export default function TheActivistCoPage() {
                   </p>
                 </div>
 
-                <div className="h-[20px]" />
+                <div className="h-[26px]" />
                 <div className="w-full h-px bg-white/20" />
-                <div className="h-[20px]" />
+                <div className="h-[26px]" />
 
                 {/* Pillar 3 */}
                 <div>
@@ -546,13 +558,14 @@ export default function TheActivistCoPage() {
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 400,
-                      fontSize: "14px",
-                      lineHeight: "110%",
+                      fontSize: "16px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
                     }}
                   >
                     Blue Innovation & Governance
                   </h3>
-                  <div className="h-[10px]" />
+                  <div className="h-[24px]" />
                   <p
                     className="align-middle m-0"
                     style={{
@@ -560,6 +573,7 @@ export default function TheActivistCoPage() {
                       fontWeight: 400,
                       fontSize: "12px",
                       lineHeight: "120%",
+                      letterSpacing: "0%",
                       color: "#AEAEAE",
                     }}
                   >
