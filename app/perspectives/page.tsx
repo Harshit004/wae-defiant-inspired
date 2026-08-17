@@ -38,7 +38,9 @@ const SelectButton: FC<SelectButtonProps> = ({ children, selected, onClick }) =>
       textTransform: 'uppercase',
       cursor: 'pointer',
       borderRadius: '0px',
-      whiteSpace: 'nowrap'
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis'
     }}
   >
     {children}
