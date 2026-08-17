@@ -580,8 +580,8 @@ export default function TheActivistCoPage() {
 
         {/* SECTION 6: Our Green Is Blue */}
         <section className={containerClass}>
-          {/* Top Image */}
-          <div className="w-full relative overflow-hidden aspect-[1224/502] mb-[28px] lg:mb-[72px]">
+          {/* Top Image: 40px gap after it on mobile */}
+          <div className="w-full relative overflow-hidden aspect-[1224/502] mb-[40px] lg:mb-[72px]">
             <Image
               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/006890d0-cec2-4d1e-4c70-ec21dfc8b700/public"
               alt="Our Green Is Blue"
@@ -592,12 +592,13 @@ export default function TheActivistCoPage() {
 
           <div className="flex flex-col lg:flex-row items-start justify-between">
             <h2
-              className="mb-[20px] lg:mb-0 align-middle"
+              className="mb-[24px] lg:mb-0 align-middle m-0"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: "clamp(28px, 2.77vw, 40px)",
                 lineHeight: "100%",
+                letterSpacing: "0%",
                 color: "#FFF"
               }}
             >
@@ -611,10 +612,23 @@ export default function TheActivistCoPage() {
                   fontWeight: 400,
                   fontSize: "12px",
                   lineHeight: "120%",
+                  letterSpacing: "0%",
                   color: "#AEAEAE",
                 }}
               >
-                <span style={{ fontWeight: 700, color: "#fff" }}>"Our Green Is Blue"</span> is more than a statement of belief; it is the foundation of an entire worldview.
+                <span
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "12px",
+                    lineHeight: "120%",
+                    letterSpacing: "0%",
+                    color: "#FFFFFF",
+                  }}
+                >
+                  "Our Green Is Blue"
+                </span>{" "}
+                is more than a statement of belief; it is the foundation of an entire worldview.
               </p>
               <p
                 className="align-middle m-0"
@@ -623,6 +637,7 @@ export default function TheActivistCoPage() {
                   fontWeight: 400,
                   fontSize: "12px",
                   lineHeight: "120%",
+                  letterSpacing: "0%",
                   color: "#AEAEAE",
                 }}
               >
@@ -635,6 +650,7 @@ export default function TheActivistCoPage() {
                   fontWeight: 400,
                   fontSize: "12px",
                   lineHeight: "120%",
+                  letterSpacing: "0%",
                   color: "#AEAEAE",
                 }}
               >
@@ -647,6 +663,7 @@ export default function TheActivistCoPage() {
                   fontWeight: 400,
                   fontSize: "12px",
                   lineHeight: "120%",
+                  letterSpacing: "0%",
                   color: "#AEAEAE",
                 }}
               >
