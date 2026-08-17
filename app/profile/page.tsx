@@ -154,18 +154,18 @@ const TimelineSection = () => {
     const activeData = timelineData[activeIndex];
 
     return (
-        <section className="w-full pt-[48px] md:pt-[92px] pb-0">
+        <section className="w-full pt-[40px] md:pt-[92px] pb-0">
             <div className={containerClass}>
-                <div className="w-full border-t border-white/20 mb-[36px] md:mb-[92px]"></div>
-                <h2 className="font-['Manrope'] font-normal text-[26px] sm:text-[32px] md:text-[40px] leading-[110%] mb-[8px] md:mb-[20px]">
+                <div className="w-full border-t border-white/20 mb-[40px] md:mb-[92px]"></div>
+                <h2 className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[16px] md:text-[40px] leading-[100%] md:leading-[110%] mb-[9px] md:mb-[20px] text-white">
                     WAE Chronicle
                 </h2>
-                <p className="font-['Manrope'] font-normal text-[13px] md:text-[16px] leading-[110%] text-[#AEAEAE] mb-[36px] md:mb-[86px]">
+                <p className="font-['Manrope',sans-serif] font-normal text-[12px] md:text-[16px] leading-[110%] text-[#AEAEAE] mb-[40px] md:mb-[86px]">
                     From Intent to Impact
                 </p>
 
                 {/* Timeline Scrubber */}
-                <div className="w-full relative mb-[36px] md:mb-[120px] px-1 md:px-0">
+                <div className="w-full relative mb-[51px] md:mb-[120px] px-1 md:px-0">
                     <div className="w-full h-[1px] bg-white/20 relative">
                         <div
                             className="absolute top-0 left-0 h-full bg-white transition-all duration-300"
@@ -183,7 +183,7 @@ const TimelineSection = () => {
                                     style={{ left: `${(i / (timelineData.length - 1)) * 100}%`, transform: 'translate(-50%, -50%)' }}
                                 >
                                     <div className={`w-[7px] h-[7px] md:w-[8px] md:h-[8px] rounded-full transition-colors duration-300 ${isActive ? 'bg-white' : 'bg-[#AEAEAE99]'}`}></div>
-                                    <span className={`absolute top-[14px] md:top-[20px] text-[10px] md:text-[12px] font-['Manrope'] whitespace-nowrap transition-colors duration-300 ${isCurrent ? 'text-white font-medium' : 'text-[#AEAEAE99]'}`}>
+                                    <span className={`absolute top-[14px] md:top-[20px] font-['Manrope',sans-serif] font-medium text-[8px] md:text-[12px] leading-[110%] whitespace-nowrap transition-colors duration-300 ${isCurrent ? 'text-white' : 'text-[#AEAEAE99]'}`}>
                                         {item.yearLabel}
                                     </span>
                                 </button>
@@ -193,18 +193,18 @@ const TimelineSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col md:flex-row gap-6 md:gap-[4vw] items-start">
-                    <div className="w-full md:w-[60%] relative aspect-[16/9]">
+                <div className="flex flex-col md:flex-row gap-0 md:gap-[4vw] items-start">
+                    <div className="w-full md:w-[60%] relative aspect-[16/9] mb-[20px] md:mb-0">
                         <Image src={activeData.image} alt={activeData.title} fill className="object-cover transition-opacity duration-500" />
                     </div>
                     <div className="w-full md:w-[40%] flex flex-col justify-between h-auto min-h-0 md:min-h-[300px]">
                         <div>
-                            <h3 className="font-['Manrope'] font-normal text-[22px] md:text-[40px] leading-[110%] mb-[16px] md:mb-[24px]">
+                            <h3 className="font-['Manrope',sans-serif] font-normal text-[16px] md:text-[40px] leading-[110%] mb-[24px] text-white">
                                 {activeData.title}
                             </h3>
                             <div className="flex flex-col gap-2">
                                 {activeData.items.map((text, idx) => (
-                                    <p key={idx} className="font-['Manrope'] font-normal text-[13px] md:text-[14px] leading-[140%] md:leading-[130%] text-[#AEAEAE] flex gap-2">
+                                    <p key={idx} className="font-['Manrope',sans-serif] font-normal text-[12px] md:text-[14px] leading-[110%] md:leading-[130%] text-[#AEAEAE] flex gap-2">
                                         <span>•</span>
                                         <span>{text}</span>
                                     </p>
@@ -212,22 +212,22 @@ const TimelineSection = () => {
                             </div>
                         </div>
 
-                        <div className="flex gap-3 md:gap-4 mt-6 md:mt-12 justify-end">
+                        <div className="flex gap-3 md:gap-4 mt-[31px] md:mt-12 justify-end">
                             <button
                                 onClick={handlePrev}
                                 disabled={activeIndex === 0}
                                 aria-label="Previous timeline item"
-                                className="w-9 h-9 md:w-10 md:h-10 border border-white/20 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10"
+                                className="w-[31px] h-[31px] md:w-10 md:h-10 border border-white/20 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10"
                             >
-                                <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-white/70" strokeWidth={1.5} />
+                                <ChevronLeft className="w-3.5 h-3.5 md:w-5 md:h-5 text-white/70" strokeWidth={1.5} />
                             </button>
                             <button
                                 onClick={handleNext}
                                 disabled={activeIndex === timelineData.length - 1}
                                 aria-label="Next timeline item"
-                                className="w-9 h-9 md:w-10 md:h-10 border border-white/20 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10"
+                                className="w-[31px] h-[31px] md:w-10 md:h-10 border border-white/20 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10"
                             >
-                                <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-white/70" strokeWidth={1.5} />
+                                <ChevronRight className="w-3.5 h-3.5 md:w-5 md:h-5 text-white/70" strokeWidth={1.5} />
                             </button>
                         </div>
                     </div>
@@ -243,7 +243,7 @@ const businessModelsData = [
         title: "Single-use plastic is an institutional problem",
         titleDesktop: <>Single-use plastic is an<br />institutional problem</>,
         content: (
-            <div className="font-['Manrope'] font-normal text-[13px] md:text-[12px] leading-[150%] text-[#AEAEAE]">
+            <div className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[12px] leading-[130%] md:leading-[150%] text-[#AEAEAE]">
                 <p className="mb-4 md:mb-6">
                     Most organisations have made sustainability commitments, but their water infrastructure contradicts them. Bottled water creates ongoing plastic waste, carbon cost from logistics, and reputational risk.
                 </p>
@@ -261,7 +261,7 @@ const businessModelsData = [
         title: "The bottled gets replaced with infrastructure",
         titleDesktop: <>The bottled gets replaced with<br />infrastructure</>,
         content: (
-            <div className="font-['Manrope'] font-normal text-[13px] md:text-[12px] leading-[150%] text-[#AEAEAE]">
+            <div className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[12px] leading-[130%] md:leading-[150%] text-[#AEAEAE]">
                 <p className="mb-4 md:mb-6">
                     WAE designs and deploys steel-first, point-of-use water systems for public institutions, corporate campuses, hospitality, and healthcare environments. Our systems connect directly to the water supply, eliminating plastic at the source, not the policy level.
                 </p>
@@ -280,7 +280,7 @@ const businessModelsData = [
         title: "How the model works in practice",
         titleDesktop: <>How the model works in<br />practice</>,
         content: (
-            <div className="font-['Manrope'] font-normal text-[13px] md:text-[12px] leading-[150%] text-[#AEAEAE]">
+            <div className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[12px] leading-[130%] md:leading-[150%] text-[#AEAEAE]">
                 <p className="mb-4 md:mb-6">
                     Site assessment: WAE audits the client's existing water usage, plastic footprint, and infrastructure
                 </p>
@@ -299,7 +299,6 @@ const businessModelsData = [
 ];
 
 const BusinessModelSection = () => {
-    // Mobile accordion state: null or index of open accordion (item 0 can be toggled)
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     const toggleAccordion = (idx: number) => {
@@ -307,10 +306,10 @@ const BusinessModelSection = () => {
     };
 
     return (
-        <section className="w-full pt-[48px] md:pt-[92px] pb-0">
+        <section className="w-full pt-[40px] md:pt-[92px] pb-0">
             <div className={containerClass}>
-                <div className="w-full border-t border-white/20 mb-[36px] md:mb-[92px]"></div>
-                <h2 className="font-['Manrope'] font-normal text-[26px] sm:text-[32px] md:text-[40px] leading-[110%] mb-[28px] md:mb-[78px]">
+                <div className="w-full border-t border-white/20 mb-[40px] md:mb-[92px]"></div>
+                <h2 className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[16px] md:text-[40px] leading-[100%] md:leading-[110%] mb-[24px] md:mb-[78px] text-white">
                     Our Business Model
                 </h2>
 
@@ -321,7 +320,7 @@ const BusinessModelSection = () => {
                             <div className="mb-[32px]">
                                 <img src={model.icon} className="w-[57px] h-[57px] object-contain" alt="Icon" />
                             </div>
-                            <h3 className="font-['Manrope'] font-normal text-[28px] leading-[110%] mb-[24px]">
+                            <h3 className="font-['Manrope',sans-serif] font-normal text-[28px] leading-[110%] mb-[24px]">
                                 {model.titleDesktop}
                             </h3>
                             {model.content}
@@ -329,29 +328,30 @@ const BusinessModelSection = () => {
                     ))}
                 </div>
 
-                {/* MOBILE ACCORDION VIEW */}
-                <div className="flex md:hidden flex-col border-t border-white/20">
+                {/* MOBILE ACCORDION VIEW (NO TOP/BOTTOM LINES) */}
+                <div className="flex md:hidden flex-col mb-[52px]">
                     {businessModelsData.map((model, idx) => {
                         const isOpen = openIndex === idx;
+                        const isLast = idx === businessModelsData.length - 1;
                         return (
-                            <div key={idx} className="border-b border-white/20 flex flex-col transition-all">
+                            <div key={idx} className={`flex flex-col transition-all ${!isLast ? 'border-b border-white/20' : ''}`}>
                                 <button
                                     type="button"
                                     onClick={() => toggleAccordion(idx)}
-                                    className="w-full py-5 flex items-center justify-between gap-3 text-left bg-transparent border-0 cursor-pointer outline-none"
+                                    className="w-full py-4 flex items-center justify-between gap-3 text-left bg-transparent border-0 cursor-pointer outline-none"
                                 >
-                                    <div className="flex items-center gap-3.5 pr-2">
-                                        <img src={model.icon} className="w-[26px] h-[26px] object-contain shrink-0" alt="Icon" />
-                                        <span className="font-['Manrope'] font-normal text-[15px] leading-[125%] text-white">
+                                    <div className="flex items-center gap-3 pr-2">
+                                        <img src={model.icon} className="w-[24px] h-[24px] object-contain shrink-0" alt="Icon" />
+                                        <span className="font-['Inter_Tight',sans-serif] font-normal text-[14px] leading-[120%] text-white">
                                             {model.title}
                                         </span>
                                     </div>
                                     <div className="shrink-0 text-white/70">
-                                        <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180 text-white' : ''}`} />
+                                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180 text-white' : ''}`} />
                                     </div>
                                 </button>
                                 {isOpen && (
-                                    <div className="pb-6 pl-[39px] pr-2 transition-all">
+                                    <div className="pb-5 pl-[36px] pr-2 transition-all">
                                         {model.content}
                                     </div>
                                 )}
@@ -411,10 +411,10 @@ const AwardsSection = () => {
     };
 
     return (
-        <section className="w-full pt-[48px] md:pt-[92px] pb-[64px] md:pb-[124px]">
+        <section className="w-full pt-[40px] md:pt-[92px] pb-[64px] md:pb-[124px]">
             <div className={containerClass}>
-                <div className="w-full border-t border-white/20 mb-[36px] md:mb-[92px]"></div>
-                <h2 className="font-['Manrope'] font-normal text-[26px] sm:text-[32px] md:text-[40px] leading-[110%] mb-[28px] md:mb-[78px]">
+                <div className="w-full border-t border-white/20 mb-[40px] md:mb-[92px]"></div>
+                <h2 className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[28px] md:text-[40px] leading-[110%] mb-[40px] md:mb-[78px] text-white">
                     Awards & Recognition
                 </h2>
 
@@ -444,18 +444,17 @@ const AwardsSection = () => {
                             <div
                                 key={index}
                                 onClick={() => scrollToAward(index)}
-                                className="w-[62vw] max-w-[240px] shrink-0 snap-start flex flex-col cursor-pointer"
+                                className="w-[calc(50%-8px)] sm:w-[220px] shrink-0 snap-start flex flex-col cursor-pointer"
                             >
                                 <div className="w-full aspect-[340/407] relative mb-3 bg-black/40">
                                     <Image src={award.image} alt={award.title} fill className="object-cover" />
                                 </div>
-                                <p className="font-['Manrope'] font-normal text-[15px] leading-[125%] text-white">
+                                <p className="font-['Manrope',sans-serif] font-normal text-[15px] leading-[125%] text-white">
                                     {award.title}<br />
                                     {award.year}
                                 </p>
                             </div>
                         ))}
-                        <div className="shrink-0 w-2" />
                     </div>
 
                     {/* Dots indicator matching screenshot */}
@@ -485,16 +484,16 @@ const ThisIsUs: FC = () => {
             <Header transparentBg />
 
             {/* HERO SECTION */}
-            <section className="w-full pt-[120px] md:pt-[235px] pb-[40px] md:pb-[68px]">
+            <section className="w-full pt-[102px] md:pt-[235px] pb-0">
                 <div className={containerClass}>
-                    <p className="font-['Manrope'] font-medium text-[13px] md:text-[20px] leading-[110%] text-[#AEAEAE99] mb-3 md:mb-[1em]">
+                    <p className="font-['Inter_Tight',sans-serif] font-semibold text-[12px] md:text-[20px] leading-[100%] md:leading-[110%] text-[#AEAEAE99] mb-[24px] md:mb-[1em]">
                         WAE
                     </p>
-                    <h1 className="font-['Manrope'] font-normal text-[32px] sm:text-[40px] md:text-[60px] leading-[115%] md:leading-[110%] mb-[32px] md:mb-[68px] max-w-full md:max-w-[80%]">
+                    <h1 className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[28px] md:text-[60px] leading-[120%] md:leading-[110%] mb-[32px] md:mb-[68px] max-w-full md:max-w-[80%] text-white">
                         Designing the future of plastic-free hydration infrastructure.
                     </h1>
 
-                    <div className="w-full aspect-[16/9] md:aspect-auto md:h-[500px] relative">
+                    <div className="w-full aspect-[16/9] md:aspect-auto md:h-[500px] relative mb-[32px] md:mb-0">
                         <video
                             autoPlay
                             loop
@@ -509,56 +508,58 @@ const ThisIsUs: FC = () => {
             </section>
 
             {/* SDG 6 MISSION VISION */}
-            <section className="w-full pt-4 md:pt-0">
+            <section className="w-full pt-0 md:pt-0">
                 <div className={containerClass}>
                     <div className="flex flex-col md:flex-row">
                         {/* Left Col (SDG 6) */}
-                        <div className="w-full md:w-[50%] md:pr-[4.65vw] md:border-r border-white/20 flex flex-col items-start justify-start pb-8 md:pb-0">
-                            <h2 className="font-['Manrope'] font-normal text-[28px] sm:text-[34px] md:text-[55px] leading-[115%] md:leading-[105%] mb-5 md:mb-[60px] md:max-w-[41.8vw]">
+                        <div className="w-full md:w-[50%] md:pr-[4.65vw] md:border-r border-white/20 flex flex-col items-start justify-start pb-0 md:pb-0">
+                            <h2 className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[28px] md:text-[55px] leading-[120%] md:leading-[105%] mb-[32px] md:mb-[60px] md:max-w-[41.8vw] text-white">
                                 Supporting SDG 6 through carbon-neutral water infrastructure solutions.
                             </h2>
                             <div>
-                                <DarkSectionButton href="/sustainability" className="mt-2 md:mt-[-28px]">
+                                <DarkSectionButton href="/sustainability" className="mt-0 md:mt-[-28px]">
                                     Know More
                                 </DarkSectionButton>
                             </div>
+                            {/* Horizontal divider after button on mobile */}
+                            <div className="w-full border-t border-white/20 my-[40px] md:hidden"></div>
                         </div>
 
                         {/* Right Col (Mission & Vision) */}
-                        <div className="w-full md:w-[50%] md:pl-[3.47vw] flex flex-col pt-6 md:pt-0">
+                        <div className="w-full md:w-[50%] md:pl-[3.47vw] flex flex-col pt-0 md:pt-0">
                             {/* Mission */}
-                            <div className="pb-[36px] md:pb-[58px] border-b border-white/20">
-                                <div className="flex items-start gap-3.5 md:gap-[1.65vw]">
-                                    <div className="w-[20px] h-[20px] md:w-[21.44px] md:h-[21.44px] shrink-0 mt-1 md:mt-[6px]">
+                            <div className="pb-[40px] md:pb-[58px] border-b border-white/20">
+                                <div className="flex items-start gap-[20px] md:gap-[1.65vw]">
+                                    <div className="w-[24px] h-[24px] md:w-[21.44px] md:h-[21.44px] shrink-0 mt-0.5 md:mt-[6px]">
                                         <Rocket className="w-full h-full text-white/70" strokeWidth={1.5} />
                                     </div>
-                                    <div>
-                                        <h3 className="font-['Manrope'] font-medium text-[22px] md:text-[32px] leading-[110%] mb-3 md:mb-4">
+                                    <div className="flex-1">
+                                        <h3 className="font-['Manrope',sans-serif] font-medium text-[16px] md:text-[32px] leading-[110%] mb-[14px] md:mb-4 text-white">
                                             Mission
                                         </h3>
-                                        <p className="font-['Manrope'] font-normal text-[13px] md:text-[14px] leading-[140%] md:leading-[130%] text-[#AEAEAE] mb-3 md:mb-4">
+                                        <p className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[12px] md:text-[14px] leading-[130%] text-[#AEAEAE] mb-3 md:mb-4">
                                             WAE exists to make a meaningful, lasting contribution, protecting the environment and improving the quality of human life without compromising future generations. Our idea of leadership is not defined by scale, but by excellence: in green technologies, consumer value, customer service, and employee capability.
                                         </p>
-                                        <p className="font-['Manrope'] font-normal text-[13px] md:text-[14px] leading-[140%] md:leading-[130%] text-[#AEAEAE]">
+                                        <p className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[12px] md:text-[14px] leading-[130%] text-[#AEAEAE]">
                                             We seek to reconcile social progress, professional fulfilment, quality-driven service, and economic development. Long-term value creation must remain balanced, responsible, and sustainable. Growth, for us, is not a number on a chart. It is the outcome of doing right by people, planet, and the communities we are built to serve.
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             {/* Vision */}
-                            <div className="pt-[36px] md:pt-[58px]">
-                                <div className="flex items-start gap-3.5 md:gap-[1.65vw]">
-                                    <div className="w-[20px] h-[20px] md:w-[21.44px] md:h-[21.44px] shrink-0 mt-1 md:mt-[6px]">
+                            <div className="pt-[40px] md:pt-[58px]">
+                                <div className="flex items-start gap-[20px] md:gap-[1.65vw]">
+                                    <div className="w-[24px] h-[24px] md:w-[21.44px] md:h-[21.44px] shrink-0 mt-0.5 md:mt-[6px]">
                                         <Lightbulb className="w-full h-full text-white/70" strokeWidth={1.5} />
                                     </div>
-                                    <div>
-                                        <h3 className="font-['Manrope'] font-medium text-[22px] md:text-[32px] leading-[110%] mb-3 md:mb-4">
+                                    <div className="flex-1">
+                                        <h3 className="font-['Manrope',sans-serif] font-medium text-[16px] md:text-[32px] leading-[110%] mb-[14px] md:mb-4 text-white">
                                             Vision
                                         </h3>
-                                        <p className="font-['Manrope'] font-normal text-[13px] md:text-[14px] leading-[140%] md:leading-[130%] text-[#AEAEAE] mb-3 md:mb-4">
+                                        <p className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[12px] md:text-[14px] leading-[130%] text-[#AEAEAE] mb-3 md:mb-4">
                                             WAE translates values into action through research-driven products and solutions that serve both the environment and human well-being. We operate as a technology-led organisation, guided by knowledge, science, and long-term thinking, not short-term market pressures. Accountability to employees, customers, partners, and societies is not optional.
                                         </p>
-                                        <p className="font-['Manrope'] font-normal text-[13px] md:text-[14px] leading-[140%] md:leading-[130%] text-[#AEAEAE]">
+                                        <p className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[12px] md:text-[14px] leading-[130%] text-[#AEAEAE]">
                                             It is how we operate. We hold ourselves to the highest standards across products, services, relationships, and commitments. Profit is a strategic necessity, not the goal. It follows meaningful contribution, shared progress, and participative growth. That distinction shapes every decision we make, from the materials we choose to the partnerships we build.
                                         </p>
                                     </div>
@@ -573,9 +574,9 @@ const ThisIsUs: FC = () => {
             <BusinessModelSection />
 
             {/* ACTIVIST QUOTE */}
-            <section className="w-full pt-[48px] md:pt-[92px] pb-0">
+            <section className="w-full pt-0 md:pt-[92px] pb-0">
                 <div className={containerClass}>
-                    <div className="w-full border-t border-white/20 mb-[36px] md:mb-[92px]"></div>
+                    <div className="hidden md:block w-full border-t border-white/20 mb-[92px]"></div>
                     <div className="w-full aspect-[16/9] md:aspect-[1227/548] relative mb-[28px] md:mb-[62px]">
                         <video
                             autoPlay
@@ -588,10 +589,10 @@ const ThisIsUs: FC = () => {
                         </video>
                     </div>
                     <div className="flex flex-col w-full">
-                        <p className="font-['Manrope'] font-medium text-[17px] sm:text-[22px] md:text-[40px] leading-[135%] md:leading-[120%] text-left md:text-right text-[#AEAEAE] mb-4 md:mb-8">
+                        <p className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-medium text-[16px] md:text-[40px] leading-[120%] text-right text-[#AEAEAE] mb-4 md:mb-8">
                             &ldquo;WAE was built as an activist <span className="text-white font-semibold">organisation</span>, not a product company. That origin shapes everything: material choices, partnerships, pricing philosophy, and where we deploy.
                         </p>
-                        <p className="font-['Manrope'] font-medium text-[17px] sm:text-[22px] md:text-[40px] leading-[135%] md:leading-[120%] text-right text-[#AEAEAE]">
+                        <p className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-medium text-[16px] md:text-[40px] leading-[120%] text-right text-[#AEAEAE]">
                             It is not <span className="text-white font-semibold">positioning</span>.<br />It is <span className="text-white font-semibold">structure</span>.&rdquo;
                         </p>
                     </div>
@@ -602,13 +603,15 @@ const ThisIsUs: FC = () => {
             <TimelineSection />
 
             {/* THE TEAM */}
-            <section className="w-full pt-[48px] md:pt-[92px] pb-0">
+            <section className="w-full pt-[40px] md:pt-[92px] pb-0">
                 <div className={containerClass}>
-                    <div className="w-full border-t border-white/20 mb-[36px] md:mb-[92px]"></div>
+                    <div className="w-full border-t border-white/20 mb-[40px] md:mb-[92px]"></div>
                     
                     {/* Mobile Section Header */}
-                    <div className="block md:hidden mb-8">
-                        <h2 className="font-['Manrope'] font-normal text-[26px] leading-[110%] mb-4">The team behind WAE</h2>
+                    <div className="block md:hidden mb-[52px]">
+                        <h2 className="font-['Inter_Tight',sans-serif] font-normal text-[28px] leading-[100%] mb-[24px] text-white">
+                            The team behind WAE
+                        </h2>
                         <DarkSectionButton href="/careers">Know More</DarkSectionButton>
                     </div>
 
@@ -629,7 +632,7 @@ const ThisIsUs: FC = () => {
                         <div className="w-full md:w-[75%] md:pl-[5.56vw] flex flex-col gap-6 md:gap-[4.86vw]">
                             {/* Founder CEO */}
                             <div className="flex w-full justify-between items-start md:gap-[3.75vw]">
-                                <div className="w-[calc(50%-2.415%)] md:w-[calc(50%-1.875vw)] aspect-square md:aspect-[410/517] relative shrink-0">
+                                <div className="w-[calc(50%-2.415%)] md:w-[calc(50%-1.875vw)] aspect-[162/242] md:aspect-[410/517] relative shrink-0">
                                     <Image
                                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/945f5796-0664-44a9-b951-7759f4d39400/public"
                                         alt="A. Vikram Joshe"
@@ -849,15 +852,15 @@ const ThisIsUs: FC = () => {
             </section>
 
             {/* SERVING WITH PURPOSE */}
-            <section className="w-full pt-[48px] md:pt-[92px] pb-0">
+            <section className="w-full pt-[40px] md:pt-[92px] pb-0">
                 <div className={containerClass}>
-                    <div className="w-full border-t border-white/20 mb-[36px] md:mb-[92px]"></div>
+                    <div className="w-full border-t border-white/20 mb-[40px] md:mb-[92px]"></div>
                     <div className="flex flex-col-reverse md:flex-row items-start">
                         <div className="w-full md:w-[42%] md:pr-[4.72vw]">
-                            <h2 className="font-['Manrope'] font-normal text-[26px] sm:text-[32px] md:text-[40px] leading-[110%] mb-4 md:mb-[78px]">
+                            <h2 className="font-['Inter_Tight',sans-serif] md:font-['Manrope',sans-serif] font-normal text-[28px] md:text-[40px] leading-[110%] mb-[27px] md:mb-[78px] text-white">
                                 Serving<span className="hidden md:inline"><br /></span> with Purpose
                             </h2>
-                            <p className="font-['Manrope'] font-normal text-[13px] md:text-[14px] leading-[140%] md:leading-[130%] text-[#AEAEAE] mb-6 md:mb-[40px]">
+                            <p className="font-['Manrope',sans-serif] font-normal text-[12px] md:text-[14px] leading-[135%] md:leading-[130%] text-[#AEAEAE] mb-[40px]">
                                 All CSR activities undertaken through the WAE Foundation follow structured processes and are supported by proper documentation. Each initiative is planned, executed, and recorded with clear accountability. Transparency and traceability are central to how we operate, ensuring that every contribution is meaningful, measurable, and aligned with responsible long-term growth.
                             </p>
                             <div>
@@ -866,7 +869,7 @@ const ThisIsUs: FC = () => {
                                 </DarkSectionButton>
                             </div>
                         </div>
-                        <div className="w-full md:w-[58%] mb-6 md:mb-0">
+                        <div className="w-full md:w-[58%] mb-[40px] md:mb-0">
                             <div className="w-full relative aspect-[16/9] md:aspect-[767/433]">
                                 <Image
                                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/09994f88-82ea-4103-7333-6c7f1bb6ab00/public"
