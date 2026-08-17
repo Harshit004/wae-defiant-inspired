@@ -2904,5 +2904,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Required dealership and product details ",
     "type": "contact-us",
     "createdAt": "2026-08-14T09:02:26.388Z"
+  },
+  "71e57c95-c4db-42e3-82dc-e45658fd876e": {
+    "id": "71e57c95-c4db-42e3-82dc-e45658fd876e",
+    "fullName": "AMAN AGRAWAL",
+    "companyName": "BAJAJ FINSERV",
+    "email": "aman.agrawal4@bajajfinser.in",
+    "phone": "9975629988",
+    "city": "Pune",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Hi,\n\nWant to connect with regards to RFQ and exploring business for our branches and HO's RO/Water Purifieres requirements.\n\nRegards,\nAman",
+    "type": "contact-us",
+    "createdAt": "2026-08-17T09:50:38.485Z"
   }
 };
