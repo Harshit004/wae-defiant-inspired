@@ -459,15 +459,15 @@ export default function TheActivistCoPage() {
 
             {/* Pillars with left indicator layout: 27x27 px, 65px gap, vertical rule, 31px gap */}
             <div className="flex flex-row items-stretch">
-              {/* Left column: 27x27 px icon box */}
+              {/* Left column: 27x27 px icon (no outer border) */}
               <div className="shrink-0 flex flex-col items-start">
-                <div className="w-[27px] h-[27px] border border-white/40 flex items-center justify-center p-1">
+                <div className="w-[27px] h-[27px] relative">
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/48b42c14-6d59-40b5-b839-2689e3f4a900/public"
                     alt="Arrow"
-                    width={15}
-                    height={15}
-                    className="object-contain"
+                    width={27}
+                    height={27}
+                    className="w-[27px] h-[27px] object-contain"
                   />
                 </div>
               </div>
