@@ -2916,5 +2916,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hi,\n\nWant to connect with regards to RFQ and exploring business for our branches and HO's RO/Water Purifieres requirements.\n\nRegards,\nAman",
     "type": "contact-us",
     "createdAt": "2026-08-17T09:50:38.485Z"
+  },
+  "a9c86fc8-3765-49ca-a679-e9cf311de36a": {
+    "id": "a9c86fc8-3765-49ca-a679-e9cf311de36a",
+    "fullName": "Pankaj Lakhani",
+    "companyName": "Tarachand Guru Dutt",
+    "email": "tarachand.gurudutt@gmail.com",
+    "phone": "9897580453",
+    "city": "Dehradun ",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Need to contact for rates of 25LPH RO  UV purifier AND 100 LPH RO SYSTEM",
+    "type": "contact-us",
+    "createdAt": "2026-08-18T11:41:35.416Z"
   }
 };
