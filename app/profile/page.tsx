@@ -484,7 +484,7 @@ const ThisIsUs: FC = () => {
             <Header transparentBg />
 
             {/* HERO SECTION */}
-            <section className="w-full pt-[102px] md:pt-[235px] pb-0">
+            <section className="w-full pt-[102px] md:pt-[235px] pb-0 md:pb-[68px]">
                 <div className={containerClass}>
                     <p className="font-['Inter_Tight',sans-serif] font-semibold text-[12px] md:text-[20px] leading-[100%] md:leading-[110%] text-[#AEAEAE99] mb-[24px] md:mb-[1em]">
                         WAE
