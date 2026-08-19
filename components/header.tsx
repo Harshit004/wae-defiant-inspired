@@ -216,7 +216,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                                 fontSize: "10px",
                                                 lineHeight: "105%",
                                                 letterSpacing: "0%",
-                                                color: "#AEAEAE",
+                                                color: "#FFFFFF",
                                             }}
                                         >
                                             {sec.category}
