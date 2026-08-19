@@ -225,9 +225,13 @@ export default function LifeAtWAEPage() {
               More than a certification, it's a reflection of our people. Built on respect, inclusivity, and shared success, our workplace continues to be recognized among the best.
             </p>
             <div className="w-full mt-[41px] flex justify-between items-center">
-              {[1, 2, 3].map((_, idx) => (
+              {[
+                "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/328dea5e-933c-4d22-7648-58fa383fcd00/public",
+                "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fc64655e-82b3-415f-8f3c-051764640c00/public",
+                "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5a5a770a-3e51-44f4-8d03-84c884f42d00/public"
+              ].map((src, idx) => (
                 <div key={idx} className="relative w-[5.9vw] aspect-[85/154]">
-                  <Image src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/328dea5e-933c-4d22-7648-58fa383fcd00/public" alt="Great Place to Work Badge" fill className="object-contain" />
+                  <Image src={src} alt="Great Place to Work Badge" fill className="object-contain" />
                 </div>
               ))}
             </div>
