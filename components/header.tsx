@@ -1,7 +1,7 @@
 "use client"
 
 import type { FC } from "react"
-import { useRef, Fragment, useState } from "react"
+import { useRef, Fragment, useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
@@ -26,9 +26,55 @@ const etceteraItems = [
     { text: "Contact", href: "/contact-us" },
 ]
 
+const mobileMenuSections = [
+    {
+        category: "INSIDE WAE",
+        items: [
+            { text: "Profile", href: "/profile" },
+            { text: "Portfolio", href: "/portfolio" },
+            { text: "Reimagine Work", href: "/careers" },
+        ],
+    },
+    {
+        category: "RESPONSIBILITY",
+        items: [
+            { text: "Sustainability", href: "/sustainability" },
+            { text: "Activism", href: "/activism" },
+            { text: "Compliances", href: "/compliance" },
+        ],
+    },
+    {
+        category: "ETCETERA",
+        items: [
+            { text: "Perspectives", href: "/perspectives" },
+            { text: "Mentioned", href: "/news-and-updates" },
+            { text: "Contact", href: "/contact-us" },
+        ],
+    },
+    {
+        category: "POLICIES",
+        items: [
+            { text: "Terms of Use", href: "/terms-of-use" },
+            { text: "Cookie Policy", href: "/cookie-policy" },
+            { text: "Data Privacy Policy", href: "/data-privacy-policy" },
+        ],
+    },
+]
+
 const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
     const headerRef = useRef<HTMLDivElement>(null)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = ""
+        }
+        return () => {
+            document.body.style.overflow = ""
+        }
+    }, [mobileMenuOpen])
 
     return (
         <>
@@ -47,8 +93,15 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                     className="w-[37px] h-[40px]"
                                 />
                             </Link>
-                            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white p-2">
-                                {mobileMenuOpen ? <X size={24} /> : (
+                            <button
+                                type="button"
+                                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                                className="text-white p-2 focus:outline-none cursor-pointer"
+                                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                            >
+                                {mobileMenuOpen ? (
+                                    <X size={24} strokeWidth={1.5} className="text-white" />
+                                ) : (
                                     <svg width="21.5" height="19.5" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 1.5H20.5M1 9.5H20.5M1 17.5H20.5" stroke="white" strokeWidth="2" strokeLinecap="round" />
                                     </svg>
@@ -58,6 +111,148 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                         
                         {/* Mobile Header Full-Width Divider */}
                         <div className="md:hidden absolute top-[76px] left-0 right-0 border-b border-[#FFFFFF4D]" />
+
+                        {/* Mobile Slide-In Full-Screen Menu */}
+                        <div
+                            className={`md:hidden fixed inset-0 z-[100] bg-[#000000] text-white overflow-y-auto px-[24px] transition-transform duration-300 ease-in-out ${
+                                mobileMenuOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
+                            }`}
+                        >
+                            {/* Header Row inside Menu */}
+                            <div className="flex justify-between items-center pt-[20px] pb-[16px]">
+                                <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                                    <Image
+                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
+                                        alt="WAE Logo"
+                                        width={37}
+                                        height={40}
+                                        priority
+                                        className="w-[37px] h-[40px]"
+                                    />
+                                </Link>
+                                <button
+                                    type="button"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="text-white p-2 focus:outline-none cursor-pointer"
+                                    aria-label="Close menu"
+                                >
+                                    <X size={24} strokeWidth={1.5} className="text-white" />
+                                </button>
+                            </div>
+
+                            {/* 21px gap under the header */}
+                            <div className="mt-[21px] flex justify-between items-start w-full">
+                                {/* Left Column: ORIGIN */}
+                                <div className="flex flex-col">
+                                    <span
+                                        className="uppercase"
+                                        style={{
+                                            fontFamily: "'Inter Tight', sans-serif",
+                                            fontWeight: 400,
+                                            fontSize: "10px",
+                                            lineHeight: "105%",
+                                            letterSpacing: "0%",
+                                            color: "#AEAEAE",
+                                        }}
+                                    >
+                                        ORIGIN
+                                    </span>
+                                    <div
+                                        className="mt-[8px]"
+                                        style={{
+                                            fontFamily: "'Inter Tight', sans-serif",
+                                            fontWeight: 500,
+                                            fontSize: "12px",
+                                            lineHeight: "120%",
+                                            letterSpacing: "0%",
+                                            color: "#FFFFFF",
+                                        }}
+                                    >
+                                        20.5937° N<br />78.9629° E
+                                    </div>
+                                </div>
+
+                                {/* Right Column: OBJECTIVE */}
+                                <div className="flex flex-col items-start" style={{ width: "29.227vw", minWidth: "120px" }}>
+                                    <span
+                                        className="uppercase"
+                                        style={{
+                                            fontFamily: "'Inter Tight', sans-serif",
+                                            fontWeight: 400,
+                                            fontSize: "10px",
+                                            lineHeight: "105%",
+                                            letterSpacing: "0%",
+                                            color: "#AEAEAE",
+                                        }}
+                                    >
+                                        OBJECTIVE
+                                    </span>
+                                    <div
+                                        className="mt-[8px]"
+                                        style={{
+                                            fontFamily: "'Inter Tight', sans-serif",
+                                            fontWeight: 500,
+                                            fontSize: "12px",
+                                            lineHeight: "120%",
+                                            letterSpacing: "0%",
+                                            color: "#FFFFFF",
+                                        }}
+                                    >
+                                        To lead the way in sustainability ahead of the rest
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 47px gap before INSIDE WAE */}
+                            <div className="mt-[47px]">
+                                {mobileMenuSections.map((sec, secIdx) => (
+                                    <div key={secIdx} className="mb-[30px]">
+                                        {/* Section Header */}
+                                        <span
+                                            className="uppercase block"
+                                            style={{
+                                                fontFamily: "'Inter Tight', sans-serif",
+                                                fontWeight: 400,
+                                                fontSize: "10px",
+                                                lineHeight: "105%",
+                                                letterSpacing: "0%",
+                                                color: "#AEAEAE",
+                                            }}
+                                        >
+                                            {sec.category}
+                                        </span>
+
+                                        {/* 12px gap, horizontal divider, 12px gap */}
+                                        <div className="mt-[12px] mb-[12px] w-full h-[1px] bg-white/20" />
+
+                                        {/* Menu Items with 6px gap */}
+                                        <div className="flex flex-col gap-[6px]">
+                                            {sec.items.map((item, itemIdx) => (
+                                                <Link
+                                                    key={itemIdx}
+                                                    href={item.href}
+                                                    onClick={() => setMobileMenuOpen(false)}
+                                                    style={{
+                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                        fontWeight: 400,
+                                                        fontSize: "20px",
+                                                        lineHeight: "105%",
+                                                        letterSpacing: "0%",
+                                                        color: "#FFFFFF",
+                                                    }}
+                                                    className="transition-colors hover:text-white/70"
+                                                >
+                                                    {item.text}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Bottom extra padding */}
+                            <div className="pb-[40px]" />
+                        </div>
 
                         {/* Desktop Header */}
                         <div className="hidden md:grid grid-cols-[auto_minmax(0,10.17vw)_auto_minmax(0,10.21vw)_auto_minmax(0,10.21vw)_auto_minmax(0,9.03vw)_auto_minmax(0,8.13vw)_1fr] items-start pt-[30px]">
