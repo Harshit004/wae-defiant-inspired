@@ -332,12 +332,13 @@ export default function Home() {
       <section className="w-full relative z-10 pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
         <div className={containerClass}>
           <div className="flex flex-col md:flex-row justify-between items-start">
-            <div className="w-full md:w-[38.68vw] mb-6 md:mb-0">
+            <div className="w-full md:w-[38.68vw] mb-[30px] md:mb-0">
               <h2
-                className="text-[24px] md:text-[2.77vw] leading-[120%] text-white align-middle m-0"
+                className="text-[28px] md:text-[2.77vw] leading-[120%] text-white align-middle m-0"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 Responsibility begins<br />
@@ -346,19 +347,21 @@ export default function Home() {
             </div>
             <div className="w-full md:w-[27.77vw] flex flex-col pt-0 md:pt-[0.5vw]">
               <p
-                className="text-[11px] md:text-[0.97vw] leading-[140%] md:leading-[130%] text-[#AEAEAE] mb-4 md:mb-[1.38vw] align-middle"
+                className="text-[12px] md:text-[0.97vw] leading-[120%] md:leading-[130%] text-[#AEAEAE] mb-[14px] md:mb-[1.38vw] align-middle"
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 The world is not running low on water. It is running out of patience for those who waste it.
               </p>
               <p
-                className="text-[11px] md:text-[0.97vw] leading-[140%] md:leading-[130%] text-[#AEAEAE] align-middle"
+                className="text-[12px] md:text-[0.97vw] leading-[120%] md:leading-[130%] text-[#AEAEAE] align-middle"
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 Every bottle procured through a supply chain contributes to aquifer depletion, plastic waste, transport emissions, and growing business risk. What was once seen as convenience is now an environmental, operational, and reputational liability. WAE exists to replace that model with one that is cleaner, smarter, and built for the future.
@@ -372,21 +375,23 @@ export default function Home() {
       {/* WHY IT MATTERS SECTION */}
       <section className="w-full relative z-10 pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
         <div className={containerClass}>
-          <div className="mb-6 md:mb-[5.13vw]">
+          <div className="mb-[40px] md:mb-[5.13vw]">
             <h2
-              className="text-[20px] md:text-[2.77vw] leading-[100%] text-white mb-2 md:mb-[1.18vw] align-middle"
+              className="text-[16px] md:text-[2.77vw] leading-[120%] md:leading-[100%] text-white mb-2 md:mb-[1.18vw] align-middle"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
+                letterSpacing: "0%",
               }}
             >
               Why It Matters
             </h2>
             <p
-              className="text-[11px] md:text-[0.97vw] leading-[100%] text-[#AEAEAE] align-middle"
+              className="text-[10px] md:text-[0.97vw] leading-[100%] text-[#AEAEAE] align-middle"
               style={{
                 fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
+                letterSpacing: "0%",
               }}
             >
               The challenge is no longer invisible.
@@ -395,7 +400,7 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row items-stretch">
             {/* Left side image */}
-            <div className="w-full md:w-[34.02vw] shrink-0 mb-6 md:mb-0">
+            <div className="w-full md:w-[34.02vw] shrink-0 mb-[40px] md:mb-0">
               <img
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/697673e1-ba24-4763-4a6f-f2f4fadbda00/public"
                 alt="Why it matters"
@@ -413,10 +418,11 @@ export default function Home() {
               <div className="flex items-center justify-between border-b border-white/20 py-4 md:py-0 md:flex-1">
                 <div className="flex-1">
                   <span
-                    className="text-[36px] md:text-[4.86vw] text-white"
+                    className="text-[30px] md:text-[4.86vw] leading-[110%] text-white"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 400,
+                      letterSpacing: "0%",
                     }}
                   >
                     <CountUp value="50" />%
@@ -424,10 +430,11 @@ export default function Home() {
                 </div>
                 <div className="w-[55%] md:w-[19.44vw] shrink-0 pl-4 md:pl-[1.38vw]">
                   <h4
-                    className="text-[14px] md:text-[1.25vw] text-white mb-1 md:mb-[0.69vw]"
+                    className="text-[16px] md:text-[1.25vw] leading-[120%] text-white mb-1 md:mb-[0.69vw]"
                     style={{
                       fontFamily: "'Manrope', sans-serif",
                       fontWeight: 500,
+                      letterSpacing: "0%",
                     }}
                   >
                     Water use
@@ -448,10 +455,11 @@ export default function Home() {
               <div className="flex items-center justify-between border-b border-white/20 py-4 md:py-0 md:flex-1">
                 <div className="flex-1">
                   <span
-                    className="text-[36px] md:text-[4.86vw] text-white whitespace-nowrap"
+                    className="text-[30px] md:text-[4.86vw] leading-[110%] text-white whitespace-nowrap"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 400,
+                      letterSpacing: "0%",
                     }}
                   >
                     ₹<CountUp value="36" />L cr +
@@ -459,10 +467,11 @@ export default function Home() {
                 </div>
                 <div className="w-[55%] md:w-[19.44vw] shrink-0 pl-4 md:pl-[1.38vw]">
                   <h4
-                    className="text-[14px] md:text-[1.25vw] text-white mb-1 md:mb-[0.69vw]"
+                    className="text-[16px] md:text-[1.25vw] leading-[120%] text-white mb-1 md:mb-[0.69vw]"
                     style={{
                       fontFamily: "'Manrope', sans-serif",
                       fontWeight: 500,
+                      letterSpacing: "0%",
                     }}
                   >
                     Financial exposure
@@ -483,10 +492,11 @@ export default function Home() {
               <div className="flex items-center justify-between border-b border-white/20 py-4 md:py-0 md:flex-1">
                 <div className="flex-1">
                   <span
-                    className="text-[36px] md:text-[4.86vw] text-white whitespace-nowrap"
+                    className="text-[30px] md:text-[4.86vw] leading-[110%] text-white whitespace-nowrap"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 400,
+                      letterSpacing: "0%",
                     }}
                   >
                     ₹<CountUp value="8.5" />L cr
@@ -494,10 +504,11 @@ export default function Home() {
                 </div>
                 <div className="w-[55%] md:w-[19.44vw] shrink-0 pl-4 md:pl-[1.38vw]">
                   <h4
-                    className="text-[14px] md:text-[1.25vw] text-white mb-1 md:mb-[0.69vw]"
+                    className="text-[16px] md:text-[1.25vw] leading-[120%] text-white mb-1 md:mb-[0.69vw]"
                     style={{
                       fontFamily: "'Manrope', sans-serif",
                       fontWeight: 500,
+                      letterSpacing: "0%",
                     }}
                   >
                     Revenue at risk
@@ -518,10 +529,11 @@ export default function Home() {
               <div className="flex items-center justify-between py-4 md:py-0 md:flex-1">
                 <div className="flex-1">
                   <span
-                    className="text-[36px] md:text-[4.86vw] text-white"
+                    className="text-[30px] md:text-[4.86vw] leading-[110%] text-white"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 400,
+                      letterSpacing: "0%",
                     }}
                   >
                     <CountUp value="67" />%
@@ -529,10 +541,11 @@ export default function Home() {
                 </div>
                 <div className="w-[55%] md:w-[19.44vw] shrink-0 pl-4 md:pl-[1.38vw]">
                   <h4
-                    className="text-[14px] md:text-[1.25vw] text-white mb-1 md:mb-[0.69vw]"
+                    className="text-[16px] md:text-[1.25vw] leading-[120%] text-white mb-1 md:mb-[0.69vw]"
                     style={{
                       fontFamily: "'Manrope', sans-serif",
                       fontWeight: 500,
+                      letterSpacing: "0%",
                     }}
                   >
                     Global stress
@@ -559,19 +572,21 @@ export default function Home() {
         <div className={containerClass}>
           <div className="flex flex-col items-end w-full">
             <p
-              className="text-[14px] md:text-[2.77vw] leading-[140%] md:leading-[130%] text-[#FFFFFF80] text-right align-middle mb-4 md:mb-[1.5vw] w-full"
+              className="text-[16px] md:text-[2.77vw] leading-[120%] md:leading-[130%] text-[#FFFFFF80] text-right align-middle mb-4 md:mb-[1.5vw] w-full"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
+                fontWeight: 500,
+                letterSpacing: "0%",
               }}
             >
               Our <span className="text-white">responsibility</span> is to create <span className="text-white">solutions</span> that protect natural resources while improving the quality of everyday life. That means rethinking wasteful systems, reducing dependence on extractive supply chains, and enabling <span className="text-white">organizations</span> to act with greater accountability.
             </p>
             <p
-              className="text-[14px] md:text-[2.77vw] leading-[140%] md:leading-[130%] text-[#FFFFFF80] text-right align-middle w-full"
+              className="text-[16px] md:text-[2.77vw] leading-[120%] md:leading-[130%] text-[#FFFFFF80] text-right align-middle w-full"
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
+                fontWeight: 500,
+                letterSpacing: "0%",
               }}
             >
               Responsibility at <span className="text-white">WAE</span> is not a statement. It is built into the way we <span className="text-white">design</span>, <span className="text-white">deliver</span>, and <span className="text-white">scale solutions</span>.
@@ -585,82 +600,92 @@ export default function Home() {
       <section className="w-full relative z-10 pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
         <div className={containerClass}>
           <h2
-            className="text-[20px] md:text-[2.77vw] leading-[120%] text-white align-middle mb-6 md:mb-[5vw]"
+            className="text-[16px] md:text-[2.77vw] leading-[100%] md:leading-[120%] text-white align-middle mb-[40px] md:mb-[5vw]"
             style={{
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 400,
+              letterSpacing: "0%",
             }}
           >
             We are helping clients
           </h2>
 
-          <div className="flex flex-col md:grid md:grid-cols-3 gap-8 md:gap-[2.29vw]">
-            <div className="flex flex-col border-l-0 md:border-l border-white/20 pl-0 md:pl-[1.52vw] pb-6 md:pb-0 border-b md:border-b-0 border-white/20">
-              <div className="w-full aspect-[360/224] mb-3 md:mb-[1.38vw]">
+          <div className="flex flex-col md:grid md:grid-cols-3 gap-0 md:gap-[2.29vw]">
+            {/* Card 1 */}
+            <div className="flex flex-col border-l-0 md:border-l border-white/20 pl-0 md:pl-[1.52vw] pb-[40px] md:pb-0 border-b md:border-b-0 border-white/20 mb-[40px] md:mb-0">
+              <div className="w-full aspect-[360/224] mb-[20px] md:mb-[1.38vw]">
                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/21779bba-89da-415d-af81-d015add0cc00/public" alt="Reduce Scope 3" className="w-full h-full object-cover" />
               </div>
               <h3
-                className="text-[16px] md:text-[1.66vw] leading-[100%] text-white align-middle mb-2 md:mb-[0.83vw]"
+                className="text-[16px] md:text-[1.66vw] leading-[100%] text-white align-middle mb-[12px] md:mb-[0.83vw]"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 Reduce Scope 3 Emissions
               </h3>
               <p
-                className="text-[11px] md:text-[0.97vw] leading-[140%] md:leading-[130%] text-[#AEAEAE] align-middle"
+                className="text-[12px] md:text-[0.97vw] leading-[120%] md:leading-[130%] text-[#AEAEAE] align-middle"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 The greatest emissions are often the ones hidden in everyday operations. Rethink how water is sourced, transported, and consumed to reduce indirect emissions where they matter most and turn sustainability into measurable business impact.
               </p>
             </div>
 
-            <div className="flex flex-col border-l-0 md:border-l border-white/20 pl-0 md:pl-[1.52vw] pb-6 md:pb-0 border-b md:border-b-0 border-white/20">
-              <div className="w-full aspect-[360/224] mb-3 md:mb-[1.38vw]">
+            {/* Card 2 */}
+            <div className="flex flex-col border-l-0 md:border-l border-white/20 pl-0 md:pl-[1.52vw] pb-[40px] md:pb-0 border-b md:border-b-0 border-white/20 mb-[40px] md:mb-0">
+              <div className="w-full aspect-[360/224] mb-[20px] md:mb-[1.38vw]">
                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ce4e4b96-60aa-4973-1d75-80165114a800/public" alt="Enable Plastic-Free Hydration" className="w-full h-full object-cover" />
               </div>
               <h3
-                className="text-[16px] md:text-[1.66vw] leading-[100%] text-white align-middle mb-2 md:mb-[0.83vw]"
+                className="text-[16px] md:text-[1.66vw] leading-[100%] text-white align-middle mb-[12px] md:mb-[0.83vw]"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 Enable Plastic-Free Hydration
               </h3>
               <p
-                className="text-[11px] md:text-[0.97vw] leading-[140%] md:leading-[130%] text-[#AEAEAE] align-middle"
+                className="text-[12px] md:text-[0.97vw] leading-[120%] md:leading-[130%] text-[#AEAEAE] align-middle"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 Every refill is a choice against single-use plastic. Replace a disposable habit with a lasting solution that protects natural resources, keeps plastic out of the waste stream, and redefines the way people experience drinking water.
               </p>
             </div>
 
+            {/* Card 3 */}
             <div className="flex flex-col border-l-0 md:border-l border-white/20 pl-0 md:pl-[1.52vw]">
-              <div className="w-full aspect-[360/224] mb-3 md:mb-[1.38vw]">
+              <div className="w-full aspect-[360/224] mb-[20px] md:mb-[1.38vw]">
                 <img src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6f886425-f3b6-4b5a-de68-f75fd3459500/public" alt="Advance the Net-Zero Transition" className="w-full h-full object-cover" />
               </div>
               <h3
-                className="text-[16px] md:text-[1.66vw] leading-[100%] text-white align-middle mb-2 md:mb-[0.83vw]"
+                className="text-[16px] md:text-[1.66vw] leading-[100%] text-white align-middle mb-[12px] md:mb-[0.83vw]"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 Advance the Net-Zero Transition
               </h3>
               <p
-                className="text-[11px] md:text-[0.97vw] leading-[140%] md:leading-[130%] text-[#AEAEAE] align-middle"
+                className="text-[12px] md:text-[0.97vw] leading-[120%] md:leading-[130%] text-[#AEAEAE] align-middle"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 Net-zero isn't achieved through a single initiative but through thousands of smarter decisions. Transform water infrastructure into a climate-positive asset that reduces environmental impact while supporting long-term sustainability and ESG ambitions.
@@ -804,32 +829,34 @@ export default function Home() {
           {/* MOBILE VIEW */}
           <div className="block md:hidden">
             {/* Top Header: Title on Left, Image on Right */}
-            <div className="flex items-start justify-between gap-4 mb-6">
-              <div className="w-[55%] flex flex-col justify-start">
+            <div className="flex items-start justify-between gap-4 mb-[40px]">
+              <div className="flex-1 flex flex-col justify-start">
                 <h2
-                  className="text-[20px] text-white leading-tight mb-2"
+                  className="text-[16px] text-white leading-[23px] mb-[20px]"
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
+                    letterSpacing: "0%",
                   }}
                 >
                   Blue<br />Transformations
                 </h2>
                 <p
-                  className="text-[10px] text-[#AEAEAE] leading-[130%]"
+                  className="text-[10px] text-[#AEAEAE] leading-[120%]"
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
+                    letterSpacing: "0%",
                   }}
                 >
                   The success stories that changed what sustainable hydration looks like.
                 </p>
               </div>
-              <div className="w-[42%] aspect-[362/391] shrink-0">
+              <div className="w-[49.87vw] shrink-0 flex justify-end">
                 <img
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ed81f80c-aa41-49b4-922a-4899bc32d300/public"
                   alt="Transformations"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
@@ -852,42 +879,46 @@ export default function Home() {
                 {volumes.map((vol, idx) => (
                   <div key={idx} className="w-full flex-shrink-0 flex flex-col pr-1">
                     <span
-                      className="text-[10px] text-[#AEAEAE] mb-2 block"
+                      className="text-[12px] text-[#AEAEAE] mb-[22px] block leading-[110%]"
                       style={{
                         fontFamily: "'Manrope', sans-serif",
                         fontWeight: 400,
+                        letterSpacing: "0%",
                       }}
                     >
                       {vol.volume}
                     </span>
                     <h3
-                      className="text-[16px] text-white mb-2 leading-snug"
+                      className="text-[16px] text-white mb-[14px] leading-[100%]"
                       style={{
                         fontFamily: "'Inter Tight', sans-serif",
                         fontWeight: 400,
+                        letterSpacing: "0%",
                       }}
                     >
                       {vol.title}
                     </h3>
                     <p
-                      className="text-[11px] text-[#AEAEAE] leading-[130%] mb-3"
+                      className="text-[12px] text-[#AEAEAE] leading-[120%] mb-[22px]"
                       style={{
                         fontFamily: "'Manrope', sans-serif",
                         fontWeight: 400,
+                        letterSpacing: "0%",
                       }}
                     >
                       {vol.subtitle}
                     </p>
                     <p
-                      className="text-[11px] text-[#AEAEAE] leading-[130%] mb-4"
+                      className="text-[12px] text-[#AEAEAE] leading-[120%] mb-[30px]"
                       style={{
                         fontFamily: "'Manrope', sans-serif",
                         fontWeight: 400,
+                        letterSpacing: "0%",
                       }}
                     >
                       {vol.desc}
                     </p>
-                    <div className="mt-1">
+                    <div>
                       <HoverButton variant="inverted" href={vol.pdf} download>
                         {(hovered) => (
                           <>
@@ -914,11 +945,11 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Divider line before dots */}
-              <div className="border-b border-white/20 mt-6 mb-4"></div>
+              {/* 40px gap, horizontal divider, 40px gap */}
+              <div className="border-b border-white/20 mt-[40px] mb-[40px]"></div>
 
-              {/* Carousel pagination indicators matching Screenshot 3 */}
-              <div className="flex items-center justify-center gap-1.5">
+              {/* Carousel pagination indicators with 40px gap below */}
+              <div className="flex items-center justify-center gap-1.5 mb-[40px]">
                 {volumes.map((_, idx) => (
                   <button
                     key={idx}
@@ -940,23 +971,24 @@ export default function Home() {
       <div className="hidden md:block relative z-10 mx-[7.5vw] border-b border-white/20"></div>
 
       {/* EARTH SECTION */}
-      <section className="w-full relative z-10 pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
+      <section className="w-full relative z-10 pt-0 md:pt-[6.38vw] pb-[88px] md:pb-[6.38vw]">
         <div className={containerClass}>
-          <div className="w-full h-[180px] sm:h-[260px] md:h-[500px] mb-6 md:mb-[5vw]">
+          <div className="w-full h-auto mb-[40px] md:mb-[5vw]">
             <img
               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/048c10f8-fc18-43ed-c62c-8658de2acf00/public"
               alt="Earth, Our Only Shareholder"
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-cover"
             />
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-start">
-            <div className="w-full md:w-1/2 mb-4 md:mb-0">
+            <div className="w-full md:w-1/2 mb-[40px] md:mb-0">
               <h2
-                className="text-[24px] md:text-[2.77vw] leading-[110%] md:leading-[100%] text-white align-middle"
+                className="text-[28px] md:text-[2.77vw] leading-[120%] md:leading-[100%] text-white align-middle"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 Earth, Our<br />Only Shareholder
@@ -964,19 +996,21 @@ export default function Home() {
             </div>
             <div className="w-full md:w-[35%] flex flex-col items-start">
               <p
-                className="text-[11px] md:text-[0.97vw] leading-[140%] md:leading-[130%] text-[#FFFFFF80] align-middle mb-3 md:mb-0"
+                className="text-[12px] md:text-[0.97vw] leading-[120%] md:leading-[130%] text-[#AEAEAE] md:text-[#FFFFFF80] align-middle mb-[14px] md:mb-0"
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 We're excited to share the progress we have made, reflecting our commitment to sustainability.
               </p>
               <p
-                className="text-[11px] md:text-[0.97vw] leading-[140%] md:leading-[130%] text-[#FFFFFF80] align-middle mb-6 md:mb-[4.3vw]"
+                className="text-[12px] md:text-[0.97vw] leading-[120%] md:leading-[130%] text-[#AEAEAE] md:text-[#FFFFFF80] align-middle mb-[30px] md:mb-[4.3vw]"
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
+                  letterSpacing: "0%",
                 }}
               >
                 Explore them to see how we're making a positive impact on the environment, society & governance.
