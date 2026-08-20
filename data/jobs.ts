@@ -71,7 +71,7 @@ export const JOBS: Record<string, JobPost> = {
     "category": "OPERATION",
     "type": "On-site",
     "time": "Full time",
-    "shortDescription": "We're looking for a strategic procurement professional to drive sourcing, vendor partnerships, and cost optimization across manufacturing and project operations. This role requires strong commercial acumen, ownership, and the ability to build an efficient, resilient, and future-ready supply chain.",
+    "shortDescription": "We're looking for a strategic procurement professional to drive sourcing,........",
     "status": "Live",
     "createdAt": "2026-07-01T05:53:44.692Z",
     "summaryParagraphs": [
