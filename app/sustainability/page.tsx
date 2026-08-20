@@ -75,44 +75,53 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, variant = "default"
  * CountUp Component: Animates a numeric value from 0 to target
  */
 const CountUp: FC<{ value: string; duration?: number }> = ({ value, duration = 2 }) => {
+  const match = value.match(/([\d,.]+)/);
+  const numStr = match ? match[0].replace(/,/g, "") : "0";
+  const target = parseFloat(numStr) || 0;
+  const hasDecimal = value.includes(".");
+
   const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const nodeRef = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(nodeRef, { once: true, margin: "-100px" });
 
   useEffect(() => {
-    if (isInView) {
-      const match = value.match(/([\d,.]+)/);
-      if (!match) return;
+    const node = nodeRef.current;
+    if (!node) return;
 
-      const numStr = match[0].replace(/,/g, "");
-      const target = parseFloat(numStr);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          const controls = animate(0, target, {
+            duration: duration,
+            ease: [0.16, 1, 0.3, 1],
+            onUpdate: (latest) => {
+              setCount(latest);
+            },
+          });
+          return () => controls.stop();
+        }
+      },
+      { threshold: 0.05, rootMargin: "50px 0px" }
+    );
 
-      const controls = animate(0, target, {
-        duration: duration,
-        ease: [0.16, 1, 0.3, 1],
-        onUpdate: (latest) => {
-          setCount(latest);
-        },
-      });
+    observer.observe(node);
 
-      return () => controls.stop();
-    }
-  }, [value, duration, isInView]);
+    return () => observer.disconnect();
+  }, [target, duration, hasAnimated]);
 
   const formatNumber = (num: number) => {
-    const hasDecimal = value.includes(".");
     if (hasDecimal) {
-      return num.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 1 });
+      return num.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
     }
     return Math.floor(num).toLocaleString();
   };
 
-  const match = value.match(/([\d,.]+)/);
   const prefix = match ? value.substring(0, value.indexOf(match[0])) : "";
   const suffix = match ? value.substring(value.indexOf(match[0]) + match[0].length) : "";
 
   return (
-    <span ref={nodeRef}>
+    <span ref={nodeRef} className="inline-block tabular-nums">
       {prefix}{formatNumber(count)}{suffix}
     </span>
   );
