@@ -122,6 +122,11 @@ export default function Home() {
   const [isEnquirePopupOpen, setIsEnquirePopupOpen] = useState(false);
   const [activeVolume, setActiveVolume] = useState(0);
 
+  // Touch & drag state for mobile carousel swiping
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+
   const brandLogos = [
     "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3f2f7aee-3341-40f0-83b0-9929fed77700/public",
     "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e2da048e-651a-463e-2689-58d8418b7700/public",
@@ -158,23 +163,70 @@ export default function Home() {
     }
   ];
 
+  const minSwipeDistance = 40;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) {
+      setActiveVolume((prev) => (prev < volumes.length - 1 ? prev + 1 : prev));
+    } else if (distance < -minSwipeDistance) {
+      setActiveVolume((prev) => (prev > 0 ? prev - 1 : prev));
+    }
+  };
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setTouchEnd(null);
+    setTouchStart(e.clientX);
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    setTouchEnd(e.clientX);
+  };
+
+  const onMouseUp = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) {
+      setActiveVolume((prev) => (prev < volumes.length - 1 ? prev + 1 : prev));
+    } else if (distance < -minSwipeDistance) {
+      setActiveVolume((prev) => (prev > 0 ? prev - 1 : prev));
+    }
+  };
+
   return (
     <main className="relative bg-[#0A0A0A] text-white overflow-x-hidden">
-      {/* Dark background gradient */}
+      {/* Dark background gradient: set to z-0 so it stays strictly underneath content */}
       <div
-        className="absolute top-0 left-0 w-full pointer-events-none"
+        className="absolute top-0 left-0 w-full pointer-events-none z-0"
         style={{
           background: 'linear-gradient(160deg, #004063 4.52%, #0F0F0F 40%)',
           height: 'clamp(500px, 80vh, 875px)'
         }}
       />
+
       {/* HEADER */}
-      <Header transparentBg />
+      <div className="relative z-20">
+        <Header transparentBg />
+      </div>
 
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative flex flex-col items-center"
+        className="w-full relative z-10 flex flex-col items-center"
       >
         <div className={`${containerClass} pt-[106px] md:pt-[240px]`}>
           <div className="flex flex-col pb-[24px] md:pb-[2.63vw]">
@@ -268,7 +320,7 @@ export default function Home() {
       </section>
 
       {/* RESPONSIBILITY SECTION */}
-      <section className="w-full pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
+      <section className="w-full relative z-10 pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
         <div className={containerClass}>
           <div className="flex flex-col md:flex-row justify-between items-start">
             <div className="w-full md:w-[38.68vw] mb-6 md:mb-0">
@@ -306,10 +358,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="mx-[24px] md:mx-[7.5vw] border-b border-white/20"></div>
+      <div className="relative z-10 mx-[24px] md:mx-[7.5vw] border-b border-white/20"></div>
 
       {/* WHY IT MATTERS SECTION */}
-      <section className="w-full pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
+      <section className="w-full relative z-10 pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
         <div className={containerClass}>
           <div className="mb-6 md:mb-[5.13vw]">
             <h2
@@ -491,10 +543,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="mx-[24px] md:mx-[7.5vw] border-b border-white/20"></div>
+      <div className="relative z-10 mx-[24px] md:mx-[7.5vw] border-b border-white/20"></div>
 
       {/* OUR RESPONSIBILITY SOLUTIONS */}
-      <section className="w-full pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw] flex flex-col items-end">
+      <section className="w-full relative z-10 pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw] flex flex-col items-end">
         <div className={containerClass}>
           <div className="flex flex-col items-end w-full">
             <p
@@ -518,10 +570,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="mx-[24px] md:mx-[7.5vw] border-b border-white/20"></div>
+      <div className="relative z-10 mx-[24px] md:mx-[7.5vw] border-b border-white/20"></div>
 
       {/* WE ARE HELPING CLIENTS */}
-      <section className="w-full pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
+      <section className="w-full relative z-10 pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
         <div className={containerClass}>
           <h2
             className="text-[20px] md:text-[2.77vw] leading-[120%] text-white align-middle mb-6 md:mb-[5vw]"
@@ -608,10 +660,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="mx-[24px] md:mx-[7.5vw] border-b border-white/20"></div>
+      <div className="relative z-10 mx-[24px] md:mx-[7.5vw] border-b border-white/20"></div>
 
       {/* TRANSFORMATIONS SECTION */}
-      <section className="w-full pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
+      <section className="w-full relative z-10 pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
         <div className={containerClass}>
           {/* DESKTOP VIEW */}
           <div className="hidden md:flex items-stretch">
@@ -773,11 +825,23 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Active Volume Carousel Card */}
-            <div className="flex flex-col">
-              {volumes.map((vol, idx) => (
-                idx === activeVolume ? (
-                  <div key={idx} className="flex flex-col">
+            {/* Swipable Volume Carousel Track */}
+            <div
+              className="w-full overflow-hidden select-none touch-pan-y"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+              onMouseDown={onMouseDown}
+              onMouseMove={onMouseMove}
+              onMouseUp={onMouseUp}
+              onMouseLeave={onMouseUp}
+            >
+              <div
+                className="flex transition-transform duration-300 ease-out"
+                style={{ transform: `translateX(-${activeVolume * 100}%)` }}
+              >
+                {volumes.map((vol, idx) => (
+                  <div key={idx} className="w-full flex-shrink-0 flex flex-col pr-1">
                     <span
                       className="text-[10px] text-[#AEAEAE] mb-2 block"
                       style={{
@@ -838,8 +902,8 @@ export default function Home() {
                       </HoverButton>
                     </div>
                   </div>
-                ) : null
-              ))}
+                ))}
+              </div>
 
               {/* Divider line before dots */}
               <div className="border-b border-white/20 mt-6 mb-4"></div>
@@ -851,7 +915,7 @@ export default function Home() {
                     key={idx}
                     type="button"
                     onClick={() => setActiveVolume(idx)}
-                    className={`transition-all duration-300 ${
+                    className={`transition-all duration-300 cursor-pointer ${
                       activeVolume === idx
                         ? "w-5 h-1 bg-white rounded-full"
                         : "w-1.5 h-1.5 bg-white/40 rounded-full hover:bg-white/70"
@@ -864,10 +928,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="mx-[24px] md:mx-[7.5vw] border-b border-white/20"></div>
+      <div className="relative z-10 mx-[24px] md:mx-[7.5vw] border-b border-white/20"></div>
 
       {/* EARTH SECTION */}
-      <section className="w-full pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
+      <section className="w-full relative z-10 pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
         <div className={containerClass}>
           <div className="w-full h-[180px] sm:h-[260px] md:h-[500px] mb-6 md:mb-[5vw]">
             <img
@@ -935,7 +999,9 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
 
       <EnquireNowPopup
         isOpen={isEnquirePopupOpen}
