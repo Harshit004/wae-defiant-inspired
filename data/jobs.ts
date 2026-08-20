@@ -31,7 +31,7 @@ export const JOBS: Record<string, JobPost> = {
     "category": "MARKETING",
     "type": "On-site",
     "time": "Full time",
-    "shortDescription": "This role is best suited for someone who enjoys solving problems,..........\n",
+    "shortDescription": "This role is best suited for someone who enjoys solving problems,.... \n",
     "status": "Live",
     "createdAt": "2024-01-01T00:00:00Z",
     "summaryParagraphs": [
