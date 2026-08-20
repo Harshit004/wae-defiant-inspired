@@ -41,20 +41,22 @@ const sitemapData = [
   {
     title: "4. Portfolio",
     links: [
-      { text: "Bottle Filling Stations", href: "/portfolio?category=bottle-filling-stations" },
-      { text: "Drinking Water Fountains", href: "/portfolio?category=drinking-water-fountains" },
-      { text: "Drinking Water Dispensers & Coolers", href: "/portfolio?category=drinking-water-dispensers" },
-      { text: "Drinking Water Stations", href: "/portfolio?category=drinking-water-stations" },
-      { text: "Drinking Water Faucets", href: "/portfolio?category=drinking-water-faucets" },
-      { text: "Under The Counter RO", href: "/portfolio?category=under-the-counter-ro" },
+      { text: "Drinking Water Station - BLUWAE", href: "/portfolio/bluwae" },
+      { text: "Water Dispenser & Cooler - TRUBLU", href: "/portfolio/trublu" },
+      { text: "Drinking Water Fountain - ZVR", href: "/portfolio/zvr" },
+      { text: "Drinking Water Faucets - WATERMATIC", href: "/portfolio/watermatic" },
+      { text: "Compact Purification Units - WAEAU", href: "/portfolio/pus" },
+      { text: "Glass Bottling Plant", href: "/portfolio/glass-bottling" },
     ]
   },
   {
     title: "5. GBS",
     links: [
-      { text: "PRIMUS", href: "/product-description-page/primus" },
-      { text: "AQUARIUS Series", href: "/product-description-page/aquarius" },
-      { text: "QUANTIM", href: "/product-description-page/quantim" },
+      { text: "PRIMUS", href: "/portfolio/glass-bottling/primus" },
+      { text: "AQUARIUS Series", href: "/portfolio/glass-bottling/aquarius-series" },
+      { text: "QUANTM", href: "/portfolio/glass-bottling/quantm" },
+      { text: "SPÜLMEISTER", href: "/portfolio/glass-bottling/spiulmeister" },
+      { text: "SÜẞWASSER", href: "/portfolio/glass-bottling/s-wasser-mini" },
     ]
   },
   {

@@ -81,9 +81,9 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "0.55vw", padding: "10.5px 16px",
-                fontFamily: "\'Manrope\', sans-serif",
-        fontWeight: 500,
-        fontSize: "10px",
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 500,
+                fontSize: "10px",
                 lineHeight: "100%",
                 textTransform: "none",
                 backgroundColor:
@@ -99,17 +99,16 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
                         theme === "transparent-white-black-hover" ? (hovered ? "#000" : "#fff") :
                             theme === "dark" ? "#fff" : (hovered ? "#fff" : "#000"),
             }}
-
         >
-            {children(hovered)} {/* This is where the error happens if children is not a function */}
+            {children(hovered)}
         </button>
     );
 
     // Use a simple anchor tag if it's an internal page link, Link component for Next.js routes
     return href ? (
-        href.startsWith('#') ? ( // Check if it's an anchor link
+        href.startsWith('#') ? (
             <a href={href} className="contents" style={{ textDecoration: 'none', color: 'inherit' }}>{buttonContent}</a>
-        ) : ( // Assume it's a Next.js route link
+        ) : (
             <Link href={href} className="contents">{buttonContent}</Link>
         )
     ) : buttonContent;
@@ -217,29 +216,6 @@ function ProductListingContent() {
         return () => clearInterval(interval)
     }, [])
 
-
-
-    const taglineLine1 = "To lead the way in sustainability"
-    const taglineLine2 = "ahead of the rest."
-    const taglineWords1 = taglineLine1.split(" ")
-    const taglineWords2 = taglineLine2.split(" ")
-
-    const productsItems = [
-        { text: "This is Us", href: "/profile" },
-        { text: "Our Portfolio", href: "/portfolio" },
-        { text: "Reimagine Work", href: "/careers" },
-    ]
-    const blueprintItems = [
-        { text: "Sustainability", href: "/sustainability" },
-        { text: "The Activist Co.", href: "/activism" },
-        { text: "Blog", href: "/perspectives" },
-    ]
-const etceteraItems = [
-    { text: "Contact", href: "/contact-us" },
-    { text: "Compliance", href: "/compliance" },
-    { text: "Mentioned", href: "/news-and-updates" },
-]
-
     return (
         <main className="relative">
             {/* HEADER */}
@@ -322,7 +298,7 @@ const etceteraItems = [
 
                                             return (
                                                 <Link
-                                                    href={`/product-description-page/${product.id}`}
+                                                    href={`/portfolio/${categoryId}/${product.id}`}
                                                     key={product.name}
                                                     className={`${isFeatured ? 'col-span-2 row-span-2 flex flex-col h-full' : 'col-span-1 block'}`}
                                                 >

@@ -948,7 +948,7 @@ export default function Home() {
 
           <div className="hidden md:grid grid-cols-4 w-full" style={{ height: '506px' }}>
             {/* Aurela */}
-            <Link href="/product-description-page/aurela" className="relative group cursor-pointer h-full overflow-hidden block">
+            <Link href="/portfolio/trublu/aurela" className="relative group cursor-pointer h-full overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/317e8eb4-d823-462a-c1d3-54cd0664ea00/public"
                 alt="Aurela"
@@ -975,7 +975,7 @@ export default function Home() {
             </Link>
 
             {/* Reva */}
-            <Link href="/product-description-page/reva" className="relative group cursor-pointer h-full overflow-hidden block">
+            <Link href="/portfolio/bluwae/reva" className="relative group cursor-pointer h-full overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/62a8a1c0-fffe-44c2-5ae2-ed461e445600/public"
                 alt="Reva"
@@ -1002,7 +1002,7 @@ export default function Home() {
             </Link>
 
             {/* Venus */}
-            <Link href="/product-description-page/venus" className="relative group cursor-pointer h-full overflow-hidden block">
+            <Link href="/portfolio/bluwae/venus" className="relative group cursor-pointer h-full overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3ed4ddbf-f8ce-4cdb-f703-41fa25cbf400/public"
                 alt="Venus"
@@ -1090,7 +1090,7 @@ export default function Home() {
 
           <MobileProductCarousel>
               {/* Aurela */}
-              <Link href="/product-description-page/aurela" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
+              <Link href="/portfolio/trublu/aurela" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/317e8eb4-d823-462a-c1d3-54cd0664ea00/public"
                   alt="Aurela"
@@ -1118,7 +1118,7 @@ export default function Home() {
 
 
               {/* Reva */}
-              <Link href="/product-description-page/reva" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
+              <Link href="/portfolio/bluwae/reva" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/62a8a1c0-fffe-44c2-5ae2-ed461e445600/public"
                   alt="Reva"
@@ -1146,7 +1146,7 @@ export default function Home() {
 
 
               {/* Venus */}
-              <Link href="/product-description-page/venus" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
+              <Link href="/portfolio/bluwae/venus" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3ed4ddbf-f8ce-4cdb-f703-41fa25cbf400/public"
                   alt="Venus"

@@ -24,6 +24,15 @@ const nextConfig = {
     reactRemoveProperties: process.env.NODE_ENV === 'production',
   },
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/product-listing/:category',
+        destination: '/portfolio/:category',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 async function mergeConfig(nextConfig, userConfig) {

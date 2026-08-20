@@ -9,6 +9,7 @@ import Footer from "@/components/footer"
 import { useParams } from "next/navigation"
 import Link from "next/link"
 import { PRODUCTS } from "@/data/products"
+import { getProductUrl } from "@/lib/product-utils"
 import EnquireNowPopup from "@/components/EnquireNowPopup"
 
 // Shared container class for consistent margins and max-width using relative dimensions
@@ -1158,7 +1159,7 @@ function ProductDescriptionPageContent() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-[50px] md:gap-[2.5vw]">
                         {Object.values(PRODUCTS).filter(p => p.id !== currentProduct.id && p.categoryName?.toLowerCase().replace(" series", "") === currentProduct.categoryName?.toLowerCase().replace(" series", "")).slice(0, 3).map((item, index) => (
                             <Link
-                                href={`/product-description-page/${item.id}`}
+                                href={getProductUrl(item.id)}
                                 key={index}
                                 className="group flex flex-col text-left cursor-pointer transition-all duration-500 hover:-translate-y-1"
                             >
