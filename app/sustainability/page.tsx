@@ -937,7 +937,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="relative z-10 mx-[24px] md:mx-[7.5vw] border-b border-white/20"></div>
+      <div className="hidden md:block relative z-10 mx-[7.5vw] border-b border-white/20"></div>
 
       {/* EARTH SECTION */}
       <section className="w-full relative z-10 pt-[40px] pb-[40px] md:pt-[6.38vw] md:pb-[6.38vw]">
