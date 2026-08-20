@@ -2928,5 +2928,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Need to contact for rates of 25LPH RO  UV purifier AND 100 LPH RO SYSTEM",
     "type": "contact-us",
     "createdAt": "2026-08-18T11:41:35.416Z"
+  },
+  "0e6d4970-4a0a-417d-a16b-289295d800ac": {
+    "id": "0e6d4970-4a0a-417d-a16b-289295d800ac",
+    "fullName": "harshul kaushik",
+    "companyName": "The Water DIgest",
+    "email": "secretariat@thewaterdigest.com",
+    "phone": "9355593336",
+    "city": "Gurugram",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Hi\n\nI’m reaching out from Water Digest, India’s premier water magazine and a leading platform for the water industry since 2006.\n\nWater Digest has been recognised with the ‘Best Media’ and ‘Best English Newspaper’ awards at the National Water Awards 2023, 2018 and 2019 by the Ministry of Jal Shakti, Government of India, along with the Best Media Outreach in Water by ASSOCHAM and international recognition as ‘Best Brand’ at the Worldwide Excellence Awards in Malaysia.\n\nOver the years, Water Digest has built a strong ecosystem connecting water-focused companies, innovators, government organisations and industry stakeholders. Our work goes beyond magazine publishing. We offer organisations opportunities across:\n\n• Magazine advertising and brand visibility\n• Editorial features and industry stories\n• Water Digest Annual Awards and category-based recognition\n• Print and digital media campaigns\n• Social media and media management projects\n• Custom media and communication initiatives\n\nConsidering your work in sustainable water solutions, I believe there could be some interesting opportunities for us to collaborate and create visibility for your organisation within the water sector.\n\nI’d be happy to share more details and discuss how we could work together. Would you be available for a brief conversation, or should I share the details with you here?\n\nBest regards\n\n",
+    "type": "contact-us",
+    "createdAt": "2026-08-20T10:15:38.778Z"
   }
 };
