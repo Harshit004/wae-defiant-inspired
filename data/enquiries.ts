@@ -3000,5 +3000,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-08-21T06:07:19.711Z"
+  },
+  "336b53fb-84ff-4221-ac66-088df350624c": {
+    "id": "336b53fb-84ff-4221-ac66-088df350624c",
+    "fullName": "Shreyansh jain",
+    "companyName": "Design Forum International ",
+    "email": "shreyansh.jain0306@gmail.com",
+    "phone": "8699971276",
+    "city": "Noida",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "I need few products information for our office. kindly connect me to the sales Team for the TDS or Product information",
+    "type": "contact-us",
+    "createdAt": "2026-08-21T12:50:51.114Z"
   }
 };
