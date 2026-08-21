@@ -69,5 +69,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-08-14",
     "time": "14:33:06",
     "pageLink": "/"
+  },
+  {
+    "id": "1957f9cc-a2b4-4b88-915b-17c3d7db1107",
+    "email": "ravikant.swami98@gmail.com",
+    "date": "2026-08-21",
+    "time": "21:47:30",
+    "pageLink": "/profile"
   }
 ];
