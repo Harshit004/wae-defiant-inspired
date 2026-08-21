@@ -103,7 +103,16 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: false, message: 'Product not found.' }, { status: 404 });
       }
 
-      const { name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants, displayImageIndex, hoverImageIndex, displayOrder } = productData;
+      const { inputId, name, categoryName, heroSubtitle, images, featuresList, specifications, status, description, heroImage, heroTagline, heroSubtext, heroCtaText, heroCtaLink, showcaseCtaText, showcaseCtaLink, brochurePdf, datasheetPdf, variants, displayImageIndex, hoverImageIndex, displayOrder } = productData;
+      
+      const generatedId = inputId
+        ? inputId.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+        : id;
+
+      if (generatedId !== id && dbState.products[generatedId]) {
+        return NextResponse.json({ success: false, message: `Product with slug "${generatedId}" already exists.` }, { status: 400 });
+      }
+
       const existing = dbState.products[id];
 
       const parentCategory = dbState.categories[categoryId];
@@ -115,8 +124,9 @@ export async function POST(request: Request) {
       }
 
       // Update PRODUCTS
-      dbState.products[id] = {
+      dbState.products[generatedId] = {
         ...existing,
+        id: generatedId,
         name: name || existing.name,
         categoryName: categoryName !== undefined ? categoryName : (existing.categoryName || parentCategory.title),
         heroSubtitle: heroSubtitle !== undefined ? heroSubtitle : existing.heroSubtitle,
@@ -139,6 +149,10 @@ export async function POST(request: Request) {
         displayOrder: displayOrder !== undefined ? displayOrder : (existing.displayOrder !== undefined ? existing.displayOrder : parentCategory.products.length)
       };
 
+      if (generatedId !== id) {
+        delete dbState.products[id];
+      }
+
       // Update/Move category placement
       // Find where the product currently is and remove it
       Object.keys(dbState.categories).forEach((catKey) => {
@@ -151,19 +165,19 @@ export async function POST(request: Request) {
       const chosenIndex = displayImageIndex !== undefined ? displayImageIndex : (existing.displayImageIndex !== undefined ? existing.displayImageIndex : 0);
       const activeImages = images || existing.images || [];
       const newDisplayImageUrl = activeImages[chosenIndex] ? activeImages[chosenIndex] : (activeImages[0] || '');
-      const newHoverIndex = dbState.products[id].hoverImageIndex;
+      const newHoverIndex = dbState.products[generatedId].hoverImageIndex;
       const newHoverImageUrl = newHoverIndex !== null && newHoverIndex !== undefined && activeImages && activeImages[newHoverIndex] ? activeImages[newHoverIndex] : null;
 
       const categoryProduct: Product = {
-        id,
+        id: generatedId,
         name: name || existing.name,
         category: subCategory || 'free-standing',
         image: newDisplayImageUrl,
         hoverImage: newHoverImageUrl,
-        displayOrder: dbState.products[id].displayOrder
+        displayOrder: dbState.products[generatedId].displayOrder
       };
       
-      const existingIdx = parentCategory.products.findIndex(p => p.id === id);
+      const existingIdx = parentCategory.products.findIndex(p => p.id === generatedId);
       if (existingIdx >= 0) {
         parentCategory.products[existingIdx] = categoryProduct;
       } else {
@@ -171,7 +185,7 @@ export async function POST(request: Request) {
       }
 
       await writeDB(dbState);
-      return NextResponse.json({ success: true, product: dbState.products[id] });
+      return NextResponse.json({ success: true, product: dbState.products[generatedId] });
     }
 
     if (action === 'delete') {

@@ -52,6 +52,7 @@ export default function EditProductPage({ params }: EditProductProps) {
   const [pendingRedirectUrl, setPendingRedirectUrl] = useState<string | null>(null)
 
   // Form Fields
+  const [inputId, setInputId] = useState("")
   const [name, setName] = useState("")
   const [heroSubtitle, setHeroSubtitle] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("")
@@ -108,6 +109,7 @@ export default function EditProductPage({ params }: EditProductProps) {
           setCategories(data.categories)
           const prod = data.products.find((p: any) => p.id === productId)
           if (prod) {
+            setInputId(prod.id)
             setName(prod.name)
             setHeroSubtitle(prod.heroSubtitle || "")
             setStatus(prod.status || "Live")
@@ -362,6 +364,7 @@ export default function EditProductPage({ params }: EditProductProps) {
       categoryId: selectedCategory,
       subCategory: subCategory,
       productData: {
+        inputId: inputId.trim(),
         name: name.trim(),
         categoryName: categoryName.trim(),
         heroSubtitle: heroSubtitle.trim(),
@@ -461,15 +464,16 @@ export default function EditProductPage({ params }: EditProductProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                    Product Slug / ID (Read-only)
+                    Product Slug / ID
                   </label>
                   <input
                     type="text"
-                    disabled
-                    value={productId}
-                    className="w-full bg-[#051424] border border-white/5 text-gray-500 px-4 py-3 text-sm rounded-none cursor-not-allowed select-none"
+                    value={inputId}
+                    onChange={(e) => handleFieldChange(setInputId, e.target.value)}
+                    className="w-full bg-[#051424] border border-white/10 text-white placeholder-gray-600 px-4 py-3 outline-none focus:border-white/20 transition-all text-sm rounded-none"
                     style={{ fontFamily: "'Manrope', sans-serif" }}
                   />
+                  <p className="text-[10px] text-gray-500 mt-1">Changing this will change the URL of the product.</p>
                 </div>
 
                 <div>
