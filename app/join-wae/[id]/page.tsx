@@ -8,7 +8,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { JOBS } from "@/data/jobs";
 
-const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]";
+const containerClass = "mx-auto w-full max-w-[1440px] px-[24px] md:px-[7.5vw]";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
@@ -60,25 +60,31 @@ export default function JobDescriptionPage() {
     <main className="bg-[#0F0F0F] min-h-screen text-white font-sans selection:bg-white selection:text-black relative overflow-x-hidden">
       {/* Dark background gradient */}
       <div
-        className="absolute top-0 left-0 w-full pointer-events-none"
+        className="absolute top-0 left-0 w-full pointer-events-none z-0"
         style={{
-          background: 'linear-gradient(160deg, #004063 4.52%, #0F0F0F 40%)', height: 'clamp(500px, 80vh, 875px)'
+          background: 'linear-gradient(160deg, #004063 4.52%, #0F0F0F 40%)',
+          height: 'clamp(500px, 80vh, 875px)'
         }}
       />
 
-      <Header transparentBg />
+      <div className="relative z-20">
+        <Header transparentBg />
+      </div>
 
-      <section className="pt-[254px] relative z-10">
+      <section className="pt-[110px] md:pt-[254px] relative z-10">
         <div className={containerClass}>
           {/* Header section of JD */}
-          <div className="flex justify-between items-start mb-[28px]">
-            <h1 className="font-['Inter_Tight'] font-normal text-[46px] leading-[1.1] text-white">
+          <div className="flex justify-between items-start mb-[16px] md:mb-[28px]">
+            <h1 className="font-['Inter_Tight'] font-normal text-[26px] md:text-[46px] leading-[1.1] text-white flex-1 pr-4">
               {job.title}
             </h1>
-            <HoverButton href={`mailto:hr2@waecorp.com?subject=Application - ${job.title}`} className="w-[6.87vw] h-[2.43vw] min-w-[99px] min-h-[35px]">
+            <HoverButton
+              href={`mailto:hr2@waecorp.com?subject=Application - ${job.title}`}
+              className="px-[16px] py-[8px] md:px-0 md:py-0 md:w-[6.87vw] md:h-[2.43vw] md:min-w-[99px] md:min-h-[35px] flex-shrink-0"
+            >
               {(hovered) => (
-                <div className="flex items-center justify-center gap-[8px]">
-                  <span className="font-['Manrope'] font-medium text-[10px] leading-none uppercase">Apply Now</span>
+                <div className="flex items-center justify-center gap-[6px] md:gap-[8px]">
+                  <span className="font-['Manrope'] font-medium text-[10px] leading-none">Apply now</span>
                   <div className="relative inline-block w-3 h-3 overflow-hidden">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`transition-transform duration-300 ${hovered ? 'translate-x-full -translate-y-full' : 'translate-x-0 translate-y-0'}`}>
                       <line x1="5" y1="19" x2="19" y2="5" />
@@ -94,53 +100,53 @@ export default function JobDescriptionPage() {
             </HoverButton>
           </div>
 
-          <p className="font-['Manrope'] font-normal text-[16px] leading-normal text-[#AEAEAE] mb-[20px]">
+          <p className="font-['Manrope'] font-normal text-[12px] md:text-[16px] leading-[140%] md:leading-normal text-[#AEAEAE] mb-[16px] md:mb-[20px]">
             {job.shortDescription}
           </p>
 
-          <div className="flex gap-[42px] font-['Inter_Tight'] font-normal text-[24px] leading-normal text-white mb-[62px]">
+          <div className="flex gap-[24px] md:gap-[42px] font-['Inter_Tight'] font-normal text-[12px] md:text-[24px] leading-normal text-white mb-[24px] md:mb-[62px]">
             <span>{job.type}</span>
             <span>{job.time}</span>
           </div>
 
-          <div className="w-full border-b border-[#FFFFFF4D] mb-[62px]" />
+          <div className="w-full border-b border-[#FFFFFF4D] mb-[28px] md:mb-[62px]" />
 
-          <div className="w-full max-w-[62.71vw]">
+          <div className="w-full md:max-w-[62.71vw]">
             {/* Job Summary */}
-            <h2 className="font-['Inter_Tight'] font-normal text-[24px] leading-[1.1] text-white mb-[38px]">
+            <h2 className="font-['Inter_Tight'] font-normal text-[18px] md:text-[24px] leading-[1.1] text-white mb-[16px] md:mb-[38px]">
               Job Summary
             </h2>
-            <div className="font-['Manrope'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE] mb-[50px] space-y-4">
+            <div className="font-['Manrope'] font-normal text-[12px] md:text-[14px] leading-[140%] md:leading-[1.3] text-[#AEAEAE] mb-[32px] md:mb-[50px] space-y-3 md:space-y-4">
               {job.summaryParagraphs.map((para, idx) => (
                 <p key={idx}>{para}</p>
               ))}
             </div>
 
             {/* What you'll do */}
-            <h3 className="font-['Manrope'] font-medium text-[14px] leading-normal text-white mb-[30px]">
+            <h3 className="font-['Inter_Tight'] md:font-['Manrope'] font-normal md:font-medium text-[14px] leading-normal text-white mb-[16px] md:mb-[30px]">
               What you'll do
             </h3>
-            <ul className="list-disc pl-5 font-['Manrope'] font-normal text-[14px] leading-[1.8] text-[#AEAEAE] mb-[50px]">
+            <ul className="list-disc pl-4 md:pl-5 font-['Manrope'] font-normal text-[12px] md:text-[14px] leading-[150%] md:leading-[1.8] text-[#AEAEAE] mb-[32px] md:mb-[50px] space-y-2 md:space-y-0">
               {job.whatYouWillDo.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
             </ul>
 
             {/* What you'll own */}
-            <h3 className="font-['Manrope'] font-medium text-[14px] leading-normal text-white mb-[30px]">
+            <h3 className="font-['Inter_Tight'] md:font-['Manrope'] font-normal md:font-medium text-[14px] leading-normal text-white mb-[16px] md:mb-[30px]">
               What you'll own
             </h3>
-            <ul className="list-disc pl-5 font-['Manrope'] font-normal text-[14px] leading-[1.8] text-[#AEAEAE] mb-[50px]">
+            <ul className="list-disc pl-4 md:pl-5 font-['Manrope'] font-normal text-[12px] md:text-[14px] leading-[150%] md:leading-[1.8] text-[#AEAEAE] mb-[32px] md:mb-[50px] space-y-2 md:space-y-0">
               {job.whatYouWillOwn.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
             </ul>
 
             {/* Who are we looking for */}
-            <h3 className="font-['Manrope'] font-medium text-[14px] leading-normal text-white mb-[30px]">
+            <h3 className="font-['Inter_Tight'] md:font-['Manrope'] font-normal md:font-medium text-[14px] leading-normal text-white mb-[16px] md:mb-[30px]">
               Who are we looking for
             </h3>
-            <ul className="list-disc pl-5 font-['Manrope'] font-normal text-[14px] leading-[1.8] text-[#AEAEAE] mb-[62px]">
+            <ul className="list-disc pl-4 md:pl-5 font-['Manrope'] font-normal text-[12px] md:text-[14px] leading-[150%] md:leading-[1.8] text-[#AEAEAE] mb-[32px] md:mb-[62px] space-y-2 md:space-y-0">
               {job.whoWeAreLookingFor.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
@@ -152,31 +158,36 @@ export default function JobDescriptionPage() {
       </section>
 
       {/* Great Place to Work Section */}
-      <div className={`${containerClass} relative z-10`}>
-        <div className="flex justify-between items-start pt-[100px] pb-[100px]">
-          <h2 className="font-['Inter_Tight'] font-normal text-[64px] leading-[1.1] text-white">
-            Great Place<br />to Work
-          </h2>
-          <div className="w-[23.54vw]">
-            <p className="font-['Inter_Tight'] font-normal text-[14px] leading-[1.3] text-[#AEAEAE]">
-              More than a certification, it's a reflection of our people. Built on respect, inclusivity, and shared success, our workplace continues to be recognized among the best.
-            </p>
-            <div className="w-full mt-[41px] flex justify-between items-center">
-              {[
-                "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/328dea5e-933c-4d22-7648-58fa383fcd00/public",
-                "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fc64655e-82b3-415f-8f3c-051764640c00/public",
-                "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5a5a770a-3e51-44f4-8d03-84c884f42d00/public"
-              ].map((src, idx) => (
-                <div key={idx} className="relative w-[5.9vw] aspect-[85/154]">
-                  <Image src={src} alt="Great Place to Work Badge" fill className="object-contain" />
-                </div>
-              ))}
+      <section className="relative z-10 pt-[40px] pb-[60px] md:pt-[100px] md:pb-[100px]">
+        <div className={containerClass}>
+          <div className="flex flex-col md:flex-row justify-between items-start">
+            <h2 className="font-['Inter_Tight'] font-normal text-[36px] md:text-[64px] leading-[1.1] text-white mb-[20px] md:mb-0">
+              Great Place<br />to Work
+            </h2>
+            <div className="w-full md:w-[23.54vw]">
+              <p className="font-['Manrope'] md:font-['Inter_Tight'] font-normal text-[12px] md:text-[14px] leading-[140%] md:leading-[1.3] text-[#AEAEAE] mb-[32px] md:mb-0">
+                More than a certification, it's a reflection of our people. Built on respect, inclusivity, and shared success, our workplace continues to be recognized among the best.
+              </p>
+              <div className="w-full mt-0 md:mt-[41px] flex items-center justify-start gap-[16px] md:justify-between md:gap-0">
+                {[
+                  "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/328dea5e-933c-4d22-7648-58fa383fcd00/public",
+                  "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fc64655e-82b3-415f-8f3c-051764640c00/public",
+                  "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5a5a770a-3e51-44f4-8d03-84c884f42d00/public"
+                ].map((src, idx) => (
+                  <div key={idx} className="relative w-[72px] md:w-[5.9vw] aspect-[85/154]">
+                    <Image src={src} alt="Great Place to Work Badge" fill className="object-contain" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </main>
   );
 }
+
