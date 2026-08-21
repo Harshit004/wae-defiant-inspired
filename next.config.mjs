@@ -24,6 +24,12 @@ const nextConfig = {
     reactRemoveProperties: process.env.NODE_ENV === 'production',
   },
   reactStrictMode: true,
+  outputFileTracingIncludes: {
+    '/api/admin/categories': ['./data/products.ts'],
+    '/api/admin/categories/*': ['./data/products.ts'],
+    '/api/admin/products': ['./data/products.ts'],
+    '/api/admin/products/*': ['./data/products.ts'],
+  },
   async redirects() {
     return [
       {
