@@ -3012,5 +3012,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I need few products information for our office. kindly connect me to the sales Team for the TDS or Product information",
     "type": "contact-us",
     "createdAt": "2026-08-21T12:50:51.114Z"
+  },
+  "658ca0bc-2e77-4400-ab7c-81afcf93401c": {
+    "id": "658ca0bc-2e77-4400-ab7c-81afcf93401c",
+    "fullName": "Rohit vishwakarma",
+    "companyName": "Honda motor and scooter manufacturing india",
+    "email": "laxmanvishwakarma746@gmail.com",
+    "phone": "7067143570",
+    "city": "Ahemdabad ",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "I want to join wae as a technician ",
+    "type": "general",
+    "createdAt": "2026-08-24T14:17:51.803Z"
   }
 };
