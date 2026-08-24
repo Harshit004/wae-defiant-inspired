@@ -640,7 +640,7 @@ const ThisIsUs: FC = () => {
                                         className="object-cover"
                                     />
                                 </div>
-                                <div className="w-[calc(50%-2.415%)] md:w-full flex flex-col justify-between py-0.5 md:py-1">
+                                <div className="w-[calc(50%-2.415%)] md:w-[calc(50%-1.875vw)] flex flex-col justify-between py-0.5 md:py-1">
                                     <div className="flex flex-col relative w-full">
                                         <div className="flex items-start justify-between">
                                             <div>
