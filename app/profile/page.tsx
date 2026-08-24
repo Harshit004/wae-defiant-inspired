@@ -631,7 +631,7 @@ const ThisIsUs: FC = () => {
                         {/* Team Content */}
                         <div className="w-full md:w-[75%] md:pl-[5.56vw] flex flex-col gap-6 md:gap-[4.86vw]">
                             {/* Founder CEO */}
-                            <div className="flex w-full justify-between items-start md:gap-[3.75vw]">
+                            <div className="flex w-full justify-between items-start md:items-stretch md:gap-[3.75vw]">
                                 <div className="w-[calc(50%-2.415%)] md:w-[calc(50%-1.875vw)] aspect-[162/242] md:aspect-[410/517] relative shrink-0">
                                     <Image
                                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/945f5796-0664-44a9-b951-7759f4d39400/public"
@@ -640,7 +640,7 @@ const ThisIsUs: FC = () => {
                                         className="object-cover"
                                     />
                                 </div>
-                                <div className="w-[calc(50%-2.415%)] md:w-[calc(50%-1.875vw)] flex flex-col justify-between py-0.5 md:py-1">
+                                <div className="w-[calc(50%-2.415%)] md:w-[calc(50%-1.875vw)] flex flex-col py-0.5 md:py-1 h-full">
                                     <div className="flex flex-col relative w-full">
                                         <div className="flex items-start justify-between">
                                             <div>
@@ -656,14 +656,12 @@ const ThisIsUs: FC = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col mt-2 md:mt-0">
-                                        <p className="font-['Inter_Tight',sans-serif] font-normal text-[10.5px] sm:text-[12px] md:text-[1.66vw] leading-[125%] md:leading-[100%] text-white">
-                                            &ldquo;Water is one of the world’s most visible expressions of care, and the future of care must include care for the planet.&rdquo;
-                                        </p>
-                                        <p className="font-['Manrope',sans-serif] font-normal text-[9px] sm:text-[10.5px] md:text-[0.97vw] leading-[130%] text-[#AEAEAE] mt-2 md:mt-[3.125vw]">
-                                            A sustainability entrepreneur with three decades of cross-sector experience, building a water-secure future by making sustainable water technologies accessible and mainstream through responsible, long-term solutions.
-                                        </p>
-                                    </div>
+                                    <p className="font-['Inter_Tight',sans-serif] font-normal text-[10.5px] sm:text-[12px] md:text-[1.66vw] leading-[125%] md:leading-[100%] text-white mt-2 md:mt-[200px]">
+                                        &ldquo;Water is one of the world’s most visible expressions of care, and the future of care must include care for the planet.&rdquo;
+                                    </p>
+                                    <p className="font-['Manrope',sans-serif] font-normal text-[9px] sm:text-[10.5px] md:text-[0.97vw] leading-[130%] text-[#AEAEAE] mt-2 md:mt-auto">
+                                        A sustainability entrepreneur with three decades of cross-sector experience, building a water-secure future by making sustainable water technologies accessible and mainstream through responsible, long-term solutions.
+                                    </p>
                                 </div>
                             </div>
 
