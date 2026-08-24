@@ -3024,5 +3024,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I want to join wae as a technician ",
     "type": "general",
     "createdAt": "2026-08-24T14:17:51.803Z"
+  },
+  "b1614f06-8400-415d-a8fc-84accfd058fd": {
+    "id": "b1614f06-8400-415d-a8fc-84accfd058fd",
+    "fullName": "Rohit vishwakarma",
+    "companyName": "Honda motor and scooter manufacturing india",
+    "email": "laxmanvishwakarma746@gmail.com",
+    "phone": "7067143570",
+    "city": "Ahemdabad ",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "I want to join wae as a technician ",
+    "type": "general",
+    "createdAt": "2026-08-24T14:17:53.423Z"
   }
 };
