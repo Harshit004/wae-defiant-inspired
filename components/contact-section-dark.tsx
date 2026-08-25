@@ -59,25 +59,27 @@ const ContactSectionDark = () => {
         <div className="w-full bg-black text-white flex flex-col md:flex-row justify-between items-start">
             {/* Left Side */}
             <div className="w-full md:w-[40%] flex flex-col pt-12 md:pt-0">
-                <h2 style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: '60px',
-                    lineHeight: '110%',
-                    color: '#FFFFFF',
-                    marginBottom: '40px'
-                }}>
+                <h2 
+                    className="text-[36px] md:text-[60px] font-normal md:font-medium mb-[18px] md:mb-[40px]"
+                    style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        lineHeight: '110%',
+                        color: '#FFFFFF'
+                    }}
+                >
                     For More Info
                 </h2>
-                <p style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '18px',
-                    lineHeight: '140%',
-                    color: '#FFFFFF',
-                    marginBottom: '60px',
-                    maxWidth: '350px'
-                }}>
+                <p 
+                    className="text-[12px] md:text-[18px]"
+                    style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        lineHeight: '140%',
+                        color: '#FFFFFF',
+                        marginBottom: '60px',
+                        maxWidth: '350px'
+                    }}
+                >
                     Every water challenge is different.<br />Let's find the right solution for yours.
                 </p>
 
