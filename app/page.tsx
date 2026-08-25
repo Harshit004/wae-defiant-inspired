@@ -1090,7 +1090,7 @@ export default function Home() {
 
           <MobileProductCarousel>
               {/* Aurela */}
-              <Link href="/portfolio/trublu/aurela" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
+              <Link href="/portfolio/trublu/aurela" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block" style={{ border: '2px solid #FFFFFF80' }}>
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/317e8eb4-d823-462a-c1d3-54cd0664ea00/public"
                   alt="Aurela"
@@ -1118,7 +1118,7 @@ export default function Home() {
 
 
               {/* Reva */}
-              <Link href="/portfolio/bluwae/reva" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
+              <Link href="/portfolio/bluwae/reva" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block" style={{ border: '2px solid #FFFFFF80' }}>
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/62a8a1c0-fffe-44c2-5ae2-ed461e445600/public"
                   alt="Reva"
@@ -1146,7 +1146,7 @@ export default function Home() {
 
 
               {/* Venus */}
-              <Link href="/portfolio/bluwae/venus" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
+              <Link href="/portfolio/bluwae/venus" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block" style={{ border: '2px solid #FFFFFF80' }}>
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3ed4ddbf-f8ce-4cdb-f703-41fa25cbf400/public"
                   alt="Venus"
@@ -1174,7 +1174,7 @@ export default function Home() {
 
 
               {/* View All */}
-              <Link href="/portfolio" className="h-[128.75vw] bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]">
+              <Link href="/portfolio" className="h-[128.75vw] bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]" style={{ border: '2px solid #FFFFFF80' }}>
                 <div
                   className="rounded-full border border-white flex items-center justify-center"
                   style={{
