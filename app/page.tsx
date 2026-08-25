@@ -1888,7 +1888,7 @@ export default function Home() {
           Perspectives
         </h2>
         
-        <div style={{ height: '4.32vw' }} />
+        <div style={{ height: '17px' }} />
         
         <p style={{
           fontFamily: "'Manrope', sans-serif",
@@ -1900,7 +1900,7 @@ export default function Home() {
           WAE publishes perspectives on climate, water, and sustainability — because good water companies think beyond the tap.
         </p>
         
-        <div style={{ height: '12.21vw' }} />
+        <div style={{ height: '48px' }} />
 
         <div className="flex justify-start">
           <Link href="/perspectives" className="contents">
