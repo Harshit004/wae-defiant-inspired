@@ -1937,7 +1937,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div style={{ height: '19.84vw' }} />
+        <div style={{ height: '78px' }} />
 
         <div className="flex flex-col">
           {blogsLoading ? (
