@@ -3036,5 +3036,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I want to join wae as a technician ",
     "type": "general",
     "createdAt": "2026-08-24T14:17:53.423Z"
+  },
+  "16a07a53-30cb-42aa-a35b-83d5a2f3462e": {
+    "id": "16a07a53-30cb-42aa-a35b-83d5a2f3462e",
+    "fullName": "dasswater solutions",
+    "companyName": "DASS WATER SOLUTION PVT LTD",
+    "email": "dasswater@gmail.com",
+    "phone": "9561969924",
+    "city": "Pune",
+    "pageLink": "https://www.waecorp.com/contact-us?utm_source=chatgpt.com",
+    "type": "contact-us",
+    "createdAt": "2026-08-29T09:37:22.118Z"
   }
 };
