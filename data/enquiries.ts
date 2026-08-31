@@ -3047,5 +3047,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?utm_source=chatgpt.com",
     "type": "contact-us",
     "createdAt": "2026-08-29T09:37:22.118Z"
+  },
+  "22babaa3-fb54-4d69-8152-cbecd1826db0": {
+    "id": "22babaa3-fb54-4d69-8152-cbecd1826db0",
+    "fullName": "Biren Shah",
+    "companyName": "UTENSTEELS",
+    "email": "purchase@utensteels.com",
+    "phone": "+91-9825157890",
+    "city": "Ahmedabad",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Looking for price of VAR 50 HAC immediately for further supply. Send your best rates.",
+    "type": "contact-us",
+    "createdAt": "2026-08-31T11:49:53.303Z"
   }
 };
