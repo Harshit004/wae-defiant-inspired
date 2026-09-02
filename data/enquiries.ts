@@ -3059,5 +3059,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Looking for price of VAR 50 HAC immediately for further supply. Send your best rates.",
     "type": "contact-us",
     "createdAt": "2026-08-31T11:49:53.303Z"
+  },
+  "9c6c7a5c-518a-4e9e-bfcc-752a823c6f88": {
+    "id": "9c6c7a5c-518a-4e9e-bfcc-752a823c6f88",
+    "fullName": "Shiv kumar",
+    "companyName": "MEPCO",
+    "email": "shivakumar@mepcoengs.com",
+    "phone": "9880846342",
+    "city": "bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "need contact details of bangalore respresentive",
+    "type": "contact-us",
+    "createdAt": "2026-09-02T08:13:10.776Z"
   }
 };
