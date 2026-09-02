@@ -3071,5 +3071,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "need contact details of bangalore respresentive",
     "type": "contact-us",
     "createdAt": "2026-09-02T08:13:10.776Z"
+  },
+  "683b0c0e-ab65-43b2-a23c-062fa59d8cc6": {
+    "id": "683b0c0e-ab65-43b2-a23c-062fa59d8cc6",
+    "fullName": "Hirender Pannu",
+    "companyName": "Century Real Estate",
+    "email": "hirenderpannu@centuryrealestate.in",
+    "phone": "8178712163",
+    "city": "Bengaluru",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Would like a demo of your Reva product.",
+    "type": "contact-us",
+    "createdAt": "2026-09-02T08:34:43.800Z"
   }
 };
