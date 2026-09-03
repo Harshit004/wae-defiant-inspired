@@ -3083,5 +3083,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Would like a demo of your Reva product.",
     "type": "contact-us",
     "createdAt": "2026-09-02T08:34:43.800Z"
+  },
+  "bc488376-dad8-4660-99c2-d2f41f64dbd5": {
+    "id": "bc488376-dad8-4660-99c2-d2f41f64dbd5",
+    "fullName": "vimal dhasmana",
+    "companyName": "Radisson Hotel Noida",
+    "email": "purchase@rdnoida.com",
+    "phone": "9999722232",
+    "city": "Noida",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "I want to start your glass bottling plant stablish in our property",
+    "type": "general",
+    "createdAt": "2026-09-03T06:44:42.658Z"
   }
 };
