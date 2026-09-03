@@ -3095,5 +3095,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I want to start your glass bottling plant stablish in our property",
     "type": "general",
     "createdAt": "2026-09-03T06:44:42.658Z"
+  },
+  "9709dd7d-c2fe-44ef-96bd-4581f3289f81": {
+    "id": "9709dd7d-c2fe-44ef-96bd-4581f3289f81",
+    "fullName": "PANKAJ RANA",
+    "companyName": "GREY HAMMER DESIGNS & SOLUTIONS LLP",
+    "email": "pankaj@greyhammersolutions.com",
+    "phone": "08288907333",
+    "city": "Panchkula",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Looking to install WFS in our projects in Mohali, Punjab.",
+    "type": "contact-us",
+    "createdAt": "2026-09-03T06:56:21.882Z"
   }
 };
