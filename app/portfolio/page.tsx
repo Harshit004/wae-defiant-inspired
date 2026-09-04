@@ -673,34 +673,38 @@ export default function Home() {
                     <p className="font-manrope font-normal text-[12px] md:text-[14px] leading-[120%] md:leading-[1.5] align-middle text-[#AEAEAE] m-0 mb-[58px] md:mb-[62px]">
                       {portfolioProducts[4].description}
                     </p>
-                    <HoverButton href={portfolioProducts[4].href} theme="transparent-white-black-hover">
-                      {(hovered) => (
-                        <>
-                          Know More
-                          <div className="relative inline-block w-4 h-4">
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon default"
-                              width={16}
-                              height={16}
-                            />
-                            <motion.div
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: hovered ? 1 : 0 }}
-                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                              className="absolute top-0 left-0"
-                            >
-                              <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                              />
-                            </motion.div>
-                          </div>
-                        </>
-                      )}
-                    </HoverButton>
+                    <button
+                      type="button"
+                      disabled
+                      aria-disabled="true"
+                      className="w-fit"
+                      style={{
+                        pointerEvents: "none",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.55vw",
+                        padding: "10.5px 16px",
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 500,
+                        fontSize: "10px",
+                        lineHeight: "100%",
+                        textTransform: "none",
+                        backgroundColor: "transparent",
+                        border: "1px solid #FFFFFF33",
+                        color: "#FFFFFF33",
+                        cursor: "default",
+                      }}
+                    >
+                      Coming Soon
+                      <div className="relative inline-block w-4 h-4" style={{ opacity: 0.2 }}>
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                          alt="arrow icon"
+                          width={16}
+                          height={16}
+                        />
+                      </div>
+                    </button>
                   </div>
                 ) : <div />}
               </div>
