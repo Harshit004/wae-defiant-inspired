@@ -691,7 +691,7 @@ export default function Home() {
                         textTransform: "none",
                         backgroundColor: "transparent",
                         border: "1px solid #FFFFFF33",
-                        color: "#FFFFFF33",
+                        color: "#FFFFFF",
                         cursor: "default",
                       }}
                     >
