@@ -3107,5 +3107,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Looking to install WFS in our projects in Mohali, Punjab.",
     "type": "contact-us",
     "createdAt": "2026-09-03T06:56:21.882Z"
+  },
+  "80d7eb5c-33f9-4f73-a330-8d4d23445fce": {
+    "id": "80d7eb5c-33f9-4f73-a330-8d4d23445fce",
+    "fullName": "Alice John",
+    "companyName": "BothOfUs Sweden",
+    "email": "alice@bothofus.se",
+    "phone": "0768688418",
+    "city": "Sweden",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Dear Founder,\n\nBøthOfUs (Sweden) is selecting 6 organisations from India/EU for its India - EU Scale up - Mother of all deal program \n\nA selection-based scale-up track for organisations who are ready to:\n• increase revenue\n• expand, unlock EU / UN funding\n• expand into EU,India markets\n• professionalise fundraising and branding\n\nKey points:\n• 349+ organisations already supported\n• €90M+ raised collectively by portfolio organisations\n• Access to EU / UN grant pipelines\n• 30–50% BøthOfUs grant support for digital tools & branding\n• Cross-continent collaboration with the EU ecosystem\n\nApply here :\nhttps://www.bothofus.org/in\n\nhttps://form.jotform.com/260912555806056\n\nProgram Director: https://www.linkedin.com/in/kaynag/\n\nBest regards,\nAlice John\nBøthOfUs – Sweden",
+    "type": "contact-us",
+    "createdAt": "2026-09-04T07:45:21.184Z"
   }
 };
