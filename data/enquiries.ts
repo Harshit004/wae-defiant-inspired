@@ -3119,5 +3119,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Dear Founder,\n\nBøthOfUs (Sweden) is selecting 6 organisations from India/EU for its India - EU Scale up - Mother of all deal program \n\nA selection-based scale-up track for organisations who are ready to:\n• increase revenue\n• expand, unlock EU / UN funding\n• expand into EU,India markets\n• professionalise fundraising and branding\n\nKey points:\n• 349+ organisations already supported\n• €90M+ raised collectively by portfolio organisations\n• Access to EU / UN grant pipelines\n• 30–50% BøthOfUs grant support for digital tools & branding\n• Cross-continent collaboration with the EU ecosystem\n\nApply here :\nhttps://www.bothofus.org/in\n\nhttps://form.jotform.com/260912555806056\n\nProgram Director: https://www.linkedin.com/in/kaynag/\n\nBest regards,\nAlice John\nBøthOfUs – Sweden",
     "type": "contact-us",
     "createdAt": "2026-09-04T07:45:21.184Z"
+  },
+  "d76f3942-95e9-4067-a39f-bd8a50906c0d": {
+    "id": "d76f3942-95e9-4067-a39f-bd8a50906c0d",
+    "fullName": "Ashish Joshi",
+    "companyName": "Na",
+    "email": "ashishjoshi8907@gmail.com",
+    "phone": "8882217976",
+    "city": "Ghaziabad ",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "Hello sir \nSir is there any job opportunity for MIS executive role or data analyst role?",
+    "type": "general",
+    "createdAt": "2026-09-04T07:53:15.150Z"
   }
 };
