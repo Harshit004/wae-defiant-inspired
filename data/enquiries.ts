@@ -3131,5 +3131,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hello sir \nSir is there any job opportunity for MIS executive role or data analyst role?",
     "type": "general",
     "createdAt": "2026-09-04T07:53:15.150Z"
+  },
+  "e827381b-c5ac-43ab-ae6f-712363f25478": {
+    "id": "e827381b-c5ac-43ab-ae6f-712363f25478",
+    "fullName": "tarun ",
+    "companyName": "siddharthsales",
+    "email": "siddharthsales99@gmail.com",
+    "phone": "99675332632",
+    "city": "mumbai",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/alfa-ct",
+    "type": "product",
+    "createdAt": "2026-09-04T11:02:18.346Z"
   }
 };
