@@ -3142,5 +3142,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/alfa-ct",
     "type": "product",
     "createdAt": "2026-09-04T11:02:18.346Z"
+  },
+  "fcb73cb0-84bd-4874-ae80-af950f998802": {
+    "id": "fcb73cb0-84bd-4874-ae80-af950f998802",
+    "fullName": "Bhavesh Dudharejiya",
+    "companyName": "MANAS ENTERPRISE",
+    "email": "bhavesh.dudharejiya@gmail.com",
+    "phone": "8980803280",
+    "city": "Rajkot",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/epsilon",
+    "type": "product",
+    "createdAt": "2026-09-06T07:08:47.436Z"
   }
 };
