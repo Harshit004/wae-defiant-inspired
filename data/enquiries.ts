@@ -3153,5 +3153,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/epsilon",
     "type": "product",
     "createdAt": "2026-09-06T07:08:47.436Z"
+  },
+  "74af80a5-0fb8-41b6-bd6f-c97bc5a5405e": {
+    "id": "74af80a5-0fb8-41b6-bd6f-c97bc5a5405e",
+    "fullName": "Bhavesh Dudharejiya",
+    "companyName": "MANAS ENTERPRISE",
+    "email": "bhavesh.dudharejiya@gmail.com",
+    "phone": "8980803280",
+    "city": "Rajkot",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/pos",
+    "type": "product",
+    "createdAt": "2026-09-06T07:10:41.029Z"
   }
 };
