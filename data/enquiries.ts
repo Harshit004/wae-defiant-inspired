@@ -3164,5 +3164,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/pos",
     "type": "product",
     "createdAt": "2026-09-06T07:10:41.029Z"
+  },
+  "5195d763-ed73-44fa-a49d-82e161a50bfa": {
+    "id": "5195d763-ed73-44fa-a49d-82e161a50bfa",
+    "fullName": "Hardayal Singh Bansal",
+    "companyName": "AIR COOL SOLUTIONS ",
+    "email": "hsbansal1969@gmail.com",
+    "phone": "9810197305",
+    "city": "NEW DELHI",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/alfa-100",
+    "type": "product",
+    "createdAt": "2026-09-08T17:25:10.529Z"
   }
 };
