@@ -53,7 +53,7 @@
       "date": "Aug-05/2026",
       "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2867474c-e8ce-4ad7-3c86-d3e0eb4c1c00/public",
       "link": "https://www.tribuneindia.com/news/business/wae-showcases-next-generation-sustainable-water-technologies-at-the-india-international-hospitality-expo-2026/",
-      "displayOnHomepage": true,
+      "displayOnHomepage": false,
       "rank": 1,
       "id": "item-1782885606879-866"
     },
@@ -141,7 +141,7 @@
       "date": "25 August 2026",
       "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bb6b82fb-edea-405c-e42f-8d18357c8000/public",
       "link": "https://theprint.in/ani-press-releases/wae-joins-united-nations-global-compact-network-india-advancing-technology-led-water-sustainability/3024339/",
-      "displayOnHomepage": false,
+      "displayOnHomepage": true,
       "rank": 1,
       "id": "item-1788845242305-757"
     }
