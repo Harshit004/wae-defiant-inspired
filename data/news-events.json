@@ -53,8 +53,8 @@
       "date": "Aug-05/2026",
       "imageUrl": " https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2867474c-e8ce-4ad7-3c86-d3e0eb4c1c00/public",
       "link": "https://www.tribuneindia.com/news/business/wae-showcases-next-generation-sustainable-water-technologies-at-the-india-international-hospitality-expo-2026/",
-      "displayOnHomepage": false,
-      "rank": 1,
+      "displayOnHomepage": true,
+      "rank": 2,
       "id": "item-1782885606879-866"
     },
     {
@@ -64,7 +64,7 @@
       "date": "May-19/2026",
       "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/463eb4cd-804b-405a-cc4d-0c07e74e8b00/public",
       "link": "https://safariindia.com/binita-singh-wae-fb-sustainable-water-solutions/",
-      "displayOnHomepage": true,
+      "displayOnHomepage": false,
       "rank": 2,
       "id": "item-1782885723368-966"
     },
