@@ -1,461 +1,345 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
        <loc>https://www.waecorp.com/</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>1.0000</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/profile</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/sustainability</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/perspectives</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/activism</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/news-and-updates</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/careers</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/sustainability</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/activism</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/compliance</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/perspectives</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/news-and-updates</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/contact-us</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio/trublu/aurela</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio/bluwae/reva</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio/bluwae/venus</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/terms-of-use</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/cookie-policy</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/data-privacy-policy</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/portfolio/trublu/aurela</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/portfolio/bluwae/reva</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/portfolio/bluwae/venus</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/sitemap</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.waecorp.com/WAE_Success_Stories_Vol_I.pdf</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/WAE_Success_Stories_Vol_II.pdf</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/WAE_Success_Stories_Vol_III.pdf</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/perspectives/climate-change-water/from-kyoto-to-cop28</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/perspectives/climate-change-water/climate-change-in-the-indian-subcontinent</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/perspectives/climate-change-water/the-ozone-crisis</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/perspectives/climate-change-water/industrial-revolution-to-the-carbon-age-how-we-got-there</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/perspectives/climate-change-water/the-great-smog-of-london-and-the-birth-of-environmental-policy</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/perspectives/climate-change-water/the-invention-of-the-carbon-footprint-a-marketing-strategy-or-a-call-to-action</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/perspectives/climate-change-water/the-climate-protest-before-greta-how-yesterday-s-campaigns-built-today-s-movement</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
        <loc>https://www.waecorp.com/portfolio/bluwae</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/trublu</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/zvr</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/watermatic</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio/pus</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/glass-bottling</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/awards-and-recognitions</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/life-at-wae</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/join-wae</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/WAE_Success_Stories_Vol_I.pdf</loc>
+       <lastmod>2026-09-07T04:45:30+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/WAE_Success_Stories_Vol_II.pdf</loc>
+       <lastmod>2026-09-07T04:45:30+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/WAE_Success_Stories_Vol_III.pdf</loc>
+       <lastmod>2026-09-07T04:45:31+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/memberships</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/perspectives/climate-change-water/from-kyoto-to-cop28</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/perspectives/climate-change-water/climate-change-in-the-indian-subcontinent</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/perspectives/climate-change-water/the-ozone-crisis</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/perspectives/climate-change-water/industrial-revolution-to-the-carbon-age-how-we-got-there</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/perspectives/climate-change-water/the-great-smog-of-london-and-the-birth-of-environmental-policy</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/perspectives/climate-change-water/the-invention-of-the-carbon-footprint-a-marketing-strategy-or-a-call-to-action</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/perspectives/climate-change-water/the-climate-protest-before-greta-how-yesterday-s-campaigns-built-today-s-movement</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/awards-and-recognitions</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/trublu/yami</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/trublu/epsilon</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/bluwae/var-series</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/bluwae/enki</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/bluwae/pos</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.waecorp.com/portfolio?category=bottle-filling-stations</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio?category=drinking-water-fountains</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio?category=drinking-water-dispensers</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio?category=drinking-water-stations</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio?category=drinking-water-faucets</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio?category=under-the-counter-ro</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <loc>https://www.waecorp.com/portfolio/pus</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/glass-bottling/primus</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/glass-bottling/aquarius-series</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/glass-bottling/quantm</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/portfolio/glass-bottling/spiulmeister</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.waecorp.com/portfolio/glass-bottling/s-wasser-mini</loc>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/bluwae/gsp</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/bluwae/eno-ct</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/bluwae/var-ct</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/bluwae/rom-ct</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/bluwae/rom-grande</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/bluwae/assistflow</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/trublu/alfa-ct</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/trublu/alfa-100</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/trublu/aenon</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/trublu/lagoon</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/zvr/nt01</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/zvr/aquallence</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/zvr/plusultra</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/watermatic/touch</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/watermatic/hkn</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/watermatic/indus</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/watermatic/piper</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/watermatic/moses</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/portfolio/watermatic/led-uv-c</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio/glass-bottling/aquarius-series</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio/glass-bottling/quantm</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio/glass-bottling/spiulmeister</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-  </url>
-  <url>
-       <loc>https://www.waecorp.com/portfolio/glass-bottling/s-wasser-mini</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/join-wae/product-designer</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://www.waecorp.com/join-wae/purchase-manager</loc>
-       <lastmod>2026-07-17T07:37:41+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-09-07T04:49:40+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
 </urlset>
