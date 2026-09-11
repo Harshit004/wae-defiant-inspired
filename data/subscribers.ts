@@ -83,5 +83,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-08-24",
     "time": "19:44:55",
     "pageLink": "/"
+  },
+  {
+    "id": "9ebe130d-f61e-4a40-a1cc-297020995c34",
+    "email": "basantravidas10@gmail.com",
+    "date": "2026-09-11",
+    "time": "13:35:30",
+    "pageLink": "/"
   }
 ];
