@@ -90,5 +90,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-09-11",
     "time": "13:35:30",
     "pageLink": "/"
+  },
+  {
+    "id": "adadd710-3f5a-4953-91ba-0e5e78edc7b4",
+    "email": "kashishku9206@gmail.com",
+    "date": "2026-09-14",
+    "time": "12:38:55",
+    "pageLink": "/portfolio/bluwae"
   }
 ];
