@@ -3256,5 +3256,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Dear WAE Team,\n\nWe are currently specifying the WATERMATIC™ MOSES Premium Drinking Water Faucet System for an upcoming project and are modeling our mechanical and plumbing layouts in Autodesk Revit.\n\nCould you please provide the native Revit family (.rfa) file for this unit, including MEP connector data for the inlet supply lines (cold, ambient, hot), electrical requirements, and drainage?\n\nIf a native .rfa family is unavailable, please share any 3D CAD models (.dwg, .sat, or .step) and the technical cut sheet so our team can generate the BIM family internally.\n\nThank you,",
     "type": "contact-us",
     "createdAt": "2026-09-15T18:17:27.648Z"
+  },
+  "cdd697ad-cf9b-474d-bb41-991dc94ba9bb": {
+    "id": "cdd697ad-cf9b-474d-bb41-991dc94ba9bb",
+    "fullName": "Himanshu arya Arya",
+    "companyName": "Indore",
+    "email": "himanshuaryaarya813@gmail.com",
+    "phone": "+916263200739",
+    "city": "Indore ",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Jobs",
+    "type": "contact-us",
+    "createdAt": "2026-09-15T18:39:05.702Z"
   }
 };
