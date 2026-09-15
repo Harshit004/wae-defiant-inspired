@@ -3245,15 +3245,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "type": "product",
     "createdAt": "2026-09-15T18:14:51.819Z"
   },
-  "a3d83e77-4b4b-4cbf-b044-e6ca9bad0b7c": {
-    "id": "a3d83e77-4b4b-4cbf-b044-e6ca9bad0b7c",
+  "6a138ec9-2407-4bdf-97d8-0b5ba98c8bec": {
+    "id": "6a138ec9-2407-4bdf-97d8-0b5ba98c8bec",
     "fullName": "Ankita Rana",
     "companyName": "AECOM INDIA PVT LTD",
     "email": "ankita.rana@aecom.com",
     "phone": "7018556081",
     "city": "Gurgaon",
     "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Dear WAE Team,\n\nWe are currently specifying the WATERMATIC™ MOSES Premium Drinking Water Faucet System for an upcoming project and are modeling our mechanical and plumbing layouts in Autodesk Revit.\n\nCould you please provide the native Revit family (.rfa) file for this unit, including MEP connector data for the inlet supply lines (cold, ambient, hot), electrical requirements, and drainage?\n\nIf a native .rfa family is unavailable, please share any 3D CAD models (.dwg, .sat, or .step) and the technical cut sheet so our team can generate the BIM family internally.\n\nThank you,",
     "type": "contact-us",
-    "createdAt": "2026-09-15T18:16:48.142Z"
+    "createdAt": "2026-09-15T18:17:27.648Z"
   }
 };
