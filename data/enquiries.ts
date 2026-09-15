@@ -3187,5 +3187,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Please contact at the earliest ",
     "type": "general",
     "createdAt": "2026-09-15T09:54:00.977Z"
+  },
+  "9edc5756-ea84-4dff-b7c1-996469bbec62": {
+    "id": "9edc5756-ea84-4dff-b7c1-996469bbec62",
+    "fullName": "Siri",
+    "companyName": "Siri Sampada Group ",
+    "email": "hr@sirisampada.com",
+    "phone": "8121008249",
+    "city": "Hyderabad ",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "Please contact at the earliest ",
+    "type": "general",
+    "createdAt": "2026-09-15T09:54:02.601Z"
   }
 };
