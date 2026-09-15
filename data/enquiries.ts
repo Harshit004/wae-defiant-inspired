@@ -3175,5 +3175,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/alfa-100",
     "type": "product",
     "createdAt": "2026-09-08T17:25:10.529Z"
+  },
+  "bb812c56-bf64-48f6-915c-d3fab8bf2e69": {
+    "id": "bb812c56-bf64-48f6-915c-d3fab8bf2e69",
+    "fullName": "Siri",
+    "companyName": "Siri Sampada Group ",
+    "email": "hr@sirisampada.com",
+    "phone": "8121008249",
+    "city": "Hyderabad ",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "Please contact at the earliest ",
+    "type": "general",
+    "createdAt": "2026-09-15T09:54:00.977Z"
   }
 };
