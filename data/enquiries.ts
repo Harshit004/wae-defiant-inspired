@@ -3199,5 +3199,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Please contact at the earliest ",
     "type": "general",
     "createdAt": "2026-09-15T09:54:02.601Z"
+  },
+  "dfc1792f-ea00-48ca-82f4-dbee732c6341": {
+    "id": "dfc1792f-ea00-48ca-82f4-dbee732c6341",
+    "fullName": "Mallika Jadly",
+    "companyName": "WWF-India",
+    "email": "jadly.mallika@gmail.com",
+    "phone": "09810974379",
+    "city": "New Delhi",
+    "pageLink": "/sustainability",
+    "type": "product",
+    "createdAt": "2026-09-15T11:20:19.855Z"
   }
 };
