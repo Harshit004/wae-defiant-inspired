@@ -3210,5 +3210,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "/sustainability",
     "type": "product",
     "createdAt": "2026-09-15T11:20:19.855Z"
+  },
+  "705900be-f545-476f-b2f8-7ba0b86458d6": {
+    "id": "705900be-f545-476f-b2f8-7ba0b86458d6",
+    "fullName": "abjitbaraik",
+    "companyName": "abjit",
+    "email": "abjitbaraik@gmil.com",
+    "phone": "7602550502",
+    "city": "jalpaiguri",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "mujhe v kam ka darkar hai aapka factery me kya kya kam hai ",
+    "type": "contact-us",
+    "createdAt": "2026-09-15T14:53:56.127Z"
   }
 };
