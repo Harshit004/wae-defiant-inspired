@@ -3222,5 +3222,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "mujhe v kam ka darkar hai aapka factery me kya kya kam hai ",
     "type": "contact-us",
     "createdAt": "2026-09-15T14:53:56.127Z"
+  },
+  "0af3e0e3-d879-414e-9d4f-7d7e5a0c1ae4": {
+    "id": "0af3e0e3-d879-414e-9d4f-7d7e5a0c1ae4",
+    "fullName": "Gautam Talpada",
+    "companyName": "Gautam Talpada",
+    "email": "gautamt2562@gmail.com",
+    "phone": "gautamt2562@gmail.com",
+    "city": "Yu Hi 6777",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-09-15T17:10:53.773Z"
   }
 };
