@@ -153,5 +153,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-09-16",
     "time": "13:08:25",
     "pageLink": "/portfolio/zvr"
+  },
+  {
+    "id": "0fae75c7-f970-4a45-97f7-0e01b2e0746a",
+    "email": "pk9726kumar@gmail.com",
+    "date": "2026-09-17",
+    "time": "00:02:04",
+    "pageLink": "/portfolio/trublu"
   }
 ];
