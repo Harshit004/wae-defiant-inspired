@@ -3280,5 +3280,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Contact me at the earliest ",
     "type": "contact-us",
     "createdAt": "2026-09-16T07:01:02.370Z"
+  },
+  "1a3cdd3f-282d-4b3d-ad57-789e41b39873": {
+    "id": "1a3cdd3f-282d-4b3d-ad57-789e41b39873",
+    "fullName": "Deepak Verma",
+    "companyName": "Xtranet technologies ",
+    "email": "dv9302639530@gmail.com",
+    "phone": "9302639530",
+    "city": "Bhopal ",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "We need water dispenser for office ues",
+    "type": "contact-us",
+    "createdAt": "2026-09-18T03:22:39.833Z"
   }
 };
