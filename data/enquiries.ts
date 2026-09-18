@@ -3304,5 +3304,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Name.ranjeet singh rathore \n Koi kam ho to msg karna 🙏",
     "type": "contact-us",
     "createdAt": "2026-09-18T08:38:03.495Z"
+  },
+  "2d056524-b012-4ec4-8a0b-e9e89554099f": {
+    "id": "2d056524-b012-4ec4-8a0b-e9e89554099f",
+    "fullName": "Sahul raj",
+    "companyName": "Sahul raj",
+    "email": "rahulraj05264@gmail.com",
+    "phone": "rahulraj05264@gmail.com",
+    "city": "Bihar",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Dt",
+    "type": "contact-us",
+    "createdAt": "2026-09-18T09:57:05.250Z"
   }
 };
