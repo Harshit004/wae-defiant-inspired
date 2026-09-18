@@ -3316,5 +3316,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Dt",
     "type": "contact-us",
     "createdAt": "2026-09-18T09:57:05.250Z"
+  },
+  "63d96637-d83b-4a6d-9c33-c45fe4a6e84b": {
+    "id": "63d96637-d83b-4a6d-9c33-c45fe4a6e84b",
+    "fullName": "Kavita",
+    "companyName": "8394851121",
+    "email": "pramsingh879196@gmail.com",
+    "phone": "pramsingh879196@gmail.com",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-09-18T15:32:46.053Z"
   }
 };
