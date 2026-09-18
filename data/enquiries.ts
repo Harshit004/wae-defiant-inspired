@@ -3292,5 +3292,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We need water dispenser for office ues",
     "type": "contact-us",
     "createdAt": "2026-09-18T03:22:39.833Z"
+  },
+  "36a68277-21c7-43b6-a2ec-dfb5bc706a4e": {
+    "id": "36a68277-21c7-43b6-a2ec-dfb5bc706a4e",
+    "fullName": "Ranjeetsingh ",
+    "companyName": "Ranjeetsingh ",
+    "email": "ranjeetsingh17315@gmail.com",
+    "phone": "ranjeetsingh17315@gmail.com",
+    "city": "Osian (jodhpur)",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Name.ranjeet singh rathore \n Koi kam ho to msg karna 🙏",
+    "type": "contact-us",
+    "createdAt": "2026-09-18T08:38:03.495Z"
   }
 };
