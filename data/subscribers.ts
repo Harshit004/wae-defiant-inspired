@@ -223,5 +223,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-09-19",
     "time": "14:28:59",
     "pageLink": "/portfolio/trublu"
+  },
+  {
+    "id": "2fa24b93-808a-42e8-b024-e07968ae4b43",
+    "email": "sanketdhawalkar1122@gmail.com",
+    "date": "2026-09-19",
+    "time": "14:50:59",
+    "pageLink": "/portfolio/trublu"
   }
 ];
