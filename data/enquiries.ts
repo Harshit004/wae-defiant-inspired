@@ -3350,5 +3350,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Ham do log Hain meri wife aur Main donon aaenge working",
     "type": "contact-us",
     "createdAt": "2026-09-19T09:00:39.785Z"
+  },
+  "06281f61-eaa0-451a-8cc8-395b33eb3327": {
+    "id": "06281f61-eaa0-451a-8cc8-395b33eb3327",
+    "fullName": "vishal ",
+    "companyName": "ions filtration pvt .ltd ",
+    "email": "ionsfiltration@gmail.com",
+    "phone": "9810301620",
+    "city": "delhi 110032",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Need a proposal for 20 - 25 glass bottles per minute line for the hospitality sector. We are manufacturers of ETP and STP and this is for our regular client. \n",
+    "type": "contact-us",
+    "createdAt": "2026-09-19T10:37:29.246Z"
   }
 };
