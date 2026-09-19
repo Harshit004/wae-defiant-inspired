@@ -3338,5 +3338,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-09-18T15:35:18.116Z"
+  },
+  "24606cf8-63db-452c-a033-b4e274d30034": {
+    "id": "24606cf8-63db-452c-a033-b4e274d30034",
+    "fullName": "Durgesh Dehariya ",
+    "companyName": "Durgesh Dehariya ",
+    "email": "durgeshdehariya622@gmail.com",
+    "phone": "7000826695",
+    "city": "Tamiya ",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Ham do log Hain meri wife aur Main donon aaenge working",
+    "type": "contact-us",
+    "createdAt": "2026-09-19T09:00:39.785Z"
   }
 };
