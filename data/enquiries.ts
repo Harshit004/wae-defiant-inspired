@@ -3362,5 +3362,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Need a proposal for 20 - 25 glass bottles per minute line for the hospitality sector. We are manufacturers of ETP and STP and this is for our regular client. \n",
     "type": "contact-us",
     "createdAt": "2026-09-19T10:37:29.246Z"
+  },
+  "f5123441-47c0-4072-bd9e-3cedb016355f": {
+    "id": "f5123441-47c0-4072-bd9e-3cedb016355f",
+    "fullName": "Tushar Puri",
+    "companyName": "THE GYM health planet",
+    "email": "puri.tushar@gmail.com",
+    "phone": "9711111194",
+    "city": "Gurugram",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Looking for water solution for gym",
+    "type": "contact-us",
+    "createdAt": "2026-09-19T18:46:34.234Z"
   }
 };
