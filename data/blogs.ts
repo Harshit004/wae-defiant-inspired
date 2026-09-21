@@ -4076,12 +4076,27 @@ export const BLOGS: Record<string, BlogPost> = {
         },
         {
           "type": "paragraph",
-          "text": "India’s monitoring systems are becoming more sophisticated, but emerging contaminants expose an important gap. CGWB’s national assessment tracks established parameters such as nitrate, fluoride, arsenic, salinity and several trace elements. No equivalent nationwide groundwater baseline for microplastics exists yet.\n\nThe local evidence from Kerala cannot fill that gap. It can, however, show regulators, researchers and water managers where the next questions lie.\n\nGroundwater is influenced by what happens across the landscape above it: farms, drains, sewage networks, factories, landfills, roads, households and the materials society throws away. Sustainable water management therefore has to connect aquifer protection with pollution prevention, waste management, and better, more sustainable water infrastructure.\n\nA dry aquifer is a water crisis. An aquifer that still contains water but can no longer supply it safely is a water crisis too.\n\nIndia will have to address both.\n\nLong-term water security depends on extracting groundwater responsibly, protecting recharge zones, preventing contaminants from entering water systems, improving plastic waste management, and reducing unnecessary single-use packaging wherever practical alternatives exist. These actions ultimately strengthen water security by protecting both water availability and water quality.\n\nFor organisations, these principles can also be translated into everyday hydration infrastructure. WAE’s approach focuses on plastic-free, point-of-use water systems designed to reduce dependence on packaged-water supply chains while supporting broader water stewardship, circular-economy and sustainability objectives.\n\nProtecting groundwater means more than keeping water underground. It means ensuring that when the next generation reaches it, the water is still worth using."
+          "text": "India’s monitoring systems are becoming more sophisticated, but emerging contaminants reveal a major gap. CGWB’s national assessment tracks established parameters such as nitrate, fluoride, arsenic, salinity, and several trace elements. No equivalent nationwide groundwater baseline for microplastics exists yet.\n\nThe local evidence from Kerala cannot fill that gap. It can, however, show regulators, researchers and water managers where the next questions lie.\n\nGroundwater is influenced by what happens across the landscape above it: farms, drains, sewage networks, factories, landfills, roads, households and the materials society throws away. Sustainable water management therefore has to connect aquifer protection with pollution prevention, waste management, and better, more sustainable water infrastructure.\n\nWHO reports that wastewater treatment can remove more than 90% of microplastics, with the highest removal achieved through tertiary treatment such as filtration. Optimised conventional drinking-water treatment can also remove particles smaller than a micrometre.\n\nA dry aquifer is a water crisis. An aquifer that still contains water but can no longer supply it safely is a water crisis too.\n\nIndia will have to address both.\n\nLong-term water security depends on extracting groundwater responsibly, protecting recharge zones, preventing contaminants from entering water systems, improving plastic waste management, and reducing unnecessary single-use packaging wherever practical alternatives exist. These actions ultimately strengthen water security by protecting both water availability and water quality.\n\nFor organisations, these principles can also be translated into everyday hydration infrastructure. WAE’s approach focuses on plastic-free, point-of-use water systems designed to reduce dependence on packaged-water supply chains while supporting broader water stewardship, circular-economy and sustainability objectives.\n\nProtecting groundwater means more than keeping water underground. It means ensuring that when the next generation reaches it, the water is still worth using."
         },
         {
           "type": "list",
           "items": [
-            "https://www.jalshakti-dowr.gov.in/static/uploads/2025/11/2d2afc1bcaa06de10de2f1ffe3276780.pdf"
+            "1 - Central Ground Water Board’s Annual Ground Water Quality Report 2025",
+            "https://www.jalshakti-dowr.gov.in/static/uploads/2025/11/2d2afc1bcaa06de10de2f1ffe3276780.pdf",
+            "2 - World Health Organization, Arsenic Fact Sheet",
+            "https://www.who.int/news-room/fact-sheets/detail/arsenic?",
+            "3 - World Health Organization, Microplastics in Drinking Water",
+            "https://www.who.int/publications/i/item/9789241516198?",
+            "4 - https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244106&lang=1&reg=3&utm",
+            "5 - Kozhikode groundwater microplastics study, 2025",
+            "https://pubmed.ncbi.nlm.nih.gov/40907300/",
+            "6 - Brahmapuram landfill groundwater study, 2025",
+            "https://link.springer.com/article/10.1007/s44288-025-00303-6?",
+            "7 - West Godavari bottled-water microplastics study, 2024",
+            "https://www.sciencedirect.com/science/article/abs/pii/S0169772224000500?",
+            "8 - Rupnagar bottled-water microplastics study, 2026",
+            "https://www.sciencedirect.com/science/article/pii/S2590123026009916?",
+            "9 - https://moef.gov.in/uploads/pdf-uploads/pdf_68401a627be674.03844470.pdf?"
           ]
         }
       ]
