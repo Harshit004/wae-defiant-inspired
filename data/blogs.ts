@@ -3905,5 +3905,77 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "from-rule-takers-to-rule-shapers-the-brics-summit-and-the-global-south-s-new-vision-for-sustainable-industry": {
+    "id": "from-rule-takers-to-rule-shapers-the-brics-summit-and-the-global-south-s-new-vision-for-sustainable-industry",
+    "title": "From Rule-Takers to Rule-Shapers: The BRICS Summit and the Global South’s New Vision for Sustainable Industry",
+    "category": "Industry Impact and Solutions",
+    "description": "India’s 2026 BRICS chairship signals the Global South’s shift from participating in global systems to helping shape them. The blog explores how sustainability, innovation, resilience and cooperation are redefining industrial development, corporate responsibility and India’s role in building a more inclusive future.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f68870b0-3c98-46cb-8de6-aa6aac75e800/public",
+    "writerId": "shambhavi",
+    "readTime": "6 min read",
+    "status": "Live",
+    "createdAt": "2026-09-21T10:25:43.582Z",
+    "contentColumns": [
+      [
+        {
+          "type": "heading",
+          "text": "“Saṃgacchadhvaṃ Saṃvadadhvaṃ Saṃ Vo Manāṃsi Jānatām.”- Move together, speak together, let your minds be united.\n\n— Rigveda 10.191.2\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "There are moments when a country does more than host the world. It sets the direction in which the world begins to look.\n\nNew Delhi, in September 2026, became one such moment.\n\nAs India welcomed the leaders of the expanded BRICS grouping for its 18th Summit on 12–13 September, the symbolism was difficult to miss. Under the theme Building for Resilience, Innovation, Cooperation and Sustainability, India placed not merely economic growth, but the architecture of tomorrow’s growth, at the centre of the conversation.\n\nThis was not simply a summit about where the world is today.\n\nIt was a conversation about who gets to shape where it goes next.\n"
+        },
+        {
+          "type": "heading",
+          "text": "The Steps We Took And The Stride We Made: The Making of a Global Platform\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The scale of that transformation becomes clearer when viewed through the journey India and BRICS have travelled together.\n\nBRICS today brings together eleven major emerging economies and developing countries: Brazil, China, Egypt, Ethiopia, India, Indonesia, Iran, Russia, Saudi Arabia, South Africa and the United Arab Emirates. Together, they represent approximately 49.5% of the world’s population, 40% of global GDP and 26% of global trade.\n\nThose numbers alter the meaning of the platform itself.\n\nIndia’s 2026 chairship brought this enlarged constituency into a more ambitious conversation: not merely how emerging economies can grow, but how they can grow with resilience, technological confidence, institutional cooperation and ecological responsibility.\n\nIndia’s own evolution is inseparable from that story.\n\nIts BRICS chairship brought the conversation out of conference rooms and into nearly 30 cities through more than 400 meetings and engagements involving ministers, parliamentarians, officials, experts, businesses and people. The New Delhi Declaration explicitly recognised this breadth of engagement as part of the progress achieved during the chairship.\n\nThe significance lies in that movement, from the summit to the system, from the national capital to the wider country, from policy to participation.\n\nThe history of BRICS is, in many ways, the history of an idea gaining institutional weight.\n\nThe acronym BRIC was formalised as a grouping at the first meeting of the BRIC Foreign Ministers on the sidelines of the United Nations General Assembly in New York in 2006. The first BRIC Summit followed in Yekaterinburg, Russia, in 2009.\n\nSouth Africa joined in 2011, transforming BRIC into BRICS. The next major expansion came in 2024, when Egypt, Ethiopia, Iran and the UAE became full members. Indonesia followed as a full member in January 2025, while Belarus, Bolivia, Kazakhstan, Cuba, Malaysia, Nigeria, Thailand, Uganda and Uzbekistan became Partner Countries.\n\nThe architecture has therefore evolved considerably, from four emerging economies to an expanded platform representing nearly half of humanity.\n\nYet the evolution is not merely numerical.\n\nBRICS cooperation rests on three established pillars: political and security cooperation; economic and financial cooperation; and cultural and people-to-people cooperation. The 2026 New Delhi Declaration builds on these pillars while placing resilience, innovation and sustainable development at the centre of the grouping’s contemporary agenda.\n\nIndia’s 2026 chairship gave the BRICS agenda four defining words: Resilience. Innovation. Cooperation. Sustainability.\n\nResilience is about more than surviving disruption. For economies and enterprises, it means building systems capable of absorbing climate shocks, supply-chain interruptions, energy volatility and other uncertainties without compromising long-term development.\n\nInnovation is the mechanism through which constraints become possibilities. Digital public infrastructure, artificial intelligence, fintech, advanced energy systems and knowledge networks can expand the capacity of institutions and industries while opening new pathways for inclusive growth.\n\nCooperation is what allows those capabilities to travel. Technology, finance, research, standards and knowledge become exponentially more powerful when they are shared across borders and adapted to different development contexts.\n\nAnd sustainability is what makes growth enduring.\n\n"
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "When Sustainability Moves from Principle to Practice"
+        },
+        {
+          "type": "paragraph",
+          "text": "India’s approach has increasingly connected environmental responsibility with development rather than positioning the two as opposing objectives.\n\nOne important expression of this is Mission LiFE — Lifestyle for Environment, which places sustainable choices and behavioural change alongside technological and policy interventions. India has previously presented Mission LiFE within the BRICS context as an initiative intended to encourage more environmentally responsible lifestyles.\n\nThe idea is significant because sustainability cannot be engineered entirely from the top.\nIt must also be lived.\n\nThat principle found institutional expression during the 12th BRICS Environment Ministers’ Meeting in New Delhi in August 2026. The meeting placed four priorities at the centre of environmental cooperation: sustainable lifestyles; afforestation, forest-fire management and disaster resilience; circular economy; and climate adaptation through people-centric and community-based approaches built on traditional knowledge.\nThe emphasis was deliberately practical: knowledge sharing, technology cooperation, institutional partnerships and implementation.\n\nIn other words, sustainability was being treated not as an ornamental layer of development, but as part of its operating architecture.\n\nIndia’s BRICS chairship produced a concrete example of this approach through the launch of the BRICS Digital Centre of Excellence for Smart Grids and Energy Storage at the 11th BRICS Energy Ministers’ Meeting in Gurugram.\n\nThe Centre was established as a voluntary collaborative platform for knowledge sharing, capacity building, policy and regulatory exchange and pilot initiatives. BRICS also adopted Guiding Principles on Smart Grids and Energy Storage, while advancing cooperation around hydrogen value chains.\n\n“Energy storage is now essential for both grid flexibility and resilience as renewable integration rises. No single technology can meet all system needs; diverse solutions and strong BRICS collaboration across value chains, manufacturing, and innovation are critical.”\n\n- Debmalya Sen, President, IESA. Source: Down To Earth\n\nAccording to the India Energy Storage Alliance, India’s energy-storage project pipeline has crossed 100 GW, with around 10 GW commissioned. IESA has called for deeper BRICS cooperation on advanced storage technologies, resilient supply chains, critical minerals, harmonised standards and joint demonstration projects.\n\nThis is what sustainable industrial policy begins to look like when innovation meets infrastructure.\nCircular economy thinking changes the question from How much can we produce? to How intelligently can we use what we already have?\n\nThe BRICS environmental agenda has therefore placed resource efficiency and circularity alongside sustainable lifestyles and climate adaptation.\n\nThe New Delhi Declaration recognises the growing scale and complexity of waste generated by urbanisation, industrialisation and changing consumption patterns, and highlights mechanisms including Extended Producer Responsibility, eco-design, sustainable public procurement, recycling and recovery infrastructure.\n\n“Sustainable lifestyles could promote efficient resource utilisation, environmental protection, sustainable livelihoods, equitable economic opportunities, energy access and conservation, as well as environmentally friendly technologies that improve the resilience and well-being of vulnerable communities.”\n\n- BRICS Joint Statement, Source: BRICS Summit\n"
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Building the Nation from the Ground Up"
+        },
+        {
+          "type": "paragraph",
+          "text": "And this is where India's larger development story returns to the ground. A nation cannot build a resilient economy through government action alone.\n\nPolicy establishes direction. Technology creates possibility. Industry scales solutions. Financial institutions enable investment. Institutions implement change. Communities contribute knowledge and participation. Individuals turn systems into habits.\n\nThe most durable form of national development is therefore neither entirely top-down nor entirely bottom-up. It is multi-stakeholder by design.\n\nFor corporates, this creates a new responsibility.\n\nESG expectations and the Sustainable Development Goals are increasingly asking businesses to understand the environmental and social consequences embedded within their operations. Water stewardship, resource efficiency, responsible consumption, resilient infrastructure and climate action sit naturally within this wider framework. SDG 6, in particular, calls for the availability and sustainable management of water and sanitation for all, while SDG 12 places responsible consumption and production at the heart of sustainable development.\n\nThe BRICS New Delhi Declaration itself recognises the importance of advancing SDG 6 and notes the forthcoming 2026 UN Water Conference, reinforcing the connection between global development, water security and sustainable management.\n\nThe real measure of India's global leadership will not be found only in the grandeur of a summit hall.\nIt will be found in what follows.\n\nIn the factory that consumes less and produces more intelligently. In the institution that treats water as a resource rather than a disposable convenience. In the enterprise that designs circularity into its operations. \nThis is where the ambition of BRICS becomes tangible.\n\nThe Global South is not merely asking for a larger seat at an existing table. It is increasingly contributing ideas about what the table itself should look like: more representative, more collaborative, more technologically capable and more conscious of the ecological foundations of prosperity.\n\nIndia’s BRICS chairship has brought that proposition into sharp focus.\n\nAnd perhaps that is the most important transition of all.\n"
+        },
+        {
+          "type": "heading",
+          "text": "From rule-takers to rule-shapers. From consuming the future to designing it.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "At WAE, sustainable advocacy begins with this same belief: that environmental progress becomes meaningful when it moves from intention into the systems through which people and institutions consume essential resources. \n\nOur vision for water is part of that positive movement—towards hydration infrastructure that respects both human need and ecological responsibility.\n\nBecause nations may announce their vision at the summit.\n\nBut the future is built everywhere else.\n"
+        },
+        {
+          "type": "heading",
+          "text": "Bibliography"
+        },
+        {
+          "type": "list",
+          "items": [
+            "BRICS India 2026. (2026). About BRICS. Government of India.  https://www.brics2026.gov.in/about-us/ ",
+            "Down To Earth. (2026). BRICS ministers link energy access to climate finance as India pushes storage and mineral cooperation. https://www.downtoearth.org.in/energy/brics-ministers-link-energy-access-to-climate-finance-as-india-pushes-storage-and-mineral-cooperation",
+            "Ministry of External Affairs, Government of India. (2025). BRICS. Government of India. https://www.mea.gov.in/Portal/ForeignRelation/BRICS-2025.pdf",
+            "Press Information Bureau. (2026). Joint statement of the 12th BRICS Environment Ministers’ Meeting. Government of India. https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2300822&utm"
+          ]
+        }
+      ]
+    ]
   }
 };
