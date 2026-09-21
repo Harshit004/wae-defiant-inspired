@@ -3374,5 +3374,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Looking for water solution for gym",
     "type": "contact-us",
     "createdAt": "2026-09-19T18:46:34.234Z"
+  },
+  "4139c274-ac56-442d-9232-670a08bcb16f": {
+    "id": "4139c274-ac56-442d-9232-670a08bcb16f",
+    "fullName": "Shangari",
+    "companyName": "SD Exports",
+    "email": "sdexportsenquiry@gmail.com",
+    "phone": "9280089274",
+    "city": "Theni, Tamilnadu",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "WACO HYUNDAI Model 500N water cooler\n",
+    "type": "contact-us",
+    "createdAt": "2026-09-21T05:04:36.246Z"
   }
 };
