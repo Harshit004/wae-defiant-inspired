@@ -3386,5 +3386,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "WACO HYUNDAI Model 500N water cooler\n",
     "type": "contact-us",
     "createdAt": "2026-09-21T05:04:36.246Z"
+  },
+  "c7dccc47-8a7f-4e66-be69-2e0104022692": {
+    "id": "c7dccc47-8a7f-4e66-be69-2e0104022692",
+    "fullName": "Tanishka Shekhawat",
+    "companyName": "Prameya Consulting",
+    "email": "tanishka162004@gmail.com",
+    "phone": "09004759632",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-09-21T05:52:58.561Z"
   }
 };
