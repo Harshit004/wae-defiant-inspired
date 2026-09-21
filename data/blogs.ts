@@ -3618,7 +3618,7 @@ export const BLOGS: Record<string, BlogPost> = {
   "the-blue-economy-within-industry-powering-india-s-industrial-future-through-sustainable-water-management": {
     "id": "the-blue-economy-within-industry-powering-india-s-industrial-future-through-sustainable-water-management",
     "title": "The Blue Economy Within Industry: Powering India's Industrial Future Through Sustainable Water Management",
-    "category": "Climate Change & Water",
+    "category": "Industry Impact and Solutions",
     "description": "The greatest forces shaping civilisation have rarely been the loudest.\nCoal ignited the Industrial Revolution. Oil accelerated global commerce. Data now powers the digital economy.",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5cb219de-994b-4ce4-06bb-8fccdb366400/public",
     "writerId": "shambhavi",
