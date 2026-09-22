@@ -4105,7 +4105,7 @@ export const BLOGS: Record<string, BlogPost> = {
           "text": "Microplastics in Indian Groundwater: What Local Studies Show"
         },
         {
-          "type": "heading",
+          "type": "paragraph",
           "text": "Evidence from India is beginning to make the connection more concrete."
         },
         {
