@@ -4260,6 +4260,7 @@ export const BLOGS: Record<string, BlogPost> = {
           ]
         }
       ]
-    ]
+    ],
+    "featuredOnHomepage": true
   }
 };
