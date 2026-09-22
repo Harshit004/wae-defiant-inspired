@@ -265,5 +265,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-09-22",
     "time": "12:41:33",
     "pageLink": "/join-wae"
+  },
+  {
+    "id": "8e857c8e-f715-40f5-b12f-d632b3947631",
+    "email": "69chotilulli@gmail.com",
+    "date": "2026-09-22",
+    "time": "12:41:57",
+    "pageLink": "/join-wae"
   }
 ];
