@@ -3397,5 +3397,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-09-21T05:52:58.561Z"
+  },
+  "0b69c66b-64e7-4cb1-a6e1-94c10b25996b": {
+    "id": "0b69c66b-64e7-4cb1-a6e1-94c10b25996b",
+    "fullName": "Bal Kumar",
+    "companyName": "Bal Kumar",
+    "email": "balkumarmaurya1975@gmail.com",
+    "phone": "+919728189078",
+    "city": "Deepakmaurya ",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/primus",
+    "type": "product",
+    "createdAt": "2026-09-22T05:03:10.246Z"
   }
 };
