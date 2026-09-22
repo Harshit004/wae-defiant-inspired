@@ -3420,5 +3420,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We have requirements of RO of 100LPH, 150LPH and 400LPH for our ongoing projects in jaipur.\n",
     "type": "general",
     "createdAt": "2026-09-22T06:16:11.841Z"
+  },
+  "7ec16ba6-26bc-43e0-905e-8d119111eb83": {
+    "id": "7ec16ba6-26bc-43e0-905e-8d119111eb83",
+    "fullName": "Adil Islam",
+    "companyName": "Diamcorp services pvt ltd",
+    "email": "adil4806@gmaio.com",
+    "phone": "7977184692",
+    "city": "Ranchi",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/plusultra",
+    "type": "product",
+    "createdAt": "2026-09-22T07:10:26.655Z"
   }
 };
