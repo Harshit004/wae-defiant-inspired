@@ -3442,5 +3442,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series",
     "type": "product",
     "createdAt": "2026-09-22T07:24:05.487Z"
+  },
+  "ecfbc53d-fc19-4c9c-88e2-d8680517101c": {
+    "id": "ecfbc53d-fc19-4c9c-88e2-d8680517101c",
+    "fullName": "Rajender Sharma",
+    "companyName": "Office Banao",
+    "email": "rajender.sharma@officebanao.com",
+    "phone": "9212891276",
+    "city": "gurgaon",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "450 Ltr RO Unit Required for Kolkata Project",
+    "type": "contact-us",
+    "createdAt": "2026-09-22T09:43:34.353Z"
   }
 };
