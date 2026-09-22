@@ -1044,7 +1044,7 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ],
-    "featuredOnHomepage": true
+    "featuredOnHomepage": false
   },
   "when-cities-block-rivers-how-urbanisation-turns-monsoons-into-disasters": {
     "id": "when-cities-block-rivers-how-urbanisation-turns-monsoons-into-disasters",
