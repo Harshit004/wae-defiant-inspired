@@ -3431,5 +3431,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/plusultra",
     "type": "product",
     "createdAt": "2026-09-22T07:10:26.655Z"
+  },
+  "2ad68155-e2ab-416d-9b8a-7d5d8310d308": {
+    "id": "2ad68155-e2ab-416d-9b8a-7d5d8310d308",
+    "fullName": "ankush kumar",
+    "companyName": "Gleeds",
+    "email": "ankush.kumar@gleeds.com",
+    "phone": "9592291363",
+    "city": "new delhi",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series",
+    "type": "product",
+    "createdAt": "2026-09-22T07:24:05.487Z"
   }
 };
