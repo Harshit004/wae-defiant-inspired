@@ -3408,5 +3408,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/primus",
     "type": "product",
     "createdAt": "2026-09-22T05:03:10.246Z"
+  },
+  "13737cce-ad15-46e9-9b90-859796b62e89": {
+    "id": "13737cce-ad15-46e9-9b90-859796b62e89",
+    "fullName": "Rohit Kumar Choudhary",
+    "companyName": "DY INFRA & PROJECTS PVT LTD",
+    "email": "rohitk.choudhary@dyinfraprojects.com",
+    "phone": "8963859455",
+    "city": "JAIPUR",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "We have requirements of RO of 100LPH, 150LPH and 400LPH for our ongoing projects in jaipur.\n",
+    "type": "general",
+    "createdAt": "2026-09-22T06:16:11.841Z"
   }
 };
