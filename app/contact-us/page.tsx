@@ -6,6 +6,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { trackLeadCreated } from "@/lib/tracking"
 
 const containerClass = "mx-auto w-full px-[24px] md:px-[7.5vw]"
 
@@ -68,6 +69,7 @@ export default function ContactUsPage() {
         body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error()
+      trackLeadCreated()
       router.push("/thank-you")
     } catch {
       setFormStatus("error")

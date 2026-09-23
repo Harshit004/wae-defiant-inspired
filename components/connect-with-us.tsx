@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackLeadCreated } from '@/lib/tracking';
 
 const Icons = {
   Phone: <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,6 +53,7 @@ const ConnectWithUs: React.FC<ConnectWithUsProps> = ({ introText }) => {
       });
 
       console.log('Form submission request sent to Google Apps Script.');
+      trackLeadCreated();
       alert('Thank you for contacting us! Your message has been sent.');
       form.reset();
 

@@ -39,6 +39,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* End Google Tag Manager */}
+        {/* OpenAI Measurement Pixel */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,u){
+if(w.oaiq)return;var q=function(){q.q?q.q.push(arguments):(q.q=[arguments]);};
+q.q=q.q||[];w.oaiq=q;var js=d.createElement(s);js.async=true;js.src=u;
+var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(js,f);
+})(window,document,'script','https://bzrcdn.openai.com/sdk/oaiq.min.js');`
+          }}
+        />
+        {/* End OpenAI Measurement Pixel */}
         <link rel="icon" href="https://github.com/wae-corp/WAE-F-B/blob/main/public/favicon-32x32.png?raw=true" sizes="32x32" />
       </head>
       <body className={interTight.className}>

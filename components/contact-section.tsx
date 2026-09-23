@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { trackLeadCreated } from '@/lib/tracking';
 
 const Icons = {
   ChevronRight: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,6 +65,7 @@ const ContactSection = () => {
       // Note: With 'no-cors', you won't be able to read the actual response
       // from the Apps Script, but the request will still be sent.
       console.log('Form submission request sent to Google Apps Script.');
+      trackLeadCreated();
       router.push('/thank-you');
 
     } catch (error) {

@@ -8,7 +8,7 @@ export interface Enquiry {
   pageLink: string;
   createdAt: string;
   message?: string;
-  type?: 'product' | 'general' | 'contact-us';
+  type?: 'product' | 'general' | 'contact-us' | string;
 }
 
 export const ENQUIRIES: Record<string, Enquiry> = {

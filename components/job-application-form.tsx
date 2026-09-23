@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { trackLeadCreated } from '@/lib/tracking';
 
 const Icons = {
   ChevronRight: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,6 +97,7 @@ Page URL: ${window.location.href}
 
       if (response.ok || result.success) {
         console.log('Form submission successful');
+        trackLeadCreated();
         setShowToast(true);
         form.reset();
         setResumeFileName('');

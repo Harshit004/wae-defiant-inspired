@@ -4,6 +4,7 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { trackLeadCreated } from "@/lib/tracking";
 
 interface EnquireNowPopupProps {
   isOpen: boolean;
@@ -55,6 +56,7 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
           a.click();
           document.body.removeChild(a);
         }
+        trackLeadCreated();
         router.push("/thank-you");
       } else {
         setError(data.message || "Failed to submit enquiry. Please try again.");

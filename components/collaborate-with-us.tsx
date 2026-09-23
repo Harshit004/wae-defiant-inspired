@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import { trackLeadCreated } from '@/lib/tracking';
 
 interface CollaborateWithUsProps {
   introText: string;
@@ -33,6 +34,7 @@ const CollaborateWithUs: React.FC<CollaborateWithUsProps> = ({ introText }) => {
       });
 
       console.log('Form submission request sent to Google Apps Script.');
+      trackLeadCreated();
       alert('Thank you for your interest in collaborating with us! We will get back to you soon.');
       form.reset();
 

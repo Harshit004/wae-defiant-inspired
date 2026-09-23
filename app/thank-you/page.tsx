@@ -1,11 +1,13 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import Image from "next/image";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Link from "next/link";
+import Script from "next/script";
 import { motion } from "framer-motion";
+import { trackLeadCreated } from "@/lib/tracking";
 
 interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode;
@@ -62,8 +64,24 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, variant = "default"
 };
 
 export default function ThankYouPage() {
+  useEffect(() => {
+    trackLeadCreated();
+  }, []);
+
   return (
     <main className="relative min-h-screen bg-[#0F0F0F] text-white selection:bg-white selection:text-black overflow-x-hidden font-sans flex flex-col">
+      {/* OpenAI Measurement Pixel & Conversion Tracking */}
+      <Script id="openai-lead-tracking" strategy="afterInteractive">
+        {`
+          if (typeof window !== "undefined") {
+            if (typeof window.oaiq === "function") {
+              window.oaiq("measure", "lead_created", { type: "customer_action" });
+            } else if (typeof oaiq === "function") {
+              oaiq("measure", "lead_created", { type: "customer_action" });
+            }
+          }
+        `}
+      </Script>
       {/* Dark background gradient */}
 
       <div className="mb-[125px]">

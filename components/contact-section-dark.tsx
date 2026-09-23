@@ -1,6 +1,7 @@
 import React, { FC, useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { animate } from "framer-motion";
+import { trackLeadCreated } from '@/lib/tracking';
 
 const Icons = {
     Email: <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,6 +49,7 @@ const ContactSectionDark = () => {
                 throw new Error(errorData?.message || 'Failed to submit enquiry');
             }
 
+            trackLeadCreated();
             router.push('/thank-you');
         } catch (error: any) {
             console.error('Error submitting form:', error);
