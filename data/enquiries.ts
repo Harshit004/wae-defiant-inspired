@@ -3466,5 +3466,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "please call ",
     "type": "contact-us",
     "createdAt": "2026-09-23T05:18:24.538Z"
+  },
+  "b25bf203-9e2b-4a20-9345-6e58e601bb39": {
+    "id": "b25bf203-9e2b-4a20-9345-6e58e601bb39",
+    "fullName": "Gurjant Singh",
+    "companyName": "Gurjant Singh",
+    "email": "gs3831358@gmail.com",
+    "phone": "+917529046215",
+    "city": "Jindala davi das pura ",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/quantm",
+    "type": "product",
+    "createdAt": "2026-09-23T05:37:35.478Z"
   }
 };
