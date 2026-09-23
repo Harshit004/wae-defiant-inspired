@@ -279,5 +279,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-09-23",
     "time": "07:26:05",
     "pageLink": "/portfolio/watermatic"
+  },
+  {
+    "id": "77e068e1-8403-4c02-a8cb-05e011121a8a",
+    "email": "farzanakapadia1977@gmail.com",
+    "date": "2026-09-23",
+    "time": "10:25:00",
+    "pageLink": "/portfolio/glass-bottling"
   }
 ];
