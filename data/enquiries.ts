@@ -3454,5 +3454,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "450 Ltr RO Unit Required for Kolkata Project",
     "type": "contact-us",
     "createdAt": "2026-09-22T09:43:34.353Z"
+  },
+  "1496fc89-e246-46a5-9175-20f02dc81cd8": {
+    "id": "1496fc89-e246-46a5-9175-20f02dc81cd8",
+    "fullName": "rpj",
+    "companyName": "pathways",
+    "email": "Frontoffice@rpjgroup.in",
+    "phone": "7602723597 ",
+    "city": "delhi",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "please call ",
+    "type": "contact-us",
+    "createdAt": "2026-09-23T05:18:24.538Z"
   }
 };
