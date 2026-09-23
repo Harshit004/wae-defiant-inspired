@@ -3499,5 +3499,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/primus",
     "type": "product",
     "createdAt": "2026-09-23T07:56:35.766Z"
+  },
+  "c9b89ade-29f8-4688-9eb0-610f781897f5": {
+    "id": "c9b89ade-29f8-4688-9eb0-610f781897f5",
+    "fullName": "Anil",
+    "companyName": "Acorp Consultants Pvt Ltd",
+    "email": "anil@acorp.ltd",
+    "phone": "9900655600",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "We are looking for touchless water stations with the following requirements:\n\nAmbient, hot and cold water dispensing\n\nMinimum capacity: 100 LPH\n\nAmbient, Hot and cold water storage capacity as applicable\n\nDrain tray capacity: minimum 2–3 litres\n\nEquipment to be connected to the domestic water supply line\n\nPreference for a sleek, free-standing model suitable for commercial applications",
+    "type": "contact-us",
+    "createdAt": "2026-09-23T11:57:25.049Z"
   }
 };
