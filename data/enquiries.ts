@@ -3488,5 +3488,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/quantm",
     "type": "product",
     "createdAt": "2026-09-23T05:37:36.838Z"
+  },
+  "a6612cd4-7cbc-4da0-9328-aa4af1e0355e": {
+    "id": "a6612cd4-7cbc-4da0-9328-aa4af1e0355e",
+    "fullName": "Ali Hussain",
+    "companyName": "Salvage Filteration Systems Pvt Ltd",
+    "email": "md@salfy.in",
+    "phone": "9828186876",
+    "city": "Udaipur",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/primus",
+    "type": "product",
+    "createdAt": "2026-09-23T07:56:35.766Z"
   }
 };
