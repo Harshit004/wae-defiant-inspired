@@ -4262,5 +4262,238 @@ export const BLOGS: Record<string, BlogPost> = {
       ]
     ],
     "featuredOnHomepage": true
+  },
+  "from-wastewater-to-water-security-can-india-reduce-its-dependence-on-freshwater": {
+    "id": "from-wastewater-to-water-security-can-india-reduce-its-dependence-on-freshwater",
+    "title": "From Wastewater to Water Security: Can India Reduce Its Dependence on Freshwater?",
+    "category": "Water conservation",
+    "description": "India’s growing freshwater stress is pushing treated wastewater reuse from a disposal issue to a water-security strategy. The blog explores how fit-for-purpose reuse, stronger infrastructure, safe treatment, and circular water management can reduce unnecessary freshwater withdrawals across cities, industry, and agriculture.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7c94a7b0-3651-4a89-ec69-99771405d300/public",
+    "writerId": "rehnuma-ansari",
+    "readTime": "8 min read",
+    "status": "Live",
+    "createdAt": "2026-09-23T07:35:02.856Z",
+    "contentColumns": [
+      [
+        {
+          "type": "paragraph",
+          "text": "Treated wastewater reuse in India can become a practical part of water conservation when safely reclaimed water replaces freshwater in applications that do not require drinking-water quality."
+        },
+        {
+          "type": "paragraph",
+          "text": "India has spent decades trying to secure more water. Cities reach farther for river supplies, farmers drill deeper for groundwater, reservoirs expand, and pipelines carry water over growing distances. Yet another large water resource passes through Indian cities every day, is used once, and is often treated mainly as something to dispose of."
+        },
+        {
+          "type": "paragraph",
+          "text": "Wastewater can serve another purpose if it is collected properly, treated to the required standard, and delivered to the right user. For sustainable water management, this changes the question from “Where will the next source come from?” to “Where is freshwater genuinely necessary?”"
+        },
+        {
+          "type": "heading",
+          "text": "Treated Wastewater Reuse in India: Current Status and Scale"
+        },
+        {
+          "type": "paragraph",
+          "text": "Most conventional urban water systems still follow a linear path: freshwater is extracted from a river, reservoir, or aquifer, treated, supplied, used, collected as sewage, and eventually discharged. Reuse adds another stage. It keeps water productive for longer and can support freshwater conservation by reducing repeat withdrawals from natural sources."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Central Pollution Control Board’s 2021 national inventory estimated urban sewage generation at 72,368 million litres per day (MLD). Installed treatment capacity stood at 31,841 MLD, operational capacity at 26,869 MLD, and actual treatment utilisation at 20,235 MLD. These figures are a historical baseline, not a description of the system in 2026.  (1)"
+        },
+        {
+          "type": "paragraph",
+          "text": "NITI Aayog later used that baseline to show how little treated wastewater was returning to productive use at the time: less than 1,000 MLD, or roughly 3% of treated wastewater in that dataset. The larger lesson is central to the circular economy: treatment alone does not create resource efficiency. (2)"
+        },
+        {
+          "type": "paragraph",
+          "text": "A city can treat sewage and still discharge it into a drain or river. Freshwater demand falls only when treated water replaces water that would otherwise have been drawn from a river, reservoir, or aquifer. That substitution is what turns wastewater treatment into a contribution to water security."
+        },
+        {
+          "type": "heading",
+          "text": "Wastewater Reuse in India Is Moving Into Policy"
+        },
+        {
+          "type": "paragraph",
+          "text": "The reuse picture is changing. In February 2026, the Ministry of Housing and Urban Affairs reported that City Water Balance Plans under AMRUT 2.0 showed States reusing around 6,535 MLD of treated water in industry, horticulture, agriculture, and other applications. Another 1,931 MLD of recycle-and-reuse capacity had been approved under AMRUT 2.0. This marks a shift in water stewardship. (3)"
+        },
+        {
+          "type": "paragraph",
+          "text": "These figures should not be compared directly with NITI Aayog’s earlier 3% estimate because the reporting systems, coverage, and dates differ. What they do show is that reuse is becoming part of formal urban planning and sustainable water management. Scaling it will require sustainable water infrastructure that connects treatment plants with actual users."
+        },
+        {
+          "type": "paragraph",
+          "text": "AMRUT 2.0 sets an ambition for recycled water to meet 20% of total urban water demand and 40% of industrial water demand at the state level. That target reframes freshwater conservation: cities need not only more supply; they also need to identify demand that does not require freshwater. (4)"
+        },
+        {
+          "type": "heading",
+          "text": "Fit-for-Purpose Reuse: Use the Right Water for the Right Job"
+        },
+        {
+          "type": "paragraph",
+          "text": "This is where fit-for-purpose reuse becomes important. Water used for drinking and cooking needs more protection than water used for landscaping, cooling equipment, or some industrial operations. Using potable-quality freshwater automatically for both can be inefficient where a safe alternative exists."
+        },
+        {
+          "type": "paragraph",
+          "text": "For businesses, this logic can support industrial water conservation. Cooling towers, some manufacturing processes, and utility functions can often use appropriately treated reclaimed water, as long as the quality matches the process."
+        },
+        {
+          "type": "paragraph",
+          "text": "Power generation and industry offer established examples. In Mathura, a tertiary treatment facility was developed to supply around 20 MLD of treated sewage water to the IOCL refinery instead of relying on an equivalent freshwater draw from the water-stressed Yamuna system. (5)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The significance is not simply the technology. It is about avoiding freshwater withdrawal. At scale, that becomes water resource conservation."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Water Recycling in Cities Goes Beyond Heavy Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "The same principle applies across urban systems. Parks and landscaping do not necessarily need drinking-quality water. Nor do many construction activities, road cleaning, or certain toilet-flushing systems need it, where separate infrastructure and safeguards are available."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is where circular water management moves from policy language into city design. A sewage treatment plant with no nearby users, pipeline, or reuse plan solves only part of the problem."
+        },
+        {
+          "type": "paragraph",
+          "text": "Demand must be mapped near treatment facilities because moving reclaimed water long distances can make reuse expensive. Separate pipelines, pumping, and storage may be needed. Industries need consistent quality, while municipal users need predictable supply."
+        },
+        {
+          "type": "paragraph",
+          "text": "Treatment plants are therefore only one part of sustainable urban water management. Distribution, pricing, monitoring, and demand planning matter just as much."
+        },
+        {
+          "type": "heading",
+          "text": "Varanasi: A Practical Treated-Water Reuse Case Study"
+        },
+        {
+          "type": "paragraph",
+          "text": "Varanasi provides a useful case study in sustainable water management. A 2026 city-level action plan developed by NMCG, Varanasi Nagar Nigam, and CEEW estimates that the city generates about 465 MLD of sewage and treats around 354 MLD, or roughly 76%. However, only 38% of households are connected to the centralized sewerage network. (6)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The plan identifies 12 potential reuse avenues, including agriculture, railways, construction, industry, landscaping, and water-body rejuvenation. The estimated reuse potential is 91–127 MLD, and the plan suggests Varanasi could reuse about 30% of the treated water currently available. That could meet roughly 35% of the city’s unmet water demand by 2040.  (6)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Reusing more of this water could reduce pressure on existing freshwater supplies and support groundwater conservation."
+        },
+        {
+          "type": "paragraph",
+          "text": "The binding constraints reveal key issues for water stewardship. Limited sewer connectivity leaves treatment assets underused, while some proposed applications require additional tertiary treatment. Reuse therefore depends on collection, treatment quality, and delivery infrastructure working together."
+        },
+        {
+          "type": "heading",
+          "text": "Treated Wastewater for Irrigation: Opportunity With Limits"
+        },
+        {
+          "type": "paragraph",
+          "text": "Agriculture could absorb large volumes of reclaimed water, particularly around expanding cities. NITI Aayog has identified treated wastewater for irrigation as a way to supplement groundwater and surface-water supplies. (2)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Used correctly, this can support sustainable irrigation while reducing competition for freshwater. But “treated” does not mean “suitable for every crop under every condition”."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pathogens may remain if disinfection is inadequate. Salts can affect soils. Industrial inputs to sewer systems can introduce contaminants that municipal treatment may not be designed to remove. Crop type, irrigation method, and worker exposure all matter. NITI Aayog specifically identifies pathogen exposure and bioaccumulation among risks that require monitoring and management. (2)"
+        },
+        {
+          "type": "paragraph",
+          "text": "That is why fit-for-purpose reuse should guide decisions. The objective is not to maximise reuse percentages for their own sake. It is to maximise safe freshwater substitution. That is water stewardship in practice: conserving one resource without transferring risk elsewhere."
+        },
+        {
+          "type": "heading",
+          "text": "Why Reclaimed Water Does Not Automatically Find a User"
+        },
+        {
+          "type": "paragraph",
+          "text": "Technology is only one barrier to water conservation through reuse. Economics can be equally important.\nGroundwater may be cheap for the user pumping it, even when the aquifer carries the environmental cost. If an industrial user can extract freshwater cheaply, paying for a reclaimed-water pipeline, storage, and tariff may appear unattractive."
+        },
+        {
+          "type": "paragraph",
+          "text": "Distance also matters. A treatment plant may produce large volumes of suitable water, but that resource has limited value if the nearest user is kilometres away. Quality must remain consistent too. Businesses cannot redesign operations around a supply that repeatedly falls outside specification."
+        },
+        {
+          "type": "paragraph",
+          "text": "Reliable quality, proximity, and predictable supply are what turn reclaimed water into practical, sustainable water solutions. Public trust matters as well. Reuse programs need transparent standards, routine testing, and clear separation between potable and non-potable systems."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "From Wastewater Treatment to a Circular Water Economy"
+        },
+        {
+          "type": "paragraph",
+          "text": "The broader sustainability principle is simple: water doesn't lose all its value after one use. Its quality changes. With the right collection and treatment, some of it can serve another purpose."
+        },
+        {
+          "type": "paragraph",
+          "text": "Reclaimed water can reduce freshwater withdrawals while also reducing the volume of treated effluent discharged into drains and rivers. That is the operational logic behind a circular water economy."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Jal Hi AMRIT initiative is also building institutional capacity around resource recovery. Government reporting in 2026 said that Water Resource Recovery Cells had been established across 25 States and Union Territories to help plan and scale such interventions. (3)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The emphasis should remain on outcomes rather than terminology. A city becomes more circular when it actually avoids freshwater withdrawal, reuses water safely, and manages quality transparently."
+        },
+        {
+          "type": "heading",
+          "text": "Freshwater Conservation Depends on Fit-for-Purpose Water Use"
+        },
+        {
+          "type": "paragraph",
+          "text": "Treated wastewater will not eliminate India’s dependence on freshwater, nor should that be the objective. People need reliably safe water for drinking and other sensitive uses. Rivers, wetlands, and aquifers also need water to maintain ecological function."
+        },
+        {
+          "type": "paragraph",
+          "text": "The practical opportunity is to stop using scarce freshwater automatically for activities where another water quality can safely perform the same job. That makes fit-for-purpose water use central to sustainable water management."
+        },
+        {
+          "type": "paragraph",
+          "text": "Success should therefore be measured not only by how many litres of wastewater are treated, but by how many litres of freshwater withdrawal are genuinely avoided.\nThe principle is straightforward: reserve high-quality freshwater for uses that require it, and safely reuse treated water where it can perform the job.\nThat is a stronger route to long-term water security than simply searching for the next source."
+        },
+        {
+          "type": "heading",
+          "text": "Where This Connects With WAE’s Water Stewardship Vision"
+        },
+        {
+          "type": "paragraph",
+          "text": "WAE’s connection to this issue is not that institutional hydration and municipal sewage management are the same industry. They are not. The connection lies in the underlying principle of water stewardship: reduce unnecessary extraction, match water quality to purpose, keep resources in productive circulation where it is safe to do so, and build infrastructure around accountability rather than one-time consumption."
+        },
+        {
+          "type": "paragraph",
+          "text": "WAE currently describes its mission as leading through science- and technology-driven water purification and reuse solutions, while its sustainability platform focuses on water stewardship, reducing extractive supply chains and resource-efficient water infrastructure. (7)"
+        },
+        {
+          "type": "paragraph",
+          "text": "For organisations, the lesson is practical. A water strategy should ask not only how much water is consumed, but whether every application needs the same water quality. That is where water conservation, circularity, and infrastructure planning begin to meet."
+        },
+        {
+          "type": "paragraph",
+          "text": "This also connects with WAE’s earlier perspective on groundwater extraction and water-intensive supply chains: The Great Water Trade: How the Plastic Bottle Industry Exploits India’s Groundwater. (8)\nFor organisations looking to translate these principles into responsible water infrastructure, explore WAE’s approach to water stewardship and sustainability."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Sources ",
+            "1 - https://cpcb.gov.in/openpdffile.php?id=UmVwb3J0RmlsZXMvMTIyOF8xNjE1MTk2MzIyX21lZGlhcGhvdG85NTY0LnBkZg",
+            "2 - https://www.niti.gov.in/node/887?",
+            "3 - https://www.pib.gov.in/PressReleasePage.aspx?PRID=2223878&lang=1&reg=3&",
+            "4 - https://amrut.mohua.gov.in/uploads/AMRUT_2.0_REFORMS_TOOLKIT.pdf?",
+            "5 - https://www.pib.gov.in/newsite/PrintRelease.aspx?lang=2&reg=48&relid=179925&",
+            "6 - https://www.ceew.in/press-releases/varanasi-water-reuse-30-percent-treated-used-water-2040",
+            "7 - https://www.waecorp.com/",
+            "8 - https://www.waecorp.com/perspectives/water-conservation/the-great-water-trade-how-the-plastic-bottle-industry-exploits-india-s-groundwater"
+          ]
+        }
+      ]
+    ]
   }
 };
