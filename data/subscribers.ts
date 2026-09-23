@@ -272,5 +272,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-09-22",
     "time": "12:41:57",
     "pageLink": "/join-wae"
+  },
+  {
+    "id": "37ce3ce2-c273-4407-9e2f-f8b58e6cbd68",
+    "email": "papitajatpapita268@gmail.com",
+    "date": "2026-09-23",
+    "time": "07:26:05",
+    "pageLink": "/portfolio/watermatic"
   }
 ];
