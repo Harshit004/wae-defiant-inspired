@@ -4561,17 +4561,17 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "The built environment makes this relationship impossible to ignore.\n\nUNEP reports that buildings consume approximately 32% of global energy and contribute 34% of global CO₂ emissions. Materials such as cement and steel are responsible for 18% of global emissions and remain fundamental to construction.\n\nEvery industrial facility, therefore, carries an environmental story before its machines begin operating.\n\nThe same logic applies to the materials that move through modern consumption systems. A life-cycle assessment published in Waste Management examined bottled water across different bottle materials and highlighted the environmental impacts associated with bottle production and the broader life cycle of bottled water. \n\nThe study also discusses the petroleum basis of conventional PET production; the figure of approximately 4% of annual global petroleum use historically associated with plastic production is cited in this body of literature.\n\nThe lesson is not that the industry must stop producing.\n\nIt is that industrial systems must become conscious of the resources embedded in what they produce, and the infrastructure through which those products are delivered.\n\n"
-        }
-      ],
-      [
+        },
         {
           "type": "heading",
           "text": "Count the Water. Then Change the Equation."
         },
         {
           "type": "paragraph",
-          "text": "Water-footprint management begins with visibility.\n\nWhere does water enter the process?\n\nWhere is it consumed?\nWhere is potable water being used unnecessarily?\nWhere can water be reused?\nWhere can technology reduce demand without affecting output?\nWhere can permanent infrastructure replace a recurring disposable dependency?\n\nThese questions transform water from an overhead into an operational variable.\nAnd that is important for B2B decision-makers.\n\nA reduction in water intensity can strengthen resilience. Process optimisation can reduce operating pressure. Reuse can lower dependence on external supply. Monitoring can reveal inefficiencies invisible in aggregate utility bills.\n\nThe objective is not to ask industry to produce less.\n\nIt is to make every litre work harder.\n"
-        },
+          "text": "Water-footprint management begins with visibility.\n\nWhere does water enter the process?\nWhere is it consumed?\nWhere is potable water being used unnecessarily?\nWhere can water be reused?\nWhere can technology reduce demand without affecting output?\n\nWhere can permanent infrastructure replace a recurring disposable dependency?\n\nThese questions transform water from an overhead into an operational variable.\n\nAnd that is important for B2B decision-makers.\n\nA reduction in water intensity can strengthen resilience. Process optimisation can reduce operating pressure. Reuse can lower dependence on external supply. Monitoring can reveal inefficiencies invisible in aggregate utility bills.\n\nThe objective is not to ask industry to produce less.\n\nIt is to make every litre work harder.\n"
+        }
+      ],
+      [
         {
           "type": "heading",
           "text": "The Factory of the Future Is More Intelligent, Not Smaller"
