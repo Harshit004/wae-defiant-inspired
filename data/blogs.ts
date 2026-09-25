@@ -4527,17 +4527,17 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "Revenue is an essential language of business.\n\nIt pays for expansion. It funds research. It creates employment. It attracts investment. It gives an enterprise the capacity to build again.\n\nBut revenue is an incomplete measure of industrial success if the resources required to generate it are treated as infinite.\n\nThe economics of tomorrow therefore demands a broader equation:\n\nGrowth with responsibility; Productivity with resource intelligence; Revenue with resilience.\nIndia's Union Budget 2026–27 offers an interesting reflection of this growth ambition. It introduced a ₹10,000 crore SME Growth Fund to help create future champion SMEs and proposed a ₹2,000 crore top-up to the Self-Reliant India Fund to maintain access to risk capital for micro enterprises.\n\nCapital can help industry scale.\n\nThe next question is whether that scale can become progressively less resource-intensive.\nBecause the factory that produces more while consuming less water, energy and material is not compromising productivity.\n\nIt is redefining productivity.\n"
-        }
-      ],
-      [
+        },
         {
           "type": "heading",
           "text": "The Cost of Ignoring Tomorrow"
         },
         {
           "type": "paragraph",
-          "text": "Climate risk has made this conversation unavoidable.\n\nFor industry, two categories are particularly consequential: physical risk and transition risk.\n\nPhysical risks are the direct consequences of climate change; floods, droughts, extreme heat, storms, changing precipitation patterns and water stress. Their impact can reach production facilities, workers, supply chains, logistics, raw-material availability and access to essential utilities.\n\nTransition risks emerge from the movement towards a lower-carbon economy. Regulation may change. Carbon costs may rise. Technologies may make existing processes less competitive. Customers may demand lower-impact products. Investors and financial institutions may increasingly scrutinise environmental performance.\nThe industrial question is therefore no longer simply, Can we manufacture this?\n\nIt is also, Can we manufacture this resiliently?\n\nThe Paris Agreement established the global ambition of holding the increase in average global temperature to well below 2°C above pre-industrial levels while pursuing efforts to limit warming to 1.5°C.\n\nThat ambition has made greenhouse-gas mitigation central to industrial strategy. Measuring and reducing emissions is now increasingly connected to the way companies understand operational efficiency, supply-chain exposure and long-term resilience.\n\nThe GHG Protocol provides the familiar architecture: Scope 1 emissions from sources owned or controlled by an organisation; Scope 2 emissions associated with purchased energy; and Scope 3 emissions arising across the wider value chain.\n\nThe implication is profound.\n\nThe environmental footprint of a business does not end at its factory gate.\n"
-        },
+          "text": "Climate risk has made this conversation unavoidable.\n\nFor industry, two categories are particularly consequential: physical risk and transition risk.\n\nPhysical risks are the direct consequences of climate change; floods, droughts, extreme heat, storms, changing precipitation patterns and water stress. Their impact can reach production facilities, workers, supply chains, logistics, raw-material availability and access to essential utilities.\n\nTransition risks emerge from the movement towards a lower-carbon economy. Regulation may change. Carbon costs may rise. Technologies may make existing processes less competitive. Customers may demand lower-impact products. Investors and financial institutions may increasingly scrutinise environmental performance.\n\nThe industrial question is therefore no longer simply, Can we manufacture this?\n\nIt is also, Can we manufacture this resiliently?\n\nThe Paris Agreement established the global ambition of holding the increase in average global temperature to well below 2°C above pre-industrial levels while pursuing efforts to limit warming to 1.5°C.\n\nThat ambition has made greenhouse-gas mitigation central to industrial strategy. Measuring and reducing emissions is now increasingly connected to the way companies understand operational efficiency, supply-chain exposure and long-term resilience.\n\nThe GHG Protocol provides the familiar architecture: Scope 1 emissions from sources owned or controlled by an organisation; Scope 2 emissions associated with purchased energy; and Scope 3 emissions arising across the wider value chain.\n\nThe implication is profound.\n\nThe environmental footprint of a business does not end at its factory gate.\n"
+        }
+      ],
+      [
         {
           "type": "heading",
           "text": "When Sustainability Became a System"
@@ -4553,17 +4553,17 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "There is one industrial input that makes this conversation particularly tangible.\n\nWater.\n\nNo construction activity can happen without water in place. Manufacturing processes depend on it for cooling, cleaning, processing, material preparation and countless other operations. Workers need it. Buildings need it. \n\nCommunities surrounding industrial ecosystems need it.\n\nWater is therefore not simply a sustainability metric.\n\nIt is industrial infrastructure.\n\nUN-Water's analysis of SDG indicator 6.4.1 found that global water-use efficiency increased from US$17.3 per cubic metre in 2015 to US$18.9 per cubic metre in 2018. Industrial water-use efficiency reached approximately US$32 per cubic metre, representing a 15% improvement over 2015.\n\nThe number suggests a larger industrial principle:\n\nThe value of water should be measured not only by how much is consumed, but by how much productive value is generated from it.\n\nThat is the beginning of a water-footprint strategy.\n"
-        }
-      ],
-      [
+        },
         {
           "type": "heading",
           "text": "What We Build Has a Water Story"
         },
         {
           "type": "paragraph",
-          "text": "The built environment makes this relationship impossible to ignore.\n\nUNEP reports that buildings consume approximately 32% of global energy and contribute 34% of global CO₂ emissions. Materials such as cement and steel are responsible for 18% of global emissions and remain fundamental to construction.\n\nEvery industrial facility, therefore, carries an environmental story before its machines begin operating.\n\nThe same logic applies to the materials that move through modern consumption systems. A life-cycle assessment published in Waste Management examined bottled water across different bottle materials and highlighted the environmental impacts associated with bottle production and the broader life cycle of bottled water. The study also discusses the petroleum basis of conventional PET production; the figure of approximately 4% of annual global petroleum use historically associated with plastic production is cited in this body of literature.\n\nThe lesson is not that the industry must stop producing.\n\nIt is that industrial systems must become conscious of the resources embedded in what they produce, and the infrastructure through which those products are delivered.\n"
-        },
+          "text": "The built environment makes this relationship impossible to ignore.\n\nUNEP reports that buildings consume approximately 32% of global energy and contribute 34% of global CO₂ emissions. Materials such as cement and steel are responsible for 18% of global emissions and remain fundamental to construction.\n\nEvery industrial facility, therefore, carries an environmental story before its machines begin operating.\n\nThe same logic applies to the materials that move through modern consumption systems. A life-cycle assessment published in Waste Management examined bottled water across different bottle materials and highlighted the environmental impacts associated with bottle production and the broader life cycle of bottled water. \n\nThe study also discusses the petroleum basis of conventional PET production; the figure of approximately 4% of annual global petroleum use historically associated with plastic production is cited in this body of literature.\n\nThe lesson is not that the industry must stop producing.\n\nIt is that industrial systems must become conscious of the resources embedded in what they produce, and the infrastructure through which those products are delivered.\n\n"
+        }
+      ],
+      [
         {
           "type": "heading",
           "text": "Count the Water. Then Change the Equation."
