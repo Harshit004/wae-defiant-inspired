@@ -3511,5 +3511,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We are looking for touchless water stations with the following requirements:\n\nAmbient, hot and cold water dispensing\n\nMinimum capacity: 100 LPH\n\nAmbient, Hot and cold water storage capacity as applicable\n\nDrain tray capacity: minimum 2–3 litres\n\nEquipment to be connected to the domestic water supply line\n\nPreference for a sleek, free-standing model suitable for commercial applications",
     "type": "contact-us",
     "createdAt": "2026-09-23T11:57:25.049Z"
+  },
+  "23c83348-a97c-4d58-9e2f-9b55db4a8802": {
+    "id": "23c83348-a97c-4d58-9e2f-9b55db4a8802",
+    "fullName": "Sugana meena",
+    "companyName": "Sugana meena",
+    "email": "suganameena504@gmail.com",
+    "phone": "suganameena504@gmail.com",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-09-26T01:55:02.207Z"
   }
 };
