@@ -3545,5 +3545,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "need bottling plant for my Hotels in Guwahati. need information. ",
     "type": "contact-us",
     "createdAt": "2026-09-28T07:47:31.245Z"
+  },
+  "748dac73-45b5-44c2-8613-41e16cc80870": {
+    "id": "748dac73-45b5-44c2-8613-41e16cc80870",
+    "fullName": "GOPAL",
+    "companyName": "SPYCOM INDIA PVT LTD ",
+    "email": "gopal@spycomindia.in",
+    "phone": "7606889871",
+    "city": "MP - NIDORE",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "\"Supply, installation, testing and commissioning of recessed Bi-Level Drinking Water Fountains with double bubbler, bottle filling station with minimum 50 LPH RO system, 60 LPH cooling capacity mechanical operation to activate the water flow, stainless steel body brushed finish, SS bubbler Guard operated between 20 to 150 PSI, chilling unit suitable for R134a refrigerant, adjustable thermostat with electrical protection rating, supply Complete with all accessories further strengthened by Certification: GRIHA-C, CE, ISO, TUV, BIS Certification.\nMake:- WAE \"\tEach\t15\n",
+    "type": "contact-us",
+    "createdAt": "2026-09-28T08:23:51.581Z"
   }
 };
