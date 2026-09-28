@@ -3522,5 +3522,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-09-26T01:55:02.207Z"
+  },
+  "a93500ff-6ad1-404d-bf2b-ee8bb02f3775": {
+    "id": "a93500ff-6ad1-404d-bf2b-ee8bb02f3775",
+    "fullName": "Prashant Bobade",
+    "companyName": "AMPS Power India Pvt Ltd",
+    "email": "purchase@ampspower.in",
+    "phone": "7755979769",
+    "city": "PUNE",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series?shem=aimgspe,",
+    "type": "product",
+    "createdAt": "2026-09-28T05:58:18.477Z"
   }
 };
