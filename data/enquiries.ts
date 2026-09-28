@@ -3557,5 +3557,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "\"Supply, installation, testing and commissioning of recessed Bi-Level Drinking Water Fountains with double bubbler, bottle filling station with minimum 50 LPH RO system, 60 LPH cooling capacity mechanical operation to activate the water flow, stainless steel body brushed finish, SS bubbler Guard operated between 20 to 150 PSI, chilling unit suitable for R134a refrigerant, adjustable thermostat with electrical protection rating, supply Complete with all accessories further strengthened by Certification: GRIHA-C, CE, ISO, TUV, BIS Certification.\nMake:- WAE \"\tEach\t15\n",
     "type": "contact-us",
     "createdAt": "2026-09-28T08:23:51.581Z"
+  },
+  "3aacf355-0f98-4c81-99db-896c97e989d4": {
+    "id": "3aacf355-0f98-4c81-99db-896c97e989d4",
+    "fullName": "Ankit Yadav",
+    "companyName": "Ankit Yadav",
+    "email": "ankityadav.154278@gmail.com",
+    "phone": "9935902260",
+    "city": "Ankit ko ",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/quantm",
+    "type": "product",
+    "createdAt": "2026-09-28T10:51:55.442Z"
   }
 };
