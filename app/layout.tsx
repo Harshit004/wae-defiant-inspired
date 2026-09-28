@@ -71,6 +71,13 @@ var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(js,f);
         </Suspense>
         <ScrollToTop />
         <Toaster />
+        <Script 
+          type="text/javascript"
+          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+          id="aisensy-wa-widget"
+          strategy="afterInteractive"
+          {...{ "widget-id": "aab53u" }}
+        />
       </body>
     </html>
   )
