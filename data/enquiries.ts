@@ -3533,5 +3533,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series?shem=aimgspe,",
     "type": "product",
     "createdAt": "2026-09-28T05:58:18.477Z"
+  },
+  "9c5a5dcb-c0f1-4bfa-be0c-843b0f45e075": {
+    "id": "9c5a5dcb-c0f1-4bfa-be0c-843b0f45e075",
+    "fullName": "Prabir Mahanta ",
+    "companyName": "Hotel Brahmaputra Madhukalya ",
+    "email": "pmprabir04@gmail.com",
+    "phone": "8638285296",
+    "city": "Guwahati",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "need bottling plant for my Hotels in Guwahati. need information. ",
+    "type": "contact-us",
+    "createdAt": "2026-09-28T07:47:31.245Z"
   }
 };
