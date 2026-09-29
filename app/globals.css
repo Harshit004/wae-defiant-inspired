@@ -78,8 +78,21 @@ padding-bottom: 20px;
   animation: underlineSlide 0.3s forwards;
 }
 
-/* AiSensy WhatsApp Widget - Transparent Icon Background */
+/* AiSensy WhatsApp Widget - Styling & Alignment */
+#df-btn-cont .df-btn {
+  bottom: 22px !important;
+  right: 21px !important;
+  transition: none !important;
+}
+
+@media (max-width: 767px) {
+  #df-btn-cont .df-btn {
+    right: 13px !important;
+  }
+}
+
 #df-btn-cont .df-btn-text {
+  padding: 0 !important;
   background-color: transparent !important;
   background: transparent !important;
   box-shadow: none !important;
