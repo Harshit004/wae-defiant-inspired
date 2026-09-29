@@ -78,3 +78,18 @@ padding-bottom: 20px;
   animation: underlineSlide 0.3s forwards;
 }
 
+/* AiSensy WhatsApp Widget - Transparent Icon Background */
+#df-btn-cont .df-btn-text {
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#df-btn-cont .df-btn-text:hover {
+  box-shadow: none !important;
+}
+
+#df-btn-cont .df-svg-icon {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+
