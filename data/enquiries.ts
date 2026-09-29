@@ -3580,5 +3580,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "cold /hot /normal  yeah tin option hona chahiye\nno botterl install direct connect water suply plumber",
     "type": "contact-us",
     "createdAt": "2026-09-29T07:21:06.387Z"
+  },
+  "cd2a7803-4cc3-4a39-b395-167ff8aab62a": {
+    "id": "cd2a7803-4cc3-4a39-b395-167ff8aab62a",
+    "fullName": "Muskan Gupta ",
+    "companyName": "ACME PLASTICS",
+    "email": "Sales@acmeplasticsindia.com",
+    "phone": "9560032209",
+    "city": "Faridabad",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Our key capabilities include Extruded Profiles, Sleeves, Spiral Sleeves, PVC/Polymer Products and Injection Moulded Components, supported by in-house Tool Room, New Product Development and Quality facilities.\n\nWe would be interested in becoming an approved/regular supplier for your organization.\nWe are supply to IMPERIAL AUTO & GATES INDIA ALSO.",
+    "type": "contact-us",
+    "createdAt": "2026-09-29T10:35:25.643Z"
   }
 };
