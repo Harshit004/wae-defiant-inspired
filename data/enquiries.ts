@@ -3592,5 +3592,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Our key capabilities include Extruded Profiles, Sleeves, Spiral Sleeves, PVC/Polymer Products and Injection Moulded Components, supported by in-house Tool Room, New Product Development and Quality facilities.\n\nWe would be interested in becoming an approved/regular supplier for your organization.\nWe are supply to IMPERIAL AUTO & GATES INDIA ALSO.",
     "type": "contact-us",
     "createdAt": "2026-09-29T10:35:25.643Z"
+  },
+  "7a588705-5437-4b1a-859d-f66dcb58f4c1": {
+    "id": "7a588705-5437-4b1a-859d-f66dcb58f4c1",
+    "fullName": "Kaif Qureshi",
+    "companyName": "Kent",
+    "email": "kq1201539@gmail.com",
+    "phone": "7610601364",
+    "city": "Mhow",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-ct",
+    "type": "product",
+    "createdAt": "2026-09-29T18:50:00.892Z"
   }
 };
