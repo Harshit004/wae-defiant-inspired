@@ -3568,5 +3568,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/quantm",
     "type": "product",
     "createdAt": "2026-09-28T10:51:55.442Z"
+  },
+  "cd450d70-15db-4835-aad9-8af476c91cad": {
+    "id": "cd450d70-15db-4835-aad9-8af476c91cad",
+    "fullName": "Ankit Thakor",
+    "companyName": "vrinsoft",
+    "email": "ankit.t@vrinsoft.com",
+    "phone": "9328250429",
+    "city": "ahemdabad gujarat",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "cold /hot /normal  yeah tin option hona chahiye\nno botterl install direct connect water suply plumber",
+    "type": "contact-us",
+    "createdAt": "2026-09-29T07:21:06.387Z"
   }
 };
