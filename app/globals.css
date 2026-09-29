@@ -90,6 +90,8 @@ padding-bottom: 20px;
 }
 
 #df-btn-cont .df-svg-icon {
+  width: 60px !important;
+  height: 60px !important;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
 }
 
