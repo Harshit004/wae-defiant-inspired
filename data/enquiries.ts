@@ -3614,5 +3614,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series",
     "type": "product",
     "createdAt": "2026-10-01T10:02:31.286Z"
+  },
+  "01a1c023-1937-4ca7-8e0b-82a8f99e6a4c": {
+    "id": "01a1c023-1937-4ca7-8e0b-82a8f99e6a4c",
+    "fullName": "aaaaaaa",
+    "companyName": "aaaaaa",
+    "email": "aaa",
+    "phone": "aaaaa",
+    "city": "aaaa",
+    "pageLink": "aaaaa",
+    "message": "aaa",
+    "type": "aaaaaaa",
+    "createdAt": "2026-10-01T13:15:38.435Z"
   }
 };
