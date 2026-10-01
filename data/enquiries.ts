@@ -3603,5 +3603,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-ct",
     "type": "product",
     "createdAt": "2026-09-29T18:50:00.892Z"
+  },
+  "3c8f3450-fb9a-4e10-abe9-fdf5f8c7c74f": {
+    "id": "3c8f3450-fb9a-4e10-abe9-fdf5f8c7c74f",
+    "fullName": "Utkarsh Chaturvedii",
+    "companyName": "Procura Business",
+    "email": "utkarsh@procurabusiness.com",
+    "phone": "7977579889",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series",
+    "type": "product",
+    "createdAt": "2026-10-01T10:02:31.286Z"
   }
 };
