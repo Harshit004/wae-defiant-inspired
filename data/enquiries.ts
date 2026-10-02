@@ -3638,5 +3638,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-10-01T13:15:41.570Z"
+  },
+  "16d0818d-45a5-49bb-aafc-39d970dd7975": {
+    "id": "16d0818d-45a5-49bb-aafc-39d970dd7975",
+    "fullName": "Reji john",
+    "companyName": "Mentor Security Technics ",
+    "email": "krmentor@gmail.com",
+    "phone": "9387058595",
+    "city": "Thiruvananthapuram ",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "We need hot. Cooling, normal  water dispenser for sales ",
+    "type": "contact-us",
+    "createdAt": "2026-10-02T16:43:51.106Z"
   }
 };
