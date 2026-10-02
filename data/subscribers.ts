@@ -384,5 +384,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-09-29",
     "time": "22:12:17",
     "pageLink": "/portfolio/bluwae/reva"
+  },
+  {
+    "id": "ec941743-d28d-4bb5-a533-887597387a55",
+    "email": "shaikhnoorainshaikh93@gmail.com",
+    "date": "2026-10-02",
+    "time": "13:21:17",
+    "pageLink": "/portfolio/glass-bottling"
   }
 ];
