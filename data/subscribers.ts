@@ -391,5 +391,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-02",
     "time": "13:21:17",
     "pageLink": "/portfolio/glass-bottling"
+  },
+  {
+    "id": "83e02309-aea6-42ac-8707-a16ad1249640",
+    "email": "intajurbarbhuiyarahman@gmail.com",
+    "date": "2026-10-03",
+    "time": "09:10:48",
+    "pageLink": "/portfolio/glass-bottling"
   }
 ];
