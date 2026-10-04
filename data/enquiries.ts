@@ -3650,5 +3650,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We need hot. Cooling, normal  water dispenser for sales ",
     "type": "contact-us",
     "createdAt": "2026-10-02T16:43:51.106Z"
+  },
+  "d61eb529-66bd-4b31-b26f-4d128de1f90d": {
+    "id": "d61eb529-66bd-4b31-b26f-4d128de1f90d",
+    "fullName": "Subodh Kumar",
+    "companyName": "Shreya Services",
+    "email": "shreyaservices.10@gmail.com",
+    "phone": "7542027793",
+    "city": "Patna",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "We need Your Services centra contact details.",
+    "type": "contact-us",
+    "createdAt": "2026-10-04T08:46:39.985Z"
   }
 };
