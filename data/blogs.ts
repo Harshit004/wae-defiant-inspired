@@ -4633,7 +4633,11 @@ export const BLOGS: Record<string, BlogPost> = {
         },
         {
           "type": "paragraph",
-          "text": "Profits. The word industry understands instinctively.\nEvery quarter, every annual meeting, every strategic review eventually returns to the graph: revenue, margins, productivity, growth. Manufacturing tracks raw materials, shipments, logistics and distribution. Technology and services track resources, efficiency and the intelligence of every decision.\nBut beneath these systems sits something rarely treated as a business variable.\nWater.\nIndustry functions on the environment, because of the environment, and sometimes at the expense of it. Water connects the factory floor to the supply chain, the server room to the electricity grid, the field to the finished product.\nWorldwide, agriculture accounts for roughly 70% of freshwater withdrawals, industry just under 20%, and domestic use about 12%. Global freshwater demand has risen by just under 1% annually since the 1980s. Groundwater supplies about 25% of irrigation water and half of freshwater withdrawn for domestic use.\nThat is not merely a water statistic. It is an industrial warning.\n"
+          "text": "Profits. The word industry understands instinctively.\nEvery quarter, every annual meeting, every strategic review eventually returns to the graph: revenue, margins, productivity, growth. Manufacturing tracks raw materials, shipments, logistics and distribution. Technology and services track resources, efficiency and the intelligence of every decision.\nBut beneath these systems sits something rarely treated as a business variable.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Water.\nIndustry functions on the environment, because of the environment, and sometimes at the expense of it. Water connects the factory floor to the supply chain, the server room to the electricity grid, the field to the finished product.\nWorldwide, agriculture accounts for roughly 70% of freshwater withdrawals, industry just under 20%, and domestic use about 12%. Global freshwater demand has risen by just under 1% annually since the 1980s. Groundwater supplies about 25% of irrigation water and half of freshwater withdrawn for domestic use.\nThat is not merely a water statistic. It is an industrial warning.\n"
         },
         {
           "type": "heading",
@@ -4661,7 +4665,11 @@ export const BLOGS: Record<string, BlogPost> = {
         },
         {
           "type": "paragraph",
-          "text": "Textile Industry: The textile industry is among the most water-intensive industries worldwide. According to the Water Footprint Network estimate cited by Thomasnet, producing a single pair of jeans can require approximately 2,800 gallons of water when the full lifecycle of cotton production and processing is considered. The footprint therefore extends beyond the textile factory, beginning with cotton cultivation and continuing through processing and manufacturing."
+          "text": "Textile Industry: The textile industry is among the most water-intensive industries worldwide. According to the Water Footprint Network estimate cited by Thomasnet, producing a single pair of jeans can require approximately 2,800 gallons of water when the full lifecycle of cotton production and processing is considered. "
+        },
+        {
+          "type": "paragraph",
+          "text": "The footprint therefore extends beyond the textile factory, beginning with cotton cultivation and continuing through processing and manufacturing."
         }
       ],
       [
@@ -4691,7 +4699,11 @@ export const BLOGS: Record<string, BlogPost> = {
         },
         {
           "type": "paragraph",
-          "text": "The industrial water conversation cannot stop at quantity.\nWhat enters a process can leave it altered. UNESCO notes that in lower-income countries, poor water quality is strongly associated with inadequate wastewater treatment, while in higher-income countries, agricultural runoff is a major concern. Emerging contaminants include pharmaceuticals, hormones, industrial chemicals, detergents, cyanotoxins, PFAS and nanomaterials.\nThat makes industrial responsibility a question of quality as much as volume.\nIndia faces the same tension at scale. One industry estimate places industrial and energy-sector water demand growth at 4.2% annually, with industrial demand projected near 228 billion cubic metres by 2025. The same source notes that roughly 70% of wastewater is discharged without treatment. Separately, ScienceDirect identifies industrial water use as occupying 22% of worldwide water use, covering applications including thermoelectric power, manufacturing, refineries and dams.\nThe numbers make one thing clear: water cannot remain a utility line item while its scarcity becomes an operational variable.\n"
+          "text": "The industrial water conversation cannot stop at quantity.\nWhat enters a process can leave it altered. UNESCO notes that in lower-income countries, poor water quality is strongly associated with inadequate wastewater treatment, while in higher-income countries, agricultural runoff is a major concern. Emerging contaminants include pharmaceuticals, hormones, industrial chemicals, detergents, cyanotoxins, PFAS and nanomaterials.\nThat makes industrial responsibility a question of quality as much as volume.\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "India faces the same tension at scale. One industry estimate places industrial and energy-sector water demand growth at 4.2% annually, with industrial demand projected near 228 billion cubic metres by 2025. The same source notes that roughly 70% of wastewater is discharged without treatment. Separately, ScienceDirect identifies industrial water use as occupying 22% of worldwide water use, covering applications including thermoelectric power, manufacturing, refineries and dams.\nThe numbers make one thing clear: water cannot remain a utility line item while its scarcity becomes an operational variable.\n"
         }
       ],
       [
