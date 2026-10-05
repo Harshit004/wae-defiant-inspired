@@ -3686,5 +3686,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Vishnu Kumar 1234",
     "type": "contact-us",
     "createdAt": "2026-10-05T15:28:24.897Z"
+  },
+  "f3dceacf-b1b1-4610-902c-3266000b6cde": {
+    "id": "f3dceacf-b1b1-4610-902c-3266000b6cde",
+    "fullName": "Krishna Goswami ",
+    "companyName": "Mexim adhesive tape",
+    "email": "goswamikrishna38@gmail.com",
+    "phone": "7524027310",
+    "city": "Kld",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Respected women's ",
+    "type": "contact-us",
+    "createdAt": "2026-10-05T23:41:13.292Z"
   }
 };
