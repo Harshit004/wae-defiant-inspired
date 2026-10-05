@@ -3674,5 +3674,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We are inviting offers for a modern 75 KLD Sewage Treatment Plant (STP) for PM Ekta Mall, Aizawl, Mizoram. It is a government project. and would like you to submit your offer for the same.\n\nWe are attaching the technical specification and the DBR (Design Basis Report) for your reference. Please go through both documents and prepare your offer accordingly.\n\nYour offer should include:\n- Proposed treatment technology and process description\n- Price break-up (supply, installation, commissioning)\n- Delivery and completion schedule\n- Commercial terms, payment terms and warranty\n- Any deviations or clarifications, listed separately\n\nPlease submit your offer at the earliest. If you need any clarification, feel free to contact us.\n",
     "type": "contact-us",
     "createdAt": "2026-10-05T09:13:09.018Z"
+  },
+  "f502322d-ee00-4467-81a7-cc184459b9da": {
+    "id": "f502322d-ee00-4467-81a7-cc184459b9da",
+    "fullName": "Vishnu Kumar ",
+    "companyName": "Vishnu Kumar 1234",
+    "email": "satishraj20491@gmail.com",
+    "phone": "8707039598",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Vishnu Kumar 1234",
+    "type": "contact-us",
+    "createdAt": "2026-10-05T15:28:24.897Z"
   }
 };
