@@ -4610,5 +4610,142 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "tomorrow-is-not-a-market-rethinking-industry-s-responsibility-to-the-future": {
+    "id": "tomorrow-is-not-a-market-rethinking-industry-s-responsibility-to-the-future",
+    "title": "Tomorrow Is Not a Market: Rethinking Industry’s Responsibility to the Future",
+    "category": "Industry Impact and Solutions",
+    "description": "Industry measures growth in numbers, but water sustains every number on the balance sheet. From factories and supply chains to data centres, this article examines industry's water dependency, and why responsible growth demands redesigning how we use, manage and value water before tomorrow arrives.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ed7338f3-86db-40f6-54d2-8d701f951700/public",
+    "writerId": "shambhavi",
+    "readTime": "3 min read",
+    "status": "Live",
+    "createdAt": "2026-10-05T06:04:21.145Z",
+    "contentColumns": [
+      [
+        {
+          "type": "heading",
+          "text": "“Industry can no longer ignore the vital link between water and climate.” \n\n- Christophe Beck\n"
+        },
+        {
+          "type": "heading",
+          "text": "The Metric That Sits Beneath Every Market\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Profits. The word industry understands instinctively.\nEvery quarter, every annual meeting, every strategic review eventually returns to the graph: revenue, margins, productivity, growth. Manufacturing tracks raw materials, shipments, logistics and distribution. Technology and services track resources, efficiency and the intelligence of every decision.\nBut beneath these systems sits something rarely treated as a business variable.\nWater.\nIndustry functions on the environment, because of the environment, and sometimes at the expense of it. Water connects the factory floor to the supply chain, the server room to the electricity grid, the field to the finished product.\nWorldwide, agriculture accounts for roughly 70% of freshwater withdrawals, industry just under 20%, and domestic use about 12%. Global freshwater demand has risen by just under 1% annually since the 1980s. Groundwater supplies about 25% of irrigation water and half of freshwater withdrawn for domestic use.\nThat is not merely a water statistic. It is an industrial warning.\n"
+        },
+        {
+          "type": "heading",
+          "text": "From Desks to Data Centres: Mapping Water Consumption\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Water is present at every stage, and the point of maximum consumption changes with the industry.\nPower generation can require vast quantities for cooling and heat transfer. Pulp and paper relies heavily on process water. Textiles consume water through cotton cultivation, wet processing, dyeing and finishing. Food and beverage depend on water across agriculture, processing, cleaning and sanitation. Automotive manufacturing uses it for surface treatment, coating, painting, washing, cooling and boilers.\n"
+        },
+        {
+          "type": "heading",
+          "text": "Industry-Specific Water Consumption Patterns"
+        },
+        {
+          "type": "paragraph",
+          "text": "Water use changes dramatically from one industry to another. For some, it is fundamental to production; for others, it supports cooling, processing, cleaning, sanitation or the infrastructure that keeps operations running. Yet across sectors, the pattern remains the same: water is embedded far deeper into the industrial value chain than the final product reveals."
+        },
+        {
+          "type": "paragraph",
+          "text": "Power Generation: Power generation facilities, particularly fossil fuel and nuclear power plants, require vast quantities of water, primarily for cooling and heat transfer. Water plays a critical role in managing the immense heat generated during electricity production, making cooling one of the principal points of industrial water demand.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pulp & Paper: The pulp and paper industry is among the water-intensive sectors because of its reliance on process water throughout production. Water is involved across multiple stages of manufacturing, from processing raw material to producing and finishing paper. The industry's dependence demonstrates how water can become integral not merely to an industrial facility's operations, but to the production process itself.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Textile Industry: The textile industry is among the most water-intensive industries worldwide. According to the Water Footprint Network estimate cited by Thomasnet, producing a single pair of jeans can require approximately 2,800 gallons of water when the full lifecycle of cotton production and processing is considered. The footprint therefore extends beyond the textile factory, beginning with cotton cultivation and continuing through processing and manufacturing."
+        }
+      ],
+      [
+        {
+          "type": "paragraph",
+          "text": "Food & Beverage Industry: The food and beverage industry carries a substantial water footprint because water is required across both agricultural production and manufacturing. Research by Mesfin M. Mekonnen and Arjen Y. Hoekstra estimates that animal production accounts for approximately 29% of global agricultural water use.\nThe numbers become even more tangible at the product level. It can take approximately 180–300 gallons of water to produce a 2-litre bottle of soda, around 20 gallons to produce a pint of beer, and roughly 30–40 gallons to produce the ingredients for a single cup of coffee, according to the Water Footprint Network.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Automotive Manufacturing: The automotive industry demonstrates how water use extends across a complex manufacturing ecosystem. Producing a single vehicle can require over 39,000 gallons of water, including the manufacture of components such as tyres. Water is therefore embedded not only in vehicle assembly but also in the production of the materials and components that make the vehicle possible.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "IT & Data Centres: The digital economy may appear comparatively removed from conventional industrial water consumption. It is not. Data centres require water for onsite cooling, while the electricity used to operate them can create additional water demand through offsite electricity generation. According to the World Economic Forum, accelerated AI adoption alone could result in an additional 4.2–6.6 billion cubic metres of water withdrawal by 2027, including onsite cooling and offsite electricity generation. The figure is a reminder that technological progress does not eliminate resource dependence. It can simply relocate it."
+        },
+        {
+          "type": "paragraph",
+          "text": "Services & Technology: The services and technology sectors may not consume water in the same quantities or in the same manner as heavy manufacturing, but their operations remain dependent on water and on the infrastructure that supplies it. From offices and commercial facilities to the digital systems supporting modern business, water remains part of the underlying resource base.\n\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The distinction is important. Industrial water responsibility cannot be understood by looking only at the factory floor.\nFrom cooling power plants and processing paper, to growing cotton, producing food and beverages, manufacturing vehicles, and cooling the infrastructure behind AI, water moves through the entire economic system.\nThe question, therefore, is not simply which industry uses the most water.\nIt is where water is being used, at which stage, for what purpose, and whether that use still needs to exist in its current form.\n"
+        },
+        {
+          "type": "heading",
+          "text": "Water Is Not Only Withdrawn. It Is Changed."
+        },
+        {
+          "type": "paragraph",
+          "text": "The industrial water conversation cannot stop at quantity.\nWhat enters a process can leave it altered. UNESCO notes that in lower-income countries, poor water quality is strongly associated with inadequate wastewater treatment, while in higher-income countries, agricultural runoff is a major concern. Emerging contaminants include pharmaceuticals, hormones, industrial chemicals, detergents, cyanotoxins, PFAS and nanomaterials.\nThat makes industrial responsibility a question of quality as much as volume.\nIndia faces the same tension at scale. One industry estimate places industrial and energy-sector water demand growth at 4.2% annually, with industrial demand projected near 228 billion cubic metres by 2025. The same source notes that roughly 70% of wastewater is discharged without treatment. Separately, ScienceDirect identifies industrial water use as occupying 22% of worldwide water use, covering applications including thermoelectric power, manufacturing, refineries and dams.\nThe numbers make one thing clear: water cannot remain a utility line item while its scarcity becomes an operational variable.\n"
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "The Cost of Looking Only at Today"
+        },
+        {
+          "type": "paragraph",
+          "text": "In the haste to reach the future, the ground is shifting beneath us.\nCompanies have dedicated teams for ESG, SDGs and CSR. They publish reports, measure emissions and track performance. Yet the variable that quietly underwrites production, supply chains and digital infrastructure can still sit outside the central business conversation.\nThe answer is not simply to use less water.\nIt is to know where water is being used, where it is being lost, what is contaminating it, where it can be reused, and, most importantly, what should no longer require freshwater at all.\nThat is where sustainability becomes industrial intelligence.\nThe strongest businesses will not merely optimise existing systems. They will redesign them.\n"
+        },
+        {
+          "type": "heading",
+          "text": "When Industry Challenged the Status Quo: Case Studies"
+        },
+        {
+          "type": "paragraph",
+          "text": "Levi Strauss & Co offers one example. Its Water-Less processes have eliminated up to 96% of the water used in certain finishing processes, while its work with the Better Cotton Initiative addresses water upstream, where cotton is grown."
+        },
+        {
+          "type": "paragraph",
+          "text": "Coca-Cola, meanwhile, has set a 2035 ambition to return 100% of the total water used in each of more than 200 high-risk locations to nature and communities, while maintaining an aggregate goal of returning more than 100% of water used in finished products globally.\n"
+        },
+        {
+          "type": "heading",
+          "text": "Redesigning What Industry Owes Tomorrow"
+        },
+        {
+          "type": "paragraph",
+          "text": "The lesson is not that industry must stop growing.\nIt is that growth cannot remain indifferent to the systems that make growth possible.\nWater is finite. Its availability is local. Its quality is fragile. Its movement through industrial systems can create value—or create consequences that outlast a financial quarter.\nThis is where the conversation must move from conservation to responsibility by design: efficient processes, wastewater treatment, reuse and recycling, closed-loop systems, intelligent monitoring, responsible sourcing and technologies that eliminate unnecessary freshwater demand.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The World Economic Forum’s work on data centres points in precisely this direction. Circular water strategies, including optimisation, advanced liquid cooling, wastewater reuse and replenishment, can significantly reduce freshwater dependence. The question is no longer whether technology can respond. It is whether industry will redesign quickly enough.\nFor WAE, that distinction matters.\nSustainability is not a report that follows business. It is a principle that should shape how business is engineered. Our Green Is Blue begins with that simple conviction: before industries can speak about a greener future, they must understand the water that makes that future possible.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Because tomorrow cannot be treated like another addressable market.\nThere is no quarterly graph for a depleted aquifer. No annual report can manufacture a watershed. No growth strategy can negotiate with a dry river.\nTomorrow is not a market. It is a responsibility.\nAnd responsibility demands more than measuring what industry has already done.\nIt demands the courage to ask what industry should redesign next.\n"
+        },
+        {
+          "type": "heading",
+          "text": "Bibliography"
+        },
+        {
+          "type": "list",
+          "items": [
+            "World Economic Forum. (2025, November 18). Data centres use vast amounts of water – here’s how we advance water circularity. https://www.weforum.org/stories/circular-economy/data-centres-and-water-circularity/",
+            "UNESCO. (2024). Statistics: UN World Water Development Report 2024. https://www.unesco.org/reports/wwdr/en/2024/s",
+            "Thomas Publishing Company, LLC & Case Studies. (2026, May 20). Which industries use the most water? https://www.thomasnet.com/insights/which-industries-use-the-most-water/",
+            "Hossain, M. F. (2019). Industrial. In Sustainable design and build. Elsevier. https://www.sciencedirect.com/topics/engineering/industrial-water-use",
+            "iNODE Design. (n.d.). Different sectors and their water consumption. https://www.inodedesign.com/sector-blog/water-consumption"
+          ]
+        }
+      ]
+    ]
   }
 };
