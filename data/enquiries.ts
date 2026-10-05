@@ -3662,5 +3662,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We need Your Services centra contact details.",
     "type": "contact-us",
     "createdAt": "2026-10-04T08:46:39.985Z"
+  },
+  "944e9497-2de4-4fef-86e4-74a0993ecae9": {
+    "id": "944e9497-2de4-4fef-86e4-74a0993ecae9",
+    "fullName": "Sanskar Garg",
+    "companyName": "Mayasheel Ventures Limited",
+    "email": "aizunitmall@gmail.com",
+    "phone": "09958582857",
+    "city": "Ghaziabad",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "We are inviting offers for a modern 75 KLD Sewage Treatment Plant (STP) for PM Ekta Mall, Aizawl, Mizoram. It is a government project. and would like you to submit your offer for the same.\n\nWe are attaching the technical specification and the DBR (Design Basis Report) for your reference. Please go through both documents and prepare your offer accordingly.\n\nYour offer should include:\n- Proposed treatment technology and process description\n- Price break-up (supply, installation, commissioning)\n- Delivery and completion schedule\n- Commercial terms, payment terms and warranty\n- Any deviations or clarifications, listed separately\n\nPlease submit your offer at the earliest. If you need any clarification, feel free to contact us.\n",
+    "type": "contact-us",
+    "createdAt": "2026-10-05T09:13:09.018Z"
   }
 };
