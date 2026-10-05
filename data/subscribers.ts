@@ -433,5 +433,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-04",
     "time": "21:34:45",
     "pageLink": "/portfolio/trublu"
+  },
+  {
+    "id": "6e640696-aa03-4a0e-95a2-a4981d3cbab8",
+    "email": "gamachauhan214@gmail.com",
+    "date": "2026-10-05",
+    "time": "09:12:47",
+    "pageLink": "/portfolio/trublu"
   }
 ];
