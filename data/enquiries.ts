@@ -3710,5 +3710,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "aaa",
     "type": "aaaaaaa",
     "createdAt": "2026-10-06T06:19:06.597Z"
+  },
+  "6a377639-d8fb-49fc-9338-06089b43d0cb": {
+    "id": "6a377639-d8fb-49fc-9338-06089b43d0cb",
+    "fullName": "harshit",
+    "companyName": "NA",
+    "email": "ahdv@gmail.com",
+    "phone": "6500987888",
+    "city": "NA",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "This is a test. I am trying to see the validation check enabled for contact number as well as email and how long this form entry takes to show up in the CMS.",
+    "type": "general",
+    "createdAt": "2026-10-06T10:38:27.956Z"
   }
 };
