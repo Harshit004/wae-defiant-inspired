@@ -3722,5 +3722,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "This is a test. I am trying to see the validation check enabled for contact number as well as email and how long this form entry takes to show up in the CMS.",
     "type": "general",
     "createdAt": "2026-10-06T10:38:27.956Z"
+  },
+  "9eb954e8-9c0c-4a8b-9a25-5b66c872f75a": {
+    "id": "9eb954e8-9c0c-4a8b-9a25-5b66c872f75a",
+    "fullName": "Nisha",
+    "companyName": "Vishubh Integerated Solution Pvt Ltd",
+    "email": "purchase-blr@vishubhfacilities.com",
+    "phone": "9380375201",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Need distributor contact number in bangalore  for WAE water dispenser.",
+    "type": "contact-us",
+    "createdAt": "2026-10-06T12:02:28.051Z"
   }
 };
