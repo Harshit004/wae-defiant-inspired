@@ -454,5 +454,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-05",
     "time": "18:58:49",
     "pageLink": "/portfolio/trublu"
+  },
+  {
+    "id": "cabde8ae-e2ea-4bf0-9cbd-e7cf1519897b",
+    "email": "venusdigital.in@gmail.com",
+    "date": "2026-10-06",
+    "time": "21:59:44",
+    "pageLink": "/portfolio/bluwae/var-series"
   }
 ];
