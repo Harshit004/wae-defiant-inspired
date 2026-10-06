@@ -51,13 +51,29 @@ export default function ContactUsPage() {
     const form = e.currentTarget
     const formData = new FormData(form)
 
+    const email = (formData.get("email") as string || "").trim()
+    const phone = (formData.get("contact") as string || "").trim().replace(/\D/g, "")
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    if (!emailRegex.test(email)) {
+      setFormStatus("error")
+      setFormMessage("Please enter a valid email address.")
+      return
+    }
+
+    if (phone.length !== 10) {
+      setFormStatus("error")
+      setFormMessage("Contact number must be exactly 10 digits.")
+      return
+    }
+
     const payload = {
-      fullName: formData.get("name"),
-      companyName: formData.get("companyName"),
-      phone: formData.get("contact"),
-      email: formData.get("email"),
-      city: formData.get("city"),
-      message: formData.get("message"),
+      fullName: (formData.get("name") as string || "").trim(),
+      companyName: (formData.get("companyName") as string || "").trim(),
+      phone,
+      email,
+      city: (formData.get("city") as string || "").trim(),
+      message: (formData.get("message") as string || "").trim(),
       pageLink: window.location.href,
       type: "contact-us",
     }
@@ -256,8 +272,31 @@ export default function ContactUsPage() {
 
                   <input className="cu-input" type="text" name="name" placeholder="Name*" required />
                   <input className="cu-input" type="text" name="companyName" placeholder="Company Name*" required />
-                  <input className="cu-input" type="tel" name="contact" placeholder="Contact No.*" required />
-                  <input className="cu-input" type="email" name="email" placeholder="Official Email*" required />
+                  <input
+                    className="cu-input"
+                    type="tel"
+                    name="contact"
+                    placeholder="Contact No. (10 digits)*"
+                    maxLength={10}
+                    minLength={10}
+                    pattern="[0-9]{10}"
+                    inputMode="numeric"
+                    title="Contact number must be exactly 10 digits"
+                    required
+                    onInput={(e) => {
+                      const target = e.target as HTMLInputElement;
+                      target.value = target.value.replace(/\D/g, '').slice(0, 10);
+                    }}
+                  />
+                  <input
+                    className="cu-input"
+                    type="email"
+                    name="email"
+                    placeholder="Official Email*"
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                    title="Please enter a valid email address"
+                    required
+                  />
                   <input className="cu-input" type="text" name="city" placeholder="City*" />
                   <textarea className="cu-textarea" name="message" placeholder="Your Message" maxLength={2000} />
 

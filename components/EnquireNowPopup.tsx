@@ -28,6 +28,11 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+    if (name === "phone") {
+      const numericValue = value.replace(/\D/g, "").slice(0, 10);
+      setFormData((prev) => ({ ...prev, [name]: numericValue }));
+      return;
+    }
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -37,6 +42,18 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
       setError("Please fill in all required fields (*)");
       return;
     }
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(formData.email.trim())) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    if (formData.phone.length !== 10) {
+      setError("Contact number must be exactly 10 digits");
+      return;
+    }
+
     setError("");
     setIsSubmitting(true);
 
@@ -182,6 +199,8 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
                   placeholder="Email*"
                   value={formData.email}
                   onChange={handleChange}
+                  pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                  title="Please enter a valid email address"
                   required
                   style={{
                     height: "39px",
@@ -199,9 +218,14 @@ export default function EnquireNowPopup({ isOpen, onClose, pageLink, downloadUrl
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Phone*"
+                  placeholder="Phone (10 digits)*"
                   value={formData.phone}
                   onChange={handleChange}
+                  maxLength={10}
+                  minLength={10}
+                  pattern="[0-9]{10}"
+                  inputMode="numeric"
+                  title="Contact number must be exactly 10 digits"
                   required
                   style={{
                     height: "39px",

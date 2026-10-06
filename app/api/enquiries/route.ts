@@ -34,6 +34,16 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, message: 'Missing required fields' }, { status: 400 });
     }
 
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (typeof email !== 'string' || !emailRegex.test(email.trim())) {
+      return NextResponse.json({ success: false, message: 'Please provide a valid email address.' }, { status: 400 });
+    }
+
+    const cleanedPhone = typeof phone === 'string' ? phone.trim().replace(/\D/g, '') : '';
+    if (cleanedPhone.length !== 10) {
+      return NextResponse.json({ success: false, message: 'Contact number must be exactly 10 digits.' }, { status: 400 });
+    }
+
     if (message && message.length > 2000) {
       return NextResponse.json({ success: false, message: 'Message exceeds the 2000 character limit.' }, { status: 400 });
     }
@@ -42,13 +52,13 @@ export async function POST(request: Request) {
     
     const newEnquiry = {
       id: crypto.randomUUID(),
-      fullName,
-      companyName: companyName || '',
-      email,
-      phone,
-      city: city || '',
+      fullName: String(fullName).trim(),
+      companyName: companyName ? String(companyName).trim() : '',
+      email: email.trim().toLowerCase(),
+      phone: cleanedPhone,
+      city: city ? String(city).trim() : '',
       pageLink: pageLink || '',
-      message: message || undefined,
+      message: message ? String(message).trim() : undefined,
       type: type || 'product',
       createdAt: new Date().toISOString()
     };
