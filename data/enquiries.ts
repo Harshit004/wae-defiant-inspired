@@ -3792,5 +3792,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We are interested know more about the Equipment to transform Humidity to water. What are the capacities available?  What will be space and power requirement. What about service after sales. Send us if any technical data sheets are available. If humidity is < 20%, how it is going to work? Is the technology is similar to Heat pup?",
     "type": "general",
     "createdAt": "2026-10-07T06:51:12.402Z"
+  },
+  "3a30b7c6-81e7-402c-bb7d-72d6918cb9d5": {
+    "id": "3a30b7c6-81e7-402c-bb7d-72d6918cb9d5",
+    "fullName": "Shipra",
+    "companyName": "K12 techno Service",
+    "email": "shiprasha2512@gmail.com",
+    "phone": "9757177516",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/portfolio/pus/enki",
+    "type": "product",
+    "createdAt": "2026-10-07T09:29:19.848Z"
   }
 };
