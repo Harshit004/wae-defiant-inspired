@@ -3780,5 +3780,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Looking forward to connecting and discuss further.",
     "type": "contact-us",
     "createdAt": "2026-10-07T06:39:16.338Z"
+  },
+  "1ff8be27-24f3-4555-8407-d5c27a0e5f2d": {
+    "id": "1ff8be27-24f3-4555-8407-d5c27a0e5f2d",
+    "fullName": "Mohandas M",
+    "companyName": "Aqualam Engineering Solutions Pvt Ltd.,",
+    "email": "spnmohandas@gmail.com",
+    "phone": "9480495816",
+    "city": "Bangalore- 560084",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "We are interested know more about the Equipment to transform Humidity to water. What are the capacities available?  What will be space and power requirement. What about service after sales. Send us if any technical data sheets are available. If humidity is < 20%, how it is going to work? Is the technology is similar to Heat pup?",
+    "type": "general",
+    "createdAt": "2026-10-07T06:51:12.402Z"
   }
 };
