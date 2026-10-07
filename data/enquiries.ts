@@ -3745,5 +3745,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-10-07T01:25:51.989Z"
+  },
+  "6ed6e5bf-aeb0-4e2f-9481-73e2e65675b8": {
+    "id": "6ed6e5bf-aeb0-4e2f-9481-73e2e65675b8",
+    "fullName": "AISHWARY",
+    "companyName": "MEDIMAX",
+    "email": "contact@medimaxhospitals.in",
+    "phone": "9712397303",
+    "city": "HANUMANGARH RAJASTHAN",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/assistflow",
+    "type": "product",
+    "createdAt": "2026-10-07T05:50:26.275Z"
   }
 };
