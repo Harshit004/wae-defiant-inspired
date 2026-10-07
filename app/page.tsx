@@ -414,7 +414,7 @@ export default function Home() {
                     lineHeight: '140%',
                   }}
                 >
-                  WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
+                  Our work is an expression of that belief—that human ingenuity can serve the natural order on which all life depends.
                 </p>
                 <div style={{ height: '32px' }} />
                 <Link href="/profile" className="contents">
@@ -488,7 +488,7 @@ export default function Home() {
                     lineHeight: '140%',
                   }}
                 >
-                  It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
+                  At WAE, sustainability begins with water. Blue is the resource we protect, the science we apply and the future we seek to make possible. We engineer water as a circular asset from intake and purification to use, recovery and reuse.
                 </p>
                 <div style={{ height: '12px' }} />
                 <p
@@ -500,7 +500,7 @@ export default function Home() {
                     lineHeight: '140%',
                   }}
                 >
-                  At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
+                  Each system is an opportunity to conserve resources, reduce emissions and move closer to carbon-neutral water. Our green is blue because a more sustainable world depends on what we do with every drop.
                 </p>
                 <div style={{ height: '32px' }} />
                 <Link href="/sustainability" className="contents">
@@ -550,7 +550,7 @@ export default function Home() {
                     letterSpacing: '0%',
                   }}
                 >
-                  Principle
+                  Practices
                 </h2>
                 <div style={{ height: '32px' }} />
                 <h3
@@ -562,7 +562,7 @@ export default function Home() {
                     lineHeight: '100%',
                   }}
                 >
-                  People First
+                  From Water Intake to Water Use
                 </h3>
                 <div style={{ height: '12px' }} />
                 <p
@@ -574,7 +574,7 @@ export default function Home() {
                     lineHeight: '140%',
                   }}
                 >
-                  People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
+                  WAE engineers water from intake to recovery and reuse, configuring treatment around source chemistry and demand to conserve resources. On-site purification and dispensing reduce packaged water reliance and Scope 3 emissions.
                 </p>
                 <div style={{ height: '12px' }} />
                 <p
@@ -586,7 +586,7 @@ export default function Home() {
                     lineHeight: '140%',
                   }}
                 >
-                  In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
+                  Membrane-based treatment enables wastewater reuse, while digital monitoring measures quality, consumption and recovery advancing our carbon-neutral water ambition.
                 </p>
                 <div style={{ height: '32px' }} />
                 <Link href="/careers" className="contents">
@@ -674,7 +674,7 @@ export default function Home() {
                       lineHeight: '120%',
                     }}
                   >
-                    WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
+                    Our work is an expression of that belief—that human ingenuity can serve the natural order on which all life depends.
                   </p>
                   <div style={{ height: '12.21vw' }} />
                   <Link href="/profile" className="contents">
@@ -749,7 +749,7 @@ export default function Home() {
                       lineHeight: '120%',
                     }}
                   >
-                    It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
+                    At WAE, sustainability begins with water. Blue is the resource we protect, the science we apply and the future we seek to make possible. We engineer water as a circular asset from intake and purification to use, recovery and reuse.
                   </p>
                   <div style={{ height: '3.05vw' }} />
                   <p
@@ -761,7 +761,7 @@ export default function Home() {
                       lineHeight: '120%',
                     }}
                   >
-                    At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
+                    Each system is an opportunity to conserve resources, reduce emissions and move closer to carbon-neutral water. Our green is blue because a more sustainable world depends on what we do with every drop.
                   </p>
                   <div style={{ height: '12.21vw' }} />
                   <Link href="/sustainability" className="contents">
@@ -812,7 +812,7 @@ export default function Home() {
                       letterSpacing: '0%',
                     }}
                   >
-                    Principle
+                    Practices
                   </h2>
                   <div style={{ height: '6.1vw' }} />
                   <h3
@@ -824,7 +824,7 @@ export default function Home() {
                       lineHeight: '100%',
                     }}
                   >
-                    People First
+                    From Water Intake to Water Use
                   </h3>
                   <div style={{ height: '3.05vw' }} />
                   <p
@@ -836,7 +836,7 @@ export default function Home() {
                       lineHeight: '120%',
                     }}
                   >
-                    People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
+                    WAE engineers water from intake to recovery and reuse, configuring treatment around source chemistry and demand to conserve resources. On-site purification and dispensing reduce packaged water reliance and Scope 3 emissions.
                   </p>
                   <div style={{ height: '3.05vw' }} />
                   <p
@@ -848,7 +848,7 @@ export default function Home() {
                       lineHeight: '120%',
                     }}
                   >
-                    In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
+                    Membrane-based treatment enables wastewater reuse, while digital monitoring measures quality, consumption and recovery advancing our carbon-neutral water ambition.
                   </p>
                   <div style={{ height: '12.21vw' }} />
                   <Link href="/careers" className="contents">
