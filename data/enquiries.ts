@@ -3768,5 +3768,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I am reaching out to explore senior commercial leadership opportunities where I can contribute to your market expansion and revenue growth agenda.\n\n \n\nWith 22+ years of experience across sales leadership, international business development, export strategy, and technical sales, I bring a strong track record of building markets, developing distributor networks, and managing multi-crore revenue portfolios across India. My experience extends across B2B, B2C, and B2G markets, with exposure to more than 15 countries.\n\n \n\nMy sector expertise covers small and large appliances, industrial filtration, and water technologies—including RO systems, softeners, STP, ETP, ZLD, desalination, POE/POU filtration, and atmospheric water generation (AWG).\n\n \n\nThroughout my career, I have led end-to-end sales operations across HORECA, corporate, and institutional segments—identifying strategic accounts, developing C-suite relationships, and closing high-value deals. I have also built sales teams in new geographies and strengthened distributor, channel, and OEM partnerships to support sustained growth.\n\n \n\nMy contribution would focus on:\n\n \n\nMarket Expansion: Prioritizing opportunities, defining market entry strategies, and establishing scalable routes to market across India and international territories.\n\nRevenue Growth: Strengthening key account engagement, building qualified pipelines, and converting technical capabilities into compelling customer value.\n\nChannel & OEM Development: Expanding partner networks, improving market coverage, and aligning partnerships with long-term commercial objectives.\n\nCommercial Execution: Connecting sales strategy, forecasting, negotiations, and team performance with measurable business outcomes.\n\nLeadership & Capability Building: \n\nWarm regards,\nDaljit Singh Saggu\nHead of Sales | Water Solutions & Renewable Energy\n+91 98117 58582 | +91 96507 65158\nwww.linkedin.com/in/daljit-singh-saggu-50608430\ndaljit.791@rediffmail.com",
     "type": "contact-us",
     "createdAt": "2026-10-07T05:52:16.681Z"
+  },
+  "c8164f3d-c386-4a46-8f73-d6e621aef8f3": {
+    "id": "c8164f3d-c386-4a46-8f73-d6e621aef8f3",
+    "fullName": "Harsha Yedupati",
+    "companyName": "Biological E Ltd.",
+    "email": "harsha.yedupati@biologicale.com",
+    "phone": "9494294250",
+    "city": "Hyderabad",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Looking forward to connecting and discuss further.",
+    "type": "contact-us",
+    "createdAt": "2026-10-07T06:39:16.338Z"
   }
 };
