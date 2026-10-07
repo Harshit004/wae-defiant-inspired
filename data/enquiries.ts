@@ -3734,5 +3734,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Need distributor contact number in bangalore  for WAE water dispenser.",
     "type": "contact-us",
     "createdAt": "2026-10-06T12:02:28.051Z"
+  },
+  "eb04f700-de8a-4f22-ac22-44b1257a821a": {
+    "id": "eb04f700-de8a-4f22-ac22-44b1257a821a",
+    "fullName": "Shravan Chauhan",
+    "companyName": "Shraj Industries Pvt Ltd",
+    "email": "shrajindustries@gmail.com",
+    "phone": "8793841013",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-10-07T01:25:51.989Z"
   }
 };
