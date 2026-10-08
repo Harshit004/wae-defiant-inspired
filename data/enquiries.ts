@@ -3815,5 +3815,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I require the contact number of chennai team who takes care of the product installation",
     "type": "contact-us",
     "createdAt": "2026-10-08T04:11:51.669Z"
+  },
+  "a5a9ec27-f4f5-4158-9b88-d3123cd47f65": {
+    "id": "a5a9ec27-f4f5-4158-9b88-d3123cd47f65",
+    "fullName": "Rahul agrawal",
+    "companyName": "Agrawal Enterprises",
+    "email": "rahulharda@gmail.com",
+    "phone": "9425162000",
+    "city": "HARDA",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "I AM NTRESTED N MNERAL WATER BOTTELNG PLANT\nPLEASE SEND ME DETAILS",
+    "type": "contact-us",
+    "createdAt": "2026-10-08T08:44:39.886Z"
   }
 };
