@@ -3803,5 +3803,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/pus/enki",
     "type": "product",
     "createdAt": "2026-10-07T09:29:19.848Z"
+  },
+  "2039c89a-e84f-49d3-85d6-7a01f4208ecb": {
+    "id": "2039c89a-e84f-49d3-85d6-7a01f4208ecb",
+    "fullName": "Adwidh P",
+    "companyName": "Mindstudio Pvt. Ltd.",
+    "email": "procurement@mindstudio.co.in",
+    "phone": "9036002849",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "I require the contact number of chennai team who takes care of the product installation",
+    "type": "contact-us",
+    "createdAt": "2026-10-08T04:11:51.669Z"
   }
 };
