@@ -4759,5 +4759,177 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "artificial-intelligence-real-resources-addressing-the-challenge-of-data-centre-sustainability": {
+    "id": "artificial-intelligence-real-resources-addressing-the-challenge-of-data-centre-sustainability",
+    "title": "Artificial Intelligence, Real Resources: Addressing The Challenge Of Data Centre Sustainability",
+    "category": "Industry Impact and Solutions",
+    "description": "As artificial intelligence scales, so does the physical infrastructure behind it. This article examines the growing water footprint of data centres, the sustainability challenges shaping AI infrastructure, and how smarter cooling, circular water systems and responsible design can support digital growth.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/319ac238-b5db-442b-3fbd-f04a93328300/public",
+    "writerId": "shambhavi",
+    "readTime": "6 min read",
+    "status": "Live",
+    "createdAt": "2026-10-09T07:39:56.209Z",
+    "contentColumns": [
+      [
+        {
+          "type": "heading",
+          "text": "The Intelligence We See. The Resources We Don't.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Artificial intelligence has made the extraordinary appear effortless. A question becomes an answer. A dataset becomes a decision. An idea becomes an image. In seconds, machines perform tasks that once demanded hours of human effort.\n\nBut the apparent weightlessness of digital intelligence conceals a material reality. Every AI interaction depends on physical infrastructure: processors, servers, buildings, electricity, cooling systems and water. The more sophisticated the intelligence, the more consequential the infrastructure supporting it can become.\n"
+        },
+        {
+          "type": "heading",
+          "text": "When the \"Cloud\" Needs Water"
+        },
+        {
+          "type": "paragraph",
+          "text": "Data centres are not new. For decades, they have powered internet searches, enterprise applications, cloud storage and video streaming. What has changed is the intensity of computation. The rise of generative AI and large language models has accelerated demand for high-performance processors, denser server racks and hyperscale facilities capable of handling extraordinary workloads. These processors generate substantial heat, making thermal management central to operational reliability.\nWater enters this equation through cooling towers, evaporative systems and chillers that dissipate heat. Depending on the technology and local climate, facilities may also use closed-loop liquid cooling or air-based alternatives. Yet where evaporation is central to cooling, freshwater can become a significant operational requirement. Beyond the facility itself, electricity generation and semiconductor manufacturing add further dimensions to the water footprint.\n"
+        },
+        {
+          "type": "heading",
+          "text": "The Water Behind Every Computation "
+        },
+        {
+          "type": "paragraph",
+          "text": "Consider the scale at which this demand accumulates. Some estimates associate a single AI text response with 10–50 millilitres of water, compared with a fraction of a millilitre for a conventional web search. Training GPT-3 has been estimated to require approximately 700,000 litres of clean freshwater. These figures are indicative rather than universal: actual consumption varies with model efficiency, response length, cooling technology, electricity source and location.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "A single interaction may appear inconsequential. Billions of interactions, repeated model training and ever-expanding computational workloads tell a different story.\nAt facility level, the scale becomes more tangible. A typical data centre has been estimated to consume around 100 million US gallons of water annually, approximately 378 million litres, although actual consumption varies considerably by size and cooling design. The Environmental and Energy Study Institute cites estimates of approximately 110 million gallons annually for a medium-sized facility, while large data centres may consume as much as 5 million gallons a day. That upper-end daily demand can rival the water use of a community of 10,000–50,000 people.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The electricity requirement is equally striking. According to the Lincoln Institute of Land Policy, a conventional data centre may draw as much power as 10,000–25,000 households, while an AI-focused hyperscale facility can require electricity equivalent to 100,000 homes or more. AI is therefore not simply a software revolution. It is an infrastructure revolution, with implications for both energy systems and freshwater security."
+        },
+        {
+          "type": "heading",
+          "text": "The Water Footprint Behind the Intelligence"
+        },
+        {
+          "type": "paragraph",
+          "text": "The global numbers sharpen the concern. Knowable Magazine reports that data-centre cooling systems consumed approximately 66 billion litres of water worldwide in 2023. Looking ahead, a 2026 paper in Water Research, titled The Water Footprint of Artificial Intelligence: Emerging Solutions and Governance Imperatives, projects that AI's global water footprint could reach 4.2–6.6 billion cubic metres annually by 2027. This estimate includes water associated with on-site cooling, electricity generation and semiconductor manufacturing, rather than cooling alone."
+        },
+        {
+          "type": "heading",
+          "text": "A Global Technology With Local Consequences "
+        },
+        {
+          "type": "paragraph",
+          "text": "The projection warrants attention, but so does the geography behind it. Industry executives, including AWS CEO Matt Garman, have argued that direct data-centre water consumption represents less than 1% of total US industrial water use. Agriculture and some manufacturing activities consume substantially greater volumes. Yet a modest national share can still produce an acute local burden when facilities cluster in water-stressed regions. Water availability is not evenly distributed, and a national average cannot reveal what a particular watershed can sustainably supply.\n\nThe distinction matters. The issue is not whether data centres consume more water than every other industry. It is whether their demand is compatible with the ecological and social conditions of the places in which they operate.\n"
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "India's AI Ambition and Its Water Imperative "
+        },
+        {
+          "type": "paragraph",
+          "text": "India stands at a consequential intersection. Its digital economy is expanding, investment in data-centre infrastructure is accelerating, and AI is becoming integral to business operations. But the infrastructure underpinning that transformation must operate within a country where water stress is already a defining development challenge."
+        },
+        {
+          "type": "paragraph",
+          "text": "Figures cited in the World Economic Forum's discussion of water circularity, drawing on CEEW and Mordor Intelligence estimates, place India's data-centre capacity at approximately 1.5 gigawatts in 2025, with annual water use estimated at 150 billion litres. Consumption is projected to more than double to 358 billion litres by 2030. Broader estimates that account for the total resource footprint reportedly reach 558 billion litres. At the assumed urban supply benchmark of 135 litres per person per day, that volume is equivalent to a year's water needs for approximately 11 million urban residents. These estimates should be read in light of their underlying assumptions and the distinction between direct use and the wider resource footprint.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "The stakes are heightened by NITI Aayog's 2018 Composite Water Management Index, which reported that approximately 600 million Indians face high to extreme water stress. Against this backdrop, decisions about where data centres are built, how they are cooled and which water sources they use become questions of public interest, not merely facilities management."
+        },
+        {
+          "type": "paragraph",
+          "text": "An investigation published by Frontline has also raised concerns about India's regulatory preparedness for rapid data-centre expansion, including water and electricity consumption, land displacement and pollution. These concerns do not diminish the economic value of digital infrastructure. They underline the need to assess that value alongside its resource costs.\n"
+        },
+        {
+          "type": "heading",
+          "text": "The Question Is Not Whether AI Should Advance"
+        },
+        {
+          "type": "paragraph",
+          "text": "The challenge is to ensure that progress does not transfer hidden costs to communities, ecosystems or future generations. Freshwater withdrawals can intensify pressure on aquifers and rivers; electricity generation can create additional water demand beyond the data centre's boundaries; and semiconductor manufacturing requires ultrapure water for chip fabrication.\n\nA responsible assessment must therefore examine the whole water footprint: direct consumption, indirect use in power generation, and the water embedded in hardware manufacturing. It must also distinguish water withdrawal from water consumption, since water returned after use is not necessarily available in the same place, at the same time or at the same quality.\n\nFor B2B decision-makers, that distinction changes the investment conversation. Water is not simply a utility cost to be managed after construction. It is a strategic resource that belongs in site selection, infrastructure planning, operational risk assessment and long-term business resilience.\n"
+        },
+        {
+          "type": "heading",
+          "text": "Redesigning Intelligence for a Water-Responsible Future"
+        },
+        {
+          "type": "paragraph",
+          "text": "The conventional response to rising resource demand is to optimise existing systems. The more ambitious response is to question whether those systems should be designed differently in the first place."
+        },
+        {
+          "type": "paragraph",
+          "text": "Water Usage Effectiveness (WUE), measured in litres of water consumed per kilowatt-hour of IT energy, provides one way to assess performance. The Environmental and Energy Study Institute cites an average WUE of approximately 1.9 litres per kWh, although actual values vary by facility and operating conditions. Air-cooled systems can approach zero direct cooling-water use, while closed-loop systems can recirculate cooling fluids and reduce dependence on freshwater. Neither approach eliminates every indirect water impact, but both demonstrate how design choices influence resource demand."
+        },
+        {
+          "type": "heading",
+          "text": "Efficiency Is the Beginning. Redesign Is the Ambition."
+        },
+        {
+          "type": "paragraph",
+          "text": "Smart water management can take this further. Real-time sensors monitor consumption, cooling demand and system performance, allowing operators to identify inefficiencies and adjust operations before unnecessary losses accumulate. Estimates supplied for these optimisation approaches suggest that predictive control can reduce water consumption by up to 25%. These savings depend on the baseline, the cooling architecture and the effectiveness of implementation."
+        },
+        {
+          "type": "paragraph",
+          "text": "Liquid immersion cooling offers another route. Servers or individual electronic components are immersed in a non-conductive fluid that absorbs heat and transfers it to a heat exchanger. Compared with conventional air cooling, some reported implementations can reduce water consumption by up to 91%, energy consumption by 50% and space occupancy by 85%. These are technology-specific estimates, not guaranteed outcomes for every data centre."
+        }
+      ],
+      [
+        {
+          "type": "paragraph",
+          "text": "The wider portfolio of alternatives includes direct-to-chip cooling, closed-loop liquid systems, recycled wastewater, non-potable water supplies and zero-direct-water cooling designs. Their suitability depends on climate, workload, capital expenditure and local water availability. The World Economic Forum also discusses circular water strategies capable of delivering substantial savings, alongside replenishment initiatives designed to improve water availability in surrounding communities."
+        },
+        {
+          "type": "heading",
+          "text": "From Resource Consumption to Resource Circularity"
+        },
+        {
+          "type": "paragraph",
+          "text": "The next frontier is not merely using less water per computation. It is redesigning the relationship between infrastructure and the resources that sustain it.\nReclaimed wastewater can replace potable freshwater for suitable cooling applications. Closed-loop systems can reduce losses by recirculating cooling fluids. Strategic siting can favour regions with lower water stress, while cleaner electricity can reduce the indirect water footprint associated with fossil-fuel power generation. Waste-heat recovery can also redirect thermal energy towards district heating or other productive uses rather than allowing it to dissipate unused.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Emerging technologies point towards even more unconventional possibilities. WIRED has reported on Atoco's experimental approach to extracting water from air using specialised materials and waste heat. Such technologies are promising areas of development, although their scalability and practical suitability for large facilities require further assessment."
+        },
+        {
+          "type": "paragraph",
+          "text": "These innovations must be accompanied by transparent reporting, watershed-level planning and meaningful engagement with local stakeholders. Replenishment can contribute to water security, but it cannot substitute for reducing avoidable consumption or excuse unsustainable withdrawals. The priority must remain clear: avoid unnecessary demand, improve efficiency, reuse water wherever feasible and replenish responsibly."
+        },
+        {
+          "type": "heading",
+          "text": "Our Green Is Blue: Reframing Sustainability Through the Lens of Water"
+        },
+        {
+          "type": "paragraph",
+          "text": "For WAE, the sustainability question extends beyond how efficiently an industry operates. It asks whether the industry is prepared to challenge resource-intensive conventions and engineer better alternatives.\nOur Green Is Blue expresses a fundamental principle: water is not a secondary consideration in environmental responsibility. It is one of its foundations. This principle is especially relevant to AI infrastructure, where the sophistication of the technology can obscure the simplicity of its dependency on essential natural resources.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Data-centre operators, technology companies, infrastructure developers and policymakers have an opportunity to make water stewardship integral to digital growth. That means treating water availability as a design constraint, selecting cooling systems with local conditions in mind, measuring the complete resource footprint and investing in commercially viable solutions that reduce pressure on freshwater.\nThe objective is not to choose between technological advancement and environmental responsibility. It is to reject the assumption that the two must compete.\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "Artificial intelligence represents human ingenuity at an extraordinary scale. The infrastructure supporting it should reflect that same ingenuity in its relationship with the natural world. The real measure of progress will not be how much more intelligence industry can produce, but how responsibly it can produce it.\nThe future is not simply about building smarter machines. It is about engineering smarter systems around them.\n"
+        },
+        {
+          "type": "heading",
+          "text": "Bibliography"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Business Today. (2026, June 21). Why do AI data centres use so much water? | Explained [Video]. YouTube. - https://www.youtube.com/watch?v=DpfffbzEcno&t=26s",
+            "AKCP. (2026, August 17). The data center water footprint: 2026 AI impact and statistics. https://www.akcp.com/2026/08/17/truth-about-data-water-footprint-of-data-centers/",
+            "Knowable Magazine. Zimmer, K. (2026, August 24). How much of a problem is AI’s water use?  https://knowablemagazine.org/content/article/technology/2026/how-much-water-do-ai-data-centers-use ",
+            "ScienceDirect. Barnett-Itzhaki, Z. (2026). The water footprint of artificial intelligence: Emerging solutions and governance imperatives. Water Research, 299, Article 125866.  https://www.sciencedirect.com/science/article/abs/pii/S0043135426005488",
+            "Environmental and Energy Study Institute. Yañez-Barnuevo, M. (2025, June 25). Data centers and water consumption. https://www.eesi.org/articles/view/data-centers-and-water-consumption",
+            "Lincoln Institute Of Land Policy. Gorey, J. (2025, October 17). Data drain: The land and water impacts of the AI boom. https://www.lincolninst.edu/publications/land-lines-magazine/articles/land-water-impacts-data-centers/ ",
+            "World Economic Forum. Spindler, W., Fisher, L., & Atamian Hahn-Petersen, L. (2025, November 18). Data centres use vast amounts of water—here’s how we advance water circularity. https://www.weforum.org/stories/circular-economy/data-centres-and-water-circularity/ ",
+            "Frontline & The Hindu. Kakani, K. (n.d.). Data centres: AI’s new empire on stolen land and scarce water. https://frontline.thehindu.com/the-nation/ai-data-centres-india-regulations-environment/article71532615.ece"
+          ]
+        }
+      ]
+    ]
   }
 };
