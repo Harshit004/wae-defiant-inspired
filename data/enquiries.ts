@@ -3827,5 +3827,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I AM NTRESTED N MNERAL WATER BOTTELNG PLANT\nPLEASE SEND ME DETAILS",
     "type": "contact-us",
     "createdAt": "2026-10-08T08:44:39.886Z"
+  },
+  "b545e317-7354-47cc-bb16-16c1bc5ff653": {
+    "id": "b545e317-7354-47cc-bb16-16c1bc5ff653",
+    "fullName": "Furkan",
+    "companyName": "Futkan",
+    "email": "bhatfiza9541@gmail.com",
+    "phone": "9541967761",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-10-09T03:46:36.408Z"
   }
 };
