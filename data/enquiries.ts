@@ -3838,5 +3838,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-10-09T03:46:36.408Z"
+  },
+  "4bc39433-03e6-4891-803f-e9b07ca50b75": {
+    "id": "4bc39433-03e6-4891-803f-e9b07ca50b75",
+    "fullName": "Dinesh Rathia",
+    "companyName": "Corporate office",
+    "email": "dineshrathia2235@gmail.com",
+    "phone": "8839679833",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24259570723&gclid=EAIaIQobChMIuK_R5IaslwMVAoZmAh2FfwoMEAAYASADEgII3fD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-09T04:12:05.570Z"
   }
 };
