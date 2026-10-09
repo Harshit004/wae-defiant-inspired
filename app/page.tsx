@@ -368,259 +368,268 @@ export default function Home() {
           <div className="hidden md:grid grid-cols-3 h-full border-b border-[#FFFFFF4D]">
             {/* Column 1: Purpose */}
             <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[320px]">
-                <h2
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '40px',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                  }}
-                >
-                  Purpose
-                </h2>
-                <div style={{ height: '32px' }} />
-                <h3
-                  className="text-white group-hover:text-white"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                  }}
-                >
-                  Being Sustainable
-                </h3>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
-                </p>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  Our work is an expression of that belief—that human ingenuity can serve the natural order on which all life depends.
-                </p>
-                <div style={{ height: '32px' }} />
-                <Link href="/profile" className="contents">
-                  <HoverButton theme="transparent-white">
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
+              <div className="flex flex-col justify-between w-full max-w-[320px] h-full py-[100px]">
+                <div>
+                  <h2
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '40px',
+                      lineHeight: '110%',
+                      letterSpacing: '0%',
+                    }}
+                  >
+                    Purpose
+                  </h2>
+                  <div style={{ height: '32px' }} />
+                  <h3
+                    className="text-white group-hover:text-white"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 700,
+                      fontSize: '12px',
+                      lineHeight: '100%',
+                    }}
+                  >
+                    Being Sustainable
+                  </h3>
+                  <div style={{ height: '12px' }} />
+                  <p
+                    className="text-white/60 group-hover:text-white"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '12px',
+                      lineHeight: '140%',
+                    }}
+                  >
+                    The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
+                  </p>
+                  <div style={{ height: '12px' }} />
+                  <p
+                    className="text-white/60 group-hover:text-white"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '12px',
+                      lineHeight: '140%',
+                    }}
+                  >
+                    Our work is an expression of that belief—that human ingenuity can serve the natural order on which all life depends.
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <Link href="/profile" className="contents">
+                    <HoverButton theme="transparent-white">
+                      {(hovered) => (
+                        <>
+                          Know More
+                          <div className="relative inline-block w-4 h-4">
                             <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                              alt="icon default"
                               width={16}
                               height={16}
                               className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                             />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: hovered ? 1 : 0 }}
+                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                              className="absolute top-0 left-0"
+                            >
+                              <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt="icon hover"
+                                width={16}
+                                height={16}
+                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                              />
+                            </motion.div>
+                          </div>
+                        </>
+                      )}
+                    </HoverButton>
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Column 2: Philosophy */}
             <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[320px]">
-                <h2
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '40px',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                  }}
-                >
-                  Philosophy
-                </h2>
-                <div style={{ height: '32px' }} />
-                <h3
-                  className="text-white group-hover:text-white"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                  }}
-                >
-                  Our Green Is Blue
-                </h3>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  At WAE, sustainability begins with water. Blue is the resource we protect, the science we apply and the future we seek to make possible. We engineer water as a circular asset from intake and purification to use, recovery and reuse.
-                </p>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  Each system is an opportunity to conserve resources, reduce emissions and move closer to carbon-neutral water. Our green is blue because a more sustainable world depends on what we do with every drop.
-                </p>
-                <div style={{ height: '32px' }} />
-                <Link href="/sustainability" className="contents">
-                  <HoverButton theme="transparent-white">
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
+              <div className="flex flex-col justify-between w-full max-w-[320px] h-full py-[100px]">
+                <div>
+                  <h2
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '40px',
+                      lineHeight: '110%',
+                      letterSpacing: '0%',
+                    }}
+                  >
+                    Philosophy
+                  </h2>
+                  <div style={{ height: '32px' }} />
+                  <h3
+                    className="text-white group-hover:text-white"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 700,
+                      fontSize: '12px',
+                      lineHeight: '100%',
+                    }}
+                  >
+                    Our Green Is Blue
+                  </h3>
+                  <div style={{ height: '12px' }} />
+                  <p
+                    className="text-white/60 group-hover:text-white"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '12px',
+                      lineHeight: '140%',
+                    }}
+                  >
+                    At WAE, sustainability begins with water. Blue is the resource we protect, the science we apply and the future we seek to make possible. We engineer water as a circular asset from intake and purification to use, recovery and reuse.
+                  </p>
+                  <div style={{ height: '12px' }} />
+                  <p
+                    className="text-white/60 group-hover:text-white"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '12px',
+                      lineHeight: '140%',
+                    }}
+                  >
+                    Each system is an opportunity to conserve resources, reduce emissions and move closer to carbon-neutral water. Our green is blue because a more sustainable world depends on what we do with every drop.
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <Link href="/sustainability" className="contents">
+                    <HoverButton theme="transparent-white">
+                      {(hovered) => (
+                        <>
+                          Know More
+                          <div className="relative inline-block w-4 h-4">
                             <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                              alt="icon default"
                               width={16}
                               height={16}
                               className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                             />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: hovered ? 1 : 0 }}
+                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                              className="absolute top-0 left-0"
+                            >
+                              <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt="icon hover"
+                                width={16}
+                                height={16}
+                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                              />
+                            </motion.div>
+                          </div>
+                        </>
+                      )}
+                    </HoverButton>
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Column 3: Principle */}
             <div className="flex flex-col h-full items-center justify-center px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[320px]">
-                <h2
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '40px',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                  }}
-                >
-                  Practices
-                </h2>
-                <div style={{ height: '32px' }} />
-                <h3
-                  className="text-white group-hover:text-white"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                  }}
-                >
-                  From Water Intake to Water Use
-                </h3>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  WAE engineers water from intake to recovery and reuse, configuring treatment around source chemistry and demand to conserve resources. On-site purification and dispensing reduce packaged water reliance and Scope 3 emissions.
-                </p>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  Membrane-based treatment enables wastewater reuse, while digital monitoring measures quality, consumption and recovery advancing our carbon-neutral water ambition.
-                </p>
-                <div style={{ height: '32px' }} />
-                <Link href="/careers" className="contents">
-                  <HoverButton theme="transparent-white">
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
+              <div className="flex flex-col justify-between w-full max-w-[320px] h-full py-[100px]">
+                <div>
+                  <h2
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '40px',
+                      lineHeight: '110%',
+                      letterSpacing: '0%',
+                    }}
+                  >
+                    Practices
+                  </h2>
+                  <div style={{ height: '32px' }} />
+                  <h3
+                    className="text-white group-hover:text-white"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 700,
+                      fontSize: '12px',
+                      lineHeight: '100%',
+                    }}
+                  >
+                    From Water Intake to Water Use
+                  </h3>
+                  <div style={{ height: '12px' }} />
+                  <p
+                    className="text-white/60 group-hover:text-white"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '12px',
+                      lineHeight: '140%',
+                    }}
+                  >
+                    WAE engineers water from intake to recovery and reuse, configuring treatment around source chemistry and demand to conserve resources. On-site purification and dispensing reduce packaged water reliance and Scope 3 emissions.
+                  </p>
+                  <div style={{ height: '12px' }} />
+                  <p
+                    className="text-white/60 group-hover:text-white"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '12px',
+                      lineHeight: '140%',
+                    }}
+                  >
+                    Membrane-based treatment enables wastewater reuse, while digital monitoring measures quality, consumption and recovery advancing our carbon-neutral water ambition.
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <Link href="/careers" className="contents">
+                    <HoverButton theme="transparent-white">
+                      {(hovered) => (
+                        <>
+                          Know More
+                          <div className="relative inline-block w-4 h-4">
                             <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                              alt="icon default"
                               width={16}
                               height={16}
                               className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                             />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: hovered ? 1 : 0 }}
+                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                              className="absolute top-0 left-0"
+                            >
+                              <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt="icon hover"
+                                width={16}
+                                height={16}
+                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                              />
+                            </motion.div>
+                          </div>
+                        </>
+                      )}
+                    </HoverButton>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
