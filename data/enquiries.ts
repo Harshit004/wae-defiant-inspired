@@ -3849,5 +3849,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24259570723&gclid=EAIaIQobChMIuK_R5IaslwMVAoZmAh2FfwoMEAAYASADEgII3fD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-09T04:12:05.570Z"
+  },
+  "1576dfe7-1905-4086-9677-bce15efce6df": {
+    "id": "1576dfe7-1905-4086-9677-bce15efce6df",
+    "fullName": "Aryan kamble",
+    "companyName": "Aryan Prakash Kamble",
+    "email": "kambleprakash2421@gmail.com",
+    "phone": "8591154401",
+    "city": "काजूपाडा कमानी",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/primus?gad_source=5&gad_campaignid=24259570723&gclid=EAIaIQobChMIs9mJ-ouvlwMV2atmAh38EjVWEAAYASACEgJ1CPD_BwE",
+    "type": "product",
+    "createdAt": "2026-10-10T09:06:28.229Z"
   }
 };
