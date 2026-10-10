@@ -3860,5 +3860,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/primus?gad_source=5&gad_campaignid=24259570723&gclid=EAIaIQobChMIs9mJ-ouvlwMV2atmAh38EjVWEAAYASACEgJ1CPD_BwE",
     "type": "product",
     "createdAt": "2026-10-10T09:06:28.229Z"
+  },
+  "50e987ca-08fc-4287-8d71-b7c1a94d80d0": {
+    "id": "50e987ca-08fc-4287-8d71-b7c1a94d80d0",
+    "fullName": "Ramesh Jayraj",
+    "companyName": "GLAZE TECHNO FACADE SYSTEMS PVT LTD",
+    "email": "ramesh.j@glazetecnoindia.com",
+    "phone": "9136538380",
+    "city": "Andheri East, Chandivali, Powai",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/pos",
+    "type": "product",
+    "createdAt": "2026-10-10T09:53:24.091Z"
   }
 };
