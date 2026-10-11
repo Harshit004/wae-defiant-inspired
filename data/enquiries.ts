@@ -3871,5 +3871,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/pos",
     "type": "product",
     "createdAt": "2026-10-10T09:53:24.091Z"
+  },
+  "ed34e724-cc95-4598-a2fb-536d752a0c92": {
+    "id": "ed34e724-cc95-4598-a2fb-536d752a0c92",
+    "fullName": "Saeel bankar",
+    "companyName": "Saeel bankar",
+    "email": "bankarjunedh@gmail.com",
+    "phone": "7498641837",
+    "city": "Binny engineering",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series",
+    "type": "product",
+    "createdAt": "2026-10-11T15:16:43.575Z"
   }
 };
