@@ -138,7 +138,7 @@ export default function Footer() {
             <div className="col-span-4 w-full h-[1px] bg-[#FFFFFF4D] mb-4" />
 
             <ul className="space-y-3 font-[Inter_Tight] font-normal text-[2.5vw] text-white">
-              <li><Link href="/profile">Profile</Link></li>
+              <li><Link href="/profile">À propos</Link></li>
               <li><Link href="/portfolio">Portfolio</Link></li>
               <li><Link href="/careers">Reimagine Work</Link></li>
             </ul>
@@ -146,13 +146,13 @@ export default function Footer() {
             <ul className="space-y-3 font-[Inter_Tight] font-normal text-[2.5vw] text-white">
               <li><Link href="/sustainability">Sustainability</Link></li>
               <li><Link href="/activism">Activism</Link></li>
-              <li><Link href="/compliance">Compliances</Link></li>
+              <li><Link href="/compliance">Philanthropy</Link></li>
             </ul>
 
             <ul className="space-y-3 font-[Inter_Tight] font-normal text-[2.5vw] text-white">
               <li><Link href="/perspectives">Perspectives</Link></li>
               <li><Link href="/news-and-updates">Mentioned</Link></li>
-              <li><Link href="/contact-us">Contact</Link></li>
+              <li><Link href="/contact-us">Dialogue</Link></li>
             </ul>
 
             <ul className="space-y-3 font-[Inter_Tight] font-normal text-[2.5vw] text-white break-words pr-1">
@@ -370,7 +370,7 @@ export default function Footer() {
                 {/* Link lists */}
                 {/* INSIDE WAE */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/profile" className="hover:opacity-80 transition-opacity">Profile</Link></li>
+                  <li><Link href="/profile" className="hover:opacity-80 transition-opacity">À propos</Link></li>
                   <li><Link href="/portfolio" className="hover:opacity-80 transition-opacity">Portfolio</Link></li>
                   <li><Link href="/careers" className="hover:opacity-80 transition-opacity">Reimagine Work</Link></li>
                 </ul>
@@ -379,14 +379,14 @@ export default function Footer() {
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
                   <li><Link href="/sustainability" className="hover:opacity-80 transition-opacity">Sustainability</Link></li>
                   <li><Link href="/activism" className="hover:opacity-80 transition-opacity">Activism</Link></li>
-                  <li><Link href="/compliance" className="hover:opacity-80 transition-opacity">Compliances</Link></li>
+                  <li><Link href="/compliance" className="hover:opacity-80 transition-opacity">Philanthropy</Link></li>
                 </ul>
 
                 {/* ETCETERA */}
                 <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
                   <li><Link href="/perspectives" className="hover:opacity-80 transition-opacity">Perspectives</Link></li>
                   <li><Link href="/news-and-updates" className="hover:opacity-80 transition-opacity">Mentioned</Link></li>
-                  <li><Link href="/contact-us" className="hover:opacity-80 transition-opacity">Contact</Link></li>
+                  <li><Link href="/contact-us" className="hover:opacity-80 transition-opacity">Dialogue</Link></li>
                 </ul>
 
                 {/* POLICIES */}

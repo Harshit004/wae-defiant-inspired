@@ -11,26 +11,26 @@ const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
 
 // Menu data
 const productsItems = [
-    { text: "Profile", href: "/profile" },
+    { text: "À propos", href: "/profile" },
     { text: "Portfolio", href: "/portfolio" },
     { text: "Reimagine Work", href: "/careers" },
 ]
 const blueprintItems = [
     { text: "Sustainability", href: "/sustainability" },
     { text: "Activism", href: "/activism" },
-    { text: "Compliances", href: "/compliance" },
+    { text: "Philanthropy", href: "/compliance" },
 ]
 const etceteraItems = [
     { text: "Perspectives", href: "/perspectives" },
     { text: "Mentioned", href: "/news-and-updates" },
-    { text: "Contact", href: "/contact-us" },
+    { text: "Dialogue", href: "/contact-us" },
 ]
 
 const mobileMenuSections = [
     {
         category: "INSIDE WAE",
         items: [
-            { text: "Profile", href: "/profile" },
+            { text: "À propos", href: "/profile" },
             { text: "Portfolio", href: "/portfolio" },
             { text: "Reimagine Work", href: "/careers" },
         ],
@@ -40,7 +40,7 @@ const mobileMenuSections = [
         items: [
             { text: "Sustainability", href: "/sustainability" },
             { text: "Activism", href: "/activism" },
-            { text: "Compliances", href: "/compliance" },
+            { text: "Philanthropy", href: "/compliance" },
         ],
     },
     {
@@ -48,7 +48,7 @@ const mobileMenuSections = [
         items: [
             { text: "Perspectives", href: "/perspectives" },
             { text: "Mentioned", href: "/news-and-updates" },
-            { text: "Contact", href: "/contact-us" },
+            { text: "Dialogue", href: "/contact-us" },
         ],
     },
     {

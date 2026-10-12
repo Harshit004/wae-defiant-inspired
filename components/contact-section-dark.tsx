@@ -89,7 +89,7 @@ const ContactSectionDark = () => {
                         color: '#FFFFFF'
                     }}
                 >
-                    For More Info
+                    Dialogues
                 </h2>
                 <p 
                     className="text-[12px] md:text-[18px]"
@@ -102,7 +102,7 @@ const ContactSectionDark = () => {
                         maxWidth: '350px'
                     }}
                 >
-                    Every water challenge is different.<br />Let's find the right solution for yours.
+                    A conversation worth beginning
                 </p>
 
                 <div className="flex items-start gap-4 mt-auto">
