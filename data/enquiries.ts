@@ -3894,5 +3894,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Ro services Bhopal All",
     "type": "contact-us",
     "createdAt": "2026-10-12T08:19:40.609Z"
+  },
+  "24de1b2c-edc0-4a14-a562-2509c41ca889": {
+    "id": "24de1b2c-edc0-4a14-a562-2509c41ca889",
+    "fullName": "Linmay Pimparkar",
+    "companyName": "Orion Dental",
+    "email": "linmaypimparkar@gmail.com",
+    "phone": "9757021659",
+    "city": "Mumbau",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "I’m interested in buying WAE ALPHA CT product. Please quote for 1 unit.",
+    "type": "contact-us",
+    "createdAt": "2026-10-12T09:03:50.823Z"
   }
 };
