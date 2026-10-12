@@ -1231,7 +1231,7 @@ export default function Home() {
         <div className="flex justify-between items-stretch w-full">
 
           {/* Left Column */}
-          <div style={{ width: '44.93vw' }} className="flex flex-col">
+          <div style={{ width: '44.93vw' }} className="flex flex-col justify-between self-stretch">
             <div>
               <h2
                 style={{
@@ -1259,19 +1259,19 @@ export default function Home() {
             </div>
 
             {/* Image pinned to bottom */}
-            <div className="mt-auto pt-8">
+            <div className="mt-auto w-full">
               <motion.div
                 initial={{ filter: 'grayscale(100%)' }}
                 whileHover={{ filter: 'grayscale(0%)' }}
                 transition={{ duration: 0.8 }}
-                className="w-full h-auto cursor-pointer"
+                className="w-full h-auto cursor-pointer block leading-none"
               >
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fd6e76cf-b35a-46af-de19-8caa2b168300/public"
                   alt="Carbon Neutral Illustration"
                   width={645}
                   height={362}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover block"
                 />
               </motion.div>
             </div>
@@ -1280,7 +1280,7 @@ export default function Home() {
           {/* Right Column */}
           <div style={{ width: '34.93vw' }}>
 
-            {/* 1. Carbon Neutrality by Design */}
+            {/* 1. Purpose, Measured. Progress, Accountable. */}
             <div className="flex flex-col">
               <h4
                 style={{
@@ -1291,7 +1291,7 @@ export default function Home() {
                   color: '#FFFFFF'
                 }}
               >
-                1. Carbon Neutrality by Design
+                1. Purpose, Measured. Progress, Accountable.
               </h4>
               <div style={{ height: '12px' }} />
               <p
@@ -1303,7 +1303,7 @@ export default function Home() {
                   color: '#AEAEAE'
                 }}
               >
-                WAE engineers carbon neutrality across stages. From ZED Gold manufacturing to optimised distribution and point-of-use purification. Each verifiable installation helps reduce Scope 3 emissions by eliminating packaged water.
+                WAE embeds sustainability into engineering, operations and governance supported by EcoVadis recognition, reinforced through our UN Global Compact commitments, and advanced through SBTi-aligned decarbonisation goals. Our focus is measurable: lower carbon intensity, circular water systems, responsible materials, ethical enterprise and progressively reduced lifecycle environmental impact.
               </p>
               <div style={{ height: '22px' }} />
               <div className="w-full h-px bg-[#FFFFFF4D]" />
@@ -1311,7 +1311,7 @@ export default function Home() {
 
             <div style={{ height: '48px' }} />
 
-            {/* 2. ESG Performance & Reporting */}
+            {/* 2. Carbon Neutrality by Design */}
             <div className="flex flex-col">
               <h4
                 style={{
@@ -1322,7 +1322,7 @@ export default function Home() {
                   color: '#FFFFFF'
                 }}
               >
-                2. ESG Performance & Reporting
+                2. Carbon Neutrality by Design
               </h4>
               <div style={{ height: '12px' }} />
               <p
@@ -1334,7 +1334,7 @@ export default function Home() {
                   color: '#AEAEAE'
                 }}
               >
-                WAE solutions deliver measurable outcomes across ESG. They reduce plastic and carbon, enable hydration, and meet GRIHA, CE, and IWQA standards. With 20,000+ installations, WAE gives sustainability teams reportable data.
+                WAE engineers decarbonisation into the water lifecycle through in-situ purification, reduced packaging, lower logistics intensity, energy-efficient thermal systems, circular water use and lifecycle optimisation—progressively reducing embedded and operational carbon while advancing our ambition for Carbon Neutral Water.
               </p>
               <div style={{ height: '22px' }} />
               <div className="w-full h-px bg-[#FFFFFF4D]" />
@@ -1342,7 +1342,7 @@ export default function Home() {
 
             <div style={{ height: '48px' }} />
 
-            {/* 3. Water Stewardship */}
+            {/* 3. With Scope 3 in Focus */}
             <div className="flex flex-col">
               <h4
                 style={{
@@ -1353,7 +1353,7 @@ export default function Home() {
                   color: '#FFFFFF'
                 }}
               >
-                3. Water Stewardship
+                3. With Scope 3 in Focus
               </h4>
               <div style={{ height: '12px' }} />
               <p
@@ -1365,7 +1365,7 @@ export default function Home() {
                   color: '#AEAEAE'
                 }}
               >
-                WAE manages the full water lifecycle. From multi-stage RO purification to IoT-monitored point-of-use dispensing. Every installation enables traceability, accountability, zero waste, and water stewardship.
+                Our ESG architecture extends beyond direct operations to the broader value chain. Through responsible sourcing, lifecycle assessment, digital measurement, resource efficiency and elimination of avoidable packaging and transport, WAE targets material reductions in Scope 3 emissions while strengthening governance, transparency and stakeholder accountability.
               </p>
               <div style={{ height: '22px' }} />
               <div className="w-full h-px bg-[#FFFFFF4D]" />
@@ -1396,10 +1396,8 @@ export default function Home() {
                   color: '#AEAEAE'
                 }}
               >
-                WAE eliminates the emission chain of single-use plastic water. From production and transport to refrigeration and disposal. Each active system removes an estimated 20,000–30,000 bottles per year. It supports verified Scope 3 reductions aligned with SBTi and net zero goals.
+                WAE's net-zero pathway integrates science-based target setting, energy efficiency, renewable integration, process optimisation, circular materials and measurable carbon accounting. Our approach is aligned with SBTi principles, progressively linking engineering decisions, operational performance and value-chain decarbonisation to a credible long-term transition toward net-zero emissions.
               </p>
-              <div style={{ height: '22px' }} />
-              <div className="w-full h-px bg-white/20" />
             </div>
 
           </div>
@@ -1433,42 +1431,42 @@ export default function Home() {
 
           <div style={{ height: '15.77vw' }} />
 
-          {/* 1. Carbon Neutrality by Design */}
+          {/* 1. Purpose, Measured. Progress, Accountable. */}
           <div className="flex flex-col">
             <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.07vw', lineHeight: '100%' }}>
-              1. Carbon Neutrality by Design
+              1. Purpose, Measured. Progress, Accountable.
             </h4>
             <div style={{ height: '3.05vw' }} />
             <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
-              WAE engineers carbon neutrality across stages. From ZED Gold manufacturing to optimised distribution and point-of-use purification. Each verifiable installation helps reduce Scope 3 emissions by eliminating packaged water.
+              WAE embeds sustainability into engineering, operations and governance supported by EcoVadis recognition, reinforced through our UN Global Compact commitments, and advanced through SBTi-aligned decarbonisation goals. Our focus is measurable: lower carbon intensity, circular water systems, responsible materials, ethical enterprise and progressively reduced lifecycle environmental impact.
             </p>
             <div style={{ height: '9.41vw' }} />
             <div className="w-full h-px bg-[#FFFFFF4D]" />
             <div style={{ height: '9.41vw' }} />
           </div>
 
-          {/* 2. ESG Performance & Reporting */}
+          {/* 2. Carbon Neutrality by Design */}
           <div className="flex flex-col">
             <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.07vw', lineHeight: '100%' }}>
-              2. ESG Performance & Reporting
+              2. Carbon Neutrality by Design
             </h4>
             <div style={{ height: '3.05vw' }} />
             <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
-              WAE solutions deliver measurable outcomes across ESG. They reduce plastic and carbon, enable hydration, and meet GRIHA, CE, and IWQA standards. With 20,000+ installations, WAE gives sustainability teams reportable data.
+              WAE engineers decarbonisation into the water lifecycle through in-situ purification, reduced packaging, lower logistics intensity, energy-efficient thermal systems, circular water use and lifecycle optimisation—progressively reducing embedded and operational carbon while advancing our ambition for Carbon Neutral Water.
             </p>
             <div style={{ height: '9.41vw' }} />
             <div className="w-full h-px bg-[#FFFFFF4D]" />
             <div style={{ height: '9.41vw' }} />
           </div>
 
-          {/* 3. Water Stewardship */}
+          {/* 3. With Scope 3 in Focus */}
           <div className="flex flex-col">
             <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.07vw', lineHeight: '100%' }}>
-              3. Water Stewardship
+              3. With Scope 3 in Focus
             </h4>
             <div style={{ height: '3.05vw' }} />
             <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
-              WAE manages the full water lifecycle. From multi-stage RO purification to IoT-monitored point-of-use dispensing. Every installation enables traceability, accountability, zero waste, and water stewardship.
+              Our ESG architecture extends beyond direct operations to the broader value chain. Through responsible sourcing, lifecycle assessment, digital measurement, resource efficiency and elimination of avoidable packaging and transport, WAE targets material reductions in Scope 3 emissions while strengthening governance, transparency and stakeholder accountability.
             </p>
             <div style={{ height: '9.41vw' }} />
             <div className="w-full h-px bg-[#FFFFFF4D]" />
@@ -1482,7 +1480,7 @@ export default function Home() {
             </h4>
             <div style={{ height: '3.05vw' }} />
             <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
-              WAE eliminates the emission chain of single-use plastic water. From production and transport to refrigeration and disposal. Each active system removes an estimated 20,000–30,000 bottles per year. It supports verified Scope 3 reductions aligned with SBTi and net zero goals.
+              WAE's net-zero pathway integrates science-based target setting, energy efficiency, renewable integration, process optimisation, circular materials and measurable carbon accounting. Our approach is aligned with SBTi principles, progressively linking engineering decisions, operational performance and value-chain decarbonisation to a credible long-term transition toward net-zero emissions.
             </p>
           </div>
 
