@@ -3882,5 +3882,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series",
     "type": "product",
     "createdAt": "2026-10-11T15:16:43.575Z"
+  },
+  "4227d61c-10bf-4189-bacb-2478b8f02bc7": {
+    "id": "4227d61c-10bf-4189-bacb-2478b8f02bc7",
+    "fullName": "Vicky deshmukh",
+    "companyName": "Vicky ro services",
+    "email": "deshmukhvilash86@gmail.com",
+    "phone": "7987272506",
+    "city": "Bhopal",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Ro services Bhopal All",
+    "type": "contact-us",
+    "createdAt": "2026-10-12T08:19:40.609Z"
   }
 };
