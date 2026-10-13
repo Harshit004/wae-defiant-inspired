@@ -3906,5 +3906,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I’m interested in buying WAE ALPHA CT product. Please quote for 1 unit.",
     "type": "contact-us",
     "createdAt": "2026-10-12T09:03:50.823Z"
+  },
+  "9a4304c9-6674-43e4-84a1-e35fb9f8cb04": {
+    "id": "9a4304c9-6674-43e4-84a1-e35fb9f8cb04",
+    "fullName": "Mohith",
+    "companyName": "Molex",
+    "email": "mohithkiran.sh@molex.com",
+    "phone": "8722801691",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Enquiry",
+    "type": "contact-us",
+    "createdAt": "2026-10-13T17:32:24.121Z"
   }
 };
