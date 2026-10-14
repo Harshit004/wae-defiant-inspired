@@ -3918,5 +3918,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Enquiry",
     "type": "contact-us",
     "createdAt": "2026-10-13T17:32:24.121Z"
+  },
+  "89faf8cb-a0ae-4430-8397-83488de36f5d": {
+    "id": "89faf8cb-a0ae-4430-8397-83488de36f5d",
+    "fullName": "Abid Sayed",
+    "companyName": "Absa enterprises",
+    "email": "absa.ent@gmail.com",
+    "phone": "9967595802",
+    "city": "mumbai",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "plz contact",
+    "type": "general",
+    "createdAt": "2026-10-14T05:07:55.334Z"
   }
 };
