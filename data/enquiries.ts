@@ -3975,5 +3975,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Need to enquire about commercial water purifier, required in Mumbai",
     "type": "general",
     "createdAt": "2026-10-15T10:07:58.217Z"
+  },
+  "9b0e8ac8-6f74-4ddc-a522-190e0b6c44b4": {
+    "id": "9b0e8ac8-6f74-4ddc-a522-190e0b6c44b4",
+    "fullName": "manas ranjan bhoi",
+    "companyName": "no company",
+    "email": "manasranjan7997@gmail.com",
+    "phone": "7205020633",
+    "city": "cuttack",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/primus",
+    "type": "product",
+    "createdAt": "2026-10-15T10:47:06.748Z"
   }
 };
