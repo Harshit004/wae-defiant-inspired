@@ -3963,5 +3963,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "/sustainability",
     "type": "product",
     "createdAt": "2026-10-15T09:50:40.326Z"
+  },
+  "afdc9e95-6fe6-47d2-af87-29d36f229c8c": {
+    "id": "afdc9e95-6fe6-47d2-af87-29d36f229c8c",
+    "fullName": "Riyaz S R Shaikh",
+    "companyName": "S R Enterprises",
+    "email": "riyaz@srepmc.com",
+    "phone": "9820188311",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "Need to enquire about commercial water purifier, required in Mumbai",
+    "type": "general",
+    "createdAt": "2026-10-15T10:07:58.217Z"
   }
 };
