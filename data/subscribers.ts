@@ -566,5 +566,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-15",
     "time": "09:42:57",
     "pageLink": "/profile"
+  },
+  {
+    "id": "b164a63a-17a0-4c0d-93bb-8be900abf9dd",
+    "email": "gupta.rish2501@gmail.com",
+    "date": "2026-10-15",
+    "time": "14:57:32",
+    "pageLink": "/join-wae"
   }
 ];
