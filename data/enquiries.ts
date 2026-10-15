@@ -3930,5 +3930,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "plz contact",
     "type": "general",
     "createdAt": "2026-10-14T05:07:55.334Z"
+  },
+  "653320c1-6e76-49f0-8bce-739827d0091f": {
+    "id": "653320c1-6e76-49f0-8bce-739827d0091f",
+    "fullName": "Durga Singh",
+    "companyName": "kasauli hospitalty service pvt.ltd.",
+    "email": "purchase@kasaulihillsresort.com",
+    "phone": "8091531082",
+    "city": "GARKHAL, KASAULI",
+    "pageLink": "https://www.waecorp.com/",
+    "type": "general",
+    "createdAt": "2026-10-15T04:05:33.993Z"
   }
 };
