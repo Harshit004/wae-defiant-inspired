@@ -559,5 +559,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-14",
     "time": "16:44:11",
     "pageLink": "/portfolio/glass-bottling"
+  },
+  {
+    "id": "54688a9b-c442-4d44-a693-b5fb2e45f201",
+    "email": "purchase@kasaulihillsresort.com",
+    "date": "2026-10-15",
+    "time": "09:42:57",
+    "pageLink": "/profile"
   }
 ];
