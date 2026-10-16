@@ -3986,5 +3986,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/primus",
     "type": "product",
     "createdAt": "2026-10-15T10:47:06.748Z"
+  },
+  "a69493dd-fa3a-440c-830e-c21a5ab14bca": {
+    "id": "a69493dd-fa3a-440c-830e-c21a5ab14bca",
+    "fullName": "Shiva B",
+    "companyName": "Facility Solutions",
+    "email": "shiva@facilitysolutions.in",
+    "phone": "9980011776",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "WAE Trublu ALFA 7 HCA - 2 Nos",
+    "type": "contact-us",
+    "createdAt": "2026-10-16T12:26:48.142Z"
   }
 };
