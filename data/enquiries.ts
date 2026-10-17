@@ -3998,5 +3998,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "WAE Trublu ALFA 7 HCA - 2 Nos",
     "type": "contact-us",
     "createdAt": "2026-10-16T12:26:48.142Z"
+  },
+  "0bddb579-749d-4d16-a318-8f05035e1302": {
+    "id": "0bddb579-749d-4d16-a318-8f05035e1302",
+    "fullName": "Puneet Maini",
+    "companyName": "Maini Power Solutions",
+    "email": "mainipuneet.maini@gmail.com",
+    "phone": "9815511616",
+    "city": "Ludhiana",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "We need Water Stations at our office and residence",
+    "type": "general",
+    "createdAt": "2026-10-17T10:34:22.296Z"
   }
 };
