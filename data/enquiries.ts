@@ -4010,5 +4010,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We need Water Stations at our office and residence",
     "type": "general",
     "createdAt": "2026-10-17T10:34:22.296Z"
+  },
+  "5978c110-d337-41a2-980f-6ba92a9eb53d": {
+    "id": "5978c110-d337-41a2-980f-6ba92a9eb53d",
+    "fullName": "Ritik Kumar Saraf",
+    "companyName": "NIRMAL HARDWARE",
+    "email": "sarafritik374@gmail.com",
+    "phone": "8210185699",
+    "city": "DHANBAD",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gbraid=0AAAAABUiSLzyu24e-dbtz3kHeiHVlsKyw&gclid=CjwKCAjw_9bWBhBGEiwAomyTIqdai8KR2avWoknrwDywfDUwNDwJ6WCvwWgKGaT4CAg-T6GEftHsxRoCClcQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-10-20T04:44:34.681Z"
   }
 };
