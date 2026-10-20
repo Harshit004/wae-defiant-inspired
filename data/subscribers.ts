@@ -580,5 +580,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-16",
     "time": "10:14:35",
     "pageLink": "/"
+  },
+  {
+    "id": "ef0c5631-9d15-40f0-99b7-610b47f85931",
+    "email": "abbaspatra9@gmail.com",
+    "date": "2026-10-20",
+    "time": "17:32:38",
+    "pageLink": "/portfolio/watermatic"
   }
 ];
