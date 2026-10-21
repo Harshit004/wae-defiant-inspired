@@ -4021,5 +4021,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gbraid=0AAAAABUiSLzyu24e-dbtz3kHeiHVlsKyw&gclid=CjwKCAjw_9bWBhBGEiwAomyTIqdai8KR2avWoknrwDywfDUwNDwJ6WCvwWgKGaT4CAg-T6GEftHsxRoCClcQAvD_BwE",
     "type": "product",
     "createdAt": "2026-10-20T04:44:34.681Z"
+  },
+  "8a8cd3f4-0d3c-4061-9324-6670bcd75d16": {
+    "id": "8a8cd3f4-0d3c-4061-9324-6670bcd75d16",
+    "fullName": "TEST ENQUIRY - Please ignore",
+    "companyName": "WAE - Internal form test",
+    "email": "muditmishratest@gmail.com",
+    "phone": "9696969696",
+    "city": "Noida - Internal test",
+    "pageLink": "https://www.waecorp.com/portfolio/watermatic/touch",
+    "type": "product",
+    "createdAt": "2026-10-21T09:49:55.390Z"
   }
 };
