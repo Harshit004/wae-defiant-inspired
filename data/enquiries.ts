@@ -4043,5 +4043,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/watermatic/touch",
     "type": "product",
     "createdAt": "2026-10-21T10:14:58.843Z"
+  },
+  "8ca83168-3988-452b-83bf-5f361f0357b7": {
+    "id": "8ca83168-3988-452b-83bf-5f361f0357b7",
+    "fullName": "TEST ENQUIRY - GA4 verification",
+    "companyName": "WAE - Internal tracking test",
+    "email": "muditmishratest@gmail.com",
+    "phone": "9696969696",
+    "city": "Noida - Internal test",
+    "pageLink": "https://www.waecorp.com/portfolio/watermatic/touch?gtm_debug=1792578744704",
+    "type": "product",
+    "createdAt": "2026-10-21T10:33:15.401Z"
   }
 };
