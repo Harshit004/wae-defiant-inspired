@@ -587,5 +587,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-20",
     "time": "17:32:38",
     "pageLink": "/portfolio/watermatic"
+  },
+  {
+    "id": "2fd41719-6f8e-4344-9161-ff23329da652",
+    "email": "satyamvashishta8@gmail.com",
+    "date": "2026-10-21",
+    "time": "09:27:39",
+    "pageLink": "/careers"
   }
 ];
