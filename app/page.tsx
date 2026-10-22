@@ -1231,7 +1231,7 @@ export default function Home() {
         <div className="flex justify-between items-stretch w-full">
 
           {/* Left Column */}
-          <div style={{ width: '44.93vw', maxWidth: '645px' }} className="flex flex-col justify-between self-stretch">
+          <div style={{ width: '44.93vw' }} className="flex flex-col justify-between self-stretch">
             <div>
               <h2
                 style={{
@@ -1242,7 +1242,7 @@ export default function Home() {
                   color: '#FFFFFF'
                 }}
               >
-                Earth, Our Only Shareholder
+                Positive Hydration for a Net<br />Zero Future
               </h2>
               <div style={{ height: '32px' }} />
               <p
@@ -1254,7 +1254,7 @@ export default function Home() {
                   color: '#AEAEAE'
                 }}
               >
-                A ledger of people, planet, and profit and the water that connects them all.
+                Carbon neutrality isn't an afterthought at WAE.<br />It is built into every stage.
               </p>
             </div>
 
@@ -1278,91 +1278,128 @@ export default function Home() {
           </div>
 
           {/* Right Column */}
-          <div style={{ width: '38vw', maxWidth: '540px' }} className="flex flex-col justify-between self-stretch">
-            {/* Top Section */}
+          <div style={{ width: '34.93vw' }}>
+
+            {/* 1. Purpose, Measured. Progress, Accountable. */}
             <div className="flex flex-col">
-              <h3
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontStyle: 'normal',
-                  fontSize: 'clamp(32px, 4.03vw, 58px)',
-                  lineHeight: '105%',
-                  letterSpacing: '0%',
-                  color: '#AEAEAE',
-                  verticalAlign: 'middle',
-                }}
-              >
-                <span className="inline-block pl-[clamp(28px,4.5vw,64px)]">“ He who knows</span><br />
-                that enough is<br />
-                enough will always<br />
-                have enough. ”
-              </h3>
-
-              <div style={{ height: '17px' }} />
-
-              <div className="w-full flex justify-end">
-                <span
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontStyle: 'normal',
-                    fontSize: '16px',
-                    lineHeight: '105%',
-                    letterSpacing: '0%',
-                    color: '#FFFFFF',
-                    verticalAlign: 'middle',
-                  }}
-                >
-                  - Lao Tzu
-                </span>
-              </div>
-
-              <div style={{ height: '31px' }} />
-
-              <div className="w-full h-px bg-[#FFFFFF4D]" />
-            </div>
-
-            {/* Bottom Section */}
-            <div className="flex flex-col justify-between flex-1" style={{ paddingTop: '55px' }}>
-              <p
+              <h4
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontStyle: 'normal',
-                  fontSize: '14px',
+                  fontSize: '18px',
                   lineHeight: '100%',
-                  letterSpacing: '0%',
-                  color: '#AEAEAE',
-                  verticalAlign: 'middle',
+                  color: '#FFFFFF'
                 }}
               >
-                There is a quiet truth that underpins<br />
-                all progress, often overlooked,<br />
-                yet impossible to escape:
+                1. Purpose, Measured. Progress, Accountable.
+              </h4>
+              <div style={{ height: '12px' }} />
+              <p
+                className="leading-normal"
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  color: '#AEAEAE'
+                }}
+              >
+                WAE embeds sustainability into engineering, operations and governance supported by EcoVadis recognition, reinforced through our UN Global Compact commitments, and advanced through SBTi-aligned decarbonisation goals. Our focus is measurable: lower carbon intensity, circular water systems, responsible materials, ethical enterprise and progressively reduced lifecycle environmental impact.
               </p>
-
-              <div className="flex justify-end mt-auto" style={{ paddingTop: '55px' }}>
-                <h3
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontStyle: 'normal',
-                    fontSize: 'clamp(24px, 2.5vw, 36px)',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    color: '#FFFFFF',
-                    verticalAlign: 'middle',
-                    textAlign: 'left',
-                  }}
-                >
-                  Earth holds<br />
-                  no equity.<br />
-                  Yet everything<br />
-                  answers to it.
-                </h3>
-              </div>
+              <div style={{ height: '22px' }} />
+              <div className="w-full h-px bg-[#FFFFFF4D]" />
             </div>
+
+            <div style={{ height: '48px' }} />
+
+            {/* 2. Carbon Neutrality by Design */}
+            <div className="flex flex-col">
+              <h4
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  color: '#FFFFFF'
+                }}
+              >
+                2. Carbon Neutrality by Design
+              </h4>
+              <div style={{ height: '12px' }} />
+              <p
+                className="leading-normal"
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  color: '#AEAEAE'
+                }}
+              >
+                WAE engineers decarbonisation into the water lifecycle through in-situ purification, reduced packaging, lower logistics intensity, energy-efficient thermal systems, circular water use and lifecycle optimisation—progressively reducing embedded and operational carbon while advancing our ambition for Carbon Neutral Water.
+              </p>
+              <div style={{ height: '22px' }} />
+              <div className="w-full h-px bg-[#FFFFFF4D]" />
+            </div>
+
+            <div style={{ height: '48px' }} />
+
+            {/* 3. With Scope 3 in Focus */}
+            <div className="flex flex-col">
+              <h4
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  color: '#FFFFFF'
+                }}
+              >
+                3. With Scope 3 in Focus
+              </h4>
+              <div style={{ height: '12px' }} />
+              <p
+                className="leading-normal"
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  color: '#AEAEAE'
+                }}
+              >
+                Our ESG architecture extends beyond direct operations to the broader value chain. Through responsible sourcing, lifecycle assessment, digital measurement, resource efficiency and elimination of avoidable packaging and transport, WAE targets material reductions in Scope 3 emissions while strengthening governance, transparency and stakeholder accountability.
+              </p>
+              <div style={{ height: '22px' }} />
+              <div className="w-full h-px bg-[#FFFFFF4D]" />
+            </div>
+
+            <div style={{ height: '48px' }} />
+
+            {/* 4. Net Zero Alignment */}
+            <div className="flex flex-col">
+              <h4
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '18px',
+                  lineHeight: '100%',
+                  color: '#FFFFFF'
+                }}
+              >
+                4. Net Zero Alignment
+              </h4>
+              <div style={{ height: '12px' }} />
+              <p
+                className="leading-normal"
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  color: '#AEAEAE'
+                }}
+              >
+                WAE's net-zero pathway integrates science-based target setting, energy efficiency, renewable integration, process optimisation, circular materials and measurable carbon accounting. Our approach is aligned with SBTi principles, progressively linking engineering decisions, operational performance and value-chain decarbonisation to a credible long-term transition toward net-zero emissions.
+              </p>
+            </div>
+
           </div>
         </div>
       
@@ -1374,14 +1411,14 @@ export default function Home() {
             Sustainability
           </h3>
           <div style={{ height: '7.12vw' }} />
-          <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '7.12vw', lineHeight: '105%' }}>
-            Earth, Our Only Shareholder
+          <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: '7.12vw', lineHeight: '105%' }}>
+            Carbon Neutral water from water intake to water reuse
           </h2>
-          <div style={{ height: '3.5vw' }} />
-          <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
-            A ledger of people, planet, and profit and the water that connects them all.
+          <div style={{ height: '5.59vw' }} />
+          <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '100%', color: '#AEAEAE' }}>
+            Carbon neutrality isn't an afterthought at WAE. It is built into every stage.
           </p>
-          <div style={{ height: '10vw' }} />
+          <div style={{ height: '19.84vw' }} />
           
           <div className="w-full relative" style={{ height: '42.74vw' }}>
             <Image
@@ -1392,77 +1429,61 @@ export default function Home() {
             />
           </div>
 
-          <div style={{ height: '12vw' }} />
+          <div style={{ height: '15.77vw' }} />
 
-          {/* Quote */}
-          <h3
-            style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 400,
-              fontSize: '8vw',
-              lineHeight: '105%',
-              color: '#AEAEAE',
-            }}
-          >
-            <span className="inline-block pl-[6vw]">“ He who knows</span><br />
-            that enough is<br />
-            enough will always<br />
-            have enough. ”
-          </h3>
-
-          <div style={{ height: '17px' }} />
-
-          <div className="w-full flex justify-end">
-            <span
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 500,
-                fontSize: '16px',
-                lineHeight: '105%',
-                color: '#FFFFFF',
-              }}
-            >
-              - Lao Tzu
-            </span>
+          {/* 1. Purpose, Measured. Progress, Accountable. */}
+          <div className="flex flex-col">
+            <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.07vw', lineHeight: '100%' }}>
+              1. Purpose, Measured. Progress, Accountable.
+            </h4>
+            <div style={{ height: '3.05vw' }} />
+            <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
+              WAE embeds sustainability into engineering, operations and governance supported by EcoVadis recognition, reinforced through our UN Global Compact commitments, and advanced through SBTi-aligned decarbonisation goals. Our focus is measurable: lower carbon intensity, circular water systems, responsible materials, ethical enterprise and progressively reduced lifecycle environmental impact.
+            </p>
+            <div style={{ height: '9.41vw' }} />
+            <div className="w-full h-px bg-[#FFFFFF4D]" />
+            <div style={{ height: '9.41vw' }} />
           </div>
 
-          <div style={{ height: '31px' }} />
-          <div className="w-full h-px bg-[#FFFFFF4D]" />
-          <div style={{ height: '35px' }} />
-
-          <p
-            style={{
-              fontFamily: "'Manrope', sans-serif",
-              fontWeight: 400,
-              fontSize: '14px',
-              lineHeight: '130%',
-              color: '#AEAEAE',
-            }}
-          >
-            There is a quiet truth that underpins<br />
-            all progress, often overlooked,<br />
-            yet impossible to escape:
-          </p>
-
-          <div style={{ height: '35px' }} />
-
-          <div className="flex justify-end">
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: '28px',
-                lineHeight: '105%',
-                color: '#FFFFFF',
-                textAlign: 'left',
-              }}
-            >
-              Earth holds<br />
-              no equity.<br />
-              Yet everything<br />
-              answers to it.
-            </h3>
+          {/* 2. Carbon Neutrality by Design */}
+          <div className="flex flex-col">
+            <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.07vw', lineHeight: '100%' }}>
+              2. Carbon Neutrality by Design
+            </h4>
+            <div style={{ height: '3.05vw' }} />
+            <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
+              WAE engineers decarbonisation into the water lifecycle through in-situ purification, reduced packaging, lower logistics intensity, energy-efficient thermal systems, circular water use and lifecycle optimisation—progressively reducing embedded and operational carbon while advancing our ambition for Carbon Neutral Water.
+            </p>
+            <div style={{ height: '9.41vw' }} />
+            <div className="w-full h-px bg-[#FFFFFF4D]" />
+            <div style={{ height: '9.41vw' }} />
           </div>
+
+          {/* 3. With Scope 3 in Focus */}
+          <div className="flex flex-col">
+            <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.07vw', lineHeight: '100%' }}>
+              3. With Scope 3 in Focus
+            </h4>
+            <div style={{ height: '3.05vw' }} />
+            <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
+              Our ESG architecture extends beyond direct operations to the broader value chain. Through responsible sourcing, lifecycle assessment, digital measurement, resource efficiency and elimination of avoidable packaging and transport, WAE targets material reductions in Scope 3 emissions while strengthening governance, transparency and stakeholder accountability.
+            </p>
+            <div style={{ height: '9.41vw' }} />
+            <div className="w-full h-px bg-[#FFFFFF4D]" />
+            <div style={{ height: '9.41vw' }} />
+          </div>
+
+          {/* 4. Net Zero Alignment */}
+          <div className="flex flex-col">
+            <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.07vw', lineHeight: '100%' }}>
+              4. Net Zero Alignment
+            </h4>
+            <div style={{ height: '3.05vw' }} />
+            <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
+              WAE's net-zero pathway integrates science-based target setting, energy efficiency, renewable integration, process optimisation, circular materials and measurable carbon accounting. Our approach is aligned with SBTi principles, progressively linking engineering decisions, operational performance and value-chain decarbonisation to a credible long-term transition toward net-zero emissions.
+            </p>
+          </div>
+
         </div>
       </section>
 
