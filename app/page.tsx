@@ -1289,7 +1289,7 @@ export default function Home() {
                   fontSize: 'clamp(32px, 4.03vw, 58px)',
                   lineHeight: '105%',
                   letterSpacing: '0%',
-                  color: '#FFFFFF',
+                  color: '#AEAEAE',
                   verticalAlign: 'middle',
                 }}
               >
@@ -1401,7 +1401,7 @@ export default function Home() {
               fontWeight: 400,
               fontSize: '8vw',
               lineHeight: '105%',
-              color: '#FFFFFF',
+              color: '#AEAEAE',
             }}
           >
             <span className="inline-block pl-[6vw]">“ He who knows</span><br />
