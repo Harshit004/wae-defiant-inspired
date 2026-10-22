@@ -1219,102 +1219,102 @@ export default function Home() {
           </h3>
           <div style={{ height: '26px' }} />
         </div>
-        <div className="flex justify-between items-stretch w-full">
-
-          {/* Left Column */}
-          <div style={{ width: '44.93vw', maxWidth: '645px' }} className="flex flex-col justify-between self-stretch">
-            <div>
-              <h2
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '40px',
-                  lineHeight: '110%',
-                  color: '#FFFFFF'
-                }}
-              >
-                Earth, Our Only Shareholder
-              </h2>
-              <div style={{ height: '32px' }} />
-              <p
-                className="leading-normal"
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  color: '#AEAEAE'
-                }}
-              >
-                A ledger of people, planet, and profit and the water that connects them all.
-              </p>
-            </div>
-
-            {/* Image pinned to bottom */}
-            <div className="mt-auto w-full">
-              <motion.div
-                initial={{ filter: 'grayscale(100%)' }}
-                whileHover={{ filter: 'grayscale(0%)' }}
-                transition={{ duration: 0.8 }}
-                className="w-full h-auto cursor-pointer block leading-none"
-              >
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fd6e76cf-b35a-46af-de19-8caa2b168300/public"
-                  alt="Carbon Neutral Illustration"
-                  width={645}
-                  height={362}
-                  className="w-full h-auto object-cover block"
-                />
-              </motion.div>
-            </div>
+        {/* Top Row: Heading on left, Quote on right */}
+        <div className="flex justify-between items-start w-full">
+          {/* Left Column - Heading & Subtitle */}
+          <div style={{ width: '44.93vw', maxWidth: '645px' }}>
+            <h2
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: '40px',
+                lineHeight: '110%',
+                color: '#FFFFFF'
+              }}
+            >
+              Earth, Our Only Shareholder
+            </h2>
+            <div style={{ height: '32px' }} />
+            <p
+              className="leading-normal"
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: '14px',
+                color: '#AEAEAE'
+              }}
+            >
+              A ledger of people, planet, and profit and the water that connects them all.
+            </p>
           </div>
 
-          {/* Right Column */}
-          <div style={{ width: '38vw', maxWidth: '540px' }} className="flex flex-col justify-between self-stretch">
-            {/* Top Section */}
-            <div className="flex flex-col">
-              <h3
+          {/* Right Column - Quote & Author */}
+          <div style={{ width: '38vw', maxWidth: '540px' }} className="flex flex-col">
+            <h3
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontStyle: 'normal',
+                fontSize: 'clamp(32px, 4.03vw, 58px)',
+                lineHeight: '105%',
+                letterSpacing: '0%',
+                color: '#AEAEAE',
+                verticalAlign: 'middle',
+              }}
+            >
+              <span className="inline-block pl-[clamp(28px,4.5vw,64px)]">“ He who knows</span><br />
+              that enough is<br />
+              enough will always<br />
+              have enough. ”
+            </h3>
+
+            <div style={{ height: '17px' }} />
+
+            <div className="w-full flex justify-end">
+              <span
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
+                  fontWeight: 500,
                   fontStyle: 'normal',
-                  fontSize: 'clamp(32px, 4.03vw, 58px)',
+                  fontSize: '16px',
                   lineHeight: '105%',
                   letterSpacing: '0%',
-                  color: '#AEAEAE',
+                  color: '#FFFFFF',
                   verticalAlign: 'middle',
                 }}
               >
-                <span className="inline-block pl-[clamp(28px,4.5vw,64px)]">“ He who knows</span><br />
-                that enough is<br />
-                enough will always<br />
-                have enough. ”
-              </h3>
-
-              <div style={{ height: '17px' }} />
-
-              <div className="w-full flex justify-end">
-                <span
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontStyle: 'normal',
-                    fontSize: '16px',
-                    lineHeight: '105%',
-                    letterSpacing: '0%',
-                    color: '#FFFFFF',
-                    verticalAlign: 'middle',
-                  }}
-                >
-                  - Lao Tzu
-                </span>
-              </div>
-
-              <div style={{ height: '31px' }} />
-
-              <div className="w-full h-px bg-[#FFFFFF4D]" />
+                - Lao Tzu
+              </span>
             </div>
 
-            {/* Bottom Section */}
+            <div style={{ height: '31px' }} />
+          </div>
+        </div>
+
+        {/* Bottom Row: Image on left aligned with Horizontal Line on right */}
+        <div className="flex justify-between items-stretch w-full">
+          {/* Left Column - Image */}
+          <div style={{ width: '44.93vw', maxWidth: '645px' }} className="w-full">
+            <motion.div
+              initial={{ filter: 'grayscale(100%)' }}
+              whileHover={{ filter: 'grayscale(0%)' }}
+              transition={{ duration: 0.8 }}
+              className="w-full h-auto cursor-pointer block leading-none"
+            >
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fd6e76cf-b35a-46af-de19-8caa2b168300/public"
+                alt="Carbon Neutral Illustration"
+                width={645}
+                height={362}
+                className="w-full h-auto object-cover block"
+              />
+            </motion.div>
+          </div>
+
+          {/* Right Column - Horizontal Line & Truth / Equity Section */}
+          <div style={{ width: '38vw', maxWidth: '540px' }} className="flex flex-col justify-between self-stretch">
+            <div className="w-full h-px bg-[#FFFFFF4D]" />
+
             <div className="flex flex-col justify-between flex-1" style={{ paddingTop: '55px' }}>
               <p
                 style={{
@@ -1322,7 +1322,7 @@ export default function Home() {
                   fontWeight: 400,
                   fontStyle: 'normal',
                   fontSize: '14px',
-                  lineHeight: '100%',
+                  lineHeight: '130%',
                   letterSpacing: '0%',
                   color: '#AEAEAE',
                   verticalAlign: 'middle',
