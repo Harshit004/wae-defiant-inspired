@@ -5567,7 +5567,9 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "The audit does not assume that a new drinking-water system is required. It establishes whether the existing hydration model is efficient, appropriate, and resilient."
-        },
+        }
+      ],
+      [
         {
           "type": "heading",
           "text": "Water Audit, Water Balance, and Smart Metering Serve Different Roles"
@@ -5583,9 +5585,7 @@ export const BLOGS: Record<string, BlogPost> = {
         {
           "type": "paragraph",
           "text": "This prevents organisations from installing additional monitoring technology without knowing which flows need closer attention."
-        }
-      ],
-      [
+        },
         {
           "type": "heading",
           "text": "How to Reduce Water Consumption After the Audit"
