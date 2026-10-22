@@ -5397,5 +5397,268 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "where-does-a-building-waste-water-why-water-audits-should-come-before-water-saving-technology": {
+    "id": "where-does-a-building-waste-water-why-water-audits-should-come-before-water-saving-technology",
+    "title": "Where Does a Building Waste Water? Why Water Audits Should Come Before Water-Saving Technology",
+    "category": "Water conservation",
+    "description": "Buildings often invest in water-saving technology before understanding where water is actually being lost or overused. The blog explains how water audits create that baseline by mapping consumption, leaks, treatment, reuse and operational risks, helping organisations prioritise investments based on measurable water savings rather than assumptions.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1ae327f7-0444-463b-137a-2ec2ae96e500/public",
+    "writerId": "rehnuma-ansari",
+    "readTime": "8 min read",
+    "status": "Live",
+    "createdAt": "2026-10-22T11:51:35.332Z",
+    "contentColumns": [
+      [
+        {
+          "type": "paragraph",
+          "text": "Water-saving technology is easy to buy. Understanding where a building actually wastes water is harder."
+        },
+        {
+          "type": "paragraph",
+          "text": "An office may install low-flow fixtures, a hotel may upgrade its plumbing, and a campus may add rainwater harvesting or recycling systems. Each intervention can be useful, but none answers the first management question: where is the water going, and which losses matter most?"
+        },
+        {
+          "type": "paragraph",
+          "text": "A building water audit answers that question before capital is committed. It examines how water enters a site, how it is distributed and used, where it is treated or discharged, and where consumption can be reduced."
+        },
+        {
+          "type": "paragraph",
+          "text": "The principle is simple: measure first, diagnose second, and then invest."
+        },
+        {
+          "type": "heading",
+          "text": "What Is a Water Audit for Buildings?"
+        },
+        {
+          "type": "paragraph",
+          "text": "The National Productivity Council defines a water audit as a study of an entity’s water use. Its detailed guidance then traces water from the point of entry onto the premises to the point of wastewater discharge, examining volumes, wastage, leakage, excess use, treatment practices, and opportunities to improve efficiency."
+        },
+        {
+          "type": "paragraph",
+          "text": "NPC’s detailed audit process includes baseline water mapping, pressure and flow measurements, quantification of leaks and inefficiencies, analysis of flow and quality variations, treatment assessment, and evaluation of reuse opportunities."
+        },
+        {
+          "type": "paragraph",
+          "text": "That distinction makes a water audit a diagnostic exercise rather than a simple bill review or a plumbing inspection."
+        },
+        {
+          "type": "heading",
+          "text": "Why Technology Should Come After Diagnosis"
+        },
+        {
+          "type": "paragraph",
+          "text": "Water waste in buildings is rarely confined to a single location."
+        },
+        {
+          "type": "paragraph",
+          "text": "A dripping tap is easy to see. A larger loss may be hidden underground, occurring through storage-tank overflow, inefficient irrigation, cooling-system operation, or a process that uses more water than necessary."
+        },
+        {
+          "type": "paragraph",
+          "text": "Without evidence, building managers tend to focus on what is most visible."
+        },
+        {
+          "type": "paragraph",
+          "text": "In 2010, the Centre for Science and Environment reached a similar conclusion after auditing its own Delhi office. CSE described the audit as a prerequisite and the first step toward systematically identifying opportunities to improve water use. The example is dated, but the management principle remains relevant."
+        },
+        {
+          "type": "paragraph",
+          "text": "A commercial building water audit helps distinguish visible symptoms from the larger sources of avoidable water demand."
+        },
+        {
+          "type": "heading",
+          "text": "What a Water Audit Process Should Examine"
+        },
+        {
+          "type": "paragraph",
+          "text": "The process usually begins with existing evidence, including utility bills, tanker records, borewell logs, treatment data, occupancy data, operating schedules, and maintenance records."
+        },
+        {
+          "type": "paragraph",
+          "text": "The audit then tests those records against actual on-site conditions. Auditors can inspect major storage and distribution points, measure key flows, investigate losses, and document wastewater or reuse streams."
+        },
+        {
+          "type": "paragraph",
+          "text": "GRIHA for Existing Buildings Version 1 reflects this approach. Criterion 7.1.1 requires a detailed water audit that includes a water-supply and usage study, a process and system audit, and a discharge analysis."
+        },
+        {
+          "type": "paragraph",
+          "text": "The audit should be tailored to the building. A hotel with kitchens, laundry, and guest rooms has a different water profile than a conventional office. A campus may require zone-level analysis because different buildings operate on different schedules."
+        },
+        {
+          "type": "paragraph",
+          "text": "For organisations that need independent expertise, the Water Audit Council, an initiative of the Indian Plumbing Association, offers built-environment water audits and certification. It also provides training for certified water auditors. "
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Benefits of a Water Audit: Cost, Risk and Resilience"
+        },
+        {
+          "type": "paragraph",
+          "text": "The immediate benefit is identifying avoidable water use, but the business case extends beyond that."
+        },
+        {
+          "type": "paragraph",
+          "text": "A water audit can expose leaks, inefficient processes, and treatment losses. It can also reveal how dependent an organization is on municipal supply, borewells, tankers, or specific treatment infrastructure."
+        },
+        {
+          "type": "paragraph",
+          "text": "That creates a resilience benefit. A facility that knows where its water comes from and which uses are essential can respond more effectively to supply interruptions or local water stress."
+        },
+        {
+          "type": "paragraph",
+          "text": "CBRE India’s 2026 research on modern offices describes water stewardship as both a business imperative and an ESG priority and argues for a transition toward water-neutral and ultimately water-positive commercial assets."
+        },
+        {
+          "type": "paragraph",
+          "text": "Audits also support better reporting. SEBI’s BRSR framework includes disclosures on water withdrawal by source, total consumption, water intensity, and discharge by destination and treatment level. A site-level water audit does not automatically satisfy company-wide BRSR obligations, but stronger site-level data strengthens the evidence available to organizations within scope. "
+        },
+        {
+          "type": "heading",
+          "text": "Water Efficiency in Buildings Needs a Baseline"
+        },
+        {
+          "type": "paragraph",
+          "text": "Every claim of water savings depends on a fair comparison."
+        },
+        {
+          "type": "paragraph",
+          "text": "Suppose an office reports that consumption fell by 20% after a retrofit. If occupancy also fell during the same period, part of the change may have occurred without the intervention. A hotel may use more water in a busy month without becoming less efficient per guest."
+        },
+        {
+          "type": "paragraph",
+          "text": "A baseline provides context for performance."
+        },
+        {
+          "type": "paragraph",
+          "text": "Useful variables include total consumption, occupancy, operating days, seasonal conditions, source mix, and major changes in equipment or operations."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is especially important for building water efficiency because consumption rarely remains constant throughout the year."
+        },
+        {
+          "type": "paragraph",
+          "text": "ISO 46001:2019 provides an international management-system framework for water efficiency based on measurement, monitoring, and continual improvement through a reduce, replace, and reuse approach. Amendment 1:2024 introduced climate-action changes, and a second edition is now under development."
+        },
+        {
+          "type": "paragraph",
+          "text": "The aim is to make efficiency measurable over time, not merely to install efficient equipment."
+        },
+        {
+          "type": "heading",
+          "text": "A Water Audit Should Include Drinking Water Too"
+        },
+        {
+          "type": "paragraph",
+          "text": "Drinking water may account for less volume than cooling or sanitation in some properties, but it remains part of the building’s water system."
+        },
+        {
+          "type": "paragraph",
+          "text": "A workplace may provide drinking water through on-site purification, packaged-water deliveries, dispensers, or multiple systems operating together. An audit can document the supply source, treatment method, consumption, packaged-water dependence, maintenance requirements, and reject streams where relevant."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is where the connection with WAE becomes natural rather than promotional. WAE’s site-assessment model reviews a client’s existing water use, plastic footprint, and infrastructure before a point-of-use system is configured. "
+        },
+        {
+          "type": "paragraph",
+          "text": "The audit does not assume that a new drinking-water system is required. It establishes whether the existing hydration model is efficient, appropriate, and resilient."
+        },
+        {
+          "type": "heading",
+          "text": "Water Audit, Water Balance, and Smart Metering Serve Different Roles"
+        },
+        {
+          "type": "paragraph",
+          "text": "A water audit diagnoses the broader system. A water balance reconciles key inputs and outputs, while smart metering provides higher-frequency data that can reveal changes sooner."
+        },
+        {
+          "type": "paragraph",
+          "text": "A building may ultimately use all three, but diagnosis should come first."
+        },
+        {
+          "type": "paragraph",
+          "text": "This prevents organisations from installing additional monitoring technology without knowing which flows need closer attention."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "How to Reduce Water Consumption After the Audit"
+        },
+        {
+          "type": "paragraph",
+          "text": "The audit should conclude with prioritized actions."
+        },
+        {
+          "type": "paragraph",
+          "text": "Some recommendations may require little capital: repairing leaks, changing cleaning practices, adjusting irrigation schedules, correcting tank controls, or strengthening preventive maintenance."
+        },
+        {
+          "type": "paragraph",
+          "text": "Others may include installing efficient fixtures, optimizing cooling systems, using rainwater, reusing wastewater, adding treatment, or improving metering."
+        },
+        {
+          "type": "paragraph",
+          "text": "The order should reflect expected water savings, source risk, cost, technical feasibility, and maintenance capacity."
+        },
+        {
+          "type": "paragraph",
+          "text": "The audit should also specify how each improvement will be verified. A repaired leak should produce a measurable change. A new reuse loop should reduce external freshwater withdrawals. A fixture program should lower demand when occupancy and other conditions are comparable."
+        },
+        {
+          "type": "paragraph",
+          "text": "That closes the gap between recommendation and performance."
+        },
+        {
+          "type": "heading",
+          "text": "When Should a Building Conduct a Water Audit?"
+        },
+        {
+          "type": "paragraph",
+          "text": "An audit need not be recreated every month, but it should not become a report that remains unchanged for years."
+        },
+        {
+          "type": "paragraph",
+          "text": "A review is warranted when occupancy changes materially, a new building opens, significant equipment is replaced, a water source becomes unreliable, or consumption deviates from its established baseline."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is also important for organisations pursuing broader sustainability claims."
+        },
+        {
+          "type": "paragraph",
+          "text": "The GRIHA Water Positive Certification framework explicitly considers water conservation, wastewater recycling, rainwater harvesting, and groundwater recharge as integral components of built-environment water management."
+        },
+        {
+          "type": "paragraph",
+          "text": "Water-positive ambition therefore depends on understanding the underlying water system, not merely on adding individual sustainability technologies."
+        },
+        {
+          "type": "heading",
+          "text": "Measure First, Then Invest"
+        },
+        {
+          "type": "paragraph",
+          "text": "The strongest intervention may be a new treatment system, a repaired pipe, an operational change, or a new meter. The audit's purpose is to determine which."
+        },
+        {
+          "type": "paragraph",
+          "text": "Before approving a water-saving investment, a building should be able to explain how much water it uses, which activities drive demand, where losses occur, what can be safely reused, and how the outcome will be measured."
+        },
+        {
+          "type": "paragraph",
+          "text": "That is what turns a building water audit from paperwork into a management tool."
+        },
+        {
+          "type": "paragraph",
+          "text": "For organisations examining their drinking-water infrastructure, WAE applies the same sequence, starting with a site assessment before system configuration."
+        }
+      ]
+    ]
   }
 };
