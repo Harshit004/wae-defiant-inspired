@@ -5327,7 +5327,7 @@ export const BLOGS: Record<string, BlogPost> = {
         },
         {
           "type": "paragraph",
-          "text": "WAE has explored one aspect of this extraction-side problem in The Great Water Trade, which examines the relationship between packaged-water supply chains and groundwater withdrawals. (10)"
+          "text": "WAE has explored one aspect of this extraction-side problem in The Great Water Trade, which examines the relationship between packaged-water supply chains and groundwater withdrawals."
         },
         {
           "type": "heading",
@@ -5347,7 +5347,7 @@ export const BLOGS: Record<string, BlogPost> = {
         },
         {
           "type": "paragraph",
-          "text": "For organisations, that same principle includes reducing avoidable dependence on extractive water supply chains. WAE’s site assessment model examines existing water use, infrastructure, and plastic footprint before configuring point-of-use systems. (11) "
+          "text": "For organisations, that same principle includes reducing avoidable dependence on extractive water supply chains. WAE’s site assessment model examines existing water use, infrastructure, and plastic footprint before configuring point-of-use systems."
         },
         {
           "type": "heading",
