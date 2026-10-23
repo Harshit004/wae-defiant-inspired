@@ -4077,5 +4077,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We are facing a continuous water leakage issue from the drainpipe inside the WAE washing machine. Kindly arrange for a technician to inspect the machine and resolve the issue at the earliest.",
     "type": "contact-us",
     "createdAt": "2026-10-23T07:36:01.069Z"
+  },
+  "509c195b-d9b3-41eb-8508-a3345e2be8b0": {
+    "id": "509c195b-d9b3-41eb-8508-a3345e2be8b0",
+    "fullName": "Sagar Bansal",
+    "companyName": "MD & CEO OF CENTURY CITY CINEMAS, MANDI DABWALI",
+    "email": "sagarbansal223@gmail.com",
+    "phone": "9878796223",
+    "city": "Bathinda",
+    "pageLink": "https://www.waecorp.com/contact-us?utm_source=chatgpt.com",
+    "message": "I want mount wall water dispenser",
+    "type": "contact-us",
+    "createdAt": "2026-10-23T12:43:33.127Z"
   }
 };
