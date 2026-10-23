@@ -11,7 +11,7 @@ import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import dynamic from "next/dynamic"
-import LightweightRipple from "@/components/LightweightRipple"
+// import LightweightRipple from "@/components/LightweightRipple"
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
@@ -313,19 +313,54 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
+        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col overflow-hidden"
       >
-        {/* Background Image determining the height of the section naturally */}
-        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public" />
+        {/* Mobile Background Video */}
+        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full overflow-hidden pointer-events-none">
+          <iframe
+            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d8a526236b950c6c03c5ef8391ec7a7e/iframe?muted=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd8a526236b950c6c03c5ef8391ec7a7e%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+            style={{
+              border: "none",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "max(100vw, calc((100vh - 119px) / 0.63024))",
+              height: "max(100%, calc(100vw * 0.63024))",
+              minWidth: "100%",
+              minHeight: "100%",
+              pointerEvents: "none",
+            }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen={true}
+          />
         </div>
-        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1440/691]">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
+
+        {/* Desktop Background Video determining the height of the section naturally */}
+        <div
+          className="hidden md:block relative w-full overflow-hidden"
+          style={{ position: "relative", paddingTop: "63.0242825607064%" }}
+        >
+          <iframe
+            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d8a526236b950c6c03c5ef8391ec7a7e/iframe?muted=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd8a526236b950c6c03c5ef8391ec7a7e%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+            style={{
+              border: "none",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              height: "100%",
+              width: "100%",
+              pointerEvents: "none",
+            }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen={true}
+          />
         </div>
 
         {/* Hero Content Text (Topmost) */}
         <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
           <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
+            {/* Top row: Heading */}
             <div
               className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
               style={{
@@ -343,17 +378,42 @@ export default function Home() {
               >
                 We're here<br />to disrupt the<br />status quo!
               </h1>
-              <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
+            </div>
+
+            <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
+
+            {/* Bottom row: "Our Green is Blue" on left, Festive Wish on right */}
+            <div className="w-full flex flex-col sm:flex-row sm:items-end justify-between gap-6 md:gap-8">
               <p
                 className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
                 style={{
                   letterSpacing: "0%",
                   verticalAlign: "middle",
                   margin: 0,
+                  fontFamily: "'Inter Tight', sans-serif",
                 }}
               >
                 Our Green is Blue
               </p>
+
+              <div className="w-full sm:w-auto flex justify-end">
+                <p
+                  className="text-[14px] sm:text-[18px] text-right text-white font-medium ml-auto"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 500,
+                    lineHeight: "114.99999999999999%",
+                    letterSpacing: "0%",
+                    textAlign: "right",
+                    verticalAlign: "middle",
+                    margin: 0,
+                  }}
+                >
+                  May the festival of lights fill your life<br />
+                  with joy, peace, prosperity, and<br />
+                  endless blessings.
+                </p>
+              </div>
             </div>
           </div>
 
