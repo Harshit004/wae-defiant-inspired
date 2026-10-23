@@ -5660,5 +5660,316 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "how-to-build-a-water-balance-for-offices-hotels-and-campuses": {
+    "id": "how-to-build-a-water-balance-for-offices-hotels-and-campuses",
+    "title": "How to Build a Water Balance for Offices, Hotels and Campuses",
+    "category": "Water conservation",
+    "description": "Knowing a building’s total water consumption does not explain where that water comes from, where it goes, or how efficiently it is used. The blog shows how offices, hotels, and campuses can build a water balance by mapping sources, end uses, reuse, discharge, and unaccounted water, turning raw consumption data into a practical management tool.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b43c81f7-e242-46dc-baa9-f55970b72600/public",
+    "writerId": "rehnuma-ansari",
+    "readTime": "7 min read",
+    "status": "Live",
+    "createdAt": "2026-10-23T07:09:59.110Z",
+    "contentColumns": [
+      [
+        {
+          "type": "paragraph",
+          "text": "A building can know exactly how much water it purchases yet still have only a vague idea of where that water goes."
+        },
+        {
+          "type": "paragraph",
+          "text": "A monthly bill shows a total but does not specify how much water was used in washrooms, kitchens, cooling, landscaping, or drinking-water systems; how much came from groundwater, tankers, or rain; how much was reused; or how much remains unaccounted for."
+        },
+        {
+          "type": "paragraph",
+          "text": "A water balance in buildings consolidates those separate flows into a single accounting system. The method is straightforward in principle: define the boundary, record external sources, map significant end uses, account for reuse and discharge, and then investigate whatever does not reconcile."
+        },
+        {
+          "type": "heading",
+          "text": "What a Water Balance in Buildings Actually Measures"
+        },
+        {
+          "type": "paragraph",
+          "text": "The National Productivity Council includes a water balance as a core component of a detailed water audit. NPC describes the completed balance as a full account of water entering and leaving the facility."
+        },
+        {
+          "type": "paragraph",
+          "text": "At its simplest:"
+        },
+        {
+          "type": "heading",
+          "text": "External water entering the site = discharge + consumptive use + change in storage + unaccounted water"
+        },
+        {
+          "type": "paragraph",
+          "text": "Internal reuse needs careful treatment."
+        },
+        {
+          "type": "paragraph",
+          "text": "If treated wastewater is reused for landscaping or flushing, it creates another useful cycle without requiring an additional external withdrawal. Counting it as fresh incoming water would overstate what the site actually takes from outside."
+        },
+        {
+          "type": "paragraph",
+          "text": "That is why water accounting provides more insight than a single monthly consumption figure."
+        },
+        {
+          "type": "heading",
+          "text": "Step 1: Define the Boundary and Time Period"
+        },
+        {
+          "type": "paragraph",
+          "text": "The first decision is what the balance includes."
+        },
+        {
+          "type": "paragraph",
+          "text": "For an office building, the boundary might be the property line. A hotel may include kitchens, laundry, pools, and landscaped areas. A campus may contain multiple buildings, hostels, laboratories, common utilities, and cooling plants."
+        },
+        {
+          "type": "paragraph",
+          "text": "The time period should also be defined. Monthly data usually aligns with utility bills and operations, while seasonal balances can reveal changes that are masked by an annual average."
+        },
+        {
+          "type": "paragraph",
+          "text": "Storage must be handled consistently. If tanks start a month full and end nearly empty, the difference is not consumption. It is a change in stored volume."
+        },
+        {
+          "type": "heading",
+          "text": "Step 2: Record External Water Sources"
+        },
+        {
+          "type": "paragraph",
+          "text": "The balance then identifies every material water source crossing the site boundary."
+        },
+        {
+          "type": "paragraph",
+          "text": "Depending on the building, this may include municipal supply, groundwater, tanker deliveries, and harvested rainwater."
+        },
+        {
+          "type": "paragraph",
+          "text": "Two buildings can each use 500 kL per month yet face very different water risks. One may rely mainly on municipal water, while another depends on borewells and tanker deliveries."
+        },
+        {
+          "type": "paragraph",
+          "text": "Source-level information is therefore important for water security as well as for accounting."
+        },
+        {
+          "type": "paragraph",
+          "text": "If groundwater extraction falls but tanker purchases increase by the same volume, management should not automatically claim groundwater savings, because tanker water may itself originate from an aquifer."
+        },
+        {
+          "type": "heading",
+          "text": "Step 3: Map the Major End Uses"
+        },
+        {
+          "type": "paragraph",
+          "text": "The next step is to identify uses large enough to influence management decisions."
+        },
+        {
+          "type": "paragraph",
+          "text": "An office may require categories for washrooms, cooling, kitchens, drinking water, housekeeping, and landscaping. Hotels add guest rooms, laundry, and potentially pools. Campuses can include laboratories, hostels, sports facilities, cafeterias, and academic buildings."
+        },
+        {
+          "type": "paragraph",
+          "text": "Performance indicators should reflect those operations. Offices may track liters per employee, while hotels may find liters per guest-night more useful."
+        },
+        {
+          "type": "paragraph",
+          "text": "The objective is not to meter every individual tap. It is to explain enough of the total demand that changes become meaningful."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Step 4: Add Water Quality and Reuse Loops"
+        },
+        {
+          "type": "paragraph",
+          "text": "Volume alone does not determine where water can be used. Quality matters."
+        },
+        {
+          "type": "paragraph",
+          "text": "Drinking and food preparation require potable water. Flushing, landscaping, and some cooling applications may use appropriately treated non-potable water."
+        },
+        {
+          "type": "paragraph",
+          "text": "A useful building water balance diagram therefore distinguishes water by purpose and can include internal reuse loops."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is where WAE’s relationship to the topic is most relevant. WAE states that its treatment systems are configured around source chemistry and demand, which is fundamentally a fit-for-purpose treatment approach."
+        },
+        {
+          "type": "paragraph",
+          "text": "The drinking-water stream becomes one specific high-quality demand within a much larger building water balance."
+        },
+        {
+          "type": "heading",
+          "text": "Step 5: Reconcile the Numbers"
+        },
+        {
+          "type": "paragraph",
+          "text": "Once sources and uses are mapped, the figures should be compared."
+        },
+        {
+          "type": "paragraph",
+          "text": "The difference between measured supply and accounted use is often called unaccounted water. That does not necessarily mean leakage. Meter inaccuracy, storage changes, estimated flows, evaporation, and incomplete measurement may all contribute."
+        },
+        {
+          "type": "paragraph",
+          "text": "A persistent gap remains useful because it highlights where better information is needed."
+        },
+        {
+          "type": "paragraph",
+          "text": "A facility might calibrate a meter, add a sub-meter, measure a previously estimated process, or investigate persistent nighttime consumption."
+        },
+        {
+          "type": "paragraph",
+          "text": "The purpose is to reduce uncertainty rather than force the balance to close by inserting an assumption that cannot be defended."
+        },
+        {
+          "type": "heading",
+          "text": "Worked Example: How to Calculate a Water Balance for an Office"
+        },
+        {
+          "type": "paragraph",
+          "text": "Consider an office campus with a monthly water demand of 500 kL. This example uses illustrative figures to explain how water is supplied, consumed, treated, and reused within a facility. It assumes no change in water storage during the month."
+        },
+        {
+          "type": "paragraph",
+          "text": "The campus receives 420 kL of water from external sources, including 260 kL from municipal supply, 100 kL from groundwater, 20 kL from tankers, and 40 kL from rainwater harvesting. In addition, 80 kL of treated wastewater is reused on-site, bringing the total water available for use to 500 kL per month."
+        },
+        {
+          "type": "paragraph",
+          "text": "Water is used across different activities, including:\n\n•\tWashrooms: 180 kL\n•\tCooling: 130 kL\n•\tLandscaping: 80 kL (reused treated water)\n•\tKitchen and Drinking: 50 kL\n•\tHousekeeping: 30 kL\n•\tOther Uses: 20 kL\n•\tUnaccounted Water: 10 kL\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "During the month, approximately 300 kL of wastewater is generated, including 20 kL of cooling blowdown. Of this, 80 kL is treated and reused for landscaping, while 220 kL is discharged from the site after treatment. Another 110 kL is lost through cooling evaporation, and 80 kL is consumed through landscaping."
+        },
+        {
+          "type": "paragraph",
+          "text": "The final water balance is calculated as:"
+        },
+        {
+          "type": "heading",
+          "text": "420 kL External Inflow = 220 kL Discharge + 190 kL Consumptive Use + 10 kL Unaccounted Water + 0 kL Storage Change"
+        },
+        {
+          "type": "paragraph",
+          "text": "This example shows how an office campus can meet a monthly water demand of 500 kL with just 420 kL of external water by reusing 80 kL of treated wastewater. It also highlights the importance of tracking water consumption, identifying unaccounted water, and making better use of available resources."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "What the Example Tells Management"
+        },
+        {
+          "type": "paragraph",
+          "text": "The table immediately raises management questions."
+        },
+        {
+          "type": "paragraph",
+          "text": "The 100 kL groundwater contribution may warrant an assessment of local aquifer conditions. Cooling consumes 130 kL, making it a candidate for operational review. The 10 kL unaccounted volume may justify additional measurement."
+        },
+        {
+          "type": "paragraph",
+          "text": "Water intensity can then put these numbers into context. SEBI’s BRSR Core framework includes water-consumption intensity as a reporting metric, expressed relative to revenue or an appropriate product or service measure. (1)"
+        },
+        {
+          "type": "paragraph",
+          "text": "A building-level balance and corporate BRSR reporting are not the same exercise, but both illustrate why raw volume becomes more useful when it is related to activity."
+        },
+        {
+          "type": "heading",
+          "text": "Seasonal Water Balances and ECSBC 2024"
+        },
+        {
+          "type": "paragraph",
+          "text": "Water demand can vary substantially between seasons."
+        },
+        {
+          "type": "paragraph",
+          "text": "Cooling loads, landscaping requirements, rainwater availability, and tanker dependence may change throughout the year. An annual average can obscure those shifts."
+        },
+        {
+          "type": "paragraph",
+          "text": "Section 9.2.15, “Water Balance,” on page 93 of the Energy Conservation and Sustainable Building Code 2024 states that the water balance should show total inflow and outflow in a pictorial diagram and be prepared for both dry-season and wet-season conditions. It also links the calculation to assumptions about building population and demand. (2)"
+        },
+        {
+          "type": "paragraph",
+          "text": "There is an important regulatory qualification. NITI Aayog reported in 2026 that ECSBC 2024 had been recently launched and had yet to be adopted by states and Union Territories."
+        },
+        {
+          "type": "paragraph",
+          "text": "It should therefore be understood as an emerging national building-code benchmark, not as a requirement already enforceable for every commercial property across India."
+        },
+        {
+          "type": "heading",
+          "text": "From Water Balance to Water Budget"
+        },
+        {
+          "type": "paragraph",
+          "text": "Once current flows are understood, a facility can move from accounting to planning."
+        },
+        {
+          "type": "paragraph",
+          "text": "A water budget estimates how much water important uses should require under realistic conditions. Actual performance can then be compared with expected ranges."
+        },
+        {
+          "type": "paragraph",
+          "text": "If cooling demand rises while weather and occupancy remain comparable, the system can be investigated. If municipal supply falls but tanker purchases increase, apparent conservation may only reflect a source shift."
+        },
+        {
+          "type": "paragraph",
+          "text": "If reuse increases while external withdrawals fall, the benefit becomes visible."
+        },
+        {
+          "type": "paragraph",
+          "text": "ISO 46001 supports this broader cycle of monitoring, measurement, and continual water-efficiency improvement. "
+        },
+        {
+          "type": "paragraph",
+          "text": "The balance therefore shifts from describing the past to helping manage the future."
+        },
+        {
+          "type": "heading",
+          "text": "A Better Water Balance Leads to Better Decisions"
+        },
+        {
+          "type": "paragraph",
+          "text": "A water-smart building is not defined by how many sustainability systems it has."
+        },
+        {
+          "type": "paragraph",
+          "text": "Rainwater harvesting, treatment, reuse, and smart meters are valuable only when they work together as parts of an understandable system."
+        },
+        {
+          "type": "paragraph",
+          "text": "A water balance in buildings provides that systems view. It shows where water comes from, where it is used, which applications require which water quality, what can be recovered, and what eventually leaves the site."
+        },
+        {
+          "type": "paragraph",
+          "text": "For organizations reviewing their potable-water infrastructure, WAE’s source-specific treatment model can sit within that broader accounting framework rather than outside it. "
+        },
+        {
+          "type": "paragraph",
+          "text": "The first step toward smarter water management is not another device.\n\nIt is knowing where every significant flow belongs.\n"
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 - https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_I-Format-of-BRSR-Core_p.pdf?"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2 - https://beeindia.gov.in/WriteReadData/L45218/7534511430467336.pdf"
+          ]
+        }
+      ]
+    ]
   }
 };
