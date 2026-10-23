@@ -4089,5 +4089,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I want mount wall water dispenser",
     "type": "contact-us",
     "createdAt": "2026-10-23T12:43:33.127Z"
+  },
+  "cf387bf4-4004-486c-9ed0-43c43040eee7": {
+    "id": "cf387bf4-4004-486c-9ed0-43c43040eee7",
+    "fullName": "Deepanshu Gupta",
+    "companyName": ".",
+    "email": "gdeepanshu1@gmail.com",
+    "phone": "7309257351",
+    "city": "Lucknow",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gbraid=0AAAAABUiSLyVqtUbGHrHd8XPobF_gSXk_&gclid=CjwKCAjwi-zWBhAdEiwAqlRf-FC4G5HsY2GR2NtnxQuUN_D9mQdGNNO0ryU78pqmiJ2BjLmMb_O5BhoC9PEQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-10-23T14:44:52.343Z"
   }
 };
