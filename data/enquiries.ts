@@ -4065,5 +4065,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/watermatic/touch",
     "type": "product",
     "createdAt": "2026-10-21T10:47:52.152Z"
+  },
+  "d296e39b-bc44-463c-aaca-ac19a46386bb": {
+    "id": "d296e39b-bc44-463c-aaca-ac19a46386bb",
+    "fullName": "MATHIAZHAGAN",
+    "companyName": "om sai intex pvt ltd",
+    "email": "mathi@omsaiintex.com",
+    "phone": "9513629828",
+    "city": "hydrabad",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "We are facing a continuous water leakage issue from the drainpipe inside the WAE washing machine. Kindly arrange for a technician to inspect the machine and resolve the issue at the earliest.",
+    "type": "contact-us",
+    "createdAt": "2026-10-23T07:36:01.069Z"
   }
 };
