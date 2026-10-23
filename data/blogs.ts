@@ -6013,5 +6013,314 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "can-smart-water-metering-stop-hidden-water-waste-in-buildings": {
+    "id": "can-smart-water-metering-stop-hidden-water-waste-in-buildings",
+    "title": "Can Smart Water Metering Stop Hidden Water Waste in Buildings?",
+    "category": "Water conservation",
+    "description": "Hidden water waste can persist for days when buildings rely solely on periodic meter readings or monthly bills. The blog examines how smart meters, sub-metering, analytics, and digital monitoring can detect abnormal consumption earlier, while emphasizing that technology only creates value when facilities have clear baselines, operational ownership, and a process for acting on the data.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/451b0667-c664-479c-015e-b6e49b7d9600/public",
+    "writerId": "rehnuma-ansari",
+    "readTime": "8 min read",
+    "status": "Live",
+    "createdAt": "2026-10-23T11:30:45.271Z",
+    "contentColumns": [
+      [
+        {
+          "type": "paragraph",
+          "text": "A leaking pipe does not wait for the monthly water bill to arrive."
+        },
+        {
+          "type": "paragraph",
+          "text": "In a conventional building, a small leak can persist for hours or even days before anyone notices. The first signs may include a wet wall, an overflowing tank, an unusually high bill, or a maintenance complaint. By then, water has already been lost."
+        },
+        {
+          "type": "paragraph",
+          "text": "The technology does not repair the leak. Its value lies in shortening the time between when water waste begins and when someone can act."
+        },
+        {
+          "type": "heading",
+          "text": "What Is Smart Water Metering?"
+        },
+        {
+          "type": "paragraph",
+          "text": "A conventional meter records cumulative water volume. Someone reads it periodically, and the difference between two readings indicates how much water was consumed."
+        },
+        {
+          "type": "paragraph",
+          "text": "Digital metering adds communication and time resolution."
+        },
+        {
+          "type": "paragraph",
+          "text": "Automated Meter Reading (AMR) transmits meter readings without routine manual collection. Advanced Metering Infrastructure (AMI) integrates meters, communications, and data systems to enable more frequent information exchange."
+        },
+        {
+          "type": "paragraph",
+          "text": "The US Environmental Protection Agency describes AMI as providing frequent, often hourly, water-use data that can help facility managers understand usage patterns and identify leaks. (1)"
+        },
+        {
+          "type": "paragraph",
+          "text": "A smart-building system may also integrate IoT-enabled water meters, dashboards and water analytics. Ultrasonic water meters are one option, though the meter type should be selected based on pipe size, flow characteristics, accuracy requirements and operating conditions."
+        },
+        {
+          "type": "paragraph",
+          "text": "The defining feature is not a single sensor technology. It is the ability to convert cumulative consumption into timely, usable information."
+        },
+        {
+          "type": "heading",
+          "text": "Why Smart Water Metering Needs More Than One Meter"
+        },
+        {
+          "type": "paragraph",
+          "text": "A smart meter at the main inlet can show that total consumption has changed. It may not show where."
+        },
+        {
+          "type": "paragraph",
+          "text": "That is why sub-metering matters."
+        },
+        {
+          "type": "paragraph",
+          "text": "GRIHA for Existing Buildings Version 1 requires basic digital metering at major supply and treatment points under Criterion 4.1.1. Its additional criteria award points for advanced sub-metering, smart metering, and two-way communication."
+        },
+        {
+          "type": "paragraph",
+          "text": "The smart-metering provision includes web-based tracking, hourly near-real-time reporting, consumption patterns, targets, alarms, historical comparisons, and mobile-compatible access. "
+        },
+        {
+          "type": "paragraph",
+          "text": "If continuous night flow occurs in only one office block, maintenance has a smaller area to inspect. If cooling-tower make-up rises sharply while occupancy remains stable, the facilities team can focus on the plant rather than checking every washroom."
+        },
+        {
+          "type": "paragraph",
+          "text": "Useful measurement boundaries should align with useful management boundaries."
+        },
+        {
+          "type": "heading",
+          "text": "How Smart Water Metering Detects Leaks Earlier"
+        },
+        {
+          "type": "paragraph",
+          "text": "Water leak detection is one of the clearest applications of frequent meter readings."
+        },
+        {
+          "type": "paragraph",
+          "text": "A monthly bill can show that consumption increased. Higher-frequency information can reveal when that increase began and whether water continued to flow during periods when demand should have been low."
+        },
+        {
+          "type": "paragraph",
+          "text": "A 2013 Australian residential study by Tracy C. Britton, Rodney A. Stewart, and Kelvin R. O’Halloran used smart-meter data to identify post-meter leakage and then communicated the findings to households."
+        },
+        {
+          "type": "paragraph",
+          "text": "Minimum night-flow leakage in the intervention group decreased by 89%, while consumption in the control group increased by 52% over the study period. (2)"
+        }
+      ],
+      [
+        {
+          "type": "paragraph",
+          "text": "Those percentages should not be allocated to an Indian office, campus, or hotel. The intervention involved residential customers in Australia, and communication and subsequent repairs produced the savings."
+        },
+        {
+          "type": "paragraph",
+          "text": "The useful lesson is the process."
+        },
+        {
+          "type": "heading",
+          "text": "alert → inspect → repair → verify"
+        },
+        {
+          "type": "paragraph",
+          "text": "The last step is essential. If the meter data does not return to the expected range after a repair, the investigation is not complete."
+        },
+        {
+          "type": "paragraph",
+          "text": "A building can waste water without a pipe rupture occurring."
+        },
+        {
+          "type": "paragraph",
+          "text": "Irrigation may continue after rainfall. A storage tank may overflow each afternoon. Cleaning practices may use more water during one shift. Cooling systems may begin using more make-up water because operating conditions have changed."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is where water analytics becomes more useful than a basic leak alarm."
+        },
+        {
+          "type": "paragraph",
+          "text": "A 2022 Journal of Cleaner Production study by I. Andrić and colleagues examined an IoT and LoRaWAN architecture for smart water use in buildings. It demonstrated that connected smart meters can provide users with transparent, real-time consumption information and support improved distribution efficiency. (3)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The data still needs context. Ten thousand liters of overnight use may be abnormal for an office but entirely legitimate for a hospital."
+        },
+        {
+          "type": "paragraph",
+          "text": "Smart monitoring works only when a facility first understands what normal consumption looks like."
+        },
+        {
+          "type": "paragraph",
+          "text": "Infosys provides a useful example from India."
+        },
+        {
+          "type": "paragraph",
+          "text": "Its current sustainability page states that the company has installed nearly 1,000 smart water meters across its campuses. The meters monitor flow in real time and send data to a central monitoring system, where deviations from normal patterns can indicate problems such as leaks, deposits, or changes in consumption. (4)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Infosys also reports that per-capita water consumption across its Indian campuses has fallen by nearly 64% compared with 2008 levels. (4) "
+        },
+        {
+          "type": "paragraph",
+          "text": "That reduction should not be attributed to smart meters alone. The company’s long-term water performance reflects multiple conservation and infrastructure interventions. The meter’s role is visibility: it helps facilities teams recognize deviations and act on them sooner."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is a better way to understand smart technology. It does not replace operational water management; it strengthens it."
+        },
+        {
+          "type": "heading",
+          "text": "Digital Twins Take Water Monitoring Further"
+        },
+        {
+          "type": "paragraph",
+          "text": "A 2024 IFAC-PapersOnLine study by Anushka Singh, Abhilasha Maheshwari, and Shobhana Singh developed a digital twin framework for the IIT Jodhpur campus water distribution system. The work combined network mapping, hydraulic modeling, calibration, and machine-learning-based leakage identification. (5)"
+        },
+        {
+          "type": "paragraph",
+          "text": "A 2025 Urban Water Journal paper by Anushka Singh, Shobhana Singh, and Abhilasha Maheshwari tested a digital twin approach using field data from the campus."
+        },
+        {
+          "type": "paragraph",
+          "text": "In the highest-consumption zone, the graph-convolution model achieved 90% leakage-detection accuracy. In one test scenario, the framework indicated potential water savings of up to 58% of the volume that would otherwise have been lost to leakage. (6)"
+        },
+        {
+          "type": "paragraph",
+          "text": "These are research results from a specific network, not guaranteed performance figures for another facility."
+        },
+        {
+          "type": "paragraph",
+          "text": "Their importance is directional: once good monitoring data exists, diagnosis can shift from retrospective reporting to modeling and predictive analysis."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Smart Metering Has Limits"
+        },
+        {
+          "type": "paragraph",
+          "text": "Connected infrastructure can create new problems if it is poorly designed."
+        },
+        {
+          "type": "paragraph",
+          "text": "Meters may be incorrectly sized or poorly calibrated. Communication can fail. Poorly chosen sub-meter locations may produce data that no one owns. Alert systems can become noise if thresholds do not reflect actual operating patterns."
+        },
+        {
+          "type": "paragraph",
+          "text": "Cost and complexity should also align with the property."
+        },
+        {
+          "type": "paragraph",
+          "text": "Cybersecurity and data governance become relevant when systems connect to building management platforms or cloud dashboards."
+        },
+        {
+          "type": "paragraph",
+          "text": "The correct question is not “How much technology can we install?”"
+        },
+        {
+          "type": "paragraph",
+          "text": "It is, “Which operational decision will this data improve?”"
+        },
+        {
+          "type": "heading",
+          "text": "Real-Time Monitoring Can Confirm Water Conservation"
+        },
+        {
+          "type": "paragraph",
+          "text": "Smart meters also help determine whether other water-conservation measures are effective."
+        },
+        {
+          "type": "paragraph",
+          "text": "A facility can compare consumption before and after repairing leaks, replacing fixtures, or adjusting operations. It can track harvested rainwater, treated-water reuse, or reduced freshwater demand.."
+        },
+        {
+          "type": "paragraph",
+          "text": "ABB India’s Nelamangala campus offers an Indian example of this broader systems approach."
+        },
+        {
+          "type": "paragraph",
+          "text": "GRIHA describes the campus as the first project to achieve GRIHA Water Positive Certification, with a Water Positivity Index of 1.25. Its six-part water strategy includes rainwater harvesting and recharge, reducing freshwater use, recycling, real-time monitoring of water consumption and recharge, reuse of treated wastewater, and responsible landscaping. (7)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The important point is that metering is one part of the strategy. It provides the information needed to verify the performance of the wider water system."
+        },
+        {
+          "type": "heading",
+          "text": "From Smart Water Metering to Water Stewardship"
+        },
+        {
+          "type": "paragraph",
+          "text": "A smart meter cannot compensate for a building that does not understand its water system."
+        },
+        {
+          "type": "paragraph",
+          "text": "Facilities still need to know their sources, key end uses, normal demand patterns, and operational responsibilities. Once those basics are in place, smart water metering can make management faster and more accountable."
+        },
+        {
+          "type": "paragraph",
+          "text": "It can reveal continuous consumption, identify unusual patterns, narrow investigations, and confirm whether corrective action actually worked."
+        },
+        {
+          "type": "paragraph",
+          "text": "That is also where this topic connects directly to WAE. The company describes its water-stewardship model as spanning multi-stage purification to IoT-monitored point-of-use dispensing, with traceability across consumption and system performance."
+        },
+        {
+          "type": "paragraph",
+          "text": "It is better to have information early enough to prevent unnecessary water use from continuing."
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 - https://www.epa.gov/watersense/getting-started?"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2 - https://www.sciencedirect.com/science/article/abs/pii/S0959652613003272?"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "3 - https://www.sciencedirect.com/science/article/abs/pii/S0959652622023873?"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4 - https://www.infosys.com/about/esg/environmental/water/water-smart-meters.html"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "5 - https://www.sciencedirect.com/science/article/pii/S2405896324000491?"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "6 - https://www.tandfonline.com/doi/abs/10.1080/1573062X.2025.2480632?trk=article-ssr-frontend-pulse_little-text-block&"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "7 - https://www.grihaindia.org/node/5344?"
+          ]
+        }
+      ]
+    ]
   }
 };
