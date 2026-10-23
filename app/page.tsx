@@ -313,7 +313,7 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col overflow-hidden"
+        className="w-full relative bg-black md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col overflow-hidden"
       >
         {/* Mobile Background Video */}
         <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full overflow-hidden pointer-events-none">
