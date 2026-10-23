@@ -324,7 +324,7 @@ export default function Home() {
               position: "absolute",
               top: "50%",
               left: "50%",
-              transform: "translate(-50%, -50%)",
+              transform: "translate(-50%, -50%) scale(1.04)",
               width: "max(100vw, calc((100vh - 119px) / 0.63024))",
               height: "max(100%, calc(100vw * 0.63024))",
               minWidth: "100%",
@@ -334,6 +334,8 @@ export default function Home() {
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
             allowFullScreen={true}
           />
+          {/* Top edge cover to eliminate video top edge line artifact */}
+          <div className="absolute top-0 left-0 right-0 h-[6px] bg-black z-10 pointer-events-none" />
         </div>
 
         {/* Desktop Background Video determining the height of the section naturally */}
@@ -346,15 +348,17 @@ export default function Home() {
             style={{
               border: "none",
               position: "absolute",
-              top: 0,
+              top: "-6px",
               left: 0,
-              height: "100%",
+              height: "calc(100% + 12px)",
               width: "100%",
               pointerEvents: "none",
             }}
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
             allowFullScreen={true}
           />
+          {/* Top edge cover to eliminate video top edge line artifact */}
+          <div className="absolute top-0 left-0 right-0 h-[6px] bg-black z-10 pointer-events-none" />
         </div>
 
         {/* Hero Content Text (Topmost) */}
