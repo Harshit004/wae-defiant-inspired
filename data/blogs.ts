@@ -5841,7 +5841,49 @@ export const BLOGS: Record<string, BlogPost> = {
         },
         {
           "type": "paragraph",
-          "text": "Water is used across different activities, including:\n\n•\tWashrooms: 180 kL\n•\tCooling: 130 kL\n•\tLandscaping: 80 kL (reused treated water)\n•\tKitchen and Drinking: 50 kL\n•\tHousekeeping: 30 kL\n•\tOther Uses: 20 kL\n•\tUnaccounted Water: 10 kL\n"
+          "text": "Water is used across different activities, including:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Washrooms: 180 kL "
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Cooling: 130 kL"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Landscaping: 80 kL (reused treated water)"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kitchen and Drinking: 50 kL"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Housekeeping: 30 kL "
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Other Uses: 20 kL"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Unaccounted Water: 10 kL"
+          ]
         },
         {
           "type": "paragraph",
