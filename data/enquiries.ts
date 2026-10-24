@@ -4100,5 +4100,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gbraid=0AAAAABUiSLyVqtUbGHrHd8XPobF_gSXk_&gclid=CjwKCAjwi-zWBhAdEiwAqlRf-FC4G5HsY2GR2NtnxQuUN_D9mQdGNNO0ryU78pqmiJ2BjLmMb_O5BhoC9PEQAvD_BwE",
     "type": "product",
     "createdAt": "2026-10-23T14:44:52.343Z"
+  },
+  "8bb53069-4136-4216-b9cb-a4a0def850d7": {
+    "id": "8bb53069-4136-4216-b9cb-a4a0def850d7",
+    "fullName": "Altaf Azam",
+    "companyName": "HM Resort",
+    "email": "altaf.azam93@gmail.com",
+    "phone": "9066772066",
+    "city": "DIBRUGARH",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Enquiry for a resort bottling plant",
+    "type": "contact-us",
+    "createdAt": "2026-10-24T05:57:10.603Z"
   }
 };
