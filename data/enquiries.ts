@@ -4112,5 +4112,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Enquiry for a resort bottling plant",
     "type": "contact-us",
     "createdAt": "2026-10-24T05:57:10.603Z"
+  },
+  "ec129045-c765-412f-b875-43fe783fc563": {
+    "id": "ec129045-c765-412f-b875-43fe783fc563",
+    "fullName": "Rishabh Singh",
+    "companyName": "ALLPICS EXIM LLP",
+    "email": "rishabh.singh2311@gmail.com",
+    "phone": "8287102860",
+    "city": "Gurugram",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/lagoon",
+    "type": "product",
+    "createdAt": "2026-10-25T03:22:03.004Z"
   }
 };
