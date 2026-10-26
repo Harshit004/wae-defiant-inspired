@@ -4250,5 +4250,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Please help",
     "type": "contact-us",
     "createdAt": "2026-10-26T15:24:41.029Z"
+  },
+  "08d0053b-3dcf-4670-9aba-63d4f7388bb3": {
+    "id": "08d0053b-3dcf-4670-9aba-63d4f7388bb3",
+    "fullName": "Shlok",
+    "companyName": "Awadh rishi",
+    "email": "pinkeyc909@gmail.com",
+    "phone": "6396269655",
+    "city": "Amethi",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjw9PvWBhAxEiwAddzYyZdtxFcCpz68vVPFNr9c8K_87ZgfnaHSTu_QNbp-q9xDSAEYX0GslxoClLoQAvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-26T15:32:22.850Z"
   }
 };
