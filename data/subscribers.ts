@@ -594,5 +594,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-21",
     "time": "09:27:39",
     "pageLink": "/careers"
+  },
+  {
+    "id": "5f14ec2c-e6cb-4b81-8bec-a43c8c2c6caf",
+    "email": "bhasapalli9@gmail.com",
+    "date": "2026-10-26",
+    "time": "20:14:04",
+    "pageLink": "/profile"
   }
 ];
