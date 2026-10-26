@@ -453,7 +453,7 @@ export default function Home() {
             isAudioPlaying ? "opacity-100" : "opacity-40 hover:opacity-80"
           }`}
           style={{
-            right: "max(16px, calc(49 / 1440 * 100vw))",
+            right: "max(20px, calc(69 / 1440 * 100vw))",
             bottom: "max(24px, calc(197 / 1440 * 100vw))",
           }}
         >
