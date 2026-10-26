@@ -380,21 +380,10 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative bg-black h-[100svh] md:h-auto flex flex-col overflow-hidden"
+        className="w-full relative bg-black h-screen h-[100svh] flex flex-col overflow-hidden"
       >
-        {/* Mobile Background Image */}
-        <div className="md:hidden absolute inset-0 w-full h-full overflow-hidden">
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cc3b1b73-75a4-479b-2161-92fed5778500/public"
-            alt="Hero background"
-            fill
-            priority
-            className="object-cover object-center"
-          />
-        </div>
-
-        {/* Desktop Background Image determining the height of the section naturally */}
-        <div className="hidden md:block relative w-full aspect-[1215/768] overflow-hidden">
+        {/* Background Image (fits screen perfectly without overflow, keeping dimension ratio intact) */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
           <Image
             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cc3b1b73-75a4-479b-2161-92fed5778500/public"
             alt="Hero background"
