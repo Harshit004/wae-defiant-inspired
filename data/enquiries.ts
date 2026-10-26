@@ -4261,5 +4261,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjw9PvWBhAxEiwAddzYyZdtxFcCpz68vVPFNr9c8K_87ZgfnaHSTu_QNbp-q9xDSAEYX0GslxoClLoQAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-26T15:32:22.850Z"
+  },
+  "8c92692e-22bb-4365-b8fe-ac811b76d2ad": {
+    "id": "8c92692e-22bb-4365-b8fe-ac811b76d2ad",
+    "fullName": "Sachin Yuvashree",
+    "companyName": "Sachin",
+    "email": "sachin.yuvashree@gmail.com",
+    "phone": "9741019988",
+    "city": "Chennai",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series?gad_source=1&gad_campaignid=24242484871&gbraid=0AAAAABUiSLxc0EPaBZf5rso4btldceAOq&gclid=EAIaIQobChMIioK2goTYlwMVMzmDAx1uVChWEAAYASAAEgJ12vD_BwE",
+    "type": "product",
+    "createdAt": "2026-10-26T15:48:25.524Z"
   }
 };
