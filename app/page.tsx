@@ -313,10 +313,10 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative bg-black md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col overflow-hidden"
+        className="w-full relative bg-black h-[100svh] md:h-auto flex flex-col overflow-hidden"
       >
         {/* Mobile Background Image */}
-        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full overflow-hidden">
+        <div className="md:hidden absolute inset-0 w-full h-full overflow-hidden">
           <Image
             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cc3b1b73-75a4-479b-2161-92fed5778500/public"
             alt="Hero background"
@@ -338,9 +338,8 @@ export default function Home() {
         </div>
 
         {/* Hero Content Text (Topmost) */}
-        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
+        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[130px] pb-[30px]">
           <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
-            {/* Top row: Heading */}
             <div
               className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
               style={{
@@ -358,12 +357,7 @@ export default function Home() {
               >
                 We're here<br />to disrupt the<br />status quo!
               </h1>
-            </div>
-
-            <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
-
-            {/* Bottom row: "Our Green is Blue" on left, Festive Wish on right */}
-            <div className="w-full flex flex-col sm:flex-row sm:items-end justify-between gap-6 md:gap-8">
+              <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
               <p
                 className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
                 style={{
@@ -375,25 +369,6 @@ export default function Home() {
               >
                 Our Green is Blue
               </p>
-
-              <div className="w-full sm:w-auto flex justify-end">
-                <p
-                  className="text-[14px] sm:text-[18px] text-right text-white font-medium ml-auto"
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 500,
-                    lineHeight: "114.99999999999999%",
-                    letterSpacing: "0%",
-                    textAlign: "right",
-                    verticalAlign: "middle",
-                    margin: 0,
-                  }}
-                >
-                  May the festival of lights fill your life<br />
-                  with joy, peace, prosperity, and<br />
-                  endless blessings.
-                </p>
-              </div>
             </div>
           </div>
 
