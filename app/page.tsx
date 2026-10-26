@@ -306,6 +306,73 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
+  // Halloween Sound State & Toggle
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const userMutedAudioRef = useRef(false)
+
+  useEffect(() => {
+    const audio = new Audio("/halloween-sound.mp3")
+    audio.loop = true
+    audio.preload = "auto"
+    audioRef.current = audio
+
+    const playAudio = () => {
+      audio
+        .play()
+        .then(() => {
+          setIsAudioPlaying(true)
+        })
+        .catch(() => {
+          setIsAudioPlaying(false)
+        })
+    }
+
+    // Attempt autoplay immediately
+    playAudio()
+
+    // Handle browsers blocking unmuted autoplay until user gesture
+    const handleFirstGesture = () => {
+      if (!userMutedAudioRef.current && audioRef.current && audioRef.current.paused) {
+        playAudio()
+      }
+      removeGestureListeners()
+    }
+
+    const removeGestureListeners = () => {
+      window.removeEventListener("click", handleFirstGesture)
+      window.removeEventListener("scroll", handleFirstGesture)
+      window.removeEventListener("touchstart", handleFirstGesture)
+      window.removeEventListener("keydown", handleFirstGesture)
+    }
+
+    window.addEventListener("click", handleFirstGesture)
+    window.addEventListener("scroll", handleFirstGesture)
+    window.addEventListener("touchstart", handleFirstGesture)
+    window.addEventListener("keydown", handleFirstGesture)
+
+    return () => {
+      removeGestureListeners()
+      audio.pause()
+      audio.src = ""
+    }
+  }, [])
+
+  const toggleHalloweenSound = () => {
+    if (!audioRef.current) return
+    if (isAudioPlaying) {
+      audioRef.current.pause()
+      setIsAudioPlaying(false)
+      userMutedAudioRef.current = true
+    } else {
+      userMutedAudioRef.current = false
+      audioRef.current
+        .play()
+        .then(() => setIsAudioPlaying(true))
+        .catch(() => {})
+    }
+  }
+
   return (
     <main className="relative">
       <Header transparentBg />
@@ -375,6 +442,37 @@ export default function Home() {
           {/* Mobile divider at the bottom of the hero section */}
           <div className="md:hidden absolute bottom-0 left-0 right-0 border-b border-[#FFFFFF4D] z-[5]" />
         </div>
+
+        {/* Halloween Sound Toggle Switch */}
+        <button
+          type="button"
+          onClick={toggleHalloweenSound}
+          aria-label={isAudioPlaying ? "Mute halloween sound" : "Play halloween sound"}
+          title={isAudioPlaying ? "Mute sound" : "Play sound"}
+          className={`absolute z-20 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 ${
+            isAudioPlaying ? "opacity-100" : "opacity-40 hover:opacity-80"
+          }`}
+          style={{
+            right: "max(16px, calc(49 / 1440 * 100vw))",
+            bottom: "max(24px, calc(197 / 1440 * 100vw))",
+          }}
+        >
+          <div className="relative w-[24px] h-[24px] flex items-center justify-center">
+            <Image
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/04a97efe-a544-4dfe-86ad-e4c66b5c4200/public"
+              alt="Halloween sound toggle"
+              width={24}
+              height={24}
+              className="w-[24px] h-[24px] object-contain select-none pointer-events-none"
+            />
+            {!isAudioPlaying && (
+              <span
+                className="absolute w-[24px] h-[2px] bg-red-500 rotate-45 pointer-events-none rounded-full"
+                style={{ boxShadow: "0 0 3px rgba(0,0,0,0.9)" }}
+              />
+            )}
+          </div>
+        </button>
       </section>
 
       {/* Purpose, Philisophy & Principle Section */}
