@@ -4192,27 +4192,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "type": "contact-us",
     "createdAt": "2026-10-26T15:11:50.732Z"
   },
-  "cdbaf3e1-eb18-40bd-971c-99e0a470ca0e": {
-    "id": "cdbaf3e1-eb18-40bd-971c-99e0a470ca0e",
-    "fullName": "Yadav vishalbhai pravinbhai",
-    "companyName": "Sawerarestaurant",
-    "email": "vishu4433221@gmail.com",
-    "phone": "8847498575",
-    "city": "Hyderabad",
-    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIj7XlsfzXlwMVKMGEAB0eczDWEAEYASAAEgIg3vD_BwE",
+  "c1909484-9910-4b06-9b25-fc8ed921fb7f": {
+    "id": "c1909484-9910-4b06-9b25-fc8ed921fb7f",
+    "fullName": "Skhasibul Ali",
+    "companyName": "Hubhuuujjok",
+    "email": "skhasibulali458@gmail.com",
+    "phone": "6296461962",
+    "city": "Grab kohu9oh",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMInMW4lvzXlwMVzceEAB3JaQnnEAEYASAAEgJcoPD_BwE",
+    "message": "Jj7yghji\nIiiu7kk",
     "type": "contact-us",
-    "createdAt": "2026-10-26T15:14:44.003Z"
-  },
-  "30226393-564b-4fff-b9f1-46055a286f07": {
-    "id": "30226393-564b-4fff-b9f1-46055a286f07",
-    "fullName": "Raskumar maibam",
-    "companyName": "Own business",
-    "email": "naorembung@gmail.com",
-    "phone": "6909257221",
-    "city": "Manipur",
-    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjw9PvWBhAxEiwAddzYybp9X8f4k6NfEI4Vt6Orqk33Q4-mReaUCBnekHrCetdlXdHz2UnaRRoCuAAQAvD_BwE",
-    "message": "Fyjghkggdnnmkljjhb",
-    "type": "contact-us",
-    "createdAt": "2026-10-26T15:15:03.353Z"
+    "createdAt": "2026-10-26T15:15:37.685Z"
   }
 };
