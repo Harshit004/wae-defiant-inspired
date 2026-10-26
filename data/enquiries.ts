@@ -4146,5 +4146,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We are looking for procure below device on priority, could you please share its pricing today?\n\nWater dispensers with built in RO\nMake- WAE\nModel-  VAR 100HAC  (5L+85L+10L)\n\nwidth-550mm\nheight-1560mm\ndepth-850mm\nWith cold, Normal &  hot water options",
     "type": "contact-us",
     "createdAt": "2026-10-26T06:53:33.260Z"
+  },
+  "4601b939-5f8f-497e-b277-f1a0206dbe9d": {
+    "id": "4601b939-5f8f-497e-b277-f1a0206dbe9d",
+    "fullName": "Sanofer San",
+    "companyName": "deejos architects",
+    "email": "sanofer@deejos.com",
+    "phone": "9344883156",
+    "city": "chennai",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "need dispenser",
+    "type": "contact-us",
+    "createdAt": "2026-10-26T08:26:56.835Z"
   }
 };
