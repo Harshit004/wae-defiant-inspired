@@ -4203,5 +4203,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Jj7yghji\nIiiu7kk",
     "type": "contact-us",
     "createdAt": "2026-10-26T15:15:37.685Z"
+  },
+  "9b4d797a-bf8e-4ad9-89de-96368512e229": {
+    "id": "9b4d797a-bf8e-4ad9-89de-96368512e229",
+    "fullName": "Raskumar maibam",
+    "companyName": "Own business",
+    "email": "naorembung@gmail.com",
+    "phone": "6909257221",
+    "city": "Manipur",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "Raskumar namaste maibam",
+    "type": "general",
+    "createdAt": "2026-10-26T15:15:48.401Z"
   }
 };
