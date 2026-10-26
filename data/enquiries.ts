@@ -4158,5 +4158,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "need dispenser",
     "type": "contact-us",
     "createdAt": "2026-10-26T08:26:56.835Z"
+  },
+  "8a34626d-879d-4639-a924-a3b6cf396cfc": {
+    "id": "8a34626d-879d-4639-a924-a3b6cf396cfc",
+    "fullName": "Mir Sadiq",
+    "companyName": "Warp N Weft",
+    "email": "nawazoo@icloud.com",
+    "phone": "9032339786",
+    "city": "Hyderabad",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gbraid=0AAAAABUiSLwAmhtYzfd1bkNo8soFb_WdV",
+    "type": "product",
+    "createdAt": "2026-10-26T09:46:56.030Z"
   }
 };
