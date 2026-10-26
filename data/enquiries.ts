@@ -4134,5 +4134,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gbraid=0AAAAABUiSLz1jNSu8Q8C8mU61B7XE44OJ&gclid=CjwKCAjw0fbWBhBkEiwAwJuQ8WhTRXxFcOfxY1g1SaE_jMKTFbFHxkL0jnVs6nLo8I0_6qt7V0jmHRoCjKIQAvD_BwE",
     "type": "product",
     "createdAt": "2026-10-26T05:16:37.898Z"
+  },
+  "43a133d7-0568-424e-871b-f037688e04ea": {
+    "id": "43a133d7-0568-424e-871b-f037688e04ea",
+    "fullName": "Alok Sharma",
+    "companyName": "OakNorth Global Pvt. Ltd.",
+    "email": "alok.sharma@oaknorth.co.uk",
+    "phone": "9953149992",
+    "city": "Gurgaon",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "We are looking for procure below device on priority, could you please share its pricing today?\n\nWater dispensers with built in RO\nMake- WAE\nModel-  VAR 100HAC  (5L+85L+10L)\n\nwidth-550mm\nheight-1560mm\ndepth-850mm\nWith cold, Normal &  hot water options",
+    "type": "contact-us",
+    "createdAt": "2026-10-26T06:53:33.260Z"
   }
 };
