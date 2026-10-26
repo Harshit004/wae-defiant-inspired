@@ -315,50 +315,26 @@ export default function Home() {
         id="hero"
         className="w-full relative bg-black md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col overflow-hidden"
       >
-        {/* Mobile Background Video */}
-        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full overflow-hidden pointer-events-none">
-          <iframe
-            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d8a526236b950c6c03c5ef8391ec7a7e/iframe?muted=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd8a526236b950c6c03c5ef8391ec7a7e%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
-            style={{
-              border: "none",
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%) scale(1.04)",
-              width: "max(100vw, calc((100vh - 119px) / 0.63024))",
-              height: "max(100%, calc(100vw * 0.63024))",
-              minWidth: "100%",
-              minHeight: "100%",
-              pointerEvents: "none",
-            }}
-            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-            allowFullScreen={true}
+        {/* Mobile Background Image */}
+        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full overflow-hidden">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cc3b1b73-75a4-479b-2161-92fed5778500/public"
+            alt="Hero background"
+            fill
+            priority
+            className="object-cover object-center"
           />
-          {/* Top edge cover to eliminate video top edge line artifact */}
-          <div className="absolute top-0 left-0 right-0 h-[6px] bg-black z-10 pointer-events-none" />
         </div>
 
-        {/* Desktop Background Video determining the height of the section naturally */}
-        <div
-          className="hidden md:block relative w-full overflow-hidden"
-          style={{ position: "relative", paddingTop: "63.0242825607064%" }}
-        >
-          <iframe
-            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d8a526236b950c6c03c5ef8391ec7a7e/iframe?muted=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd8a526236b950c6c03c5ef8391ec7a7e%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
-            style={{
-              border: "none",
-              position: "absolute",
-              top: "-6px",
-              left: 0,
-              height: "calc(100% + 12px)",
-              width: "100%",
-              pointerEvents: "none",
-            }}
-            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-            allowFullScreen={true}
+        {/* Desktop Background Image determining the height of the section naturally */}
+        <div className="hidden md:block relative w-full aspect-[1215/768] overflow-hidden">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cc3b1b73-75a4-479b-2161-92fed5778500/public"
+            alt="Hero background"
+            fill
+            priority
+            className="object-cover object-center"
           />
-          {/* Top edge cover to eliminate video top edge line artifact */}
-          <div className="absolute top-0 left-0 right-0 h-[6px] bg-black z-10 pointer-events-none" />
         </div>
 
         {/* Hero Content Text (Topmost) */}
