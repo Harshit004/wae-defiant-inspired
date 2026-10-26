@@ -443,7 +443,7 @@ export default function Home() {
           }`}
           style={{
             right: "max(20px, calc(69 / 1440 * 100vw))",
-            bottom: "max(24px, calc(197 / 1440 * 100vw))",
+            bottom: "max(20px, calc(97 / 1440 * 100vw))",
           }}
         >
           <div className="relative w-[24px] h-[24px] flex items-center justify-center">
