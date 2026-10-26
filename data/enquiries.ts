@@ -4191,5 +4191,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjw9PvWBhAxEiwAddzYyW3asU4gj8NM-i1-NeBZdquEBq3ojRAsXUzk8GsVkw5YWRW4eUN6GhoCz2wQAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-26T15:11:50.732Z"
+  },
+  "cdbaf3e1-eb18-40bd-971c-99e0a470ca0e": {
+    "id": "cdbaf3e1-eb18-40bd-971c-99e0a470ca0e",
+    "fullName": "Yadav vishalbhai pravinbhai",
+    "companyName": "Sawerarestaurant",
+    "email": "vishu4433221@gmail.com",
+    "phone": "8847498575",
+    "city": "Hyderabad",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIj7XlsfzXlwMVKMGEAB0eczDWEAEYASAAEgIg3vD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-26T15:14:44.003Z"
   }
 };
