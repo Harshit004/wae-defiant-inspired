@@ -4180,5 +4180,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI_M-4qvXXlwMVIsKEAB3b6wXvEAEYASAAEgLw7PD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-26T14:43:27.253Z"
+  },
+  "668912d7-8cf9-400e-910e-005159c4b792": {
+    "id": "668912d7-8cf9-400e-910e-005159c4b792",
+    "fullName": "Shivani Yadav",
+    "companyName": "Galixy",
+    "email": "shivangiyadavshivangi123@gmail.com",
+    "phone": "9936935544",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjw9PvWBhAxEiwAddzYyW3asU4gj8NM-i1-NeBZdquEBq3ojRAsXUzk8GsVkw5YWRW4eUN6GhoCz2wQAvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-26T15:11:50.732Z"
   }
 };
