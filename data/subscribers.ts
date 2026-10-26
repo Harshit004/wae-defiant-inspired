@@ -601,5 +601,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-26",
     "time": "20:14:04",
     "pageLink": "/profile"
+  },
+  {
+    "id": "c8d6d157-7d58-4c99-9082-ea0a37e1b923",
+    "email": "naorembung@gmail.com",
+    "date": "2026-10-26",
+    "time": "20:46:13",
+    "pageLink": "/"
   }
 ];
