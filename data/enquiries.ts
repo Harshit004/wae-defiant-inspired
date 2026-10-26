@@ -4202,5 +4202,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIj7XlsfzXlwMVKMGEAB0eczDWEAEYASAAEgIg3vD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-26T15:14:44.003Z"
+  },
+  "30226393-564b-4fff-b9f1-46055a286f07": {
+    "id": "30226393-564b-4fff-b9f1-46055a286f07",
+    "fullName": "Raskumar maibam",
+    "companyName": "Own business",
+    "email": "naorembung@gmail.com",
+    "phone": "6909257221",
+    "city": "Manipur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjw9PvWBhAxEiwAddzYybp9X8f4k6NfEI4Vt6Orqk33Q4-mReaUCBnekHrCetdlXdHz2UnaRRoCuAAQAvD_BwE",
+    "message": "Fyjghkggdnnmkljjhb",
+    "type": "contact-us",
+    "createdAt": "2026-10-26T15:15:03.353Z"
   }
 };
