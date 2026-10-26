@@ -1404,7 +1404,7 @@ export default function Home() {
           <div className="flex justify-between items-start w-full">
             {/* Left Column - Button & Earth Video */}
             <div style={{ width: '44.93vw', maxWidth: '645px' }} className="w-full flex flex-col">
-              <div className="flex">
+              <div className="flex items-start" style={{ height: '49px' }}>
                 <Link href="/sustainability" className="contents">
                   <HoverButton theme="transparent-white">
                     {(hovered) => (
@@ -1439,9 +1439,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div style={{ height: '20px' }} />
-
-              {/* Earth video (uncropped 1:1 aspect ratio, pushed ~50px left from right edge) */}
+              {/* Earth video (top aligned with text top in right column, pushed ~50px left from right edge) */}
               <div className="w-full flex justify-end">
                 <div
                   className="relative"
@@ -1472,10 +1470,10 @@ export default function Home() {
 
             {/* Right Column - Horizontal Line & Two Text Columns */}
             <div style={{ width: '42vw', maxWidth: '610px' }} className="flex flex-col">
-              {/* Horizontal line aligned with button top */}
-              <div className="w-full h-px bg-[#FFFFFF4D]" />
-
-              <div style={{ height: '48px' }} />
+              <div style={{ height: '49px' }} className="flex flex-col justify-start">
+                {/* Horizontal line aligned with button top */}
+                <div className="w-full h-px bg-[#FFFFFF4D]" />
+              </div>
 
               {/* Two sub-columns */}
               <div className="grid grid-cols-2 gap-8 lg:gap-12">
