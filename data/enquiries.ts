@@ -4123,5 +4123,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/lagoon",
     "type": "product",
     "createdAt": "2026-10-25T03:22:03.004Z"
+  },
+  "c47b5d53-e4bc-4f46-bf6b-6a9ea8b2a46f": {
+    "id": "c47b5d53-e4bc-4f46-bf6b-6a9ea8b2a46f",
+    "fullName": "sks mills",
+    "companyName": "sks mills unit of sharadha terry products private limited",
+    "email": "rajeshwari.s@sksmills.co.in",
+    "phone": "9360212323",
+    "city": "mettupalayam-641305",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gbraid=0AAAAABUiSLz1jNSu8Q8C8mU61B7XE44OJ&gclid=CjwKCAjw0fbWBhBkEiwAwJuQ8WhTRXxFcOfxY1g1SaE_jMKTFbFHxkL0jnVs6nLo8I0_6qt7V0jmHRoCjKIQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-10-26T05:16:37.898Z"
   }
 };
