@@ -1441,14 +1441,14 @@ export default function Home() {
 
               <div style={{ height: '20px' }} />
 
-              {/* Earth video 392x336 aligned with right of left column */}
+              {/* Earth video (uncropped 1:1 aspect ratio, pushed ~50px left from right edge) */}
               <div className="w-full flex justify-end">
                 <div
-                  className="relative overflow-hidden"
+                  className="relative"
                   style={{
-                    width: '392px',
+                    width: 'clamp(280px, 27.22vw, 392px)',
                     maxWidth: '100%',
-                    height: '336px',
+                    marginRight: 'clamp(20px, 3.47vw, 50px)',
                   }}
                 >
                   <div style={{ position: 'relative', width: '100%', paddingTop: '100%' }}>
@@ -1591,12 +1591,9 @@ export default function Home() {
 
           <div style={{ height: '6vw' }} />
           
-          {/* Earth Video */}
+          {/* Earth Video (uncropped 1:1 aspect ratio) */}
           <div className="w-full flex justify-center">
-            <div
-              className="relative overflow-hidden w-full max-w-[392px]"
-              style={{ height: 'clamp(240px, 70vw, 336px)' }}
-            >
+            <div className="relative w-full max-w-[392px] aspect-square">
               <div style={{ position: 'relative', width: '100%', paddingTop: '100%' }}>
                 <iframe
                   src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d504f9762d02a41de4b5b5010d52e126/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd504f9762d02a41de4b5b5010d52e126%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
