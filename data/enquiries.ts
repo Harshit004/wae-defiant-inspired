@@ -4169,5 +4169,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gbraid=0AAAAABUiSLwAmhtYzfd1bkNo8soFb_WdV",
     "type": "product",
     "createdAt": "2026-10-26T09:46:56.030Z"
+  },
+  "d5511b6a-abb3-4687-8b06-e5fda7e18c05": {
+    "id": "d5511b6a-abb3-4687-8b06-e5fda7e18c05",
+    "fullName": "palli pushpalatha",
+    "companyName": "palli Pushpa Latha",
+    "email": "bhasapalli9@gmail.com",
+    "phone": "7993517987",
+    "city": "chiguruvalasa",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI_M-4qvXXlwMVIsKEAB3b6wXvEAEYASAAEgLw7PD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-26T14:43:27.253Z"
   }
 };
