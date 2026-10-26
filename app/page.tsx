@@ -1298,166 +1298,243 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Carbon Neutral Section */}
+      {/* Carbon Neutral / Sustainability Section */}
       <section className="bg-black text-white md:border-b-0">
         {/* Desktop Layout */}
         <div className="w-full hidden md:block border-b border-[#FFFFFF4D]" style={{ paddingBottom: '123px', paddingLeft: '7.5vw', paddingRight: '7.5vw' }}>
           
-        <div className="w-full">
-          <div style={{ height: '123px' }} />
-          <h3
-            style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 400,
-              fontStyle: 'normal',
-              fontSize: '24px',
-              lineHeight: '110%',
-              letterSpacing: '0px',
-              verticalAlign: 'middle',
-              color: '#FFFFFF'
-            }}
-          >
-            Sustainability
-          </h3>
-          <div style={{ height: '26px' }} />
-        </div>
-        {/* Top Row: Heading on left, Quote on right */}
-        <div className="flex justify-between items-start w-full">
-          {/* Left Column - Heading & Subtitle */}
-          <div style={{ width: '44.93vw', maxWidth: '645px' }}>
-            <h2
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: '40px',
-                lineHeight: '110%',
-                color: '#FFFFFF'
-              }}
-            >
-              Earth, Our Only Shareholder
-            </h2>
-            <div style={{ height: '32px' }} />
-            <p
-              className="leading-normal"
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontWeight: 400,
-                fontSize: '14px',
-                color: '#AEAEAE'
-              }}
-            >
-              A ledger of people, planet, and profit and the water that connects them all.
-            </p>
-          </div>
-
-          {/* Right Column - Quote & Author */}
-          <div style={{ width: '38vw', maxWidth: '540px' }} className="flex flex-col">
+          <div className="w-full">
+            <div style={{ height: '123px' }} />
             <h3
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontStyle: 'normal',
-                fontSize: 'clamp(32px, 4.03vw, 58px)',
-                lineHeight: '105%',
-                letterSpacing: '0%',
-                color: '#AEAEAE',
+                fontSize: '24px',
+                lineHeight: '110%',
+                letterSpacing: '0px',
                 verticalAlign: 'middle',
+                color: '#FFFFFF'
               }}
             >
-              <span className="inline-block pl-[clamp(28px,4.5vw,64px)]">“ He who knows</span><br />
-              that enough is<br />
-              enough will always<br />
-              have enough. ”
+              Sustainability
             </h3>
+            <div style={{ height: '26px' }} />
+          </div>
 
-            <div style={{ height: '17px' }} />
-
-            <div className="w-full flex justify-end">
-              <span
+          {/* Top Row: Heading on left, Quote on right */}
+          <div className="flex justify-between items-stretch w-full">
+            {/* Left Column - Heading & Subtitle */}
+            <div style={{ width: '44.93vw', maxWidth: '645px' }} className="flex flex-col">
+              <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
+                  fontWeight: 400,
                   fontStyle: 'normal',
-                  fontSize: '16px',
-                  lineHeight: '105%',
-                  letterSpacing: '0%',
-                  color: '#FFFFFF',
+                  fontSize: '60px',
+                  lineHeight: '110%',
+                  letterSpacing: '0px',
                   verticalAlign: 'middle',
+                  color: '#FFFFFF'
                 }}
               >
-                - Lao Tzu
-              </span>
-            </div>
-
-            <div style={{ height: '31px' }} />
-          </div>
-        </div>
-
-        {/* Bottom Row: Image on left aligned with Horizontal Line on right */}
-        <div className="flex justify-between items-stretch w-full">
-          {/* Left Column - Image */}
-          <div style={{ width: '44.93vw', maxWidth: '645px' }} className="w-full">
-            <motion.div
-              initial={{ filter: 'grayscale(100%)' }}
-              whileHover={{ filter: 'grayscale(0%)' }}
-              transition={{ duration: 0.8 }}
-              className="w-full h-auto cursor-pointer block leading-none"
-            >
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fd6e76cf-b35a-46af-de19-8caa2b168300/public"
-                alt="Carbon Neutral Illustration"
-                width={645}
-                height={362}
-                className="w-full h-auto object-cover block"
-              />
-            </motion.div>
-          </div>
-
-          {/* Right Column - Horizontal Line & Truth / Equity Section */}
-          <div style={{ width: '38vw', maxWidth: '540px' }} className="flex flex-col justify-between self-stretch">
-            <div className="w-full h-px bg-[#FFFFFF4D]" />
-
-            <div className="flex flex-col justify-between flex-1" style={{ paddingTop: '55px' }}>
+                Earth, Our Only<br />Shareholder
+              </h2>
+              <div style={{ height: '31px' }} />
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
                   fontStyle: 'normal',
                   fontSize: '14px',
-                  lineHeight: '130%',
+                  lineHeight: '100%',
                   letterSpacing: '0%',
-                  color: '#AEAEAE',
                   verticalAlign: 'middle',
+                  color: '#AEAEAE'
                 }}
               >
-                There is a quiet truth that underpins<br />
-                all progress, often overlooked,<br />
-                yet impossible to escape:
+                A ledger of people, planet, and profit and the water that connects them all.
               </p>
+              <div style={{ height: '60px' }} />
+            </div>
 
-              <div className="flex justify-end mt-auto" style={{ paddingTop: '55px' }}>
+            {/* Right Column - Quote & Author */}
+            <div style={{ width: '42vw', maxWidth: '610px' }} className="flex flex-col justify-between">
+              <div>
                 <h3
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
                     fontStyle: 'normal',
-                    fontSize: 'clamp(24px, 2.5vw, 36px)',
-                    lineHeight: '100%',
+                    fontSize: '44px',
+                    lineHeight: '105%',
                     letterSpacing: '0%',
-                    color: '#FFFFFF',
                     verticalAlign: 'middle',
-                    textAlign: 'left',
+                    color: '#AEAEAE',
                   }}
                 >
-                  Earth holds<br />
-                  no equity.<br />
-                  Yet everything<br />
-                  answers to it.
+                  “He who knows that <span style={{ color: '#FFFFFF' }}>enough</span><br />
+                  is <span style={{ color: '#FFFFFF' }}>enough</span> will always have<br />
+                  <span style={{ color: '#FFFFFF' }}>enough.</span> ”
                 </h3>
+
+                <div style={{ height: '35px' }} />
+
+                <div className="w-full flex justify-end">
+                  <span
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontStyle: 'normal',
+                      fontSize: '16px',
+                      lineHeight: '105%',
+                      letterSpacing: '0%',
+                      verticalAlign: 'middle',
+                      color: '#FFFFFF',
+                    }}
+                  >
+                    - Lao Tzu
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
+          {/* Bottom Row: Button & Earth Video on left aligned with Horizontal Line & Text Columns on right */}
+          <div className="flex justify-between items-start w-full">
+            {/* Left Column - Button & Earth Video */}
+            <div style={{ width: '44.93vw', maxWidth: '645px' }} className="w-full flex flex-col">
+              <div className="flex">
+                <Link href="/sustainability" className="contents">
+                  <HoverButton theme="transparent-white">
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
+              </div>
+
+              <div style={{ height: '20px' }} />
+
+              {/* Earth video 392x336 aligned with right of left column */}
+              <div className="w-full flex justify-end">
+                <div
+                  className="relative overflow-hidden"
+                  style={{
+                    width: '392px',
+                    maxWidth: '100%',
+                    height: '336px',
+                  }}
+                >
+                  <div style={{ position: 'relative', width: '100%', paddingTop: '100%' }}>
+                    <iframe
+                      src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d504f9762d02a41de4b5b5010d52e126/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd504f9762d02a41de4b5b5010d52e126%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+                      style={{
+                        border: 'none',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        height: '100%',
+                        width: '100%',
+                      }}
+                      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                      allowFullScreen={true}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Horizontal Line & Two Text Columns */}
+            <div style={{ width: '42vw', maxWidth: '610px' }} className="flex flex-col">
+              {/* Horizontal line aligned with button top */}
+              <div className="w-full h-px bg-[#FFFFFF4D]" />
+
+              <div style={{ height: '48px' }} />
+
+              {/* Two sub-columns */}
+              <div className="grid grid-cols-2 gap-8 lg:gap-12">
+                {/* Sub-column 1 */}
+                <div
+                  className="flex flex-col space-y-4"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: 'normal',
+                    fontSize: '14px',
+                    lineHeight: '135%',
+                    letterSpacing: '0%',
+                    verticalAlign: 'middle',
+                    color: '#AEAEAE',
+                  }}
+                >
+                  <p>
+                    It does not attend AGMs. It signs no term sheets. It cannot vote against us.
+                  </p>
+                  <p>
+                    But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life.
+                  </p>
+                  <p>
+                    For us, this recognition is not philosophical. It is operational.
+                  </p>
+                  <p>
+                    Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business.
+                  </p>
+                </div>
+
+                {/* Sub-column 2 */}
+                <div
+                  className="flex flex-col space-y-4"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: 'normal',
+                    fontSize: '14px',
+                    lineHeight: '135%',
+                    letterSpacing: '0%',
+                    verticalAlign: 'middle',
+                    color: '#AEAEAE',
+                  }}
+                >
+                  <p>
+                    It is the context within which our business is allowed to exist.
+                  </p>
+                  <p>
+                    In this view, sustainability is not an initiative layered onto business strategy.<br />
+                    It is the condition that determines whether that strategy is viable at all.
+                  </p>
+                  <p>
+                    This is our account of stewardship to the only shareholder that was always there In place of Place of progress report as in above para
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
       
         </div>
 
@@ -1474,18 +1551,71 @@ export default function Home() {
           <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
             A ledger of people, planet, and profit and the water that connects them all.
           </p>
-          <div style={{ height: '10vw' }} />
-          
-          <div className="w-full relative" style={{ height: '42.74vw' }}>
-            <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fd6e76cf-b35a-46af-de19-8caa2b168300/public"
-              alt="Carbon Neutral Illustration"
-              fill
-              className="object-cover"
-            />
+          <div style={{ height: '6vw' }} />
+
+          {/* Button */}
+          <div className="flex">
+            <Link href="/sustainability" className="contents">
+              <HoverButton theme="transparent-white">
+                {(hovered) => (
+                  <>
+                    Know More
+                    <div className="relative inline-block w-4 h-4">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                        alt="icon default"
+                        width={16}
+                        height={16}
+                        className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                      />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hovered ? 1 : 0 }}
+                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                        className="absolute top-0 left-0"
+                      >
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                          alt="icon hover"
+                          width={16}
+                          height={16}
+                          className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                        />
+                      </motion.div>
+                    </div>
+                  </>
+                )}
+              </HoverButton>
+            </Link>
           </div>
 
-          <div style={{ height: '12vw' }} />
+          <div style={{ height: '6vw' }} />
+          
+          {/* Earth Video */}
+          <div className="w-full flex justify-center">
+            <div
+              className="relative overflow-hidden w-full max-w-[392px]"
+              style={{ height: 'clamp(240px, 70vw, 336px)' }}
+            >
+              <div style={{ position: 'relative', width: '100%', paddingTop: '100%' }}>
+                <iframe
+                  src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d504f9762d02a41de4b5b5010d52e126/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd504f9762d02a41de4b5b5010d52e126%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+                  style={{
+                    border: 'none',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    height: '100%',
+                    width: '100%',
+                  }}
+                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                  allowFullScreen={true}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div style={{ height: '10vw' }} />
 
           {/* Quote */}
           <h3
@@ -1497,10 +1627,9 @@ export default function Home() {
               color: '#AEAEAE',
             }}
           >
-            <span className="inline-block pl-[6vw]">“ He who knows</span><br />
-            that enough is<br />
-            enough will always<br />
-            have enough. ”
+            “He who knows that <span style={{ color: '#FFFFFF' }}>enough</span><br />
+            is <span style={{ color: '#FFFFFF' }}>enough</span> will always have<br />
+            <span style={{ color: '#FFFFFF' }}>enough.</span> ”
           </h3>
 
           <div style={{ height: '17px' }} />
@@ -1523,38 +1652,39 @@ export default function Home() {
           <div className="w-full h-px bg-[#FFFFFF4D]" />
           <div style={{ height: '35px' }} />
 
-          <p
+          {/* Text paragraphs */}
+          <div
+            className="flex flex-col space-y-4"
             style={{
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 400,
               fontSize: '14px',
-              lineHeight: '130%',
+              lineHeight: '135%',
               color: '#AEAEAE',
             }}
           >
-            There is a quiet truth that underpins<br />
-            all progress, often overlooked,<br />
-            yet impossible to escape:
-          </p>
-
-          <div style={{ height: '35px' }} />
-
-          <div className="flex justify-end">
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontWeight: 400,
-                fontSize: '28px',
-                lineHeight: '105%',
-                color: '#FFFFFF',
-                textAlign: 'left',
-              }}
-            >
-              Earth holds<br />
-              no equity.<br />
-              Yet everything<br />
-              answers to it.
-            </h3>
+            <p>
+              It does not attend AGMs. It signs no term sheets. It cannot vote against us.
+            </p>
+            <p>
+              But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life.
+            </p>
+            <p>
+              For us, this recognition is not philosophical. It is operational.
+            </p>
+            <p>
+              Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business.
+            </p>
+            <p>
+              It is the context within which our business is allowed to exist.
+            </p>
+            <p>
+              In this view, sustainability is not an initiative layered onto business strategy.<br />
+              It is the condition that determines whether that strategy is viable at all.
+            </p>
+            <p>
+              This is our account of stewardship to the only shareholder that was always there In place of Place of progress report as in above para
+            </p>
           </div>
         </div>
       </section>
