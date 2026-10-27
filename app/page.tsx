@@ -1476,8 +1476,8 @@ export default function Home() {
           {/* Bottom Row: Button & Earth Video on left aligned with Horizontal Line & Text Columns on right */}
           <div className="flex justify-between items-start w-full">
             {/* Left Column - Button & Earth Video */}
-            <div style={{ width: '44.93vw', maxWidth: '645px' }} className="w-full flex flex-col">
-              <div className="flex items-start" style={{ height: '49px' }}>
+            <div style={{ width: '44.93vw', maxWidth: '645px' }} className="w-full flex flex-col relative">
+              <div className="relative z-10 flex items-start" style={{ height: '49px' }}>
                 <Link href="/sustainability" className="contents">
                   <HoverButton theme="transparent-white">
                     {(hovered) => (
@@ -1513,7 +1513,7 @@ export default function Home() {
               </div>
 
               {/* Earth video (center aligned vertically with the word 'water' in subtext) */}
-              <div className="w-full relative">
+              <div className="w-full relative z-0">
                 <div
                   className="relative"
                   style={{
