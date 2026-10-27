@@ -4341,5 +4341,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hello",
     "type": "contact-us",
     "createdAt": "2026-10-27T13:43:23.258Z"
+  },
+  "889550b8-4d6d-41a1-a299-4b36ff7a937c": {
+    "id": "889550b8-4d6d-41a1-a299-4b36ff7a937c",
+    "fullName": "Durgesh singh",
+    "companyName": "Singh",
+    "email": "kumaromkar73316@gmail.com",
+    "phone": "1234567890",
+    "city": "Goya",
+    "pageLink": "https://www.waecorp.com/contact-us?gbraid=0AAAAABUiSLz99FY7k1N_Y9Elv07GUZ5Rl&gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjwl4HXBhAjEiwAHlpWhCOTeMrQ_6u6jKD3KmqETEtEyswKNIPU0FmsZOSSu5EChm5E0KMuiBoC3EwQAvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-27T14:46:39.881Z"
   }
 };
