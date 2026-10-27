@@ -205,7 +205,7 @@ const ContactSectionDark = () => {
                         />
                     </div>
 
-                    <div>
+                    <div className="mt-[10px]">
                         <button
                             type="submit"
                             className="w-full h-[50px] bg-transparent text-white border border-white flex items-center justify-center gap-4 group transition-all duration-300 hover:bg-white hover:text-black"
