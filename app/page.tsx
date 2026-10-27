@@ -1396,9 +1396,9 @@ export default function Home() {
           </div>
 
           {/* Top Row: Heading on left, Quote on right */}
-          <div className="flex justify-between items-stretch w-full">
+          <div className="flex justify-between items-stretch w-full gap-6 lg:gap-10">
             {/* Left Column - Heading & Subtitle */}
-            <div style={{ width: '44.93vw', maxWidth: '645px' }} className="relative flex flex-col">
+            <div style={{ width: 'clamp(320px, 35vw, 490px)' }} className="relative flex flex-col flex-shrink-0">
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -1432,22 +1432,22 @@ export default function Home() {
             </div>
 
             {/* Right Column - Quote & Author */}
-            <div style={{ width: '42vw', maxWidth: '610px' }} className="flex flex-col justify-between">
+            <div style={{ maxWidth: '650px' }} className="flex flex-col justify-between flex-1 min-w-0">
               <div>
                 <h3
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
                     fontStyle: 'normal',
-                    fontSize: '40px',
+                    fontSize: 'clamp(28px, 2.78vw, 40px)',
                     lineHeight: '105%',
                     letterSpacing: '0%',
                     verticalAlign: 'middle',
                     color: '#AEAEAE',
                   }}
                 >
-                  “He who knows that <span style={{ color: '#FFFFFF' }}>enough</span> is <span style={{ color: '#FFFFFF' }}>enough</span><br />
-                  will always have <span style={{ color: '#FFFFFF' }}>enough.</span> ”
+                  <span className="whitespace-nowrap">“He who knows that <span style={{ color: '#FFFFFF' }}>enough</span> is <span style={{ color: '#FFFFFF' }}>enough</span></span><br />
+                  <span className="whitespace-nowrap">will always have <span style={{ color: '#FFFFFF' }}>enough.</span> ”</span>
                 </h3>
 
                 <div style={{ height: '35px' }} />
@@ -1473,9 +1473,9 @@ export default function Home() {
           </div>
 
           {/* Bottom Row: Button & Earth Video on left aligned with Horizontal Line & Text Columns on right */}
-          <div className="flex justify-between items-start w-full">
+          <div className="flex justify-between items-start w-full gap-6 lg:gap-10">
             {/* Left Column - Button & Earth Video */}
-            <div style={{ width: '44.93vw', maxWidth: '645px' }} className="w-full flex flex-col relative">
+            <div style={{ width: 'clamp(320px, 35vw, 490px)' }} className="w-full flex flex-col relative flex-shrink-0">
               <div className="relative z-10 flex items-start" style={{ height: '49px' }}>
                 <Link href="/sustainability" className="contents">
                   <HoverButton theme="transparent-white">
@@ -1547,7 +1547,7 @@ export default function Home() {
             </div>
 
             {/* Right Column - Horizontal Line & Two Text Columns */}
-            <div style={{ width: '42vw', maxWidth: '610px' }} className="flex flex-col">
+            <div style={{ maxWidth: '650px' }} className="flex flex-col flex-1 min-w-0">
               <div style={{ height: '49px' }} className="flex flex-col justify-start">
                 {/* Horizontal line aligned with button top */}
                 <div className="w-full h-px bg-[#FFFFFF4D]" />
@@ -1563,7 +1563,7 @@ export default function Home() {
                     fontWeight: 400,
                     fontStyle: 'normal',
                     fontSize: '12px',
-                    lineHeight: '100%',
+                    lineHeight: '130%',
                     letterSpacing: '0%',
                     verticalAlign: 'middle',
                     color: '#AEAEAE',
@@ -1591,7 +1591,7 @@ export default function Home() {
                     fontWeight: 400,
                     fontStyle: 'normal',
                     fontSize: '12px',
-                    lineHeight: '100%',
+                    lineHeight: '130%',
                     letterSpacing: '0%',
                     verticalAlign: 'middle',
                     color: '#AEAEAE',
@@ -1740,7 +1740,7 @@ export default function Home() {
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 400,
               fontSize: '12px',
-              lineHeight: '100%',
+              lineHeight: '130%',
               color: '#AEAEAE',
             }}
           >
