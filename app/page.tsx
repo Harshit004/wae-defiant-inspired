@@ -337,6 +337,24 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
+  // Measure position of 'water' word to align Earth video center vertically
+  const waterWordRef = useRef<HTMLSpanElement>(null)
+  const [waterCenterX, setWaterCenterX] = useState<number | null>(null)
+
+  useEffect(() => {
+    const updateWaterPos = () => {
+      if (waterWordRef.current) {
+        setWaterCenterX(waterWordRef.current.offsetLeft + waterWordRef.current.offsetWidth / 2)
+      }
+    }
+    updateWaterPos()
+    if (typeof document !== "undefined" && document.fonts) {
+      document.fonts.ready.then(updateWaterPos)
+    }
+    window.addEventListener("resize", updateWaterPos)
+    return () => window.removeEventListener("resize", updateWaterPos)
+  }, [])
+
   // Halloween Sound State & Toggle
   const [isAudioPlaying, setIsAudioPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
@@ -1380,7 +1398,7 @@ export default function Home() {
           {/* Top Row: Heading on left, Quote on right */}
           <div className="flex justify-between items-stretch w-full">
             {/* Left Column - Heading & Subtitle */}
-            <div style={{ width: '44.93vw', maxWidth: '645px' }} className="flex flex-col">
+            <div style={{ width: '44.93vw', maxWidth: '645px' }} className="relative flex flex-col">
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
@@ -1408,7 +1426,7 @@ export default function Home() {
                   color: '#AEAEAE'
                 }}
               >
-                A ledger of people, planet, and profit and the water that connects them all.
+                A ledger of people, planet, and profit and the <span ref={waterWordRef}>water</span> that connects them all.
               </p>
               <div style={{ height: '60px' }} />
             </div>
@@ -1494,15 +1512,17 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Earth video (increased by 5% to 412x353, pushed 5% upwards) */}
-              <div className="w-full flex justify-end">
+              {/* Earth video (center aligned vertically with the word 'water' in subtext) */}
+              <div className="w-full relative">
                 <div
                   className="relative"
                   style={{
                     width: 'clamp(294px, 28.58vw, 412px)',
                     height: 'clamp(252px, 24.5vw, 353px)',
                     maxWidth: '100%',
-                    marginRight: 'clamp(20px, 3.47vw, 50px)',
+                    marginLeft: waterCenterX !== null
+                      ? `max(0px, calc(${waterCenterX}px - clamp(294px, 28.58vw, 412px) / 2))`
+                      : 'max(0px, calc(306.3px - clamp(294px, 28.58vw, 412px) / 2))',
                     overflow: 'hidden',
                     transform: 'translateY(-5%) scaleX(-1)',
                   }}
