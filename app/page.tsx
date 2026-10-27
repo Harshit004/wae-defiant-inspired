@@ -2628,11 +2628,11 @@ export default function Home() {
 
       {/* THE COMPANY WE KEEP SECTION */}
       <section
-        className="bg-[#0F0F0F] text-white px-[6.1vw] py-[16.53vw] md:px-[7.5vw] md:py-[120px] border-t border-[#FFFFFF4D] overflow-hidden"
+        className="bg-[#0F0F0F] text-white border-t border-[#FFFFFF4D] overflow-hidden"
       >
-        <div className="mx-auto w-full max-w-[1440px] flex flex-col lg:flex-row justify-between items-start">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-stretch">
           {/* Left Column */}
-          <div className="w-full lg:w-[48%] flex flex-col">
+          <div className="w-full lg:w-[48%] max-w-[680px] flex flex-col pl-[6.1vw] pr-[6.1vw] lg:pl-[7.5vw] lg:pr-0 pt-[102px] pb-[114px]">
             {/* Heading */}
             <h2
               style={{
@@ -2837,22 +2837,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Column - Client Logos Map (633x710) */}
-          <div className="w-full lg:w-[48%] flex justify-center lg:justify-end mt-12 lg:mt-0">
-            <div
-              className="relative w-full"
-              style={{
-                maxWidth: 'clamp(320px, 44vw, 633px)',
-                aspectRatio: '633 / 710',
-              }}
-            >
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3fa9fcfd-f127-4215-2e1b-bb7170586700/public"
+          {/* Right Column - Client Logos Map */}
+          <div className="w-full lg:flex-1 flex justify-center lg:justify-end self-stretch px-[6.1vw] lg:px-0 lg:pr-[48px] pb-12 lg:pb-0">
+            <div className="relative w-full lg:w-auto h-auto lg:h-full flex items-center justify-center lg:justify-end">
+              <img
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e62f5a5d-f1c7-44f9-dbe0-8d2689942a00/public"
                 alt="The company we keep - Brands we serve map"
-                fill
-                className="object-contain"
-                sizes="(max-width: 1024px) 90vw, 633px"
-                priority={false}
+                className="w-full max-w-[626px] h-auto lg:w-auto lg:h-full lg:max-w-full object-contain object-center lg:object-right"
               />
             </div>
           </div>
