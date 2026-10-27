@@ -12,7 +12,7 @@ import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import GhostCursor from "@/components/GhostCursor"
 import dynamic from "next/dynamic"
-// import LightweightRipple from "@/components/LightweightRipple"
+import LightweightRipple from "@/components/LightweightRipple"
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
@@ -432,15 +432,9 @@ export default function Home() {
         id="hero"
         className="w-full relative bg-black h-screen h-[100svh] flex flex-col overflow-hidden"
       >
-        {/* Background Image (fits screen perfectly without overflow, keeping dimension ratio intact) */}
+        {/* Background Image with Water Ripple Effect */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c917ec39-8efd-4f15-9063-04c3ea250200/public"
-            alt="Hero background"
-            fill
-            priority
-            className="object-cover object-center"
-          />
+          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c917ec39-8efd-4f15-9063-04c3ea250200/public" />
         </div>
 
         {/* Hero Content Text (Topmost) */}
