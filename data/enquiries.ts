@@ -4352,5 +4352,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gbraid=0AAAAABUiSLz99FY7k1N_Y9Elv07GUZ5Rl&gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjwl4HXBhAjEiwAHlpWhCOTeMrQ_6u6jKD3KmqETEtEyswKNIPU0FmsZOSSu5EChm5E0KMuiBoC3EwQAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-27T14:46:39.881Z"
+  },
+  "b20ac8e2-7a4c-4e20-b41e-c8a839f961c6": {
+    "id": "b20ac8e2-7a4c-4e20-b41e-c8a839f961c6",
+    "fullName": "Sai Babu Kudaravalli",
+    "companyName": "Web Synergies",
+    "email": "saibabu@websynergies.com",
+    "phone": "9885674048",
+    "city": "Hyderabad",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series?gad_source=1&gad_campaignid=24242484871&gbraid=0AAAAABUiSLzN0mlt6GyD04cYhflExm7GS&gclid=CjwKCAjwl4HXBhAjEiwAHlpWhKif3M8yEMjN_W7Itd2r7EOjF7DlzlinVCvwUVZH1zSzAbsuRe9tPxoC6rIQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-10-27T15:05:25.510Z"
   }
 };
