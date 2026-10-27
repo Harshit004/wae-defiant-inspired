@@ -2845,9 +2845,9 @@ export default function Home() {
           <div className="w-full lg:flex-1 flex justify-center lg:justify-end self-stretch px-[6.1vw] lg:px-0 lg:pr-[48px] pb-12 lg:pb-0">
             <div className="relative w-full lg:w-auto h-auto lg:h-full flex items-center justify-center lg:justify-end">
               <img
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e62f5a5d-f1c7-44f9-dbe0-8d2689942a00/public"
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f25e4025-739e-475f-13ae-f82e5e153e00/public"
                 alt="The company we keep - Brands we serve map"
-                className="w-full max-w-[626px] h-auto lg:w-auto lg:h-full lg:max-w-full object-contain object-center lg:object-right"
+                className="w-full max-w-[649px] h-auto lg:w-auto lg:h-full lg:max-w-full object-contain object-center lg:object-right py-[14px]"
               />
             </div>
           </div>
