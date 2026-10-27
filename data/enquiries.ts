@@ -4283,5 +4283,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gclid=CjwKCAjw9PvWBhAxEiwAddzYyaznpKYvw4vVBH5Jc4n0tiDPKCQUkNW7v_0AAE1FTLYmACJevpaTsRoCz3YQAvD_BwE",
     "type": "product",
     "createdAt": "2026-10-27T04:45:42.501Z"
+  },
+  "0c629e51-42c6-4be7-888c-69f6d0e7ac82": {
+    "id": "0c629e51-42c6-4be7-888c-69f6d0e7ac82",
+    "fullName": "mohit kumar Kaushish",
+    "companyName": "personal",
+    "email": "noni0611@gmail.com",
+    "phone": "9818261522",
+    "city": "New Delhi",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gbraid=0AAAAABUiSLxpJJvDv2jPtX9k_kweFTZpT&gclid=CjwKCAjw9PvWBhAxEiwAddzYyRTLkLbzffEzSfE6Kp5efBxhKReHw6r2C9Ob-xUz3lrZYquKkbH90RoCn8YQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-10-27T06:46:24.849Z"
   }
 };
