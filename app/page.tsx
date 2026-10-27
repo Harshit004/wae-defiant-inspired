@@ -417,7 +417,7 @@ export default function Home() {
         {/* Background Image (fits screen perfectly without overflow, keeping dimension ratio intact) */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cc3b1b73-75a4-479b-2161-92fed5778500/public"
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c917ec39-8efd-4f15-9063-04c3ea250200/public"
             alt="Hero background"
             fill
             priority
@@ -464,36 +464,60 @@ export default function Home() {
           <div className="md:hidden absolute bottom-0 left-0 right-0 border-b border-[#FFFFFF4D] z-[5]" />
         </div>
 
-        {/* Halloween Sound Toggle Switch */}
-        <button
-          type="button"
-          onClick={toggleHalloweenSound}
-          aria-label={isAudioPlaying ? "Mute halloween sound" : "Play halloween sound"}
-          title={isAudioPlaying ? "Mute sound" : "Play sound"}
-          className={`absolute z-20 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 ${
-            isAudioPlaying ? "opacity-100" : "opacity-40 hover:opacity-80"
-          }`}
+        {/* Halloween Banner & Sound Toggle Switch (Aligned in middle, 26px gap) */}
+        <div
+          className="absolute z-20 flex items-center pointer-events-auto"
           style={{
             right: "max(20px, calc(69 / 1440 * 100vw))",
             bottom: "max(20px, calc(97 / 1440 * 100vw))",
+            gap: "clamp(12px, calc(26 / 1440 * 100vw), 26px)",
           }}
         >
-          <div className="relative w-[24px] h-[24px] flex items-center justify-center">
+          {/* Banner Image (362x158 responsive, middle-aligned with toggle button) */}
+          <div
+            className="relative flex-shrink-0 select-none pointer-events-none"
+            style={{
+              width: "clamp(130px, calc(362 / 1440 * 100vw), 362px)",
+              aspectRatio: "1366 / 596",
+            }}
+          >
             <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/04a97efe-a544-4dfe-86ad-e4c66b5c4200/public"
-              alt="Halloween sound toggle"
-              width={24}
-              height={24}
-              className="w-[24px] h-[24px] object-contain select-none pointer-events-none"
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7b97d4c1-73ae-4b0a-3ac8-b9c6d0ee9d00/public"
+              alt="Halloween Happy Hour"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 150px, 362px"
+              priority
             />
-            {!isAudioPlaying && (
-              <span
-                className="absolute w-[24px] h-[2px] bg-red-500 rotate-45 pointer-events-none rounded-full"
-                style={{ boxShadow: "0 0 3px rgba(0,0,0,0.9)" }}
-              />
-            )}
           </div>
-        </button>
+
+          {/* Halloween Sound Toggle Switch */}
+          <button
+            type="button"
+            onClick={toggleHalloweenSound}
+            aria-label={isAudioPlaying ? "Mute halloween sound" : "Play halloween sound"}
+            title={isAudioPlaying ? "Mute sound" : "Play sound"}
+            className={`flex-shrink-0 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 ${
+              isAudioPlaying ? "opacity-100" : "opacity-40 hover:opacity-80"
+            }`}
+          >
+            <div className="relative w-[24px] h-[24px] flex items-center justify-center">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/04a97efe-a544-4dfe-86ad-e4c66b5c4200/public"
+                alt="Halloween sound toggle"
+                width={24}
+                height={24}
+                className="w-[24px] h-[24px] object-contain select-none pointer-events-none"
+              />
+              {!isAudioPlaying && (
+                <span
+                  className="absolute w-[24px] h-[2px] bg-red-500 rotate-45 pointer-events-none rounded-full"
+                  style={{ boxShadow: "0 0 3px rgba(0,0,0,0.9)" }}
+                />
+              )}
+            </div>
+          </button>
+        </div>
       </section>
 
       {/* Purpose, Philisophy & Principle Section */}
@@ -1480,7 +1504,7 @@ export default function Home() {
                     maxWidth: '100%',
                     marginRight: 'clamp(20px, 3.47vw, 50px)',
                     overflow: 'hidden',
-                    transform: 'translateY(-5%)',
+                    transform: 'translateY(-5%) scaleX(-1)',
                   }}
                 >
                   <div style={{ position: 'relative', width: '100%', height: '100%' }}>
@@ -1632,7 +1656,7 @@ export default function Home() {
                 maxWidth: '412px',
                 aspectRatio: '392 / 336',
                 overflow: 'hidden',
-                transform: 'translateY(-5%)',
+                transform: 'translateY(-5%) scaleX(-1)',
               }}
             >
               <div style={{ position: 'relative', width: '100%', height: '100%' }}>
@@ -2926,13 +2950,13 @@ export default function Home() {
         .animate-marquee-left {
           display: flex;
           width: max-content;
-          animation: marqueeScrollLeft 30s linear infinite;
+          animation: marqueeScrollLeft 60s linear infinite;
           will-change: transform;
         }
         .animate-marquee-right {
           display: flex;
           width: max-content;
-          animation: marqueeScrollRight 30s linear infinite;
+          animation: marqueeScrollRight 60s linear infinite;
           will-change: transform;
         }
         .animate-marquee-left:hover,
