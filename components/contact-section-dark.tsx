@@ -136,7 +136,8 @@ const ContactSectionDark = () => {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:gap-5">
                     <style jsx>{`
                         input::placeholder, textarea::placeholder {
-                            color: #FFFFFF4D !important;
+                            color: #FFFFFF !important;
+                            font-size: 13px;
                             opacity: 1;
                         }
                     `}</style>
@@ -145,7 +146,7 @@ const ContactSectionDark = () => {
                             type="text"
                             name="name"
                             placeholder="Name*"
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-[13px]"
                             required
                         />
                     </div>
@@ -156,7 +157,7 @@ const ContactSectionDark = () => {
                             placeholder="Your Email*"
                             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                             title="Please enter a valid email address"
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-[13px]"
                             required
                         />
                     </div>
@@ -170,7 +171,7 @@ const ContactSectionDark = () => {
                             pattern="[0-9]{10}"
                             inputMode="numeric"
                             title="Contact number must be exactly 10 digits"
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-[13px]"
                             required
                             onInput={(e) => {
                                 const target = e.target as HTMLInputElement;
@@ -183,7 +184,7 @@ const ContactSectionDark = () => {
                             type="text"
                             name="companyName"
                             placeholder="ABC Company*"
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-[13px]"
                         />
                     </div>
                     <div className="relative group">
@@ -191,7 +192,7 @@ const ContactSectionDark = () => {
                             type="text"
                             name="city"
                             placeholder="City*"
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-[13px]"
                             required
                         />
                     </div>
@@ -200,7 +201,7 @@ const ContactSectionDark = () => {
                             name="message"
                             placeholder="Message"
                             maxLength={2000}
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm resize-none h-20"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-[13px] resize-none h-20"
                         />
                     </div>
 
