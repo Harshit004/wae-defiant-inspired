@@ -1446,9 +1446,8 @@ export default function Home() {
                     color: '#AEAEAE',
                   }}
                 >
-                  “He who knows that <span style={{ color: '#FFFFFF' }}>enough</span><br />
-                  is <span style={{ color: '#FFFFFF' }}>enough</span> will always have<br />
-                  <span style={{ color: '#FFFFFF' }}>enough.</span> ”
+                  “He who knows that <span style={{ color: '#FFFFFF' }}>enough</span> is <span style={{ color: '#FFFFFF' }}>enough</span><br />
+                  will always have <span style={{ color: '#FFFFFF' }}>enough.</span> ”
                 </h3>
 
                 <div style={{ height: '35px' }} />
@@ -1705,14 +1704,13 @@ export default function Home() {
             style={{
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 400,
-              fontSize: '8vw',
+              fontSize: '5.6vw',
               lineHeight: '105%',
               color: '#AEAEAE',
             }}
           >
-            “He who knows that <span style={{ color: '#FFFFFF' }}>enough</span><br />
-            is <span style={{ color: '#FFFFFF' }}>enough</span> will always have<br />
-            <span style={{ color: '#FFFFFF' }}>enough.</span> ”
+            “He who knows that <span style={{ color: '#FFFFFF' }}>enough</span> is <span style={{ color: '#FFFFFF' }}>enough</span><br />
+            will always have <span style={{ color: '#FFFFFF' }}>enough.</span> ”
           </h3>
 
           <div style={{ height: '17px' }} />

@@ -80,33 +80,33 @@ const ContactSectionDark = () => {
     return (
         <div className="w-full bg-black text-white flex flex-col md:flex-row justify-between items-start">
             {/* Left Side */}
-            <div className="w-full md:w-[40%] flex flex-col md:self-stretch md:justify-between pt-12 md:pt-0">
-                <div>
-                    <h2 
-                        className="text-[36px] md:text-[60px] font-normal md:font-medium mb-[16px] md:mb-[24px]"
-                        style={{
-                            fontFamily: "'Inter Tight', sans-serif",
-                            lineHeight: '110%',
-                            color: '#FFFFFF'
-                        }}
-                    >
-                        Dialogues
-                    </h2>
-                    <p 
-                        className="text-[12px] md:text-[18px]"
-                        style={{
-                            fontFamily: "'Manrope', sans-serif",
-                            fontWeight: 400,
-                            lineHeight: '140%',
-                            color: '#FFFFFF',
-                            maxWidth: '350px'
-                        }}
-                    >
-                        A conversation worth beginning
-                    </p>
-                </div>
+            <div className="w-full md:w-[40%] flex flex-col pt-12 md:pt-0">
+                <h2 
+                    className="text-[36px] md:text-[60px] font-normal md:font-medium mb-[16px] md:mb-[24px]"
+                    style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        lineHeight: '110%',
+                        color: '#FFFFFF'
+                    }}
+                >
+                    Dialogues
+                </h2>
+                <p 
+                    className="text-[12px] md:text-[18px]"
+                    style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        lineHeight: '140%',
+                        color: '#FFFFFF',
+                        maxWidth: '350px'
+                    }}
+                >
+                    A conversation worth beginning
+                </p>
 
-                <div className="flex items-start gap-4 mt-8 md:mt-0">
+                <div style={{ height: '40px' }} />
+
+                <div className="flex items-start gap-4">
                     <div className="mt-1">{Icons.Email}</div>
                     <div className="flex flex-col gap-2">
                         <p style={{
