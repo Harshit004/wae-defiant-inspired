@@ -1333,7 +1333,7 @@ export default function Home() {
       {/* Carbon Neutral / Sustainability Section */}
       <section className="bg-black text-white md:border-b-0">
         {/* Desktop Layout */}
-        <div className="w-full hidden md:block border-b border-[#FFFFFF4D] py-[108px]" style={{ paddingLeft: '7.5vw', paddingRight: '7.5vw' }}>
+        <div className="w-full hidden md:block border-b border-[#FFFFFF4D] pt-[108px] pb-[68px]" style={{ paddingLeft: '7.5vw', paddingRight: '7.5vw' }}>
           
           <div className="w-full">
             <h3
@@ -1572,7 +1572,7 @@ export default function Home() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="w-full md:hidden flex flex-col py-[108px] px-[6.1vw] border-b border-[#FFFFFF4D]">
+        <div className="w-full md:hidden flex flex-col pt-[108px] pb-[68px] px-[6.1vw] border-b border-[#FFFFFF4D]">
           <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.58vw', lineHeight: '115%' }}>
             Sustainability
           </h3>
