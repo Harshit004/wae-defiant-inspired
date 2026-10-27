@@ -4306,5 +4306,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Plz jadi",
     "type": "contact-us",
     "createdAt": "2026-10-27T09:49:02.897Z"
+  },
+  "6e64b2e1-265e-4981-a17f-a4c8d5eb3b4d": {
+    "id": "6e64b2e1-265e-4981-a17f-a4c8d5eb3b4d",
+    "fullName": "Biju Pasung",
+    "companyName": "Biju Pasung",
+    "email": "pasungbiju294@gmail.com",
+    "phone": "8011852118",
+    "city": "Gulagat",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI1YPgmIjalwMVeUAPAh1lbyG6EAEYASAAEgJS0vD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-27T11:13:40.340Z"
   }
 };
