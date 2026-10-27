@@ -1331,10 +1331,9 @@ export default function Home() {
       {/* Carbon Neutral / Sustainability Section */}
       <section className="bg-black text-white md:border-b-0">
         {/* Desktop Layout */}
-        <div className="w-full hidden md:block border-b border-[#FFFFFF4D]" style={{ paddingBottom: '123px', paddingLeft: '7.5vw', paddingRight: '7.5vw' }}>
+        <div className="w-full hidden md:block border-b border-[#FFFFFF4D] py-[108px]" style={{ paddingLeft: '7.5vw', paddingRight: '7.5vw' }}>
           
           <div className="w-full">
-            <div style={{ height: '123px' }} />
             <h3
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
@@ -1469,16 +1468,17 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Earth video 392x336 (top aligned with text top in right column, pushed ~50px left from right edge) */}
+              {/* Earth video (increased by 5% to 412x353, pushed 5% upwards) */}
               <div className="w-full flex justify-end">
                 <div
                   className="relative"
                   style={{
-                    width: 'clamp(280px, 27.22vw, 392px)',
-                    height: 'clamp(240px, 23.33vw, 336px)',
+                    width: 'clamp(294px, 28.58vw, 412px)',
+                    height: 'clamp(252px, 24.5vw, 353px)',
                     maxWidth: '100%',
                     marginRight: 'clamp(20px, 3.47vw, 50px)',
                     overflow: 'hidden',
+                    transform: 'translateY(-5%)',
                   }}
                 >
                   <div style={{ position: 'relative', width: '100%', height: '100%' }}>
@@ -1569,7 +1569,7 @@ export default function Home() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="w-full md:hidden flex flex-col py-[20.35vw] px-[6.1vw] border-b border-[#FFFFFF4D]">
+        <div className="w-full md:hidden flex flex-col py-[108px] px-[6.1vw] border-b border-[#FFFFFF4D]">
           <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.58vw', lineHeight: '115%' }}>
             Sustainability
           </h3>
@@ -1621,14 +1621,15 @@ export default function Home() {
 
           <div style={{ height: '6vw' }} />
           
-          {/* Earth Video (392x336) */}
+          {/* Earth Video (increased by 5% to 412x353, pushed 5% upwards) */}
           <div className="w-full flex justify-center">
             <div
               className="relative w-full"
               style={{
-                maxWidth: '392px',
+                maxWidth: '412px',
                 aspectRatio: '392 / 336',
                 overflow: 'hidden',
+                transform: 'translateY(-5%)',
               }}
             >
               <div style={{ position: 'relative', width: '100%', height: '100%' }}>
