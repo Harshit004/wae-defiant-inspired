@@ -80,32 +80,33 @@ const ContactSectionDark = () => {
     return (
         <div className="w-full bg-black text-white flex flex-col md:flex-row justify-between items-start">
             {/* Left Side */}
-            <div className="w-full md:w-[40%] flex flex-col pt-12 md:pt-0">
-                <h2 
-                    className="text-[36px] md:text-[60px] font-normal md:font-medium mb-[18px] md:mb-[40px]"
-                    style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        lineHeight: '110%',
-                        color: '#FFFFFF'
-                    }}
-                >
-                    Dialogues
-                </h2>
-                <p 
-                    className="text-[12px] md:text-[18px]"
-                    style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 400,
-                        lineHeight: '140%',
-                        color: '#FFFFFF',
-                        marginBottom: '60px',
-                        maxWidth: '350px'
-                    }}
-                >
-                    A conversation worth beginning
-                </p>
+            <div className="w-full md:w-[40%] flex flex-col md:self-stretch md:justify-between pt-12 md:pt-0">
+                <div>
+                    <h2 
+                        className="text-[36px] md:text-[60px] font-normal md:font-medium mb-[16px] md:mb-[24px]"
+                        style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            lineHeight: '110%',
+                            color: '#FFFFFF'
+                        }}
+                    >
+                        Dialogues
+                    </h2>
+                    <p 
+                        className="text-[12px] md:text-[18px]"
+                        style={{
+                            fontFamily: "'Manrope', sans-serif",
+                            fontWeight: 400,
+                            lineHeight: '140%',
+                            color: '#FFFFFF',
+                            maxWidth: '350px'
+                        }}
+                    >
+                        A conversation worth beginning
+                    </p>
+                </div>
 
-                <div className="flex items-start gap-4 mt-auto">
+                <div className="flex items-start gap-4 mt-8 md:mt-0">
                     <div className="mt-1">{Icons.Email}</div>
                     <div className="flex flex-col gap-2">
                         <p style={{
@@ -131,8 +132,8 @@ const ContactSectionDark = () => {
             </div>
 
             {/* Right Side - Form */}
-            <div className="w-full md:w-[50%] mt-12 md:mt-0">
-                <form onSubmit={handleSubmit} className="flex flex-col gap-10">
+            <div className="w-full md:w-[50%] mt-8 md:mt-0">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:gap-5">
                     <style jsx>{`
                         input::placeholder, textarea::placeholder {
                             color: #FFFFFF4D !important;
@@ -144,7 +145,7 @@ const ContactSectionDark = () => {
                             type="text"
                             name="name"
                             placeholder="Name*"
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
                         />
                     </div>
@@ -155,7 +156,7 @@ const ContactSectionDark = () => {
                             placeholder="Your Email*"
                             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                             title="Please enter a valid email address"
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
                         />
                     </div>
@@ -169,7 +170,7 @@ const ContactSectionDark = () => {
                             pattern="[0-9]{10}"
                             inputMode="numeric"
                             title="Contact number must be exactly 10 digits"
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
                             onInput={(e) => {
                                 const target = e.target as HTMLInputElement;
@@ -182,7 +183,7 @@ const ContactSectionDark = () => {
                             type="text"
                             name="companyName"
                             placeholder="ABC Company*"
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                         />
                     </div>
                     <div className="relative group">
@@ -190,7 +191,7 @@ const ContactSectionDark = () => {
                             type="text"
                             name="city"
                             placeholder="City*"
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
                         />
                     </div>
@@ -199,14 +200,14 @@ const ContactSectionDark = () => {
                             name="message"
                             placeholder="Message"
                             maxLength={2000}
-                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm resize-none h-32"
+                            className="w-full bg-transparent border-b border-[#FFFFFF4D] py-2 md:py-2.5 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm resize-none h-20"
                         />
                     </div>
 
-                    <div className="mt-8">
+                    <div>
                         <button
                             type="submit"
-                            className="w-full h-[54px] bg-transparent text-white border border-white flex items-center justify-center gap-4 group transition-all duration-300 hover:bg-white hover:text-black"
+                            className="w-full h-[50px] bg-transparent text-white border border-white flex items-center justify-center gap-4 group transition-all duration-300 hover:bg-white hover:text-black"
                         >
                             <span style={{
                                 fontFamily: "'Inter Tight', sans-serif",
