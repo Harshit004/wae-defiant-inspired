@@ -10,6 +10,7 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
+import GhostCursor from "@/components/GhostCursor"
 import dynamic from "next/dynamic"
 // import LightweightRipple from "@/components/LightweightRipple"
 
@@ -404,7 +405,8 @@ export default function Home() {
   }
 
   return (
-    <main className="relative">
+    <main className="relative homepage-cursor">
+      <GhostCursor />
       <Header transparentBg />
 
       {/* HERO SECTION */}
@@ -1491,6 +1493,7 @@ export default function Home() {
                         left: 0,
                         height: '100%',
                         width: '100%',
+                        pointerEvents: 'none',
                       }}
                       allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                       allowFullScreen={true}
@@ -1642,6 +1645,7 @@ export default function Home() {
                     left: 0,
                     height: '100%',
                     width: '100%',
+                    pointerEvents: 'none',
                   }}
                   allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                   allowFullScreen={true}
