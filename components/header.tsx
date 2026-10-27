@@ -9,24 +9,30 @@ import { Menu, X } from "lucide-react"
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
 
+interface MenuItem {
+    text: string
+    href: string
+    isDeadLink?: boolean
+}
+
 // Menu data
-const productsItems = [
+const productsItems: MenuItem[] = [
     { text: "À propos", href: "/profile" },
     { text: "Portfolio", href: "/portfolio" },
     { text: "Reimagine Work", href: "/careers" },
 ]
-const blueprintItems = [
+const blueprintItems: MenuItem[] = [
     { text: "Sustainability", href: "/sustainability" },
     { text: "Activism", href: "/activism" },
-    { text: "Philanthropy", href: "/compliance" },
+    { text: "Philanthropy", href: "#", isDeadLink: true },
 ]
-const etceteraItems = [
+const etceteraItems: MenuItem[] = [
     { text: "Perspectives", href: "/perspectives" },
     { text: "Mentioned", href: "/news-and-updates" },
     { text: "Dialogue", href: "/contact-us" },
 ]
 
-const mobileMenuSections = [
+const mobileMenuSections: { category: string; items: MenuItem[] }[] = [
     {
         category: "INSIDE WAE",
         items: [
@@ -40,7 +46,7 @@ const mobileMenuSections = [
         items: [
             { text: "Sustainability", href: "/sustainability" },
             { text: "Activism", href: "/activism" },
-            { text: "Philanthropy", href: "/compliance" },
+            { text: "Philanthropy", href: "#", isDeadLink: true },
         ],
     },
     {
@@ -228,22 +234,49 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                         {/* Menu Items with 6px gap */}
                                         <div className="flex flex-col gap-[6px]">
                                             {sec.items.map((item, itemIdx) => (
-                                                <Link
-                                                    key={itemIdx}
-                                                    href={item.href}
-                                                    onClick={() => setMobileMenuOpen(false)}
-                                                    style={{
-                                                        fontFamily: "'Inter Tight', sans-serif",
-                                                        fontWeight: 400,
-                                                        fontSize: "20px",
-                                                        lineHeight: "105%",
-                                                        letterSpacing: "0%",
-                                                        color: "#FFFFFF",
-                                                    }}
-                                                    className="transition-colors hover:text-white/70"
-                                                >
-                                                    {item.text}
-                                                </Link>
+                                                item.isDeadLink ? (
+                                                    <div key={itemIdx} className="flex items-center gap-3 cursor-default select-none">
+                                                        <span
+                                                            style={{
+                                                                fontFamily: "'Inter Tight', sans-serif",
+                                                                fontWeight: 400,
+                                                                fontSize: "20px",
+                                                                lineHeight: "105%",
+                                                                letterSpacing: "0%",
+                                                                color: "#AEAEAE",
+                                                            }}
+                                                        >
+                                                            {item.text}
+                                                        </span>
+                                                        <img
+                                                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/18f6211c-9bbc-42d0-5640-8d5589020800/public"
+                                                            alt="Coming Soon"
+                                                            style={{
+                                                                height: "20px",
+                                                                aspectRatio: "65 / 14",
+                                                                objectFit: "contain",
+                                                                display: "inline-block",
+                                                            }}
+                                                        />
+                                                    </div>
+                                                ) : (
+                                                    <Link
+                                                        key={itemIdx}
+                                                        href={item.href}
+                                                        onClick={() => setMobileMenuOpen(false)}
+                                                        style={{
+                                                            fontFamily: "'Inter Tight', sans-serif",
+                                                            fontWeight: 400,
+                                                            fontSize: "20px",
+                                                            lineHeight: "105%",
+                                                            letterSpacing: "0%",
+                                                            color: "#FFFFFF",
+                                                        }}
+                                                        className="transition-colors hover:text-white/70"
+                                                    >
+                                                        {item.text}
+                                                    </Link>
+                                                )
                                             ))}
                                         </div>
                                     </div>
@@ -390,28 +423,46 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                         }}
                                     >
                                         {blueprintItems[i] ? (
-                                            <Link href={blueprintItems[i].href || "#"} className="contents">
-                                                <div className="c--anim-btn pb-2">
-                                                    <div className="text-container">
-                                                        <span className="c-anim-btn">{blueprintItems[i].text}</span>
-                                                        <span className="block">{blueprintItems[i].text}</span>
-                                                    </div>
-                                                    <span className="menu-arrow blueprint-arrow">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="12"
-                                                            height="12"
-                                                            viewBox="0 0 24 24"
-                                                            fill="none"
-                                                            stroke="currentColor"
-                                                            strokeWidth="2"
-                                                        >
-                                                            <line x1="5" y1="12" x2="19" y2="12" />
-                                                            <polyline points="12 5 19 12 12 19" />
-                                                        </svg>
+                                            blueprintItems[i].isDeadLink ? (
+                                                <div className="flex items-center gap-[6px] pb-2 cursor-default select-none">
+                                                    <span style={{ color: "#AEAEAE", whiteSpace: "nowrap" }}>
+                                                        {blueprintItems[i].text}
                                                     </span>
+                                                    <img
+                                                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/18f6211c-9bbc-42d0-5640-8d5589020800/public"
+                                                        alt="Coming Soon"
+                                                        style={{
+                                                            height: "12px",
+                                                            aspectRatio: "65 / 14",
+                                                            objectFit: "contain",
+                                                            display: "inline-block",
+                                                        }}
+                                                    />
                                                 </div>
-                                            </Link>
+                                            ) : (
+                                                <Link href={blueprintItems[i].href || "#"} className="contents">
+                                                    <div className="c--anim-btn pb-2">
+                                                        <div className="text-container">
+                                                            <span className="c-anim-btn">{blueprintItems[i].text}</span>
+                                                            <span className="block">{blueprintItems[i].text}</span>
+                                                        </div>
+                                                        <span className="menu-arrow blueprint-arrow">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="12"
+                                                                height="12"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                strokeWidth="2"
+                                                            >
+                                                                <line x1="5" y1="12" x2="19" y2="12" />
+                                                                <polyline points="12 5 19 12 12 19" />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                </Link>
+                                            )
                                         ) : null}
                                     </div>
                                     <div></div>

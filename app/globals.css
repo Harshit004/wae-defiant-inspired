@@ -108,3 +108,28 @@ padding-bottom: 20px;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
 }
 
+/* Homepage Ghost Cursor */
+@media (hover: hover) and (pointer: fine) {
+  html.homepage-ghost-cursor-active,
+  html.homepage-ghost-cursor-active body,
+  html.homepage-ghost-cursor-active a,
+  html.homepage-ghost-cursor-active button,
+  html.homepage-ghost-cursor-active [role="button"],
+  html.homepage-ghost-cursor-active .cursor-pointer {
+    cursor: none !important;
+  }
+
+  html.homepage-ghost-cursor-active input:focus,
+  html.homepage-ghost-cursor-active textarea:focus {
+    cursor: text !important;
+  }
+}
+
+/* Fallback native cursor for homepage */
+.homepage-cursor {
+  cursor: url('/ghost-cursor.png') 16 2,
+          url('https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8e483afa-d843-477f-e2f8-8b17703fa700/public') 16 2,
+          auto;
+}
+
+

@@ -10,8 +10,9 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
+import GhostCursor from "@/components/GhostCursor"
 import dynamic from "next/dynamic"
-import LightweightRipple from "@/components/LightweightRipple"
+// import LightweightRipple from "@/components/LightweightRipple"
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
@@ -197,6 +198,36 @@ const MobileProductCarousel = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
+const sectorsRow1 = [
+  {
+    name: 'Corporate',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3377d5c7-cc8b-48da-02a8-047ba09d6a00/public',
+  },
+  {
+    name: 'Hospitality',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d64e3fde-83e0-43e0-e0d9-625eb4b6bf00/public',
+  },
+  {
+    name: 'Education',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4efa005e-5156-4427-6893-5a8b27cde800/public',
+  },
+]
+
+const sectorsRow2 = [
+  {
+    name: 'Healthcare',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a4022f96-a986-4a49-f5ff-bf6d785f8900/public',
+  },
+  {
+    name: 'BFSI',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/836e8835-2b94-45d4-fcdd-8c760d8b6300/public',
+  },
+  {
+    name: 'Consultancy',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5226aae0-7c1e-4141-35c7-6adf421a4a00/public',
+  },
+]
+
 export default function Home() {
   // State variables
   const [activeSection, setActiveSection] = useState(0)
@@ -306,25 +337,114 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
+  // Measure position of 'water' word to align Earth video center vertically
+  const waterWordRef = useRef<HTMLSpanElement>(null)
+  const [waterCenterX, setWaterCenterX] = useState<number | null>(null)
+
+  useEffect(() => {
+    const updateWaterPos = () => {
+      if (waterWordRef.current) {
+        setWaterCenterX(waterWordRef.current.offsetLeft + waterWordRef.current.offsetWidth / 2)
+      }
+    }
+    updateWaterPos()
+    if (typeof document !== "undefined" && document.fonts) {
+      document.fonts.ready.then(updateWaterPos)
+    }
+    window.addEventListener("resize", updateWaterPos)
+    return () => window.removeEventListener("resize", updateWaterPos)
+  }, [])
+
+  // Halloween Sound State & Toggle
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const userMutedAudioRef = useRef(false)
+
+  useEffect(() => {
+    const audio = new Audio("/halloween-sound.mp3")
+    audio.loop = true
+    audio.preload = "auto"
+    audioRef.current = audio
+
+    const playAudio = () => {
+      audio
+        .play()
+        .then(() => {
+          setIsAudioPlaying(true)
+        })
+        .catch(() => {
+          setIsAudioPlaying(false)
+        })
+    }
+
+    // Attempt autoplay immediately
+    playAudio()
+
+    // Handle browsers blocking unmuted autoplay until user gesture
+    const handleFirstGesture = () => {
+      if (!userMutedAudioRef.current && audioRef.current && audioRef.current.paused) {
+        playAudio()
+      }
+      removeGestureListeners()
+    }
+
+    const removeGestureListeners = () => {
+      window.removeEventListener("click", handleFirstGesture)
+      window.removeEventListener("scroll", handleFirstGesture)
+      window.removeEventListener("touchstart", handleFirstGesture)
+      window.removeEventListener("keydown", handleFirstGesture)
+    }
+
+    window.addEventListener("click", handleFirstGesture)
+    window.addEventListener("scroll", handleFirstGesture)
+    window.addEventListener("touchstart", handleFirstGesture)
+    window.addEventListener("keydown", handleFirstGesture)
+
+    return () => {
+      removeGestureListeners()
+      audio.pause()
+      audio.src = ""
+    }
+  }, [])
+
+  const toggleHalloweenSound = () => {
+    if (!audioRef.current) return
+    if (isAudioPlaying) {
+      audioRef.current.pause()
+      setIsAudioPlaying(false)
+      userMutedAudioRef.current = true
+    } else {
+      userMutedAudioRef.current = false
+      audioRef.current
+        .play()
+        .then(() => setIsAudioPlaying(true))
+        .catch(() => {})
+    }
+  }
+
   return (
-    <main className="relative">
+    <main className="relative homepage-cursor">
+      <GhostCursor />
       <Header transparentBg />
 
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
+        className="w-full relative bg-black h-screen h-[100svh] flex flex-col overflow-hidden"
       >
-        {/* Background Image determining the height of the section naturally */}
-        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public" />
-        </div>
-        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1440/691]">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
+        {/* Background Image (fits screen perfectly without overflow, keeping dimension ratio intact) */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c917ec39-8efd-4f15-9063-04c3ea250200/public"
+            alt="Hero background"
+            fill
+            priority
+            className="object-cover object-center"
+          />
         </div>
 
         {/* Hero Content Text (Topmost) */}
-        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
+        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[130px] pb-[30px]">
           <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
             <div
               className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
@@ -350,6 +470,7 @@ export default function Home() {
                   letterSpacing: "0%",
                   verticalAlign: "middle",
                   margin: 0,
+                  fontFamily: "'Inter Tight', sans-serif",
                 }}
               >
                 Our Green is Blue
@@ -360,6 +481,61 @@ export default function Home() {
           {/* Mobile divider at the bottom of the hero section */}
           <div className="md:hidden absolute bottom-0 left-0 right-0 border-b border-[#FFFFFF4D] z-[5]" />
         </div>
+
+        {/* Halloween Banner & Sound Toggle Switch (Aligned in middle, 26px gap) */}
+        <div
+          className="absolute z-20 flex items-center pointer-events-auto"
+          style={{
+            right: "max(20px, calc(69 / 1440 * 100vw))",
+            bottom: "max(20px, calc(97 / 1440 * 100vw))",
+            gap: "clamp(12px, calc(26 / 1440 * 100vw), 26px)",
+          }}
+        >
+          {/* Banner Image (362x158 responsive, middle-aligned with toggle button) */}
+          <div
+            className="relative flex-shrink-0 select-none pointer-events-none"
+            style={{
+              width: "clamp(130px, calc(362 / 1440 * 100vw), 362px)",
+              aspectRatio: "1366 / 596",
+            }}
+          >
+            <Image
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7b97d4c1-73ae-4b0a-3ac8-b9c6d0ee9d00/public"
+              alt="Halloween Happy Hour"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 150px, 362px"
+              priority
+            />
+          </div>
+
+          {/* Halloween Sound Toggle Switch */}
+          <button
+            type="button"
+            onClick={toggleHalloweenSound}
+            aria-label={isAudioPlaying ? "Mute halloween sound" : "Play halloween sound"}
+            title={isAudioPlaying ? "Mute sound" : "Play sound"}
+            className={`flex-shrink-0 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 ${
+              isAudioPlaying ? "opacity-100" : "opacity-40 hover:opacity-80"
+            }`}
+          >
+            <div className="relative w-[24px] h-[24px] flex items-center justify-center">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/04a97efe-a544-4dfe-86ad-e4c66b5c4200/public"
+                alt="Halloween sound toggle"
+                width={24}
+                height={24}
+                className="w-[24px] h-[24px] object-contain select-none pointer-events-none"
+              />
+              {!isAudioPlaying && (
+                <span
+                  className="absolute w-[24px] h-[2px] bg-red-500 rotate-45 pointer-events-none rounded-full"
+                  style={{ boxShadow: "0 0 3px rgba(0,0,0,0.9)" }}
+                />
+              )}
+            </div>
+          </button>
+        </div>
       </section>
 
       {/* Purpose, Philisophy & Principle Section */}
@@ -368,268 +544,259 @@ export default function Home() {
           <div className="hidden md:grid grid-cols-3 h-full border-b border-[#FFFFFF4D]">
             {/* Column 1: Purpose */}
             <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col justify-between w-full max-w-[320px] h-full py-[100px]">
-                <div>
-                  <h2
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '40px',
-                      lineHeight: '110%',
-                      letterSpacing: '0%',
-                    }}
-                  >
-                    Purpose
-                  </h2>
-                  <div style={{ height: '32px' }} />
-                  <h3
-                    className="text-white group-hover:text-white"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 700,
-                      fontSize: '12px',
-                      lineHeight: '100%',
-                    }}
-                  >
-                    Being Sustainable
-                  </h3>
-                  <div style={{ height: '12px' }} />
-                  <p
-                    className="text-white/60 group-hover:text-white"
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '12px',
-                      lineHeight: '140%',
-                    }}
-                  >
-                    The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
-                  </p>
-                  <div style={{ height: '12px' }} />
-                  <p
-                    className="text-white/60 group-hover:text-white"
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '12px',
-                      lineHeight: '140%',
-                    }}
-                  >
-                    Our work is an expression of that belief—that human ingenuity can serve the natural order on which all life depends.
-                  </p>
-                </div>
-                <div className="mt-auto">
-                  <Link href="/profile" className="contents">
-                    <HoverButton theme="transparent-white">
-                      {(hovered) => (
-                        <>
-                          Know More
-                          <div className="relative inline-block w-4 h-4">
+              <div className="flex flex-col w-full max-w-[320px]">
+                <h2
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '40px',
+                    lineHeight: '110%',
+                    letterSpacing: '0%',
+                  }}
+                >
+                  Purpose
+                </h2>
+                <div style={{ height: '32px' }} />
+                <h3
+                  className="text-white group-hover:text-white"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                  }}
+                >
+                  Being Sustainable
+                </h3>
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
+                </p>
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
+                </p>
+                <div style={{ height: '32px' }} />
+                <Link href="/profile" className="contents">
+                  <HoverButton theme="transparent-white">
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
                             <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                              alt="icon default"
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
                               width={16}
                               height={16}
                               className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                             />
-                            <motion.div
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: hovered ? 1 : 0 }}
-                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                              className="absolute top-0 left-0"
-                            >
-                              <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                              />
-                            </motion.div>
-                          </div>
-                        </>
-                      )}
-                    </HoverButton>
-                  </Link>
-                </div>
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
 
             {/* Column 2: Philosophy */}
             <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col justify-between w-full max-w-[320px] h-full py-[100px]">
-                <div>
-                  <h2
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '40px',
-                      lineHeight: '110%',
-                      letterSpacing: '0%',
-                    }}
-                  >
-                    Philosophy
-                  </h2>
-                  <div style={{ height: '32px' }} />
-                  <h3
-                    className="text-white group-hover:text-white"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 700,
-                      fontSize: '12px',
-                      lineHeight: '100%',
-                    }}
-                  >
-                    Our Green Is Blue
-                  </h3>
-                  <div style={{ height: '12px' }} />
-                  <p
-                    className="text-white/60 group-hover:text-white"
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '12px',
-                      lineHeight: '140%',
-                    }}
-                  >
-                    At WAE, sustainability begins with water. Blue is the resource we protect, the science we apply and the future we seek to make possible. We engineer water as a circular asset from intake and purification to use, recovery and reuse.
-                  </p>
-                  <div style={{ height: '12px' }} />
-                  <p
-                    className="text-white/60 group-hover:text-white"
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '12px',
-                      lineHeight: '140%',
-                    }}
-                  >
-                    Each system is an opportunity to conserve resources, reduce emissions and move closer to carbon-neutral water. Our green is blue because a more sustainable world depends on what we do with every drop.
-                  </p>
-                </div>
-                <div className="mt-auto">
-                  <Link href="/sustainability" className="contents">
-                    <HoverButton theme="transparent-white">
-                      {(hovered) => (
-                        <>
-                          Know More
-                          <div className="relative inline-block w-4 h-4">
+              <div className="flex flex-col w-full max-w-[320px]">
+                <h2
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '40px',
+                    lineHeight: '110%',
+                    letterSpacing: '0%',
+                  }}
+                >
+                  Philosophy
+                </h2>
+                <div style={{ height: '32px' }} />
+                <h3
+                  className="text-white group-hover:text-white"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                  }}
+                >
+                  Our Green Is Blue
+                </h3>
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
+                </p>
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
+                </p>
+                <div style={{ height: '32px' }} />
+                <Link href="/sustainability" className="contents">
+                  <HoverButton theme="transparent-white">
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
                             <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                              alt="icon default"
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
                               width={16}
                               height={16}
                               className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                             />
-                            <motion.div
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: hovered ? 1 : 0 }}
-                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                              className="absolute top-0 left-0"
-                            >
-                              <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                              />
-                            </motion.div>
-                          </div>
-                        </>
-                      )}
-                    </HoverButton>
-                  </Link>
-                </div>
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
 
             {/* Column 3: Principle */}
             <div className="flex flex-col h-full items-center justify-center px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col justify-between w-full max-w-[320px] h-full py-[100px]">
-                <div>
-                  <h2
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '40px',
-                      lineHeight: '110%',
-                      letterSpacing: '0%',
-                    }}
-                  >
-                    Practices
-                  </h2>
-                  <div style={{ height: '32px' }} />
-                  <h3
-                    className="text-white group-hover:text-white"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontWeight: 700,
-                      fontSize: '12px',
-                      lineHeight: '100%',
-                    }}
-                  >
-                    From Water Intake to Water Use
-                  </h3>
-                  <div style={{ height: '12px' }} />
-                  <p
-                    className="text-white/60 group-hover:text-white"
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '12px',
-                      lineHeight: '140%',
-                    }}
-                  >
-                    WAE engineers water from intake to recovery and reuse, configuring treatment around source chemistry and demand to conserve resources. On-site purification and dispensing reduce packaged water reliance and Scope 3 emissions.
-                  </p>
-                  <div style={{ height: '12px' }} />
-                  <p
-                    className="text-white/60 group-hover:text-white"
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '12px',
-                      lineHeight: '140%',
-                    }}
-                  >
-                    Membrane-based treatment enables wastewater reuse, while digital monitoring measures quality, consumption and recovery advancing our carbon-neutral water ambition.
-                  </p>
-                </div>
-                <div className="mt-auto">
-                  <Link href="/careers" className="contents">
-                    <HoverButton theme="transparent-white">
-                      {(hovered) => (
-                        <>
-                          Know More
-                          <div className="relative inline-block w-4 h-4">
+              <div className="flex flex-col w-full max-w-[320px]">
+                <h2
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '40px',
+                    lineHeight: '110%',
+                    letterSpacing: '0%',
+                  }}
+                >
+                  Principle
+                </h2>
+                <div style={{ height: '32px' }} />
+                <h3
+                  className="text-white group-hover:text-white"
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: '12px',
+                    lineHeight: '100%',
+                  }}
+                >
+                  People First
+                </h3>
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
+                </p>
+                <div style={{ height: '12px' }} />
+                <p
+                  className="text-white/60 group-hover:text-white"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '140%',
+                  }}
+                >
+                  In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
+                </p>
+                <div style={{ height: '32px' }} />
+                <Link href="/careers" className="contents">
+                  <HoverButton theme="transparent-white">
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
                             <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                              alt="icon default"
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
                               width={16}
                               height={16}
                               className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                             />
-                            <motion.div
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: hovered ? 1 : 0 }}
-                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                              className="absolute top-0 left-0"
-                            >
-                              <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                              />
-                            </motion.div>
-                          </div>
-                        </>
-                      )}
-                    </HoverButton>
-                  </Link>
-                </div>
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
               </div>
             </div>
           </div>
@@ -683,7 +850,7 @@ export default function Home() {
                       lineHeight: '120%',
                     }}
                   >
-                    Our work is an expression of that belief—that human ingenuity can serve the natural order on which all life depends.
+                    WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
                   </p>
                   <div style={{ height: '12.21vw' }} />
                   <Link href="/profile" className="contents">
@@ -758,7 +925,7 @@ export default function Home() {
                       lineHeight: '120%',
                     }}
                   >
-                    At WAE, sustainability begins with water. Blue is the resource we protect, the science we apply and the future we seek to make possible. We engineer water as a circular asset from intake and purification to use, recovery and reuse.
+                    It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
                   </p>
                   <div style={{ height: '3.05vw' }} />
                   <p
@@ -770,7 +937,7 @@ export default function Home() {
                       lineHeight: '120%',
                     }}
                   >
-                    Each system is an opportunity to conserve resources, reduce emissions and move closer to carbon-neutral water. Our green is blue because a more sustainable world depends on what we do with every drop.
+                    At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
                   </p>
                   <div style={{ height: '12.21vw' }} />
                   <Link href="/sustainability" className="contents">
@@ -821,7 +988,7 @@ export default function Home() {
                       letterSpacing: '0%',
                     }}
                   >
-                    Practices
+                    Principle
                   </h2>
                   <div style={{ height: '6.1vw' }} />
                   <h3
@@ -833,7 +1000,7 @@ export default function Home() {
                       lineHeight: '100%',
                     }}
                   >
-                    From Water Intake to Water Use
+                    People First
                   </h3>
                   <div style={{ height: '3.05vw' }} />
                   <p
@@ -845,7 +1012,7 @@ export default function Home() {
                       lineHeight: '120%',
                     }}
                   >
-                    WAE engineers water from intake to recovery and reuse, configuring treatment around source chemistry and demand to conserve resources. On-site purification and dispensing reduce packaged water reliance and Scope 3 emissions.
+                    People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
                   </p>
                   <div style={{ height: '3.05vw' }} />
                   <p
@@ -857,7 +1024,7 @@ export default function Home() {
                       lineHeight: '120%',
                     }}
                   >
-                    Membrane-based treatment enables wastewater reuse, while digital monitoring measures quality, consumption and recovery advancing our carbon-neutral water ambition.
+                    In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
                   </p>
                   <div style={{ height: '12.21vw' }} />
                   <Link href="/careers" className="contents">
@@ -957,7 +1124,7 @@ export default function Home() {
 
           <div className="hidden md:grid grid-cols-4 w-full" style={{ height: '506px' }}>
             {/* Aurela */}
-            <Link href="/portfolio/trublu/aurela" className="relative group cursor-pointer h-full overflow-hidden block">
+            <Link href="/product-description-page?product=aurela" className="relative group cursor-pointer h-full overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/317e8eb4-d823-462a-c1d3-54cd0664ea00/public"
                 alt="Aurela"
@@ -984,7 +1151,7 @@ export default function Home() {
             </Link>
 
             {/* Reva */}
-            <Link href="/portfolio/bluwae/reva" className="relative group cursor-pointer h-full overflow-hidden block">
+            <Link href="/product-description-page?product=reva" className="relative group cursor-pointer h-full overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/62a8a1c0-fffe-44c2-5ae2-ed461e445600/public"
                 alt="Reva"
@@ -1011,7 +1178,7 @@ export default function Home() {
             </Link>
 
             {/* Venus */}
-            <Link href="/portfolio/bluwae/venus" className="relative group cursor-pointer h-full overflow-hidden block">
+            <Link href="/product-description-page?product=venus" className="relative group cursor-pointer h-full overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3ed4ddbf-f8ce-4cdb-f703-41fa25cbf400/public"
                 alt="Venus"
@@ -1099,7 +1266,7 @@ export default function Home() {
 
           <MobileProductCarousel>
               {/* Aurela */}
-              <Link href="/portfolio/trublu/aurela" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block" style={{ border: '0.67px solid #FFFFFF80' }}>
+              <Link href="/product-description-page?product=aurela" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/317e8eb4-d823-462a-c1d3-54cd0664ea00/public"
                   alt="Aurela"
@@ -1127,7 +1294,7 @@ export default function Home() {
 
 
               {/* Reva */}
-              <Link href="/portfolio/bluwae/reva" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block" style={{ border: '0.67px solid #FFFFFF80' }}>
+              <Link href="/product-description-page?product=reva" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/62a8a1c0-fffe-44c2-5ae2-ed461e445600/public"
                   alt="Reva"
@@ -1155,7 +1322,7 @@ export default function Home() {
 
 
               {/* Venus */}
-              <Link href="/portfolio/bluwae/venus" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block" style={{ border: '0.67px solid #FFFFFF80' }}>
+              <Link href="/product-description-page?product=venus" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3ed4ddbf-f8ce-4cdb-f703-41fa25cbf400/public"
                   alt="Venus"
@@ -1183,7 +1350,7 @@ export default function Home() {
 
 
               {/* View All */}
-              <Link href="/portfolio" className="h-[128.75vw] bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]" style={{ border: '0.67px solid #FFFFFF80' }}>
+              <Link href="/portfolio" className="h-[128.75vw] bg-[#004063] flex items-center justify-center cursor-pointer transition-colors hover:bg-[#00304a]">
                 <div
                   className="rounded-full border border-white flex items-center justify-center"
                   style={{
@@ -1205,285 +1372,403 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Carbon Neutral Section */}
+      {/* Carbon Neutral / Sustainability Section */}
       <section className="bg-black text-white md:border-b-0">
         {/* Desktop Layout */}
-        <div className="w-full hidden md:block border-b border-[#FFFFFF4D]" style={{ paddingBottom: '123px', paddingLeft: '7.5vw', paddingRight: '7.5vw' }}>
+        <div className="w-full hidden md:block border-b border-[#FFFFFF4D] pt-[108px] pb-[68px]" style={{ paddingLeft: '7.5vw', paddingRight: '7.5vw' }}>
           
-        <div className="w-full">
-          <div style={{ height: '123px' }} />
-          <h3
-            style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontWeight: 400,
-              fontStyle: 'normal',
-              fontSize: '24px',
-              lineHeight: '110%',
-              letterSpacing: '0px',
-              verticalAlign: 'middle',
-              color: '#FFFFFF'
-            }}
-          >
-            Sustainability
-          </h3>
-          <div style={{ height: '26px' }} />
-        </div>
-        <div className="flex justify-between items-stretch w-full">
+          <div className="w-full">
+            <h3
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontStyle: 'normal',
+                fontSize: '24px',
+                lineHeight: '110%',
+                letterSpacing: '0px',
+                verticalAlign: 'middle',
+                color: '#FFFFFF'
+              }}
+            >
+              Sustainability
+            </h3>
+            <div style={{ height: '26px' }} />
+          </div>
 
-          {/* Left Column */}
-          <div style={{ width: '44.93vw' }} className="flex flex-col justify-between self-stretch">
-            <div>
+          {/* Top Row: Heading on left, Quote on right */}
+          <div className="flex justify-between items-stretch w-full">
+            {/* Left Column - Heading & Subtitle */}
+            <div style={{ width: '44.93vw', maxWidth: '645px' }} className="relative flex flex-col">
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
-                  fontSize: '40px',
+                  fontStyle: 'normal',
+                  fontSize: '60px',
                   lineHeight: '110%',
+                  letterSpacing: '0px',
+                  verticalAlign: 'middle',
                   color: '#FFFFFF'
                 }}
               >
-                Positive Hydration for a Net<br />Zero Future
+                Earth, Our Only<br />Shareholder
               </h2>
-              <div style={{ height: '32px' }} />
+              <div style={{ height: '31px' }} />
               <p
-                className="leading-normal"
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
+                  fontStyle: 'normal',
                   fontSize: '14px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
                   color: '#AEAEAE'
                 }}
               >
-                Carbon neutrality isn't an afterthought at WAE.<br />It is built into every stage.
+                A ledger of people, planet, and profit and the <span ref={waterWordRef}>water</span> that connects them all.
               </p>
+              <div style={{ height: '60px' }} />
             </div>
 
-            {/* Image pinned to bottom */}
-            <div className="mt-auto w-full">
-              <motion.div
-                initial={{ filter: 'grayscale(100%)' }}
-                whileHover={{ filter: 'grayscale(0%)' }}
-                transition={{ duration: 0.8 }}
-                className="w-full h-auto cursor-pointer block leading-none"
-              >
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fd6e76cf-b35a-46af-de19-8caa2b168300/public"
-                  alt="Carbon Neutral Illustration"
-                  width={645}
-                  height={362}
-                  className="w-full h-auto object-cover block"
-                />
-              </motion.div>
+            {/* Right Column - Quote & Author */}
+            <div style={{ width: '42vw', maxWidth: '610px' }} className="flex flex-col justify-between">
+              <div>
+                <h3
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: 'normal',
+                    fontSize: '44px',
+                    lineHeight: '105%',
+                    letterSpacing: '0%',
+                    verticalAlign: 'middle',
+                    color: '#AEAEAE',
+                  }}
+                >
+                  “He who knows that <span style={{ color: '#FFFFFF' }}>enough</span><br />
+                  is <span style={{ color: '#FFFFFF' }}>enough</span> will always have<br />
+                  <span style={{ color: '#FFFFFF' }}>enough.</span> ”
+                </h3>
+
+                <div style={{ height: '35px' }} />
+
+                <div className="w-full flex justify-end">
+                  <span
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontStyle: 'normal',
+                      fontSize: '16px',
+                      lineHeight: '105%',
+                      letterSpacing: '0%',
+                      verticalAlign: 'middle',
+                      color: '#FFFFFF',
+                    }}
+                  >
+                    - Lao Tzu
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Column */}
-          <div style={{ width: '34.93vw' }}>
+          {/* Bottom Row: Button & Earth Video on left aligned with Horizontal Line & Text Columns on right */}
+          <div className="flex justify-between items-start w-full">
+            {/* Left Column - Button & Earth Video */}
+            <div style={{ width: '44.93vw', maxWidth: '645px' }} className="w-full flex flex-col relative">
+              <div className="relative z-10 flex items-start" style={{ height: '49px' }}>
+                <Link href="/sustainability" className="contents">
+                  <HoverButton theme="transparent-white">
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                            />
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
+              </div>
 
-            {/* 1. Purpose, Measured. Progress, Accountable. */}
-            <div className="flex flex-col">
-              <h4
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  color: '#FFFFFF'
-                }}
-              >
-                1. Purpose, Measured. Progress, Accountable.
-              </h4>
-              <div style={{ height: '12px' }} />
-              <p
-                className="leading-normal"
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  color: '#AEAEAE'
-                }}
-              >
-                WAE embeds sustainability into engineering, operations and governance supported by EcoVadis recognition, reinforced through our UN Global Compact commitments, and advanced through SBTi-aligned decarbonisation goals. Our focus is measurable: lower carbon intensity, circular water systems, responsible materials, ethical enterprise and progressively reduced lifecycle environmental impact.
-              </p>
-              <div style={{ height: '22px' }} />
-              <div className="w-full h-px bg-[#FFFFFF4D]" />
+              {/* Earth video (center aligned vertically with the word 'water' in subtext) */}
+              <div className="w-full relative z-0">
+                <div
+                  className="relative"
+                  style={{
+                    width: 'clamp(294px, 28.58vw, 412px)',
+                    height: 'clamp(252px, 24.5vw, 353px)',
+                    maxWidth: '100%',
+                    marginLeft: waterCenterX !== null
+                      ? `max(0px, calc(${waterCenterX}px - clamp(294px, 28.58vw, 412px) / 2))`
+                      : 'max(0px, calc(306.3px - clamp(294px, 28.58vw, 412px) / 2))',
+                    overflow: 'hidden',
+                    transform: 'translateY(-5%) scaleX(-1)',
+                  }}
+                >
+                  <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                    <iframe
+                      src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d504f9762d02a41de4b5b5010d52e126/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd504f9762d02a41de4b5b5010d52e126%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+                      style={{
+                        border: 'none',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        height: '100%',
+                        width: '100%',
+                        pointerEvents: 'none',
+                      }}
+                      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                      allowFullScreen={true}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div style={{ height: '48px' }} />
+            {/* Right Column - Horizontal Line & Two Text Columns */}
+            <div style={{ width: '42vw', maxWidth: '610px' }} className="flex flex-col">
+              <div style={{ height: '49px' }} className="flex flex-col justify-start">
+                {/* Horizontal line aligned with button top */}
+                <div className="w-full h-px bg-[#FFFFFF4D]" />
+              </div>
 
-            {/* 2. Carbon Neutrality by Design */}
-            <div className="flex flex-col">
-              <h4
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  color: '#FFFFFF'
-                }}
-              >
-                2. Carbon Neutrality by Design
-              </h4>
-              <div style={{ height: '12px' }} />
-              <p
-                className="leading-normal"
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  color: '#AEAEAE'
-                }}
-              >
-                WAE engineers decarbonisation into the water lifecycle through in-situ purification, reduced packaging, lower logistics intensity, energy-efficient thermal systems, circular water use and lifecycle optimisation—progressively reducing embedded and operational carbon while advancing our ambition for Carbon Neutral Water.
-              </p>
-              <div style={{ height: '22px' }} />
-              <div className="w-full h-px bg-[#FFFFFF4D]" />
+              {/* Two sub-columns */}
+              <div className="grid grid-cols-2 gap-8 lg:gap-12">
+                {/* Sub-column 1 */}
+                <div
+                  className="flex flex-col space-y-4"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: 'normal',
+                    fontSize: '14px',
+                    lineHeight: '135%',
+                    letterSpacing: '0%',
+                    verticalAlign: 'middle',
+                    color: '#AEAEAE',
+                  }}
+                >
+                  <p>
+                    It does not attend AGMs. It signs no term sheets. It cannot vote against us.
+                  </p>
+                  <p>
+                    But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life.
+                  </p>
+                  <p>
+                    For us, this recognition is not philosophical. It is operational.
+                  </p>
+                  <p>
+                    Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business.
+                  </p>
+                </div>
+
+                {/* Sub-column 2 */}
+                <div
+                  className="flex flex-col space-y-4"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: 'normal',
+                    fontSize: '14px',
+                    lineHeight: '135%',
+                    letterSpacing: '0%',
+                    verticalAlign: 'middle',
+                    color: '#AEAEAE',
+                  }}
+                >
+                  <p>
+                    It is the context within which our business is allowed to exist.
+                  </p>
+                  <p>
+                    In this view, sustainability is not an initiative layered onto business strategy.<br />
+                    It is the condition that determines whether that strategy is viable at all.
+                  </p>
+                  <p>
+                    This is our account of stewardship to the only shareholder that was always there In place of Place of progress report as in above para
+                  </p>
+                </div>
+              </div>
             </div>
-
-            <div style={{ height: '48px' }} />
-
-            {/* 3. With Scope 3 in Focus */}
-            <div className="flex flex-col">
-              <h4
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  color: '#FFFFFF'
-                }}
-              >
-                3. With Scope 3 in Focus
-              </h4>
-              <div style={{ height: '12px' }} />
-              <p
-                className="leading-normal"
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  color: '#AEAEAE'
-                }}
-              >
-                Our ESG architecture extends beyond direct operations to the broader value chain. Through responsible sourcing, lifecycle assessment, digital measurement, resource efficiency and elimination of avoidable packaging and transport, WAE targets material reductions in Scope 3 emissions while strengthening governance, transparency and stakeholder accountability.
-              </p>
-              <div style={{ height: '22px' }} />
-              <div className="w-full h-px bg-[#FFFFFF4D]" />
-            </div>
-
-            <div style={{ height: '48px' }} />
-
-            {/* 4. Net Zero Alignment */}
-            <div className="flex flex-col">
-              <h4
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  color: '#FFFFFF'
-                }}
-              >
-                4. Net Zero Alignment
-              </h4>
-              <div style={{ height: '12px' }} />
-              <p
-                className="leading-normal"
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  color: '#AEAEAE'
-                }}
-              >
-                WAE's net-zero pathway integrates science-based target setting, energy efficiency, renewable integration, process optimisation, circular materials and measurable carbon accounting. Our approach is aligned with SBTi principles, progressively linking engineering decisions, operational performance and value-chain decarbonisation to a credible long-term transition toward net-zero emissions.
-              </p>
-            </div>
-
           </div>
-        </div>
       
         </div>
 
         {/* Mobile Layout */}
-        <div className="w-full md:hidden flex flex-col py-[20.35vw] px-[6.1vw] border-b border-[#FFFFFF4D]">
+        <div className="w-full md:hidden flex flex-col pt-[108px] pb-[68px] px-[6.1vw] border-b border-[#FFFFFF4D]">
           <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.58vw', lineHeight: '115%' }}>
             Sustainability
           </h3>
           <div style={{ height: '7.12vw' }} />
-          <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: '7.12vw', lineHeight: '105%' }}>
-            Carbon Neutral water from water intake to water reuse
+          <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '7.12vw', lineHeight: '105%' }}>
+            Earth, Our Only Shareholder
           </h2>
-          <div style={{ height: '5.59vw' }} />
-          <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '100%', color: '#AEAEAE' }}>
-            Carbon neutrality isn't an afterthought at WAE. It is built into every stage.
+          <div style={{ height: '3.5vw' }} />
+          <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
+            A ledger of people, planet, and profit and the water that connects them all.
           </p>
-          <div style={{ height: '19.84vw' }} />
+          <div style={{ height: '6vw' }} />
+
+          {/* Button */}
+          <div className="flex">
+            <Link href="/sustainability" className="contents">
+              <HoverButton theme="transparent-white">
+                {(hovered) => (
+                  <>
+                    Know More
+                    <div className="relative inline-block w-4 h-4">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                        alt="icon default"
+                        width={16}
+                        height={16}
+                        className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                      />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hovered ? 1 : 0 }}
+                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                        className="absolute top-0 left-0"
+                      >
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                          alt="icon hover"
+                          width={16}
+                          height={16}
+                          className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                        />
+                      </motion.div>
+                    </div>
+                  </>
+                )}
+              </HoverButton>
+            </Link>
+          </div>
+
+          <div style={{ height: '6vw' }} />
           
-          <div className="w-full relative" style={{ height: '42.74vw' }}>
-            <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fd6e76cf-b35a-46af-de19-8caa2b168300/public"
-              alt="Carbon Neutral Illustration"
-              fill
-              className="object-cover"
-            />
+          {/* Earth Video (increased by 5% to 412x353, pushed 5% upwards) */}
+          <div className="w-full flex justify-center">
+            <div
+              className="relative w-full"
+              style={{
+                maxWidth: '412px',
+                aspectRatio: '392 / 336',
+                overflow: 'hidden',
+                transform: 'translateY(-5%) scaleX(-1)',
+              }}
+            >
+              <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                <iframe
+                  src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d504f9762d02a41de4b5b5010d52e126/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd504f9762d02a41de4b5b5010d52e126%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+                  style={{
+                    border: 'none',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    height: '100%',
+                    width: '100%',
+                    pointerEvents: 'none',
+                  }}
+                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                  allowFullScreen={true}
+                />
+              </div>
+            </div>
           </div>
 
-          <div style={{ height: '15.77vw' }} />
+          <div style={{ height: '10vw' }} />
 
-          {/* 1. Purpose, Measured. Progress, Accountable. */}
-          <div className="flex flex-col">
-            <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.07vw', lineHeight: '100%' }}>
-              1. Purpose, Measured. Progress, Accountable.
-            </h4>
-            <div style={{ height: '3.05vw' }} />
-            <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
-              WAE embeds sustainability into engineering, operations and governance supported by EcoVadis recognition, reinforced through our UN Global Compact commitments, and advanced through SBTi-aligned decarbonisation goals. Our focus is measurable: lower carbon intensity, circular water systems, responsible materials, ethical enterprise and progressively reduced lifecycle environmental impact.
+          {/* Quote */}
+          <h3
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: '8vw',
+              lineHeight: '105%',
+              color: '#AEAEAE',
+            }}
+          >
+            “He who knows that <span style={{ color: '#FFFFFF' }}>enough</span><br />
+            is <span style={{ color: '#FFFFFF' }}>enough</span> will always have<br />
+            <span style={{ color: '#FFFFFF' }}>enough.</span> ”
+          </h3>
+
+          <div style={{ height: '17px' }} />
+
+          <div className="w-full flex justify-end">
+            <span
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: '16px',
+                lineHeight: '105%',
+                color: '#FFFFFF',
+              }}
+            >
+              - Lao Tzu
+            </span>
+          </div>
+
+          <div style={{ height: '31px' }} />
+          <div className="w-full h-px bg-[#FFFFFF4D]" />
+          <div style={{ height: '35px' }} />
+
+          {/* Text paragraphs */}
+          <div
+            className="flex flex-col space-y-4"
+            style={{
+              fontFamily: "'Manrope', sans-serif",
+              fontWeight: 400,
+              fontSize: '14px',
+              lineHeight: '135%',
+              color: '#AEAEAE',
+            }}
+          >
+            <p>
+              It does not attend AGMs. It signs no term sheets. It cannot vote against us.
             </p>
-            <div style={{ height: '9.41vw' }} />
-            <div className="w-full h-px bg-[#FFFFFF4D]" />
-            <div style={{ height: '9.41vw' }} />
-          </div>
-
-          {/* 2. Carbon Neutrality by Design */}
-          <div className="flex flex-col">
-            <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.07vw', lineHeight: '100%' }}>
-              2. Carbon Neutrality by Design
-            </h4>
-            <div style={{ height: '3.05vw' }} />
-            <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
-              WAE engineers decarbonisation into the water lifecycle through in-situ purification, reduced packaging, lower logistics intensity, energy-efficient thermal systems, circular water use and lifecycle optimisation—progressively reducing embedded and operational carbon while advancing our ambition for Carbon Neutral Water.
+            <p>
+              But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life.
             </p>
-            <div style={{ height: '9.41vw' }} />
-            <div className="w-full h-px bg-[#FFFFFF4D]" />
-            <div style={{ height: '9.41vw' }} />
-          </div>
-
-          {/* 3. With Scope 3 in Focus */}
-          <div className="flex flex-col">
-            <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.07vw', lineHeight: '100%' }}>
-              3. With Scope 3 in Focus
-            </h4>
-            <div style={{ height: '3.05vw' }} />
-            <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
-              Our ESG architecture extends beyond direct operations to the broader value chain. Through responsible sourcing, lifecycle assessment, digital measurement, resource efficiency and elimination of avoidable packaging and transport, WAE targets material reductions in Scope 3 emissions while strengthening governance, transparency and stakeholder accountability.
+            <p>
+              For us, this recognition is not philosophical. It is operational.
             </p>
-            <div style={{ height: '9.41vw' }} />
-            <div className="w-full h-px bg-[#FFFFFF4D]" />
-            <div style={{ height: '9.41vw' }} />
-          </div>
-
-          {/* 4. Net Zero Alignment */}
-          <div className="flex flex-col">
-            <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: '4.07vw', lineHeight: '100%' }}>
-              4. Net Zero Alignment
-            </h4>
-            <div style={{ height: '3.05vw' }} />
-            <p className="leading-normal" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '3.05vw', lineHeight: '120%', color: '#AEAEAE' }}>
-              WAE's net-zero pathway integrates science-based target setting, energy efficiency, renewable integration, process optimisation, circular materials and measurable carbon accounting. Our approach is aligned with SBTi principles, progressively linking engineering decisions, operational performance and value-chain decarbonisation to a credible long-term transition toward net-zero emissions.
+            <p>
+              Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business.
+            </p>
+            <p>
+              It is the context within which our business is allowed to exist.
+            </p>
+            <p>
+              In this view, sustainability is not an initiative layered onto business strategy.<br />
+              It is the condition that determines whether that strategy is viable at all.
+            </p>
+            <p>
+              This is our account of stewardship to the only shareholder that was always there In place of Place of progress report as in above para
             </p>
           </div>
-
         </div>
       </section>
 
@@ -1895,7 +2180,7 @@ export default function Home() {
           Perspectives
         </h2>
         
-        <div style={{ height: '17px' }} />
+        <div style={{ height: '4.32vw' }} />
         
         <p style={{
           fontFamily: "'Manrope', sans-serif",
@@ -1907,7 +2192,7 @@ export default function Home() {
           WAE publishes perspectives on climate, water, and sustainability — because good water companies think beyond the tap.
         </p>
         
-        <div style={{ height: '48px' }} />
+        <div style={{ height: '12.21vw' }} />
 
         <div className="flex justify-start">
           <Link href="/perspectives" className="contents">
@@ -1944,7 +2229,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div style={{ height: '78px' }} />
+        <div style={{ height: '19.84vw' }} />
 
         <div className="flex flex-col">
           {blogsLoading ? (
@@ -2389,6 +2674,230 @@ export default function Home() {
         </div>
       </section>
 
+      {/* THE COMPANY WE KEEP SECTION */}
+      <section
+        className="bg-black text-white border-t border-[#FFFFFF4D] overflow-hidden"
+      >
+        <div className="w-full flex flex-col lg:flex-row justify-between items-stretch">
+          {/* Left Column */}
+          <div className="w-full lg:w-[48%] max-w-[680px] flex flex-col pl-[6.1vw] pr-[6.1vw] lg:pl-[7.5vw] lg:pr-0 pt-[102px] pb-[114px]">
+            {/* Heading */}
+            <h2
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: 'clamp(36px, 3.82vw, 55px)',
+                lineHeight: '100%',
+                letterSpacing: '0px',
+                color: '#FFFFFF',
+              }}
+            >
+              The company<br />we keep
+            </h2>
+
+            {/* 16px below it: Subheading */}
+            <div style={{ height: '16px' }} />
+            <p
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 500,
+                fontSize: 'clamp(14px, 1.11vw, 16px)',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                color: '#AEAEAE',
+              }}
+            >
+              Brands we serve. Alliances we value
+            </p>
+
+            {/* 307px below it */}
+            <div style={{ height: 'clamp(60px, 16vw, 307px)' }} />
+
+            {/* Sectors we serve */}
+            <h3
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: 'clamp(14px, 1.11vw, 16px)',
+                lineHeight: '105%',
+                letterSpacing: '0%',
+                color: '#FFFFFF',
+              }}
+            >
+              Sectors we serve
+            </h3>
+
+            {/* 50px below it */}
+            <div style={{ height: 'clamp(24px, 3.47vw, 50px)' }} />
+
+            {/* Marquee Container with 120px edge gradients */}
+            <div className="relative w-full overflow-hidden">
+              {/* Left edge 120px gradient */}
+              <div
+                className="absolute left-0 top-0 bottom-0 pointer-events-none z-10"
+                style={{
+                  width: 'clamp(40px, 8.33vw, 120px)',
+                  background: 'linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0) 100%)',
+                }}
+              />
+
+              {/* Right edge 120px gradient */}
+              <div
+                className="absolute right-0 top-0 bottom-0 pointer-events-none z-10"
+                style={{
+                  width: 'clamp(40px, 8.33vw, 120px)',
+                  background: 'linear-gradient(to left, #000000 0%, rgba(0, 0, 0, 0) 100%)',
+                }}
+              />
+
+              {/* 1st Row: Right to Left */}
+              <div className="overflow-hidden w-full">
+                <div className="animate-marquee-left flex w-max">
+                  {/* First copy */}
+                  <div className="flex shrink-0 items-center">
+                    {[...sectorsRow1, ...sectorsRow1, ...sectorsRow1, ...sectorsRow1].map((sector, idx) => (
+                      <div
+                        key={`r1-a-${idx}`}
+                        className="flex items-center shrink-0"
+                        style={{ gap: '25px', marginRight: '64px' }}
+                      >
+                        <img
+                          src={sector.icon}
+                          alt={sector.name}
+                          style={{ width: '32px', height: '32px', minWidth: '32px', objectFit: 'contain' }}
+                        />
+                        <span
+                          style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 400,
+                            fontSize: '20px',
+                            lineHeight: '110%',
+                            letterSpacing: '0px',
+                            color: '#FFFFFF',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          {sector.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Second copy for seamless continuous loop */}
+                  <div className="flex shrink-0 items-center" aria-hidden="true">
+                    {[...sectorsRow1, ...sectorsRow1, ...sectorsRow1, ...sectorsRow1].map((sector, idx) => (
+                      <div
+                        key={`r1-b-${idx}`}
+                        className="flex items-center shrink-0"
+                        style={{ gap: '25px', marginRight: '64px' }}
+                      >
+                        <img
+                          src={sector.icon}
+                          alt=""
+                          style={{ width: '32px', height: '32px', minWidth: '32px', objectFit: 'contain' }}
+                        />
+                        <span
+                          style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 400,
+                            fontSize: '20px',
+                            lineHeight: '110%',
+                            letterSpacing: '0px',
+                            color: '#FFFFFF',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          {sector.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* 32px gap between rows */}
+              <div style={{ height: '32px' }} />
+
+              {/* 2nd Row: Left to Right */}
+              <div className="overflow-hidden w-full">
+                <div className="animate-marquee-right flex w-max">
+                  {/* First copy */}
+                  <div className="flex shrink-0 items-center">
+                    {[...sectorsRow2, ...sectorsRow2, ...sectorsRow2, ...sectorsRow2].map((sector, idx) => (
+                      <div
+                        key={`r2-a-${idx}`}
+                        className="flex items-center shrink-0"
+                        style={{ gap: '25px', marginRight: '64px' }}
+                      >
+                        <img
+                          src={sector.icon}
+                          alt={sector.name}
+                          style={{ width: '32px', height: '32px', minWidth: '32px', objectFit: 'contain' }}
+                        />
+                        <span
+                          style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 400,
+                            fontSize: '20px',
+                            lineHeight: '110%',
+                            letterSpacing: '0px',
+                            color: '#FFFFFF',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          {sector.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Second copy for seamless continuous loop */}
+                  <div className="flex shrink-0 items-center" aria-hidden="true">
+                    {[...sectorsRow2, ...sectorsRow2, ...sectorsRow2, ...sectorsRow2].map((sector, idx) => (
+                      <div
+                        key={`r2-b-${idx}`}
+                        className="flex items-center shrink-0"
+                        style={{ gap: '25px', marginRight: '64px' }}
+                      >
+                        <img
+                          src={sector.icon}
+                          alt=""
+                          style={{ width: '32px', height: '32px', minWidth: '32px', objectFit: 'contain' }}
+                        />
+                        <span
+                          style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 400,
+                            fontSize: '20px',
+                            lineHeight: '110%',
+                            letterSpacing: '0px',
+                            color: '#FFFFFF',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          {sector.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Client Logos Map */}
+          <div className="w-full lg:flex-1 flex justify-center lg:justify-end self-stretch px-[6.1vw] lg:px-0 lg:pr-[48px] pb-12 lg:pb-0">
+            <div className="relative w-full lg:w-auto h-auto lg:h-full flex items-center justify-center lg:justify-end">
+              <img
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f25e4025-739e-475f-13ae-f82e5e153e00/public"
+                alt="The company we keep - Brands we serve map"
+                className="w-full max-w-[649px] h-auto lg:w-auto lg:h-full lg:max-w-full object-contain object-center lg:object-right py-[14px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT SECTION */}
       <section
         className="bg-black text-white px-[6.1vw] pt-[16.53vw] pb-[21.11vw] md:px-[7.5vw] md:py-[123px] border-t border-[#FFFFFF4D]"
@@ -2439,6 +2948,40 @@ export default function Home() {
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
+        }
+
+        /* Marquee Animations */
+        @keyframes marqueeScrollLeft {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        @keyframes marqueeScrollRight {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+        .animate-marquee-left {
+          display: flex;
+          width: max-content;
+          animation: marqueeScrollLeft 60s linear infinite;
+          will-change: transform;
+        }
+        .animate-marquee-right {
+          display: flex;
+          width: max-content;
+          animation: marqueeScrollRight 60s linear infinite;
+          will-change: transform;
+        }
+        .animate-marquee-left:hover,
+        .animate-marquee-right:hover {
+          animation-play-state: paused;
         }
       `}</style>
 
