@@ -197,6 +197,36 @@ const MobileProductCarousel = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
+const sectorsRow1 = [
+  {
+    name: 'Corporate',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3377d5c7-cc8b-48da-02a8-047ba09d6a00/public',
+  },
+  {
+    name: 'Hospitality',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d64e3fde-83e0-43e0-e0d9-625eb4b6bf00/public',
+  },
+  {
+    name: 'Education',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4efa005e-5156-4427-6893-5a8b27cde800/public',
+  },
+]
+
+const sectorsRow2 = [
+  {
+    name: 'Healthcare',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a4022f96-a986-4a49-f5ff-bf6d785f8900/public',
+  },
+  {
+    name: 'BFSI',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/836e8835-2b94-45d4-fcdd-8c760d8b6300/public',
+  },
+  {
+    name: 'Consultancy',
+    icon: 'https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5226aae0-7c1e-4141-35c7-6adf421a4a00/public',
+  },
+]
+
 export default function Home() {
   // State variables
   const [activeSection, setActiveSection] = useState(0)
@@ -1439,17 +1469,19 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Earth video (top aligned with text top in right column, pushed ~50px left from right edge) */}
+              {/* Earth video 392x336 (top aligned with text top in right column, pushed ~50px left from right edge) */}
               <div className="w-full flex justify-end">
                 <div
                   className="relative"
                   style={{
                     width: 'clamp(280px, 27.22vw, 392px)',
+                    height: 'clamp(240px, 23.33vw, 336px)',
                     maxWidth: '100%',
                     marginRight: 'clamp(20px, 3.47vw, 50px)',
+                    overflow: 'hidden',
                   }}
                 >
-                  <div style={{ position: 'relative', width: '100%', paddingTop: '100%' }}>
+                  <div style={{ position: 'relative', width: '100%', height: '100%' }}>
                     <iframe
                       src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d504f9762d02a41de4b5b5010d52e126/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd504f9762d02a41de4b5b5010d52e126%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
                       style={{
@@ -1589,10 +1621,17 @@ export default function Home() {
 
           <div style={{ height: '6vw' }} />
           
-          {/* Earth Video (uncropped 1:1 aspect ratio) */}
+          {/* Earth Video (392x336) */}
           <div className="w-full flex justify-center">
-            <div className="relative w-full max-w-[392px] aspect-square">
-              <div style={{ position: 'relative', width: '100%', paddingTop: '100%' }}>
+            <div
+              className="relative w-full"
+              style={{
+                maxWidth: '392px',
+                aspectRatio: '392 / 336',
+                overflow: 'hidden',
+              }}
+            >
+              <div style={{ position: 'relative', width: '100%', height: '100%' }}>
                 <iframe
                   src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d504f9762d02a41de4b5b5010d52e126/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd504f9762d02a41de4b5b5010d52e126%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
                   style={{
@@ -2586,6 +2625,239 @@ export default function Home() {
         </div>
       </section>
 
+      {/* THE COMPANY WE KEEP SECTION */}
+      <section
+        className="bg-[#0F0F0F] text-white px-[6.1vw] py-[16.53vw] md:px-[7.5vw] md:py-[120px] border-t border-[#FFFFFF4D] overflow-hidden"
+      >
+        <div className="mx-auto w-full max-w-[1440px] flex flex-col lg:flex-row justify-between items-start">
+          {/* Left Column */}
+          <div className="w-full lg:w-[48%] flex flex-col">
+            {/* Heading */}
+            <h2
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: 'clamp(36px, 3.82vw, 55px)',
+                lineHeight: '130%',
+                letterSpacing: '0px',
+                color: '#FFFFFF',
+              }}
+            >
+              The company<br />we keep
+            </h2>
+
+            {/* 16px below it: Subheading */}
+            <div style={{ height: '16px' }} />
+            <p
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 500,
+                fontSize: 'clamp(14px, 1.11vw, 16px)',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                color: '#AEAEAE',
+              }}
+            >
+              Brands we serve. Alliances we value
+            </p>
+
+            {/* 307px below it */}
+            <div style={{ height: 'clamp(60px, 16vw, 307px)' }} />
+
+            {/* Sectors we serve */}
+            <h3
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: 'clamp(14px, 1.11vw, 16px)',
+                lineHeight: '105%',
+                letterSpacing: '0%',
+                color: '#FFFFFF',
+              }}
+            >
+              Sectors we serve
+            </h3>
+
+            {/* 50px below it */}
+            <div style={{ height: 'clamp(24px, 3.47vw, 50px)' }} />
+
+            {/* Marquee Container with 120px edge gradients */}
+            <div className="relative w-full overflow-hidden">
+              {/* Left edge 120px gradient */}
+              <div
+                className="absolute left-0 top-0 bottom-0 pointer-events-none z-10"
+                style={{
+                  width: 'clamp(40px, 8.33vw, 120px)',
+                  background: 'linear-gradient(to right, #0F0F0F 0%, rgba(15, 15, 15, 0) 100%)',
+                }}
+              />
+
+              {/* Right edge 120px gradient */}
+              <div
+                className="absolute right-0 top-0 bottom-0 pointer-events-none z-10"
+                style={{
+                  width: 'clamp(40px, 8.33vw, 120px)',
+                  background: 'linear-gradient(to left, #0F0F0F 0%, rgba(15, 15, 15, 0) 100%)',
+                }}
+              />
+
+              {/* 1st Row: Right to Left */}
+              <div className="overflow-hidden w-full">
+                <div className="animate-marquee-left flex w-max">
+                  {/* First copy */}
+                  <div className="flex shrink-0 items-center">
+                    {[...sectorsRow1, ...sectorsRow1, ...sectorsRow1, ...sectorsRow1].map((sector, idx) => (
+                      <div
+                        key={`r1-a-${idx}`}
+                        className="flex items-center shrink-0"
+                        style={{ gap: '25px', marginRight: '64px' }}
+                      >
+                        <img
+                          src={sector.icon}
+                          alt={sector.name}
+                          style={{ width: '32px', height: '32px', minWidth: '32px', objectFit: 'contain' }}
+                        />
+                        <span
+                          style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 400,
+                            fontSize: '20px',
+                            lineHeight: '110%',
+                            letterSpacing: '0px',
+                            color: '#FFFFFF',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          {sector.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Second copy for seamless continuous loop */}
+                  <div className="flex shrink-0 items-center" aria-hidden="true">
+                    {[...sectorsRow1, ...sectorsRow1, ...sectorsRow1, ...sectorsRow1].map((sector, idx) => (
+                      <div
+                        key={`r1-b-${idx}`}
+                        className="flex items-center shrink-0"
+                        style={{ gap: '25px', marginRight: '64px' }}
+                      >
+                        <img
+                          src={sector.icon}
+                          alt=""
+                          style={{ width: '32px', height: '32px', minWidth: '32px', objectFit: 'contain' }}
+                        />
+                        <span
+                          style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 400,
+                            fontSize: '20px',
+                            lineHeight: '110%',
+                            letterSpacing: '0px',
+                            color: '#FFFFFF',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          {sector.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* 32px gap between rows */}
+              <div style={{ height: '32px' }} />
+
+              {/* 2nd Row: Left to Right */}
+              <div className="overflow-hidden w-full">
+                <div className="animate-marquee-right flex w-max">
+                  {/* First copy */}
+                  <div className="flex shrink-0 items-center">
+                    {[...sectorsRow2, ...sectorsRow2, ...sectorsRow2, ...sectorsRow2].map((sector, idx) => (
+                      <div
+                        key={`r2-a-${idx}`}
+                        className="flex items-center shrink-0"
+                        style={{ gap: '25px', marginRight: '64px' }}
+                      >
+                        <img
+                          src={sector.icon}
+                          alt={sector.name}
+                          style={{ width: '32px', height: '32px', minWidth: '32px', objectFit: 'contain' }}
+                        />
+                        <span
+                          style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 400,
+                            fontSize: '20px',
+                            lineHeight: '110%',
+                            letterSpacing: '0px',
+                            color: '#FFFFFF',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          {sector.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Second copy for seamless continuous loop */}
+                  <div className="flex shrink-0 items-center" aria-hidden="true">
+                    {[...sectorsRow2, ...sectorsRow2, ...sectorsRow2, ...sectorsRow2].map((sector, idx) => (
+                      <div
+                        key={`r2-b-${idx}`}
+                        className="flex items-center shrink-0"
+                        style={{ gap: '25px', marginRight: '64px' }}
+                      >
+                        <img
+                          src={sector.icon}
+                          alt=""
+                          style={{ width: '32px', height: '32px', minWidth: '32px', objectFit: 'contain' }}
+                        />
+                        <span
+                          style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: 400,
+                            fontSize: '20px',
+                            lineHeight: '110%',
+                            letterSpacing: '0px',
+                            color: '#FFFFFF',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          {sector.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Client Logos Map (633x710) */}
+          <div className="w-full lg:w-[48%] flex justify-center lg:justify-end mt-12 lg:mt-0">
+            <div
+              className="relative w-full"
+              style={{
+                maxWidth: 'clamp(320px, 44vw, 633px)',
+                aspectRatio: '633 / 710',
+              }}
+            >
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3fa9fcfd-f127-4215-2e1b-bb7170586700/public"
+                alt="The company we keep - Brands we serve map"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 90vw, 633px"
+                priority={false}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT SECTION */}
       <section
         className="bg-black text-white px-[6.1vw] pt-[16.53vw] pb-[21.11vw] md:px-[7.5vw] md:py-[123px] border-t border-[#FFFFFF4D]"
@@ -2636,6 +2908,40 @@ export default function Home() {
         .c--anim-btn:hover .blueprint-arrow {
           transform: rotate(-45deg) translateX(0);
           opacity: 1;
+        }
+
+        /* Marquee Animations */
+        @keyframes marqueeScrollLeft {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        @keyframes marqueeScrollRight {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+        .animate-marquee-left {
+          display: flex;
+          width: max-content;
+          animation: marqueeScrollLeft 30s linear infinite;
+          will-change: transform;
+        }
+        .animate-marquee-right {
+          display: flex;
+          width: max-content;
+          animation: marqueeScrollRight 30s linear infinite;
+          will-change: transform;
+        }
+        .animate-marquee-left:hover,
+        .animate-marquee-right:hover {
+          animation-play-state: paused;
         }
       `}</style>
 
