@@ -4272,5 +4272,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series?gad_source=1&gad_campaignid=24242484871&gbraid=0AAAAABUiSLxc0EPaBZf5rso4btldceAOq&gclid=EAIaIQobChMIioK2goTYlwMVMzmDAx1uVChWEAAYASAAEgJ12vD_BwE",
     "type": "product",
     "createdAt": "2026-10-26T15:48:25.524Z"
+  },
+  "9032709d-ee9f-4b5d-9667-c6f925ec855a": {
+    "id": "9032709d-ee9f-4b5d-9667-c6f925ec855a",
+    "fullName": "Ãjåy Ørāøñ",
+    "companyName": "Maersk line gurgaon",
+    "email": "oraon3356@gmail.com",
+    "phone": "9990835294",
+    "city": "Bld no 5 cyber City 20th  floor",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gclid=CjwKCAjw9PvWBhAxEiwAddzYyaznpKYvw4vVBH5Jc4n0tiDPKCQUkNW7v_0AAE1FTLYmACJevpaTsRoCz3YQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-10-27T04:45:42.501Z"
   }
 };
