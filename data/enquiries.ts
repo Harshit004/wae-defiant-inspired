@@ -4329,5 +4329,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Bb",
     "type": "contact-us",
     "createdAt": "2026-10-27T11:14:54.767Z"
+  },
+  "9c9cbb9b-a4d9-41f3-9b1f-a9c899371fe4": {
+    "id": "9c9cbb9b-a4d9-41f3-9b1f-a9c899371fe4",
+    "fullName": "Palak Kumari",
+    "companyName": "Let's connect",
+    "email": "kumaripalakbth329@gmail.com",
+    "phone": "9942571061",
+    "city": "Bettiah",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIoMHBi6nalwMVxfg4Bh07LQ1hEAEYASAAEgIZNPD_BwE",
+    "message": "Hello",
+    "type": "contact-us",
+    "createdAt": "2026-10-27T13:43:23.258Z"
   }
 };
