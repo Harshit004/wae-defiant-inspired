@@ -2632,7 +2632,7 @@ export default function Home() {
 
       {/* THE COMPANY WE KEEP SECTION */}
       <section
-        className="bg-[#0F0F0F] text-white border-t border-[#FFFFFF4D] overflow-hidden"
+        className="bg-black text-white border-t border-[#FFFFFF4D] overflow-hidden"
       >
         <div className="w-full flex flex-col lg:flex-row justify-between items-stretch">
           {/* Left Column */}
@@ -2693,7 +2693,7 @@ export default function Home() {
                 className="absolute left-0 top-0 bottom-0 pointer-events-none z-10"
                 style={{
                   width: 'clamp(40px, 8.33vw, 120px)',
-                  background: 'linear-gradient(to right, #0F0F0F 0%, rgba(15, 15, 15, 0) 100%)',
+                  background: 'linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0) 100%)',
                 }}
               />
 
@@ -2702,7 +2702,7 @@ export default function Home() {
                 className="absolute right-0 top-0 bottom-0 pointer-events-none z-10"
                 style={{
                   width: 'clamp(40px, 8.33vw, 120px)',
-                  background: 'linear-gradient(to left, #0F0F0F 0%, rgba(15, 15, 15, 0) 100%)',
+                  background: 'linear-gradient(to left, #000000 0%, rgba(0, 0, 0, 0) 100%)',
                 }}
               />
 
