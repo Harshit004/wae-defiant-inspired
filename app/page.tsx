@@ -1446,8 +1446,8 @@ export default function Home() {
                     color: '#AEAEAE',
                   }}
                 >
-                  <span className="whitespace-nowrap">“He who knows that <span style={{ color: '#FFFFFF' }}>enough</span> is <span style={{ color: '#FFFFFF' }}>enough</span></span><br />
-                  <span className="whitespace-nowrap">will always have <span style={{ color: '#FFFFFF' }}>enough.</span> ”</span>
+                  <span className="whitespace-nowrap">“He who knows that <span style={{ color: '#FFFFFF' }}>enough</span></span><br />
+                  <span className="whitespace-nowrap">is <span style={{ color: '#FFFFFF' }}>enough</span> will always have <span style={{ color: '#FFFFFF' }}>enough.</span> ”</span>
                 </h3>
 
                 <div style={{ height: '35px' }} />
@@ -1709,8 +1709,8 @@ export default function Home() {
               color: '#AEAEAE',
             }}
           >
-            “He who knows that <span style={{ color: '#FFFFFF' }}>enough</span> is <span style={{ color: '#FFFFFF' }}>enough</span><br />
-            will always have <span style={{ color: '#FFFFFF' }}>enough.</span> ”
+            “He who knows that <span style={{ color: '#FFFFFF' }}>enough</span><br />
+            is <span style={{ color: '#FFFFFF' }}>enough</span> will always have <span style={{ color: '#FFFFFF' }}>enough.</span> ”
           </h3>
 
           <div style={{ height: '17px' }} />
