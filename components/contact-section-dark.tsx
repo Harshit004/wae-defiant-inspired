@@ -97,7 +97,7 @@ const ContactSectionDark = () => {
                         fontFamily: "'Manrope', sans-serif",
                         fontWeight: 400,
                         lineHeight: '140%',
-                        color: '#FFFFFF',
+                        color: '#AEAEAE',
                         maxWidth: '350px'
                     }}
                 >
