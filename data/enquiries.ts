@@ -4385,5 +4385,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIstXIgebalwMVMdVzAR1CTQrWEAEYASAAEgL3yPD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-27T18:13:37.404Z"
+  },
+  "f793cdd6-b1cf-459d-a1a5-b9a63a80d658": {
+    "id": "f793cdd6-b1cf-459d-a1a5-b9a63a80d658",
+    "fullName": "U.VINAY",
+    "companyName": "Vinay",
+    "email": "vvinaytarak@gmail.com",
+    "phone": "9963411269",
+    "city": "Hindupur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIzs-1kvbalwMVGOGEAB2A6RR3EAEYASAAEgJZrPD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-27T19:24:56.479Z"
   }
 };
