@@ -4294,5 +4294,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gbraid=0AAAAABUiSLxpJJvDv2jPtX9k_kweFTZpT&gclid=CjwKCAjw9PvWBhAxEiwAddzYyRTLkLbzffEzSfE6Kp5efBxhKReHw6r2C9Ob-xUz3lrZYquKkbH90RoCn8YQAvD_BwE",
     "type": "product",
     "createdAt": "2026-10-27T06:46:24.849Z"
+  },
+  "39a4895d-383b-4fda-95c4-629aa8ef236d": {
+    "id": "39a4895d-383b-4fda-95c4-629aa8ef236d",
+    "fullName": "Ruchika dadhich",
+    "companyName": "Ruchika",
+    "email": "ruchikaanktisharma8@gmail.com",
+    "phone": "6376220872",
+    "city": "Bhilwara",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIno6AvvXZlwMVbvOEAB3MYS_KEAEYASAAEgKVAfD_BwE",
+    "message": "Plz jadi",
+    "type": "contact-us",
+    "createdAt": "2026-10-27T09:49:02.897Z"
   }
 };
