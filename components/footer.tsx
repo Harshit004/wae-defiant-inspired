@@ -187,11 +187,10 @@ export default function Footer() {
         {/* Divider */}
         <div className="w-full h-[1px] bg-[#FFFFFF4D] mt-8 mb-6" />
 
-        {/* Bottom Bar: Copyright & WhatsApp */}
+        {/* Bottom Bar: Copyright & Links */}
         <div className="flex justify-start items-center w-full">
-          <div className="flex items-center gap-2 font-[Manrope] text-[3vw] text-white">
-            <span>&copy;</span>
-            <span>Copy Right WAE 2026</span>
+          <div className="flex flex-wrap items-center gap-1 font-[Manrope] text-[3vw] text-white">
+            <span>&copy; 2026 WAE. All Rights Reserved. &nbsp;|&nbsp; <Link href="/sitemap" className="hover:opacity-80 transition-opacity">Sitemap</Link> &nbsp;|&nbsp; FAQ &nbsp;|&nbsp; <Link href="/compliance" className="hover:opacity-80 transition-opacity">Compliance</Link></span>
           </div>
         </div>
       </div>
@@ -414,7 +413,7 @@ export default function Footer() {
         }}
         className="flex justify-between items-center font-[Manrope] text-[10px] text-white"
       >
-        <span>&copy; 2026 WAE. All Rights Reserved. &nbsp;|&nbsp; <Link href="/sitemap" className="hover:opacity-80 transition-opacity">Sitemap</Link> &nbsp;|&nbsp; FAQ</span>
+        <span>&copy; 2026 WAE. All Rights Reserved. &nbsp;|&nbsp; <Link href="/sitemap" className="hover:opacity-80 transition-opacity">Sitemap</Link> &nbsp;|&nbsp; FAQ &nbsp;|&nbsp; <Link href="/compliance" className="hover:opacity-80 transition-opacity">Compliance</Link></span>
       </div>
     </div>
     </footer>

@@ -1,6 +1,7 @@
 import React, { FC, useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { animate } from "framer-motion";
+import { trackLeadCreated } from '@/lib/tracking';
 
 const Icons = {
     Email: <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,13 +24,33 @@ const ContactSectionDark = () => {
         const formData = new FormData(form);
         const pageUrl = window.location.href;
 
+        const fullName = (formData.get('name') as string || '').trim();
+        const email = (formData.get('email') as string || '').trim();
+        const phone = (formData.get('contact') as string || '').trim().replace(/\D/g, '');
+        const companyName = (formData.get('companyName') as string || '').trim();
+        const city = (formData.get('city') as string || '').trim();
+        const message = (formData.get('message') as string || '').trim();
+
+        // Email validation
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // Contact number validation: exactly 10 digits
+        if (phone.length !== 10) {
+            alert('Contact number must be exactly 10 digits.');
+            return;
+        }
+
         const payload = {
-            fullName: formData.get('name'),
-            email: formData.get('email'),
-            phone: formData.get('contact'),
-            companyName: formData.get('companyName'),
-            city: formData.get('city'),
-            message: formData.get('message'),
+            fullName,
+            email,
+            phone,
+            companyName,
+            city,
+            message,
             pageLink: pageUrl,
             type: 'general'
         };
@@ -48,6 +69,7 @@ const ContactSectionDark = () => {
                 throw new Error(errorData?.message || 'Failed to submit enquiry');
             }
 
+            trackLeadCreated();
             router.push('/thank-you');
         } catch (error: any) {
             console.error('Error submitting form:', error);
@@ -59,26 +81,28 @@ const ContactSectionDark = () => {
         <div className="w-full bg-black text-white flex flex-col md:flex-row justify-between items-start">
             {/* Left Side */}
             <div className="w-full md:w-[40%] flex flex-col pt-12 md:pt-0">
-                <h2 style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 500,
-                    fontSize: '60px',
-                    lineHeight: '110%',
-                    color: '#FFFFFF',
-                    marginBottom: '40px'
-                }}>
-                    For More Info
+                <h2 
+                    className="text-[36px] md:text-[60px] font-normal md:font-medium mb-[18px] md:mb-[40px]"
+                    style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        lineHeight: '110%',
+                        color: '#FFFFFF'
+                    }}
+                >
+                    Dialogues
                 </h2>
-                <p style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '18px',
-                    lineHeight: '140%',
-                    color: '#FFFFFF',
-                    marginBottom: '60px',
-                    maxWidth: '350px'
-                }}>
-                    Every water challenge is different.<br />Let's find the right solution for yours.
+                <p 
+                    className="text-[12px] md:text-[18px]"
+                    style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        lineHeight: '140%',
+                        color: '#FFFFFF',
+                        marginBottom: '60px',
+                        maxWidth: '350px'
+                    }}
+                >
+                    A conversation worth beginning
                 </p>
 
                 <div className="flex items-start gap-4 mt-auto">
@@ -129,6 +153,8 @@ const ContactSectionDark = () => {
                             type="email"
                             name="email"
                             placeholder="Your Email*"
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                            title="Please enter a valid email address"
                             className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
                         />
@@ -137,9 +163,18 @@ const ContactSectionDark = () => {
                         <input
                             type="tel"
                             name="contact"
-                            placeholder="Contact No.*"
+                            placeholder="Contact No. (10 digits)*"
+                            maxLength={10}
+                            minLength={10}
+                            pattern="[0-9]{10}"
+                            inputMode="numeric"
+                            title="Contact number must be exactly 10 digits"
                             className="w-full bg-transparent border-b border-[#FFFFFF4D] py-4 focus:outline-none focus:border-[#FFFFFF4D] transition-colors font-manrope text-sm"
                             required
+                            onInput={(e) => {
+                                const target = e.target as HTMLInputElement;
+                                target.value = target.value.replace(/\D/g, '').slice(0, 10);
+                            }}
                         />
                     </div>
                     <div className="relative group">
