@@ -4374,5 +4374,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI78-cv8zalwMVK8mEAB1x6CHHEAEYASAAEgJezfD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-27T16:19:31.842Z"
+  },
+  "c7dfe053-505d-4088-84fb-b0e939ccf261": {
+    "id": "c7dfe053-505d-4088-84fb-b0e939ccf261",
+    "fullName": "Harish",
+    "companyName": "Reliance digital",
+    "email": "hemamethre26@gmail.com",
+    "phone": "9880836546",
+    "city": "Bidar",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIstXIgebalwMVMdVzAR1CTQrWEAEYASAAEgL3yPD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-27T18:13:37.404Z"
   }
 };
