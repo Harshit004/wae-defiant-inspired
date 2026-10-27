@@ -2643,7 +2643,7 @@ export default function Home() {
                 fontFamily: "'Inter Tight', sans-serif",
                 fontWeight: 400,
                 fontSize: 'clamp(36px, 3.82vw, 55px)',
-                lineHeight: '130%',
+                lineHeight: '100%',
                 letterSpacing: '0px',
                 color: '#FFFFFF',
               }}
