@@ -4430,5 +4430,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI0LGRlbDdlwMVNJE4CB14php9EAEYASAAEgI0AfD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-28T18:50:04.017Z"
+  },
+  "27685162-4e6c-4373-acd9-69cb2e358bf1": {
+    "id": "27685162-4e6c-4373-acd9-69cb2e358bf1",
+    "fullName": "Iari Nongsiej",
+    "companyName": "iarinongsiej35@gmail.com",
+    "email": "iarinongsiej35@gmail.com",
+    "phone": "8974541813",
+    "city": "India",
+    "pageLink": "https://www.waecorp.com/",
+    "type": "general",
+    "createdAt": "2026-10-28T18:51:10.531Z"
   }
 };
