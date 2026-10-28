@@ -4396,5 +4396,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIzs-1kvbalwMVGOGEAB2A6RR3EAEYASAAEgJZrPD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-27T19:24:56.479Z"
+  },
+  "307b2de5-4fb8-46d7-a16c-0e558b5f9ad3": {
+    "id": "307b2de5-4fb8-46d7-a16c-0e558b5f9ad3",
+    "fullName": "MANOJ",
+    "companyName": "MACRO SALES CORPORATION",
+    "email": "macrosalescorp@gmail.com",
+    "phone": "9620529361",
+    "city": "BANGALORE",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Automated Water Dispenser.\n\n \n\nQty is 16 no’s.",
+    "type": "contact-us",
+    "createdAt": "2026-10-28T10:13:10.812Z"
   }
 };
