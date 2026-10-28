@@ -4441,5 +4441,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIj6jNhbHdlwMViKRjBh2S8hFfEAEYASAAEgK-j_D_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-28T18:53:39.476Z"
+  },
+  "fb4e03c6-f6b0-4576-b099-69eda65d4c96": {
+    "id": "fb4e03c6-f6b0-4576-b099-69eda65d4c96",
+    "fullName": "Rishi",
+    "companyName": "Rishi",
+    "email": "jyoti873012@gmail.com",
+    "phone": "9792218399",
+    "city": "Kadipur",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-10-28T19:11:29.619Z"
   }
 };
