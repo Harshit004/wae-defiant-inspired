@@ -4408,5 +4408,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Automated Water Dispenser.\n\n \n\nQty is 16 no’s.",
     "type": "contact-us",
     "createdAt": "2026-10-28T10:13:10.812Z"
+  },
+  "10ccbd9c-e05c-42ff-bf1b-abb4cf5bb1cb": {
+    "id": "10ccbd9c-e05c-42ff-bf1b-abb4cf5bb1cb",
+    "fullName": "Iari Nongsiej",
+    "companyName": "iarinongsiej35@gmail.com",
+    "email": "iarinongsiej35@gmail.com",
+    "phone": "8974541813",
+    "city": "India",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIwPe8k6_dlwMVz_yEAB11FBrtEAEYASAAEgLiIvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-28T18:46:42.154Z"
   }
 };
