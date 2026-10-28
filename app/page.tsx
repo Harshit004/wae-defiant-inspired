@@ -339,88 +339,39 @@ export default function Home() {
 
   // Measure position of 'water' word to align Earth video center vertically
   const waterWordRef = useRef<HTMLSpanElement>(null)
-  const [waterCenterX, setWaterCenterX] = useState<number | null>(null)
+  const earthContainerRef = useRef<HTMLDivElement>(null)
+  const [earthMarginLeft, setEarthMarginLeft] = useState<number>(0)
 
   useEffect(() => {
-    const updateWaterPos = () => {
-      if (waterWordRef.current) {
-        setWaterCenterX(waterWordRef.current.offsetLeft + waterWordRef.current.offsetWidth / 2)
+    const updateEarthPos = () => {
+      if (waterWordRef.current && earthContainerRef.current) {
+        const waterRect = waterWordRef.current.getBoundingClientRect()
+        const containerRect = earthContainerRef.current.getBoundingClientRect()
+        const waterCenter = waterRect.left + waterRect.width / 2
+
+        // Video width responsive calculation: clamp(294px, 28.58vw, 412px)
+        const vw = typeof window !== 'undefined' ? window.innerWidth : 1440
+        const desiredVideoWidth = Math.min(412, Math.max(294, (28.58 / 100) * vw))
+        const actualVideoWidth = Math.min(containerRect.width, desiredVideoWidth)
+
+        // Ideal position so video center aligns with water center
+        const targetLeft = waterCenter - containerRect.left - actualVideoWidth / 2
+
+        // Clamp so the video is strictly inside the left container:
+        // left >= 0 and left + actualVideoWidth <= containerRect.width
+        const maxLeft = Math.max(0, containerRect.width - actualVideoWidth)
+        const clampedLeft = Math.max(0, Math.min(maxLeft, targetLeft))
+
+        setEarthMarginLeft(clampedLeft)
       }
     }
-    updateWaterPos()
+    updateEarthPos()
     if (typeof document !== "undefined" && document.fonts) {
-      document.fonts.ready.then(updateWaterPos)
+      document.fonts.ready.then(updateEarthPos)
     }
-    window.addEventListener("resize", updateWaterPos)
-    return () => window.removeEventListener("resize", updateWaterPos)
+    window.addEventListener("resize", updateEarthPos)
+    return () => window.removeEventListener("resize", updateEarthPos)
   }, [])
-
-  // Halloween Sound State & Toggle
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false)
-  const audioRef = useRef<HTMLAudioElement | null>(null)
-  const userMutedAudioRef = useRef(false)
-
-  useEffect(() => {
-    const audio = new Audio("/halloween-sound.mp3")
-    audio.loop = true
-    audio.preload = "auto"
-    audioRef.current = audio
-
-    const playAudio = () => {
-      audio
-        .play()
-        .then(() => {
-          setIsAudioPlaying(true)
-        })
-        .catch(() => {
-          setIsAudioPlaying(false)
-        })
-    }
-
-    // Attempt autoplay immediately
-    playAudio()
-
-    // Handle browsers blocking unmuted autoplay until user gesture
-    const handleFirstGesture = () => {
-      if (!userMutedAudioRef.current && audioRef.current && audioRef.current.paused) {
-        playAudio()
-      }
-      removeGestureListeners()
-    }
-
-    const removeGestureListeners = () => {
-      window.removeEventListener("click", handleFirstGesture)
-      window.removeEventListener("scroll", handleFirstGesture)
-      window.removeEventListener("touchstart", handleFirstGesture)
-      window.removeEventListener("keydown", handleFirstGesture)
-    }
-
-    window.addEventListener("click", handleFirstGesture)
-    window.addEventListener("scroll", handleFirstGesture)
-    window.addEventListener("touchstart", handleFirstGesture)
-    window.addEventListener("keydown", handleFirstGesture)
-
-    return () => {
-      removeGestureListeners()
-      audio.pause()
-      audio.src = ""
-    }
-  }, [])
-
-  const toggleHalloweenSound = () => {
-    if (!audioRef.current) return
-    if (isAudioPlaying) {
-      audioRef.current.pause()
-      setIsAudioPlaying(false)
-      userMutedAudioRef.current = true
-    } else {
-      userMutedAudioRef.current = false
-      audioRef.current
-        .play()
-        .then(() => setIsAudioPlaying(true))
-        .catch(() => { })
-    }
-  }
 
   return (
     <main className="relative homepage-cursor">
@@ -430,15 +381,18 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative bg-black h-screen h-[100svh] flex flex-col overflow-hidden"
+        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
       >
-        {/* Background Image with Water Ripple Effect */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c917ec39-8efd-4f15-9063-04c3ea250200/public" />
+        {/* Background Image determining the height of the section naturally */}
+        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
+          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public" />
+        </div>
+        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1440/691]">
+          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
         </div>
 
         {/* Hero Content Text (Topmost) */}
-        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[130px] pb-[30px]">
+        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
           <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
             <div
               className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
@@ -474,60 +428,6 @@ export default function Home() {
 
           {/* Mobile divider at the bottom of the hero section */}
           <div className="md:hidden absolute bottom-0 left-0 right-0 border-b border-[#FFFFFF4D] z-[5]" />
-        </div>
-
-        {/* Halloween Banner & Sound Toggle Switch (Aligned in middle, 26px gap) */}
-        <div
-          className="absolute z-20 flex items-center pointer-events-auto"
-          style={{
-            right: "max(20px, calc(69 / 1440 * 100vw))",
-            bottom: "max(20px, calc(97 / 1440 * 100vw))",
-            gap: "clamp(12px, calc(26 / 1440 * 100vw), 26px)",
-          }}
-        >
-          {/* Banner Image (362x158 responsive, middle-aligned with toggle button) */}
-          <div
-            className="relative flex-shrink-0 select-none pointer-events-none"
-            style={{
-              width: "clamp(130px, calc(362 / 1440 * 100vw), 362px)",
-              aspectRatio: "1366 / 596",
-            }}
-          >
-            <Image
-              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7b97d4c1-73ae-4b0a-3ac8-b9c6d0ee9d00/public"
-              alt="Halloween Happy Hour"
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 150px, 362px"
-              priority
-            />
-          </div>
-
-          {/* Halloween Sound Toggle Switch */}
-          <button
-            type="button"
-            onClick={toggleHalloweenSound}
-            aria-label={isAudioPlaying ? "Mute halloween sound" : "Play halloween sound"}
-            title={isAudioPlaying ? "Mute sound" : "Play sound"}
-            className={`flex-shrink-0 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 ${isAudioPlaying ? "opacity-100" : "opacity-40 hover:opacity-80"
-              }`}
-          >
-            <div className="relative w-[24px] h-[24px] flex items-center justify-center">
-              <Image
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/04a97efe-a544-4dfe-86ad-e4c66b5c4200/public"
-                alt="Halloween sound toggle"
-                width={24}
-                height={24}
-                className="w-[24px] h-[24px] object-contain select-none pointer-events-none"
-              />
-              {!isAudioPlaying && (
-                <span
-                  className="absolute w-[24px] h-[2px] bg-red-500 rotate-45 pointer-events-none rounded-full"
-                  style={{ boxShadow: "0 0 3px rgba(0,0,0,0.9)" }}
-                />
-              )}
-            </div>
-          </button>
         </div>
       </section>
 
@@ -1469,7 +1369,7 @@ export default function Home() {
           <div className="flex justify-between items-start w-full gap-6 lg:gap-10">
             {/* Left Column - Button & Earth Video */}
             <div style={{ width: 'clamp(320px, 35vw, 490px)' }} className="w-full flex flex-col relative flex-shrink-0">
-              <div className="relative z-10 flex items-start" style={{ height: '49px' }}>
+              <div className="relative z-20 flex items-start" style={{ height: '49px' }}>
                 <Link href="/sustainability" className="contents">
                   <HoverButton theme="transparent-white">
                     {(hovered) => (
@@ -1504,17 +1404,15 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Earth video (center aligned vertically with the word 'water' in subtext) */}
-              <div className="w-full relative z-0">
+              {/* Earth video (center aligned vertically with the word 'water' in subtext, strictly contained) */}
+              <div ref={earthContainerRef} className="w-full relative z-0 overflow-hidden">
                 <div
                   className="relative"
                   style={{
                     width: 'clamp(294px, 28.58vw, 412px)',
                     height: 'clamp(252px, 24.5vw, 353px)',
                     maxWidth: '100%',
-                    marginLeft: waterCenterX !== null
-                      ? `max(0px, calc(${waterCenterX}px - clamp(294px, 28.58vw, 412px) / 2))`
-                      : 'max(0px, calc(306.3px - clamp(294px, 28.58vw, 412px) / 2))',
+                    marginLeft: `${earthMarginLeft}px`,
                     overflow: 'hidden',
                     transform: 'translateY(-5%) scaleX(-1)',
                   }}
@@ -1540,17 +1438,17 @@ export default function Home() {
             </div>
 
             {/* Right Column - Horizontal Line & Two Text Columns */}
-            <div style={{ maxWidth: '650px' }} className="flex flex-col flex-1 min-w-0">
+            <div style={{ maxWidth: '650px' }} className="relative z-10 flex flex-col flex-1 min-w-0">
               <div style={{ height: '49px' }} className="flex flex-col justify-start">
                 {/* Horizontal line aligned with button top */}
                 <div className="w-full h-px bg-[#FFFFFF4D]" />
               </div>
 
               {/* Two sub-columns */}
-              <div className="grid grid-cols-2 gap-8 lg:gap-12">
+              <div className="grid grid-cols-2 gap-8 lg:gap-12 relative z-10">
                 {/* Sub-column 1 */}
                 <div
-                  className="flex flex-col space-y-4"
+                  className="relative z-10 flex flex-col space-y-4"
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
@@ -1578,7 +1476,7 @@ export default function Home() {
 
                 {/* Sub-column 2 */}
                 <div
-                  className="flex flex-col space-y-4"
+                  className="relative z-10 flex flex-col space-y-4"
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
@@ -1661,7 +1559,7 @@ export default function Home() {
           <div style={{ height: '6vw' }} />
 
           {/* Earth Video (increased by 5% to 412x353, pushed 5% upwards) */}
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center relative z-0">
             <div
               className="relative w-full"
               style={{
@@ -1728,7 +1626,7 @@ export default function Home() {
 
           {/* Text paragraphs */}
           <div
-            className="flex flex-col space-y-4"
+            className="relative z-10 flex flex-col space-y-4"
             style={{
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 400,
