@@ -622,5 +622,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-29",
     "time": "00:23:26",
     "pageLink": "/contact-us"
+  },
+  {
+    "id": "34a9d107-0859-47a2-8dc1-4dc718d9ce4c",
+    "email": "jyoti873012@gmail.com",
+    "date": "2026-10-29",
+    "time": "00:40:56",
+    "pageLink": "/contact-us"
   }
 ];
