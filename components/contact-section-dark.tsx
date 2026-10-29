@@ -81,7 +81,7 @@ const ContactSectionDark = () => {
         <div className="w-full bg-black text-white flex flex-col md:flex-row justify-between items-start">
             {/* Left Side */}
             <div className="w-full md:w-[40%] flex flex-col pt-12 md:pt-0">
-                <h2 
+                <h2
                     className="text-[36px] md:text-[60px] font-normal md:font-medium mb-[16px] md:mb-[24px]"
                     style={{
                         fontFamily: "'Inter Tight', sans-serif",
@@ -91,7 +91,7 @@ const ContactSectionDark = () => {
                 >
                     Dialogues
                 </h2>
-                <p 
+                <p
                     className="text-[12px] md:text-[18px]"
                     style={{
                         fontFamily: "'Manrope', sans-serif",
@@ -136,7 +136,7 @@ const ContactSectionDark = () => {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:gap-5">
                     <style jsx>{`
                         input::placeholder, textarea::placeholder {
-                            color: #FFFFFF !important;
+                            color: #8B8B8B !important;
                             font-size: 13px;
                             opacity: 1;
                         }
