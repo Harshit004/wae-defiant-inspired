@@ -4464,5 +4464,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Need to install water coolers , request a call.",
     "type": "contact-us",
     "createdAt": "2026-10-29T05:39:12.184Z"
+  },
+  "9e9739d7-f05e-4c45-8906-c6b9690e5bdf": {
+    "id": "9e9739d7-f05e-4c45-8906-c6b9690e5bdf",
+    "fullName": "sunil ingale",
+    "companyName": "malpani logistics park",
+    "email": "sunilingale1980@gmail.com",
+    "phone": "7972791632",
+    "city": "Nashik",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Need Ro water filter  for office use",
+    "type": "contact-us",
+    "createdAt": "2026-10-29T13:16:27.988Z"
   }
 };
