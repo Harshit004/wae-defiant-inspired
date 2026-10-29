@@ -4452,5 +4452,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-10-28T19:11:29.619Z"
+  },
+  "d2b43a32-a7be-4d24-a536-4e1937d03879": {
+    "id": "d2b43a32-a7be-4d24-a536-4e1937d03879",
+    "fullName": "Satish Uttekar",
+    "companyName": "Modi auto group pvt ltd",
+    "email": "servicehr.pws@modimotorsjlr.com",
+    "phone": "8308302757",
+    "city": "Pune",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Need to install water coolers , request a call.",
+    "type": "contact-us",
+    "createdAt": "2026-10-29T05:39:12.184Z"
   }
 };
