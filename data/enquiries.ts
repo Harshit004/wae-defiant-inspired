@@ -4545,5 +4545,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQjw3YvXBhCDARIsAKB-ox9-dEZu7hbI67WZVixOfKfbyjCDNACLMyYEeyreKmUQKeolYV-0WOsaAmNgEALw_wcB",
     "type": "contact-us",
     "createdAt": "2026-10-30T04:01:26.584Z"
+  },
+  "217e2d46-6cfb-4964-81da-f9132e4ec1df": {
+    "id": "217e2d46-6cfb-4964-81da-f9132e4ec1df",
+    "fullName": "Durgasri subhramaneswari Ganesula",
+    "companyName": "Srivenkatasaidegree college",
+    "email": "ganeshuladurgasri9030@gmail.com",
+    "phone": "1233456668",
+    "city": "Kakinada",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQjw3YvXBhCDARIsAKB-ox8Ti-bOnwPEjnUU02t2vMMc2HVaszvC9ea9vOb6eFjytJV2qpY-PisaArmGEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-10-30T04:06:48.326Z"
   }
 };
