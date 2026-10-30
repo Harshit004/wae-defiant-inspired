@@ -4476,5 +4476,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Need Ro water filter  for office use",
     "type": "contact-us",
     "createdAt": "2026-10-29T13:16:27.988Z"
+  },
+  "ca6c8ba0-fe7e-4b2d-a5a5-84dfdda87206": {
+    "id": "ca6c8ba0-fe7e-4b2d-a5a5-84dfdda87206",
+    "fullName": "Prabhat Kumar Satapathy",
+    "companyName": "Vedang institute of Technology",
+    "email": "psatapathy@gmail.com",
+    "phone": "9437060456",
+    "city": "Bhubaneswar",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-10-30T03:08:50.813Z"
   }
 };
