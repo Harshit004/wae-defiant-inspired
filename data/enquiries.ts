@@ -4534,5 +4534,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Yes",
     "type": "contact-us",
     "createdAt": "2026-10-30T04:00:35.333Z"
+  },
+  "7cf8a07a-9036-45f4-ba52-32d42255d0a7": {
+    "id": "7cf8a07a-9036-45f4-ba52-32d42255d0a7",
+    "fullName": "Eram",
+    "companyName": "Nothing",
+    "email": "shamsulhasan1011980@gmail.com",
+    "phone": "8009981163",
+    "city": "India",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQjw3YvXBhCDARIsAKB-ox9-dEZu7hbI67WZVixOfKfbyjCDNACLMyYEeyreKmUQKeolYV-0WOsaAmNgEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-10-30T04:01:26.584Z"
   }
 };
