@@ -4499,5 +4499,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Fhg79",
     "type": "contact-us",
     "createdAt": "2026-10-30T03:23:37.401Z"
+  },
+  "798445c8-a296-40f2-8b20-c94ef2281d1f": {
+    "id": "798445c8-a296-40f2-8b20-c94ef2281d1f",
+    "fullName": "Pinki Prajapati",
+    "companyName": "BB nbnbb",
+    "email": "pinkiprajapati9gd140@gmail.com",
+    "phone": "9140853744",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQjw3YvXBhCDARIsAKB-ox9nB9D6prW_VlC2-7nlcrACQYf4Zn2iaqzJ33tU8RyTWu9qIs-GpZAaAjSCEALw_wcB",
+    "message": "Azamgarh ka",
+    "type": "contact-us",
+    "createdAt": "2026-10-30T03:31:40.274Z"
   }
 };
