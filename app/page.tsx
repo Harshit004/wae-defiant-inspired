@@ -339,20 +339,38 @@ export default function Home() {
 
   // Measure position of 'water' word to align Earth video center vertically
   const waterWordRef = useRef<HTMLSpanElement>(null)
-  const [waterCenterX, setWaterCenterX] = useState<number | null>(null)
+  const earthContainerRef = useRef<HTMLDivElement>(null)
+  const [earthMarginLeft, setEarthMarginLeft] = useState<number>(0)
 
   useEffect(() => {
-    const updateWaterPos = () => {
-      if (waterWordRef.current) {
-        setWaterCenterX(waterWordRef.current.offsetLeft + waterWordRef.current.offsetWidth / 2)
+    const updateEarthPos = () => {
+      if (waterWordRef.current && earthContainerRef.current) {
+        const waterRect = waterWordRef.current.getBoundingClientRect()
+        const containerRect = earthContainerRef.current.getBoundingClientRect()
+        const waterCenter = waterRect.left + waterRect.width / 2
+
+        // Video width responsive calculation: clamp(294px, 28.58vw, 412px)
+        const vw = typeof window !== 'undefined' ? window.innerWidth : 1440
+        const desiredVideoWidth = Math.min(412, Math.max(294, (28.58 / 100) * vw))
+        const actualVideoWidth = Math.min(containerRect.width, desiredVideoWidth)
+
+        // Ideal position so video center aligns with water center
+        const targetLeft = waterCenter - containerRect.left - actualVideoWidth / 2
+
+        // Clamp so the video is strictly inside the left container:
+        // left >= 0 and left + actualVideoWidth <= containerRect.width
+        const maxLeft = Math.max(0, containerRect.width - actualVideoWidth)
+        const clampedLeft = Math.max(0, Math.min(maxLeft, targetLeft))
+
+        setEarthMarginLeft(clampedLeft)
       }
     }
-    updateWaterPos()
+    updateEarthPos()
     if (typeof document !== "undefined" && document.fonts) {
-      document.fonts.ready.then(updateWaterPos)
+      document.fonts.ready.then(updateEarthPos)
     }
-    window.addEventListener("resize", updateWaterPos)
-    return () => window.removeEventListener("resize", updateWaterPos)
+    window.addEventListener("resize", updateEarthPos)
+    return () => window.removeEventListener("resize", updateEarthPos)
   }, [])
 
   // Halloween Sound State & Toggle
@@ -1469,7 +1487,7 @@ export default function Home() {
           <div className="flex justify-between items-start w-full gap-6 lg:gap-10">
             {/* Left Column - Button & Earth Video */}
             <div style={{ width: 'clamp(320px, 35vw, 490px)' }} className="w-full flex flex-col relative flex-shrink-0">
-              <div className="relative z-10 flex items-start" style={{ height: '49px' }}>
+              <div className="relative z-20 flex items-start" style={{ height: '49px' }}>
                 <Link href="/sustainability" className="contents">
                   <HoverButton theme="transparent-white">
                     {(hovered) => (
@@ -1504,17 +1522,15 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Earth video (center aligned vertically with the word 'water' in subtext) */}
-              <div className="w-full relative z-0">
+              {/* Earth video (center aligned vertically with the word 'water' in subtext, strictly contained) */}
+              <div ref={earthContainerRef} className="w-full relative z-0 overflow-hidden">
                 <div
                   className="relative"
                   style={{
                     width: 'clamp(294px, 28.58vw, 412px)',
                     height: 'clamp(252px, 24.5vw, 353px)',
                     maxWidth: '100%',
-                    marginLeft: waterCenterX !== null
-                      ? `max(0px, calc(${waterCenterX}px - clamp(294px, 28.58vw, 412px) / 2))`
-                      : 'max(0px, calc(306.3px - clamp(294px, 28.58vw, 412px) / 2))',
+                    marginLeft: `${earthMarginLeft}px`,
                     overflow: 'hidden',
                     transform: 'translateY(-5%) scaleX(-1)',
                   }}
@@ -1540,17 +1556,17 @@ export default function Home() {
             </div>
 
             {/* Right Column - Horizontal Line & Two Text Columns */}
-            <div style={{ maxWidth: '650px' }} className="flex flex-col flex-1 min-w-0">
+            <div style={{ maxWidth: '650px' }} className="relative z-10 flex flex-col flex-1 min-w-0">
               <div style={{ height: '49px' }} className="flex flex-col justify-start">
                 {/* Horizontal line aligned with button top */}
                 <div className="w-full h-px bg-[#FFFFFF4D]" />
               </div>
 
               {/* Two sub-columns */}
-              <div className="grid grid-cols-2 gap-8 lg:gap-12">
+              <div className="grid grid-cols-2 gap-8 lg:gap-12 relative z-10">
                 {/* Sub-column 1 */}
                 <div
-                  className="flex flex-col space-y-4"
+                  className="relative z-10 flex flex-col space-y-4"
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
@@ -1578,7 +1594,7 @@ export default function Home() {
 
                 {/* Sub-column 2 */}
                 <div
-                  className="flex flex-col space-y-4"
+                  className="relative z-10 flex flex-col space-y-4"
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
@@ -1661,7 +1677,7 @@ export default function Home() {
           <div style={{ height: '6vw' }} />
 
           {/* Earth Video (increased by 5% to 412x353, pushed 5% upwards) */}
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center relative z-0">
             <div
               className="relative w-full"
               style={{
@@ -1728,7 +1744,7 @@ export default function Home() {
 
           {/* Text paragraphs */}
           <div
-            className="flex flex-col space-y-4"
+            className="relative z-10 flex flex-col space-y-4"
             style={{
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 400,

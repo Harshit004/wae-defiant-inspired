@@ -608,5 +608,33 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-26",
     "time": "20:46:13",
     "pageLink": "/"
+  },
+  {
+    "id": "72d87c55-0d0e-4d3e-a834-6af93d5615ed",
+    "email": "ashutoshrajput9621@gmail.com",
+    "date": "2026-10-28",
+    "time": "04:28:21",
+    "pageLink": "/contact-us"
+  },
+  {
+    "id": "b433278b-ed27-41cc-88df-125da48b21b4",
+    "email": "iarinongsiej35@gmail.com",
+    "date": "2026-10-29",
+    "time": "00:23:26",
+    "pageLink": "/contact-us"
+  },
+  {
+    "id": "34a9d107-0859-47a2-8dc1-4dc718d9ce4c",
+    "email": "jyoti873012@gmail.com",
+    "date": "2026-10-29",
+    "time": "00:40:56",
+    "pageLink": "/contact-us"
+  },
+  {
+    "id": "86833c63-3229-4545-99e4-7634ab579390",
+    "email": "ganeshuladurgasri9030@gmail.com",
+    "date": "2026-10-30",
+    "time": "09:36:09",
+    "pageLink": "/contact-us"
   }
 ];
