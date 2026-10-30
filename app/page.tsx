@@ -10,7 +10,7 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
-// import GhostCursor from "@/components/GhostCursor"
+import GhostCursor from "@/components/GhostCursor"
 import dynamic from "next/dynamic"
 import LightweightRipple from "@/components/LightweightRipple"
 
@@ -373,25 +373,90 @@ export default function Home() {
     return () => window.removeEventListener("resize", updateEarthPos)
   }, [])
 
+  // Halloween Sound State & Toggle
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const userMutedAudioRef = useRef(false)
+
+  useEffect(() => {
+    const audio = new Audio("/halloween-sound.mp3")
+    audio.loop = true
+    audio.preload = "auto"
+    audioRef.current = audio
+
+    const playAudio = () => {
+      audio
+        .play()
+        .then(() => {
+          setIsAudioPlaying(true)
+        })
+        .catch(() => {
+          setIsAudioPlaying(false)
+        })
+    }
+
+    // Attempt autoplay immediately
+    playAudio()
+
+    // Handle browsers blocking unmuted autoplay until user gesture
+    const handleFirstGesture = () => {
+      if (!userMutedAudioRef.current && audioRef.current && audioRef.current.paused) {
+        playAudio()
+      }
+      removeGestureListeners()
+    }
+
+    const removeGestureListeners = () => {
+      window.removeEventListener("click", handleFirstGesture)
+      window.removeEventListener("scroll", handleFirstGesture)
+      window.removeEventListener("touchstart", handleFirstGesture)
+      window.removeEventListener("keydown", handleFirstGesture)
+    }
+
+    window.addEventListener("click", handleFirstGesture)
+    window.addEventListener("scroll", handleFirstGesture)
+    window.addEventListener("touchstart", handleFirstGesture)
+    window.addEventListener("keydown", handleFirstGesture)
+
+    return () => {
+      removeGestureListeners()
+      audio.pause()
+      audio.src = ""
+    }
+  }, [])
+
+  const toggleHalloweenSound = () => {
+    if (!audioRef.current) return
+    if (isAudioPlaying) {
+      audioRef.current.pause()
+      setIsAudioPlaying(false)
+      userMutedAudioRef.current = true
+    } else {
+      userMutedAudioRef.current = false
+      audioRef.current
+        .play()
+        .then(() => setIsAudioPlaying(true))
+        .catch(() => { })
+    }
+  }
+
   return (
-    <main className="relative">
+    <main className="relative homepage-cursor">
+      <GhostCursor />
       <Header transparentBg />
 
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
+        className="w-full relative bg-black h-screen h-[100svh] flex flex-col overflow-hidden"
       >
-        {/* Background Image determining the height of the section naturally */}
-        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public" />
-        </div>
-        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1440/691]">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
+        {/* Background Image with Water Ripple Effect */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c917ec39-8efd-4f15-9063-04c3ea250200/public" />
         </div>
 
         {/* Hero Content Text (Topmost) */}
-        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
+        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[130px] pb-[30px]">
           <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
             <div
               className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
@@ -427,6 +492,60 @@ export default function Home() {
 
           {/* Mobile divider at the bottom of the hero section */}
           <div className="md:hidden absolute bottom-0 left-0 right-0 border-b border-[#FFFFFF4D] z-[5]" />
+        </div>
+
+        {/* Halloween Banner & Sound Toggle Switch (Aligned in middle, 26px gap) */}
+        <div
+          className="absolute z-20 flex items-center pointer-events-auto"
+          style={{
+            right: "max(20px, calc(69 / 1440 * 100vw))",
+            bottom: "max(20px, calc(97 / 1440 * 100vw))",
+            gap: "clamp(12px, calc(26 / 1440 * 100vw), 26px)",
+          }}
+        >
+          {/* Banner Image (362x158 responsive, middle-aligned with toggle button) */}
+          <div
+            className="relative flex-shrink-0 select-none pointer-events-none"
+            style={{
+              width: "clamp(130px, calc(362 / 1440 * 100vw), 362px)",
+              aspectRatio: "1366 / 596",
+            }}
+          >
+            <Image
+              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/7b97d4c1-73ae-4b0a-3ac8-b9c6d0ee9d00/public"
+              alt="Halloween Happy Hour"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 150px, 362px"
+              priority
+            />
+          </div>
+
+          {/* Halloween Sound Toggle Switch */}
+          <button
+            type="button"
+            onClick={toggleHalloweenSound}
+            aria-label={isAudioPlaying ? "Mute halloween sound" : "Play halloween sound"}
+            title={isAudioPlaying ? "Mute sound" : "Play sound"}
+            className={`flex-shrink-0 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 ${isAudioPlaying ? "opacity-100" : "opacity-40 hover:opacity-80"
+              }`}
+          >
+            <div className="relative w-[24px] h-[24px] flex items-center justify-center">
+              <Image
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/04a97efe-a544-4dfe-86ad-e4c66b5c4200/public"
+                alt="Halloween sound toggle"
+                width={24}
+                height={24}
+                className="w-[24px] h-[24px] object-contain select-none pointer-events-none"
+              />
+              {!isAudioPlaying && (
+                <span
+                  className="absolute w-[24px] h-[2px] bg-red-500 rotate-45 pointer-events-none rounded-full"
+                  style={{ boxShadow: "0 0 3px rgba(0,0,0,0.9)" }}
+                />
+              )}
+            </div>
+          </button>
         </div>
       </section>
 
