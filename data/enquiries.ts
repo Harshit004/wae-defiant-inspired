@@ -4522,5 +4522,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMImrqHnujglwMV2MiEAB0FIR-mEAEYASAAEgI3BvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-30T03:39:48.804Z"
+  },
+  "b7b99e44-7127-4700-bde7-51cee070ba15": {
+    "id": "b7b99e44-7127-4700-bde7-51cee070ba15",
+    "fullName": "Anjali Maurya",
+    "companyName": "Anjali Maurya",
+    "email": "anjalimaurya944709@gmail.com",
+    "phone": "9889918872",
+    "city": "Azamgarh",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQjw3YvXBhCDARIsAKB-ox95dkqZPQZlxQG6aw6Yl-q51K2XYho8vIjKEioWyyYMqudr91uNr3MaAhSREALw_wcB",
+    "message": "Yes",
+    "type": "contact-us",
+    "createdAt": "2026-10-30T04:00:35.333Z"
   }
 };
