@@ -6497,7 +6497,7 @@ export const BLOGS: Record<string, BlogPost> = {
     "title": "The New Growth Frontier: Can We Build the Industries of Tomorrow Without Repeating the Mistakes of the Past?",
     "category": "Industry Impact and Solutions",
     "description": "India’s next industrial revolution demands more than economic growth. Drawing lessons from history, this article explores how worker welfare, environmental accountability and water security can shape inclusive, responsible industrial progress.",
-    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/c4b1e282-780d-42f0-b1e0-99b7c2702700/public",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0ee9cbf8-50c6-41ba-d216-c6d1c9af6900/public",
     "writerId": "shambhavi",
     "readTime": "3 min read",
     "status": "Live",
