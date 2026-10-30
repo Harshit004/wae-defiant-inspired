@@ -629,5 +629,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-29",
     "time": "00:40:56",
     "pageLink": "/contact-us"
+  },
+  {
+    "id": "86833c63-3229-4545-99e4-7634ab579390",
+    "email": "ganeshuladurgasri9030@gmail.com",
+    "date": "2026-10-30",
+    "time": "09:36:09",
+    "pageLink": "/contact-us"
   }
 ];
