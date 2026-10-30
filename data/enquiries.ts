@@ -4511,5 +4511,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Azamgarh ka",
     "type": "contact-us",
     "createdAt": "2026-10-30T03:31:40.274Z"
+  },
+  "be813365-a0c5-46f4-aad3-bc46d307ea43": {
+    "id": "be813365-a0c5-46f4-aad3-bc46d307ea43",
+    "fullName": "Raghuveer yadav",
+    "companyName": "Milk",
+    "email": "raghuveer@gmail.com",
+    "phone": "7505574818",
+    "city": "Badaun",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMImrqHnujglwMV2MiEAB0FIR-mEAEYASAAEgI3BvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-30T03:39:48.804Z"
   }
 };
