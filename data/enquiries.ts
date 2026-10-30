@@ -4487,5 +4487,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-10-30T03:08:50.813Z"
+  },
+  "20e0774b-ade5-453a-a2e4-a30b9ea38989": {
+    "id": "20e0774b-ade5-453a-a2e4-a30b9ea38989",
+    "fullName": "Devesh",
+    "companyName": "Igh9j",
+    "email": "daveshmilak97@gmail.com",
+    "phone": "9412526990",
+    "city": "Rampur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQjw3YvXBhCDARIsAKB-ox-06Yq1dIWrDWy_b3_gUj9Ef-1o0LXp1SEKC_TUAGlfhORw0w_7JVUaAqNoEALw_wcB",
+    "message": "Fhg79",
+    "type": "contact-us",
+    "createdAt": "2026-10-30T03:23:37.401Z"
   }
 };
