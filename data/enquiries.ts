@@ -4579,15 +4579,15 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "type": "contact-us",
     "createdAt": "2026-10-31T06:24:29.171Z"
   },
-  "8c4e4572-acae-480e-83d9-d66af721dffd": {
-    "id": "8c4e4572-acae-480e-83d9-d66af721dffd",
+  "8212b03e-5973-487e-bb4a-c1fbe1ffd8d5": {
+    "id": "8212b03e-5973-487e-bb4a-c1fbe1ffd8d5",
     "fullName": "Radha",
     "companyName": "Teacher",
     "email": "sahareradha811@gmail.com",
     "phone": "9755977940",
-    "city": "",
+    "city": "Katangi",
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMItta7t8_jlwMV0Y6sAh3o_iySEAEYASAAEgKJdfD_BwE",
     "type": "contact-us",
-    "createdAt": "2026-10-31T06:26:38.365Z"
+    "createdAt": "2026-10-31T06:28:34.140Z"
   }
 };
