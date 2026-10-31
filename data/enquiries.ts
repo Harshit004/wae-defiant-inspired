@@ -4567,5 +4567,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series?gad_source=1&gad_campaignid=24242484871&gbraid=0AAAAABUiSLwOEbTjwrrcogzqNaIEi4VrL&gclid=CjwKCAjwgJHXBhBGEiwAHohJq-IDPYTzz7jmu52w1-oFjXfsb7aiVY-lMcjEz71TyMUA4U1ON-oQMRoC16cQAvD_BwE",
     "type": "product",
     "createdAt": "2026-10-31T05:44:35.605Z"
+  },
+  "e7323829-3a1d-4a64-a7c1-2b20777b4ab1": {
+    "id": "e7323829-3a1d-4a64-a7c1-2b20777b4ab1",
+    "fullName": "Vhdthu8j",
+    "companyName": "Vhdavu",
+    "email": "atsjoulla@gmail.com",
+    "phone": "9690982542",
+    "city": "Doghatib",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI-Lm6g8_jlwMVu-uEAB2RkxvOEAEYASAAEgJqhvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-10-31T06:24:29.171Z"
   }
 };
