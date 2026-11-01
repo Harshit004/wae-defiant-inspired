@@ -4633,5 +4633,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjwxpvXBhASEiwAue4B4Vsqx3Sng8b23NNU7gsK2ElNoq74slRSKlpsPhsXu77zpt6mk8znNhoCLpcQAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-01T22:49:15.925Z"
+  },
+  "50ca7cca-7dea-4678-9d0d-ee7b2718b94a": {
+    "id": "50ca7cca-7dea-4678-9d0d-ee7b2718b94a",
+    "fullName": "Gudiya Yadav",
+    "companyName": "123456",
+    "email": "gudiya444yadav@gmail.com",
+    "phone": "9369725848",
+    "city": "Rawilway",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjwxpvXBhASEiwAue4B4ZPYuH7QXW2dOcDd4UwIhlzqLgAX1sZEk-7eoTMFvjlpXN-44yJQNhoCRfkQAvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-01T22:53:07.069Z"
   }
 };
