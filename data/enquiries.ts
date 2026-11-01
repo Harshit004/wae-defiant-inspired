@@ -4622,5 +4622,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gclid=CjwKCAjwxpvXBhASEiwAue4B4Wyc6_pp9hLraOhpXQGpHykeAHXjGlVXz-xFqDY0Upi0jJCEnE8AuBoCybAQAvD_BwE",
     "type": "product",
     "createdAt": "2026-11-01T09:50:10.196Z"
+  },
+  "82f583b6-9121-48a9-9177-58b8421d4832": {
+    "id": "82f583b6-9121-48a9-9177-58b8421d4832",
+    "fullName": "Dipa Odi",
+    "companyName": "Bazaar",
+    "email": "dipaodi123456@gmail.com",
+    "phone": "9777642699",
+    "city": "Odisha",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjwxpvXBhASEiwAue4B4Vsqx3Sng8b23NNU7gsK2ElNoq74slRSKlpsPhsXu77zpt6mk8znNhoCLpcQAvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-01T22:49:15.925Z"
   }
 };
