@@ -4655,5 +4655,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gclid=CjwKCAjwxpvXBhASEiwAue4B4fTiiYjVmMczMVfv9rSQw1lWQlqdIsdExOxmdfhN14_Ah5E4DUTtNRoC4UIQAvD_BwE",
     "type": "product",
     "createdAt": "2026-11-01T23:44:04.327Z"
+  },
+  "bc247ef6-883f-49ce-99e8-4e0426e6f10b": {
+    "id": "bc247ef6-883f-49ce-99e8-4e0426e6f10b",
+    "fullName": "Nishu",
+    "companyName": "Nishu",
+    "email": "satyapuraini42@gmail.com",
+    "phone": "9250996150",
+    "city": "Hamirpur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjwxpvXBhASEiwAue4B4aFNVl9aIeSIWTVZ7Se-AsWzjsn_exEaSMm3Q-qfQMF0ff-pFFYaTBoCfBwQAvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-01T23:51:47.488Z"
   }
 };
