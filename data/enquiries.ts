@@ -4611,5 +4611,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gclid=CjwKCAjwxpvXBhASEiwAue4B4Wyc6_pp9hLraOhpXQGpHykeAHXjGlVXz-xFqDY0Upi0jJCEnE8AuBoCybAQAvD_BwE",
     "type": "product",
     "createdAt": "2026-11-01T09:50:07.727Z"
+  },
+  "4d482a21-84b7-471e-b09b-c9f420677fd0": {
+    "id": "4d482a21-84b7-471e-b09b-c9f420677fd0",
+    "fullName": "Ankush khanna",
+    "companyName": "A k enterprises",
+    "email": "ankushji10@gmail.com",
+    "phone": "7888778795",
+    "city": "Amritsar",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gclid=CjwKCAjwxpvXBhASEiwAue4B4Wyc6_pp9hLraOhpXQGpHykeAHXjGlVXz-xFqDY0Upi0jJCEnE8AuBoCybAQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-01T09:50:10.196Z"
   }
 };
