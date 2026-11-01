@@ -4589,5 +4589,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMItta7t8_jlwMV0Y6sAh3o_iySEAEYASAAEgKJdfD_BwE",
     "type": "contact-us",
     "createdAt": "2026-10-31T06:28:34.140Z"
+  },
+  "d84f0914-b3a4-4fe0-a96e-75ae3b9f3b18": {
+    "id": "d84f0914-b3a4-4fe0-a96e-75ae3b9f3b18",
+    "fullName": "Annu Maurya",
+    "companyName": "Annu Maurya",
+    "email": "annumaurya@gmail.com",
+    "phone": "9651779763",
+    "city": "Mirzapur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIn8G0uIDmlwMV8YbpBR1mpg1nEAEYASAAEgLKJfD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-01T05:11:54.881Z"
   }
 };
