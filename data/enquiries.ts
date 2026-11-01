@@ -4644,5 +4644,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjwxpvXBhASEiwAue4B4ZPYuH7QXW2dOcDd4UwIhlzqLgAX1sZEk-7eoTMFvjlpXN-44yJQNhoCRfkQAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-01T22:53:07.069Z"
+  },
+  "27405ee3-5afa-4cee-a0d9-6238f53c5204": {
+    "id": "27405ee3-5afa-4cee-a0d9-6238f53c5204",
+    "fullName": "Vikas",
+    "companyName": "Ganga layer farm",
+    "email": "vikaskhokhar2323@gmail.com",
+    "phone": "7097580000",
+    "city": "Gohana",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gclid=CjwKCAjwxpvXBhASEiwAue4B4fTiiYjVmMczMVfv9rSQw1lWQlqdIsdExOxmdfhN14_Ah5E4DUTtNRoC4UIQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-01T23:44:04.327Z"
   }
 };
