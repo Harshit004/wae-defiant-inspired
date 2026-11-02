@@ -82,7 +82,7 @@ const ContactSectionDark = () => {
             {/* Left Side */}
             <div className="w-full md:w-[40%] flex flex-col pt-12 md:pt-0">
                 <h2
-                    className="text-[36px] md:text-[60px] font-normal md:font-medium mb-[16px] md:mb-[24px]"
+                    className="text-[36px] md:text-[60px] font-normal md:font-normal mb-[16px] md:mb-[24px]"
                     style={{
                         fontFamily: "'Inter Tight', sans-serif",
                         lineHeight: '110%',
@@ -211,15 +211,12 @@ const ContactSectionDark = () => {
                             className="w-full h-[50px] bg-transparent text-white border border-white flex items-center justify-center gap-4 group transition-all duration-300 hover:bg-white hover:text-black"
                         >
                             <span style={{
-                                fontFamily: "'Inter Tight', sans-serif",
+                                fontFamily: "'Manrope', sans-serif",
                                 fontWeight: 400,
-                                fontSize: '16px',
+                                fontSize: '14px',
                             }}>
-                                Get in Touch
+                                Let’s Talk Possibilities
                             </span>
-                            <svg width="29" height="14" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform group-hover:translate-x-2">
-                                <path d="M2 12H38M38 12L28 2M38 12L28 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
                         </button>
                     </div>
                 </form>
