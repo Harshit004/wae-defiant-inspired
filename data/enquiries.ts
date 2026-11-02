@@ -4666,5 +4666,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAjwxpvXBhASEiwAue4B4aFNVl9aIeSIWTVZ7Se-AsWzjsn_exEaSMm3Q-qfQMF0ff-pFFYaTBoCfBwQAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-01T23:51:47.488Z"
+  },
+  "8c99b251-3098-4b38-923e-c2444a280313": {
+    "id": "8c99b251-3098-4b38-923e-c2444a280313",
+    "fullName": "Manju Maharjan",
+    "companyName": "Vie Tec Pvt Ltd",
+    "email": "admin@vietec.co",
+    "phone": "9851351541",
+    "city": "Baluwatar, Kathmandu",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "VIE TEC is an integrated engineering company specialising in water treatment, swimming pools and MEP solutions since 1995, serving leading hotels and hospitality projects across Nepal.\n\nWith the growing demand for alternatives to plastic bottled water in Nepal's hospitality sector, we are exploring partnerships with reliable Indian manufacturers to offer complete in-house glass bottling solutions to hotels and resorts.\n\nWe would like to enquire about:\n\n1. Glass Bottling Plants: Semi-automatic and automatic washing, filling and capping systems (100–700 bottles/hour).\n2. Sparkling Water Units: Compact carbonation and filling systems for hotels and resorts.\n3. Consumables: Reusable glass bottles, caps, seals, labels, crates and trolleys.\n\nKindly share the following details:\n\n- Technical brochures, specifications and utility requirements.\n- Indicative EXW pricing in INR and distributor/partner pricing for Nepal.\n- Delivery timelines, warranty and after-sales support.\n- Hotel installation references in India or abroad.\n- Operator and technical training facilities.\n\n\nWe look forward to exploring a long-term business association for the Nepal market and would be happy to visit your factory for a demonstration.",
+    "type": "contact-us",
+    "createdAt": "2026-11-02T07:04:31.113Z"
   }
 };
