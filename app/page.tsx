@@ -380,20 +380,20 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative bg-black md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col overflow-hidden"
+        className="w-full relative bg-black h-screen h-[100svh] min-h-[100svh] flex flex-col justify-between overflow-hidden"
       >
-        {/* Mobile Background Video */}
-        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full overflow-hidden pointer-events-none">
+        {/* Diwali Background Video (fills screen end-to-end, no spaces, aspect ratio preserved, cropped if needed) */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
           <iframe
-            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d8a526236b950c6c03c5ef8391ec7a7e/iframe?muted=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd8a526236b950c6c03c5ef8391ec7a7e%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/df9e20df3deb916b588afb97a4adfe18/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fdf9e20df3deb916b588afb97a4adfe18%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
             style={{
               border: "none",
               position: "absolute",
               top: "50%",
               left: "50%",
-              transform: "translate(-50%, -50%) scale(1.04)",
-              width: "max(100vw, calc((100vh - 119px) / 0.63024))",
-              height: "max(100%, calc(100vw * 0.63024))",
+              transform: "translate(-50%, -50%) scale(1.02)",
+              width: "max(100%, 100vw, calc(100vh * 1.5900552), calc(100svh * 1.5900552))",
+              height: "max(100%, 100vh, 100svh, calc(100vw * 0.6289089645587214))",
               minWidth: "100%",
               minHeight: "100%",
               pointerEvents: "none",
@@ -401,35 +401,10 @@ export default function Home() {
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
             allowFullScreen={true}
           />
-          {/* Top edge cover to eliminate video top edge line artifact */}
-          <div className="absolute top-0 left-0 right-0 h-[6px] bg-black z-10 pointer-events-none" />
-        </div>
-
-        {/* Desktop Background Video determining the height of the section naturally */}
-        <div
-          className="hidden md:block relative w-full overflow-hidden"
-          style={{ position: "relative", paddingTop: "63.0242825607064%" }}
-        >
-          <iframe
-            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d8a526236b950c6c03c5ef8391ec7a7e/iframe?muted=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd8a526236b950c6c03c5ef8391ec7a7e%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
-            style={{
-              border: "none",
-              position: "absolute",
-              top: "-6px",
-              left: 0,
-              height: "calc(100% + 12px)",
-              width: "100%",
-              pointerEvents: "none",
-            }}
-            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-            allowFullScreen={true}
-          />
-          {/* Top edge cover to eliminate video top edge line artifact */}
-          <div className="absolute top-0 left-0 right-0 h-[6px] bg-black z-10 pointer-events-none" />
         </div>
 
         {/* Hero Content Text (Topmost) */}
-        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
+        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[130px] pb-[30px]">
           <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
             {/* Top row: Heading */}
             <div
