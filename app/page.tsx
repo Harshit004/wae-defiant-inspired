@@ -389,9 +389,10 @@ export default function Home() {
             style={{
               border: "none",
               position: "absolute",
-              top: "50%",
+              top: 0,
               left: "50%",
-              transform: "translate(-50%, -50%) scale(1.02)",
+              transform: "translateX(-50%) scale(1.02)",
+              transformOrigin: "top center",
               width: "max(100%, 100vw, calc(100vh * 1.5900552), calc(100svh * 1.5900552))",
               height: "max(100%, 100vh, 100svh, calc(100vw * 0.6289089645587214))",
               minWidth: "100%",
