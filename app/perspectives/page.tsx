@@ -112,7 +112,7 @@ export default function Home() {
                   src={featuredPost.heroImage}
                   alt={featuredPost.title}
                   fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-[800ms] hover:scale-103"
+                  className="object-cover grayscale hover:grayscale-0 transition-all [transition-duration:800ms] hover:scale-103"
                   priority
                 />
               )}
@@ -218,7 +218,7 @@ export default function Home() {
                           src={post.heroImage}
                           alt={post.title}
                           fill
-                          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"
+                          className="object-cover grayscale group-hover:grayscale-0 transition-all [transition-duration:800ms] ease-in-out"
                         />
                       </Link>
 
@@ -273,7 +273,7 @@ export default function Home() {
               <div key={idx} className="flex flex-col text-left h-full">
                 <Link
                   href={writer.link}
-                  className="block relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-[600ms] rounded-full aspect-square w-full max-w-[222px]"
+                  className="block relative overflow-hidden grayscale hover:grayscale-0 transition-all [transition-duration:600ms] rounded-full aspect-square w-full max-w-[222px]"
                 >
                   <Image
                     src={writer.image}

@@ -339,7 +339,7 @@ export default function DynamicBlogPost() {
                               src={post.heroImage}
                               alt={post.title}
                               fill
-                              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"
+                              className="object-cover grayscale group-hover:grayscale-0 transition-all [transition-duration:800ms] ease-in-out"
                             />
                           </Link>
 
