@@ -6,8 +6,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 
-// Shared container class for consistent margins and max-width
-const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
+// Shared container class for consistent margins across all screens
+const containerClass = "w-full px-[24px] md:px-[7.5vw]"
 
 interface MenuItem {
     text: string
@@ -288,13 +288,13 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                         </div>
 
                         {/* Desktop Header */}
-                        <div className="hidden md:grid grid-cols-[auto_minmax(0,10.17vw)_auto_minmax(0,10.21vw)_auto_minmax(0,10.21vw)_auto_minmax(0,9.03vw)_auto_minmax(0,8.13vw)_1fr] items-start pt-[30px]">
+                        <div className="hidden md:grid grid-cols-[auto_minmax(0.75rem,1.1fr)_auto_minmax(0.75rem,1.1fr)_auto_minmax(1rem,1.2fr)_auto_minmax(0.75rem,1fr)_auto_minmax(0.75rem,0.9fr)_auto] items-start pt-[30px]">
                             {/* Headings */}
                             <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>PERSONA</div>
                             <div></div>
                             <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>ORIGIN</div>
                             <div></div>
-                            <div className="uppercase pb-[10px] flex items-center" style={{ position: "relative", left: "-20px", fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>OBJECTIVE</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>OBJECTIVE</div>
                             <div></div>
                             <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>INSIDE WAE</div>
                             <div></div>
@@ -365,8 +365,6 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                     fontSize: "11px",
                                     lineHeight: "130%",
                                     color: "#ffffff",
-                                    position: "relative",
-                                    left: "-20px",
                                     whiteSpace: "nowrap",
                                 }}
                             >

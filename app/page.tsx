@@ -14,8 +14,8 @@ import ContactSectionDark from "@/components/contact-section-dark"
 import dynamic from "next/dynamic"
 
 
-// Shared container class for consistent margins and max-width
-const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
+// Shared container class for consistent margins across all screens
+const containerClass = "w-full px-[24px] md:px-[7.5vw]"
 
 /**
  * Animated counter component
