@@ -82,7 +82,7 @@ export default function TheActivistCoPage() {
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "12px",
+                  fontSize: "clamp(12px, 0.833vw, 18px)",
                   lineHeight: "120%",
                   letterSpacing: "0%",
                   color: "#AEAEAE",
@@ -128,7 +128,7 @@ export default function TheActivistCoPage() {
               style={{
                 fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
-                fontSize: "12px",
+                fontSize: "clamp(12px, 0.833vw, 18px)",
                 lineHeight: "120%",
                 letterSpacing: "0%",
                 color: "#AEAEAE",
@@ -147,7 +147,7 @@ export default function TheActivistCoPage() {
               style={{
                 fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
-                fontSize: "12px",
+                fontSize: "clamp(12px, 0.833vw, 18px)",
                 lineHeight: "120%",
                 letterSpacing: "0%",
                 color: "#AEAEAE",
@@ -203,7 +203,7 @@ export default function TheActivistCoPage() {
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 500,
-                  fontSize: "12px",
+                  fontSize: "clamp(12px, 0.833vw, 18px)",
                   lineHeight: "100%",
                   letterSpacing: "0%",
                 }}
@@ -222,7 +222,7 @@ export default function TheActivistCoPage() {
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "12px",
+                  fontSize: "clamp(12px, 0.833vw, 18px)",
                   lineHeight: "120%",
                   letterSpacing: "0%",
                   color: "#aeaeae",
@@ -238,7 +238,7 @@ export default function TheActivistCoPage() {
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "12px",
+                  fontSize: "clamp(12px, 0.833vw, 18px)",
                   lineHeight: "120%",
                   letterSpacing: "0%",
                   color: "#aeaeae",
@@ -295,7 +295,7 @@ export default function TheActivistCoPage() {
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "12px",
+                  fontSize: "clamp(12px, 0.833vw, 18px)",
                   lineHeight: "120%",
                   letterSpacing: "0%",
                   color: "#aeaeae",
@@ -311,7 +311,7 @@ export default function TheActivistCoPage() {
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "12px",
+                  fontSize: "clamp(12px, 0.833vw, 18px)",
                   lineHeight: "120%",
                   letterSpacing: "0%",
                   color: "#aeaeae",
@@ -327,7 +327,7 @@ export default function TheActivistCoPage() {
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
-                  fontSize: "12px",
+                  fontSize: "clamp(12px, 0.833vw, 18px)",
                   lineHeight: "120%",
                   letterSpacing: "0%",
                   color: "#aeaeae",

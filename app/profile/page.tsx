@@ -425,7 +425,7 @@ const AwardsSection = () => {
                             <div className="w-full aspect-[340/407] relative mb-[35px] max-w-[340px]">
                                 <Image src={award.image} alt={award.title} fill className="object-cover" />
                             </div>
-                            <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '24px', lineHeight: '130%', color: '#fff' }} className="pr-4">
+                            <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 'clamp(24px, 1.66vw, 36px)', lineHeight: '130%', color: '#fff' }} className="pr-4">
                                 {award.title}<br />
                                 {award.year}
                             </p>
@@ -619,7 +619,7 @@ const ThisIsUs: FC = () => {
                         {/* Desktop Sticky Left Bar */}
                         <div className="hidden md:block w-[25%] pr-[5.56vw] border-r border-white/20 relative">
                             <div className="sticky top-40">
-                                <h2 style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: '40px', lineHeight: '100%', marginBottom: '60px' }}>
+                                <h2 style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 'clamp(40px, 2.77vw, 64px)', lineHeight: '100%', marginBottom: '60px' }}>
                                     The team<br />behind WAE
                                 </h2>
                                 <div className="mt-[-28px]">

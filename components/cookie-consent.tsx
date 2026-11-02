@@ -75,10 +75,11 @@ export default function CookieConsent() {
 
         .cookie-modal-box {
           position: relative;
-          width: 50.97vw; /* 734px at 1440px */
-          height: 31.11vw; /* 448px at 1440px */
+          width: min(90vw, clamp(580px, 50.97vw, 760px));
+          height: auto;
+          max-height: 90vh;
           background-color: #003c58;
-          padding: 4.93vw 6.45vw; /* py-71px px-93px relative to 1440px */
+          padding: clamp(36px, 4.5vw, 64px) clamp(36px, 5.8vw, 84px);
           border-radius: 0px;
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
           display: flex;
@@ -90,21 +91,21 @@ export default function CookieConsent() {
         }
 
         .cookie-title {
-          margin: 0 0 26px 0;
+          margin: 0 0 clamp(16px, 1.8vw, 26px) 0;
           font-family: 'Inter Tight', sans-serif;
           font-weight: 400;
-          font-size: 32px;
+          font-size: clamp(26px, 2.22vw, 36px);
           line-height: 105%;
           letter-spacing: 0%;
           vertical-align: middle;
         }
 
         .cookie-desc {
-          margin: 0 0 77px 0;
+          margin: 0 0 clamp(32px, 3.8vw, 56px) 0;
           font-family: 'Manrope', sans-serif;
           font-weight: 400;
-          font-size: 16px;
-          line-height: 130%;
+          font-size: clamp(14px, 1.11vw, 18px);
+          line-height: 140%;
           letter-spacing: 0%;
           vertical-align: middle;
           color: #AEAEAE;
@@ -112,15 +113,30 @@ export default function CookieConsent() {
 
         .cookie-buttons-row {
           display: flex;
-          gap: 15px;
-          margin-bottom: 24px;
+          gap: clamp(12px, 1.04vw, 18px);
+          margin-bottom: clamp(18px, 1.66vw, 26px);
           width: 100%;
+        }
+
+        .cookie-btn {
+          flex: 1;
+          border-radius: 0px;
+          padding: clamp(11px, 0.9vw, 16px) 0;
+          font-family: 'Manrope', sans-serif;
+          font-size: clamp(13px, 1.04vw, 16px);
+          line-height: 100%;
+          letter-spacing: 0%;
+          text-align: center;
+          vertical-align: middle;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          box-sizing: border-box;
         }
 
         .cookie-link {
           font-family: 'Manrope', sans-serif;
           font-weight: 400;
-          font-size: 16px;
+          font-size: clamp(13px, 1.04vw, 16px);
           line-height: 100%;
           letter-spacing: 0%;
           vertical-align: middle;
@@ -165,8 +181,8 @@ export default function CookieConsent() {
           type="button"
           style={{
             position: "absolute",
-            top: "26px", // mt-26
-            right: "26px", // mr-26
+            top: "clamp(18px, 1.8vw, 28px)",
+            right: "clamp(18px, 1.8vw, 28px)",
             width: "34px",
             height: "34px",
             background: "none",
@@ -206,23 +222,12 @@ export default function CookieConsent() {
             onMouseEnter={() => setAcceptHovered(true)}
             onMouseLeave={() => setAcceptHovered(false)}
             type="button"
+            className="cookie-btn"
             style={{
-              flex: 1,
               background: acceptHovered ? "transparent" : "#FFF",
               border: "1.5px solid #FFF",
-              borderRadius: "0px",
               color: acceptHovered ? "#FFF" : "#003c58",
-              padding: "13px 0",
-              fontFamily: "'Manrope', sans-serif",
               fontWeight: 600,
-              fontSize: "15px",
-              lineHeight: "100%",
-              letterSpacing: "0%",
-              textAlign: "center",
-              verticalAlign: "middle",
-              cursor: "pointer",
-              transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-              boxSizing: "border-box",
             }}
           >
             Accept All
@@ -234,23 +239,12 @@ export default function CookieConsent() {
             onMouseEnter={() => setNecessaryHovered(true)}
             onMouseLeave={() => setNecessaryHovered(false)}
             type="button"
+            className="cookie-btn"
             style={{
-              flex: 1,
               background: necessaryHovered ? "#FFF" : "transparent",
               border: "1.5px solid #FFF",
-              borderRadius: "0px",
               color: necessaryHovered ? "#003c58" : "#FFF",
-              padding: "13px 0",
-              fontFamily: "'Manrope', sans-serif",
               fontWeight: 400,
-              fontSize: "15px",
-              lineHeight: "100%",
-              letterSpacing: "0%",
-              textAlign: "center",
-              verticalAlign: "middle",
-              cursor: "pointer",
-              transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-              boxSizing: "border-box",
             }}
           >
             Accept Necessary

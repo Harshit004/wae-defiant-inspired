@@ -290,38 +290,39 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                         {/* Desktop Header */}
                         <div className="hidden md:grid grid-cols-[auto_minmax(0.75rem,1.1fr)_auto_minmax(0.75rem,1.1fr)_auto_minmax(1rem,1.2fr)_auto_minmax(0.75rem,1fr)_auto_minmax(0.75rem,0.9fr)_auto] items-start pt-[30px]">
                             {/* Headings */}
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>PERSONA</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "clamp(12px, 0.833vw, 20px)", lineHeight: "100%" }}>PERSONA</div>
                             <div></div>
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>ORIGIN</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "clamp(12px, 0.833vw, 20px)", lineHeight: "100%" }}>ORIGIN</div>
                             <div></div>
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>OBJECTIVE</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "clamp(12px, 0.833vw, 20px)", lineHeight: "100%" }}>OBJECTIVE</div>
                             <div></div>
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>INSIDE WAE</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "clamp(12px, 0.833vw, 20px)", lineHeight: "100%" }}>INSIDE WAE</div>
                             <div></div>
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>RESPONSIBILITY</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "clamp(12px, 0.833vw, 20px)", lineHeight: "100%" }}>RESPONSIBILITY</div>
                             <div></div>
-                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "12px", lineHeight: "100%" }}>ETCETERA</div>
+                            <div className="uppercase pb-[10px] flex items-center" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, fontSize: "clamp(12px, 0.833vw, 20px)", lineHeight: "100%" }}>ETCETERA</div>
 
                             {/* Divider */}
                             <div className="col-span-11 w-full h-px bg-[#FFFFFF4D] mb-[10px]" />
 
                             {/* Logo */}
-                            <div className="row-span-6 flex flex-col justify-start pt-1 w-[64px] relative group z-20">
+                            <div className="row-span-6 flex flex-col justify-start pt-1 w-[clamp(64px,4.44vw,100px)] relative group z-20">
                                 <Link href="/">
                                     <Image
                                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
                                         alt="WAE Logo"
-                                        width={64}
-                                        height={67}
+                                        width={96}
+                                        height={100}
                                         priority
+                                        className="w-[clamp(64px,4.44vw,100px)] h-auto object-contain"
                                     />
                                 </Link>
-                                <div className="absolute left-[32px] top-[85px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center h-[50px] pointer-events-none w-[240px]">
+                                <div className="absolute left-[clamp(32px,2.22vw,50px)] top-[clamp(85px,6vw,130px)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center h-[50px] pointer-events-none w-[clamp(240px,18vw,360px)]">
                                     <div className="w-[1px] bg-[#666666] h-[45px]"></div>
-                                    <div className="ml-[10px] w-[201px]" style={{
+                                    <div className="ml-[10px] w-max max-w-[clamp(201px,16vw,320px)]" style={{
                                         fontFamily: "'Manrope', sans-serif",
                                         fontWeight: 500,
-                                        fontSize: "10px",
+                                        fontSize: "clamp(10px, 0.694vw, 15px)",
                                         lineHeight: "130%",
                                         color: "white"
                                     }}>
@@ -339,7 +340,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     fontWeight: 500,
-                                    fontSize: "11px",
+                                    fontSize: "clamp(11px, 0.764vw, 18px)",
                                     lineHeight: "130%",
                                     color: "#ffffff",
                                     whiteSpace: "nowrap",
@@ -351,7 +352,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                     78.9629° E
                                 </div>
                                 <div className="absolute top-1 left-0 opacity-0 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none">
-                                    <Image src="/image-571.png" alt="India Flag" width={38} height={25} className="object-cover rounded-sm" />
+                                    <Image src="/image-571.png" alt="India Flag" width={60} height={40} className="w-[clamp(38px,2.64vw,60px)] h-auto object-cover rounded-sm" />
                                 </div>
                             </div>
                             <div className="row-span-6"></div>
@@ -362,7 +363,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                 style={{
                                     fontFamily: "'Inter Tight', sans-serif",
                                     fontWeight: 500,
-                                    fontSize: "11px",
+                                    fontSize: "clamp(11px, 0.764vw, 18px)",
                                     lineHeight: "130%",
                                     color: "#ffffff",
                                     whiteSpace: "nowrap",
@@ -380,7 +381,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                         style={{
                                             fontFamily: "'Inter Tight', sans-serif",
                                             fontWeight: 500,
-                                            fontSize: "11px",
+                                            fontSize: "clamp(11px, 0.764vw, 18px)",
                                             lineHeight: "110%",
                                         }}
                                     >
@@ -394,12 +395,11 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                                     <span className="menu-arrow blueprint-arrow">
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
-                                                            width="12"
-                                                            height="12"
                                                             viewBox="0 0 24 24"
                                                             fill="none"
                                                             stroke="currentColor"
                                                             strokeWidth="2"
+                                                            className="w-[clamp(12px,0.833vw,18px)] h-[clamp(12px,0.833vw,18px)]"
                                                         >
                                                             <line x1="5" y1="12" x2="19" y2="12" />
                                                             <polyline points="12 5 19 12 12 19" />
@@ -416,7 +416,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                         style={{
                                             fontFamily: "'Inter Tight', sans-serif",
                                             fontWeight: 500,
-                                            fontSize: "11px",
+                                            fontSize: "clamp(11px, 0.764vw, 18px)",
                                             lineHeight: "110%",
                                         }}
                                     >
@@ -430,7 +430,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/18f6211c-9bbc-42d0-5640-8d5589020800/public"
                                                         alt="Coming Soon"
                                                         style={{
-                                                            height: "12px",
+                                                            height: "clamp(12px, 0.833vw, 18px)",
                                                             aspectRatio: "65 / 14",
                                                             objectFit: "contain",
                                                             display: "inline-block",
@@ -447,12 +447,11 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                                         <span className="menu-arrow blueprint-arrow">
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
-                                                                width="12"
-                                                                height="12"
                                                                 viewBox="0 0 24 24"
                                                                 fill="none"
                                                                 stroke="currentColor"
                                                                 strokeWidth="2"
+                                                                className="w-[clamp(12px,0.833vw,18px)] h-[clamp(12px,0.833vw,18px)]"
                                                             >
                                                                 <line x1="5" y1="12" x2="19" y2="12" />
                                                                 <polyline points="12 5 19 12 12 19" />
@@ -470,7 +469,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                         style={{
                                             fontFamily: "'Inter Tight', sans-serif",
                                             fontWeight: 500,
-                                            fontSize: "11px",
+                                            fontSize: "clamp(11px, 0.764vw, 18px)",
                                             lineHeight: "110%",
                                         }}
                                     >
@@ -484,12 +483,11 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                                                     <span className="menu-arrow blueprint-arrow">
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
-                                                            width="12"
-                                                            height="12"
                                                             viewBox="0 0 24 24"
                                                             fill="none"
                                                             stroke="currentColor"
                                                             strokeWidth="2"
+                                                            className="w-[clamp(12px,0.833vw,18px)] h-[clamp(12px,0.833vw,18px)]"
                                                         >
                                                             <line x1="5" y1="12" x2="19" y2="12" />
                                                             <polyline points="12 5 19 12 12 19" />
@@ -517,7 +515,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                     gap: 4px;
                 }
                 .text-container {
-                    height: 12px;
+                    height: 1.25em;
                     overflow: hidden;
                     white-space: nowrap;
                 }
@@ -527,7 +525,7 @@ const Header: FC<{ transparentBg?: boolean }> = ({ transparentBg = false }) => {
                     transition: margin-top 0.5s;
                 }
                 .c--anim-btn:hover .c-anim-btn {
-                    margin-top: -12px;
+                    margin-top: -1.25em;
                 }
                 .menu-arrow {
                     display: inline-block;
