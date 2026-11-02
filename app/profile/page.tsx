@@ -7,8 +7,8 @@ import Footer from "@/components/footer"
 import Header from "@/components/header"
 import { Rocket, Lightbulb, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react"
 
-// Shared container class for consistent margins and max-width: 24px on mobile, 7.5vw on desktop
-const containerClass = "mx-auto w-full max-w-[1440px] px-6 sm:px-8 md:px-[7.5vw]"
+// Shared container class for consistent margins: 24px on mobile, 7.5vw on desktop
+const containerClass = "w-full px-6 sm:px-8 md:px-[7.5vw]"
 
 const DarkSectionButton = ({
     href,

@@ -7,8 +7,8 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import { BLOGS, WRITERS } from "@/data/blogs"
 
-// Center layout container matching standard padding & max-width
-const containerClass = "mx-auto w-full max-w-[1440px] px-[24px] md:px-[7.5vw]"
+// Layout container matching standard padding
+const containerClass = "w-full px-[24px] md:px-[7.5vw]"
 
 interface SelectButtonProps {
   children: React.ReactNode

@@ -8,7 +8,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { BLOGS, WRITERS, BlogPost, Writer } from "@/data/blogs"
 
-const containerClass = "mx-auto w-full max-w-[1440px]"
+const containerClass = "w-full"
 
 export default function DynamicBlogPost() {
   const params = useParams()
@@ -60,7 +60,7 @@ export default function DynamicBlogPost() {
       <main className="relative bg-[#0F0F0F] text-white min-h-screen">
         <Header transparentBg />
         <div className="h-[220px]" />
-        <section className="px-[24px] md:px-[7.5vw] mx-auto w-full max-w-[1440px]">
+        <section className="px-[24px] md:px-[7.5vw] w-full">
           <div className="text-center py-20">
             <h1 className="text-2xl font-inter-tight font-normal">
               Article Not Found
