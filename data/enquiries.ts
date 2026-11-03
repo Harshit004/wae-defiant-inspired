@@ -4689,5 +4689,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI8trfyOPqlwMVz4ysAh3IQyAREAEYASAAEgKvePD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-03T02:46:22.874Z"
+  },
+  "0b74e4ff-a26d-4d63-80c4-acfcef237c8f": {
+    "id": "0b74e4ff-a26d-4d63-80c4-acfcef237c8f",
+    "fullName": "Hanumantha Hanu",
+    "companyName": "Merck (Bhagmani tech park )",
+    "email": "hanumanthahanu3184@gmail.com",
+    "phone": "9945646415",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "General service all water dispenser",
+    "type": "contact-us",
+    "createdAt": "2026-11-03T09:35:04.844Z"
   }
 };
