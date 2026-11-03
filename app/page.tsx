@@ -407,42 +407,41 @@ export default function Home() {
         {/* Hero Content Text (Topmost) */}
         <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[130px] pb-[30px]">
           <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
-            <div className="w-full flex flex-col sm:flex-row sm:items-end justify-between gap-8 md:gap-12">
-              {/* Left Column: Heading + Subtitle closely grouped */}
-              <div className="flex flex-col">
-                <div
-                  className="w-[85vw] md:w-[clamp(280px,34.79vw,780px)]"
-                  style={{
-                    color: "#FFFFFF",
-                    fontFamily: "'Inter Tight', sans-serif",
-                  }}
-                >
-                  <h1
-                    className="text-[12.5vw] md:text-[clamp(36px,5.9vw,140px)] leading-[105%] font-medium"
-                    style={{
-                      letterSpacing: "0%",
-                      verticalAlign: "middle",
-                      margin: 0,
-                    }}
-                  >
-                    We're here<br />to disrupt the<br />status quo!
-                  </h1>
-                </div>
+            {/* Top: Heading */}
+            <div
+              className="w-[85vw] md:w-[clamp(280px,34.79vw,780px)]"
+              style={{
+                color: "#FFFFFF",
+                fontFamily: "'Inter Tight', sans-serif",
+              }}
+            >
+              <h1
+                className="text-[12.5vw] md:text-[clamp(36px,5.9vw,140px)] leading-[105%] font-medium"
+                style={{
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  margin: 0,
+                }}
+              >
+                We're here<br />to disrupt the<br />status quo!
+              </h1>
+            </div>
 
-                <div className="h-[12px] md:h-[clamp(14px,1.2vw,22px)]" />
+            <div className="h-[12px] md:h-[clamp(14px,1.2vw,22px)]" />
 
-                <p
-                  className="text-[6vw] md:text-[clamp(24px,1.8vw,44px)] leading-[115%] font-normal text-[#AEAEAE]"
-                  style={{
-                    letterSpacing: "0%",
-                    verticalAlign: "middle",
-                    margin: 0,
-                    fontFamily: "'Inter Tight', sans-serif",
-                  }}
-                >
-                  Our Green is Blue
-                </p>
-              </div>
+            {/* Bottom Row: "Our Green is Blue" and Festive Greeting aligned at TOP */}
+            <div className="w-full flex flex-col sm:flex-row sm:items-start justify-between gap-6 md:gap-8">
+              <p
+                className="text-[6vw] md:text-[clamp(24px,1.8vw,44px)] leading-[115%] font-normal text-[#AEAEAE]"
+                style={{
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  margin: 0,
+                  fontFamily: "'Inter Tight', sans-serif",
+                }}
+              >
+                Our Green is Blue
+              </p>
 
               {/* Right Column: Festive Greeting */}
               <div className="w-full sm:w-auto flex sm:justify-end">
