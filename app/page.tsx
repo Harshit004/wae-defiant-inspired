@@ -385,7 +385,7 @@ export default function Home() {
         {/* Diwali Background Video (fills screen end-to-end, no spaces, aspect ratio preserved, cropped if needed) */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
           <iframe
-            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/02c646ef837c75358e32537f17019dfc/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2F02c646ef837c75358e32537f17019dfc%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/e1ff58a81e2a2d8d852fa8acf2771bd0/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fe1ff58a81e2a2d8d852fa8acf2771bd0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
             style={{
               border: "none",
               position: "absolute",
