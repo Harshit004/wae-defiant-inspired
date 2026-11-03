@@ -407,56 +407,57 @@ export default function Home() {
         {/* Hero Content Text (Topmost) */}
         <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[130px] pb-[30px]">
           <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
-            {/* Top row: Heading */}
-            <div
-              className="w-[85vw] md:w-[clamp(280px,34.79vw,780px)]"
-              style={{
-                color: "#FFFFFF",
-                fontFamily: "'Inter Tight', sans-serif",
-              }}
-            >
-              <h1
-                className="text-[12.5vw] md:text-[clamp(36px,5.9vw,140px)] leading-[105%] font-medium"
-                style={{
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  margin: 0,
-                }}
-              >
-                We're here<br />to disrupt the<br />status quo!
-              </h1>
-            </div>
+            <div className="w-full flex flex-col sm:flex-row sm:items-end justify-between gap-8 md:gap-12">
+              {/* Left Column: Heading + Subtitle closely grouped */}
+              <div className="flex flex-col">
+                <div
+                  className="w-[85vw] md:w-[clamp(280px,34.79vw,780px)]"
+                  style={{
+                    color: "#FFFFFF",
+                    fontFamily: "'Inter Tight', sans-serif",
+                  }}
+                >
+                  <h1
+                    className="text-[12.5vw] md:text-[clamp(36px,5.9vw,140px)] leading-[105%] font-medium"
+                    style={{
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                      margin: 0,
+                    }}
+                  >
+                    We're here<br />to disrupt the<br />status quo!
+                  </h1>
+                </div>
 
-            <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
+                <div className="h-[12px] md:h-[clamp(14px,1.2vw,22px)]" />
 
-            {/* Bottom row: "Our Green is Blue" on left, Festive Wish on right */}
-            <div className="w-full flex flex-col sm:flex-row sm:items-end justify-between gap-6 md:gap-8">
-              <p
-                className="text-[6vw] md:text-[clamp(30px,2.08vw,52px)] leading-[115%] font-normal text-[#AEAEAE]"
-                style={{
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  margin: 0,
-                  fontFamily: "'Inter Tight', sans-serif",
-                }}
-              >
-                Our Green is Blue
-              </p>
-
-              <div className="w-full sm:w-auto flex justify-end">
                 <p
-                  className="text-[14px] sm:text-[clamp(18px,1.25vw,28px)] text-right text-white font-medium ml-auto max-w-[clamp(280px,24vw,520px)]"
+                  className="text-[6vw] md:text-[clamp(24px,1.8vw,44px)] leading-[115%] font-normal text-[#AEAEAE]"
+                  style={{
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    margin: 0,
+                    fontFamily: "'Inter Tight', sans-serif",
+                  }}
+                >
+                  Our Green is Blue
+                </p>
+              </div>
+
+              {/* Right Column: Festive Greeting */}
+              <div className="w-full sm:w-auto flex sm:justify-end">
+                <p
+                  className="text-[14px] sm:text-[clamp(16px,1.15vw,24px)] text-left sm:text-right text-white font-normal ml-auto max-w-[clamp(360px,28vw,580px)]"
                   style={{
                     fontFamily: "'Inter', sans-serif",
-                    fontWeight: 500,
-                    lineHeight: "114.99999999999999%",
+                    fontWeight: 400,
+                    lineHeight: "140%",
                     letterSpacing: "0%",
-                    textAlign: "right",
                     verticalAlign: "middle",
                     margin: 0,
                   }}
                 >
-                  May the festival of lights fill your life<br />
+                  May the festival of lights <span className="whitespace-nowrap">fill your life</span><br />
                   with joy, peace, prosperity, and<br />
                   endless blessings.
                 </p>
