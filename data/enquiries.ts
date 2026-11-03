@@ -4678,5 +4678,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "VIE TEC is an integrated engineering company specialising in water treatment, swimming pools and MEP solutions since 1995, serving leading hotels and hospitality projects across Nepal.\n\nWith the growing demand for alternatives to plastic bottled water in Nepal's hospitality sector, we are exploring partnerships with reliable Indian manufacturers to offer complete in-house glass bottling solutions to hotels and resorts.\n\nWe would like to enquire about:\n\n1. Glass Bottling Plants: Semi-automatic and automatic washing, filling and capping systems (100–700 bottles/hour).\n2. Sparkling Water Units: Compact carbonation and filling systems for hotels and resorts.\n3. Consumables: Reusable glass bottles, caps, seals, labels, crates and trolleys.\n\nKindly share the following details:\n\n- Technical brochures, specifications and utility requirements.\n- Indicative EXW pricing in INR and distributor/partner pricing for Nepal.\n- Delivery timelines, warranty and after-sales support.\n- Hotel installation references in India or abroad.\n- Operator and technical training facilities.\n\n\nWe look forward to exploring a long-term business association for the Nepal market and would be happy to visit your factory for a demonstration.",
     "type": "contact-us",
     "createdAt": "2026-11-02T07:04:31.113Z"
+  },
+  "4611fb6c-780a-4616-b249-15701c93ea3d": {
+    "id": "4611fb6c-780a-4616-b249-15701c93ea3d",
+    "fullName": "Kannu arya",
+    "companyName": "Kannu",
+    "email": "kannuarya533@gmail.com",
+    "phone": "6396254591",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI8trfyOPqlwMVz4ysAh3IQyAREAEYASAAEgKvePD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-03T02:46:22.874Z"
   }
 };
