@@ -636,5 +636,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-10-30",
     "time": "09:36:09",
     "pageLink": "/contact-us"
+  },
+  {
+    "id": "942d1373-9c52-47f6-94af-d74c6d68de7a",
+    "email": "kannuarya533@gmail.com",
+    "date": "2026-11-03",
+    "time": "08:18:11",
+    "pageLink": "/awards-and-recognitions"
   }
 ];
