@@ -643,5 +643,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-03",
     "time": "08:18:11",
     "pageLink": "/awards-and-recognitions"
+  },
+  {
+    "id": "b4911bdf-d98d-44ea-be9e-5b5233f7db33",
+    "email": "sharmarishipal492@gmail.com",
+    "date": "2026-11-03",
+    "time": "15:31:07",
+    "pageLink": "/join-wae"
   }
 ];
