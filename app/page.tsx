@@ -385,7 +385,7 @@ export default function Home() {
         {/* Diwali Background Video (fills screen end-to-end, no spaces, aspect ratio preserved, cropped if needed) */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
           <iframe
-            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/df9e20df3deb916b588afb97a4adfe18/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fdf9e20df3deb916b588afb97a4adfe18%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/02c646ef837c75358e32537f17019dfc/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2F02c646ef837c75358e32537f17019dfc%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
             style={{
               border: "none",
               position: "absolute",
@@ -393,8 +393,8 @@ export default function Home() {
               left: "50%",
               transform: "translateX(-50%) scale(1.02)",
               transformOrigin: "top center",
-              width: "max(100%, 100vw, calc(100vh * 1.5900552), calc(100svh * 1.5900552))",
-              height: "max(100%, 100vh, 100svh, calc(100vw * 0.6289089645587214))",
+              width: "max(100%, 100vw, calc(100vh * 1.5861769), calc(100svh * 1.5861769))",
+              height: "max(100%, 100vh, 100svh, calc(100vw * 0.6304468))",
               minWidth: "100%",
               minHeight: "100%",
               pointerEvents: "none",
