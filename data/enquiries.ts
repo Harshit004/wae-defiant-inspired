@@ -4701,5 +4701,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "General service all water dispenser",
     "type": "contact-us",
     "createdAt": "2026-11-03T09:35:04.844Z"
+  },
+  "9ec08e18-36b5-4515-aa48-52a591b472c8": {
+    "id": "9ec08e18-36b5-4515-aa48-52a591b472c8",
+    "fullName": "Geeta Chutani",
+    "companyName": "Nothing",
+    "email": "geetachutani01@gmail.com",
+    "phone": "7988040990",
+    "city": "Gurugram",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "About my husband and marriage life",
+    "type": "contact-us",
+    "createdAt": "2026-11-04T04:10:44.384Z"
   }
 };
