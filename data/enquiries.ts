@@ -4725,5 +4725,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hii",
     "type": "contact-us",
     "createdAt": "2026-11-04T06:43:56.260Z"
+  },
+  "b7215745-0e0a-4189-a8e9-da51e5a75f48": {
+    "id": "b7215745-0e0a-4189-a8e9-da51e5a75f48",
+    "fullName": "Balajied mawnai Balajied mawnai",
+    "companyName": "India",
+    "email": "bbalajiedmawnai@gmail.com",
+    "phone": "9863726453",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI7qG8xN3tlwMVe_g4Bh3D1iggEAEYASAAEgKyXPD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-04T06:54:49.386Z"
   }
 };
