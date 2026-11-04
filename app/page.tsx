@@ -414,10 +414,13 @@ export default function Home() {
           />
         </div>
 
-        {/* Diwali Background Video (fills screen end-to-end, no spaces, aspect ratio preserved, cropped from bottom, screened over lantern video) */}
+        {/* Diwali Background Video (100% opacity, layered in front of lantern video, covers hero area) */}
         <div
           className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-[1]"
-          style={{ mixBlendMode: "screen" }}
+          style={{
+            clipPath: "inset(clamp(110px, 11vw, 170px) 0 0 0)",
+            WebkitClipPath: "inset(clamp(110px, 11vw, 170px) 0 0 0)",
+          }}
         >
           <iframe
             src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/e1ff58a81e2a2d8d852fa8acf2771bd0/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fe1ff58a81e2a2d8d852fa8acf2771bd0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
@@ -433,7 +436,6 @@ export default function Home() {
               minWidth: "100%",
               minHeight: "100%",
               pointerEvents: "none",
-              mixBlendMode: "screen",
             }}
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
             allowFullScreen={true}
