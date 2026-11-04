@@ -425,7 +425,7 @@ export default function Home() {
           }}
         >
           <iframe
-            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/e1ff58a81e2a2d8d852fa8acf2771bd0/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fe1ff58a81e2a2d8d852fa8acf2771bd0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/f51003ef85f330e3375f238f4188692f/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Ff51003ef85f330e3375f238f4188692f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
             style={{
               border: "none",
               position: "absolute",
@@ -433,8 +433,8 @@ export default function Home() {
               left: "50%",
               transform: "translateX(-50%) scale(1.02)",
               transformOrigin: "top center",
-              width: "max(100%, 100vw, calc(100vh * 1.5861769), calc(100svh * 1.5861769))",
-              height: "max(100%, 100vh, 100svh, calc(100vw * 0.6304468))",
+              width: "max(100%, 100vw, calc(100vh * 1.584615), calc(100svh * 1.584615))",
+              height: "max(100%, 100vh, 100svh, calc(100vw * 0.631068))",
               minWidth: "100%",
               minHeight: "100%",
               pointerEvents: "none",
