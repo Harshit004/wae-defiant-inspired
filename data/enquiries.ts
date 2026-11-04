@@ -4736,5 +4736,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI7qG8xN3tlwMVe_g4Bh3D1iggEAEYASAAEgKyXPD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-04T06:54:49.386Z"
+  },
+  "3f9cb766-2565-48f0-b396-eaed74f5d037": {
+    "id": "3f9cb766-2565-48f0-b396-eaed74f5d037",
+    "fullName": "Kumkum",
+    "companyName": "Kumkum Kumari Kumkum kadipur",
+    "email": "kumkumkumarikumkumkadipur@gmail.com",
+    "phone": "9250162518",
+    "city": "Sultanpur  .u.p",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAqabXBhBUEiwAw_SQpeQZMsfNnV_wZNF6Uz-O-SdUzcB9PUUsIwnJFpd2r5ZRGQ7Ip0ic9RoCfBgQAvD_BwE",
+    "message": "Mari nokari kab lagygi aor pypar my paas ho jaugi ki nhi",
+    "type": "contact-us",
+    "createdAt": "2026-11-04T06:57:21.853Z"
   }
 };
