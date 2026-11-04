@@ -414,12 +414,14 @@ export default function Home() {
           />
         </div>
 
-        {/* Diwali Background Video (100% opacity, layered in front of lantern video, covers hero area) */}
+        {/* Diwali Background Video (100% opacity, layered in front of lantern video, covers hero area with top 30px blended into background) */}
         <div
           className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-[1]"
           style={{
-            clipPath: "inset(clamp(110px, 11vw, 170px) 0 0 0)",
-            WebkitClipPath: "inset(clamp(110px, 11vw, 170px) 0 0 0)",
+            maskImage:
+              "linear-gradient(to bottom, transparent 0, transparent clamp(110px, 11vw, 170px), black clamp(140px, calc(11vw + 30px), 200px), black 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0, transparent clamp(110px, 11vw, 170px), black clamp(140px, calc(11vw + 30px), 200px), black 100%)",
           }}
         >
           <iframe
