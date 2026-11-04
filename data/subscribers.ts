@@ -657,5 +657,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-04",
     "time": "06:32:40",
     "pageLink": "/contact-us"
+  },
+  {
+    "id": "b029d021-ab41-436d-8261-8ef1bed816ac",
+    "email": "sunilyadav98sy15@gmail.com",
+    "date": "2026-11-04",
+    "time": "10:44:24",
+    "pageLink": "/terms-of-use"
   }
 ];
