@@ -382,38 +382,16 @@ export default function Home() {
         id="hero"
         className="w-full relative bg-black h-screen h-[100svh] min-h-[100svh] flex flex-col justify-between overflow-hidden"
       >
-        {/* Diwali Background Video (fills screen end-to-end, no spaces, aspect ratio preserved, cropped if needed) */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
-          <iframe
-            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/e1ff58a81e2a2d8d852fa8acf2771bd0/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fe1ff58a81e2a2d8d852fa8acf2771bd0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
-            style={{
-              border: "none",
-              position: "absolute",
-              top: 0,
-              left: "50%",
-              transform: "translateX(-50%) scale(1.02)",
-              transformOrigin: "top center",
-              width: "max(100%, 100vw, calc(100vh * 1.5861769), calc(100svh * 1.5861769))",
-              height: "max(100%, 100vh, 100svh, calc(100vw * 0.6304468))",
-              minWidth: "100%",
-              minHeight: "100%",
-              pointerEvents: "none",
-            }}
-            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-            allowFullScreen={true}
-          />
-        </div>
-
-        {/* Header Backdrop Lantern Video (Above hero banner, behind header including padding below and beside it) */}
+        {/* Header Backdrop Lantern Video (Behind hero video and behind header including padding below and beside it) */}
         <div
-          className="absolute top-0 left-0 right-0 w-full overflow-hidden pointer-events-none z-[1]"
+          className="absolute top-0 left-0 right-0 w-full overflow-hidden pointer-events-none z-0"
           style={{
-            height: "clamp(220px, 22vw, 360px)",
+            height: "clamp(260px, 30vw, 460px)",
             backdropFilter: "blur(4px)",
             WebkitBackdropFilter: "blur(4px)",
             opacity: 0.69,
-            maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
+            maskImage: "linear-gradient(to bottom, black 75%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent 100%)",
           }}
         >
           <iframe
@@ -430,6 +408,32 @@ export default function Home() {
               minWidth: "100%",
               minHeight: "100%",
               pointerEvents: "none",
+            }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen={true}
+          />
+        </div>
+
+        {/* Diwali Background Video (fills screen end-to-end, no spaces, aspect ratio preserved, cropped from bottom, screened over lantern video) */}
+        <div
+          className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-[1]"
+          style={{ mixBlendMode: "screen" }}
+        >
+          <iframe
+            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/e1ff58a81e2a2d8d852fa8acf2771bd0/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fe1ff58a81e2a2d8d852fa8acf2771bd0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+            style={{
+              border: "none",
+              position: "absolute",
+              top: 0,
+              left: "50%",
+              transform: "translateX(-50%) scale(1.02)",
+              transformOrigin: "top center",
+              width: "max(100%, 100vw, calc(100vh * 1.5861769), calc(100svh * 1.5861769))",
+              height: "max(100%, 100vh, 100svh, calc(100vw * 0.6304468))",
+              minWidth: "100%",
+              minHeight: "100%",
+              pointerEvents: "none",
+              mixBlendMode: "screen",
             }}
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
             allowFullScreen={true}
