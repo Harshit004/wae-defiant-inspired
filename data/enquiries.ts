@@ -4713,5 +4713,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "About my husband and marriage life",
     "type": "contact-us",
     "createdAt": "2026-11-04T04:10:44.384Z"
+  },
+  "33e9b051-54d2-458d-99f9-fbc37a8c84ba": {
+    "id": "33e9b051-54d2-458d-99f9-fbc37a8c84ba",
+    "fullName": "Sharmila Nehara",
+    "companyName": "Nehara",
+    "email": "neharasharmila@gmail.com",
+    "phone": "9983307850",
+    "city": "Churu",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAqabXBhBUEiwAw_SQpcpNFovdPk6moRsykegWiALiLVd52UmEbnV5roFYmVp8KU8Q2NDHvRoCXP8QAvD_BwE",
+    "message": "Hii",
+    "type": "contact-us",
+    "createdAt": "2026-11-04T06:43:56.260Z"
   }
 };
