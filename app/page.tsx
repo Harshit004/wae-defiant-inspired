@@ -404,6 +404,38 @@ export default function Home() {
           />
         </div>
 
+        {/* Header Backdrop Lantern Video (Above hero banner, behind header including padding below and beside it) */}
+        <div
+          className="absolute top-0 left-0 right-0 w-full overflow-hidden pointer-events-none z-[1]"
+          style={{
+            height: "clamp(220px, 22vw, 360px)",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
+            opacity: 0.69,
+            maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
+          }}
+        >
+          <iframe
+            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/7583ff743f700cda61a7981aa4617c1d/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2F7583ff743f700cda61a7981aa4617c1d%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+            style={{
+              border: "none",
+              position: "absolute",
+              top: 0,
+              left: "50%",
+              transform: "translateX(-50%) scale(1.02)",
+              transformOrigin: "top center",
+              width: "max(100%, 100vw, calc(100vh * 1.584615), calc(100svh * 1.584615))",
+              height: "max(100%, 100vh, 100svh, calc(100vw * 0.631068))",
+              minWidth: "100%",
+              minHeight: "100%",
+              pointerEvents: "none",
+            }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen={true}
+          />
+        </div>
+
         {/* Hero Content Text (Topmost) */}
         <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[130px] pb-[30px]">
           <div className={`${containerClass} flex-1 flex flex-col justify-center translate-y-[100px]`}>
