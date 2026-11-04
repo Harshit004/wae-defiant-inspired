@@ -664,5 +664,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-04",
     "time": "10:44:24",
     "pageLink": "/terms-of-use"
+  },
+  {
+    "id": "96267204-7c7a-4d69-9268-89e81e6f944a",
+    "email": "tl.projects@apexequipments.in",
+    "date": "2026-11-04",
+    "time": "14:36:16",
+    "pageLink": "/portfolio/watermatic/indus"
   }
 ];
