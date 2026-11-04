@@ -384,24 +384,17 @@ export default function Home() {
       >
         {/* Full-bleed Hero Background Video */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
-          <iframe
-            src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/a3221c0e3282c80a8dd75b9f6ac4df9c/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fa3221c0e3282c80a8dd75b9f6ac4df9c%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
-            style={{
-              border: "none",
-              position: "absolute",
-              top: 0,
-              left: "50%",
-              transform: "translateX(-50%) scale(1.02)",
-              transformOrigin: "top center",
-              width: "max(100%, 100vw, calc(100vh * 1.5861769), calc(100svh * 1.5861769))",
-              height: "max(100%, 100vh, 100svh, calc(100vw * 0.6304468))",
-              minWidth: "100%",
-              minHeight: "100%",
-              pointerEvents: "none",
-            }}
-            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-            allowFullScreen={true}
-          />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover object-top pointer-events-none"
+          >
+            <source src="/newdiwali%20(2).mp4" type="video/mp4" />
+            <source src="/newdiwali (2).mp4" type="video/mp4" />
+          </video>
         </div>
 
         {/* Hero Content Text (Topmost) */}
