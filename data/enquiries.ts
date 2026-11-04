@@ -4771,5 +4771,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341411094&gad_source=5&gad_campaignid=22024897670&gclid=EAIaIQobChMIrLLPx7zulwMV6M2gAh3nZhtCEAEYASAAEgLbCPD_BwE",
     "type": "product",
     "createdAt": "2026-11-04T14:01:35.226Z"
+  },
+  "4e4ac54c-6fa9-48a1-9861-4ded4b4c4e70": {
+    "id": "4e4ac54c-6fa9-48a1-9861-4ded4b4c4e70",
+    "fullName": "kantilaL Barela",
+    "companyName": "Poco",
+    "email": "kantilalbarela47@gmail.com",
+    "phone": "8817276930",
+    "city": "6262",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341411085&gad_source=5&gad_campaignid=22024897670&gclid=CjwKCAiAzKvXBhBAEiwABLl9AoBcN43ox6KV52xfowMl6l_cc9DcHPNahVZn8QRlQTrg9LJWi1wkQBoCxEwQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-04T14:20:11.268Z"
   }
 };
