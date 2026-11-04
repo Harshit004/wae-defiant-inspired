@@ -4748,5 +4748,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Mari nokari kab lagygi aor pypar my paas ho jaugi ki nhi",
     "type": "contact-us",
     "createdAt": "2026-11-04T06:57:21.853Z"
+  },
+  "fb612114-c662-47ff-a852-5873db366bda": {
+    "id": "fb612114-c662-47ff-a852-5873db366bda",
+    "fullName": "Hanumantha Hanu",
+    "companyName": "Merck",
+    "email": "hanumanthahanu3184@gmail.com",
+    "phone": "9945646415",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "General chekup-",
+    "type": "contact-us",
+    "createdAt": "2026-11-04T11:08:09.868Z"
   }
 };
