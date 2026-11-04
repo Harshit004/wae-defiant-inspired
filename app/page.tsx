@@ -373,83 +373,6 @@ export default function Home() {
     return () => window.removeEventListener("resize", updateEarthPos)
   }, [])
 
-  // Cloudflare Stream Hero Video Ref & 4-second loop controller
-  const heroVideoIframeRef = useRef<HTMLIFrameElement>(null)
-
-  useEffect(() => {
-    let isMounted = true
-    let pollInterval: NodeJS.Timeout | null = null
-
-    // 1. Direct postMessage listener for instantaneous reaction
-    const handleMessage = (event: MessageEvent) => {
-      if (!isMounted || !event.data || typeof event.data !== "object") return
-      if (
-        event.data.__privateUnstableMessageType === "propertyChange" &&
-        event.data.property === "currentTime" &&
-        typeof event.data.value === "number"
-      ) {
-        if (event.data.value >= 4.0) {
-          heroVideoIframeRef.current?.contentWindow?.postMessage(
-            {
-              __privateUnstableMessageType: "setProperty",
-              property: "currentTime",
-              value: 0,
-            },
-            "*"
-          )
-        }
-      }
-    }
-    window.addEventListener("message", handleMessage)
-
-    // 2. Official Cloudflare Stream Player SDK initialization
-    const initStreamPlayer = () => {
-      if (!isMounted || !heroVideoIframeRef.current) return
-      const Stream = (window as any).Stream
-      if (typeof Stream === "function") {
-        try {
-          const player = Stream(heroVideoIframeRef.current)
-          if (player) {
-            player.addEventListener("timeupdate", () => {
-              if (player.currentTime >= 4.0) {
-                player.currentTime = 0
-              }
-            })
-            // High-frequency polling backup to ensure it resets cleanly at 4s
-            pollInterval = setInterval(() => {
-              if (player && typeof player.currentTime === "number" && player.currentTime >= 4.0) {
-                player.currentTime = 0
-              }
-            }, 60)
-          }
-        } catch (e) {
-          console.error("Stream player SDK error:", e)
-        }
-      }
-    }
-
-    const existingScript = document.querySelector<HTMLScriptElement>(
-      'script[src="https://embed.cloudflarestream.com/embed/sdk.latest.js"]'
-    )
-    if ((window as any).Stream) {
-      initStreamPlayer()
-    } else if (existingScript) {
-      existingScript.addEventListener("load", initStreamPlayer)
-    } else {
-      const script = document.createElement("script")
-      script.src = "https://embed.cloudflarestream.com/embed/sdk.latest.js"
-      script.async = true
-      script.onload = initStreamPlayer
-      document.body.appendChild(script)
-    }
-
-    return () => {
-      isMounted = false
-      window.removeEventListener("message", handleMessage)
-      if (pollInterval) clearInterval(pollInterval)
-    }
-  }, [])
-
   return (
     <main className="relative">
       <Header transparentBg />
@@ -459,10 +382,9 @@ export default function Home() {
         id="hero"
         className="w-full relative bg-black h-screen h-[100svh] min-h-[100svh] flex flex-col justify-between overflow-hidden"
       >
-        {/* Full-bleed Hero Background Video (first 4 seconds looped) */}
+        {/* Full-bleed Hero Background Video */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
           <iframe
-            ref={heroVideoIframeRef}
             src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/a3221c0e3282c80a8dd75b9f6ac4df9c/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fa3221c0e3282c80a8dd75b9f6ac4df9c%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
             style={{
               border: "none",
