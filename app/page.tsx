@@ -392,8 +392,8 @@ export default function Home() {
             preload="auto"
             className="w-full h-full object-cover object-top pointer-events-none"
           >
-            <source src="/newdiwali%20(2).mp4" type="video/mp4" />
-            <source src="/newdiwali (2).mp4" type="video/mp4" />
+            <source src="/newdiwali%20(6).mp4" type="video/mp4" />
+            <source src="/newdiwali (6).mp4" type="video/mp4" />
           </video>
         </div>
 
