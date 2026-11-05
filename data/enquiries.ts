@@ -4849,5 +4849,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-05T13:28:40.529Z"
+  },
+  "1ec55bd6-c13e-4d82-b8af-d19e00975d83": {
+    "id": "1ec55bd6-c13e-4d82-b8af-d19e00975d83",
+    "fullName": "Nikki kumari",
+    "companyName": "Kaveri cotture",
+    "email": "nikkipaswan931977@gmail.com",
+    "phone": "8826517930",
+    "city": "Delhi",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-05T16:54:18.986Z"
   }
 };
