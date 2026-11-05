@@ -359,14 +359,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "displayOrder": 3
       },
       {
-        "id": "aquarius-series",
-        "name": "AQUARIUS SERIES",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9bf3de4-35c9-4eaf-d1da-309816543400/public",
-        "hoverImage": null,
-        "displayOrder": 0
-      },
-      {
         "id": "primus",
         "name": "PRIMUS",
         "category": "free-standing",
@@ -381,6 +373,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/0fa74b2d-742f-41d4-7fd6-387da6344000/public",
         "hoverImage": null,
         "displayOrder": 4
+      },
+      {
+        "id": "aquarius-series",
+        "name": "AQUARIUS SERIES",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/e9bf3de4-35c9-4eaf-d1da-309816543400/public",
+        "hoverImage": null,
+        "displayOrder": 0
       }
     ]
   }
@@ -2937,8 +2937,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "status": "Live",
     "description": "",
     "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3513098a-4028-492c-dd4e-cc43c95d6500/public",
-    "heroTagline": "Operate Sustainably, Maintain Seamlessly",
-    "heroSubtext": "Turnkey Operations and Maintenance for Glass Bottling Plants of All Makes",
+    "heroTagline": "In-House Glass Water Bottling for Hotels",
+    "heroSubtext": "Explore AQUARIUS systems for filling, capping and branding glass water bottles.",
     "heroCtaText": "Contact Us",
     "heroCtaLink": "#product-showcase",
     "showcaseCtaText": "Enquire Now",
