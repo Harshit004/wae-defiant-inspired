@@ -678,5 +678,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-05",
     "time": "07:24:52",
     "pageLink": "/portfolio/glass-bottling/aquarius-series"
+  },
+  {
+    "id": "cba7582d-fa0c-42c4-a174-a87b2836d7fe",
+    "email": "dipakmeda93@gmail.com",
+    "date": "2026-11-05",
+    "time": "18:55:55",
+    "pageLink": "/thank-you"
   }
 ];
