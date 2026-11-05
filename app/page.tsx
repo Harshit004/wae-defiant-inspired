@@ -396,18 +396,18 @@ export default function Home() {
         </div>
 
         {/* Hero Content Text (Topmost) */}
-        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[130px] pb-[30px]">
-          <div className={`${containerClass} flex-1 flex flex-col justify-center translate-y-[100px]`}>
+        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-end pt-[clamp(70px,10vh,120px)] pb-[clamp(28px,6vh,80px)]">
+          <div className={`${containerClass} flex flex-col justify-end`}>
             {/* Top: Heading */}
             <div
-              className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
+              className="w-full max-w-[clamp(280px,38vw,780px)]"
               style={{
                 color: "#FFFFFF",
                 fontFamily: "'Inter Tight', sans-serif",
               }}
             >
               <h1
-                className="text-[12.5vw] md:text-[clamp(36px,5.9vw,85px)] leading-[105%] font-medium"
+                className="text-[12.5vw] md:text-[clamp(30px,min(5.5vw,7.8vh),85px)] leading-[105%] font-medium"
                 style={{
                   letterSpacing: "0%",
                   verticalAlign: "middle",
@@ -418,12 +418,12 @@ export default function Home() {
               </h1>
             </div>
 
-            <div className="h-[12px] md:h-[clamp(14px,1.2vw,22px)]" />
+            <div className="h-[clamp(10px,1.6vh,22px)]" />
 
             {/* Bottom Row: "Our Green is Blue" and Festive Greeting aligned at TOP */}
-            <div className="w-full flex flex-col sm:flex-row sm:items-start justify-between gap-6 md:gap-8">
+            <div className="w-full flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-6 md:gap-8">
               <p
-                className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
+                className="text-[6vw] md:text-[clamp(18px,min(2vw,3.2vh),30px)] leading-[115%] font-normal text-[#AEAEAE]"
                 style={{
                   letterSpacing: "0%",
                   verticalAlign: "middle",
@@ -437,7 +437,7 @@ export default function Home() {
               {/* Right Column: Festive Greeting */}
               <div className="w-full sm:w-auto flex sm:justify-end">
                 <p
-                  className="text-[14px] sm:text-[clamp(16px,1.15vw,24px)] text-left sm:text-right text-white font-normal ml-auto max-w-[clamp(360px,28vw,580px)]"
+                  className="text-[14px] sm:text-[clamp(12px,min(1.15vw,2vh),22px)] text-left sm:text-right text-white font-normal ml-auto max-w-[clamp(300px,28vw,580px)]"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     fontWeight: 400,
