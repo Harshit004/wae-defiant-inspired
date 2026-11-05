@@ -396,7 +396,7 @@ export default function Home() {
         </div>
 
         {/* Hero Content Text (Topmost) */}
-        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-end pt-[clamp(70px,10vh,120px)] pb-[clamp(48px,14vh,150px)]">
+        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-end pt-[clamp(70px,10vh,120px)] pb-[clamp(36px,11vh,120px)]">
           <div className={`${containerClass} flex flex-col justify-end`}>
             {/* Top: Heading */}
             <div
