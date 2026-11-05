@@ -4860,5 +4860,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-05T16:54:18.986Z"
+  },
+  "d8a907a8-2110-4e4e-a086-c545c066a9d1": {
+    "id": "d8a907a8-2110-4e4e-a086-c545c066a9d1",
+    "fullName": "Dilisjohn",
+    "companyName": "Nongstoiñ",
+    "email": "dilisjohnmarthong@gmail.com",
+    "phone": "6009528547",
+    "city": "Nongkhlaiñ",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiA77DXBhCHARIsAHf2MNpt7kGexV84qMV69Gu21CvmtW-WlrX7k6ngc6sSnuipg5-S92l6jCkaArwIEALw_wcB",
+    "message": "India",
+    "type": "contact-us",
+    "createdAt": "2026-11-05T20:02:49.713Z"
   }
 };
