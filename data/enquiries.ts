@@ -4793,5 +4793,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341411085&gad_source=5&gad_campaignid=22024897670&gclid=CjwKCAiAzKvXBhBAEiwABLl9AoBcN43ox6KV52xfowMl6l_cc9DcHPNahVZn8QRlQTrg9LJWi1wkQBoCxEwQAvD_BwE",
     "type": "product",
     "createdAt": "2026-11-04T14:20:26.154Z"
+  },
+  "d035ab1d-b5f1-4790-8d4c-74320c14cbae": {
+    "id": "d035ab1d-b5f1-4790-8d4c-74320c14cbae",
+    "fullName": "ghjk",
+    "companyName": "cvb nm",
+    "email": "dotndline@gmail.com",
+    "phone": "8765432212",
+    "city": "kjhgdfghjukil",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "fghjkl",
+    "type": "contact-us",
+    "createdAt": "2026-11-05T07:37:43.831Z"
   }
 };
