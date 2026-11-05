@@ -671,5 +671,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-04",
     "time": "14:36:16",
     "pageLink": "/portfolio/watermatic/indus"
+  },
+  {
+    "id": "583f00d2-45bd-4777-8adb-d5cecd3913d8",
+    "email": "sarfudeenkhankhan5@gmail.com",
+    "date": "2026-11-05",
+    "time": "07:24:52",
+    "pageLink": "/portfolio/glass-bottling/aquarius-series"
   }
 ];
