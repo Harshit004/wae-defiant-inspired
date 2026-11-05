@@ -4805,5 +4805,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "fghjkl",
     "type": "contact-us",
     "createdAt": "2026-11-05T07:37:43.831Z"
+  },
+  "3fca97b9-280b-4fe8-8f01-162cb3d289c2": {
+    "id": "3fca97b9-280b-4fe8-8f01-162cb3d289c2",
+    "fullName": "Puneesh arora",
+    "companyName": "Queen’s Multispeciality Hospital",
+    "email": "polyclinicqueens@gmail.com",
+    "phone": "8800558027",
+    "city": "Gurgaon sector 82",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?gad_source=1&gad_campaignid=24244197975&gbraid=0AAAAABUiSLy-eMnzMaUhyp15wY7u9uwcH&gclid=Cj0KCQiA77DXBhCHARIsAHf2MNpOLuy00o-3xi-Ow8kuE_08j9FqQ3iO3b4WLGv7fKpKY_qVSdAAYHUaAhpvEALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-05T12:47:53.985Z"
   }
 };
