@@ -4816,5 +4816,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?gad_source=1&gad_campaignid=24244197975&gbraid=0AAAAABUiSLy-eMnzMaUhyp15wY7u9uwcH&gclid=Cj0KCQiA77DXBhCHARIsAHf2MNpOLuy00o-3xi-Ow8kuE_08j9FqQ3iO3b4WLGv7fKpKY_qVSdAAYHUaAhpvEALw_wcB",
     "type": "product",
     "createdAt": "2026-11-05T12:47:53.985Z"
+  },
+  "3b53dde3-9c91-42d7-aedf-dd159a0edda4": {
+    "id": "3b53dde3-9c91-42d7-aedf-dd159a0edda4",
+    "fullName": "Radha Kumari dangi",
+    "companyName": "Dangi",
+    "email": "plal49656@gmail.com",
+    "phone": "9772113314",
+    "city": "Jhalawar",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-05T12:59:24.195Z"
   }
 };
