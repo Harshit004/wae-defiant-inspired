@@ -4827,5 +4827,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-05T12:59:24.195Z"
+  },
+  "1c88e363-7949-4cf9-9ece-ae0cda621a6a": {
+    "id": "1c88e363-7949-4cf9-9ece-ae0cda621a6a",
+    "fullName": "Dipak Meda",
+    "companyName": "Dipak Meda",
+    "email": "dipakmeda93@gmail.com",
+    "phone": "9179020993",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-05T13:25:36.071Z"
   }
 };
