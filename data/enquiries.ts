@@ -4872,5 +4872,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "India",
     "type": "contact-us",
     "createdAt": "2026-11-05T20:02:49.713Z"
+  },
+  "69b356c5-aaa0-41f0-a213-840ebe2f680b": {
+    "id": "69b356c5-aaa0-41f0-a213-840ebe2f680b",
+    "fullName": "Shaikh mallikdinar@gmail.com",
+    "companyName": "Shaikh mallikdinar@gmail.com",
+    "email": "sumangaradia95@gmail.com",
+    "phone": "9078842784",
+    "city": "Jk pur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiA77DXBhCHARIsAHf2MNrHxRX9JPqMjHwwFNK708dxodnGx4rt9_JBr5sKzMqk7hsfXn4sdywaAhWXEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-11-06T02:36:52.522Z"
   }
 };
