@@ -4883,5 +4883,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiA77DXBhCHARIsAHf2MNrHxRX9JPqMjHwwFNK708dxodnGx4rt9_JBr5sKzMqk7hsfXn4sdywaAhWXEALw_wcB",
     "type": "contact-us",
     "createdAt": "2026-11-06T02:36:52.522Z"
+  },
+  "b21e6d4f-dbf2-4524-81fb-31d3b87dd07b": {
+    "id": "b21e6d4f-dbf2-4524-81fb-31d3b87dd07b",
+    "fullName": "kowsik R",
+    "companyName": "Emerson",
+    "email": "kowsik.rajasekaran@emerson.com",
+    "phone": "9789057258",
+    "city": "Chennai",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gbraid=0AAAAABUiSLyDFF_aqAYDuHn91haWoq2tV&gclid=EAIaIQobChMIlqD3_IHzlwMVIolmAh1WVSa5EAAYASAAEgLmCvD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-06T09:23:53.122Z"
   }
 };
