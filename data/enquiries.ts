@@ -4894,5 +4894,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/aenon?gad_source=1&gad_campaignid=24248958914&gbraid=0AAAAABUiSLyDFF_aqAYDuHn91haWoq2tV&gclid=EAIaIQobChMIlqD3_IHzlwMVIolmAh1WVSa5EAAYASAAEgLmCvD_BwE",
     "type": "product",
     "createdAt": "2026-11-06T09:23:53.122Z"
+  },
+  "e8e2792d-441f-4b61-bc40-835e2102400c": {
+    "id": "e8e2792d-441f-4b61-bc40-835e2102400c",
+    "fullName": "Suresh",
+    "companyName": "Suresh",
+    "email": "uppersileru94931@gmail.com",
+    "phone": "8688699506",
+    "city": "Sileru",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI9Ozx9L_zlwMVnnwPAh0FfDVOEAEYASAAEgJyL_D_BwE",
+    "message": "Dfghjkl",
+    "type": "contact-us",
+    "createdAt": "2026-11-06T13:59:30.697Z"
   }
 };
