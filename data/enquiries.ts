@@ -4965,5 +4965,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "1000",
     "type": "contact-us",
     "createdAt": "2026-11-07T06:34:47.116Z"
+  },
+  "a2506b05-11da-444d-ad7e-717dc94dad99": {
+    "id": "a2506b05-11da-444d-ad7e-717dc94dad99",
+    "fullName": "Sarita Mahajan",
+    "companyName": "Mahajan",
+    "email": "saritahmahajan@gmail.com",
+    "phone": "7498380226",
+    "city": "Shirpur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAkrbXBhB2EiwA2y1E3mNnUC8VbcSxRjWZjjnf6hmxe_kudb56b5K_NqpkE_vt6pbSqzYpdBoCe40QAvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-07T07:14:11.899Z"
   }
 };
