@@ -4929,5 +4929,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Mera naam ifra hai meri shadi kesse ho ge our ouska Naam kya ho ga",
     "type": "contact-us",
     "createdAt": "2026-11-07T04:29:58.386Z"
+  },
+  "84b861d5-01f1-428f-bc00-60cff976cb33": {
+    "id": "84b861d5-01f1-428f-bc00-60cff976cb33",
+    "fullName": "Mota hote Mota hote",
+    "companyName": "Ifra saleem",
+    "email": "motahotemotahote@gmail.com",
+    "phone": "7217828259",
+    "city": "Delhi",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Mera naam ifra hai meri shadi kiss se ho gi or ous ka naam kya ho ga",
+    "type": "contact-us",
+    "createdAt": "2026-11-07T04:32:27.834Z"
   }
 };
