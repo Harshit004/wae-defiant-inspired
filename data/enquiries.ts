@@ -4917,5 +4917,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/quantm",
     "type": "product",
     "createdAt": "2026-11-07T00:43:11.046Z"
+  },
+  "6ec374d3-5397-47bd-847f-f38f5abea703": {
+    "id": "6ec374d3-5397-47bd-847f-f38f5abea703",
+    "fullName": "Ifra",
+    "companyName": "Ifra saleem",
+    "email": "motahotemotahote@gmail.com",
+    "phone": "7217828259",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Mera naam ifra hai meri shadi kesse ho ge our ouska Naam kya ho ga",
+    "type": "contact-us",
+    "createdAt": "2026-11-07T04:29:58.386Z"
   }
 };
