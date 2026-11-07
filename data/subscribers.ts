@@ -699,5 +699,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-07",
     "time": "12:05:19",
     "pageLink": "/thank-you"
+  },
+  {
+    "id": "70179962-55c9-4d2f-bf6c-08af5174f2f2",
+    "email": "kavitasaini9435@gmail.comkhudana",
+    "date": "2026-11-07",
+    "time": "12:06:35",
+    "pageLink": "/cookie-policy"
   }
 ];
