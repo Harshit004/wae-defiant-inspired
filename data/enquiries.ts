@@ -4953,5 +4953,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I want to test it",
     "type": "contact-us",
     "createdAt": "2026-11-07T04:55:42.513Z"
+  },
+  "cb0512b4-c19d-4df3-a9c6-906152a7bf4c": {
+    "id": "cb0512b4-c19d-4df3-a9c6-906152a7bf4c",
+    "fullName": "Kavita",
+    "companyName": "Saini",
+    "email": "kavitasaini9435@gmail.com",
+    "phone": "9358769757",
+    "city": "Jhunjhunu",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAkrbXBhB2EiwA2y1E3iRNA6gHtUyRDoHv4kEIjjwCweP0sU9T_h5B_Z8IYbdLH8_YAS5KtxoCEPoQAvD_BwE",
+    "message": "1000",
+    "type": "contact-us",
+    "createdAt": "2026-11-07T06:34:47.116Z"
   }
 };
