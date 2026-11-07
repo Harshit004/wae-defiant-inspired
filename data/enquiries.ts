@@ -4941,5 +4941,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Mera naam ifra hai meri shadi kiss se ho gi or ous ka naam kya ho ga",
     "type": "contact-us",
     "createdAt": "2026-11-07T04:32:27.834Z"
+  },
+  "a4ec6ffc-a4c0-478e-883f-b252efac4fd6": {
+    "id": "a4ec6ffc-a4c0-478e-883f-b252efac4fd6",
+    "fullName": "Venba Padayachi",
+    "companyName": "No",
+    "email": "venbapadayachi7@gmail.com",
+    "phone": "9137974499",
+    "city": "Eugufl",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "I want to test it",
+    "type": "contact-us",
+    "createdAt": "2026-11-07T04:55:42.513Z"
   }
 };
