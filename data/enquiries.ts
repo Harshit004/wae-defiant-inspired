@@ -4906,5 +4906,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Dfghjkl",
     "type": "contact-us",
     "createdAt": "2026-11-06T13:59:30.697Z"
+  },
+  "86d29241-edb6-4cea-a859-a8acb96081c1": {
+    "id": "86d29241-edb6-4cea-a859-a8acb96081c1",
+    "fullName": "Dudala Vinay",
+    "companyName": "Hyderabad polo and riding club",
+    "email": "dudalavinay123@gmail.com",
+    "phone": "9949000085",
+    "city": "hyderabad",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/quantm",
+    "type": "product",
+    "createdAt": "2026-11-07T00:43:11.046Z"
   }
 };
