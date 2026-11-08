@@ -4976,5 +4976,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAkrbXBhB2EiwA2y1E3mNnUC8VbcSxRjWZjjnf6hmxe_kudb56b5K_NqpkE_vt6pbSqzYpdBoCe40QAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-07T07:14:11.899Z"
+  },
+  "fd35bcbf-b07a-4a7d-94d0-7ac27a5e78ca": {
+    "id": "fd35bcbf-b07a-4a7d-94d0-7ac27a5e78ca",
+    "fullName": "Ajoy",
+    "companyName": "Das",
+    "email": "ajoy6788999@gmail.com",
+    "phone": "9382774118",
+    "city": "Hii",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Hoo",
+    "type": "contact-us",
+    "createdAt": "2026-11-08T07:43:01.907Z"
   }
 };
