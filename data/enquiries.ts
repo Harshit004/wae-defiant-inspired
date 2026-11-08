@@ -4988,5 +4988,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hoo",
     "type": "contact-us",
     "createdAt": "2026-11-08T07:43:01.907Z"
+  },
+  "751d3b1a-9944-4fdf-92aa-ae5a89b48e1c": {
+    "id": "751d3b1a-9944-4fdf-92aa-ae5a89b48e1c",
+    "fullName": "Saantosh kumar Rout",
+    "companyName": "Rout seeds store",
+    "email": "saantoshkumarrout@gmail.com",
+    "phone": "7008397529",
+    "city": "Semiliguda",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiA2MDXBhBUEiwAD-YB-wHpjNsgZyF7szqFLU-54m_OFA80RycTxUjyg7Md6FjJf7yo9XC3zxoCrUkQAvD_BwE",
+    "message": "No\nNo message \n\\",
+    "type": "contact-us",
+    "createdAt": "2026-11-08T15:24:41.537Z"
   }
 };
