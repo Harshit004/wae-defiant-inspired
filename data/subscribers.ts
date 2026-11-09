@@ -708,10 +708,10 @@ export const SUBSCRIBERS: Subscriber[] = [
     "pageLink": "/cookie-policy"
   },
   {
-    "id": "b9969adb-74a8-4560-925e-41e79f0d2aa4",
-    "email": "sbi.07961@sbi.co.in",
+    "id": "3a573f84-272c-4768-9574-939e13e8fbe8",
+    "email": "akashghosh1458@gmail.com",
     "date": "2026-11-09",
-    "time": "16:13:59",
+    "time": "16:14:53",
     "pageLink": "/thank-you"
   }
 ];
