@@ -5037,8 +5037,8 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "type": "contact-us",
     "createdAt": "2026-11-09T10:42:37.466Z"
   },
-  "e6239ef6-3215-460c-b4e0-fc6f18e7dec6": {
-    "id": "e6239ef6-3215-460c-b4e0-fc6f18e7dec6",
+  "9452f5be-4983-49bd-8055-8bc8c04385a2": {
+    "id": "9452f5be-4983-49bd-8055-8bc8c04385a2",
     "fullName": "Akash Ghosh",
     "companyName": "Sbi",
     "email": "akashghosh1458@gmail.com",
@@ -5047,6 +5047,18 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/",
     "message": "9123651561",
     "type": "general",
-    "createdAt": "2026-11-09T10:47:04.600Z"
+    "createdAt": "2026-11-09T10:47:05.226Z"
+  },
+  "9591f959-3874-48e9-8e54-35834bcbb0f9": {
+    "id": "9591f959-3874-48e9-8e54-35834bcbb0f9",
+    "fullName": "Mohsin",
+    "companyName": "Watch in",
+    "email": "mohammedmohsinqureshi457@gmail.com",
+    "phone": "9929845298",
+    "city": "Ramgarh shekhawati sikar",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Applying for mason foreman",
+    "type": "contact-us",
+    "createdAt": "2026-11-09T10:48:33.535Z"
   }
 };
