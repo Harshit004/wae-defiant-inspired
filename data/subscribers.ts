@@ -708,10 +708,10 @@ export const SUBSCRIBERS: Subscriber[] = [
     "pageLink": "/cookie-policy"
   },
   {
-    "id": "3a573f84-272c-4768-9574-939e13e8fbe8",
-    "email": "akashghosh1458@gmail.com",
+    "id": "77858358-fd30-4e82-aef3-9b8b6bced360",
+    "email": "ghousash27@gmail.com",
     "date": "2026-11-09",
-    "time": "16:14:53",
+    "time": "16:18:01",
     "pageLink": "/thank-you"
   }
 ];
