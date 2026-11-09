@@ -5000,5 +5000,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "No\nNo message \n\\",
     "type": "contact-us",
     "createdAt": "2026-11-08T15:24:41.537Z"
+  },
+  "095b1135-8d90-4880-9776-06059f4102d9": {
+    "id": "095b1135-8d90-4880-9776-06059f4102d9",
+    "fullName": "Uday krishna",
+    "companyName": "Crystal Beverages",
+    "email": "uday.yenigalla@gmail.com",
+    "phone": "9396529529",
+    "city": "hyderabad",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Looking for Glass bottle filling machine",
+    "type": "contact-us",
+    "createdAt": "2026-11-09T06:35:06.964Z"
   }
 };
