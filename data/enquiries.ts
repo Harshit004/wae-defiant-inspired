@@ -5024,5 +5024,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hi",
     "type": "contact-us",
     "createdAt": "2026-11-09T10:40:42.726Z"
+  },
+  "597a862f-e28a-4e26-a0b9-70962cb75efd": {
+    "id": "597a862f-e28a-4e26-a0b9-70962cb75efd",
+    "fullName": "Akash Ghosh",
+    "companyName": "Sbi",
+    "email": "akashghosh1458@gmail.com",
+    "phone": "9123651561",
+    "city": "India",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "9123651561",
+    "type": "contact-us",
+    "createdAt": "2026-11-09T10:42:37.466Z"
   }
 };
