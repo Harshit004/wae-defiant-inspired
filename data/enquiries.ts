@@ -5012,5 +5012,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Looking for Glass bottle filling machine",
     "type": "contact-us",
     "createdAt": "2026-11-09T06:35:06.964Z"
+  },
+  "69c3cd43-c5d8-4c61-aec3-8021382abe1a": {
+    "id": "69c3cd43-c5d8-4c61-aec3-8021382abe1a",
+    "fullName": "Tanaji",
+    "companyName": "Zende",
+    "email": "tzende06@gmail.com",
+    "phone": "9503513883",
+    "city": "1212",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Hi",
+    "type": "contact-us",
+    "createdAt": "2026-11-09T10:40:42.726Z"
   }
 };
