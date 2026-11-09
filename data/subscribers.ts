@@ -706,5 +706,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-07",
     "time": "12:06:35",
     "pageLink": "/cookie-policy"
+  },
+  {
+    "id": "b9969adb-74a8-4560-925e-41e79f0d2aa4",
+    "email": "sbi.07961@sbi.co.in",
+    "date": "2026-11-09",
+    "time": "16:13:59",
+    "pageLink": "/thank-you"
   }
 ];
