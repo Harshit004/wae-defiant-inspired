@@ -29,6 +29,9 @@ const nextConfig = {
     '/api/admin/categories/*': ['./data/products.ts'],
     '/api/admin/products': ['./data/products.ts'],
     '/api/admin/products/*': ['./data/products.ts'],
+    '/api/admin/blogs': ['./data/blogs.ts'],
+    '/api/admin/blogs/*': ['./data/blogs.ts'],
+    '/api/homepage-blogs': ['./data/blogs.ts'],
   },
   async redirects() {
     return [

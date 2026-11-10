@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { BlogPost, Writer } from '@/data/blogs';
+import { BlogPost, Writer, BLOGS, WRITERS } from '@/data/blogs';
 
 const BLOGS_FILE_PATH = path.join(process.cwd(), 'data', 'blogs.ts');
 
@@ -21,29 +21,37 @@ export function readBlogDB(): BlogDBState {
   }
 
   try {
-    const fileContent = fs.readFileSync(BLOGS_FILE_PATH, 'utf-8');
+    if (fs.existsSync(BLOGS_FILE_PATH)) {
+      const fileContent = fs.readFileSync(BLOGS_FILE_PATH, 'utf-8');
 
-    // Extract WRITERS block
-    const writersRegex = /export const WRITERS:\s*Record<string,\s*Writer>\s*=\s*([\s\S]*?);\s*export const BLOGS/;
-    const writersMatch = fileContent.match(writersRegex);
+      // Extract WRITERS block
+      const writersRegex = /export const WRITERS:\s*Record<string,\s*Writer>\s*=\s*([\s\S]*?);\s*export const BLOGS/;
+      const writersMatch = fileContent.match(writersRegex);
 
-    // Extract BLOGS block
-    const blogsRegex = /export const BLOGS:\s*Record<string,\s*BlogPost>\s*=\s*([\s\S]*?);?\s*$/;
-    const blogsMatch = fileContent.match(blogsRegex);
+      // Extract BLOGS block
+      const blogsRegex = /export const BLOGS:\s*Record<string,\s*BlogPost>\s*=\s*([\s\S]*?);?\s*$/;
+      const blogsMatch = fileContent.match(blogsRegex);
 
-    if (!writersMatch || !blogsMatch) {
-      throw new Error('Failed to locate WRITERS or BLOGS blocks in blogs.ts');
+      if (writersMatch && blogsMatch) {
+        const writers = JSON.parse(writersMatch[1].trim());
+        const blogs = JSON.parse(blogsMatch[1].trim().replace(/;\s*$/, ''));
+
+        if (Object.keys(blogs).length > 0) {
+          cachedState = { writers, blogs };
+          return cachedState;
+        }
+      }
     }
-
-    const writers = JSON.parse(writersMatch[1].trim());
-    const blogs = JSON.parse(blogsMatch[1].trim());
-
-    cachedState = { writers, blogs };
-    return cachedState;
   } catch (error) {
-    console.error('Error reading blogs.ts DB:', error);
-    return { writers: {}, blogs: {} };
+    console.error('Error reading blogs.ts DB from disk, falling back to static dataset:', error);
   }
+
+  // Fallback to static dataset bundled at build time
+  cachedState = {
+    writers: { ...WRITERS },
+    blogs: { ...BLOGS },
+  };
+  return cachedState;
 }
 
 /**

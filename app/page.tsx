@@ -11,6 +11,20 @@ import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import dynamic from "next/dynamic"
+import { BLOGS } from "@/data/blogs"
+
+// Initial featured blogs from static dataset to avoid flash of empty state
+const defaultHomepageBlogs = Object.values(BLOGS)
+  .filter((b) => b.featuredOnHomepage === true && b.status === "Live")
+  .slice(0, 3)
+  .map((b) => ({
+    id: b.id,
+    title: b.title,
+    description: b.description,
+    heroImage: b.heroImage,
+    category: b.category,
+    readTime: b.readTime,
+  }))
 
 // Shared container class for consistent margins and max-width
 const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
@@ -234,7 +248,7 @@ export default function Home() {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.5 })
 
-  // Homepage featured blogs (CMS-controlled)
+  // Homepage featured blogs (CMS-controlled with instant initial static fallback)
   interface HomepageBlog {
     id: string;
     title: string;
@@ -243,8 +257,8 @@ export default function Home() {
     category: string;
     readTime: string;
   }
-  const [homepageBlogs, setHomepageBlogs] = useState<HomepageBlog[]>([])
-  const [blogsLoading, setBlogsLoading] = useState(true)
+  const [homepageBlogs, setHomepageBlogs] = useState<HomepageBlog[]>(defaultHomepageBlogs)
+  const [blogsLoading, setBlogsLoading] = useState(false)
 
   // Homepage news/events
   const [homepageNews, setHomepageNews] = useState<any[]>([])
@@ -253,8 +267,8 @@ export default function Home() {
     fetch('/api/homepage-blogs')
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
-          setHomepageBlogs(data.blogs || [])
+        if (data.success && Array.isArray(data.blogs) && data.blogs.length > 0) {
+          setHomepageBlogs(data.blogs)
         }
       })
       .catch(console.error)
