@@ -5127,5 +5127,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Shivndu kumar",
     "type": "contact-us",
     "createdAt": "2026-11-10T01:52:20.093Z"
+  },
+  "90b7f1dd-d81d-40ba-8bd6-19d5a0e7226f": {
+    "id": "90b7f1dd-d81d-40ba-8bd6-19d5a0e7226f",
+    "fullName": "Yogesh Belure",
+    "companyName": "S y techno Ventures",
+    "email": "belureyogesh53@gmail.com",
+    "phone": "7058491444",
+    "city": "Pune",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gclid=Cj0KCQiAnsvXBhCqARIsAHKgGNazyNKs19Kj0p1LGbWEb-PSiqzSI87_qcfiaLOltZX-OZqiZ4kcaggaAt5-EALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-10T10:07:38.743Z"
   }
 };
