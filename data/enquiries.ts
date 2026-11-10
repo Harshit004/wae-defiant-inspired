@@ -5082,5 +5082,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "/sustainability",
     "type": "product",
     "createdAt": "2026-11-10T00:33:44.092Z"
+  },
+  "f4e8bb90-cdc3-43bb-bf4c-15a99e473b98": {
+    "id": "f4e8bb90-cdc3-43bb-bf4c-15a99e473b98",
+    "fullName": "Dharani Nath",
+    "companyName": "Sunji",
+    "email": "dharaninath1970a@gmail.com",
+    "phone": "7086107238",
+    "city": "nathgituraj",
+    "pageLink": "/sustainability",
+    "type": "product",
+    "createdAt": "2026-11-10T00:34:37.364Z"
   }
 };
