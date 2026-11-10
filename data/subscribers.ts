@@ -720,5 +720,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-10",
     "time": "06:03:21",
     "pageLink": "/sustainability"
+  },
+  {
+    "id": "e63604e3-ae8a-4e26-9113-45eb38fe69b8",
+    "email": "shakeb.nishat007@gmail.com",
+    "date": "2026-11-11",
+    "time": "03:16:06",
+    "pageLink": "/portfolio/trublu/aenon"
   }
 ];
