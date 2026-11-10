@@ -5060,5 +5060,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Applying for mason foreman",
     "type": "contact-us",
     "createdAt": "2026-11-09T10:48:33.535Z"
+  },
+  "9b4876d0-9a32-423c-beae-4db44c71c099": {
+    "id": "9b4876d0-9a32-423c-beae-4db44c71c099",
+    "fullName": "Sunji",
+    "companyName": "Sunji",
+    "email": "dharaninath1970a@gmail.com",
+    "phone": "7086107238",
+    "city": "nathgituraj",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341411091&gad_source=5&gad_campaignid=22024897670&gclid=Cj0KCQiA-8XXBhDaARIsADnEOrA2ZoTGWt6-DfY4SNxWICKxUphOCmy8_jR1OY7MVB4bGO6UUeHVMj4aAi9-EALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-10T00:32:14.985Z"
   }
 };
