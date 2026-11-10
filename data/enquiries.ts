@@ -5093,5 +5093,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "/sustainability",
     "type": "product",
     "createdAt": "2026-11-10T00:34:37.364Z"
+  },
+  "3d7e6688-d6ff-4d99-b76e-c03abf374208": {
+    "id": "3d7e6688-d6ff-4d99-b76e-c03abf374208",
+    "fullName": "Nishant Meeena",
+    "companyName": "Nishant meena",
+    "email": "nishantmeeena00@gmail.com",
+    "phone": "6367441064",
+    "city": "Harwar",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341410950&gad_source=5&gad_campaignid=22024897670&gclid=EAIaIQobChMI3M2dhqD8lwMV3U0PAh0VkA-qEAEYASAAEgJL2_D_BwE",
+    "type": "product",
+    "createdAt": "2026-11-10T01:30:14.721Z"
   }
 };
