@@ -11,7 +11,7 @@ import Link from "next/link"
 import EnquireNowPopup from "@/components/EnquireNowPopup"
 
 // Shared container class: 24px padding on mobile, 7.5vw on desktop
-const containerClass = "mx-auto w-full max-w-[1440px] px-[24px] md:px-[7.5vw]"
+const containerClass = "w-full px-[24px] md:px-[7.5vw]"
 
 /**
  * Reusable hover button component.

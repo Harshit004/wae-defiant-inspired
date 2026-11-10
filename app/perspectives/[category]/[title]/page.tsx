@@ -1,81 +1,109 @@
-"use client"
-
-import React, { useState, useEffect } from "react"
-import { useParams } from "next/navigation"
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { BLOGS, WRITERS, BlogPost, Writer } from "@/data/blogs"
+import ShareArticleButton from "@/components/share-article-button"
 
-const containerClass = "mx-auto w-full max-w-[1440px]"
+interface PageProps {
+  params: Promise<{
+    category: string
+    title: string
+  }>
+}
 
-export default function DynamicBlogPost() {
-  const params = useParams()
-  const titleParam = params?.title as string
+const containerClass = "w-full"
 
-  const [copied, setCopied] = useState(false)
-  const [hoveredRelatedCard, setHoveredRelatedCard] = useState<number | null>(null)
-  const [blogData, setBlogData] = useState<BlogPost | null>(null)
-  const [writerData, setWriterData] = useState<Writer | null>(null)
-  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([])
-
-  useEffect(() => {
-    if (titleParam) {
-      const post = BLOGS[titleParam] || Object.values(BLOGS).find(b => b.id === titleParam)
-      if (post) {
-        setBlogData(post)
-        const writer = WRITERS[post.writerId]
-        setWriterData(writer || null)
-
-        const sameCategoryRelated = Object.values(BLOGS)
-          .filter(b => b.id !== post.id && b.category === post.category && b.status === "Live")
-
-        let related = sameCategoryRelated.slice(0, 3)
-
-        if (related.length < 3) {
-          const otherRelated = Object.values(BLOGS)
-            .filter(b => b.id !== post.id && b.category !== post.category && b.status === "Live")
-          related = [...related, ...otherRelated].slice(0, 3)
-        }
-
-        setRelatedPosts(related)
-      }
+export async function generateStaticParams() {
+  const liveBlogs = Object.values(BLOGS).filter((b) => b.status === "Live")
+  return liveBlogs.map((blog) => {
+    const categorySlug = blog.category
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "")
+    return {
+      category: categorySlug,
+      title: blog.id,
     }
-  }, [titleParam])
+  })
+}
 
-  const handleShare = () => {
-    navigator.clipboard.writeText(window.location.href)
-      .then(() => {
-        setCopied(true)
-        setTimeout(() => setCopied(false), 2000)
-      })
-      .catch((err) => {
-        console.error("Failed to copy link: ", err)
-      })
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { title } = await params
+  const post = BLOGS[title] || Object.values(BLOGS).find((b) => b.id === title)
+
+  if (!post || post.status !== "Live") {
+    return {
+      title: "Article Not Found | WAE Insights",
+      description: "The requested article could not be found.",
+    }
   }
 
-  if (!blogData) {
-    return (
-      <main className="relative bg-[#0F0F0F] text-white min-h-screen">
-        <Header transparentBg />
-        <div className="h-[220px]" />
-        <section className="px-[24px] md:px-[7.5vw] mx-auto w-full max-w-[1440px]">
-          <div className="text-center py-20">
-            <h1 className="text-2xl font-inter-tight font-normal">
-              Article Not Found
-            </h1>
-            <p className="text-gray-500 mt-4 font-manrope font-normal">
-              The article you are looking for does not exist or has been moved.
-            </p>
-            <Link href="/perspectives" className="text-[#0081C9] hover:underline mt-6 inline-block">
-              Back to all blogs
-            </Link>
-          </div>
-        </section>
-        <Footer />
-      </main>
+  const categorySlug = post.category
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")
+  const canonicalUrl = `https://www.waecorp.com/perspectives/${categorySlug}/${post.id}`
+
+  return {
+    title: `${post.title} | WAE Insights`,
+    description: post.description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: canonicalUrl,
+      siteName: "WAE Corp",
+      type: "article",
+      publishedTime: post.createdAt,
+      images: post.heroImage
+        ? [
+            {
+              url: post.heroImage,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ]
+        : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: post.heroImage ? [post.heroImage] : [],
+    },
+  }
+}
+
+export default async function DynamicBlogPost({ params }: PageProps) {
+  const { title } = await params
+  const blogData: BlogPost | undefined =
+    BLOGS[title] || Object.values(BLOGS).find((b) => b.id === title)
+
+  if (!blogData || blogData.status !== "Live") {
+    notFound()
+  }
+
+  const writerData: Writer | null = WRITERS[blogData.writerId] || null
+
+  const sameCategoryRelated = Object.values(BLOGS).filter(
+    (b) => b.id !== blogData.id && b.category === blogData.category && b.status === "Live"
+  )
+
+  let relatedPosts = sameCategoryRelated.slice(0, 3)
+
+  if (relatedPosts.length < 3) {
+    const otherRelated = Object.values(BLOGS).filter(
+      (b) => b.id !== blogData.id && b.category !== blogData.category && b.status === "Live"
     )
+    relatedPosts = [...relatedPosts, ...otherRelated].slice(0, 3)
   }
 
   return (
@@ -101,14 +129,14 @@ export default function DynamicBlogPost() {
           <div
             className="absolute top-0 left-0 right-0 pointer-events-none z-10 h-[200px] md:h-[430px]"
             style={{
-              background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%)',
+              background: "linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%)",
             }}
           />
           {/* Bottom Gradient */}
           <div
             className="absolute bottom-0 left-0 right-0 pointer-events-none z-10 h-[100px] md:h-[270px]"
             style={{
-              background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%)',
+              background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%)",
             }}
           />
         </div>
@@ -120,9 +148,9 @@ export default function DynamicBlogPost() {
         <div
           className="absolute top-0 left-0 right-0 pointer-events-none z-0"
           style={{
-            height: '875px',
-            maxHeight: '875px',
-            background: 'linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)',
+            height: "875px",
+            maxHeight: "875px",
+            background: "linear-gradient(146.59deg, #004063 4.52%, #0F0F0F 49.04%)",
           }}
         />
 
@@ -151,9 +179,7 @@ export default function DynamicBlogPost() {
                   {writerData.name}
                 </Link>
               ) : (
-                <span className="font-inter-tight text-[12px] md:text-[14px]">
-                  WAE Writer
-                </span>
+                <span className="font-inter-tight text-[12px] md:text-[14px]">WAE Writer</span>
               )}
 
               <div className="flex items-center gap-[12px]">
@@ -161,24 +187,7 @@ export default function DynamicBlogPost() {
                   {blogData.readTime}
                 </span>
 
-                <button
-                  onClick={handleShare}
-                  aria-label="Share article"
-                  className="hover:opacity-80 transition-opacity relative flex items-center cursor-pointer"
-                >
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/cefe6cc9-95e7-4e11-0008-900d4d407600/public"
-                    alt="Share"
-                    width={24}
-                    height={24}
-                    className="w-4 h-4 md:w-6 md:h-6 object-contain"
-                  />
-                  {copied && (
-                    <span className="absolute bottom-full right-0 mb-2 px-2 py-1 text-[10px] bg-black/95 text-white rounded border border-white/20 whitespace-nowrap backdrop-blur-sm shadow-md font-inter-tight">
-                      Link Copied!
-                    </span>
-                  )}
-                </button>
+                <ShareArticleButton />
               </div>
             </div>
 
@@ -192,15 +201,20 @@ export default function DynamicBlogPost() {
                 return (
                   <div key={colIdx} className="flex flex-col">
                     {columnBlocks.map((block, blockIdx) => {
-                      const isAfterHeading = blockIdx > 0 && columnBlocks[blockIdx - 1]?.type === 'heading'
+                      const isAfterHeading =
+                        blockIdx > 0 && columnBlocks[blockIdx - 1]?.type === "heading"
                       const isFirst = blockIdx === 0
 
-                      if (block.type === 'paragraph') {
+                      if (block.type === "paragraph") {
                         return (
                           <p
                             key={blockIdx}
                             className={`font-manrope font-normal text-[14px] leading-[1.5] text-[#AEAEAE] ${
-                              isFirst ? 'mt-0' : isAfterHeading ? 'mt-[16px] md:mt-[20px]' : 'mt-[12px]'
+                              isFirst
+                                ? "mt-0"
+                                : isAfterHeading
+                                ? "mt-[16px] md:mt-[20px]"
+                                : "mt-[12px]"
                             }`}
                           >
                             {block.text}
@@ -208,12 +222,12 @@ export default function DynamicBlogPost() {
                         )
                       }
 
-                      if (block.type === 'heading') {
+                      if (block.type === "heading") {
                         return (
                           <h2
                             key={blockIdx}
                             className={`font-inter-tight font-normal text-[18px] leading-[1.3] text-white ${
-                              isFirst ? 'mt-0' : 'mt-[32px] md:mt-[46px]'
+                              isFirst ? "mt-0" : "mt-[32px] md:mt-[46px]"
                             } mb-[16px] md:mb-[20px]`}
                           >
                             {block.text}
@@ -221,18 +235,24 @@ export default function DynamicBlogPost() {
                         )
                       }
 
-                      if (block.type === 'list') {
+                      if (block.type === "list") {
                         return (
                           <ul
                             key={blockIdx}
                             className={`list-disc pl-5 font-manrope font-normal text-[14px] leading-[1.5] text-[#AEAEAE] ${
-                              isFirst ? 'mt-0' : isAfterHeading ? 'mt-[16px] md:mt-[20px]' : 'mt-[12px]'
+                              isFirst
+                                ? "mt-0"
+                                : isAfterHeading
+                                ? "mt-[16px] md:mt-[20px]"
+                                : "mt-[12px]"
                             }`}
                           >
                             {block.items?.map((item, itemIdx) => (
                               <li
                                 key={itemIdx}
-                                className={itemIdx === (block.items?.length || 1) - 1 ? 'mb-0' : 'mb-[8px]'}
+                                className={
+                                  itemIdx === (block.items?.length || 1) - 1 ? "mb-0" : "mb-[8px]"
+                                }
                               >
                                 {item}
                               </li>
@@ -255,7 +275,9 @@ export default function DynamicBlogPost() {
 
         {/* Writer Card Section */}
         {writerData && (
-          <section className={`relative z-10 w-full mb-[40px] md:mb-[76px] px-[24px] md:px-[7.5vw] ${containerClass}`}>
+          <section
+            className={`relative z-10 w-full mb-[40px] md:mb-[76px] px-[24px] md:px-[7.5vw] ${containerClass}`}
+          >
             <div className="mx-auto">
               {/* Writer Profile row */}
               <div className="flex flex-row items-start md:items-stretch gap-[16px] md:gap-[94px]">
@@ -291,9 +313,7 @@ export default function DynamicBlogPost() {
                       href={writerData.link || "#"}
                       className="inline-flex items-center text-white cursor-pointer font-inter-tight font-medium md:font-normal text-[10px] md:text-[18px] leading-[120%]"
                     >
-                      <span className="underline underline-offset-[3px]">
-                        View Profile
-                      </span>
+                      <span className="underline underline-offset-[3px]">View Profile</span>
                       <span className="ml-[6px] md:ml-[10px]">↗</span>
                     </Link>
                   </div>
@@ -318,28 +338,34 @@ export default function DynamicBlogPost() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-[4.166%] md:gap-y-[130px]">
                 {relatedPosts.map((post, index) => {
-                  const rCatSlug = post.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+                  const rCatSlug = post.category
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/(^-|-$)/g, "")
                   const linkUrl = `/perspectives/${rCatSlug}/${post.id}`
 
                   return (
                     <div key={post.id} className="flex flex-col">
-                      <div
-                        className="group flex items-stretch transition-all duration-300"
-                        onMouseEnter={() => setHoveredRelatedCard(index)}
-                        onMouseLeave={() => setHoveredRelatedCard(null)}
-                      >
+                      <div className="group flex items-stretch transition-all duration-300">
                         {/* Divider line before card (Desktop only) */}
                         <div className="hidden md:block w-px bg-white/20 self-stretch shrink-0" />
-                        <div className="hidden md:block shrink-0" style={{ width: "calc(22 / 1440 * 100vw)" }} />
+                        <div
+                          className="hidden md:block shrink-0"
+                          style={{ width: "calc(22 / 1440 * 100vw)" }}
+                        />
 
                         {/* Card Content */}
                         <div className="flex flex-col flex-grow text-left">
-                          <Link href={linkUrl} className="block relative aspect-[364/270] w-full overflow-hidden">
+                          <Link
+                            href={linkUrl}
+                            className="block relative aspect-[364/270] w-full overflow-hidden"
+                          >
                             <Image
                               src={post.heroImage}
                               alt={post.title}
                               fill
-                              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"
+                              className="object-cover grayscale group-hover:grayscale-0 transition-all [transition-duration:800ms] ease-in-out"
                             />
                           </Link>
 
@@ -379,7 +405,6 @@ export default function DynamicBlogPost() {
             </div>
           </section>
         )}
-
       </div>
       <Footer />
     </main>

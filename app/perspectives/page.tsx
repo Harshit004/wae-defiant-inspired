@@ -7,8 +7,8 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import { BLOGS, WRITERS } from "@/data/blogs"
 
-// Center layout container matching standard padding & max-width
-const containerClass = "mx-auto w-full max-w-[1440px] px-[24px] md:px-[7.5vw]"
+// Layout container matching standard padding
+const containerClass = "w-full px-[24px] md:px-[7.5vw]"
 
 interface SelectButtonProps {
   children: React.ReactNode
@@ -112,7 +112,7 @@ export default function Home() {
                   src={featuredPost.heroImage}
                   alt={featuredPost.title}
                   fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-[800ms] hover:scale-103"
+                  className="object-cover grayscale hover:grayscale-0 transition-all [transition-duration:800ms] hover:scale-103"
                   priority
                 />
               )}
@@ -171,15 +171,40 @@ export default function Home() {
           `}</style>
           
           <div className="grid grid-flow-col auto-cols-[minmax(220px,1fr)] lg:grid-flow-row lg:grid-cols-5 gap-[12px] md:gap-[1.5vw] w-full overflow-x-auto hide-scroll pb-[4px]">
-            {buttonLabels.map((label, index) => (
-              <SelectButton
-                key={label}
-                selected={selectedIndex === index}
-                onClick={() => setSelectedIndex(index === selectedIndex ? null : index)}
-              >
-                {label}
-              </SelectButton>
-            ))}
+            {buttonLabels.map((label, index) => {
+              const categorySlug = label
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/(^-|-$)/g, "")
+              const isSelected = selectedIndex === index
+
+              return (
+                <Link
+                  key={label}
+                  href={`/perspectives/${categorySlug}`}
+                  className="transition-all duration-300 ease-in-out border border-white/20 hover:bg-white/10 w-full h-full flex items-center justify-center"
+                  style={{
+                    padding: "14px 16px",
+                    backgroundColor: isSelected ? "#ffffff" : "transparent",
+                    color: isSelected ? "#000000" : "#ffffff",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "12px",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                    borderRadius: "0px",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
+                  {label}
+                </Link>
+              )
+            })}
           </div>
 
           {/* Pagination dots indicator (Mobile Only matching screenshot) */}
@@ -218,7 +243,7 @@ export default function Home() {
                           src={post.heroImage}
                           alt={post.title}
                           fill
-                          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[800ms] ease-in-out"
+                          className="object-cover grayscale group-hover:grayscale-0 transition-all [transition-duration:800ms] ease-in-out"
                         />
                       </Link>
 
@@ -273,7 +298,7 @@ export default function Home() {
               <div key={idx} className="flex flex-col text-left h-full">
                 <Link
                   href={writer.link}
-                  className="block relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-[600ms] rounded-full aspect-square w-full max-w-[222px]"
+                  className="block relative overflow-hidden grayscale hover:grayscale-0 transition-all [transition-duration:600ms] rounded-full aspect-square w-full max-w-[222px]"
                 >
                   <Image
                     src={writer.image}

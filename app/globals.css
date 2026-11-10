@@ -108,28 +108,100 @@ padding-bottom: 20px;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
 }
 
-/* Homepage Ghost Cursor */
-@media (hover: hover) and (pointer: fine) {
-  html.homepage-ghost-cursor-active,
-  html.homepage-ghost-cursor-active body,
-  html.homepage-ghost-cursor-active a,
-  html.homepage-ghost-cursor-active button,
-  html.homepage-ghost-cursor-active [role="button"],
-  html.homepage-ghost-cursor-active .cursor-pointer {
-    cursor: none !important;
-  }
+/* ==========================================================================
+   Fluid Typography for Screens Bigger Than A Laptop (> 1440px)
+   The baseline design is built at 1440px.
+   For viewports > 1440px (1920px, 2K/2560px, 4K/3840px, ultrawide),
+   scale text proportionally by percentage of viewport width (N / 1440 * 100vw).
+   Mobile, tablet, and laptop screens (<= 1440px) remain 100% UNTOUCHED.
+   ========================================================================== */
+@media (min-width: 1441px) {
+  /* Cascade Level 1: Base text sizes */
+  .text-\[8px\] { font-size: calc(8 / 1440 * 100vw) !important; }
+  .text-\[9px\] { font-size: calc(9 / 1440 * 100vw) !important; }
+  .text-\[10px\] { font-size: calc(10 / 1440 * 100vw) !important; }
+  .text-\[10\.5px\] { font-size: calc(10.5 / 1440 * 100vw) !important; }
+  .text-\[11px\] { font-size: calc(11 / 1440 * 100vw) !important; }
+  .text-\[12px\] { font-size: calc(12 / 1440 * 100vw) !important; }
+  .text-\[13px\] { font-size: calc(13 / 1440 * 100vw) !important; }
+  .text-\[14px\] { font-size: calc(14 / 1440 * 100vw) !important; }
+  .text-\[15px\] { font-size: calc(15 / 1440 * 100vw) !important; }
+  .text-\[16px\] { font-size: calc(16 / 1440 * 100vw) !important; }
+  .text-\[18px\] { font-size: calc(18 / 1440 * 100vw) !important; }
+  .text-\[20px\] { font-size: calc(20 / 1440 * 100vw) !important; }
+  .text-\[22px\] { font-size: calc(22 / 1440 * 100vw) !important; }
+  .text-\[24px\] { font-size: calc(24 / 1440 * 100vw) !important; }
+  .text-\[26px\] { font-size: calc(26 / 1440 * 100vw) !important; }
+  .text-\[28px\] { font-size: calc(28 / 1440 * 100vw) !important; }
+  .text-\[30px\] { font-size: calc(30 / 1440 * 100vw) !important; }
+  .text-\[32px\] { font-size: calc(32 / 1440 * 100vw) !important; }
+  .text-\[36px\] { font-size: calc(36 / 1440 * 100vw) !important; }
+  .text-\[38px\] { font-size: calc(38 / 1440 * 100vw) !important; }
+  .text-\[40px\] { font-size: calc(40 / 1440 * 100vw) !important; }
+  .text-\[46px\] { font-size: calc(46 / 1440 * 100vw) !important; }
+  .text-\[48px\] { font-size: calc(48 / 1440 * 100vw) !important; }
+  .text-\[50px\] { font-size: calc(50 / 1440 * 100vw) !important; }
+  .text-\[55px\] { font-size: calc(55 / 1440 * 100vw) !important; }
+  .text-\[60px\] { font-size: calc(60 / 1440 * 100vw) !important; }
+  .text-\[64px\] { font-size: calc(64 / 1440 * 100vw) !important; }
+  .text-\[70px\] { font-size: calc(70 / 1440 * 100vw) !important; }
+  .text-\[72px\] { font-size: calc(72 / 1440 * 100vw) !important; }
+  .text-\[80px\] { font-size: calc(80 / 1440 * 100vw) !important; }
 
-  html.homepage-ghost-cursor-active input:focus,
-  html.homepage-ghost-cursor-active textarea:focus {
-    cursor: text !important;
-  }
+  /* Cascade Level 2: sm: overrides */
+  .sm\:text-\[10px\] { font-size: calc(10 / 1440 * 100vw) !important; }
+  .sm\:text-\[10\.5px\] { font-size: calc(10.5 / 1440 * 100vw) !important; }
+  .sm\:text-\[11px\] { font-size: calc(11 / 1440 * 100vw) !important; }
+  .sm\:text-\[12px\] { font-size: calc(12 / 1440 * 100vw) !important; }
+  .sm\:text-\[14px\] { font-size: calc(14 / 1440 * 100vw) !important; }
+  .sm\:text-\[15px\] { font-size: calc(15 / 1440 * 100vw) !important; }
+  .sm\:text-\[16px\] { font-size: calc(16 / 1440 * 100vw) !important; }
+  .sm\:text-\[18px\] { font-size: calc(18 / 1440 * 100vw) !important; }
+  .sm\:text-\[20px\] { font-size: calc(20 / 1440 * 100vw) !important; }
+  .sm\:text-\[24px\] { font-size: calc(24 / 1440 * 100vw) !important; }
+
+  /* Cascade Level 3: md: overrides */
+  .md\:text-\[12px\] { font-size: calc(12 / 1440 * 100vw) !important; }
+  .md\:text-\[14px\] { font-size: calc(14 / 1440 * 100vw) !important; }
+  .md\:text-\[16px\] { font-size: calc(16 / 1440 * 100vw) !important; }
+  .md\:text-\[18px\] { font-size: calc(18 / 1440 * 100vw) !important; }
+  .md\:text-\[20px\] { font-size: calc(20 / 1440 * 100vw) !important; }
+  .md\:text-\[24px\] { font-size: calc(24 / 1440 * 100vw) !important; }
+  .md\:text-\[28px\] { font-size: calc(28 / 1440 * 100vw) !important; }
+  .md\:text-\[30px\] { font-size: calc(30 / 1440 * 100vw) !important; }
+  .md\:text-\[32px\] { font-size: calc(32 / 1440 * 100vw) !important; }
+  .md\:text-\[36px\] { font-size: calc(36 / 1440 * 100vw) !important; }
+  .md\:text-\[38px\] { font-size: calc(38 / 1440 * 100vw) !important; }
+  .md\:text-\[40px\] { font-size: calc(40 / 1440 * 100vw) !important; }
+  .md\:text-\[46px\] { font-size: calc(46 / 1440 * 100vw) !important; }
+  .md\:text-\[48px\] { font-size: calc(48 / 1440 * 100vw) !important; }
+  .md\:text-\[50px\] { font-size: calc(50 / 1440 * 100vw) !important; }
+  .md\:text-\[55px\] { font-size: calc(55 / 1440 * 100vw) !important; }
+  .md\:text-\[60px\] { font-size: calc(60 / 1440 * 100vw) !important; }
+  .md\:text-\[64px\] { font-size: calc(64 / 1440 * 100vw) !important; }
+  .md\:text-\[70px\] { font-size: calc(70 / 1440 * 100vw) !important; }
+  .md\:text-\[72px\] { font-size: calc(72 / 1440 * 100vw) !important; }
+  .md\:text-\[80px\] { font-size: calc(80 / 1440 * 100vw) !important; }
+
+  /* Cascade Level 4: lg: overrides */
+  .lg\:text-\[12px\] { font-size: calc(12 / 1440 * 100vw) !important; }
+  .lg\:text-\[14px\] { font-size: calc(14 / 1440 * 100vw) !important; }
+  .lg\:text-\[16px\] { font-size: calc(16 / 1440 * 100vw) !important; }
+  .lg\:text-\[18px\] { font-size: calc(18 / 1440 * 100vw) !important; }
+  .lg\:text-\[20px\] { font-size: calc(20 / 1440 * 100vw) !important; }
+  .lg\:text-\[24px\] { font-size: calc(24 / 1440 * 100vw) !important; }
+  .lg\:text-\[28px\] { font-size: calc(28 / 1440 * 100vw) !important; }
+  .lg\:text-\[32px\] { font-size: calc(32 / 1440 * 100vw) !important; }
+  .lg\:text-\[36px\] { font-size: calc(36 / 1440 * 100vw) !important; }
+  .lg\:text-\[40px\] { font-size: calc(40 / 1440 * 100vw) !important; }
+  .lg\:text-\[46px\] { font-size: calc(46 / 1440 * 100vw) !important; }
+  .lg\:text-\[48px\] { font-size: calc(48 / 1440 * 100vw) !important; }
+  .lg\:text-\[50px\] { font-size: calc(50 / 1440 * 100vw) !important; }
+  .lg\:text-\[55px\] { font-size: calc(55 / 1440 * 100vw) !important; }
+  .lg\:text-\[60px\] { font-size: calc(60 / 1440 * 100vw) !important; }
+  .lg\:text-\[64px\] { font-size: calc(64 / 1440 * 100vw) !important; }
 }
 
-/* Fallback native cursor for homepage */
-.homepage-cursor {
-  cursor: url('/ghost-cursor.png') 16 2,
-          url('https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8e483afa-d843-477f-e2f8-8b17703fa700/public') 16 2,
-          auto;
-}
+
 
 

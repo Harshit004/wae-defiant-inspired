@@ -7,7 +7,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { JOBS, JOB_CATEGORIES } from "@/data/jobs";
 
-const containerClass = "mx-auto w-full max-w-[1440px] px-[24px] md:px-[7.5vw]";
+const containerClass = "w-full px-[24px] md:px-[7.5vw]";
 
 interface SelectButtonProps {
   children: React.ReactNode;

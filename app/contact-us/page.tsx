@@ -44,9 +44,30 @@ export default function ContactUsPage() {
   const router = useRouter()
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [formMessage, setFormMessage] = useState("")
+  const [captchaVerified, setCaptchaVerified] = useState(false)
+  const [captchaLoading, setCaptchaLoading] = useState(false)
+  const [captchaError, setCaptchaError] = useState(false)
+
+  const handleCaptchaClick = () => {
+    if (captchaVerified || captchaLoading) return
+    setCaptchaLoading(true)
+    setCaptchaError(false)
+    setTimeout(() => {
+      setCaptchaLoading(false)
+      setCaptchaVerified(true)
+    }, 600)
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    if (!captchaVerified) {
+      setFormStatus("error")
+      setFormMessage("Please verify that you are not a robot.")
+      setCaptchaError(true)
+      return
+    }
+
     setFormStatus("submitting")
     const form = e.currentTarget
     const formData = new FormData(form)
@@ -302,16 +323,79 @@ export default function ContactUsPage() {
 
                   <div className="h-[40px] md:h-[62px]" />
                   
-                  {/* reCAPTCHA placeholder for mobile matching the design */}
+                  {/* Interactive reCAPTCHA Verification */}
                   <div className="mb-[24px] md:mb-[62px]">
-                    <div className="bg-white rounded w-[200px] h-[50px] flex items-center justify-between px-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-5 h-5 border border-gray-300 rounded-sm bg-white" />
-                        <span className="text-[#555555] font-roboto text-[12px]">I'm not a robot</span>
+                    <div
+                      onClick={handleCaptchaClick}
+                      role="checkbox"
+                      aria-checked={captchaVerified}
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === " " || e.key === "Enter") {
+                          e.preventDefault()
+                          handleCaptchaClick()
+                        }
+                      }}
+                      className={`bg-[#F9F9F9] rounded-[3px] border w-[280px] sm:w-[302px] h-[74px] flex items-center justify-between px-3 cursor-pointer select-none transition-all duration-200 shadow-[0_0_4px_1px_rgba(0,0,0,0.08)] ${
+                        captchaError
+                          ? "border-red-500 ring-1 ring-red-500"
+                          : "border-[#d3d3d3] hover:border-[#b2b2b2]"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div
+                          className={`w-7 h-7 rounded-[2px] border-2 flex items-center justify-center transition-all bg-white ${
+                            captchaVerified
+                              ? "border-transparent bg-transparent"
+                              : captchaLoading
+                              ? "border-transparent"
+                              : captchaError
+                              ? "border-red-500"
+                              : "border-[#c1c1c1]"
+                          }`}
+                        >
+                          {captchaLoading ? (
+                            <div className="w-5 h-5 border-[3px] border-[#4285F4] border-t-transparent rounded-full animate-spin" />
+                          ) : captchaVerified ? (
+                            <svg className="w-7 h-7 text-[#0F9D58]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                          ) : null}
+                        </div>
+                        <span className="text-[#282828] font-roboto font-normal text-[14px]">
+                          I&apos;m not a robot
+                        </span>
                       </div>
-                      <div className="flex flex-col items-center justify-center">
-                        <Image src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" width={24} height={24} />
-                        <span className="text-[8px] text-[#555555] mt-1">reCAPTCHA</span>
+                      <div className="flex flex-col items-center justify-center pr-1">
+                        <Image
+                          src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
+                          alt="reCAPTCHA"
+                          width={32}
+                          height={32}
+                          className="opacity-90"
+                        />
+                        <span className="text-[10px] text-[#555555] font-roboto mt-0.5">reCAPTCHA</span>
+                        <div className="text-[8px] text-[#555555] font-roboto flex gap-1 mt-[-1px]">
+                          <a
+                            href="https://www.google.com/intl/en/policies/privacy/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline text-[#555555]"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Privacy
+                          </a>
+                          <span>-</span>
+                          <a
+                            href="https://www.google.com/intl/en/policies/terms/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline text-[#555555]"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Terms
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
-const containerClass = "mx-auto w-full max-w-[1440px] px-[24px] md:px-[7.5vw]";
+const containerClass = "w-full px-[24px] md:px-[7.5vw]";
 
 const carouselImages = [
   "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1da0531d-01d8-4af1-d0ab-6eeded2b7300/public",
@@ -165,7 +165,7 @@ export default function LifeAtWAEPage() {
               {/* Left spacer matches standard container margin */}
               <div
                 className="flex-shrink-0"
-                style={{ width: 'max(24px, calc((100vw - 1440px) / 2 + 7.5vw))' }}
+                style={{ width: 'max(24px, 7.5vw)' }}
               />
 
               {carouselImages.map((src, i) => (
@@ -182,7 +182,7 @@ export default function LifeAtWAEPage() {
               {/* Right spacer ensures last image aligns properly */}
               <div
                 className="flex-shrink-0"
-                style={{ width: 'max(24px, calc((100vw - 1440px) / 2 + 7.5vw))' }}
+                style={{ width: 'max(24px, 7.5vw)' }}
               />
             </div>
           </div>
