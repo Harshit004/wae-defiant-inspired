@@ -171,15 +171,40 @@ export default function Home() {
           `}</style>
           
           <div className="grid grid-flow-col auto-cols-[minmax(220px,1fr)] lg:grid-flow-row lg:grid-cols-5 gap-[12px] md:gap-[1.5vw] w-full overflow-x-auto hide-scroll pb-[4px]">
-            {buttonLabels.map((label, index) => (
-              <SelectButton
-                key={label}
-                selected={selectedIndex === index}
-                onClick={() => setSelectedIndex(index === selectedIndex ? null : index)}
-              >
-                {label}
-              </SelectButton>
-            ))}
+            {buttonLabels.map((label, index) => {
+              const categorySlug = label
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/(^-|-$)/g, "")
+              const isSelected = selectedIndex === index
+
+              return (
+                <Link
+                  key={label}
+                  href={`/perspectives/${categorySlug}`}
+                  className="transition-all duration-300 ease-in-out border border-white/20 hover:bg-white/10 w-full h-full flex items-center justify-center"
+                  style={{
+                    padding: "14px 16px",
+                    backgroundColor: isSelected ? "#ffffff" : "transparent",
+                    color: isSelected ? "#000000" : "#ffffff",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "12px",
+                    letterSpacing: "0%",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                    borderRadius: "0px",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
+                  {label}
+                </Link>
+              )
+            })}
           </div>
 
           {/* Pagination dots indicator (Mobile Only matching screenshot) */}

@@ -37,6 +37,42 @@ const nextConfig = {
         destination: '/portfolio/:category',
         permanent: true,
       },
+      {
+        source: '/product-description-page',
+        has: [
+          {
+            type: 'query',
+            key: 'product',
+            value: 'aurela',
+          },
+        ],
+        destination: '/portfolio/trublu/aurela',
+        permanent: true,
+      },
+      {
+        source: '/product-description-page',
+        has: [
+          {
+            type: 'query',
+            key: 'product',
+            value: 'reva',
+          },
+        ],
+        destination: '/portfolio/bluwae/reva',
+        permanent: true,
+      },
+      {
+        source: '/product-description-page',
+        has: [
+          {
+            type: 'query',
+            key: 'product',
+            value: 'venus',
+          },
+        ],
+        destination: '/portfolio/bluwae/venus',
+        permanent: true,
+      },
     ]
   },
 }

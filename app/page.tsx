@@ -10,12 +10,10 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
-
 import dynamic from "next/dynamic"
 
-
-// Shared container class for consistent margins across all screens
-const containerClass = "w-full px-[24px] md:px-[7.5vw]"
+// Shared container class for consistent margins and max-width
+const containerClass = "mx-auto w-full max-w-[1440px] px-[7.5vw]"
 
 /**
  * Animated counter component
@@ -402,14 +400,14 @@ export default function Home() {
           <div className={`${containerClass} flex flex-col justify-end`}>
             {/* Top: Heading */}
             <div
-              className="w-[85vw] md:w-[clamp(280px,34.79vw,780px)]"
+              className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
               style={{
                 color: "#FFFFFF",
                 fontFamily: "'Inter Tight', sans-serif",
               }}
             >
               <h1
-                className="text-[12.5vw] md:text-[clamp(36px,5.9vw,140px)] leading-[105%] font-medium"
+                className="text-[12.5vw] md:text-[clamp(36px,5.9vw,85px)] leading-[105%] font-medium"
                 style={{
                   letterSpacing: "0%",
                   verticalAlign: "middle",
@@ -425,7 +423,7 @@ export default function Home() {
             {/* Bottom Row: "Our Green is Blue" and Festive Greeting aligned at TOP */}
             <div className="w-full flex flex-col sm:flex-row sm:items-start justify-between gap-6 md:gap-8">
               <p
-                className="text-[6vw] md:text-[clamp(24px,1.8vw,44px)] leading-[115%] font-normal text-[#AEAEAE]"
+                className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
                 style={{
                   letterSpacing: "0%",
                   verticalAlign: "middle",
@@ -468,12 +466,12 @@ export default function Home() {
           <div className="hidden md:grid grid-cols-3 h-full border-b border-[#FFFFFF4D]">
             {/* Column 1: Purpose */}
             <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[clamp(320px,24vw,440px)]">
+              <div className="flex flex-col w-full max-w-[320px]">
                 <h2
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
-                    fontSize: 'clamp(40px, 2.78vw, 64px)',
+                    fontSize: '40px',
                     lineHeight: '110%',
                     letterSpacing: '0%',
                   }}
@@ -486,7 +484,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 700,
-                    fontSize: 'clamp(12px, 0.833vw, 18px)',
+                    fontSize: '12px',
                     lineHeight: '100%',
                   }}
                 >
@@ -498,7 +496,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
-                    fontSize: 'clamp(12px, 0.833vw, 18px)',
+                    fontSize: '12px',
                     lineHeight: '140%',
                   }}
                 >
@@ -510,7 +508,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
-                    fontSize: 'clamp(12px, 0.833vw, 18px)',
+                    fontSize: '12px',
                     lineHeight: '140%',
                   }}
                 >
@@ -554,12 +552,12 @@ export default function Home() {
 
             {/* Column 2: Philosophy */}
             <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[clamp(320px,24vw,440px)]">
+              <div className="flex flex-col w-full max-w-[320px]">
                 <h2
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
-                    fontSize: 'clamp(40px, 2.78vw, 64px)',
+                    fontSize: '40px',
                     lineHeight: '110%',
                     letterSpacing: '0%',
                   }}
@@ -572,7 +570,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 700,
-                    fontSize: 'clamp(12px, 0.833vw, 18px)',
+                    fontSize: '12px',
                     lineHeight: '100%',
                   }}
                 >
@@ -584,7 +582,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
-                    fontSize: 'clamp(12px, 0.833vw, 18px)',
+                    fontSize: '12px',
                     lineHeight: '140%',
                   }}
                 >
@@ -596,7 +594,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
-                    fontSize: 'clamp(12px, 0.833vw, 18px)',
+                    fontSize: '12px',
                     lineHeight: '140%',
                   }}
                 >
@@ -640,12 +638,12 @@ export default function Home() {
 
             {/* Column 3: Principle */}
             <div className="flex flex-col h-full items-center justify-center px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[clamp(320px,24vw,440px)]">
+              <div className="flex flex-col w-full max-w-[320px]">
                 <h2
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
-                    fontSize: 'clamp(40px, 2.78vw, 64px)',
+                    fontSize: '40px',
                     lineHeight: '110%',
                     letterSpacing: '0%',
                   }}
@@ -658,7 +656,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 700,
-                    fontSize: 'clamp(12px, 0.833vw, 18px)',
+                    fontSize: '12px',
                     lineHeight: '100%',
                   }}
                 >
@@ -670,7 +668,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
-                    fontSize: 'clamp(12px, 0.833vw, 18px)',
+                    fontSize: '12px',
                     lineHeight: '140%',
                   }}
                 >
@@ -682,7 +680,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
-                    fontSize: 'clamp(12px, 0.833vw, 18px)',
+                    fontSize: '12px',
                     lineHeight: '140%',
                   }}
                 >
@@ -999,7 +997,7 @@ export default function Home() {
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 400,
               fontStyle: 'normal',
-              fontSize: 'clamp(24px, 1.67vw, 38px)',
+              fontSize: '24px',
               lineHeight: '115%',
               letterSpacing: '0%',
               verticalAlign: 'middle',
@@ -1014,7 +1012,7 @@ export default function Home() {
             style={{
               fontFamily: "'Inter Tight', sans-serif",
               fontWeight: 500,
-              fontSize: "clamp(40px, 4.17vw, 88px)",
+              fontSize: "60px",
               lineHeight: '105%',
               letterSpacing: '0%',
               color: '#FFFFFF',
@@ -1033,7 +1031,7 @@ export default function Home() {
               style={{
                 fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
-                fontSize: 'clamp(16px, 1.11vw, 24px)',
+                fontSize: '16px',
                 letterSpacing: '0px',
                 color: '#FFFFFF',
                 maxWidth: '34.72vw',
@@ -1046,9 +1044,9 @@ export default function Home() {
 
           <div style={{ height: '18px' }} />
 
-          <div className="hidden md:grid grid-cols-4 w-full" style={{ height: 'clamp(506px, 35.14vw, 750px)' }}>
+          <div className="hidden md:grid grid-cols-4 w-full" style={{ height: '506px' }}>
             {/* Aurela */}
-            <Link href="/product-description-page?product=aurela" className="relative group cursor-pointer h-full overflow-hidden block">
+            <Link href="/portfolio/trublu/aurela" className="relative group cursor-pointer h-full overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/317e8eb4-d823-462a-c1d3-54cd0664ea00/public"
                 alt="Aurela"
@@ -1059,11 +1057,11 @@ export default function Home() {
                 <div
                   className="rounded-full border border-white flex items-center justify-center"
                   style={{
-                    width: 'clamp(150px, 10.42vw, 220px)',
-                    height: 'clamp(150px, 10.42vw, 220px)',
+                    width: '150px',
+                    height: '150px',
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 600,
-                    fontSize: 'clamp(18px, 1.25vw, 26px)',
+                    fontSize: '18px',
                     lineHeight: '110%',
                     textTransform: 'uppercase',
                     textAlign: 'center'
@@ -1075,7 +1073,7 @@ export default function Home() {
             </Link>
 
             {/* Reva */}
-            <Link href="/product-description-page?product=reva" className="relative group cursor-pointer h-full overflow-hidden block">
+            <Link href="/portfolio/bluwae/reva" className="relative group cursor-pointer h-full overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/62a8a1c0-fffe-44c2-5ae2-ed461e445600/public"
                 alt="Reva"
@@ -1086,11 +1084,11 @@ export default function Home() {
                 <div
                   className="rounded-full border border-white flex items-center justify-center"
                   style={{
-                    width: 'clamp(150px, 10.42vw, 220px)',
-                    height: 'clamp(150px, 10.42vw, 220px)',
+                    width: '150px',
+                    height: '150px',
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 600,
-                    fontSize: 'clamp(18px, 1.25vw, 26px)',
+                    fontSize: '18px',
                     lineHeight: '110%',
                     textTransform: 'uppercase',
                     textAlign: 'center'
@@ -1102,7 +1100,7 @@ export default function Home() {
             </Link>
 
             {/* Venus */}
-            <Link href="/product-description-page?product=venus" className="relative group cursor-pointer h-full overflow-hidden block">
+            <Link href="/portfolio/bluwae/venus" className="relative group cursor-pointer h-full overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3ed4ddbf-f8ce-4cdb-f703-41fa25cbf400/public"
                 alt="Venus"
@@ -1113,11 +1111,11 @@ export default function Home() {
                 <div
                   className="rounded-full border border-white flex items-center justify-center"
                   style={{
-                    width: 'clamp(150px, 10.42vw, 220px)',
-                    height: 'clamp(150px, 10.42vw, 220px)',
+                    width: '150px',
+                    height: '150px',
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 600,
-                    fontSize: 'clamp(18px, 1.25vw, 26px)',
+                    fontSize: '18px',
                     lineHeight: '110%',
                     textTransform: 'uppercase',
                     textAlign: 'center'
@@ -1133,11 +1131,11 @@ export default function Home() {
               <div
                 className="rounded-full border border-white flex items-center justify-center"
                 style={{
-                  width: 'clamp(150px, 10.42vw, 220px)',
-                  height: 'clamp(150px, 10.42vw, 220px)',
+                  width: '150px',
+                  height: '150px',
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 600,
-                  fontSize: 'clamp(18px, 1.25vw, 26px)',
+                  fontSize: '18px',
                   lineHeight: '110%',
                   textTransform: 'uppercase',
                   textAlign: 'center'
@@ -1190,7 +1188,7 @@ export default function Home() {
 
           <MobileProductCarousel>
             {/* Aurela */}
-            <Link href="/product-description-page?product=aurela" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
+            <Link href="/portfolio/trublu/aurela" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/317e8eb4-d823-462a-c1d3-54cd0664ea00/public"
                 alt="Aurela"
@@ -1218,7 +1216,7 @@ export default function Home() {
 
 
             {/* Reva */}
-            <Link href="/product-description-page?product=reva" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
+            <Link href="/portfolio/bluwae/reva" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/62a8a1c0-fffe-44c2-5ae2-ed461e445600/public"
                 alt="Reva"
@@ -1246,7 +1244,7 @@ export default function Home() {
 
 
             {/* Venus */}
-            <Link href="/product-description-page?product=venus" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
+            <Link href="/portfolio/bluwae/venus" className="relative group cursor-pointer h-[128.75vw] overflow-hidden block">
               <Image
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3ed4ddbf-f8ce-4cdb-f703-41fa25cbf400/public"
                 alt="Venus"
@@ -1343,7 +1341,7 @@ export default function Home() {
                   fontFamily: "'Manrope', sans-serif",
                   fontWeight: 400,
                   fontStyle: 'normal',
-                  fontSize: 'clamp(14px, 0.97vw, 20px)',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                   verticalAlign: 'middle',
@@ -1356,14 +1354,14 @@ export default function Home() {
             </div>
 
             {/* Right Column - Quote & Author */}
-            <div style={{ maxWidth: 'clamp(650px, 45vw, 950px)' }} className="flex flex-col justify-between flex-1 min-w-0">
+            <div style={{ maxWidth: '650px' }} className="flex flex-col justify-between flex-1 min-w-0">
               <div>
                 <h3
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 400,
                     fontStyle: 'normal',
-                    fontSize: 'clamp(28px, 2.78vw, 68px)',
+                    fontSize: 'clamp(28px, 2.78vw, 40px)',
                     lineHeight: '105%',
                     letterSpacing: '0%',
                     verticalAlign: 'middle',
@@ -1382,7 +1380,7 @@ export default function Home() {
                       fontFamily: "'Inter Tight', sans-serif",
                       fontWeight: 500,
                       fontStyle: 'normal',
-                      fontSize: 'clamp(16px, 1.11vw, 24px)',
+                      fontSize: '16px',
                       lineHeight: '105%',
                       letterSpacing: '0%',
                       verticalAlign: 'middle',
@@ -1399,7 +1397,7 @@ export default function Home() {
           {/* Bottom Row: Button & Earth Video on left aligned with Horizontal Line & Text Columns on right */}
           <div className="flex justify-between items-start w-full gap-6 lg:gap-10">
             {/* Left Column - Button & Earth Video */}
-            <div style={{ width: 'clamp(320px, 35vw, 650px)' }} className="w-full flex flex-col relative flex-shrink-0">
+            <div style={{ width: 'clamp(320px, 35vw, 490px)' }} className="w-full flex flex-col relative flex-shrink-0">
               <div className="relative z-20 flex items-start" style={{ height: '49px' }}>
                 <Link href="/sustainability" className="contents">
                   <HoverButton theme="transparent-white">
@@ -1440,8 +1438,8 @@ export default function Home() {
                 <div
                   className="relative"
                   style={{
-                    width: 'clamp(294px, 28.58vw, 600px)',
-                    height: 'clamp(252px, 24.5vw, 514px)',
+                    width: 'clamp(294px, 28.58vw, 412px)',
+                    height: 'clamp(252px, 24.5vw, 353px)',
                     maxWidth: '100%',
                     marginLeft: `${earthMarginLeft}px`,
                     overflow: 'hidden',
@@ -1469,7 +1467,7 @@ export default function Home() {
             </div>
 
             {/* Right Column - Horizontal Line & Two Text Columns */}
-            <div style={{ maxWidth: 'clamp(650px, 45vw, 950px)' }} className="relative z-10 flex flex-col flex-1 min-w-0">
+            <div style={{ maxWidth: '650px' }} className="relative z-10 flex flex-col flex-1 min-w-0">
               <div style={{ height: '49px' }} className="flex flex-col justify-start">
                 {/* Horizontal line aligned with button top */}
                 <div className="w-full h-px bg-[#FFFFFF4D]" />
@@ -1484,7 +1482,7 @@ export default function Home() {
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
                     fontStyle: 'normal',
-                    fontSize: 'clamp(12px, 0.833vw, 18px)',
+                    fontSize: '12px',
                     lineHeight: '130%',
                     letterSpacing: '0%',
                     verticalAlign: 'middle',
@@ -1512,7 +1510,7 @@ export default function Home() {
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
                     fontStyle: 'normal',
-                    fontSize: 'clamp(12px, 0.833vw, 18px)',
+                    fontSize: '12px',
                     lineHeight: '130%',
                     letterSpacing: '0%',
                     verticalAlign: 'middle',
