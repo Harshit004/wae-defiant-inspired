@@ -5071,5 +5071,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341411091&gad_source=5&gad_campaignid=22024897670&gclid=Cj0KCQiA-8XXBhDaARIsADnEOrA2ZoTGWt6-DfY4SNxWICKxUphOCmy8_jR1OY7MVB4bGO6UUeHVMj4aAi9-EALw_wcB",
     "type": "product",
     "createdAt": "2026-11-10T00:32:14.985Z"
+  },
+  "24e2c216-7a20-47e9-babd-afc934325013": {
+    "id": "24e2c216-7a20-47e9-babd-afc934325013",
+    "fullName": "Dharani Nath",
+    "companyName": "Sunji",
+    "email": "dharaninath1970a@gmail.com",
+    "phone": "7086107238",
+    "city": "nathgituraj",
+    "pageLink": "/sustainability",
+    "type": "product",
+    "createdAt": "2026-11-10T00:33:44.092Z"
   }
 };
