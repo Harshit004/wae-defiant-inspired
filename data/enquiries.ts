@@ -5115,5 +5115,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341410950&gad_source=5&gad_campaignid=22024897670&gclid=EAIaIQobChMI3M2dhqD8lwMV3U0PAh0VkA-qEAEYASAAEgJL2_D_BwE",
     "type": "product",
     "createdAt": "2026-11-10T01:30:17.204Z"
+  },
+  "e442ae40-fde4-4086-89fa-bc21054843f6": {
+    "id": "e442ae40-fde4-4086-89fa-bc21054843f6",
+    "fullName": "Shivndu kumar",
+    "companyName": "Shivndu kumar",
+    "email": "maltidevijamui1971@gmail.com",
+    "phone": "9153212089",
+    "city": "Shivndu kumar",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Shivndu kumar",
+    "type": "contact-us",
+    "createdAt": "2026-11-10T01:52:20.093Z"
   }
 };
