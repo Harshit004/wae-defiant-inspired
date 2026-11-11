@@ -727,5 +727,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-11",
     "time": "03:16:06",
     "pageLink": "/portfolio/trublu/aenon"
+  },
+  {
+    "id": "a90b18c1-3a90-4df5-b710-740d7473fd7d",
+    "email": "khanahmad30394@gmail.com",
+    "date": "2026-11-11",
+    "time": "06:51:16",
+    "pageLink": "/contact-us"
   }
 ];
