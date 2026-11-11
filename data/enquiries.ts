@@ -5171,5 +5171,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series?gad_source=1&gad_campaignid=24242484871&gbraid=0AAAAABUiSLwZ7OfXfnBPdmfbramIowRg1&gclid=Cj0KCQiAwdDXBhDuARIsAFdLuklGcgZf66GAdKmUCg_UeGWTjyd1xPqndJQE4VqzHZf9FsXLGLCs2UIaAmctEALw_wcB",
     "type": "product",
     "createdAt": "2026-11-11T08:57:08.780Z"
+  },
+  "1b2ffa0f-59af-4b19-9567-d777513d68b5": {
+    "id": "1b2ffa0f-59af-4b19-9567-d777513d68b5",
+    "fullName": "Adarsh Gupta",
+    "companyName": "Herbalife",
+    "email": "ag8828874@gmail.com",
+    "phone": "8115615212",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIt6Lx-Or_lwMVi8YWBR2VxAP3EAEYASAAEgI5E_D_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-11T11:43:44.250Z"
   }
 };
