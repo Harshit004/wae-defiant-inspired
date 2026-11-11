@@ -11,6 +11,7 @@ import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import dynamic from "next/dynamic"
+import LightweightRipple from "@/components/LightweightRipple"
 import { BLOGS } from "@/data/blogs"
 
 // Initial featured blogs from static dataset to avoid flash of empty state
@@ -392,27 +393,19 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative bg-black h-screen h-[100svh] min-h-[100svh] flex flex-col justify-between overflow-hidden"
+        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
       >
-        {/* Full-bleed Hero Background Video */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="w-full h-full object-cover object-top pointer-events-none"
-          >
-            <source src="/newdiwali%20(6).mp4" type="video/mp4" />
-            <source src="/newdiwali (6).mp4" type="video/mp4" />
-          </video>
+        {/* Background Image determining the height of the section naturally */}
+        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
+          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public" />
+        </div>
+        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1440/691]">
+          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
         </div>
 
         {/* Hero Content Text (Topmost) */}
-        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-end pt-[clamp(70px,10vh,120px)] pb-[clamp(36px,11vh,120px)]">
-          <div className={`${containerClass} flex flex-col justify-end`}>
-            {/* Top: Heading */}
+        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
+          <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
             <div
               className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
               style={{
@@ -430,12 +423,7 @@ export default function Home() {
               >
                 We're here<br />to disrupt the<br />status quo!
               </h1>
-            </div>
-
-            <div className="h-[12px] md:h-[clamp(14px,1.2vw,22px)]" />
-
-            {/* Bottom Row: "Our Green is Blue" and Festive Greeting aligned at TOP */}
-            <div className="w-full flex flex-col sm:flex-row sm:items-start justify-between gap-6 md:gap-8">
+              <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
               <p
                 className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
                 style={{
@@ -447,25 +435,6 @@ export default function Home() {
               >
                 Our Green is Blue
               </p>
-
-              {/* Right Column: Festive Greeting */}
-              <div className="w-full sm:w-auto flex sm:justify-end">
-                <p
-                  className="text-[14px] sm:text-[clamp(16px,1.15vw,24px)] text-left sm:text-right text-white font-normal ml-auto max-w-[clamp(360px,28vw,580px)]"
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 400,
-                    lineHeight: "140%",
-                    letterSpacing: "0%",
-                    verticalAlign: "middle",
-                    margin: 0,
-                  }}
-                >
-                  May the festival of lights <span className="whitespace-nowrap">fill your life</span><br />
-                  with joy, peace, prosperity, and<br />
-                  endless blessings.
-                </p>
-              </div>
             </div>
           </div>
 
