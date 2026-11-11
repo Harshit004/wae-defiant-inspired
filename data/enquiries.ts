@@ -8,7 +8,7 @@ export interface Enquiry {
   pageLink: string;
   createdAt: string;
   message?: string;
-  type?: 'product' | 'general' | 'contact-us' | string;
+  type?: 'product' | 'general' | 'contact-us';
 }
 
 export const ENQUIRIES: Record<string, Enquiry> = {
@@ -5138,5 +5138,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gclid=Cj0KCQiAnsvXBhCqARIsAHKgGNazyNKs19Kj0p1LGbWEb-PSiqzSI87_qcfiaLOltZX-OZqiZ4kcaggaAt5-EALw_wcB",
     "type": "product",
     "createdAt": "2026-11-10T10:07:38.743Z"
+  },
+  "f8e9868f-62fc-4639-b4d0-07dc127b160e": {
+    "id": "f8e9868f-62fc-4639-b4d0-07dc127b160e",
+    "fullName": "Digamber Tathe",
+    "companyName": "tathe",
+    "email": "tathedigamber52@gmail.com",
+    "phone": "9822877687",
+    "city": "गाव वाकोद तालुला फुलंब्री जिल्हा छत्रपती संभाजी नगर",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934529&gad_source=5&gad_campaignid=23735506714&gclid=Cj0KCQiAnsvXBhCqARIsAHKgGNZysQAjun3CJ3_Dzwa3RuuDTylJe7uUg0V2bX3A-1ix5uJGvRVb86kaAgrbEALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-11T00:50:26.956Z"
   }
 };
