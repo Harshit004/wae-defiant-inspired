@@ -5160,5 +5160,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934529&gad_source=5&gad_campaignid=23735506714&gclid=Cj0KCQiAnsvXBhCqARIsAHKgGNZysQAjun3CJ3_Dzwa3RuuDTylJe7uUg0V2bX3A-1ix5uJGvRVb86kaAgrbEALw_wcB",
     "type": "product",
     "createdAt": "2026-11-11T00:50:31.866Z"
+  },
+  "df3f1b81-c074-4179-84b7-2c5352ecd4a8": {
+    "id": "df3f1b81-c074-4179-84b7-2c5352ecd4a8",
+    "fullName": "Vaibhav Shah",
+    "companyName": "BROWSERSTACK",
+    "email": "vaibhav.as@browserstack.com",
+    "phone": "9619514494",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series?gad_source=1&gad_campaignid=24242484871&gbraid=0AAAAABUiSLwZ7OfXfnBPdmfbramIowRg1&gclid=Cj0KCQiAwdDXBhDuARIsAFdLuklGcgZf66GAdKmUCg_UeGWTjyd1xPqndJQE4VqzHZf9FsXLGLCs2UIaAmctEALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-11T08:57:08.780Z"
   }
 };
