@@ -5149,5 +5149,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934529&gad_source=5&gad_campaignid=23735506714&gclid=Cj0KCQiAnsvXBhCqARIsAHKgGNZysQAjun3CJ3_Dzwa3RuuDTylJe7uUg0V2bX3A-1ix5uJGvRVb86kaAgrbEALw_wcB",
     "type": "product",
     "createdAt": "2026-11-11T00:50:26.956Z"
+  },
+  "1f6a7f53-3b75-4296-a159-6f79024ec691": {
+    "id": "1f6a7f53-3b75-4296-a159-6f79024ec691",
+    "fullName": "Digamber Tathe",
+    "companyName": "tathe",
+    "email": "tathedigamber52@gmail.com",
+    "phone": "9822877687",
+    "city": "गाव वाकोद तालुला फुलंब्री जिल्हा छत्रपती संभाजी नगर",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934529&gad_source=5&gad_campaignid=23735506714&gclid=Cj0KCQiAnsvXBhCqARIsAHKgGNZysQAjun3CJ3_Dzwa3RuuDTylJe7uUg0V2bX3A-1ix5uJGvRVb86kaAgrbEALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-11T00:50:31.866Z"
   }
 };
