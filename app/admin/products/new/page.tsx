@@ -195,6 +195,14 @@ export default function NewProductPage() {
     const file = e.target.files?.[0]
     if (!file) return
 
+    // Vercel serverless request body is capped at 4.5 MB
+    const MAX_SIZE_MB = 4.5
+    if (file.size > MAX_SIZE_MB * 1024 * 1024) {
+      alert(`File size (${(file.size / (1024 * 1024)).toFixed(1)} MB) exceeds the ${MAX_SIZE_MB} MB upload limit. Please compress your PDF before uploading.`)
+      e.target.value = ""
+      return
+    }
+
     const setter = type === "brochure" ? setBrochurePdf : setDatasheetPdf
     const setUploading = type === "brochure" ? setUploadingBrochure : setUploadingDatasheet
 
@@ -211,16 +219,18 @@ export default function NewProductPage() {
       if (data.success) {
         handleFieldChange(setter, data.url)
       } else {
-        if (data.message?.toLowerCase().includes("store_suspended") || data.message?.toLowerCase().includes("quota") || data.message?.toLowerCase().includes("limit") || data.message?.toLowerCase().includes("storage")) {
+        if (data.message?.toLowerCase().includes("store_suspended") || data.message?.toLowerCase().includes("quota_exceeded")) {
           setShowStorageFullModal(true)
         } else {
           alert(data.message || "Failed to upload file")
         }
       }
-    } catch (err) {
-      setShowStorageFullModal(true) // Treat general network/API failures during upload as potential storage limits
+    } catch (err: any) {
+      console.error("Upload error:", err)
+      alert("Upload failed: " + (err?.message || "Network error. Please check your connection."))
     } finally {
       setUploading(false)
+      e.target.value = ""
     }
   }
 
