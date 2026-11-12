@@ -2,9 +2,8 @@ import type { Metadata } from "next"
 import type React from "react"
 
 export const metadata: Metadata = {
-  title: "Terms of Use | WAE Corporation",
-  description: "Read the terms, conditions, and user agreements governing the use of WAE Corporation's website, products, and online services.",
-  keywords: "Terms of Use, Legal, Terms and Conditions",
+  title: "WAE Terms of Use | Website Terms & Conditions",
+  description: "Read WAE’s Terms of Use covering website access, permitted activities, user responsibilities, intellectual property, and legal conditions.",
   alternates: {
     canonical: "/terms-of-use",
   },

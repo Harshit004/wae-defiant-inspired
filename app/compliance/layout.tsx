@@ -2,9 +2,8 @@ import type { Metadata } from "next"
 import type React from "react"
 
 export const metadata: Metadata = {
-  title: "Compliance & Standards | WAE",
-  description: "Learn about WAE's rigorous adherence to regulatory, environmental, quality, and water safety standards across operations and manufacturing.",
-  keywords: "Compliance, Standards, Water Quality, Certification",
+  title: "WAE Compliance | Certified Sustainable Standards",
+  description: "Explore WAE compliance, certifications, and standards that support safe, sustainable manufacturing and reliable hydration solutions.",
   alternates: {
     canonical: "/compliance",
   },

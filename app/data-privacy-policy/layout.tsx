@@ -2,9 +2,8 @@ import type { Metadata } from "next"
 import type React from "react"
 
 export const metadata: Metadata = {
-  title: "Data Privacy Policy | WAE Corporation",
-  description: "Read WAE's commitment to protecting your personal data, privacy rights, and transparent data handling practices under global privacy regulations.",
-  keywords: "Data Privacy Policy, Privacy Rights, Information Security",
+  title: "WAE Data Privacy Policy | Protecting Your Data",
+  description: "Read WAE’s Data Privacy Policy to learn how we collect, use, protect, and manage personal data under applicable privacy laws.",
   alternates: {
     canonical: "/data-privacy-policy",
   },

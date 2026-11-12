@@ -2,9 +2,8 @@ import type { Metadata } from "next"
 import type React from "react"
 
 export const metadata: Metadata = {
-  title: "Life at WAE | Culture, People & Purpose",
-  description: "Experience the vibrant, purpose-driven culture at WAE where changemakers innovate, collaborate, and pioneer the future of water.",
-  keywords: "Life at WAE, Company Culture, Careers, Changemakers",
+  title: "Life at WAE | Careers, Culture & Growth",
+  description: "Discover life at WAE an inclusive, purpose-led workplace offering internships, career growth, collaboration, and meaningful impact.",
   alternates: {
     canonical: "/life-at-wae",
   },

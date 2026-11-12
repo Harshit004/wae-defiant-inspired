@@ -2,9 +2,8 @@ import type { Metadata } from "next"
 import type React from "react"
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | WAE Corporation",
-  description: "Learn how WAE uses cookies and similar tracking technologies to improve browsing experience, analyze traffic, and ensure site security.",
-  keywords: "Cookie Policy, Privacy, Tracking Technologies",
+  title: "WAE Cookie Policy | How We Use Cookies",
+  description: "Learn how WAE uses necessary, analytics, functional, and marketing cookies to improve website performance and your experience.",
   alternates: {
     canonical: "/cookie-policy",
   },

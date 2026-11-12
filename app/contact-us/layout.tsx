@@ -2,9 +2,8 @@ import type { Metadata } from "next"
 import type React from "react"
 
 export const metadata: Metadata = {
-  title: "Contact Us | Connect with WAE",
-  description: "Get in touch with WAE for enterprise hydration solutions, drinking water stations, project partnerships, and sustainability queries.",
-  keywords: "Contact WAE, Water Solutions, Hydration Systems",
+  title: "Contact WAE | Connect With Our Team",
+  description: "Contact WAE to explore sustainable hydration solutions, discuss your project, request support, or get expert guidance from our team.",
   alternates: {
     canonical: "/contact-us",
   },

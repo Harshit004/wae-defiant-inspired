@@ -2,9 +2,8 @@ import type { Metadata } from "next"
 import type React from "react"
 
 export const metadata: Metadata = {
-  title: "Awards & Recognitions | Celebrating Innovation & Sustainability",
-  description: "Explore the prestigious industry awards, design accolades, and green certifications honoring WAE's pioneering water technologies and ESG leadership.",
-  keywords: "Awards, Accolades, Certifications, Sustainability Leadership",
+  title: "WAE Awards & Recognition | Honours and Achievements",
+  description: "Discover WAE awards and recognitions celebrating innovation, sustainability, quality, and leadership in hydration solutions.",
   alternates: {
     canonical: "/awards-and-recognitions",
   },
