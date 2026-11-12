@@ -24,6 +24,7 @@ export async function POST(req: Request): Promise<NextResponse> {
           return {
             allowedContentTypes: ["application/pdf"],
             maximumSizeInBytes: 100 * 1024 * 1024, // 100 MB limit
+            validUntil: Date.now() + 10 * 60 * 1000, // 10 minutes for large uploads
           }
         },
       })

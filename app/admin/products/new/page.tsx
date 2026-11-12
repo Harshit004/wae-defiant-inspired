@@ -223,6 +223,7 @@ export default function NewProductPage() {
           access: 'private',
           handleUploadUrl: '/api/admin/upload',
           headers,
+          multipart: true,
         })
       } catch (privateError: any) {
         if (privateError?.message?.includes('public')) {
@@ -230,6 +231,7 @@ export default function NewProductPage() {
             access: 'public',
             handleUploadUrl: '/api/admin/upload',
             headers,
+            multipart: true,
           })
         } else {
           throw privateError

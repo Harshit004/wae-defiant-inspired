@@ -323,6 +323,7 @@ export default function EditProductPage({ params }: EditProductProps) {
           access: 'private',
           handleUploadUrl: '/api/admin/upload',
           headers,
+          multipart: true,
         })
       } catch (privateError: any) {
         if (privateError?.message?.includes('public')) {
@@ -330,6 +331,7 @@ export default function EditProductPage({ params }: EditProductProps) {
             access: 'public',
             handleUploadUrl: '/api/admin/upload',
             headers,
+            multipart: true,
           })
         } else {
           throw privateError
