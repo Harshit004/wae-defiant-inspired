@@ -181,7 +181,31 @@ const productSEO = {
         title: "AQUASMITH™ Atmospheric Water Generator | Premium Water From Air System",
         description: "Engineered to create water from air, AQUASMITH™ combines atmospheric harvesting, intelligent purification, and elegant design to deliver exceptional hydration.",
         keywords: "Atmospheric water generator, Waterv From Air System,Smart Water Technology"
+    },
+    "indus": {
+        title: "INDUS | ADA-Compliant Smart Commercial Water Faucet",
+        description: "Engineered for accessibility and high-traffic spaces, INDUS is an ADA-compliant commercial drinking water faucet with advanced IR sensors and real-time OLED display.",
+        keywords: "ADA Compliant Water Faucet, Smart Drinking Water Faucet, Touchless Water Tap, INDUS"
     }
+}
+
+const slugAliases: Record<string, string> = {
+    "spiulmeister": "spuilmeister",
+    "spulmeister": "spuilmeister",
+    "s-wasser-mini": "subwasser",
+    "susswasser": "subwasser",
+    "subwasser-mini": "subwasser",
+    "moses": "mosses",
+    "led-uv-c": "led uv.c",
+    "var-ct": "var c.t",
+    "rom-ct": "rom c.t",
+    "alfa-ct": "alfa c.t",
+    "eno-ct": "enki c.t",
+    "enki-ct": "enki c.t",
+    "rom-grande": "rom",
+    "var-series": "var",
+    "alfa-100": "alfa",
+    "aquarius-series": "aquarius",
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ category: string; product: string }> }): Promise<Metadata> {
@@ -191,10 +215,25 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     const canonicalUrl = `https://www.waecorp.com/portfolio/${category}/${product}`;
     
     if (product && typeof product === 'string') {
-        const key = product.toLowerCase();
-        // Exact match
-        if (productSEO[key as keyof typeof productSEO]) {
-            const seo = productSEO[key as keyof typeof productSEO];
+        const rawKey = product.toLowerCase().trim();
+        const aliasKey = slugAliases[rawKey] || rawKey;
+
+        // 1. Direct or alias match
+        if (productSEO[aliasKey as keyof typeof productSEO]) {
+            const seo = productSEO[aliasKey as keyof typeof productSEO];
+            return {
+                title: seo.title,
+                description: seo.description,
+                keywords: seo.keywords,
+                alternates: {
+                    canonical: canonicalUrl,
+                },
+            }
+        }
+
+        // 2. Exact match on rawKey
+        if (productSEO[rawKey as keyof typeof productSEO]) {
+            const seo = productSEO[rawKey as keyof typeof productSEO];
             return {
                 title: seo.title,
                 description: seo.description,
@@ -205,11 +244,12 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
             }
         }
         
-        // Partial match (e.g., if URL has "var-c-t", "alfa-ct")
-        const normalizedProduct = key.replace(/-/g, ' ');
-        const foundKey = Object.keys(productSEO).find(k => 
-            normalizedProduct.includes(k) || k.includes(normalizedProduct)
-        );
+        // 3. Normalized punctuation match (e.g., "var-ct" -> "var ct" matching "var c.t")
+        const normalizedProduct = aliasKey.replace(/[-.]/g, ' ').replace(/\s+/g, ' ').trim();
+        const foundKey = Object.keys(productSEO).find(k => {
+            const normalizedK = k.replace(/[-.]/g, ' ').replace(/\s+/g, ' ').trim();
+            return normalizedProduct === normalizedK || normalizedProduct.includes(normalizedK) || normalizedK.includes(normalizedProduct);
+        });
         
         if (foundKey) {
             const seo = productSEO[foundKey as keyof typeof productSEO];

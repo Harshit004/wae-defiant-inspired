@@ -76,6 +76,92 @@ const nextConfig = {
         destination: '/portfolio/bluwae/venus',
         permanent: true,
       },
+      // Legacy redirects (Fix 6)
+      {
+        source: '/contact',
+        destination: '/contact-us',
+        permanent: true,
+      },
+      {
+        source: '/privacy',
+        destination: '/data-privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/privacy-policy',
+        destination: '/data-privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/terms',
+        destination: '/terms-of-use',
+        permanent: true,
+      },
+      {
+        source: '/terms-and-conditions',
+        destination: '/terms-of-use',
+        permanent: true,
+      },
+      {
+        source: '/awards',
+        destination: '/awards-and-recognitions',
+        permanent: true,
+      },
+      {
+        source: '/ourgreenisblue',
+        destination: '/sustainability',
+        permanent: true,
+      },
+      {
+        source: '/water-dispensers',
+        destination: '/portfolio/bluwae',
+        permanent: true,
+      },
+      {
+        source: '/water-coolers',
+        destination: '/portfolio/bluwae',
+        permanent: true,
+      },
+      {
+        source: '/bottle-filling-stations',
+        destination: '/portfolio/bluwae',
+        permanent: true,
+      },
+      {
+        source: '/drinking-water-fountains',
+        destination: '/portfolio/trublu',
+        permanent: true,
+      },
+      {
+        source: '/glass_bottling_plant',
+        destination: '/portfolio/glass-bottling',
+        permanent: true,
+      },
+      {
+        source: '/glass-bottling-plant',
+        destination: '/portfolio/glass-bottling',
+        permanent: true,
+      },
+      {
+        source: '/about',
+        destination: '/profile',
+        permanent: true,
+      },
+      {
+        source: '/about-us',
+        destination: '/profile',
+        permanent: true,
+      },
+      {
+        source: '/careers-at-wae',
+        destination: '/careers',
+        permanent: true,
+      },
+      {
+        source: '/news',
+        destination: '/news-and-updates',
+        permanent: true,
+      },
     ]
   },
 }
