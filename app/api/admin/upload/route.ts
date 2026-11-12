@@ -1,9 +1,34 @@
 import { NextRequest, NextResponse } from "next/server"
+import { handleUpload, type HandleUploadBody } from "@vercel/blob/client"
 import { put } from "@vercel/blob"
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request): Promise<NextResponse> {
+  const contentType = req.headers.get("content-type") || ""
+
+  // Case 1: Client-side direct upload handshake (JSON payload)
+  if (contentType.includes("application/json")) {
+    try {
+      const body = (await req.json()) as HandleUploadBody
+      const jsonResponse = await handleUpload({
+        body,
+        request: req,
+        onBeforeGenerateToken: async (pathname) => {
+          return {
+            allowedContentTypes: ["application/pdf"],
+            maximumSizeInBytes: 100 * 1024 * 1024, // 100 MB limit
+          }
+        },
+      })
+      return NextResponse.json(jsonResponse)
+    } catch (error: any) {
+      console.error("handleUpload error:", error)
+      return NextResponse.json({ error: error.message }, { status: 400 })
+    }
+  }
+
+  // Case 2: Server-side FormData fallback
   try {
-    const formData = await req.formData()
+    const formData = await (req as NextRequest).formData()
     const file = formData.get("file") as File
     if (!file) {
       return NextResponse.json({ success: false, message: "No file provided" }, { status: 400 })

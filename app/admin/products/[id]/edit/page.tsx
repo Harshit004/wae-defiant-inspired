@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import Header from "@/components/admin/header"
 import { ChevronLeft, Trash2, Plus, Save, GripVertical, ShieldAlert } from "lucide-react"
+import { upload } from "@vercel/blob/client"
 
 interface SpecRow {
   variant: string
@@ -295,10 +296,10 @@ export default function EditProductPage({ params }: EditProductProps) {
     const file = e.target.files?.[0]
     if (!file) return
 
-    // Vercel serverless request body is capped at 4.5 MB
-    const MAX_SIZE_MB = 4.5
+    // 100 MB limit for client direct upload
+    const MAX_SIZE_MB = 100
     if (file.size > MAX_SIZE_MB * 1024 * 1024) {
-      alert(`File size (${(file.size / (1024 * 1024)).toFixed(1)} MB) exceeds the ${MAX_SIZE_MB} MB upload limit. Please compress your PDF before uploading.`)
+      alert(`File size (${(file.size / (1024 * 1024)).toFixed(1)} MB) exceeds the ${MAX_SIZE_MB} MB upload limit.`)
       e.target.value = ""
       return
     }
@@ -307,27 +308,41 @@ export default function EditProductPage({ params }: EditProductProps) {
     const setUploading = type === "brochure" ? setUploadingBrochure : setUploadingDatasheet
 
     setUploading(true)
-    const formData = new FormData()
-    formData.append("file", file)
 
     try {
-      const res = await fetch("/api/admin/upload", {
-        method: "POST",
-        body: formData,
-      })
-      const data = await res.json()
-      if (data.success) {
-        handleFieldChange(setter, data.url)
-      } else {
-        if (data.message?.toLowerCase().includes("store_suspended") || data.message?.toLowerCase().includes("quota_exceeded")) {
-          setShowStorageFullModal(true)
+      const cleanFileName = file.name.replace(/[^a-zA-Z0-9.-]/g, "_")
+      const filename = `${Date.now()}_${cleanFileName}`
+
+      // Direct client-side upload (bypasses 4.5 MB serverless limit)
+      let blob
+      try {
+        blob = await upload(`uploads/${filename}`, file, {
+          access: 'private',
+          handleUploadUrl: '/api/admin/upload',
+        })
+      } catch (privateError: any) {
+        if (privateError?.message?.includes('public')) {
+          blob = await upload(`uploads/${filename}`, file, {
+            access: 'public',
+            handleUploadUrl: '/api/admin/upload',
+          })
         } else {
-          alert(data.message || "Failed to upload file")
+          throw privateError
         }
       }
+
+      const finalUrl = blob.url.includes('.private.blob.vercel-storage.com')
+        ? `/api/brochure?url=${encodeURIComponent(blob.url)}`
+        : blob.url
+
+      handleFieldChange(setter, finalUrl)
     } catch (err: any) {
       console.error("Upload error:", err)
-      alert("Upload failed: " + (err?.message || "Network error. Please check your connection."))
+      if (err?.message?.toLowerCase().includes("store_suspended") || err?.message?.toLowerCase().includes("quota_exceeded")) {
+        setShowStorageFullModal(true)
+      } else {
+        alert("Upload failed: " + (err?.message || "Network error. Please check your connection."))
+      }
     } finally {
       setUploading(false)
       e.target.value = ""
