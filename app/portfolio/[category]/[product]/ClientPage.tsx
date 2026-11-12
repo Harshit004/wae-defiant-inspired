@@ -68,7 +68,7 @@ function ProductDescriptionPageContent() {
     const showcaseCtaText = currentProduct.showcaseCtaText || "Enquire Now"
     const showcaseCtaLink = currentProduct.showcaseCtaLink || "#"
     const brochureLink = currentProduct.brochurePdf || "#"
-    const isBrochureDead = brochureLink === "#"
+    const isBrochureDead = !brochureLink || brochureLink === "#" || brochureLink.startsWith("file://") || brochureLink.includes("C:/") || brochureLink.includes("C:\\")
 
     const showHot = currentProduct.variants ? currentProduct.variants.hot : true
     const showCold = currentProduct.variants ? currentProduct.variants.cold : true
