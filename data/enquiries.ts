@@ -5182,5 +5182,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIt6Lx-Or_lwMVi8YWBR2VxAP3EAEYASAAEgI5E_D_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-11T11:43:44.250Z"
+  },
+  "8f3af2f9-998e-494f-b03d-39d0f52b3499": {
+    "id": "8f3af2f9-998e-494f-b03d-39d0f52b3499",
+    "fullName": "Ardgdt",
+    "companyName": "fdfyudd",
+    "email": "ridrisi262@gmail.com",
+    "phone": "7045172313",
+    "city": "6664r",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341410956&gad_source=5&gad_campaignid=22024897670&gclid=Cj0KCQiAwdDXBhDuARIsAFdLukn6x6yQeWeVvAjnESScXliUyvBI_Ii5hfVujTLJzQEYQdcBiSMs2OIaAv-SEALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-12T06:08:16.598Z"
   }
 };
