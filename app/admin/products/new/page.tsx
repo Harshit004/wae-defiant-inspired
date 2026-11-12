@@ -213,18 +213,23 @@ export default function NewProductPage() {
       const cleanFileName = file.name.replace(/[^a-zA-Z0-9.-]/g, "_")
       const filename = `${Date.now()}_${cleanFileName}`
 
+      const token = typeof window !== "undefined" ? localStorage.getItem("wae_cms_token") : null
+      const headers = token ? { Authorization: `Bearer ${token}` } : undefined
+
       // Direct client-side upload (bypasses 4.5 MB serverless limit)
       let blob
       try {
         blob = await upload(`uploads/${filename}`, file, {
           access: 'private',
           handleUploadUrl: '/api/admin/upload',
+          headers,
         })
       } catch (privateError: any) {
         if (privateError?.message?.includes('public')) {
           blob = await upload(`uploads/${filename}`, file, {
             access: 'public',
             handleUploadUrl: '/api/admin/upload',
+            headers,
           })
         } else {
           throw privateError

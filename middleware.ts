@@ -5,7 +5,7 @@ import { verifySessionToken } from './lib/auth';
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const isApiAdmin = pathname.startsWith('/api/admin');
+  const isApiAdmin = pathname.startsWith('/api/admin') && pathname !== '/api/admin/upload';
   const isApiAnalytics = pathname === '/api/analytics' || pathname.startsWith('/api/analytics/');
   const isApiSubscribersGet = (pathname === '/api/subscribers' || pathname.startsWith('/api/subscribers/')) && request.method === 'GET';
 
