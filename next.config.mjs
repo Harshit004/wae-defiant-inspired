@@ -32,6 +32,10 @@ const nextConfig = {
     '/api/admin/blogs': ['./data/blogs.ts'],
     '/api/admin/blogs/*': ['./data/blogs.ts'],
     '/api/homepage-blogs': ['./data/blogs.ts'],
+    '/api/admin/news-events': ['./data/news-events.json'],
+    '/api/news-events': ['./data/news-events.json'],
+    '/news-and-updates': ['./data/news-events.json'],
+    '/awards-and-recognitions': ['./data/news-events.json'],
   },
   async redirects() {
     return [

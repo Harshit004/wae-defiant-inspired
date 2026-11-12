@@ -66,6 +66,43 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     }
 }
 
-export default function PortfolioCategoryPage() {
-    return <ProductListingClient />
+export default async function PortfolioCategoryPage({ params }: { params: Promise<{ category: string }> }) {
+    const { category } = await params;
+    const categoryTitle = productSEO[category?.toLowerCase() as keyof typeof productSEO]?.title?.split('|')[0]?.trim() || (category ? category.toUpperCase() : 'Category');
+    const canonicalUrl = `https://www.waecorp.com/portfolio/${category}`;
+
+    const breadcrumbsSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.waecorp.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Portfolio",
+                "item": "https://www.waecorp.com/portfolio"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": categoryTitle,
+                "item": canonicalUrl
+            }
+        ]
+    };
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+            />
+            <ProductListingClient />
+        </>
+    );
 }

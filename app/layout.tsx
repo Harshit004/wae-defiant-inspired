@@ -24,6 +24,40 @@ export const metadata: Metadata = {
   keywords: "Sustainable Hydration Solutions",
 }
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "WAE Corporation",
+  "alternateName": "WAE",
+  "url": "https://www.waecorp.com",
+  "logo": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public",
+  "description": "Redefining water through sustainable hydration solutions, WAE is an activist company committed to innovation, zero to landfill initiatives, and lasting ESG impact.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "H-18, H Block, Sector 63",
+    "addressLocality": "Noida",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "201301",
+    "addressCountry": "IN"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-120-406-9800",
+      "contactType": "customer service",
+      "email": "info@waecorp.com",
+      "areaServed": "IN"
+    }
+  ],
+  "sameAs": [
+    "https://in.linkedin.com/company/wae-limited",
+    "https://www.x.com/WAE_LTD",
+    "https://www.youtube.com/@wae-limited",
+    "https://www.facebook.com/waeltd",
+    "https://www.instagram.com/wae.limited"
+  ]
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -32,6 +66,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable} ${manrope.variable} ${interTight.variable}`}>
       <head>
+        {/* Organization Structured Data (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{

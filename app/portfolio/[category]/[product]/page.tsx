@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import ProductDescriptionPageClient from "./ClientPage"
+import { PRODUCTS } from "@/data/products"
 
 const productSEO = {
     "var": {
@@ -274,6 +275,83 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     }
 }
 
-export default function ProductDescriptionPage() {
-    return <ProductDescriptionPageClient />
+export default async function ProductDescriptionPage({ params }: { params: Promise<{ category: string; product: string }> }) {
+    const resolvedParams = await params;
+    const category = resolvedParams.category;
+    const product = resolvedParams.product;
+
+    const rawKey = product ? product.toLowerCase().trim() : '';
+    const aliasKey = slugAliases[rawKey] || rawKey;
+    const seo = productSEO[aliasKey as keyof typeof productSEO] || productSEO[rawKey as keyof typeof productSEO];
+
+    const currentProduct = PRODUCTS[aliasKey] || PRODUCTS[rawKey] || Object.values(PRODUCTS).find(p => p.id === rawKey || p.id === aliasKey);
+    const productName = currentProduct?.name || (seo?.title ? seo.title.split('|')[0].trim() : (product ? product.toUpperCase() : 'Product'));
+    const productDesc = seo?.description || currentProduct?.featuresList?.[0]?.description || "Explore sustainable drinking water systems by WAE.";
+    const productImg = currentProduct?.images?.[0] || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public";
+    const canonicalUrl = `https://www.waecorp.com/portfolio/${category}/${product}`;
+
+    const productSchema = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": productName,
+        "description": productDesc,
+        "image": currentProduct?.images && currentProduct.images.length > 0 ? currentProduct.images : [productImg],
+        "brand": {
+            "@type": "Brand",
+            "name": "WAE"
+        },
+        "category": currentProduct?.categoryName || category,
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": canonicalUrl
+        }
+    };
+
+    const breadcrumbsSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.waecorp.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Portfolio",
+                "item": "https://www.waecorp.com/portfolio"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": (currentProduct?.categoryName || category).toUpperCase(),
+                "item": `https://www.waecorp.com/portfolio/${category}`
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": productName,
+                "item": canonicalUrl
+            }
+        ]
+    };
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+            />
+            <ProductDescriptionPageClient />
+        </>
+    );
 }

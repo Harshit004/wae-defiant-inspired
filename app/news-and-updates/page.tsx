@@ -1,24 +1,12 @@
-"use client"
-
-import { useEffect, useState } from "react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import NewsGrid from "@/components/news-grid"
-import { usePathname } from "next/navigation"
+import { readNewsEventsDB } from "@/lib/newsEventsDb"
 
 export default function NewsAndUpdatesPage() {
-  const pathname = usePathname()
-  const [data, setData] = useState<{ heroTextNews: string, items: any[] } | null>(null)
-
-  useEffect(() => {
-    fetch("/api/news-events")
-      .then(res => res.json())
-      .then(json => {
-        if (json.success) setData(json.data)
-      })
-      .catch(console.error)
-  }, [])
+  const data = readNewsEventsDB()
+  const newsItems = (data.items || []).filter(i => i.type === 'news')
 
   return (
     <main className="relative min-h-screen bg-[#0F0F0F] text-white overflow-x-hidden">
@@ -42,14 +30,14 @@ export default function NewsAndUpdatesPage() {
         <div className="flex flex-row w-full gap-[16px] mb-[40px] md:mb-[75px] md:justify-start">
           <Link href="/news-and-updates" className="flex-1 md:flex-none">
             <button
-              className={`w-full md:w-auto px-[12px] md:px-6 border transition-colors flex items-center justify-center font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] h-[41px] ${pathname === '/news-and-updates' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
+              className="w-full md:w-auto px-[12px] md:px-6 border transition-colors flex items-center justify-center font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] h-[41px] border-white text-black bg-white"
             >
               News & Media
             </button>
           </Link>
           <Link href="/awards-and-recognitions" className="flex-1 md:flex-none">
             <button
-              className={`w-full md:w-auto px-[12px] md:px-6 border transition-colors flex items-center justify-center font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] h-[41px] ${pathname === '/awards-and-recognitions' ? 'border-white text-black bg-white' : 'border-white/30 text-white hover:border-white'}`}
+              className="w-full md:w-auto px-[12px] md:px-6 border transition-colors flex items-center justify-center font-manrope font-medium text-[12px] md:text-[14px] leading-[100%] h-[41px] border-white/30 text-white hover:border-white"
             >
               Awards & Honours
             </button>
@@ -69,14 +57,14 @@ export default function NewsAndUpdatesPage() {
 
           <div className="w-full md:w-[clamp(260px,28vw,403px)] shrink-0">
             <p className="font-manrope font-normal text-[14px] md:text-[clamp(14px,1.11vw,16px)] leading-[130%] text-[#AEAEAE] m-0">
-              {data ? data.heroTextNews : "Loading..."}
+              {data.heroTextNews || "Stay informed with WAE's latest announcements, recognitions, and stories advancing sustainability and water innovation."}
             </p>
           </div>
         </div>
 
         {/* News Grid Component */}
         <div>
-          {data ? <NewsGrid cards={data.items.filter(i => i.type === 'news')} /> : null}
+          <NewsGrid cards={newsItems} />
         </div>
 
       </section>

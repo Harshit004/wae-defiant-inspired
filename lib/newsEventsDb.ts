@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import fallbackNewsEvents from '@/data/news-events.json';
 
 const NEWS_EVENTS_FILE_PATH = path.join(process.cwd(), 'data', 'news-events.json');
 
@@ -33,8 +34,8 @@ export function readNewsEventsDB(): NewsEventsDBState {
     cachedState = JSON.parse(fileContent);
     return cachedState as NewsEventsDBState;
   } catch (error) {
-    console.error('Error reading news-events.json DB:', error);
-    return { heroTextNews: '', heroTextAwards: '', items: [] };
+    console.error('Error reading news-events.json DB, falling back to bundled dataset:', error);
+    return (fallbackNewsEvents || { heroTextNews: '', heroTextAwards: '', items: [] }) as unknown as NewsEventsDBState;
   }
 }
 

@@ -106,8 +106,81 @@ export default async function DynamicBlogPost({ params }: PageProps) {
     relatedPosts = [...relatedPosts, ...otherRelated].slice(0, 3)
   }
 
+  const categorySlug = blogData.category
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")
+  const canonicalUrl = `https://www.waecorp.com/perspectives/${categorySlug}/${blogData.id}`
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": blogData.title,
+    "description": blogData.description,
+    "image": blogData.heroImage ? [blogData.heroImage] : [],
+    "datePublished": blogData.createdAt,
+    "dateModified": blogData.updatedAt || blogData.createdAt,
+    "author": {
+      "@type": "Person",
+      "name": writerData?.name || "WAE Research Team",
+      "jobTitle": writerData?.designation || "Research & Sustainability"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "WAE Corporation",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ee8763d3-899e-45e6-10b2-d3da584da400/public"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    }
+  }
+
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.waecorp.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Perspectives",
+        "item": "https://www.waecorp.com/perspectives"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": blogData.category,
+        "item": `https://www.waecorp.com/perspectives/${categorySlug}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": blogData.title,
+        "item": canonicalUrl
+      }
+    ]
+  }
+
   return (
     <main className="relative bg-[#0F0F0F] text-white min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+      />
       <Header transparentBg />
 
       {/* Hero section */}

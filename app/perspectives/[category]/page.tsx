@@ -105,8 +105,37 @@ export default async function CategoryPage({ params }: PageProps) {
     ? `/perspectives/${currentCategory.slug}/${featuredPost.id}`
     : "#"
 
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.waecorp.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Perspectives",
+        "item": "https://www.waecorp.com/perspectives"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": currentCategory.name,
+        "item": `https://www.waecorp.com/perspectives/${currentCategory.slug}`
+      }
+    ]
+  }
+
   return (
     <main className="relative bg-[#0F0F0F] text-white min-h-screen overflow-x-hidden selection:bg-[#004063] selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+      />
       {/* Top wrapper with hero gradient background */}
       <div
         className="w-full relative"
