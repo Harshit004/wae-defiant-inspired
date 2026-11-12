@@ -780,6 +780,19 @@ function ProductDescriptionPageContent() {
                                                     color: "#FFFFFF80",
                                                     marginBottom: "0px"
                                                 }}>{currentProduct.specifications.waterTemp.hot}</p>
+                                                {(currentProduct.specifications.waterTemp as any).ambient && (
+                                                    <p style={{
+                                                        fontFamily: "'Inter Tight', sans-serif",
+                                                        fontWeight: 400,
+                                                        fontSize: isMobile ? "12px" : "14px",
+                                                        lineHeight: "120%",
+                                                        letterSpacing: "0%",
+                                                        verticalAlign: "middle",
+                                                        color: "#FFFFFF80",
+                                                        marginTop: "8px",
+                                                        marginBottom: "0px"
+                                                    }}>{(currentProduct.specifications.waterTemp as any).ambient}</p>
+                                                )}
                                             </div>
 
                                             {/* Green Certification */}

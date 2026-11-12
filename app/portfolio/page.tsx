@@ -394,23 +394,23 @@ export default function Home() {
         <section className="relative z-[1] bg-transparent pt-[62px] pb-[80px] px-[31px] md:pt-[123px] md:pb-[110px] md:px-[7.5vw]">
           <div className="flex flex-col items-end w-full">
             {/* Desktop View */}
-            <div className="hidden md:block w-full text-right font-medium tracking-normal text-[#FFFFFF66] font-manrope text-[36px] leading-[105%]">
+            <h1 className="hidden md:block w-full text-right font-medium tracking-normal text-[#FFFFFF66] font-manrope text-[36px] leading-[105%]">
               WAE’s hydration systems <br />
               <span className="text-white">deliver plastic-free</span> water dispensing for <span className="text-white">high-footfall</span><br />
               <span className="inline-block mr-[1.2em]">
                 <span className="text-white">environments</span> while supporting <span className="text-white">zero-landfill goals</span>.
               </span>
-            </div>
+            </h1>
 
             {/* Mobile View */}
-            <div className="block md:hidden w-full text-right font-medium tracking-normal text-[#FFFFFF66] font-inter text-[28px] leading-[120%]">
+            <h1 className="block md:hidden w-full text-right font-medium tracking-normal text-[#FFFFFF66] font-inter text-[28px] leading-[120%]">
               WAE’s hydration systems <br />
               <span className="text-white">deliver plastic-free</span> <br />
               water dispensing for <br />
               <span className="text-white">high-footfall environments</span> <br />
               while supporting <br />
               <span className="text-white">zero-landfill goals.</span>
-            </div>
+            </h1>
           </div>
         </section>
 

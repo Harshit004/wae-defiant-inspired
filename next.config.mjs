@@ -41,44 +41,13 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/portfolio/bluwae/eno-ct',
+        destination: '/portfolio/bluwae/enki-ct',
+        permanent: true,
+      },
+      {
         source: '/product-listing/:category',
         destination: '/portfolio/:category',
-        permanent: true,
-      },
-      {
-        source: '/product-description-page',
-        has: [
-          {
-            type: 'query',
-            key: 'product',
-            value: 'aurela',
-          },
-        ],
-        destination: '/portfolio/trublu/aurela',
-        permanent: true,
-      },
-      {
-        source: '/product-description-page',
-        has: [
-          {
-            type: 'query',
-            key: 'product',
-            value: 'reva',
-          },
-        ],
-        destination: '/portfolio/bluwae/reva',
-        permanent: true,
-      },
-      {
-        source: '/product-description-page',
-        has: [
-          {
-            type: 'query',
-            key: 'product',
-            value: 'venus',
-          },
-        ],
-        destination: '/portfolio/bluwae/venus',
         permanent: true,
       },
       // SEO Redirect #1

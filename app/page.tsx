@@ -241,11 +241,44 @@ const sectorsRow2 = [
   },
 ]
 
+const pillars = [
+  {
+    title: 'Purpose',
+    subtitle: 'Being Sustainable',
+    desc1: 'The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.',
+    desc2: "WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.",
+    href: '/profile',
+  },
+  {
+    title: 'Philosophy',
+    subtitle: 'Our Green Is Blue',
+    desc1: 'It is where sustainability takes its truest form, not in what is made, but in how it lives on.',
+    desc2: 'At WAE, we do not just treat water but architect a scientific reality where consumption and conservation coexist effortlessly.',
+    href: '/sustainability',
+  },
+  {
+    title: 'Principle',
+    subtitle: 'People First',
+    desc1: 'People are the natural rhythm of WAE — endlessly evolving, quietly powerful, shaping the future with every idea they breathe into life.',
+    desc2: 'In their curiosity and courage, the company finds its true flow, turning purpose into action and innovation into enduring impact.',
+    href: '/careers',
+  },
+]
+
 export default function Home() {
   // State variables
   const [activeSection, setActiveSection] = useState(0)
   const [currentTime, setCurrentTime] = useState("")
   const [activeGovernanceCard, setActiveGovernanceCard] = useState(0)
+  const [pillarActiveIndex, setPillarActiveIndex] = useState(0)
+  const pillarContainerRef = useRef<HTMLDivElement>(null)
+
+  const handlePillarScroll = () => {
+    if (!pillarContainerRef.current) return
+    const scrollLeft = pillarContainerRef.current.scrollLeft
+    const width = pillarContainerRef.current.offsetWidth
+    setPillarActiveIndex(Math.round(scrollLeft / width))
+  }
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.5 })
 
@@ -421,7 +454,7 @@ export default function Home() {
                   margin: 0,
                 }}
               >
-                We're here<br />to disrupt the<br />status quo!
+                We're here <br />to disrupt the <br />status quo!
               </h1>
               <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
               <p
@@ -443,531 +476,108 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Purpose, Philisophy & Principle Section */}
+      {/* Purpose, Philosophy & Principle Section */}
       <section className="relative bg-black text-white w-full">
-        <div className="w-full h-[576px]">
-          <div className="hidden md:grid grid-cols-3 h-full border-b border-[#FFFFFF4D]">
-            {/* Column 1: Purpose */}
-            <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[320px]">
-                <h2
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '40px',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                  }}
-                >
-                  Purpose
-                </h2>
-                <div style={{ height: '32px' }} />
-                <h3
-                  className="text-white group-hover:text-white"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                  }}
-                >
-                  Being Sustainable
-                </h3>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
-                </p>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
-                </p>
-                <div style={{ height: '32px' }} />
-                <Link href="/profile" className="contents">
-                  <HoverButton theme="transparent-white">
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
+        <div className="w-full md:h-[576px]">
+          <div
+            ref={pillarContainerRef}
+            onScroll={handlePillarScroll}
+            className="w-full flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 md:h-full md:overflow-visible border-b border-[#FFFFFF4D]"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {pillars.map((pillar, idx) => (
+              <div
+                key={pillar.title}
+                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${
+                  idx < 2 ? 'md:border-r md:border-[#FFFFFF4D]' : ''
+                } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group`}
+              >
+                <div className="flex flex-col w-full max-w-[320px]">
+                  <h2
+                    className="text-[7.12vw] md:text-[40px] leading-[110%] font-normal"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      letterSpacing: '0%',
+                    }}
+                  >
+                    {pillar.title}
+                  </h2>
+                  <div className="h-[6.1vw] md:h-[32px]" />
+                  <h3
+                    className="text-white group-hover:text-white text-[3.05vw] md:text-[16px] leading-[100%] font-bold"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                    }}
+                  >
+                    {pillar.subtitle}
+                  </h3>
+                  <div className="h-[3.05vw] md:h-[16px]" />
+                  <p
+                    className="text-white/60 group-hover:text-white text-[3.05vw] md:text-[12px] leading-[120%] md:leading-[140%] font-normal"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                    }}
+                  >
+                    {pillar.desc1}
+                  </p>
+                  <div className="h-[3.05vw] md:h-[12px]" />
+                  <p
+                    className="text-white/60 group-hover:text-white text-[3.05vw] md:text-[12px] leading-[120%] md:leading-[140%] font-normal"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                    }}
+                  >
+                    {pillar.desc2}
+                  </p>
+                  <div className="h-[6.1vw] md:h-[32px]" />
+                  <Link href={pillar.href} className="contents">
+                    <HoverButton theme="transparent-white">
+                      {(hovered) => (
+                        <>
+                          Know More
+                          <div className="relative inline-block w-4 h-4">
                             <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                              alt={`${pillar.title} icon`}
                               width={16}
                               height={16}
-                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                              className={hovered ? 'filter-wae-blue' : ''}
                             />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: hovered ? 1 : 0 }}
+                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                              className="absolute top-0 left-0"
+                            >
+                              <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt={`${pillar.title} icon hover`}
+                                width={16}
+                                height={16}
+                                className={hovered ? 'filter-wae-blue' : 'brightness-0 invert'}
+                              />
+                            </motion.div>
+                          </div>
+                        </>
+                      )}
+                    </HoverButton>
+                  </Link>
+                </div>
               </div>
-            </div>
-
-            {/* Column 2: Philosophy */}
-            <div className="flex flex-col h-full items-center justify-center border-r border-[#FFFFFF4D] px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[320px]">
-                <h2
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '40px',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                  }}
-                >
-                  Philosophy
-                </h2>
-                <div style={{ height: '32px' }} />
-                <h3
-                  className="text-white group-hover:text-white"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                  }}
-                >
-                  Our Green Is Blue
-                </h3>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
-                </p>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
-                </p>
-                <div style={{ height: '32px' }} />
-                <Link href="/sustainability" className="contents">
-                  <HoverButton theme="transparent-white">
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-              </div>
-            </div>
-
-            {/* Column 3: Principle */}
-            <div className="flex flex-col h-full items-center justify-center px-12 lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[320px]">
-                <h2
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '40px',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                  }}
-                >
-                  Principle
-                </h2>
-                <div style={{ height: '32px' }} />
-                <h3
-                  className="text-white group-hover:text-white"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '12px',
-                    lineHeight: '100%',
-                  }}
-                >
-                  People First
-                </h3>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
-                </p>
-                <div style={{ height: '12px' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '140%',
-                  }}
-                >
-                  In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
-                </p>
-                <div style={{ height: '32px' }} />
-                <Link href="/careers" className="contents">
-                  <HoverButton theme="transparent-white">
-                    {(hovered) => (
-                      <>
-                        Know More
-                        <div className="relative inline-block w-4 h-4">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
 
-          <MobileCarousel>
-            {/* Column 1: Purpose */}
-            <div className="flex flex-col py-[21.1vw] items-center justify-center  px-[18.06vw] lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[320px]">
-                <h2
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '7.12vw',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                  }}
-                >
-                  Purpose
-                </h2>
-                <div style={{ height: '6.1vw' }} />
-                <h3
-                  className="text-white group-hover:text-white"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '3.05vw',
-                    lineHeight: '100%',
-                  }}
-                >
-                  Being Sustainable
-                </h3>
-                <div style={{ height: '3.05vw' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '3.05vw',
-                    lineHeight: '120%',
-                  }}
-                >
-                  The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.
-                </p>
-                <div style={{ height: '3.05vw' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '3.05vw',
-                    lineHeight: '120%',
-                  }}
-                >
-                  WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.
-                </p>
-                <div style={{ height: '12.21vw' }} />
-                <Link href="/profile" className="contents">
-                  <HoverButton theme="transparent-white">
-                    {(hovered) => (
-                      <>
-                        <span style={{ fontSize: '2.54vw', lineHeight: '100%', fontWeight: 500 }}>Know More</span>
-                        <div className="relative inline-block w-[4.07vw] h-[4.07vw]">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-              </div>
-            </div>
-
-
-            {/* Column 2: Philosophy */}
-            <div className="flex flex-col py-[21.1vw] items-center justify-center  px-[18.06vw] lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[320px]">
-                <h2
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '7.12vw',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                  }}
-                >
-                  Philosophy
-                </h2>
-                <div style={{ height: '6.1vw' }} />
-                <h3
-                  className="text-white group-hover:text-white"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '3.05vw',
-                    lineHeight: '100%',
-                  }}
-                >
-                  Our Green Is Blue
-                </h3>
-                <div style={{ height: '3.05vw' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '3.05vw',
-                    lineHeight: '120%',
-                  }}
-                >
-                  It is where sustainability takes its truest form, not in what we take, but in what we give back. In every drop we preserve, nature finds its balance again — pure, circular, and endlessly alive.
-                </p>
-                <div style={{ height: '3.05vw' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '3.05vw',
-                    lineHeight: '120%',
-                  }}
-                >
-                  At WAE, we do not just treat water but architect a scientifically governed, sustainability-positive water continuum.
-                </p>
-                <div style={{ height: '12.21vw' }} />
-                <Link href="/sustainability" className="contents">
-                  <HoverButton theme="transparent-white">
-                    {(hovered) => (
-                      <>
-                        <span style={{ fontSize: '2.54vw', lineHeight: '100%', fontWeight: 500 }}>Know More</span>
-                        <div className="relative inline-block w-[4.07vw] h-[4.07vw]">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-              </div>
-            </div>
-
-
-            {/* Column 3: Principle */}
-            <div className="flex flex-col py-[21.1vw] items-center justify-center px-[18.06vw] lg:px-24 hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group">
-              <div className="flex flex-col w-full max-w-[320px]">
-                <h2
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '7.12vw',
-                    lineHeight: '110%',
-                    letterSpacing: '0%',
-                  }}
-                >
-                  Principle
-                </h2>
-                <div style={{ height: '6.1vw' }} />
-                <h3
-                  className="text-white group-hover:text-white"
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '3.05vw',
-                    lineHeight: '100%',
-                  }}
-                >
-                  People First
-                </h3>
-                <div style={{ height: '3.05vw' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '3.05vw',
-                    lineHeight: '120%',
-                  }}
-                >
-                  People are the natural rhythm of WAE — endlessly evolving, quietly resilient, and profoundly capable of renewal. They are the pulse that keeps our purpose alive, the continuity between what we imagine and what we achieve.
-                </p>
-                <div style={{ height: '3.05vw' }} />
-                <p
-                  className="text-white/60 group-hover:text-white"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '3.05vw',
-                    lineHeight: '120%',
-                  }}
-                >
-                  In their curiosity and courage, the company finds its true flow — powerful, generous, and human at its core.
-                </p>
-                <div style={{ height: '12.21vw' }} />
-                <Link href="/careers" className="contents">
-                  <HoverButton theme="transparent-white">
-                    {(hovered) => (
-                      <>
-                        <span style={{ fontSize: '2.54vw', lineHeight: '100%', fontWeight: 500 }}>Know More</span>
-                        <div className="relative inline-block w-[4.07vw] h-[4.07vw]">
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon default"
-                            width={16}
-                            height={16}
-                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: hovered ? 1 : 0 }}
-                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                            className="absolute top-0 left-0"
-                          >
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                              alt="icon hover"
-                              width={16}
-                              height={16}
-                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                            />
-                          </motion.div>
-                        </div>
-                      </>
-                    )}
-                  </HoverButton>
-                </Link>
-              </div>
-            </div>
-
-          </MobileCarousel>
+          {/* Mobile carousel indicator dots */}
+          <div className="w-full md:hidden border-b border-[#FFFFFF4D] py-6 flex justify-center items-center gap-[6px]">
+            {pillars.map((_, i) => (
+              <div
+                key={i}
+                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${
+                  i === pillarActiveIndex ? 'w-[24px]' : 'w-[6px] opacity-30'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -1508,7 +1118,7 @@ export default function Home() {
                     It is the condition that determines whether that strategy is viable at all.
                   </p>
                   <p>
-                    This is our account of stewardship to the only shareholder that was always there In place of Place of progress report as in above para
+                    This is our account of stewardship to the only shareholder that was always there.
                   </p>
                 </div>
               </div>
@@ -1667,7 +1277,7 @@ export default function Home() {
               It is the condition that determines whether that strategy is viable at all.
             </p>
             <p>
-              This is our account of stewardship to the only shareholder that was always there In place of Place of progress report as in above para
+              This is our account of stewardship to the only shareholder that was always there.
             </p>
           </div>
         </div>
@@ -2694,7 +2304,7 @@ export default function Home() {
                       >
                         <img
                           src={sector.icon}
-                          alt=""
+                          alt={sector.name}
                           style={{ width: '32px', height: '32px', minWidth: '32px', objectFit: 'contain' }}
                         />
                         <span
@@ -2762,7 +2372,7 @@ export default function Home() {
                       >
                         <img
                           src={sector.icon}
-                          alt=""
+                          alt={sector.name}
                           style={{ width: '32px', height: '32px', minWidth: '32px', objectFit: 'contain' }}
                         />
                         <span

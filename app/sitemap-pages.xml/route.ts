@@ -6,40 +6,38 @@ export const revalidate = 86400
 
 export async function GET() {
   const baseUrl = "https://www.waecorp.com"
-  const defaultDate = "2026-06-01T00:00:00.000Z"
 
   const staticPages = [
-    { path: "", lastmod: "2026-06-25T00:00:00.000Z" },
-    { path: "/profile", lastmod: "2026-06-20T00:00:00.000Z" },
-    { path: "/portfolio", lastmod: "2026-06-24T00:00:00.000Z" },
-    { path: "/careers", lastmod: "2026-06-15T00:00:00.000Z" },
-    { path: "/sustainability", lastmod: "2026-06-22T00:00:00.000Z" },
-    { path: "/activism", lastmod: "2026-06-18T00:00:00.000Z" },
-    { path: "/memberships", lastmod: "2026-06-10T00:00:00.000Z" },
-    { path: "/compliance", lastmod: "2026-06-12T00:00:00.000Z" },
-    { path: "/life-at-wae", lastmod: "2026-06-14T00:00:00.000Z" },
-    { path: "/contact-us", lastmod: "2026-06-25T00:00:00.000Z" },
-    { path: "/perspectives", lastmod: "2026-06-25T00:00:00.000Z" },
-    { path: "/terms-of-use", lastmod: "2026-01-01T00:00:00.000Z" },
-    { path: "/cookie-policy", lastmod: "2026-01-01T00:00:00.000Z" },
-    { path: "/data-privacy-policy", lastmod: "2026-01-01T00:00:00.000Z" },
-    { path: "/sitemap", lastmod: "2026-06-25T00:00:00.000Z" },
+    { path: "" },
+    { path: "/profile" },
+    { path: "/portfolio" },
+    { path: "/careers" },
+    { path: "/sustainability" },
+    { path: "/activism" },
+    { path: "/memberships" },
+    { path: "/compliance" },
+    { path: "/life-at-wae" },
+    { path: "/contact-us" },
+    { path: "/perspectives" },
+    { path: "/terms-of-use" },
+    { path: "/cookie-policy" },
+    { path: "/data-privacy-policy" },
+    { path: "/sitemap" },
   ]
 
   const liveJobs = Object.values(JOBS)
     .filter((j) => j.status === "Live")
     .map((job) => ({
       path: `/join-wae/${job.id}`,
-      lastmod: job.createdAt || defaultDate,
+      lastmod: job.createdAt,
     }))
 
-  const allUrls = [...staticPages, ...liveJobs]
+  const allUrls: Array<{ path: string; lastmod?: string }> = [...staticPages, ...liveJobs]
 
   const urlEntries = allUrls
     .map(
       (item) => `  <url>
-    <loc>${baseUrl}${item.path}</loc>
-    <lastmod>${item.lastmod}</lastmod>
+    <loc>${baseUrl}${item.path}</loc>${item.lastmod ? `\n    <lastmod>${item.lastmod}</lastmod>` : ""}
   </url>`
     )
     .join("\n")

@@ -22,6 +22,36 @@ export const metadata: Metadata = {
   title: "WAE | Activist-Led Sustainable Hydration Solutions",
   description: "Redefining water through sustainable hydration solutions, WAE is an activist company committed to innovation and lasting impact.",
   keywords: "Sustainable Hydration Solutions",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+    ],
+    shortcut: "/favicon-32x32.png",
+    apple: "/favicon-32x32.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.waecorp.com",
+    siteName: "WAE",
+    title: "WAE | Activist-Led Sustainable Hydration Solutions",
+    description: "Redefining water through sustainable hydration solutions, WAE is an activist company committed to innovation and lasting impact.",
+    images: [
+      {
+        url: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public",
+        width: 1200,
+        height: 630,
+        alt: "WAE - Activist-Led Sustainable Hydration Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WAE | Activist-Led Sustainable Hydration Solutions",
+    description: "Redefining water through sustainable hydration solutions, WAE is an activist company committed to innovation and lasting impact.",
+    images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public"],
+  },
 }
 
 const organizationJsonLd = {
@@ -93,7 +123,9 @@ var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(js,f);
           }}
         />
         {/* End OpenAI Measurement Pixel */}
-        <link rel="icon" href="https://github.com/wae-corp/WAE-F-B/blob/main/public/favicon-32x32.png?raw=true" sizes="32x32" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/favicon-32x32.png" />
       </head>
       <body className={interTight.className}>
         {/* Google Tag Manager (noscript) */}

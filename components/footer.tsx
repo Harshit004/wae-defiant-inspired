@@ -68,7 +68,9 @@ export default function Footer() {
               H-18, H block, Sector 63, Noida, Uttar Pradesh, India, 201301
             </p>
             <p className="font-[Inter_Tight] font-normal text-[2.5vw] text-white">
-              +120 4069800
+              <a href="tel:+911204069800" className="hover:underline transition-all">
+                +120 4069800
+              </a>
             </p>
           </div>
         </div>
@@ -229,11 +231,12 @@ export default function Footer() {
                   Co-ordinates
                 </h4>
                 <p className="font-[Inter_Tight] font-normal text-[10px] text-white leading-relaxed mb-[10px]">
-                  H-18, H block, Sector 63, Noida, Uttar Pradesh,<br />
-                  India, 201301
+                  H-18, H block, Sector 63, Noida, Uttar Pradesh, India, 201301
                 </p>
                 <p className="font-[Inter_Tight] font-normal text-[10px] text-white">
-                  +120 4069800
+                  <a href="tel:+911204069800" className="hover:underline transition-all">
+                    +120 4069800
+                  </a>
                 </p>
               </div>
 

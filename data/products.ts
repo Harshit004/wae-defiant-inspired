@@ -99,7 +99,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "displayOrder": 4
       },
       {
-        "id": "eno-ct",
+        "id": "enki-ct",
         "name": "ENKI.CT",
         "category": "counter-top",
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public",
@@ -385,6 +385,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ]
   }
 };
+
 
 export const PRODUCTS: Record<string, ProductDetails> = {
   "var-series": {
@@ -732,7 +733,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       ],
       "waterTemp": {
         "cold": "Cold: 5°C - 24° C (default 8°C)",
-        "hot": "Hot: 50°C - 80°C (default 55°C)"
+        "hot": "Hot: 50°C - 80°C (default 55°C)",
+        "ambient": "Ambient"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "1000 ml",
@@ -1150,8 +1152,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "hoverImageIndex": 2,
     "displayOrder": 10
   },
-  "eno-ct": {
-    "id": "eno-ct",
+  "enki-ct": {
+    "id": "enki-ct",
     "name": "ENKI.CT",
     "categoryName": "DRINKING WATER STATION - BLUWAE Series",
     "heroSubtitle": "",
@@ -1199,7 +1201,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       ],
       "waterTemp": {
         "cold": "Cold: 5°C - 24° C (default 8°C)",
-        "hot": "Hot: 50°C - 80°C (default 55°C)"
+        "hot": "Hot: 50°C - 80°C (default 55°C)",
+        "ambient": "Ambient"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "500 ml",
@@ -1369,7 +1372,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       ],
       "waterTemp": {
         "cold": "Cold: 5°C - 24° C (default 8°C)",
-        "hot": "Hot: 50°C - 80°C (default 55°C)"
+        "hot": "Hot: 50°C - 80°C (default 55°C)",
+        "ambient": "Ambient"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "1000ml/500ml",
@@ -2153,7 +2157,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       ],
       "waterTemp": {
         "cold": "Cold: 5°C - 24° C (default 8°C)",
-        "hot": "Hot: 50°C - 80°C (default 55°C)"
+        "hot": "Hot: 50°C - 80°C (default 55°C)",
+        "ambient": "Ambient"
       },
       "greenCertification": "nfirms to green product certification, low discharge faucets : 1.5 LPM",
       "dripTray": "1000ml",
@@ -2248,7 +2253,8 @@ export const PRODUCTS: Record<string, ProductDetails> = {
       ],
       "waterTemp": {
         "cold": "Cold: 5°C - 24° C (default 8°C)",
-        "hot": "Hot: 50°C - 80°C (default 55°C)"
+        "hot": "Hot: 50°C - 80°C (default 55°C)",
+        "ambient": "Ambient"
       },
       "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 - 2 LPM",
       "dripTray": "1000ml",
@@ -3296,3 +3302,6 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayOrder": 4
   }
 };
+
+PRODUCTS["eno-ct"] = PRODUCTS["enki-ct"];
+

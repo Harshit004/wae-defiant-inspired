@@ -6,9 +6,8 @@ export const revalidate = 86400
 
 export async function GET() {
   const baseUrl = "https://www.waecorp.com"
-  const defaultDate = "2026-06-25T00:00:00.000Z"
 
-  const urls: Array<{ loc: string; lastmod: string }> = []
+  const urls: string[] = []
 
   // Iterate over categories in data/products.ts
   for (const [catKey, categoryData] of Object.entries(CATEGORIES)) {
@@ -18,25 +17,18 @@ export async function GET() {
     }
 
     // Category page
-    urls.push({
-      loc: `${baseUrl}/portfolio/${catKey}`,
-      lastmod: defaultDate,
-    })
+    urls.push(`${baseUrl}/portfolio/${catKey}`)
 
     // Products within category
     for (const product of categoryData.products) {
-      urls.push({
-        loc: `${baseUrl}/portfolio/${catKey}/${product.id}`,
-        lastmod: defaultDate,
-      })
+      urls.push(`${baseUrl}/portfolio/${catKey}/${product.id}`)
     }
   }
 
   const urlEntries = urls
     .map(
-      (item) => `  <url>
-    <loc>${item.loc}</loc>
-    <lastmod>${item.lastmod}</lastmod>
+      (loc) => `  <url>
+    <loc>${loc}</loc>
   </url>`
     )
     .join("\n")

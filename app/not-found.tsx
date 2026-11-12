@@ -5,6 +5,8 @@ import Footer from "@/components/footer"
 export default function NotFound() {
   return (
     <main className="relative bg-[#0F0F0F] text-white min-h-screen flex flex-col justify-between">
+      <title>Page Not Found | WAE</title>
+      <meta name="robots" content="noindex, follow" />
       <Header transparentBg />
       <div className="h-[120px] md:h-[220px]" />
       <section className="px-[24px] md:px-[7.5vw] w-full flex-grow flex items-center justify-center">

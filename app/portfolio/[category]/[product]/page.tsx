@@ -215,6 +215,10 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     const product = resolvedParams.product;
     const canonicalUrl = `https://www.waecorp.com/portfolio/${category}/${product}`;
     
+    let title = "Product Details | WAE";
+    let description = "Explore detailed specifications and features of WAE products.";
+    let keywords = "Product Details, WAE";
+    
     if (product && typeof product === 'string') {
         const rawKey = product.toLowerCase().trim();
         const aliasKey = slugAliases[rawKey] || rawKey;
@@ -222,56 +226,63 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
         // 1. Direct or alias match
         if (productSEO[aliasKey as keyof typeof productSEO]) {
             const seo = productSEO[aliasKey as keyof typeof productSEO];
-            return {
-                title: seo.title,
-                description: seo.description,
-                keywords: seo.keywords,
-                alternates: {
-                    canonical: canonicalUrl,
-                },
-            }
-        }
-
-        // 2. Exact match on rawKey
-        if (productSEO[rawKey as keyof typeof productSEO]) {
+            title = seo.title;
+            description = seo.description;
+            keywords = seo.keywords;
+        } else if (productSEO[rawKey as keyof typeof productSEO]) {
             const seo = productSEO[rawKey as keyof typeof productSEO];
-            return {
-                title: seo.title,
-                description: seo.description,
-                keywords: seo.keywords,
-                alternates: {
-                    canonical: canonicalUrl,
-                },
-            }
-        }
-        
-        // 3. Normalized punctuation match (e.g., "var-ct" -> "var ct" matching "var c.t")
-        const normalizedProduct = aliasKey.replace(/[-.]/g, ' ').replace(/\s+/g, ' ').trim();
-        const foundKey = Object.keys(productSEO).find(k => {
-            const normalizedK = k.replace(/[-.]/g, ' ').replace(/\s+/g, ' ').trim();
-            return normalizedProduct === normalizedK || normalizedProduct.includes(normalizedK) || normalizedK.includes(normalizedProduct);
-        });
-        
-        if (foundKey) {
-            const seo = productSEO[foundKey as keyof typeof productSEO];
-            return {
-                title: seo.title,
-                description: seo.description,
-                keywords: seo.keywords,
-                alternates: {
-                    canonical: canonicalUrl,
-                },
+            title = seo.title;
+            description = seo.description;
+            keywords = seo.keywords;
+        } else {
+            // 3. Normalized punctuation match (e.g., "var-ct" -> "var ct" matching "var c.t")
+            const normalizedProduct = aliasKey.replace(/[-.]/g, ' ').replace(/\s+/g, ' ').trim();
+            const foundKey = Object.keys(productSEO).find(k => {
+                const normalizedK = k.replace(/[-.]/g, ' ').replace(/\s+/g, ' ').trim();
+                return normalizedProduct === normalizedK || normalizedProduct.includes(normalizedK) || normalizedK.includes(normalizedProduct);
+            });
+            
+            if (foundKey) {
+                const seo = productSEO[foundKey as keyof typeof productSEO];
+                title = seo.title;
+                description = seo.description;
+                keywords = seo.keywords;
             }
         }
     }
 
+    const rawKey = product ? product.toLowerCase().trim() : "";
+    const aliasKey = slugAliases[rawKey] || rawKey;
+    const productData = PRODUCTS[aliasKey] || PRODUCTS[rawKey];
+    const ogImage = productData?.heroImage || productData?.images?.[0] || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public";
+
     return {
-        title: "Product Details | WAE",
-        description: "Explore detailed specifications and features of WAE products.",
-        keywords: "Product Details, WAE",
+        title,
+        description,
+        keywords,
         alternates: {
             canonical: canonicalUrl,
         },
+        openGraph: {
+            type: "website",
+            url: canonicalUrl,
+            title,
+            description,
+            images: [
+                {
+                    url: ogImage,
+                    width: 1200,
+                    height: 630,
+                    alt: title,
+                }
+            ]
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: [ogImage],
+        }
     }
 }
 

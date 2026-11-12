@@ -46,6 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     
     if (category && typeof category === 'string' && productSEO[category.toLowerCase() as keyof typeof productSEO]) {
         const seo = productSEO[category.toLowerCase() as keyof typeof productSEO];
+        const isPus = category.toLowerCase() === 'pus' || category.toLowerCase() === 'waeau';
         return {
             title: seo.title,
             description: seo.description,
@@ -53,6 +54,27 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
             alternates: {
                 canonical: canonicalUrl,
             },
+            ...(isPus ? { robots: { index: false, follow: false } } : {}),
+            openGraph: {
+                type: "website",
+                url: canonicalUrl,
+                title: seo.title,
+                description: seo.description,
+                images: [
+                    {
+                        url: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public",
+                        width: 1200,
+                        height: 630,
+                        alt: seo.title,
+                    }
+                ]
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: seo.title,
+                description: seo.description,
+                images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public"],
+            }
         }
     }
 
@@ -63,6 +85,26 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
         alternates: {
             canonical: canonicalUrl,
         },
+        openGraph: {
+            type: "website",
+            url: canonicalUrl,
+            title: "Portfolio | WAE",
+            description: "Explore WAE's purpose-led products and solutions.",
+            images: [
+                {
+                    url: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public",
+                    width: 1200,
+                    height: 630,
+                    alt: "Portfolio | WAE",
+                }
+            ]
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: "Portfolio | WAE",
+            description: "Explore WAE's purpose-led products and solutions.",
+            images: ["https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/76c51a3d-e466-4a10-0f41-c45ef7537a00/public"],
+        }
     }
 }
 

@@ -45,7 +45,6 @@ const sitemapData = [
       { text: "Water Dispenser & Cooler - TRUBLU", href: "/portfolio/trublu" },
       { text: "Drinking Water Fountain - ZVR", href: "/portfolio/zvr" },
       { text: "Drinking Water Faucets - WATERMATIC", href: "/portfolio/watermatic" },
-      { text: "Compact Purification Units - WAEAU", href: "/portfolio/pus" },
       { text: "Glass Bottling Plant", href: "/portfolio/glass-bottling" },
     ]
   },
