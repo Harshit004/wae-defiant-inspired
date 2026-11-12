@@ -144,14 +144,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "displayOrder": 10
       },
       {
-        "id": "var-series",
-        "name": "VAR",
-        "category": "free-standing",
-        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public",
-        "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6a645ebd-b768-47e1-e7ea-eb9ba395f700/public",
-        "displayOrder": 1
-      },
-      {
         "id": "pos",
         "name": "POS",
         "category": "free-standing",
@@ -166,6 +158,14 @@ export const CATEGORIES: Record<string, CategoryData> = {
         "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3d6c1acd-771b-412e-25c8-64a908da5100/public",
         "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/978c8961-cf7f-4570-2b9b-e6e5838ed100/public",
         "displayOrder": 0
+      },
+      {
+        "id": "var-series",
+        "name": "VAR",
+        "category": "free-standing",
+        "image": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4aca6071-c05f-46cd-f8ba-1238aae87400/public",
+        "hoverImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6a645ebd-b768-47e1-e7ea-eb9ba395f700/public",
+        "displayOrder": 1
       }
     ],
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9dac2dbe-676f-4f2b-b09f-cc64cd253700/public"
@@ -494,7 +494,7 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "heroCtaLink": "/contact-us",
     "showcaseCtaText": "Enquire Now",
     "showcaseCtaLink": "",
-    "brochurePdf": "file:///C:/Users/WAE/Downloads/VAR.pdf",
+    "brochurePdf": "/api/brochure?url=https%3A%2F%2Fud2wphafvarszdv4.private.blob.vercel-storage.com%2Fuploads%2F1794485691160_VAR.pdf",
     "variants": {
       "hot": true,
       "cold": true,
