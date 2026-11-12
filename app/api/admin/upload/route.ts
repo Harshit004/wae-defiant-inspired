@@ -8,8 +8,16 @@ export async function POST(req: Request): Promise<NextResponse> {
   // Case 1: Client-side direct upload handshake (JSON payload)
   if (contentType.includes("application/json")) {
     try {
+      if (!process.env.BLOB_READ_WRITE_TOKEN) {
+        return NextResponse.json(
+          { error: "BLOB_READ_WRITE_TOKEN is not set in this environment's variables. Please check Vercel settings and redeploy." },
+          { status: 500 }
+        )
+      }
+
       const body = (await req.json()) as HandleUploadBody
       const jsonResponse = await handleUpload({
+        token: process.env.BLOB_READ_WRITE_TOKEN,
         body,
         request: req,
         onBeforeGenerateToken: async (pathname) => {
