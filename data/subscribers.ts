@@ -748,5 +748,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-12",
     "time": "13:24:04",
     "pageLink": "/contact-us"
+  },
+  {
+    "id": "230ad430-121d-46fe-bd7b-9e8e86a128ef",
+    "email": "vijayninama7770@gmail.com",
+    "date": "2026-11-12",
+    "time": "14:09:33",
+    "pageLink": "/portfolio/zvr/nt01"
   }
 ];
