@@ -135,29 +135,44 @@ function ProductDescriptionPageContent() {
                 {/* Hero Central Text */}
                 <div className={`${containerClass} z-20 flex-grow flex flex-col justify-end pb-[5vh]`}>
                     <div className="w-full md:max-w-[65vw] text-left" style={{ marginBottom: isMobile ? "125px" : "141px" }}>
-                        <p
-                            className="mb-0"
-                            style={{
-                                fontFamily: "'Manrope', sans-serif",
-                                fontWeight: 400,
-                                fontSize: "20px",
-                                lineHeight: "100%",
-                                letterSpacing: "0%",
-                                verticalAlign: "middle",
-                                color: "#AEAEAE"
-                            }}
-                        >
-                            {heroSubtext}
-                        </p>
-
-                        <div style={{ height: "23px" }} />
-
                         <h1
                             className="mb-0"
                             style={{
                                 fontFamily: "'Inter Tight', sans-serif",
                                 fontWeight: 500,
-                                fontSize: isMobile ? "28px" : "44px",
+                                fontSize: isMobile ? "36px" : "56px",
+                                lineHeight: "115%",
+                                letterSpacing: "-0.01em",
+                                color: "#FFFFFF"
+                            }}
+                        >
+                            {currentProduct.name}
+                        </h1>
+
+                        {heroSubtext && (
+                            <p
+                                className="mb-0 mt-[12px]"
+                                style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 400,
+                                    fontSize: isMobile ? "14px" : "18px",
+                                    lineHeight: "100%",
+                                    letterSpacing: "0%",
+                                    color: "#AEAEAE"
+                                }}
+                            >
+                                {heroSubtext}
+                            </p>
+                        )}
+
+                        <div style={{ height: "20px" }} />
+
+                        <p
+                            className="mb-0"
+                            style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontSize: isMobile ? "20px" : "32px",
                                 lineHeight: isMobile ? "120%" : "130%",
                                 letterSpacing: "0%",
                                 verticalAlign: "middle",
@@ -170,7 +185,7 @@ function ProductDescriptionPageContent() {
                                     {idx < taglineLines.length - 1 && <br />}
                                 </span>
                             ))}
-                        </h1>
+                        </p>
                     </div>
 
                     {/* Hero Navigation / Subbar */}

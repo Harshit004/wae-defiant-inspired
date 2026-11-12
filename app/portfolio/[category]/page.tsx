@@ -42,6 +42,7 @@ const productSEO = {
 export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
     const resolvedParams = await params;
     const category = resolvedParams.category;
+    const canonicalUrl = `https://www.waecorp.com/portfolio/${category}`;
     
     if (category && typeof category === 'string' && productSEO[category.toLowerCase() as keyof typeof productSEO]) {
         const seo = productSEO[category.toLowerCase() as keyof typeof productSEO];
@@ -49,13 +50,19 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
             title: seo.title,
             description: seo.description,
             keywords: seo.keywords,
+            alternates: {
+                canonical: canonicalUrl,
+            },
         }
     }
 
     return {
         title: "Portfolio | WAE",
         description: "Explore WAE's purpose-led products and solutions.",
-        keywords: "Portfolio, Products, WAE"
+        keywords: "Portfolio, Products, WAE",
+        alternates: {
+            canonical: canonicalUrl,
+        },
     }
 }
 

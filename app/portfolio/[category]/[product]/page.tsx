@@ -186,7 +186,9 @@ const productSEO = {
 
 export async function generateMetadata({ params }: { params: Promise<{ category: string; product: string }> }): Promise<Metadata> {
     const resolvedParams = await params;
+    const category = resolvedParams.category;
     const product = resolvedParams.product;
+    const canonicalUrl = `https://www.waecorp.com/portfolio/${category}/${product}`;
     
     if (product && typeof product === 'string') {
         const key = product.toLowerCase();
@@ -197,6 +199,9 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
                 title: seo.title,
                 description: seo.description,
                 keywords: seo.keywords,
+                alternates: {
+                    canonical: canonicalUrl,
+                },
             }
         }
         
@@ -212,6 +217,9 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
                 title: seo.title,
                 description: seo.description,
                 keywords: seo.keywords,
+                alternates: {
+                    canonical: canonicalUrl,
+                },
             }
         }
     }
@@ -219,7 +227,10 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     return {
         title: "Product Details | WAE",
         description: "Explore detailed specifications and features of WAE products.",
-        keywords: "Product Details, WAE"
+        keywords: "Product Details, WAE",
+        alternates: {
+            canonical: canonicalUrl,
+        },
     }
 }
 

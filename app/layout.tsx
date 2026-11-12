@@ -15,6 +15,10 @@ const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" })
 const interTight = Inter_Tight({ subsets: ["latin"], variable: "--font-inter-tight" })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.waecorp.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: "WAE | Activist-Led Sustainable Hydration Solutions",
   description: "Redefining water through sustainable hydration solutions, WAE is an activist company committed to innovation and lasting impact.",
   keywords: "Sustainable Hydration Solutions",

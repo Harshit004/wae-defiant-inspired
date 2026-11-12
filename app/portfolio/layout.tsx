@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Portfolio | Purpose-Led Products & Solutions",
   description: "From plastic-free hydration systems to water reuse solutions, explore WAE's portfolio built for sustainability and lasting impact.",
   keywords: "Water Reuse Solutions, Plastic Free Hydration,",
+  alternates: {
+    canonical: "/portfolio",
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

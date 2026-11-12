@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Explore Roles at WAE | Purpose-Driven Career Opportunities",
   description: "Discover purpose-driven career opportunities at WAE and build a future shaped by innovation, sustainability, and impact.",
   keywords: "Sustainability, Innovation and impact",
+  alternates: {
+    canonical: "/join-wae",
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

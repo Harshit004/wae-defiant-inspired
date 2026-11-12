@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   },
   description: "Discover expert insights on climate, water, and sustainability through research-driven stories shaping the future of our planet.",
   keywords: "Climate, Water, Sustainability, Future of our planet",
+  alternates: {
+    canonical: "/perspectives",
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

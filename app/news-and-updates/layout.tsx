@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Media Centre | Stories of Progress and Impact",
   description: "Stay informed with WAE's latest announcements, recognitions, and stories advancing sustainability and water innovation.",
   keywords: "Sustainability, Innovation",
+  alternates: {
+    canonical: "/news-and-updates",
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
