@@ -778,10 +778,10 @@ export const SUBSCRIBERS: Subscriber[] = [
     "pageLink": "/portfolio/zvr/nt01"
   },
   {
-    "id": "c5936646-af90-4162-bd4f-ac27ea096562",
+    "id": "6fde32be-f14a-4f2c-b390-0f61fe4d5c05",
     "email": "nokainaga3@gmail.com",
     "date": "2026-11-13",
-    "time": "20:00:40",
+    "time": "20:02:55",
     "pageLink": "/thank-you"
   }
 ];
