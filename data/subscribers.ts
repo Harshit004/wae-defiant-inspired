@@ -762,5 +762,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-12",
     "time": "14:23:41",
     "pageLink": "/portfolio/zvr/nt01"
+  },
+  {
+    "id": "03ebff5e-99cf-4b43-a91d-20854b91d1bf",
+    "email": "na0135853@gmail.com",
+    "date": "2026-11-13",
+    "time": "07:32:59",
+    "pageLink": "/contact-us"
   }
 ];
