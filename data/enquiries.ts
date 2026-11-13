@@ -5204,5 +5204,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiA5NXXBhDEARIsABAJhdI-USR6Qzv4qk-6aM-DqVhpVFyRTs-Re7_itq8mnBAZjpVZB7c1AMIaAirGEALw_wcB",
     "type": "contact-us",
     "createdAt": "2026-11-13T02:01:49.197Z"
+  },
+  "1d21f43e-72ad-4ae3-8ba9-9026b41bcf5b": {
+    "id": "1d21f43e-72ad-4ae3-8ba9-9026b41bcf5b",
+    "fullName": "Basha Dasari",
+    "companyName": "Basha babi",
+    "email": "bd363391@gmail.com",
+    "phone": "8886835311",
+    "city": "Makathal",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gclid=Cj0KCQiA5NXXBhDEARIsABAJhdK5Ysxe1IOq2wNVSygi6MD4fD59jyKfRYf9BFegNrqlNzLtoslHKTYaAgpDEALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-13T02:19:12.867Z"
   }
 };
