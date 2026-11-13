@@ -5215,5 +5215,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gclid=Cj0KCQiA5NXXBhDEARIsABAJhdK5Ysxe1IOq2wNVSygi6MD4fD59jyKfRYf9BFegNrqlNzLtoslHKTYaAgpDEALw_wcB",
     "type": "product",
     "createdAt": "2026-11-13T02:19:12.867Z"
+  },
+  "0901b190-e995-46e5-a4be-d44d39ef6f9d": {
+    "id": "0901b190-e995-46e5-a4be-d44d39ef6f9d",
+    "fullName": "RUPALI DALVI",
+    "companyName": "Thomson & Thomsons",
+    "email": "sales@thomsonnthomsons.com",
+    "phone": "7045464718",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "S.NO\tITEM\tQTY\tSIZE  (mm)\t\t\t\tRECOMMENDED\t\n\t\t\tW / Ø \tD\tH\t+\tMAKE\tMODEL / SPEC\n3.08\tUNDERCOUNTER RO SYSTEM\t1\t400\t275\t600\t\tWACORP\tAQUA TRUE 100\n4.13\tWAE TAP WITH HEATING, COOLING & RO\t1\tAS\tPER\tOEM\t\tWACORP\tMOSES + HYDROPAC + AQUA TRUE 50\n5.03\tWAE TAP WITH HEATING, COOLING & RO\t1\tAS\tPER\tOEM\t\tWACORP\tMOSES + HYDROPAC + AQUA TRUE 50\n\nMailed for Dealer Price Deails- Need Quotation on urgent basis",
+    "type": "contact-us",
+    "createdAt": "2026-11-13T06:03:15.475Z"
   }
 };
