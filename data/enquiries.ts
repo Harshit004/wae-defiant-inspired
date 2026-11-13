@@ -5193,5 +5193,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341410956&gad_source=5&gad_campaignid=22024897670&gclid=Cj0KCQiAwdDXBhDuARIsAFdLukn6x6yQeWeVvAjnESScXliUyvBI_Ii5hfVujTLJzQEYQdcBiSMs2OIaAv-SEALw_wcB",
     "type": "product",
     "createdAt": "2026-11-12T06:08:16.598Z"
+  },
+  "812d9a04-fea6-480f-aa28-567b728e176d": {
+    "id": "812d9a04-fea6-480f-aa28-567b728e176d",
+    "fullName": "Fiza",
+    "companyName": "Bharti airtel",
+    "email": "na0135853@gmail.com",
+    "phone": "9758543811",
+    "city": "Rampur Uttar Pradesh",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiA5NXXBhDEARIsABAJhdI-USR6Qzv4qk-6aM-DqVhpVFyRTs-Re7_itq8mnBAZjpVZB7c1AMIaAirGEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-11-13T02:01:49.197Z"
   }
 };
