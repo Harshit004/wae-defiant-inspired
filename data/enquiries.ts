@@ -5238,5 +5238,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-13T07:05:36.392Z"
+  },
+  "8783f334-fae6-4642-bc32-a8b23b603f1a": {
+    "id": "8783f334-fae6-4642-bc32-a8b23b603f1a",
+    "fullName": "Abhishek",
+    "companyName": "Shankara Narayan construction Pvt Ltd",
+    "email": "satish3270@gmail.com",
+    "phone": "7022975861",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Bi-Level Drinking water fountain made of natural sandstone of dimensions 500 x 500 mm x 1300 mm with a smooth and carved finish - 11nos",
+    "type": "contact-us",
+    "createdAt": "2026-11-13T10:30:45.624Z"
   }
 };
