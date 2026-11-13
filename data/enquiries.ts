@@ -5250,5 +5250,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Bi-Level Drinking water fountain made of natural sandstone of dimensions 500 x 500 mm x 1300 mm with a smooth and carved finish - 11nos",
     "type": "contact-us",
     "createdAt": "2026-11-13T10:30:45.624Z"
+  },
+  "4b80573f-b42b-486e-91a3-57063b05b612": {
+    "id": "4b80573f-b42b-486e-91a3-57063b05b612",
+    "fullName": "Nokai Naga",
+    "companyName": "9798571857",
+    "email": "nokainaga3@gmail.com",
+    "phone": "8798571857",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAh9vXBhDKARIsAMooYhe4BiJZjR7pRJBBLuisjiz6ss99jQ-vS6hfCgY6ZOVsiiKJF0PkO04aAqkeEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-11-13T14:28:36.620Z"
   }
 };
