@@ -5227,5 +5227,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "S.NO\tITEM\tQTY\tSIZE  (mm)\t\t\t\tRECOMMENDED\t\n\t\t\tW / Ø \tD\tH\t+\tMAKE\tMODEL / SPEC\n3.08\tUNDERCOUNTER RO SYSTEM\t1\t400\t275\t600\t\tWACORP\tAQUA TRUE 100\n4.13\tWAE TAP WITH HEATING, COOLING & RO\t1\tAS\tPER\tOEM\t\tWACORP\tMOSES + HYDROPAC + AQUA TRUE 50\n5.03\tWAE TAP WITH HEATING, COOLING & RO\t1\tAS\tPER\tOEM\t\tWACORP\tMOSES + HYDROPAC + AQUA TRUE 50\n\nMailed for Dealer Price Deails- Need Quotation on urgent basis",
     "type": "contact-us",
     "createdAt": "2026-11-13T06:03:15.475Z"
+  },
+  "2a11c143-117e-45a7-ae64-077e70ef9e2f": {
+    "id": "2a11c143-117e-45a7-ae64-077e70ef9e2f",
+    "fullName": "Ashok Sahani",
+    "companyName": "Deco.",
+    "email": "ashokur23144@gmail.com",
+    "phone": "7463021074",
+    "city": "East Champaran",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-13T07:05:36.392Z"
   }
 };
