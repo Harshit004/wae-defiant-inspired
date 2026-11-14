@@ -5339,5 +5339,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-14T10:31:37.865Z"
+  },
+  "72ee57a0-4895-4f3a-bf96-0d3a71c1c887": {
+    "id": "72ee57a0-4895-4f3a-bf96-0d3a71c1c887",
+    "fullName": "Raja Sab",
+    "companyName": "RAJASAB",
+    "email": "rsab9863@gmail.com",
+    "phone": "9880090615",
+    "city": "Alicante",
+    "pageLink": "/sustainability",
+    "type": "product",
+    "createdAt": "2026-11-14T10:33:59.739Z"
   }
 };
