@@ -5272,5 +5272,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAh9vXBhDKARIsAMooYhckZFj53u2Sn5TdXHk0h2UWihZ8fguqmUPC6r5eiqgbT2BOOwxgRXwaAnZyEALw_wcB",
     "type": "contact-us",
     "createdAt": "2026-11-14T00:24:51.383Z"
+  },
+  "7e921d26-6a16-414b-9b67-10c322fba0fd": {
+    "id": "7e921d26-6a16-414b-9b67-10c322fba0fd",
+    "fullName": "Prasad Kala",
+    "companyName": "Colruyt Group India",
+    "email": "prasad.kala@colruytgroup.com",
+    "phone": "7093600314",
+    "city": "Hyderabad",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series?gad_source=1&gad_campaignid=24242484871&gclid=Cj0KCQiAh9vXBhDKARIsAMooYhfDrTv9A4HjqGRE5W3jg-E7Oyz4IJiTgapllEq4g5cLqSem2nMpqJwaAhsnEALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-14T02:02:06.538Z"
   }
 };
