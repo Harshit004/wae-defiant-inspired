@@ -5294,5 +5294,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAh9vXBhDKARIsAMooYhfJArCB7lQjyPbNubLeR7-ZGvcXg-ncUt_vksD-WpXcaKoSLqDOcssaAjVUEALw_wcB",
     "type": "contact-us",
     "createdAt": "2026-11-14T06:06:57.572Z"
+  },
+  "a1ed8bc7-e5ba-4948-892c-66f02c9d4253": {
+    "id": "a1ed8bc7-e5ba-4948-892c-66f02c9d4253",
+    "fullName": "Mila Zhang",
+    "companyName": "ningbo rxhl technology",
+    "email": "zhangzp@rtlwater.com",
+    "phone": "1356633427",
+    "city": "cixi",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "We are ro membrane manufacturer from China，before OEM for Aquaporin and supply ro membrane to your factory，because of Aquaporin bankrupt，now we are looking for cooperation direct with you，waiting for your earliest reply！",
+    "type": "contact-us",
+    "createdAt": "2026-11-14T06:43:18.393Z"
   }
 };
