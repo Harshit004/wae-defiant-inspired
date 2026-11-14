@@ -5306,5 +5306,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We are ro membrane manufacturer from China，before OEM for Aquaporin and supply ro membrane to your factory，because of Aquaporin bankrupt，now we are looking for cooperation direct with you，waiting for your earliest reply！",
     "type": "contact-us",
     "createdAt": "2026-11-14T06:43:18.393Z"
+  },
+  "8ae8d09e-cb97-4ba0-8a85-74d1d3a7e1dc": {
+    "id": "8ae8d09e-cb97-4ba0-8a85-74d1d3a7e1dc",
+    "fullName": "Pawankumar I",
+    "companyName": "Tata",
+    "email": "devesh870870@gm.com",
+    "phone": "8858313502",
+    "city": "Safdarjung station",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341410953&gad_source=5&gad_campaignid=22024897670&gclid=CjwKCAiAquDXBhApEiwAoyNqBBrtkvOse-SbyrB_cCLBOKHQ-F7RcWBpPBbCHrHjz6VWjCFnK_jdUhoCpOIQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-14T08:18:07.323Z"
   }
 };
