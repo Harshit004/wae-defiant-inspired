@@ -5317,5 +5317,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341410953&gad_source=5&gad_campaignid=22024897670&gclid=CjwKCAiAquDXBhApEiwAoyNqBBrtkvOse-SbyrB_cCLBOKHQ-F7RcWBpPBbCHrHjz6VWjCFnK_jdUhoCpOIQAvD_BwE",
     "type": "product",
     "createdAt": "2026-11-14T08:18:07.323Z"
+  },
+  "55b2cda5-ff19-409b-9dae-45c1bfabbfd2": {
+    "id": "55b2cda5-ff19-409b-9dae-45c1bfabbfd2",
+    "fullName": "Shani Kumar",
+    "companyName": "Shani Kumar",
+    "email": "shanikumar0863@gmail.com",
+    "phone": "8009228799",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-14T10:21:24.181Z"
   }
 };
