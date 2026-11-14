@@ -5283,5 +5283,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-series?gad_source=1&gad_campaignid=24242484871&gclid=Cj0KCQiAh9vXBhDKARIsAMooYhfDrTv9A4HjqGRE5W3jg-E7Oyz4IJiTgapllEq4g5cLqSem2nMpqJwaAhsnEALw_wcB",
     "type": "product",
     "createdAt": "2026-11-14T02:02:06.538Z"
+  },
+  "a03aa3a4-f693-4a55-b47f-ccd2021f1fa7": {
+    "id": "a03aa3a4-f693-4a55-b47f-ccd2021f1fa7",
+    "fullName": "Bulti  de",
+    "companyName": "Housewife",
+    "email": "bultide1998@gmail.com",
+    "phone": "7029089442",
+    "city": "Ratanpur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAh9vXBhDKARIsAMooYhfJArCB7lQjyPbNubLeR7-ZGvcXg-ncUt_vksD-WpXcaKoSLqDOcssaAjVUEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-11-14T06:06:57.572Z"
   }
 };
