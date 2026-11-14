@@ -5261,5 +5261,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAh9vXBhDKARIsAMooYhe4BiJZjR7pRJBBLuisjiz6ss99jQ-vS6hfCgY6ZOVsiiKJF0PkO04aAqkeEALw_wcB",
     "type": "contact-us",
     "createdAt": "2026-11-13T14:28:36.620Z"
+  },
+  "da950828-0e63-4453-b645-9697f1cc001c": {
+    "id": "da950828-0e63-4453-b645-9697f1cc001c",
+    "fullName": "Mohit",
+    "companyName": "Mohit",
+    "email": "mohit9nishad@gmail.com",
+    "phone": "9984590118",
+    "city": "Basti",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAh9vXBhDKARIsAMooYhckZFj53u2Sn5TdXHk0h2UWihZ8fguqmUPC6r5eiqgbT2BOOwxgRXwaAnZyEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-11-14T00:24:51.383Z"
   }
 };
