@@ -5361,5 +5361,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934538&gad_source=5&gad_campaignid=23735506714&gclid=EAIaIQobChMI_trJx62HmAMV5cZzAR3TogxqEAEYASAAEgLUSfD_BwE",
     "type": "product",
     "createdAt": "2026-11-14T11:30:09.561Z"
+  },
+  "30215a8f-db7a-4657-b1b9-d3cc45b2aff9": {
+    "id": "30215a8f-db7a-4657-b1b9-d3cc45b2aff9",
+    "fullName": "Mantu Udyagol",
+    "companyName": "Mantu Udyagol",
+    "email": "mantuudyagol16@gmail.com",
+    "phone": "9731018725",
+    "city": "Gokak",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934538&gad_source=5&gad_campaignid=23735506714&gclid=EAIaIQobChMI_trJx62HmAMV5cZzAR3TogxqEAEYASAAEgLUSfD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-14T11:31:25.727Z"
   }
 };
