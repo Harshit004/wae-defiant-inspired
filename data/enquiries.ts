@@ -5428,5 +5428,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "T",
     "type": "contact-us",
     "createdAt": "2026-11-15T10:46:47.947Z"
+  },
+  "2fe4ac5f-87ea-437c-8e28-6899f3084ca1": {
+    "id": "2fe4ac5f-87ea-437c-8e28-6899f3084ca1",
+    "fullName": "Akash Ghalot",
+    "companyName": "Akash Ghalot",
+    "email": "aghalot775@gmail.com",
+    "phone": "6280872968",
+    "city": "Chandigarh",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-15T14:39:48.131Z"
   }
 };
