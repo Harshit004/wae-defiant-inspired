@@ -5439,5 +5439,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-15T14:39:48.131Z"
+  },
+  "89e5cd5d-ebf0-4283-9524-ce9ed8d16332": {
+    "id": "89e5cd5d-ebf0-4283-9524-ce9ed8d16332",
+    "fullName": "Ramniwas Rajbhar",
+    "companyName": "Ramnivash",
+    "email": "rajbharramniwas662@gmail.com",
+    "phone": "9725503017",
+    "city": "Ramnivash",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-15T23:53:56.026Z"
   }
 };
