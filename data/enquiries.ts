@@ -5416,5 +5416,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341411097&gad_source=5&gad_campaignid=22024897670&gclid=CjwKCAiAquDXBhApEiwAoyNqBEKg5R-ks5eW4ER5xgOtazUM4wAa8EKch2vhzbiGvIrSCiMC5lem8xoCLoAQAvD_BwE",
     "type": "product",
     "createdAt": "2026-11-15T07:09:42.054Z"
+  },
+  "acf34ae1-6554-4d1b-b437-0bd6ffdadab7": {
+    "id": "acf34ae1-6554-4d1b-b437-0bd6ffdadab7",
+    "fullName": "Sultana kahtoon",
+    "companyName": "SURABHI TRANSPORT PRIVATE LIMITED",
+    "email": "tasvaralam67@gmail.com",
+    "phone": "7219027211",
+    "city": "Town",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "T",
+    "type": "contact-us",
+    "createdAt": "2026-11-15T10:46:47.947Z"
   }
 };
