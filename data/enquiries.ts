@@ -5394,5 +5394,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAquDXBhApEiwAoyNqBKt1RW7EK5Tym_VTeqNwjbwpWLGQD5ZpivtsRLwjf4wb947u5spJmxoC-iUQAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-15T01:52:02.067Z"
+  },
+  "eb060aea-9b04-482f-aaad-903848dabd27": {
+    "id": "eb060aea-9b04-482f-aaad-903848dabd27",
+    "fullName": "Hiral Nayak",
+    "companyName": "ABc",
+    "email": "hn840761@gmail.com",
+    "phone": "9512585491",
+    "city": "Hiral Nayak",
+    "pageLink": "https://www.waecorp.com/",
+    "type": "general",
+    "createdAt": "2026-11-15T01:53:01.459Z"
   }
 };
