@@ -5372,5 +5372,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934538&gad_source=5&gad_campaignid=23735506714&gclid=EAIaIQobChMI_trJx62HmAMV5cZzAR3TogxqEAEYASAAEgLUSfD_BwE",
     "type": "product",
     "createdAt": "2026-11-14T11:31:25.727Z"
+  },
+  "138a742e-aae7-4f32-90eb-0680a3fd399d": {
+    "id": "138a742e-aae7-4f32-90eb-0680a3fd399d",
+    "fullName": "Ramniwas Rajbhar",
+    "companyName": "Ramnivash",
+    "email": "rajbharramniwas662@gmail.com",
+    "phone": "9725503017",
+    "city": "Ramnivash",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934529&gad_source=5&gad_campaignid=23735506714&gclid=CjwKCAiAquDXBhApEiwAoyNqBP55Y3ocg-Y2kAeBrSij7mPIPNuyp8OLPsAVKfDTuJ6YQMFK7WWM8RoChH8QAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-15T00:40:36.778Z"
   }
 };
