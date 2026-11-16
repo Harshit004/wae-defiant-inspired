@@ -5450,5 +5450,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-15T23:53:56.026Z"
+  },
+  "0ac3832d-2f6d-4e2a-8420-f853e4276dcd": {
+    "id": "0ac3832d-2f6d-4e2a-8420-f853e4276dcd",
+    "fullName": "Kriachisa mk",
+    "companyName": "No",
+    "email": "winitmrwinitrmarak@gmail.com",
+    "phone": "8876067536",
+    "city": "Town",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAzeXXBhCGARIsADO5-zGHjw6df30-zzu3FmH_wiiyvOw4xWfGfrmk_dllsRIVLl4CGCMhdjUaAvOpEALw_wcB",
+    "message": "No",
+    "type": "contact-us",
+    "createdAt": "2026-11-16T01:20:17.689Z"
   }
 };
