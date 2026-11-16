@@ -5495,5 +5495,27 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-16T03:52:58.852Z"
+  },
+  "5dba2362-c66b-418b-8fa4-6e856cb40ac5": {
+    "id": "5dba2362-c66b-418b-8fa4-6e856cb40ac5",
+    "fullName": "Kanta Ajay",
+    "companyName": "Havells company",
+    "email": "kantaajay730@gmail.com",
+    "phone": "7850887330",
+    "city": "Radhe Rajasthan jila Alwar tahsil Ramgarh gaon mamuli",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-16T04:51:24.398Z"
+  },
+  "4d86d1d7-3c24-4f49-ab79-e8a1341c53ec": {
+    "id": "4d86d1d7-3c24-4f49-ab79-e8a1341c53ec",
+    "fullName": "Kanta Ajay",
+    "companyName": "Havells company",
+    "email": "kantaajay730@gmail.com",
+    "phone": "7850887330",
+    "city": "Radhe Rajasthan jila Alwar tahsil Ramgarh gaon mamuli",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-16T04:51:45.190Z"
   }
 };
