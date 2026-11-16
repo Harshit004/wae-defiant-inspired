@@ -5584,5 +5584,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIk4WB_paNmAMVUsiEAB0WkRF8EAEYASAAEgL5FPD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-16T19:07:18.115Z"
+  },
+  "d0036a7f-faaa-4a25-a4bc-42e449ebb09a": {
+    "id": "d0036a7f-faaa-4a25-a4bc-42e449ebb09a",
+    "fullName": "Priyanka",
+    "companyName": "Sardar",
+    "email": "sardarpriyanka525@gmail.com",
+    "phone": "6287844148",
+    "city": "হাওড়া",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-16T21:23:55.731Z"
   }
 };
