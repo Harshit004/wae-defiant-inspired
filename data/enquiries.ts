@@ -5462,5 +5462,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "No",
     "type": "contact-us",
     "createdAt": "2026-11-16T01:20:17.689Z"
+  },
+  "49daca0a-c331-4d9c-a2e6-f6b1bfa7d76d": {
+    "id": "49daca0a-c331-4d9c-a2e6-f6b1bfa7d76d",
+    "fullName": "Shubham Tiwari",
+    "companyName": "r.k company",
+    "email": "s60287175@gmail.com",
+    "phone": "9415550162",
+    "city": "Mirzapur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIyrjOsrSLmAMV8exzAR0VdAHKEAEYASAAEgIkgfD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-16T02:11:57.840Z"
   }
 };
