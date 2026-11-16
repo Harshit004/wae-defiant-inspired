@@ -5528,5 +5528,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-16T04:53:33.202Z"
+  },
+  "f3d8ea90-47c0-4a47-bf3b-1c3a93043dc6": {
+    "id": "f3d8ea90-47c0-4a47-bf3b-1c3a93043dc6",
+    "fullName": "Santosh kumar singh",
+    "companyName": "Estan hetitek  D 246 sector 63",
+    "email": "santosh.rani281277@gmail.com",
+    "phone": "9582094446",
+    "city": "Noida",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-16T05:49:01.710Z"
   }
 };
