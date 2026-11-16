@@ -5473,5 +5473,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIyrjOsrSLmAMV8exzAR0VdAHKEAEYASAAEgIkgfD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-16T02:11:57.840Z"
+  },
+  "fff39243-3894-40e6-ad22-59b1d808362f": {
+    "id": "fff39243-3894-40e6-ad22-59b1d808362f",
+    "fullName": "Rozi",
+    "companyName": "Pmd",
+    "email": "rozirozi011998@gmail.com",
+    "phone": "9650546258",
+    "city": "Basti",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-16T03:16:50.753Z"
   }
 };
