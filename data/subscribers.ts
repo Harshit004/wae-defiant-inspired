@@ -832,5 +832,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-16",
     "time": "10:21:22",
     "pageLink": "/portfolio/glass-bottling/aquarius-series"
+  },
+  {
+    "id": "a1d18a68-e627-4947-b640-a5afba12a614",
+    "email": "sitaram.agro.enterprises@gmail.com",
+    "date": "2026-11-16",
+    "time": "17:19:07",
+    "pageLink": "/contact-us"
   }
 ];
