@@ -5561,5 +5561,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-16T05:52:43.241Z"
+  },
+  "79c9a4f0-14fc-4b47-8e7e-2e74f11acd64": {
+    "id": "79c9a4f0-14fc-4b47-8e7e-2e74f11acd64",
+    "fullName": "Ganesh Das",
+    "companyName": "Inspacio Design Pvt Ltd.",
+    "email": "ganesh@inspacio.in",
+    "phone": "9738969360",
+    "city": "Gurugram",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "R.O Tower Unit: Providing, Fixting, Testing and Commissioing Floor Mounted Package  RO Membrane Based Drinking Water Generation System with built-in Hot and Cold Water Storage\t\t\nType: Packaged Type complete with micron filter, carbon filter cartridges and RO membranes, UF membranes all in engineering plastic housings, high pressure pump, pressurised storage vessel, disinfection unit, auto flush, TDS Mudulator, auto controls, interconnecting micro tubing, cabling etc and complete supporing/ fixing arrangement\t\t\n\"The unit shall be suitable for the following expected raw water characterstics:\nRaw Water Characterstic\npH Value: 6.5 - 8.5\nTotal Hardness : upto 300 mg/litre\nDissolved Solids: upto1000 mg/litre\"\t\t\n\t\t\nR.O Water Generation Capacity: As mentioned Below\t\t\nCold- 130  L; Hot- 5 L : Ambient: 20 L \t\t\na) Capacity: 150 LPH Capacity  with three  sensor taps (CHA)\t\t\nMake: Wa Corp Hyundai India Ltd.\t\t\nModels:WAE VAR150 HAC\tNo.\t2",
+    "type": "contact-us",
+    "createdAt": "2026-11-16T06:18:59.506Z"
   }
 };
