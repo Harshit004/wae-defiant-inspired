@@ -5484,5 +5484,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-16T03:16:50.753Z"
+  },
+  "735b91b1-882a-4081-8454-3e271a4bf7d6": {
+    "id": "735b91b1-882a-4081-8454-3e271a4bf7d6",
+    "fullName": "Mahendra singh kaprala Mahender",
+    "companyName": "Amul dairy",
+    "email": "mahendrasinghkaprola@gmail.com",
+    "phone": "9636146473",
+    "city": "Bharatpur Rajasthan",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-16T03:52:58.852Z"
   }
 };
