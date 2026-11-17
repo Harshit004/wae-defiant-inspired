@@ -5606,5 +5606,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiA8OrXBhDEARIsAECtlx5Oq6rj_rV8yOoX00yfB-a6Tn74wDNQOqeBXA_cxorBkckO_990okwaAupLEALw_wcB",
     "type": "contact-us",
     "createdAt": "2026-11-17T04:20:04.859Z"
+  },
+  "73355a9e-1d9c-4e5f-a964-af210b6c3235": {
+    "id": "73355a9e-1d9c-4e5f-a964-af210b6c3235",
+    "fullName": "Tofiq Choudhary",
+    "companyName": "Investec",
+    "email": "tofiq.choudhary@investec.com",
+    "phone": "8976876194",
+    "city": "Bandra East",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-ct",
+    "type": "product",
+    "createdAt": "2026-11-17T05:20:04.505Z"
   }
 };
