@@ -5595,5 +5595,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-16T21:23:55.731Z"
+  },
+  "918937f4-0942-47a4-a7c7-8bdeff1b429e": {
+    "id": "918937f4-0942-47a4-a7c7-8bdeff1b429e",
+    "fullName": "Sonika",
+    "companyName": "4itkoe7kaoroo52ooo5of",
+    "email": "sonikabasera2005@gmail.comp",
+    "phone": "9680883654",
+    "city": "4iitiw89yi",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiA8OrXBhDEARIsAECtlx5Oq6rj_rV8yOoX00yfB-a6Tn74wDNQOqeBXA_cxorBkckO_990okwaAupLEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-11-17T04:20:04.859Z"
   }
 };
