@@ -5617,5 +5617,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/var-ct",
     "type": "product",
     "createdAt": "2026-11-17T05:20:04.505Z"
+  },
+  "dfab229e-ebed-4749-be6d-bc4f4602c7a5": {
+    "id": "dfab229e-ebed-4749-be6d-bc4f4602c7a5",
+    "fullName": "Tofiq Choudhary",
+    "companyName": "Investec",
+    "email": "tofiq.choudhary@investec.com",
+    "phone": "8976876194",
+    "city": "Mumbai Bandra East",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "I would like to inquire about the water dispenser for my office",
+    "type": "contact-us",
+    "createdAt": "2026-11-17T05:23:19.861Z"
   }
 };
