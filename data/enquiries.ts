@@ -5640,5 +5640,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-17T08:29:09.817Z"
+  },
+  "4667aa76-bda8-4b85-9aa2-1b31c59af473": {
+    "id": "4667aa76-bda8-4b85-9aa2-1b31c59af473",
+    "fullName": "Rajesh Soni",
+    "companyName": "Intrkt",
+    "email": "rs@intrkt.com",
+    "phone": "9076014568",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "We have Ai voice calling starting from just Rs. 2 per minute excellent human like quality. We'll be happy to setup a free customized demo for your exact requirement. Not needed right now? Refer anyone in your network, professional or personal, who makes 1,000+ sales or cold calls a day and earn up to 40% commission: intrkt.com/refer",
+    "type": "general",
+    "createdAt": "2026-11-17T09:32:46.578Z"
   }
 };
