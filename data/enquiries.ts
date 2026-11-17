@@ -5629,5 +5629,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I would like to inquire about the water dispenser for my office",
     "type": "contact-us",
     "createdAt": "2026-11-17T05:23:19.861Z"
+  },
+  "4819ae9b-b5fd-4edf-b07a-13460b0aa76f": {
+    "id": "4819ae9b-b5fd-4edf-b07a-13460b0aa76f",
+    "fullName": "beant singh",
+    "companyName": "Chandra Raj travels",
+    "email": "beantsingh7105@gmail.com",
+    "phone": "8560915164",
+    "city": "Rajasthan",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-17T08:29:09.817Z"
   }
 };
