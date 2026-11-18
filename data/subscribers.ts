@@ -839,5 +839,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-16",
     "time": "17:19:07",
     "pageLink": "/contact-us"
+  },
+  {
+    "id": "80690081-4dfb-46eb-818c-f9abe2044899",
+    "email": "vaibhav.baranwal.973174@gmail.com",
+    "date": "2026-11-18",
+    "time": "10:37:39",
+    "pageLink": "/profile"
   }
 ];
