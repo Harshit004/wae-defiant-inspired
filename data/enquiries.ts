@@ -5686,5 +5686,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Kya mere givan mein  bhakti rahegi",
     "type": "contact-us",
     "createdAt": "2026-11-18T05:44:37.003Z"
+  },
+  "23ada86a-01bb-49da-9655-003483789914": {
+    "id": "23ada86a-01bb-49da-9655-003483789914",
+    "fullName": "Palesh Chavhan",
+    "companyName": "M-tech Innovation ltd.",
+    "email": "kdsales@m-techindia.com",
+    "phone": "9420257615",
+    "city": "Pune , India",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "Greeting from the M-tech Innovation.\nWe are an electronic and automotive components supplier with the 35 years of experience in the automotive &  industrial sectors. \nOur key capabilities include:\nMembrane keypads & switches- PCB/PCF base tactile/non-tactile \nGraphic overlays & labels \nIMD/IMF components \nCapacitive touch panels & HMI components \nPU logos, emblems & resin base decorative components \nAt M-tech we are adding value through continuous improvement, consistent quality & timely delivery ensuring that we meet & exceed our customer expectation",
+    "type": "general",
+    "createdAt": "2026-11-18T06:37:52.796Z"
   }
 };
