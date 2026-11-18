@@ -5698,5 +5698,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Greeting from the M-tech Innovation.\nWe are an electronic and automotive components supplier with the 35 years of experience in the automotive &  industrial sectors. \nOur key capabilities include:\nMembrane keypads & switches- PCB/PCF base tactile/non-tactile \nGraphic overlays & labels \nIMD/IMF components \nCapacitive touch panels & HMI components \nPU logos, emblems & resin base decorative components \nAt M-tech we are adding value through continuous improvement, consistent quality & timely delivery ensuring that we meet & exceed our customer expectation",
     "type": "general",
     "createdAt": "2026-11-18T06:37:52.796Z"
+  },
+  "91a5ebaf-7ac0-4691-9425-0a7ac2468233": {
+    "id": "91a5ebaf-7ac0-4691-9425-0a7ac2468233",
+    "fullName": "Jagdeep Singh",
+    "companyName": "Arora trading company",
+    "email": "js7766757@gmail.com",
+    "phone": "7710570990",
+    "city": "Zira",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934529&gad_source=5&gad_campaignid=23735506714&gclid=Cj0KCQiAk_DXBhCoARIsAHE-omMucGYV0zBk0hVRghFJxdJy-7DhDTSfiTYcqI4afJ5_pq9CG3r6A8waAjPtEALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-18T06:39:31.054Z"
   }
 };
