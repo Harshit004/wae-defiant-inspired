@@ -5652,5 +5652,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "We have Ai voice calling starting from just Rs. 2 per minute excellent human like quality. We'll be happy to setup a free customized demo for your exact requirement. Not needed right now? Refer anyone in your network, professional or personal, who makes 1,000+ sales or cold calls a day and earn up to 40% commission: intrkt.com/refer",
     "type": "general",
     "createdAt": "2026-11-17T09:32:46.578Z"
+  },
+  "d4828dcb-dd8d-45c8-a4fd-8571b89feaf8": {
+    "id": "d4828dcb-dd8d-45c8-a4fd-8571b89feaf8",
+    "fullName": "Suman verma",
+    "companyName": "Santosh saw",
+    "email": "rv857748@gmail.com",
+    "phone": "8252853688",
+    "city": "Patna",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAk_DXBhCoARIsAHE-omNaNhH1Bsd0zyZfyLw_ka6KUbo6ii0COhi12nN-lt1ho5d_4FgH7pkaAjr4EALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-11-18T05:01:00.232Z"
   }
 };
