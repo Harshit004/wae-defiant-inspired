@@ -5709,5 +5709,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934529&gad_source=5&gad_campaignid=23735506714&gclid=Cj0KCQiAk_DXBhCoARIsAHE-omMucGYV0zBk0hVRghFJxdJy-7DhDTSfiTYcqI4afJ5_pq9CG3r6A8waAjPtEALw_wcB",
     "type": "product",
     "createdAt": "2026-11-18T06:39:31.054Z"
+  },
+  "6b61cd60-0f8c-423e-b28f-8e54db243d0e": {
+    "id": "6b61cd60-0f8c-423e-b28f-8e54db243d0e",
+    "fullName": "Ashok Chawla",
+    "companyName": "ASHOK & CO. NIVAS PRIVATE LIMITED",
+    "email": "chawlaashok398@gmail.com",
+    "phone": "7240675129",
+    "city": "Ashok Chawla",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-18T12:18:09.059Z"
   }
 };
