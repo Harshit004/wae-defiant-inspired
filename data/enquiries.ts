@@ -5674,5 +5674,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAk_DXBhCoARIsAHE-omOhOkZkRFTMgeS0SgfgCLfRQ1IlWzteoJtE7g_1QLReza8aEzD0jA8aAjeZEALw_wcB",
     "type": "contact-us",
     "createdAt": "2026-11-18T05:06:58.474Z"
+  },
+  "2269046e-ef48-47ea-bdd6-fc7155e4eb86": {
+    "id": "2269046e-ef48-47ea-bdd6-fc7155e4eb86",
+    "fullName": "Ragini",
+    "companyName": "Kumari",
+    "email": "brijk249@gmail.com",
+    "phone": "9289853564",
+    "city": "Delhi",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAk_DXBhCoARIsAHE-omNZhqa9f5klbVLMFOhMYtTCyqlkFrExbDdaAai3ROABV9HB2S8MFQYaAr-lEALw_wcB",
+    "message": "Kya mere givan mein  bhakti rahegi",
+    "type": "contact-us",
+    "createdAt": "2026-11-18T05:44:37.003Z"
   }
 };
