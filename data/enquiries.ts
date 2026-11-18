@@ -5663,5 +5663,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAk_DXBhCoARIsAHE-omNaNhH1Bsd0zyZfyLw_ka6KUbo6ii0COhi12nN-lt1ho5d_4FgH7pkaAjr4EALw_wcB",
     "type": "contact-us",
     "createdAt": "2026-11-18T05:01:00.232Z"
+  },
+  "5973ac8a-2297-4e56-bdc6-09c92df43706": {
+    "id": "5973ac8a-2297-4e56-bdc6-09c92df43706",
+    "fullName": "Vaibhav baranwal",
+    "companyName": "Vaibhav baranwal",
+    "email": "vaibhav.baranwal.973174@gmail.com",
+    "phone": "8090871966",
+    "city": "Jaunpur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAk_DXBhCoARIsAHE-omOhOkZkRFTMgeS0SgfgCLfRQ1IlWzteoJtE7g_1QLReza8aEzD0jA8aAjeZEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-11-18T05:06:58.474Z"
   }
 };
