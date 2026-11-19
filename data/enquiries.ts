@@ -5778,5 +5778,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/primus?gad_source=1&gad_campaignid=24259570723&gbraid=0AAAAABUiSLzaFzoQwoPtu9tXtsesQMdMw&gclid=Cj0KCQiA2frXBhC_ARIsAPTFcdMsShrHo_xnQCiz7f2IK8C_caCbUFB-Uo4tidB41zULD6I0LKKclJ0aApcLEALw_wcB",
     "type": "product",
     "createdAt": "2026-11-19T09:19:13.695Z"
+  },
+  "623386b4-4111-4c8f-9085-a5dc89c6745f": {
+    "id": "623386b4-4111-4c8f-9085-a5dc89c6745f",
+    "fullName": "Rahul",
+    "companyName": "Kumar",
+    "email": "r40426972@gmail.com",
+    "phone": "8539981466",
+    "city": "851211",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-19T09:32:47.103Z"
   }
 };
