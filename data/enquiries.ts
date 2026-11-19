@@ -5720,5 +5720,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-18T12:18:09.059Z"
+  },
+  "8641e866-c710-4d7d-b243-7a0c95a5e0c7": {
+    "id": "8641e866-c710-4d7d-b243-7a0c95a5e0c7",
+    "fullName": "Gibi Ponnachan",
+    "companyName": "Hudson River Trading",
+    "email": "gibi@hudson-trading.com",
+    "phone": "9972098040",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Looking for a zip tap type solution for our new office in Mumbai",
+    "type": "contact-us",
+    "createdAt": "2026-11-19T00:28:34.545Z"
   }
 };
