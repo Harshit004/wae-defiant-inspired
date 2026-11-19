@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import LightweightRipple from "@/components/LightweightRipple"
 import { BLOGS } from "@/data/blogs"
-import { toast } from "sonner"
+import ContactSectionDark from "@/components/contact-section-dark"
 
 // ── DATA & CONSTANTS ──
 
@@ -233,6 +233,38 @@ const pillars = [
   },
 ]
 
+// ── SECTORS ──
+
+const sectorsRow1 = [
+  {
+    name: "Corporate",
+    icon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3377d5c7-cc8b-48da-02a8-047ba09d6a00/public",
+  },
+  {
+    name: "Hospitality",
+    icon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d64e3fde-83e0-43e0-e0d9-625eb4b6bf00/public",
+  },
+  {
+    name: "Education",
+    icon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4efa005e-5156-4427-6893-5a8b27cde800/public",
+  },
+]
+
+const sectorsRow2 = [
+  {
+    name: "Healthcare",
+    icon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a4022f96-a986-4a49-f5ff-bf6d785f8900/public",
+  },
+  {
+    name: "BFSI",
+    icon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/836e8835-2b94-45d4-fcdd-8c760d8b6300/public",
+  },
+  {
+    name: "Consultancy",
+    icon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5226aae0-7c1e-4141-35c7-6adf421a4a00/public",
+  },
+]
+
 // ── PRODUCT PORTFOLIO ITEMS ──
 
 const productPortfolioItems = [
@@ -259,34 +291,7 @@ const productPortfolioItems = [
   },
 ]
 
-// ── SUSTAINABILITY 4 STEPS (FIGMA SPEC) ──
 
-const sustainabilitySteps = [
-  {
-    number: "01",
-    title: "Water Intake",
-    description:
-      "Raw water ingress engineered for zero environmental disturbance and dynamic filtration intake balancing natural aquifers.",
-  },
-  {
-    number: "02",
-    title: "Purification & Disinfection",
-    description:
-      "Precision multi-stage nanofiltration and chemical-free UV-C point-of-dispense sterilization preserving essential natural minerals.",
-  },
-  {
-    number: "03",
-    title: "Low Carbon Footprint",
-    description:
-      "Eliminating the manufacturing, packaging, and logistical carbon overhead of single-use bottled water supply chains.",
-  },
-  {
-    number: "04",
-    title: "Circular Reuse & Intelligence",
-    description:
-      "Closed-loop greywater reclamation paired with live Blugrids IoT telemetry for autonomous diagnostics and net-positive impact.",
-  },
-]
 
 // ── MAIN COMPONENT ──
 
@@ -296,12 +301,12 @@ export default function HomeV2() {
   const [isPaused, setIsPaused] = useState(false)
   const heroTouchStartX = useRef<number | null>(null)
 
-  // Carousel Autoplay (7 seconds)
+  // Carousel Autoplay (2 seconds as specified)
   useEffect(() => {
     if (isPaused) return
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
-    }, 7000)
+    }, 2000)
     return () => clearInterval(timer)
   }, [isPaused])
 
@@ -327,6 +332,50 @@ export default function HomeV2() {
     }
     heroTouchStartX.current = null
   }
+
+  // Pillar scroll state (same as main homepage)
+  const pillarContainerRef = useRef<HTMLDivElement>(null)
+  const [pillarActiveIndex, setPillarActiveIndex] = useState(0)
+
+  const handlePillarScroll = () => {
+    if (pillarContainerRef.current) {
+      const scrollLeft = pillarContainerRef.current.scrollLeft
+      const width = pillarContainerRef.current.offsetWidth
+      const index = Math.round(scrollLeft / width)
+      setPillarActiveIndex(index)
+    }
+  }
+
+  // Earth video position tracking (same as main homepage)
+  const waterWordRef = useRef<HTMLSpanElement>(null)
+  const earthContainerRef = useRef<HTMLDivElement>(null)
+  const [earthMarginLeft, setEarthMarginLeft] = useState<number>(0)
+
+  useEffect(() => {
+    const updateEarthPos = () => {
+      if (waterWordRef.current && earthContainerRef.current) {
+        const waterRect = waterWordRef.current.getBoundingClientRect()
+        const containerRect = earthContainerRef.current.getBoundingClientRect()
+        const waterCenter = waterRect.left + waterRect.width / 2
+
+        const vw = typeof window !== "undefined" ? window.innerWidth : 1440
+        const desiredVideoWidth = Math.min(412, Math.max(294, (28.58 / 100) * vw))
+        const actualVideoWidth = Math.min(containerRect.width, desiredVideoWidth)
+
+        const targetLeft = waterCenter - containerRect.left - actualVideoWidth / 2
+        const maxLeft = Math.max(0, containerRect.width - actualVideoWidth)
+        const clampedLeft = Math.max(0, Math.min(maxLeft, targetLeft))
+
+        setEarthMarginLeft(clampedLeft)
+      }
+    }
+    updateEarthPos()
+    if (typeof document !== "undefined" && document.fonts) {
+      document.fonts.ready.then(updateEarthPos)
+    }
+    window.addEventListener("resize", updateEarthPos)
+    return () => window.removeEventListener("resize", updateEarthPos)
+  }, [])
 
   // Impact Section Ref
   const impactRef = useRef<HTMLElement>(null)
@@ -369,46 +418,7 @@ export default function HomeV2() {
       .catch(console.error)
   }, [])
 
-  // Contact Form State
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!formState.name || !formState.email) {
-      toast.error("Please enter your name and email.")
-      return
-    }
-
-    setIsSubmitting(true)
-    try {
-      const res = await fetch("/api/enquiries", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formState,
-          source: "homeV2 - For More Info",
-          type: "general",
-        }),
-      })
-      if (res.ok) {
-        toast.success("Thank you! We'll get in touch with you soon.")
-        setFormState({ name: "", email: "", phone: "", company: "", message: "" })
-      } else {
-        toast.error("Something went wrong. Please try again.")
-      }
-    } catch (err) {
-      toast.error("Failed to submit form. Please check your connection.")
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   const activeSlideData = HERO_SLIDES[currentSlide]
 
@@ -424,7 +434,7 @@ export default function HomeV2() {
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className="w-full relative bg-[#0D0D0D] h-[100svh] min-h-[640px] md:min-h-[720px] lg:min-h-[820px] flex flex-col justify-between overflow-hidden"
+        className="w-full relative bg-[#0D0D0D] h-screen h-[100dvh] flex flex-col justify-between overflow-hidden"
       >
         {/* Background Slide Crossfade */}
         <AnimatePresence mode="wait">
@@ -546,11 +556,11 @@ export default function HomeV2() {
           </div>
         </div>
 
-        {/* Carousel Pagination & Cues (Bottom Bar) */}
+        {/* Carousel Pagination (Centered, no navigation arrows) */}
         <div className="relative z-[4] w-full pb-8 md:pb-10 pointer-events-auto">
-          <div className={`${containerClass} flex items-center justify-between`}>
-            {/* Slide Index Indicators (Pill + Dots matching Figma) */}
-            <div className="flex items-center gap-2.5">
+          <div className="w-full flex items-center justify-center">
+            {/* Slide Index Indicators (Pill + Dots centered) */}
+            <div className="flex items-center justify-center gap-2.5">
               {HERO_SLIDES.map((slide, idx) => {
                 const isActive = idx === currentSlide
                 return (
@@ -566,150 +576,110 @@ export default function HomeV2() {
                 )
               })}
             </div>
-
-            {/* Slide Controls & Water Ripple Cue */}
-            <div className="flex items-center gap-4">
-              <button
-                type="button"
-                onClick={prevSlide}
-                aria-label="Previous slide"
-                className="hidden md:flex w-9 h-9 items-center justify-center rounded-full border border-white/20 text-white/70 hover:text-white hover:border-white/50 transition-all text-xs"
-              >
-                ←
-              </button>
-              <button
-                type="button"
-                onClick={nextSlide}
-                aria-label="Next slide"
-                className="hidden md:flex w-9 h-9 items-center justify-center rounded-full border border-white/20 text-white/70 hover:text-white hover:border-white/50 transition-all text-xs"
-              >
-                →
-              </button>
-
-              {/* Water Wave Indicator Cue from Figma */}
-              <div
-                title="Interactive Water Ripple"
-                className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity"
-              >
-                <div className="w-3 h-3 rounded-full border border-[#0081C9] animate-ping opacity-60" />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#0081C9] -ml-2" />
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* ── PILLARS SECTION (PURPOSE, PHILOSOPHY, PRINCIPLE) ── */}
-      <section className="relative bg-black text-white w-full border-b border-[#FFFFFF33]">
-        <div className={containerClass}>
-          {/* Desktop 3-Column Layout with 1px dividers */}
-          <div className="hidden md:grid grid-cols-3 divide-x divide-[#FFFFFF33] py-[clamp(48px,6vw,84px)]">
-            {pillars.map((pillar) => (
+      {/* ── PURPOSE, PHILOSOPHY & PRINCIPLE SECTION (SAME AS MAIN HOMEPAGE) ── */}
+      <section className="relative bg-black text-white w-full">
+        <div className="w-full md:h-[576px]">
+          <div
+            ref={pillarContainerRef}
+            onScroll={handlePillarScroll}
+            className="w-full flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 md:h-full md:overflow-visible border-b border-[#FFFFFF4D]"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {pillars.map((pillar, idx) => (
               <div
                 key={pillar.title}
-                className="group relative flex flex-col justify-between px-8 first:pl-0 last:pr-0 transition-colors duration-500 hover:bg-gradient-to-b hover:from-[#002B49]/30 hover:to-transparent rounded-sm py-4"
+                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${
+                  idx < 2 ? "md:border-r md:border-[#FFFFFF4D]" : ""
+                } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group`}
               >
-                <div>
-                  <h3
+                <div className="flex flex-col w-full max-w-[320px]">
+                  <h2
+                    className="text-[7.12vw] md:text-[40px] leading-[110%] font-normal"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "clamp(22px, 1.8vw, 30px)",
-                      lineHeight: "115%",
-                      fontWeight: 500,
+                      letterSpacing: "0%",
                     }}
-                    className="text-white mb-2"
                   >
                     {pillar.title}
-                  </h3>
-                  <p
+                  </h2>
+                  <div className="h-[6.1vw] md:h-[32px]" />
+                  <h3
+                    className="text-white group-hover:text-white text-[3.05vw] md:text-[16px] leading-[100%] font-bold"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "clamp(12px, 0.9vw, 15px)",
-                      color: "#0081C9",
                     }}
-                    className="mb-6 font-medium"
                   >
                     {pillar.subtitle}
-                  </p>
+                  </h3>
+                  <div className="h-[3.05vw] md:h-[16px]" />
                   <p
+                    className="text-white/60 group-hover:text-white text-[3.05vw] md:text-[12px] leading-[120%] md:leading-[140%] font-normal"
                     style={{
                       fontFamily: "'Manrope', sans-serif",
-                      fontSize: "clamp(12px, 0.85vw, 14px)",
-                      lineHeight: "150%",
-                      color: "#AEAEAE",
                     }}
-                    className="mb-4"
                   >
                     {pillar.desc1}
                   </p>
+                  <div className="h-[3.05vw] md:h-[12px]" />
                   <p
+                    className="text-white/60 group-hover:text-white text-[3.05vw] md:text-[12px] leading-[120%] md:leading-[140%] font-normal"
                     style={{
                       fontFamily: "'Manrope', sans-serif",
-                      fontSize: "clamp(12px, 0.85vw, 14px)",
-                      lineHeight: "150%",
-                      color: "#AEAEAE",
                     }}
-                    className="mb-8"
                   >
                     {pillar.desc2}
                   </p>
-                </div>
-
-                <div>
-                  <Link
-                    href={pillar.href}
-                    className="inline-flex items-center gap-2 text-white text-[13px] font-[Inter_Tight] hover:text-[#0081C9] transition-colors group-hover:underline underline-offset-4"
-                  >
-                    <span>Read More</span>
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
+                  <div className="h-[6.1vw] md:h-[32px]" />
+                  <Link href={pillar.href} className="contents">
+                    <HoverButton theme="transparent-white">
+                      {(hovered) => (
+                        <>
+                          Know More
+                          <div className="relative inline-block w-4 h-4">
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                              alt={`${pillar.title} icon`}
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : ""}
+                            />
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: hovered ? 1 : 0 }}
+                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                              className="absolute top-0 left-0"
+                            >
+                              <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt={`${pillar.title} icon hover`}
+                                width={16}
+                                height={16}
+                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                              />
+                            </motion.div>
+                          </div>
+                        </>
+                      )}
+                    </HoverButton>
                   </Link>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Mobile Stack Layout */}
-          <div className="md:hidden py-10 divide-y divide-[#FFFFFF33]">
-            {pillars.map((pillar) => (
-              <div key={pillar.title} className="py-8 first:pt-0 last:pb-0">
-                <h3 className="font-[Inter_Tight] text-[22px] font-medium text-white mb-1">
-                  {pillar.title}
-                </h3>
-                <p className="font-[Inter_Tight] text-[13px] text-[#0081C9] font-medium mb-3">
-                  {pillar.subtitle}
-                </p>
-                <p className="font-[Manrope] text-[13px] text-[#AEAEAE] leading-relaxed mb-3">
-                  {pillar.desc1}
-                </p>
-                <p className="font-[Manrope] text-[13px] text-[#AEAEAE] leading-relaxed mb-4">
-                  {pillar.desc2}
-                </p>
-                <Link
-                  href={pillar.href}
-                  className="inline-flex items-center gap-2 text-white text-[13px] underline underline-offset-4 font-[Inter_Tight]"
-                >
-                  <span>Read More</span>
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
+          {/* Mobile carousel indicator dots */}
+          <div className="w-full md:hidden border-b border-[#FFFFFF4D] py-6 flex justify-center items-center gap-[6px]">
+            {pillars.map((_, i) => (
+              <div
+                key={i}
+                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${
+                  i === pillarActiveIndex ? "w-[24px]" : "w-[6px] opacity-30"
+                }`}
+              />
             ))}
           </div>
         </div>
@@ -814,83 +784,398 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* ── SUSTAINABILITY SECTION (FIGMA SPEC: AERIAL RIVER DELTA & 4 STEPS) ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
-        <div className={containerClass}>
-          {/* Header */}
-          <div className="mb-12">
-            <span className="text-[#0081C9] tracking-[2px] text-[11px] md:text-[12px] uppercase font-semibold font-[Inter_Tight] block mb-3">
+      {/* ── SUSTAINABILITY SECTION (SAME AS MAIN HOMEPAGE) ── */}
+      <section className="bg-black text-white md:border-b-0">
+        {/* Desktop Layout */}
+        <div className="w-full hidden md:block border-b border-[#FFFFFF4D] pt-[108px] pb-[68px]" style={{ paddingLeft: "7.5vw", paddingRight: "7.5vw" }}>
+
+          <div className="w-full">
+            <h3
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontStyle: "normal",
+                fontSize: "24px",
+                lineHeight: "110%",
+                letterSpacing: "0px",
+                verticalAlign: "middle",
+                color: "#FFFFFF",
+              }}
+            >
               Sustainability
-            </span>
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6">
+            </h3>
+            <div style={{ height: "26px" }} />
+          </div>
+
+          {/* Top Row: Heading on left, Quote on right */}
+          <div className="flex justify-between items-stretch w-full gap-6 lg:gap-10">
+            {/* Left Column - Heading & Subtitle */}
+            <div style={{ width: "clamp(320px, 35vw, 490px)" }} className="relative flex flex-col flex-shrink-0">
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "clamp(28px, 3.2vw, 46px)",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontSize: "52px",
                   lineHeight: "110%",
+                  letterSpacing: "0px",
+                  verticalAlign: "middle",
                   color: "#FFFFFF",
                 }}
-                className="max-w-[700px] font-normal"
               >
-                Carbon Neutral water
-                <br />
-                from water intake to water reuse
+                Earth, Our Only<br />Shareholder
               </h2>
-              <div className="flex-shrink-0">
+              <div style={{ height: "31px" }} />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#AEAEAE",
+                }}
+              >
+                A ledger of people, planet, and profit and the <span ref={waterWordRef}>water</span> that connects them all.
+              </p>
+              <div style={{ height: "60px" }} />
+            </div>
+
+            {/* Right Column - Quote & Author */}
+            <div style={{ maxWidth: "650px" }} className="flex flex-col justify-between flex-1 min-w-0">
+              <div>
+                <h3
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: "normal",
+                    fontSize: "clamp(28px, 2.78vw, 40px)",
+                    lineHeight: "105%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    color: "#AEAEAE",
+                  }}
+                >
+                  <span className="whitespace-nowrap">“He who knows that <span style={{ color: "#FFFFFF" }}>enough is </span></span><br />
+                  <span className="whitespace-nowrap"><span style={{ color: "#FFFFFF" }}>enough</span> will always have <span style={{ color: "#FFFFFF" }}>enough.</span> ”</span>
+                </h3>
+
+                <div style={{ height: "35px" }} />
+
+                <div className="w-full flex justify-end">
+                  <span
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 500,
+                      fontStyle: "normal",
+                      fontSize: "16px",
+                      lineHeight: "105%",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                      color: "#FFFFFF",
+                    }}
+                  >
+                    - Lao Tzu
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Row: Button & Earth Video on left aligned with Horizontal Line & Text Columns on right */}
+          <div className="flex justify-between items-start w-full gap-6 lg:gap-10">
+            {/* Left Column - Button & Earth Video */}
+            <div style={{ width: "clamp(320px, 35vw, 490px)" }} className="w-full flex flex-col relative flex-shrink-0">
+              <div className="relative z-20 flex items-start" style={{ height: "49px" }}>
                 <Link href="/sustainability" className="contents">
                   <HoverButton theme="transparent-white">
                     {(hovered) => (
                       <>
                         Know More
-                        <div className="relative inline-block w-4 h-4 ml-1">
+                        <div className="relative inline-block w-4 h-4">
                           <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon"
+                            alt="icon default"
                             width={16}
                             height={16}
                             className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                           />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                            />
+                          </motion.div>
                         </div>
                       </>
                     )}
                   </HoverButton>
                 </Link>
               </div>
-            </div>
-          </div>
 
-          {/* Grid Layout: Aerial River Map on Left, 4 Process Steps on Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            {/* Left: River Map Artwork */}
-            <div className="lg:col-span-5 relative w-full aspect-[4/3] rounded-sm overflow-hidden border border-white/10 bg-[#111111]">
-              <Image
-                src="/hero/sustainability-river.png"
-                alt="Hydrological River Delta Topography"
-                fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 left-4 right-4 text-xs font-[Manrope] text-[#AEAEAE]">
-                Continuous Hydrological Cycle — Engineered Zero Landfill
+              {/* Earth video (center aligned vertically with the word 'water' in subtext, strictly contained) */}
+              <div ref={earthContainerRef} className="w-full relative z-0 overflow-hidden">
+                <div
+                  className="relative"
+                  style={{
+                    width: "clamp(294px, 28.58vw, 412px)",
+                    height: "clamp(252px, 24.5vw, 353px)",
+                    maxWidth: "100%",
+                    marginLeft: `${earthMarginLeft}px`,
+                    overflow: "hidden",
+                    transform: "translateY(-5%) scaleX(-1)",
+                  }}
+                >
+                  <div style={{ position: "relative", width: "100%", height: "100%" }}>
+                    <iframe
+                      src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d504f9762d02a41de4b5b5010d52e126/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd504f9762d02a41de4b5b5010d52e126%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+                      style={{
+                        border: "none",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        height: "100%",
+                        width: "100%",
+                        pointerEvents: "none",
+                      }}
+                      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                      allowFullScreen={true}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Right: 4 Structured Steps */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 divide-y sm:divide-y-0 divide-white/10">
-              {sustainabilitySteps.map((step) => (
-                <div key={step.number} className="pt-4 sm:pt-0">
-                  <div className="text-[#0081C9] font-[Inter_Tight] text-[16px] font-semibold mb-2">
-                    {step.number}
-                  </div>
-                  <h3 className="font-[Inter_Tight] text-[18px] text-white font-medium mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="font-[Manrope] text-[13px] text-[#AEAEAE] leading-relaxed">
-                    {step.description}
+            {/* Right Column - Horizontal Line & Two Text Columns */}
+            <div style={{ maxWidth: "650px" }} className="relative z-10 flex flex-col flex-1 min-w-0">
+              <div style={{ height: "49px" }} className="flex flex-col justify-start">
+                {/* Horizontal line aligned with button top */}
+                <div className="w-full h-px bg-[#FFFFFF4D]" />
+              </div>
+
+              {/* Two sub-columns */}
+              <div className="grid grid-cols-2 gap-8 lg:gap-12 relative z-10">
+                {/* Sub-column 1 */}
+                <div
+                  className="relative z-10 flex flex-col space-y-4"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: "normal",
+                    fontSize: "12px",
+                    lineHeight: "130%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    color: "#AEAEAE",
+                  }}
+                >
+                  <p>
+                    It does not attend AGMs. It signs no term sheets. It cannot vote against us.
+                  </p>
+                  <p>
+                    But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life.
+                  </p>
+                  <p>
+                    For us, this recognition is not philosophical. It is operational.
+                  </p>
+                  <p>
+                    Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business.
                   </p>
                 </div>
-              ))}
+
+                {/* Sub-column 2 */}
+                <div
+                  className="relative z-10 flex flex-col space-y-4"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: "normal",
+                    fontSize: "12px",
+                    lineHeight: "130%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    color: "#AEAEAE",
+                  }}
+                >
+                  <p>
+                    It is the context within which our business is allowed to exist.
+                  </p>
+                  <p>
+                    In this view, sustainability is not an initiative layered onto business strategy.<br />
+                    It is the condition that determines whether that strategy is viable at all.
+                  </p>
+                  <p>
+                    This is our account of stewardship to the only shareholder that was always there.
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="w-full md:hidden flex flex-col pt-[108px] pb-[68px] px-[6.1vw] border-b border-[#FFFFFF4D]">
+          <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "4.58vw", lineHeight: "115%" }}>
+            Sustainability
+          </h3>
+          <div style={{ height: "7.12vw" }} />
+          <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "7.12vw", lineHeight: "105%" }}>
+            Earth, Our Only Shareholder
+          </h2>
+          <div style={{ height: "3.5vw" }} />
+          <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "3.05vw", lineHeight: "120%", color: "#AEAEAE" }}>
+            A ledger of people, planet, and profit and the water that connects them all.
+          </p>
+          <div style={{ height: "6vw" }} />
+
+          {/* Button */}
+          <div className="flex">
+            <Link href="/sustainability" className="contents">
+              <HoverButton theme="transparent-white">
+                {(hovered) => (
+                  <>
+                    Know More
+                    <div className="relative inline-block w-4 h-4">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                        alt="icon default"
+                        width={16}
+                        height={16}
+                        className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                      />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hovered ? 1 : 0 }}
+                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                        className="absolute top-0 left-0"
+                      >
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                          alt="icon hover"
+                          width={16}
+                          height={16}
+                          className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                        />
+                      </motion.div>
+                    </div>
+                  </>
+                )}
+              </HoverButton>
+            </Link>
+          </div>
+
+          <div style={{ height: "6vw" }} />
+
+          {/* Earth Video */}
+          <div className="w-full flex justify-center relative z-0">
+            <div
+              className="relative w-full"
+              style={{
+                maxWidth: "412px",
+                aspectRatio: "392 / 336",
+                overflow: "hidden",
+                transform: "translateY(-5%) scaleX(-1)",
+              }}
+            >
+              <div style={{ position: "relative", width: "100%", height: "100%" }}>
+                <iframe
+                  src="https://customer-nqls4utgv1ytiyat.cloudflarestream.com/d504f9762d02a41de4b5b5010d52e126/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-nqls4utgv1ytiyat.cloudflarestream.com%2Fd504f9762d02a41de4b5b5010d52e126%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+                  style={{
+                    border: "none",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    height: "100%",
+                    width: "100%",
+                    pointerEvents: "none",
+                  }}
+                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                  allowFullScreen={true}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div style={{ height: "10vw" }} />
+
+          {/* Quote */}
+          <h3
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "5.6vw",
+              lineHeight: "105%",
+              color: "#AEAEAE",
+            }}
+          >
+            “He who knows that <span style={{ color: "#FFFFFF" }}>enough</span><br />
+            is <span style={{ color: "#FFFFFF" }}>enough</span> will always have <span style={{ color: "#FFFFFF" }}>enough.</span> ”
+          </h3>
+
+          <div style={{ height: "17px" }} />
+
+          <div className="w-full flex justify-end">
+            <span
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 500,
+                fontSize: "16px",
+                lineHeight: "105%",
+                color: "#FFFFFF",
+              }}
+            >
+              - Lao Tzu
+            </span>
+          </div>
+
+          <div style={{ height: "31px" }} />
+          <div className="w-full h-px bg-[#FFFFFF4D]" />
+          <div style={{ height: "35px" }} />
+
+          {/* Text paragraphs */}
+          <div
+            className="relative z-10 flex flex-col space-y-4"
+            style={{
+              fontFamily: "'Manrope', sans-serif",
+              fontWeight: 400,
+              fontSize: "12px",
+              lineHeight: "130%",
+              color: "#AEAEAE",
+            }}
+          >
+            <p>
+              It does not attend AGMs. It signs no term sheets. It cannot vote against us.
+            </p>
+            <p>
+              But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life.
+            </p>
+            <p>
+              For us, this recognition is not philosophical. It is operational.
+            </p>
+            <p>
+              Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business.
+            </p>
+            <p>
+              It is the context within which our business is allowed to exist.
+            </p>
+            <p>
+              In this view, sustainability is not an initiative layered onto business strategy.<br />
+              It is the condition that determines whether that strategy is viable at all.
+            </p>
+            <p>
+              This is our account of stewardship to the only shareholder that was always there.
+            </p>
           </div>
         </div>
       </section>
@@ -1256,145 +1541,81 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* ── FOR MORE INFO (DIRECT LEAD CONTACT FORM MATCHING FIGMA) ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
-        <div className={containerClass}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-            {/* Left: Contact Coordinates */}
-            <div className="lg:col-span-5 flex flex-col justify-between">
-              <div>
-                <span className="text-[#0081C9] tracking-[2px] text-[11px] md:text-[12px] uppercase font-semibold font-[Inter_Tight] block mb-3">
-                  Contact
-                </span>
-                <h2
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "clamp(32px, 3.6vw, 52px)",
-                    lineHeight: "105%",
-                    color: "#FFFFFF",
-                  }}
-                  className="mb-8 font-normal"
-                >
-                  For More Info
-                </h2>
-                <div className="space-y-6 text-[#AEAEAE] font-[Manrope] text-[14px]">
-                  <div>
-                    <h4 className="text-white font-[Inter_Tight] text-[15px] font-medium mb-1">
-                      Corporate Headquarters
-                    </h4>
-                    <p>H-18, Sector 63, Noida, Uttar Pradesh, India, 201301</p>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-[Inter_Tight] text-[15px] font-medium mb-1">
-                      Direct Telephone
-                    </h4>
-                    <a href="tel:+911204069800" className="hover:text-white transition-colors">
-                      +91 120 4069800
-                    </a>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-[Inter_Tight] text-[15px] font-medium mb-1">
-                      Inquiries & Dialogues
-                    </h4>
-                    <a href="mailto:contact@waecorp.com" className="hover:text-white transition-colors">
-                      contact@waecorp.com
-                    </a>
-                  </div>
-                </div>
-              </div>
+      {/* ── THE COMPANY WE KEEP SECTION (FOOTPRINT & PARTNERS) ── */}
+      <section className="bg-black text-white overflow-hidden">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-stretch">
+          {/* Left Column */}
+          <div className="w-full lg:w-[48%] max-w-[680px] flex flex-col pl-[6.1vw] pr-[6.1vw] lg:pl-[7.5vw] lg:pr-0 py-[clamp(60px,7vw,102px)]">
+            <h2
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontSize: "clamp(32px, 3.82vw, 55px)",
+                lineHeight: "105%",
+                color: "#FFFFFF",
+              }}
+              className="mb-4"
+            >
+              The company
+              <br />
+              we keep
+            </h2>
+            <p
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontSize: "clamp(13px, 1.11vw, 16px)",
+                color: "#AEAEAE",
+              }}
+              className="mb-12"
+            >
+              Brands we serve. Alliances we value.
+            </p>
 
-              <div className="pt-8">
-                <span className="text-[12px] text-[#AEAEAE] font-[Inter_Tight] block">
-                  ISO 9001, ISO 14001, ISO 45001 Certified Hydration Architecture
-                </span>
-              </div>
+            <h3
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontSize: "clamp(14px, 1.11vw, 16px)",
+                color: "#FFFFFF",
+              }}
+              className="font-medium mb-6"
+            >
+              Sectors we serve
+            </h3>
+
+            {/* Sectors Grid */}
+            <div className="grid grid-cols-3 gap-6">
+              {[...sectorsRow1, ...sectorsRow2].map((sector) => (
+                <div key={sector.name} className="flex flex-col items-center text-center gap-2">
+                  <div className="relative w-10 h-10 flex items-center justify-center rounded bg-white/5 p-2">
+                    <img
+                      src={sector.icon}
+                      alt={sector.name}
+                      className="w-full h-full object-contain filter invert opacity-80"
+                    />
+                  </div>
+                  <span className="font-[Manrope] text-[12px] text-[#AEAEAE]">{sector.name}</span>
+                </div>
+              ))}
             </div>
+          </div>
 
-            {/* Right: Direct Form */}
-            <div className="lg:col-span-7 bg-[#111111]/60 border border-white/10 rounded-sm p-8 lg:p-10">
-              <form onSubmit={handleFormSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[12px] font-[Inter_Tight] uppercase text-[#AEAEAE] tracking-wider mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formState.name}
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      placeholder="Jane Doe"
-                      className="w-full bg-black/50 border border-white/20 focus:border-[#0081C9] outline-none text-white px-4 py-3 text-[14px] font-[Manrope] rounded-sm transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[12px] font-[Inter_Tight] uppercase text-[#AEAEAE] tracking-wider mb-2">
-                      Corporate Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formState.email}
-                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      placeholder="jane@company.com"
-                      className="w-full bg-black/50 border border-white/20 focus:border-[#0081C9] outline-none text-white px-4 py-3 text-[14px] font-[Manrope] rounded-sm transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[12px] font-[Inter_Tight] uppercase text-[#AEAEAE] tracking-wider mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      value={formState.phone}
-                      onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                      placeholder="+91 98765 43210"
-                      className="w-full bg-black/50 border border-white/20 focus:border-[#0081C9] outline-none text-white px-4 py-3 text-[14px] font-[Manrope] rounded-sm transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[12px] font-[Inter_Tight] uppercase text-[#AEAEAE] tracking-wider mb-2">
-                      Organization / Company
-                    </label>
-                    <input
-                      type="text"
-                      value={formState.company}
-                      onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                      placeholder="Acme Enterprises"
-                      className="w-full bg-black/50 border border-white/20 focus:border-[#0081C9] outline-none text-white px-4 py-3 text-[14px] font-[Manrope] rounded-sm transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-[12px] font-[Inter_Tight] uppercase text-[#AEAEAE] tracking-wider mb-2">
-                    Message / Hydration Needs
-                  </label>
-                  <textarea
-                    rows={4}
-                    value={formState.message}
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    placeholder="Tell us about your workplace requirements or hydration goals..."
-                    className="w-full bg-black/50 border border-white/20 focus:border-[#0081C9] outline-none text-white px-4 py-3 text-[14px] font-[Manrope] rounded-sm transition-colors resize-none"
-                  />
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full sm:w-auto px-8 py-3.5 bg-white text-black font-[Manrope] text-[13px] font-semibold tracking-wide uppercase rounded-sm hover:bg-[#0081C9] hover:text-white transition-all duration-300 disabled:opacity-50"
-                  >
-                    {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-                  </button>
-                </div>
-              </form>
+          {/* Right Column - Map Visual */}
+          <div className="w-full lg:flex-1 flex justify-center lg:justify-end self-stretch px-[6.1vw] lg:px-0 lg:pr-[7.5vw] py-10 lg:py-0">
+            <div className="relative w-full lg:w-auto h-auto lg:h-full flex items-center justify-center lg:justify-end">
+              <img
+                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f25e4025-739e-475f-13ae-f82e5e153e00/public"
+                alt="The company we keep - Brands we serve map"
+                className="w-full max-w-[649px] h-auto object-contain py-4 opacity-90"
+              />
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ── CONTACT SECTION ── */}
+      <section
+        className="bg-black text-white px-[6.1vw] pt-[16.53vw] pb-[21.11vw] md:px-[7.5vw] md:py-[123px] border-t border-[#FFFFFF4D]"
+      >
+        <ContactSectionDark />
       </section>
 
       {/* ── FOOTER ── */}
