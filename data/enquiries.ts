@@ -5767,5 +5767,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hy",
     "type": "contact-us",
     "createdAt": "2026-11-19T07:53:01.144Z"
+  },
+  "6537bb4b-b2fd-41a0-bb62-42c47fccd580": {
+    "id": "6537bb4b-b2fd-41a0-bb62-42c47fccd580",
+    "fullName": "JAY INTERNATIONAL",
+    "companyName": "Jay international",
+    "email": "jayint2006@gmail.com",
+    "phone": "7738000427",
+    "city": "MUMBAI",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/primus?gad_source=1&gad_campaignid=24259570723&gbraid=0AAAAABUiSLzaFzoQwoPtu9tXtsesQMdMw&gclid=Cj0KCQiA2frXBhC_ARIsAPTFcdMsShrHo_xnQCiz7f2IK8C_caCbUFB-Uo4tidB41zULD6I0LKKclJ0aApcLEALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-19T09:19:13.695Z"
   }
 };
