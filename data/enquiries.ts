@@ -5732,5 +5732,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Looking for a zip tap type solution for our new office in Mumbai",
     "type": "contact-us",
     "createdAt": "2026-11-19T00:28:34.545Z"
+  },
+  "bf526ec6-e327-428e-880b-8b02ea613fc6": {
+    "id": "bf526ec6-e327-428e-880b-8b02ea613fc6",
+    "fullName": "Suman",
+    "companyName": "Suman",
+    "email": "uday03599@gmail.com",
+    "phone": "7544073551",
+    "city": "Bihar",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAtvXXBhC2ARIsAJc8SURq54YLi2XShg-qOs19BBsrcJihGKFpvRnmYPmSQCTdjoRflj2xWKEaAtq6EALw_wcB",
+    "message": "H",
+    "type": "contact-us",
+    "createdAt": "2026-11-19T07:16:51.916Z"
   }
 };
