@@ -237,60 +237,46 @@ const pillars = [
 
 const figmaProducts = [
   {
-    id: "aero",
-    title: "WAE Aero",
-    category: "Point of Use Water Purifiers",
-    image: "/homeV2/product-1.png",
-    href: "/portfolio/bluwae/enki",
-    description: "Compact precision RO and UV-C point of dispense purification.",
+    id: "trublu",
+    title: "Dispensing Systems - Trublu ",
+    image: "/homeV2/product-trublu.png",
+    href: "/portfolio/trublu",
   },
   {
-    id: "stream-x",
-    title: "WAE Stream-X",
-    category: "Touchless Drinking Water Faucets",
-    image: "/homeV2/product-2.png",
+    id: "watermatic",
+    title: "Drinking Water Faucets - WATERMATIC",
+    image: "/homeV2/product-watermatic.png",
     href: "/portfolio/trublu/alfa-100",
-    description: "Hygienic sensor-actuated architectural water dispensing tap.",
   },
   {
-    id: "elite",
-    title: "WAE Elite",
-    category: "Drinking Water Stations",
-    image: "/homeV2/product-3.png",
-    href: "/portfolio/bluwae/assistflow",
-    description: "High-traffic stainless steel integrated water station with bottle fill.",
+    id: "quantm",
+    title: "Glass Bottling Plants - Quantm",
+    image: "/homeV2/product-quantm.png",
+    href: "/portfolio/glass-bottling",
   },
   {
-    id: "oasis",
-    title: "WAE Oasis",
-    category: "Floor Standing Dispensers",
-    image: "/homeV2/product-4.png",
-    href: "/portfolio/bluwae/gsp",
-    description: "Multi-temperature hydration dispenser with interactive digital telemetry.",
+    id: "aquasmith",
+    title: "Air to Water Generators - Aquasmith",
+    image: "/homeV2/product-aquasmith.png",
+    href: "/portfolio/aquasmith",
   },
   {
-    id: "tower",
-    title: "WAE Tower",
-    category: "Commercial Hydration Towers",
-    image: "/homeV2/product-5.png",
-    href: "/portfolio/bluwae/rom-grande",
-    description: "Heavy-duty commercial tower dispenser designed for corporate headquarters.",
+    id: "bluwae",
+    title: "Hydration Systems - Bluwae",
+    image: "/homeV2/product-bluwae.png",
+    href: "/portfolio/bluwae",
   },
   {
-    id: "curve",
-    title: "WAE Curve",
-    category: "Cantilever Architectural Dispensers",
-    image: "/homeV2/product-6.png",
-    href: "/portfolio/bluwae/venus",
-    description: "Sculptural cantilever hydration system engineered for luxury venues.",
+    id: "zvr",
+    title: "Public Utility Systems - ZVR",
+    image: "/homeV2/product-zvr.png",
+    href: "/portfolio/zvr",
   },
   {
-    id: "kiosk",
-    title: "WAE Kiosk",
-    category: "Smart Telemetry Water Kiosks",
-    image: "/homeV2/product-7.png",
-    href: "/portfolio/glass-bottling/quantm",
-    description: "IoT-connected public hydration point with automated diagnostics.",
+    id: "hydroscience",
+    title: "Filters & Membrane - Hydroscience",
+    image: "/homeV2/product-hydroscience.png",
+    href: "/portfolio/hydroscience",
   },
 ]
 
@@ -298,36 +284,18 @@ const figmaProducts = [
 
 const figmaSolutions = [
   {
-    id: "desalination",
+    id: "wastewater",
     number: "01",
-    title: "Desalination, Recovery & Zero Liquid Discharge",
-    subtitle: "Advanced thermal and membrane desalination systems achieving up to 98% water recovery with minimum specific energy consumption.",
-    image: "/homeV2/solution-1.png",
-    href: "/portfolio",
+    title: "Wastewater,\nRecovery & Reuse",
+    image: "/homeV2/solution-wastewater.png",
+    href: "/solutions/wastewater",
   },
   {
-    id: "waste-treatment",
+    id: "water-treatment",
     number: "02",
-    title: "Waste Treatment & Process Water",
-    subtitle: "High-performance effluent treatment plants (ETP), biological reactors, and automated closed-loop industrial process water recycling.",
-    image: "/homeV2/solution-2.png",
-    href: "/portfolio",
-  },
-  {
-    id: "recirculation",
-    number: "03",
-    title: "Recirculation, Demineralization & Ultrapure",
-    subtitle: "Continuous electro-deionization (CEDI) and multi-pass reverse osmosis producing ultra-pure water for precision manufacturing.",
-    image: "/homeV2/solution-3.png",
-    href: "/portfolio",
-  },
-  {
-    id: "process-cooling",
-    number: "04",
-    title: "Process Cooling, Steam & Boiler Feed Systems",
-    subtitle: "Chemical-free cooling tower conditioning, high-pressure boiler feed pretreatment, and automated condensate recovery.",
-    image: "/homeV2/solution-4.png",
-    href: "/portfolio",
+    title: "Water Treatment\n& Process Water",
+    image: "/homeV2/solution-water-treatment.png",
+    href: "/solutions/water-treatment",
   },
 ]
 
@@ -335,87 +303,46 @@ const figmaSolutions = [
 
 const figmaSectors = [
   {
-    title: "Automotive & Mobility",
-    description: "Meeting strict industrial water quality standards and zero-liquid discharge requirements for automotive assembly.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
-        <circle cx="7" cy="17" r="2" />
-        <path d="M9 17h6" />
-        <circle cx="17" cy="17" r="2" />
-      </svg>
-    ),
+    id: "workplaces",
+    title: "Workplaces",
+    description: "Safe everyday hydration for Modern work places",
+    iconType: "workplaces",
   },
   {
-    title: "Pharma & Life Sciences",
-    description: "Ultra-pure water for critical operations, USP-grade purity, and clean-in-place compliance across drug formulations.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z" />
-        <path d="m8.5 8.5 7 7" />
-      </svg>
-    ),
+    id: "horeca",
+    title: "HoReCa",
+    description: "Safe and conditioned water for hydration and luxury",
+    iconType: "horeca",
   },
   {
-    title: "Semiconductors & High-Tech",
-    description: "Zero-particulate high-purity water solutions engineered for nanoscale semiconductor manufacturing and wafer rinsing.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect width="16" height="16" x="4" y="4" rx="2" />
-        <rect width="6" height="6" x="9" y="9" rx="1" />
-        <path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2" />
-      </svg>
-    ),
+    id: "manufacturing",
+    title: "Manufacturing",
+    description: "Potable , conditioned utility  and process water",
+    iconType: "manufacturing",
   },
   {
-    title: "Data Centers",
-    description: "Optimized cooling loop treatment and high-efficiency water recycling systems minimizing PUE and WUE footprints.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect width="20" height="8" x="2" y="2" rx="2" />
-        <rect width="20" height="8" x="2" y="14" rx="2" />
-        <line x1="6" x2="6.01" y1="6" y2="6" />
-        <line x1="6" x2="6.01" y1="18" y2="18" />
-      </svg>
-    ),
+    id: "health",
+    title: "Health & Wellness",
+    description: "Potable and ultra pure water for laboratory & specialised procedures",
+    iconType: "health",
   },
   {
-    title: "Corporate & Commercial",
-    description: "Sustainable hydration across campus facilities, eliminating single-use plastic bottles and tracking ESG metrics.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect width="16" height="20" x="4" y="2" rx="2" />
-        <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01" />
-      </svg>
-    ),
+    id: "education",
+    title: "Education & Institutions",
+    description: "Potable water for campus hydration and ultrapure for laboratories.",
+    iconType: "education",
   },
   {
-    title: "Hospitality & Institutions",
-    description: "High-volume pure drinking water systems, automated glass bottling plants, and point-of-use dispensers for luxury venues.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8 22v-4a4 4 0 0 1 8 0v4M2 22h20M7 10h10M12 2v8" />
-      </svg>
-    ),
+    id: "aviation",
+    title: "Aviation & Urban Mobility",
+    description: "WAE integrates water treatment, membrane ",
+    iconType: "aviation",
   },
   {
-    title: "Food & Beverage",
-    description: "Hygienic, compliant water processing and continuous filtration systems meeting stringent international food safety standards.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8ZM6 1v3M10 1v3M14 1v3" />
-      </svg>
-    ),
-  },
-  {
-    title: "Heavy Industry & Mining",
-    description: "Robust effluent treatment, acid mine drainage remediation, and heavy metal recovery under demanding operational conditions.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
-        <path d="M17 18h1M12 18h1M7 18h1" />
-      </svg>
-    ),
+    id: "utilities",
+    title: "Public Utilities & Infra",
+    description: "Safe drinking water  public hydration and conditioned water for utilities",
+    iconType: "utilities",
   },
 ]
 
@@ -450,6 +377,58 @@ const sectorsRow2 = [
     icon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5226aae0-7c1e-4141-35c7-6adf421a4a00/public",
   },
 ]
+
+const renderSectorIcon = (type: string) => {
+  switch (type) {
+    case "workplaces":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="4" y="2" width="16" height="20" rx="2" />
+          <path d="M9 22v-4h6v4" />
+          <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01" />
+        </svg>
+      )
+    case "manufacturing":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+          <path d="M17 18h1M12 18h1M7 18h1" />
+        </svg>
+      )
+    case "health":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z" />
+        </svg>
+      )
+    case "education":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+          <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5" />
+        </svg>
+      )
+    case "aviation":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+        </svg>
+      )
+    case "utilities":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="4" y="3" width="16" height="16" rx="2" />
+          <path d="M4 11h16" />
+          <path d="M8 15h.01" />
+          <path d="M16 15h.01" />
+          <path d="M6 19v2" />
+          <path d="M18 19v2" />
+        </svg>
+      )
+    default:
+      return null
+  }
+}
 
 // ── MAIN COMPONENT ──
 
@@ -540,8 +519,17 @@ export default function HomeV2() {
 
   const handleProductScrollNav = (direction: "left" | "right") => {
     if (!productScrollRef.current) return
-    const scrollAmount = 320
+    const scrollAmount = 343
     productScrollRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    })
+  }
+
+  const handleSolutionScrollNav = (direction: "left" | "right") => {
+    if (!solutionScrollRef.current) return
+    const scrollAmount = 440
+    solutionScrollRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     })
@@ -550,7 +538,7 @@ export default function HomeV2() {
   const handleSolutionScroll = () => {
     if (!solutionScrollRef.current) return
     const scrollLeft = solutionScrollRef.current.scrollLeft
-    const itemWidth = 320
+    const itemWidth = 440
     const index = Math.round(scrollLeft / itemWidth)
     setActiveSolutionIndex(Math.min(figmaSolutions.length - 1, Math.max(0, index)))
   }
@@ -856,126 +844,149 @@ export default function HomeV2() {
       </section>
 
       {/* ── PRODUCT SECTION (FIGMA NODE 12767:11081) ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+      <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
         <div className={containerClass}>
-          {/* Header Row */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12">
-            <div>
-              <span className="text-[#AEAEAE] tracking-[2px] text-[11px] md:text-[12px] uppercase font-semibold font-[Inter_Tight] block mb-3">
-                Product
-              </span>
+          {/* Top row: Eyebrow */}
+          <div className="mb-4">
+            <span
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontSize: "24px",
+                lineHeight: "115%",
+                color: "#FFFFFF",
+              }}
+              className="font-normal block"
+            >
+              Product
+            </span>
+          </div>
+
+          {/* Heading and Description Row */}
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-10">
+            <div className="max-w-[700px]">
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "clamp(28px, 3.2vw, 48px)",
-                  lineHeight: "110%",
+                  fontSize: "clamp(28px, 2.78vw, 40px)",
+                  lineHeight: "105%",
+                  fontWeight: 500,
                   color: "#FFFFFF",
                 }}
-                className="font-normal"
               >
                 Water
                 <br />
                 Engineered at the Point of Use.
               </h2>
+
+              <div className="mt-6">
+                <Link href="/portfolio" className="contents">
+                  <HoverButton theme="transparent-white">
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          className={hovered ? "translate-x-1 transition-transform" : "transition-transform"}
+                        >
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
+              </div>
             </div>
 
-            <div className="max-w-[520px] flex flex-col items-start lg:items-end text-left lg:text-right">
-              <p className="font-[Manrope] text-[13px] md:text-[14px] text-[#AEAEAE] leading-relaxed mb-3">
-                Every machine we design is engineered to eliminate single-use plastic and dramatically reduce operational carbon footprints through advanced nanofiltration.
+            <div className="max-w-[480px]">
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: "14px",
+                  lineHeight: "19px",
+                  color: "#AEAEAE",
+                }}
+              >
+                WAE’s portfolio brings together in-situ purification, water conditioning, thermal management, carbonation and hygienic dispensing to deliver application-specific potable water—mineralised or alkaline – Still or sparkling—in conformity with BIS IS 10500 standards.
               </p>
-              <Link
-                href="/portfolio"
-                className="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-[13px] font-[Inter_Tight] underline underline-offset-4"
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: "14px",
+                  lineHeight: "19px",
+                  color: "#AEAEAE",
+                }}
+                className="mt-4"
               >
-                <span>Read more about the point of use - Whitepaper</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
+                <Link href="/portfolio" className="underline underline-offset-4 hover:text-white transition-colors">
+                  Explore the Product Architecture......Read more
+                </Link>
+              </p>
+
+              {/* Prev / Next circular controls */}
+              <div className="flex items-center gap-3 mt-6">
+                <button
+                  type="button"
+                  onClick={() => handleProductScrollNav("left")}
+                  className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+                  aria-label="Previous products"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleProductScrollNav("right")}
+                  className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+                  aria-label="Next products"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* Carousel Controls & Top Link */}
-          <div className="flex justify-between items-center mb-6">
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-2 text-white text-[13px] font-[Inter_Tight] hover:text-white/80 transition-colors group"
-            >
-              <span>Explore All Products</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </Link>
-
-            {/* Navigation buttons */}
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => handleProductScrollNav("left")}
-                className="w-10 h-10 rounded-full border border-white/20 hover:border-white/60 flex items-center justify-center transition-colors text-white"
-                aria-label="Previous products"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M19 12H5M12 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                onClick={() => handleProductScrollNav("right")}
-                className="w-10 h-10 rounded-full border border-white/20 hover:border-white/60 flex items-center justify-center transition-colors text-white"
-                aria-label="Next products"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          {/* Horizontal Product Cards Row */}
+          {/* Product Carousel Row (Figma Frame 1000008542: 339x546 each, 4px gap) */}
           <div
             ref={productScrollRef}
-            className="flex gap-6 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory"
+            className="flex gap-2 sm:gap-4 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pt-2"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {figmaProducts.map((prod) => (
               <Link
                 key={prod.id}
                 href={prod.href}
-                className="group flex-shrink-0 w-[280px] sm:w-[320px] snap-start block"
+                className="group flex-shrink-0 w-[280px] sm:w-[339px] snap-start block"
               >
-                <div className="h-full bg-[#0D0D0D] border border-white/10 group-hover:border-white/30 rounded-sm p-6 flex flex-col justify-between transition-all duration-500 hover:bg-[#141414] relative overflow-hidden">
-                  {/* Subtle top accent */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/5 to-transparent pointer-events-none" />
-
-                  {/* Product Image */}
-                  <div className="relative w-full aspect-[4/5] mb-6 flex items-center justify-center bg-black/50 rounded-sm p-4 overflow-hidden border border-white/5">
+                <div className="flex flex-col">
+                  {/* Image container: 339x506 in Figma */}
+                  <div className="relative w-full h-[400px] sm:h-[506px] bg-[#FFFFFF] rounded-sm overflow-hidden flex items-center justify-center p-4">
                     <Image
                       src={prod.image}
                       alt={prod.title}
                       fill
-                      className="object-contain p-2 group-hover:scale-105 transition-transform duration-700"
+                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-
-                  {/* Metadata */}
-                  <div>
-                    <span className="text-[11px] font-[Manrope] text-[#AEAEAE] tracking-wide block mb-1.5 uppercase">
-                      {prod.category}
-                    </span>
-                    <h3 className="font-[Inter_Tight] text-[20px] font-medium text-white mb-2">
-                      {prod.title}
-                    </h3>
-                    <p className="font-[Manrope] text-[12px] text-white/60 line-clamp-2 mb-4 leading-relaxed">
-                      {prod.description}
-                    </p>
-                    <div className="inline-flex items-center gap-1.5 text-white/80 group-hover:text-white text-[12px] font-[Inter_Tight] transition-colors">
-                      <span>Know More</span>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
+                  {/* Label below image: Manrope 500/600 16px */}
+                  <h3
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontSize: "16px",
+                      lineHeight: "17.6px",
+                      fontWeight: 500,
+                    }}
+                    className="text-[#AEAEAE] group-hover:text-white transition-colors mt-[22px]"
+                  >
+                    {prod.title}
+                  </h3>
                 </div>
               </Link>
             ))}
@@ -984,35 +995,48 @@ export default function HomeV2() {
       </section>
 
       {/* ── SOLUTIONS SECTION (FIGMA NODE 12768:11338) ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+      <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
         <div className={containerClass}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            {/* Left Column: Solution Manifesto & Navigation */}
-            <div className="lg:col-span-4 flex flex-col justify-between h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            {/* Left Column: Solution Manifesto & Navigation (x=-4738 to -4165, ~492px width) */}
+            <div className="lg:col-span-5 flex flex-col justify-between">
               <div>
-                <span className="text-[#AEAEAE] tracking-[2px] text-[11px] md:text-[12px] uppercase font-semibold font-[Inter_Tight] block mb-3">
+                {/* Eyebrow */}
+                <span
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontSize: "24px",
+                    lineHeight: "115%",
+                    color: "#FFFFFF",
+                  }}
+                  className="font-normal block mb-4"
+                >
                   Solution
                 </span>
+
+                {/* Heading */}
                 <h2
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "clamp(28px, 3.2vw, 48px)",
-                    lineHeight: "110%",
+                    fontSize: "clamp(28px, 2.78vw, 40px)",
+                    lineHeight: "105%",
+                    fontWeight: 400,
                     color: "#FFFFFF",
                   }}
-                  className="font-normal mb-6"
+                  className="mb-8"
                 >
                   Water
                   <br />
                   Engineered as One System.
                 </h2>
 
+                {/* Know More Button */}
                 <div className="mb-8">
                   <Link href="/portfolio" className="contents">
                     <HoverButton theme="transparent-white">
                       {(hovered) => (
                         <>
-                          Explore All Solutions
+                          Know More
                           <svg
                             width="12"
                             height="12"
@@ -1030,39 +1054,61 @@ export default function HomeV2() {
                   </Link>
                 </div>
 
-                <p className="font-[Manrope] text-[13px] md:text-[14px] text-[#AEAEAE] leading-relaxed mb-6">
-                  From raw intake to zero liquid discharge, we engineer end-to-end industrial water cycles. Our integrated solutions optimize process water, recover resources, and ensure complete regulatory compliance with unmatched efficiency and uptime.
+                {/* Description Copy */}
+                <p
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontSize: "14px",
+                    lineHeight: "19.1px",
+                    color: "#AEAEAE",
+                  }}
+                  className="mb-4"
+                >
+                  WAE integrates water treatment, membrane separation, wastewater recovery, reuse and low-carbon thermal infrastructure within a unified engineering architecture. From turnkey EPC and retrofit to digital monitoring, O&M and Water-as-a-Service, our systems are engineered for higher recovery, lower resource intensity, lifecycle efficiency and measurable decarbonisation.
                 </p>
 
-                <Link
-                  href="/portfolio"
-                  className="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-[13px] font-[Inter_Tight] underline underline-offset-4 mb-8"
+                <p
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontSize: "14px",
+                    lineHeight: "19.1px",
+                    color: "#AEAEAE",
+                  }}
+                  className="mb-8"
                 >
-                  <span>Explore how we engineer complete water cycles - White Paper</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </Link>
+                  <Link href="/portfolio" className="underline underline-offset-4 hover:text-white transition-colors">
+                    Explore the Product Architecture......Read more
+                  </Link>
+                </p>
               </div>
 
-              {/* Dynamic Slide Counter */}
-              <div className="pt-4 border-t border-white/10 flex items-center gap-4">
-                <span className="font-[Inter_Tight] text-[18px] text-white font-medium">
-                  0{activeSolutionIndex + 1} / 0{figmaSolutions.length}
-                </span>
-                <div className="flex-1 max-w-[120px] h-[2px] bg-white/20 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-white transition-all duration-300"
-                    style={{
-                      width: `${((activeSolutionIndex + 1) / figmaSolutions.length) * 100}%`,
-                    }}
-                  />
-                </div>
+              {/* Prev / Next circular controls */}
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => handleSolutionScrollNav("left")}
+                  className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+                  aria-label="Previous solutions"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleSolutionScrollNav("right")}
+                  className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+                  aria-label="Next solutions"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </div>
 
-            {/* Right Column: High-Impact Solution Cards */}
-            <div className="lg:col-span-8">
+            {/* Right Column: High-Impact Solution Cards (Group 8439: 428x690 each) */}
+            <div className="lg:col-span-7">
               <div
                 ref={solutionScrollRef}
                 onScroll={handleSolutionScroll}
@@ -1073,7 +1119,7 @@ export default function HomeV2() {
                   <Link
                     key={sol.id}
                     href={sol.href}
-                    className="group flex-shrink-0 w-[280px] sm:w-[340px] aspect-[3/4] snap-start relative rounded-sm overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-500 block"
+                    className="group flex-shrink-0 w-[280px] sm:w-[380px] lg:w-[428px] h-[480px] sm:h-[600px] lg:h-[690px] snap-start relative rounded-sm overflow-hidden block"
                   >
                     {/* Background Photography */}
                     <Image
@@ -1083,35 +1129,34 @@ export default function HomeV2() {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
 
-                    {/* Gradient Overlay for Typography Legibility */}
+                    {/* Gradient Overlay for Typography Legibility (Figma: transparent to black) */}
                     <div
                       className="absolute inset-0 pointer-events-none"
                       style={{
                         background:
-                          "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.1) 100%)",
+                          "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0) 100%)",
                       }}
                     />
 
-                    {/* Card Content */}
-                    <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
-                      <div className="flex justify-between items-start">
-                        <span className="text-[12px] font-[Inter_Tight] text-white/70 font-semibold tracking-wider">
-                          {sol.number}
-                        </span>
-                        <div className="w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-colors">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M7 17L17 7M17 7H7M17 7v10" />
-                          </svg>
-                        </div>
-                      </div>
+                    {/* Card Content at bottom: Title and chevron-right arrow */}
+                    <div className="absolute inset-x-0 bottom-0 p-8 flex justify-between items-end z-10">
+                      <h3
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontSize: "22px",
+                          lineHeight: "27.5px",
+                          fontWeight: 400,
+                          color: "#FFFFFF",
+                          whiteSpace: "pre-line",
+                        }}
+                      >
+                        {sol.title}
+                      </h3>
 
-                      <div>
-                        <h3 className="font-[Inter_Tight] text-[20px] font-medium text-white mb-2 leading-snug">
-                          {sol.title}
-                        </h3>
-                        <p className="font-[Manrope] text-[12px] text-white/70 line-clamp-3 leading-relaxed">
-                          {sol.subtitle}
-                        </p>
+                      <div className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white group-hover:border-white group-hover:translate-x-1 transition-all">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M9 5l7 7-7 7" />
+                        </svg>
                       </div>
                     </div>
                   </Link>
@@ -1123,27 +1168,32 @@ export default function HomeV2() {
       </section>
 
       {/* ── SECTORS WE SERVE SECTION (FIGMA NODE 12854:13637) ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+      <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
         <div className={containerClass}>
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+          {/* Header Row */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
             <div>
-              <span className="text-[#AEAEAE] tracking-[2px] text-[11px] md:text-[12px] uppercase font-semibold font-[Inter_Tight] block mb-3">
-                Industry Solutions
-              </span>
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "clamp(28px, 3.2vw, 48px)",
-                  lineHeight: "110%",
+                  fontSize: "clamp(28px, 2.78vw, 40px)",
+                  lineHeight: "100%",
+                  fontWeight: 400,
                   color: "#FFFFFF",
                 }}
-                className="font-normal"
               >
                 Sectors we serve
               </h2>
-              <p className="font-[Manrope] text-[13px] md:text-[14px] text-[#AEAEAE] mt-3 max-w-[620px] leading-relaxed">
-                Customized water infrastructure engineered for the rigorous demands of industry, compliance, and circular sustainability.
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: "14px",
+                  lineHeight: "19.1px",
+                  color: "#AEAEAE",
+                }}
+                className="mt-3"
+              >
+                Water engineered for the way each sector works.
               </p>
             </div>
 
@@ -1152,7 +1202,7 @@ export default function HomeV2() {
                 <HoverButton theme="transparent-white">
                   {(hovered) => (
                     <>
-                      Explore All
+                      Know More
                       <svg
                         width="12"
                         height="12"
@@ -1171,26 +1221,129 @@ export default function HomeV2() {
             </div>
           </div>
 
-          {/* 8-Card Grid matching Figma specifications */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {figmaSectors.map((sector) => (
+          {/* Tablist Divider Line and Filter Bar */}
+          <div className="border-t border-white/20 pt-4 pb-6 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <span className="text-white text-[13px] font-[Inter_Tight] font-medium border-b-2 border-white pb-1">
+                All
+              </span>
+              <span className="text-[#AEAEAE] text-[13px] font-[Inter_Tight] hover:text-white transition-colors cursor-pointer">
+                Filter By
+              </span>
+            </div>
+          </div>
+
+          {/* 7 Sectors Grid: 4 Columns x 2 Rows with 1px border-white/10 lines */}
+          <div className="border border-white/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Row 1 */}
+            {figmaSectors.slice(0, 4).map((sec, idx) => (
               <div
-                key={sector.title}
-                className="bg-[#0D0D0D] border border-white/10 hover:border-white/30 rounded-sm p-6 flex flex-col justify-between transition-all duration-500 hover:bg-[#141414] group"
+                key={sec.id}
+                className={`p-6 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] hover:bg-white/[0.03] transition-colors ${
+                  idx < 3 ? "lg:border-r border-white/10" : ""
+                } ${idx % 2 === 0 ? "sm:border-r lg:border-r-0" : ""} border-b lg:border-b-0 border-white/10`}
               >
                 <div>
-                  <div className="w-10 h-10 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-white/80 group-hover:text-white group-hover:border-white/30 transition-colors mb-5">
-                    {sector.icon}
+                  <div className="mb-6 flex items-center gap-3">
+                    {sec.iconType === "horeca" ? (
+                      <div className="w-7 h-7 relative flex items-center justify-center">
+                        <img
+                          src="/homeV2/sector-horeca.png"
+                          alt="HoReCa"
+                          className="w-full h-full object-contain filter invert opacity-90"
+                        />
+                      </div>
+                    ) : (
+                      <div className="text-white/90">
+                        {renderSectorIcon(sec.iconType)}
+                      </div>
+                    )}
+                    <h3
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontSize: "20px",
+                        lineHeight: "120%",
+                        fontWeight: 400,
+                        color: "#FFFFFF",
+                      }}
+                    >
+                      {sec.title}
+                    </h3>
                   </div>
-                  <h3 className="font-[Inter_Tight] text-[18px] font-medium text-white mb-2 leading-snug">
-                    {sector.title}
-                  </h3>
-                  <p className="font-[Manrope] text-[12px] text-[#AEAEAE] leading-relaxed">
-                    {sector.description}
+
+                  <p
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontSize: "14px",
+                      lineHeight: "19.1px",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    {sec.description}
                   </p>
                 </div>
               </div>
             ))}
+
+            {/* Horizontal Line separating Row 1 and Row 2 across entire 4 columns */}
+            <div className="hidden lg:block col-span-4 border-t border-white/10" />
+
+            {/* Row 2 */}
+            {figmaSectors.slice(4, 7).map((sec, idx) => (
+              <div
+                key={sec.id}
+                className={`p-6 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] hover:bg-white/[0.03] transition-colors ${
+                  idx < 3 ? "lg:border-r border-white/10" : ""
+                } ${idx % 2 === 0 ? "sm:border-r lg:border-r-0" : ""} border-b sm:border-b-0 border-white/10`}
+              >
+                <div>
+                  <div className="mb-6 flex items-center gap-3">
+                    <div className="text-white/90">
+                      {renderSectorIcon(sec.iconType)}
+                    </div>
+                    <h3
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontSize: "20px",
+                        lineHeight: "120%",
+                        fontWeight: 400,
+                        color: "#FFFFFF",
+                      }}
+                    >
+                      {sec.title}
+                    </h3>
+                  </div>
+
+                  <p
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontSize: "14px",
+                      lineHeight: "19.1px",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    {sec.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+            {/* 8th cell: Subtle CTA cell in row 2, col 4 */}
+            <div className="p-6 sm:p-8 hidden lg:flex flex-col justify-between min-h-[200px] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+              <Link href="/portfolio" className="group flex flex-col justify-between h-full">
+                <span className="text-[12px] font-[Inter_Tight] text-[#AEAEAE] tracking-wider uppercase">
+                  Tailored Engineering
+                </span>
+                <div className="flex items-center justify-between text-white group-hover:text-white/80 transition-colors">
+                  <span className="font-[Inter_Tight] text-[18px]">Explore All Sectors</span>
+                  <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:border-white group-hover:translate-x-1 transition-all">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -1895,60 +2048,213 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* ── THE COMPANY WE KEEP SECTION (FOOTPRINT & PARTNERS) ── */}
-      <section className="bg-black text-white overflow-hidden">
-        <div className="w-full flex flex-col lg:flex-row justify-between items-stretch">
+      {/* ── THE COMPANY WE KEEP SECTION ── */}
+      <section
+        className="bg-black text-white px-[6.1vw] py-[16.53vw] md:px-[7.5vw] md:py-[123px] border-b border-[#FFFFFF4D]"
+      >
+        <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-stretch">
           {/* Left Column */}
-          <div className="w-full lg:w-[48%] max-w-[680px] flex flex-col pl-[6.1vw] pr-[6.1vw] lg:pl-[7.5vw] lg:pr-0 py-[clamp(60px,7vw,102px)]">
-            <h2
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "clamp(32px, 3.82vw, 55px)",
-                lineHeight: "105%",
-                color: "#FFFFFF",
-              }}
-              className="mb-4"
-            >
-              The company
-              <br />
-              we keep
-            </h2>
-            <p
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontSize: "clamp(13px, 1.11vw, 16px)",
-                color: "#AEAEAE",
-              }}
-              className="mb-12"
-            >
-              Brands we serve. Alliances we value.
-            </p>
+          <div className="w-full lg:w-[48%] max-w-[680px] flex flex-col justify-between">
+            <div>
+              <h2
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "clamp(32px, 3.82vw, 55px)",
+                  lineHeight: "105%",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
+                }}
+              >
+                The company<br />we keep
+              </h2>
+              <div style={{ height: "clamp(12px, 1.11vw, 16px)" }} />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "clamp(14px, 1.11vw, 16px)",
+                  lineHeight: "140%",
+                  letterSpacing: "0%",
+                  color: "#AEAEAE",
+                }}
+              >
+                Brands we serve. Alliances we value
+              </p>
 
-            <h3
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "clamp(14px, 1.11vw, 16px)",
-                color: "#FFFFFF",
-              }}
-              className="font-medium mb-6"
-            >
-              Sectors we serve
-            </h3>
+              {/* 307px below it */}
+              <div style={{ height: "clamp(60px, 16vw, 307px)" }} />
 
-            {/* Sectors Grid */}
-            <div className="grid grid-cols-3 gap-6">
-              {[...sectorsRow1, ...sectorsRow2].map((sector) => (
-                <div key={sector.name} className="flex flex-col items-center text-center gap-2">
-                  <div className="relative w-10 h-10 flex items-center justify-center rounded bg-white/5 p-2">
-                    <img
-                      src={sector.icon}
-                      alt={sector.name}
-                      className="w-full h-full object-contain filter invert opacity-80"
-                    />
+              {/* Sectors we serve */}
+              <h3
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "clamp(14px, 1.11vw, 16px)",
+                  lineHeight: "105%",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
+                }}
+              >
+                Sectors we serve
+              </h3>
+
+              {/* 50px below it */}
+              <div style={{ height: "clamp(24px, 3.47vw, 50px)" }} />
+
+              {/* Marquee Container with 120px edge gradients */}
+              <div className="relative w-full overflow-hidden">
+                {/* Left edge 120px gradient */}
+                <div
+                  className="absolute left-0 top-0 bottom-0 pointer-events-none z-10"
+                  style={{
+                    width: "clamp(40px, 8.33vw, 120px)",
+                    background: "linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0) 100%)",
+                  }}
+                />
+
+                {/* Right edge 120px gradient */}
+                <div
+                  className="absolute right-0 top-0 bottom-0 pointer-events-none z-10"
+                  style={{
+                    width: "clamp(40px, 8.33vw, 120px)",
+                    background: "linear-gradient(to left, #000000 0%, rgba(0, 0, 0, 0) 100%)",
+                  }}
+                />
+
+                {/* 1st Row: Right to Left */}
+                <div className="overflow-hidden w-full">
+                  <div className="animate-marquee-left flex w-max">
+                    {/* First copy */}
+                    <div className="flex shrink-0 items-center">
+                      {[...sectorsRow1, ...sectorsRow1, ...sectorsRow1, ...sectorsRow1].map((sector, idx) => (
+                        <div
+                          key={`r1-a-${idx}`}
+                          className="flex items-center shrink-0"
+                          style={{ gap: "25px", marginRight: "64px" }}
+                        >
+                          <img
+                            src={sector.icon}
+                            alt={sector.name}
+                            style={{ width: "32px", height: "32px", minWidth: "32px", objectFit: "contain" }}
+                          />
+                          <span
+                            style={{
+                              fontFamily: "'Inter Tight', sans-serif",
+                              fontWeight: 400,
+                              fontSize: "20px",
+                              lineHeight: "110%",
+                              letterSpacing: "0px",
+                              color: "#FFFFFF",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            {sector.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Second copy for seamless continuous loop */}
+                    <div className="flex shrink-0 items-center" aria-hidden="true">
+                      {[...sectorsRow1, ...sectorsRow1, ...sectorsRow1, ...sectorsRow1].map((sector, idx) => (
+                        <div
+                          key={`r1-b-${idx}`}
+                          className="flex items-center shrink-0"
+                          style={{ gap: "25px", marginRight: "64px" }}
+                        >
+                          <img
+                            src={sector.icon}
+                            alt={sector.name}
+                            style={{ width: "32px", height: "32px", minWidth: "32px", objectFit: "contain" }}
+                          />
+                          <span
+                            style={{
+                              fontFamily: "'Inter Tight', sans-serif",
+                              fontWeight: 400,
+                              fontSize: "20px",
+                              lineHeight: "110%",
+                              letterSpacing: "0px",
+                              color: "#FFFFFF",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            {sector.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <span className="font-[Manrope] text-[12px] text-[#AEAEAE]">{sector.name}</span>
                 </div>
-              ))}
+
+                {/* 32px gap between rows */}
+                <div style={{ height: "32px" }} />
+
+                {/* 2nd Row: Left to Right */}
+                <div className="overflow-hidden w-full">
+                  <div className="animate-marquee-right flex w-max">
+                    {/* First copy */}
+                    <div className="flex shrink-0 items-center">
+                      {[...sectorsRow2, ...sectorsRow2, ...sectorsRow2, ...sectorsRow2].map((sector, idx) => (
+                        <div
+                          key={`r2-a-${idx}`}
+                          className="flex items-center shrink-0"
+                          style={{ gap: "25px", marginRight: "64px" }}
+                        >
+                          <img
+                            src={sector.icon}
+                            alt={sector.name}
+                            style={{ width: "32px", height: "32px", minWidth: "32px", objectFit: "contain" }}
+                          />
+                          <span
+                            style={{
+                              fontFamily: "'Inter Tight', sans-serif",
+                              fontWeight: 400,
+                              fontSize: "20px",
+                              lineHeight: "110%",
+                              letterSpacing: "0px",
+                              color: "#FFFFFF",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            {sector.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Second copy for seamless continuous loop */}
+                    <div className="flex shrink-0 items-center" aria-hidden="true">
+                      {[...sectorsRow2, ...sectorsRow2, ...sectorsRow2, ...sectorsRow2].map((sector, idx) => (
+                        <div
+                          key={`r2-b-${idx}`}
+                          className="flex items-center shrink-0"
+                          style={{ gap: "25px", marginRight: "64px" }}
+                        >
+                          <img
+                            src={sector.icon}
+                            alt={sector.name}
+                            style={{ width: "32px", height: "32px", minWidth: "32px", objectFit: "contain" }}
+                          />
+                          <span
+                            style={{
+                              fontFamily: "'Inter Tight', sans-serif",
+                              fontWeight: 400,
+                              fontSize: "20px",
+                              lineHeight: "110%",
+                              letterSpacing: "0px",
+                              color: "#FFFFFF",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            {sector.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1958,7 +2264,7 @@ export default function HomeV2() {
               <img
                 src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f25e4025-739e-475f-13ae-f82e5e153e00/public"
                 alt="The company we keep - Brands we serve map"
-                className="w-full max-w-[649px] h-auto object-contain py-4 opacity-90"
+                className="w-full max-w-[649px] h-auto lg:w-auto lg:h-full lg:max-w-full object-contain object-center lg:object-right py-[14px]"
               />
             </div>
           </div>
@@ -1969,11 +2275,97 @@ export default function HomeV2() {
       <section
         className="bg-black text-white px-[6.1vw] pt-[16.53vw] pb-[21.11vw] md:px-[7.5vw] md:py-[123px] border-t border-[#FFFFFF4D]"
       >
-        <ContactSectionDark />
+        <div className="max-w-[1440px] mx-auto w-full">
+          <ContactSectionDark />
+        </div>
       </section>
 
       {/* ── FOOTER ── */}
       <Footer />
+
+      {/* INLINE CSS for hover and arrow animations */}
+      <style jsx>{`
+        /* Custom filter for #004063 blue color - global selector to bypass styled-jsx scoping on Image tag */
+        :global(.filter-wae-blue) {
+          filter: invert(16%) sepia(93%) saturate(1599%) hue-rotate(180deg) brightness(96%) contrast(105%) !important;
+        }
+
+        .c--anim-btn {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+        .text-container {
+          height: 12px;
+          overflow: hidden;
+        }
+        .c-anim-btn {
+          display: block;
+          margin-top: 0;
+          transition: margin-top 0.5s;
+        }
+        .c--anim-btn:hover .c-anim-btn {
+          margin-top: -12px;
+        }
+        .menu-arrow {
+          display: inline-block;
+          opacity: 0;
+          transform: translateX(-10px);
+          transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .c--anim-btn:hover .menu-arrow {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        .blueprint-arrow {
+          transform: rotate(-45deg) translateX(-10px);
+        }
+        .c--anim-btn:hover .blueprint-arrow {
+          transform: rotate(-45deg) translateX(0);
+          opacity: 1;
+        }
+
+        /* Marquee Animations */
+        @keyframes marqueeScrollLeft {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        @keyframes marqueeScrollRight {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+        .animate-marquee-left {
+          display: flex;
+          width: max-content;
+          animation: marqueeScrollLeft 60s linear infinite;
+          will-change: transform;
+        }
+        .animate-marquee-right {
+          display: flex;
+          width: max-content;
+          animation: marqueeScrollRight 60s linear infinite;
+          will-change: transform;
+        }
+        .animate-marquee-left:hover,
+        .animate-marquee-right:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
+      {/* Global Styles */}
+      <style jsx global>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </main>
   )
 }
