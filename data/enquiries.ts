@@ -5744,5 +5744,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "H",
     "type": "contact-us",
     "createdAt": "2026-11-19T07:16:51.916Z"
+  },
+  "565bd3af-1f22-40d2-afb3-7381ae0168f4": {
+    "id": "565bd3af-1f22-40d2-afb3-7381ae0168f4",
+    "fullName": "Poonam",
+    "companyName": "House wife",
+    "email": "tabschool190@gmail.com",
+    "phone": "9813426057",
+    "city": "Sonipat",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAtvXXBhC2ARIsAJc8SURq8GUPmlTwqMcoENQ4K63_i5Y7s_ed2TebnyJ4Wl-exEhfbIFurT8aAqltEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-11-19T07:22:38.417Z"
   }
 };
