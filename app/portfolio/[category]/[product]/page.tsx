@@ -214,11 +214,11 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     const category = resolvedParams.category;
     const product = resolvedParams.product;
     const canonicalUrl = `https://www.waecorp.com/portfolio/${category}/${product}`;
-    
+
     let title = "Product Details | WAE";
     let description = "Explore detailed specifications and features of WAE products.";
     let keywords = "Product Details, WAE";
-    
+
     if (product && typeof product === 'string') {
         const rawKey = product.toLowerCase().trim();
         const aliasKey = slugAliases[rawKey] || rawKey;
@@ -241,7 +241,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
                 const normalizedK = k.replace(/[-.]/g, ' ').replace(/\s+/g, ' ').trim();
                 return normalizedProduct === normalizedK || normalizedProduct.includes(normalizedK) || normalizedK.includes(normalizedProduct);
             });
-            
+
             if (foundKey) {
                 const seo = productSEO[foundKey as keyof typeof productSEO];
                 title = seo.title;

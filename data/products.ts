@@ -1245,6 +1245,99 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayImageIndex": 0,
     "displayOrder": 5
   },
+  "eno-ct": {
+    "id": "eno-ct",
+    "name": "ENKI.CT",
+    "categoryName": "DRINKING WATER STATION - BLUWAE Series",
+    "heroSubtitle": "",
+    "images": [
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/fbf516d7-077e-47f3-6aed-895881ab0c00/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/836e8089-a92c-4171-9060-f61c95591700/public",
+      "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/2078a46d-8819-4840-a853-96abb0409400/public"
+    ],
+    "featuresList": [
+      {
+        "title": "Touch-Free Operation",
+        "description": "Enjoy sensor-based, hygienic water dispensing that’s quick, easy, and completely touchless.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Powerful LED UV-C Intank Sterilization",
+        "description": "Eliminates bacteria, viruses and pathogens, ensuring water is purified upto 99.99% for sterilized hydration",
+        "isDisplayed": true
+      },
+      {
+        "title": "Clean Flow, Minimal Splash",
+        "description": "Engineered for a smooth, laminar flow that minimizes spillage, complemented by an efficient drainage system.",
+        "isDisplayed": true
+      },
+      {
+        "title": "Effortless Integration",
+        "description": "Easily connects with carbonated beverage dispensers and coffee/tea\nmachines, offering a versatile hydration solution.",
+        "isDisplayed": false
+      }
+    ],
+    "specifications": {
+      "storageCapacity": [
+        {
+          "variant": "ENKI 50 CT",
+          "hot": "1",
+          "cold": "1 5",
+          "ambient": "-"
+        },
+        {
+          "variant": "ENKI 25 CT",
+          "hot": "1",
+          "cold": "9",
+          "ambient": "-"
+        }
+      ],
+      "waterTemp": {
+        "cold": "Cold: 5°C - 24° C (default 8°C)",
+        "hot": "Hot: 50°C - 80°C (default 55°C)",
+        "ambient": "Ambient"
+      },
+      "greenCertification": "Confirms to green product certification, low discharge faucets : 1.5 LPM",
+      "dripTray": "500 ml",
+      "refrigerant": "R-134a",
+      "dimensions": [
+        {
+          "variant": "ENKI 50 CT",
+          "weight": "43.0",
+          "height": "677",
+          "width": "370",
+          "depth": "590"
+        },
+        {
+          "variant": "ENKI 25 CT",
+          "weight": "37.0",
+          "height": "677",
+          "width": "370",
+          "depth": "440"
+        }
+      ],
+      "powerRequirement": "220V/50 HZ RZ 134a1/8 HP",
+      "purificationSystem": "Multigrade filter | CTO | RO | Post carbon filter | Intank LED UV-C sterilization (Chemical- free and eco-friendly)",
+      "pointOfUseSterilization": "Germ Guardian™"
+    },
+    "status": "Live",
+    "description": "For instance, a 50 LPH machine operating continuously for 8 hours will produce 400 liters of\nwater daily, amounting to 8,800 liters over a month.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/61c42426-6a67-4edf-2bf9-e45a4b8cad00/public",
+    "heroTagline": "Plastic is passe, Landfilling is zero.\nSustainability is the future.",
+    "heroSubtext": "Sustainability at Core",
+    "heroCtaText": "Contact Us",
+    "heroCtaLink": "/contact-us",
+    "showcaseCtaText": "Enquire Now",
+    "showcaseCtaLink": "",
+    "brochurePdf": "file:///C:/Users/WAE/Downloads/ENKI.pdf",
+    "variants": {
+      "hot": true,
+      "cold": true,
+      "ambient": false
+    },
+    "displayImageIndex": 0,
+    "displayOrder": 5
+  },
   "var-ct": {
     "id": "var-ct",
     "name": "VAR.CT",
@@ -3302,6 +3395,3 @@ export const PRODUCTS: Record<string, ProductDetails> = {
     "displayOrder": 4
   }
 };
-
-PRODUCTS["eno-ct"] = PRODUCTS["enki-ct"];
-

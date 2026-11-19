@@ -3,8 +3,10 @@
 User-agent: *
 Allow: /
 
-# Block CMS Login
-Disallow: /secret-cms-login/
+# Disallow CMS Login, Admin Dashboard, and Internal APIs
+Disallow: /secret-cms-login
+Disallow: /admin
+Disallow: /api/
 
 # Sitemap
 Sitemap: https://www.waecorp.com/sitemap.xml

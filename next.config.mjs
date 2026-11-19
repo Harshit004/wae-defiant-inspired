@@ -38,8 +38,84 @@ const nextConfig = {
     '/news-and-updates': ['./data/news-events.json'],
     '/awards-and-recognitions': ['./data/news-events.json'],
   },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+        ],
+      },
+      {
+        source: '/secret-cms-login',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow, noarchive, nosnippet',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+        ],
+      },
+      {
+        source: '/admin/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow, noarchive, nosnippet',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+        ],
+      },
+      {
+        source: '/api/admin/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow, noarchive, nosnippet',
+          },
+        ],
+      },
+    ]
+  },
   async redirects() {
     return [
+      // Canonical host redirect from flagged Vercel subdomain to verified corporate domain
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'wae-ltd.vercel.app',
+          },
+        ],
+        destination: 'https://www.waecorp.com/:path*',
+        permanent: true,
+      },
       {
         source: '/portfolio/bluwae/eno-ct',
         destination: '/portfolio/bluwae/enki-ct',

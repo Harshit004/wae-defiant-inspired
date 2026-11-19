@@ -74,11 +74,24 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  return NextResponse.next();
+  const response = NextResponse.next();
+  response.headers.set('X-Content-Type-Options', 'nosniff');
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+
+  if (pathname.startsWith('/admin') || pathname === '/secret-cms-login' || pathname.startsWith('/api/admin')) {
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive, nosnippet');
+    response.headers.set('X-Frame-Options', 'DENY');
+  } else {
+    response.headers.set('X-Frame-Options', 'SAMEORIGIN');
+  }
+
+  return response;
 }
 
 export const config = {
   matcher: [
+    '/admin/:path*',
+    '/secret-cms-login',
     '/api/admin/:path*',
     '/api/analytics',
     '/api/subscribers',

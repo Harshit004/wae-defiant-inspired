@@ -1,6 +1,16 @@
 import type { ReactNode } from "react"
+import type { Metadata } from "next"
 import Sidebar from "@/components/admin/sidebar"
 import AdminAuthGuard from "@/components/admin/auth-guard"
+
+export const metadata: Metadata = {
+  title: "WAE CMS Dashboard",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
+}
 
 interface AdminLayoutProps {
   children: ReactNode

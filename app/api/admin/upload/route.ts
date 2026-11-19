@@ -43,6 +43,27 @@ export async function POST(req: Request): Promise<NextResponse> {
       return NextResponse.json({ success: false, message: "No file provided" }, { status: 400 })
     }
 
+    // Security check: validate allowed mime types and file extensions
+    const allowedMimeTypes = ["application/pdf", "image/jpeg", "image/png", "image/webp"]
+    const allowedExtensions = [".pdf", ".jpg", ".jpeg", ".png", ".webp"]
+    const lowerName = file.name.toLowerCase()
+    const hasAllowedExtension = allowedExtensions.some(ext => lowerName.endsWith(ext))
+
+    if (!allowedMimeTypes.includes(file.type) && !hasAllowedExtension) {
+      return NextResponse.json(
+        { success: false, message: "Invalid file type. Only PDF brochures and web images (JPG, PNG, WebP) are allowed." },
+        { status: 400 }
+      )
+    }
+
+    // Max file size: 50MB
+    if (file.size > 50 * 1024 * 1024) {
+      return NextResponse.json(
+        { success: false, message: "File exceeds maximum permitted size of 50MB." },
+        { status: 400 }
+      )
+    }
+
     // Clean up file name to avoid special characters
     const cleanFileName = file.name.replace(/[^a-zA-Z0-9.-]/g, "_")
     const filename = `${Date.now()}_${cleanFileName}`

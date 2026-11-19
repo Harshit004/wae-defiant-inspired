@@ -40,10 +40,10 @@ export default function Footer() {
   return (
     <footer className="text-white w-full m-0 p-0 border-t border-[#FFFFFF4D]" style={{ marginBottom: 0, background: 'linear-gradient(146.25deg, #002C43 10.53%, #000000 50.39%)' }}>
 
-      
+
       {/* ── MOBILE LAYOUT ── */}
       <div className="block md:hidden w-full px-[6.1vw] pt-[12vw] pb-[6vw]">
-        
+
         {/* Top Row: Logo & Coordinates */}
         <div className="flex justify-between items-start w-full">
           {/* Logo */}
@@ -58,7 +58,7 @@ export default function Footer() {
               />
             </Link>
           </div>
-          
+
           {/* Coordinates */}
           <div className="w-[50%] flex flex-col">
             <h4 className="font-[Inter_Tight] font-medium text-[3vw] text-white mb-2">
@@ -196,229 +196,229 @@ export default function Footer() {
           </div>
         </div>
       </div>
-{/* ── DESKTOP LAYOUT ── */}
+      {/* ── DESKTOP LAYOUT ── */}
       <div className="hidden md:block">
-      <div
-        style={{
-          paddingLeft: "7.5vw",
-          paddingRight: "7.5vw",
-          paddingTop: "66px",
-          paddingBottom: "48px",
-        }}
-      >
-        {/* Two equal halves — mirrors the contact section layout for email input alignment */}
-        <div className="flex flex-row items-start w-full">
+        <div
+          style={{
+            paddingLeft: "7.5vw",
+            paddingRight: "7.5vw",
+            paddingTop: "66px",
+            paddingBottom: "48px",
+          }}
+        >
+          {/* Two equal halves — mirrors the contact section layout for email input alignment */}
+          <div className="flex flex-row items-start w-full">
 
-          {/* ── LEFT HALF (50 vw - 7.5 vw = 42.5 vw): Logo + Coordinates + Social ── */}
-          <div className="w-[50%] flex flex-row gap-6 items-start">
+            {/* ── LEFT HALF (50 vw - 7.5 vw = 42.5 vw): Logo + Coordinates + Social ── */}
+            <div className="w-[50%] flex flex-row gap-6 items-start">
 
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <Link href="/" passHref>
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/96af99a6-327c-4bd1-2407-662d05acc500/public"
-                  alt="WAE Logo"
-                  width={180}
-                  height={65}
-                />
-              </Link>
-            </div>
-
-            {/* Coordinates & Social */}
-            <div className="flex flex-col justify-between min-h-[221px] ml-[7.5vw]">
-              <div>
-                <h4 className="font-[Inter_Tight] font-medium text-[10px] uppercase text-white tracking-wider mb-3">
-                  Co-ordinates
-                </h4>
-                <p className="font-[Inter_Tight] font-normal text-[10px] text-white leading-relaxed mb-[10px]">
-                  H-18, H block, Sector 63, Noida, Uttar Pradesh, India, 201301
-                </p>
-                <p className="font-[Inter_Tight] font-normal text-[10px] text-white">
-                  <a href="tel:+911204069800" className="hover:underline transition-all">
-                    +120 4069800
-                  </a>
-                </p>
-              </div>
-
-              {/* Social Media Icons */}
-              <div className="flex gap-4 items-center mt-7">
-                <Link href="https://in.linkedin.com/company/wae-limited" className="hover:opacity-80 transition-opacity">
+              {/* Logo */}
+              <div className="flex-shrink-0">
+                <Link href="/" passHref>
                   <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f944e769-4d53-4737-1415-e379403c6900/public"
-                    alt="LinkedIn"
-                    width={24}
-                    height={24}
-                    className="brightness-0 invert"
-                  />
-                </Link>
-                <Link href="https://www.instagram.com/wae.limited" className="hover:opacity-80 transition-opacity">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c0755e5-5c07-4e1c-31f7-066dde50cb00/public"
-                    alt="Instagram"
-                    width={24}
-                    height={24}
-                    className="brightness-0 invert"
-                  />
-                </Link>
-                <Link href="https://www.facebook.com/waeltd" className="hover:opacity-80 transition-opacity">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3f100468-318f-4c5c-b006-b304966d4100/public"
-                    alt="Facebook"
-                    width={11.5}
-                    height={18.5}
-                    className="brightness-0 invert"
-                  />
-                </Link>
-                <Link href="https://www.x.com/WAE_LTD" className="hover:opacity-80 transition-opacity">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/abb4c68a-3cf5-425e-f2d9-62cb73630100/public"
-                    alt="X"
-                    width={18}
-                    height={18}
-                    className="brightness-0 invert"
-                  />
-                </Link>
-                <Link href="https://www.youtube.com/@wae-limited" className="hover:opacity-80 transition-opacity">
-                  <Image
-                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5e07270e-f6f2-466a-0a14-316b9a397000/public"
-                    alt="YouTube"
-                    width={20}
-                    height={16}
-                    className="brightness-0 invert"
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/96af99a6-327c-4bd1-2407-662d05acc500/public"
+                    alt="WAE Logo"
+                    width={180}
+                    height={65}
                   />
                 </Link>
               </div>
+
+              {/* Coordinates & Social */}
+              <div className="flex flex-col justify-between min-h-[221px] ml-[7.5vw]">
+                <div>
+                  <h4 className="font-[Inter_Tight] font-medium text-[10px] uppercase text-white tracking-wider mb-3">
+                    Co-ordinates
+                  </h4>
+                  <p className="font-[Inter_Tight] font-normal text-[10px] text-white leading-relaxed mb-[10px]">
+                    H-18, H block, Sector 63, Noida, Uttar Pradesh, India, 201301
+                  </p>
+                  <p className="font-[Inter_Tight] font-normal text-[10px] text-white">
+                    <a href="tel:+911204069800" className="hover:underline transition-all">
+                      +120 4069800
+                    </a>
+                  </p>
+                </div>
+
+                {/* Social Media Icons */}
+                <div className="flex gap-4 items-center mt-7">
+                  <Link href="https://in.linkedin.com/company/wae-limited" className="hover:opacity-80 transition-opacity">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f944e769-4d53-4737-1415-e379403c6900/public"
+                      alt="LinkedIn"
+                      width={24}
+                      height={24}
+                      className="brightness-0 invert"
+                    />
+                  </Link>
+                  <Link href="https://www.instagram.com/wae.limited" className="hover:opacity-80 transition-opacity">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/1c0755e5-5c07-4e1c-31f7-066dde50cb00/public"
+                      alt="Instagram"
+                      width={24}
+                      height={24}
+                      className="brightness-0 invert"
+                    />
+                  </Link>
+                  <Link href="https://www.facebook.com/waeltd" className="hover:opacity-80 transition-opacity">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3f100468-318f-4c5c-b006-b304966d4100/public"
+                      alt="Facebook"
+                      width={11.5}
+                      height={18.5}
+                      className="brightness-0 invert"
+                    />
+                  </Link>
+                  <Link href="https://www.x.com/WAE_LTD" className="hover:opacity-80 transition-opacity">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/abb4c68a-3cf5-425e-f2d9-62cb73630100/public"
+                      alt="X"
+                      width={18}
+                      height={18}
+                      className="brightness-0 invert"
+                    />
+                  </Link>
+                  <Link href="https://www.youtube.com/@wae-limited" className="hover:opacity-80 transition-opacity">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5e07270e-f6f2-466a-0a14-316b9a397000/public"
+                      alt="YouTube"
+                      width={20}
+                      height={16}
+                      className="brightness-0 invert"
+                    />
+                  </Link>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* ── RIGHT HALF (exactly matches the contact section's right 50%) ── */}
-          <div className="w-[50%] flex flex-col">
+            {/* ── RIGHT HALF (exactly matches the contact section's right 50%) ── */}
+            <div className="w-[50%] flex flex-col">
 
-            {/* Newsletter form — full width so right edge aligns with "Get in Touch" button */}
-            <form
-              onSubmit={handleSubscribe}
-              className="flex flex-row w-full mb-12"
-              style={{ height: "54px" }}
-            >
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter email address to sign up for newsletter."
-                className="flex-1 h-full outline-none bg-transparent"
-                style={{
-                  border: "1px solid #FFFFFF",
-                  padding: "0 24px",
-                  fontFamily: "Manrope",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  color: "#FFFFFF",
-                }}
-              />
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                style={{
-                  height: "100%",
-                  fontFamily: "Manrope",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  color: "#000000",
-                  backgroundColor: "#FFFFFF",
-                  border: "1px solid #FFFFFF",
-                  borderLeft: "none",
-                  padding: "0 40px",
-                  cursor: isSubmitting ? "not-allowed" : "pointer",
-                  whiteSpace: "nowrap",
-                  transition: "background-color 0.3s, color 0.3s",
-                  opacity: isSubmitting ? 0.7 : 1,
-                }}
-                onMouseEnter={e => {
-                  if (isSubmitting) return;
-                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
-                  (e.currentTarget as HTMLButtonElement).style.color = "#FFFFFF";
-                }}
-                onMouseLeave={e => {
-                  if (isSubmitting) return;
-                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#FFFFFF";
-                  (e.currentTarget as HTMLButtonElement).style.color = "#000000";
-                }}
+              {/* Newsletter form — full width so right edge aligns with "Get in Touch" button */}
+              <form
+                onSubmit={handleSubscribe}
+                className="flex flex-row w-full mb-12"
+                style={{ height: "54px" }}
               >
-                {isSubmitting ? "..." : "JOIN"}
-              </button>
-            </form>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter email address to sign up for newsletter."
+                  className="flex-1 h-full outline-none bg-transparent"
+                  style={{
+                    border: "1px solid #FFFFFF",
+                    padding: "0 24px",
+                    fontFamily: "Manrope",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    color: "#FFFFFF",
+                  }}
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  style={{
+                    height: "100%",
+                    fontFamily: "Manrope",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    color: "#000000",
+                    backgroundColor: "#FFFFFF",
+                    border: "1px solid #FFFFFF",
+                    borderLeft: "none",
+                    padding: "0 40px",
+                    cursor: isSubmitting ? "not-allowed" : "pointer",
+                    whiteSpace: "nowrap",
+                    transition: "background-color 0.3s, color 0.3s",
+                    opacity: isSubmitting ? 0.7 : 1,
+                  }}
+                  onMouseEnter={e => {
+                    if (isSubmitting) return;
+                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+                    (e.currentTarget as HTMLButtonElement).style.color = "#FFFFFF";
+                  }}
+                  onMouseLeave={e => {
+                    if (isSubmitting) return;
+                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#FFFFFF";
+                    (e.currentTarget as HTMLButtonElement).style.color = "#000000";
+                  }}
+                >
+                  {isSubmitting ? "..." : "JOIN"}
+                </button>
+              </form>
 
-            {/* Navigation link columns */}
-            <div className="w-full relative">
-              <div className="grid grid-cols-[auto_auto_auto_auto] justify-between w-full">
-                {/* Column headings */}
-                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
-                  INSIDE WAE
-                </h3>
-                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
-                  RESPONSIBILITY
-                </h3>
-                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
-                  ETCETERA
-                </h3>
-                <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
-                  POLICIES
-                </h3>
+              {/* Navigation link columns */}
+              <div className="w-full relative">
+                <div className="grid grid-cols-[auto_auto_auto_auto] justify-between w-full">
+                  {/* Column headings */}
+                  <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
+                    INSIDE WAE
+                  </h3>
+                  <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
+                    RESPONSIBILITY
+                  </h3>
+                  <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
+                    ETCETERA
+                  </h3>
+                  <h3 className="font-[Inter_Tight] font-semibold text-[10px] uppercase text-white tracking-wider pb-3">
+                    POLICIES
+                  </h3>
 
-                {/* Single continuous horizontal rule */}
-                <div className="col-span-4 w-full h-[0.67px] bg-[#FFFFFF4D] mb-3" />
+                  {/* Single continuous horizontal rule */}
+                  <div className="col-span-4 w-full h-[0.67px] bg-[#FFFFFF4D] mb-3" />
 
-                {/* Link lists */}
-                {/* INSIDE WAE */}
-                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/profile" className="hover:opacity-80 transition-opacity">Profile</Link></li>
-                  <li><Link href="/portfolio" className="hover:opacity-80 transition-opacity">Portfolio</Link></li>
-                  <li><Link href="/careers" className="hover:opacity-80 transition-opacity">Reimagine Work</Link></li>
-                </ul>
+                  {/* Link lists */}
+                  {/* INSIDE WAE */}
+                  <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
+                    <li><Link href="/profile" className="hover:opacity-80 transition-opacity">Profile</Link></li>
+                    <li><Link href="/portfolio" className="hover:opacity-80 transition-opacity">Portfolio</Link></li>
+                    <li><Link href="/careers" className="hover:opacity-80 transition-opacity">Reimagine Work</Link></li>
+                  </ul>
 
-                {/* RESPONSIBILITY */}
-                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/sustainability" className="hover:opacity-80 transition-opacity">Sustainability</Link></li>
-                  <li><Link href="/activism" className="hover:opacity-80 transition-opacity">Activism</Link></li>
-                  <li><Link href="/compliance" className="hover:opacity-80 transition-opacity">Compliances</Link></li>
-                </ul>
+                  {/* RESPONSIBILITY */}
+                  <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
+                    <li><Link href="/sustainability" className="hover:opacity-80 transition-opacity">Sustainability</Link></li>
+                    <li><Link href="/activism" className="hover:opacity-80 transition-opacity">Activism</Link></li>
+                    <li><Link href="/compliance" className="hover:opacity-80 transition-opacity">Compliances</Link></li>
+                  </ul>
 
-                {/* ETCETERA */}
-                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/perspectives" className="hover:opacity-80 transition-opacity">Perspectives</Link></li>
-                  <li><Link href="/news-and-updates" className="hover:opacity-80 transition-opacity">Mentioned</Link></li>
-                  <li><Link href="/contact-us" className="hover:opacity-80 transition-opacity">Contact</Link></li>
-                </ul>
+                  {/* ETCETERA */}
+                  <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
+                    <li><Link href="/perspectives" className="hover:opacity-80 transition-opacity">Perspectives</Link></li>
+                    <li><Link href="/news-and-updates" className="hover:opacity-80 transition-opacity">Mentioned</Link></li>
+                    <li><Link href="/contact-us" className="hover:opacity-80 transition-opacity">Contact</Link></li>
+                  </ul>
 
-                {/* POLICIES */}
-                <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
-                  <li><Link href="/terms-of-use" className="hover:opacity-80 transition-opacity">Terms of Use</Link></li>
-                  <li><Link href="/cookie-policy" className="hover:opacity-80 transition-opacity">Cookie Policy</Link></li>
-                  <li><Link href="/data-privacy-policy" className="hover:opacity-80 transition-opacity">Data Privacy Policy</Link></li>
-                </ul>
+                  {/* POLICIES */}
+                  <ul className="space-y-2 font-[Inter_Tight] font-normal text-[13px] text-white">
+                    <li><Link href="/terms-of-use" className="hover:opacity-80 transition-opacity">Terms of Use</Link></li>
+                    <li><Link href="/cookie-policy" className="hover:opacity-80 transition-opacity">Cookie Policy</Link></li>
+                    <li><Link href="/data-privacy-policy" className="hover:opacity-80 transition-opacity">Data Privacy Policy</Link></li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ── Full-screen-width copyright rule + text ── */}
-      <div className="w-full h-[0.67px] bg-[#FFFFFF4D]" />
+        {/* ── Full-screen-width copyright rule + text ── */}
+        <div className="w-full h-[0.67px] bg-[#FFFFFF4D]" />
 
-      <div
-        style={{
-          paddingLeft: "7.5vw",
-          paddingRight: "7.5vw",
-          paddingTop: "23px",
-          paddingBottom: "55px",
-        }}
-        className="flex justify-between items-center font-[Manrope] text-[10px] text-white"
-      >
-        <span>&copy; 2026 WAE. All Rights Reserved. &nbsp;|&nbsp; <Link href="/sitemap" className="hover:opacity-80 transition-opacity">Sitemap</Link> &nbsp;|&nbsp; FAQ &nbsp;|&nbsp; <Link href="/compliance" className="hover:opacity-80 transition-opacity">Compliance</Link></span>
+        <div
+          style={{
+            paddingLeft: "7.5vw",
+            paddingRight: "7.5vw",
+            paddingTop: "23px",
+            paddingBottom: "55px",
+          }}
+          className="flex justify-between items-center font-[Manrope] text-[10px] text-white"
+        >
+          <span>&copy; 2026 WAE. All Rights Reserved. &nbsp;|&nbsp; <Link href="/sitemap" className="hover:opacity-80 transition-opacity">Sitemap</Link> &nbsp;|&nbsp; FAQ &nbsp;|&nbsp; <Link href="/compliance" className="hover:opacity-80 transition-opacity">Compliance</Link></span>
+        </div>
       </div>
-    </div>
     </footer>
   );
 }

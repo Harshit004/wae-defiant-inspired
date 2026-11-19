@@ -197,7 +197,7 @@ export default function SitemapPage() {
                     <div className="w-full h-px bg-[#333]" />
                   </div>
                 )}
-                
+
                 <div
                   className={`
                     ${idx % 2 === 0 ? 'pl-0 border-none' : 'border-l border-[#333] pl-[clamp(28px,7.77vw,50px)] md:pl-[clamp(28px,3.47vw,50px)]'}

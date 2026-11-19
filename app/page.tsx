@@ -488,9 +488,8 @@ export default function Home() {
             {pillars.map((pillar, idx) => (
               <div
                 key={pillar.title}
-                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${
-                  idx < 2 ? 'md:border-r md:border-[#FFFFFF4D]' : ''
-                } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group`}
+                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${idx < 2 ? 'md:border-r md:border-[#FFFFFF4D]' : ''
+                  } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group`}
               >
                 <div className="flex flex-col w-full max-w-[320px]">
                   <h2
@@ -572,9 +571,8 @@ export default function Home() {
             {pillars.map((_, i) => (
               <div
                 key={i}
-                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${
-                  i === pillarActiveIndex ? 'w-[24px]' : 'w-[6px] opacity-30'
-                }`}
+                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${i === pillarActiveIndex ? 'w-[24px]' : 'w-[6px] opacity-30'
+                  }`}
               />
             ))}
           </div>
