@@ -5755,5 +5755,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAtvXXBhC2ARIsAJc8SURq8GUPmlTwqMcoENQ4K63_i5Y7s_ed2TebnyJ4Wl-exEhfbIFurT8aAqltEALw_wcB",
     "type": "contact-us",
     "createdAt": "2026-11-19T07:22:38.417Z"
+  },
+  "cc0c435a-4f69-40bc-aeb6-f7d1a6263b08": {
+    "id": "cc0c435a-4f69-40bc-aeb6-f7d1a6263b08",
+    "fullName": "Rimjhim",
+    "companyName": "Rimjhim yada",
+    "email": "adityayadavji9984@gmail.com",
+    "phone": "7355073870",
+    "city": "Lalitpur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiAtvXXBhC2ARIsAJc8SUQqez0S9jgBguivFEkp3OOvVK7XcsqU3aYO9f7F9kKpn3SQnW6-YMoaAniQEALw_wcB",
+    "message": "Hy",
+    "type": "contact-us",
+    "createdAt": "2026-11-19T07:53:01.144Z"
   }
 };
