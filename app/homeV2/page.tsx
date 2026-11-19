@@ -280,22 +280,36 @@ const figmaProducts = [
   },
 ]
 
-// ── SOLUTIONS (FIGMA NODE 12768:11338) ──
+// ── SOLUTIONS (FIGMA NODE 12768:11338 / 12907:14247, 14279, 14289, 14300) ──
 
 const figmaSolutions = [
   {
     id: "wastewater",
     number: "01",
     title: "Wastewater,\nRecovery & Reuse",
-    image: "/homeV2/solution-wastewater.png",
-    href: "/solutions/wastewater",
+    image: "/homeV2/solution-1.png",
+    href: "/portfolio",
   },
   {
     id: "water-treatment",
     number: "02",
     title: "Water Treatment\n& Process Water",
-    image: "/homeV2/solution-water-treatment.png",
-    href: "/solutions/water-treatment",
+    image: "/homeV2/solution-2.png",
+    href: "/portfolio",
+  },
+  {
+    id: "desalination",
+    number: "03",
+    title: "Desalination,\nDemineralisation & Ultrapure",
+    image: "/homeV2/solution-3.png",
+    href: "/portfolio",
+  },
+  {
+    id: "process-cooling",
+    number: "04",
+    title: "Process Cooling,\nSteam & Boiler Feed Systems",
+    image: "/homeV2/solution-4.png",
+    href: "/portfolio",
   },
 ]
 
@@ -843,8 +857,9 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* ── PRODUCT SECTION (FIGMA NODE 12767:11081) ── */}
-      <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+      {/* ── PRODUCT SECTION (FIGMA NODE 12767:11081 / FRAME 1000008542) ── */}
+      <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)] overflow-hidden">
+        {/* Header Content inside Page Container */}
         <div className={containerClass}>
           {/* Top row: Eyebrow */}
           <div className="mb-4">
@@ -952,50 +967,54 @@ export default function HomeV2() {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Product Carousel Row (Figma Frame 1000008542: 339x546 each, 4px gap) */}
-          <div
-            ref={productScrollRef}
-            className="flex gap-2 sm:gap-4 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pt-2"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {figmaProducts.map((prod) => (
-              <Link
-                key={prod.id}
-                href={prod.href}
-                className="group flex-shrink-0 w-[280px] sm:w-[339px] snap-start block"
-              >
-                <div className="flex flex-col">
-                  {/* Image container: 339x506 in Figma */}
-                  <div className="relative w-full h-[400px] sm:h-[506px] bg-[#FFFFFF] rounded-sm overflow-hidden flex items-center justify-center p-4">
-                    <Image
-                      src={prod.image}
-                      alt={prod.title}
-                      fill
-                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  {/* Label below image: Manrope 500/600 16px */}
-                  <h3
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontSize: "16px",
-                      lineHeight: "17.6px",
-                      fontWeight: 500,
-                    }}
-                    className="text-[#AEAEAE] group-hover:text-white transition-colors mt-[22px]"
-                  >
-                    {prod.title}
-                  </h3>
+        {/* Product Carousel Row (Figma Frame 1000008542: 339x546 each, starts with margin, bleeds outside screen, ends with margin) */}
+        <div
+          ref={productScrollRef}
+          className="w-full flex gap-3 sm:gap-4 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pt-2 pl-[6.1vw] md:pl-[max(7.5vw,calc((100vw-1440px)/2+108px))] pr-[6.1vw] md:pr-[max(7.5vw,calc((100vw-1440px)/2+108px))] scroll-pl-[6.1vw] md:scroll-pl-[max(7.5vw,calc((100vw-1440px)/2+108px))]"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {figmaProducts.map((prod) => (
+            <Link
+              key={prod.id}
+              href={prod.href}
+              className="group flex-shrink-0 w-[280px] sm:w-[339px] snap-start block"
+            >
+              <div className="flex flex-col">
+                {/* Image container: 339x506 in Figma */}
+                <div className="relative w-full h-[400px] sm:h-[506px] bg-[#0B141E] bg-[url('/homeV2/product-fallback-bg.png')] bg-cover bg-center rounded-sm overflow-hidden flex items-center justify-center p-6 border border-white/5">
+                  <Image
+                    src={prod.image}
+                    alt={prod.title}
+                    fill
+                    className="object-contain p-6 group-hover:scale-105 transition-transform duration-500 z-0"
+                  />
+                  {/* Dark overlay #000000B2 that transitions out on hover */}
+                  <div
+                    className="absolute inset-0 bg-[#000000B2] opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none z-10"
+                  />
                 </div>
-              </Link>
-            ))}
-          </div>
+                {/* Label below image: Manrope 500/600 16px */}
+                <h3
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontSize: "16px",
+                    lineHeight: "17.6px",
+                    fontWeight: 500,
+                  }}
+                  className="text-[#AEAEAE] group-hover:text-white transition-colors mt-[22px]"
+                >
+                  {prod.title}
+                </h3>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
       {/* ── SOLUTIONS SECTION (FIGMA NODE 12768:11338) ── */}
-      <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+      <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)] overflow-hidden">
         <div className={containerClass}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Left Column: Solution Manifesto & Navigation (x=-4738 to -4165, ~492px width) */}
@@ -1107,12 +1126,12 @@ export default function HomeV2() {
               </div>
             </div>
 
-            {/* Right Column: High-Impact Solution Cards (Group 8439: 428x690 each) */}
-            <div className="lg:col-span-7">
+            {/* Right Column: High-Impact Solution Cards (Group 8439: 428x690 each) - Starts at column, bleeds outside screen, ends with margin */}
+            <div className="lg:col-span-7 -mr-[6.1vw] md:-mr-[max(7.5vw,calc((100vw-1440px)/2+108px))]">
               <div
                 ref={solutionScrollRef}
                 onScroll={handleSolutionScroll}
-                className="flex gap-6 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory"
+                className="flex gap-6 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pr-[6.1vw] md:pr-[max(7.5vw,calc((100vw-1440px)/2+108px))] scroll-pr-[6.1vw] md:scroll-pr-[max(7.5vw,calc((100vw-1440px)/2+108px))]"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {figmaSolutions.map((sol) => (
@@ -1221,20 +1240,8 @@ export default function HomeV2() {
             </div>
           </div>
 
-          {/* Tablist Divider Line and Filter Bar */}
-          <div className="border-t border-white/20 pt-4 pb-6 flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <span className="text-white text-[13px] font-[Inter_Tight] font-medium border-b-2 border-white pb-1">
-                All
-              </span>
-              <span className="text-[#AEAEAE] text-[13px] font-[Inter_Tight] hover:text-white transition-colors cursor-pointer">
-                Filter By
-              </span>
-            </div>
-          </div>
-
-          {/* 7 Sectors Grid: 4 Columns x 2 Rows with 1px border-white/10 lines */}
-          <div className="border border-white/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {/* 7 Sectors Grid: 4 Columns x 2 Rows with internal divider lines only */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {/* Row 1 */}
             {figmaSectors.slice(0, 4).map((sec, idx) => (
               <div
@@ -1285,7 +1292,7 @@ export default function HomeV2() {
               </div>
             ))}
 
-            {/* Horizontal Line separating Row 1 and Row 2 across entire 4 columns */}
+            {/* Horizontal Line separating Row 1 and Row 2 across 4 columns */}
             <div className="hidden lg:block col-span-4 border-t border-white/10" />
 
             {/* Row 2 */}
@@ -1293,7 +1300,7 @@ export default function HomeV2() {
               <div
                 key={sec.id}
                 className={`p-6 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] hover:bg-white/[0.03] transition-colors ${
-                  idx < 3 ? "lg:border-r border-white/10" : ""
+                  idx < 2 ? "lg:border-r border-white/10" : ""
                 } ${idx % 2 === 0 ? "sm:border-r lg:border-r-0" : ""} border-b sm:border-b-0 border-white/10`}
               >
                 <div>
@@ -1327,23 +1334,6 @@ export default function HomeV2() {
                 </div>
               </div>
             ))}
-
-            {/* 8th cell: Subtle CTA cell in row 2, col 4 */}
-            <div className="p-6 sm:p-8 hidden lg:flex flex-col justify-between min-h-[200px] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
-              <Link href="/portfolio" className="group flex flex-col justify-between h-full">
-                <span className="text-[12px] font-[Inter_Tight] text-[#AEAEAE] tracking-wider uppercase">
-                  Tailored Engineering
-                </span>
-                <div className="flex items-center justify-between text-white group-hover:text-white/80 transition-colors">
-                  <span className="font-[Inter_Tight] text-[18px]">Explore All Sectors</span>
-                  <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:border-white group-hover:translate-x-1 transition-all">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -2048,224 +2038,133 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* ── THE COMPANY WE KEEP SECTION ── */}
-      <section
-        className="bg-black text-white px-[6.1vw] py-[16.53vw] md:px-[7.5vw] md:py-[123px] border-b border-[#FFFFFF4D]"
-      >
-        <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-stretch">
-          {/* Left Column */}
-          <div className="w-full lg:w-[48%] max-w-[680px] flex flex-col justify-between">
-            <div>
+      {/* ── THE TERRITORY AHEAD (FIGMA NODE 12863:13760) ── */}
+      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+        <div className={containerClass}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            {/* Left Column: Heading and View All CTA */}
+            <div className="lg:col-span-3">
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(32px, 3.82vw, 55px)",
+                  fontSize: "clamp(32px, 3.2vw, 44px)",
                   lineHeight: "105%",
-                  letterSpacing: "0%",
+                  fontWeight: 400,
                   color: "#FFFFFF",
                 }}
               >
-                The company<br />we keep
+                The Territory
+                <br />
+                Ahead
               </h2>
-              <div style={{ height: "clamp(12px, 1.11vw, 16px)" }} />
-              <p
+
+              <div className="mt-8">
+                <Link href="/perspectives" className="contents">
+                  <HoverButton theme="transparent-white">
+                    {(hovered) => (
+                      <>
+                        View All
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          className={hovered ? "translate-x-1 transition-transform" : "transition-transform"}
+                        >
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </>
+                    )}
+                  </HoverButton>
+                </Link>
+              </div>
+            </div>
+
+            {/* Middle Column: Number, Headline, Subhead, Read Time */}
+            <div className="lg:col-span-4 lg:border-l border-white/10 lg:pl-10">
+              <span
                 style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "140%",
-                  letterSpacing: "0%",
-                  color: "#AEAEAE",
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontSize: "16px",
+                  lineHeight: "100%",
+                  color: "rgba(255, 255, 255, 0.6)",
                 }}
+                className="block mb-6"
               >
-                Brands we serve. Alliances we value
-              </p>
+                01
+              </span>
 
-              {/* 307px below it */}
-              <div style={{ height: "clamp(60px, 16vw, 307px)" }} />
-
-              {/* Sectors we serve */}
               <h3
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "clamp(14px, 1.11vw, 16px)",
-                  lineHeight: "105%",
-                  letterSpacing: "0%",
+                  fontSize: "clamp(26px, 2.4vw, 34px)",
+                  lineHeight: "115%",
                   color: "#FFFFFF",
                 }}
+                className="font-normal mb-3"
               >
-                Sectors we serve
+                Disrupt/Change
+                <br />
+                <span className="font-semibold text-white">the status quo.</span>
               </h3>
 
-              {/* 50px below it */}
-              <div style={{ height: "clamp(24px, 3.47vw, 50px)" }} />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: "16px",
+                  lineHeight: "140%",
+                  color: "#AEAEAE",
+                }}
+                className="mb-8"
+              >
+                Bold action.
+              </p>
 
-              {/* Marquee Container with 120px edge gradients */}
-              <div className="relative w-full overflow-hidden">
-                {/* Left edge 120px gradient */}
-                <div
-                  className="absolute left-0 top-0 bottom-0 pointer-events-none z-10"
-                  style={{
-                    width: "clamp(40px, 8.33vw, 120px)",
-                    background: "linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0) 100%)",
-                  }}
-                />
-
-                {/* Right edge 120px gradient */}
-                <div
-                  className="absolute right-0 top-0 bottom-0 pointer-events-none z-10"
-                  style={{
-                    width: "clamp(40px, 8.33vw, 120px)",
-                    background: "linear-gradient(to left, #000000 0%, rgba(0, 0, 0, 0) 100%)",
-                  }}
-                />
-
-                {/* 1st Row: Right to Left */}
-                <div className="overflow-hidden w-full">
-                  <div className="animate-marquee-left flex w-max">
-                    {/* First copy */}
-                    <div className="flex shrink-0 items-center">
-                      {[...sectorsRow1, ...sectorsRow1, ...sectorsRow1, ...sectorsRow1].map((sector, idx) => (
-                        <div
-                          key={`r1-a-${idx}`}
-                          className="flex items-center shrink-0"
-                          style={{ gap: "25px", marginRight: "64px" }}
-                        >
-                          <img
-                            src={sector.icon}
-                            alt={sector.name}
-                            style={{ width: "32px", height: "32px", minWidth: "32px", objectFit: "contain" }}
-                          />
-                          <span
-                            style={{
-                              fontFamily: "'Inter Tight', sans-serif",
-                              fontWeight: 400,
-                              fontSize: "20px",
-                              lineHeight: "110%",
-                              letterSpacing: "0px",
-                              color: "#FFFFFF",
-                              whiteSpace: "nowrap",
-                            }}
-                          >
-                            {sector.name}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Second copy for seamless continuous loop */}
-                    <div className="flex shrink-0 items-center" aria-hidden="true">
-                      {[...sectorsRow1, ...sectorsRow1, ...sectorsRow1, ...sectorsRow1].map((sector, idx) => (
-                        <div
-                          key={`r1-b-${idx}`}
-                          className="flex items-center shrink-0"
-                          style={{ gap: "25px", marginRight: "64px" }}
-                        >
-                          <img
-                            src={sector.icon}
-                            alt={sector.name}
-                            style={{ width: "32px", height: "32px", minWidth: "32px", objectFit: "contain" }}
-                          />
-                          <span
-                            style={{
-                              fontFamily: "'Inter Tight', sans-serif",
-                              fontWeight: 400,
-                              fontSize: "20px",
-                              lineHeight: "110%",
-                              letterSpacing: "0px",
-                              color: "#FFFFFF",
-                              whiteSpace: "nowrap",
-                            }}
-                          >
-                            {sector.name}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* 32px gap between rows */}
-                <div style={{ height: "32px" }} />
-
-                {/* 2nd Row: Left to Right */}
-                <div className="overflow-hidden w-full">
-                  <div className="animate-marquee-right flex w-max">
-                    {/* First copy */}
-                    <div className="flex shrink-0 items-center">
-                      {[...sectorsRow2, ...sectorsRow2, ...sectorsRow2, ...sectorsRow2].map((sector, idx) => (
-                        <div
-                          key={`r2-a-${idx}`}
-                          className="flex items-center shrink-0"
-                          style={{ gap: "25px", marginRight: "64px" }}
-                        >
-                          <img
-                            src={sector.icon}
-                            alt={sector.name}
-                            style={{ width: "32px", height: "32px", minWidth: "32px", objectFit: "contain" }}
-                          />
-                          <span
-                            style={{
-                              fontFamily: "'Inter Tight', sans-serif",
-                              fontWeight: 400,
-                              fontSize: "20px",
-                              lineHeight: "110%",
-                              letterSpacing: "0px",
-                              color: "#FFFFFF",
-                              whiteSpace: "nowrap",
-                            }}
-                          >
-                            {sector.name}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Second copy for seamless continuous loop */}
-                    <div className="flex shrink-0 items-center" aria-hidden="true">
-                      {[...sectorsRow2, ...sectorsRow2, ...sectorsRow2, ...sectorsRow2].map((sector, idx) => (
-                        <div
-                          key={`r2-b-${idx}`}
-                          className="flex items-center shrink-0"
-                          style={{ gap: "25px", marginRight: "64px" }}
-                        >
-                          <img
-                            src={sector.icon}
-                            alt={sector.name}
-                            style={{ width: "32px", height: "32px", minWidth: "32px", objectFit: "contain" }}
-                          />
-                          <span
-                            style={{
-                              fontFamily: "'Inter Tight', sans-serif",
-                              fontWeight: 400,
-                              fontSize: "20px",
-                              lineHeight: "110%",
-                              letterSpacing: "0px",
-                              color: "#FFFFFF",
-                              whiteSpace: "nowrap",
-                            }}
-                          >
-                            {sector.name}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <span
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: "13px",
+                  color: "rgba(255, 255, 255, 0.4)",
+                }}
+              >
+                1 min read
+              </span>
             </div>
-          </div>
 
-          {/* Right Column - Map Visual */}
-          <div className="w-full lg:flex-1 flex justify-center lg:justify-end self-stretch px-[6.1vw] lg:px-0 lg:pr-[7.5vw] py-10 lg:py-0">
-            <div className="relative w-full lg:w-auto h-auto lg:h-full flex items-center justify-center lg:justify-end">
-              <img
-                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f25e4025-739e-475f-13ae-f82e5e153e00/public"
-                alt="The company we keep - Brands we serve map"
-                className="w-full max-w-[649px] h-auto lg:w-auto lg:h-full lg:max-w-full object-contain object-center lg:object-right py-[14px]"
-              />
+            {/* Right Column: In-depth Manifesto Copy */}
+            <div className="lg:col-span-5 space-y-6 lg:border-l border-white/10 lg:pl-10">
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: "14px",
+                  lineHeight: "160%",
+                  color: "#AEAEAE",
+                }}
+              >
+                Water isn’t just a commodity to consume—it is a closed, sacred loop that demands radical reinvention. At WAE, challenging the status quo isn’t an option; it is our founding doctrine.
+              </p>
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: "14px",
+                  lineHeight: "160%",
+                  color: "#AEAEAE",
+                }}
+              >
+                By replacing single-use plastic supply chains with point-of-use engineering, in-situ purification, and circular recovery systems, we engineer infrastructure that measurably lowers carbon intensity and resource extraction.
+              </p>
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: "14px",
+                  lineHeight: "160%",
+                  color: "#AEAEAE",
+                }}
+              >
+                Every breakthrough we deploy bridges the gap between commercial viability and planetary balance, proving that enterprise growth and ecological stewardship can advance in perfect synchrony.
+              </p>
             </div>
           </div>
         </div>
