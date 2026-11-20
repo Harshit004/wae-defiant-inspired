@@ -5845,5 +5845,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/watermatic/moses",
     "type": "product",
     "createdAt": "2026-11-20T08:39:56.581Z"
+  },
+  "e7b555b9-721b-463e-883e-7f980bc0e607": {
+    "id": "e7b555b9-721b-463e-883e-7f980bc0e607",
+    "fullName": "Mohammed anood",
+    "companyName": "Midad Drinking water llp",
+    "email": "mvanoodh@gmail.com",
+    "phone": "9745486941",
+    "city": "Kozhikode",
+    "pageLink": "https://www.waecorp.com/portfolio/watermatic/touch?gad_source=1&gad_campaignid=24244453821&gclid=Cj0KCQiA_P_XBhDvARIsALHjSUXMZ1ljYaf-Qach7RGzvOQ1jIBmXm9jJiOzP1qvE5sufURMN8tt5ZIaAt-5EALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-20T09:11:22.117Z"
   }
 };
