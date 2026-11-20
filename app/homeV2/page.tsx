@@ -2107,18 +2107,20 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* ── THE TERRITORY AHEAD (FIGMA NODE 12863:13760) ── */}
+      {/* ── THE TERRITORY AHEAD ── */}
       <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
         <div className={containerClass}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Left Column: Heading and View All CTA */}
-            <div className="lg:col-span-3">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
+            {/* Left Column: Heading and JOIN US CTA */}
+            <div className="lg:col-span-3 flex flex-col justify-start items-start">
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "clamp(32px, 3.2vw, 44px)",
-                  lineHeight: "105%",
                   fontWeight: 400,
+                  fontSize: "40px",
+                  lineHeight: "110%",
+                  letterSpacing: "0px",
+                  verticalAlign: "middle",
                   color: "#FFFFFF",
                 }}
               >
@@ -2128,11 +2130,11 @@ export default function HomeV2() {
               </h2>
 
               <div className="mt-8">
-                <Link href="/perspectives" className="contents">
+                <Link href="/join-wae" className="contents">
                   <HoverButton theme="transparent-white">
                     {(hovered) => (
                       <>
-                        View All
+                        <span className="uppercase tracking-wider">JOIN US</span>
                         <div className="relative inline-block w-4 h-4 ml-2">
                           <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
@@ -2149,88 +2151,125 @@ export default function HomeV2() {
               </div>
             </div>
 
-            {/* Middle Column: Number, Headline, Subhead, Read Time */}
-            <div className="lg:col-span-4 lg:border-l border-white/10 lg:pl-10">
-              <span
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "100%",
-                  color: "rgba(255, 255, 255, 0.6)",
-                }}
-                className="block mb-6"
-              >
-                01
-              </span>
+            {/* Middle Column: Do / Disrupt/Change the status quo. Or become it. and --Mark Shayler */}
+            <div className="lg:col-span-4 flex flex-col justify-between">
+              <div>
+                <div
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "26px",
+                    lineHeight: "120%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    color: "#FFFFFF",
+                  }}
+                  className="mb-1"
+                >
+                  Do/
+                </div>
 
-              <h3
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "clamp(26px, 2.4vw, 34px)",
-                  lineHeight: "115%",
-                  color: "#FFFFFF",
-                }}
-                className="font-normal mb-3"
-              >
-                Disrupt/Change
-                <br />
-                <span className="font-semibold text-white">the status quo.</span>
-              </h3>
+                <div
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "clamp(30px, 2.78vw, 44px)",
+                    lineHeight: "105%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    color: "#6E6E6E",
+                  }}
+                >
+                  Disrupt/Change
+                </div>
 
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "140%",
-                  color: "#AEAEAE",
-                }}
-                className="mb-8"
-              >
-                Bold action.
-              </p>
+                <div
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "clamp(30px, 2.78vw, 44px)",
+                    lineHeight: "105%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    color: "#FFFFFF",
+                  }}
+                  className="mb-2"
+                >
+                  the status quo.
+                </div>
 
-              <span
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontSize: "13px",
-                  color: "rgba(255, 255, 255, 0.4)",
-                }}
-              >
-                1 min read
-              </span>
+                <div
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "26px",
+                    lineHeight: "120%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    color: "#FFFFFF",
+                  }}
+                >
+                  Or become it.
+                </div>
+              </div>
+
+              <div className="mt-[68px]">
+                <p
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "120%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    color: "#AEAEAE",
+                  }}
+                >
+                  - Mark Shayler
+                </p>
+              </div>
             </div>
 
-            {/* Right Column: In-depth Manifesto Copy */}
-            <div className="lg:col-span-5 space-y-6 lg:border-l border-white/10 lg:pl-10">
+            {/* Right Column: 3 Paragraphs of Manifest */}
+            <div className="lg:col-span-5 flex flex-col justify-between gap-6">
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
                   fontSize: "14px",
-                  lineHeight: "160%",
+                  lineHeight: "150%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
                   color: "#AEAEAE",
                 }}
               >
-                Water isn’t just a commodity to consume—it is a closed, sacred loop that demands radical reinvention. At WAE, challenging the status quo isn’t an option; it is our founding doctrine.
+                Greed has an excellent publicist. It calls depletion “growth,” disposability “convenience,” and someone else’s environmental bill “profit.”
               </p>
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
                   fontSize: "14px",
-                  lineHeight: "160%",
+                  lineHeight: "150%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
                   color: "#AEAEAE",
                 }}
               >
-                By replacing single-use plastic supply chains with point-of-use engineering, in-situ purification, and circular recovery systems, we engineer infrastructure that measurably lowers carbon intensity and resource extraction.
+                At WAE, we challenge the logic that legitimises the commodification of nature and engineer a better way. We use science, technology and independent thinking to make wasteful conventions obsolete, beginning with how water is treated, consumed and reused.
               </p>
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
                   fontSize: "14px",
-                  lineHeight: "160%",
+                  lineHeight: "150%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
                   color: "#AEAEAE",
                 }}
               >
-                Every breakthrough we deploy bridges the gap between commercial viability and planetary balance, proving that enterprise growth and ecological stewardship can advance in perfect synchrony.
+                We seek minds that challenge accepted answers and hands capable of building better ones. If your ambition extends beyond climbing the established order to changing how it works, chose a place where your potential has as much room as your ambition .
               </p>
             </div>
           </div>
