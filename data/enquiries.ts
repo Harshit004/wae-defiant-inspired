@@ -5811,5 +5811,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934535&gad_source=5&gad_campaignid=23735506714&gclid=Cj0KCQiA2frXBhC_ARIsAPTFcdMkv6Uzwu0Q9CKGFPjurnPShoAkLuINg0urG4s639s8mcSXo4lXFNUaAh2hEALw_wcB",
     "type": "product",
     "createdAt": "2026-11-20T05:57:37.182Z"
+  },
+  "24c1f340-ac57-4665-8cb5-934d968a4a89": {
+    "id": "24c1f340-ac57-4665-8cb5-934d968a4a89",
+    "fullName": "Aditya Raut",
+    "companyName": "NISM",
+    "email": "aditya.raut@nism.ac.in",
+    "phone": "7875293373",
+    "city": "Panvel",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/alfa-ct",
+    "type": "product",
+    "createdAt": "2026-11-20T06:41:58.852Z"
   }
 };
