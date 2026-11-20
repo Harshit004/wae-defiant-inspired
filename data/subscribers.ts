@@ -888,5 +888,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-20",
     "time": "15:54:50",
     "pageLink": "/careers"
+  },
+  {
+    "id": "3b25b0f8-826f-48c8-8e06-1ef25f724ac8",
+    "email": "devendergoud503@gmail.com",
+    "date": "2026-11-21",
+    "time": "02:56:04",
+    "pageLink": "/portfolio/zvr/nt01"
   }
 ];
