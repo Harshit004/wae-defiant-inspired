@@ -5789,5 +5789,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-19T09:32:47.103Z"
+  },
+  "f3971621-d126-46d2-85b3-70493cf08f14": {
+    "id": "f3971621-d126-46d2-85b3-70493cf08f14",
+    "fullName": "Laxman Vatane",
+    "companyName": "Laxmanvatannn",
+    "email": "laxmanvatane070@gmail.com",
+    "phone": "9552153634",
+    "city": "BFQv7934A",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934535&gad_source=5&gad_campaignid=23735506714&gclid=Cj0KCQiA2frXBhC_ARIsAPTFcdMkv6Uzwu0Q9CKGFPjurnPShoAkLuINg0urG4s639s8mcSXo4lXFNUaAh2hEALw_wcB",
+    "type": "product",
+    "createdAt": "2026-11-20T05:57:27.839Z"
   }
 };
