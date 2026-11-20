@@ -5822,5 +5822,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/alfa-ct",
     "type": "product",
     "createdAt": "2026-11-20T06:41:58.852Z"
+  },
+  "9c6e7cb6-f129-4b09-a010-5f48e2745010": {
+    "id": "9c6e7cb6-f129-4b09-a010-5f48e2745010",
+    "fullName": "Deepak Gotwal",
+    "companyName": "Deepak",
+    "email": "deepakgotwal91@gmail.com",
+    "phone": "7424918286",
+    "city": "Kota",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "30",
+    "type": "contact-us",
+    "createdAt": "2026-11-20T08:02:30.551Z"
   }
 };
