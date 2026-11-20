@@ -238,44 +238,51 @@ const pillars = [
 const figmaProducts = [
   {
     id: "trublu",
-    title: "Dispensing Systems - Trublu ",
-    image: "/homeV2/product-trublu.png",
+    category: "Dispensing Systems",
+    name: "Trublu",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
     href: "/portfolio/trublu",
   },
   {
     id: "watermatic",
-    title: "Drinking Water Faucets - WATERMATIC",
-    image: "/homeV2/product-watermatic.png",
+    category: "Drinking Water Faucets",
+    name: "WATERMATIC",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
     href: "/portfolio/trublu/alfa-100",
   },
   {
     id: "quantm",
-    title: "Glass Bottling Plants - Quantm",
-    image: "/homeV2/product-quantm.png",
+    category: "Glass Bottling Plants",
+    name: "Quantm",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
     href: "/portfolio/glass-bottling",
   },
   {
     id: "aquasmith",
-    title: "Air to Water Generators - Aquasmith",
-    image: "/homeV2/product-aquasmith.png",
+    category: "Air to Water Generators",
+    name: "Aquasmith",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
     href: "/portfolio/aquasmith",
   },
   {
     id: "bluwae",
-    title: "Hydration Systems - Bluwae",
-    image: "/homeV2/product-bluwae.png",
+    category: "Hydration Systems",
+    name: "Bluwae",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
     href: "/portfolio/bluwae",
   },
   {
     id: "zvr",
-    title: "Public Utility Systems - ZVR",
-    image: "/homeV2/product-zvr.png",
+    category: "Public Utility Systems",
+    name: "ZVR",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
     href: "/portfolio/zvr",
   },
   {
     id: "hydroscience",
-    title: "Filters & Membrane - Hydroscience",
-    image: "/homeV2/product-hydroscience.png",
+    category: "Filters & Membrane",
+    name: "Hydroscience",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
     href: "/portfolio/hydroscience",
   },
 ]
@@ -301,14 +308,14 @@ const figmaSolutions = [
     id: "desalination",
     number: "03",
     title: "Desalination,\nDemineralisation & Ultrapure",
-    image: "/homeV2/solution-3.png",
+    image: "/homeV2/solution-1.png",
     href: "/portfolio",
   },
   {
     id: "process-cooling",
     number: "04",
     title: "Process Cooling,\nSteam & Boiler Feed Systems",
-    image: "/homeV2/solution-4.png",
+    image: "/homeV2/solution-2.png",
     href: "/portfolio",
   },
 ]
@@ -861,30 +868,34 @@ export default function HomeV2() {
       <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)] overflow-hidden">
         {/* Header Content inside Page Container */}
         <div className={containerClass}>
-          {/* Top row: Eyebrow */}
-          <div className="mb-4">
-            <span
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "24px",
-                lineHeight: "115%",
-                color: "#FFFFFF",
-              }}
-              className="font-normal block"
-            >
-              Product
-            </span>
-          </div>
-
-          {/* Heading and Description Row */}
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-10">
+          {/* Top row: Left & Right Sections */}
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16 mb-12">
+            {/* Left Section */}
             <div className="max-w-[700px]">
+              <h3
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "24px",
+                  lineHeight: "115%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#FFFFFF",
+                }}
+              >
+                Product
+              </h3>
+
+              <div style={{ height: "32px" }} />
+
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontSize: "clamp(28px, 2.78vw, 40px)",
-                  lineHeight: "105%",
-                  fontWeight: 500,
+                  lineHeight: "110%",
+                  fontWeight: 400,
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
                   color: "#FFFFFF",
                 }}
               >
@@ -893,23 +904,23 @@ export default function HomeV2() {
                 Engineered at the Point of Use.
               </h2>
 
-              <div className="mt-6">
+              <div style={{ height: "58px" }} />
+
+              <div>
                 <Link href="/portfolio" className="contents">
                   <HoverButton theme="transparent-white">
                     {(hovered) => (
                       <>
                         Know More
-                        <svg
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          className={hovered ? "translate-x-1 transition-transform" : "transition-transform"}
-                        >
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
+                        <div className="relative inline-block w-4 h-4 ml-2">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                        </div>
                       </>
                     )}
                   </HoverButton>
@@ -917,99 +928,161 @@ export default function HomeV2() {
               </div>
             </div>
 
+            {/* Right Section */}
             <div className="max-w-[480px]">
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
                   fontSize: "14px",
-                  lineHeight: "19px",
+                  lineHeight: "140%",
+                  letterSpacing: "0px",
+                  verticalAlign: "middle",
                   color: "#AEAEAE",
                 }}
               >
                 WAE’s portfolio brings together in-situ purification, water conditioning, thermal management, carbonation and hygienic dispensing to deliver application-specific potable water—mineralised or alkaline – Still or sparkling—in conformity with BIS IS 10500 standards.
               </p>
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontSize: "14px",
-                  lineHeight: "19px",
-                  color: "#AEAEAE",
-                }}
-                className="mt-4"
-              >
-                <Link href="/portfolio" className="underline underline-offset-4 hover:text-white transition-colors">
-                  Explore the Product Architecture......Read more
-                </Link>
-              </p>
 
-              {/* Prev / Next circular controls */}
-              <div className="flex items-center gap-3 mt-6">
-                <button
-                  type="button"
-                  onClick={() => handleProductScrollNav("left")}
-                  className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
-                  aria-label="Previous products"
+              <div className="mt-4 flex flex-wrap items-center gap-1.5">
+                <span
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                    letterSpacing: "0px",
+                    verticalAlign: "middle",
+                    color: "#AEAEAE",
+                  }}
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleProductScrollNav("right")}
-                  className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
-                  aria-label="Next products"
+                  Explore the Product Architecture......
+                </span>
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center gap-1 hover:underline underline-offset-4 transition-colors"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                    letterSpacing: "0px",
+                    verticalAlign: "middle",
+                    color: "#FFFFFF",
+                  }}
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+                  <span>Read more</span>
+                  <div className="relative inline-block w-3.5 h-3.5">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                      alt="icon"
+                      width={14}
+                      height={14}
+                      className="brightness-0 invert"
+                    />
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Product Carousel Row (Figma Frame 1000008542: 339x546 each, starts with margin, bleeds outside screen, ends with margin) */}
+        {/* Product Carousel Row (339x506 clamped, overlay #000000B2) */}
         <div
           ref={productScrollRef}
-          className="w-full flex gap-3 sm:gap-4 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pt-2 pl-[6.1vw] md:pl-[max(7.5vw,calc((100vw-1440px)/2+108px))] pr-[6.1vw] md:pr-[max(7.5vw,calc((100vw-1440px)/2+108px))] scroll-pl-[6.1vw] md:scroll-pl-[max(7.5vw,calc((100vw-1440px)/2+108px))]"
+          className="w-full flex gap-4 sm:gap-6 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pt-2 pl-[6.1vw] md:pl-[max(7.5vw,calc((100vw-1440px)/2+108px))] pr-[6.1vw] md:pr-[max(7.5vw,calc((100vw-1440px)/2+108px))] scroll-pl-[6.1vw] md:scroll-pl-[max(7.5vw,calc((100vw-1440px)/2+108px))]"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {figmaProducts.map((prod) => (
             <Link
               key={prod.id}
               href={prod.href}
-              className="group flex-shrink-0 w-[280px] sm:w-[339px] snap-start block"
+              className="group flex-shrink-0 w-[clamp(260px,23.54vw,339px)] snap-start block"
             >
               <div className="flex flex-col">
-                {/* Image container: 339x506 in Figma */}
-                <div className="relative w-full h-[400px] sm:h-[506px] bg-[#0B141E] bg-[url('/homeV2/product-fallback-bg.png')] bg-cover bg-center rounded-sm overflow-hidden flex items-center justify-center p-6 border border-white/5">
+                {/* Image container: 339x506 clamped with #000000B2 overlay */}
+                <div className="relative w-[clamp(260px,23.54vw,339px)] h-[clamp(388px,35.14vw,506px)] bg-[#0B141E] rounded-sm overflow-hidden flex items-center justify-center border border-white/5">
                   <Image
                     src={prod.image}
-                    alt={prod.title}
+                    alt={`${prod.category} - ${prod.name}`}
                     fill
-                    className="object-contain p-6 group-hover:scale-105 transition-transform duration-500 z-0"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 z-0"
                   />
-                  {/* Dark overlay #000000B2 that transitions out on hover */}
+                  {/* Overlay #000000B2 */}
                   <div
-                    className="absolute inset-0 bg-[#000000B2] opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none z-10"
+                    className="absolute inset-0 bg-[#000000B2] pointer-events-none z-10 transition-opacity duration-300 group-hover:opacity-80"
                   />
                 </div>
-                {/* Label below image: Manrope 500/600 16px */}
-                <h3
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontSize: "16px",
-                    lineHeight: "17.6px",
-                    fontWeight: 500,
-                  }}
-                  className="text-[#AEAEAE] group-hover:text-white transition-colors mt-[22px]"
-                >
-                  {prod.title}
-                </h3>
+
+                {/* Product Label */}
+                <div className="mt-[22px]">
+                  <h3
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontSize: "16px",
+                      lineHeight: "110%",
+                      letterSpacing: "0px",
+                      verticalAlign: "middle",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 500,
+                        color: "#AEAEAE",
+                        fontSize: "16px",
+                        lineHeight: "110%",
+                        letterSpacing: "0px",
+                        verticalAlign: "middle",
+                      }}
+                    >
+                      {prod.category} -&nbsp;
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 600,
+                        color: "#FFFFFF",
+                        fontSize: "16px",
+                        lineHeight: "110%",
+                        letterSpacing: "0px",
+                        verticalAlign: "middle",
+                      }}
+                      className="group-hover:underline underline-offset-4"
+                    >
+                      {prod.name}
+                    </span>
+                  </h3>
+                </div>
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* Navigation Buttons: 50px below the carousel */}
+        <div className={containerClass}>
+          <div className="flex items-center gap-3 mt-[50px]">
+            <button
+              type="button"
+              onClick={() => handleProductScrollNav("left")}
+              className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+              aria-label="Previous products"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={() => handleProductScrollNav("right")}
+              className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+              aria-label="Next products"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -1056,17 +1129,15 @@ export default function HomeV2() {
                       {(hovered) => (
                         <>
                           Know More
-                          <svg
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            className={hovered ? "translate-x-1 transition-transform" : "transition-transform"}
-                          >
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                          </svg>
+                          <div className="relative inline-block w-4 h-4 ml-2">
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                              alt="icon"
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                            />
+                          </div>
                         </>
                       )}
                     </HoverButton>
@@ -1222,17 +1293,15 @@ export default function HomeV2() {
                   {(hovered) => (
                     <>
                       Know More
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        className={hovered ? "translate-x-1 transition-transform" : "transition-transform"}
-                      >
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
+                      <div className="relative inline-block w-4 h-4 ml-2">
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                          alt="icon"
+                          width={16}
+                          height={16}
+                          className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                        />
+                      </div>
                     </>
                   )}
                 </HoverButton>
@@ -2064,17 +2133,15 @@ export default function HomeV2() {
                     {(hovered) => (
                       <>
                         View All
-                        <svg
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          className={hovered ? "translate-x-1 transition-transform" : "transition-transform"}
-                        >
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
+                        <div className="relative inline-block w-4 h-4 ml-2">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                        </div>
                       </>
                     )}
                   </HoverButton>
