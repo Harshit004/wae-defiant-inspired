@@ -5867,5 +5867,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIpIHU85-WmAMVT6ZjBh26VDznEAEYASAAEgJItfD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-20T09:39:15.166Z"
+  },
+  "63b4dc95-37c8-42df-a25b-4f3eda7f79ea": {
+    "id": "63b4dc95-37c8-42df-a25b-4f3eda7f79ea",
+    "fullName": "Jaspinder kochhar",
+    "companyName": "enframe constructions",
+    "email": "info@enframeconstructions.com",
+    "phone": "9735003555",
+    "city": "New Delhi",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-20T13:52:09.182Z"
   }
 };
