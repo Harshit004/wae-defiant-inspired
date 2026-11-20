@@ -5856,5 +5856,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/watermatic/touch?gad_source=1&gad_campaignid=24244453821&gclid=Cj0KCQiA_P_XBhDvARIsALHjSUXMZ1ljYaf-Qach7RGzvOQ1jIBmXm9jJiOzP1qvE5sufURMN8tt5ZIaAt-5EALw_wcB",
     "type": "product",
     "createdAt": "2026-11-20T09:11:22.117Z"
+  },
+  "97edb1b8-dfa8-48c2-86eb-14c9dad47638": {
+    "id": "97edb1b8-dfa8-48c2-86eb-14c9dad47638",
+    "fullName": "ALOK",
+    "companyName": "ALOK",
+    "email": "alok79896@gmail.com",
+    "phone": "9125931615",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIpIHU85-WmAMVT6ZjBh26VDznEAEYASAAEgJItfD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-20T09:39:15.166Z"
   }
 };
