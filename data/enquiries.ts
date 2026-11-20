@@ -5834,5 +5834,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "30",
     "type": "contact-us",
     "createdAt": "2026-11-20T08:02:30.551Z"
+  },
+  "aaef770e-3151-4023-bf26-cccbe06e325c": {
+    "id": "aaef770e-3151-4023-bf26-cccbe06e325c",
+    "fullName": "Design - TAD",
+    "companyName": "TAD",
+    "email": "design@tripleadesign.in",
+    "phone": "9100483957",
+    "city": "banglore",
+    "pageLink": "https://www.waecorp.com/portfolio/watermatic/moses",
+    "type": "product",
+    "createdAt": "2026-11-20T08:39:56.581Z"
   }
 };
