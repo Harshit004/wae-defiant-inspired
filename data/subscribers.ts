@@ -874,5 +874,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-19",
     "time": "13:59:55",
     "pageLink": "/contact-us"
+  },
+  {
+    "id": "741aae0c-7bc7-4e4c-bcad-c6a33b548847",
+    "email": "gkbhardwaj2025@gmail.com",
+    "date": "2026-11-20",
+    "time": "12:03:05",
+    "pageLink": "/careers"
   }
 ];
