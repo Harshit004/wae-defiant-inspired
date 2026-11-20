@@ -34,10 +34,21 @@ interface HeroSlide {
   headline: string
   subhead?: string
   bodyCopy?: string
+  highlight?: string
   tagline?: string
   badge?: string
   bgImage: string
   isRipple?: boolean
+  legend?: { label: string; color: string }[]
+  footnote?: {
+    lines: string[]
+    hashtag?: string
+  }
+  definition?: {
+    word: string
+    phonetic: string
+    meaning: string
+  }
 }
 
 const HERO_SLIDES: HeroSlide[] = [
@@ -50,28 +61,38 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: 2,
-    headline: "Carbon neutral water",
-    subhead: "Water is our planet's life support system, and carbon emissions are a concern.",
-    bodyCopy: "In a world facing climate change, WAE leads by commitment.",
-    tagline: "From water intake to water reuse.",
-    badge: "Circular Hydrology",
-    bgImage: "/hero/hero-slide-2.png",
+    headline: "Blugrids",
+    subhead: "One intelligent Platform -\nInfinite water Intelligence",
+    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a081b76b-c5b4-4e14-32df-7f0c314d3b00/public",
   },
   {
     id: 3,
     headline: "1% for water",
-    subhead: "1% of Net Sales. 100% of Commitment.",
-    bodyCopy: "For water resilience, restoration, and access for all.",
-    badge: "Global Commitment",
-    bgImage: "/hero/hero-slide-3.png",
+    subhead: "1% of Net Sales\n100% of Our Commitment",
+    bodyCopy: "For water resilience, restoration\nand access for all",
+    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4b8d8360-aee7-4082-c88d-d0ad416f2e00/public",
+    legend: [
+      { label: "Secure", color: "#4A90E2" },
+      { label: "Exhausted", color: "#8E8E93" },
+      { label: "Unreachable", color: "#FFFFFF" },
+    ],
+    footnote: {
+      lines: ["Not charity.", "Not CSR", "Responsibility"],
+      hashtag: "#GiveBackToWater",
+    },
   },
   {
     id: 4,
-    headline: "Blugrids",
-    subhead: "One Intelligent Platform - Infinite Water Intelligence",
-    bodyCopy: "Next-generation IoT hydration monitoring, real-time purity tracking, and proactive telemetry.",
-    badge: "IoT Telemetry",
-    bgImage: "/hero/hero-slide-4.png",
+    headline: "Carbon\nneutral water",
+    subhead: "Nature made H₂O with three atoms.\nHuman greed added a carbon.",
+    highlight: "Inspired by phytoplankton -\nWAE intend to remove it.",
+    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9b376b75-199f-48d2-42ff-72b27f7ac900/public",
+    definition: {
+      word: "Phytoplankton",
+      phonetic: "/ˌfaɪ.təʊˈplæŋk.tən/ · noun",
+      meaning:
+        "Microscopic, organisms principal agents of the global carbon cycle, responsible for approximately 70% of Earth's oxygen while less than 1% of its photosynthetic biomass.",
+    },
   },
 ]
 
@@ -642,14 +663,14 @@ export default function HomeV2() {
                   alt={activeSlideData.headline}
                   fill
                   priority
-                  className="object-cover object-center md:object-right opacity-85"
+                  className="object-cover object-center md:object-right opacity-95"
                 />
                 {/* Dark Vignette Overlay */}
                 <div
                   className="absolute inset-0 pointer-events-none"
                   style={{
                     background:
-                      "linear-gradient(to right, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.7) 45%, rgba(13,13,13,0.3) 100%)",
+                      "linear-gradient(to right, rgba(13,13,13,0.7) 0%, rgba(13,13,13,0.2) 40%, transparent 80%)",
                   }}
                 />
               </div>
@@ -664,6 +685,21 @@ export default function HomeV2() {
             background: "linear-gradient(to bottom, rgba(10,10,10,0.85) 0%, transparent 100%)",
           }}
         />
+
+        {/* Slide-specific Legend (e.g. Slide 3 Map Legend) */}
+        {activeSlideData.legend && (
+          <div className="hidden md:flex flex-col items-end gap-1.5 absolute top-[130px] right-[6.1vw] md:right-[7.5vw] z-[4] font-[Manrope] text-[11px] text-[#AEAEAE]">
+            {activeSlideData.legend.map((item, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <span>{item.label}</span>
+                <span
+                  className="w-2.5 h-2.5 rounded-full inline-block"
+                  style={{ backgroundColor: item.color }}
+                />
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Slide Content Layer */}
         <div className="relative z-[3] flex-1 flex flex-col justify-center pt-[100px] md:pt-[120px] pb-[80px]">
@@ -689,12 +725,12 @@ export default function HomeV2() {
                 <h1
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "clamp(32px, 5.2vw, 76px)",
+                    fontSize: "clamp(34px, 5.2vw, 76px)",
                     lineHeight: "105%",
                     fontWeight: 500,
                     letterSpacing: "-0.02em",
                   }}
-                  className="text-white mb-4"
+                  className="text-white mb-4 whitespace-pre-line"
                 >
                   {activeSlideData.headline}
                 </h1>
@@ -706,24 +742,39 @@ export default function HomeV2() {
                       fontSize: "clamp(16px, 1.8vw, 24px)",
                       lineHeight: "130%",
                       fontWeight: 400,
-                      color: "#E0E0E0",
+                      color: activeSlideData.id === 4 ? "#AEAEAE" : "#E0E0E0",
                     }}
-                    className="mb-4"
+                    className="mb-4 whitespace-pre-line"
                   >
                     {activeSlideData.subhead}
+                  </p>
+                )}
+
+                {activeSlideData.highlight && (
+                  <p
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontSize: "clamp(18px, 1.9vw, 26px)",
+                      lineHeight: "125%",
+                      fontWeight: 600,
+                      color: "#FFFFFF",
+                    }}
+                    className="mb-4 whitespace-pre-line"
+                  >
+                    {activeSlideData.highlight}
                   </p>
                 )}
 
                 {activeSlideData.bodyCopy && (
                   <p
                     style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontSize: "clamp(13px, 1.05vw, 16px)",
-                      lineHeight: "150%",
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontSize: "clamp(15px, 1.35vw, 20px)",
+                      lineHeight: "140%",
                       color: "#AEAEAE",
                       maxWidth: "580px",
                     }}
-                    className="mb-6"
+                    className="mb-6 whitespace-pre-line"
                   >
                     {activeSlideData.bodyCopy}
                   </p>
@@ -739,10 +790,59 @@ export default function HomeV2() {
           </div>
         </div>
 
-        {/* Bottom Slide Indicators Centered Horizontally (No Arrow Navigation) */}
+        {/* Bottom Slide Indicators & Footnotes */}
         <div className="relative z-[3] pb-6 md:pb-8 w-full">
-          <div className={`${containerClass} flex justify-center items-center`}>
-            <div className="flex items-center gap-2">
+          <div className={`${containerClass} relative flex items-end justify-between min-h-[50px]`}>
+            {/* Left Footnote / Definition */}
+            <div className="max-w-[340px] md:max-w-[460px]">
+              <AnimatePresence mode="wait">
+                {activeSlideData.footnote && (
+                  <motion.div
+                    key={`fn-${activeSlideData.id}`}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.3 }}
+                    className="font-[Manrope]"
+                  >
+                    <div className="text-[12px] md:text-[13px] text-[#AEAEAE] leading-[135%]">
+                      {activeSlideData.footnote.lines.map((l, i) => (
+                        <p key={i}>{l}</p>
+                      ))}
+                    </div>
+                    {activeSlideData.footnote.hashtag && (
+                      <p className="text-[12px] md:text-[13px] font-bold text-white mt-1.5">
+                        {activeSlideData.footnote.hashtag}
+                      </p>
+                    )}
+                  </motion.div>
+                )}
+
+                {activeSlideData.definition && (
+                  <motion.div
+                    key={`def-${activeSlideData.id}`}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.3 }}
+                    className="font-[Manrope]"
+                  >
+                    <p className="text-[13px] md:text-[14px] font-bold text-white">
+                      {activeSlideData.definition.word}
+                    </p>
+                    <p className="text-[11px] md:text-[12px] text-[#AEAEAE] mb-0.5">
+                      {activeSlideData.definition.phonetic}
+                    </p>
+                    <p className="text-[11px] md:text-[12px] text-[#AEAEAE] leading-[135%]">
+                      {activeSlideData.definition.meaning}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Bottom Slide Indicators Centered Horizontally */}
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 flex items-center gap-2">
               {HERO_SLIDES.map((slide, idx) => (
                 <button
                   key={slide.id}
@@ -755,6 +855,9 @@ export default function HomeV2() {
                 />
               ))}
             </div>
+
+            {/* Right Spacer for balance / WhatsApp icon */}
+            <div className="w-[40px] md:w-[60px] pointer-events-none" />
           </div>
         </div>
       </section>
