@@ -5912,5 +5912,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hi",
     "type": "contact-us",
     "createdAt": "2026-11-21T12:57:59.498Z"
+  },
+  "931adafa-9e32-4b46-8910-8f3c880166b1": {
+    "id": "931adafa-9e32-4b46-8910-8f3c880166b1",
+    "fullName": "Lamsieh Singson",
+    "companyName": "IPM",
+    "email": "singson1968@gmail.com",
+    "phone": "8798301784",
+    "city": "Silchar",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAn4XYBhA-EiwA8176FbsAezwcwVUg_0qtAbs1vYjE8JvtZ_QdfsZiBODMJeQi-Lc62t_zNhoCIgYQAvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-21T14:10:31.241Z"
   }
 };
