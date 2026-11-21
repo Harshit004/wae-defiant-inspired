@@ -5889,5 +5889,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934523&gad_source=5&gad_campaignid=23735506714&gclid=EAIaIQobChMIgsa37-qXmAMVe-iEAB3z5wpLEAEYASAAEgLkg_D_BwE",
     "type": "product",
     "createdAt": "2026-11-21T00:49:36.429Z"
+  },
+  "5f2d6702-79f6-4b5a-a1c7-f9fba8351a74": {
+    "id": "5f2d6702-79f6-4b5a-a1c7-f9fba8351a74",
+    "fullName": "N K mishra “Neelmani” Mishra",
+    "companyName": "L  N CHEMICAL INDUSTRIES",
+    "email": "nkm@lnchem.in",
+    "phone": "9322854983",
+    "city": "Navi Mumbai",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-21T06:25:26.760Z"
   }
 };
