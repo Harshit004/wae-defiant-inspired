@@ -5900,5 +5900,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-21T06:25:26.760Z"
+  },
+  "1f2b0e35-e980-4111-9d1e-a3648f8f4459": {
+    "id": "1f2b0e35-e980-4111-9d1e-a3648f8f4459",
+    "fullName": "Nani",
+    "companyName": "Nani",
+    "email": "inapakurthiuma@gmail.com",
+    "phone": "9030604568",
+    "city": "Guntur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAn4XYBhA-EiwA8176FVaNm-t20XqQaxtYrSvn7I00s7_mL3A5Md83aFNS-fNzrIu2JRqx7xoCF0cQAvD_BwE",
+    "message": "Hi",
+    "type": "contact-us",
+    "createdAt": "2026-11-21T12:57:59.498Z"
   }
 };
