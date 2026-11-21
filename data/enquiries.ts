@@ -5878,5 +5878,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-20T13:52:09.182Z"
+  },
+  "11b14838-6a50-4043-a6d7-8aa3c72935d6": {
+    "id": "11b14838-6a50-4043-a6d7-8aa3c72935d6",
+    "fullName": "Girraj Prasad",
+    "companyName": "All",
+    "email": "girrajprasad250470@gmail.com",
+    "phone": "9799892680",
+    "city": "All",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934523&gad_source=5&gad_campaignid=23735506714&gclid=EAIaIQobChMIgsa37-qXmAMVe-iEAB3z5wpLEAEYASAAEgLkg_D_BwE",
+    "type": "product",
+    "createdAt": "2026-11-21T00:49:36.429Z"
   }
 };
