@@ -6037,5 +6037,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "20000",
     "type": "contact-us",
     "createdAt": "2026-11-22T09:37:57.701Z"
+  },
+  "4a904217-c5f2-4805-a653-8477f4136100": {
+    "id": "4a904217-c5f2-4805-a653-8477f4136100",
+    "fullName": "Charan",
+    "companyName": "Charan",
+    "email": "cc852421@gmail.com",
+    "phone": "9959775947",
+    "city": "Tuni",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI14XRmrmbmAMV_W4qCR3UJRzpEAEYASAAEgKBP_D_BwE",
+    "message": "Followers please",
+    "type": "contact-us",
+    "createdAt": "2026-11-22T11:16:38.349Z"
   }
 };
