@@ -6073,5 +6073,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Want for reselling",
     "type": "contact-us",
     "createdAt": "2026-11-22T14:48:59.085Z"
+  },
+  "80c668e4-9688-42c1-8938-966c998734eb": {
+    "id": "80c668e4-9688-42c1-8938-966c998734eb",
+    "fullName": "Medikonda Ashmitha",
+    "companyName": "Nothing",
+    "email": "medikondaashmitha938@gmail.com",
+    "phone": "8341462675",
+    "city": "Ongole",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMImZjkh6ycmAMVcrWDBx1OXw8PEAEYASAAEgJ2RfD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-22T19:49:10.653Z"
   }
 };
