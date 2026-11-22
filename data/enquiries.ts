@@ -5991,5 +5991,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gbraid=0AAAAABUiSLzSdBUKMXeh_dkRap4p6bpwV&gclid=CjwKCAiAn4XYBhA-EiwA8176FZtkUcKSpzygAHb6n-wd4lFgfdYeOJwYY66sMny-6xQes3xlRwTlxBoChQ8QAvD_BwE",
     "type": "product",
     "createdAt": "2026-11-22T06:54:51.178Z"
+  },
+  "c975a6be-8408-49a9-b053-490512bbd2e6": {
+    "id": "c975a6be-8408-49a9-b053-490512bbd2e6",
+    "fullName": "Priya",
+    "companyName": "Bhardwaj",
+    "email": "kmpbhardwaj13@gmail.com",
+    "phone": "9794533147",
+    "city": "Mau",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAn4XYBhA-EiwA8176FRzNmeELoCnYikaEDKmvf1Wp2T-l3IFFPAVdx39RXm2H0kKzWA73ZxoCj8gQAvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-22T07:43:51.098Z"
   }
 };
