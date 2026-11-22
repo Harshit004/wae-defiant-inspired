@@ -6025,5 +6025,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Gard",
     "type": "contact-us",
     "createdAt": "2026-11-22T08:47:05.115Z"
+  },
+  "9715d40e-8d3a-4265-a071-7dbf9263dc55": {
+    "id": "9715d40e-8d3a-4265-a071-7dbf9263dc55",
+    "fullName": "Nirdesh",
+    "companyName": "Kumar",
+    "email": "n63742599@gmail.com",
+    "phone": "9319885141",
+    "city": "Up",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "20000",
+    "type": "contact-us",
+    "createdAt": "2026-11-22T09:37:57.701Z"
   }
 };
