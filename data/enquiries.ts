@@ -6061,5 +6061,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Instagram followers",
     "type": "contact-us",
     "createdAt": "2026-11-22T11:21:57.703Z"
+  },
+  "3908a55f-4759-41a6-a0b1-76045230771c": {
+    "id": "3908a55f-4759-41a6-a0b1-76045230771c",
+    "fullName": "Saurav",
+    "companyName": "Cpton India pvt Ltd",
+    "email": "cptonindia@gmail.com",
+    "phone": "6200645150",
+    "city": "Samastipur",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Want for reselling",
+    "type": "contact-us",
+    "createdAt": "2026-11-22T14:48:59.085Z"
   }
 };
