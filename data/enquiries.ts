@@ -5980,5 +5980,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-22T06:26:18.060Z"
+  },
+  "ebfeaffd-db02-466c-ac75-913cada075bd": {
+    "id": "ebfeaffd-db02-466c-ac75-913cada075bd",
+    "fullName": "Bhabaranjan Jena",
+    "companyName": "AMRAYA",
+    "email": "bhabaranjan3714@gmail.com",
+    "phone": "7847839513",
+    "city": "ANGUL, ODISHA",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?gad_source=1&gad_campaignid=24259570723&gbraid=0AAAAABUiSLzSdBUKMXeh_dkRap4p6bpwV&gclid=CjwKCAiAn4XYBhA-EiwA8176FZtkUcKSpzygAHb6n-wd4lFgfdYeOJwYY66sMny-6xQes3xlRwTlxBoChQ8QAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-22T06:54:51.178Z"
   }
 };
