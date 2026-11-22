@@ -6049,5 +6049,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Followers please",
     "type": "contact-us",
     "createdAt": "2026-11-22T11:16:38.349Z"
+  },
+  "335a048d-6e76-4893-9edf-c0f45b9e7456": {
+    "id": "335a048d-6e76-4893-9edf-c0f45b9e7456",
+    "fullName": "Charan",
+    "companyName": "Charan",
+    "email": "cc852421@gmail.com",
+    "phone": "9959775947",
+    "city": "Kakinada",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMI3taA3rqbmAMVPfmgAh2gjR-8EAEYASAAEgJZQfD_BwE",
+    "message": "Instagram followers",
+    "type": "contact-us",
+    "createdAt": "2026-11-22T11:21:57.703Z"
   }
 };
