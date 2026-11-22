@@ -6013,5 +6013,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934529&gad_source=5&gad_campaignid=23735506714&gclid=CjwKCAiAn4XYBhA-EiwA8176FXDCCXO_qbdJZ-J_5fqCz-idqw4s4BLrAFu2YeFQNMmLVH-6tUE8bBoC_WsQAvD_BwE",
     "type": "product",
     "createdAt": "2026-11-22T07:54:37.660Z"
+  },
+  "39a4f59d-3632-4cb6-9b15-f7deb5d5badc": {
+    "id": "39a4f59d-3632-4cb6-9b15-f7deb5d5badc",
+    "fullName": "Girraj Prasad",
+    "companyName": "Girraj Prasad",
+    "email": "girrajprasad250470@gmail.com",
+    "phone": "9799892680",
+    "city": "Alwar",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Gard",
+    "type": "contact-us",
+    "createdAt": "2026-11-22T08:47:05.115Z"
   }
 };
