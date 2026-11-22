@@ -5958,5 +5958,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Hii",
     "type": "contact-us",
     "createdAt": "2026-11-22T02:44:46.547Z"
+  },
+  "f548f288-6dd2-4426-88b0-dbc500714742": {
+    "id": "f548f288-6dd2-4426-88b0-dbc500714742",
+    "fullName": "Sohan meena",
+    "companyName": "Sohan meena",
+    "email": "so95093702@gmail.com",
+    "phone": "9178776421",
+    "city": "Kavalapira",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341411094&gad_source=5&gad_campaignid=22024897670&gclid=CjwKCAiAn4XYBhA-EiwA8176FTAj-_Wb5YRTrnO8UDP38qa8PJlqW7yj_miCP5dxJ2ODPMBa8VhsqRoCX60QAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-22T05:14:50.839Z"
   }
 };
