@@ -5969,5 +5969,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341411094&gad_source=5&gad_campaignid=22024897670&gclid=CjwKCAiAn4XYBhA-EiwA8176FTAj-_Wb5YRTrnO8UDP38qa8PJlqW7yj_miCP5dxJ2ODPMBa8VhsqRoCX60QAvD_BwE",
     "type": "product",
     "createdAt": "2026-11-22T05:14:50.839Z"
+  },
+  "3a5e30fe-e2ea-4051-a014-a2453192eacb": {
+    "id": "3a5e30fe-e2ea-4051-a014-a2453192eacb",
+    "fullName": "MANOJ AGRAWAL",
+    "companyName": "Deemon",
+    "email": "agrawalm976@gmail.com",
+    "phone": "8006431981",
+    "city": "Delhi",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-22T06:26:18.060Z"
   }
 };
