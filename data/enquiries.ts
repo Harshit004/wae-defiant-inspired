@@ -5946,5 +5946,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Gard",
     "type": "contact-us",
     "createdAt": "2026-11-22T01:59:13.265Z"
+  },
+  "5c60ceba-7b87-4a97-9202-b65ba1e84cda": {
+    "id": "5c60ceba-7b87-4a97-9202-b65ba1e84cda",
+    "fullName": "omparkash meena",
+    "companyName": "Airport",
+    "email": "kharandi939@gmail.com",
+    "phone": "9460070679",
+    "city": "Dausa",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Hii",
+    "type": "contact-us",
+    "createdAt": "2026-11-22T02:44:46.547Z"
   }
 };
