@@ -5923,5 +5923,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAn4XYBhA-EiwA8176FbsAezwcwVUg_0qtAbs1vYjE8JvtZ_QdfsZiBODMJeQi-Lc62t_zNhoCIgYQAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-21T14:10:31.241Z"
+  },
+  "eb7b7bba-20fe-4b33-9cba-c87729b52358": {
+    "id": "eb7b7bba-20fe-4b33-9cba-c87729b52358",
+    "fullName": "Girraj Prasad",
+    "companyName": "Girraj Prasad",
+    "email": "girrajprasad250470@gmail.com",
+    "phone": "9799892680",
+    "city": "Jhorle",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934535&gad_source=5&gad_campaignid=23735506714&gclid=EAIaIQobChMI6KXKqruamAMVPueEAB1AywOHEAEYASAAEgJ1RvD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-22T01:52:36.087Z"
   }
 };
