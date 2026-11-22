@@ -6002,5 +6002,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAn4XYBhA-EiwA8176FRzNmeELoCnYikaEDKmvf1Wp2T-l3IFFPAVdx39RXm2H0kKzWA73ZxoCj8gQAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-22T07:43:51.098Z"
+  },
+  "2c2eda90-7785-4d49-b971-d2c4e7e12053": {
+    "id": "2c2eda90-7785-4d49-b971-d2c4e7e12053",
+    "fullName": "Umesh",
+    "companyName": "262402",
+    "email": "umeshpandey2026@gmail.com",
+    "phone": "9258323336",
+    "city": "Sanjay Nagar second Bindu Bhatta",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934529&gad_source=5&gad_campaignid=23735506714&gclid=CjwKCAiAn4XYBhA-EiwA8176FXDCCXO_qbdJZ-J_5fqCz-idqw4s4BLrAFu2YeFQNMmLVH-6tUE8bBoC_WsQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-22T07:54:37.660Z"
   }
 };
