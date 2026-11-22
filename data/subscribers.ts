@@ -902,5 +902,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-21",
     "time": "18:17:24",
     "pageLink": "/portfolio/zvr/nt01"
+  },
+  {
+    "id": "ca21f3ba-e90b-46d8-9913-8e8239f0cba0",
+    "email": "medikondaashmitha938@gmail.com",
+    "date": "2026-11-23",
+    "time": "01:19:37",
+    "pageLink": "/"
   }
 ];
