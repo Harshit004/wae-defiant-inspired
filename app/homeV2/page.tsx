@@ -1450,100 +1450,75 @@ export default function HomeV2() {
 
           {/* 7 Sectors Grid: 4 Columns x 2 Rows with internal divider lines only */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Row 1 */}
-            {figmaSectors.slice(0, 4).map((sec, idx) => (
-              <div
-                key={sec.id}
-                className={`p-6 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] ${
-                  idx < 3 ? "lg:border-r border-white/10" : ""
-                } ${idx % 2 === 0 ? "sm:border-r lg:border-r-0" : ""} border-b lg:border-b-0 border-white/10`}
-              >
-                <div>
-                  <div className="mb-6 flex items-center gap-3">
-                    <div className="w-[30px] h-[30px] relative flex-shrink-0 flex items-center justify-center">
-                      <Image
-                        src={sec.icon}
-                        alt={sec.title}
-                        width={30}
-                        height={30}
-                        className="w-[30px] h-[30px] object-contain"
-                      />
+            {figmaSectors.map((sec, idx) => {
+              // Desktop (lg: 4 cols x 2 rows):
+              // Columns 0, 1, 2 have right divider; column 3 has no right divider
+              const lgBorderR = idx % 4 !== 3
+              // Row 1 (indices 0, 1, 2, 3) has bottom divider; Row 2 has no bottom divider
+              const lgBorderB = idx < 4
+
+              // Tablet (sm: 2 cols x 4 rows):
+              // Left column items (even indices) have right divider (except last item if alone)
+              const smBorderR = idx % 2 === 0 && idx < 6
+              // All items except the last row have bottom divider
+              const smBorderB = idx < 6
+
+              // Mobile (1 col x 7 rows):
+              // All items except the last item have bottom divider
+              const mobileBorderB = idx < 6
+
+              return (
+                <div
+                  key={sec.id}
+                  className={`p-6 sm:p-8 flex flex-col justify-start min-h-[160px] sm:min-h-[180px] lg:min-h-[200px] border-[#FFFFFF1A] ${
+                    mobileBorderB ? "border-b" : "border-b-0"
+                  } ${smBorderR ? "sm:border-r" : "sm:border-r-0"} ${
+                    smBorderB ? "sm:border-b" : "sm:border-b-0"
+                  } ${lgBorderR ? "lg:border-r" : "lg:border-r-0"} ${
+                    lgBorderB ? "lg:border-b" : "lg:border-b-0"
+                  }`}
+                >
+                  <div>
+                    <div className="mb-6 flex items-center gap-3">
+                      <div className="w-[30px] h-[30px] relative flex-shrink-0 flex items-center justify-center">
+                        <Image
+                          src={sec.icon}
+                          alt={sec.title}
+                          width={30}
+                          height={30}
+                          className="w-[30px] h-[30px] object-contain"
+                        />
+                      </div>
+                      <h3
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontSize: "20px",
+                          lineHeight: "120%",
+                          fontWeight: 400,
+                          color: "#FFFFFF",
+                        }}
+                      >
+                        {sec.title}
+                      </h3>
                     </div>
-                    <h3
+
+                    <p
                       style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontSize: "20px",
-                        lineHeight: "120%",
-                        fontWeight: 400,
-                        color: "#FFFFFF",
+                        fontFamily: "'Manrope', sans-serif",
+                        fontSize: "14px",
+                        lineHeight: "19.1px",
+                        color: "#AEAEAE",
                       }}
                     >
-                      {sec.title}
-                    </h3>
+                      {sec.description}
+                    </p>
                   </div>
-
-                  <p
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontSize: "14px",
-                      lineHeight: "19.1px",
-                      color: "#AEAEAE",
-                    }}
-                  >
-                    {sec.description}
-                  </p>
                 </div>
-              </div>
-            ))}
+              )
+            })}
 
-            {/* Horizontal Line separating Row 1 and Row 2 across 4 columns */}
-            <div className="hidden lg:block col-span-4 border-t border-white/10" />
-
-            {/* Row 2 */}
-            {figmaSectors.slice(4, 7).map((sec, idx) => (
-              <div
-                key={sec.id}
-                className={`p-6 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] ${
-                  idx < 2 ? "lg:border-r border-white/10" : ""
-                } ${idx % 2 === 0 ? "sm:border-r lg:border-r-0" : ""} border-b sm:border-b-0 border-white/10`}
-              >
-                <div>
-                  <div className="mb-6 flex items-center gap-3">
-                    <div className="w-[30px] h-[30px] relative flex-shrink-0 flex items-center justify-center">
-                      <Image
-                        src={sec.icon}
-                        alt={sec.title}
-                        width={30}
-                        height={30}
-                        className="w-[30px] h-[30px] object-contain"
-                      />
-                    </div>
-                    <h3
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontSize: "20px",
-                        lineHeight: "120%",
-                        fontWeight: 400,
-                        color: "#FFFFFF",
-                      }}
-                    >
-                      {sec.title}
-                    </h3>
-                  </div>
-
-                  <p
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontSize: "14px",
-                      lineHeight: "19.1px",
-                      color: "#AEAEAE",
-                    }}
-                  >
-                    {sec.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+            {/* 8th cell placeholder to complete 4x2 grid on desktop */}
+            <div className="hidden lg:block min-h-[160px] sm:min-h-[180px] lg:min-h-[200px]" />
           </div>
         </div>
       </section>
