@@ -269,42 +269,42 @@ const figmaProducts = [
     id: "watermatic",
     category: "Drinking Water Faucets",
     name: "WATERMATIC",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/44d78286-f6ee-43a3-4b07-0107e6796400/public",
     href: "/portfolio/trublu/alfa-100",
   },
   {
     id: "quantm",
     category: "Glass Bottling Plants",
     name: "Quantm",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/317c1fa3-5c94-48a7-c76a-f451944afa00/public",
     href: "/portfolio/glass-bottling",
   },
   {
     id: "aquasmith",
     category: "Air to Water Generators",
     name: "Aquasmith",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ae63033b-d3bd-4cb4-0b76-8d9029d3b400/public",
     href: "/portfolio/aquasmith",
   },
   {
     id: "bluwae",
     category: "Hydration Systems",
     name: "Bluwae",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/aff0b296-99ba-4ed0-4bd4-919c3e20b200/public",
     href: "/portfolio/bluwae",
   },
   {
     id: "zvr",
     category: "Public Utility Systems",
     name: "ZVR",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8b279fd6-4db8-4ae9-67f3-b87880c53600/public",
     href: "/portfolio/zvr",
   },
   {
     id: "hydroscience",
     category: "Filters & Membrane",
     name: "Hydroscience",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/10e0c9db-97fd-4c60-7506-53a46620a700/public",
     href: "/portfolio/hydroscience",
   },
 ]
@@ -1186,7 +1186,6 @@ export default function HomeV2() {
                         letterSpacing: "0px",
                         verticalAlign: "middle",
                       }}
-                      className="group-hover:underline underline-offset-4"
                     >
                       {prod.name}
                     </span>
@@ -1291,7 +1290,10 @@ export default function HomeV2() {
                     </HoverButton>
                   </Link>
                 </div>
+              </div>
 
+              {/* Bottom Block: Manifesto Text 58px above the nav arrows */}
+              <div className="mt-8 lg:mt-0">
                 {/* Description Copy */}
                 <p
                   style={{
@@ -1321,7 +1323,7 @@ export default function HomeV2() {
                   , our systems are engineered for higher recovery, lower resource intensity, lifecycle efficiency and measurable decarbonisation.
                 </p>
 
-                <div className="flex flex-wrap items-center gap-1.5 mb-8">
+                <div className="flex flex-wrap items-center gap-1.5">
                   <span
                     style={{
                       fontFamily: "'Manrope', sans-serif",
@@ -1360,40 +1362,43 @@ export default function HomeV2() {
                     </div>
                   </Link>
                 </div>
-              </div>
 
-              {/* Prev / Next circular controls */}
-              <div className="flex items-center gap-3 pt-6 lg:pt-0">
-                <button
-                  type="button"
-                  onClick={() => handleSolutionScrollNav("left")}
-                  disabled={!solutionCanScrollLeft}
-                  className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
-                    !solutionCanScrollLeft
-                      ? "border-white/20 text-white/20 cursor-not-allowed"
-                      : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
-                  }`}
-                  aria-label="Previous solutions"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleSolutionScrollNav("right")}
-                  disabled={!solutionCanScrollRight}
-                  className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
-                    !solutionCanScrollRight
-                      ? "border-white/20 text-white/20 cursor-not-allowed"
-                      : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
-                  }`}
-                  aria-label="Next solutions"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+                {/* 58px above the nav arrows */}
+                <div style={{ height: "58px" }} />
+
+                {/* Prev / Next circular controls */}
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => handleSolutionScrollNav("left")}
+                    disabled={!solutionCanScrollLeft}
+                    className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
+                      !solutionCanScrollLeft
+                        ? "border-white/20 text-white/20 cursor-not-allowed"
+                        : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
+                    }`}
+                    aria-label="Previous solutions"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleSolutionScrollNav("right")}
+                    disabled={!solutionCanScrollRight}
+                    className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
+                      !solutionCanScrollRight
+                        ? "border-white/20 text-white/20 cursor-not-allowed"
+                        : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
+                    }`}
+                    aria-label="Next solutions"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
 
