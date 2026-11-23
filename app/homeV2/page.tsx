@@ -7,7 +7,6 @@ import { motion, AnimatePresence, animate, useInView } from "framer-motion"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
-import LightweightRipple from "@/components/LightweightRipple"
 import StatusQuoPopup from "@/components/StatusQuoPopup"
 import { BLOGS } from "@/data/blogs"
 import ContactSectionDark from "@/components/contact-section-dark"
@@ -39,7 +38,6 @@ interface HeroSlide {
   tagline?: string
   badge?: string
   bgImage: string
-  isRipple?: boolean
   legend?: { label: string; color: string }[]
   footnote?: {
     lines: string[]
@@ -58,7 +56,6 @@ const HERO_SLIDES: HeroSlide[] = [
     headline: "We're here\nto disrupt the\nstatus quo!",
     subhead: "Our Green is Bluw",
     bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public",
-    isRipple: true,
   },
   {
     id: 2,
@@ -642,19 +639,13 @@ export default function HomeV2() {
           >
             {/* Background Photography & Vignette */}
             <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-              {activeSlideData.isRipple ? (
-                <div className="absolute inset-0 w-full h-full opacity-95">
-                  <LightweightRipple imageUrl={activeSlideData.bgImage} />
-                </div>
-              ) : (
-                <Image
-                  src={activeSlideData.bgImage}
-                  alt={activeSlideData.headline}
-                  fill
-                  priority
-                  className="object-cover object-center md:object-right opacity-95"
-                />
-              )}
+              <Image
+                src={activeSlideData.bgImage}
+                alt={activeSlideData.headline}
+                fill
+                priority
+                className="object-cover object-center md:object-right opacity-95"
+              />
               {/* Dark Vignette Overlay */}
               <div
                 className="absolute inset-0 pointer-events-none"
