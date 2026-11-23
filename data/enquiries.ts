@@ -6108,5 +6108,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "I want to purchase 12 units of water cooler with bottle dispenser",
     "type": "contact-us",
     "createdAt": "2026-11-23T04:47:50.278Z"
+  },
+  "30f3b9c8-8d51-43c4-a6fe-056495847e9f": {
+    "id": "30f3b9c8-8d51-43c4-a6fe-056495847e9f",
+    "fullName": "KISHORE RAVI",
+    "companyName": "QualiTlabs",
+    "email": "kishore.ravi@qualitlabs.com",
+    "phone": "8686222553",
+    "city": "HYDERABAD",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "https://www.waecorp.com/portfolio/trublu/alfa-100\nwhat's the price of this one?",
+    "type": "contact-us",
+    "createdAt": "2026-11-23T07:27:35.054Z"
   }
 };
