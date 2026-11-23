@@ -427,10 +427,10 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative bg-[#0D0D0D] md:pt-0 md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
+        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
       >
         {/* Background Image determining the height of the section naturally */}
-        <div className="md:hidden absolute inset-0 w-full h-full opacity-95">
+        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
           <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public" />
         </div>
         <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1440/691]">
@@ -440,45 +440,46 @@ export default function Home() {
         {/* Hero Content Text (Topmost) */}
         <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
           <div className={`${containerClass} flex-1 flex flex-col justify-center relative`}>
-            {/* Left Headline */}
-            <div
-              className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)] -translate-y-[52px] md:translate-y-0"
-              style={{
-                color: "#FFFFFF",
-                fontFamily: "'Inter Tight', sans-serif",
-              }}
-            >
-              <h1
-                className="text-[12.5vw] md:text-[clamp(36px,5.9vw,85px)] leading-[105%] font-medium"
+            {/* Left Headline & Subhead (Identical position as main branch) */}
+            <div className="relative w-full">
+              <div
+                className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
                 style={{
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  margin: 0,
-                }}
-              >
-                We're here <br />to disrupt the <br />status quo!
-              </h1>
-            </div>
-
-            <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
-
-            {/* Row with "Our Green is Blue" on left and Punjabi Verse on right */}
-            <div className="w-full flex flex-col md:flex-row md:items-start md:justify-between gap-6 pointer-events-auto">
-              {/* Left Column: Our Green is Blue */}
-              <p
-                className="text-[6vw] md:text-[clamp(18px,2.08vw,30px)] leading-[115%] font-normal text-[#AEAEAE] -translate-y-[52px] md:translate-y-0"
-                style={{
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  margin: 0,
+                  color: "#FFFFFF",
                   fontFamily: "'Inter Tight', sans-serif",
                 }}
               >
-                Our Green is Blue
-              </p>
+                <h1
+                  className="text-[12.5vw] md:text-[clamp(36px,5.9vw,85px)] leading-[105%] font-medium"
+                  style={{
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    margin: 0,
+                  }}
+                >
+                  We're here <br />to disrupt the <br />status quo!
+                </h1>
+                <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
+                <p
+                  className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
+                  style={{
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    margin: 0,
+                    fontFamily: "'Inter Tight', sans-serif",
+                  }}
+                >
+                  Our Green is Blue
+                </p>
+              </div>
 
               {/* Right Column: Sacred Verse & Punjabi Symbol (Desktop) */}
-              <div className="hidden md:flex flex-col items-end text-right max-w-[clamp(280px,32vw,460px)]">
+              <div
+                className="hidden md:flex flex-col items-end text-right pointer-events-auto max-w-[clamp(280px,32vw,460px)] absolute right-0"
+                style={{
+                  top: "calc(100% - 35px)",
+                }}
+              >
                 {/* Punjabi Symbol (Middle aligned with Our Green is Blue top) */}
                 <div className="-translate-y-1/2">
                   <Image
@@ -547,7 +548,7 @@ export default function Home() {
               style={{
                 width: "clamp(200px, 19.51vw, 281px)",
                 height: "clamp(233px, 22.71vw, 327px)",
-                top: "clamp(85px, 7.8vw, 120px)",
+                top: "clamp(0px, 1vw, 20px)",
                 right: "clamp(110px, 12vw, 180px)",
               }}
             >
@@ -607,10 +608,10 @@ export default function Home() {
 
             {/* Mobile: Guru Nanak Ji Portrait & Greeting (Contained in 281x327) */}
             <div
-              className="md:hidden flex flex-col justify-between items-start mx-auto mt-[clamp(16px, 3vh, 28px)] pointer-events-auto"
+              className="md:hidden flex flex-col justify-between items-start mx-auto mt-4 pointer-events-auto"
               style={{
-                width: "clamp(220px, 72vw, 281px)",
-                height: "clamp(255px, 38vh, 327px)",
+                width: "min(281px, 75vw)",
+                height: "min(327px, 36vh)",
               }}
             >
               <div className="w-full flex-1 relative min-h-0">
@@ -662,12 +663,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Mobile bottom indicator */}
-          <div className="md:hidden absolute bottom-[18px] left-[7.5vw] flex items-center gap-1.5 text-[#AEAEAE] text-[10px] tracking-wider uppercase font-medium">
-            <span>SCROLL FOR MORE</span>
-            <span className="text-[12px] leading-none">↶</span>
           </div>
 
           {/* Mobile divider at the bottom of the hero section */}
