@@ -57,7 +57,8 @@ const HERO_SLIDES: HeroSlide[] = [
     id: 1,
     headline: "We're here\nto disrupt the\nstatus quo!",
     subhead: "Our Green is Bluw",
-    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6820c51f-ec1f-45a8-f30d-d0725e98d100/public",
+    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public",
+    isRipple: true,
   },
   {
     id: 2,
@@ -629,25 +630,31 @@ export default function HomeV2() {
           }}
         />
 
-        {/* Sliding Banner (Background + Text + Legends + Footnotes all slide in from left together) */}
+        {/* Sliding Banner (Background + Text + Legends + Footnotes all slide together in opposite direction) */}
         <AnimatePresence initial={false}>
           <motion.div
             key={activeSlideData.id}
-            initial={{ x: "-100%" }}
+            initial={{ x: "100%" }}
             animate={{ x: "0%" }}
-            exit={{ x: "100%" }}
-            transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="absolute inset-0 w-full h-full flex flex-col justify-between overflow-hidden"
           >
             {/* Background Photography & Vignette */}
             <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-              <Image
-                src={activeSlideData.bgImage}
-                alt={activeSlideData.headline}
-                fill
-                priority
-                className="object-cover object-center md:object-right opacity-95"
-              />
+              {activeSlideData.isRipple ? (
+                <div className="absolute inset-0 w-full h-full opacity-95">
+                  <LightweightRipple imageUrl={activeSlideData.bgImage} />
+                </div>
+              ) : (
+                <Image
+                  src={activeSlideData.bgImage}
+                  alt={activeSlideData.headline}
+                  fill
+                  priority
+                  className="object-cover object-center md:object-right opacity-95"
+                />
+              )}
               {/* Dark Vignette Overlay */}
               <div
                 className="absolute inset-0 pointer-events-none"
