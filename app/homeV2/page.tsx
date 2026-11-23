@@ -1514,7 +1514,7 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* ── SUSTAINABILITY SECTION (IDENTICAL TO MAIN HOMEPAGE) ── */}
+      {/* ── SUSTAINABILITY SECTION ── */}
       <section className="bg-black text-white md:border-b-0">
         {/* Desktop Layout */}
         <div className="w-full hidden md:block border-b border-[#FFFFFF4D] pt-[108px] pb-[68px]" style={{ paddingLeft: "7.5vw", paddingRight: "7.5vw" }}>
@@ -1533,7 +1533,7 @@ export default function HomeV2() {
             >
               Sustainability
             </h3>
-            <div style={{ height: "26px" }} />
+            <div style={{ height: "32px" }} />
           </div>
 
           {/* Top Row: Heading on left, Quote on right */}
@@ -1554,7 +1554,7 @@ export default function HomeV2() {
               >
                 Earth, Our Only<br />Shareholder
               </h2>
-              <div style={{ height: "31px" }} />
+              <div style={{ height: "32px" }} />
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
@@ -1569,7 +1569,7 @@ export default function HomeV2() {
               >
                 A ledger of people, planet, and profit and the <span ref={waterWordRef}>water</span> that connects them all.
               </p>
-              <div style={{ height: "60px" }} />
+              <div style={{ height: "82px" }} />
             </div>
 
             {/* Right Column - Quote & Author */}
@@ -1685,65 +1685,72 @@ export default function HomeV2() {
               </div>
             </div>
 
-            {/* Right Column - Horizontal Line & Two Text Columns */}
-            <div style={{ maxWidth: "650px" }} className="relative z-10 flex flex-col flex-1 min-w-0">
-              <div style={{ height: "49px" }} className="flex flex-col justify-start">
-                <div className="w-full h-px bg-[#FFFFFF4D]" />
+            {/* Right Column - Horizontal Line & Two Text Columns + Statement (Bottom aligned 30px above video bottom) */}
+            <div style={{ maxWidth: "650px" }} className="relative z-10 flex flex-col justify-between flex-1 min-w-0 self-stretch pb-[30px]">
+              <div>
+                <div style={{ height: "49px" }} className="flex flex-col justify-start">
+                  {/* Horizontal line aligned with button top */}
+                  <div className="w-full h-px bg-[#FFFFFF4D]" />
+                </div>
+
+                {/* Two sub-columns */}
+                <div className="grid grid-cols-2 gap-8 lg:gap-12 relative z-10">
+                  {/* Sub-column 1 */}
+                  <div
+                    className="relative z-10 flex flex-col space-y-4"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontStyle: "normal",
+                      fontSize: "14px",
+                      lineHeight: "120%",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    <p>
+                      It does not attend AGMs. It signs no term sheets. It cannot vote against us. But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life. For us, this recognition is not philosophical. It is operational.
+                    </p>
+                  </div>
+
+                  {/* Sub-column 2 */}
+                  <div
+                    className="relative z-10 flex flex-col space-y-4"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontStyle: "normal",
+                      fontSize: "14px",
+                      lineHeight: "120%",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    <p>
+                      Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business. It is the context within which our business is allowed to exist. In this view, sustainability is not an initiative layered onto business strategy. It is the condition that determines whether that strategy is viable at all.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* Two sub-columns */}
-              <div className="grid grid-cols-2 gap-8 lg:gap-12 relative z-10">
-                <div
-                  className="relative z-10 flex flex-col space-y-4"
+              {/* Footer Statement: aligned with 30px above the video bottom */}
+              <div className="mt-8 lg:mt-12">
+                <p
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
                     fontStyle: "normal",
-                    fontSize: "12px",
-                    lineHeight: "130%",
+                    fontSize: "22px",
+                    lineHeight: "120%",
                     letterSpacing: "0%",
                     verticalAlign: "middle",
                     color: "#AEAEAE",
                   }}
                 >
-                  <p>
-                    It does not attend AGMs. It signs no term sheets. It cannot vote against us.
-                  </p>
-                  <p>
-                    But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life.
-                  </p>
-                  <p>
-                    For us, this recognition is not philosophical. It is operational.
-                  </p>
-                  <p>
-                    Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business.
-                  </p>
-                </div>
-
-                <div
-                  className="relative z-10 flex flex-col space-y-4"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontStyle: "normal",
-                    fontSize: "12px",
-                    lineHeight: "130%",
-                    letterSpacing: "0%",
-                    verticalAlign: "middle",
-                    color: "#AEAEAE",
-                  }}
-                >
-                  <p>
-                    It is the context within which our business is allowed to exist.
-                  </p>
-                  <p>
-                    In this view, sustainability is not an initiative layered onto business strategy.<br />
-                    It is the condition that determines whether that strategy is viable at all.
-                  </p>
-                  <p>
-                    This is our account of stewardship to the only shareholder that was always there.
-                  </p>
-                </div>
+                  This is our account of stewardship to the only shareholder that was always there - Earth.
+                </p>
               </div>
             </div>
           </div>
@@ -1754,15 +1761,15 @@ export default function HomeV2() {
           <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "4.58vw", lineHeight: "115%" }}>
             Sustainability
           </h3>
-          <div style={{ height: "7.12vw" }} />
+          <div style={{ height: "32px" }} />
           <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "7.12vw", lineHeight: "105%" }}>
             Earth, Our Only Shareholder
           </h2>
-          <div style={{ height: "3.5vw" }} />
+          <div style={{ height: "32px" }} />
           <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "3.05vw", lineHeight: "120%", color: "#AEAEAE" }}>
             A ledger of people, planet, and profit and the water that connects them all.
           </p>
-          <div style={{ height: "6vw" }} />
+          <div style={{ height: "82px" }} />
 
           {/* Button */}
           <div className="flex">
@@ -1874,37 +1881,44 @@ export default function HomeV2() {
             style={{
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 400,
-              fontSize: "3.56vw",
-              lineHeight: "130%",
+              fontSize: "14px",
+              lineHeight: "120%",
               color: "#AEAEAE",
             }}
           >
-            <p>It does not attend AGMs. It signs no term sheets. It cannot vote against us.</p>
             <p>
-              But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life.
+              It does not attend AGMs. It signs no term sheets. It cannot vote against us. But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life. For us, this recognition is not philosophical. It is operational.
             </p>
-            <p>For us, this recognition is not philosophical. It is operational.</p>
-            <p>Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business.</p>
-            <p>It is the context within which our business is allowed to exist.</p>
             <p>
-              In this view, sustainability is not an initiative layered onto business strategy. It is the condition that determines whether that strategy is viable at all.
+              Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business. It is the context within which our business is allowed to exist. In this view, sustainability is not an initiative layered onto business strategy. It is the condition that determines whether that strategy is viable at all.
             </p>
-            <p>This is our account of stewardship to the only shareholder that was always there.</p>
+            <p
+              style={{
+                fontSize: "18px",
+                lineHeight: "120%",
+                color: "#AEAEAE",
+                paddingTop: "12px",
+              }}
+            >
+              This is our account of stewardship to the only shareholder that was always there - Earth.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ── IMPACT SECTION (METRICS & SKYLINE SILHOUETTE) ── */}
+      {/* ── SUSTAINABILITY IMPACT SECTION (EXACTLY AS HOMEPAGE) ── */}
       <section
         ref={impactRef}
-        className="relative text-white w-full border-b border-[#FFFFFF33] overflow-hidden"
+        className="relative text-white w-full"
         style={{
           background: "linear-gradient(146.59deg, #004063 4.52%, #000000 49.04%)",
+          overflow: "hidden",
         }}
       >
+        {/* Background SVG with gradient mask for smooth blending */}
         <img
           src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/374f4710-d942-4059-e39c-b5fc24283700/public"
-          alt="Impact Silhouette"
+          alt="Impact Background"
           className="absolute md:top-0 top-1/2 md:right-0 -right-[12.72vw] md:translate-y-0 -translate-y-1/2 md:h-full h-[104.97vw] w-auto opacity-70 object-cover object-right pointer-events-none select-none z-0"
           style={{
             WebkitMaskImage: "linear-gradient(to right, transparent, black 15%)",
@@ -1912,87 +1926,289 @@ export default function HomeV2() {
           }}
         />
 
-        <div className={`relative z-10 py-[clamp(80px,8.6vw,124px)] ${containerClass}`}>
-          <div className="max-w-[600px] mb-12">
-            <h2
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "clamp(32px, 2.78vw, 42px)",
-                lineHeight: "110%",
-                color: "#FFFFFF",
-              }}
-              className="mb-2 font-normal"
-            >
-              Impact
-            </h2>
-            <p
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "clamp(16px, 1.38vw, 20px)",
-                lineHeight: "110%",
-                color: "#FFFFFF",
-              }}
-              className="mb-4"
-            >
-              Real numbers. Real results.
-            </p>
-            <p
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontSize: "clamp(12px, 0.97vw, 14px)",
-                lineHeight: "140%",
-                color: "#AEAEAE",
-                maxWidth: "460px",
-              }}
-              className="mb-8"
-            >
-              Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
-            </p>
-            <Link href="/sustainability" className="contents">
-              <HoverButton theme="transparent-white">
-                {(hovered) => (
-                  <>
-                    Know More
-                    <div className="relative inline-block w-4 h-4 ml-1">
+        {/* Desktop Layout */}
+        <div
+          className="w-full hidden md:block relative z-10"
+          style={{ paddingTop: "124px", paddingBottom: "124px", paddingLeft: "7.5vw", paddingRight: "7.5vw" }}
+        >
+          <div className="flex flex-col justify-between h-full">
+            <div className="max-w-[600px]">
+              <h2
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "40px",
+                  lineHeight: "110%",
+                  color: "#FFFFFF",
+                }}
+              >
+                Impact
+              </h2>
+              <div style={{ height: "10px" }} />
+              <p
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "20px",
+                  lineHeight: "110%",
+                  color: "#FFFFFF",
+                }}
+              >
+                Real numbers. Real results.
+              </p>
+              <div style={{ height: "32px" }} />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  color: "#AEAEAE",
+                  maxWidth: "32.91vw",
+                }}
+              >
+                Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
+              </p>
+              <div style={{ height: "46px" }} />
+              <Link href="/sustainability" className="contents">
+                <HoverButton theme="transparent-white">
+                  {(hovered) => (
+                    <>
+                      Know More
+                      <div className="relative inline-block w-4 h-4 ml-1">
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                          alt="icon default"
+                          width={16}
+                          height={16}
+                          className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                        />
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
+                        >
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                        </motion.div>
+                      </div>
+                    </>
+                  )}
+                </HoverButton>
+              </Link>
+            </div>
+
+            <div className="mt-[150px]">
+              <div className="grid grid-cols-2" style={{ maxWidth: "45.55vw", maxHeight: "267px" }}>
+                {/* Tonnes CO₂ emissions saved */}
+                <div className="border-r border-white/20 p-8 pl-0">
+                  <Counter value={1012120.45} suffix="+" trigger={isImpactInView} />
+                  <p
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "18px",
+                      lineHeight: "100%",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    Tonnes CO₂ emissions saved
+                  </p>
+                </div>
+
+                <div className="p-8"></div>
+
+                {/* Million gallons of water saved */}
+                <div className="border-r border-t border-white/20 p-8 pl-0">
+                  <Counter value={12185.45} suffix="+" trigger={isImpactInView} />
+                  <p
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "18px",
+                      lineHeight: "100%",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    Million gallons of water saved
+                  </p>
+                </div>
+
+                {/* Tonnes plastic removed */}
+                <div className="border-t border-white/20 p-8">
+                  <Counter value={22253.65} suffix="+" trigger={isImpactInView} />
+                  <p
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "18px",
+                      lineHeight: "100%",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    Tonnes plastic removed
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="w-full md:hidden flex flex-col relative z-10 py-[13.74vw] px-[6.1vw]">
+          <h2
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "7.12vw",
+              lineHeight: "110%",
+              color: "#FFFFFF",
+            }}
+          >
+            Impact
+          </h2>
+          <div style={{ height: "2.54vw" }} />
+          <p
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "3.56vw",
+              lineHeight: "110%",
+              color: "#FFFFFF",
+            }}
+          >
+            Real numbers. Real results.
+          </p>
+          <div style={{ height: "6.1vw" }} />
+          <p
+            style={{
+              fontFamily: "'Manrope', sans-serif",
+              fontWeight: 400,
+              fontSize: "3.05vw",
+              lineHeight: "100%",
+              color: "#AEAEAE",
+              maxWidth: "59.29vw",
+            }}
+          >
+            Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
+          </p>
+          <div style={{ height: "12.21vw" }} />
+
+          <Link href="/sustainability" className="contents">
+            <HoverButton theme="transparent-white">
+              {(hovered) => (
+                <>
+                  Know More
+                  <div className="relative inline-block w-4 h-4 ml-2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                      alt="icon default"
+                      width={16}
+                      height={16}
+                      className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                    />
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: hovered ? 1 : 0 }}
+                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                      className="absolute top-0 left-0"
+                    >
                       <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                        alt="icon"
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                        alt="icon hover"
                         width={16}
                         height={16}
                         className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                       />
-                    </div>
-                  </>
-                )}
-              </HoverButton>
-            </Link>
-          </div>
+                    </motion.div>
+                  </div>
+                </>
+              )}
+            </HoverButton>
+          </Link>
 
-          {/* Counters Grid with dividers */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-white/20 pt-4">
-            <div className="sm:pr-6 pt-4 sm:pt-0">
-              <Counter value={1012120.45} suffix="+" trigger={isImpactInView} />
-              <p className="font-[Manrope] text-[14px] text-[#AEAEAE] mt-2">
+          <div style={{ height: "45.03vw" }} />
+
+          {/* Grid of stats */}
+          <div className="grid grid-cols-2 w-full mt-auto">
+            {/* Tonnes CO₂ emissions saved */}
+            <div className="border-r border-b border-white/20 pb-[5vw] pr-[2vw]">
+              <Counter
+                value={1012120.45}
+                suffix="+"
+                trigger={isImpactInView}
+                style={{ fontSize: "6vw", lineHeight: "100%", marginBottom: "2vw", fontWeight: 400 }}
+              />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "2.5vw",
+                  lineHeight: "110%",
+                  color: "#AEAEAE",
+                }}
+              >
                 Tonnes CO₂ emissions saved
               </p>
             </div>
 
-            <div className="sm:px-6 pt-6 sm:pt-0">
-              <Counter value={12185.45} suffix="+" trigger={isImpactInView} />
-              <p className="font-[Manrope] text-[14px] text-[#AEAEAE] mt-2">
-                Million gallons of water saved
+            {/* Empty space in grid */}
+            <div className="border-b border-white/20 pb-[5vw] pl-[2vw]"></div>
+
+            {/* Million gallons of water saved */}
+            <div className="border-r border-white/20 pt-[5vw] pr-[2vw]">
+              <Counter
+                value={12185.45}
+                suffix="+"
+                trigger={isImpactInView}
+                style={{ fontSize: "6vw", lineHeight: "100%", marginBottom: "2vw", fontWeight: 400 }}
+              />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "2.5vw",
+                  lineHeight: "110%",
+                  color: "#AEAEAE",
+                }}
+              >
+                Million Gallons Of Water Saved
               </p>
             </div>
 
-            <div className="sm:pl-6 pt-6 sm:pt-0">
-              <Counter value={22253.65} suffix="+" trigger={isImpactInView} />
-              <p className="font-[Manrope] text-[14px] text-[#AEAEAE] mt-2">
-                Tonnes plastic removed
+            {/* Tonnes plastic removed */}
+            <div className="pt-[5vw] pl-[4vw]">
+              <Counter
+                value={22253.65}
+                suffix="+"
+                trigger={isImpactInView}
+                style={{ fontSize: "6vw", lineHeight: "100%", marginBottom: "2vw", fontWeight: 400 }}
+              />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "2.5vw",
+                  lineHeight: "110%",
+                  color: "#AEAEAE",
+                }}
+              >
+                Tonnes Plastic Removed
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      <div className="w-full bg-black">
+        <div className="w-full h-px bg-white/20" />
+      </div>
 
       {/* ── PERSPECTIVES SECTION ── */}
       <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
