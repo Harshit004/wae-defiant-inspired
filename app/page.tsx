@@ -541,33 +541,34 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Desktop: Guru Nanak Ji Portrait & Greeting (Under Philanthropy in header) */}
+            {/* Desktop: Guru Nanak Ji Portrait & Greeting (Contained in 281x327, Under Philanthropy in header) */}
             <div
-              className="hidden md:flex flex-col items-start absolute pointer-events-auto"
+              className="hidden md:flex flex-col justify-between items-start absolute pointer-events-auto"
               style={{
+                width: "clamp(200px, 19.51vw, 281px)",
+                height: "clamp(233px, 22.71vw, 327px)",
                 top: "clamp(85px, 7.8vw, 120px)",
-                right: "clamp(135px, 14.5vw, 215px)",
+                right: "clamp(110px, 12vw, 180px)",
               }}
             >
-              <div className="w-[clamp(140px, 13.5vw, 195px)] h-auto">
+              <div className="w-full flex-1 relative min-h-0">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3892ef84-0609-41ac-cf14-c405e6f9ad00/public"
                   alt="Sri Guru Nanak Dev Ji"
-                  width={659}
-                  height={768}
+                  fill
                   priority
                   unoptimized
-                  className="w-full h-auto object-contain"
+                  className="object-contain object-bottom"
                 />
               </div>
 
               {/* Greeting below portrait */}
-              <div className="flex flex-col items-start mt-[clamp(6px, 0.6vw, 10px)]">
+              <div className="flex flex-col items-start shrink-0 pt-2">
                 <span
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     fontWeight: 400,
-                    fontSize: "clamp(14px, 1.67vw, 24px)",
+                    fontSize: "clamp(16px, 1.67vw, 24px)",
                     lineHeight: "100%",
                     letterSpacing: "0%",
                     color: "#A0A0A0",
@@ -580,7 +581,7 @@ export default function Home() {
                     style={{
                       fontFamily: "'DM Serif Display', serif",
                       fontWeight: 400,
-                      fontSize: "clamp(20px, 2.5vw, 36px)",
+                      fontSize: "clamp(24px, 2.5vw, 36px)",
                       lineHeight: "100%",
                       letterSpacing: "0%",
                       color: "#C09A5E",
@@ -592,7 +593,7 @@ export default function Home() {
                     style={{
                       fontFamily: "'DM Serif Display', serif",
                       fontWeight: 400,
-                      fontSize: "clamp(20px, 2.5vw, 36px)",
+                      fontSize: "clamp(24px, 2.5vw, 36px)",
                       lineHeight: "105%",
                       letterSpacing: "0%",
                       color: "#A0A0A0",
@@ -604,21 +605,26 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Mobile: Guru Nanak Ji Portrait & Greeting */}
-            <div className="md:hidden flex flex-col items-center mx-auto mt-[clamp(16px, 4vh, 28px)] pointer-events-auto">
-              <div className="w-[clamp(140px, 42vw, 185px)] h-auto">
+            {/* Mobile: Guru Nanak Ji Portrait & Greeting (Contained in 281x327) */}
+            <div
+              className="md:hidden flex flex-col justify-between items-start mx-auto mt-[clamp(16px, 3vh, 28px)] pointer-events-auto"
+              style={{
+                width: "clamp(220px, 72vw, 281px)",
+                height: "clamp(255px, 38vh, 327px)",
+              }}
+            >
+              <div className="w-full flex-1 relative min-h-0">
                 <Image
                   src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3892ef84-0609-41ac-cf14-c405e6f9ad00/public"
                   alt="Sri Guru Nanak Dev Ji"
-                  width={659}
-                  height={768}
+                  fill
                   priority
                   unoptimized
-                  className="w-full h-auto object-contain"
+                  className="object-contain object-bottom"
                 />
               </div>
 
-              <div className="flex flex-col items-start w-[clamp(140px, 42vw, 185px)] mt-2">
+              <div className="flex flex-col items-start shrink-0 pt-2 w-full">
                 <span
                   style={{
                     fontFamily: "'Inter', sans-serif",
