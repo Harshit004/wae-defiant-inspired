@@ -480,8 +480,8 @@ export default function Home() {
                   top: "calc(100% - 35px)",
                 }}
               >
-                {/* Punjabi Symbol (Middle aligned with Our Green is Blue top) */}
-                <div className="-translate-y-1/2">
+                {/* Punjabi Symbol (Pushed down with exact 16px gap to verse) */}
+                <div>
                   <Image
                     src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3a988963-e3cf-432d-d0fe-9782d6b24d00/public"
                     alt="Ik Onkar Emblem"
@@ -502,7 +502,7 @@ export default function Home() {
                     fontSize: "clamp(11px, 0.97vw, 14px)",
                     lineHeight: "105%",
                     letterSpacing: "0%",
-                    marginTop: "clamp(10px, 1.11vw, 16px)",
+                    marginTop: "16px",
                   }}
                 >
                   ਪਵਣੁ ਗੁਰੂ ਪਾਣੀ ਪਿਤਾ ਮਾਤਾ ਧਰਤਿ ਮਹਤੁ ॥
@@ -550,6 +550,7 @@ export default function Home() {
                 height: "clamp(233px, 22.71vw, 327px)",
                 top: "clamp(105px, 7.99vw, 135px)",
                 right: "clamp(70px, 7.22vw, 120px)",
+                background: "linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 50.48%, rgba(13, 13, 13, 0) 100%)",
               }}
             >
               <div className="w-full flex-1 relative min-h-0">
@@ -612,6 +613,7 @@ export default function Home() {
               style={{
                 width: "min(281px, 75vw)",
                 height: "min(327px, 36vh)",
+                background: "linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 50.48%, rgba(13, 13, 13, 0) 100%)",
               }}
             >
               <div className="w-full flex-1 relative min-h-0">
