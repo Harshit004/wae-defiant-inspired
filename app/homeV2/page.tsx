@@ -316,28 +316,28 @@ const figmaSolutions = [
     id: "wastewater",
     number: "01",
     title: "Wastewater,\nRecovery & Reuse",
-    image: "/homeV2/solution-1.png",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4deb62dc-41a4-4381-4b4e-a4a3eb9c9200/public",
     href: "/portfolio",
   },
   {
     id: "water-treatment",
     number: "02",
     title: "Water Treatment\n& Process Water",
-    image: "/homeV2/solution-2.png",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f41f4550-1462-4c80-91f3-6e6de1851a00/public",
     href: "/portfolio",
   },
   {
-    id: "desalination",
+    id: "membrane-separation",
     number: "03",
-    title: "Desalination,\nDemineralisation & Ultrapure",
-    image: "/homeV2/solution-1.png",
+    title: "Membrane\n& Separation Technologies",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/22594f18-48bf-45ab-8999-25f5bffd4200/public",
     href: "/portfolio",
   },
   {
-    id: "process-cooling",
+    id: "heat-pump",
     number: "04",
-    title: "Process Cooling,\nSteam & Boiler Feed Systems",
-    image: "/homeV2/solution-2.png",
+    title: "Heat-Pump\nWater Heating Systems",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6aa9acc7-c143-4e67-878c-29e696fbf300/public",
     href: "/portfolio",
   },
 ]
@@ -1371,17 +1371,17 @@ export default function HomeV2() {
                       className="object-cover"
                     />
 
-                    {/* Gradient Overlay for Typography Legibility (Figma: transparent to black) - disappears on hover */}
+                    {/* Gradient Overlay for Typography Legibility (fades at bottom behind text) - disappears on hover */}
                     <div
                       className="absolute inset-0 pointer-events-none transition-opacity duration-300 group-hover:opacity-0"
                       style={{
                         background:
-                          "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0) 100%)",
+                          "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 22%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0) 45%)",
                       }}
                     />
 
                     {/* Card Content at bottom: Title and chevron-right arrow - disappears on hover */}
-                    <div className="absolute inset-x-0 bottom-0 p-8 flex justify-between items-end z-10 transition-opacity duration-300 group-hover:opacity-0">
+                    <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex justify-between items-end z-10 transition-opacity duration-300 group-hover:opacity-0">
                       <h3
                         style={{
                           fontFamily: "'Inter Tight', sans-serif",
@@ -1395,8 +1395,17 @@ export default function HomeV2() {
                         {sol.title}
                       </h3>
 
-                      <div className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white transition-all">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <div className="flex items-center text-white pb-1">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
                           <path d="M9 5l7 7-7 7" />
                         </svg>
                       </div>
