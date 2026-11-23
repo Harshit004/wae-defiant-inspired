@@ -916,5 +916,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-23",
     "time": "16:03:04",
     "pageLink": "/careers"
+  },
+  {
+    "id": "866efdd9-09b7-40a8-b1a1-e2ab070882dd",
+    "email": "rahulmaheshwari2830@gmail.com",
+    "date": "2026-11-23",
+    "time": "16:05:08",
+    "pageLink": "/sustainability"
   }
 ];
