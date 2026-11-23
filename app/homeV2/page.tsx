@@ -57,8 +57,8 @@ const HERO_SLIDES: HeroSlide[] = [
     id: 1,
     headline: "We're here to disrupt the status quo!",
     subhead: "Our Dream is Blue.",
-    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public",
-    isRipple: true,
+    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6820c51f-ec1f-45a8-f30d-d0725e98d100/public",
+    isRipple: false,
   },
   {
     id: 2,
@@ -557,8 +557,15 @@ export default function HomeV2() {
 
   // Product Carousel State & Navigation
   const productScrollRef = useRef<HTMLDivElement>(null)
-  const [activeSolutionIndex, setActiveSolutionIndex] = useState(0)
-  const solutionScrollRef = useRef<HTMLDivElement>(null)
+  const [productCanScrollLeft, setProductCanScrollLeft] = useState(false)
+  const [productCanScrollRight, setProductCanScrollRight] = useState(true)
+
+  const checkProductScroll = useCallback(() => {
+    if (!productScrollRef.current) return
+    const { scrollLeft, scrollWidth, clientWidth } = productScrollRef.current
+    setProductCanScrollLeft(scrollLeft > 10)
+    setProductCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10)
+  }, [])
 
   const handleProductScrollNav = (direction: "left" | "right") => {
     if (!productScrollRef.current) return
@@ -567,7 +574,20 @@ export default function HomeV2() {
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     })
+    setTimeout(checkProductScroll, 350)
   }
+
+  // Solution Carousel State & Navigation
+  const solutionScrollRef = useRef<HTMLDivElement>(null)
+  const [solutionCanScrollLeft, setSolutionCanScrollLeft] = useState(false)
+  const [solutionCanScrollRight, setSolutionCanScrollRight] = useState(true)
+
+  const checkSolutionScroll = useCallback(() => {
+    if (!solutionScrollRef.current) return
+    const { scrollLeft, scrollWidth, clientWidth } = solutionScrollRef.current
+    setSolutionCanScrollLeft(scrollLeft > 10)
+    setSolutionCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10)
+  }, [])
 
   const handleSolutionScrollNav = (direction: "left" | "right") => {
     if (!solutionScrollRef.current) return
@@ -576,15 +596,29 @@ export default function HomeV2() {
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     })
+    setTimeout(checkSolutionScroll, 350)
   }
 
-  const handleSolutionScroll = () => {
-    if (!solutionScrollRef.current) return
-    const scrollLeft = solutionScrollRef.current.scrollLeft
-    const itemWidth = 440
-    const index = Math.round(scrollLeft / itemWidth)
-    setActiveSolutionIndex(Math.min(figmaSolutions.length - 1, Math.max(0, index)))
-  }
+  useEffect(() => {
+    checkProductScroll()
+    checkSolutionScroll()
+    const prodEl = productScrollRef.current
+    const solEl = solutionScrollRef.current
+    if (prodEl) {
+      prodEl.addEventListener("scroll", checkProductScroll, { passive: true })
+    }
+    if (solEl) {
+      solEl.addEventListener("scroll", checkSolutionScroll, { passive: true })
+    }
+    window.addEventListener("resize", checkProductScroll)
+    window.addEventListener("resize", checkSolutionScroll)
+    return () => {
+      if (prodEl) prodEl.removeEventListener("scroll", checkProductScroll)
+      if (solEl) solEl.removeEventListener("scroll", checkSolutionScroll)
+      window.removeEventListener("resize", checkProductScroll)
+      window.removeEventListener("resize", checkSolutionScroll)
+    }
+  }, [checkProductScroll, checkSolutionScroll])
 
   // Impact Section Ref
   const impactRef = useRef<HTMLElement>(null)
@@ -849,9 +883,8 @@ export default function HomeV2() {
                   key={slide.id}
                   type="button"
                   onClick={() => setCurrentSlide(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    idx === currentSlide ? "w-10 bg-white" : "w-2.5 bg-white/30 hover:bg-white/60"
-                  }`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentSlide ? "w-10 bg-white" : "w-2.5 bg-white/30 hover:bg-white/60"
+                    }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
               ))}
@@ -878,9 +911,8 @@ export default function HomeV2() {
             {pillars.map((pillar, idx) => (
               <div
                 key={pillar.title}
-                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${
-                  idx < 2 ? "md:border-r md:border-[#FFFFFF4D]" : ""
-                } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group transition-all duration-500`}
+                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${idx < 2 ? "md:border-r md:border-[#FFFFFF4D]" : ""
+                  } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group transition-all duration-500`}
               >
                 <div className="flex flex-col w-full max-w-[320px]">
                   <h2
@@ -962,9 +994,8 @@ export default function HomeV2() {
             {pillars.map((_, i) => (
               <div
                 key={i}
-                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${
-                  i === pillarActiveIndex ? "w-[24px]" : "w-[6px] opacity-30"
-                }`}
+                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${i === pillarActiveIndex ? "w-[24px]" : "w-[6px] opacity-30"
+                  }`}
               />
             ))}
           </div>
@@ -1113,7 +1144,7 @@ export default function HomeV2() {
                     src={prod.image}
                     alt={`${prod.category} - ${prod.name}`}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 z-0"
+                    className="object-cover z-0"
                   />
                   {/* Overlay #000000B2 */}
                   <div
@@ -1172,7 +1203,12 @@ export default function HomeV2() {
             <button
               type="button"
               onClick={() => handleProductScrollNav("left")}
-              className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+              disabled={!productCanScrollLeft}
+              className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
+                !productCanScrollLeft
+                  ? "border-white/20 text-white/20 cursor-not-allowed"
+                  : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
+              }`}
               aria-label="Previous products"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1182,7 +1218,12 @@ export default function HomeV2() {
             <button
               type="button"
               onClick={() => handleProductScrollNav("right")}
-              className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+              disabled={!productCanScrollRight}
+              className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
+                !productCanScrollRight
+                  ? "border-white/20 text-white/20 cursor-not-allowed"
+                  : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
+              }`}
               aria-label="Next products"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1198,7 +1239,7 @@ export default function HomeV2() {
         <div className={containerClass}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Left Column: Solution Manifesto & Navigation (x=-4738 to -4165, ~492px width) */}
-            <div className="lg:col-span-5 flex flex-col justify-between">
+            <div className="lg:col-span-5 flex flex-col justify-between self-stretch">
               <div>
                 {/* Eyebrow */}
                 <span
@@ -1255,36 +1296,83 @@ export default function HomeV2() {
                 <p
                   style={{
                     fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
                     fontSize: "14px",
-                    lineHeight: "19.1px",
+                    lineHeight: "120%",
+                    letterSpacing: "0px",
+                    verticalAlign: "middle",
                     color: "#AEAEAE",
                   }}
                   className="mb-4"
                 >
-                  WAE integrates water treatment, membrane separation, wastewater recovery, reuse and low-carbon thermal infrastructure within a unified engineering architecture. From turnkey EPC and retrofit to digital monitoring, O&M and Water-as-a-Service, our systems are engineered for higher recovery, lower resource intensity, lifecycle efficiency and measurable decarbonisation.
+                  WAE integrates water treatment, membrane separation, wastewater recovery, reuse and low-carbon thermal infrastructure within a unified engineering architecture.{" "}
+                  <span
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "14px",
+                      lineHeight: "120%",
+                      letterSpacing: "0px",
+                      verticalAlign: "middle",
+                    }}
+                  >
+                    From turnkey EPC and retrofit to digital monitoring, O&M and Water-as-a-Service
+                  </span>
+                  , our systems are engineered for higher recovery, lower resource intensity, lifecycle efficiency and measurable decarbonisation.
                 </p>
 
-                <p
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontSize: "14px",
-                    lineHeight: "19.1px",
-                    color: "#AEAEAE",
-                  }}
-                  className="mb-8"
-                >
-                  <Link href="/portfolio" className="underline underline-offset-4 hover:text-white transition-colors">
-                    Explore the Product Architecture......Read more
+                <div className="flex flex-wrap items-center gap-1.5 mb-8">
+                  <span
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "14px",
+                      lineHeight: "120%",
+                      letterSpacing: "0px",
+                      verticalAlign: "middle",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    Explore the Product Architecture......
+                  </span>
+                  <Link
+                    href="/portfolio"
+                    className="inline-flex items-center gap-1 hover:underline underline-offset-4 transition-colors"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "14px",
+                      lineHeight: "120%",
+                      letterSpacing: "0px",
+                      verticalAlign: "middle",
+                      color: "#FFFFFF",
+                    }}
+                  >
+                    <span>Read more</span>
+                    <div className="relative inline-block w-3.5 h-3.5">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                        alt="icon"
+                        width={14}
+                        height={14}
+                        className="brightness-0 invert"
+                      />
+                    </div>
                   </Link>
-                </p>
+                </div>
               </div>
 
               {/* Prev / Next circular controls */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 pt-6 lg:pt-0">
                 <button
                   type="button"
                   onClick={() => handleSolutionScrollNav("left")}
-                  className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+                  disabled={!solutionCanScrollLeft}
+                  className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
+                    !solutionCanScrollLeft
+                      ? "border-white/20 text-white/20 cursor-not-allowed"
+                      : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
+                  }`}
                   aria-label="Previous solutions"
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1294,7 +1382,12 @@ export default function HomeV2() {
                 <button
                   type="button"
                   onClick={() => handleSolutionScrollNav("right")}
-                  className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+                  disabled={!solutionCanScrollRight}
+                  className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
+                    !solutionCanScrollRight
+                      ? "border-white/20 text-white/20 cursor-not-allowed"
+                      : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
+                  }`}
                   aria-label="Next solutions"
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1308,7 +1401,6 @@ export default function HomeV2() {
             <div className="lg:col-span-7 -mr-[6.1vw] md:-mr-[max(7.5vw,calc((100vw-1440px)/2+108px))]">
               <div
                 ref={solutionScrollRef}
-                onScroll={handleSolutionScroll}
                 className="flex gap-6 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pr-[6.1vw] md:pr-[max(7.5vw,calc((100vw-1440px)/2+108px))] scroll-pr-[6.1vw] md:scroll-pr-[max(7.5vw,calc((100vw-1440px)/2+108px))]"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
@@ -1323,7 +1415,7 @@ export default function HomeV2() {
                       src={sol.image}
                       alt={sol.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="object-cover"
                     />
 
                     {/* Gradient Overlay for Typography Legibility (Figma: transparent to black) */}
@@ -1422,7 +1514,7 @@ export default function HomeV2() {
             {figmaSectors.slice(0, 4).map((sec, idx) => (
               <div
                 key={sec.id}
-                className={`p-6 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] hover:bg-white/[0.03] transition-colors ${
+                className={`p-6 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] ${
                   idx < 3 ? "lg:border-r border-white/10" : ""
                 } ${idx % 2 === 0 ? "sm:border-r lg:border-r-0" : ""} border-b lg:border-b-0 border-white/10`}
               >
@@ -1475,7 +1567,7 @@ export default function HomeV2() {
             {figmaSectors.slice(4, 7).map((sec, idx) => (
               <div
                 key={sec.id}
-                className={`p-6 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] hover:bg-white/[0.03] transition-colors ${
+                className={`p-6 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] ${
                   idx < 2 ? "lg:border-r border-white/10" : ""
                 } ${idx % 2 === 0 ? "sm:border-r lg:border-r-0" : ""} border-b sm:border-b-0 border-white/10`}
               >
@@ -1685,8 +1777,8 @@ export default function HomeV2() {
               </div>
             </div>
 
-            {/* Right Column - Horizontal Line & Two Text Columns + Statement (Bottom aligned 30px above video bottom) */}
-            <div style={{ maxWidth: "650px" }} className="relative z-10 flex flex-col justify-between flex-1 min-w-0 self-stretch pb-[30px]">
+            {/* Right Column - Horizontal Line & Two Text Columns + Statement (Bottom aligned 70px above video bottom) */}
+            <div style={{ maxWidth: "650px" }} className="relative z-10 flex flex-col justify-between flex-1 min-w-0 self-stretch pb-[70px]">
               <div>
                 <div style={{ height: "49px" }} className="flex flex-col justify-start">
                   {/* Horizontal line aligned with button top */}
@@ -2263,23 +2355,23 @@ export default function HomeV2() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {blogsLoading
               ? [0, 1, 2].map((i) => (
-                  <div key={i} className="border-l border-white/20 pl-6">
-                    <div className="relative w-full aspect-square overflow-hidden mb-6 bg-white/5 animate-pulse rounded" />
-                    <div className="h-5 bg-white/5 animate-pulse mb-2 w-3/4 rounded" />
-                    <div className="h-4 bg-white/5 animate-pulse mb-1 w-full rounded" />
-                  </div>
-                ))
+                <div key={i} className="border-l border-white/20 pl-6">
+                  <div className="relative w-full aspect-square overflow-hidden mb-6 bg-white/5 animate-pulse rounded" />
+                  <div className="h-5 bg-white/5 animate-pulse mb-2 w-3/4 rounded" />
+                  <div className="h-4 bg-white/5 animate-pulse mb-1 w-full rounded" />
+                </div>
+              ))
               : homepageBlogs.map((blog) => {
-                  const categorySlug = blog.category
-                    .toLowerCase()
-                    .trim()
-                    .replace(/[^a-z0-9]+/g, "-")
-                    .replace(/(^-|-$)/g, "")
-                  const titleSlug = blog.title
-                    .toLowerCase()
-                    .trim()
-                    .replace(/[^a-z0-9]+/g, "-")
-                    .replace(/(^-|-$)/g, "")
+                const categorySlug = blog.category
+                  .toLowerCase()
+                  .trim()
+                  .replace(/[^a-z0-9]+/g, "-")
+                  .replace(/(^-|-$)/g, "")
+                const titleSlug = blog.title
+                  .toLowerCase()
+                  .trim()
+                  .replace(/[^a-z0-9]+/g, "-")
+                  .replace(/(^-|-$)/g, "")
 
                   return (
                     <Link
@@ -2292,7 +2384,7 @@ export default function HomeV2() {
                           src={blog.heroImage}
                           alt={blog.title}
                           fill
-                          className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                         />
                       </div>
                       <span className="text-[11px] font-[Manrope] text-[#AEAEAE] tracking-wide block mb-2 uppercase">
