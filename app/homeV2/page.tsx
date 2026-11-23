@@ -55,16 +55,22 @@ interface HeroSlide {
 const HERO_SLIDES: HeroSlide[] = [
   {
     id: 1,
-    headline: "We're here to disrupt the status quo!",
-    subhead: "Our Dream is Blue.",
+    headline: "We're here\nto disrupt the\nstatus quo!",
+    subhead: "Our Green is Bluw",
     bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6820c51f-ec1f-45a8-f30d-d0725e98d100/public",
-    isRipple: false,
   },
   {
     id: 2,
-    headline: "Blugrids",
-    subhead: "One intelligent Platform -\nInfinite water Intelligence",
+    headline: "Carbon\nneutral water",
+    subhead: "Nature made H₂O with three atoms.\nHuman greed added a carbon.",
+    highlight: "Inspired by phytoplankton -\nWAE intend to remove it.",
     bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a081b76b-c5b4-4e14-32df-7f0c314d3b00/public",
+    definition: {
+      word: "Phytoplankton",
+      phonetic: "/ˌfaɪ.təʊˈplæŋk.tən/ · noun",
+      meaning:
+        "Microscopic, organisms principal agents of the global carbon cycle, responsible for approximately 70% of Earth's oxygen while less than 1% of its photosynthetic biomass.",
+    },
   },
   {
     id: 3,
@@ -78,22 +84,15 @@ const HERO_SLIDES: HeroSlide[] = [
       { label: "Unreachable", color: "#FFFFFF" },
     ],
     footnote: {
-      lines: ["Not charity.", "Not CSR", "Responsibility"],
+      lines: ["Not charity.", "Not CSR.", "Responsibility"],
       hashtag: "#GiveBackToWater",
     },
   },
   {
     id: 4,
-    headline: "Carbon\nneutral water",
-    subhead: "Nature made H₂O with three atoms.\nHuman greed added a carbon.",
-    highlight: "Inspired by phytoplankton -\nWAE intend to remove it.",
-    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9b376b75-199f-48d2-42ff-72b27f7ac900/public",
-    definition: {
-      word: "Phytoplankton",
-      phonetic: "/ˌfaɪ.təʊˈplæŋk.tən/ · noun",
-      meaning:
-        "Microscopic, organisms principal agents of the global carbon cycle, responsible for approximately 70% of Earth's oxygen while less than 1% of its photosynthetic biomass.",
-    },
+    headline: "Blugrids",
+    subhead: "One intelligent Platform -\nInfinite water Intelligence",
+    bgImage: "/hero/hero-slide-4.png",
   },
 ]
 
@@ -429,14 +428,13 @@ export default function HomeV2() {
   const [isPaused, setIsPaused] = useState(false)
   const heroTouchStartX = useRef<number | null>(null)
 
-  // Carousel Autoplay - exactly 2 seconds as requested by user
+  // Carousel Autoplay - exactly every 2 seconds as requested by user
   useEffect(() => {
-    if (isPaused) return
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
     }, 2000)
     return () => clearInterval(timer)
-  }, [isPaused])
+  }, [])
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
@@ -619,228 +617,193 @@ export default function HomeV2() {
       {/* ── HERO CAROUSEL SECTION ── */}
       <section
         id="hero"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         className="w-full relative bg-[#0D0D0D] h-screen h-[100dvh] flex flex-col justify-between overflow-hidden"
       >
-        {/* Background Slide Crossfade */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeSlideData.id}
-            initial={{ opacity: 0, scale: 1.02 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.75, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full z-0 pointer-events-none"
-          >
-            {activeSlideData.isRipple ? (
-              <div className="absolute inset-0 w-full h-full opacity-95">
-                <LightweightRipple imageUrl={activeSlideData.bgImage} />
-              </div>
-            ) : (
-              <div className="absolute inset-0 w-full h-full">
-                <Image
-                  src={activeSlideData.bgImage}
-                  alt={activeSlideData.headline}
-                  fill
-                  priority
-                  className="object-cover object-center md:object-right opacity-95"
-                />
-                {/* Dark Vignette Overlay */}
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background:
-                      "linear-gradient(to right, rgba(13,13,13,0.7) 0%, rgba(13,13,13,0.2) 40%, transparent 80%)",
-                  }}
-                />
-              </div>
-            )}
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Ambient Top Gradient for Header Contrast */}
+        {/* Ambient Top Gradient for Header Contrast (Fixed) */}
         <div
-          className="absolute top-0 left-0 right-0 h-[160px] pointer-events-none z-[2]"
+          className="absolute top-0 left-0 right-0 h-[160px] pointer-events-none z-[4]"
           style={{
             background: "linear-gradient(to bottom, rgba(10,10,10,0.85) 0%, transparent 100%)",
           }}
         />
 
-        {/* Slide-specific Legend (e.g. Slide 3 Map Legend) */}
-        {activeSlideData.legend && (
-          <div className="hidden md:flex flex-col items-end gap-1.5 absolute top-[130px] right-[6.1vw] md:right-[7.5vw] z-[4] font-[Manrope] text-[11px] text-[#AEAEAE]">
-            {activeSlideData.legend.map((item, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <span>{item.label}</span>
-                <span
-                  className="w-2.5 h-2.5 rounded-full inline-block"
-                  style={{ backgroundColor: item.color }}
-                />
-              </div>
-            ))}
-          </div>
-        )}
+        {/* Sliding Banner (Background + Text + Legends + Footnotes all slide in from left together) */}
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={activeSlideData.id}
+            initial={{ x: "-100%" }}
+            animate={{ x: "0%" }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
+            className="absolute inset-0 w-full h-full flex flex-col justify-between overflow-hidden"
+          >
+            {/* Background Photography & Vignette */}
+            <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+              <Image
+                src={activeSlideData.bgImage}
+                alt={activeSlideData.headline}
+                fill
+                priority
+                className="object-cover object-center md:object-right opacity-95"
+              />
+              {/* Dark Vignette Overlay */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(to right, rgba(13,13,13,0.7) 0%, rgba(13,13,13,0.2) 40%, transparent 80%)",
+                }}
+              />
+            </div>
 
-        {/* Slide Content Layer */}
-        <div className="relative z-[3] flex-1 flex flex-col justify-center pt-[100px] md:pt-[120px] pb-[80px]">
-          <div className={containerClass}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeSlideData.id}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="max-w-[780px]"
-              >
-                {activeSlideData.badge && (
-                  <span
-                    className="inline-block text-white/70 tracking-widest text-[11px] md:text-[13px] uppercase font-semibold mb-3 font-[Inter_Tight]"
-                    style={{ letterSpacing: "1.5px" }}
-                  >
-                    {activeSlideData.badge}
-                  </span>
-                )}
-
-                <h1
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "clamp(34px, 5.2vw, 76px)",
-                    lineHeight: "105%",
-                    fontWeight: 500,
-                    letterSpacing: "-0.02em",
-                  }}
-                  className="text-white mb-4 whitespace-pre-line"
-                >
-                  {activeSlideData.headline}
-                </h1>
-
-                {activeSlideData.subhead && (
-                  <p
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "clamp(16px, 1.8vw, 24px)",
-                      lineHeight: "130%",
-                      fontWeight: 400,
-                      color: activeSlideData.id === 4 ? "#AEAEAE" : "#E0E0E0",
-                    }}
-                    className="mb-4 whitespace-pre-line"
-                  >
-                    {activeSlideData.subhead}
-                  </p>
-                )}
-
-                {activeSlideData.highlight && (
-                  <p
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "clamp(18px, 1.9vw, 26px)",
-                      lineHeight: "125%",
-                      fontWeight: 600,
-                      color: "#FFFFFF",
-                    }}
-                    className="mb-4 whitespace-pre-line"
-                  >
-                    {activeSlideData.highlight}
-                  </p>
-                )}
-
-                {activeSlideData.bodyCopy && (
-                  <p
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "clamp(15px, 1.35vw, 20px)",
-                      lineHeight: "140%",
-                      color: "#AEAEAE",
-                      maxWidth: "580px",
-                    }}
-                    className="mb-6 whitespace-pre-line"
-                  >
-                    {activeSlideData.bodyCopy}
-                  </p>
-                )}
-
-                {activeSlideData.tagline && (
-                  <div className="inline-block px-3 py-1 rounded bg-white/10 backdrop-blur-sm text-white/90 text-xs font-[Manrope] mb-6">
-                    {activeSlideData.tagline}
+            {/* Slide-specific Legend (e.g. Slide 3 Map Legend) */}
+            {activeSlideData.legend && (
+              <div className="hidden md:flex flex-col items-end gap-1.5 absolute top-[130px] right-[6.1vw] md:right-[7.5vw] z-[3] font-[Manrope] text-[11px] text-[#AEAEAE]">
+                {activeSlideData.legend.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <span>{item.label}</span>
+                    <span
+                      className="w-2.5 h-2.5 rounded-full inline-block"
+                      style={{ backgroundColor: item.color }}
+                    />
                   </div>
-                )}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
+                ))}
+              </div>
+            )}
 
-        {/* Bottom Slide Indicators & Footnotes */}
-        <div className="relative z-[3] pb-6 md:pb-8 w-full">
-          <div className={`${containerClass} relative flex items-end justify-between min-h-[50px]`}>
-            {/* Left Footnote / Definition */}
-            <div className="max-w-[340px] md:max-w-[460px]">
-              <AnimatePresence mode="wait">
-                {activeSlideData.footnote && (
-                  <motion.div
-                    key={`fn-${activeSlideData.id}`}
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.3 }}
-                    className="font-[Manrope]"
+            {/* Slide Content Layer: Title, Subhead, Highlight, Body Copy */}
+            <div className="relative z-[2] flex-1 flex flex-col justify-center pt-[100px] md:pt-[120px] pb-[80px]">
+              <div className={containerClass}>
+                <div className="max-w-[780px]">
+                  {activeSlideData.badge && (
+                    <span
+                      className="inline-block text-white/70 tracking-widest text-[11px] md:text-[13px] uppercase font-semibold mb-3 font-[Inter_Tight]"
+                      style={{ letterSpacing: "1.5px" }}
+                    >
+                      {activeSlideData.badge}
+                    </span>
+                  )}
+
+                  <h1
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontSize: "clamp(34px, 5.2vw, 76px)",
+                      lineHeight: "105%",
+                      fontWeight: 500,
+                      letterSpacing: "-0.02em",
+                    }}
+                    className="text-white mb-4 whitespace-pre-line"
                   >
-                    <div className="text-[12px] md:text-[13px] text-[#AEAEAE] leading-[135%]">
-                      {activeSlideData.footnote.lines.map((l, i) => (
-                        <p key={i}>{l}</p>
-                      ))}
+                    {activeSlideData.headline}
+                  </h1>
+
+                  {activeSlideData.subhead && (
+                    <p
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontSize: "clamp(16px, 1.8vw, 24px)",
+                        lineHeight: "130%",
+                        fontWeight: 400,
+                        color: activeSlideData.id === 4 ? "#AEAEAE" : "#E0E0E0",
+                      }}
+                      className="mb-4 whitespace-pre-line"
+                    >
+                      {activeSlideData.subhead}
+                    </p>
+                  )}
+
+                  {activeSlideData.highlight && (
+                    <p
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontSize: "clamp(18px, 1.9vw, 26px)",
+                        lineHeight: "125%",
+                        fontWeight: 600,
+                        color: "#FFFFFF",
+                      }}
+                      className="mb-4 whitespace-pre-line"
+                    >
+                      {activeSlideData.highlight}
+                    </p>
+                  )}
+
+                  {activeSlideData.bodyCopy && (
+                    <p
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontSize: "clamp(15px, 1.35vw, 20px)",
+                        lineHeight: "140%",
+                        color: "#AEAEAE",
+                        maxWidth: "580px",
+                      }}
+                      className="mb-6 whitespace-pre-line"
+                    >
+                      {activeSlideData.bodyCopy}
+                    </p>
+                  )}
+
+                  {activeSlideData.tagline && (
+                    <div className="inline-block px-3 py-1 rounded bg-white/10 backdrop-blur-sm text-white/90 text-xs font-[Manrope] mb-6">
+                      {activeSlideData.tagline}
                     </div>
-                    {activeSlideData.footnote.hashtag && (
-                      <p className="text-[12px] md:text-[13px] font-bold text-white mt-1.5">
-                        {activeSlideData.footnote.hashtag}
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Footnote / Definition inside sliding slide */}
+            <div className="relative z-[2] pb-6 md:pb-8 w-full pointer-events-none">
+              <div className={`${containerClass} flex items-end justify-between min-h-[50px]`}>
+                <div className="max-w-[340px] md:max-w-[460px] pointer-events-auto">
+                  {activeSlideData.footnote && (
+                    <div className="font-[Manrope]">
+                      <div className="text-[12px] md:text-[13px] text-[#AEAEAE] leading-[135%]">
+                        {activeSlideData.footnote.lines.map((l, i) => (
+                          <p key={i}>{l}</p>
+                        ))}
+                      </div>
+                      {activeSlideData.footnote.hashtag && (
+                        <p className="text-[12px] md:text-[13px] font-bold text-white mt-1.5">
+                          {activeSlideData.footnote.hashtag}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  {activeSlideData.definition && (
+                    <div className="font-[Manrope]">
+                      <p className="text-[13px] md:text-[14px] font-bold text-white">
+                        {activeSlideData.definition.word}
                       </p>
-                    )}
-                  </motion.div>
-                )}
-
-                {activeSlideData.definition && (
-                  <motion.div
-                    key={`def-${activeSlideData.id}`}
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.3 }}
-                    className="font-[Manrope]"
-                  >
-                    <p className="text-[13px] md:text-[14px] font-bold text-white">
-                      {activeSlideData.definition.word}
-                    </p>
-                    <p className="text-[11px] md:text-[12px] text-[#AEAEAE] mb-0.5">
-                      {activeSlideData.definition.phonetic}
-                    </p>
-                    <p className="text-[11px] md:text-[12px] text-[#AEAEAE] leading-[135%]">
-                      {activeSlideData.definition.meaning}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                      <p className="text-[11px] md:text-[12px] text-[#AEAEAE] mb-0.5">
+                        {activeSlideData.definition.phonetic}
+                      </p>
+                      <p className="text-[11px] md:text-[12px] text-[#AEAEAE] leading-[135%]">
+                        {activeSlideData.definition.meaning}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
+          </motion.div>
+        </AnimatePresence>
 
-            {/* Bottom Slide Indicators Centered Horizontally */}
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 flex items-center gap-2">
-              {HERO_SLIDES.map((slide, idx) => (
-                <button
-                  key={slide.id}
-                  type="button"
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentSlide ? "w-10 bg-white" : "w-2.5 bg-white/30 hover:bg-white/60"
-                    }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Right Spacer for balance / WhatsApp icon */}
-            <div className="w-[40px] md:w-[60px] pointer-events-none" />
-          </div>
+        {/* Bottom Slide Indicators Centered Horizontally (Fixed on top of sliding slides) */}
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-6 md:bottom-8 z-[10] flex items-center gap-2">
+          {HERO_SLIDES.map((slide, idx) => (
+            <button
+              key={slide.id}
+              type="button"
+              onClick={() => setCurrentSlide(idx)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                idx === currentSlide ? "w-10 bg-white" : "w-2.5 bg-white/30 hover:bg-white/60"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
         </div>
 
         {/* Status Quo Announcement Popup */}
