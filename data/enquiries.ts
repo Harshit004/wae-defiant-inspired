@@ -6120,5 +6120,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "https://www.waecorp.com/portfolio/trublu/alfa-100\nwhat's the price of this one?",
     "type": "contact-us",
     "createdAt": "2026-11-23T07:27:35.054Z"
+  },
+  "be70ea24-a227-4465-b03a-b02f733888e2": {
+    "id": "be70ea24-a227-4465-b03a-b02f733888e2",
+    "fullName": "Pavan Gadi",
+    "companyName": "FreeFly",
+    "email": "gadi.pavan@befreefly.in",
+    "phone": "9840847035",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/portfolio/bluwae/venus",
+    "type": "product",
+    "createdAt": "2026-11-23T07:43:05.705Z"
   }
 };
