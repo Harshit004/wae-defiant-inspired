@@ -349,43 +349,43 @@ const figmaSectors = [
     id: "workplaces",
     title: "Workplaces",
     description: "Safe everyday hydration for Modern work places",
-    iconType: "workplaces",
+    icon: "/icons/sectors/workplaces.svg",
   },
   {
     id: "horeca",
     title: "HoReCa",
     description: "Safe and conditioned water for hydration and luxury",
-    iconType: "horeca",
+    icon: "/icons/sectors/horeca.svg",
   },
   {
     id: "manufacturing",
     title: "Manufacturing",
     description: "Potable , conditioned utility  and process water",
-    iconType: "manufacturing",
+    icon: "/icons/sectors/manufacturing.svg",
   },
   {
     id: "health",
     title: "Health & Wellness",
     description: "Potable and ultra pure water for laboratory & specialised procedures",
-    iconType: "health",
+    icon: "/icons/sectors/health.svg",
   },
   {
     id: "education",
     title: "Education & Institutions",
     description: "Potable water for campus hydration and ultrapure for laboratories.",
-    iconType: "education",
+    icon: "/icons/sectors/education.svg",
   },
   {
     id: "aviation",
     title: "Aviation & Urban Mobility",
     description: "WAE integrates water treatment, membrane ",
-    iconType: "aviation",
+    icon: "/icons/sectors/aviation.svg",
   },
   {
     id: "utilities",
     title: "Public Utilities & Infra",
     description: "Safe drinking water  public hydration and conditioned water for utilities",
-    iconType: "utilities",
+    icon: "/icons/sectors/utilities.svg",
   },
 ]
 
@@ -420,58 +420,6 @@ const sectorsRow2 = [
     icon: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5226aae0-7c1e-4141-35c7-6adf421a4a00/public",
   },
 ]
-
-const renderSectorIcon = (type: string) => {
-  switch (type) {
-    case "workplaces":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="4" y="2" width="16" height="20" rx="2" />
-          <path d="M9 22v-4h6v4" />
-          <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01" />
-        </svg>
-      )
-    case "manufacturing":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
-          <path d="M17 18h1M12 18h1M7 18h1" />
-        </svg>
-      )
-    case "health":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z" />
-        </svg>
-      )
-    case "education":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-          <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5" />
-        </svg>
-      )
-    case "aviation":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
-        </svg>
-      )
-    case "utilities":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="4" y="3" width="16" height="16" rx="2" />
-          <path d="M4 11h16" />
-          <path d="M8 15h.01" />
-          <path d="M16 15h.01" />
-          <path d="M6 19v2" />
-          <path d="M18 19v2" />
-        </svg>
-      )
-    default:
-      return null
-  }
-}
 
 // ── MAIN COMPONENT ──
 
@@ -1146,9 +1094,9 @@ export default function HomeV2() {
                     fill
                     className="object-cover z-0"
                   />
-                  {/* Overlay #000000B2 */}
+                  {/* Overlay #000000B2 (completely disappears on hover) */}
                   <div
-                    className="absolute inset-0 bg-[#000000B2] pointer-events-none z-10 transition-opacity duration-300 group-hover:opacity-80"
+                    className="absolute inset-0 bg-[#000000B2] pointer-events-none z-10 transition-opacity duration-300 group-hover:opacity-0"
                   />
                 </div>
 
@@ -1423,17 +1371,17 @@ export default function HomeV2() {
                       className="object-cover"
                     />
 
-                    {/* Gradient Overlay for Typography Legibility (Figma: transparent to black) */}
+                    {/* Gradient Overlay for Typography Legibility (Figma: transparent to black) - disappears on hover */}
                     <div
-                      className="absolute inset-0 pointer-events-none"
+                      className="absolute inset-0 pointer-events-none transition-opacity duration-300 group-hover:opacity-0"
                       style={{
                         background:
                           "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0) 100%)",
                       }}
                     />
 
-                    {/* Card Content at bottom: Title and chevron-right arrow */}
-                    <div className="absolute inset-x-0 bottom-0 p-8 flex justify-between items-end z-10">
+                    {/* Card Content at bottom: Title and chevron-right arrow - disappears on hover */}
+                    <div className="absolute inset-x-0 bottom-0 p-8 flex justify-between items-end z-10 transition-opacity duration-300 group-hover:opacity-0">
                       <h3
                         style={{
                           fontFamily: "'Inter Tight', sans-serif",
@@ -1447,7 +1395,7 @@ export default function HomeV2() {
                         {sol.title}
                       </h3>
 
-                      <div className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white group-hover:border-white group-hover:translate-x-1 transition-all">
+                      <div className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white transition-all">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M9 5l7 7-7 7" />
                         </svg>
@@ -1525,19 +1473,15 @@ export default function HomeV2() {
               >
                 <div>
                   <div className="mb-6 flex items-center gap-3">
-                    {sec.iconType === "horeca" ? (
-                      <div className="w-7 h-7 relative flex items-center justify-center">
-                        <img
-                          src="/homeV2/sector-horeca.png"
-                          alt="HoReCa"
-                          className="w-full h-full object-contain filter invert opacity-90"
-                        />
-                      </div>
-                    ) : (
-                      <div className="text-white/90">
-                        {renderSectorIcon(sec.iconType)}
-                      </div>
-                    )}
+                    <div className="w-[30px] h-[30px] relative flex-shrink-0 flex items-center justify-center">
+                      <Image
+                        src={sec.icon}
+                        alt={sec.title}
+                        width={30}
+                        height={30}
+                        className="w-[30px] h-[30px] object-contain"
+                      />
+                    </div>
                     <h3
                       style={{
                         fontFamily: "'Inter Tight', sans-serif",
@@ -1578,8 +1522,14 @@ export default function HomeV2() {
               >
                 <div>
                   <div className="mb-6 flex items-center gap-3">
-                    <div className="text-white/90">
-                      {renderSectorIcon(sec.iconType)}
+                    <div className="w-[30px] h-[30px] relative flex-shrink-0 flex items-center justify-center">
+                      <Image
+                        src={sec.icon}
+                        alt={sec.title}
+                        width={30}
+                        height={30}
+                        className="w-[30px] h-[30px] object-contain"
+                      />
                     </div>
                     <h3
                       style={{
