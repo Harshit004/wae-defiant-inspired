@@ -11,7 +11,7 @@ import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import dynamic from "next/dynamic"
-import LightweightRipple from "@/components/LightweightRipple"
+// import LightweightRipple from "@/components/LightweightRipple"
 import StatusQuoPopup from "@/components/StatusQuoPopup"
 import { BLOGS } from "@/data/blogs"
 
@@ -427,14 +427,28 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
+        className="w-full relative bg-[#0D0D0D] md:pt-0 md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
       >
         {/* Background Image determining the height of the section naturally */}
-        <div className="md:hidden absolute inset-0 w-full h-full opacity-95">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6ec52330-413b-4798-0bb2-f0279c930100/public" />
+        <div className="md:hidden absolute inset-0 w-full h-full">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6ec52330-413b-4798-0bb2-f0279c930100/public"
+            alt="Guru Nanak Jayanti Hero Banner"
+            fill
+            priority
+            unoptimized
+            className="object-cover object-center"
+          />
         </div>
-        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1265/768]">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6820c51f-ec1f-45a8-f30d-d0725e98d100/public" />
+        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full md:aspect-[1265/768]">
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6820c51f-ec1f-45a8-f30d-d0725e98d100/public"
+            alt="Guru Nanak Jayanti Hero Banner"
+            fill
+            priority
+            unoptimized
+            className="object-cover object-center"
+          />
         </div>
 
         {/* Hero Content Text (Topmost) */}

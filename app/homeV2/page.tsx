@@ -58,7 +58,7 @@ const HERO_SLIDES: HeroSlide[] = [
     headline: "We're here to disrupt the status quo!",
     subhead: "Our Dream is Blue.",
     bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6820c51f-ec1f-45a8-f30d-d0725e98d100/public",
-    isRipple: true,
+    isRipple: false,
   },
   {
     id: 2,
