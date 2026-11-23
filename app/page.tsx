@@ -12,6 +12,7 @@ import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import dynamic from "next/dynamic"
 import LightweightRipple from "@/components/LightweightRipple"
+import StatusQuoPopup from "@/components/StatusQuoPopup"
 import { BLOGS } from "@/data/blogs"
 
 // Initial featured blogs from static dataset to avoid flash of empty state
@@ -474,6 +475,9 @@ export default function Home() {
           {/* Mobile divider at the bottom of the hero section */}
           <div className="md:hidden absolute bottom-0 left-0 right-0 border-b border-[#FFFFFF4D] z-[5]" />
         </div>
+
+        {/* Status Quo Announcement Popup */}
+        <StatusQuoPopup />
       </section>
 
       {/* Purpose, Philosophy & Principle Section */}
