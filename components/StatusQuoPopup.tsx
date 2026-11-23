@@ -101,7 +101,7 @@ export default function StatusQuoPopup({ className = "" }: StatusQuoPopupProps) 
               shadow-[0_8px_32px_rgba(0,0,0,0.36)]
               ${className}`}
           >
-            <div className="flex items-start gap-[clamp(12px,1.11vw,16px)]">
+            <div className="flex items-start gap-[clamp(16px,1.39vw,20px)]">
               {/* Top-left Circle 36x36 with 24x24 icon */}
               <div className="w-[36px] h-[36px] min-w-[36px] min-h-[36px] rounded-full bg-[#1D668F] flex items-center justify-center shrink-0">
                 <Image
