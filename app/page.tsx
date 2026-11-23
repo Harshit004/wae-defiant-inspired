@@ -548,8 +548,8 @@ export default function Home() {
               style={{
                 width: "clamp(200px, 19.51vw, 281px)",
                 height: "clamp(233px, 22.71vw, 327px)",
-                top: "clamp(0px, 1vw, 20px)",
-                right: "clamp(110px, 12vw, 180px)",
+                top: "clamp(105px, 7.99vw, 135px)",
+                right: "clamp(70px, 7.22vw, 120px)",
               }}
             >
               <div className="w-full flex-1 relative min-h-0">
