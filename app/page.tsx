@@ -439,36 +439,232 @@ export default function Home() {
 
         {/* Hero Content Text (Topmost) */}
         <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
-          <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
-            <div
-              className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
-              style={{
-                color: "#FFFFFF",
-                fontFamily: "'Inter Tight', sans-serif",
-              }}
-            >
-              <h1
-                className="text-[12.5vw] md:text-[clamp(36px,5.9vw,85px)] leading-[105%] font-medium"
+          <div className={`${containerClass} flex-1 flex flex-col justify-center relative`}>
+            {/* Left Headline & Subhead (Identical position as main branch) */}
+            <div className="relative w-full">
+              <div
+                className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
                 style={{
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  margin: 0,
-                }}
-              >
-                We're here <br />to disrupt the <br />status quo!
-              </h1>
-              <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
-              <p
-                className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
-                style={{
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  margin: 0,
+                  color: "#FFFFFF",
                   fontFamily: "'Inter Tight', sans-serif",
                 }}
               >
-                Our Green is Blue
-              </p>
+                <h1
+                  className="text-[12.5vw] md:text-[clamp(36px,5.9vw,85px)] leading-[105%] font-medium"
+                  style={{
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    margin: 0,
+                  }}
+                >
+                  We're here <br />to disrupt the <br />status quo!
+                </h1>
+                <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
+                <p
+                  className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
+                  style={{
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    margin: 0,
+                    fontFamily: "'Inter Tight', sans-serif",
+                  }}
+                >
+                  Our Green is Blue
+                </p>
+              </div>
+
+              {/* Right Column: Sacred Verse & Punjabi Symbol (Desktop) */}
+              <div
+                className="hidden md:flex flex-col items-end text-right pointer-events-auto max-w-[clamp(280px,32vw,460px)] absolute right-0"
+                style={{
+                  top: "calc(100% - 35px)",
+                }}
+              >
+                {/* Punjabi Symbol (Pushed down with exact 16px gap to verse) */}
+                <div>
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3a988963-e3cf-432d-d0fe-9782d6b24d00/public"
+                    alt="Ik Onkar Emblem"
+                    width={244}
+                    height={136}
+                    unoptimized
+                    priority
+                    className="w-[clamp(52px,4.4vw,72px)] h-auto object-contain"
+                  />
+                </div>
+
+                {/* 16px under it: Gurmukhi Verse */}
+                <p
+                  className="text-white text-right m-0"
+                  style={{
+                    fontFamily: "'Tiro Gurmukhi', serif",
+                    fontWeight: 400,
+                    fontSize: "clamp(11px, 0.97vw, 14px)",
+                    lineHeight: "105%",
+                    letterSpacing: "0%",
+                    marginTop: "16px",
+                  }}
+                >
+                  ਪਵਣੁ ਗੁਰੂ ਪਾਣੀ ਪਿਤਾ ਮਾਤਾ ਧਰਤਿ ਮਹਤੁ ॥
+                </p>
+
+                {/* 12px under it: Transliteration */}
+                <p
+                  className="text-[#A0A0A0] text-right m-0"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "clamp(11px, 0.97vw, 14px)",
+                    lineHeight: "105%",
+                    letterSpacing: "0%",
+                    marginTop: "clamp(8px, 0.83vw, 12px)",
+                  }}
+                >
+                  Pavan Guru Pani Pita, Mata Dharat Mahat
+                </p>
+
+                {/* 12px under it: English Translation */}
+                <p
+                  className="text-[#A0A0A0] text-right m-0"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "clamp(11px, 0.97vw, 14px)",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    marginTop: "clamp(8px, 0.83vw, 12px)",
+                  }}
+                >
+                  Air is the <span className="text-white font-normal">Guru</span>, Water is the{" "}
+                  <span className="text-white font-normal">Father</span>, and Great Sacred Earth is the{" "}
+                  <span className="text-white font-normal">Mother</span> of all.
+                </p>
+              </div>
+            </div>
+
+            {/* Desktop: Guru Nanak Ji Portrait & Greeting (Contained in 281x327, Under Philanthropy in header) */}
+            <div
+              className="hidden md:flex flex-col justify-between items-start absolute pointer-events-auto"
+              style={{
+                width: "clamp(200px, 19.51vw, 281px)",
+                height: "clamp(233px, 22.71vw, 327px)",
+                top: "clamp(105px, 7.99vw, 135px)",
+                right: "clamp(70px, 7.22vw, 120px)",
+                background: "linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 50.48%, rgba(13, 13, 13, 0) 100%)",
+              }}
+            >
+              <div className="w-full flex-1 relative min-h-0">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3892ef84-0609-41ac-cf14-c405e6f9ad00/public"
+                  alt="Sri Guru Nanak Dev Ji"
+                  fill
+                  priority
+                  unoptimized
+                  className="object-contain object-bottom"
+                />
+              </div>
+
+              {/* Greeting overlapping bottom of portrait */}
+              <div className="flex flex-col items-start shrink-0 -mt-[clamp(24px,2.2vw,32px)] relative z-10">
+                <span
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "clamp(16px, 1.67vw, 24px)",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    color: "#A0A0A0",
+                  }}
+                >
+                  Happy
+                </span>
+                <div className="flex items-baseline gap-[clamp(6px, 0.5vw, 10px)] mt-[clamp(2px, 0.28vw, 4px)] whitespace-nowrap">
+                  <span
+                    style={{
+                      fontFamily: "'DM Serif Display', serif",
+                      fontWeight: 400,
+                      fontSize: "clamp(24px, 2.5vw, 36px)",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      color: "#C09A5E",
+                    }}
+                  >
+                    Gurunanak
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'DM Serif Display', serif",
+                      fontWeight: 400,
+                      fontSize: "clamp(24px, 2.5vw, 36px)",
+                      lineHeight: "105%",
+                      letterSpacing: "0%",
+                      color: "#A0A0A0",
+                    }}
+                  >
+                    Jaynti
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile: Guru Nanak Ji Portrait & Greeting (Contained in 281x327) */}
+            <div
+              className="md:hidden flex flex-col justify-between items-start mx-auto mt-4 pointer-events-auto"
+              style={{
+                width: "min(281px, 75vw)",
+                height: "min(327px, 36vh)",
+                background: "linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 50.48%, rgba(13, 13, 13, 0) 100%)",
+              }}
+            >
+              <div className="w-full flex-1 relative min-h-0">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3892ef84-0609-41ac-cf14-c405e6f9ad00/public"
+                  alt="Sri Guru Nanak Dev Ji"
+                  fill
+                  priority
+                  unoptimized
+                  className="object-contain object-bottom"
+                />
+              </div>
+
+              {/* Greeting overlapping bottom of portrait */}
+              <div className="flex flex-col items-start shrink-0 -mt-5 relative z-10 w-full">
+                <span
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                    color: "#A0A0A0",
+                  }}
+                >
+                  Happy
+                </span>
+                <div className="flex items-baseline gap-2 mt-1 whitespace-nowrap">
+                  <span
+                    style={{
+                      fontFamily: "'DM Serif Display', serif",
+                      fontWeight: 400,
+                      fontSize: "20px",
+                      lineHeight: "100%",
+                      color: "#C09A5E",
+                    }}
+                  >
+                    Gurunanak
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'DM Serif Display', serif",
+                      fontWeight: 400,
+                      fontSize: "20px",
+                      lineHeight: "105%",
+                      color: "#A0A0A0",
+                    }}
+                  >
+                    Jaynti
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -492,8 +688,9 @@ export default function Home() {
             {pillars.map((pillar, idx) => (
               <div
                 key={pillar.title}
-                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${idx < 2 ? 'md:border-r md:border-[#FFFFFF4D]' : ''
-                  } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group`}
+                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${
+                  idx < 2 ? 'md:border-r md:border-[#FFFFFF4D]' : ''
+                } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group`}
               >
                 <div className="flex flex-col w-full max-w-[320px]">
                   <h2
@@ -575,8 +772,9 @@ export default function Home() {
             {pillars.map((_, i) => (
               <div
                 key={i}
-                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${i === pillarActiveIndex ? 'w-[24px]' : 'w-[6px] opacity-30'
-                  }`}
+                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${
+                  i === pillarActiveIndex ? 'w-[24px]' : 'w-[6px] opacity-30'
+                }`}
               />
             ))}
           </div>
