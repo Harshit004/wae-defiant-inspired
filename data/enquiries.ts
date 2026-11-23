@@ -6142,5 +6142,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/plusultra?gad_source=1&gad_campaignid=24244197975&gclid=EAIaIQobChMI0PaXhY2emAMVzoxLBR19ei1SEAAYBCAAEgJA-PD_BwE",
     "type": "product",
     "createdAt": "2026-11-23T12:36:52.653Z"
+  },
+  "fab7c6e3-8051-4488-9c8a-d561e048a303": {
+    "id": "fab7c6e3-8051-4488-9c8a-d561e048a303",
+    "fullName": "OM Prakash Gurjar",
+    "companyName": "Alwar",
+    "email": "prakashgurjaralwar5@gmail.com",
+    "phone": "9197828076",
+    "city": "Sakat bara ka bass th. Rajgarh Dist. Alwar",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934538&gad_source=5&gad_campaignid=23735506714&gclid=EAIaIQobChMI2q3GvZqemAMVFPpzAR1Iziy1EAEYASAAEgKxQ_D_BwE",
+    "type": "product",
+    "createdAt": "2026-11-23T13:36:59.741Z"
   }
 };
