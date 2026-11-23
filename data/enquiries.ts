@@ -6131,5 +6131,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/bluwae/venus",
     "type": "product",
     "createdAt": "2026-11-23T07:43:05.705Z"
+  },
+  "dad69fe5-e879-462e-9a64-071a37e6343c": {
+    "id": "dad69fe5-e879-462e-9a64-071a37e6343c",
+    "fullName": "Praveen Kumar",
+    "companyName": "SMRTHUB PRIVATE LIMITED",
+    "email": "qip.admin@rynasolutions.com",
+    "phone": "9581818220",
+    "city": "Hitech City",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/plusultra?gad_source=1&gad_campaignid=24244197975&gclid=EAIaIQobChMI0PaXhY2emAMVzoxLBR19ei1SEAAYBCAAEgJA-PD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-23T12:36:52.653Z"
   }
 };
