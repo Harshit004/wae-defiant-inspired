@@ -96,13 +96,12 @@ export default function StatusQuoPopup({ className = "" }: StatusQuoPopupProps) 
             transition={{ duration: 0.35, ease: "easeOut" }}
             className={`pointer-events-auto
               w-[calc(100vw-24px)] max-w-[426px] md:w-[clamp(320px,29.58vw,426px)]
-              min-h-[clamp(190px,25.63vh,223px)]
               bg-[#094063]
               px-[clamp(16px,1.39vw,20px)] py-[clamp(18px,2.76vh,24px)]
               shadow-[0_8px_32px_rgba(0,0,0,0.36)]
               ${className}`}
           >
-            <div className="flex items-start gap-[clamp(12px,1.11vw,16px)] h-full">
+            <div className="flex items-start gap-[clamp(12px,1.11vw,16px)]">
               {/* Top-left Circle 36x36 with 24x24 icon */}
               <div className="w-[36px] h-[36px] min-w-[36px] min-h-[36px] rounded-full bg-[#1D668F] flex items-center justify-center shrink-0">
                 <Image
@@ -116,7 +115,7 @@ export default function StatusQuoPopup({ className = "" }: StatusQuoPopupProps) 
               </div>
 
               {/* Right Column: Title + Cross, Body Text, Continue Browsing */}
-              <div className="flex-1 min-w-0 flex flex-col justify-between h-full">
+              <div className="flex-1 min-w-0 flex flex-col justify-between">
                 {/* Top Header Row: Headline + 11.3x11.3 Cross */}
                 <div className="flex items-center justify-between gap-2">
                   <h3
@@ -172,11 +171,9 @@ export default function StatusQuoPopup({ className = "" }: StatusQuoPopupProps) 
                     verticalAlign: "middle",
                     color: "#AEAEAE",
                   }}
-                  className="mt-[clamp(8px,0.8vw,12px)] mb-[clamp(12px,1.1vw,16px)] text-left"
+                  className="mt-[clamp(8px,1vh,12px)] mb-[clamp(12px,1.5vh,16px)] text-left"
                 >
-                  Our new website traces the origins of WAE’s water activism. We began by challenging how water is treated, delivered and consumed. We’re continuously engineering better ways to do all three.
-                  <br />
-                  Feel free to look around while we put the finishing touches on new features and content. The refreshed site goes live on 1 January 2027.
+                  Our new website traces the origins of WAE’s water activism. We began by challenging how water is treated, delivered and consumed. We’re continuously engineering better ways to do all three. Feel free to look around while we put the finishing touches on new features and content. The refreshed site goes live on 1 January 2027.
                 </p>
 
                 {/* Bottom Action: Continue Browsing */}
