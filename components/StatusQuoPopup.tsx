@@ -166,10 +166,11 @@ export default function StatusQuoPopup({ className = "" }: StatusQuoPopupProps) 
                     fontWeight: 400,
                     fontStyle: "normal",
                     fontSize: "12px",
-                    lineHeight: "120%",
+                    lineHeight: "130%",
                     letterSpacing: "0%",
                     verticalAlign: "middle",
                     color: "#AEAEAE",
+                    maxWidth: "calc(100% - 36.3px)",
                   }}
                   className="mt-[clamp(8px,1vh,12px)] mb-[clamp(12px,1.5vh,16px)] text-left"
                 >
