@@ -455,7 +455,7 @@ export default function Home() {
         <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
           <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
             <div
-              className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
+              className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)] -translate-y-[52px] md:translate-y-0"
               style={{
                 color: "#FFFFFF",
                 fontFamily: "'Inter Tight', sans-serif",
