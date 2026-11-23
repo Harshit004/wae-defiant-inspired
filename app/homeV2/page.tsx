@@ -8,6 +8,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import LightweightRipple from "@/components/LightweightRipple"
+import StatusQuoPopup from "@/components/StatusQuoPopup"
 import { BLOGS } from "@/data/blogs"
 import ContactSectionDark from "@/components/contact-section-dark"
 
@@ -860,6 +861,9 @@ export default function HomeV2() {
             <div className="w-[40px] md:w-[60px] pointer-events-none" />
           </div>
         </div>
+
+        {/* Status Quo Announcement Popup */}
+        <StatusQuoPopup />
       </section>
 
       {/* ── PURPOSE, PHILOSOPHY & PRINCIPLE SECTION (IDENTICAL TO MAIN HOMEPAGE) ── */}
