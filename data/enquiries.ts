@@ -6096,5 +6096,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Glass bottles bottling plant requirement.",
     "type": "contact-us",
     "createdAt": "2026-11-23T03:53:48.676Z"
+  },
+  "b58fe769-ef40-4fb1-969f-b11bcec2ef91": {
+    "id": "b58fe769-ef40-4fb1-969f-b11bcec2ef91",
+    "fullName": "Nayan Vora",
+    "companyName": "Vora ceramics pvt ltd",
+    "email": "nayanjvora@hotmail.com",
+    "phone": "9820045451",
+    "city": "Mumbai",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "I want to purchase 12 units of water cooler with bottle dispenser",
+    "type": "contact-us",
+    "createdAt": "2026-11-23T04:47:50.278Z"
   }
 };
