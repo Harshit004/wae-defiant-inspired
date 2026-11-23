@@ -11,7 +11,7 @@ import Link from "next/link"
 import ConnectWithUs from "@/components/connect-with-us"
 import ContactSectionDark from "@/components/contact-section-dark"
 import dynamic from "next/dynamic"
-// import LightweightRipple from "@/components/LightweightRipple"
+import LightweightRipple from "@/components/LightweightRipple"
 import StatusQuoPopup from "@/components/StatusQuoPopup"
 import { BLOGS } from "@/data/blogs"
 
@@ -430,30 +430,17 @@ export default function Home() {
         className="w-full relative bg-[#0D0D0D] md:pt-0 md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
       >
         {/* Background Image determining the height of the section naturally */}
-        <div className="md:hidden absolute inset-0 w-full h-full">
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6ec52330-413b-4798-0bb2-f0279c930100/public"
-            alt="Guru Nanak Jayanti Hero Banner"
-            fill
-            priority
-            unoptimized
-            className="object-cover object-center"
-          />
+        <div className="md:hidden absolute inset-0 w-full h-full opacity-95">
+          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public" />
         </div>
-        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full md:aspect-[1265/768]">
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6820c51f-ec1f-45a8-f30d-d0725e98d100/public"
-            alt="Guru Nanak Jayanti Hero Banner"
-            fill
-            priority
-            unoptimized
-            className="object-cover object-center"
-          />
+        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1440/691]">
+          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
         </div>
 
         {/* Hero Content Text (Topmost) */}
         <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
-          <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
+          <div className={`${containerClass} flex-1 flex flex-col justify-center relative`}>
+            {/* Left Headline */}
             <div
               className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)] -translate-y-[52px] md:translate-y-0"
               style={{
@@ -471,9 +458,15 @@ export default function Home() {
               >
                 We're here <br />to disrupt the <br />status quo!
               </h1>
-              <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
+            </div>
+
+            <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
+
+            {/* Row with "Our Green is Blue" on left and Punjabi Verse on right */}
+            <div className="w-full flex flex-col md:flex-row md:items-start md:justify-between gap-6 pointer-events-auto">
+              {/* Left Column: Our Green is Blue */}
               <p
-                className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
+                className="text-[6vw] md:text-[clamp(18px,2.08vw,30px)] leading-[115%] font-normal text-[#AEAEAE] -translate-y-[52px] md:translate-y-0"
                 style={{
                   letterSpacing: "0%",
                   verticalAlign: "middle",
@@ -483,7 +476,192 @@ export default function Home() {
               >
                 Our Green is Blue
               </p>
+
+              {/* Right Column: Sacred Verse & Punjabi Symbol (Desktop) */}
+              <div className="hidden md:flex flex-col items-end text-right max-w-[clamp(280px,32vw,460px)]">
+                {/* Punjabi Symbol (Middle aligned with Our Green is Blue top) */}
+                <div className="-translate-y-1/2">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3a988963-e3cf-432d-d0fe-9782d6b24d00/public"
+                    alt="Ik Onkar Emblem"
+                    width={244}
+                    height={136}
+                    unoptimized
+                    priority
+                    className="w-[clamp(26px,2.2vw,36px)] h-auto object-contain"
+                  />
+                </div>
+
+                {/* 16px under it: Gurmukhi Verse */}
+                <p
+                  className="text-white text-right m-0"
+                  style={{
+                    fontFamily: "'Tiro Gurmukhi', serif",
+                    fontWeight: 400,
+                    fontSize: "clamp(11px, 0.97vw, 14px)",
+                    lineHeight: "105%",
+                    letterSpacing: "0%",
+                    marginTop: "clamp(10px, 1.11vw, 16px)",
+                  }}
+                >
+                  ਪਵਣੁ ਗੁਰੂ ਪਾਣੀ ਪਿਤਾ ਮਾਤਾ ਧਰਤਿ ਮਹਤੁ ॥
+                </p>
+
+                {/* 12px under it: Transliteration */}
+                <p
+                  className="text-[#A0A0A0] text-right m-0"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "clamp(11px, 0.97vw, 14px)",
+                    lineHeight: "105%",
+                    letterSpacing: "0%",
+                    marginTop: "clamp(8px, 0.83vw, 12px)",
+                  }}
+                >
+                  Pavan Guru Pani Pita, Mata Dharat Mahat
+                </p>
+
+                {/* 12px under it: English Translation */}
+                <p
+                  className="text-[#A0A0A0] text-right m-0"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "clamp(11px, 0.97vw, 14px)",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    marginTop: "clamp(8px, 0.83vw, 12px)",
+                  }}
+                >
+                  Air is the <span className="text-white font-normal">Guru</span>, Water is the{" "}
+                  <span className="text-white font-normal">Father</span>, and Great Sacred Earth is the{" "}
+                  <span className="text-white font-normal">Mother</span> of all.
+                </p>
+              </div>
             </div>
+
+            {/* Desktop: Guru Nanak Ji Portrait & Greeting (Under Philanthropy in header) */}
+            <div
+              className="hidden md:flex flex-col items-start absolute pointer-events-auto"
+              style={{
+                top: "clamp(85px, 7.8vw, 120px)",
+                right: "clamp(135px, 14.5vw, 215px)",
+              }}
+            >
+              <div className="w-[clamp(140px, 13.5vw, 195px)] h-auto">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3892ef84-0609-41ac-cf14-c405e6f9ad00/public"
+                  alt="Sri Guru Nanak Dev Ji"
+                  width={659}
+                  height={768}
+                  priority
+                  unoptimized
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+
+              {/* Greeting below portrait */}
+              <div className="flex flex-col items-start mt-[clamp(6px, 0.6vw, 10px)]">
+                <span
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "clamp(14px, 1.67vw, 24px)",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    color: "#A0A0A0",
+                  }}
+                >
+                  Happy
+                </span>
+                <div className="flex items-baseline gap-[clamp(6px, 0.5vw, 10px)] mt-[clamp(2px, 0.28vw, 4px)] whitespace-nowrap">
+                  <span
+                    style={{
+                      fontFamily: "'DM Serif Display', serif",
+                      fontWeight: 400,
+                      fontSize: "clamp(20px, 2.5vw, 36px)",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      color: "#C09A5E",
+                    }}
+                  >
+                    Gurunanak
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'DM Serif Display', serif",
+                      fontWeight: 400,
+                      fontSize: "clamp(20px, 2.5vw, 36px)",
+                      lineHeight: "105%",
+                      letterSpacing: "0%",
+                      color: "#A0A0A0",
+                    }}
+                  >
+                    Jaynti
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile: Guru Nanak Ji Portrait & Greeting */}
+            <div className="md:hidden flex flex-col items-center mx-auto mt-[clamp(16px, 4vh, 28px)] pointer-events-auto">
+              <div className="w-[clamp(140px, 42vw, 185px)] h-auto">
+                <Image
+                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3892ef84-0609-41ac-cf14-c405e6f9ad00/public"
+                  alt="Sri Guru Nanak Dev Ji"
+                  width={659}
+                  height={768}
+                  priority
+                  unoptimized
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+
+              <div className="flex flex-col items-start w-[clamp(140px, 42vw, 185px)] mt-2">
+                <span
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                    color: "#A0A0A0",
+                  }}
+                >
+                  Happy
+                </span>
+                <div className="flex items-baseline gap-2 mt-1 whitespace-nowrap">
+                  <span
+                    style={{
+                      fontFamily: "'DM Serif Display', serif",
+                      fontWeight: 400,
+                      fontSize: "20px",
+                      lineHeight: "100%",
+                      color: "#C09A5E",
+                    }}
+                  >
+                    Gurunanak
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'DM Serif Display', serif",
+                      fontWeight: 400,
+                      fontSize: "20px",
+                      lineHeight: "105%",
+                      color: "#A0A0A0",
+                    }}
+                  >
+                    Jaynti
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile bottom indicator */}
+          <div className="md:hidden absolute bottom-[18px] left-[7.5vw] flex items-center gap-1.5 text-[#AEAEAE] text-[10px] tracking-wider uppercase font-medium">
+            <span>SCROLL FOR MORE</span>
+            <span className="text-[12px] leading-none">↶</span>
           </div>
 
           {/* Mobile divider at the bottom of the hero section */}
