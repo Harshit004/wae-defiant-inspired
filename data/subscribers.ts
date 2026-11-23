@@ -909,5 +909,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-23",
     "time": "01:19:37",
     "pageLink": "/"
+  },
+  {
+    "id": "6e41bfd3-322d-4fdb-9694-699ade6211bd",
+    "email": "sks9097692531@gmail.com",
+    "date": "2026-11-23",
+    "time": "16:03:04",
+    "pageLink": "/careers"
   }
 ];
