@@ -54,7 +54,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: 1,
     headline: "We're here\nto disrupt the\nstatus quo!",
-    subhead: "Our Green is Bluw",
+    subhead: "Our Green is Blue",
     bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public",
   },
   {
@@ -426,11 +426,11 @@ export default function HomeV2() {
   const [isPaused, setIsPaused] = useState(false)
   const heroTouchStartX = useRef<number | null>(null)
 
-  // Carousel Autoplay - exactly every 2 seconds as requested by user
+  // Carousel Autoplay - exactly every 5 seconds as requested by user
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
-    }, 2000)
+    }, 5000)
     return () => clearInterval(timer)
   }, [])
 
@@ -634,7 +634,7 @@ export default function HomeV2() {
             initial={{ x: "100%" }}
             animate={{ x: "0%" }}
             exit={{ x: "-100%" }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
             className="absolute inset-0 w-full h-full flex flex-col justify-between overflow-hidden"
           >
             {/* Background Photography & Vignette */}
@@ -656,9 +656,9 @@ export default function HomeV2() {
               />
             </div>
 
-            {/* Slide-specific Legend (e.g. Slide 3 Map Legend) */}
+            {/* Slide-specific Legend (e.g. Slide 3 Map Legend) - shifted down with banner */}
             {activeSlideData.legend && (
-              <div className="hidden md:flex flex-col items-end gap-1.5 absolute top-[130px] right-[6.1vw] md:right-[7.5vw] z-[3] font-[Manrope] text-[11px] text-[#AEAEAE]">
+              <div className="hidden md:flex flex-col items-end gap-1.5 absolute top-[230px] right-[6.1vw] md:right-[7.5vw] z-[3] font-[Manrope] text-[11px] text-[#AEAEAE]">
                 {activeSlideData.legend.map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <span>{item.label}</span>
@@ -671,8 +671,8 @@ export default function HomeV2() {
               </div>
             )}
 
-            {/* Slide Content Layer: Title, Subhead, Highlight, Body Copy */}
-            <div className="relative z-[2] flex-1 flex flex-col justify-center pt-[100px] md:pt-[120px] pb-[80px]">
+            {/* Slide Content Layer: Title, Subhead, Highlight, Body Copy - pushed down by 100px */}
+            <div className="relative z-[2] flex-1 flex flex-col justify-center pt-[200px] md:pt-[220px] pb-[80px]">
               <div className={containerClass}>
                 <div className="max-w-[780px]">
                   {activeSlideData.badge && (
@@ -687,7 +687,10 @@ export default function HomeV2() {
                   <h1
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "clamp(34px, 5.2vw, 76px)",
+                      fontSize:
+                        activeSlideData.id === 3
+                          ? "clamp(38px, 5.9vw, 85px)"
+                          : "clamp(34px, 5.2vw, 76px)",
                       lineHeight: "105%",
                       fontWeight: 500,
                       letterSpacing: "-0.02em",
@@ -701,10 +704,21 @@ export default function HomeV2() {
                     <p
                       style={{
                         fontFamily: "'Inter Tight', sans-serif",
-                        fontSize: "clamp(16px, 1.8vw, 24px)",
-                        lineHeight: "130%",
-                        fontWeight: 400,
-                        color: activeSlideData.id === 4 ? "#AEAEAE" : "#E0E0E0",
+                        fontSize:
+                          activeSlideData.id === 1
+                            ? "clamp(20px, 2.08vw, 30px)"
+                            : activeSlideData.id === 2
+                            ? "clamp(18px, 1.8vw, 26px)"
+                            : activeSlideData.id === 3
+                            ? "clamp(22px, 2.5vw, 36px)"
+                            : "clamp(26px, 3.61vw, 52px)",
+                        lineHeight: activeSlideData.id === 3 ? "105%" : "115%",
+                        fontWeight: activeSlideData.id === 3 ? 500 : 400,
+                        color:
+                          activeSlideData.id === 2 || activeSlideData.id === 3
+                            ? "#FFFFFF"
+                            : "#C1C1C1",
+                        letterSpacing: "0%",
                       }}
                       className="mb-4 whitespace-pre-line"
                     >
@@ -716,10 +730,11 @@ export default function HomeV2() {
                     <p
                       style={{
                         fontFamily: "'Inter Tight', sans-serif",
-                        fontSize: "clamp(18px, 1.9vw, 26px)",
-                        lineHeight: "125%",
-                        fontWeight: 600,
-                        color: "#FFFFFF",
+                        fontSize: "clamp(20px, 1.94vw, 28px)",
+                        lineHeight: "115%",
+                        fontWeight: 700,
+                        color: "#C1C1C1",
+                        letterSpacing: "0%",
                       }}
                       className="mb-4 whitespace-pre-line"
                     >
@@ -731,10 +746,12 @@ export default function HomeV2() {
                     <p
                       style={{
                         fontFamily: "'Inter Tight', sans-serif",
-                        fontSize: "clamp(15px, 1.35vw, 20px)",
-                        lineHeight: "140%",
-                        color: "#AEAEAE",
-                        maxWidth: "580px",
+                        fontSize: "clamp(18px, 1.94vw, 28px)",
+                        lineHeight: "120%",
+                        fontWeight: 400,
+                        color: "#C1C1C1",
+                        letterSpacing: "0%",
+                        maxWidth: "680px",
                       }}
                       className="mb-6 whitespace-pre-line"
                     >
