@@ -489,7 +489,7 @@ export default function Home() {
                     height={136}
                     unoptimized
                     priority
-                    className="w-[clamp(26px,2.2vw,36px)] h-auto object-contain"
+                    className="w-[clamp(52px,4.4vw,72px)] h-auto object-contain"
                   />
                 </div>
 
@@ -563,8 +563,8 @@ export default function Home() {
                 />
               </div>
 
-              {/* Greeting below portrait */}
-              <div className="flex flex-col items-start shrink-0 pt-2">
+              {/* Greeting overlapping bottom of portrait */}
+              <div className="flex flex-col items-start shrink-0 -mt-[clamp(24px,2.2vw,32px)] relative z-10">
                 <span
                   style={{
                     fontFamily: "'Inter', sans-serif",
@@ -625,7 +625,8 @@ export default function Home() {
                 />
               </div>
 
-              <div className="flex flex-col items-start shrink-0 pt-2 w-full">
+              {/* Greeting overlapping bottom of portrait */}
+              <div className="flex flex-col items-start shrink-0 -mt-5 relative z-10 w-full">
                 <span
                   style={{
                     fontFamily: "'Inter', sans-serif",
