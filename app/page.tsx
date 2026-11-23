@@ -430,11 +430,11 @@ export default function Home() {
         className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
       >
         {/* Background Image determining the height of the section naturally */}
-        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public" />
+        <div className="md:hidden absolute inset-0 w-full h-full opacity-95">
+          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6ec52330-413b-4798-0bb2-f0279c930100/public" />
         </div>
-        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1440/691]">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
+        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1265/768]">
+          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6820c51f-ec1f-45a8-f30d-d0725e98d100/public" />
         </div>
 
         {/* Hero Content Text (Topmost) */}
