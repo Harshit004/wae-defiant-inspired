@@ -6084,5 +6084,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMImZjkh6ycmAMVcrWDBx1OXw8PEAEYASAAEgJ2RfD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-22T19:49:10.653Z"
+  },
+  "d93c6ed8-a3b2-4db0-9e76-98c9d40782eb": {
+    "id": "d93c6ed8-a3b2-4db0-9e76-98c9d40782eb",
+    "fullName": "Shreyas",
+    "companyName": "Forbes Marshall Private Limited.",
+    "email": "shpkulkarni@forbesmarshall.com",
+    "phone": "8805027598",
+    "city": "PUNE",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Glass bottles bottling plant requirement.",
+    "type": "contact-us",
+    "createdAt": "2026-11-23T03:53:48.676Z"
   }
 };
