@@ -432,10 +432,24 @@ export default function Home() {
       >
         {/* Background Image determining the height of the section naturally */}
         <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public" />
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public"
+            alt="Landing Hero Banner"
+            fill
+            priority
+            unoptimized
+            className="object-cover object-center"
+          />
         </div>
         <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1440/691]">
-          <LightweightRipple imageUrl="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public" />
+          <Image
+            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public"
+            alt="Landing Hero Banner"
+            fill
+            priority
+            unoptimized
+            className="object-cover object-center"
+          />
         </div>
 
         {/* Hero Content Text (Topmost) */}

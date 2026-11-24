@@ -15,7 +15,11 @@ const Icons = {
     </svg>,
 };
 
-const ContactSectionDark = () => {
+interface ContactSectionDarkProps {
+    titleStyle?: React.CSSProperties;
+}
+
+const ContactSectionDark: FC<ContactSectionDarkProps> = ({ titleStyle }) => {
     const router = useRouter();
 
     const handleSubmit = async (event: React.FormEvent) => {
@@ -82,11 +86,16 @@ const ContactSectionDark = () => {
             {/* Left Side */}
             <div className="w-full md:w-[40%] flex flex-col pt-12 md:pt-0">
                 <h2
-                    className="text-[36px] md:text-[60px] font-normal md:font-normal mb-[16px] md:mb-[24px]"
+                    className="text-[36px] md:text-[50px] font-normal mb-[16px] md:mb-[24px]"
                     style={{
                         fontFamily: "'Inter Tight', sans-serif",
-                        lineHeight: '110%',
-                        color: '#FFFFFF'
+                        fontWeight: 400,
+                        fontStyle: 'normal',
+                        fontSize: '50px',
+                        lineHeight: '100%',
+                        letterSpacing: '0%',
+                        color: '#FFFFFF',
+                        ...titleStyle
                     }}
                 >
                     Dialogues

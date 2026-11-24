@@ -7,7 +7,6 @@ import { motion, AnimatePresence, animate, useInView } from "framer-motion"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
-import LightweightRipple from "@/components/LightweightRipple"
 import StatusQuoPopup from "@/components/StatusQuoPopup"
 import { BLOGS } from "@/data/blogs"
 import ContactSectionDark from "@/components/contact-section-dark"
@@ -29,73 +28,7 @@ const defaultHomepageBlogs = Object.values(BLOGS)
 // Responsive container class with max-width clamping and fluid gutters
 const containerClass = "mx-auto w-full max-w-[1440px] px-[6.1vw] md:px-[7.5vw]"
 
-// 4 Hero Carousel Slides derived from Figma Node 6709:8319
-interface HeroSlide {
-  id: number
-  headline: string
-  subhead?: string
-  bodyCopy?: string
-  highlight?: string
-  tagline?: string
-  badge?: string
-  bgImage: string
-  isRipple?: boolean
-  legend?: { label: string; color: string }[]
-  footnote?: {
-    lines: string[]
-    hashtag?: string
-  }
-  definition?: {
-    word: string
-    phonetic: string
-    meaning: string
-  }
-}
 
-const HERO_SLIDES: HeroSlide[] = [
-  {
-    id: 1,
-    headline: "We're here to disrupt the status quo!",
-    subhead: "Our Dream is Blue.",
-    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6820c51f-ec1f-45a8-f30d-d0725e98d100/public",
-    isRipple: false,
-  },
-  {
-    id: 2,
-    headline: "Blugrids",
-    subhead: "One intelligent Platform -\nInfinite water Intelligence",
-    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/a081b76b-c5b4-4e14-32df-7f0c314d3b00/public",
-  },
-  {
-    id: 3,
-    headline: "1% for water",
-    subhead: "1% of Net Sales\n100% of Our Commitment",
-    bodyCopy: "For water resilience, restoration\nand access for all",
-    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4b8d8360-aee7-4082-c88d-d0ad416f2e00/public",
-    legend: [
-      { label: "Secure", color: "#4A90E2" },
-      { label: "Exhausted", color: "#8E8E93" },
-      { label: "Unreachable", color: "#FFFFFF" },
-    ],
-    footnote: {
-      lines: ["Not charity.", "Not CSR", "Responsibility"],
-      hashtag: "#GiveBackToWater",
-    },
-  },
-  {
-    id: 4,
-    headline: "Carbon\nneutral water",
-    subhead: "Nature made H₂O with three atoms.\nHuman greed added a carbon.",
-    highlight: "Inspired by phytoplankton -\nWAE intend to remove it.",
-    bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/9b376b75-199f-48d2-42ff-72b27f7ac900/public",
-    definition: {
-      word: "Phytoplankton",
-      phonetic: "/ˌfaɪ.təʊˈplæŋk.tən/ · noun",
-      meaning:
-        "Microscopic, organisms principal agents of the global carbon cycle, responsible for approximately 70% of Earth's oxygen while less than 1% of its photosynthetic biomass.",
-    },
-  },
-]
 
 // Animated Counter
 const Counter: FC<{
@@ -154,17 +87,17 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
       type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="w-fit"
+      className="w-fit "
       style={{
-        transition: "background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease",
+        transition: "background-color 0.65s ease, color 0.65s ease, border-color 0.65s ease",
         pointerEvents: "auto",
         display: "inline-flex",
         alignItems: "center",
-        gap: "8px",
-        padding: "clamp(8px, 0.73vw, 12px) clamp(12px, 1.1vw, 20px)",
+        gap: "0.55vw",
+        padding: "10.5px 16px",
         fontFamily: "'Manrope', sans-serif",
         fontWeight: 500,
-        fontSize: "clamp(11px, 0.7vw, 13px)",
+        fontSize: "10px",
         lineHeight: "100%",
         textTransform: "none",
         backgroundColor:
@@ -232,26 +165,26 @@ const pillars = [
     desc1:
       "The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.",
     desc2:
-      "WAE's mission is to lead the industry by offering science and technology driven water purification and reuse solutions.",
-    href: "/profile",
-  },
-  {
-    title: "Philosophy",
-    subtitle: "Our Green Is Blue",
-    desc1:
-      "It is where sustainability takes its truest form, not in what is made, but in how it lives on.",
-    desc2:
-      "At WAE, we do not just treat water but architect a scientific reality where consumption and conservation coexist effortlessly.",
+      "All life depends on water. Nature functions continuously and abundantly, and sustainability is its inherent property.",
     href: "/sustainability",
   },
   {
-    title: "Principle",
-    subtitle: "People First",
+    title: "Philosophy",
+    subtitle: "Doing Sustainability",
     desc1:
-      "People are the natural rhythm of WAE — endlessly evolving, quietly powerful, shaping the future with every idea they breathe into life.",
+      "To be and do good. Selfless giving, helping others with pure, truthful intention. Giving back to water, community, and the planet.",
     desc2:
-      "In their curiosity and courage, the company finds its true flow, turning purpose into action and innovation into enduring impact.",
-    href: "/careers",
+      "Doing is the true measure of being. At WAE, every action is driven by a deep commitment to preserving our planet's most vital resource.",
+    href: "/activism",
+  },
+  {
+    title: "Principles",
+    subtitle: "Science, Design & Engineering",
+    desc1:
+      "Living honestly, working passionately, and continuously learning. Our commitment to transparent, ethically driven engineering and science.",
+    desc2:
+      "We design products that are durable, beautiful, and sustainable—ensuring our business remains a force for positive environmental change.",
+    href: "/portfolio",
   },
 ]
 
@@ -269,42 +202,42 @@ const figmaProducts = [
     id: "watermatic",
     category: "Drinking Water Faucets",
     name: "WATERMATIC",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/44d78286-f6ee-43a3-4b07-0107e6796400/public",
     href: "/portfolio/trublu/alfa-100",
   },
   {
     id: "quantm",
     category: "Glass Bottling Plants",
     name: "Quantm",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/317c1fa3-5c94-48a7-c76a-f451944afa00/public",
     href: "/portfolio/glass-bottling",
   },
   {
     id: "aquasmith",
     category: "Air to Water Generators",
     name: "Aquasmith",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ae63033b-d3bd-4cb4-0b76-8d9029d3b400/public",
     href: "/portfolio/aquasmith",
   },
   {
     id: "bluwae",
     category: "Hydration Systems",
     name: "Bluwae",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/aff0b296-99ba-4ed0-4bd4-919c3e20b200/public",
     href: "/portfolio/bluwae",
   },
   {
     id: "zvr",
     category: "Public Utility Systems",
     name: "ZVR",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/8b279fd6-4db8-4ae9-67f3-b87880c53600/public",
     href: "/portfolio/zvr",
   },
   {
     id: "hydroscience",
     category: "Filters & Membrane",
     name: "Hydroscience",
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/462f5160-0083-4cbe-d589-efe921b19200/public",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/10e0c9db-97fd-4c60-7506-53a46620a700/public",
     href: "/portfolio/hydroscience",
   },
 ]
@@ -316,76 +249,84 @@ const figmaSolutions = [
     id: "wastewater",
     number: "01",
     title: "Wastewater,\nRecovery & Reuse",
-    image: "/homeV2/solution-1.png",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/4deb62dc-41a4-4381-4b4e-a4a3eb9c9200/public",
     href: "/portfolio",
   },
   {
     id: "water-treatment",
     number: "02",
     title: "Water Treatment\n& Process Water",
-    image: "/homeV2/solution-2.png",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/f41f4550-1462-4c80-91f3-6e6de1851a00/public",
     href: "/portfolio",
   },
   {
-    id: "desalination",
+    id: "membrane-separation",
     number: "03",
-    title: "Desalination,\nDemineralisation & Ultrapure",
-    image: "/homeV2/solution-1.png",
+    title: "Membrane\n& Separation Technologies",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/22594f18-48bf-45ab-8999-25f5bffd4200/public",
     href: "/portfolio",
   },
   {
-    id: "process-cooling",
+    id: "heat-pump",
     number: "04",
-    title: "Process Cooling,\nSteam & Boiler Feed Systems",
-    image: "/homeV2/solution-2.png",
+    title: "Heat-Pump\nWater Heating Systems",
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/6aa9acc7-c143-4e67-878c-29e696fbf300/public",
     href: "/portfolio",
   },
 ]
 
 // ── SECTORS WE SERVE (FIGMA NODE 12854:13637) ──
 
-const figmaSectors = [
+interface FigmaSectorItem {
+  id: string
+  title: string
+  description: string
+  icon: string
+  isEmpty?: boolean
+}
+
+const figmaSectors: FigmaSectorItem[] = [
   {
     id: "workplaces",
     title: "Workplaces",
     description: "Safe everyday hydration for Modern work places",
-    iconType: "workplaces",
+    icon: "/icons/sectors/workplaces.svg",
   },
   {
     id: "horeca",
     title: "HoReCa",
     description: "Safe and conditioned water for hydration and luxury",
-    iconType: "horeca",
+    icon: "/icons/sectors/horeca.svg",
   },
   {
     id: "manufacturing",
     title: "Manufacturing",
     description: "Potable , conditioned utility  and process water",
-    iconType: "manufacturing",
+    icon: "/icons/sectors/manufacturing.svg",
   },
   {
     id: "health",
     title: "Health & Wellness",
     description: "Potable and ultra pure water for laboratory & specialised procedures",
-    iconType: "health",
+    icon: "/icons/sectors/health.svg",
   },
   {
     id: "education",
     title: "Education & Institutions",
     description: "Potable water for campus hydration and ultrapure for laboratories.",
-    iconType: "education",
+    icon: "/icons/sectors/education.svg",
   },
   {
     id: "aviation",
     title: "Aviation & Urban Mobility",
     description: "WAE integrates water treatment, membrane ",
-    iconType: "aviation",
+    icon: "/icons/sectors/aviation.svg",
   },
   {
     id: "utilities",
     title: "Public Utilities & Infra",
     description: "Safe drinking water  public hydration and conditioned water for utilities",
-    iconType: "utilities",
+    icon: "/icons/sectors/utilities.svg",
   },
 ]
 
@@ -421,74 +362,45 @@ const sectorsRow2 = [
   },
 ]
 
-const renderSectorIcon = (type: string) => {
-  switch (type) {
-    case "workplaces":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="4" y="2" width="16" height="20" rx="2" />
-          <path d="M9 22v-4h6v4" />
-          <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01" />
-        </svg>
-      )
-    case "manufacturing":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
-          <path d="M17 18h1M12 18h1M7 18h1" />
-        </svg>
-      )
-    case "health":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z" />
-        </svg>
-      )
-    case "education":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-          <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5" />
-        </svg>
-      )
-    case "aviation":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
-        </svg>
-      )
-    case "utilities":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="4" y="3" width="16" height="16" rx="2" />
-          <path d="M4 11h16" />
-          <path d="M8 15h.01" />
-          <path d="M16 15h.01" />
-          <path d="M6 19v2" />
-          <path d="M18 19v2" />
-        </svg>
-      )
-    default:
-      return null
-  }
+// ── HERO CAROUSEL SLIDES ──
+interface HeroBannerSlide {
+  id: number
+  isFirst?: boolean
+  image?: string
 }
+
+const HERO_SLIDES: HeroBannerSlide[] = [
+  {
+    id: 1,
+    isFirst: true,
+  },
+  {
+    id: 2,
+    image: "/hero/hero-slide-2.webp",
+  },
+  {
+    id: 3,
+    image: "/hero/hero-slide-3.webp",
+  },
+  {
+    id: 4,
+    image: "/hero/hero-slide-4.webp",
+  },
+]
 
 // ── MAIN COMPONENT ──
 
 export default function HomeV2() {
   // Hero Carousel State
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
   const heroTouchStartX = useRef<number | null>(null)
 
-  // Carousel Autoplay - exactly 2 seconds as requested by user
   useEffect(() => {
-    if (isPaused) return
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
-    }, 2000)
+    }, 5000)
     return () => clearInterval(timer)
-  }, [isPaused])
+  }, [])
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
@@ -512,7 +424,6 @@ export default function HomeV2() {
     }
     heroTouchStartX.current = null
   }
-
   // Purpose Carousel State (Identical to app/page.tsx)
   const [pillarActiveIndex, setPillarActiveIndex] = useState(0)
   const pillarContainerRef = useRef<HTMLDivElement>(null)
@@ -557,8 +468,15 @@ export default function HomeV2() {
 
   // Product Carousel State & Navigation
   const productScrollRef = useRef<HTMLDivElement>(null)
-  const [activeSolutionIndex, setActiveSolutionIndex] = useState(0)
-  const solutionScrollRef = useRef<HTMLDivElement>(null)
+  const [productCanScrollLeft, setProductCanScrollLeft] = useState(false)
+  const [productCanScrollRight, setProductCanScrollRight] = useState(true)
+
+  const checkProductScroll = useCallback(() => {
+    if (!productScrollRef.current) return
+    const { scrollLeft, scrollWidth, clientWidth } = productScrollRef.current
+    setProductCanScrollLeft(scrollLeft > 10)
+    setProductCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10)
+  }, [])
 
   const handleProductScrollNav = (direction: "left" | "right") => {
     if (!productScrollRef.current) return
@@ -567,7 +485,20 @@ export default function HomeV2() {
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     })
+    setTimeout(checkProductScroll, 350)
   }
+
+  // Solution Carousel State & Navigation
+  const solutionScrollRef = useRef<HTMLDivElement>(null)
+  const [solutionCanScrollLeft, setSolutionCanScrollLeft] = useState(false)
+  const [solutionCanScrollRight, setSolutionCanScrollRight] = useState(true)
+
+  const checkSolutionScroll = useCallback(() => {
+    if (!solutionScrollRef.current) return
+    const { scrollLeft, scrollWidth, clientWidth } = solutionScrollRef.current
+    setSolutionCanScrollLeft(scrollLeft > 10)
+    setSolutionCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10)
+  }, [])
 
   const handleSolutionScrollNav = (direction: "left" | "right") => {
     if (!solutionScrollRef.current) return
@@ -576,15 +507,29 @@ export default function HomeV2() {
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     })
+    setTimeout(checkSolutionScroll, 350)
   }
 
-  const handleSolutionScroll = () => {
-    if (!solutionScrollRef.current) return
-    const scrollLeft = solutionScrollRef.current.scrollLeft
-    const itemWidth = 440
-    const index = Math.round(scrollLeft / itemWidth)
-    setActiveSolutionIndex(Math.min(figmaSolutions.length - 1, Math.max(0, index)))
-  }
+  useEffect(() => {
+    checkProductScroll()
+    checkSolutionScroll()
+    const prodEl = productScrollRef.current
+    const solEl = solutionScrollRef.current
+    if (prodEl) {
+      prodEl.addEventListener("scroll", checkProductScroll, { passive: true })
+    }
+    if (solEl) {
+      solEl.addEventListener("scroll", checkSolutionScroll, { passive: true })
+    }
+    window.addEventListener("resize", checkProductScroll)
+    window.addEventListener("resize", checkSolutionScroll)
+    return () => {
+      if (prodEl) prodEl.removeEventListener("scroll", checkProductScroll)
+      if (solEl) solEl.removeEventListener("scroll", checkSolutionScroll)
+      window.removeEventListener("resize", checkProductScroll)
+      window.removeEventListener("resize", checkSolutionScroll)
+    }
+  }, [checkProductScroll, checkSolutionScroll])
 
   // Impact Section Ref
   const impactRef = useRef<HTMLElement>(null)
@@ -627,238 +572,129 @@ export default function HomeV2() {
       .catch(console.error)
   }, [])
 
-  const activeSlideData = HERO_SLIDES[currentSlide]
-
   return (
     <main className="relative bg-[#0A0A0A] text-white min-h-screen overflow-x-hidden">
       {/* ── HEADER ── */}
       <Header transparentBg />
 
-      {/* ── HERO CAROUSEL SECTION ── */}
+      {/* ── HERO SECTION (CAROUSEL BANNER) ── */}
       <section
         id="hero"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className="w-full relative bg-[#0D0D0D] h-screen h-[100dvh] flex flex-col justify-between overflow-hidden"
+        className="w-full relative h-[100svh] h-screen max-h-[100svh] flex flex-col overflow-hidden"
+        style={{
+          backgroundColor: currentSlide === 0 ? "#0D0D0D" : "#000000",
+          transition: "background-color 0.5s ease",
+        }}
       >
-        {/* Background Slide Crossfade */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeSlideData.id}
-            initial={{ opacity: 0, scale: 1.02 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.75, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full z-0 pointer-events-none"
-          >
-            {activeSlideData.isRipple ? (
-              <div className="absolute inset-0 w-full h-full opacity-95">
-                <LightweightRipple imageUrl={activeSlideData.bgImage} />
-              </div>
-            ) : (
-              <div className="absolute inset-0 w-full h-full">
-                <Image
-                  src={activeSlideData.bgImage}
-                  alt={activeSlideData.headline}
-                  fill
-                  priority
-                  className="object-cover object-center md:object-right opacity-95"
-                />
-                {/* Dark Vignette Overlay */}
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background:
-                      "linear-gradient(to right, rgba(13,13,13,0.7) 0%, rgba(13,13,13,0.2) 40%, transparent 80%)",
-                  }}
-                />
-              </div>
-            )}
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Ambient Top Gradient for Header Contrast */}
-        <div
-          className="absolute top-0 left-0 right-0 h-[160px] pointer-events-none z-[2]"
-          style={{
-            background: "linear-gradient(to bottom, rgba(10,10,10,0.85) 0%, transparent 100%)",
-          }}
-        />
-
-        {/* Slide-specific Legend (e.g. Slide 3 Map Legend) */}
-        {activeSlideData.legend && (
-          <div className="hidden md:flex flex-col items-end gap-1.5 absolute top-[130px] right-[6.1vw] md:right-[7.5vw] z-[4] font-[Manrope] text-[11px] text-[#AEAEAE]">
-            {activeSlideData.legend.map((item, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <span>{item.label}</span>
-                <span
-                  className="w-2.5 h-2.5 rounded-full inline-block"
-                  style={{ backgroundColor: item.color }}
-                />
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Slide Content Layer */}
-        <div className="relative z-[3] flex-1 flex flex-col justify-center pt-[100px] md:pt-[120px] pb-[80px]">
-          <div className={containerClass}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeSlideData.id}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="max-w-[780px]"
-              >
-                {activeSlideData.badge && (
-                  <span
-                    className="inline-block text-white/70 tracking-widest text-[11px] md:text-[13px] uppercase font-semibold mb-3 font-[Inter_Tight]"
-                    style={{ letterSpacing: "1.5px" }}
-                  >
-                    {activeSlideData.badge}
-                  </span>
-                )}
-
-                <h1
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "clamp(34px, 5.2vw, 76px)",
-                    lineHeight: "105%",
-                    fontWeight: 500,
-                    letterSpacing: "-0.02em",
-                  }}
-                  className="text-white mb-4 whitespace-pre-line"
-                >
-                  {activeSlideData.headline}
-                </h1>
-
-                {activeSlideData.subhead && (
-                  <p
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "clamp(16px, 1.8vw, 24px)",
-                      lineHeight: "130%",
-                      fontWeight: 400,
-                      color: activeSlideData.id === 4 ? "#AEAEAE" : "#E0E0E0",
-                    }}
-                    className="mb-4 whitespace-pre-line"
-                  >
-                    {activeSlideData.subhead}
-                  </p>
-                )}
-
-                {activeSlideData.highlight && (
-                  <p
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "clamp(18px, 1.9vw, 26px)",
-                      lineHeight: "125%",
-                      fontWeight: 600,
-                      color: "#FFFFFF",
-                    }}
-                    className="mb-4 whitespace-pre-line"
-                  >
-                    {activeSlideData.highlight}
-                  </p>
-                )}
-
-                {activeSlideData.bodyCopy && (
-                  <p
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "clamp(15px, 1.35vw, 20px)",
-                      lineHeight: "140%",
-                      color: "#AEAEAE",
-                      maxWidth: "580px",
-                    }}
-                    className="mb-6 whitespace-pre-line"
-                  >
-                    {activeSlideData.bodyCopy}
-                  </p>
-                )}
-
-                {activeSlideData.tagline && (
-                  <div className="inline-block px-3 py-1 rounded bg-white/10 backdrop-blur-sm text-white/90 text-xs font-[Manrope] mb-6">
-                    {activeSlideData.tagline}
+        {/* Banner Viewport */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <AnimatePresence initial={false}>
+            <motion.div
+              key={currentSlide}
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+              className="absolute inset-0 w-full h-full overflow-hidden"
+              style={{
+                backgroundColor: currentSlide === 0 ? "#0D0D0D" : "#000000",
+              }}
+            >
+              {currentSlide === 0 ? (
+                <>
+                  {/* Mobile Background */}
+                  <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public"
+                      alt="Landing Hero Banner"
+                      fill
+                      priority
+                      unoptimized
+                      className="object-cover object-center"
+                    />
                   </div>
-                )}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
 
-        {/* Bottom Slide Indicators & Footnotes */}
-        <div className="relative z-[3] pb-6 md:pb-8 w-full">
-          <div className={`${containerClass} relative flex items-end justify-between min-h-[50px]`}>
-            {/* Left Footnote / Definition */}
-            <div className="max-w-[340px] md:max-w-[460px]">
-              <AnimatePresence mode="wait">
-                {activeSlideData.footnote && (
-                  <motion.div
-                    key={`fn-${activeSlideData.id}`}
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.3 }}
-                    className="font-[Manrope]"
-                  >
-                    <div className="text-[12px] md:text-[13px] text-[#AEAEAE] leading-[135%]">
-                      {activeSlideData.footnote.lines.map((l, i) => (
-                        <p key={i}>{l}</p>
-                      ))}
+                  {/* Desktop Background */}
+                  <div className="hidden md:block absolute top-[130px] left-0 right-0 w-full aspect-[1440/691] opacity-95">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public"
+                      alt="Landing Hero Banner"
+                      fill
+                      priority
+                      unoptimized
+                      className="object-cover object-center"
+                    />
+                  </div>
+
+                  {/* Hero Content Text */}
+                  <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
+                    <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
+                      <div
+                        className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
+                        style={{
+                          color: "#FFFFFF",
+                          fontFamily: "'Inter Tight', sans-serif",
+                        }}
+                      >
+                        <h1
+                          className="text-[12.5vw] md:text-[clamp(36px,5.9vw,85px)] leading-[105%] font-medium"
+                          style={{
+                            letterSpacing: "0%",
+                            verticalAlign: "middle",
+                            margin: 0,
+                          }}
+                        >
+                          We&apos;re here <br />to disrupt the <br />status quo!
+                        </h1>
+                        <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
+                        <p
+                          className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
+                          style={{
+                            letterSpacing: "0%",
+                            verticalAlign: "middle",
+                            margin: 0,
+                            fontFamily: "'Inter Tight', sans-serif",
+                          }}
+                        >
+                          Our Green is Blue
+                        </p>
+                      </div>
                     </div>
-                    {activeSlideData.footnote.hashtag && (
-                      <p className="text-[12px] md:text-[13px] font-bold text-white mt-1.5">
-                        {activeSlideData.footnote.hashtag}
-                      </p>
-                    )}
-                  </motion.div>
-                )}
 
-                {activeSlideData.definition && (
-                  <motion.div
-                    key={`def-${activeSlideData.id}`}
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.3 }}
-                    className="font-[Manrope]"
-                  >
-                    <p className="text-[13px] md:text-[14px] font-bold text-white">
-                      {activeSlideData.definition.word}
-                    </p>
-                    <p className="text-[11px] md:text-[12px] text-[#AEAEAE] mb-0.5">
-                      {activeSlideData.definition.phonetic}
-                    </p>
-                    <p className="text-[11px] md:text-[12px] text-[#AEAEAE] leading-[135%]">
-                      {activeSlideData.definition.meaning}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                    {/* Mobile divider at the bottom of the hero section */}
+                    <div className="md:hidden absolute bottom-0 left-0 right-0 border-b border-[#FFFFFF4D] z-[5]" />
+                  </div>
+                </>
+              ) : (
+                <div className="relative w-full h-full bg-black flex items-center justify-center">
+                  <Image
+                    src={HERO_SLIDES[currentSlide].image!}
+                    alt={`Hero Banner ${currentSlide + 1}`}
+                    fill
+                    priority
+                    unoptimized
+                    className="object-contain object-center"
+                  />
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
 
-            {/* Bottom Slide Indicators Centered Horizontally */}
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 flex items-center gap-2">
-              {HERO_SLIDES.map((slide, idx) => (
-                <button
-                  key={slide.id}
-                  type="button"
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    idx === currentSlide ? "w-10 bg-white" : "w-2.5 bg-white/30 hover:bg-white/60"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Right Spacer for balance / WhatsApp icon */}
-            <div className="w-[40px] md:w-[60px] pointer-events-none" />
+          {/* Slide Indicators */}
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-8 z-[20] flex items-center gap-2 pointer-events-auto">
+            {HERO_SLIDES.map((slide, idx) => (
+              <button
+                key={slide.id}
+                type="button"
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  idx === currentSlide ? "w-8 md:w-10 bg-white" : "w-2 md:w-2.5 bg-white/30 hover:bg-white/60"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
           </div>
         </div>
 
@@ -878,9 +714,8 @@ export default function HomeV2() {
             {pillars.map((pillar, idx) => (
               <div
                 key={pillar.title}
-                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${
-                  idx < 2 ? "md:border-r md:border-[#FFFFFF4D]" : ""
-                } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group transition-all duration-500`}
+                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${idx < 2 ? "md:border-r md:border-[#FFFFFF4D]" : ""
+                  } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group transition-all duration-500`}
               >
                 <div className="flex flex-col w-full max-w-[320px]">
                   <h2
@@ -925,7 +760,7 @@ export default function HomeV2() {
                       {(hovered) => (
                         <>
                           Know More
-                          <div className="relative inline-block w-4 h-4 ml-1">
+                          <div className="relative inline-block w-4 h-4">
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                               alt={`${pillar.title} icon`}
@@ -962,9 +797,8 @@ export default function HomeV2() {
             {pillars.map((_, i) => (
               <div
                 key={i}
-                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${
-                  i === pillarActiveIndex ? "w-[24px]" : "w-[6px] opacity-30"
-                }`}
+                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${i === pillarActiveIndex ? "w-[24px]" : "w-[6px] opacity-30"
+                  }`}
               />
             ))}
           </div>
@@ -972,11 +806,11 @@ export default function HomeV2() {
       </section>
 
       {/* ── PRODUCT SECTION (FIGMA NODE 12767:11081 / FRAME 1000008542) ── */}
-      <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)] overflow-hidden">
+      <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] pt-[112px] pb-[79px] overflow-hidden">
         {/* Header Content inside Page Container */}
         <div className={containerClass}>
           {/* Top row: Left & Right Sections */}
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16 mb-12">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16 mb-[92px]">
             {/* Left Section */}
             <div className="max-w-[700px]">
               <h3
@@ -998,9 +832,10 @@ export default function HomeV2() {
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "clamp(28px, 2.78vw, 40px)",
-                  lineHeight: "110%",
+                  fontSize: "40px",
                   fontWeight: 400,
+                  fontStyle: "normal",
+                  lineHeight: "105%",
                   letterSpacing: "0%",
                   verticalAlign: "middle",
                   color: "#FFFFFF",
@@ -1022,11 +857,25 @@ export default function HomeV2() {
                         <div className="relative inline-block w-4 h-4 ml-2">
                           <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon"
+                            alt="icon default"
                             width={16}
                             height={16}
                             className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                           />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                            />
+                          </motion.div>
                         </div>
                       </>
                     )}
@@ -1113,11 +962,11 @@ export default function HomeV2() {
                     src={prod.image}
                     alt={`${prod.category} - ${prod.name}`}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 z-0"
+                    className="object-cover z-0"
                   />
-                  {/* Overlay #000000B2 */}
+                  {/* Overlay #000000B2 (completely disappears on hover) */}
                   <div
-                    className="absolute inset-0 bg-[#000000B2] pointer-events-none z-10 transition-opacity duration-300 group-hover:opacity-80"
+                    className="absolute inset-0 bg-[#000000B2] pointer-events-none z-10 transition-opacity duration-300 group-hover:opacity-0"
                   />
                 </div>
 
@@ -1125,22 +974,20 @@ export default function HomeV2() {
                 <div className="mt-[22px]">
                   <h3
                     style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontSize: "16px",
-                      lineHeight: "110%",
-                      letterSpacing: "0px",
                       verticalAlign: "middle",
                     }}
                   >
                     <span
                       style={{
                         fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 500,
-                        color: "#AEAEAE",
+                        fontWeight: 400,
+                        fontStyle: "normal",
                         fontSize: "16px",
                         lineHeight: "110%",
                         letterSpacing: "0px",
                         verticalAlign: "middle",
+                        textTransform: "capitalize",
+                        color: "#AEAEAE",
                       }}
                     >
                       {prod.category} -&nbsp;
@@ -1148,14 +995,15 @@ export default function HomeV2() {
                     <span
                       style={{
                         fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 600,
-                        color: "#FFFFFF",
+                        fontWeight: 500,
+                        fontStyle: "normal",
                         fontSize: "16px",
                         lineHeight: "110%",
                         letterSpacing: "0px",
                         verticalAlign: "middle",
+                        textTransform: "uppercase",
+                        color: "#FFFFFF",
                       }}
-                      className="group-hover:underline underline-offset-4"
                     >
                       {prod.name}
                     </span>
@@ -1172,7 +1020,12 @@ export default function HomeV2() {
             <button
               type="button"
               onClick={() => handleProductScrollNav("left")}
-              className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+              disabled={!productCanScrollLeft}
+              className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
+                !productCanScrollLeft
+                  ? "border-white/20 text-white/20 cursor-not-allowed"
+                  : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
+              }`}
               aria-label="Previous products"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1182,7 +1035,12 @@ export default function HomeV2() {
             <button
               type="button"
               onClick={() => handleProductScrollNav("right")}
-              className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
+              disabled={!productCanScrollRight}
+              className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
+                !productCanScrollRight
+                  ? "border-white/20 text-white/20 cursor-not-allowed"
+                  : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
+              }`}
               aria-label="Next products"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1198,7 +1056,7 @@ export default function HomeV2() {
         <div className={containerClass}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Left Column: Solution Manifesto & Navigation (x=-4738 to -4165, ~492px width) */}
-            <div className="lg:col-span-5 flex flex-col justify-between">
+            <div className="lg:col-span-5 flex flex-col justify-between self-stretch">
               <div>
                 {/* Eyebrow */}
                 <span
@@ -1207,8 +1065,9 @@ export default function HomeV2() {
                     fontSize: "24px",
                     lineHeight: "115%",
                     color: "#FFFFFF",
+                    marginBottom: "32px",
                   }}
-                  className="font-normal block mb-4"
+                  className="font-normal block"
                 >
                   Solution
                 </span>
@@ -1217,12 +1076,15 @@ export default function HomeV2() {
                 <h2
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "clamp(28px, 2.78vw, 40px)",
-                    lineHeight: "105%",
+                    fontSize: "40px",
                     fontWeight: 400,
+                    fontStyle: "normal",
+                    lineHeight: "105%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
                     color: "#FFFFFF",
+                    marginBottom: "58px",
                   }}
-                  className="mb-8"
                 >
                   Water
                   <br />
@@ -1239,68 +1101,131 @@ export default function HomeV2() {
                           <div className="relative inline-block w-4 h-4 ml-2">
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                              alt="icon"
+                              alt="icon default"
                               width={16}
                               height={16}
                               className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                             />
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: hovered ? 1 : 0 }}
+                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                              className="absolute top-0 left-0"
+                            >
+                              <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt="icon hover"
+                                width={16}
+                                height={16}
+                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                              />
+                            </motion.div>
                           </div>
                         </>
                       )}
                     </HoverButton>
                   </Link>
                 </div>
+              </div>
 
+              {/* Bottom Block: Manifesto Text 58px above the nav arrows */}
+              <div className="mt-8 lg:mt-0">
                 {/* Description Copy */}
                 <p
                   style={{
                     fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
                     fontSize: "14px",
-                    lineHeight: "19.1px",
+                    lineHeight: "130%",
+                    letterSpacing: "0px",
+                    verticalAlign: "middle",
                     color: "#AEAEAE",
                   }}
                   className="mb-4"
                 >
-                  WAE integrates water treatment, membrane separation, wastewater recovery, reuse and low-carbon thermal infrastructure within a unified engineering architecture. From turnkey EPC and retrofit to digital monitoring, O&M and Water-as-a-Service, our systems are engineered for higher recovery, lower resource intensity, lifecycle efficiency and measurable decarbonisation.
+                  WAE integrates water treatment, membrane separation, wastewater recovery, reuse and low-carbon thermal infrastructure within a unified engineering architecture.{" "}
+                  <span
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "14px",
+                      lineHeight: "130%",
+                      letterSpacing: "0px",
+                      verticalAlign: "middle",
+                    }}
+                  >
+                    From turnkey EPC and retrofit to digital monitoring, O&M and Water-as-a-Service
+                  </span>
+                  , our systems are engineered for higher recovery, lower resource intensity, lifecycle efficiency and measurable decarbonisation.
                 </p>
 
-                <p
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontSize: "14px",
-                    lineHeight: "19.1px",
-                    color: "#AEAEAE",
-                  }}
-                  className="mb-8"
-                >
-                  <Link href="/portfolio" className="underline underline-offset-4 hover:text-white transition-colors">
-                    Explore the Product Architecture......Read more
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "14px",
+                      lineHeight: "130%",
+                      letterSpacing: "0px",
+                      verticalAlign: "middle",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    Explore the Product Architecture......
+                  </span>
+                  <Link
+                    href="https://wae-ltd-git-preview-wcgs-projects-1d1036ec.vercel.app/portfolio"
+                    className="inline-flex items-center transition-colors"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "14px",
+                      lineHeight: "130%",
+                      letterSpacing: "0px",
+                      verticalAlign: "middle",
+                      color: "#FFFFFF",
+                    }}
+                  >
+                    <span>Read more</span>
                   </Link>
-                </p>
-              </div>
+                </div>
 
-              {/* Prev / Next circular controls */}
-              <div className="flex items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => handleSolutionScrollNav("left")}
-                  className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
-                  aria-label="Previous solutions"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleSolutionScrollNav("right")}
-                  className="w-[41px] h-[41px] rounded-full border border-white/60 hover:border-white flex items-center justify-center transition-colors text-white"
-                  aria-label="Next solutions"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+                {/* 58px above the nav arrows */}
+                <div style={{ height: "58px" }} />
+
+                {/* Prev / Next circular controls */}
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => handleSolutionScrollNav("left")}
+                    disabled={!solutionCanScrollLeft}
+                    className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
+                      !solutionCanScrollLeft
+                        ? "border-white/20 text-white/20 cursor-not-allowed"
+                        : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
+                    }`}
+                    aria-label="Previous solutions"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleSolutionScrollNav("right")}
+                    disabled={!solutionCanScrollRight}
+                    className={`w-[41px] h-[41px] rounded-full border flex items-center justify-center transition-colors ${
+                      !solutionCanScrollRight
+                        ? "border-white/20 text-white/20 cursor-not-allowed"
+                        : "border-white text-white hover:bg-white hover:text-black cursor-pointer"
+                    }`}
+                    aria-label="Next solutions"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -1308,7 +1233,6 @@ export default function HomeV2() {
             <div className="lg:col-span-7 -mr-[6.1vw] md:-mr-[max(7.5vw,calc((100vw-1440px)/2+108px))]">
               <div
                 ref={solutionScrollRef}
-                onScroll={handleSolutionScroll}
                 className="flex gap-6 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pr-[6.1vw] md:pr-[max(7.5vw,calc((100vw-1440px)/2+108px))] scroll-pr-[6.1vw] md:scroll-pr-[max(7.5vw,calc((100vw-1440px)/2+108px))]"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
@@ -1323,26 +1247,29 @@ export default function HomeV2() {
                       src={sol.image}
                       alt={sol.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="object-cover"
                     />
 
-                    {/* Gradient Overlay for Typography Legibility (Figma: transparent to black) */}
+                    {/* Gradient Overlay subtly spreading from bottom to 93% of the top - disappears on hover */}
                     <div
-                      className="absolute inset-0 pointer-events-none"
+                      className="absolute inset-x-0 bottom-0 h-[93%] pointer-events-none transition-opacity duration-300 group-hover:opacity-0"
                       style={{
                         background:
-                          "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0) 100%)",
+                          "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)",
                       }}
                     />
 
-                    {/* Card Content at bottom: Title and chevron-right arrow */}
-                    <div className="absolute inset-x-0 bottom-0 p-8 flex justify-between items-end z-10">
+                    {/* Card Content at bottom: Title and chevron-right arrow - disappears on hover */}
+                    <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex justify-between items-end z-10 transition-opacity duration-300 group-hover:opacity-0">
                       <h3
                         style={{
                           fontFamily: "'Inter Tight', sans-serif",
-                          fontSize: "22px",
-                          lineHeight: "27.5px",
+                          fontSize: "20px",
+                          lineHeight: "125%",
                           fontWeight: 400,
+                          fontStyle: "normal",
+                          letterSpacing: "0%",
+                          verticalAlign: "middle",
                           color: "#FFFFFF",
                           whiteSpace: "pre-line",
                         }}
@@ -1350,8 +1277,17 @@ export default function HomeV2() {
                         {sol.title}
                       </h3>
 
-                      <div className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white group-hover:border-white group-hover:translate-x-1 transition-all">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <div className="flex items-center text-white pb-1">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
                           <path d="M9 5l7 7-7 7" />
                         </svg>
                       </div>
@@ -1368,14 +1304,17 @@ export default function HomeV2() {
       <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
         <div className={containerClass}>
           {/* Header Row */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-[100px]">
             <div>
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "clamp(28px, 2.78vw, 40px)",
+                  fontSize: "40px",
                   lineHeight: "100%",
                   fontWeight: 400,
+                  fontStyle: "normal",
+                  letterSpacing: "0px",
+                  verticalAlign: "middle",
                   color: "#FFFFFF",
                 }}
               >
@@ -1387,8 +1326,8 @@ export default function HomeV2() {
                   fontSize: "14px",
                   lineHeight: "19.1px",
                   color: "#AEAEAE",
+                  marginTop: "32px",
                 }}
-                className="mt-3"
               >
                 Water engineered for the way each sector works.
               </p>
@@ -1403,11 +1342,25 @@ export default function HomeV2() {
                       <div className="relative inline-block w-4 h-4 ml-2">
                         <Image
                           src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon"
+                          alt="icon default"
                           width={16}
                           height={16}
                           className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                         />
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
+                        >
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                        </motion.div>
                       </div>
                     </>
                   )}
@@ -1418,103 +1371,107 @@ export default function HomeV2() {
 
           {/* 7 Sectors Grid: 4 Columns x 2 Rows with internal divider lines only */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Row 1 */}
-            {figmaSectors.slice(0, 4).map((sec, idx) => (
-              <div
-                key={sec.id}
-                className={`p-6 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] hover:bg-white/[0.03] transition-colors ${
-                  idx < 3 ? "lg:border-r border-white/10" : ""
-                } ${idx % 2 === 0 ? "sm:border-r lg:border-r-0" : ""} border-b lg:border-b-0 border-white/10`}
-              >
-                <div>
-                  <div className="mb-6 flex items-center gap-3">
-                    {sec.iconType === "horeca" ? (
-                      <div className="w-7 h-7 relative flex items-center justify-center">
-                        <img
-                          src="/homeV2/sector-horeca.png"
-                          alt="HoReCa"
-                          className="w-full h-full object-contain filter invert opacity-90"
+            {[
+              ...figmaSectors,
+              {
+                id: "empty-slot",
+                title: "",
+                description: "",
+                icon: "",
+                isEmpty: true,
+              },
+            ].map((sec, idx) => {
+              if (sec.isEmpty) {
+                return (
+                  <div
+                    key="empty-slot"
+                    className="hidden sm:block lg:block sm:pt-8 sm:pl-6 sm:pr-0 lg:pt-10 lg:pl-8 lg:pr-0"
+                  />
+                )
+              }
+
+              // Desktop (lg: 4 cols x 2 rows):
+              // Col 0: pl-0 pr-8 border-r
+              // Col 1, 2: px-8 border-r
+              // Col 3: pl-8 pr-0 (no border-r)
+              const lgColClass =
+                idx % 4 === 0
+                  ? "lg:pl-0 lg:pr-8 lg:border-r"
+                  : idx % 4 === 3
+                  ? "lg:pl-8 lg:pr-0 lg:border-r-0"
+                  : "lg:px-8 lg:border-r"
+
+              // Desktop Row:
+              // Row 1 (idx 0..3): pt-0 pb-10 border-b
+              // Row 2 (idx 4..7): pt-10 pb-0 border-b-0
+              const lgRowClass = idx < 4 ? "lg:pt-0 lg:pb-10 lg:border-b" : "lg:pt-10 lg:pb-0 lg:border-b-0"
+
+              // Tablet (sm: 2 cols x 4 rows):
+              // Col 0: pl-0 pr-6 border-r
+              // Col 1: pl-6 pr-0 border-r-0
+              const smColClass = idx % 2 === 0 ? "sm:pl-0 sm:pr-6 sm:border-r" : "sm:pl-6 sm:pr-0 sm:border-r-0"
+
+              // Tablet Row:
+              // Top row: pt-0
+              // Subsequent rows: pt-8
+              // Bottom row: pb-0 border-b-0
+              // Rows 1-3: pb-8 border-b
+              const smRowClass = `${idx < 2 ? "sm:pt-0" : "sm:pt-8"} ${idx < 6 ? "sm:pb-8 sm:border-b" : "sm:pb-0 sm:border-b-0"}`
+
+              // Mobile (1 col):
+              // idx 0: pt-0 pb-6 border-b
+              // idx 1..5: py-6 border-b
+              // idx 6: pt-6 pb-0 border-b-0
+              const mobileClass = `${idx === 0 ? "pt-0 pb-6" : idx === 6 ? "pt-6 pb-0" : "py-6"} ${idx < 6 ? "border-b" : "border-b-0"}`
+
+              return (
+                <div
+                  key={sec.id}
+                  className={`flex flex-col justify-start border-[#FFFFFF26] ${mobileClass} ${smColClass} ${smRowClass} ${lgColClass} ${lgRowClass}`}
+                >
+                  <div>
+                    <div className="mb-5 flex items-center gap-4">
+                      <div className="w-[30px] h-[30px] relative flex-shrink-0 flex items-center justify-center">
+                        <Image
+                          src={sec.icon}
+                          alt={sec.title}
+                          width={30}
+                          height={30}
+                          className="w-[30px] h-[30px] object-contain"
                         />
                       </div>
-                    ) : (
-                      <div className="text-white/90">
-                        {renderSectorIcon(sec.iconType)}
-                      </div>
-                    )}
-                    <h3
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontSize: "20px",
-                        lineHeight: "120%",
-                        fontWeight: 400,
-                        color: "#FFFFFF",
-                      }}
-                    >
-                      {sec.title}
-                    </h3>
-                  </div>
-
-                  <p
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontSize: "14px",
-                      lineHeight: "19.1px",
-                      color: "#AEAEAE",
-                    }}
-                  >
-                    {sec.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-
-            {/* Horizontal Line separating Row 1 and Row 2 across 4 columns */}
-            <div className="hidden lg:block col-span-4 border-t border-white/10" />
-
-            {/* Row 2 */}
-            {figmaSectors.slice(4, 7).map((sec, idx) => (
-              <div
-                key={sec.id}
-                className={`p-6 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] hover:bg-white/[0.03] transition-colors ${
-                  idx < 2 ? "lg:border-r border-white/10" : ""
-                } ${idx % 2 === 0 ? "sm:border-r lg:border-r-0" : ""} border-b sm:border-b-0 border-white/10`}
-              >
-                <div>
-                  <div className="mb-6 flex items-center gap-3">
-                    <div className="text-white/90">
-                      {renderSectorIcon(sec.iconType)}
+                      <h3
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontSize: "20px",
+                          lineHeight: "120%",
+                          fontWeight: 400,
+                          color: "#FFFFFF",
+                        }}
+                      >
+                        {sec.title}
+                      </h3>
                     </div>
-                    <h3
+
+                    <p
                       style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontSize: "20px",
-                        lineHeight: "120%",
-                        fontWeight: 400,
-                        color: "#FFFFFF",
+                        fontFamily: "'Manrope', sans-serif",
+                        fontSize: "14px",
+                        lineHeight: "19.1px",
+                        color: "#AEAEAE",
                       }}
                     >
-                      {sec.title}
-                    </h3>
+                      {sec.description}
+                    </p>
                   </div>
-
-                  <p
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontSize: "14px",
-                      lineHeight: "19.1px",
-                      color: "#AEAEAE",
-                    }}
-                  >
-                    {sec.description}
-                  </p>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* ── SUSTAINABILITY SECTION (IDENTICAL TO MAIN HOMEPAGE) ── */}
+      {/* ── SUSTAINABILITY SECTION ── */}
       <section className="bg-black text-white md:border-b-0">
         {/* Desktop Layout */}
         <div className="w-full hidden md:block border-b border-[#FFFFFF4D] pt-[108px] pb-[68px]" style={{ paddingLeft: "7.5vw", paddingRight: "7.5vw" }}>
@@ -1533,7 +1490,7 @@ export default function HomeV2() {
             >
               Sustainability
             </h3>
-            <div style={{ height: "26px" }} />
+            <div style={{ height: "32px" }} />
           </div>
 
           {/* Top Row: Heading on left, Quote on right */}
@@ -1545,7 +1502,7 @@ export default function HomeV2() {
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
                   fontStyle: "normal",
-                  fontSize: "52px",
+                  fontSize: "40px",
                   lineHeight: "110%",
                   letterSpacing: "0px",
                   verticalAlign: "middle",
@@ -1554,7 +1511,7 @@ export default function HomeV2() {
               >
                 Earth, Our Only<br />Shareholder
               </h2>
-              <div style={{ height: "31px" }} />
+              <div style={{ height: "32px" }} />
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
@@ -1569,7 +1526,7 @@ export default function HomeV2() {
               >
                 A ledger of people, planet, and profit and the <span ref={waterWordRef}>water</span> that connects them all.
               </p>
-              <div style={{ height: "60px" }} />
+              <div style={{ height: "82px" }} />
             </div>
 
             {/* Right Column - Quote & Author */}
@@ -1623,7 +1580,7 @@ export default function HomeV2() {
                     {(hovered) => (
                       <>
                         Know More
-                        <div className="relative inline-block w-4 h-4 ml-1">
+                        <div className="relative inline-block w-4 h-4">
                           <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                             alt="icon default"
@@ -1685,65 +1642,72 @@ export default function HomeV2() {
               </div>
             </div>
 
-            {/* Right Column - Horizontal Line & Two Text Columns */}
-            <div style={{ maxWidth: "650px" }} className="relative z-10 flex flex-col flex-1 min-w-0">
-              <div style={{ height: "49px" }} className="flex flex-col justify-start">
-                <div className="w-full h-px bg-[#FFFFFF4D]" />
+            {/* Right Column - Horizontal Line & Two Text Columns + Statement (Bottom aligned 70px above video bottom) */}
+            <div style={{ maxWidth: "650px" }} className="relative z-10 flex flex-col justify-between flex-1 min-w-0 self-stretch pb-[70px]">
+              <div>
+                <div style={{ height: "49px" }} className="flex flex-col justify-start">
+                  {/* Horizontal line aligned with button top */}
+                  <div className="w-full h-px bg-[#FFFFFF4D]" />
+                </div>
+
+                {/* Two sub-columns */}
+                <div className="grid grid-cols-2 gap-8 lg:gap-12 relative z-10">
+                  {/* Sub-column 1 */}
+                  <div
+                    className="relative z-10 flex flex-col space-y-4"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontStyle: "normal",
+                      fontSize: "14px",
+                      lineHeight: "140%",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    <p>
+                      It does not attend AGMs. It signs no term sheets. It cannot vote against us. But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life. For us, this recognition is not philosophical. It is operational.
+                    </p>
+                  </div>
+
+                  {/* Sub-column 2 */}
+                  <div
+                    className="relative z-10 flex flex-col space-y-4"
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontStyle: "normal",
+                      fontSize: "14px",
+                      lineHeight: "140%",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    <p>
+                      Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business. It is the context within which our business is allowed to exist. In this view, sustainability is not an initiative layered onto business strategy. It is the condition that determines whether that strategy is viable at all.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* Two sub-columns */}
-              <div className="grid grid-cols-2 gap-8 lg:gap-12 relative z-10">
-                <div
-                  className="relative z-10 flex flex-col space-y-4"
+              {/* Footer Statement: aligned with 30px above the video bottom */}
+              <div className="mt-8 lg:mt-12">
+                <p
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 400,
                     fontStyle: "normal",
-                    fontSize: "12px",
-                    lineHeight: "130%",
+                    fontSize: "22px",
+                    lineHeight: "120%",
                     letterSpacing: "0%",
                     verticalAlign: "middle",
                     color: "#AEAEAE",
                   }}
                 >
-                  <p>
-                    It does not attend AGMs. It signs no term sheets. It cannot vote against us.
-                  </p>
-                  <p>
-                    But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life.
-                  </p>
-                  <p>
-                    For us, this recognition is not philosophical. It is operational.
-                  </p>
-                  <p>
-                    Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business.
-                  </p>
-                </div>
-
-                <div
-                  className="relative z-10 flex flex-col space-y-4"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontWeight: 400,
-                    fontStyle: "normal",
-                    fontSize: "12px",
-                    lineHeight: "130%",
-                    letterSpacing: "0%",
-                    verticalAlign: "middle",
-                    color: "#AEAEAE",
-                  }}
-                >
-                  <p>
-                    It is the context within which our business is allowed to exist.
-                  </p>
-                  <p>
-                    In this view, sustainability is not an initiative layered onto business strategy.<br />
-                    It is the condition that determines whether that strategy is viable at all.
-                  </p>
-                  <p>
-                    This is our account of stewardship to the only shareholder that was always there.
-                  </p>
-                </div>
+                  This is our account of stewardship to the only shareholder that was always there - Earth.
+                </p>
               </div>
             </div>
           </div>
@@ -1754,15 +1718,15 @@ export default function HomeV2() {
           <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "4.58vw", lineHeight: "115%" }}>
             Sustainability
           </h3>
-          <div style={{ height: "7.12vw" }} />
+          <div style={{ height: "32px" }} />
           <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400, fontSize: "7.12vw", lineHeight: "105%" }}>
             Earth, Our Only Shareholder
           </h2>
-          <div style={{ height: "3.5vw" }} />
+          <div style={{ height: "32px" }} />
           <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: "3.05vw", lineHeight: "120%", color: "#AEAEAE" }}>
             A ledger of people, planet, and profit and the water that connects them all.
           </p>
-          <div style={{ height: "6vw" }} />
+          <div style={{ height: "82px" }} />
 
           {/* Button */}
           <div className="flex">
@@ -1771,7 +1735,7 @@ export default function HomeV2() {
                 {(hovered) => (
                   <>
                     Know More
-                    <div className="relative inline-block w-4 h-4 ml-1">
+                    <div className="relative inline-block w-4 h-4">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                         alt="icon default"
@@ -1874,37 +1838,44 @@ export default function HomeV2() {
             style={{
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 400,
-              fontSize: "3.56vw",
-              lineHeight: "130%",
+              fontSize: "14px",
+              lineHeight: "120%",
               color: "#AEAEAE",
             }}
           >
-            <p>It does not attend AGMs. It signs no term sheets. It cannot vote against us.</p>
             <p>
-              But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life.
+              It does not attend AGMs. It signs no term sheets. It cannot vote against us. But before there were contracts, there was Earth. Before there were compliance frameworks, there was water. And before there were boards and balance sheets, there was a responsibility to protect what sustains life. For us, this recognition is not philosophical. It is operational.
             </p>
-            <p>For us, this recognition is not philosophical. It is operational.</p>
-            <p>Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business.</p>
-            <p>It is the context within which our business is allowed to exist.</p>
             <p>
-              In this view, sustainability is not an initiative layered onto business strategy. It is the condition that determines whether that strategy is viable at all.
+              Our manifesto begins with a simple, unwavering premise: The environment is not a stakeholder in our business. It is the context within which our business is allowed to exist. In this view, sustainability is not an initiative layered onto business strategy. It is the condition that determines whether that strategy is viable at all.
             </p>
-            <p>This is our account of stewardship to the only shareholder that was always there.</p>
+            <p
+              style={{
+                fontSize: "18px",
+                lineHeight: "120%",
+                color: "#AEAEAE",
+                paddingTop: "12px",
+              }}
+            >
+              This is our account of stewardship to the only shareholder that was always there - Earth.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ── IMPACT SECTION (METRICS & SKYLINE SILHOUETTE) ── */}
+      {/* ── SUSTAINABILITY IMPACT SECTION (EXACTLY AS HOMEPAGE) ── */}
       <section
         ref={impactRef}
-        className="relative text-white w-full border-b border-[#FFFFFF33] overflow-hidden"
+        className="relative text-white w-full"
         style={{
           background: "linear-gradient(146.59deg, #004063 4.52%, #000000 49.04%)",
+          overflow: "hidden",
         }}
       >
+        {/* Background SVG with gradient mask for smooth blending */}
         <img
           src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/374f4710-d942-4059-e39c-b5fc24283700/public"
-          alt="Impact Silhouette"
+          alt="Impact Background"
           className="absolute md:top-0 top-1/2 md:right-0 -right-[12.72vw] md:translate-y-0 -translate-y-1/2 md:h-full h-[104.97vw] w-auto opacity-70 object-cover object-right pointer-events-none select-none z-0"
           style={{
             WebkitMaskImage: "linear-gradient(to right, transparent, black 15%)",
@@ -1912,101 +1883,307 @@ export default function HomeV2() {
           }}
         />
 
-        <div className={`relative z-10 py-[clamp(80px,8.6vw,124px)] ${containerClass}`}>
-          <div className="max-w-[600px] mb-12">
-            <h2
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "clamp(32px, 2.78vw, 42px)",
-                lineHeight: "110%",
-                color: "#FFFFFF",
-              }}
-              className="mb-2 font-normal"
-            >
-              Impact
-            </h2>
-            <p
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "clamp(16px, 1.38vw, 20px)",
-                lineHeight: "110%",
-                color: "#FFFFFF",
-              }}
-              className="mb-4"
-            >
-              Real numbers. Real results.
-            </p>
-            <p
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontSize: "clamp(12px, 0.97vw, 14px)",
-                lineHeight: "140%",
-                color: "#AEAEAE",
-                maxWidth: "460px",
-              }}
-              className="mb-8"
-            >
-              Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
-            </p>
-            <Link href="/sustainability" className="contents">
-              <HoverButton theme="transparent-white">
-                {(hovered) => (
-                  <>
-                    Know More
-                    <div className="relative inline-block w-4 h-4 ml-1">
+        {/* Desktop Layout */}
+        <div
+          className="w-full hidden md:block relative z-10"
+          style={{ paddingTop: "124px", paddingBottom: "124px", paddingLeft: "7.5vw", paddingRight: "7.5vw" }}
+        >
+          <div className="flex flex-col justify-between h-full">
+            <div className="max-w-[600px]">
+              <h2
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "40px",
+                  lineHeight: "110%",
+                  color: "#FFFFFF",
+                }}
+              >
+                Impact
+              </h2>
+              <div style={{ height: "10px" }} />
+              <p
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "20px",
+                  lineHeight: "110%",
+                  color: "#FFFFFF",
+                }}
+              >
+                Real numbers. Real results.
+              </p>
+              <div style={{ height: "32px" }} />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  lineHeight: "130%",
+                  color: "#AEAEAE",
+                  maxWidth: "32.91vw",
+                }}
+              >
+                Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
+              </p>
+              <div style={{ height: "46px" }} />
+              <Link href="/sustainability" className="contents">
+                <HoverButton theme="transparent-white">
+                  {(hovered) => (
+                    <>
+                      Know More
+                      <div className="relative inline-block w-4 h-4">
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                          alt="icon default"
+                          width={16}
+                          height={16}
+                          className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                        />
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
+                        >
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                        </motion.div>
+                      </div>
+                    </>
+                  )}
+                </HoverButton>
+              </Link>
+            </div>
+
+            <div className="mt-[150px]">
+              <div className="grid grid-cols-2" style={{ maxWidth: "45.55vw", maxHeight: "267px" }}>
+                {/* Tonnes CO₂ emissions saved */}
+                <div className="border-r border-white/20 p-8 pl-0">
+                  <Counter value={1012120.45} suffix="+" trigger={isImpactInView} />
+                  <p
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "18px",
+                      lineHeight: "100%",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    Tonnes CO₂ emissions saved
+                  </p>
+                </div>
+
+                <div className="p-8"></div>
+
+                {/* Million gallons of water saved */}
+                <div className="border-r border-t border-white/20 p-8 pl-0">
+                  <Counter value={12185.45} suffix="+" trigger={isImpactInView} />
+                  <p
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "18px",
+                      lineHeight: "100%",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    Million gallons of water saved
+                  </p>
+                </div>
+
+                {/* Tonnes plastic removed */}
+                <div className="border-t border-white/20 p-8">
+                  <Counter value={22253.65} suffix="+" trigger={isImpactInView} />
+                  <p
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "18px",
+                      lineHeight: "100%",
+                      color: "#AEAEAE",
+                    }}
+                  >
+                    Tonnes plastic removed
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="w-full md:hidden flex flex-col relative z-10 py-[13.74vw] px-[6.1vw]">
+          <h2
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "7.12vw",
+              lineHeight: "110%",
+              color: "#FFFFFF",
+            }}
+          >
+            Impact
+          </h2>
+          <div style={{ height: "2.54vw" }} />
+          <p
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "3.56vw",
+              lineHeight: "110%",
+              color: "#FFFFFF",
+            }}
+          >
+            Real numbers. Real results.
+          </p>
+          <div style={{ height: "6.1vw" }} />
+          <p
+            style={{
+              fontFamily: "'Manrope', sans-serif",
+              fontWeight: 400,
+              fontSize: "3.05vw",
+              lineHeight: "100%",
+              color: "#AEAEAE",
+              maxWidth: "59.29vw",
+            }}
+          >
+            Measured outcomes that demonstrate how our systems reduce environmental footprint at scale.
+          </p>
+          <div style={{ height: "12.21vw" }} />
+
+          <Link href="/sustainability" className="contents">
+            <HoverButton theme="transparent-white">
+              {(hovered) => (
+                <>
+                  Know More
+                  <div className="relative inline-block w-4 h-4">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                      alt="icon default"
+                      width={16}
+                      height={16}
+                      className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                    />
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: hovered ? 1 : 0 }}
+                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                      className="absolute top-0 left-0"
+                    >
                       <Image
-                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                        alt="icon"
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                        alt="icon hover"
                         width={16}
                         height={16}
                         className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                       />
-                    </div>
-                  </>
-                )}
-              </HoverButton>
-            </Link>
-          </div>
+                    </motion.div>
+                  </div>
+                </>
+              )}
+            </HoverButton>
+          </Link>
 
-          {/* Counters Grid with dividers */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-white/20 pt-4">
-            <div className="sm:pr-6 pt-4 sm:pt-0">
-              <Counter value={1012120.45} suffix="+" trigger={isImpactInView} />
-              <p className="font-[Manrope] text-[14px] text-[#AEAEAE] mt-2">
+          <div style={{ height: "45.03vw" }} />
+
+          {/* Grid of stats */}
+          <div className="grid grid-cols-2 w-full mt-auto">
+            {/* Tonnes CO₂ emissions saved */}
+            <div className="border-r border-b border-white/20 pb-[5vw] pr-[2vw]">
+              <Counter
+                value={1012120.45}
+                suffix="+"
+                trigger={isImpactInView}
+                style={{ fontSize: "6vw", lineHeight: "100%", marginBottom: "2vw", fontWeight: 400 }}
+              />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "2.5vw",
+                  lineHeight: "110%",
+                  color: "#AEAEAE",
+                }}
+              >
                 Tonnes CO₂ emissions saved
               </p>
             </div>
 
-            <div className="sm:px-6 pt-6 sm:pt-0">
-              <Counter value={12185.45} suffix="+" trigger={isImpactInView} />
-              <p className="font-[Manrope] text-[14px] text-[#AEAEAE] mt-2">
-                Million gallons of water saved
+            {/* Empty space in grid */}
+            <div className="border-b border-white/20 pb-[5vw] pl-[2vw]"></div>
+
+            {/* Million gallons of water saved */}
+            <div className="border-r border-white/20 pt-[5vw] pr-[2vw]">
+              <Counter
+                value={12185.45}
+                suffix="+"
+                trigger={isImpactInView}
+                style={{ fontSize: "6vw", lineHeight: "100%", marginBottom: "2vw", fontWeight: 400 }}
+              />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "2.5vw",
+                  lineHeight: "110%",
+                  color: "#AEAEAE",
+                }}
+              >
+                Million Gallons Of Water Saved
               </p>
             </div>
 
-            <div className="sm:pl-6 pt-6 sm:pt-0">
-              <Counter value={22253.65} suffix="+" trigger={isImpactInView} />
-              <p className="font-[Manrope] text-[14px] text-[#AEAEAE] mt-2">
-                Tonnes plastic removed
+            {/* Tonnes plastic removed */}
+            <div className="pt-[5vw] pl-[4vw]">
+              <Counter
+                value={22253.65}
+                suffix="+"
+                trigger={isImpactInView}
+                style={{ fontSize: "6vw", lineHeight: "100%", marginBottom: "2vw", fontWeight: 400 }}
+              />
+              <p
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "2.5vw",
+                  lineHeight: "110%",
+                  color: "#AEAEAE",
+                }}
+              >
+                Tonnes Plastic Removed
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      <div className="w-full bg-black">
+        <div className="w-full h-px bg-white/20" />
+      </div>
+
       {/* ── PERSPECTIVES SECTION ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[112px]">
         <div className={containerClass}>
           <div className="flex justify-between items-start w-full mb-12">
             <div className="flex-1">
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "clamp(28px, 2.78vw, 40px)",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontSize: "40px",
                   lineHeight: "110%",
+                  letterSpacing: "0px",
+                  verticalAlign: "middle",
                   color: "#FFFFFF",
                 }}
-                className="mb-3 font-normal"
+                className="mb-3"
               >
                 Perspectives
               </h2>
@@ -2027,8 +2204,8 @@ export default function HomeV2() {
               <HoverButton href="/perspectives" theme="transparent-white-black-hover">
                 {(hovered) => (
                   <>
-                    View All
-                    <div className="relative inline-block w-4 h-4 ml-2">
+                    Know More
+                    <div className="relative inline-block w-4 h-4">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                         alt="icon"
@@ -2047,23 +2224,23 @@ export default function HomeV2() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {blogsLoading
               ? [0, 1, 2].map((i) => (
-                  <div key={i} className="border-l border-white/20 pl-6">
-                    <div className="relative w-full aspect-square overflow-hidden mb-6 bg-white/5 animate-pulse rounded" />
-                    <div className="h-5 bg-white/5 animate-pulse mb-2 w-3/4 rounded" />
-                    <div className="h-4 bg-white/5 animate-pulse mb-1 w-full rounded" />
-                  </div>
-                ))
+                <div key={i} className="border-l border-white/20 pl-6">
+                  <div className="relative w-full aspect-square overflow-hidden mb-6 bg-white/5 animate-pulse rounded" />
+                  <div className="h-5 bg-white/5 animate-pulse mb-2 w-3/4 rounded" />
+                  <div className="h-4 bg-white/5 animate-pulse mb-1 w-full rounded" />
+                </div>
+              ))
               : homepageBlogs.map((blog) => {
-                  const categorySlug = blog.category
-                    .toLowerCase()
-                    .trim()
-                    .replace(/[^a-z0-9]+/g, "-")
-                    .replace(/(^-|-$)/g, "")
-                  const titleSlug = blog.title
-                    .toLowerCase()
-                    .trim()
-                    .replace(/[^a-z0-9]+/g, "-")
-                    .replace(/(^-|-$)/g, "")
+                const categorySlug = blog.category
+                  .toLowerCase()
+                  .trim()
+                  .replace(/[^a-z0-9]+/g, "-")
+                  .replace(/(^-|-$)/g, "")
+                const titleSlug = blog.title
+                  .toLowerCase()
+                  .trim()
+                  .replace(/[^a-z0-9]+/g, "-")
+                  .replace(/(^-|-$)/g, "")
 
                   return (
                     <Link
@@ -2076,7 +2253,7 @@ export default function HomeV2() {
                           src={blog.heroImage}
                           alt={blog.title}
                           fill
-                          className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                         />
                       </div>
                       <span className="text-[11px] font-[Manrope] text-[#AEAEAE] tracking-wide block mb-2 uppercase">
@@ -2096,23 +2273,40 @@ export default function HomeV2() {
       </section>
 
       {/* ── MENTIONED / NEWS & MEDIA SECTION ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[112px]">
         <div className={containerClass}>
           <div className="flex justify-between items-start w-full mb-12">
             <div className="flex-1">
-              <span className="text-[#AEAEAE] tracking-[2px] text-[11px] md:text-[12px] uppercase font-semibold font-[Inter_Tight] block mb-2">
-                Media Coverage
+              <span
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontSize: "24px",
+                  lineHeight: "110%",
+                  letterSpacing: "0px",
+                  verticalAlign: "middle",
+                  color: "#FFFFFF",
+                }}
+                className="block mb-2"
+              >
+                Mentioned
               </span>
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "clamp(28px, 2.78vw, 40px)",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontSize: "40px",
                   lineHeight: "110%",
+                  letterSpacing: "0px",
+                  verticalAlign: "middle",
                   color: "#FFFFFF",
+                  maxWidth: "800px",
                 }}
                 className="font-normal"
               >
-                Stay informed with our latest announcements.
+                Stay informed with our latest media coverage and announcements
               </h2>
             </div>
 
@@ -2120,8 +2314,8 @@ export default function HomeV2() {
               <HoverButton href="/news-and-updates" theme="transparent-white-black-hover">
                 {(hovered) => (
                   <>
-                    View All
-                    <div className="relative inline-block w-4 h-4 ml-2">
+                    Know More
+                    <div className="relative inline-block w-4 h-4">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                         alt="icon"
@@ -2136,9 +2330,9 @@ export default function HomeV2() {
             </div>
           </div>
 
-          {/* 12-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            <div className="md:col-span-4 group cursor-pointer">
+          {/* 3-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            <div className="group cursor-pointer">
               {homepageNews[0] ? (
                 <Link href={homepageNews[0].link} className="block">
                   <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-5 rounded-sm bg-white/5">
@@ -2161,7 +2355,7 @@ export default function HomeV2() {
               )}
             </div>
 
-            <div className="md:col-span-4 group cursor-pointer">
+            <div className="group cursor-pointer">
               {homepageNews[1] ? (
                 <Link href={homepageNews[1].link} className="block">
                   <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-5 rounded-sm bg-white/5">
@@ -2185,7 +2379,7 @@ export default function HomeV2() {
             </div>
 
             {/* Sidebar list */}
-            <div className="md:col-span-4 flex flex-col gap-5 justify-between">
+            <div className="flex flex-col gap-5 justify-between">
               {homepageNews.slice(2, 5).map((item) => (
                 <Link href={item.link} key={item.id} className="flex gap-4 items-start group cursor-pointer">
                   <div className="relative w-[110px] aspect-[1.4/1] flex-shrink-0 rounded-sm overflow-hidden bg-white/5">
@@ -2215,15 +2409,16 @@ export default function HomeV2() {
       </section>
 
       {/* ── THE TERRITORY AHEAD ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[112px]">
         <div className={containerClass}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
             {/* Left Column: Heading and JOIN US CTA */}
-            <div className="lg:col-span-3 flex flex-col justify-start items-start">
+            <div className="flex flex-col justify-start items-start">
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
+                  fontStyle: "normal",
                   fontSize: "40px",
                   lineHeight: "110%",
                   letterSpacing: "0px",
@@ -2236,7 +2431,9 @@ export default function HomeV2() {
                 Ahead
               </h2>
 
-              <div className="mt-8">
+              <div style={{ height: "58px" }} />
+
+              <div>
                 <Link href="/join-wae" className="contents">
                   <HoverButton theme="transparent-white">
                     {(hovered) => (
@@ -2245,11 +2442,25 @@ export default function HomeV2() {
                         <div className="relative inline-block w-4 h-4 ml-2">
                           <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon"
+                            alt="icon default"
                             width={16}
                             height={16}
                             className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                           />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                            />
+                          </motion.div>
                         </div>
                       </>
                     )}
@@ -2259,7 +2470,7 @@ export default function HomeV2() {
             </div>
 
             {/* Middle Column: Do / Disrupt/Change the status quo. Or become it. and --Mark Shayler */}
-            <div className="lg:col-span-4 flex flex-col justify-between">
+            <div className="flex flex-col justify-between">
               <div>
                 <div
                   style={{
@@ -2338,7 +2549,7 @@ export default function HomeV2() {
             </div>
 
             {/* Right Column: 3 Paragraphs of Manifest */}
-            <div className="lg:col-span-5 flex flex-col justify-between gap-6">
+            <div className="flex flex-col justify-between gap-6">
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
@@ -2388,7 +2599,16 @@ export default function HomeV2() {
         className="bg-black text-white px-[6.1vw] pt-[16.53vw] pb-[21.11vw] md:px-[7.5vw] md:py-[123px] border-t border-[#FFFFFF4D]"
       >
         <div className="max-w-[1440px] mx-auto w-full">
-          <ContactSectionDark />
+          <ContactSectionDark
+            titleStyle={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontStyle: "normal",
+              fontSize: "50px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+            }}
+          />
         </div>
       </section>
 
