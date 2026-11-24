@@ -574,10 +574,14 @@ export default function HomeV2() {
         id="hero"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col overflow-hidden"
+        className="w-full relative h-[100svh] md:h-auto md:aspect-[1440/872] flex flex-col overflow-hidden"
+        style={{
+          backgroundColor: currentSlide === 0 ? "#0D0D0D" : "#000000",
+          transition: "background-color 0.5s ease",
+        }}
       >
         {/* Banner Viewport */}
-        <div className="relative w-full h-[calc(100svh-119px)] mt-[119px] md:mt-0 md:h-auto md:aspect-[1440/691] overflow-hidden">
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
           <AnimatePresence initial={false}>
             <motion.div
               key={currentSlide}
@@ -586,11 +590,14 @@ export default function HomeV2() {
               exit={{ x: "-100%" }}
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
               className="absolute inset-0 w-full h-full overflow-hidden"
+              style={{
+                backgroundColor: currentSlide === 0 ? "#0D0D0D" : "#000000",
+              }}
             >
               {currentSlide === 0 ? (
                 <>
                   {/* Mobile Background */}
-                  <div className="md:hidden absolute inset-0 w-full h-full opacity-95">
+                  <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
                     <Image
                       src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public"
                       alt="Landing Hero Banner"
@@ -602,7 +609,7 @@ export default function HomeV2() {
                   </div>
 
                   {/* Desktop Background */}
-                  <div className="hidden md:block absolute inset-0 w-full h-full opacity-95">
+                  <div className="hidden md:block absolute top-[130px] left-0 right-0 w-full aspect-[1440/691] opacity-95">
                     <Image
                       src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public"
                       alt="Landing Hero Banner"
@@ -614,7 +621,7 @@ export default function HomeV2() {
                   </div>
 
                   {/* Hero Content Text */}
-                  <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center">
+                  <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
                     <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
                       <div
                         className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
@@ -653,14 +660,14 @@ export default function HomeV2() {
                   </div>
                 </>
               ) : (
-                <div className="relative w-full h-full">
+                <div className="relative w-full h-full bg-black flex items-center justify-center">
                   <Image
                     src={HERO_SLIDES[currentSlide].image!}
                     alt={`Hero Banner ${currentSlide + 1}`}
                     fill
                     priority
                     unoptimized
-                    className="object-cover object-center"
+                    className="object-contain md:object-cover object-top"
                   />
                 </div>
               )}
@@ -1314,36 +1321,66 @@ export default function HomeV2() {
 
           {/* 7 Sectors Grid: 4 Columns x 2 Rows with internal divider lines only */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            {figmaSectors.map((sec, idx) => {
+            {[
+              ...figmaSectors,
+              {
+                id: "empty-slot",
+                title: "",
+                description: "",
+                icon: "",
+                isEmpty: true,
+              },
+            ].map((sec, idx) => {
+              if (sec.isEmpty) {
+                return (
+                  <div
+                    key="empty-slot"
+                    className="hidden sm:block lg:block sm:pt-8 sm:pl-6 sm:pr-0 lg:pt-10 lg:pl-8 lg:pr-0"
+                  />
+                )
+              }
+
               // Desktop (lg: 4 cols x 2 rows):
-              // Columns 0, 1, 2 have right divider; column 3 has no right divider
-              const lgBorderR = idx % 4 !== 3
-              // Row 1 (indices 0, 1, 2, 3) has bottom divider; Row 2 has no bottom divider
-              const lgBorderB = idx < 4
+              // Col 0: pl-0 pr-8 border-r
+              // Col 1, 2: px-8 border-r
+              // Col 3: pl-8 pr-0 (no border-r)
+              const lgColClass =
+                idx % 4 === 0
+                  ? "lg:pl-0 lg:pr-8 lg:border-r"
+                  : idx % 4 === 3
+                  ? "lg:pl-8 lg:pr-0 lg:border-r-0"
+                  : "lg:px-8 lg:border-r"
+
+              // Desktop Row:
+              // Row 1 (idx 0..3): pt-0 pb-10 border-b
+              // Row 2 (idx 4..7): pt-10 pb-0 border-b-0
+              const lgRowClass = idx < 4 ? "lg:pt-0 lg:pb-10 lg:border-b" : "lg:pt-10 lg:pb-0 lg:border-b-0"
 
               // Tablet (sm: 2 cols x 4 rows):
-              // Left column items (even indices) have right divider (except last item if alone)
-              const smBorderR = idx % 2 === 0 && idx < 6
-              // All items except the last row have bottom divider
-              const smBorderB = idx < 6
+              // Col 0: pl-0 pr-6 border-r
+              // Col 1: pl-6 pr-0 border-r-0
+              const smColClass = idx % 2 === 0 ? "sm:pl-0 sm:pr-6 sm:border-r" : "sm:pl-6 sm:pr-0 sm:border-r-0"
 
-              // Mobile (1 col x 7 rows):
-              // All items except the last item have bottom divider
-              const mobileBorderB = idx < 6
+              // Tablet Row:
+              // Top row: pt-0
+              // Subsequent rows: pt-8
+              // Bottom row: pb-0 border-b-0
+              // Rows 1-3: pb-8 border-b
+              const smRowClass = `${idx < 2 ? "sm:pt-0" : "sm:pt-8"} ${idx < 6 ? "sm:pb-8 sm:border-b" : "sm:pb-0 sm:border-b-0"}`
+
+              // Mobile (1 col):
+              // idx 0: pt-0 pb-6 border-b
+              // idx 1..5: py-6 border-b
+              // idx 6: pt-6 pb-0 border-b-0
+              const mobileClass = `${idx === 0 ? "pt-0 pb-6" : idx === 6 ? "pt-6 pb-0" : "py-6"} ${idx < 6 ? "border-b" : "border-b-0"}`
 
               return (
                 <div
                   key={sec.id}
-                  className={`p-6 sm:p-8 flex flex-col justify-start min-h-[160px] sm:min-h-[180px] lg:min-h-[200px] border-[#FFFFFF1A] ${
-                    mobileBorderB ? "border-b" : "border-b-0"
-                  } ${smBorderR ? "sm:border-r" : "sm:border-r-0"} ${
-                    smBorderB ? "sm:border-b" : "sm:border-b-0"
-                  } ${lgBorderR ? "lg:border-r" : "lg:border-r-0"} ${
-                    lgBorderB ? "lg:border-b" : "lg:border-b-0"
-                  }`}
+                  className={`flex flex-col justify-start border-[#FFFFFF26] ${mobileClass} ${smColClass} ${smRowClass} ${lgColClass} ${lgRowClass}`}
                 >
                   <div>
-                    <div className="mb-6 flex items-center gap-3">
+                    <div className="mb-5 flex items-center gap-4">
                       <div className="w-[30px] h-[30px] relative flex-shrink-0 flex items-center justify-center">
                         <Image
                           src={sec.icon}
@@ -1380,9 +1417,6 @@ export default function HomeV2() {
                 </div>
               )
             })}
-
-            {/* 8th cell placeholder to complete 4x2 grid on desktop */}
-            <div className="hidden lg:block min-h-[160px] sm:min-h-[180px] lg:min-h-[200px]" />
           </div>
         </div>
       </section>
