@@ -87,17 +87,17 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
       type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="w-fit"
+      className="w-fit "
       style={{
-        transition: "background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease",
+        transition: "background-color 0.65s ease, color 0.65s ease, border-color 0.65s ease",
         pointerEvents: "auto",
         display: "inline-flex",
         alignItems: "center",
-        gap: "8px",
+        gap: "0.55vw",
         padding: "10.5px 16px",
         fontFamily: "'Manrope', sans-serif",
         fontWeight: 500,
-        fontSize: "clamp(11px, 0.7vw, 13px)",
+        fontSize: "10px",
         lineHeight: "100%",
         textTransform: "none",
         backgroundColor:
@@ -368,15 +368,15 @@ const HERO_SLIDES: HeroBannerSlide[] = [
   },
   {
     id: 2,
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bb0c49b4-3215-4743-6dc9-bf1a81a53500/public",
+    image: "/hero/hero-slide-2.webp",
   },
   {
     id: 3,
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d1d97195-66a9-4d7e-72f6-aab90f81ab00/public",
+    image: "/hero/hero-slide-3.webp",
   },
   {
     id: 4,
-    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/38e54bc8-bccd-4c5a-4adc-770bf6be3d00/public",
+    image: "/hero/hero-slide-4.webp",
   },
 ]
 
@@ -846,14 +846,28 @@ export default function HomeV2() {
                     {(hovered) => (
                       <>
                         Know More
-                        <div className="relative inline-block w-4 h-4">
+                        <div className="relative inline-block w-4 h-4 ml-2">
                           <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon"
+                            alt="icon default"
                             width={16}
                             height={16}
                             className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                           />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                            />
+                          </motion.div>
                         </div>
                       </>
                     )}
@@ -1076,14 +1090,28 @@ export default function HomeV2() {
                       {(hovered) => (
                         <>
                           Know More
-                          <div className="relative inline-block w-4 h-4">
+                          <div className="relative inline-block w-4 h-4 ml-2">
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                              alt="icon"
+                              alt="icon default"
                               width={16}
                               height={16}
                               className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                             />
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: hovered ? 1 : 0 }}
+                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                              className="absolute top-0 left-0"
+                            >
+                              <Image
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                alt="icon hover"
+                                width={16}
+                                height={16}
+                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                              />
+                            </motion.div>
                           </div>
                         </>
                       )}
@@ -1303,14 +1331,28 @@ export default function HomeV2() {
                   {(hovered) => (
                     <>
                       Know More
-                      <div className="relative inline-block w-4 h-4">
+                      <div className="relative inline-block w-4 h-4 ml-2">
                         <Image
                           src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon"
+                          alt="icon default"
                           width={16}
                           height={16}
                           className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                         />
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: hovered ? 1 : 0 }}
+                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                          className="absolute top-0 left-0"
+                        >
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                            alt="icon hover"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                        </motion.div>
                       </div>
                     </>
                   )}
@@ -2389,14 +2431,28 @@ export default function HomeV2() {
                     {(hovered) => (
                       <>
                         <span className="uppercase tracking-wider">JOIN US</span>
-                        <div className="relative inline-block w-4 h-4">
+                        <div className="relative inline-block w-4 h-4 ml-2">
                           <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                            alt="icon"
+                            alt="icon default"
                             width={16}
                             height={16}
                             className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                           />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
+                            <Image
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
+                              width={16}
+                              height={16}
+                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                            />
+                          </motion.div>
                         </div>
                       </>
                     )}
