@@ -602,7 +602,7 @@ export default function Home() {
                       color: "#A0A0A0",
                     }}
                   >
-                    Jaynti
+                    Jayanti
                   </span>
                 </div>
               </div>
@@ -669,7 +669,7 @@ export default function Home() {
                         color: "#A0A0A0",
                       }}
                     >
-                      Jaynti
+                      Jayanti
                     </span>
                   </div>
                 </div>
