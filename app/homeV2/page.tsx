@@ -94,7 +94,7 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
         display: "inline-flex",
         alignItems: "center",
         gap: "8px",
-        padding: "clamp(8px, 0.73vw, 12px) clamp(12px, 1.1vw, 20px)",
+        padding: "10.5px 16px",
         fontFamily: "'Manrope', sans-serif",
         fontWeight: 500,
         fontSize: "clamp(11px, 0.7vw, 13px)",
@@ -354,9 +354,68 @@ const sectorsRow2 = [
   },
 ]
 
+// ── HERO CAROUSEL SLIDES ──
+interface HeroBannerSlide {
+  id: number
+  isFirst?: boolean
+  image?: string
+}
+
+const HERO_SLIDES: HeroBannerSlide[] = [
+  {
+    id: 1,
+    isFirst: true,
+  },
+  {
+    id: 2,
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bb0c49b4-3215-4743-6dc9-bf1a81a53500/public",
+  },
+  {
+    id: 3,
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/d1d97195-66a9-4d7e-72f6-aab90f81ab00/public",
+  },
+  {
+    id: 4,
+    image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/38e54bc8-bccd-4c5a-4adc-770bf6be3d00/public",
+  },
+]
+
 // ── MAIN COMPONENT ──
 
 export default function HomeV2() {
+  // Hero Carousel State
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const heroTouchStartX = useRef<number | null>(null)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
+  }, [])
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)
+  }, [])
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    heroTouchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (heroTouchStartX.current === null) return
+    const touchEndX = e.changedTouches[0].clientX
+    const diff = heroTouchStartX.current - touchEndX
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) nextSlide()
+      else prevSlide()
+    }
+    heroTouchStartX.current = null
+  }
   // Purpose Carousel State (Identical to app/page.tsx)
   const [pillarActiveIndex, setPillarActiveIndex] = useState(0)
   const pillarContainerRef = useRef<HTMLDivElement>(null)
@@ -510,70 +569,118 @@ export default function HomeV2() {
       {/* ── HEADER ── */}
       <Header transparentBg />
 
-      {/* ── HERO SECTION (HOMEPAGE BANNER) ── */}
+      {/* ── HERO SECTION (CAROUSEL BANNER) ── */}
       <section
         id="hero"
-        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        className="w-full relative bg-[#0D0D0D] md:pt-[130px] md:pb-[30px] h-[100svh] md:h-auto flex flex-col overflow-hidden"
       >
-        {/* Background Image determining the height of the section naturally */}
-        <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public"
-            alt="Landing Hero Banner"
-            fill
-            priority
-            unoptimized
-            className="object-cover object-center"
-          />
-        </div>
-        <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1440/691]">
-          <Image
-            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public"
-            alt="Landing Hero Banner"
-            fill
-            priority
-            unoptimized
-            className="object-cover object-center"
-          />
-        </div>
-
-        {/* Hero Content Text (Topmost) */}
-        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
-          <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
-            <div
-              className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
-              style={{
-                color: "#FFFFFF",
-                fontFamily: "'Inter Tight', sans-serif",
-              }}
+        {/* Banner Viewport */}
+        <div className="relative w-full h-[calc(100svh-119px)] mt-[119px] md:mt-0 md:h-auto md:aspect-[1440/691] overflow-hidden">
+          <AnimatePresence initial={false}>
+            <motion.div
+              key={currentSlide}
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+              className="absolute inset-0 w-full h-full overflow-hidden"
             >
-              <h1
-                className="text-[12.5vw] md:text-[clamp(36px,5.9vw,85px)] leading-[105%] font-medium"
-                style={{
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  margin: 0,
-                }}
-              >
-                We&apos;re here <br />to disrupt the <br />status quo!
-              </h1>
-              <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
-              <p
-                className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
-                style={{
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  margin: 0,
-                  fontFamily: "'Inter Tight', sans-serif",
-                }}
-              >
-                Our Green is Blue
-              </p>
-            </div>
-          </div>
+              {currentSlide === 0 ? (
+                <>
+                  {/* Mobile Background */}
+                  <div className="md:hidden absolute inset-0 w-full h-full opacity-95">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public"
+                      alt="Landing Hero Banner"
+                      fill
+                      priority
+                      unoptimized
+                      className="object-cover object-center"
+                    />
+                  </div>
 
-          {/* Mobile divider at the bottom of the hero section */}
-          <div className="md:hidden absolute bottom-0 left-0 right-0 border-b border-[#FFFFFF4D] z-[5]" />
+                  {/* Desktop Background */}
+                  <div className="hidden md:block absolute inset-0 w-full h-full opacity-95">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public"
+                      alt="Landing Hero Banner"
+                      fill
+                      priority
+                      unoptimized
+                      className="object-cover object-center"
+                    />
+                  </div>
+
+                  {/* Hero Content Text */}
+                  <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center">
+                    <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
+                      <div
+                        className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
+                        style={{
+                          color: "#FFFFFF",
+                          fontFamily: "'Inter Tight', sans-serif",
+                        }}
+                      >
+                        <h1
+                          className="text-[12.5vw] md:text-[clamp(36px,5.9vw,85px)] leading-[105%] font-medium"
+                          style={{
+                            letterSpacing: "0%",
+                            verticalAlign: "middle",
+                            margin: 0,
+                          }}
+                        >
+                          We&apos;re here <br />to disrupt the <br />status quo!
+                        </h1>
+                        <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
+                        <p
+                          className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
+                          style={{
+                            letterSpacing: "0%",
+                            verticalAlign: "middle",
+                            margin: 0,
+                            fontFamily: "'Inter Tight', sans-serif",
+                          }}
+                        >
+                          Our Green is Blue
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Mobile divider at the bottom of the hero section */}
+                    <div className="md:hidden absolute bottom-0 left-0 right-0 border-b border-[#FFFFFF4D] z-[5]" />
+                  </div>
+                </>
+              ) : (
+                <div className="relative w-full h-full">
+                  <Image
+                    src={HERO_SLIDES[currentSlide].image!}
+                    alt={`Hero Banner ${currentSlide + 1}`}
+                    fill
+                    priority
+                    unoptimized
+                    className="object-cover object-center"
+                  />
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Slide Indicators */}
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-8 z-[10] flex items-center gap-2">
+            {HERO_SLIDES.map((slide, idx) => (
+              <button
+                key={slide.id}
+                type="button"
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  idx === currentSlide ? "w-8 md:w-10 bg-white" : "w-2 md:w-2.5 bg-white/30 hover:bg-white/60"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Status Quo Announcement Popup */}
@@ -638,7 +745,7 @@ export default function HomeV2() {
                       {(hovered) => (
                         <>
                           Know More
-                          <div className="relative inline-block w-4 h-4 ml-1">
+                          <div className="relative inline-block w-4 h-4">
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                               alt={`${pillar.title} icon`}
@@ -732,7 +839,7 @@ export default function HomeV2() {
                     {(hovered) => (
                       <>
                         Know More
-                        <div className="relative inline-block w-4 h-4 ml-2">
+                        <div className="relative inline-block w-4 h-4">
                           <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                             alt="icon"
@@ -962,7 +1069,7 @@ export default function HomeV2() {
                       {(hovered) => (
                         <>
                           Know More
-                          <div className="relative inline-block w-4 h-4 ml-2">
+                          <div className="relative inline-block w-4 h-4">
                             <Image
                               src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                               alt="icon"
@@ -1189,7 +1296,7 @@ export default function HomeV2() {
                   {(hovered) => (
                     <>
                       Know More
-                      <div className="relative inline-block w-4 h-4 ml-2">
+                      <div className="relative inline-block w-4 h-4">
                         <Image
                           src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                           alt="icon"
@@ -1389,7 +1496,7 @@ export default function HomeV2() {
                     {(hovered) => (
                       <>
                         Know More
-                        <div className="relative inline-block w-4 h-4 ml-1">
+                        <div className="relative inline-block w-4 h-4">
                           <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                             alt="icon default"
@@ -1544,7 +1651,7 @@ export default function HomeV2() {
                 {(hovered) => (
                   <>
                     Know More
-                    <div className="relative inline-block w-4 h-4 ml-1">
+                    <div className="relative inline-block w-4 h-4">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                         alt="icon default"
@@ -1741,7 +1848,7 @@ export default function HomeV2() {
                   {(hovered) => (
                     <>
                       Know More
-                      <div className="relative inline-block w-4 h-4 ml-1">
+                      <div className="relative inline-block w-4 h-4">
                         <Image
                           src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                           alt="icon default"
@@ -1871,7 +1978,7 @@ export default function HomeV2() {
               {(hovered) => (
                 <>
                   Know More
-                  <div className="relative inline-block w-4 h-4 ml-2">
+                  <div className="relative inline-block w-4 h-4">
                     <Image
                       src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                       alt="icon default"
@@ -2014,7 +2121,7 @@ export default function HomeV2() {
                 {(hovered) => (
                   <>
                     Know More
-                    <div className="relative inline-block w-4 h-4 ml-2">
+                    <div className="relative inline-block w-4 h-4">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                         alt="icon"
@@ -2124,7 +2231,7 @@ export default function HomeV2() {
                 {(hovered) => (
                   <>
                     Know More
-                    <div className="relative inline-block w-4 h-4 ml-2">
+                    <div className="relative inline-block w-4 h-4">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                         alt="icon"
@@ -2248,7 +2355,7 @@ export default function HomeV2() {
                     {(hovered) => (
                       <>
                         <span className="uppercase tracking-wider">JOIN US</span>
-                        <div className="relative inline-block w-4 h-4 ml-2">
+                        <div className="relative inline-block w-4 h-4">
                           <Image
                             src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
                             alt="icon"
