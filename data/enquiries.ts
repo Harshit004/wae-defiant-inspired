@@ -6164,5 +6164,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341411091&gad_source=5&gad_campaignid=22024897670&gclid=CjwKCAiA5Y_YBhBbEiwAK5Dl7R7JEM4Ys0EKEqySVBI6tyDxDG0fLf_MRKVLDa4UK6S3gzgmw4eLrxoChgMQAvD_BwE",
     "type": "product",
     "createdAt": "2026-11-24T01:02:08.601Z"
+  },
+  "652b5d05-905e-4f0a-a3f2-f06734a62121": {
+    "id": "652b5d05-905e-4f0a-a3f2-f06734a62121",
+    "fullName": "Arif",
+    "companyName": "Pop",
+    "email": "aali7216384@gmail.com",
+    "phone": "7828127118",
+    "city": "Wani",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Xxxx",
+    "type": "contact-us",
+    "createdAt": "2026-11-24T06:40:57.719Z"
   }
 };
