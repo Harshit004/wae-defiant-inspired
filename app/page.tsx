@@ -439,8 +439,8 @@ export default function Home() {
         </div>
 
         {/* Hero Content Text (Topmost) */}
-        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
-          <div className={`${containerClass} flex-1 flex flex-col justify-center relative`}>
+        <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-end md:justify-center pt-[100px] md:pt-[30px] pb-[22px] md:pb-[30px]">
+          <div className={`${containerClass} flex-1 flex flex-col justify-end md:justify-center relative`}>
             {/* Left Headline & Subhead (Identical position as main branch) */}
             <div className="relative w-full">
               <div
