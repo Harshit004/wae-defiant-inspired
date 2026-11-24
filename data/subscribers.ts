@@ -932,10 +932,10 @@ export const SUBSCRIBERS: Subscriber[] = [
     "pageLink": "/thank-you"
   },
   {
-    "id": "8013bae9-7384-426b-aa0d-edc09325a161",
+    "id": "52f21f09-22e5-4ff6-88fd-f1ebbf54a99c",
     "email": "ramkrishnabishnoi484@gmail.com",
     "date": "2026-11-24",
-    "time": "12:52:01",
-    "pageLink": "/drinking-water-stations"
+    "time": "12:53:08",
+    "pageLink": "/perspectives"
   }
 ];
