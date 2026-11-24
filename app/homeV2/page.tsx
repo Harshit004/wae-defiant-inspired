@@ -1977,7 +1977,7 @@ export default function HomeV2() {
       </div>
 
       {/* ── PERSPECTIVES SECTION ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[112px]">
         <div className={containerClass}>
           <div className="flex justify-between items-start w-full mb-12">
             <div className="flex-1">
@@ -2013,7 +2013,7 @@ export default function HomeV2() {
               <HoverButton href="/perspectives" theme="transparent-white-black-hover">
                 {(hovered) => (
                   <>
-                    View All
+                    Know More
                     <div className="relative inline-block w-4 h-4 ml-2">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
@@ -2082,23 +2082,40 @@ export default function HomeV2() {
       </section>
 
       {/* ── MENTIONED / NEWS & MEDIA SECTION ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[112px]">
         <div className={containerClass}>
           <div className="flex justify-between items-start w-full mb-12">
             <div className="flex-1">
-              <span className="text-[#AEAEAE] tracking-[2px] text-[11px] md:text-[12px] uppercase font-semibold font-[Inter_Tight] block mb-2">
-                Media Coverage
+              <span
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontSize: "24px",
+                  lineHeight: "110%",
+                  letterSpacing: "0px",
+                  verticalAlign: "middle",
+                  color: "#FFFFFF",
+                }}
+                className="block mb-2"
+              >
+                Mentioned
               </span>
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "clamp(28px, 2.78vw, 40px)",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontSize: "40px",
                   lineHeight: "110%",
+                  letterSpacing: "0px",
+                  verticalAlign: "middle",
                   color: "#FFFFFF",
+                  maxWidth: "800px",
                 }}
                 className="font-normal"
               >
-                Stay informed with our latest announcements.
+                Stay informed with our latest media coverage and announcements
               </h2>
             </div>
 
@@ -2106,7 +2123,7 @@ export default function HomeV2() {
               <HoverButton href="/news-and-updates" theme="transparent-white-black-hover">
                 {(hovered) => (
                   <>
-                    View All
+                    Know More
                     <div className="relative inline-block w-4 h-4 ml-2">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
@@ -2122,9 +2139,9 @@ export default function HomeV2() {
             </div>
           </div>
 
-          {/* 12-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            <div className="md:col-span-4 group cursor-pointer">
+          {/* 3-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            <div className="group cursor-pointer">
               {homepageNews[0] ? (
                 <Link href={homepageNews[0].link} className="block">
                   <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-5 rounded-sm bg-white/5">
@@ -2147,7 +2164,7 @@ export default function HomeV2() {
               )}
             </div>
 
-            <div className="md:col-span-4 group cursor-pointer">
+            <div className="group cursor-pointer">
               {homepageNews[1] ? (
                 <Link href={homepageNews[1].link} className="block">
                   <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-5 rounded-sm bg-white/5">
@@ -2171,7 +2188,7 @@ export default function HomeV2() {
             </div>
 
             {/* Sidebar list */}
-            <div className="md:col-span-4 flex flex-col gap-5 justify-between">
+            <div className="flex flex-col gap-5 justify-between">
               {homepageNews.slice(2, 5).map((item) => (
                 <Link href={item.link} key={item.id} className="flex gap-4 items-start group cursor-pointer">
                   <div className="relative w-[110px] aspect-[1.4/1] flex-shrink-0 rounded-sm overflow-hidden bg-white/5">
@@ -2201,15 +2218,16 @@ export default function HomeV2() {
       </section>
 
       {/* ── THE TERRITORY AHEAD ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
+      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[112px]">
         <div className={containerClass}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
             {/* Left Column: Heading and JOIN US CTA */}
-            <div className="lg:col-span-3 flex flex-col justify-start items-start">
+            <div className="flex flex-col justify-start items-start">
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 400,
+                  fontStyle: "normal",
                   fontSize: "40px",
                   lineHeight: "110%",
                   letterSpacing: "0px",
@@ -2222,7 +2240,9 @@ export default function HomeV2() {
                 Ahead
               </h2>
 
-              <div className="mt-8">
+              <div style={{ height: "58px" }} />
+
+              <div>
                 <Link href="/join-wae" className="contents">
                   <HoverButton theme="transparent-white">
                     {(hovered) => (
@@ -2245,7 +2265,7 @@ export default function HomeV2() {
             </div>
 
             {/* Middle Column: Do / Disrupt/Change the status quo. Or become it. and --Mark Shayler */}
-            <div className="lg:col-span-4 flex flex-col justify-between">
+            <div className="flex flex-col justify-between">
               <div>
                 <div
                   style={{
@@ -2324,7 +2344,7 @@ export default function HomeV2() {
             </div>
 
             {/* Right Column: 3 Paragraphs of Manifest */}
-            <div className="lg:col-span-5 flex flex-col justify-between gap-6">
+            <div className="flex flex-col justify-between gap-6">
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
@@ -2374,7 +2394,16 @@ export default function HomeV2() {
         className="bg-black text-white px-[6.1vw] pt-[16.53vw] pb-[21.11vw] md:px-[7.5vw] md:py-[123px] border-t border-[#FFFFFF4D]"
       >
         <div className="max-w-[1440px] mx-auto w-full">
-          <ContactSectionDark />
+          <ContactSectionDark
+            titleStyle={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontStyle: "normal",
+              fontSize: "50px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+            }}
+          />
         </div>
       </section>
 
