@@ -6199,5 +6199,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-24T19:17:45.001Z"
+  },
+  "b2eb9bb5-695a-4d1b-9f11-9ec54200363f": {
+    "id": "b2eb9bb5-695a-4d1b-9f11-9ec54200363f",
+    "fullName": "Pankaj",
+    "companyName": "raginnishad8881668453@gmail.com",
+    "email": "raginnishad8881668453@gmail.com",
+    "phone": "9369500320",
+    "city": "Gorakhpur",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-24T19:19:37.115Z"
   }
 };
