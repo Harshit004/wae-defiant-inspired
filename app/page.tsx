@@ -13,6 +13,7 @@ import ContactSectionDark from "@/components/contact-section-dark"
 import dynamic from "next/dynamic"
 import LightweightRipple from "@/components/LightweightRipple"
 import StatusQuoPopup from "@/components/StatusQuoPopup"
+import { CornerRightDown } from "lucide-react"
 import { BLOGS } from "@/data/blogs"
 
 // Initial featured blogs from static dataset to avoid flash of empty state
@@ -607,63 +608,89 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Mobile: Guru Nanak Ji Portrait & Greeting (Contained in 281x327) */}
-            <div
-              className="md:hidden flex flex-col justify-between items-start mx-auto mt-4 pointer-events-auto"
-              style={{
-                width: "min(281px, 75vw)",
-                height: "min(327px, 36vh)",
-                background: "linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 50.48%, rgba(13, 13, 13, 0) 100%)",
-              }}
-            >
-              <div className="w-full flex-1 relative min-h-0">
-                <Image
-                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3892ef84-0609-41ac-cf14-c405e6f9ad00/public"
-                  alt="Sri Guru Nanak Dev Ji"
-                  fill
-                  priority
-                  unoptimized
-                  className="object-contain object-bottom"
-                />
-              </div>
+            {/* Mobile: Guru Nanak Ji Portrait, Greeting & Scroll Indicator (Left-aligned with same margin as text above) */}
+            <div className="md:hidden flex flex-col items-start mt-[clamp(16px,3.5vh,28px)] pointer-events-auto">
+              {/* Portrait & Greeting Container with subtle gradient */}
+              <div
+                className="relative flex flex-col items-start w-max"
+                style={{
+                  background: "linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 50.48%, rgba(13, 13, 13, 0) 100%)",
+                }}
+              >
+                {/* Guru Nanak Ji Image: 171x199 */}
+                <div className="w-[171px] h-[199px] relative shrink-0">
+                  <Image
+                    src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/3892ef84-0609-41ac-cf14-c405e6f9ad00/public"
+                    alt="Sri Guru Nanak Dev Ji"
+                    fill
+                    priority
+                    unoptimized
+                    className="object-contain object-bottom"
+                  />
+                </div>
 
-              {/* Greeting overlapping bottom of portrait */}
-              <div className="flex flex-col items-start shrink-0 -mt-5 relative z-10 w-full">
-                <span
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "14px",
-                    lineHeight: "100%",
-                    color: "#A0A0A0",
-                  }}
-                >
-                  Happy
-                </span>
-                <div className="flex items-baseline gap-2 mt-1 whitespace-nowrap">
+                {/* Greeting overlapping bottom of portrait */}
+                <div className="flex flex-col items-start -mt-[37px] relative z-10 w-max">
                   <span
                     style={{
-                      fontFamily: "'DM Serif Display', serif",
+                      fontFamily: "'Inter', sans-serif",
                       fontWeight: 400,
-                      fontSize: "20px",
+                      fontSize: "16px",
                       lineHeight: "100%",
-                      color: "#C09A5E",
-                    }}
-                  >
-                    Gurunanak
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "'DM Serif Display', serif",
-                      fontWeight: 400,
-                      fontSize: "20px",
-                      lineHeight: "105%",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
                       color: "#A0A0A0",
                     }}
                   >
-                    Jaynti
+                    Happy
                   </span>
+                  <div className="flex items-baseline gap-2 mt-1 whitespace-nowrap">
+                    <span
+                      style={{
+                        fontFamily: "'DM Serif Display', serif",
+                        fontWeight: 400,
+                        fontSize: "28px",
+                        lineHeight: "105%",
+                        letterSpacing: "0%",
+                        verticalAlign: "middle",
+                        color: "#C09A5E",
+                      }}
+                    >
+                      Gurunanak
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: "'DM Serif Display', serif",
+                        fontWeight: 400,
+                        fontSize: "28px",
+                        lineHeight: "105%",
+                        letterSpacing: "0%",
+                        verticalAlign: "middle",
+                        color: "#A0A0A0",
+                      }}
+                    >
+                      Jaynti
+                    </span>
+                  </div>
                 </div>
+              </div>
+
+              {/* 25px below it: SCROLL FOR MORE ⤵ */}
+              <div
+                className="flex items-center gap-1.5"
+                style={{
+                  marginTop: "25px",
+                  fontFamily: "'Inter Tight', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "10px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#FFFFFF99",
+                }}
+              >
+                <span>SCROLL FOR MORE</span>
+                <CornerRightDown size={11} strokeWidth={2} className="text-[#FFFFFF99]" />
               </div>
             </div>
           </div>
