@@ -126,6 +126,16 @@ const nextConfig = {
         destination: '/portfolio/:category',
         permanent: true,
       },
+      {
+        source: '/homeV2',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/homev2',
+        destination: '/',
+        permanent: true,
+      },
       // SEO Redirect #1
       {
         source: '/home',
