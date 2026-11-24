@@ -38,6 +38,7 @@ interface HeroSlide {
   tagline?: string
   badge?: string
   bgImage: string
+  bgImageMobile?: string
   legend?: { label: string; color: string }[]
   footnote?: {
     lines: string[]
@@ -53,9 +54,10 @@ interface HeroSlide {
 const HERO_SLIDES: HeroSlide[] = [
   {
     id: 1,
-    headline: "We're here\nto disrupt the\nstatus quo!",
+    headline: "We're here \nto disrupt the \nstatus quo!",
     subhead: "Our Green is Blue",
     bgImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/5de3d44a-e3d5-415c-eed0-41108c90c900/public",
+    bgImageMobile: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public",
   },
   {
     id: 2,
@@ -639,21 +641,48 @@ export default function HomeV2() {
           >
             {/* Background Photography & Vignette */}
             <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-              <Image
-                src={activeSlideData.bgImage}
-                alt={activeSlideData.headline}
-                fill
-                priority
-                className="object-cover object-center md:object-right opacity-95"
-              />
-              {/* Dark Vignette Overlay */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to right, rgba(13,13,13,0.7) 0%, rgba(13,13,13,0.2) 40%, transparent 80%)",
-                }}
-              />
+              {activeSlideData.id === 1 ? (
+                <>
+                  <div className="md:hidden absolute top-[119px] bottom-0 left-0 right-0 w-full opacity-95">
+                    <Image
+                      src={activeSlideData.bgImageMobile || "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531d62fc-56b7-4172-cc36-79a46cada200/public"}
+                      alt={activeSlideData.headline}
+                      fill
+                      priority
+                      unoptimized
+                      className="object-cover object-center"
+                    />
+                  </div>
+                  <div className="hidden md:block absolute md:relative inset-0 md:inset-auto w-full h-full opacity-95 md:aspect-[1440/691]">
+                    <Image
+                      src={activeSlideData.bgImage}
+                      alt={activeSlideData.headline}
+                      fill
+                      priority
+                      unoptimized
+                      className="object-cover object-center"
+                    />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <Image
+                    src={activeSlideData.bgImage}
+                    alt={activeSlideData.headline}
+                    fill
+                    priority
+                    className="object-cover object-center md:object-right opacity-95"
+                  />
+                  {/* Dark Vignette Overlay for other slides */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background:
+                        "linear-gradient(to right, rgba(13,13,13,0.7) 0%, rgba(13,13,13,0.2) 40%, transparent 80%)",
+                    }}
+                  />
+                </>
+              )}
             </div>
 
             {/* Slide-specific Legend (e.g. Slide 3 Map Legend) - shifted down with banner */}
@@ -671,102 +700,142 @@ export default function HomeV2() {
               </div>
             )}
 
-            {/* Slide Content Layer: Title, Subhead, Highlight, Body Copy - pushed down by 100px */}
-            <div className="relative z-[2] flex-1 flex flex-col justify-center pt-[200px] md:pt-[220px] pb-[80px]">
-              <div className={containerClass}>
-                <div className="max-w-[780px]">
-                  {activeSlideData.badge && (
-                    <span
-                      className="inline-block text-white/70 tracking-widest text-[11px] md:text-[13px] uppercase font-semibold mb-3 font-[Inter_Tight]"
-                      style={{ letterSpacing: "1.5px" }}
-                    >
-                      {activeSlideData.badge}
-                    </span>
-                  )}
-
-                  <h1
+            {/* Slide Content Layer */}
+            {activeSlideData.id === 1 ? (
+              /* Landing Banner: Exact typography, alignment and structure as main branch */
+              <div className="relative z-[2] flex-1 flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px] pointer-events-none">
+                <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
+                  <div
+                    className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)] pointer-events-auto"
                     style={{
+                      color: "#FFFFFF",
                       fontFamily: "'Inter Tight', sans-serif",
-                      fontSize:
-                        activeSlideData.id === 3
-                          ? "clamp(38px, 5.9vw, 85px)"
-                          : "clamp(34px, 5.2vw, 76px)",
-                      lineHeight: "105%",
-                      fontWeight: 500,
-                      letterSpacing: "-0.02em",
                     }}
-                    className="text-white mb-4 whitespace-pre-line"
                   >
-                    {activeSlideData.headline}
-                  </h1>
-
-                  {activeSlideData.subhead && (
+                    <h1
+                      className="text-[12.5vw] md:text-[clamp(36px,5.9vw,85px)] leading-[105%] font-medium"
+                      style={{
+                        letterSpacing: "0%",
+                        verticalAlign: "middle",
+                        margin: 0,
+                      }}
+                    >
+                      We&apos;re here <br />to disrupt the <br />status quo!
+                    </h1>
+                    <div className="h-[2vw] md:h-[clamp(12px,1.5vw,22px)]" />
                     <p
+                      className="text-[6vw] md:text-[30px] leading-[115%] font-normal text-[#AEAEAE]"
+                      style={{
+                        letterSpacing: "0%",
+                        verticalAlign: "middle",
+                        margin: 0,
+                        fontFamily: "'Inter Tight', sans-serif",
+                      }}
+                    >
+                      Our Green is Blue
+                    </p>
+                  </div>
+                </div>
+
+                {/* Mobile divider at the bottom of the hero section */}
+                <div className="md:hidden absolute bottom-0 left-0 right-0 border-b border-[#FFFFFF4D] z-[5]" />
+              </div>
+            ) : (
+              /* Slides 2, 3, 4: Title, Subhead, Highlight, Body Copy - pushed down by 100px */
+              <div className="relative z-[2] flex-1 flex flex-col justify-center pt-[200px] md:pt-[220px] pb-[80px]">
+                <div className={containerClass}>
+                  <div className="max-w-[780px]">
+                    {activeSlideData.badge && (
+                      <span
+                        className="inline-block text-white/70 tracking-widest text-[11px] md:text-[13px] uppercase font-semibold mb-3 font-[Inter_Tight]"
+                        style={{ letterSpacing: "1.5px" }}
+                      >
+                        {activeSlideData.badge}
+                      </span>
+                    )}
+
+                    <h1
                       style={{
                         fontFamily: "'Inter Tight', sans-serif",
                         fontSize:
-                          activeSlideData.id === 1
-                            ? "clamp(20px, 2.08vw, 30px)"
-                            : activeSlideData.id === 2
-                            ? "clamp(18px, 1.8vw, 26px)"
-                            : activeSlideData.id === 3
-                            ? "clamp(22px, 2.5vw, 36px)"
-                            : "clamp(26px, 3.61vw, 52px)",
-                        lineHeight: activeSlideData.id === 3 ? "105%" : "115%",
-                        fontWeight: activeSlideData.id === 3 ? 500 : 400,
-                        color:
-                          activeSlideData.id === 2 || activeSlideData.id === 3
-                            ? "#FFFFFF"
-                            : "#C1C1C1",
-                        letterSpacing: "0%",
+                          activeSlideData.id === 3
+                            ? "clamp(38px, 5.9vw, 85px)"
+                            : "clamp(34px, 5.2vw, 76px)",
+                        lineHeight: "105%",
+                        fontWeight: 500,
+                        letterSpacing: "-0.02em",
                       }}
-                      className="mb-4 whitespace-pre-line"
+                      className="text-white mb-4 whitespace-pre-line"
                     >
-                      {activeSlideData.subhead}
-                    </p>
-                  )}
+                      {activeSlideData.headline}
+                    </h1>
 
-                  {activeSlideData.highlight && (
-                    <p
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontSize: "clamp(20px, 1.94vw, 28px)",
-                        lineHeight: "115%",
-                        fontWeight: 700,
-                        color: "#C1C1C1",
-                        letterSpacing: "0%",
-                      }}
-                      className="mb-4 whitespace-pre-line"
-                    >
-                      {activeSlideData.highlight}
-                    </p>
-                  )}
+                    {activeSlideData.subhead && (
+                      <p
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontSize:
+                            activeSlideData.id === 2
+                              ? "clamp(18px, 1.8vw, 26px)"
+                              : activeSlideData.id === 3
+                              ? "clamp(22px, 2.5vw, 36px)"
+                              : "clamp(26px, 3.61vw, 52px)",
+                          lineHeight: activeSlideData.id === 3 ? "105%" : "115%",
+                          fontWeight: activeSlideData.id === 3 ? 500 : 400,
+                          color:
+                            activeSlideData.id === 2 || activeSlideData.id === 3
+                              ? "#FFFFFF"
+                              : "#C1C1C1",
+                          letterSpacing: "0%",
+                        }}
+                        className="mb-4 whitespace-pre-line"
+                      >
+                        {activeSlideData.subhead}
+                      </p>
+                    )}
 
-                  {activeSlideData.bodyCopy && (
-                    <p
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        fontSize: "clamp(18px, 1.94vw, 28px)",
-                        lineHeight: "120%",
-                        fontWeight: 400,
-                        color: "#C1C1C1",
-                        letterSpacing: "0%",
-                        maxWidth: "680px",
-                      }}
-                      className="mb-6 whitespace-pre-line"
-                    >
-                      {activeSlideData.bodyCopy}
-                    </p>
-                  )}
+                    {activeSlideData.highlight && (
+                      <p
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontSize: "clamp(20px, 1.94vw, 28px)",
+                          lineHeight: "115%",
+                          fontWeight: 700,
+                          color: "#C1C1C1",
+                          letterSpacing: "0%",
+                        }}
+                        className="mb-4 whitespace-pre-line"
+                      >
+                        {activeSlideData.highlight}
+                      </p>
+                    )}
 
-                  {activeSlideData.tagline && (
-                    <div className="inline-block px-3 py-1 rounded bg-white/10 backdrop-blur-sm text-white/90 text-xs font-[Manrope] mb-6">
-                      {activeSlideData.tagline}
-                    </div>
-                  )}
+                    {activeSlideData.bodyCopy && (
+                      <p
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontSize: "clamp(18px, 1.94vw, 28px)",
+                          lineHeight: "120%",
+                          fontWeight: 400,
+                          color: "#C1C1C1",
+                          letterSpacing: "0%",
+                          maxWidth: "680px",
+                        }}
+                        className="mb-6 whitespace-pre-line"
+                      >
+                        {activeSlideData.bodyCopy}
+                      </p>
+                    )}
+
+                    {activeSlideData.tagline && (
+                      <div className="inline-block px-3 py-1 rounded bg-white/10 backdrop-blur-sm text-white/90 text-xs font-[Manrope] mb-6">
+                        {activeSlideData.tagline}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
             {/* Bottom Footnote / Definition inside sliding slide */}
             <div className="relative z-[2] pb-6 md:pb-8 w-full pointer-events-none">
