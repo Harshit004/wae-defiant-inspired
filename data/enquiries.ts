@@ -6153,5 +6153,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934538&gad_source=5&gad_campaignid=23735506714&gclid=EAIaIQobChMI2q3GvZqemAMVFPpzAR1Iziy1EAEYASAAEgKxQ_D_BwE",
     "type": "product",
     "createdAt": "2026-11-23T13:36:59.741Z"
+  },
+  "6d148d12-6aa0-43e1-a242-2d32149b7250": {
+    "id": "6d148d12-6aa0-43e1-a242-2d32149b7250",
+    "fullName": "Priti",
+    "companyName": "Lckshamibaiyi skuoti yujana",
+    "email": "diwakarkumar853@gmail.com",
+    "phone": "8433363220",
+    "city": "Basahara tarhar",
+    "pageLink": "https://www.waecorp.com/portfolio/glass-bottling/aquarius-series?utm_source=google&utm_medium=display&utm_campaign=gbp_india_display&utm_content=830341411091&gad_source=5&gad_campaignid=22024897670&gclid=CjwKCAiA5Y_YBhBbEiwAK5Dl7R7JEM4Ys0EKEqySVBI6tyDxDG0fLf_MRKVLDa4UK6S3gzgmw4eLrxoChgMQAvD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-24T01:02:08.601Z"
   }
 };
