@@ -277,7 +277,15 @@ const figmaSolutions = [
 
 // ── SECTORS WE SERVE (FIGMA NODE 12854:13637) ──
 
-const figmaSectors = [
+interface FigmaSectorItem {
+  id: string
+  title: string
+  description: string
+  icon: string
+  isEmpty?: boolean
+}
+
+const figmaSectors: FigmaSectorItem[] = [
   {
     id: "workplaces",
     title: "Workplaces",
