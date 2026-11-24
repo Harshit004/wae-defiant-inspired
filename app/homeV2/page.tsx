@@ -574,7 +574,7 @@ export default function HomeV2() {
         id="hero"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className="w-full relative h-[100svh] md:h-auto md:aspect-[1440/872] flex flex-col overflow-hidden"
+        className="w-full relative h-[100svh] h-screen max-h-[100svh] flex flex-col overflow-hidden"
         style={{
           backgroundColor: currentSlide === 0 ? "#0D0D0D" : "#000000",
           transition: "background-color 0.5s ease",
@@ -667,7 +667,7 @@ export default function HomeV2() {
                     fill
                     priority
                     unoptimized
-                    className="object-contain md:object-cover object-top"
+                    className="object-contain object-center"
                   />
                 </div>
               )}
@@ -675,13 +675,13 @@ export default function HomeV2() {
           </AnimatePresence>
 
           {/* Slide Indicators */}
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-8 z-[10] flex items-center gap-2">
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-8 z-[20] flex items-center gap-2 pointer-events-auto">
             {HERO_SLIDES.map((slide, idx) => (
               <button
                 key={slide.id}
                 type="button"
                 onClick={() => setCurrentSlide(idx)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                   idx === currentSlide ? "w-8 md:w-10 bg-white" : "w-2 md:w-2.5 bg-white/30 hover:bg-white/60"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
