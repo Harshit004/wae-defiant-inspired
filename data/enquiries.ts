@@ -6176,5 +6176,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Xxxx",
     "type": "contact-us",
     "createdAt": "2026-11-24T06:40:57.719Z"
+  },
+  "7d9affe2-bd03-492a-baea-a7e8f7381d3e": {
+    "id": "7d9affe2-bd03-492a-baea-a7e8f7381d3e",
+    "fullName": "Hanamant",
+    "companyName": "WAE",
+    "email": "8722327034hosmani@gmail.com",
+    "phone": "8722327034",
+    "city": "Bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Lone",
+    "type": "contact-us",
+    "createdAt": "2026-11-24T13:36:47.504Z"
   }
 };
