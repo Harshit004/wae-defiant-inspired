@@ -809,26 +809,27 @@ export default function Home() {
       <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] pt-[112px] pb-[79px] overflow-hidden">
         {/* Header Content inside Page Container */}
         <div className={containerClass}>
-          {/* Top row: Left & Right Sections */}
+          {/* Eyebrow */}
+          <h3
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: "24px",
+              lineHeight: "115%",
+              letterSpacing: "0%",
+              verticalAlign: "middle",
+              color: "#FFFFFF",
+            }}
+          >
+            Product
+          </h3>
+
+          <div style={{ height: "32px" }} />
+
+          {/* Top row: Left & Right Sections aligned from "Water" */}
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16 mb-[92px]">
             {/* Left Section */}
             <div className="max-w-[700px]">
-              <h3
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "24px",
-                  lineHeight: "115%",
-                  letterSpacing: "0%",
-                  verticalAlign: "middle",
-                  color: "#FFFFFF",
-                }}
-              >
-                Product
-              </h3>
-
-              <div style={{ height: "32px" }} />
-
               <h2
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
