@@ -6232,5 +6232,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIj_jBsb-imAMVa4TpBR0kcjXJEAEYASAAEgL6v_D_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-25T06:31:20.572Z"
+  },
+  "e367187a-1441-4c93-bd58-1ea7ffe57131": {
+    "id": "e367187a-1441-4c93-bd58-1ea7ffe57131",
+    "fullName": "Sandhya",
+    "companyName": "000",
+    "email": "sandhyawarkade90@gmail.com",
+    "phone": "9669681483",
+    "city": "Ghansor",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Meri sadi kab or kaha hogi",
+    "type": "contact-us",
+    "createdAt": "2026-11-25T10:22:58.634Z"
   }
 };
