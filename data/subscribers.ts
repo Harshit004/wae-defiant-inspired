@@ -937,5 +937,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-24",
     "time": "12:53:08",
     "pageLink": "/perspectives"
+  },
+  {
+    "id": "6e49dfda-da50-4d4c-9c17-19c799936059",
+    "email": "yaswanthramukuri2@gmail.com",
+    "date": "2026-11-25",
+    "time": "11:58:53",
+    "pageLink": "/contact-us"
   }
 ];
