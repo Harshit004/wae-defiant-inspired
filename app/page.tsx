@@ -2167,52 +2167,69 @@ export default function Home() {
         <div className="w-full h-px bg-white/20" />
       </div>
 
-      {/* ── PERSPECTIVES SECTION ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[112px]">
-        <div className={containerClass}>
-          <div className="flex justify-between items-start w-full mb-12">
+      {/* BLOGS SECTION */}
+      {/* DESKTOP LAYOUT */}
+      <section
+        className="bg-black text-white hidden md:block"
+        style={{
+          paddingTop: '123px',
+          paddingBottom: '123px',
+          paddingLeft: '7.5vw',
+          paddingRight: '7.5vw'
+        }}
+      >
+        <div className="w-full">
+          <div className="flex justify-between items-start w-full">
             <div className="flex-1">
-              <h2
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontStyle: "normal",
-                  fontSize: "40px",
-                  lineHeight: "110%",
-                  letterSpacing: "0px",
-                  verticalAlign: "middle",
-                  color: "#FFFFFF",
-                }}
-                className="mb-3"
-              >
+              <h2 style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontWeight: 400,
+                fontSize: '40px',
+                lineHeight: '110%',
+                color: '#FFFFFF',
+                marginBottom: '20px'
+              }}>
                 Perspectives
               </h2>
-              <p
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontSize: "clamp(12px, 0.97vw, 14px)",
-                  lineHeight: "140%",
-                  color: "#AEAEAE",
-                  maxWidth: "460px",
-                }}
-              >
+              <p style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '140%',
+                color: '#AEAEAE',
+                maxWidth: '450px',
+                marginBottom: '60px'
+              }}>
                 WAE publishes perspectives on climate, water, and sustainability — because good water companies think beyond the tap.
               </p>
             </div>
-
             <div className="flex-shrink-0">
               <HoverButton href="/perspectives" theme="transparent-white-black-hover">
                 {(hovered) => (
                   <>
                     Know More
-                    <div className="relative inline-block w-4 h-4">
+                    <div className="relative inline-block w-4 h-4 ml-2">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                        alt="icon"
+                        alt="icon default"
                         width={16}
                         height={16}
                         className={hovered ? "brightness-0" : "brightness-0 invert"}
                       />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hovered ? 1 : 0 }}
+                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                        className="absolute top-0 left-0"
+                      >
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                          alt="icon hover"
+                          width={16}
+                          height={16}
+                          className={hovered ? "brightness-0" : "brightness-0 invert"}
+                        />
+                      </motion.div>
                     </div>
                   </>
                 )}
@@ -2220,96 +2237,287 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 3-Column Articles Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {blogsLoading
-              ? [0, 1, 2].map((i) => (
-                <div key={i} className="border-l border-white/20 pl-6">
-                  <div className="relative w-full aspect-square overflow-hidden mb-6 bg-white/5 animate-pulse rounded" />
-                  <div className="h-5 bg-white/5 animate-pulse mb-2 w-3/4 rounded" />
-                  <div className="h-4 bg-white/5 animate-pulse mb-1 w-full rounded" />
+          <div className="grid grid-cols-3 gap-x-12">
+            {blogsLoading ? (
+              // Skeleton placeholders
+              [0, 1, 2].map((i) => (
+                <div key={i} className="border-l border-white/20 pl-8">
+                  <div className="relative w-full aspect-square overflow-hidden mb-6 bg-white/5 animate-pulse" />
+                  <div className="h-5 bg-white/5 animate-pulse mb-2 w-3/4" />
+                  <div className="h-4 bg-white/5 animate-pulse mb-1 w-full" />
+                  <div className="h-4 bg-white/5 animate-pulse mb-6 w-2/3" />
+                  <div className="h-3 bg-white/5 animate-pulse w-24" />
                 </div>
               ))
-              : homepageBlogs.map((blog) => {
-                const categorySlug = blog.category
-                  .toLowerCase()
-                  .trim()
-                  .replace(/[^a-z0-9]+/g, "-")
-                  .replace(/(^-|-$)/g, "")
-                const titleSlug = blog.title
-                  .toLowerCase()
-                  .trim()
-                  .replace(/[^a-z0-9]+/g, "-")
-                  .replace(/(^-|-$)/g, "")
-
-                  return (
-                    <Link
-                      key={blog.id}
-                      href={`/perspectives/${categorySlug}/${titleSlug}`}
-                      className="group block border-l border-white/20 pl-6 hover:border-white transition-colors"
-                    >
-                      <div className="relative w-full aspect-[4/3] overflow-hidden mb-5 rounded-sm bg-white/5">
-                        <Image
-                          src={blog.heroImage}
-                          alt={blog.title}
-                          fill
-                          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                        />
+            ) : homepageBlogs.length > 0 ? (
+              homepageBlogs.map((blog) => {
+                const categorySlug = blog.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+                const blogUrl = `/perspectives/${categorySlug}/${blog.id}`
+                return (
+                  <Link key={blog.id} href={blogUrl} className="contents">
+                    <div className="group cursor-pointer border-l border-white/20 pl-8">
+                      <div className="relative w-full aspect-square overflow-hidden mb-6">
+                        {blog.heroImage ? (
+                          <Image
+                            src={blog.heroImage}
+                            alt={blog.title}
+                            fill
+                            className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                            <span style={{ color: '#AEAEAE', fontSize: '11px' }}>No Image</span>
+                          </div>
+                        )}
                       </div>
-                      <span className="text-[11px] font-[Manrope] text-[#AEAEAE] tracking-wide block mb-2 uppercase">
-                        {blog.category} · {blog.readTime || "4 min read"}
-                      </span>
-                      <h3 className="font-[Inter_Tight] text-[18px] md:text-[20px] font-medium text-white mb-2 group-hover:text-white transition-colors leading-snug">
-                        {blog.title}
-                      </h3>
-                      <p className="font-[Manrope] text-[13px] text-[#AEAEAE] line-clamp-2 leading-relaxed">
+                      <div style={{ minHeight: '80px', marginBottom: '16px' }}>
+                        <h3 style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 400,
+                          fontSize: '18px',
+                          lineHeight: '130%',
+                          color: '#FFFFFF'
+                        }}>
+                          {blog.title}
+                        </h3>
+                      </div>
+                      <p style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '12px',
+                        lineHeight: '140%',
+                        color: '#AEAEAE',
+                        marginBottom: '32px'
+                      }}>
                         {blog.description}
                       </p>
-                    </Link>
-                  )
-                })}
+                      <div className="flex items-center gap-2">
+                        <span style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: 400,
+                          fontSize: '12px',
+                          color: '#FFFFFF',
+                          textDecoration: 'underline',
+                          textUnderlineOffset: '4px'
+                        }}>Read Article</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </Link>
+                )
+              })
+            ) : (
+              // No featured blogs yet — subtle empty state
+              <div className="col-span-3 py-16 text-center border-l border-white/20 pl-8">
+                <p style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: '13px',
+                  color: '#AEAEAE'
+                }}>
+                  No blogs featured yet. Select up to 3 in the CMS to display them here.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* ── MENTIONED / NEWS & MEDIA SECTION ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[112px]">
-        <div className={containerClass}>
-          <div className="flex justify-between items-start w-full mb-12">
-            <div className="flex-1">
-              <span
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontStyle: "normal",
-                  fontSize: "24px",
-                  lineHeight: "110%",
-                  letterSpacing: "0px",
-                  verticalAlign: "middle",
-                  color: "#FFFFFF",
-                }}
-                className="block mb-2"
-              >
-                Mentioned
-              </span>
-              <h2
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontWeight: 400,
-                  fontStyle: "normal",
-                  fontSize: "40px",
-                  lineHeight: "110%",
-                  letterSpacing: "0px",
-                  verticalAlign: "middle",
-                  color: "#FFFFFF",
-                  maxWidth: "800px",
-                }}
-                className="font-normal"
-              >
-                Stay informed with our latest media coverage and announcements
-              </h2>
-            </div>
+      {/* MOBILE LAYOUT */}
+      <section className="bg-black text-white md:hidden px-[6.1vw] py-[12.72vw]">
+        <h2 style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 400,
+          fontSize: '7.12vw',
+          lineHeight: '110%',
+          color: '#FFFFFF'
+        }}>
+          Perspectives
+        </h2>
 
+        <div style={{ height: '4.32vw' }} />
+
+        <p style={{
+          fontFamily: "'Manrope', sans-serif",
+          fontWeight: 400,
+          fontSize: '3.05vw',
+          lineHeight: '100%',
+          color: '#AEAEAE'
+        }}>
+          WAE publishes perspectives on climate, water, and sustainability — because good water companies think beyond the tap.
+        </p>
+
+        <div style={{ height: '12.21vw' }} />
+
+        <div className="flex justify-start">
+          <Link href="/perspectives" className="contents">
+            <HoverButton theme="transparent-white">
+              {(hovered) => (
+                <>
+                  Know More
+                  <div className="relative inline-block w-4 h-4 ml-2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                      alt="icon default"
+                      width={16}
+                      height={16}
+                      className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                    />
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: hovered ? 1 : 0 }}
+                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                      className="absolute top-0 left-0"
+                    >
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                        alt="icon hover"
+                        width={16}
+                        height={16}
+                        className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                      />
+                    </motion.div>
+                  </div>
+                </>
+              )}
+            </HoverButton>
+          </Link>
+        </div>
+
+        <div style={{ height: '19.84vw' }} />
+
+        <div className="flex flex-col">
+          {blogsLoading ? (
+            [0, 1, 2].map((i) => (
+              <div key={i} className="mb-10 w-full">
+                <div className="relative w-full aspect-video overflow-hidden mb-6 bg-white/5 animate-pulse" />
+                <div className="h-5 bg-white/5 animate-pulse mb-2 w-3/4" />
+                <div className="h-4 bg-white/5 animate-pulse mb-1 w-full" />
+              </div>
+            ))
+          ) : homepageBlogs.length > 0 ? (
+            homepageBlogs.map((blog, index) => {
+              const categorySlug = blog.category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+              const blogUrl = `/perspectives/${categorySlug}/${blog.id}`
+              return (
+                <div key={blog.id} className="w-full flex flex-col">
+                  <Link href={blogUrl} className="contents">
+                    <div className="group cursor-pointer">
+                      <div className="relative w-full h-[68.7vw] overflow-hidden">
+                        {blog.heroImage ? (
+                          <Image
+                            src={blog.heroImage}
+                            alt={blog.title}
+                            fill
+                            className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                            <span style={{ color: '#AEAEAE', fontSize: '11px' }}>No Image</span>
+                          </div>
+                        )}
+                      </div>
+
+                      <div style={{ height: '5.08vw' }} />
+
+                      <h3 style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '4.07vw',
+                        lineHeight: '100%',
+                        color: '#FFFFFF'
+                      }}>
+                        {blog.title}
+                      </h3>
+
+                      <div style={{ height: '3.05vw' }} />
+
+                      <p style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '3.05vw',
+                        lineHeight: '100%',
+                        color: '#AEAEAE'
+                      }}>
+                        {blog.description}
+                      </p>
+
+                      <div style={{ height: '13.23vw' }} />
+
+                      <span style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        fontWeight: 400,
+                        fontSize: '3.05vw',
+                        lineHeight: '110%',
+                        color: '#FFFFFF',
+                        textDecoration: 'underline',
+                        textUnderlineOffset: '0%',
+                        textDecorationThickness: '1px',
+                        textDecorationSkipInk: 'auto'
+                      }}>
+                        Read Article
+                      </span>
+                    </div>
+                  </Link>
+
+                  {index !== homepageBlogs.length - 1 && (
+                    <div className="w-full relative mt-[14.5vw] mb-[10.43vw]">
+                      <div className="absolute left-[-6.1vw] right-[-6.1vw] border-b border-[#FFFFFF4D]" />
+                    </div>
+                  )}
+                </div>
+              )
+            })
+          ) : (
+            <div className="py-8 text-center">
+              <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: '3.56vw', color: '#AEAEAE' }}>
+                No blogs featured yet.
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* MEDIA & UPDATES SECTION */}
+      <section
+        className="bg-black text-white hidden md:block"
+        style={{
+          paddingBottom: '123px',
+          paddingLeft: '7.5vw',
+          paddingRight: '7.5vw',
+          borderTop: '1px solid #FFFFFF4D'
+        }}
+      >
+        <div className="w-full">
+          <div style={{ height: '123px' }} />
+          <h3
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontStyle: 'normal',
+              fontSize: '24px',
+              lineHeight: '110%',
+              letterSpacing: '0px',
+              verticalAlign: 'middle',
+              color: '#FFFFFF'
+            }}
+          >
+            Mentioned
+          </h3>
+          <div style={{ height: '26px' }} />
+          <div className="flex justify-between items-start w-full">
+            <h2 style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontSize: '40px',
+              lineHeight: '110%',
+              color: '#FFFFFF',
+              marginBottom: '80px',
+              maxWidth: '800px'
+            }}>
+              Stay informed with our latest media coverage and announcements
+            </h2>
             <div className="flex-shrink-0">
               <HoverButton href="/news-and-updates" theme="transparent-white-black-hover">
                 {(hovered) => (
@@ -2318,11 +2526,25 @@ export default function Home() {
                     <div className="relative inline-block w-4 h-4">
                       <Image
                         src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                        alt="icon"
+                        alt="icon default"
                         width={16}
                         height={16}
                         className={hovered ? "brightness-0" : "brightness-0 invert"}
                       />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hovered ? 1 : 0 }}
+                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                        className="absolute top-0 left-0"
+                      >
+                        <Image
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                          alt="icon hover"
+                          width={16}
+                          height={16}
+                          className={hovered ? "brightness-0" : "brightness-0 invert"}
+                        />
+                      </motion.div>
                     </div>
                   </>
                 )}
@@ -2330,59 +2552,86 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 3-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            <div className="group cursor-pointer">
+          <div className="grid grid-cols-12 gap-8">
+            {/* Main News Column */}
+            <div className="col-span-4 group cursor-pointer">
               {homepageNews[0] ? (
                 <Link href={homepageNews[0].link} className="block">
-                  <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-5 rounded-sm bg-white/5">
+                  <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
                     <Image
                       src={homepageNews[0].imageUrl}
                       alt={homepageNews[0].title}
                       fill
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
-                  <h3 className="font-[Inter_Tight] text-[18px] text-white mb-2 group-hover:text-white transition-colors">
+                  <h3 style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '18px',
+                    lineHeight: '130%',
+                    color: '#FFFFFF',
+                    marginBottom: '18px'
+                  }}>
                     {homepageNews[0].title}
                   </h3>
-                  <p className="font-[Manrope] text-[13px] text-[#AEAEAE] line-clamp-3">
+                  <p style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '14px',
+                    lineHeight: '130%',
+                    color: '#AEAEAE'
+                  }}>
                     {homepageNews[0].description}
                   </p>
                 </Link>
               ) : (
-                <div className="w-full aspect-[1.8/1] bg-white/5 animate-pulse rounded" />
+                <div className="w-full aspect-[1.8/1] bg-white/5 animate-pulse rounded"></div>
               )}
             </div>
 
-            <div className="group cursor-pointer">
+            {/* Middle News Column */}
+            <div className="col-span-4 group cursor-pointer">
               {homepageNews[1] ? (
                 <Link href={homepageNews[1].link} className="block">
-                  <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-5 rounded-sm bg-white/5">
+                  <div className="relative w-full aspect-[1.8/1] overflow-hidden mb-6">
                     <Image
                       src={homepageNews[1].imageUrl}
                       alt={homepageNews[1].title}
                       fill
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
-                  <h3 className="font-[Inter_Tight] text-[18px] text-white mb-2 group-hover:text-white transition-colors">
+                  <h3 style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '18px',
+                    lineHeight: '130%',
+                    color: '#FFFFFF',
+                    marginBottom: '18px'
+                  }}>
                     {homepageNews[1].title}
                   </h3>
-                  <p className="font-[Manrope] text-[13px] text-[#AEAEAE] line-clamp-3">
+                  <p style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '14px',
+                    lineHeight: '130%',
+                    color: '#AEAEAE'
+                  }}>
                     {homepageNews[1].description}
                   </p>
                 </Link>
               ) : (
-                <div className="w-full aspect-[1.8/1] bg-white/5 animate-pulse rounded" />
+                <div className="w-full aspect-[1.8/1] bg-white/5 animate-pulse rounded"></div>
               )}
             </div>
 
-            {/* Sidebar list */}
-            <div className="flex flex-col gap-5 justify-between">
-              {homepageNews.slice(2, 5).map((item) => (
-                <Link href={item.link} key={item.id} className="flex gap-4 items-start group cursor-pointer">
-                  <div className="relative w-[110px] aspect-[1.4/1] flex-shrink-0 rounded-sm overflow-hidden bg-white/5">
+            {/* Sidebar News Column */}
+            <div className="col-span-4 flex flex-col gap-6 justify-between">
+              {homepageNews.slice(2, 5).map((item, i) => (
+                <Link href={item.link} key={item.id} className="flex gap-6 items-start group cursor-pointer">
+                  <div className="relative w-[140px] aspect-[1.4/1] flex-shrink-0">
                     <Image
                       src={item.imageUrl}
                       alt={item.title}
@@ -2390,26 +2639,199 @@ export default function Home() {
                       className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
-                  <div className="min-w-0">
-                    <h4 className="font-[Inter_Tight] text-[14px] text-white font-medium line-clamp-2 group-hover:text-white transition-colors mb-1">
+                  <div className="flex flex-col gap-2">
+                    <h4 style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '16px',
+                      lineHeight: '130%',
+                      color: '#FFFFFF'
+                    }}>
                       {item.title}
                     </h4>
-                    <p className="font-[Manrope] text-[11px] text-[#AEAEAE] line-clamp-2">
+                    <p style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '12px',
+                      lineHeight: '140%',
+                      color: '#AEAEAE'
+                    }} className="line-clamp-3">
                       {item.description}
                     </p>
                   </div>
                 </Link>
               ))}
               {homepageNews.slice(2, 5).length === 0 && (
-                <div className="w-full h-32 bg-white/5 animate-pulse rounded" />
+                <div className="w-full h-full bg-white/5 animate-pulse rounded"></div>
               )}
             </div>
           </div>
         </div>
       </section>
 
+
+      {/* MOBILE MEDIA & UPDATES SECTION */}
+      <section className="bg-black text-white md:hidden px-[6.1vw] py-[12.72vw] border-t border-[#FFFFFF4D]">
+        <h3 style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 400,
+          fontSize: '3.56vw',
+          lineHeight: '110%',
+          color: '#FFFFFF'
+        }}>
+          Mentioned
+        </h3>
+
+        <div style={{ height: '4.32vw' }} />
+
+        <h2 style={{
+          fontFamily: "'Inter Tight', sans-serif",
+          fontWeight: 400,
+          fontSize: '7.12vw',
+          lineHeight: '110%',
+          color: '#FFFFFF'
+        }}>
+          Stay informed with our latest media coverage and announcements mentioned
+        </h2>
+
+        <div style={{ height: '12.21vw' }} />
+
+        <div className="flex justify-start">
+          <Link href="/news-and-updates" className="contents">
+            <HoverButton theme="transparent-white">
+              {(hovered) => (
+                <>
+                  Know More
+                  <div className="relative inline-block w-4 h-4 ml-2">
+                    <Image
+                      src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                      alt="icon default"
+                      width={16}
+                      height={16}
+                      className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                    />
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: hovered ? 1 : 0 }}
+                      transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                      className="absolute top-0 left-0"
+                    >
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                        alt="icon hover"
+                        width={16}
+                        height={16}
+                        className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                      />
+                    </motion.div>
+                  </div>
+                </>
+              )}
+            </HoverButton>
+          </Link>
+        </div>
+
+        <div style={{ height: '19.84vw' }} />
+
+        <div className="flex flex-col">
+          {homepageNews.slice(0, 2).map((item, index) => (
+            <div key={item.id} className="w-full flex flex-col">
+              <Link href={item.link} className="contents">
+                <div className="group cursor-pointer">
+                  <div className="relative w-full h-[68.7vw] overflow-hidden">
+                    {item.imageUrl ? (
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.title}
+                        fill
+                        className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                        <span style={{ color: '#AEAEAE', fontSize: '11px' }}>No Image</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div style={{ height: '5.08vw' }} />
+
+                  <h3 style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '4.07vw',
+                    lineHeight: '100%',
+                    color: '#FFFFFF'
+                  }}>
+                    {item.title}
+                  </h3>
+
+                  <div style={{ height: '3.05vw' }} />
+
+                  <p style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '3.05vw',
+                    lineHeight: '130%',
+                    color: '#AEAEAE'
+                  }}>
+                    {item.description}
+                  </p>
+                </div>
+              </Link>
+
+              <div style={{ height: '12vw' }} />
+            </div>
+          ))}
+
+          <div className="flex flex-col gap-6">
+            {homepageNews.slice(2, 5).map((item, index) => (
+              <div key={item.id} className="w-full">
+                <Link href={item.link} className="flex gap-4 items-center group cursor-pointer">
+                  <div className="relative w-[29.2vw] aspect-[115/90] overflow-hidden flex-shrink-0">
+                    {item.imageUrl ? (
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.title}
+                        fill
+                        className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                        <span style={{ color: '#AEAEAE', fontSize: '9px' }}>No Image</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <h3 style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '3.56vw',
+                      lineHeight: '120%',
+                      color: '#FFFFFF'
+                    }} className="line-clamp-2">
+                      {item.title}
+                    </h3>
+
+                    <p style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontWeight: 400,
+                      fontSize: '2.54vw',
+                      lineHeight: '130%',
+                      color: '#AEAEAE'
+                    }} className="line-clamp-2">
+                      {item.description}
+                    </p>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── THE TERRITORY AHEAD ── */}
-      <section className="bg-black text-white border-b border-[#FFFFFF33] py-[112px]">
+      <section className="bg-black text-white border-t border-b border-[#FFFFFF33] py-[112px]">
         <div className={containerClass}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
             {/* Left Column: Heading and JOIN US CTA */}
