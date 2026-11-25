@@ -6243,5 +6243,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-25T10:23:58.531Z"
+  },
+  "533db9d6-4488-4fc1-829e-7a84bebf273e": {
+    "id": "533db9d6-4488-4fc1-829e-7a84bebf273e",
+    "fullName": "Rajesh Rana",
+    "companyName": "Rajesh Rana",
+    "email": "gfsfych@gmail.com",
+    "phone": "8529865105",
+    "city": "Dholpur",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-25T10:28:31.729Z"
   }
 };
