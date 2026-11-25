@@ -6210,5 +6210,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-24T19:19:37.115Z"
+  },
+  "72857b8e-fdd1-40fb-ac62-01163e5f8ae1": {
+    "id": "72857b8e-fdd1-40fb-ac62-01163e5f8ae1",
+    "fullName": "Vishal Mott",
+    "companyName": "Sumadhura Capitol Tower pvt ltd",
+    "email": "vishal.mott@sumadhuragroup.com",
+    "phone": "7023402636",
+    "city": "bangalore",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-25T05:18:50.462Z"
   }
 };
