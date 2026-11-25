@@ -614,7 +614,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="relative bg-[#0A0A0A] text-white min-h-screen overflow-x-hidden">
+    <main className="relative bg-[#0A0A0A] text-white min-h-screen overflow-x-clip" style={{ overflowX: "clip" }}>
       {/* ── HEADER ── */}
       <Header transparentBg />
 
@@ -623,14 +623,15 @@ export default function Home() {
         id="hero"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className="w-full relative h-[100svh] h-screen max-h-[100svh] flex flex-col overflow-hidden"
+        className="w-full relative h-[100svh] md:h-auto md:min-h-[100svh] md:aspect-[1440/872] flex flex-col overflow-clip"
         style={{
           backgroundColor: currentSlide === 0 ? "#0D0D0D" : "#000000",
           transition: "background-color 0.5s ease",
+          overflow: "clip",
         }}
       >
         {/* Banner Viewport */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
           <AnimatePresence initial={false}>
             <motion.div
               key={currentSlide}
@@ -638,7 +639,7 @@ export default function Home() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute inset-0 w-full h-full overflow-hidden"
+              className="absolute inset-0 w-full h-full"
               style={{
                 backgroundColor: currentSlide === 0 ? "#0D0D0D" : "#000000",
               }}
@@ -669,8 +670,8 @@ export default function Home() {
                     />
                   </div>
 
-                  {/* Hero Content Text */}
-                  <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
+                  {/* Hero Content Text - sticky viewport frame so text stays on screen even when banner overflows vertically */}
+                  <div className="sticky top-0 w-full h-[100svh] max-h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
                     <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
                       <div
                         className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
@@ -709,8 +710,8 @@ export default function Home() {
                   </div>
                 </>
               ) : (
-                <div className="relative w-full h-full bg-black overflow-hidden">
-                  {/* Background image stretches full screen width; may overflow height while text/indicators stay in screen */}
+                <div className="relative w-full h-full bg-black">
+                  {/* Background image spans full screen width & natural 1440:872 height without bottom cropping */}
                   <Image
                     src={HERO_SLIDES[currentSlide].image!}
                     alt={HERO_SLIDES[currentSlide].headline?.replace(/\n/g, " ") || `Hero Banner ${currentSlide + 1}`}
@@ -719,8 +720,8 @@ export default function Home() {
                     unoptimized
                     className={`object-cover ${
                       HERO_SLIDES[currentSlide].id === 4
-                        ? "object-[72%_center] md:object-top"
-                        : "object-center md:object-top"
+                        ? "object-[72%_center] md:object-center"
+                        : "object-center"
                     }`}
                   />
 
@@ -733,26 +734,26 @@ export default function Home() {
                     }}
                   />
 
-                  {/* Slide-specific Legend (Slide 3 Map Legend) */}
-                  {HERO_SLIDES[currentSlide].legend && (
-                    <div
-                      className="hidden md:flex flex-col items-end gap-1.5 absolute top-[clamp(100px,10.5vw,160px)] right-[24px] md:right-[7.5vw] z-[4] text-[clamp(11px,0.83vw,13px)] text-[#AEAEAE]"
-                      style={{ fontFamily: "'Manrope', sans-serif" }}
-                    >
-                      {HERO_SLIDES[currentSlide].legend!.map((item, i) => (
-                        <div key={i} className="flex items-center gap-2.5">
-                          <span>{item.label}</span>
-                          <span
-                            className="w-2.5 h-2.5 rounded-full inline-block flex-shrink-0"
-                            style={{ backgroundColor: item.color }}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  {/* Slide Content & Legend sticky within 100svh viewport so text always stays on screen */}
+                  <div className="sticky top-0 w-full h-[100svh] max-h-full z-[3] pointer-events-none flex flex-col justify-center pt-[84px] sm:pt-[96px] md:pt-[clamp(90px,8vw,130px)] pb-[48px] md:pb-[clamp(56px,6.5svh,76px)]">
+                    {/* Slide-specific Legend (Slide 3 Map Legend) */}
+                    {HERO_SLIDES[currentSlide].legend && (
+                      <div
+                        className="hidden md:flex flex-col items-end gap-1.5 absolute top-[clamp(100px,10.5vw,160px)] right-[24px] md:right-[7.5vw] z-[4] text-[clamp(11px,0.83vw,13px)] text-[#AEAEAE]"
+                        style={{ fontFamily: "'Manrope', sans-serif" }}
+                      >
+                        {HERO_SLIDES[currentSlide].legend!.map((item, i) => (
+                          <div key={i} className="flex items-center gap-2.5">
+                            <span>{item.label}</span>
+                            <span
+                              className="w-2.5 h-2.5 rounded-full inline-block flex-shrink-0"
+                              style={{ backgroundColor: item.color }}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
 
-                  {/* Slide Content Overlay - aligned left with header logo (7.5vw) and fitted within viewport */}
-                  <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[84px] sm:pt-[96px] md:pt-[clamp(90px,8vw,130px)] pb-[48px] md:pb-[clamp(56px,6.5svh,76px)]">
                     <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
                       <div
                         className={
@@ -940,19 +941,23 @@ export default function Home() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Slide Indicators */}
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-8 z-[20] flex items-center gap-2 pointer-events-auto">
-            {HERO_SLIDES.map((slide, idx) => (
-              <button
-                key={slide.id}
-                type="button"
-                onClick={() => setCurrentSlide(idx)}
-                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  idx === currentSlide ? "w-8 md:w-10 bg-white" : "w-2 md:w-2.5 bg-white/30 hover:bg-white/60"
-                }`}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
+          {/* Slide Indicators - sticky at bottom of visible screen while hero is in view */}
+          <div className="absolute inset-0 pointer-events-none z-[20]">
+            <div className="sticky top-0 h-[100svh] max-h-full w-full flex items-end justify-center pb-4 md:pb-8">
+              <div className="flex items-center gap-2 pointer-events-auto">
+                {HERO_SLIDES.map((slide, idx) => (
+                  <button
+                    key={slide.id}
+                    type="button"
+                    onClick={() => setCurrentSlide(idx)}
+                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      idx === currentSlide ? "w-8 md:w-10 bg-white" : "w-2 md:w-2.5 bg-white/30 hover:bg-white/60"
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
