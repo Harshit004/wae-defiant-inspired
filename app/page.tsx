@@ -190,7 +190,13 @@ const pillars = [
 
 // ── PRODUCTS (FIGMA NODE 12767:11081) ──
 
-const figmaProducts = [
+const figmaProducts: {
+  id: string
+  category: string
+  name: string
+  image: string
+  href?: string
+}[] = [
   {
     id: "trublu",
     category: "Dispensing Systems",
@@ -203,7 +209,7 @@ const figmaProducts = [
     category: "Drinking Water Faucets",
     name: "WATERMATIC",
     image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/44d78286-f6ee-43a3-4b07-0107e6796400/public",
-    href: "/portfolio/trublu/alfa-100",
+    href: "/portfolio/watermatic",
   },
   {
     id: "quantm",
@@ -217,7 +223,6 @@ const figmaProducts = [
     category: "Air to Water Generators",
     name: "Aquasmith",
     image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/ae63033b-d3bd-4cb4-0b76-8d9029d3b400/public",
-    href: "/portfolio/aquasmith",
   },
   {
     id: "bluwae",
@@ -238,7 +243,6 @@ const figmaProducts = [
     category: "Filters & Membrane",
     name: "Hydroscience",
     image: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/10e0c9db-97fd-4c60-7506-53a46620a700/public",
-    href: "/portfolio/hydroscience",
   },
 ]
 
@@ -950,12 +954,8 @@ export default function Home() {
           className="w-full flex gap-4 sm:gap-6 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pt-2 pl-[6.1vw] md:pl-[7.5vw] pr-[6.1vw] md:pr-[7.5vw] scroll-pl-[6.1vw] md:scroll-pl-[7.5vw]"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {figmaProducts.map((prod) => (
-            <Link
-              key={prod.id}
-              href={prod.href}
-              className="group flex-shrink-0 w-[clamp(240px,23.54vw,420px)] snap-start block"
-            >
+          {figmaProducts.map((prod) => {
+            const cardInner = (
               <div className="flex flex-col">
                 {/* Image container: 339:506 aspect ratio scaled fluidly with #000000B2 overlay */}
                 <div className="relative w-[clamp(240px,23.54vw,420px)] aspect-[339/506] bg-[#0B141E] rounded-sm overflow-hidden flex items-center justify-center border border-white/5">
@@ -1011,8 +1011,26 @@ export default function Home() {
                   </h3>
                 </div>
               </div>
-            </Link>
-          ))}
+            )
+
+            return prod.href ? (
+              <Link
+                key={prod.id}
+                href={prod.href}
+                className="group flex-shrink-0 w-[clamp(240px,23.54vw,420px)] snap-start block"
+              >
+                {cardInner}
+              </Link>
+            ) : (
+              <div
+                key={prod.id}
+                aria-disabled="true"
+                className="group flex-shrink-0 w-[clamp(240px,23.54vw,420px)] snap-start block cursor-default"
+              >
+                {cardInner}
+              </div>
+            )
+          })}
         </div>
 
         {/* Navigation Buttons: 50px below the carousel */}
@@ -2905,10 +2923,11 @@ export default function Home() {
                     verticalAlign: "middle",
                     color: "#FFFFFF",
                   }}
-                  className="mb-1"
                 >
                   Do/
                 </div>
+
+                <div style={{ height: "16px" }} />
 
                 <div
                   style={{
@@ -2924,6 +2943,8 @@ export default function Home() {
                   Disrupt/Change
                 </div>
 
+                <div style={{ height: "6px" }} />
+
                 <div
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
@@ -2934,10 +2955,11 @@ export default function Home() {
                     verticalAlign: "middle",
                     color: "#FFFFFF",
                   }}
-                  className="mb-2"
                 >
                   the status quo.
                 </div>
+
+                <div style={{ height: "16px" }} />
 
                 <div
                   style={{
