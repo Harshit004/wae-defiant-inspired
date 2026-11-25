@@ -25,8 +25,8 @@ const defaultHomepageBlogs = Object.values(BLOGS)
     readTime: b.readTime,
   }))
 
-// Responsive container class with max-width clamping and fluid gutters
-const containerClass = "mx-auto w-full max-w-[1440px] px-[6.1vw] md:px-[7.5vw]"
+// Responsive container class matching Header, Sustainability, Perspectives, Mentioned & Footer
+const containerClass = "w-full px-[6.1vw] md:px-[7.5vw]"
 
 
 
@@ -827,7 +827,7 @@ export default function Home() {
           <div style={{ height: "32px" }} />
 
           {/* Top row: Left & Right Sections aligned from "Water" */}
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16 mb-[92px]">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16 mb-[clamp(56px,6.39vw,92px)]">
             {/* Left Section */}
             <div className="max-w-[700px]">
               <h2
@@ -886,7 +886,7 @@ export default function Home() {
             </div>
 
             {/* Right Section */}
-            <div className="max-w-[480px]">
+            <div className="w-full lg:w-[clamp(360px,34vw,560px)]">
               <p
                 style={{
                   fontFamily: "'Manrope', sans-serif",
@@ -944,21 +944,21 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Product Carousel Row (339x506 clamped, overlay #000000B2) */}
+        {/* Product Carousel Row (339x506 clamped at 1440, scales smoothly on all desktops, overlay #000000B2) */}
         <div
           ref={productScrollRef}
-          className="w-full flex gap-4 sm:gap-6 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pt-2 pl-[6.1vw] md:pl-[max(7.5vw,calc((100vw-1440px)/2+108px))] pr-[6.1vw] md:pr-[max(7.5vw,calc((100vw-1440px)/2+108px))] scroll-pl-[6.1vw] md:scroll-pl-[max(7.5vw,calc((100vw-1440px)/2+108px))]"
+          className="w-full flex gap-4 sm:gap-6 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pt-2 pl-[6.1vw] md:pl-[7.5vw] pr-[6.1vw] md:pr-[7.5vw] scroll-pl-[6.1vw] md:scroll-pl-[7.5vw]"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {figmaProducts.map((prod) => (
             <Link
               key={prod.id}
               href={prod.href}
-              className="group flex-shrink-0 w-[clamp(260px,23.54vw,339px)] snap-start block"
+              className="group flex-shrink-0 w-[clamp(240px,23.54vw,420px)] snap-start block"
             >
               <div className="flex flex-col">
-                {/* Image container: 339x506 clamped with #000000B2 overlay */}
-                <div className="relative w-[clamp(260px,23.54vw,339px)] h-[clamp(388px,35.14vw,506px)] bg-[#0B141E] rounded-sm overflow-hidden flex items-center justify-center border border-white/5">
+                {/* Image container: 339:506 aspect ratio scaled fluidly with #000000B2 overlay */}
+                <div className="relative w-[clamp(240px,23.54vw,420px)] aspect-[339/506] bg-[#0B141E] rounded-sm overflow-hidden flex items-center justify-center border border-white/5">
                   <Image
                     src={prod.image}
                     alt={`${prod.category} - ${prod.name}`}
@@ -1055,9 +1055,9 @@ export default function Home() {
       {/* ── SOLUTIONS SECTION (FIGMA NODE 12768:11338) ── */}
       <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)] overflow-hidden">
         <div className={containerClass}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Left Column: Solution Manifesto & Navigation (x=-4738 to -4165, ~492px width) */}
-            <div className="lg:col-span-5 flex flex-col justify-between self-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-[clamp(32px,3.33vw,64px)] items-start">
+            {/* Left Column: Solution Manifesto & Navigation */}
+            <div className="lg:col-span-5 flex flex-col justify-between self-stretch max-w-[clamp(360px,36vw,540px)]">
               <div>
                 {/* Eyebrow */}
                 <span
@@ -1230,18 +1230,18 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column: High-Impact Solution Cards (Group 8439: 428x690 each) - Starts at column, bleeds outside screen, ends with margin */}
-            <div className="lg:col-span-7 -mr-[6.1vw] md:-mr-[max(7.5vw,calc((100vw-1440px)/2+108px))]">
+            {/* Right Column: High-Impact Solution Cards (428:690 ratio) - Starts at column, bleeds outside screen, ends with margin */}
+            <div className="lg:col-span-7 -mr-[6.1vw] md:-mr-[7.5vw]">
               <div
                 ref={solutionScrollRef}
-                className="flex gap-6 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pr-[6.1vw] md:pr-[max(7.5vw,calc((100vw-1440px)/2+108px))] scroll-pr-[6.1vw] md:scroll-pr-[max(7.5vw,calc((100vw-1440px)/2+108px))]"
+                className="flex gap-6 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory pr-[6.1vw] md:pr-[7.5vw] scroll-pr-[6.1vw] md:scroll-pr-[7.5vw]"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {figmaSolutions.map((sol) => (
                   <Link
                     key={sol.id}
                     href={sol.href}
-                    className="group flex-shrink-0 w-[280px] sm:w-[380px] lg:w-[428px] h-[480px] sm:h-[600px] lg:h-[690px] snap-start relative rounded-sm overflow-hidden block"
+                    className="group flex-shrink-0 w-[clamp(260px,29.72vw,520px)] aspect-[428/690] snap-start relative rounded-sm overflow-hidden block"
                   >
                     {/* Background Photography */}
                     <Image
@@ -1305,7 +1305,7 @@ export default function Home() {
       <section className="bg-[#0F0F0F] text-white border-b border-[#FFFFFF33] py-[clamp(60px,7.5vw,108px)]">
         <div className={containerClass}>
           {/* Header Row */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-[100px]">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-[clamp(48px,6.94vw,100px)]">
             <div>
               <h2
                 style={{
@@ -2899,7 +2899,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 500,
-                    fontSize: "26px",
+                    fontSize: "clamp(20px, 1.8vw, 28px)",
                     lineHeight: "120%",
                     letterSpacing: "0%",
                     verticalAlign: "middle",
@@ -2914,7 +2914,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 700,
-                    fontSize: "clamp(30px, 2.78vw, 44px)",
+                    fontSize: "clamp(24px, 2.78vw, 44px)",
                     lineHeight: "105%",
                     letterSpacing: "0%",
                     verticalAlign: "middle",
@@ -2928,7 +2928,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 700,
-                    fontSize: "clamp(30px, 2.78vw, 44px)",
+                    fontSize: "clamp(24px, 2.78vw, 44px)",
                     lineHeight: "105%",
                     letterSpacing: "0%",
                     verticalAlign: "middle",
@@ -2943,7 +2943,7 @@ export default function Home() {
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: 500,
-                    fontSize: "26px",
+                    fontSize: "clamp(20px, 1.8vw, 28px)",
                     lineHeight: "120%",
                     letterSpacing: "0%",
                     verticalAlign: "middle",
@@ -3021,7 +3021,7 @@ export default function Home() {
       <section
         className="bg-black text-white px-[6.1vw] pt-[16.53vw] pb-[21.11vw] md:px-[7.5vw] md:py-[123px] border-t border-[#FFFFFF4D]"
       >
-        <div className="max-w-[1440px] mx-auto w-full">
+        <div className="w-full">
           <ContactSectionDark
             titleStyle={{
               fontFamily: "'Inter Tight', sans-serif",
