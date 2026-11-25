@@ -6255,5 +6255,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Rajasthan",
     "type": "general",
     "createdAt": "2026-11-25T10:30:17.405Z"
+  },
+  "6fd5d5d8-3430-4200-ac41-1f0a1c2b190a": {
+    "id": "6fd5d5d8-3430-4200-ac41-1f0a1c2b190a",
+    "fullName": "Rajesh Rana",
+    "companyName": "Rajesh Rana",
+    "email": "gfsfych@gmail.com",
+    "phone": "8529865105",
+    "city": "Dholpur",
+    "pageLink": "https://www.waecorp.com/",
+    "message": "Rajasthan",
+    "type": "general",
+    "createdAt": "2026-11-25T10:30:18.998Z"
   }
 };
