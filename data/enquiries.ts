@@ -6233,16 +6233,15 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "type": "contact-us",
     "createdAt": "2026-11-25T06:31:20.572Z"
   },
-  "e367187a-1441-4c93-bd58-1ea7ffe57131": {
-    "id": "e367187a-1441-4c93-bd58-1ea7ffe57131",
-    "fullName": "Sandhya",
-    "companyName": "000",
-    "email": "sandhyawarkade90@gmail.com",
-    "phone": "9669681483",
-    "city": "Ghansor",
+  "0db0852f-3a01-48e3-a3c3-81e91ec84a98": {
+    "id": "0db0852f-3a01-48e3-a3c3-81e91ec84a98",
+    "fullName": "Raushan Kumar",
+    "companyName": "Maxxis",
+    "email": "rk8203880@gmail.com",
+    "phone": "7209995133",
+    "city": "Ahmedabad",
     "pageLink": "https://www.waecorp.com/contact-us",
-    "message": "Meri sadi kab or kaha hogi",
     "type": "contact-us",
-    "createdAt": "2026-11-25T10:22:58.634Z"
+    "createdAt": "2026-11-25T10:23:58.531Z"
   }
 };
