@@ -6221,5 +6221,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-25T05:18:50.462Z"
+  },
+  "12ad75f9-19d8-4203-ad0f-506be0b71dee": {
+    "id": "12ad75f9-19d8-4203-ad0f-506be0b71dee",
+    "fullName": "Yaswanrh",
+    "companyName": "Yaswanrh@2012",
+    "email": "yaswanthramukuri2@gmail.com",
+    "phone": "1122334455",
+    "city": "Hdtdgdg",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIj_jBsb-imAMVa4TpBR0kcjXJEAEYASAAEgL6v_D_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-25T06:31:20.572Z"
   }
 };
