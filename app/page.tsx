@@ -371,6 +371,20 @@ interface HeroBannerSlide {
   id: number
   isFirst?: boolean
   image?: string
+  headline?: string
+  subhead?: string
+  highlight?: string
+  bodyCopy?: string
+  legend?: { label: string; color: string }[]
+  footnote?: {
+    lines: string[]
+    hashtag?: string
+  }
+  definition?: {
+    word: string
+    phonetic: string
+    meaning: string
+  }
 }
 
 const HERO_SLIDES: HeroBannerSlide[] = [
@@ -381,14 +395,37 @@ const HERO_SLIDES: HeroBannerSlide[] = [
   {
     id: 2,
     image: "/hero/hero-slide-2.webp",
+    headline: "Carbon\nneutral water",
+    subhead: "Nature made H₂O with three atoms.\nHuman greed added a carbon.",
+    highlight: "Inspired by phytoplankton -\nWAE intend to remove it.",
+    definition: {
+      word: "Phytoplankton",
+      phonetic: "/ˌfaɪ.təʊˈplæŋk.tən/ · noun",
+      meaning:
+        "Microscopic, organisms principal agents of the global carbon cycle, responsible for approximately 70% of Earth's oxygen while less than 1% of its photosynthetic biomass.",
+    },
   },
   {
     id: 3,
     image: "/hero/hero-slide-3.webp",
+    headline: "1% for water",
+    subhead: "1% of Net Sales\n100% of Our Commitment",
+    bodyCopy: "For water resilience, restoration\nand access for all",
+    legend: [
+      { label: "Secure", color: "#5E7C99" },
+      { label: "Exhausted", color: "#6E6E6E" },
+      { label: "Unreachable", color: "#E5E5E5" },
+    ],
+    footnote: {
+      lines: ["Not charity.", "Not CSR", "Responsibility"],
+      hashtag: "#GiveBackToWater",
+    },
   },
   {
     id: 4,
     image: "/hero/hero-slide-4.webp",
+    headline: "Blugrids",
+    subhead: "One intelligent Platform -\nInfinite water Intelligence",
   },
 ]
 
@@ -672,15 +709,232 @@ export default function Home() {
                   </div>
                 </>
               ) : (
-                <div className="relative w-full h-full bg-black flex items-center justify-center">
+                <div className="relative w-full h-full bg-black overflow-hidden">
+                  {/* Background image stretches full screen width; may overflow height while text/indicators stay in screen */}
                   <Image
                     src={HERO_SLIDES[currentSlide].image!}
-                    alt={`Hero Banner ${currentSlide + 1}`}
+                    alt={HERO_SLIDES[currentSlide].headline?.replace(/\n/g, " ") || `Hero Banner ${currentSlide + 1}`}
                     fill
                     priority
                     unoptimized
-                    className="object-contain object-center"
+                    className={`object-cover ${
+                      HERO_SLIDES[currentSlide].id === 4
+                        ? "object-[72%_center] md:object-top"
+                        : "object-center md:object-top"
+                    }`}
                   />
+
+                  {/* Subtle mobile gradient for text legibility */}
+                  <div
+                    className="md:hidden absolute inset-0 pointer-events-none"
+                    style={{
+                      background:
+                        "linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.48) 55%, rgba(0,0,0,0.12) 100%)",
+                    }}
+                  />
+
+                  {/* Slide-specific Legend (Slide 3 Map Legend) */}
+                  {HERO_SLIDES[currentSlide].legend && (
+                    <div
+                      className="hidden md:flex flex-col items-end gap-1.5 absolute top-[clamp(100px,10.5vw,160px)] right-[24px] md:right-[7.5vw] z-[4] text-[clamp(11px,0.83vw,13px)] text-[#AEAEAE]"
+                      style={{ fontFamily: "'Manrope', sans-serif" }}
+                    >
+                      {HERO_SLIDES[currentSlide].legend!.map((item, i) => (
+                        <div key={i} className="flex items-center gap-2.5">
+                          <span>{item.label}</span>
+                          <span
+                            className="w-2.5 h-2.5 rounded-full inline-block flex-shrink-0"
+                            style={{ backgroundColor: item.color }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Slide Content Overlay - aligned left with header logo (7.5vw) and fitted within viewport */}
+                  <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[84px] sm:pt-[96px] md:pt-[clamp(90px,8vw,130px)] pb-[48px] md:pb-[clamp(56px,6.5svh,76px)]">
+                    <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
+                      <div
+                        className={
+                          HERO_SLIDES[currentSlide].id === 4
+                            ? "max-w-[92vw] md:max-w-[52vw]"
+                            : "max-w-[92vw] md:max-w-[56vw]"
+                        }
+                      >
+                        {HERO_SLIDES[currentSlide].headline && (
+                          <h1
+                            className="whitespace-pre-line text-white"
+                            style={{
+                              fontFamily: "'Inter Tight', sans-serif",
+                              fontWeight: 500,
+                              fontStyle: "normal",
+                              fontSize: "clamp(32px, min(5.9vw, 10svh), 85px)",
+                              lineHeight: "105%",
+                              letterSpacing: "0%",
+                              verticalAlign: "middle",
+                              margin: 0,
+                            }}
+                          >
+                            {HERO_SLIDES[currentSlide].headline}
+                          </h1>
+                        )}
+
+                        {HERO_SLIDES[currentSlide].subhead && (
+                          <p
+                            className="whitespace-pre-line mt-[clamp(12px,min(1.8vw,2.6svh),26px)]"
+                            style={{
+                              fontFamily: "'Inter Tight', sans-serif",
+                              fontWeight: HERO_SLIDES[currentSlide].id === 3 ? 500 : 400,
+                              fontStyle: "normal",
+                              fontSize:
+                                HERO_SLIDES[currentSlide].id === 4
+                                  ? "clamp(18px, min(3.05vw, 4.8svh), 44px)"
+                                  : HERO_SLIDES[currentSlide].id === 3
+                                    ? "clamp(16px, min(2.36vw, 3.8svh), 34px)"
+                                    : "clamp(15px, min(1.81vw, 3.2svh), 26px)",
+                              lineHeight: "115%",
+                              letterSpacing: "0%",
+                              verticalAlign: "middle",
+                              color: "#B5B5B5",
+                              marginBottom: 0,
+                            }}
+                          >
+                            {HERO_SLIDES[currentSlide].subhead}
+                          </p>
+                        )}
+
+                        {HERO_SLIDES[currentSlide].highlight && (
+                          <p
+                            className="whitespace-pre-line mt-[clamp(12px,min(1.67vw,2.5svh),24px)]"
+                            style={{
+                              fontFamily: "'Inter Tight', sans-serif",
+                              fontWeight: 700,
+                              fontStyle: "normal",
+                              fontSize: "clamp(16px, min(1.94vw, 3.4svh), 28px)",
+                              lineHeight: "115%",
+                              letterSpacing: "0%",
+                              verticalAlign: "middle",
+                              color: "#C5C5C5",
+                              marginBottom: 0,
+                            }}
+                          >
+                            {HERO_SLIDES[currentSlide].highlight}
+                          </p>
+                        )}
+
+                        {HERO_SLIDES[currentSlide].bodyCopy && (
+                          <p
+                            className="whitespace-pre-line mt-[clamp(12px,min(1.67vw,2.5svh),24px)]"
+                            style={{
+                              fontFamily: "'Inter Tight', sans-serif",
+                              fontWeight: 400,
+                              fontStyle: "normal",
+                              fontSize: "clamp(15px, min(1.81vw, 3.2svh), 26px)",
+                              lineHeight: "120%",
+                              letterSpacing: "0%",
+                              verticalAlign: "middle",
+                              color: "#B5B5B5",
+                              marginBottom: 0,
+                            }}
+                          >
+                            {HERO_SLIDES[currentSlide].bodyCopy}
+                          </p>
+                        )}
+
+                        {HERO_SLIDES[currentSlide].definition && (
+                          <div className="mt-[clamp(20px,min(4.31vw,6.8svh),62px)] max-w-[clamp(280px,34vw,480px)]">
+                            <p
+                              style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 700,
+                                fontStyle: "normal",
+                                fontSize: "clamp(12px, 0.97vw, 14px)",
+                                lineHeight: "140%",
+                                letterSpacing: "0%",
+                                verticalAlign: "middle",
+                                color: "#FFFFFF",
+                                margin: 0,
+                              }}
+                            >
+                              {HERO_SLIDES[currentSlide].definition!.word}
+                            </p>
+                            <p
+                              style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontStyle: "normal",
+                                fontSize: "clamp(12px, 0.97vw, 14px)",
+                                lineHeight: "140%",
+                                letterSpacing: "0%",
+                                verticalAlign: "middle",
+                                color: "#C1C1C1",
+                                margin: 0,
+                              }}
+                            >
+                              {HERO_SLIDES[currentSlide].definition!.phonetic}
+                            </p>
+                            <p
+                              style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontStyle: "normal",
+                                fontSize: "clamp(12px, 0.97vw, 14px)",
+                                lineHeight: "140%",
+                                letterSpacing: "0%",
+                                verticalAlign: "middle",
+                                color: "#C1C1C1",
+                                margin: 0,
+                              }}
+                            >
+                              {HERO_SLIDES[currentSlide].definition!.meaning}
+                            </p>
+                          </div>
+                        )}
+
+                        {HERO_SLIDES[currentSlide].footnote && (
+                          <div className="mt-[clamp(20px,min(4.31vw,6.8svh),62px)] max-w-[clamp(260px,28vw,380px)]">
+                            <div
+                              style={{
+                                fontFamily: "'Inter Tight', sans-serif",
+                                fontWeight: 400,
+                                fontStyle: "normal",
+                                fontSize: "clamp(12px, 0.97vw, 14px)",
+                                lineHeight: "140%",
+                                letterSpacing: "0%",
+                                color: "#B5B5B5",
+                              }}
+                            >
+                              {HERO_SLIDES[currentSlide].footnote!.lines.map((line, i) => (
+                                <p key={i} style={{ margin: 0 }}>
+                                  {line}
+                                </p>
+                              ))}
+                            </div>
+                            {HERO_SLIDES[currentSlide].footnote!.hashtag && (
+                              <p
+                                className="mt-3"
+                                style={{
+                                  fontFamily: "'Inter Tight', sans-serif",
+                                  fontWeight: 700,
+                                  fontStyle: "normal",
+                                  fontSize: "clamp(12px, 0.97vw, 14px)",
+                                  lineHeight: "140%",
+                                  letterSpacing: "0%",
+                                  color: "#FFFFFF",
+                                  marginBottom: 0,
+                                }}
+                              >
+                                {HERO_SLIDES[currentSlide].footnote!.hashtag}
+                              </p>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Mobile divider at the bottom of the hero section */}
+                    <div className="md:hidden absolute bottom-0 left-0 right-0 border-b border-[#FFFFFF4D] z-[5]" />
+                  </div>
                 </div>
               )}
             </motion.div>
