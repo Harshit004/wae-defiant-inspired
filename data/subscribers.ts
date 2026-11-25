@@ -946,10 +946,10 @@ export const SUBSCRIBERS: Subscriber[] = [
     "pageLink": "/contact-us"
   },
   {
-    "id": "4af432d7-5910-4107-b2a6-e990e45e6791",
-    "email": "rk8203880@gmail.com",
+    "id": "3e5adaf8-68a0-4349-9d39-a3eb7d1a61eb",
+    "email": "gfsfych@gmail.com",
     "date": "2026-11-25",
-    "time": "15:54:24",
-    "pageLink": "/thank-you"
+    "time": "15:57:43",
+    "pageLink": "/portfolio/zvr/nt01"
   }
 ];
