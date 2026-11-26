@@ -162,29 +162,35 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light", di
   )
 }
 
-// ── PILLARS (IDENTICAL TO MAIN HOMEPAGE) ──
+// ── PILLARS ──
 
 const pillars = [
   {
-    title: 'Purpose',
-    subtitle: 'Being Sustainable',
-    desc1: 'The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.',
-    desc2: "WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.",
-    href: '/profile',
+    title: "Purpose",
+    subtitle: "Being Sustainable",
+    desc1:
+      "The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.",
+    desc2:
+      "Our work is an expression of that belief—that human ingenuity can serve the natural order on which all life depends.",
+    href: "/profile",
   },
   {
-    title: 'Philosophy',
-    subtitle: 'Our Green Is Blue',
-    desc1: 'It is where sustainability takes its truest form, not in what is made, but in how it lives on.',
-    desc2: 'At WAE, we do not just treat water but architect a scientific reality where consumption and conservation coexist effortlessly.',
-    href: '/sustainability',
+    title: "Philosophy",
+    subtitle: "Our Green Is Blue",
+    desc1:
+      "At WAE, sustainability begins with water. Blue is the resource we protect, the science we apply and the future we seek to make possible. We engineer water as a circular asset from intake and purification to use, recovery and reuse.",
+    desc2:
+      "Each system is an opportunity to conserve resources, reduce emissions and move closer to carbon-neutral water. Our green is blue because a more sustainable world depends on what we do with every drop.",
+    href: "/sustainability",
   },
   {
-    title: 'Principle',
-    subtitle: 'People First',
-    desc1: 'People are the natural rhythm of WAE — endlessly evolving, quietly powerful, shaping the future with every idea they breathe into life.',
-    desc2: 'In their curiosity and courage, the company finds its true flow, turning purpose into action and innovation into enduring impact.',
-    href: '/careers',
+    title: "Practices",
+    subtitle: "From Water Intake to Water Use",
+    desc1:
+      "WAE engineers water from intake to recovery and reuse, configuring treatment around source chemistry and demand to conserve resources. On-site purification and dispensing reduce packaged water reliance and Scope 3 emissions.",
+    desc2:
+      "Membrane-based treatment enables wastewater reuse, while digital monitoring measures quality, consumption and recovery advancing our carbon-neutral water ambition.",
+    href: "/careers",
   },
 ]
 
@@ -965,60 +971,67 @@ export default function Home() {
         <StatusQuoPopup />
       </section>
 
-      {/* Purpose, Philosophy & Principle Section */}
+      {/* Purpose, Philosophy & Practices Section */}
       <section className="relative bg-black text-white w-full">
-        <div className="w-full md:h-[576px]">
+        <div className="w-full">
           <div
             ref={pillarContainerRef}
             onScroll={handlePillarScroll}
-            className="w-full flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 md:h-full md:overflow-visible border-b border-[#FFFFFF4D]"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="w-full flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 md:overflow-visible border-b border-[#FFFFFF4D]"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {pillars.map((pillar, idx) => (
               <div
                 key={pillar.title}
-                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${
-                  idx < 2 ? 'md:border-r md:border-[#FFFFFF4D]' : ''
+                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col items-start justify-start py-[21.1vw] px-[18.06vw] md:py-[clamp(64px,8.26vw,119px)] md:px-[clamp(36px,6.32vw,120px)] ${
+                  idx < 2 ? "md:border-r md:border-[#FFFFFF4D]" : ""
                 } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group`}
               >
-                <div className="flex flex-col w-full max-w-[320px]">
+                <div className="flex flex-col w-full">
                   <h2
-                    className="text-[7.12vw] md:text-[40px] leading-[110%] font-normal"
+                    className="text-[7.12vw] md:text-[clamp(28px,2.78vw,44px)] leading-[110%] font-normal text-white"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
-                      letterSpacing: '0%',
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
                     }}
                   >
                     {pillar.title}
                   </h2>
-                  <div className="h-[6.1vw] md:h-[32px]" />
+                  <div className="h-[6.1vw] md:h-[clamp(20px,2.22vw,32px)]" />
                   <h3
-                    className="text-white group-hover:text-white text-[3.05vw] md:text-[16px] leading-[100%] font-bold"
+                    className="text-white group-hover:text-white text-[3.05vw] md:text-[clamp(14px,1.11vw,18px)] leading-[100%] font-bold"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
                     }}
                   >
                     {pillar.subtitle}
                   </h3>
-                  <div className="h-[3.05vw] md:h-[16px]" />
+                  <div className="h-[3.05vw] md:h-[clamp(8px,0.83vw,12px)]" />
                   <p
-                    className="text-white/60 group-hover:text-white text-[3.05vw] md:text-[12px] leading-[120%] md:leading-[140%] font-normal"
+                    className="text-[#AEAEAE] group-hover:text-white text-[3.05vw] md:text-[clamp(11px,0.83vw,14px)] leading-[120%] md:leading-[100%] font-normal transition-colors"
                     style={{
                       fontFamily: "'Manrope', sans-serif",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
                     }}
                   >
                     {pillar.desc1}
                   </p>
-                  <div className="h-[3.05vw] md:h-[12px]" />
+                  <div className="h-[3.05vw] md:h-[clamp(8px,0.83vw,12px)]" />
                   <p
-                    className="text-white/60 group-hover:text-white text-[3.05vw] md:text-[12px] leading-[120%] md:leading-[140%] font-normal"
+                    className="text-[#AEAEAE] group-hover:text-white text-[3.05vw] md:text-[clamp(11px,0.83vw,14px)] leading-[120%] md:leading-[100%] font-normal transition-colors"
                     style={{
                       fontFamily: "'Manrope', sans-serif",
+                      letterSpacing: "0%",
+                      verticalAlign: "middle",
                     }}
                   >
                     {pillar.desc2}
                   </p>
-                  <div className="h-[6.1vw] md:h-[32px]" />
+                  <div className="h-[6.1vw] md:h-[clamp(40px,4.72vw,68px)]" />
                   <Link href={pillar.href} className="contents">
                     <HoverButton theme="transparent-white">
                       {(hovered) => (
@@ -1030,7 +1043,7 @@ export default function Home() {
                               alt={`${pillar.title} icon`}
                               width={16}
                               height={16}
-                              className={hovered ? 'filter-wae-blue' : ''}
+                              className={hovered ? "filter-wae-blue" : ""}
                             />
                             <motion.div
                               initial={{ opacity: 0 }}
@@ -1043,7 +1056,7 @@ export default function Home() {
                                 alt={`${pillar.title} icon hover`}
                                 width={16}
                                 height={16}
-                                className={hovered ? 'filter-wae-blue' : 'brightness-0 invert'}
+                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                               />
                             </motion.div>
                           </div>
