@@ -987,83 +987,86 @@ export default function Home() {
                   idx < 2 ? "md:border-r md:border-[#FFFFFF4D]" : ""
                 } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group`}
               >
-                <div className="flex flex-col w-full">
-                  <h2
-                    className="text-[7.12vw] md:text-[clamp(28px,2.78vw,44px)] leading-[110%] font-normal text-white"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      letterSpacing: "0%",
-                      verticalAlign: "middle",
-                    }}
-                  >
-                    {pillar.title}
-                  </h2>
-                  <div className="h-[6.1vw] md:h-[clamp(20px,2.22vw,32px)]" />
-                  <h3
-                    className="text-white group-hover:text-white text-[3.05vw] md:text-[clamp(14px,1.11vw,18px)] leading-[100%] font-bold"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      letterSpacing: "0%",
-                      verticalAlign: "middle",
-                    }}
-                  >
-                    {pillar.subtitle}
-                  </h3>
-                  <div className="h-[3.05vw] md:h-[clamp(8px,0.83vw,12px)]" />
-                  <p
-                    className="text-[#AEAEAE] group-hover:text-white text-[3.05vw] md:text-[clamp(11px,0.83vw,14px)] leading-[120%] md:leading-[100%] font-normal transition-colors"
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      letterSpacing: "0%",
-                      verticalAlign: "middle",
-                    }}
-                  >
-                    {pillar.desc1}
-                  </p>
-                  <div className="h-[3.05vw] md:h-[clamp(8px,0.83vw,12px)]" />
-                  <p
-                    className="text-[#AEAEAE] group-hover:text-white text-[3.05vw] md:text-[clamp(11px,0.83vw,14px)] leading-[120%] md:leading-[100%] font-normal transition-colors"
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      letterSpacing: "0%",
-                      verticalAlign: "middle",
-                    }}
-                  >
-                    {pillar.desc2}
-                  </p>
-                  <div className="h-[6.1vw] md:h-[clamp(40px,4.72vw,68px)]" />
-                  <Link href={pillar.href} className="contents">
-                    <HoverButton theme="transparent-white">
-                      {(hovered) => (
-                        <>
-                          Know More
-                          <div className="relative inline-block w-4 h-4">
-                            <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                              alt={`${pillar.title} icon`}
-                              width={16}
-                              height={16}
-                              className={hovered ? "filter-wae-blue" : ""}
-                            />
-                            <motion.div
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: hovered ? 1 : 0 }}
-                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                              className="absolute top-0 left-0"
-                            >
+                <div className="flex flex-col w-full h-full justify-between">
+                  <div>
+                    <h2
+                      className="text-[7.12vw] md:text-[clamp(28px,2.78vw,44px)] leading-[110%] font-normal text-white"
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        letterSpacing: "0%",
+                        verticalAlign: "middle",
+                      }}
+                    >
+                      {pillar.title}
+                    </h2>
+                    <div className="h-[6.1vw] md:h-[clamp(20px,2.22vw,32px)]" />
+                    <h3
+                      className="text-white group-hover:text-white text-[3.05vw] md:text-[clamp(14px,1.11vw,18px)] leading-[100%] font-bold"
+                      style={{
+                        fontFamily: "'Inter Tight', sans-serif",
+                        letterSpacing: "0%",
+                        verticalAlign: "middle",
+                      }}
+                    >
+                      {pillar.subtitle}
+                    </h3>
+                    <div className="h-[3.05vw] md:h-[clamp(8px,0.83vw,12px)]" />
+                    <p
+                      className="text-[#AEAEAE] group-hover:text-white text-[3.05vw] md:text-[clamp(11px,0.83vw,14px)] leading-[130%] font-normal transition-colors"
+                      style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        letterSpacing: "0%",
+                        verticalAlign: "middle",
+                      }}
+                    >
+                      {pillar.desc1}
+                    </p>
+                    <div className="h-[3.05vw] md:h-[clamp(8px,0.83vw,12px)]" />
+                    <p
+                      className="text-[#AEAEAE] group-hover:text-white text-[3.05vw] md:text-[clamp(11px,0.83vw,14px)] leading-[130%] font-normal transition-colors"
+                      style={{
+                        fontFamily: "'Manrope', sans-serif",
+                        letterSpacing: "0%",
+                        verticalAlign: "middle",
+                      }}
+                    >
+                      {pillar.desc2}
+                    </p>
+                  </div>
+                  <div className="mt-[6.1vw] md:mt-[clamp(40px,4.72vw,68px)]">
+                    <Link href={pillar.href} className="contents">
+                      <HoverButton theme="transparent-white">
+                        {(hovered) => (
+                          <>
+                            Know More
+                            <div className="relative inline-block w-4 h-4">
                               <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                alt={`${pillar.title} icon hover`}
+                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                                alt={`${pillar.title} icon`}
                                 width={16}
                                 height={16}
                                 className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                               />
-                            </motion.div>
-                          </div>
-                        </>
-                      )}
-                    </HoverButton>
-                  </Link>
+                              <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: hovered ? 1 : 0 }}
+                                transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                                className="absolute top-0 left-0"
+                              >
+                                <Image
+                                  src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                                  alt={`${pillar.title} icon hover`}
+                                  width={16}
+                                  height={16}
+                                  className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                                />
+                              </motion.div>
+                            </div>
+                          </>
+                        )}
+                      </HoverButton>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
