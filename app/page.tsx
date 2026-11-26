@@ -440,14 +440,16 @@ const HERO_SLIDES: HeroBannerSlide[] = [
 export default function Home() {
   // Hero Carousel State
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [autoScrollStopped, setAutoScrollStopped] = useState(false)
   const heroTouchStartX = useRef<number | null>(null)
 
   useEffect(() => {
+    if (autoScrollStopped) return
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
     }, 5000)
     return () => clearInterval(timer)
-  }, [])
+  }, [autoScrollStopped])
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
@@ -456,6 +458,16 @@ export default function Home() {
   const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)
   }, [])
+
+  const handleNextNav = useCallback(() => {
+    setAutoScrollStopped(true)
+    nextSlide()
+  }, [nextSlide])
+
+  const handlePrevNav = useCallback(() => {
+    setAutoScrollStopped(true)
+    prevSlide()
+  }, [prevSlide])
 
   const handleTouchStart = (e: React.TouchEvent) => {
     heroTouchStartX.current = e.touches[0].clientX
@@ -965,9 +977,33 @@ export default function Home() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Slide Indicators - sticky at bottom of visible screen while hero is in view */}
+          {/* Slide Nav Arrows & Indicators - sticky within visible screen while hero is in view */}
           <div className="absolute inset-0 pointer-events-none z-[20]">
             <div className="sticky top-0 h-[100svh] max-h-full w-full flex items-end justify-center pb-4 md:pb-8">
+              {/* Left Nav Arrow - 44px from left screen edge, middle of screen */}
+              <button
+                type="button"
+                onClick={handlePrevNav}
+                aria-label="Previous slide"
+                className="pointer-events-auto absolute left-[16px] md:left-[44px] top-1/2 -translate-y-1/2 bg-transparent border-0 p-0 text-white cursor-pointer focus:outline-none"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+
+              {/* Right Nav Arrow - 44px from right screen edge, middle of screen */}
+              <button
+                type="button"
+                onClick={handleNextNav}
+                aria-label="Next slide"
+                className="pointer-events-auto absolute right-[16px] md:right-[44px] top-1/2 -translate-y-1/2 bg-transparent border-0 p-0 text-white cursor-pointer focus:outline-none"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+
               <div className="flex items-center gap-2 pointer-events-auto">
                 {HERO_SLIDES.map((slide, idx) => (
                   <button
