@@ -416,7 +416,7 @@ const HERO_SLIDES: HeroBannerSlide[] = [
     image: "/hero/hero-slide-3.webp",
     headline: "1% for water",
     subhead: "1% of Net Sales\n100% of Our Commitment",
-    bodyCopy: "For water resilience, restoration\nand access for all",
+    bodyCopy: "For water resilience, restoration and access for all",
     legend: [
       { label: "Secure", color: "#5E7C99" },
       { label: "Exhausted", color: "#6E6E6E" },
@@ -741,7 +741,15 @@ export default function Home() {
                   />
 
                   {/* Slide Content & Legend sticky within 100svh viewport so text always stays on screen */}
-                  <div className="sticky top-0 w-full h-[100svh] max-h-full z-[3] pointer-events-none flex flex-col justify-center pt-[84px] sm:pt-[96px] md:pt-[clamp(90px,8vw,130px)] pb-[48px] md:pb-[clamp(56px,6.5svh,76px)]">
+                  <div
+                    className={`sticky top-0 w-full h-[100svh] max-h-full z-[3] pointer-events-none flex flex-col justify-center md:justify-start pt-[84px] pb-[48px] md:pb-[clamp(56px,6.5svh,76px)] ${
+                      HERO_SLIDES[currentSlide].id === 2
+                        ? "md:pt-[clamp(140px,14.58vw,240px)]"
+                        : HERO_SLIDES[currentSlide].id === 3
+                          ? "md:pt-[clamp(150px,16.74vw,270px)]"
+                          : "md:pt-[clamp(170px,20.42vw,320px)]"
+                    }`}
+                  >
                     {/* Slide-specific Legend (Slide 3 Map Legend) */}
                     {HERO_SLIDES[currentSlide].legend && (
                       <div
@@ -760,7 +768,7 @@ export default function Home() {
                       </div>
                     )}
 
-                    <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
+                    <div className={`${containerClass} flex-1 flex flex-col justify-center md:justify-start`}>
                       <div
                         className={
                           HERO_SLIDES[currentSlide].id === 4
@@ -775,7 +783,10 @@ export default function Home() {
                               fontFamily: "'Inter Tight', sans-serif",
                               fontWeight: 500,
                               fontStyle: "normal",
-                              fontSize: "clamp(32px, min(5.9vw, 10svh), 85px)",
+                              fontSize:
+                                HERO_SLIDES[currentSlide].id === 4
+                                  ? "clamp(32px, min(4.86vw, 8.2svh), 72px)"
+                                  : "clamp(30px, min(4.72vw, 8svh), 72px)",
                               lineHeight: "105%",
                               letterSpacing: "0%",
                               verticalAlign: "middle",
@@ -788,21 +799,28 @@ export default function Home() {
 
                         {HERO_SLIDES[currentSlide].subhead && (
                           <p
-                            className="whitespace-pre-line mt-[clamp(12px,min(1.8vw,2.6svh),26px)]"
+                            className={`whitespace-pre-line ${
+                              HERO_SLIDES[currentSlide].id === 3
+                                ? "mt-[clamp(10px,1.2vw,16px)]"
+                                : "mt-[clamp(14px,min(1.53vw,2.2svh),22px)]"
+                            }`}
                             style={{
                               fontFamily: "'Inter Tight', sans-serif",
                               fontWeight: HERO_SLIDES[currentSlide].id === 3 ? 500 : 400,
                               fontStyle: "normal",
                               fontSize:
                                 HERO_SLIDES[currentSlide].id === 4
-                                  ? "clamp(18px, min(3.05vw, 4.8svh), 44px)"
+                                  ? "clamp(18px, min(3.05vw, 5svh), 44px)"
                                   : HERO_SLIDES[currentSlide].id === 3
-                                    ? "clamp(16px, min(2.36vw, 3.8svh), 34px)"
-                                    : "clamp(15px, min(1.81vw, 3.2svh), 26px)",
-                              lineHeight: "115%",
+                                    ? "clamp(18px, min(2.5vw, 4svh), 36px)"
+                                    : "clamp(15px, min(1.67vw, 2.8svh), 26px)",
+                              lineHeight: HERO_SLIDES[currentSlide].id === 3 ? "110%" : "115%",
                               letterSpacing: "0%",
                               verticalAlign: "middle",
-                              color: "#B5B5B5",
+                              color:
+                                HERO_SLIDES[currentSlide].id === 3
+                                  ? "#AEAEAE"
+                                  : "#C1C1C1",
                               marginBottom: 0,
                             }}
                           >
@@ -812,12 +830,12 @@ export default function Home() {
 
                         {HERO_SLIDES[currentSlide].highlight && (
                           <p
-                            className="whitespace-pre-line mt-[clamp(12px,min(1.67vw,2.5svh),24px)]"
+                            className="whitespace-pre-line mt-[clamp(16px,min(1.94vw,3svh),28px)]"
                             style={{
                               fontFamily: "'Inter Tight', sans-serif",
                               fontWeight: 700,
                               fontStyle: "normal",
-                              fontSize: "clamp(16px, min(1.94vw, 3.4svh), 28px)",
+                              fontSize: "clamp(16px, min(1.94vw, 3.2svh), 28px)",
                               lineHeight: "115%",
                               letterSpacing: "0%",
                               verticalAlign: "middle",
@@ -831,16 +849,16 @@ export default function Home() {
 
                         {HERO_SLIDES[currentSlide].bodyCopy && (
                           <p
-                            className="whitespace-pre-line mt-[clamp(12px,min(1.67vw,2.5svh),24px)]"
+                            className="whitespace-pre-line mt-[clamp(12px,min(1.53vw,2.2svh),22px)] max-w-[clamp(280px,32vw,440px)]"
                             style={{
                               fontFamily: "'Inter Tight', sans-serif",
                               fontWeight: 400,
                               fontStyle: "normal",
-                              fontSize: "clamp(15px, min(1.81vw, 3.2svh), 26px)",
+                              fontSize: "clamp(14px, min(1.53vw, 2.6svh), 24px)",
                               lineHeight: "120%",
                               letterSpacing: "0%",
                               verticalAlign: "middle",
-                              color: "#B5B5B5",
+                              color: "#C1C1C1",
                               marginBottom: 0,
                             }}
                           >
@@ -849,7 +867,7 @@ export default function Home() {
                         )}
 
                         {HERO_SLIDES[currentSlide].definition && (
-                          <div className="mt-[clamp(20px,min(4.31vw,6.8svh),62px)] max-w-[clamp(280px,34vw,480px)]">
+                          <div className="mt-[clamp(24px,min(5.07vw,7svh),73px)] max-w-[clamp(280px,34vw,480px)]">
                             <p
                               style={{
                                 fontFamily: "'Inter Tight', sans-serif",
@@ -899,7 +917,7 @@ export default function Home() {
                         )}
 
                         {HERO_SLIDES[currentSlide].footnote && (
-                          <div className="mt-[clamp(20px,min(4.31vw,6.8svh),62px)] max-w-[clamp(260px,28vw,380px)]">
+                          <div className="mt-[clamp(32px,min(8.68vw,11svh),125px)] max-w-[clamp(260px,28vw,380px)]">
                             <div
                               style={{
                                 fontFamily: "'Inter Tight', sans-serif",
