@@ -6278,5 +6278,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIuIWPg6ClmAMV3MaEAB0NMTiaEAEYASAAEgJ7VPD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-26T08:49:50.693Z"
+  },
+  "2c0b74a5-73a0-4b30-ba29-c448568fcd10": {
+    "id": "2c0b74a5-73a0-4b30-ba29-c448568fcd10",
+    "fullName": "Rauki kumar",
+    "companyName": "Vaishnavi",
+    "email": "raukikumar437@gmail.com",
+    "phone": "8579977890",
+    "city": "Aaj gadi Mart",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Ek lakh loan ki argentin",
+    "type": "contact-us",
+    "createdAt": "2026-11-26T11:39:49.932Z"
   }
 };
