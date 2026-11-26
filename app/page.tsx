@@ -160,31 +160,25 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
 
 const pillars = [
   {
-    title: "Purpose",
-    subtitle: "Being Sustainable",
-    desc1:
-      "The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.",
-    desc2:
-      "All life depends on water. Nature functions continuously and abundantly, and sustainability is its inherent property.",
-    href: "/sustainability",
+    title: 'Purpose',
+    subtitle: 'Being Sustainable',
+    desc1: 'The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.',
+    desc2: "WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.",
+    href: '/profile',
   },
   {
-    title: "Philosophy",
-    subtitle: "Doing Sustainability",
-    desc1:
-      "To be and do good. Selfless giving, helping others with pure, truthful intention. Giving back to water, community, and the planet.",
-    desc2:
-      "Doing is the true measure of being. At WAE, every action is driven by a deep commitment to preserving our planet's most vital resource.",
-    href: "/activism",
+    title: 'Philosophy',
+    subtitle: 'Our Green Is Blue',
+    desc1: 'It is where sustainability takes its truest form, not in what is made, but in how it lives on.',
+    desc2: 'At WAE, we do not just treat water but architect a scientific reality where consumption and conservation coexist effortlessly.',
+    href: '/sustainability',
   },
   {
-    title: "Principles",
-    subtitle: "Science, Design & Engineering",
-    desc1:
-      "Living honestly, working passionately, and continuously learning. Our commitment to transparent, ethically driven engineering and science.",
-    desc2:
-      "We design products that are durable, beautiful, and sustainable—ensuring our business remains a force for positive environmental change.",
-    href: "/portfolio",
+    title: 'Principle',
+    subtitle: 'People First',
+    desc1: 'People are the natural rhythm of WAE — endlessly evolving, quietly powerful, shaping the future with every idea they breathe into life.',
+    desc2: 'In their curiosity and courage, the company finds its true flow, turning purpose into action and innovation into enduring impact.',
+    href: '/careers',
   },
 ]
 
@@ -965,27 +959,28 @@ export default function Home() {
         <StatusQuoPopup />
       </section>
 
-      {/* ── PURPOSE, PHILOSOPHY & PRINCIPLE SECTION (IDENTICAL TO MAIN HOMEPAGE) ── */}
+      {/* Purpose, Philosophy & Principle Section */}
       <section className="relative bg-black text-white w-full">
         <div className="w-full md:h-[576px]">
           <div
             ref={pillarContainerRef}
             onScroll={handlePillarScroll}
             className="w-full flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 md:h-full md:overflow-visible border-b border-[#FFFFFF4D]"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {pillars.map((pillar, idx) => (
               <div
                 key={pillar.title}
-                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${idx < 2 ? "md:border-r md:border-[#FFFFFF4D]" : ""
-                  } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group transition-all duration-500`}
+                className={`min-w-full md:min-w-0 snap-center snap-always flex flex-col py-[21.1vw] md:py-0 md:h-full items-center justify-center px-[18.06vw] md:px-12 lg:px-24 ${
+                  idx < 2 ? 'md:border-r md:border-[#FFFFFF4D]' : ''
+                } hover:bg-[linear-gradient(146.59deg,#004063_4.52%,#000000_49.04%)] cursor-pointer group`}
               >
                 <div className="flex flex-col w-full max-w-[320px]">
                   <h2
-                    className="text-[7.12vw] md:text-[40px] leading-[110%] font-normal text-white"
+                    className="text-[7.12vw] md:text-[40px] leading-[110%] font-normal"
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
-                      letterSpacing: "0%",
+                      letterSpacing: '0%',
                     }}
                   >
                     {pillar.title}
@@ -1029,7 +1024,7 @@ export default function Home() {
                               alt={`${pillar.title} icon`}
                               width={16}
                               height={16}
-                              className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                              className={hovered ? 'filter-wae-blue' : ''}
                             />
                             <motion.div
                               initial={{ opacity: 0 }}
@@ -1042,7 +1037,7 @@ export default function Home() {
                                 alt={`${pillar.title} icon hover`}
                                 width={16}
                                 height={16}
-                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                                className={hovered ? 'filter-wae-blue' : 'brightness-0 invert'}
                               />
                             </motion.div>
                           </div>
@@ -1055,13 +1050,14 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Mobile Carousel Indicator Dots */}
+          {/* Mobile carousel indicator dots */}
           <div className="w-full md:hidden border-b border-[#FFFFFF4D] py-6 flex justify-center items-center gap-[6px]">
             {pillars.map((_, i) => (
               <div
                 key={i}
-                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${i === pillarActiveIndex ? "w-[24px]" : "w-[6px] opacity-30"
-                  }`}
+                className={`h-[6px] rounded-full transition-all duration-300 bg-[#D9D9D9] ${
+                  i === pillarActiveIndex ? 'w-[24px]' : 'w-[6px] opacity-30'
+                }`}
               />
             ))}
           </div>
