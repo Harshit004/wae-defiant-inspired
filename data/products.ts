@@ -335,7 +335,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
   },
   "glass-bottling": {
     "id": "glass-bottling",
-    "title": "Glass bottling plant",
+    "title": "Glass Bottling Plants - QUANTM",
     "description": "Compact glass bottling plants enabling sustainable, premium in-house water bottling for hotels, hospitality brands, and luxury environments.",
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/23411290-087c-4c6c-77c6-9226946aae00/public",
     "paragraphs": [
@@ -385,7 +385,6 @@ export const CATEGORIES: Record<string, CategoryData> = {
     ]
   }
 };
-
 
 export const PRODUCTS: Record<string, ProductDetails> = {
   "var-series": {
