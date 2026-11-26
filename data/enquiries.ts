@@ -6290,5 +6290,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Ek lakh loan ki argentin",
     "type": "contact-us",
     "createdAt": "2026-11-26T11:39:49.932Z"
+  },
+  "2c435298-2b4f-401b-aa08-bc7f7460591a": {
+    "id": "2c435298-2b4f-401b-aa08-bc7f7460591a",
+    "fullName": "Sujay banik",
+    "companyName": "Sujay banik",
+    "email": "sujaybanik42@gmail.com",
+    "phone": "9193307781",
+    "city": "Barasat",
+    "pageLink": "https://www.waecorp.com/portfolio/zvr/nt01?utm_source=google&utm_medium=display&utm_campaign=zvr_gym_display&utm_content=830200934538&gad_source=5&gad_campaignid=23735506714&gclid=EAIaIQobChMI0LC0u6-mmAMVQsaEAB3Eoxd4EAEYASAAEgLjvfD_BwE",
+    "type": "product",
+    "createdAt": "2026-11-26T19:32:30.566Z"
   }
 };
