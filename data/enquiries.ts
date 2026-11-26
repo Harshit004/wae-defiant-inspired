@@ -6267,5 +6267,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Rajasthan",
     "type": "general",
     "createdAt": "2026-11-25T10:30:18.998Z"
+  },
+  "6b2b6e0e-06fd-48b2-92ae-bc6216bdb8a5": {
+    "id": "6b2b6e0e-06fd-48b2-92ae-bc6216bdb8a5",
+    "fullName": "Rithulya",
+    "companyName": "𝐏𝐨𝐰𝐞𝐫𝐡𝐨𝐮𝐬𝐞",
+    "email": "rithulya.sj.2026@snsacademy.org",
+    "phone": "1234567892",
+    "city": "𝐂𝐨𝐢𝐦𝐛𝐚𝐭𝐨𝐫𝐞",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIuIWPg6ClmAMV3MaEAB0NMTiaEAEYASAAEgJ7VPD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-26T08:49:50.693Z"
   }
 };
