@@ -6313,5 +6313,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Gard",
     "type": "contact-us",
     "createdAt": "2026-11-26T22:32:14.092Z"
+  },
+  "536bbe76-3e2c-4218-932d-bec2424851a7": {
+    "id": "536bbe76-3e2c-4218-932d-bec2424851a7",
+    "fullName": "Girraj Prasad",
+    "companyName": "Girraj Prasad",
+    "email": "girrajprasad250470@gmail.com",
+    "phone": "9799892680",
+    "city": "Alwar",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Gard",
+    "type": "contact-us",
+    "createdAt": "2026-11-26T22:39:00.780Z"
   }
 };
