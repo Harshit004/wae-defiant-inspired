@@ -231,7 +231,7 @@ export const CATEGORIES: Record<string, CategoryData> = {
   },
   "zvr": {
     "id": "zvr",
-    "title": "Drinking water fountain - ZVR",
+    "title": "Public Utility Systems - ZVR",
     "description": "Engineered for modern public spaces, ZVR combines touchless convenience, inclusive ADA-compliant design, and refined wall-mounted drinking water solutions.",
     "imageUrl": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/74579c8e-a7e1-4b0a-a14b-f83ab6e5d800/public",
     "paragraphs": [
