@@ -171,25 +171,25 @@ const pillars = [
     desc1:
       "The underlying natural order of the universe – circular continuity of the natural world. Undifferentiated, endlessly self-replenishing, immensely powerful and impassively generous.",
     desc2:
-      "Our work is an expression of that belief—that human ingenuity can serve the natural order on which all life depends.",
+      "WAE's mission is to lead the industry by 2030 offering science and technology driven water purification and reuse solutions.",
     href: "/profile",
   },
   {
     title: "Philosophy",
     subtitle: "Our Green Is Blue",
     desc1:
-      "At WAE, sustainability begins with water. Blue is the resource we protect, the science we apply and the future we seek to make possible. We engineer water as a circular asset from intake and purification to use, recovery and reuse.",
+      "It is where sustainability takes its truest form, not in what is made, but in how it lives on.",
     desc2:
-      "Each system is an opportunity to conserve resources, reduce emissions and move closer to carbon-neutral water. Our green is blue because a more sustainable world depends on what we do with every drop.",
+      "At WAE, we do not just treat water but architect a scientific reality where consumption and conservation coexist effortlessly.",
     href: "/sustainability",
   },
   {
-    title: "Practices",
-    subtitle: "From Water Intake to Water Use",
+    title: "Principle",
+    subtitle: "People First",
     desc1:
-      "WAE engineers water from intake to recovery and reuse, configuring treatment around source chemistry and demand to conserve resources. On-site purification and dispensing reduce packaged water reliance and Scope 3 emissions.",
+      "People are the natural rhythm of WAE — endlessly evolving, quietly powerful, shaping the future with every idea they breathe into life.",
     desc2:
-      "Membrane-based treatment enables wastewater reuse, while digital monitoring measures quality, consumption and recovery advancing our carbon-neutral water ambition.",
+      "In their curiosity and courage, the company finds its true flow, turning purpose into action and innovation into enduring impact.",
     href: "/careers",
   },
 ]
