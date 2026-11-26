@@ -688,8 +688,8 @@ export default function Home() {
                     />
                   </div>
 
-                  {/* Hero Content Text - sticky viewport frame so text stays on screen even when banner overflows vertically */}
-                  <div className="sticky top-0 w-full h-[100svh] max-h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
+                  {/* Hero Content Text */}
+                  <div className="absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center pt-[100px] md:pt-[30px] pb-[30px]">
                     <div className={`${containerClass} flex-1 flex flex-col justify-center`}>
                       <div
                         className="w-[85vw] md:w-[clamp(280px,34.79vw,600px)]"
@@ -752,9 +752,9 @@ export default function Home() {
                     }}
                   />
 
-                  {/* Slide Content & Legend sticky within 100svh viewport so text always stays on screen */}
+                  {/* Slide Content & Legend positioned statically within hero */}
                   <div
-                    className={`sticky top-0 w-full h-[100svh] max-h-full z-[3] pointer-events-none flex flex-col justify-center md:justify-start pt-[84px] pb-[48px] md:pb-[clamp(56px,6.5svh,76px)] ${
+                    className={`absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center md:justify-start pt-[84px] pb-[48px] md:pb-[clamp(56px,6.5svh,76px)] ${
                       HERO_SLIDES[currentSlide].id === 2
                         ? "md:pt-[clamp(140px,14.58vw,240px)]"
                         : HERO_SLIDES[currentSlide].id === 3
