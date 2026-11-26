@@ -166,7 +166,7 @@ export default function StatusQuoPopup({ className = "" }: StatusQuoPopupProps) 
                     fontWeight: 400,
                     fontStyle: "normal",
                     fontSize: "12px",
-                    lineHeight: "100%",
+                    lineHeight: "130%",
                     letterSpacing: "0%",
                     verticalAlign: "middle",
                     color: "#AEAEAE",
