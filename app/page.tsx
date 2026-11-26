@@ -77,20 +77,26 @@ interface HoverButtonProps {
   children: (hovered: boolean) => React.ReactNode
   href?: string
   theme?: "light" | "dark" | "transparent-white" | "transparent-white-black-hover"
+  disabled?: boolean
 }
 
-const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) => {
+const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light", disabled = false }) => {
   const [hovered, setHovered] = useState<boolean>(false)
+
+  const isHovered = !disabled && hovered
 
   const buttonContent = (
     <button
       type="button"
-      onMouseEnter={() => setHovered(true)}
+      disabled={disabled}
+      onMouseEnter={() => {
+        if (!disabled) setHovered(true)
+      }}
       onMouseLeave={() => setHovered(false)}
       className="w-fit "
       style={{
         transition: "background-color 0.65s ease, color 0.65s ease, border-color 0.65s ease",
-        pointerEvents: "auto",
+        pointerEvents: disabled ? "none" : "auto",
         display: "inline-flex",
         alignItems: "center",
         gap: "0.55vw",
@@ -102,16 +108,16 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
         textTransform: "none",
         backgroundColor:
           theme === "transparent-white"
-            ? hovered
+            ? isHovered
               ? "#fff"
               : "transparent"
             : theme === "transparent-white-black-hover"
-              ? hovered
+              ? isHovered
                 ? "#fff"
                 : "transparent"
               : theme === "dark"
                 ? "#000"
-                : hovered
+                : isHovered
                   ? "#000"
                   : "#fff",
         border:
@@ -120,28 +126,28 @@ const HoverButton: FC<HoverButtonProps> = ({ children, href, theme = "light" }) 
             : theme === "dark"
               ? "1px solid #fff"
               : "1px solid #000",
-        cursor: "pointer",
+        cursor: disabled ? "default" : "pointer",
         color:
           theme === "transparent-white"
-            ? hovered
+            ? isHovered
               ? "#004063"
               : "#fff"
             : theme === "transparent-white-black-hover"
-              ? hovered
+              ? isHovered
                 ? "#000"
                 : "#fff"
               : theme === "dark"
                 ? "#fff"
-                : hovered
+                : isHovered
                   ? "#fff"
                   : "#000",
       }}
     >
-      {children(hovered)}
+      {children(isHovered)}
     </button>
   )
 
-  return href ? (
+  return href && !disabled ? (
     href.startsWith("#") ? (
       <a href={href} className="contents" style={{ textDecoration: "none", color: "inherit" }}>
         {buttonContent}
@@ -1174,9 +1180,9 @@ export default function Home() {
                 >
                   Explore the Product Architecture......
                 </span>
-                <Link
-                  href="/portfolio"
-                  className="inline-flex items-center gap-1 hover:underline underline-offset-4 transition-colors"
+                <span
+                  aria-disabled="true"
+                  className="inline-flex items-center gap-1 cursor-default"
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 700,
@@ -1197,7 +1203,7 @@ export default function Home() {
                       className="brightness-0 invert"
                     />
                   </div>
-                </Link>
+                </span>
               </div>
             </div>
           </div>
@@ -1365,40 +1371,38 @@ export default function Home() {
                   Engineered as One System.
                 </h2>
 
-                {/* Know More Button */}
+                {/* Know More Button (Disabled) */}
                 <div className="mb-8">
-                  <Link href="/portfolio" className="contents">
-                    <HoverButton theme="transparent-white">
-                      {(hovered) => (
-                        <>
-                          Know More
-                          <div className="relative inline-block w-4 h-4 ml-2">
+                  <HoverButton theme="transparent-white" disabled>
+                    {(hovered) => (
+                      <>
+                        Know More
+                        <div className="relative inline-block w-4 h-4 ml-2">
+                          <Image
+                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                            alt="icon default"
+                            width={16}
+                            height={16}
+                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: hovered ? 1 : 0 }}
+                            transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                            className="absolute top-0 left-0"
+                          >
                             <Image
-                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                              alt="icon default"
+                              src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                              alt="icon hover"
                               width={16}
                               height={16}
                               className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                             />
-                            <motion.div
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: hovered ? 1 : 0 }}
-                              transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                              className="absolute top-0 left-0"
-                            >
-                              <Image
-                                src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                                alt="icon hover"
-                                width={16}
-                                height={16}
-                                className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                              />
-                            </motion.div>
-                          </div>
-                        </>
-                      )}
-                    </HoverButton>
-                  </Link>
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </HoverButton>
                 </div>
               </div>
 
@@ -1447,9 +1451,9 @@ export default function Home() {
                   >
                     Explore the Product Architecture......
                   </span>
-                  <Link
-                    href="https://wae-ltd-git-preview-wcgs-projects-1d1036ec.vercel.app/portfolio"
-                    className="inline-flex items-center transition-colors"
+                  <span
+                    aria-disabled="true"
+                    className="inline-flex items-center transition-colors cursor-default"
                     style={{
                       fontFamily: "'Manrope', sans-serif",
                       fontWeight: 700,
@@ -1461,7 +1465,7 @@ export default function Home() {
                     }}
                   >
                     <span>Read more</span>
-                  </Link>
+                  </span>
                 </div>
 
                 {/* 58px above the nav arrows */}
@@ -1511,10 +1515,10 @@ export default function Home() {
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {figmaSolutions.map((sol) => (
-                  <Link
+                  <div
                     key={sol.id}
-                    href={sol.href}
-                    className="group flex-shrink-0 w-[clamp(260px,29.72vw,520px)] aspect-[428/690] snap-start relative rounded-sm overflow-hidden block"
+                    aria-disabled="true"
+                    className="group flex-shrink-0 w-[clamp(260px,29.72vw,520px)] aspect-[428/690] snap-start relative rounded-sm overflow-hidden block cursor-default"
                   >
                     {/* Background Photography */}
                     <Image
@@ -1566,7 +1570,7 @@ export default function Home() {
                         </svg>
                       </div>
                     </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>
@@ -1608,38 +1612,36 @@ export default function Home() {
             </div>
 
             <div className="flex-shrink-0">
-              <Link href="/portfolio" className="contents">
-                <HoverButton theme="transparent-white">
-                  {(hovered) => (
-                    <>
-                      Know More
-                      <div className="relative inline-block w-4 h-4 ml-2">
+              <HoverButton theme="transparent-white" disabled>
+                {(hovered) => (
+                  <>
+                    Know More
+                    <div className="relative inline-block w-4 h-4 ml-2">
+                      <Image
+                        src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
+                        alt="icon default"
+                        width={16}
+                        height={16}
+                        className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
+                      />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hovered ? 1 : 0 }}
+                        transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
+                        className="absolute top-0 left-0"
+                      >
                         <Image
-                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/531927db-f544-4083-04ff-c05ab2bc2600/public"
-                          alt="icon default"
+                          src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
+                          alt="icon hover"
                           width={16}
                           height={16}
                           className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
                         />
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: hovered ? 1 : 0 }}
-                          transition={{ delay: hovered ? 0.3 : 0, duration: 0.5 }}
-                          className="absolute top-0 left-0"
-                        >
-                          <Image
-                            src="https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/b65e6ab9-db4f-4c7a-ee12-08b6d540ab00/public"
-                            alt="icon hover"
-                            width={16}
-                            height={16}
-                            className={hovered ? "filter-wae-blue" : "brightness-0 invert"}
-                          />
-                        </motion.div>
-                      </div>
-                    </>
-                  )}
-                </HoverButton>
-              </Link>
+                      </motion.div>
+                    </div>
+                  </>
+                )}
+              </HoverButton>
             </div>
           </div>
 
@@ -3107,6 +3109,23 @@ export default function Home() {
       {/* ── THE TERRITORY AHEAD ── */}
       <section className="bg-black text-white border-t border-b border-[#FFFFFF33] py-[112px]">
         <div className={containerClass}>
+          <h3
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontWeight: 400,
+              fontStyle: "normal",
+              fontSize: "24px",
+              lineHeight: "110%",
+              letterSpacing: "0px",
+              verticalAlign: "middle",
+              color: "#FFFFFF",
+            }}
+          >
+            Reimagine Work
+          </h3>
+
+          <div style={{ height: "32px" }} />
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
             {/* Left Column: Heading and JOIN US CTA */}
             <div className="flex flex-col justify-start items-start">

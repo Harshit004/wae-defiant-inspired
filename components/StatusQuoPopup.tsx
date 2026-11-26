@@ -166,21 +166,20 @@ export default function StatusQuoPopup({ className = "" }: StatusQuoPopupProps) 
                     fontWeight: 400,
                     fontStyle: "normal",
                     fontSize: "12px",
-                    lineHeight: "130%",
+                    lineHeight: "100%",
                     letterSpacing: "0%",
                     verticalAlign: "middle",
                     color: "#AEAEAE",
                     maxWidth: "calc(100% - 36.3px)",
                   }}
-                  className="mt-[clamp(8px,1vh,12px)] mb-[clamp(12px,1.5vh,16px)] text-left"
+                  className="mt-[clamp(8px,1vh,12px)] mb-[clamp(10px,1.2vh,14px)] text-left"
                 >
-                  Our new website traces the origins of WAE’s water activism. We began by challenging how water is treated, delivered and consumed. We’re continuously engineering better ways to do all three. Feel free to look around while we put the finishing touches on new features and content. The refreshed site goes live on 1 January 2027.
+                  Our new website traces the origins of WAE’s water activism. We began by challenging how water is treated, delivered and consumed. We’re continuously engineering better ways to do all three.
+                  <br />
+                  Feel free to look around while we put the finishing touches on new features and content.
                 </p>
 
-                {/* Bottom Action: Continue Browsing */}
-                <button
-                  type="button"
-                  onClick={handleDismiss}
+                <p
                   style={{
                     fontFamily: "'Manrope', sans-serif",
                     fontWeight: 500,
@@ -191,7 +190,26 @@ export default function StatusQuoPopup({ className = "" }: StatusQuoPopupProps) 
                     verticalAlign: "middle",
                     color: "#FFFFFF",
                   }}
-                  className="text-[12px] font-medium leading-[100%] text-white text-left hover:underline underline-offset-4 transition-all cursor-pointer w-fit p-0 focus:outline-none"
+                  className="mb-[clamp(12px,1.5vh,16px)] text-left"
+                >
+                  The refreshed site goes live on 1 January 2027.
+                </p>
+
+                {/* Bottom Action: Continue Browsing */}
+                <button
+                  type="button"
+                  onClick={handleDismiss}
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    fontSize: "12px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    verticalAlign: "middle",
+                    color: "#FFFFFF",
+                  }}
+                  className="text-[12px] font-semibold leading-[100%] text-white text-left hover:underline underline-offset-4 transition-all cursor-pointer w-fit p-0 focus:outline-none"
                 >
                   Continue browsing
                 </button>
