@@ -7213,5 +7213,208 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "how-much-water-is-your-cooling-tower-quietly-wasting-the-esg-question-industry-can-t-ignore": {
+    "id": "how-much-water-is-your-cooling-tower-quietly-wasting-the-esg-question-industry-can-t-ignore",
+    "title": "How Much Water Is Your Cooling Tower Quietly Wasting? The ESG Question Industry Can’t Ignore",
+    "category": "Water conservation",
+    "description": "Cooling towers consume substantial water, but not every litre represents waste because evaporation is fundamental to the cooling process. The blog explores how facilities can reduce avoidable demand by better controlling blowdown, cycles of concentration, water chemistry, monitoring, and alternative make-up sources, while balancing water savings against energy, treatment, and operational risks.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/be3a7911-05b6-4d3a-33b5-d713c1cebb00/public",
+    "writerId": "rehnuma-ansari",
+    "readTime": "7 - 8 min read",
+    "status": "Live",
+    "createdAt": "2026-11-27T10:15:28.509Z",
+    "contentColumns": [
+      [
+        {
+          "type": "paragraph",
+          "text": "A cooling tower can use a large volume of water without a dramatic leak. Much of that use is legitimate: evaporative cooling rejects heat through evaporation. The management problem arises when necessary evaporation is mixed with avoidable blowdown, poor chemistry control, leaks, overflow, or unnecessary dependence on freshwater make-up. For facilities pursuing industrial water sustainability, separating necessary consumption from avoidable demand is the first step."
+        },
+        {
+          "type": "paragraph",
+          "text": "That makes cooling tower water efficiency an operational question before it becomes an ESG claim. A facility needs to know where water is going, how efficiently it is recirculated, what chemical constraints limit optimization, and whether alternative water can safely replace part of the freshwater supply. The question is not simply, “How much water does the tower use?” It is how much of that demand is inherent to the cooling duty and how much can be reduced without compromising reliability, water quality, or energy performance."
+        },
+        {
+          "type": "heading",
+          "text": "Cooling Tower Water Efficiency Starts with Knowing Where Water Is Used"
+        },
+        {
+          "type": "paragraph",
+          "text": "In an open recirculating cooling tower, make-up water replaces water lost through evaporation, blowdown, drift, and basin leaks or overflows, according to the U.S. Department of Energy."
+        },
+        {
+          "type": "paragraph",
+          "text": "Evaporation is not waste; it is the primary way the tower transfers heat to the atmosphere. Drift consists of smaller liquid droplets carried out with the air stream. Leaks and overflows, by contrast, are avoidable losses. Understanding these differences is essential to water stewardship because not every liter leaving the system represents preventable waste."
+        },
+        {
+          "type": "paragraph",
+          "text": "Blowdown is intentional and controllable. As water evaporates, dissolved salts remain and concentrate. If they build up too much, scale, corrosion, and other problems can threaten the tower and downstream heat-transfer equipment. Operators therefore discharge a portion of the concentrated water and replace it with make-up water."
+        },
+        {
+          "type": "paragraph",
+          "text": "The operational cooling tower water balance can be expressed simply:\nMake-up water = evaporation + blowdown + drift + leaks/overflow\n\nFor industrial water conservation, the first step is to measure those flows rather than treating all make-up water as waste.\n"
+        },
+        {
+          "type": "heading",
+          "text": "Cycles of Concentration in Cooling Towers: The Number That Affects Blowdown"
+        },
+        {
+          "type": "paragraph",
+          "text": "One of the most useful cooling-tower performance indicators is cycles of concentration (CoC). It indicates how concentrated the dissolved minerals are in recirculating water relative to the make-up supply. Conductivity is commonly used as an indicator of that concentration. DOE guidance explains the relationship among CoC, conductivity, and blowdown."
+        },
+        {
+          "type": "paragraph",
+          "text": "A higher CoC generally means water is recirculated longer before some of it is discharged, reducing blowdown and make-up demand. From an industrial water-efficiency perspective, this means you can get more cooling service from the same incoming water."
+        },
+        {
+          "type": "paragraph",
+          "text": "DOE provides an illustrative example showing that increasing cycles from three to six reduces make-up demand by 20% and blowdown by 50%. This is not a universal benchmark. The practical limit depends on make-up water quality and treatment conditions. DOE’s cooling-tower guidance makes this relationship explicit."
+        },
+        {
+          "type": "paragraph",
+          "text": "A tower should not chase a higher CoC if doing so causes scaling, corrosion, biological growth, or reduced heat-transfer performance. For sustainable industrial water management, the better objective is the highest stable CoC the specific system can operate at safely and economically."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "Water Chemistry Sets the Practical Limit"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conductivity is useful, but it does not tell the whole chemical story. Hardness, alkalinity, silica, chloride, and other constituents can determine how far water can be concentrated before scaling or corrosion risk rises. Biological control also matters in warm recirculating systems."
+        },
+        {
+          "type": "paragraph",
+          "text": "That is why blowdown shouldn't rely solely on a fixed timer when better control is available. Conductivity-based control can discharge concentrated water when a defined set point is reached, rather than bleeding water regardless of actual chemistry. Better cooling tower water chemistry management can therefore support industrial freshwater conservation without pushing the system beyond safe operating limits."
+        },
+        {
+          "type": "paragraph",
+          "text": "Indian guidance supports the same discipline. The Bureau of Energy Efficiency’s Energy Conservation Guidelines for the MSME Sector recommend maintaining cycles of concentration within appropriate limits to minimize make-up water demand, using online monitoring for large centralized cooling systems, and measuring make-up water used to replace losses from evaporation, drift, blowdown, and other sources."
+        },
+        {
+          "type": "paragraph",
+          "text": "The objective is not to minimize blowdown at any cost. It is to remove only as much water as needed to maintain acceptable chemical and biological conditions."
+        },
+        {
+          "type": "heading",
+          "text": "What Facilities Should Actually Measure"
+        },
+        {
+          "type": "paragraph",
+          "text": "A cooling tower cannot be managed effectively based on a monthly water bill. Operators need enough information to build a cooling-water balance and recognize performance changes. DOE recommends installing flow meters on the make-up and blowdown lines, along with regular monitoring of conductivity and CoC. These are core water-efficiency KPIs."
+        },
+        {
+          "type": "paragraph",
+          "text": "BEE guidance also calls for measuring make-up water, electricity consumption, inlet and outlet water temperatures, water flow, pressure, and ambient conditions. Make-up volume reflects total incoming demand. Blowdown represents a major controllable discharge. Conductivity and CoC indicate whether concentration is being managed as expected. Temperature and flow data place water use in the context of cooling duty."
+        },
+        {
+          "type": "paragraph",
+          "text": "This type of cooling-tower water monitoring supports credible ESG water management because operating data should demonstrate improvements, not assumptions based on equipment installation. Facilities should also investigate drift, visible leakage, and basin overflow rather than treating unexplained water use as normal."
+        },
+        {
+          "type": "heading",
+          "text": "Alternative Make-Up Water Can Reduce Freshwater Use"
+        },
+        {
+          "type": "paragraph",
+          "text": "Improving cooling-tower performance is not only about reducing total consumption. It can also reduce dependence on freshwater. DOE identifies alternative water sources that may suit cooling-tower make-up, including air-handler condensate, compatible process water, and reclaimed wastewater."
+        },
+        {
+          "type": "paragraph",
+          "text": "Reclaimed water for cooling towers can reduce freshwater withdrawal, but “treated” does not automatically mean suitable. Assess its microbiological quality, dissolved solids, nutrients, scaling potential, corrosion risk, and compatibility with the tower’s treatment program."
+        },
+        {
+          "type": "paragraph",
+          "text": "Peer-reviewed research on municipal reclaimed water used as cooling-system make-up has demonstrated technical feasibility under defined conditions and highlighted the need to manage water chemistry and biological risks."
+        },
+        {
+          "type": "paragraph",
+          "text": "That makes treated wastewater reuse a fit-for-purpose decision. The question is not simply whether reclaimed water is available, but what treatment and monitoring would make it compatible with the cooling system. When technically justified, this can reduce dependence on freshwater."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "The Water-Energy-Treatment Trade-off"
+        },
+        {
+          "type": "paragraph",
+          "text": "Using less freshwater can require more treatment. A facility limited by hardness may soften make-up water so the tower can operate at higher cycles. Other sites may consider filtration, reverse osmosis, or blowdown recovery."
+        },
+        {
+          "type": "paragraph",
+          "text": "These interventions can reduce freshwater demand, but they may also increase energy use, chemical consumption, concentrate generation, maintenance, and costs. This water-energy nexus is why cooling-tower optimization cannot be judged by liters saved alone."
+        },
+        {
+          "type": "paragraph",
+          "text": "A 2024 Journal of Environmental Management study compared blowdown recovery with using more highly treated make-up water as routes to reducing the water footprint of a recirculating cooling tower. The preferred strategy depended on the starting CoC, water quality, and system conditions rather than a universal “maximum cycles” rule."
+        },
+        {
+          "type": "paragraph",
+          "text": "For sustainable cooling systems, the optimum operating point is therefore a system-level decision, not necessarily the point of maximum water recovery."
+        },
+        {
+          "type": "heading",
+          "text": "What Cooling Tower Performance Means for ESG"
+        },
+        {
+          "type": "paragraph",
+          "text": "SDG 6 water efficiency is directly relevant because Target 6.4 calls for substantially increasing water-use efficiency across sectors while ensuring sustainable freshwater withdrawals and supply. The United Nations’ SDG 6 framework sets out that target."
+        },
+        {
+          "type": "paragraph",
+          "text": "For listed entities under the applicable Indian reporting framework, water efficiency in ESG reporting also becomes a measurement issue. SEBI’s BRSR Core framework includes water-consumption intensity in ESG performance reporting, while energy consumption is tracked separately."
+        },
+        {
+          "type": "paragraph",
+          "text": "That means increasing CoC or switching make-up sources does not, by itself, prove stronger ESG performance. Credible corporate water stewardship should ask: How much did freshwater withdrawal fall? What happened to blowdown? Did electricity use change? Was reclaimed water safely substituted? Did additional treatment create another waste stream?"
+        },
+        {
+          "type": "paragraph",
+          "text": "The UN Global Compact’s environmental principles reinforce precaution, environmental responsibility, and environmentally sound technologies. Reporting the equipment is not the same as reporting the outcome."
+        },
+        {
+          "type": "heading",
+          "text": "The Cooling-Tower KPIs Management Should See"
+        },
+        {
+          "type": "paragraph",
+          "text": "A plant head, utility manager, or sustainability team does not need hundreds of variables. A focused dashboard should include total makeup water, blowdown volume, CoC, makeup and recirculating-water conductivity, freshwater share of makeup, alternative-water share, and electricity consumption associated with tower fans and pumps."
+        },
+        {
+          "type": "paragraph",
+          "text": "These water efficiency KPIs should be normalized against a meaningful operating denominator, such as production, cooling output, or operating hours. Trend data matters more than a single supposedly efficient value because a stable baseline makes deterioration visible early."
+        },
+        {
+          "type": "paragraph",
+          "text": "This aligns with ISO 46001:2019, which supports organizational water efficiency through monitoring, measurement, and continual improvement. For industrial water sustainability, the management cycle is simple: measure, understand, optimize, and verify."
+        },
+        {
+          "type": "heading",
+          "text": "Water Stewardship Starts With Operational Evidence"
+        },
+        {
+          "type": "paragraph",
+          "text": "Cooling towers are easy to oversimplify because large volumes of water visibly disappear from the system. But evaporation is not the enemy; it is the cooling mechanism."
+        },
+        {
+          "type": "paragraph",
+          "text": "The avoidable demand lies elsewhere: excessive blowdown, weak control of cycles of concentration, leaks and overflow, inadequate monitoring, unsuitable treatment, and unnecessary dependence on freshwater when an appropriate alternative source is technically viable. Addressing these areas is practical industrial water conservation."
+        },
+        {
+          "type": "paragraph",
+          "text": "A credible water-efficiency program therefore begins with the site’s own water balance, chemistry, and operating data. The connection to WAE sits at that management level. WAE’s institutional model begins with an assessment of existing water use and infrastructure before a system is specified. WAE’s profile reflects that evidence-first approach."
+        },
+        {
+          "type": "paragraph",
+          "text": "For industrial and commercial facilities, the ESG question is not whether a cooling tower uses water. It must. The question is whether that demand is measured, technically justified, continuously optimized, and understood alongside its energy and treatment trade-offs."
+        },
+        {
+          "type": "paragraph",
+          "text": "That is the difference between a water-saving claim and sustainable industrial water management."
+        }
+      ]
+    ]
   }
 };
