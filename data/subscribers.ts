@@ -979,5 +979,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-27",
     "time": "11:57:16",
     "pageLink": "/thank-you"
+  },
+  {
+    "id": "e1604c3d-4f46-4d0c-a371-3ffc3f4014d2",
+    "email": "vy115099@gmail.com",
+    "date": "2026-11-27",
+    "time": "13:11:00",
+    "pageLink": "/portfolio/glass-bottling/aquarius-series"
   }
 ];
