@@ -6325,5 +6325,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Gard",
     "type": "contact-us",
     "createdAt": "2026-11-26T22:39:00.780Z"
+  },
+  "ac2fb794-a639-4697-9455-dc692591f374": {
+    "id": "ac2fb794-a639-4697-9455-dc692591f374",
+    "fullName": "Ramesh Chandra",
+    "companyName": "Ramesh Chandra",
+    "email": "ramkvdopm@gmail.com",
+    "phone": "7300280171",
+    "city": "Rhgf",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "message": "Ghfgh",
+    "type": "contact-us",
+    "createdAt": "2026-11-27T04:11:19.284Z"
   }
 };
