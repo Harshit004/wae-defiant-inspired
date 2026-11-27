@@ -381,7 +381,7 @@ interface HeroBannerSlide {
   subhead?: string
   highlight?: string
   bodyCopy?: string
-  legend?: { label: string; color: string }[]
+  legendImage?: string
   footnote?: {
     lines: string[]
     hashtag?: string
@@ -416,12 +416,8 @@ const HERO_SLIDES: HeroBannerSlide[] = [
     image: "/hero/hero-slide-3.webp",
     headline: "1% for water",
     subhead: "1% of Net Sales\n100% of Our Commitment",
-    bodyCopy: "For water resilience, restoration and access for all",
-    legend: [
-      { label: "Secure", color: "#5E7C99" },
-      { label: "Exhausted", color: "#6E6E6E" },
-      { label: "Unreachable", color: "#E5E5E5" },
-    ],
+    bodyCopy: "For water resilience, restoration and\naccess for all",
+    legendImage: "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/92453570-2bca-43ef-3dc1-01c5cd829600/public",
     footnote: {
       lines: ["Not charity.", "Not CSR", "Responsibility"],
       hashtag: "#GiveBackToWater",
@@ -756,27 +752,23 @@ export default function Home() {
                   <div
                     className={`absolute inset-0 w-full h-full z-[3] pointer-events-none flex flex-col justify-center md:justify-start pt-[84px] pb-[48px] md:pb-[clamp(56px,6.5svh,76px)] ${
                       HERO_SLIDES[currentSlide].id === 2
-                        ? "md:pt-[clamp(140px,14.58vw,240px)]"
+                        ? "md:pt-[clamp(165px,18.4vw,295px)]"
                         : HERO_SLIDES[currentSlide].id === 3
                           ? "md:pt-[clamp(150px,16.74vw,270px)]"
                           : "md:pt-[clamp(170px,20.42vw,320px)]"
                     }`}
                   >
-                    {/* Slide-specific Legend (Slide 3 Map Legend) */}
-                    {HERO_SLIDES[currentSlide].legend && (
-                      <div
-                        className="hidden md:flex flex-col items-end gap-1.5 absolute top-[clamp(100px,10.5vw,160px)] right-[24px] md:right-[7.5vw] z-[4] text-[clamp(11px,0.83vw,13px)] text-[#AEAEAE]"
-                        style={{ fontFamily: "'Manrope', sans-serif" }}
-                      >
-                        {HERO_SLIDES[currentSlide].legend!.map((item, i) => (
-                          <div key={i} className="flex items-center gap-2.5">
-                            <span>{item.label}</span>
-                            <span
-                              className="w-2.5 h-2.5 rounded-full inline-block flex-shrink-0"
-                              style={{ backgroundColor: item.color }}
-                            />
-                          </div>
-                        ))}
+                    {/* Slide-specific Legend Image (Slide 3 Map Legend: 88x62, 30px under header, centered on header line end) */}
+                    {HERO_SLIDES[currentSlide].legendImage && (
+                      <div className="hidden md:block absolute top-[clamp(130px,11.11vw,175px)] right-[7.5vw] translate-x-1/2 z-[4]">
+                        <Image
+                          src={HERO_SLIDES[currentSlide].legendImage!}
+                          alt="Water availability legend"
+                          width={88}
+                          height={62}
+                          unoptimized
+                          className="w-[88px] h-[62px] object-contain"
+                        />
                       </div>
                     )}
 
@@ -845,7 +837,7 @@ export default function Home() {
                             className="whitespace-pre-line mt-[clamp(16px,min(1.94vw,3svh),28px)]"
                             style={{
                               fontFamily: "'Inter Tight', sans-serif",
-                              fontWeight: 700,
+                              fontWeight: 600,
                               fontStyle: "normal",
                               fontSize: "clamp(16px, min(1.94vw, 3.2svh), 28px)",
                               lineHeight: "115%",
@@ -861,7 +853,7 @@ export default function Home() {
 
                         {HERO_SLIDES[currentSlide].bodyCopy && (
                           <p
-                            className="whitespace-pre-line mt-[clamp(12px,min(1.53vw,2.2svh),22px)] max-w-[clamp(280px,32vw,440px)]"
+                            className="whitespace-pre-line mt-[clamp(12px,min(1.53vw,2.2svh),22px)] max-w-[clamp(300px,38vw,520px)]"
                             style={{
                               fontFamily: "'Inter Tight', sans-serif",
                               fontWeight: 400,
