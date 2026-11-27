@@ -965,5 +965,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-27",
     "time": "09:50:06",
     "pageLink": "/contact-us"
+  },
+  {
+    "id": "6ea8b95a-b649-440d-894c-564a90e998c0",
+    "email": "shagungupta357@gimal.com",
+    "date": "2026-11-27",
+    "time": "11:56:38",
+    "pageLink": "/thank-you"
   }
 ];
