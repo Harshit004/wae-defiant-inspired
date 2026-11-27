@@ -958,5 +958,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-27",
     "time": "00:34:54",
     "pageLink": "/contact-us"
+  },
+  {
+    "id": "889f6a5a-4cf4-4a97-9158-dee4cc7640ac",
+    "email": "krishnapalji577@gmail.com",
+    "date": "2026-11-27",
+    "time": "09:50:06",
+    "pageLink": "/contact-us"
   }
 ];
