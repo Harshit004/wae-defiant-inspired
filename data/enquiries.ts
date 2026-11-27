@@ -6359,5 +6359,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/portfolio/trublu/alfa-100",
     "type": "product",
     "createdAt": "2026-11-27T06:03:47.214Z"
+  },
+  "b42d1b9f-3804-432b-a1af-dc1d404d76d2": {
+    "id": "b42d1b9f-3804-432b-a1af-dc1d404d76d2",
+    "fullName": "Shagun",
+    "companyName": "Lucknow",
+    "email": "shagungupta357@gimal.com",
+    "phone": "9219774028",
+    "city": "Lucknow",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAzp_YBhAJEiwASf8kHQ6ddyUaDmnH3JvYDnOxte7s0WtLyEC-pc4--1cP6mXfxo_RhoklcRoCzR0QAvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-27T06:26:09.076Z"
   }
 };
