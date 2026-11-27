@@ -7416,5 +7416,264 @@ export const BLOGS: Record<string, BlogPost> = {
         }
       ]
     ]
+  },
+  "ai-s-hidden-water-footprint-can-india-s-data-center-boom-expand-without-worsening-water-stress": {
+    "id": "ai-s-hidden-water-footprint-can-india-s-data-center-boom-expand-without-worsening-water-stress",
+    "title": "AI’s Hidden Water Footprint: Can India’s Data Center Boom Expand Without Worsening Water Stress?",
+    "category": "Water conservation",
+    "description": "India’s expanding AI and data-center infrastructure is making water a key design, cooling, and siting consideration. The blog examines how cooling technology, Water Usage Effectiveness, freshwater dependence, alternative water sources, and local basin stress shape the sector’s real water footprint, arguing that sustainable growth requires water risk to be addressed before new capacity is built.",
+    "heroImage": "https://imagedelivery.net/R9aLuI8McL_Ccm6jM8FkvA/bfacfc2f-84d2-4dee-c865-127f2abd1a00/public",
+    "writerId": "rehnuma-ansari",
+    "readTime": "8 - 10 min read",
+    "status": "Live",
+    "createdAt": "2026-11-27T11:16:39.524Z",
+    "contentColumns": [
+      [
+        {
+          "type": "paragraph",
+          "text": "Artificial intelligence may look intangible, but the infrastructure behind it depends on physical resources: land, electricity, and, in many facilities, water. Servers generate heat continuously, and the way that heat is removed can determine whether a data center relies heavily on freshwater or operates with much lower water demand. That physical infrastructure is what gives the AI water footprint its real significance."
+        },
+        {
+          "type": "paragraph",
+          "text": "For India, this matters because digital infrastructure is expanding quickly while local water conditions vary sharply. Data center water consumption in India therefore cannot be reduced to a viral estimate of how many liters one AI query supposedly uses. The more useful chain is that computing density affects heat generation; heat affects cooling design; cooling design shapes water and electricity demand; and the significance of that demand depends on where the facility is located and which source it uses."
+        },
+        {
+          "type": "paragraph",
+          "text": "That makes corporate water stewardship a matter of design and siting, not simply an ESG reporting exercise."
+        },
+        {
+          "type": "heading",
+          "text": "India’s Data Center Boom Is Bigger Than AI"
+        },
+        {
+          "type": "paragraph",
+          "text": "India’s data center market was growing well before generative AI became a major infrastructure driver. Cloud computing, enterprise digitization, streaming, data localization, high-performance computing, and AI are all contributing to India’s data center growth."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Ministry of Electronics and Information Technology reported in March 2026 that India’s data center capacity had increased from about 375 MW in 2020 to around 1,500 MW by 2025. A newer commercial estimate from Cushman & Wakefield put operational capacity at 1,789 MW in H1 2026, with another 3,860 MW under construction or planned through 2030. The second figure is a market estimate, not an official national register. "
+        },
+        {
+          "type": "paragraph",
+          "text": "Mumbai remains the dominant cluster, followed by Chennai, Delhi-NCR, Bengaluru, and Hyderabad. This concentration makes geography important for ESG water management because the same growth in computing capacity can create very different water implications across cities and basins."
+        },
+        {
+          "type": "paragraph",
+          "text": "AI accelerates expansion, but it is not the sole cause. CEEW’s 2026 assessment also identifies cloud services, digitalization, localization requirements, and AI and machine-learning workloads as growth drivers. "
+        },
+        {
+          "type": "heading",
+          "text": "Where Does a Data Center Actually Use Water?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Data center water use has two dimensions."
+        },
+        {
+          "type": "paragraph",
+          "text": "Direct operational water use can include evaporative cooling, cooling towers, chilled-water systems, humidification, water treatment, and general facility operations. Facilities using dry or closed-loop heat rejection can have very different water profiles than those relying more heavily on evaporation."
+        },
+        {
+          "type": "paragraph",
+          "text": "Indirect water use comes mainly from electricity generation and the broader value chain. A facility with low on-site water use may still have a larger indirect footprint through its power supply. Peer-reviewed research distinguishes site-level operational water use from the broader water footprint associated with electricity generation."
+        },
+        {
+          "type": "paragraph",
+          "text": "These two categories should not be casually combined because their boundaries and management levers differ. This is also why a universal “water per AI query” figure is weak evidence. Lawrence Berkeley National Laboratory reported in 2025 that workload-level water use can vary by more than 10,000-fold depending on server efficiency, utilization, cooling technology, climate, grid water intensity, and other factors."
+        },
+        {
+          "type": "paragraph",
+          "text": "This same variability is why AI data center water consumption needs facility-specific measurement rather than sensational averages."
+        },
+        {
+          "type": "heading",
+          "text": "Why AI Changes the Cooling Equation"
+        },
+        {
+          "type": "paragraph",
+          "text": "AI and high-performance computing can increase rack density and heat generation per unit of floor area. The IEA reports that the power density of AI servers increased roughly elevenfold globally between 2020 and 2025."
+        },
+        {
+          "type": "paragraph",
+          "text": "Higher heat loads change cooling requirements. Conventional air cooling may remain suitable for some facilities, while higher-density deployments may shift toward direct-to-chip liquid cooling in data centers, immersion cooling, or hybrid architectures. Indian research from the Alliance for an Energy Efficient Economy similarly identifies AI and high-performance computing as drivers of higher rack densities and changing cooling requirements."
+        },
+        {
+          "type": "paragraph",
+          "text": "This does not mean every AI data center uses more water. The water outcome depends on how heat is ultimately rejected. A liquid-cooled server can still be connected to dry, evaporative, or hybrid heat-rejection equipment."
+        },
+        {
+          "type": "paragraph",
+          "text": "The relevant water-energy nexus is therefore not “AI equals water use.” It is:\nhigher computing density → greater heat load → cooling architecture → water and energy trade-offs\n\nNo single cooling technology is automatically the most sustainable in every Indian location."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "WUE: Useful, but Not the Whole Water Story"
+        },
+        {
+          "type": "paragraph",
+          "text": "Water Usage Effectiveness (WUE) is one of the most useful water-efficiency KPIs for data centers."
+        },
+        {
+          "type": "paragraph",
+          "text": "ISO/IEC 30134-9:2022 defines WUE as a data-center KPI that relates annual water consumption to the energy used by IT equipment, commonly expressed in liters per kilowatt-hour."
+        },
+        {
+          "type": "paragraph",
+          "text": "That makes WUE useful for tracking operational efficiency, but it does not capture the full water risk. As one of several data-center water-efficiency metrics, it should be interpreted alongside absolute consumption and source dependency."
+        },
+        {
+          "type": "paragraph",
+          "text": "A large data center may improve its WUE while total water consumption still rises because computing capacity is expanding. Two facilities may have similar WUE values but rely on different sources. A low WUE does not reveal whether the remaining water comes from municipal drinking supply, groundwater, reclaimed wastewater, or another source."
+        },
+        {
+          "type": "paragraph",
+          "text": "NITI Aayog’s 2026 Data Center Evaluation Framework reflects this limitation. It recommends standardized PUE and WUE measurement, as well as source-wise WUE reporting and long-term seasonal catchment water balances covering surface water, groundwater, municipal supply, treated wastewater, and competing demand. A stronger corporate water stewardship dashboard therefore separates four questions:"
+        },
+        {
+          "type": "paragraph",
+          "text": "WUE: How efficiently is water used?\n\nTotal consumption: How much water is consumed?\n\nFreshwater share: How dependent is the facility on freshwater?\n\nBasin stress: What does that demand mean in this location?"
+        },
+        {
+          "type": "heading",
+          "text": "Cooling Technology Creates a Water-Energy Trade-off"
+        },
+        {
+          "type": "paragraph",
+          "text": "Cooling decisions can move water and energy performance in opposite directions, which is why sustainable data center cooling cannot be judged by water use alone."
+        },
+        {
+          "type": "paragraph",
+          "text": "CEEW notes that air-cooled chillers generally use little or no cooling water but can require more electricity, particularly under challenging ambient conditions. Water-based heat rejection can improve energy performance but introduces dependence on a reliable water supply. "
+        },
+        {
+          "type": "paragraph",
+          "text": "Liquid cooling can improve heat removal at high rack densities, but it does not automatically eliminate water consumption. The internal loop still needs to reject heat somewhere, and the external system may be dry, evaporative, or hybrid."
+        },
+        {
+          "type": "paragraph",
+          "text": "NITI Aayog recommends evaluating air-cooled, indirect evaporative, liquid, closed loop, and immersion technologies based on climate, water source, rack density, and facility type. "
+        },
+        {
+          "type": "paragraph",
+          "text": "That is the core water-energy nexus. A design that reduces operational water but materially increases power demand has changed its environmental profile, not necessarily improved it overall. Equally, an energy-efficient evaporative system may be difficult to justify where freshwater is constrained."
+        },
+        {
+          "type": "heading",
+          "text": "Does Data Center Cooling Need Freshwater?"
+        },
+        {
+          "type": "paragraph",
+          "text": "The more important question is not only how much water a data center uses but also how much freshwater it actually needs."
+        },
+        {
+          "type": "paragraph",
+          "text": "In August 2026, the Government of India stated that freshwater availability, particularly in water-stressed regions, water balances, graywater generation, and recycling can be considered during environmental appraisal for applicable AI data-center projects. The same response noted that BEE’s District Cooling Guidelines recommend using treated water for cooling-tower make-up wherever feasible. "
+        },
+        {
+          "type": "paragraph",
+          "text": "This makes data center water recycling, treated wastewater reuse, and other alternative water sources serious infrastructure options."
+        },
+        {
+          "type": "paragraph",
+          "text": "Potential sources include reclaimed municipal wastewater, rainwater, condensate recovery, and recycled process water. But “treated” does not automatically mean suitable. Hardness, silica, total dissolved solids, microbial quality, corrosion potential, and scaling risk can determine what additional treatment is required."
+        },
+        {
+          "type": "paragraph",
+          "text": "That is fit-for-purpose water management. Freshwater dependency reduction should be measured by the actual share of freshwater in total supply, not inferred from the presence of a reuse system."
+        },
+        {
+          "type": "paragraph",
+          "text": "AWS provides one current Indian example. The company stated in 2026 that it plans to use recycled sewage water for cooling some newer facilities in Mumbai and Hyderabad rather than relying on drinking water. This is an attributed corporate commitment, not proof of sector-wide performance. "
+        },
+        {
+          "type": "heading",
+          "text": "Location Matters as Much as Efficiency"
+        },
+        {
+          "type": "paragraph",
+          "text": "A good WUE does not automatically imply low water risk, especially when water security in India varies substantially by location."
+        },
+        {
+          "type": "paragraph",
+          "text": "India’s data-center capacity is concentrated in a small number of metropolitan clusters, and water conditions vary by basin, climate, municipal infrastructure, groundwater status, and seasonal availability."
+        },
+        {
+          "type": "paragraph",
+          "text": "CEEW’s 2026 assessment argues that water availability should be considered in data-center siting, particularly as high-capacity facilities expand. NITI Aayog goes further, recommending 20–30-year seasonal catchment water balances that cover surface water, groundwater, municipal supply, treated wastewater, and competing demand. "
+        },
+        {
+          "type": "paragraph",
+          "text": "This moves corporate water stewardship into the siting decision. A facility in a relatively water-secure location that uses reclaimed water may pose a very different risk than an equally efficient facility drawing freshwater from a stressed basin."
+        },
+        {
+          "type": "paragraph",
+          "text": "Efficiency, absolute consumption, and local water risk are related but not interchangeable."
+        }
+      ],
+      [
+        {
+          "type": "heading",
+          "text": "What Should ESG Teams Actually Measure?"
+        },
+        {
+          "type": "paragraph",
+          "text": "WUE belongs on the dashboard, but it should not sit there alone."
+        },
+        {
+          "type": "paragraph",
+          "text": "Operators should consider total annual water withdrawal, total water consumption, freshwater withdrawal, freshwater share, alternative-water share, treated wastewater use, seasonal demand, and cooling-system water consumption. PUE should be reviewed alongside WUE so that water-saving changes are not assessed without accounting for their energy implications."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is the core of practical ESG water management: operational efficiency must be interpreted alongside source dependency, absolute demand, and local conditions."
+        },
+        {
+          "type": "paragraph",
+          "text": "For listed Indian companies within the applicable framework, BRSR and BRSR Core add a corporate disclosure layer through water withdrawal by source, consumption, water intensity, discharge, and energy use. "
+        },
+        {
+          "type": "paragraph",
+          "text": "These disclosures are distinct from engineering KPIs. WUE measures operational water intensity. BRSR addresses corporate withdrawal, consumption, and disclosure. Basin risk adds another dimension."
+        },
+        {
+          "type": "paragraph",
+          "text": "Good water efficiency in ESG reporting keeps those boundaries visible rather than collapsing them into a single sustainability score."
+        },
+        {
+          "type": "heading",
+          "text": "Can India Expand Its Data Centers Without Deepening Water Stress?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Yes, but only conditionally."
+        },
+        {
+          "type": "paragraph",
+          "text": "India does not have to choose between digital infrastructure and water security. However, data-center growth cannot treat freshwater as an unlimited utility input."
+        },
+        {
+          "type": "paragraph",
+          "text": "The strongest operators will need to make water a core consideration in siting, cooling architecture, source selection, treatment design, monitoring, and capacity planning. They will need to improve WUE without losing sight of absolute consumption and make reducing freshwater dependence a measurable operating objective wherever fit-for-purpose alternatives exist."
+        },
+        {
+          "type": "paragraph",
+          "text": "That is also the operational meaning of SDG 6 water efficiency: improving water-use efficiency while supporting sustainable freshwater withdrawals."
+        },
+        {
+          "type": "paragraph",
+          "text": "The WAE connection belongs at this broader infrastructure level, not in data-center cooling engineering. WAE’s stated model begins with understanding water use, source conditions, and infrastructure before treatment systems are specified."
+        },
+        {
+          "type": "paragraph",
+          "text": "The same management principle applies here: understand the source, define the required water quality, measure demand, identify appropriate alternative supplies, and verify whether freshwater dependence is genuinely falling. That is the foundation of sustainable water management for rapidly expanding digital infrastructure."
+        },
+        {
+          "type": "paragraph",
+          "text": "India’s data-center boom does not automatically have to deepen water stress. But avoiding that outcome requires water to become a design, siting, and operating parameter before capacity is built, not a sustainability problem to solve afterward."
+        }
+      ]
+    ]
   }
 };
