@@ -6348,5 +6348,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAzp_YBhAJEiwASf8kHekb99qL07uxtxjcIQooHJOshX8llD9YCPz-AN0nsX90vSf2cUf0vxoCKd8QAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-27T04:22:14.039Z"
+  },
+  "cefaa26d-bd19-4671-bc55-6caf1244642b": {
+    "id": "cefaa26d-bd19-4671-bc55-6caf1244642b",
+    "fullName": "Naresh",
+    "companyName": "KYVE",
+    "email": "herein@meenakshigroup.com",
+    "phone": "9652918363",
+    "city": "Nanakaram guda",
+    "pageLink": "https://www.waecorp.com/portfolio/trublu/alfa-100",
+    "type": "product",
+    "createdAt": "2026-11-27T06:03:47.214Z"
   }
 };
