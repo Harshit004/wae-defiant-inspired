@@ -6337,5 +6337,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Ghfgh",
     "type": "contact-us",
     "createdAt": "2026-11-27T04:11:19.284Z"
+  },
+  "616c1fa1-9f1f-43aa-9f4d-611bc5562912": {
+    "id": "616c1fa1-9f1f-43aa-9f4d-611bc5562912",
+    "fullName": "Krishna pal Ji",
+    "companyName": "Krishna pal Ji",
+    "email": "krishnapalji577@gmail.com",
+    "phone": "8948852293",
+    "city": "Azamgarh",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAzp_YBhAJEiwASf8kHekb99qL07uxtxjcIQooHJOshX8llD9YCPz-AN0nsX90vSf2cUf0vxoCKd8QAvD_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-27T04:22:14.039Z"
   }
 };
