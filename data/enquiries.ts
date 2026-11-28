@@ -6404,5 +6404,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us",
     "type": "contact-us",
     "createdAt": "2026-11-28T04:52:05.313Z"
+  },
+  "9d26e10f-652a-4821-9383-bb3477eb93d0": {
+    "id": "9d26e10f-652a-4821-9383-bb3477eb93d0",
+    "fullName": "Anjali sahu",
+    "companyName": "Anjali sahu",
+    "email": "ns0757937@gmail.com",
+    "phone": "8858180168",
+    "city": "Akbarpur",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiA8aTYBhCvARIsAJFINleMfsEAswFsSzem0OEu5OAXn6HDBDjHBNqTa_8Bz7CgPBfEul32Ou8aAhaEEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-11-28T07:08:25.147Z"
   }
 };
