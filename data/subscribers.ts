@@ -1000,5 +1000,12 @@ export const SUBSCRIBERS: Subscriber[] = [
     "date": "2026-11-28",
     "time": "07:58:09",
     "pageLink": "/portfolio/zvr/nt01"
+  },
+  {
+    "id": "e6c27f48-c0ab-420f-b4dc-e1b14037efd9",
+    "email": "nikkithakur9695@mail.com",
+    "date": "2026-11-28",
+    "time": "08:07:10",
+    "pageLink": "/portfolio/glass-bottling/aquarius-series"
   }
 ];
