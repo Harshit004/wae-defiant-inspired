@@ -6415,5 +6415,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiA8aTYBhCvARIsAJFINleMfsEAswFsSzem0OEu5OAXn6HDBDjHBNqTa_8Bz7CgPBfEul32Ou8aAhaEEALw_wcB",
     "type": "contact-us",
     "createdAt": "2026-11-28T07:08:25.147Z"
+  },
+  "25e5ef5c-6758-4acc-8b5c-d21ee217d029": {
+    "id": "25e5ef5c-6758-4acc-8b5c-d21ee217d029",
+    "fullName": "Payal",
+    "companyName": "Payal pal",
+    "email": "krishnapalji577@gmail.com",
+    "phone": "8948852293",
+    "city": "Azamgarh",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiA8aTYBhCvARIsAJFINlf1a8q7jvZ-mopYLmTcWksooYf228EaTyc26vnu4Bui1_VUu0BK2vsaAgRJEALw_wcB",
+    "type": "contact-us",
+    "createdAt": "2026-11-28T07:45:33.796Z"
   }
 };
