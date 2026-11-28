@@ -6381,5 +6381,17 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIrtzC6t6pmAMV7YHpBR2tCQf9EAEYASAAEgL5I_D_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-28T03:42:01.541Z"
+  },
+  "517b6cb9-6004-4977-8b37-0fb1dc8d04e8": {
+    "id": "517b6cb9-6004-4977-8b37-0fb1dc8d04e8",
+    "fullName": "Prateek",
+    "companyName": "Suhana",
+    "email": "sadhnasingh@44145.com",
+    "phone": "1234567891",
+    "city": "India",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=Cj0KCQiA8aTYBhCvARIsAJFINlfBhQGVBEe1XCelOMKjZIdI8TpIzhBQILN7CC-ysO4g_4IjVCp1B_UaAv22EALw_wcB",
+    "message": "Prateek",
+    "type": "contact-us",
+    "createdAt": "2026-11-28T04:04:40.050Z"
   }
 };
