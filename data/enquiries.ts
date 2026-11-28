@@ -6393,5 +6393,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "message": "Prateek",
     "type": "contact-us",
     "createdAt": "2026-11-28T04:04:40.050Z"
+  },
+  "95dbd496-3ae8-4f1a-9990-68f9e406b53a": {
+    "id": "95dbd496-3ae8-4f1a-9990-68f9e406b53a",
+    "fullName": "Gandikota Venkateswara Rao",
+    "companyName": "Sri Suriya industries",
+    "email": "venkatgandikotavenkatgandikota@gmail.com",
+    "phone": "9908284318",
+    "city": "Tenali",
+    "pageLink": "https://www.waecorp.com/contact-us",
+    "type": "contact-us",
+    "createdAt": "2026-11-28T04:52:05.313Z"
   }
 };
