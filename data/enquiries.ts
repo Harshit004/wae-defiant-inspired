@@ -6370,5 +6370,16 @@ export const ENQUIRIES: Record<string, Enquiry> = {
     "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=CjwKCAiAzp_YBhAJEiwASf8kHQ6ddyUaDmnH3JvYDnOxte7s0WtLyEC-pc4--1cP6mXfxo_RhoklcRoCzR0QAvD_BwE",
     "type": "contact-us",
     "createdAt": "2026-11-27T06:26:09.076Z"
+  },
+  "d8b71480-d45f-4eda-b95c-44fc5f2d2192": {
+    "id": "d8b71480-d45f-4eda-b95c-44fc5f2d2192",
+    "fullName": "Vanshika Khatri",
+    "companyName": "Vanshik",
+    "email": "vk7357908808@gmail.com",
+    "phone": "7357908808",
+    "city": "",
+    "pageLink": "https://www.waecorp.com/contact-us?gad_source=5&gad_campaignid=24392375667&gclid=EAIaIQobChMIrtzC6t6pmAMV7YHpBR2tCQf9EAEYASAAEgL5I_D_BwE",
+    "type": "contact-us",
+    "createdAt": "2026-11-28T03:42:01.541Z"
   }
 };
